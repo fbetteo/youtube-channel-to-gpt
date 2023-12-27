@@ -28,7 +28,7 @@ for youtubeId in youtubeIdArray:
 
     # Write the transcribed text to a transcript file
     print("Writing transcript for " + youtubeId + " to file")
-    transcriptionFile = open("./build/transcript.txt", "a")
+    transcriptionFile = open("./build/transcript_ramsay.txt", "a", encoding="utf-8")
     transcriptionFile.write(transcribedText)
     transcriptionFile.close()
 

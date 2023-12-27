@@ -11,8 +11,8 @@ API_KEY = os.getenv("YOUTUBE_API_KEY")
 youtube = build('youtube', 'v3', developerKey=API_KEY)
 
 # Constants
-CHANNEL_ID = 'UCcefcZRL2oaA_uBNeo5UOWg' 
-MAX_RESULTS = 50
+CHANNEL_ID = 'UCIEv3lZ_tNXHzL3ox-_uUGQ' 
+MAX_RESULTS = 10
 
 # Get medium videos
 medium_videos = youtube.search().list(
