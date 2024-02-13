@@ -2,6 +2,7 @@ import os
 import json
 from dotenv import load_dotenv
 from openai import OpenAI
+import pickle
 
 # Load environment variables
 load_dotenv()
@@ -41,22 +42,36 @@ class ChannelAssistant:
         )
 
     def create_thread(self, thread_id: str):
+        if not self.client:
+            self.client = OpenAI(api_key=OPENAI_KEY)
         self.threads[thread_id] = self.client.beta.threads.create()
         # return self.thread
 
     def create_message(self, thread_id: str, content: str):
-        self.client.beta.threads.messages.create(
-            thread_id=self.threads[thread_id].id, role="user", content=content
-        )
+        if not self.client:
+            self.client = OpenAI(api_key=OPENAI_KEY)
+        try:
+            self.client.beta.threads.messages.create(
+                thread_id=self.threads[thread_id].id, role="user", content=content
+            )
+        except KeyError:
+            print("Thread doesn't exist")
 
     def create_run(self, thread_id: str):
-        self.client.beta.threads.runs.create(
-            thread_id=self.threads[thread_id].id,
-            assistant_id=self.assistant.id,
-            #   additional_instructions="Please address the user as Jane Doe. The user has a premium account."
-        )
+        if not self.client:
+            self.client = OpenAI(api_key=OPENAI_KEY)
+        try:
+            self.client.beta.threads.runs.create(
+                thread_id=self.threads[thread_id].id,
+                assistant_id=self.assistant.id,
+                #   additional_instructions="Please address the user as Jane Doe. The user has a premium account."
+            )
+        except KeyError:
+            print("Thread doesn't exist")  # use httpexception¿
 
     def get_messages(self, thread_id: str):
+        if not self.client:
+            self.client = OpenAI(api_key=OPENAI_KEY)
         return self.client.beta.threads.messages.list(
             thread_id=self.threads[thread_id].id
         )
