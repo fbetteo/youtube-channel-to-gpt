@@ -7,3 +7,5 @@ uvicorn
 
 mysqlclient
 passlib[bcrypt]
+
+openai

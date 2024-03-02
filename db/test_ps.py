@@ -2,18 +2,19 @@ from dotenv import load_dotenv
 
 load_dotenv()
 import os
-import MySQLdb
 
 global connection
 
-connection = MySQLdb.connect(
-    host=os.getenv("DB_HOST"),
-    user=os.getenv("DB_USERNAME"),
-    passwd=os.getenv("DB_PASSWORD"),
-    db=os.getenv("DB_NAME"),
-    autocommit=True,
-    ssl_mode="VERIFY_IDENTITY",
-)
+import psycopg2
+
+connection = psycopg2.connect(database=os.getenv("DB_NAME"),
+                        host=os.getenv("DB_HOST"),
+                        user=os.getenv("DB_USERNAME"),
+                        password=os.getenv("DB_PASSWORD"),
+                        port=os.getenv("DB_PORT")
+                          )
+
+connection.autocommit = True
 
 global cache
 cache = {}
