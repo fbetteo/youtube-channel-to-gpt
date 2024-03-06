@@ -136,6 +136,16 @@ def create_thread(user_id: int, assistant_name: str, thread_id: str):
     channel_assistant = cache[user_id][assistant_name]["assistant"]
     channel_assistant.create_thread(thread_id)
 
+    c = connection.cursor()
+    c.execute(
+        f"""INSERT INTO threads(thread_id, assistant_id) VALUES
+    ('{thread_id}', '{channel_assistant.assistant.id}');"""
+    )
+
+    channel_assistant.client = None
+    with open(f"{user_id}_{channel_assistant.assistant.id}.pkl", "wb") as f:
+        pickle.dump(channel_assistant, f, pickle.HIGHEST_PROTOCOL)
+
 
 @app.post("/messages/{user_id}/{assistant_name}/{thread_id}")
 @load_assistant
@@ -156,6 +166,26 @@ def create_run(user_id: int, assistant_name: str, thread_id: str):
 def get_messages(user_id: int, assistant_name: str, thread_id: str):
     channel_assistant = cache[user_id][assistant_name]["assistant"]
     return channel_assistant.get_messages(thread_id)
+
+
+# no enteindo por que tengo que poner esa llave al final despues de assistant name
+@app.get("/threads/{user_id}/{assistant_name}")
+def get_threads(user_id: int, assistant_name: str):
+    output = []
+    c = connection.cursor()
+    c.execute(
+        f"""SELECT thread_id FROM threads 
+          join assistants on threads.assistant_id = assistants.assistant_id
+           WHERE assistants.assistant_name = '{assistant_name}'
+            and assistants.user_id = {user_id}"""
+    )
+    # print(c.fetchall())
+    results = c.fetchall()
+    c.close()
+    for row in results:
+        output.append({"thread_id": row[0]})
+    print(output)
+    return output
 
 
 @app.get("/print_messages/{user_id}/{assistant_name}/{thread_id}")

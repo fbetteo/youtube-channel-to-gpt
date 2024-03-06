@@ -5,7 +5,7 @@ python-dotenv
 fastapi
 uvicorn
 
-mysqlclient
+psycopg2
 passlib[bcrypt]
 
 openai

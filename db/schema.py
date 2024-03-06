@@ -1,16 +1,18 @@
 from dotenv import load_dotenv
 import os
+
 load_dotenv()
 import psycopg2
 
-connection = psycopg2.connect(database=os.getenv("DB_NAME"),
-                        host=os.getenv("DB_HOST"),
-                        user=os.getenv("DB_USERNAME"),
-                        password=os.getenv("DB_PASSWORD"),
-                        port=os.getenv("DB_PORT")
-                          )
+connection = psycopg2.connect(
+    database=os.getenv("DB_NAME"),
+    host=os.getenv("DB_HOST"),
+    user=os.getenv("DB_USERNAME"),
+    password=os.getenv("DB_PASSWORD"),
+    port=os.getenv("DB_PORT"),
+)
 
-connection.autocommit = True    
+connection.autocommit = True
 
 
 c = connection.cursor()
@@ -40,19 +42,19 @@ CREATE TABLE channels (
 )
 
 
-c.execute(
-    f"""
-    DROP TABLE IF EXISTS assistants;
-CREATE TABLE assistants (
-    user_id MEDIUMINT NOT NULL,
-    assistant_id CHAR(100) NOT NULL,
-    channel_id CHAR(100) NOT NULL,
-    assistant_name CHAR(100) NOT NULL,
-    PRIMARY KEY (assistant_id)
-);
+# c.execute(
+#     f"""
+#     DROP TABLE IF EXISTS assistants;
+# CREATE TABLE assistants (
+#     user_id MEDIUMINT NOT NULL,
+#     assistant_id CHAR(100) NOT NULL,
+#     channel_id CHAR(100) NOT NULL,
+#     assistant_name CHAR(100) NOT NULL,
+#     PRIMARY KEY (assistant_id)
+# );
 
-"""
-)
+# """
+# )
 
 
 c.execute(
@@ -65,6 +67,18 @@ CREATE TABLE assistants (
     assistant_name VARCHAR(100) NOT NULL,
     PRIMARY KEY (assistant_id)
 );
+"""
+)
+
+
+c.execute(
+    """
+DROP TABLE IF EXISTS threads;
+CREATE TABLE threads (
+    assistant_id VARCHAR(100) NOT NULL,
+    thread_id VARCHAR(100) NOT NULL,
+    PRIMARY KEY (thread_id)
+    );
 """
 )
 

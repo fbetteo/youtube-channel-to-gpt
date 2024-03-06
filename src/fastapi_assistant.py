@@ -76,6 +76,11 @@ class ChannelAssistant:
             thread_id=self.threads[thread_id].id
         )
 
+    # def get_threads(self):
+    #     if not self.client:
+    #         self.client = OpenAI(api_key=OPENAI_KEY)
+    #     return self.client.beta.threads.list()
+
     def print_messages(self, thread_id: str):
         messages = self.get_messages(thread_id)
         for msg in messages.data:
