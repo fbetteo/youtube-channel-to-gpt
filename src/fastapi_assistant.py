@@ -69,20 +69,29 @@ class ChannelAssistant:
         except KeyError:
             print("Thread doesn't exist")  # use httpexception¿
 
-    def get_messages(self, thread_id: str):
+    async def get_all_messages(self, thread_id: str):
         if not self.client:
             self.client = OpenAI(api_key=OPENAI_KEY)
-        return self.client.beta.threads.messages.list(
+
+        output_messages = self.client.beta.threads.messages.list(
             thread_id=self.threads[thread_id].id
         )
+        return output_messages
+
+    async def get_clean_messages(self, thread_id: str):
+        messages = await self.get_all_messages(thread_id)
+        clean_messages = []
+        for i, msg in enumerate(messages.data[::-1]):
+            clean_messages.append((i, msg.role, msg.content[0].text.value))
+        return clean_messages
 
     # def get_threads(self):
     #     if not self.client:
     #         self.client = OpenAI(api_key=OPENAI_KEY)
     #     return self.client.beta.threads.list()
 
-    def print_messages(self, thread_id: str):
-        messages = self.get_messages(thread_id)
+    async def print_messages(self, thread_id: str):
+        messages = await self.get_all_messages(thread_id)
         for msg in messages.data:
             print(msg.role)
             print(msg.content)

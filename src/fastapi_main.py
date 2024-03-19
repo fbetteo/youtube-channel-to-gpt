@@ -5,7 +5,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
 
 import pickle
-from typing import Union
+from typing import List, Union
 import fastapi_retrieve
 import fastapi_assistant
 from fastapi import FastAPI, Body, Form, HTTPException
@@ -13,7 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from db.test_ps import connection, cache
 from db.models import User
 import json
-from decorators import load_assistant
+from decorators import load_assistant, load_assistant_returning_object
 import utils
 
 app = FastAPI()
@@ -162,10 +162,14 @@ def create_run(user_id: int, assistant_name: str, thread_id: str):
 
 
 @app.get("/messages/{user_id}/{assistant_name}/{thread_id}")
-@load_assistant
-def get_messages(user_id: int, assistant_name: str, thread_id: str):
+@load_assistant_returning_object
+async def get_messages(user_id: int, assistant_name: str, thread_id: str):
+    output = []
     channel_assistant = cache[user_id][assistant_name]["assistant"]
-    return channel_assistant.get_messages(thread_id)
+    messages_list = await channel_assistant.get_clean_messages(thread_id)
+    for msg in messages_list:
+        output.append({"id": msg[0], "role": msg[1], "text": msg[2]})
+    return output
 
 
 # no enteindo por que tengo que poner esa llave al final despues de assistant name
@@ -190,7 +194,7 @@ def get_threads(user_id: int, assistant_name: str):
 
 @app.get("/print_messages/{user_id}/{assistant_name}/{thread_id}")
 @load_assistant
-def print_messages(user_id: int, assistant_name: str, thread_id: str):
+async def print_messages(user_id: int, assistant_name: str, thread_id: str):
     channel_assistant = cache[user_id][assistant_name]["assistant"]
     channel_assistant.print_messages(thread_id)
 
