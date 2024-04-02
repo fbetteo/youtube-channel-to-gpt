@@ -105,13 +105,18 @@ def read_root():
 
 
 # Deberiamos tener una sola funcion cuando el usuario quiera generar un assistant, que baje el transcript y cree el assistant. Asi no guardamos en ningun momento el transcript?
-@app.get("/transcripts/{user_id}/{assistant_name}")
+@app.get("/transcripts/{assistant_name}")
 def get_channel_transcript(
-    user_id: int, assistant_name: str, channel_id: str, max_results: int
+    assistant_name: str, channel_id: str, max_results: int, user_id: uuid.UUID
 ):
+
+    print("hello")
+    print(user_id)
     video_retrieval = fastapi_retrieve.VideoRetrieval(channel_id, max_results)
     video_retrieval.get_video_ids()
     video_retrieval.get_transcripts()
+    if cache.get(user_id) is None:
+        cache[user_id] = {}
     cache[user_id][assistant_name] = {}
     cache[user_id][assistant_name]["video_retrieval"] = video_retrieval
     print(video_retrieval.all_transcripts[0:10])
@@ -157,10 +162,15 @@ def get_assistants_protected(
 
 
 # this way because a user can have multiple versions of the same channel_id (yt identifier) so the name provided to the assistant is used to differentiate
-@app.post("/assistants/{user_id}/{assistant_name}")
-def create_assistant(user_id: int, channel_id: str, assistant_name: str):
+@app.post("/assistants/{assistant_name}")
+def create_assistant(
+    channel_id: str, assistant_name: str, payload: dict = Depends(validate_jwt)
+):
+    print("hello")
+    user_id = payload.get("sub", "anonymous")
+    print(user_id)
     print(channel_id)
-    get_channel_transcript(user_id, assistant_name, channel_id, 3)
+    get_channel_transcript(assistant_name, channel_id, 3, user_id)
     channel_assistant = fastapi_assistant.ChannelAssistant(
         cache[user_id][assistant_name]["video_retrieval"]
     )
@@ -176,19 +186,21 @@ def create_assistant(user_id: int, channel_id: str, assistant_name: str):
     # Save in DB
     c = connection.cursor()
     c.execute(
-        f"""INSERT INTO assistants(user_id ,
+        f"""INSERT INTO assistants(
     assistant_id, 
     channel_id ,
-    assistant_name ) VALUES
-    ({user_id}, '{channel_assistant.assistant.id}', '{channel_id}', '{assistant_name}');"""
+    assistant_name,
+    uuid ) VALUES
+    ('{channel_assistant.assistant.id}', '{channel_id}', '{assistant_name}', '{user_id}');"""
     )
     c.execute(f"SELECT * FROM assistants")
     print(c.fetchall())
     c.execute(
-        f"""INSERT INTO channels(user_id ,
+        f"""INSERT INTO channels(
     channel_id ,
-    assistant_name ) VALUES
-    ({user_id},  '{channel_id}', '{assistant_name}');"""
+    assistant_name,
+     uuid ) VALUES
+    ('{channel_id}', '{assistant_name}', '{user_id}');"""
     )
     c.close()
     return channel_assistant.assistant.id
@@ -253,15 +265,18 @@ async def get_messages(user_id: int, assistant_name: str, thread_id: str):
 
 
 # no enteindo por que tengo que poner esa llave al final despues de assistant name
-@app.get("/threads/{user_id}/{assistant_name}")
-def get_threads(user_id: int, assistant_name: str):
+@app.get("/threads/{assistant_name}")
+def get_threads(assistant_name: str, payload: dict = Depends(validate_jwt)):
+    print("hello")
+    user_id = payload.get("sub", "anonymous")
+    print(user_id)
     output = []
     c = connection.cursor()
     c.execute(
         f"""SELECT thread_id FROM threads 
           join assistants on threads.assistant_id = assistants.assistant_id
            WHERE assistants.assistant_name = '{assistant_name}'
-            and assistants.user_id = {user_id}"""
+            and assistants.uuid = '{user_id}'"""
     )
     # print(c.fetchall())
     results = c.fetchall()
