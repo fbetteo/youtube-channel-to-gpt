@@ -15,12 +15,46 @@ from db.models import User
 import json
 from decorators import load_assistant, load_assistant_returning_object
 import utils
+import uuid
+
+
+from fastapi import HTTPException, Depends, Header, Security, Cookie
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from jose import JWTError, jwt
+from typing import Optional
+from supabase import create_client, Client
 
 app = FastAPI()
 
+url: str = os.getenv("NEXT_PUBLIC_SUPABASE_URL")
+anon_key: str = os.getenv("SUPABASE_ANON_KEY")
+secret_key: str = os.getenv("SUPABASE_SECRET")
+supabase: Client = create_client(url, anon_key)
+
+
+ALGORITHM = "HS256"
+
+
+print(ALGORITHM)
+# def query_supabase_as_user(jwt: str):
+#     # Replace the anon key with the user's JWT
+#     supabase.headers = {
+#         "Authorization": f"Bearer {jwt}",
+#         "apikey": "YOUR_SUPABASE_ANON_KEY",
+#     }
+
+#     # Example query
+#     data = supabase.table("your_table").select("*").execute()
+#     return data
+
 
 # I think this was needed to allow the frontend to connect to the backend
-origins = ["http://localhost:3000", "http://127.0.0.1:3000"]
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "localhost:3000",
+    "http://localhost:3000/",
+]
 
 app.add_middleware(
     CORSMiddleware,
@@ -35,10 +69,34 @@ app.add_middleware(
 ## TODO: double check if this works and implement for the other methods
 ## TODO: implement db update with threads and messages
 
+
 # global cache
 # cache = {}
 # # 1 is user_id: 1
-# cache[1] = {}
+# # cache[1] = {}
+
+security = HTTPBearer()
+
+
+async def validate_jwt(credentials: HTTPAuthorizationCredentials = Depends(security)):
+    """
+    Extracts the JWT from the cookie and validates it.
+    Returns the payload if the token is valid, raises an HTTPException otherwise.
+    """
+    token = credentials.credentials
+    print(token)
+    if token is None:
+        raise HTTPException(status_code=401, detail="JWT token is missing")
+
+    try:
+        payload = jwt.decode(
+            token, secret_key, algorithms=[ALGORITHM], options={"verify_aud": False}
+        )
+        return (
+            payload  # Or extract specific data you need, e.g., user_id: payload["sub"]
+        )
+    except JWTError:
+        raise HTTPException(status_code=403, detail="Could not validate credentials")
 
 
 @app.get("/")
@@ -60,11 +118,33 @@ def get_channel_transcript(
 
 
 @app.get("/assistants/{user_id}")
-def get_assistants(user_id: int):
+def get_assistants(user_id: int, uuid: uuid.UUID):
     output = []
     c = connection.cursor()
     c.execute(
-        f"SELECT assistant_id, assistant_name FROM assistants WHERE user_id = {user_id}"
+        f"SELECT assistant_id, assistant_name FROM assistants WHERE user_id = {user_id} and uuid = '{uuid}'"
+    )
+    # print(c.fetchall())
+    results = c.fetchall()
+    c.close()
+
+    for row in results:
+        output.append({"id": row[0], "name": row[1]})
+
+    return output
+
+
+@app.get("/assistants-protected")
+def get_assistants_protected(
+    payload: dict = Depends(validate_jwt),
+):
+    print("hello")
+    user_id = payload.get("sub", "anonymous")
+    print(user_id)
+    output = []
+    c = connection.cursor()
+    c.execute(
+        f"SELECT assistant_id, assistant_name FROM assistants WHERE uuid = '{user_id}'"
     )
     # print(c.fetchall())
     results = c.fetchall()
