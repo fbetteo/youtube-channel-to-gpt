@@ -16,7 +16,8 @@ import json
 from decorators import load_assistant, load_assistant_returning_object
 import utils
 import uuid
-
+import time
+from openai import OpenAI
 
 from fastapi import HTTPException, Depends, Header, Security, Cookie
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
@@ -31,9 +32,11 @@ anon_key: str = os.getenv("SUPABASE_ANON_KEY")
 secret_key: str = os.getenv("SUPABASE_SECRET")
 supabase: Client = create_client(url, anon_key)
 
+OPENAI_KEY = os.getenv("OPENAI_API_KEY")
 
 ALGORITHM = "HS256"
 
+client = OpenAI(api_key=OPENAI_KEY)
 
 print(ALGORITHM)
 # def query_supabase_as_user(jwt: str):
@@ -207,9 +210,12 @@ def create_assistant(
 
 
 # probablemente se puede usar Depends() para que busque el assistant en el cache y lo cargue si no esta en vez de usar el decorator
-@app.post("/threads/{user_id}/{assistant_name}")
-@load_assistant
-def create_thread(user_id: int, assistant_name: str, thread_id: str):
+@app.post("/threads/{assistant_name}")
+# @load_assistant
+def create_thread(assistant_name: str, payload: dict = Depends(validate_jwt)):
+
+    user_id = payload.get("sub", "anonymous")
+    print(user_id)
     # if not cache.get(user_id, {}).get(assistant_name, {}).get("assistant"):
     #     c = connection.cursor()
     #     c.execute(
@@ -225,25 +231,89 @@ def create_thread(user_id: int, assistant_name: str, thread_id: str):
     #     except:
     #         return "Assistant not found"
 
-    channel_assistant = cache[user_id][assistant_name]["assistant"]
-    channel_assistant.create_thread(thread_id)
+    # channel_assistant = cache[user_id][assistant_name]["assistant"]
 
     c = connection.cursor()
     c.execute(
-        f"""INSERT INTO threads(thread_id, assistant_id) VALUES
-    ('{thread_id}', '{channel_assistant.assistant.id}');"""
+        f"""select max(thread_id), max(assistants.assistant_id) from threads join assistants on threads.assistant_id = assistants.assistant_id
+           WHERE assistants.assistant_name = '{assistant_name}'
+            and assistants.uuid = '{user_id}'
+            and left(thread_id,8) = 'untitled'; """
     )
 
-    channel_assistant.client = None
-    with open(f"{user_id}_{channel_assistant.assistant.id}.pkl", "wb") as f:
-        pickle.dump(channel_assistant, f, pickle.HIGHEST_PROTOCOL)
+    results = c.fetchall()
+    c.close()
+
+    if results[0][0] is None:
+        thread_name = "untitled1"
+
+        c = connection.cursor()
+        c.execute(
+            f"""select max(assistants.assistant_id) from assistants 
+           WHERE assistants.assistant_name = '{assistant_name}'
+            and assistants.uuid = '{user_id}'
+             """
+        )
+
+        results = c.fetchall()
+        c.close()
+        # if there are no threads, we need to get the assistant id name
+        assistant_id = results[0][0]
+    else:
+        thread_name = f"untitled{int(results[0][0][8:]) + 1}"
+        assistant_id = results[0][1]
+
+    print(thread_name)
+
+    new_thread = client.beta.threads.create()
+    print(new_thread.id)
+    # channel_assistant.create_thread(thread_id)
+
+    c = connection.cursor()
+    c.execute(
+        f"""INSERT INTO threads(thread_id, thread_name, assistant_id) VALUES
+    ('{new_thread.id}', '{thread_name}', '{assistant_id}');"""
+    )
+
+    return thread_name, new_thread.id
+    # channel_assistant.client = None
+    # with open(f"{user_id}_{channel_assistant.assistant.id}.pkl", "wb") as f:
+    #     pickle.dump(channel_assistant, f, pickle.HIGHEST_PROTOCOL)
 
 
-@app.post("/messages/{user_id}/{assistant_name}/{thread_id}")
-@load_assistant
-def create_message(user_id: int, assistant_name: str, thread_id: str, content: str):
-    channel_assistant = cache[user_id][assistant_name]["assistant"]
-    channel_assistant.create_message(thread_id, content)
+@app.post("/messages/{assistant_id}/{thread_id}")
+def create_message(
+    assistant_id: str,
+    thread_id: str,
+    content: str,
+    payload: dict = Depends(validate_jwt),
+):
+    user_id = payload.get("sub", "anonymous")
+    print(user_id)
+
+    message = client.beta.threads.messages.create(
+        thread_id=thread_id, role="user", content=content
+    )
+
+    run = client.beta.threads.runs.create(
+        thread_id=thread_id,
+        assistant_id=assistant_id,
+    )
+
+    attempts = 0
+    while attempts < 5:
+        time.sleep(5)
+        print(run.status)
+        messages = client.beta.threads.messages.list(thread_id=thread_id)
+        attempts += 1
+
+    # clean_messages = []
+    # for i, msg in enumerate(messages.data[::-1]):
+    #     clean_messages.append((i, msg.role, msg.content[0].text.value))
+    # return clean_messages
+
+    # channel_assistant = cache[user_id][assistant_name]["assistant"]
+    # channel_assistant.create_message(thread_id, content)
 
 
 @app.post("/runs/{user_id}/{assistant_name}/{thread_id}")
@@ -253,15 +323,25 @@ def create_run(user_id: int, assistant_name: str, thread_id: str):
     channel_assistant.create_run(thread_id)
 
 
-@app.get("/messages/{user_id}/{assistant_name}/{thread_id}")
-@load_assistant_returning_object
-async def get_messages(user_id: int, assistant_name: str, thread_id: str):
-    output = []
-    channel_assistant = cache[user_id][assistant_name]["assistant"]
-    messages_list = await channel_assistant.get_clean_messages(thread_id)
-    for msg in messages_list:
-        output.append({"id": msg[0], "role": msg[1], "text": msg[2]})
-    return output
+@app.get("/messages/{assistant_id}/{thread_id}")
+# @load_assistant_returning_object
+async def get_messages(
+    assistant_id: str, thread_id: str, payload: dict = Depends(validate_jwt)
+):
+    user_id = payload.get("sub", "anonymous")
+    print(user_id)
+    messages = client.beta.threads.messages.list(thread_id=thread_id)
+    clean_messages = []
+    for i, msg in enumerate(messages.data[::-1]):
+        clean_messages.append(
+            {"id": i, "role": msg.role, "text": msg.content[0].text.value}
+        )
+    print(clean_messages)
+    return clean_messages
+    # messages_list = await channel_assistant.get_clean_messages(thread_id)
+    # for msg in messages_list:
+    #     output.append({"id": msg[0], "role": msg[1], "text": msg[2]})
+    # return output
 
 
 # no enteindo por que tengo que poner esa llave al final despues de assistant name

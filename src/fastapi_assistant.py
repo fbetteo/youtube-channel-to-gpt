@@ -29,9 +29,15 @@ class ChannelAssistant:
         # client = OpenAI(api_key=OPENAI_KEY)
 
         self.file = self.client.files.create(
-            file=self.video_retrieval.all_transcripts.encode("utf-8"),
+            file=(
+                "uploaded_file.txt",
+                self.video_retrieval.all_transcripts.encode("utf-8"),
+            ),
             purpose="assistants",
         )
+
+        print(type(self.file))
+        print(type(self.file.id))
 
         self.assistant = self.client.beta.assistants.create(
             name="FastAPI test",

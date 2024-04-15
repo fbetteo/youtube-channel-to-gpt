@@ -77,6 +77,7 @@ DROP TABLE IF EXISTS threads;
 CREATE TABLE threads (
     assistant_id VARCHAR(100) NOT NULL,
     thread_id VARCHAR(100) NOT NULL,
+    thread_name VARCHAR(100) NOT NULL,
     PRIMARY KEY (thread_id)
     );
 """
