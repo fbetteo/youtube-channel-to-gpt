@@ -301,7 +301,7 @@ def create_message(
     )
 
     attempts = 0
-    while attempts < 5:
+    while attempts < 10:
         time.sleep(5)
         print(run.status)
         messages = client.beta.threads.messages.list(thread_id=thread_id)
