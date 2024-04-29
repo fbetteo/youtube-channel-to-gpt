@@ -3,6 +3,7 @@ import json
 from dotenv import load_dotenv
 from openai import OpenAI
 import pickle
+import io
 
 # Load environment variables
 load_dotenv()
@@ -39,12 +40,49 @@ class ChannelAssistant:
         print(type(self.file))
         print(type(self.file.id))
 
+        # self.assistant = self.client.beta.assistants.create(
+        #     name="FastAPI test",
+        #     instructions="You will answer as if you are the owner of the youtube channel where the files provided are from. The user is asking you questions about the videos. You will answer based on your knowledge of the videos and the channel. Be as helpful as possible. Be concise and to the point. If you do not know the answer, you can say 'I don't know'. Put the source of the answer. Provide lists when possible, make it easy to understand.",
+        #     tools=[{"type": "retrieval"}],
+        #     model="gpt-4-1106-preview",
+        #     file_ids=[self.file.id],
+        # )
+
         self.assistant = self.client.beta.assistants.create(
-            name="FastAPI test",
+            name="FastAPI V2 test",
             instructions="You will answer as if you are the owner of the youtube channel where the files provided are from. The user is asking you questions about the videos. You will answer based on your knowledge of the videos and the channel. Be as helpful as possible. Be concise and to the point. If you do not know the answer, you can say 'I don't know'. Put the source of the answer. Provide lists when possible, make it easy to understand.",
-            tools=[{"type": "retrieval"}],
-            model="gpt-4-1106-preview",
-            file_ids=[self.file.id],
+            model="gpt-4-turbo",
+            tools=[{"type": "file_search"}],
+        )
+        # Create a vector store caled "Financial Statements"
+        # vector_store = self.client.beta.vector_stores.create(name="FastAPI V2 test")
+
+        vector_store = self.client.beta.vector_stores.create(
+            name="FastAPI V2 test", file_ids=[self.file.id]
+        )
+
+        # Ready the files for upload to OpenAI
+        # COMENTO PORQUE YA LO TENGO SUPONGO
+        ## TENGO QUE PASARLO A BYTES
+        # file_paths = ["edgar/goog-10k.pdf", "edgar/brka-10k.txt"]
+        # file_streams = [
+        #     io.BytesIO(self.video_retrieval.all_transcripts.encode("utf-8"))
+        # ]
+
+        # Use the upload and poll SDK helper to upload the files, add them to the vector store,
+        # and poll the status of the file batch for completion.
+        # file_batch = self.client.beta.vector_stores.file_batches.upload_and_poll(
+        #     vector_store_id=vector_store.id,
+        #     files=file_streams,
+        # )
+
+        # # You can print the status and the file counts of the batch to see the result of this operation.
+        # print(file_batch.status)
+        # print(file_batch.file_counts)
+
+        self.assistant = self.client.beta.assistants.update(
+            assistant_id=self.assistant.id,
+            tool_resources={"file_search": {"vector_store_ids": [vector_store.id]}},
         )
 
     def create_thread(self, thread_id: str):

@@ -274,6 +274,7 @@ def create_thread(assistant_name: str, payload: dict = Depends(validate_jwt)):
         f"""INSERT INTO threads(thread_id, thread_name, assistant_id) VALUES
     ('{new_thread.id}', '{thread_name}', '{assistant_id}');"""
     )
+    c.close()
 
     return thread_name, new_thread.id
     # channel_assistant.client = None
@@ -295,17 +296,34 @@ def create_message(
         thread_id=thread_id, role="user", content=content
     )
 
-    run = client.beta.threads.runs.create(
+    # run = client.beta.threads.runs.create(
+    #     thread_id=thread_id,
+    #     assistant_id=assistant_id,
+    # )
+
+    run = client.beta.threads.runs.create_and_poll(
         thread_id=thread_id,
         assistant_id=assistant_id,
     )
 
-    attempts = 0
-    while attempts < 10:
-        time.sleep(5)
-        print(run.status)
+    if run.status == "completed":
         messages = client.beta.threads.messages.list(thread_id=thread_id)
-        attempts += 1
+        clean_messages = []
+        for i, msg in enumerate(messages.data[::-1]):
+            clean_messages.append(
+                {"id": i, "role": msg.role, "text": msg.content[0].text.value}
+            )
+        print(clean_messages)
+        return clean_messages
+    else:
+        print(run.status)
+
+    # attempts = 0
+    # while attempts < 10:
+    #     time.sleep(5)
+    #     print(run.status)
+    #     messages = client.beta.threads.messages.list(thread_id=thread_id)
+    #     attempts += 1
 
     # clean_messages = []
     # for i, msg in enumerate(messages.data[::-1]):
@@ -375,11 +393,34 @@ async def print_messages(user_id: int, assistant_name: str, thread_id: str):
 
 
 # insert user into the db
-@app.post("/users")
-async def create_user(user: User):
-    db_user = await utils.get_user_by_email(user.email)
-    print(db_user)
-    if db_user:
-        raise HTTPException(status_code=400, detail="Email already registered")
+# @app.post("/users")
+# async def create_user(user: User):
+#     db_user = await utils.get_user_by_email(user.email)
+#     print(db_user)
+#     if db_user:
+#         raise HTTPException(status_code=400, detail="Email already registered")
 
-    return await utils.create_user(user)
+#     return await utils.create_user(user)
+
+
+@app.post("/users")
+async def create_user_data(user: User, payload: dict = Depends(validate_jwt)):
+    user_id = payload.get("sub", "anonymous")
+    email = user.email
+    subscription = user.subscription
+    c = connection.cursor()
+    c.execute(
+        f"""INSERT INTO users(uuid, email, subscription) VALUES
+    ( '{user_id}','{email}', '{subscription}');"""
+    )
+    c.close()
+
+
+@app.post("/increment_user_meesages")
+async def increment_user_meesages(payload: dict = Depends(validate_jwt)):
+    user_id = payload.get("sub", "anonymous")
+    c = connection.cursor()
+    c.execute(
+        f"""UPDATE users SET count_messages = count_messages +1 where uuid = '{user_id}';"""
+    )
+    c.close()
