@@ -245,10 +245,10 @@ def create_thread(assistant_name: str, payload: dict = Depends(validate_jwt)):
 
     c = connection.cursor()
     c.execute(
-        f"""select max(thread_id), max(assistants.assistant_id) from threads join assistants on threads.assistant_id = assistants.assistant_id
+        f"""select max(thread_name), max(assistants.assistant_id) from threads join assistants on threads.assistant_id = assistants.assistant_id
            WHERE assistants.assistant_name = '{assistant_name}'
             and assistants.uuid = '{user_id}'
-            and left(thread_id,8) = 'untitled'; """
+            and left(thread_name,8) = 'untitled'; """
     )
 
     results = c.fetchall()
@@ -381,7 +381,7 @@ def get_threads(assistant_name: str, payload: dict = Depends(validate_jwt)):
     output = []
     c = connection.cursor()
     c.execute(
-        f"""SELECT thread_id FROM threads 
+        f"""SELECT thread_id,  thread_name FROM threads 
           join assistants on threads.assistant_id = assistants.assistant_id
            WHERE assistants.assistant_name = '{assistant_name}'
             and assistants.uuid = '{user_id}'"""
@@ -390,7 +390,7 @@ def get_threads(assistant_name: str, payload: dict = Depends(validate_jwt)):
     results = c.fetchall()
     c.close()
     for row in results:
-        output.append({"thread_id": row[0]})
+        output.append({"thread_id": row[0], "thread_name": row[1]})
     print(output)
     return output
 
