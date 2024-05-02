@@ -33,6 +33,7 @@ c.execute(
 DROP TABLE IF EXISTS channels;
 CREATE TABLE channels (
     user_id INTEGER NOT NULL,
+    channel_name VARCHAR(100) NOT NULL,
     channel_id VARCHAR(100) NOT NULL,
     assistant_name VARCHAR(100) NOT NULL,
     PRIMARY KEY (user_id, assistant_name)
@@ -62,6 +63,7 @@ DROP TABLE IF EXISTS assistants;
 CREATE TABLE assistants (
     user_id INTEGER NOT NULL,
     assistant_id VARCHAR(100) NOT NULL,
+    channel_name VARCHAR(100) NOT NULL,
     channel_id VARCHAR(100) NOT NULL,
     assistant_name VARCHAR(100) NOT NULL,
     PRIMARY KEY (assistant_id)

@@ -14,9 +14,23 @@ youtube = build("youtube", "v3", developerKey=API_KEY)
 
 
 class VideoRetrieval:
-    def __init__(self, channel_id, max_results):
-        self.channel_id = channel_id
+    def __init__(self, channel_name, max_results):
+        self.channel_name = channel_name
+        # self.channel_id = channel_id
         self.max_results = max_results
+
+    def get_channel_id(self):
+        request = youtube.search().list(
+            part="snippet", type="channel", q=self.channel_name, maxResults=1
+        )
+        response = request.execute()
+
+        if response["items"]:
+            # Assuming the first search result is the desired channel
+            self.channel_id = response["items"][0]["id"]["channelId"]
+            return self.channel_id
+        else:
+            return "Channel not found"
 
     def get_medium_videos(self):
         medium_videos = (

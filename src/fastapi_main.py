@@ -8,7 +8,7 @@ import pickle
 from typing import List, Union
 import fastapi_retrieve
 import fastapi_assistant
-from fastapi import FastAPI, Body, Form, HTTPException
+from fastapi import FastAPI, Body, Form, HTTPException, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from db.test_ps import connection, cache
 from db.models import User
@@ -18,6 +18,8 @@ import utils
 import uuid
 import time
 from openai import OpenAI
+from stripe import StripeError, stripe
+from stripe.api_resources import event as stripe_event
 
 from fastapi import HTTPException, Depends, Header, Security, Cookie
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
@@ -30,13 +32,17 @@ app = FastAPI()
 url: str = os.getenv("NEXT_PUBLIC_SUPABASE_URL")
 anon_key: str = os.getenv("SUPABASE_ANON_KEY")
 secret_key: str = os.getenv("SUPABASE_SECRET")
+
 supabase: Client = create_client(url, anon_key)
 
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY_TEST")
 OPENAI_KEY = os.getenv("OPENAI_API_KEY")
 
 ALGORITHM = "HS256"
 
 client = OpenAI(api_key=OPENAI_KEY)
+
+stripe.api_key = STRIPE_SECRET_KEY
 
 print(ALGORITHM)
 # def query_supabase_as_user(jwt: str):
@@ -110,12 +116,13 @@ def read_root():
 # Deberiamos tener una sola funcion cuando el usuario quiera generar un assistant, que baje el transcript y cree el assistant. Asi no guardamos en ningun momento el transcript?
 @app.get("/transcripts/{assistant_name}")
 def get_channel_transcript(
-    assistant_name: str, channel_id: str, max_results: int, user_id: uuid.UUID
+    assistant_name: str, channel_name: str, max_results: int, user_id: uuid.UUID
 ):
 
     print("hello")
     print(user_id)
-    video_retrieval = fastapi_retrieve.VideoRetrieval(channel_id, max_results)
+    video_retrieval = fastapi_retrieve.VideoRetrieval(channel_name, max_results)
+    video_retrieval.get_channel_id()
     video_retrieval.get_video_ids()
     video_retrieval.get_transcripts()
     if cache.get(user_id) is None:
@@ -167,16 +174,17 @@ def get_assistants_protected(
 # this way because a user can have multiple versions of the same channel_id (yt identifier) so the name provided to the assistant is used to differentiate
 @app.post("/assistants/{assistant_name}")
 def create_assistant(
-    channel_id: str, assistant_name: str, payload: dict = Depends(validate_jwt)
+    channel_name: str, assistant_name: str, payload: dict = Depends(validate_jwt)
 ):
     print("hello")
     user_id = payload.get("sub", "anonymous")
     print(user_id)
-    print(channel_id)
-    get_channel_transcript(assistant_name, channel_id, 3, user_id)
+    print(channel_name)
+    get_channel_transcript(assistant_name, channel_name, 3, user_id)
     channel_assistant = fastapi_assistant.ChannelAssistant(
         cache[user_id][assistant_name]["video_retrieval"]
     )
+    channel_id = cache[user_id][assistant_name]["video_retrieval"].channel_id
 
     cache[user_id][assistant_name]["assistant"] = channel_assistant
 
@@ -191,19 +199,21 @@ def create_assistant(
     c.execute(
         f"""INSERT INTO assistants(
     assistant_id, 
+    channel_name,
     channel_id ,
     assistant_name,
     uuid ) VALUES
-    ('{channel_assistant.assistant.id}', '{channel_id}', '{assistant_name}', '{user_id}');"""
+    ('{channel_assistant.assistant.id}', '{channel_name}', '{channel_id}', '{assistant_name}', '{user_id}');"""
     )
     c.execute(f"SELECT * FROM assistants")
     print(c.fetchall())
     c.execute(
         f"""INSERT INTO channels(
+        channel_name,
     channel_id ,
     assistant_name,
      uuid ) VALUES
-    ('{channel_id}', '{assistant_name}', '{user_id}');"""
+    ('{channel_name}','{channel_id}', '{assistant_name}', '{user_id}');"""
     )
     c.close()
     return channel_assistant.assistant.id
@@ -416,7 +426,7 @@ async def create_user_data(user: User, payload: dict = Depends(validate_jwt)):
     c.close()
 
 
-@app.post("/increment_user_meesages")
+@app.post("/increment_user_messages")
 async def increment_user_meesages(payload: dict = Depends(validate_jwt)):
     user_id = payload.get("sub", "anonymous")
     c = connection.cursor()
@@ -424,3 +434,115 @@ async def increment_user_meesages(payload: dict = Depends(validate_jwt)):
         f"""UPDATE users SET count_messages = count_messages +1 where uuid = '{user_id}';"""
     )
     c.close()
+
+
+@app.post("/modify_user_subscription")
+async def modify_user_subscription(
+    subscription: str, payload: dict = Depends(validate_jwt)
+):
+    user_id = payload.get("sub", "anonymous")
+    c = connection.cursor()
+    c.execute(
+        f"""UPDATE users SET subscription = '{subscription}' where uuid = '{user_id}';"""
+    )
+    c.close()
+
+
+@app.get("/get_user_data")
+async def get_user_data(payload: dict = Depends(validate_jwt)):
+    user_id = payload.get("sub", "anonymous")
+    c = connection.cursor()
+    c.execute(
+        f"""SELECT uuid, email, subscription, count_messages FROM users where uuid = '{user_id}';"""
+    )
+    results = c.fetchall()
+    c.close()
+    output = {}
+    output["uuid"] = results[0][0]
+    output["email"] = results[0][1]
+    output["subscription"] = results[0][2]
+    output["count_messages"] = results[0][3]
+
+    return output
+
+
+@app.post("/create-checkout-session")
+async def create_checkout_session(
+    request: Request, payload: dict = Depends(validate_jwt)
+):
+    body = await request.json()
+    user_uuid = body.get("user_uuid")
+    try:
+        checkout_session = stripe.checkout.Session.create(
+            payment_method_types=["card"],
+            line_items=[{"price": "price_1PB0goCakpeOUC7BBW0Y6UYy", "quantity": 1}],
+            mode="subscription",
+            success_url="http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}",
+            cancel_url="http://localhost:3000/cancel",
+            metadata={
+                "user_uuid": user_uuid  # Pass UUID to Stripe session for later use in webhooks
+            },
+        )
+        return {"url": checkout_session.url}
+    except StripeError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+# Stripe API setup
+WEBHOOK_SECRET = os.getenv(
+    "STRIPE_WEBHOOK_SECRET_TEST"
+)  # Set this to your Stripe webhook secret
+
+
+@app.post("/webhook")
+async def stripe_webhook(request: Request):
+    payload = await request.body()
+    # print(payload)
+    sig_header = request.headers.get("stripe-signature")
+
+    try:
+        event = stripe.Webhook.construct_event(payload, sig_header, WEBHOOK_SECRET)
+    except ValueError:
+        # Invalid payload
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid payload"
+        )
+    except stripe.error.SignatureVerificationError:
+        # Invalid signature
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid signature"
+        )
+
+    # Handle the event
+    if event["type"] == "checkout.session.completed":
+        session = event["data"]["object"]
+        user_uuid = session["metadata"]["user_uuid"]
+        print(f"User {user_uuid} subscribed to a plan")
+
+        update_user_subscription(user_id=user_uuid, subscription_type="gold")
+    elif event["type"] == "payment_intent.payment_failed":
+        session = event["data"]["object"]
+        print(session)
+        handle_failed_payment(
+            email=session["last_payment_error"]["payment_method"]["billing_details"][
+                "email"
+            ]
+        )
+
+    return {"status": "success"}
+
+
+def update_user_subscription(user_id: uuid, subscription_type: str):
+    print("Updating user subscription")
+    c = connection.cursor()
+    c.execute(
+        f"""UPDATE users SET subscription = '{subscription_type}' where uuid = '{user_id}';"""
+    )
+    c.close()
+
+
+def handle_failed_payment(email: str):
+    print("Failed payment")
+    # Handle failed payment scenario
+    # Log the failure, notify the user, etc.
+    pass
