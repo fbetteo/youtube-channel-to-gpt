@@ -60,7 +60,7 @@ print(ALGORITHM)
 # I think this was needed to allow the frontend to connect to the backend
 origins = [
     "https://youtube-channel-to-gpt-frontend-r1kgr3mb0.vercel.app",
-    "https://youtube-channel-to-gpt-frontend.vercel.app/",
+    "https://youtube-channel-to-gpt-frontend.vercel.app",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "localhost:3000",
