@@ -59,7 +59,6 @@ print(ALGORITHM)
 
 # I think this was needed to allow the frontend to connect to the backend
 origins = [
-    "https://youtube-channel-to-gpt-frontend-r1kgr3mb0.vercel.app",
     "https://youtube-channel-to-gpt-frontend.vercel.app",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
@@ -193,8 +192,8 @@ def create_assistant(
     # An object with the OpenAI client can't be pickled.
     # We save the assistant to be able to reload it even if the cache is cleared.
     channel_assistant.client = None
-    with open(f"{user_id}_{channel_assistant.assistant.id}.pkl", "wb") as f:
-        pickle.dump(channel_assistant, f, pickle.HIGHEST_PROTOCOL)
+    # with open(f"{user_id}_{channel_assistant.assistant.id}.pkl", "wb") as f:
+    #     pickle.dump(channel_assistant, f, pickle.HIGHEST_PROTOCOL)
 
     # Save in DB
     c = connection.cursor()
@@ -347,7 +346,7 @@ def create_message(
 
 
 @app.post("/runs/{user_id}/{assistant_name}/{thread_id}")
-@load_assistant
+# @load_assistant
 def create_run(user_id: int, assistant_name: str, thread_id: str):
     channel_assistant = cache[user_id][assistant_name]["assistant"]
     channel_assistant.create_run(thread_id)
@@ -398,7 +397,7 @@ def get_threads(assistant_name: str, payload: dict = Depends(validate_jwt)):
 
 
 @app.get("/print_messages/{user_id}/{assistant_name}/{thread_id}")
-@load_assistant
+# @load_assistant
 async def print_messages(user_id: int, assistant_name: str, thread_id: str):
     channel_assistant = cache[user_id][assistant_name]["assistant"]
     channel_assistant.print_messages(thread_id)
