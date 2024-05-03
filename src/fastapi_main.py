@@ -33,6 +33,9 @@ url: str = os.getenv("NEXT_PUBLIC_SUPABASE_URL")
 anon_key: str = os.getenv("SUPABASE_ANON_KEY")
 secret_key: str = os.getenv("SUPABASE_SECRET")
 
+FRONTEND_URL = os.getenv("FRONTEND_URL")
+
+
 supabase: Client = create_client(url, anon_key)
 
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY_TEST")
@@ -59,8 +62,9 @@ print(ALGORITHM)
 
 # I think this was needed to allow the frontend to connect to the backend
 origins = [
-    "https://youtube-channel-to-gpt-frontend.vercel.app",
+    FRONTEND_URL,
     "http://localhost:3000",
+    "https://youtube-channel-to-gpt-frontend.vercel.app",
     "http://127.0.0.1:3000",
     "localhost:3000",
     "http://localhost:3000/",
@@ -473,19 +477,46 @@ async def create_checkout_session(
 ):
     body = await request.json()
     user_uuid = body.get("user_uuid")
+    print(user_uuid)
+    # no puedo usar el payload ?
     try:
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=["card"],
             line_items=[{"price": "price_1PB0goCakpeOUC7BBW0Y6UYy", "quantity": 1}],
             mode="subscription",
-            success_url="http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}",
-            cancel_url="http://localhost:3000/cancel",
+            success_url=FRONTEND_URL + "/success?session_id={CHECKOUT_SESSION_ID}",
+            cancel_url=FRONTEND_URL + "/cancel",
             metadata={
                 "user_uuid": user_uuid  # Pass UUID to Stripe session for later use in webhooks
             },
         )
         return {"url": checkout_session.url}
     except StripeError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@app.post("/cancel-subscription")
+async def cancel_subscription(payload: dict = Depends(validate_jwt)):
+    user_id = payload.get("sub", "anonymous")
+    c = connection.cursor()
+    c.execute(f"""SELECT subscription_id FROM users where uuid = '{user_id}';""")
+    results = c.fetchall()
+    c.close()
+    subscription_id = results[0][0]
+    print(subscription_id)
+    try:
+        # Cancel the subscription at period end
+        subscription = stripe.Subscription.modify(
+            subscription_id,  # Replace 'sub_xxx' with your actual subscription ID
+            metadata={
+                "user_uuid": user_id  # Pass UUID to Stripe session for later use in webhooks
+            },
+        )
+        cancellation = stripe.Subscription.cancel(
+            subscription_id,
+        )
+        return {"status": "success", "cancellation": cancellation}
+    except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
 
@@ -518,9 +549,12 @@ async def stripe_webhook(request: Request):
     if event["type"] == "checkout.session.completed":
         session = event["data"]["object"]
         user_uuid = session["metadata"]["user_uuid"]
+        subscription_id = session["subscription"]
         print(f"User {user_uuid} subscribed to a plan")
 
-        update_user_subscription(user_id=user_uuid, subscription_type="gold")
+        update_user_subscription(
+            user_id=user_uuid, subscription_id=subscription_id, subscription_type="gold"
+        )
     elif event["type"] == "payment_intent.payment_failed":
         session = event["data"]["object"]
         print(session)
@@ -529,15 +563,26 @@ async def stripe_webhook(request: Request):
                 "email"
             ]
         )
+    elif event["type"] == "customer.subscription.deleted":
+        subscription = event["data"]["object"]
+        subscription_id = subscription["id"]
+        user_uuid = subscription["metadata"]["user_uuid"]
+        print(subscription)
+        print(f"Subscription {subscription['id']} cancelled")
+        update_user_subscription(
+            user_id=user_uuid, subscription_id=subscription_id, subscription_type="free"
+        )
 
     return {"status": "success"}
 
 
-def update_user_subscription(user_id: uuid, subscription_type: str):
+def update_user_subscription(
+    user_id: uuid, subscription_id: str, subscription_type: str
+):
     print("Updating user subscription")
     c = connection.cursor()
     c.execute(
-        f"""UPDATE users SET subscription = '{subscription_type}' where uuid = '{user_id}';"""
+        f"""UPDATE users SET subscription_id = '{subscription_id}', subscription = '{subscription_type}' where uuid = '{user_id}';"""
     )
     c.close()
 
