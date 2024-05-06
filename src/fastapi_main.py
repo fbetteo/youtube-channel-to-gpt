@@ -185,7 +185,7 @@ def create_assistant(
     user_id = payload.get("sub", "anonymous")
     print(user_id)
     print(channel_name)
-    get_channel_transcript(assistant_name, channel_name, 20, user_id)
+    get_channel_transcript(assistant_name, channel_name, 5, user_id)
     channel_assistant = fastapi_assistant.ChannelAssistant(
         cache[user_id][assistant_name]["video_retrieval"]
     )

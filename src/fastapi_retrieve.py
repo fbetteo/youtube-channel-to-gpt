@@ -83,8 +83,9 @@ class VideoRetrieval:
                 retrievedTranscript = YouTubeTranscriptApi.get_transcript(youtubeId)
                 print("Retrieved transcript for " + youtubeId)
                 transcribedText = ""
-            except:
+            except Exception as e:
                 print("Could not retrieve transcript for " + youtubeId)
+                print(f"Error: {e}")
                 continue
             finally:
                 print("Continuing to next video")
