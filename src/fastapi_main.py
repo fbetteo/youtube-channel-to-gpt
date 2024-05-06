@@ -291,7 +291,7 @@ def create_thread(assistant_name: str, payload: dict = Depends(validate_jwt)):
     )
     c.close()
 
-    return thread_name, new_thread.id
+    return {"thread_id": new_thread.id, "thread_name": thread_name}
     # channel_assistant.client = None
     # with open(f"{user_id}_{channel_assistant.assistant.id}.pkl", "wb") as f:
     #     pickle.dump(channel_assistant, f, pickle.HIGHEST_PROTOCOL)
