@@ -1,6 +1,6 @@
 import os
 import json
-
+import time
 from googleapiclient.discovery import build
 from dotenv import load_dotenv
 from youtube_transcript_api import YouTubeTranscriptApi
@@ -83,9 +83,11 @@ class VideoRetrieval:
                 retrievedTranscript = YouTubeTranscriptApi.get_transcript(youtubeId)
                 print("Retrieved transcript for " + youtubeId)
                 transcribedText = ""
+                time.sleep(1)
             except Exception as e:
                 print("Could not retrieve transcript for " + youtubeId)
                 print(f"Error: {e}")
+                time.sleep(1)
                 continue
             finally:
                 print("Continuing to next video")
@@ -95,6 +97,9 @@ class VideoRetrieval:
                 transcribedText += transcribedSection["text"] + " "
 
             self.all_transcripts += transcribedText
+
+            if self.all_transcripts == "":
+                raise ValueError("No transcripts found or could not be retrieved")
 
             # Write the transcribed text to a transcript file
             print("Writing transcript for " + youtubeId + " to file")

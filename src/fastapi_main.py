@@ -127,9 +127,24 @@ def get_channel_transcript(
     print("hello")
     print(user_id)
     video_retrieval = fastapi_retrieve.VideoRetrieval(channel_name, max_results)
-    video_retrieval.get_channel_id()
-    video_retrieval.get_video_ids()
-    video_retrieval.get_transcripts()
+    try:
+        video_retrieval.get_channel_id()
+    except Exception as e:
+        raise HTTPException(
+            status_code=400, detail="Error in get_channel_id()" + str(e)
+        )
+
+    try:
+        video_retrieval.get_video_ids()
+    except Exception as e:
+        raise HTTPException(status_code=400, detail="Error in get_video_ids()" + str(e))
+
+    try:
+        video_retrieval.get_transcripts()
+    except Exception as e:
+        raise HTTPException(
+            status_code=400, detail="Error in get_transcripts()" + str(e)
+        )
     if cache.get(user_id) is None:
         cache[user_id] = {}
     cache[user_id][assistant_name] = {}
@@ -482,7 +497,7 @@ async def create_checkout_session(
     try:
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=["card"],
-            line_items=[{"price": "price_1PB0goCakpeOUC7BBW0Y6UYy", "quantity": 1}],
+            line_items=[{"price": "price_1PB0ReCakpeOUC7B9hRChCqV", "quantity": 1}],
             mode="subscription",
             success_url=FRONTEND_URL + "/success?session_id={CHECKOUT_SESSION_ID}",
             cancel_url=FRONTEND_URL + "/cancel",
