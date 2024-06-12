@@ -50,9 +50,10 @@ class ChannelAssistant:
 
         self.assistant = self.client.beta.assistants.create(
             name="FastAPI V2 test",
-            instructions="You will answer as if you are the owner of the youtube channel where the files provided are from. The user is asking you questions about the videos. You will answer based on your knowledge of the videos and the channel. Be as helpful as possible. Be concise and to the point. If you do not know the answer, you can say 'I don't know'. Put the source of the answer. Provide lists when possible, make it easy to understand.",
-            model="gpt-4-turbo",
+            instructions="You will answer as if you are the owner of the youtube channel where the files provided are from. The user is asking you questions about the videos. You will answer based on your knowledge of the videos and the channel. Be as helpful as possible. Be concise and to the point. If you do not know the answer, you can say 'I don't know'. Put the source of the answer. Provide lists when possible, make it easy to understand. Answers should be concise and no matter what you shouldn't answer longer phrases if the questions asks for it.",
+            model="gpt-3.5-turbo-0125",
             tools=[{"type": "file_search"}],
+            temperature=0.01,
         )
         # Create a vector store caled "Financial Statements"
         # vector_store = self.client.beta.vector_stores.create(name="FastAPI V2 test")
