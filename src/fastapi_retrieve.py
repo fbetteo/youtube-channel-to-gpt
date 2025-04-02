@@ -105,7 +105,7 @@ class VideoRetrieval:
 
             # Iterate through the transcript and add each section to a string
             for transcribedSection in retrievedTranscript:
-                transcribedText += transcribedSection["text"] + " "
+                transcribedText += transcribedSection.text + " "
 
             self.all_transcripts += transcribedText
 
@@ -157,3 +157,7 @@ class VideoRetrieval:
 # aa.fetch()
 # new_retrievedTranscript = aa.fetch("40zozi-rGQM")
 # new_retrievedTranscript
+
+# transcribedText = ""
+# for transcribedSection in new_retrievedTranscript:
+#                 transcribedText += transcribedSection["text"] + " "
