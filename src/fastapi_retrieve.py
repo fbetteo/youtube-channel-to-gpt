@@ -4,13 +4,24 @@ import time
 from googleapiclient.discovery import build
 from dotenv import load_dotenv
 from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api.proxies import WebshareProxyConfig
 
 # Load environment variables
 load_dotenv()
 
 # API setup
 API_KEY = os.getenv("YOUTUBE_API_KEY")
+WEBSHARE_PROXY_USERNAME = os.getenv("WEBSHARE_PROXY_USERNAME")
+WEBSHARE_PROXY_PASSWORD = os.getenv("WEBSHARE_PROXY_PASSWORD")
+
 youtube = build("youtube", "v3", developerKey=API_KEY)
+
+
+ytt_api = YouTubeTranscriptApi(
+    proxy_config=WebshareProxyConfig(
+        proxy_username=WEBSHARE_PROXY_USERNAME, proxy_password=WEBSHARE_PROXY_PASSWORD
+    )
+)
 
 
 class VideoRetrieval:
@@ -80,7 +91,7 @@ class VideoRetrieval:
         for youtubeId in video_ids:
             # Retrieve the transcript for the video
             try:
-                retrievedTranscript = YouTubeTranscriptApi.get_transcript(youtubeId)
+                retrievedTranscript = ytt_api.fetch(youtubeId)
                 print("Retrieved transcript for " + youtubeId)
                 transcribedText = ""
                 time.sleep(1)
@@ -135,3 +146,14 @@ class VideoRetrieval:
 #     raise HTTPException(
 #         status_code=400, detail="Error in get_transcripts()" + str(e)
 #     )
+
+
+# retrievedTranscript = YouTubeTranscriptApi.get_transcript("40zozi-rGQM")
+
+
+# retrievedTranscript
+
+# aa = YouTubeTranscriptApi()
+# aa.fetch()
+# new_retrievedTranscript = aa.fetch("40zozi-rGQM")
+# new_retrievedTranscript
