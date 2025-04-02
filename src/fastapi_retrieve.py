@@ -110,3 +110,28 @@ class VideoRetrieval:
             transcriptionFile.close()
 
         print("Finished transcribing")
+
+
+### TEST CODE ###
+# from fastapi import FastAPI, HTTPException
+# CHANNEL_NAME = "marc-lou"
+
+# video_retrieval = VideoRetrieval(CHANNEL_NAME, 5)
+# try:
+#     video_retrieval.get_channel_id()
+# except Exception as e:
+#     raise HTTPException(
+#         status_code=400, detail="Error in get_channel_id()" + str(e)
+#     )
+
+# try:
+#     video_retrieval.get_video_ids()
+# except Exception as e:
+#     raise HTTPException(status_code=400, detail="Error in get_video_ids()" + str(e))
+
+# try:
+#     video_retrieval.get_transcripts()
+# except Exception as e:
+#     raise HTTPException(
+#         status_code=400, detail="Error in get_transcripts()" + str(e)
+#     )

@@ -5,7 +5,7 @@ import passlib.hash as _hash
 
 async def get_user_by_email(email: str):
     c = connection.cursor()
-    c.execute(f"""select * from users where email = '{email}';""")
+    c.execute("SELECT * FROM users WHERE email = %s", (email,))
     user = c.fetchone()
     c.close()
     if user:
@@ -15,12 +15,11 @@ async def get_user_by_email(email: str):
 
 
 async def create_user(user: User):
-    hashed_pasword = _hash.bcrypt.hash(user.password)
+    hashed_password = _hash.bcrypt.hash(user.password)
     c = connection.cursor()
     c.execute(
-        f"""INSERT INTO users(email, hashed_password) VALUES
-    ('{user.email}', '{hashed_pasword}');"""
+        "INSERT INTO users(email, hashed_password) VALUES (%s, %s)",
+        (user.email, hashed_password),
     )
     c.close()
-
-    return {"email": user.email, "pass": hashed_pasword}
+    return {"email": user.email, "pass": hashed_password}
