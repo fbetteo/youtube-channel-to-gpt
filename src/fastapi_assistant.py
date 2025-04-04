@@ -37,10 +37,18 @@ class ChannelAssistant:
                 self.file_ids.append(file.id)
 
                 # Extract video ID from the file name
-                video_id = os.path.basename(transcript_path).split("_")[1]
-                self.file_metadata[file.id] = self.video_retrieval.video_metadata[
-                    video_id
-                ]
+                try:
+                    video_id = os.path.basename(transcript_path).split("_")[1]
+                    if video_id in self.video_retrieval.video_metadata:
+                        self.file_metadata[file.id] = (
+                            self.video_retrieval.video_metadata[video_id]
+                        )
+                    else:
+                        print(f"Warning: Video ID '{video_id}' not found in metadata.")
+                except IndexError:
+                    print(
+                        f"Error: Could not extract video ID from file name '{transcript_path}'."
+                    )
 
         self.assistant = self.client.beta.assistants.create(
             name="FastAPI V2 test",
