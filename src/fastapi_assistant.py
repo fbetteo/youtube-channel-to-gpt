@@ -53,12 +53,14 @@ class ChannelAssistant:
         self.assistant = self.client.beta.assistants.create(
             name="FastAPI V2 test",
             instructions=(
-                "You are assisting users with information from multiple YouTube videos. "
-                "When you provide sources, reference the video title or a direct link instead "
-                "of chunk indexes. For example: [source: 'MyVideoTitle' - https://youtu.be/<id>]. "
-                "If unsure about the source, say you don't know."
+                """You are assisting users with information from multiple YouTube videos whose transcripts are uploaded in your knowledge files.
+                When you provide sources, reference the video title or a direct link instead 
+                of chunk indexes. For example: [source: 'MyVideoTitle' - https://youtu.be/<id>]. 
+                Constraints
+                1: Never give an answer that has not been checked in the uploaded files.
+                2. You can only answer questions that can be found in the provided data sources. If you cannot find an answer,  say you don't know."""
             ),
-            model="gpt-3.5-turbo-0125",
+            model="gpt-4o-mini-2024-07-18",
             tools=[{"type": "file_search"}],
             temperature=0.01,
         )
@@ -84,7 +86,15 @@ class ChannelAssistant:
         pattern = r"\[(\d+:\d+)†source\]"
 
         def replace_source(match):
-            file_id = match.group(1)
+            chunk_reference = match.group(1)  # Extract chunk reference (e.g., "8:0")
+
+            # Map chunk reference to file ID (assuming chunk reference maps to file IDs)
+            # For simplicity, we'll assume chunk_reference corresponds to file IDs in order
+            # You may need to implement a proper mapping if chunk references are more complex
+            file_id = self.file_ids[
+                int(chunk_reference.split(":")[0])
+            ]  # Map to file ID
+
             metadata = self.file_metadata.get(file_id)
             if metadata:
                 return f"[source: '{metadata['title']}' - {metadata['link']}]"
