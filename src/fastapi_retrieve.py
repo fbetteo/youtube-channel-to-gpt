@@ -29,6 +29,10 @@ class VideoRetrieval:
         self.channel_name = channel_name
         # self.channel_id = channel_id
         self.max_results = max_results
+        self.transcript_files = []
+        self.build_dir = "../build"
+        # Create build directory if it doesn't exist
+        os.makedirs(self.build_dir, exist_ok=True)
 
     def get_channel_id(self):
         request = youtube.search().list(
@@ -87,14 +91,35 @@ class VideoRetrieval:
             video_ids = self.video_ids
 
         self.all_transcripts = ""
-        # Iterate through the array of YouTube IDs
+        self.transcript_files = []
+
         for youtubeId in video_ids:
-            # Retrieve the transcript for the video
             try:
                 retrievedTranscript = ytt_api.fetch(youtubeId)
                 print("Retrieved transcript for " + youtubeId)
                 transcribedText = ""
                 time.sleep(1)
+
+                # Get video details
+                video_request = youtube.videos().list(part="snippet", id=youtubeId)
+                video_response = video_request.execute()
+                video_title = video_response["items"][0]["snippet"]["title"]
+
+                # Iterate through the transcript and add each section to a string
+                for transcribedSection in retrievedTranscript:
+                    transcribedText += transcribedSection.text + " "
+
+                # Save individual transcript file with video title
+                file_path = os.path.join(
+                    self.build_dir, f"transcript_{youtubeId}_{video_title[:50]}.txt"
+                )
+                with open(file_path, "w", encoding="utf-8") as f:
+                    f.write(f"Video Title: {video_title}\nVideo ID: {youtubeId}\n\n")
+                    f.write(transcribedText)
+
+                self.transcript_files.append(file_path)
+                self.all_transcripts += transcribedText
+
             except Exception as e:
                 print("Could not retrieve transcript for " + youtubeId)
                 print(f"Error: {e}")
@@ -103,24 +128,10 @@ class VideoRetrieval:
             finally:
                 print("Continuing to next video")
 
-            # Iterate through the transcript and add each section to a string
-            for transcribedSection in retrievedTranscript:
-                transcribedText += transcribedSection.text + " "
+        if not self.transcript_files:
+            raise ValueError("No transcripts found or could not be retrieved")
 
-            self.all_transcripts += transcribedText
-
-            if self.all_transcripts == "":
-                raise ValueError("No transcripts found or could not be retrieved")
-
-            # Write the transcribed text to a transcript file
-            print("Writing transcript for " + youtubeId + " to file")
-            transcriptionFile = open(
-                f"../build/transcript_{self.channel_id}.txt", "a", encoding="utf-8"
-            )
-            transcriptionFile.write(transcribedText)
-            transcriptionFile.close()
-
-        print("Finished transcribing")
+        return self.transcript_files
 
 
 ### TEST CODE ###
