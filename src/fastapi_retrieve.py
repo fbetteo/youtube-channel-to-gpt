@@ -31,6 +31,7 @@ class VideoRetrieval:
         self.max_results = max_results
         self.transcript_files = []
         self.build_dir = "../build"
+        self.video_metadata = {}  # Store video metadata (ID -> {title, link})
         # Create build directory if it doesn't exist
         os.makedirs(self.build_dir, exist_ok=True)
 
@@ -104,6 +105,13 @@ class VideoRetrieval:
                 video_request = youtube.videos().list(part="snippet", id=youtubeId)
                 video_response = video_request.execute()
                 video_title = video_response["items"][0]["snippet"]["title"]
+                video_link = f"https://youtu.be/{youtubeId}"
+
+                # Save metadata
+                self.video_metadata[youtubeId] = {
+                    "title": video_title,
+                    "link": video_link,
+                }
 
                 # Iterate through the transcript and add each section to a string
                 for transcribedSection in retrievedTranscript:

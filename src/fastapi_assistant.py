@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 import pickle
 import io
+import re
 
 # Load environment variables
 load_dotenv()
@@ -26,6 +27,7 @@ class ChannelAssistant:
         self.video_retrieval = video_retrieval
         self.client = OpenAI(api_key=OPENAI_KEY)
         self.threads = {}
+        self.file_metadata = {}  # Map file IDs to video metadata
 
         # Upload all transcript files
         self.file_ids = []
@@ -34,9 +36,20 @@ class ChannelAssistant:
                 file = self.client.files.create(file=f, purpose="assistants")
                 self.file_ids.append(file.id)
 
+                # Extract video ID from the file name
+                video_id = os.path.basename(transcript_path).split("_")[1]
+                self.file_metadata[file.id] = self.video_retrieval.video_metadata[
+                    video_id
+                ]
+
         self.assistant = self.client.beta.assistants.create(
             name="FastAPI V2 test",
-            instructions="You will answer as if you are the owner of the youtube channel where the files provided are from. The user is asking you questions about the videos. You will answer based on your knowledge of the videos and the channel. Be as helpful as possible. Be concise and to the point. If you do not know the answer, you can say 'I don't know'. Put the source of the answer including the video title when possible. Provide lists when possible, make it easy to understand. Answers should be concise and no matter what you shouldn't answer longer phrases if the questions asks for it.",
+            instructions=(
+                "You are assisting users with information from multiple YouTube videos. "
+                "When you provide sources, reference the video title or a direct link instead "
+                "of chunk indexes. For example: [source: 'MyVideoTitle' - https://youtu.be/<id>]. "
+                "If unsure about the source, say you don't know."
+            ),
             model="gpt-3.5-turbo-0125",
             tools=[{"type": "file_search"}],
             temperature=0.01,
@@ -57,10 +70,26 @@ class ChannelAssistant:
         self.threads[thread_id] = self.client.beta.threads.create()
         # return self.thread
 
+    # Optional: post-processing to replace chunk references.
+    def refine_sources_in_response(self, content: str) -> str:
+        # Replace patterns like [8:0†source] with video title and link
+        pattern = r"\[(\d+:\d+)†source\]"
+
+        def replace_source(match):
+            file_id = match.group(1)
+            metadata = self.file_metadata.get(file_id)
+            if metadata:
+                return f"[source: '{metadata['title']}' - {metadata['link']}]"
+            return "[source: Unknown]"
+
+        return re.sub(pattern, replace_source, content)
+
     def create_message(self, thread_id: str, content: str):
         if not self.client:
             self.client = OpenAI(api_key=OPENAI_KEY)
         try:
+            # Optionally refine old references before sending them
+            content = self.refine_sources_in_response(content)
             self.client.beta.threads.messages.create(
                 thread_id=self.threads[thread_id].id, role="user", content=content
             )
@@ -92,7 +121,9 @@ class ChannelAssistant:
         messages = await self.get_all_messages(thread_id)
         clean_messages = []
         for i, msg in enumerate(messages.data[::-1]):
-            clean_messages.append((i, msg.role, msg.content[0].text.value))
+            # Post-process the assistant’s raw text before returning
+            new_content = self.refine_sources_in_response(msg.content[0].text.value)
+            clean_messages.append((i, msg.role, new_content))
         return clean_messages
 
     # def get_threads(self):
