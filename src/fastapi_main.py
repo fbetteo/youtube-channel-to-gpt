@@ -362,9 +362,15 @@ def create_message(
         messages = client.beta.threads.messages.list(thread_id=thread_id)
         clean_messages = []
         for i, msg in enumerate(messages.data[::-1]):
-            clean_messages.append(
-                {"id": i, "role": msg.role, "text": msg.content[0].text.value}
-            )
+            # clean_messages.append(
+            #     {"id": i, "role": msg.role, "text": msg.content[0].text.value}
+            # )
+            content = msg.content[0].text.value
+            annotations = msg.content[0].text.annotations
+
+            # Refine the content by replacing source references
+            new_content = refine_sources_in_response(content, annotations)
+            clean_messages.append({"id": i, "role": msg.role, "text": new_content})
         print(clean_messages)
         return clean_messages
     else:
@@ -405,9 +411,15 @@ async def get_messages(
     messages = client.beta.threads.messages.list(thread_id=thread_id)
     clean_messages = []
     for i, msg in enumerate(messages.data[::-1]):
-        clean_messages.append(
-            {"id": i, "role": msg.role, "text": msg.content[0].text.value}
-        )
+        # clean_messages.append(
+        #     {"id": i, "role": msg.role, "text": msg.content[0].text.value}
+        # )
+        content = msg.content[0].text.value
+        annotations = msg.content[0].text.annotations
+
+        # Refine the content by replacing source references
+        new_content = refine_sources_in_response(content, annotations)
+        clean_messages.append({"id": i, "role": msg.role, "text": new_content})
     print(clean_messages)
     return clean_messages
     # messages_list = await channel_assistant.get_clean_messages(thread_id)
@@ -641,3 +653,30 @@ def handle_failed_payment(email: str):
     # Handle failed payment scenario
     # Log the failure, notify the user, etc.
     pass
+
+
+import requests
+
+
+def refine_sources_in_response(content: str, annotations: list) -> str:
+    """
+    Replace source references in the content with video metadata (title and link) based on file IDs in annotations.
+    """
+    for annotation in annotations:
+        if annotation.type == "file_citation":
+            file_id = annotation.file_citation.file_id
+            source_text = annotation.text
+
+            metadata = client.files.retrieve(file_id=file_id).filename.replace(
+                ".txt", ""
+            )
+
+            if metadata:
+                # Replace the source text with the video title and link
+                replacement = f"[source: '{metadata}]"
+                content = content.replace(source_text, replacement)
+            else:
+                # If metadata is missing, replace with a placeholder
+                content = content.replace(source_text, "[source: Unknown]")
+
+    return content

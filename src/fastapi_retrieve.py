@@ -118,9 +118,14 @@ class VideoRetrieval:
                     transcribedText += transcribedSection.text + " "
 
                 # Save individual transcript file with video title
+                # file_path = os.path.join(
+                #     self.build_dir, f"transcript_{youtubeId}_{video_title[:50]}.txt"
+                # )
+
                 file_path = os.path.join(
-                    self.build_dir, f"transcript_{youtubeId}_{video_title[:50]}.txt"
+                    self.build_dir, f"{video_title[:50]}_{youtubeId}.txt"
                 )
+
                 with open(file_path, "w", encoding="utf-8") as f:
                     f.write(f"Video Title: {video_title}\nVideo ID: {youtubeId}\n\n")
                     f.write(transcribedText)
