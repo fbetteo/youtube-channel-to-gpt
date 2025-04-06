@@ -670,10 +670,13 @@ def refine_sources_in_response(content: str, annotations: list) -> str:
             metadata = client.files.retrieve(file_id=file_id).filename.replace(
                 ".txt", ""
             )
+            video_name = metadata.split("_")[0]
+            video_id = metadata.split("_")[1]
+            video_link = f"https://youtu.be/{video_id}"
 
             if metadata:
                 # Replace the source text with the video title and link
-                replacement = f"[source: '{metadata}]"
+                replacement = f"\n Source: [{video_name}({video_link})]"
                 content = content.replace(source_text, replacement)
             else:
                 # If metadata is missing, replace with a placeholder
