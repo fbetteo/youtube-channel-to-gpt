@@ -81,26 +81,25 @@ class ChannelAssistant:
         # return self.thread
 
     # Optional: post-processing to replace chunk references.
-    def refine_sources_in_response(self, content: str) -> str:
-        # Replace patterns like [8:0†source] with video title and link
-        pattern = r"\[(\d+:\d+)†source\]"
+    def refine_sources_in_response(self, content: str, annotations: list) -> str:
+        """
+        Replace source references in the content with video metadata (title and link) based on file IDs in annotations.
+        """
+        for annotation in annotations:
+            if annotation.type == "file_citation":
+                file_id = annotation.file_citation.file_id
+                source_text = annotation.text
+                metadata = self.file_metadata.get(file_id)
 
-        def replace_source(match):
-            chunk_reference = match.group(1)  # Extract chunk reference (e.g., "8:0")
+                if metadata:
+                    # Replace the source text with the video title and link
+                    replacement = f"[source: '{metadata}]"
+                    content = content.replace(source_text, replacement)
+                else:
+                    # If metadata is missing, replace with a placeholder
+                    content = content.replace(source_text, "[source: Unknown]")
 
-            # Map chunk reference to file ID (assuming chunk reference maps to file IDs)
-            # For simplicity, we'll assume chunk_reference corresponds to file IDs in order
-            # You may need to implement a proper mapping if chunk references are more complex
-            file_id = self.file_ids[
-                int(chunk_reference.split(":")[0])
-            ]  # Map to file ID
-
-            metadata = self.file_metadata.get(file_id)
-            if metadata:
-                return f"[source: '{metadata['title']}' - {metadata['link']}]"
-            return "[source: Unknown]"
-
-        return re.sub(pattern, replace_source, content)
+        return content
 
     def create_message(self, thread_id: str, content: str):
         if not self.client:
@@ -140,8 +139,13 @@ class ChannelAssistant:
         clean_messages = []
         for i, msg in enumerate(messages.data[::-1]):
             # Post-process the assistant’s raw text before returning
-            new_content = self.refine_sources_in_response(msg.content[0].text.value)
+            content = msg.content[0].text.value
+            annotations = msg.content[0].text.annotations
+
+            # Refine the content by replacing source references
+            new_content = self.refine_sources_in_response(content, annotations)
             clean_messages.append((i, msg.role, new_content))
+
         return clean_messages
 
     # def get_threads(self):
