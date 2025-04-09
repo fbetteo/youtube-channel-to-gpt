@@ -38,7 +38,12 @@ class ChannelAssistant:
 
                 # Extract video ID from the file name
                 try:
-                    video_id = os.path.basename(transcript_path).split("_")[1]
+                    video_id = (
+                        os.path.basename(transcript_path)
+                        .split("_")[1:]
+                        .join("_")
+                        .replace(".txt", "")
+                    )
                     if video_id in self.video_retrieval.video_metadata:
                         self.file_metadata[file.id] = (
                             self.video_retrieval.video_metadata[video_id]
@@ -65,7 +70,7 @@ class ChannelAssistant:
             temperature=0.01,
         )
 
-        vector_store = self.client.beta.vector_stores.create(
+        vector_store = self.client.vector_stores.create(
             name="FastAPI V3 test", file_ids=self.file_ids
         )
 

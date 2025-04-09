@@ -5,6 +5,8 @@ from googleapiclient.discovery import build
 from dotenv import load_dotenv
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.proxies import WebshareProxyConfig
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 
 # Load environment variables
 load_dotenv()
@@ -94,12 +96,11 @@ class VideoRetrieval:
         self.all_transcripts = ""
         self.transcript_files = []
 
-        for youtubeId in video_ids:
+        def fetch_transcript(youtubeId):
             try:
                 retrievedTranscript = ytt_api.fetch(youtubeId)
-                print("Retrieved transcript for " + youtubeId)
+                print(f"Retrieved transcript for {youtubeId}")
                 transcribedText = ""
-                time.sleep(1)
 
                 # Get video details
                 video_request = youtube.videos().list(part="snippet", id=youtubeId)
@@ -118,10 +119,6 @@ class VideoRetrieval:
                     transcribedText += transcribedSection.text + " "
 
                 # Save individual transcript file with video title
-                # file_path = os.path.join(
-                #     self.build_dir, f"transcript_{youtubeId}_{video_title[:50]}.txt"
-                # )
-
                 file_path = os.path.join(
                     self.build_dir, f"{video_title[:50]}_{youtubeId}.txt"
                 )
@@ -130,16 +127,24 @@ class VideoRetrieval:
                     f.write(f"Video Title: {video_title}\nVideo ID: {youtubeId}\n\n")
                     f.write(transcribedText)
 
-                self.transcript_files.append(file_path)
-                self.all_transcripts += transcribedText
-
+                return file_path, transcribedText
             except Exception as e:
-                print("Could not retrieve transcript for " + youtubeId)
+                print(f"Could not retrieve transcript for {youtubeId}")
                 print(f"Error: {e}")
-                time.sleep(1)
-                continue
-            finally:
-                print("Continuing to next video")
+                return None, None
+
+        with ThreadPoolExecutor(
+            max_workers=5
+        ) as executor:  # Adjust max_workers as needed
+            future_to_video = {
+                executor.submit(fetch_transcript, vid): vid for vid in video_ids
+            }
+
+            for future in as_completed(future_to_video):
+                file_path, transcribedText = future.result()
+                if file_path and transcribedText:
+                    self.transcript_files.append(file_path)
+                    self.all_transcripts += transcribedText
 
         if not self.transcript_files:
             raise ValueError("No transcripts found or could not be retrieved")

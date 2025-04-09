@@ -337,15 +337,17 @@ def create_thread(
 
 
 @app.post("/messages/{assistant_id}/{thread_id}")
-def create_message(
+async def create_message(
     assistant_id: str,
     thread_id: str,
-    content: str,
+    request: Request,
     payload: dict = Depends(validate_jwt),
     db=Depends(get_db),
 ):
     user_id = payload.get("sub", "anonymous")
     print(user_id)
+    body = await request.json()
+    content = body.get("content")
 
     try:
         # Attempt to send the message
