@@ -210,13 +210,15 @@ def get_assistants_protected(payload: dict = Depends(validate_jwt), db=Depends(g
 
 # this way because a user can have multiple versions of the same channel_id (yt identifier) so the name provided to the assistant is used to differentiate
 @app.post("/assistants/{assistant_name}")
-def create_assistant(
-    channel_name: str,
+async def create_assistant(
+    request: Request,
     assistant_name: str,
     payload: dict = Depends(validate_jwt),
     db=Depends(get_db),
     cache=Depends(get_cache),
 ):
+    body = await request.json()
+    channel_name = body.get("channel_name")
     print("hello")
     user_id = payload.get("sub", "anonymous")
     print(user_id)
