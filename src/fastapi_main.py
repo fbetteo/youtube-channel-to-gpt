@@ -340,56 +340,49 @@ def create_message(
     thread_id: str,
     content: str,
     payload: dict = Depends(validate_jwt),
+    db=Depends(get_db),
 ):
     user_id = payload.get("sub", "anonymous")
     print(user_id)
 
-    message = client.beta.threads.messages.create(
-        thread_id=thread_id, role="user", content=content
-    )
+    try:
+        # Attempt to send the message
+        message = client.beta.threads.messages.create(
+            thread_id=thread_id, role="user", content=content
+        )
 
-    # run = client.beta.threads.runs.create(
-    #     thread_id=thread_id,
-    #     assistant_id=assistant_id,
-    # )
+        # Increment the user's message count and decrease remaining messages only if the message is successfully sent
+        c = db.cursor()
+        c.execute(
+            f"""UPDATE users 
+            SET count_messages = count_messages + 1, 
+                remaining_messages = remaining_messages - 1 
+            WHERE uuid = '{user_id}';"""
+        )
+        c.close()
 
-    run = client.beta.threads.runs.create_and_poll(
-        thread_id=thread_id,
-        assistant_id=assistant_id,
-    )
+        run = client.beta.threads.runs.create_and_poll(
+            thread_id=thread_id,
+            assistant_id=assistant_id,
+        )
 
-    if run.status == "completed":
-        messages = client.beta.threads.messages.list(thread_id=thread_id)
-        clean_messages = []
-        for i, msg in enumerate(messages.data[::-1]):
-            # clean_messages.append(
-            #     {"id": i, "role": msg.role, "text": msg.content[0].text.value}
-            # )
-            content = msg.content[0].text.value
-            annotations = msg.content[0].text.annotations
+        if run.status == "completed":
+            messages = client.beta.threads.messages.list(thread_id=thread_id)
+            clean_messages = []
+            for i, msg in enumerate(messages.data[::-1]):
+                content = msg.content[0].text.value
+                annotations = msg.content[0].text.annotations
 
-            # Refine the content by replacing source references
-            new_content = refine_sources_in_response(content, annotations)
-            clean_messages.append({"id": i, "role": msg.role, "text": new_content})
-        print(clean_messages)
-        return clean_messages
-    else:
-        print(run.status)
-
-    # attempts = 0
-    # while attempts < 10:
-    #     time.sleep(5)
-    #     print(run.status)
-    #     messages = client.beta.threads.messages.list(thread_id=thread_id)
-    #     attempts += 1
-
-    # clean_messages = []
-    # for i, msg in enumerate(messages.data[::-1]):
-    #     clean_messages.append((i, msg.role, msg.content[0].text.value))
-    # return clean_messages
-
-    # channel_assistant = cache[user_id][assistant_name]["assistant"]
-    # channel_assistant.create_message(thread_id, content)
+                # Refine the content by replacing source references
+                new_content = refine_sources_in_response(content, annotations)
+                clean_messages.append({"id": i, "role": msg.role, "text": new_content})
+            print(clean_messages)
+            return clean_messages
+        else:
+            print(run.status)
+    except Exception as e:
+        print(f"Error sending message: {e}")
+        raise HTTPException(status_code=500, detail="Failed to send message")
 
 
 @app.post("/runs/{user_id}/{assistant_name}/{thread_id}")
@@ -510,7 +503,7 @@ async def get_user_data(payload: dict = Depends(validate_jwt), db=Depends(get_db
     user_id = payload.get("sub", "anonymous")
     c = db.cursor()
     c.execute(
-        f"""SELECT uuid, email, subscription, count_messages FROM users where uuid = '{user_id}';"""
+        f"""SELECT uuid, email, subscription, count_messages, remaining_messages FROM users where uuid = '{user_id}';"""
     )
     results = c.fetchall()
     c.close()
@@ -519,28 +512,28 @@ async def get_user_data(payload: dict = Depends(validate_jwt), db=Depends(get_db
     output["email"] = results[0][1]
     output["subscription"] = results[0][2]
     output["count_messages"] = results[0][3]
+    output["remaining_messages"] = results[0][4]
 
     return output
 
 
 @app.post("/create-checkout-session")
 async def create_checkout_session(
-    request: Request, payload: dict = Depends(validate_jwt)
+    request: Request, payload: dict = Depends(validate_jwt), db=Depends(get_db)
 ):
     body = await request.json()
     user_uuid = body.get("user_uuid")
     print(user_uuid)
-    # no puedo usar el payload ?
+
     try:
+        # Create a one-time payment checkout session
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=["card"],
-            line_items=[{"price": "price_1PB0ReCakpeOUC7B9hRChCqV", "quantity": 1}],
-            mode="subscription",
+            line_items=[{"price": "price_1RBltfCakpeOUC7BHetgN3x9", "quantity": 1}],
+            mode="payment",
             success_url=FRONTEND_URL + "/success?session_id={CHECKOUT_SESSION_ID}",
             cancel_url=FRONTEND_URL + "/cancel",
-            metadata={
-                "user_uuid": user_uuid  # Pass UUID to Stripe session for later use in webhooks
-            },
+            metadata={"user_uuid": user_uuid},
         )
         return {"url": checkout_session.url}
     except StripeError as e:
@@ -603,35 +596,14 @@ async def stripe_webhook(request: Request, db=Depends(get_db)):
     if event["type"] == "checkout.session.completed":
         session = event["data"]["object"]
         user_uuid = session["metadata"]["user_uuid"]
-        subscription_id = session["subscription"]
-        print(f"User {user_uuid} subscribed to a plan")
 
-        update_user_subscription(
-            user_id=user_uuid,
-            subscription_id=subscription_id,
-            subscription_type="gold",
-            db=db,
+        # Increment remaining_messages by 200 for the user
+        c = db.cursor()
+        c.execute(
+            """UPDATE users SET remaining_messages = remaining_messages + 200 WHERE uuid = %s""",
+            (user_uuid,),
         )
-    elif event["type"] == "payment_intent.payment_failed":
-        session = event["data"]["object"]
-        print(session)
-        handle_failed_payment(
-            email=session["last_payment_error"]["payment_method"]["billing_details"][
-                "email"
-            ]
-        )
-    elif event["type"] == "customer.subscription.deleted":
-        subscription = event["data"]["object"]
-        subscription_id = subscription["id"]
-        user_uuid = subscription["metadata"]["user_uuid"]
-        print(subscription)
-        print(f"Subscription {subscription['id']} cancelled")
-        update_user_subscription(
-            user_id=user_uuid,
-            subscription_id=subscription_id,
-            subscription_type="free",
-            db=db,
-        )
+        c.close()
 
     return {"status": "success"}
 
