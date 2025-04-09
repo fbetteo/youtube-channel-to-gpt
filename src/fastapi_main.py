@@ -368,6 +368,8 @@ async def create_message(
         run = client.beta.threads.runs.create_and_poll(
             thread_id=thread_id,
             assistant_id=assistant_id,
+            max_completion_tokens=1000,
+            additional_instructions="Answer the question as best as you can but don't exceed 750 words approximately. This doesn't mean you have to write 750 words, but if you can answer the question in 100 words, do it. If you need to write 2000 words, cap it to 750 approx.",
         )
 
         if run.status == "completed":
