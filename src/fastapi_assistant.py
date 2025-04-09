@@ -38,12 +38,9 @@ class ChannelAssistant:
 
                 # Extract video ID from the file name
                 try:
-                    video_id = (
-                        os.path.basename(transcript_path)
-                        .split("_")[1:]
-                        .join("_")
-                        .replace(".txt", "")
-                    )
+                    video_id = "_".join(
+                        os.path.basename(transcript_path).split("_")[1:]
+                    ).replace(".txt", "")
                     if video_id in self.video_retrieval.video_metadata:
                         self.file_metadata[file.id] = (
                             self.video_retrieval.video_metadata[video_id]
