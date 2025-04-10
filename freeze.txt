@@ -48,7 +48,7 @@ postgrest==1.0.1
 propcache==0.3.1
 proto-plus==1.26.1
 protobuf==6.30.2
-psycopg2==2.9.10
+psycopg2-binary
 pyasn1==0.4.8
 pyasn1_modules==0.4.1
 pycparser==2.22
