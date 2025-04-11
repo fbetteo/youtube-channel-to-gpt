@@ -474,8 +474,8 @@ async def create_user_data(
     user_id = payload.get("sub", "anonymous")
     c = db.cursor()
     c.execute(
-        "INSERT INTO users(uuid, email, subscription) VALUES (%s, %s, %s)",
-        (user_id, user.email, user.subscription),
+        "INSERT INTO users(uuid, email, subscription, remaining_messages) VALUES (%s, %s, %s, %s)",
+        (user_id, user.email, user.subscription, user.remaining_messages),
     )
     c.close()
 
