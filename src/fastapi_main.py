@@ -469,13 +469,16 @@ async def print_messages(
 
 @app.post("/users")
 async def create_user_data(
-    user: User, payload: dict = Depends(validate_jwt), db=Depends(get_db)
+    user: User, 
+    # payload: dict = Depends(validate_jwt),
+    db=Depends(get_db)
 ):
-    user_id = payload.get("sub", "anonymous")
+    # user_id = payload.get("sub", "anonymous")
+
     c = db.cursor()
     c.execute(
         "INSERT INTO users(uuid, email, subscription, remaining_messages) VALUES (%s, %s, %s, %s)",
-        (user_id, user.email, user.subscription, user.remaining_messages),
+        (user.user_id, user.email, user.subscription, user.remaining_messages),
     )
     c.close()
 
