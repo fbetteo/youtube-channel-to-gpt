@@ -27,12 +27,12 @@ ytt_api = YouTubeTranscriptApi(
 
 
 class VideoRetrieval:
-    def __init__(self, channel_name, max_results):
+    def __init__(self, channel_name, max_results, user_id):
         self.channel_name = channel_name
         # self.channel_id = channel_id
         self.max_results = max_results
         self.transcript_files = []
-        self.build_dir = "../build"
+        self.build_dir = f"../build/{user_id}"
         self.video_metadata = {}  # Store video metadata (ID -> {title, link})
         # Create build directory if it doesn't exist
         os.makedirs(self.build_dir, exist_ok=True)
@@ -119,9 +119,9 @@ class VideoRetrieval:
                     transcribedText += transcribedSection.text + " "
 
                 # Save individual transcript file with video title
-                file_path = os.path.join(
-                    self.build_dir, f"{video_title[:50]}_{youtubeId}.txt"
-                )
+                video_folder_path = os.path.join(self.build_dir, youtubeId)
+                os.makedirs(video_folder_path, exist_ok=True)
+                file_path = os.path.join(video_folder_path, f"{video_title[:50]}.txt")
 
                 with open(file_path, "w", encoding="utf-8") as f:
                     f.write(f"Video Title: {video_title}\nVideo ID: {youtubeId}\n\n")
