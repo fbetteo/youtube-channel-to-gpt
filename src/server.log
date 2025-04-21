@@ -1,0 +1,38 @@
+nohup: ignoring input
+HS256
+INFO:     Started server process [1532643]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     190.137.206.237:0 - "GET / HTTP/1.0" 200 OK
+INFO:     3.238.237.21:0 - "GET /assistants-protected HTTP/1.0" 403 Forbidden
+INFO:     3.89.72.230:0 - "GET /threads HTTP/1.0" 404 Not Found
+INFO:     44.220.181.178:0 - "GET /assistants-protected HTTP/1.0" 403 Forbidden
+INFO:     3.236.17.77:0 - "GET /threads HTTP/1.0" 404 Not Found
+INFO:     3.236.17.77:0 - "GET /assistants-protected HTTP/1.0" 403 Forbidden
+INFO:     3.236.17.77:0 - "GET /threads HTTP/1.0" 404 Not Found
+INFO:     3.228.25.63:0 - "GET /threads HTTP/1.0" 404 Not Found
+INFO:     35.173.35.217:0 - "GET /assistants-protected HTTP/1.0" 403 Forbidden
+INFO:     3.228.25.63:0 - "GET /threads HTTP/1.0" 404 Not Found
+INFO:     35.173.35.217:0 - "GET /assistants-protected HTTP/1.0" 403 Forbidden
+INFO:     35.173.35.217:0 - "GET /assistants-protected HTTP/1.0" 403 Forbidden
+INFO:     3.236.173.4:0 - "GET /threads HTTP/1.0" 404 Not Found
+INFO:     44.201.151.143:0 - "GET /assistants-protected HTTP/1.0" 403 Forbidden
+INFO:     13.217.89.134:0 - "GET /threads HTTP/1.0" 404 Not Found
+INFO:     18.205.245.82:0 - "GET /assistants-protected HTTP/1.0" 403 Forbidden
+INFO:     52.55.83.124:0 - "GET /threads HTTP/1.0" 404 Not Found
+INFO:     3.81.139.112:0 - "GET /threads HTTP/1.0" 404 Not Found
+INFO:     44.192.63.240:0 - "GET /assistants-protected HTTP/1.0" 403 Forbidden
+INFO:     3.208.25.193:0 - "GET /assistants-protected HTTP/1.0" 403 Forbidden
+INFO:     100.27.234.254:0 - "GET /threads HTTP/1.0" 404 Not Found
+INFO:     100.27.234.254:0 - "POST /users HTTP/1.0" 422 Unprocessable Entity
+INFO:     100.27.234.254:0 - "GET /assistants-protected HTTP/1.0" 403 Forbidden
+INFO:     3.208.25.193:0 - "GET /threads HTTP/1.0" 404 Not Found
+INFO:     107.23.224.87:0 - "GET /assistants-protected HTTP/1.0" 403 Forbidden
+INFO:     100.28.220.30:0 - "GET /threads HTTP/1.0" 404 Not Found
+INFO:     3.95.216.133:0 - "GET /assistants-protected HTTP/1.0" 403 Forbidden
+INFO:     44.222.128.151:0 - "GET /threads HTTP/1.0" 404 Not Found
+INFO:     34.204.13.195:0 - "POST /users HTTP/1.0" 200 OK
+INFO:     34.204.13.195:0 - "GET /assistants-protected HTTP/1.0" 403 Forbidden
+INFO:     34.227.8.15:0 - "GET /threads HTTP/1.0" 404 Not Found
+INFO:     3.219.31.202:0 - "GET /threads HTTP/1.0" 404 Not Found

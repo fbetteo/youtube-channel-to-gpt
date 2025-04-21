@@ -1,5 +1,6 @@
 import sys
 import os
+import logging  # use logging for production messages
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
@@ -8,9 +9,20 @@ import pickle
 from typing import List, Union
 import fastapi_retrieve
 import fastapi_assistant
-from fastapi import FastAPI, Body, Form, HTTPException, Request, status
+from fastapi import (
+    FastAPI,
+    Body,
+    Form,
+    HTTPException,
+    Request,
+    status,
+    Depends,
+    Header,
+    Security,
+    Cookie,
+)
 from fastapi.middleware.cors import CORSMiddleware
-from db.test_ps import connection, cache
+from db.database import get_db, get_cache
 from db.models import User
 import json
 from decorators import load_assistant, load_assistant_returning_object
@@ -21,7 +33,6 @@ from openai import OpenAI
 from stripe import StripeError, stripe
 from stripe.api_resources import event as stripe_event
 
-from fastapi import HTTPException, Depends, Header, Security, Cookie
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from jose import JWTError, jwt
 from typing import Optional
@@ -121,7 +132,11 @@ def read_root():
 # Deberiamos tener una sola funcion cuando el usuario quiera generar un assistant, que baje el transcript y cree el assistant. Asi no guardamos en ningun momento el transcript?
 @app.get("/transcripts/{assistant_name}")
 def get_channel_transcript(
-    assistant_name: str, channel_name: str, max_results: int, user_id: uuid.UUID
+    assistant_name: str,
+    channel_name: str,
+    max_results: int,
+    user_id: str,
+    cache=Depends(get_cache),
 ):
 
     print("hello")
@@ -150,16 +165,20 @@ def get_channel_transcript(
     cache[user_id][assistant_name] = {}
     cache[user_id][assistant_name]["video_retrieval"] = video_retrieval
     print(video_retrieval.all_transcripts[0:10])
+    return {
+        "message": "Transcripts loaded",
+        "sample": video_retrieval.all_transcripts[0:10],
+    }
 
 
 @app.get("/assistants/{user_id}")
-def get_assistants(user_id: int, uuid: uuid.UUID):
+def get_assistants(user_id: str, user_uuid: str, db=Depends(get_db)):
     output = []
-    c = connection.cursor()
+    c = db.cursor()
     c.execute(
-        f"SELECT assistant_id, assistant_name FROM assistants WHERE user_id = {user_id} and uuid = '{uuid}'"
+        "SELECT assistant_id, assistant_name FROM assistants WHERE user_id = %s and uuid = %s",
+        (user_id, user_uuid),
     )
-    # print(c.fetchall())
     results = c.fetchall()
     c.close()
 
@@ -170,16 +189,14 @@ def get_assistants(user_id: int, uuid: uuid.UUID):
 
 
 @app.get("/assistants-protected")
-def get_assistants_protected(
-    payload: dict = Depends(validate_jwt),
-):
-    print("hello")
+def get_assistants_protected(payload: dict = Depends(validate_jwt), db=Depends(get_db)):
     user_id = payload.get("sub", "anonymous")
-    print(user_id)
+    logging.info("User %s requested protected assistants", user_id)
     output = []
-    c = connection.cursor()
+    c = db.cursor()
     c.execute(
-        f"SELECT assistant_id, assistant_name FROM assistants WHERE uuid = '{user_id}'"
+        "SELECT assistant_id, assistant_name FROM assistants WHERE uuid = %s",
+        (user_id,),
     )
     # print(c.fetchall())
     results = c.fetchall()
@@ -193,14 +210,20 @@ def get_assistants_protected(
 
 # this way because a user can have multiple versions of the same channel_id (yt identifier) so the name provided to the assistant is used to differentiate
 @app.post("/assistants/{assistant_name}")
-def create_assistant(
-    channel_name: str, assistant_name: str, payload: dict = Depends(validate_jwt)
+async def create_assistant(
+    request: Request,
+    assistant_name: str,
+    payload: dict = Depends(validate_jwt),
+    db=Depends(get_db),
+    cache=Depends(get_cache),
 ):
+    body = await request.json()
+    channel_name = body.get("channel_name")
     print("hello")
     user_id = payload.get("sub", "anonymous")
     print(user_id)
     print(channel_name)
-    get_channel_transcript(assistant_name, channel_name, 5, user_id)
+    get_channel_transcript(assistant_name, channel_name, 5, user_id, cache)
     channel_assistant = fastapi_assistant.ChannelAssistant(
         cache[user_id][assistant_name]["video_retrieval"]
     )
@@ -215,25 +238,24 @@ def create_assistant(
     #     pickle.dump(channel_assistant, f, pickle.HIGHEST_PROTOCOL)
 
     # Save in DB
-    c = connection.cursor()
+    c = db.cursor()
     c.execute(
-        f"""INSERT INTO assistants(
-    assistant_id, 
-    channel_name,
-    channel_id ,
-    assistant_name,
-    uuid ) VALUES
-    ('{channel_assistant.assistant.id}', '{channel_name}', '{channel_id}', '{assistant_name}', '{user_id}');"""
+        """INSERT INTO assistants(assistant_id, channel_name, channel_id, assistant_name, uuid)
+           VALUES (%s, %s, %s, %s, %s)""",
+        (
+            channel_assistant.assistant.id,
+            channel_name,
+            channel_id,
+            assistant_name,
+            user_id,
+        ),
     )
-    c.execute(f"SELECT * FROM assistants")
+    c.execute("SELECT * FROM assistants")
     print(c.fetchall())
     c.execute(
-        f"""INSERT INTO channels(
-        channel_name,
-    channel_id ,
-    assistant_name,
-     uuid ) VALUES
-    ('{channel_name}','{channel_id}', '{assistant_name}', '{user_id}');"""
+        """INSERT INTO channels(channel_name, channel_id, assistant_name, uuid)
+           VALUES (%s, %s, %s, %s)""",
+        (channel_name, channel_id, assistant_name, user_id),
     )
     c.close()
     return channel_assistant.assistant.id
@@ -242,7 +264,9 @@ def create_assistant(
 # probablemente se puede usar Depends() para que busque el assistant en el cache y lo cargue si no esta en vez de usar el decorator
 @app.post("/threads/{assistant_name}")
 # @load_assistant
-def create_thread(assistant_name: str, payload: dict = Depends(validate_jwt)):
+def create_thread(
+    assistant_name: str, payload: dict = Depends(validate_jwt), db=Depends(get_db)
+):
 
     user_id = payload.get("sub", "anonymous")
     print(user_id)
@@ -263,12 +287,13 @@ def create_thread(assistant_name: str, payload: dict = Depends(validate_jwt)):
 
     # channel_assistant = cache[user_id][assistant_name]["assistant"]
 
-    c = connection.cursor()
+    c = db.cursor()
     c.execute(
-        f"""select max(thread_name), max(assistants.assistant_id) from threads join assistants on threads.assistant_id = assistants.assistant_id
-           WHERE assistants.assistant_name = '{assistant_name}'
-            and assistants.uuid = '{user_id}'
-            and left(thread_name,8) = 'untitled'; """
+        """SELECT max(thread_name), max(assistants.assistant_id)
+           FROM threads JOIN assistants ON threads.assistant_id = assistants.assistant_id
+           WHERE assistants.assistant_name = %s AND assistants.uuid = %s
+           AND left(thread_name,8) = 'untitled'""",
+        (assistant_name, user_id),
     )
 
     results = c.fetchall()
@@ -277,12 +302,11 @@ def create_thread(assistant_name: str, payload: dict = Depends(validate_jwt)):
     if results[0][0] is None:
         thread_name = "untitled1"
 
-        c = connection.cursor()
+        c = db.cursor()
         c.execute(
-            f"""select max(assistants.assistant_id) from assistants 
-           WHERE assistants.assistant_name = '{assistant_name}'
-            and assistants.uuid = '{user_id}'
-             """
+            """SELECT max(assistants.assistant_id) FROM assistants 
+           WHERE assistants.assistant_name = %s AND assistants.uuid = %s""",
+            (assistant_name, user_id),
         )
 
         results = c.fetchall()
@@ -299,10 +323,10 @@ def create_thread(assistant_name: str, payload: dict = Depends(validate_jwt)):
     print(new_thread.id)
     # channel_assistant.create_thread(thread_id)
 
-    c = connection.cursor()
+    c = db.cursor()
     c.execute(
-        f"""INSERT INTO threads(thread_id, thread_name, assistant_id) VALUES
-    ('{new_thread.id}', '{thread_name}', '{assistant_id}');"""
+        "INSERT INTO threads(thread_id, thread_name, assistant_id) VALUES (%s, %s, %s)",
+        (new_thread.id, thread_name, assistant_id),
     )
     c.close()
 
@@ -313,60 +337,65 @@ def create_thread(assistant_name: str, payload: dict = Depends(validate_jwt)):
 
 
 @app.post("/messages/{assistant_id}/{thread_id}")
-def create_message(
+async def create_message(
     assistant_id: str,
     thread_id: str,
-    content: str,
+    request: Request,
     payload: dict = Depends(validate_jwt),
+    db=Depends(get_db),
 ):
     user_id = payload.get("sub", "anonymous")
     print(user_id)
+    body = await request.json()
+    content = body.get("content")
 
-    message = client.beta.threads.messages.create(
-        thread_id=thread_id, role="user", content=content
-    )
+    try:
+        # Attempt to send the message
+        message = client.beta.threads.messages.create(
+            thread_id=thread_id, role="user", content=content
+        )
 
-    # run = client.beta.threads.runs.create(
-    #     thread_id=thread_id,
-    #     assistant_id=assistant_id,
-    # )
+        # Increment the user's message count and decrease remaining messages only if the message is successfully sent
+        c = db.cursor()
+        c.execute(
+            f"""UPDATE users 
+            SET count_messages = count_messages + 1, 
+                remaining_messages = remaining_messages - 1 
+            WHERE uuid = '{user_id}';"""
+        )
+        c.close()
 
-    run = client.beta.threads.runs.create_and_poll(
-        thread_id=thread_id,
-        assistant_id=assistant_id,
-    )
+        run = client.beta.threads.runs.create_and_poll(
+            thread_id=thread_id,
+            assistant_id=assistant_id,
+            max_completion_tokens=1000,
+            additional_instructions="Answer the question as best as you can but don't exceed 750 words approximately. This doesn't mean you have to write 750 words, but if you can answer the question in 100 words, do it. If you need to write 2000 words, cap it to 750 approx.",
+        )
 
-    if run.status == "completed":
-        messages = client.beta.threads.messages.list(thread_id=thread_id)
-        clean_messages = []
-        for i, msg in enumerate(messages.data[::-1]):
-            clean_messages.append(
-                {"id": i, "role": msg.role, "text": msg.content[0].text.value}
-            )
-        print(clean_messages)
-        return clean_messages
-    else:
-        print(run.status)
+        if run.status == "completed":
+            messages = client.beta.threads.messages.list(thread_id=thread_id)
+            clean_messages = []
+            for i, msg in enumerate(messages.data[::-1]):
+                content = msg.content[0].text.value
+                annotations = msg.content[0].text.annotations
 
-    # attempts = 0
-    # while attempts < 10:
-    #     time.sleep(5)
-    #     print(run.status)
-    #     messages = client.beta.threads.messages.list(thread_id=thread_id)
-    #     attempts += 1
-
-    # clean_messages = []
-    # for i, msg in enumerate(messages.data[::-1]):
-    #     clean_messages.append((i, msg.role, msg.content[0].text.value))
-    # return clean_messages
-
-    # channel_assistant = cache[user_id][assistant_name]["assistant"]
-    # channel_assistant.create_message(thread_id, content)
+                # Refine the content by replacing source references
+                new_content = refine_sources_in_response(content, annotations)
+                clean_messages.append({"id": i, "role": msg.role, "text": new_content})
+            print(clean_messages)
+            return clean_messages
+        else:
+            print(run.status)
+    except Exception as e:
+        print(f"Error sending message: {e}")
+        raise HTTPException(status_code=500, detail="Failed to send message")
 
 
 @app.post("/runs/{user_id}/{assistant_name}/{thread_id}")
 # @load_assistant
-def create_run(user_id: int, assistant_name: str, thread_id: str):
+def create_run(
+    user_id: int, assistant_name: str, thread_id: str, cache=Depends(get_cache)
+):
     channel_assistant = cache[user_id][assistant_name]["assistant"]
     channel_assistant.create_run(thread_id)
 
@@ -381,9 +410,15 @@ async def get_messages(
     messages = client.beta.threads.messages.list(thread_id=thread_id)
     clean_messages = []
     for i, msg in enumerate(messages.data[::-1]):
-        clean_messages.append(
-            {"id": i, "role": msg.role, "text": msg.content[0].text.value}
-        )
+        # clean_messages.append(
+        #     {"id": i, "role": msg.role, "text": msg.content[0].text.value}
+        # )
+        content = msg.content[0].text.value
+        annotations = msg.content[0].text.annotations
+
+        # Refine the content by replacing source references
+        new_content = refine_sources_in_response(content, annotations)
+        clean_messages.append({"id": i, "role": msg.role, "text": new_content})
     print(clean_messages)
     return clean_messages
     # messages_list = await channel_assistant.get_clean_messages(thread_id)
@@ -394,30 +429,29 @@ async def get_messages(
 
 # no enteindo por que tengo que poner esa llave al final despues de assistant name
 @app.get("/threads/{assistant_name}")
-def get_threads(assistant_name: str, payload: dict = Depends(validate_jwt)):
-    print("hello")
+def get_threads(
+    assistant_name: str, payload: dict = Depends(validate_jwt), db=Depends(get_db)
+):
     user_id = payload.get("sub", "anonymous")
-    print(user_id)
-    output = []
-    c = connection.cursor()
+    c = db.cursor()
     c.execute(
-        f"""SELECT thread_id,  thread_name FROM threads 
+        """SELECT thread_id,  thread_name FROM threads 
           join assistants on threads.assistant_id = assistants.assistant_id
-           WHERE assistants.assistant_name = '{assistant_name}'
-            and assistants.uuid = '{user_id}'"""
+           WHERE assistants.assistant_name = %s
+            and assistants.uuid = %s""",
+        (assistant_name, user_id),
     )
-    # print(c.fetchall())
     results = c.fetchall()
     c.close()
-    for row in results:
-        output.append({"thread_id": row[0], "thread_name": row[1]})
-    print(output)
+    output = [{"thread_id": row[0], "thread_name": row[1]} for row in results]
     return output
 
 
 @app.get("/print_messages/{user_id}/{assistant_name}/{thread_id}")
 # @load_assistant
-async def print_messages(user_id: int, assistant_name: str, thread_id: str):
+async def print_messages(
+    user_id: int, assistant_name: str, thread_id: str, cache=Depends(get_cache)
+):
     channel_assistant = cache[user_id][assistant_name]["assistant"]
     channel_assistant.print_messages(thread_id)
 
@@ -434,22 +468,27 @@ async def print_messages(user_id: int, assistant_name: str, thread_id: str):
 
 
 @app.post("/users")
-async def create_user_data(user: User, payload: dict = Depends(validate_jwt)):
-    user_id = payload.get("sub", "anonymous")
-    email = user.email
-    subscription = user.subscription
-    c = connection.cursor()
+async def create_user_data(
+    user: User, 
+    # payload: dict = Depends(validate_jwt),
+    db=Depends(get_db)
+):
+    # user_id = payload.get("sub", "anonymous")
+
+    c = db.cursor()
     c.execute(
-        f"""INSERT INTO users(uuid, email, subscription) VALUES
-    ( '{user_id}','{email}', '{subscription}');"""
+        "INSERT INTO users(uuid, email, subscription, remaining_messages) VALUES (%s, %s, %s, %s)",
+        (user.user_id, user.email, user.subscription, user.remaining_messages),
     )
     c.close()
 
 
 @app.post("/increment_user_messages")
-async def increment_user_meesages(payload: dict = Depends(validate_jwt)):
+async def increment_user_meesages(
+    payload: dict = Depends(validate_jwt), db=Depends(get_db)
+):
     user_id = payload.get("sub", "anonymous")
-    c = connection.cursor()
+    c = db.cursor()
     c.execute(
         f"""UPDATE users SET count_messages = count_messages +1 where uuid = '{user_id}';"""
     )
@@ -458,10 +497,10 @@ async def increment_user_meesages(payload: dict = Depends(validate_jwt)):
 
 @app.post("/modify_user_subscription")
 async def modify_user_subscription(
-    subscription: str, payload: dict = Depends(validate_jwt)
+    subscription: str, payload: dict = Depends(validate_jwt), db=Depends(get_db)
 ):
     user_id = payload.get("sub", "anonymous")
-    c = connection.cursor()
+    c = db.cursor()
     c.execute(
         f"""UPDATE users SET subscription = '{subscription}' where uuid = '{user_id}';"""
     )
@@ -469,11 +508,11 @@ async def modify_user_subscription(
 
 
 @app.get("/get_user_data")
-async def get_user_data(payload: dict = Depends(validate_jwt)):
+async def get_user_data(payload: dict = Depends(validate_jwt), db=Depends(get_db)):
     user_id = payload.get("sub", "anonymous")
-    c = connection.cursor()
+    c = db.cursor()
     c.execute(
-        f"""SELECT uuid, email, subscription, count_messages FROM users where uuid = '{user_id}';"""
+        f"""SELECT uuid, email, subscription, count_messages, remaining_messages FROM users where uuid = '{user_id}';"""
     )
     results = c.fetchall()
     c.close()
@@ -482,28 +521,28 @@ async def get_user_data(payload: dict = Depends(validate_jwt)):
     output["email"] = results[0][1]
     output["subscription"] = results[0][2]
     output["count_messages"] = results[0][3]
+    output["remaining_messages"] = results[0][4]
 
     return output
 
 
 @app.post("/create-checkout-session")
 async def create_checkout_session(
-    request: Request, payload: dict = Depends(validate_jwt)
+    request: Request, payload: dict = Depends(validate_jwt), db=Depends(get_db)
 ):
     body = await request.json()
     user_uuid = body.get("user_uuid")
     print(user_uuid)
-    # no puedo usar el payload ?
+
     try:
+        # Create a one-time payment checkout session
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=["card"],
-            line_items=[{"price": "price_1PB0ReCakpeOUC7B9hRChCqV", "quantity": 1}],
-            mode="subscription",
+            line_items=[{"price": "price_1RBltfCakpeOUC7BHetgN3x9", "quantity": 1}],
+            mode="payment",
             success_url=FRONTEND_URL + "/success?session_id={CHECKOUT_SESSION_ID}",
             cancel_url=FRONTEND_URL + "/cancel",
-            metadata={
-                "user_uuid": user_uuid  # Pass UUID to Stripe session for later use in webhooks
-            },
+            metadata={"user_uuid": user_uuid},
         )
         return {"url": checkout_session.url}
     except StripeError as e:
@@ -511,14 +550,16 @@ async def create_checkout_session(
 
 
 @app.post("/cancel-subscription")
-async def cancel_subscription(payload: dict = Depends(validate_jwt)):
+async def cancel_subscription(
+    payload: dict = Depends(validate_jwt), db=Depends(get_db)
+):
     user_id = payload.get("sub", "anonymous")
-    c = connection.cursor()
-    c.execute(f"""SELECT subscription_id FROM users where uuid = '{user_id}';""")
+    c = db.cursor()
+    c.execute("SELECT subscription_id FROM users WHERE uuid = %s", (user_id,))
     results = c.fetchall()
     c.close()
     subscription_id = results[0][0]
-    print(subscription_id)
+    logging.info("Cancelling subscription %s for user %s", subscription_id, user_id)
     try:
         # Cancel the subscription at period end
         subscription = stripe.Subscription.modify(
@@ -542,7 +583,7 @@ WEBHOOK_SECRET = os.getenv(
 
 
 @app.post("/webhook")
-async def stripe_webhook(request: Request):
+async def stripe_webhook(request: Request, db=Depends(get_db)):
     payload = await request.body()
     # print(payload)
     sig_header = request.headers.get("stripe-signature")
@@ -564,40 +605,26 @@ async def stripe_webhook(request: Request):
     if event["type"] == "checkout.session.completed":
         session = event["data"]["object"]
         user_uuid = session["metadata"]["user_uuid"]
-        subscription_id = session["subscription"]
-        print(f"User {user_uuid} subscribed to a plan")
 
-        update_user_subscription(
-            user_id=user_uuid, subscription_id=subscription_id, subscription_type="gold"
+        # Increment remaining_messages by 200 for the user
+        c = db.cursor()
+        c.execute(
+            """UPDATE users SET remaining_messages = remaining_messages + 200 WHERE uuid = %s""",
+            (user_uuid,),
         )
-    elif event["type"] == "payment_intent.payment_failed":
-        session = event["data"]["object"]
-        print(session)
-        handle_failed_payment(
-            email=session["last_payment_error"]["payment_method"]["billing_details"][
-                "email"
-            ]
-        )
-    elif event["type"] == "customer.subscription.deleted":
-        subscription = event["data"]["object"]
-        subscription_id = subscription["id"]
-        user_uuid = subscription["metadata"]["user_uuid"]
-        print(subscription)
-        print(f"Subscription {subscription['id']} cancelled")
-        update_user_subscription(
-            user_id=user_uuid, subscription_id=subscription_id, subscription_type="free"
-        )
+        c.close()
 
     return {"status": "success"}
 
 
 def update_user_subscription(
-    user_id: uuid, subscription_id: str, subscription_type: str
+    user_id: uuid, subscription_id: str, subscription_type: str, db=Depends(get_db)
 ):
-    print("Updating user subscription")
-    c = connection.cursor()
+    logging.info("Updating user subscription for %s", user_id)
+    c = db.cursor()
     c.execute(
-        f"""UPDATE users SET subscription_id = '{subscription_id}', subscription = '{subscription_type}' where uuid = '{user_id}';"""
+        "UPDATE users SET subscription_id = %s, subscription = %s WHERE uuid = %s",
+        (subscription_id, subscription_type, user_id),
     )
     c.close()
 
@@ -607,3 +634,33 @@ def handle_failed_payment(email: str):
     # Handle failed payment scenario
     # Log the failure, notify the user, etc.
     pass
+
+
+import requests
+
+
+def refine_sources_in_response(content: str, annotations: list) -> str:
+    """
+    Replace source references in the content with video metadata (title and link) based on file IDs in annotations.
+    """
+    for annotation in annotations:
+        if annotation.type == "file_citation":
+            file_id = annotation.file_citation.file_id
+            source_text = annotation.text
+
+            metadata = client.files.retrieve(file_id=file_id).filename.replace(
+                ".txt", ""
+            )
+            video_name = metadata.split("_")[0]
+            video_id = metadata.split("_")[1]
+            video_link = f"https://youtu.be/{video_id}"
+
+            if metadata:
+                # Replace the source text with the video title and link in Markdown format
+                replacement = f"\n\nSource: [{video_name}]({video_link})"
+                content = content.replace(source_text, replacement)
+            else:
+                # If metadata is missing, replace with a placeholder
+                content = content.replace(source_text, "[source: Unknown]")
+
+    return content

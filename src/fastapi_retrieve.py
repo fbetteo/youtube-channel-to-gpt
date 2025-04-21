@@ -4,13 +4,26 @@ import time
 from googleapiclient.discovery import build
 from dotenv import load_dotenv
 from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api.proxies import WebshareProxyConfig
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 
 # Load environment variables
 load_dotenv()
 
 # API setup
 API_KEY = os.getenv("YOUTUBE_API_KEY")
+WEBSHARE_PROXY_USERNAME = os.getenv("WEBSHARE_PROXY_USERNAME")
+WEBSHARE_PROXY_PASSWORD = os.getenv("WEBSHARE_PROXY_PASSWORD")
+
 youtube = build("youtube", "v3", developerKey=API_KEY)
+
+
+ytt_api = YouTubeTranscriptApi(
+    proxy_config=WebshareProxyConfig(
+        proxy_username=WEBSHARE_PROXY_USERNAME, proxy_password=WEBSHARE_PROXY_PASSWORD
+    )
+)
 
 
 class VideoRetrieval:
@@ -18,6 +31,11 @@ class VideoRetrieval:
         self.channel_name = channel_name
         # self.channel_id = channel_id
         self.max_results = max_results
+        self.transcript_files = []
+        self.build_dir = "../build"
+        self.video_metadata = {}  # Store video metadata (ID -> {title, link})
+        # Create build directory if it doesn't exist
+        os.makedirs(self.build_dir, exist_ok=True)
 
     def get_channel_id(self):
         request = youtube.search().list(
@@ -76,37 +94,99 @@ class VideoRetrieval:
             video_ids = self.video_ids
 
         self.all_transcripts = ""
-        # Iterate through the array of YouTube IDs
-        for youtubeId in video_ids:
-            # Retrieve the transcript for the video
+        self.transcript_files = []
+
+        def fetch_transcript(youtubeId):
             try:
-                retrievedTranscript = YouTubeTranscriptApi.get_transcript(youtubeId)
-                print("Retrieved transcript for " + youtubeId)
+                retrievedTranscript = ytt_api.fetch(youtubeId)
+                print(f"Retrieved transcript for {youtubeId}")
                 transcribedText = ""
-                time.sleep(1)
+
+                # Get video details
+                video_request = youtube.videos().list(part="snippet", id=youtubeId)
+                video_response = video_request.execute()
+                video_title = video_response["items"][0]["snippet"]["title"]
+                video_link = f"https://youtu.be/{youtubeId}"
+
+                # Save metadata
+                self.video_metadata[youtubeId] = {
+                    "title": video_title,
+                    "link": video_link,
+                }
+
+                # Iterate through the transcript and add each section to a string
+                for transcribedSection in retrievedTranscript:
+                    transcribedText += transcribedSection.text + " "
+
+                # Save individual transcript file with video title
+                file_path = os.path.join(
+                    self.build_dir, f"{video_title[:50]}_{youtubeId}.txt"
+                )
+
+                with open(file_path, "w", encoding="utf-8") as f:
+                    f.write(f"Video Title: {video_title}\nVideo ID: {youtubeId}\n\n")
+                    f.write(transcribedText)
+
+                return file_path, transcribedText
             except Exception as e:
-                print("Could not retrieve transcript for " + youtubeId)
+                print(f"Could not retrieve transcript for {youtubeId}")
                 print(f"Error: {e}")
-                time.sleep(1)
-                continue
-            finally:
-                print("Continuing to next video")
+                return None, None
 
-            # Iterate through the transcript and add each section to a string
-            for transcribedSection in retrievedTranscript:
-                transcribedText += transcribedSection["text"] + " "
+        with ThreadPoolExecutor(
+            max_workers=5
+        ) as executor:  # Adjust max_workers as needed
+            future_to_video = {
+                executor.submit(fetch_transcript, vid): vid for vid in video_ids
+            }
 
-            self.all_transcripts += transcribedText
+            for future in as_completed(future_to_video):
+                file_path, transcribedText = future.result()
+                if file_path and transcribedText:
+                    self.transcript_files.append(file_path)
+                    self.all_transcripts += transcribedText
 
-            if self.all_transcripts == "":
-                raise ValueError("No transcripts found or could not be retrieved")
+        if not self.transcript_files:
+            raise ValueError("No transcripts found or could not be retrieved")
 
-            # Write the transcribed text to a transcript file
-            print("Writing transcript for " + youtubeId + " to file")
-            transcriptionFile = open(
-                f"../build/transcript_{self.channel_id}.txt", "a", encoding="utf-8"
-            )
-            transcriptionFile.write(transcribedText)
-            transcriptionFile.close()
+        return self.transcript_files
 
-        print("Finished transcribing")
+
+### TEST CODE ###
+# from fastapi import FastAPI, HTTPException
+# CHANNEL_NAME = "marc-lou"
+
+# video_retrieval = VideoRetrieval(CHANNEL_NAME, 5)
+# try:
+#     video_retrieval.get_channel_id()
+# except Exception as e:
+#     raise HTTPException(
+#         status_code=400, detail="Error in get_channel_id()" + str(e)
+#     )
+
+# try:
+#     video_retrieval.get_video_ids()
+# except Exception as e:
+#     raise HTTPException(status_code=400, detail="Error in get_video_ids()" + str(e))
+
+# try:
+#     video_retrieval.get_transcripts()
+# except Exception as e:
+#     raise HTTPException(
+#         status_code=400, detail="Error in get_transcripts()" + str(e)
+#     )
+
+
+# retrievedTranscript = YouTubeTranscriptApi.get_transcript("40zozi-rGQM")
+
+
+# retrievedTranscript
+
+# aa = YouTubeTranscriptApi()
+# aa.fetch()
+# new_retrievedTranscript = aa.fetch("40zozi-rGQM")
+# new_retrievedTranscript
+
+# transcribedText = ""
+# for transcribedSection in new_retrievedTranscript:
+#                 transcribedText += transcribedSection["text"] + " "
