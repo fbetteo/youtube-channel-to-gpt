@@ -145,7 +145,9 @@ def get_channel_transcript(
 
     print("hello")
     print(user_id)
-    video_retrieval = fastapi_retrieve.VideoRetrieval(channel_name, max_results)
+    video_retrieval = fastapi_retrieve.VideoRetrieval(
+        channel_name, max_results, user_id
+    )
     try:
         video_retrieval.get_channel_id()
     except Exception as e:
