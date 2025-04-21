@@ -108,6 +108,10 @@ async def validate_jwt(credentials: HTTPAuthorizationCredentials = Depends(secur
     Extracts the JWT from the cookie and validates it.
     Returns the payload if the token is valid, raises an HTTPException otherwise.
     """
+    # this is the UUID of cuentatest2. Useful to use the API without logging in in Dev mode
+    if os.getenv("DEV_MODE") == "true":
+        return {"sub": "96933f74-278f-44e5-911b-118fc234dd5f"}
+
     token = credentials.credentials
     print(token)
     if token is None:
@@ -469,9 +473,9 @@ async def print_messages(
 
 @app.post("/users")
 async def create_user_data(
-    user: User, 
+    user: User,
     # payload: dict = Depends(validate_jwt),
-    db=Depends(get_db)
+    db=Depends(get_db),
 ):
     # user_id = payload.get("sub", "anonymous")
 
