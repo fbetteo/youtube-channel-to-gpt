@@ -51,6 +51,8 @@ supabase: Client = create_client(url, anon_key)
 
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY_TEST")
 OPENAI_KEY = os.getenv("OPENAI_API_KEY")
+MAX_ASSISTANTS_PER_USER = int(os.getenv("MAX_ASSISTANTS_PER_USER", 5))
+
 
 ALGORITHM = "HS256"
 
@@ -109,8 +111,8 @@ async def validate_jwt(credentials: HTTPAuthorizationCredentials = Depends(secur
     Returns the payload if the token is valid, raises an HTTPException otherwise.
     """
     # this is the UUID of cuentatest2. Useful to use the API without logging in in Dev mode
-    if os.getenv("DEV_MODE") == "true":
-        return {"sub": "96933f74-278f-44e5-911b-118fc234dd5f"}
+    # if os.getenv("DEV_MODE") == "true":
+    #     return {"sub": "96933f74-278f-44e5-911b-118fc234dd5f"}
 
     token = credentials.credentials
     print(token)
@@ -214,22 +216,92 @@ def get_assistants_protected(payload: dict = Depends(validate_jwt), db=Depends(g
     return output
 
 
+# --- Dependency Function for Limit Check ---
+async def verify_assistant_limit(
+    payload: dict = Depends(validate_jwt), db=Depends(get_db)
+):
+    """
+    Dependency that checks if the user has reached the maximum assistant limit.
+    Raises HTTPException if the limit is exceeded.
+    """
+    user_id = payload.get("sub", "anonymous")
+    c = db.cursor()
+    try:
+        c.execute("SELECT COUNT(*) FROM assistants WHERE uuid = %s", (user_id,))
+        count_result = c.fetchone()
+        current_assistant_count = count_result[0] if count_result else 0
+    except Exception as e:
+        logging.error(
+            f"Database error checking assistant count for user {user_id}: {e}"
+        )
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Could not verify assistant count.",
+        )
+    finally:
+        c.close()
+
+    if current_assistant_count >= MAX_ASSISTANTS_PER_USER:
+        logging.warning(
+            f"User {user_id} tried to create assistant beyond limit ({MAX_ASSISTANTS_PER_USER})."
+        )
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Maximum number of assistants ({MAX_ASSISTANTS_PER_USER}) reached.",
+        )
+
+
 # this way because a user can have multiple versions of the same channel_id (yt identifier) so the name provided to the assistant is used to differentiate
 @app.post("/assistants/{assistant_name}")
 async def create_assistant(
     request: Request,
     assistant_name: str,
+    # The result of the dependency isn't needed, just its execution for the check.
+    _: None = Depends(verify_assistant_limit),
     payload: dict = Depends(validate_jwt),
     db=Depends(get_db),
     cache=Depends(get_cache),
 ):
     body = await request.json()
     channel_name = body.get("channel_name")
+    if not channel_name:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="channel_name is required in the request body.",
+        )
     print("hello")
     user_id = payload.get("sub", "anonymous")
     print(user_id)
     print(channel_name)
-    get_channel_transcript(assistant_name, channel_name, 5, user_id, cache)
+    try:
+        # Note: get_channel_transcript itself uses Depends(get_cache),
+        # so passing cache explicitly might be redundant if it's refactored
+        # to use Depends internally. For now, keep passing it if needed.
+        get_channel_transcript(assistant_name, channel_name, 5, user_id, cache)
+    except HTTPException as e:
+        # Re-raise the HTTPException from get_channel_transcript
+        raise e
+    except Exception as e:
+        # Catch other potential errors during transcript retrieval
+        logging.error(
+            f"Error in get_channel_transcript for user {user_id}, assistant {assistant_name}: {e}"
+        )
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to process channel information.",
+        )
+
+    # Check if video_retrieval was successfully created and added to cache
+    # Defensive check, ideally get_channel_transcript should raise if it fails
+    if not cache.get(user_id, {}).get(assistant_name, {}).get("video_retrieval"):
+        logging.error(
+            f"video_retrieval not found in cache for user {user_id}, assistant {assistant_name} after get_channel_transcript call."
+        )
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to retrieve channel transcripts after processing.",
+        )
+    # get_channel_transcript(assistant_name, channel_name, 5, user_id, cache)
     channel_assistant = fastapi_assistant.ChannelAssistant(
         cache[user_id][assistant_name]["video_retrieval"]
     )
@@ -245,25 +317,37 @@ async def create_assistant(
 
     # Save in DB
     c = db.cursor()
-    c.execute(
-        """INSERT INTO assistants(assistant_id, channel_name, channel_id, assistant_name, uuid)
-           VALUES (%s, %s, %s, %s, %s)""",
-        (
-            channel_assistant.assistant.id,
-            channel_name,
-            channel_id,
-            assistant_name,
-            user_id,
-        ),
-    )
-    c.execute("SELECT * FROM assistants")
-    print(c.fetchall())
-    c.execute(
-        """INSERT INTO channels(channel_name, channel_id, assistant_name, uuid)
-           VALUES (%s, %s, %s, %s)""",
-        (channel_name, channel_id, assistant_name, user_id),
-    )
-    c.close()
+    try:
+        c.execute(
+            """INSERT INTO assistants(assistant_id, channel_name, channel_id, assistant_name, uuid)
+               VALUES (%s, %s, %s, %s, %s)""",
+            (
+                channel_assistant.assistant.id,
+                channel_name,
+                channel_id,
+                assistant_name,
+                user_id,
+            ),
+        )
+        c.execute(
+            """INSERT INTO channels(channel_name, channel_id, assistant_name, uuid)
+               VALUES (%s, %s, %s, %s)""",
+            (channel_name, channel_id, assistant_name, user_id),
+        )
+        logging.info(
+            f"Assistant {assistant_name} ({channel_assistant.assistant.id}) created for user {user_id}"
+        )
+    except Exception as e:
+        logging.error(
+            f"Database error during assistant creation for user {user_id}, assistant {assistant_name}: {e}"
+        )
+        # Consider rolling back if using transactions
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to save assistant data to the database.",
+        )
+    finally:
+        c.close()
     return channel_assistant.assistant.id
 
 
