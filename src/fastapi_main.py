@@ -639,6 +639,7 @@ async def create_checkout_session(
         raise HTTPException(status_code=400, detail=str(e))
 
 
+# Not used. No subscriptionw now. Just in case for boilerplate for the future
 @app.post("/cancel-subscription")
 async def cancel_subscription(
     payload: dict = Depends(validate_jwt), db=Depends(get_db)
@@ -707,6 +708,7 @@ async def stripe_webhook(request: Request, db=Depends(get_db)):
     return {"status": "success"}
 
 
+# Not used. No subscriptionw now. Just in case for boilerplate for the future
 def update_user_subscription(
     user_id: uuid, subscription_id: str, subscription_type: str, db=Depends(get_db)
 ):
