@@ -59,6 +59,7 @@ ALGORITHM = "HS256"
 client = OpenAI(api_key=OPENAI_KEY)
 
 stripe.api_key = STRIPE_SECRET_KEY
+print(STRIPE_SECRET_KEY)
 
 print(ALGORITHM)
 # def query_supabase_as_user(jwt: str):
@@ -623,7 +624,8 @@ async def create_checkout_session(
     body = await request.json()
     user_uuid = body.get("user_uuid")
     print(user_uuid)
-
+    print(stripe.api_key)
+    print(STRIPE_SECRET_KEY)
     try:
         # Create a one-time payment checkout session
         checkout_session = stripe.checkout.Session.create(
@@ -632,7 +634,8 @@ async def create_checkout_session(
             mode="payment",
             success_url=FRONTEND_URL + "/success?session_id={CHECKOUT_SESSION_ID}",
             cancel_url=FRONTEND_URL + "/cancel",
-            metadata={"user_uuid": user_uuid},
+            metadata={"user_uuid": user_uuid,
+            "project": "youchatchannel"},
         )
         return {"url": checkout_session.url}
     except StripeError as e:
@@ -655,7 +658,8 @@ async def cancel_subscription(
         subscription = stripe.Subscription.modify(
             subscription_id,  # Replace 'sub_xxx' with your actual subscription ID
             metadata={
-                "user_uuid": user_id  # Pass UUID to Stripe session for later use in webhooks
+                "user_uuid": user_id,  # Pass UUID to Stripe session for later use in webhooks  
+                "project": "youchatchannel"  # Pass UUID to Stripe session for later use in webhooks
             },
         )
         cancellation = stripe.Subscription.cancel(
@@ -694,15 +698,34 @@ async def stripe_webhook(request: Request, db=Depends(get_db)):
     # Handle the event
     if event["type"] == "checkout.session.completed":
         session = event["data"]["object"]
-        user_uuid = session["metadata"]["user_uuid"]
+        # --- Added check for project metadata ---
+        metadata = session.get("metadata", {})
+        user_uuid = metadata.get("user_uuid")
+        project = metadata.get("project")
 
-        # Increment remaining_messages by 200 for the user
-        c = db.cursor()
-        c.execute(
-            """UPDATE users SET remaining_messages = remaining_messages + 200 WHERE uuid = %s""",
-            (user_uuid,),
-        )
-        c.close()
+        if project == "youchatchannel" and user_uuid:
+            logging.info(
+                f"Processing checkout.session.completed for user {user_uuid} from project {project}"
+            )
+            # Increment remaining_messages by 200 for the user
+            c = db.cursor()
+            try:
+                c.execute(
+                    """UPDATE users SET remaining_messages = remaining_messages + 200 WHERE uuid = %s""",
+                    (user_uuid,),
+                )
+                logging.info(f"Successfully updated remaining messages for user {user_uuid}")
+            except Exception as e:
+                 logging.error(f"Database error updating messages for user {user_uuid}: {e}")
+                 # Optionally raise an internal server error or handle differently
+            finally:
+                 c.close()
+        elif not user_uuid:
+             logging.warning(f"Received checkout.session.completed event without user_uuid in metadata. Session ID: {session.get('id')}")
+        else:
+            logging.warning(
+                f"Received checkout.session.completed event for project '{project}' (expected 'youchatchannel'). Ignoring. Session ID: {session.get('id')}"
+            )
 
     return {"status": "success"}
 
