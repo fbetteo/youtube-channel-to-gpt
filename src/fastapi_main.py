@@ -82,6 +82,7 @@ origins = [
     "http://127.0.0.1:3000",
     "localhost:3000",
     "http://localhost:3000/",
+    "youchatchannel.com",
 ]
 
 app.add_middleware(
@@ -225,6 +226,7 @@ async def verify_assistant_limit(
     Dependency that checks if the user has reached the maximum assistant limit.
     Raises HTTPException if the limit is exceeded.
     """
+    print("Verifying assistant limit for user %s", payload.get("sub", "anonymous"))
     user_id = payload.get("sub", "anonymous")
     c = db.cursor()
     try:
