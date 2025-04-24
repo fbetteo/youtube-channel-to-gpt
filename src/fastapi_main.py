@@ -59,9 +59,7 @@ ALGORITHM = "HS256"
 client = OpenAI(api_key=OPENAI_KEY)
 
 stripe.api_key = STRIPE_SECRET_KEY
-print(STRIPE_SECRET_KEY)
 
-print(ALGORITHM)
 # def query_supabase_as_user(jwt: str):
 #     # Replace the anon key with the user's JWT
 #     supabase.headers = {
@@ -117,7 +115,7 @@ async def validate_jwt(credentials: HTTPAuthorizationCredentials = Depends(secur
     #     return {"sub": "96933f74-278f-44e5-911b-118fc234dd5f"}
 
     token = credentials.credentials
-    print(token)
+    # print(token)
     if token is None:
         raise HTTPException(status_code=401, detail="JWT token is missing")
 
@@ -626,8 +624,6 @@ async def create_checkout_session(
     body = await request.json()
     user_uuid = body.get("user_uuid")
     print(user_uuid)
-    print(stripe.api_key)
-    print(STRIPE_SECRET_KEY)
     try:
         # Create a one-time payment checkout session
         checkout_session = stripe.checkout.Session.create(
