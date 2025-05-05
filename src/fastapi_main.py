@@ -428,7 +428,7 @@ def create_thread(
 
 
 @app.post("/messages/{assistant_id}/{thread_id}")
-async def create_message(
+async def create_message_and_run(  # Renamed for clarity
     assistant_id: str,
     thread_id: str,
     request: Request,
@@ -436,86 +436,166 @@ async def create_message(
     db=Depends(get_db),
 ):
     user_id = payload.get("sub", "anonymous")
-    print(user_id)
+    print(f"User {user_id} creating message in thread {thread_id}")
     body = await request.json()
     content = body.get("content")
+    if not content:
+        raise HTTPException(status_code=400, detail="Content cannot be empty")
 
     try:
-        # Attempt to send the message
+        # 1. Create the message
         message = client.beta.threads.messages.create(
             thread_id=thread_id, role="user", content=content
         )
+        print(f"Message {message.id} created for thread {thread_id}")
 
-        # Increment the user's message count and decrease remaining messages only if the message is successfully sent
+        # 2. Increment user's message count and decrease remaining (Consider doing this *after* successful run creation)
+        # It might be better to decrement remaining_messages only when the run completes successfully or fails definitively.
+        # For now, keeping it here as per original logic.
         c = db.cursor()
-        c.execute(
-            f"""UPDATE users 
-            SET count_messages = count_messages + 1, 
-                remaining_messages = remaining_messages - 1 
-            WHERE uuid = '{user_id}';"""
-        )
-        c.close()
+        try:
+            c.execute(
+                """UPDATE users
+                   SET count_messages = count_messages + 1,
+                       remaining_messages = remaining_messages - 1
+                   WHERE uuid = %s AND remaining_messages > 0;""",  # Added check for remaining messages
+                (user_id,),
+            )
+            if c.rowcount == 0:
+                # Handle case where user has no remaining messages
+                logging.warning(
+                    f"User {user_id} attempted to send message with 0 remaining messages."
+                )
+                # You might need to delete the created OpenAI message here if you want atomicity
+                # client.beta.threads.messages.delete(thread_id=thread_id, message_id=message.id) # Example
+                raise HTTPException(status_code=403, detail="No remaining messages.")
+            logging.info(f"Decremented message count for user {user_id}")
+        except Exception as db_exc:
+            logging.error(
+                f"DB Error updating message count for user {user_id}: {db_exc}"
+            )
+            # Consider deleting the OpenAI message if the DB update fails
+            raise HTTPException(
+                status_code=500, detail="Failed to update user message count."
+            )
+        finally:
+            c.close()
 
-        run = client.beta.threads.runs.create_and_poll(
+        # 3. Create the run (without polling)
+        run = client.beta.threads.runs.create(
             thread_id=thread_id,
             assistant_id=assistant_id,
             max_completion_tokens=1000,
             additional_instructions="Answer the question as best as you can but don't exceed 750 words approximately. This doesn't mean you have to write 750 words, but if you can answer the question in 100 words, do it. If you need to write 2000 words, cap it to 750 approx.",
         )
+        print(f"Run {run.id} created for thread {thread_id}, status: {run.status}")
+
+        # 4. Return the run_id and thread_id for polling
+        return {"run_id": run.id, "thread_id": thread_id, "status": run.status}
+
+    except HTTPException as http_exc:
+        # Re-raise HTTPExceptions directly
+        raise http_exc
+    except Exception as e:
+        print(f"Error creating message or run for thread {thread_id}: {e}")
+        logging.error(
+            f"Error creating message or run for thread {thread_id} by user {user_id}: {e}",
+            exc_info=True,
+        )
+        raise HTTPException(
+            status_code=500, detail="Failed to process message or start run."
+        )
+
+
+@app.get("/runs/{thread_id}/{run_id}")
+async def get_run_status(
+    thread_id: str,
+    run_id: str,
+    payload: dict = Depends(validate_jwt),  # Keep authentication
+):
+    user_id = payload.get("sub", "anonymous")  # Optional: Log which user is checking
+    print(f"User {user_id} checking status for run {run_id} in thread {thread_id}")
+    try:
+        run = client.beta.threads.runs.retrieve(thread_id=thread_id, run_id=run_id)
 
         if run.status == "completed":
-            messages = client.beta.threads.messages.list(thread_id=thread_id)
+            # If completed, fetch ALL messages in the thread without filtering
+            messages = client.beta.threads.messages.list(
+                thread_id=thread_id, order="asc"
+            )  # Use order="asc" to get oldest first
             clean_messages = []
-            for i, msg in enumerate(messages.data[::-1]):
-                content = msg.content[0].text.value
-                annotations = msg.content[0].text.annotations
 
-                # Refine the content by replacing source references
-                new_content = refine_sources_in_response(content, annotations)
-                clean_messages.append({"id": i, "role": msg.role, "text": new_content})
-            print(clean_messages)
-            return clean_messages
+            # Include ALL messages in the thread without filtering by run_id
+            for i, msg in enumerate(messages.data):  # Iterate in ascending order
+                content_block = msg.content[0]
+                if content_block.type == "text":
+                    content = content_block.text.value
+                    annotations = content_block.text.annotations
+                    # Refine the content by replacing source references
+                    new_content = refine_sources_in_response(content, annotations)
+                    clean_messages.append(
+                        {"id": msg.id, "role": msg.role, "text": new_content}
+                    )  # Use message ID
+
+            print(f"Run {run_id} completed. Returning all messages in thread.")
+            return {"status": run.status, "messages": clean_messages}
+        elif run.status in ["failed", "cancelled", "expired"]:
+            print(
+                f"Run {run_id} ended with status: {run.status}. Error: {run.last_error}"
+            )
+            # Optionally, you could refund the message credit here if the run failed
+            # Add logic to increment remaining_messages back if needed
+            error_message = (
+                str(run.last_error)
+                if run.last_error
+                else "Run failed or was cancelled."
+            )
+            return {"status": run.status, "error": error_message}
         else:
-            print(run.status)
+            # Still in progress (queued, in_progress, requires_action, cancelling)
+            print(f"Run {run_id} status: {run.status}")
+            return {"status": run.status}
+
     except Exception as e:
-        print(f"Error sending message: {e}")
-        raise HTTPException(status_code=500, detail="Failed to send message")
-
-
-@app.post("/runs/{user_id}/{assistant_name}/{thread_id}")
-# @load_assistant
-def create_run(
-    user_id: int, assistant_name: str, thread_id: str, cache=Depends(get_cache)
-):
-    channel_assistant = cache[user_id][assistant_name]["assistant"]
-    channel_assistant.create_run(thread_id)
+        print(f"Error retrieving status for run {run_id}: {e}")
+        logging.error(
+            f"Error retrieving status for run {run_id} by user {user_id}: {e}",
+            exc_info=True,
+        )
+        # Don't expose detailed errors unless necessary
+        raise HTTPException(status_code=500, detail="Failed to retrieve run status.")
 
 
 @app.get("/messages/{assistant_id}/{thread_id}")
-# @load_assistant_returning_object
 async def get_messages(
     assistant_id: str, thread_id: str, payload: dict = Depends(validate_jwt)
 ):
     user_id = payload.get("sub", "anonymous")
-    print(user_id)
-    messages = client.beta.threads.messages.list(thread_id=thread_id)
-    clean_messages = []
-    for i, msg in enumerate(messages.data[::-1]):
-        # clean_messages.append(
-        #     {"id": i, "role": msg.role, "text": msg.content[0].text.value}
-        # )
-        content = msg.content[0].text.value
-        annotations = msg.content[0].text.annotations
+    print(f"User {user_id} fetching all messages for thread {thread_id}")
+    try:
+        # Fetch all messages for the thread, ordered chronologically
+        messages = client.beta.threads.messages.list(thread_id=thread_id, order="asc")
+        clean_messages = []
+        for msg in messages.data:  # Iterate in ascending order
+            content_block = msg.content[0]
+            if content_block.type == "text":
+                content = content_block.text.value
+                annotations = content_block.text.annotations
+                # Refine the content by replacing source references
+                new_content = refine_sources_in_response(content, annotations)
+                clean_messages.append(
+                    {"id": msg.id, "role": msg.role, "text": new_content}
+                )  # Use message ID
 
-        # Refine the content by replacing source references
-        new_content = refine_sources_in_response(content, annotations)
-        clean_messages.append({"id": i, "role": msg.role, "text": new_content})
-    print(clean_messages)
-    return clean_messages
-    # messages_list = await channel_assistant.get_clean_messages(thread_id)
-    # for msg in messages_list:
-    #     output.append({"id": msg[0], "role": msg[1], "text": msg[2]})
-    # return output
+        print(f"Returning all messages for thread {thread_id}")
+        return clean_messages
+    except Exception as e:
+        print(f"Error retrieving messages for thread {thread_id}: {e}")
+        logging.error(
+            f"Error retrieving messages for thread {thread_id} by user {user_id}: {e}",
+            exc_info=True,
+        )
+        raise HTTPException(status_code=500, detail="Failed to retrieve messages.")
 
 
 # no enteindo por que tengo que poner esa llave al final despues de assistant name
@@ -632,8 +712,7 @@ async def create_checkout_session(
             mode="payment",
             success_url=FRONTEND_URL + "/success?session_id={CHECKOUT_SESSION_ID}",
             cancel_url=FRONTEND_URL + "/cancel",
-            metadata={"user_uuid": user_uuid,
-            "project": "youchatchannel"},
+            metadata={"user_uuid": user_uuid, "project": "youchatchannel"},
         )
         return {"url": checkout_session.url}
     except StripeError as e:
@@ -657,8 +736,8 @@ async def cancel_subscription(
         subscription = stripe.Subscription.modify(
             subscription_id,  # Replace 'sub_xxx' with your actual subscription ID
             metadata={
-                "user_uuid": user_id,  # Pass UUID to Stripe session for later use in webhooks  
-                "project": "youchatchannel"  # Pass UUID to Stripe session for later use in webhooks
+                "user_uuid": user_id,  # Pass UUID to Stripe session for later use in webhooks
+                "project": "youchatchannel",  # Pass UUID to Stripe session for later use in webhooks
             },
         )
         cancellation = stripe.Subscription.cancel(
@@ -713,14 +792,20 @@ async def stripe_webhook(request: Request, db=Depends(get_db)):
                     """UPDATE users SET remaining_messages = remaining_messages + 200 WHERE uuid = %s""",
                     (user_uuid,),
                 )
-                logging.info(f"Successfully updated remaining messages for user {user_uuid}")
+                logging.info(
+                    f"Successfully updated remaining messages for user {user_uuid}"
+                )
             except Exception as e:
-                 logging.error(f"Database error updating messages for user {user_uuid}: {e}")
-                 # Optionally raise an internal server error or handle differently
+                logging.error(
+                    f"Database error updating messages for user {user_uuid}: {e}"
+                )
+                # Optionally raise an internal server error or handle differently
             finally:
-                 c.close()
+                c.close()
         elif not user_uuid:
-             logging.warning(f"Received checkout.session.completed event without user_uuid in metadata. Session ID: {session.get('id')}")
+            logging.warning(
+                f"Received checkout.session.completed event without user_uuid in metadata. Session ID: {session.get('id')}"
+            )
         else:
             logging.warning(
                 f"Received checkout.session.completed event for project '{project}' (expected 'youchatchannel'). Ignoring. Session ID: {session.get('id')}"
