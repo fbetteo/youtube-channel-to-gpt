@@ -49,7 +49,7 @@ FRONTEND_URL = os.getenv("FRONTEND_URL")
 
 supabase: Client = create_client(url, anon_key)
 
-STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY_TEST")
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY_LIVE")
 OPENAI_KEY = os.getenv("OPENAI_API_KEY")
 MAX_ASSISTANTS_PER_USER = int(os.getenv("MAX_ASSISTANTS_PER_USER", 5))
 
@@ -708,7 +708,7 @@ async def create_checkout_session(
         # Create a one-time payment checkout session
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=["card"],
-            line_items=[{"price": "price_1RBltfCakpeOUC7BHetgN3x9", "quantity": 1}],
+            line_items=[{"price": "price_1RBlhvCakpeOUC7BHkbUVA0a", "quantity": 1}],
             mode="payment",
             success_url=FRONTEND_URL + "/success?session_id={CHECKOUT_SESSION_ID}",
             cancel_url=FRONTEND_URL + "/cancel",
@@ -750,7 +750,7 @@ async def cancel_subscription(
 
 # Stripe API setup
 WEBHOOK_SECRET = os.getenv(
-    "STRIPE_WEBHOOK_SECRET_TEST"
+    "STRIPE_WEBHOOK_SECRET_LIVE"
 )  # Set this to your Stripe webhook secret
 
 
