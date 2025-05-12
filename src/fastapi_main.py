@@ -278,7 +278,7 @@ async def create_assistant(
         # Note: get_channel_transcript itself uses Depends(get_cache),
         # so passing cache explicitly might be redundant if it's refactored
         # to use Depends internally. For now, keep passing it if needed.
-        get_channel_transcript(assistant_name, channel_name, 5, user_id, cache)
+        get_channel_transcript(assistant_name, channel_name, 30, user_id, cache)
     except HTTPException as e:
         # Re-raise the HTTPException from get_channel_transcript
         raise e
