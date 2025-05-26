@@ -658,7 +658,8 @@ async def get_user_profile(payload: dict = Depends(validate_jwt)):
 
 @app.post("/download/transcript")
 async def download_transcript_by_url(
-    request: DownloadURLRequest,
+    request: DownloadURLRequest,  # From JSON body: {"youtube_url": "...", "include_timestamps": false}
+    fastapi_request: Request,  # From HTTP metadata: client IP, headers, etc.
     user_info: Dict = Depends(get_user_or_anonymous),
     session: Dict = Depends(get_user_session),
 ):
@@ -685,7 +686,7 @@ async def download_transcript_by_url(
         logger.info(f"Authenticated transcript download for user {user_id}")
     else:
         # Apply rate limiting for anonymous users
-        rate_limit_info = check_anonymous_rate_limit(request)
+        rate_limit_info = check_anonymous_rate_limit(fastapi_request)
         logger.info(
             f"Anonymous transcript download from {rate_limit_info['client_ip']} "
             f"({rate_limit_info['remaining_requests']} requests remaining)"
@@ -752,7 +753,8 @@ async def download_transcript_by_url(
 
 @app.post("/download/transcript/raw")
 async def download_transcript_raw(
-    request: DownloadURLRequest,
+    request: DownloadURLRequest,  # From JSON body: {"youtube_url": "...", "include_timestamps": false}
+    fastapi_request: Request,  # From HTTP metadata: client IP, headers, etc.
     user_info: Dict = Depends(get_user_or_anonymous),
     session: Dict = Depends(get_user_session),
 ):
@@ -781,7 +783,7 @@ async def download_transcript_raw(
         logger.info(f"Authenticated raw transcript download for user {user_id}")
     else:
         # Apply rate limiting for anonymous users
-        rate_limit_info = check_anonymous_rate_limit(request)
+        rate_limit_info = check_anonymous_rate_limit(fastapi_request)
         logger.info(
             f"Anonymous raw transcript download from {rate_limit_info['client_ip']} "
             f"({rate_limit_info['remaining_requests']} requests remaining)"
@@ -926,11 +928,9 @@ async def start_channel_transcript_download(
         job_id = await youtube_service.start_channel_transcript_download(
             channel_name,
             max_results,
-            session_id,
+            # session_id,
             user_id,  # Pass user_id for credit deduction
-        )
-
-        # Return job ID for polling status
+        )  # Return job ID for polling status
         return {
             "job_id": job_id,
             "status": "processing",
@@ -939,8 +939,9 @@ async def start_channel_transcript_download(
             ],
             "channel_name": channel_name,
             "user_id": user_id,
-            "credits_will_be_deducted": max_results,
-            "message": "Transcript retrieval started. Credits will be deducted for each transcript attempt. Use the /channel/download/status endpoint to check progress.",
+            "credits_reserved": max_results,
+            "user_credits_at_start": user_credits,
+            "message": f"Transcript retrieval started. Credits will be deducted per video attempt (1 credit each). You have {user_credits} credits available. Use the /channel/download/status endpoint to check progress and credit usage.",
         }
 
     except ValueError as e:

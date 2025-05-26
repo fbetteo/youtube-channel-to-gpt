@@ -2,15 +2,16 @@
 """
 YouTube Service - Service layer for YouTube transcript downloading and processing
 """
+import asyncio
+import io
+import logging
 import os
 import re
-import uuid
-import logging
-import asyncio
+import tempfile
 import time
-from typing import Dict, List, Optional, Any, Tuple
-import io
+import uuid
 import zipfile
+from typing import Dict, List, Optional, Any, Tuple
 from pathlib import Path
 
 from googleapiclient.discovery import build
@@ -265,7 +266,7 @@ async def get_channel_info(channel_name: str) -> Dict[str, Any]:
 
 
 async def get_channel_videos(
-    channel_id: str, max_results: int = 30
+    channel_id: str, max_results: int = None
 ) -> List[Dict[str, str]]:
     """
     Get a list of videos from a YouTube channel.
@@ -291,7 +292,7 @@ async def get_channel_videos(
                     channelId=channel_id,
                     type="video",
                     videoDuration="medium",
-                    maxResults=max_results // 2,
+                    # maxResults=max_results // 2,
                     order="date",
                 )
                 .execute()
@@ -305,20 +306,40 @@ async def get_channel_videos(
                     channelId=channel_id,
                     type="video",
                     videoDuration="long",
-                    maxResults=max_results // 2,
+                    # maxResults=max_results // 2,
                     order="date",
                 )
                 .execute()
             )
 
-            return medium_videos, long_videos
+            # Get videos with long duration
+            short_videos = (
+                youtube.search()
+                .list(
+                    part="snippet",
+                    channelId=channel_id,
+                    type="video",
+                    videoDuration="short",
+                    # maxResults=max_results // 2,
+                    order="date",
+                )
+                .execute()
+            )
+
+            return medium_videos, long_videos, short_videos
 
         # Run the blocking API call in a thread pool
-        medium_videos, long_videos = await asyncio.to_thread(_fetch_channel_videos)
+        medium_videos, long_videos, short_videos = await asyncio.to_thread(
+            _fetch_channel_videos
+        )
 
         # Combine and process the results
         video_data = []
-        for video in medium_videos.get("items", []) + long_videos.get("items", []):
+        for video in (
+            medium_videos.get("items", [])
+            + long_videos.get("items", [])
+            + short_videos.get("items", [])
+        ):
             if video["id"]["kind"] == "youtube#video":
                 video_id = video["id"]["videoId"]
                 video_title = video["snippet"]["title"]
@@ -513,9 +534,7 @@ async def start_channel_transcript_download(
             raise ValueError(f"No videos found for channel: {channel_name}")
 
         # Create a unique job ID
-        job_id = str(uuid.uuid4())
-
-        # Initialize job entry in the tracking dictionary
+        job_id = str(uuid.uuid4())  # Initialize job entry in the tracking dictionary
         channel_download_jobs[job_id] = {
             "status": "processing",
             "channel_name": channel_name,
@@ -528,6 +547,9 @@ async def start_channel_transcript_download(
             "videos": videos,
             "start_time": time.time(),
             "user_id": user_id,
+            "credits_deducted": 0,
+            "initial_user_credits": None,  # Will be set when first credit is deducted
+            "credits_reserved": len(videos),  # Total credits that will be deducted
         }
 
         # Start the background task to process transcripts
@@ -590,7 +612,7 @@ async def download_channel_transcripts_task(job_id: str) -> None:
 async def process_single_video(job_id: str, video_id: str, output_dir: str) -> None:
     """
     Process a single video for transcript download.
-    Updates job statistics based on success or failure.
+    Deducts 1 credit per video attempt and updates job statistics.
 
     Args:
         job_id: The job identifier
@@ -598,12 +620,49 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
         output_dir: Directory to save transcript files
     """
     if job_id not in channel_download_jobs:
+        logger.error(f"Job {job_id} not found for video {video_id}")
         return
 
     job = channel_download_jobs[job_id]
+    user_id = job["user_id"]
     video_dir = os.path.join(
         output_dir, video_id
     )  # Use video ID as subdirectory for isolation
+
+    # Deduct credit before attempting transcript download
+    try:
+        # Import CreditManager here to avoid circular imports
+        from transcript_api import CreditManager
+
+        # Store initial credits on first deduction
+        if job["initial_user_credits"] is None:
+            job["initial_user_credits"] = CreditManager.get_user_credits(user_id)
+            logger.info(
+                f"Job {job_id}: User {user_id} started with {job['initial_user_credits']} credits"
+            )
+
+        # Deduct 1 credit for this video attempt
+        if CreditManager.deduct_credit(user_id):
+            job["credits_deducted"] += 1
+            logger.info(
+                f"Job {job_id}: Deducted credit for video {video_id}. Total deducted: {job['credits_deducted']}"
+            )
+        else:
+            # This shouldn't happen since we checked upfront, but log it
+            logger.error(
+                f"Job {job_id}: Failed to deduct credit for video {video_id} (insufficient credits)"
+            )
+            job["failed_count"] += 1
+            job["processed_count"] += 1
+            return
+
+    except Exception as e:
+        logger.error(
+            f"Job {job_id}: Error deducting credit for video {video_id}: {str(e)}"
+        )
+        job["failed_count"] += 1
+        job["processed_count"] += 1
+        return
 
     try:
         # Create a separate subdirectory for each video to isolate failures
@@ -651,7 +710,7 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
         job_id: The job identifier
 
     Returns:
-        Dictionary with job status information
+        Dictionary with job status information including credit usage
 
     Raises:
         ValueError: If job ID is not found
@@ -666,8 +725,17 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
     processed = job["processed_count"]
     progress = (processed / total * 100) if total > 0 else 0
 
-    # Return relevant status information
-    return {
+    # Get current user credits for reference
+    current_credits = None
+    try:
+        from transcript_api import CreditManager
+
+        current_credits = CreditManager.get_user_credits(job["user_id"])
+    except Exception as e:
+        logger.warning(f"Could not get current credits for job {job_id}: {str(e)}")
+
+    # Return relevant status information including credit tracking
+    status_info = {
         "status": job["status"],
         "channel_name": job["channel_name"],
         "total_videos": total,
@@ -678,7 +746,20 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
         "start_time": job["start_time"],
         "end_time": job.get("end_time"),
         "duration": job.get("duration"),
+        "credits_deducted": job["credits_deducted"],
+        "credits_reserved": job["credits_reserved"],
+        "initial_user_credits": job["initial_user_credits"],
+        "current_user_credits": current_credits,
     }
+
+    # Add credit usage summary
+    if job["initial_user_credits"] is not None:
+        status_info["credits_used_this_job"] = job["credits_deducted"]
+        status_info["credits_remaining_for_job"] = max(
+            0, job["credits_reserved"] - job["credits_deducted"]
+        )
+
+    return status_info
 
 
 async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:
