@@ -41,6 +41,7 @@ try:
             proxy_password=settings.webshare_proxy_password,
         )
         ytt_api = YouTubeTranscriptApi(proxy_config=proxy_config)
+        logger.info("YouTube Transcript API initialized successfully with proxy")
     else:
         ytt_api = YouTubeTranscriptApi()
     logger.info("YouTube Transcript API initialized successfully")

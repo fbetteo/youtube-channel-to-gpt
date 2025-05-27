@@ -10,6 +10,15 @@ import time
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
 
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    handlers=[logging.StreamHandler()],
+)
+logger = logging.getLogger(__name__)
+
 from typing import Dict, Any, List, Optional
 import io
 import zipfile
@@ -45,13 +54,7 @@ from rate_limiter import transcript_limiter
 # Using the Pydantic v2 compatible settings
 from config_v2 import settings
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    handlers=[logging.StreamHandler()],
-)
-logger = logging.getLogger(__name__)
+
 
 # Stripe configuration
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY_TEST_TRANSCRIPTS")
