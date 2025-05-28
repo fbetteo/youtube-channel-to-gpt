@@ -365,7 +365,7 @@ def get_user_or_anonymous(
 class DownloadURLRequest(BaseModel):
     youtube_url: str = Field(..., description="YouTube video URL or ID")
     include_timestamps: bool = Field(
-        False, description="Whether to include timestamps in the transcript"
+        True, description="Whether to include timestamps in the transcript"
     )
 
 
