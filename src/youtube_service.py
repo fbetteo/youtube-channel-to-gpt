@@ -33,22 +33,23 @@ except Exception as e:
     # Fallback to None, will re-attempt connection when needed
     youtube = None
 
-# Initialize YouTube Transcript API with proxy configuration if credentials are provided
-try:
+# Remove global ytt_api initialization, only keep YouTube API client
+def get_ytt_api() -> YouTubeTranscriptApi:
+    """
+    Create a new YouTubeTranscriptApi instance with proxy config if needed.
+    Returns:
+        YouTubeTranscriptApi instance
+    """
     if settings.webshare_proxy_username and settings.webshare_proxy_password:
         proxy_config = WebshareProxyConfig(
             proxy_username=settings.webshare_proxy_username,
             proxy_password=settings.webshare_proxy_password,
             retries_when_blocked=1
         )
-        ytt_api = YouTubeTranscriptApi(proxy_config=proxy_config)
-        logger.info("YouTube Transcript API initialized successfully with proxy")
+        return YouTubeTranscriptApi(proxy_config=proxy_config)
     else:
-        ytt_api = YouTubeTranscriptApi()
-    logger.info("YouTube Transcript API initialized successfully")
-except Exception as e:
-    logger.error(f"Failed to initialize YouTube Transcript API: {str(e)}")
-    # We'll handle this in the function calls
+        return YouTubeTranscriptApi()
+
 
 # Dictionary to track channel download jobs
 channel_download_jobs: Dict[str, Dict[str, Any]] = {}
@@ -284,7 +285,6 @@ async def get_channel_videos(
         ValueError: If channel ID is invalid or no videos found
     """
     try:
-
         def _fetch_channel_videos():
             # Get videos with medium duration
             medium_videos = (
@@ -294,7 +294,6 @@ async def get_channel_videos(
                     channelId=channel_id,
                     type="video",
                     videoDuration="medium",
-                    # maxResults=max_results // 2,
                     order="date",
                 )
                 .execute()
@@ -308,7 +307,6 @@ async def get_channel_videos(
                     channelId=channel_id,
                     type="video",
                     videoDuration="long",
-                    # maxResults=max_results // 2,
                     order="date",
                 )
                 .execute()
@@ -322,7 +320,6 @@ async def get_channel_videos(
                     channelId=channel_id,
                     type="video",
                     videoDuration="short",
-                    # maxResults=max_results // 2,
                     order="date",
                 )
                 .execute()
@@ -335,7 +332,12 @@ async def get_channel_videos(
             _fetch_channel_videos
         )
 
-        # Combine and process the results
+        logger.info(f"Found {len(medium_videos.get('items', []))} medium videos, "
+                    f"{len(long_videos.get('items', []))} long videos, "
+                    f"{len(short_videos.get('items', []))} short videos for channel {channel_id}")
+
+        # Combine and process the results, deduplicate by video ID
+        seen_ids = set()
         video_data = []
         for video in (
             medium_videos.get("items", [])
@@ -344,6 +346,9 @@ async def get_channel_videos(
         ):
             if video["id"]["kind"] == "youtube#video":
                 video_id = video["id"]["videoId"]
+                if video_id in seen_ids:
+                    continue
+                seen_ids.add(video_id)
                 video_title = video["snippet"]["title"]
                 video_data.append(
                     {
@@ -353,8 +358,15 @@ async def get_channel_videos(
                     }
                 )
 
+        logger.info(f"Total unique videos found: {len(video_data)} for channel {channel_id}")
+        if max_results is not None and len(video_data) > max_results:
+            logger.info(f"Limiting videos to max_results={max_results}")
         # Limit to max_results
         video_data = video_data[:max_results]
+
+        logger.info(f"Final list of videos to download ({len(video_data)}):")
+        for v in video_data:
+            logger.info(f"  - {v['id']}: {v['title']}")
 
         if not video_data:
             logger.warning(f"No videos found for channel: {channel_id}")
@@ -387,12 +399,14 @@ async def get_single_transcript(
     logger.info(f"Starting transcript fetch for video {video_id}")
 
     try:
-        # This is a blocking call, use asyncio.to_thread with retry
         fetch_start = time.time()
         try:
+            def fetch_transcript():
+                ytt_api = get_ytt_api()
+                return ytt_api.fetch(video_id)
             # Use retry operation to handle transient network issues
             fetched_transcript = await retry_operation(
-                lambda: asyncio.to_thread(ytt_api.fetch, video_id),
+                lambda: asyncio.to_thread(fetch_transcript),
                 max_retries=2,  # Try up to 3 times total (initial + 2 retries)
                 retry_delay=1.0,
             )
@@ -532,8 +546,15 @@ async def start_channel_transcript_download(
         # Get list of videos from the channel
         videos = await get_channel_videos(channel_id, max_results)
 
+        logger.info(f"Preparing to download {len(videos)} videos for channel '{channel_name}' (ID: {channel_id})")
         if not videos:
+            logger.warning(f"No videos found for channel: {channel_name}")
             raise ValueError(f"No videos found for channel: {channel_name}")
+
+        # Log the full list of videos to be downloaded
+        logger.info("Videos to be downloaded:")
+        for v in videos:
+            logger.info(f"  - {v['id']}: {v['title']}")
 
         # Create a unique job ID
         job_id = str(uuid.uuid4())  # Initialize job entry in the tracking dictionary
@@ -555,7 +576,6 @@ async def start_channel_transcript_download(
         }
 
         # Start the background task to process transcripts
-        # Note: This is where the actual download will happen in the background
         asyncio.create_task(download_channel_transcripts_task(job_id))
 
         return job_id
