@@ -403,6 +403,19 @@ class PaymentSuccessResponse(BaseModel):
     total_credits: int
 
 
+class VideoInfo(BaseModel):
+    id: str
+    title: str
+    publishedAt: str = None
+    duration: str = None
+    url: str
+
+
+class SelectedVideosRequest(BaseModel):
+    channel_name: str = Field(..., description="YouTube channel name or ID")
+    videos: List[VideoInfo] = Field(..., description="List of selected videos to download transcripts for")
+
+
 def verify_api_key(request: Request):
     """Verify API key for authenticated endpoints"""
     api_key = request.headers.get("X-API-Key")
@@ -989,6 +1002,96 @@ async def list_channel_videos(
         logger.error(f"Error listing channel videos: {str(e)}", exc_info=True)
         raise HTTPException(
             status_code=500, detail=f"Failed to list channel videos: {str(e)}"
+        )
+
+
+@app.get("/channel/{channel_name}/all-videos")
+async def list_all_channel_videos(
+    channel_name: str,
+    # payload: dict = Depends(validate_jwt),
+):
+    """
+    Get all videos for a channel with pagination.
+    Returns a list of videos with metadata for selection in the frontend.
+    """
+    try:
+        channel_info = await youtube_service.get_channel_info(channel_name)
+        channel_id = channel_info["channelId"]
+        
+        # Use the paginated function to get all videos
+        videos = await youtube_service.get_all_channel_videos(channel_id)
+        
+        # Log the result to help debug
+        logger.info(f"Returning {len(videos)} videos for channel {channel_name} (ID: {channel_id})")
+        for i, video in enumerate(videos[:5]):
+            logger.info(f"Video {i+1}: {video['id']} - {video['title']}")
+        
+        return videos
+    except ValueError as e:
+        logger.error(f"Invalid channel: {str(e)}")
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        logger.error(f"Error getting all videos: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=500, detail=f"Failed to get videos: {str(e)}"
+        )
+
+
+@app.post("/channel/download/selected")
+async def download_selected_videos(
+    request: SelectedVideosRequest,
+    payload: dict = Depends(validate_jwt),
+    session: Dict = Depends(get_user_session),
+):
+    """
+    Start asynchronous download of transcripts for selected videos from a YouTube channel.
+    Returns a job ID that can be used to check progress and retrieve results.
+
+    REQUIRES AUTHENTICATION: This endpoint requires sufficient credits for the selected videos.
+    Each video transcript attempt will deduct 1 credit.
+    """
+    channel_name = request.channel_name
+    videos = request.videos
+    session_id = session["id"]
+    user_id = get_user_id_from_payload(payload)
+    
+    # Count number of videos to download
+    num_videos = len(videos)
+
+    try:
+        # Check if user has sufficient credits for the requested videos
+        user_credits = CreditManager.get_user_credits(user_id)
+        if user_credits < num_videos:
+            raise HTTPException(
+                status_code=status.HTTP_402_PAYMENT_REQUIRED,
+                detail=f"Insufficient credits. You need {num_videos} credits but only have {user_credits}. Please purchase more credits.",
+            )
+
+        # Start asynchronous transcript retrieval for selected videos
+        job_id = await youtube_service.start_selected_videos_transcript_download(
+            channel_name,
+            videos,
+            user_id,
+        )
+        
+        return {
+            "job_id": job_id,
+            "status": "processing",
+            "total_videos": num_videos,
+            "channel_name": channel_name,
+            "user_id": user_id,
+            "credits_reserved": num_videos,
+            "user_credits_at_start": user_credits,
+            "message": f"Transcript retrieval started for {num_videos} selected videos. Credits will be deducted per video attempt (1 credit each). You have {user_credits} credits available. Use the /channel/download/status endpoint to check progress and credit usage.",
+        }
+
+    except ValueError as e:
+        logger.error(f"Invalid request: {str(e)}")
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        logger.error(f"Error starting transcript download: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=500, detail=f"Failed to start transcript download: {str(e)}"
         )
 
 
