@@ -96,7 +96,7 @@ watchfiles = "1.0.4"
 websockets = "14.2"
 wheel = "0.45.1"
 yarl = "1.18.3"
-youtube-transcript-api = "1.0.3"
+youtube-transcript-api = "^1.1.0"
 
 
 [build-system]
