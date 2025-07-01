@@ -57,8 +57,8 @@ from config_v2 import settings
 
 
 # Stripe configuration
-STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY_TEST_TRANSCRIPTS")
-STRIPE_WEBHOOK_SECRET = "whsec_9f0dc3fe5a15ee055612e9136675ff6e3c5260e350a32841a7fbfff379e6c922"  # os.getenv("STRIPE_WEBHOOK_SECRET")
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY_LIVE")
+STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET_TRANSCRIPTS")
 stripe.api_key = STRIPE_SECRET_KEY
 
 # JWT Configuration for Supabase
@@ -68,9 +68,9 @@ FRONTEND_URL = os.getenv("FRONTEND_URL_YOUTUBE_TRANSCRIPTS", "http://localhost:3
 
 # Price ID mapping for Stripe products
 PRICE_CREDITS_MAP = {
-    "price_1RS4JtCakpeOUC7BNBus3Ns2": 400,  # 400 credits
-    "price_1RS4KSCakpeOUC7B8DnlDcIS": 1000,  # 1000 credits
-    "price_1RS4QeCakpeOUC7Bvh7kNfd1": 3000,  # 3000 credits
+    "price_1Rg9SQCakpeOUC7BAhOPV6BB": 400,  # 400 credits
+    "price_1Rg9SQCakpeOUC7BeHCiO38e": 1000,  # 1000 credits
+    "price_1Rg9SQCakpeOUC7BooNktUiI": 3000,  # 3000 credits
 }
 
 # Security setup
