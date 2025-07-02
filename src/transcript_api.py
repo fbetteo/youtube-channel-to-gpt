@@ -55,7 +55,6 @@ from rate_limiter import transcript_limiter
 from config_v2 import settings
 
 
-
 # Stripe configuration
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY_LIVE")
 STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET_TRANSCRIPTS")
@@ -413,7 +412,9 @@ class VideoInfo(BaseModel):
 
 class SelectedVideosRequest(BaseModel):
     channel_name: str = Field(..., description="YouTube channel name or ID")
-    videos: List[VideoInfo] = Field(..., description="List of selected videos to download transcripts for")
+    videos: List[VideoInfo] = Field(
+        ..., description="List of selected videos to download transcripts for"
+    )
 
 
 def verify_api_key(request: Request):
@@ -723,8 +724,10 @@ async def download_transcript_by_url(
 
         # Get transcript using the new service
         transcript_start = time.time()
-        transcript_text, file_path = await youtube_service.get_single_transcript(
-            video_id, user_dir, request.include_timestamps
+        transcript_text, file_path, metadata = (
+            await youtube_service.get_single_transcript(
+                video_id, user_dir, request.include_timestamps
+            )
         )
         transcript_end = time.time()
         logger.info(
@@ -748,6 +751,13 @@ async def download_transcript_by_url(
             media_type="text/plain",
             filename=f"{video_id}_transcript.txt",
         )
+        response.headers["X-Transcript-Language"] = metadata.get(
+            "transcript_language", "unknown"
+        )
+        response.headers["X-Transcript-Type"] = metadata.get(
+            "transcript_type", "unknown"
+        )
+
         response_end = time.time()
         logger.info(f"Response preparation took {response_end - response_start:.3f}s")
 
@@ -822,7 +832,9 @@ async def download_transcript_raw(
                     include_timestamps=request.include_timestamps,
                 )
             )
-            transcript_text, _ = await asyncio.wait_for(transcript_task, timeout=30.0)
+            transcript_text, _, metadata = await asyncio.wait_for(
+                transcript_task, timeout=30.0
+            )
         except asyncio.TimeoutError:
             logger.error(
                 f"Transcript retrieval timed out for {video_id} after 30 seconds"
@@ -839,6 +851,12 @@ async def download_transcript_raw(
 
         response_start = time.time()
         response = PlainTextResponse(content=transcript_text)
+        response.headers["X-Transcript-Language"] = metadata.get(
+            "transcript_language", "unknown"
+        )
+        response.headers["X-Transcript-Type"] = metadata.get(
+            "transcript_type", "unknown"
+        )
         response_end = time.time()
         logger.info(
             f"Raw response preparation took {response_end - response_start:.3f}s"
@@ -1017,24 +1035,24 @@ async def list_all_channel_videos(
     try:
         channel_info = await youtube_service.get_channel_info(channel_name)
         channel_id = channel_info["channelId"]
-        
+
         # Use the paginated function to get all videos
         videos = await youtube_service.get_all_channel_videos(channel_id)
-        
+
         # Log the result to help debug
-        logger.info(f"Returning {len(videos)} videos for channel {channel_name} (ID: {channel_id})")
+        logger.info(
+            f"Returning {len(videos)} videos for channel {channel_name} (ID: {channel_id})"
+        )
         for i, video in enumerate(videos[:5]):
             logger.info(f"Video {i+1}: {video['id']} - {video['title']}")
-        
+
         return videos
     except ValueError as e:
         logger.error(f"Invalid channel: {str(e)}")
         raise HTTPException(status_code=404, detail=str(e))
     except Exception as e:
         logger.error(f"Error getting all videos: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail=f"Failed to get videos: {str(e)}"
-        )
+        raise HTTPException(status_code=500, detail=f"Failed to get videos: {str(e)}")
 
 
 @app.post("/channel/download/selected")
@@ -1054,7 +1072,7 @@ async def download_selected_videos(
     videos = request.videos
     session_id = session["id"]
     user_id = get_user_id_from_payload(payload)
-    
+
     # Count number of videos to download
     num_videos = len(videos)
 
@@ -1073,7 +1091,7 @@ async def download_selected_videos(
             videos,
             user_id,
         )
-        
+
         return {
             "job_id": job_id,
             "status": "processing",
@@ -1140,7 +1158,11 @@ async def download_transcript_results(
     """
     try:
         # Create a ZIP file with all transcripts for the job
+        logger.info(f"Downloading results for job {job_id}")
         zip_buffer = await youtube_service.create_transcript_zip(job_id)
+        logger.info(
+            f"Created ZIP file for job {job_id} with size {len(zip_buffer.getvalue())} bytes"
+        )
 
         # Get a safe channel name for the filename
         safe_channel_name = youtube_service.get_safe_channel_name(job_id)

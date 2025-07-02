@@ -33,6 +33,7 @@ except Exception as e:
     # Fallback to None, will re-attempt connection when needed
     youtube = None
 
+
 # Remove global ytt_api initialization, only keep YouTube API client
 def get_ytt_api() -> YouTubeTranscriptApi:
     """
@@ -44,7 +45,7 @@ def get_ytt_api() -> YouTubeTranscriptApi:
         proxy_config = WebshareProxyConfig(
             proxy_username=settings.webshare_proxy_username,
             proxy_password=settings.webshare_proxy_password,
-            retries_when_blocked=1
+            retries_when_blocked=1,
         )
         return YouTubeTranscriptApi(proxy_config=proxy_config)
     else:
@@ -230,22 +231,26 @@ async def get_channel_info(channel_name: str) -> Dict[str, Any]:
                 # Use a more specific query to get better results
                 search_query = f'"{channel_name}" channel'
                 search_request = youtube.search().list(
-                    part="snippet", 
+                    part="snippet",
                     q=search_query,
-                    type="channel", 
-                    maxResults=5  # Get more results to find best match
+                    type="channel",
+                    maxResults=5,  # Get more results to find best match
                 )
                 search_response = search_request.execute()
-                
+
                 if not search_response.get("items"):
                     raise ValueError(f"No channel found with name: {channel_name}")
-                
+
                 # Try to find exact or closest match to prevent wrong channel selection
                 best_match = None
-                logger.info(f"Channel search for '{channel_name}' returned {len(search_response['items'])} results")
+                logger.info(
+                    f"Channel search for '{channel_name}' returned {len(search_response['items'])} results"
+                )
                 for item in search_response["items"]:
                     title = item["snippet"]["title"]
-                    logger.info(f"Found channel: {title} (ID: {item['id']['channelId']})")
+                    logger.info(
+                        f"Found channel: {title} (ID: {item['id']['channelId']})"
+                    )
                     # Check for exact match first (case insensitive)
                     if title.lower() == channel_name.lower():
                         logger.info(f"Found exact match for '{channel_name}': {title}")
@@ -254,14 +259,16 @@ async def get_channel_info(channel_name: str) -> Dict[str, Any]:
                     # If we haven't found a match yet, use the first one as fallback
                     if best_match is None:
                         best_match = item
-                
+
                 if not best_match:
                     raise ValueError(f"No channel found with name: {channel_name}")
-                
+
                 channel_id = best_match["id"]["channelId"]
                 # Log the mapping for debugging
-                logger.info(f"Resolved channel name '{channel_name}' to channel ID '{channel_id}' (title: '{best_match['snippet']['title']}')")
-                
+                logger.info(
+                    f"Resolved channel name '{channel_name}' to channel ID '{channel_id}' (title: '{best_match['snippet']['title']}')"
+                )
+
                 request = youtube.channels().list(
                     part="snippet,statistics", id=channel_id
                 )
@@ -311,6 +318,7 @@ async def get_channel_videos(
         ValueError: If channel ID is invalid or no videos found
     """
     try:
+
         def _fetch_channel_videos():
             # Get videos with medium duration
             medium_videos = (
@@ -358,9 +366,11 @@ async def get_channel_videos(
             _fetch_channel_videos
         )
 
-        logger.info(f"Found {len(medium_videos.get('items', []))} medium videos, "
-                    f"{len(long_videos.get('items', []))} long videos, "
-                    f"{len(short_videos.get('items', []))} short videos for channel {channel_id}")
+        logger.info(
+            f"Found {len(medium_videos.get('items', []))} medium videos, "
+            f"{len(long_videos.get('items', []))} long videos, "
+            f"{len(short_videos.get('items', []))} short videos for channel {channel_id}"
+        )
 
         # Combine and process the results, deduplicate by video ID
         seen_ids = set()
@@ -384,7 +394,9 @@ async def get_channel_videos(
                     }
                 )
 
-        logger.info(f"Total unique videos found: {len(video_data)} for channel {channel_id}")
+        logger.info(
+            f"Total unique videos found: {len(video_data)} for channel {channel_id}"
+        )
         if max_results is not None and len(video_data) > max_results:
             logger.info(f"Limiting videos to max_results={max_results}")
         # Limit to max_results
@@ -439,20 +451,23 @@ def _fetch_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
                 break
     return list(all_videos.values())
 
+
 async def get_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
     """
     Async wrapper for _fetch_all_channel_videos with better error handling and logging.
-    
+
     Args:
         channel_id: YouTube channel ID
-        
+
     Returns:
         List of video dictionaries with metadata
     """
     try:
         logger.info(f"Fetching all videos for channel {channel_id}")
         videos = await asyncio.to_thread(_fetch_all_channel_videos, channel_id)
-        logger.info(f"Successfully fetched {len(videos)} videos for channel {channel_id}")
+        logger.info(
+            f"Successfully fetched {len(videos)} videos for channel {channel_id}"
+        )
         return videos
     except Exception as e:
         logger.error(f"Error in get_all_channel_videos for {channel_id}: {str(e)}")
@@ -461,9 +476,9 @@ async def get_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
 
 async def get_single_transcript(
     video_id: str, output_dir: Optional[str] = None, include_timestamps: bool = False
-) -> Tuple[str, Optional[str]]:
+) -> Tuple[str, Optional[str], Dict[str, Any]]:
     """
-    Get transcript for a single YouTube video.
+    Get transcript for a single YouTube video, with language fallback.
 
     Args:
         video_id: YouTube video ID
@@ -471,7 +486,7 @@ async def get_single_transcript(
         include_timestamps: Whether to include timestamps in the transcript
 
     Returns:
-        Tuple of (transcript text, file path if saved or None)
+        Tuple of (transcript text, file path if saved, metadata dict)
 
     Raises:
         ValueError: If transcript cannot be retrieved
@@ -480,27 +495,55 @@ async def get_single_transcript(
     logger.info(f"Starting transcript fetch for video {video_id}")
 
     try:
+        ytt_api = get_ytt_api()
         fetch_start = time.time()
+
+        # 1. List available transcripts
+        transcript_list = await retry_operation(
+            lambda: asyncio.to_thread(ytt_api.list, video_id),
+            max_retries=2,
+        )
+
+        transcript = None
+        # 2. Try to find English, otherwise take the first available
         try:
-            def fetch_transcript():
-                ytt_api = get_ytt_api()
-                return ytt_api.fetch(video_id)
-            # Use retry operation to handle transient network issues
-            fetched_transcript = await retry_operation(
-                lambda: asyncio.to_thread(fetch_transcript),
-                max_retries=2,  # Try up to 3 times total (initial + 2 retries)
-                retry_delay=1.0,
+            transcript = transcript_list.find_transcript(["en"])
+            logger.info(f"Found English transcript for video {video_id}")
+        except Exception:
+            logger.warning(
+                f"No English transcript found for {video_id}. Trying first available."
             )
-        except Exception as e:
-            logger.error(
-                f"Failed to fetch transcript for {video_id} after retries: {str(e)}"
-            )
-            raise ValueError(f"YouTube API failed to return transcript: {str(e)}")
+            try:
+                # Get the first transcript in the list
+                first_transcript_in_list = next(iter(transcript_list))
+                transcript = first_transcript_in_list
+                logger.info(
+                    f"Using first available transcript ({transcript.language_code}) for video {video_id}"
+                )
+            except StopIteration:
+                logger.error(f"No transcripts available at all for video {video_id}")
+                raise ValueError(f"No transcripts available for video {video_id}")
+
+        # 3. Fetch the selected transcript
+        fetched_transcript = await retry_operation(
+            lambda: asyncio.to_thread(transcript.fetch),
+            max_retries=2,
+        )
 
         fetch_end = time.time()
         logger.info(
             f"API fetch took {fetch_end - fetch_start:.3f}s for video {video_id}"
         )
+
+        # Create metadata with language info
+        selected_language = transcript.language_code
+        metadata = {
+            "video_id": video_id,
+            "transcript_language": selected_language,
+            "transcript_type": (
+                "manual" if not transcript.is_generated else "auto-generated"
+            ),
+        }
 
         # Get raw data for better performance
         raw_data_start = time.time()
@@ -595,7 +638,7 @@ async def get_single_transcript(
             f"Total transcript processing took {total_time:.3f}s for video {video_id}"
         )
 
-        return transcript_text, file_path
+        return transcript_text, file_path, metadata
 
     except Exception as e:
         logger.error(f"Error getting transcript for video {video_id}: {str(e)}")
@@ -627,7 +670,9 @@ async def start_channel_transcript_download(
         # Get list of videos from the channel
         videos = await get_channel_videos(channel_id, max_results)
 
-        logger.info(f"Preparing to download {len(videos)} videos for channel '{channel_name}' (ID: {channel_id})")
+        logger.info(
+            f"Preparing to download {len(videos)} videos for channel '{channel_name}' (ID: {channel_id})"
+        )
         if not videos:
             logger.warning(f"No videos found for channel: {channel_name}")
             raise ValueError(f"No videos found for channel: {channel_name}")
@@ -671,10 +716,10 @@ async def start_selected_videos_transcript_download(
 ) -> str:
     """
     Start transcript download for a user-selected list of videos from a channel.
-    
+
     Args:
         channel_name: Channel name or ID
-        videos: List of video dictionaries containing at least 'id' and 'title' 
+        videos: List of video dictionaries containing at least 'id' and 'title'
         user_id: User identifier for directory organization
 
     Returns:
@@ -687,30 +732,32 @@ async def start_selected_videos_transcript_download(
         # Get channel info to validate channel existence and get channel ID
         channel_info = await get_channel_info(channel_name)
         channel_id = channel_info["channelId"]
-        
+
         # Count and log the video selection
         num_videos = len(videos)
-        logger.info(f"Preparing to download {num_videos} selected videos for channel '{channel_name}' (ID: {channel_id})")
-        
+        logger.info(
+            f"Preparing to download {num_videos} selected videos for channel '{channel_name}' (ID: {channel_id})"
+        )
+
         if not videos:
             logger.warning(f"No videos selected for channel: {channel_name}")
             raise ValueError(f"No videos selected for channel: {channel_name}")
-        
+
         # Log the list of videos to be downloaded
         logger.info("Selected videos to be downloaded:")
         for v in videos:
             try:
                 # Handle both dictionary access and object attribute access
-                video_id = v.id if hasattr(v, 'id') else v['id']
-                video_title = v.title if hasattr(v, 'title') else v['title']
+                video_id = v.id if hasattr(v, "id") else v["id"]
+                video_title = v.title if hasattr(v, "title") else v["title"]
                 logger.info(f"  - {video_id}: {video_title}")
             except Exception as e:
                 logger.error(f"Error accessing video properties: {str(e)}")
                 logger.error(f"Video object type: {type(v)}")
-        
+
         # Create a unique job ID
         job_id = str(uuid.uuid4())
-        
+
         # Initialize job entry in the tracking dictionary
         channel_download_jobs[job_id] = {
             "status": "processing",
@@ -728,15 +775,17 @@ async def start_selected_videos_transcript_download(
             "initial_user_credits": None,  # Will be set when first credit is deducted
             "credits_reserved": num_videos,  # Total credits that will be deducted
         }
-        
+
         # Start the background task to process transcripts
         # Uses the same task processor as the full channel download
         asyncio.create_task(download_channel_transcripts_task(job_id))
-        
+
         return job_id
-        
+
     except Exception as e:
-        logger.error(f"Error starting selected videos transcript download for {channel_name}: {str(e)}")
+        logger.error(
+            f"Error starting selected videos transcript download for {channel_name}: {str(e)}"
+        )
         raise ValueError(f"Failed to start transcript download: {str(e)}")
 
 
@@ -772,7 +821,7 @@ async def download_channel_transcripts_task(job_id: str) -> None:
         for video in batch_videos:
             try:
                 # Handle both dictionary access and object attribute access
-                video_id = video.id if hasattr(video, 'id') else video["id"]
+                video_id = video.id if hasattr(video, "id") else video["id"]
                 tasks.append(process_single_video(job_id, video_id, output_dir))
             except Exception as e:
                 logger.error(f"Error accessing video ID: {str(e)}")
@@ -856,13 +905,20 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
             transcript_task = asyncio.create_task(
                 get_single_transcript(video_id, video_dir, include_timestamps=False)
             )
-            _, file_path = await asyncio.wait_for(
+            _, file_path, metadata = await asyncio.wait_for(
                 transcript_task, timeout=60.0
             )  # 60 second timeout
 
             if file_path:
                 # Update job statistics
-                job["files"].append(file_path)
+                job["files"].append(
+                    {
+                        "file_path": file_path,
+                        "video_id": video_id,
+                        "language": metadata.get("transcript_language"),
+                        "type": metadata.get("transcript_type"),
+                    }
+                )
                 job["completed"] += 1
                 logger.info(
                     f"Downloaded transcript for video {video_id} ({job['completed']}/{job['total_videos']})"
@@ -975,12 +1031,10 @@ async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:
 
     # Create a ZIP file with all transcripts
     with zipfile.ZipFile(zip_buffer, "w") as zip_file:
-        for file_path in job["files"]:
-            # Extract filename from path
+        for file_info in job["files"]:
+            file_path = file_info["file_path"]
             filename = os.path.basename(file_path)
-            # Add file to ZIP if it exists
-            if os.path.exists(file_path):
-                zip_file.write(file_path, filename)
+            zip_file.write(file_path, filename)
 
     # Seek to beginning of buffer for response
     zip_buffer.seek(0)
