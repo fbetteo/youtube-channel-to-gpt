@@ -371,6 +371,23 @@ class DownloadURLRequest(BaseModel):
 class ChannelRequest(BaseModel):
     channel_name: str = Field(..., description="YouTube channel name or ID")
     max_results: int = Field(30, description="Maximum number of videos to fetch")
+    # Formatting options
+    include_timestamps: bool = Field(
+        default=False, description="Include timestamps in transcript"
+    )
+    include_video_title: bool = Field(
+        default=True, description="Include video title in header"
+    )
+    include_video_id: bool = Field(
+        default=True, description="Include video ID in header"
+    )
+    include_video_url: bool = Field(
+        default=True, description="Include video URL in header"
+    )
+    concatenate_all: bool = Field(
+        default=False,
+        description="Return single concatenated file instead of individual files",
+    )
 
     @validator("max_results")
     def validate_max_results(cls, v):
@@ -414,6 +431,23 @@ class SelectedVideosRequest(BaseModel):
     channel_name: str = Field(..., description="YouTube channel name or ID")
     videos: List[VideoInfo] = Field(
         ..., description="List of selected videos to download transcripts for"
+    )
+    # Formatting options
+    include_timestamps: bool = Field(
+        default=False, description="Include timestamps in transcript"
+    )
+    include_video_title: bool = Field(
+        default=True, description="Include video title in header"
+    )
+    include_video_id: bool = Field(
+        default=True, description="Include video ID in header"
+    )
+    include_video_url: bool = Field(
+        default=True, description="Include video URL in header"
+    )
+    concatenate_all: bool = Field(
+        default=False,
+        description="Return single concatenated file instead of individual files",
     )
 
 
@@ -964,6 +998,11 @@ async def start_channel_transcript_download(
             max_results,
             # session_id,
             user_id,  # Pass user_id for credit deduction
+            include_timestamps=request.include_timestamps,
+            include_video_title=request.include_video_title,
+            include_video_id=request.include_video_id,
+            include_video_url=request.include_video_url,
+            concatenate_all=request.concatenate_all,
         )  # Return job ID for polling status
         return {
             "job_id": job_id,
@@ -1090,6 +1129,11 @@ async def download_selected_videos(
             channel_name,
             videos,
             user_id,
+            include_timestamps=request.include_timestamps,
+            include_video_title=request.include_video_title,
+            include_video_id=request.include_video_id,
+            include_video_url=request.include_video_url,
+            concatenate_all=request.concatenate_all,
         )
 
         return {
@@ -1167,12 +1211,19 @@ async def download_transcript_results(
         # Get a safe channel name for the filename
         safe_channel_name = youtube_service.get_safe_channel_name(job_id)
 
+        # Check if this is a concatenated download to adjust filename
+        job_info = youtube_service.get_job_status(job_id)
+        is_concatenated = job_info.get("concatenate_all", False)
+        filename_suffix = (
+            "_concatenated_transcripts.zip" if is_concatenated else "_transcripts.zip"
+        )
+
         # For BytesIO objects, we need to use Response with bytes content instead of FileResponse
         return Response(
             content=zip_buffer.getvalue(),
             media_type="application/zip",
             headers={
-                "Content-Disposition": f'attachment; filename="{safe_channel_name}_transcripts.zip"'
+                "Content-Disposition": f'attachment; filename="{safe_channel_name}{filename_suffix}"'
             },
         )
 

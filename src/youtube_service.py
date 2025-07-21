@@ -475,7 +475,12 @@ async def get_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
 
 
 async def get_single_transcript(
-    video_id: str, output_dir: Optional[str] = None, include_timestamps: bool = False
+    video_id: str,
+    output_dir: Optional[str] = None,
+    include_timestamps: bool = False,
+    include_video_title: bool = True,
+    include_video_id: bool = True,
+    include_video_url: bool = True,
 ) -> Tuple[str, Optional[str], Dict[str, Any]]:
     """
     Get transcript for a single YouTube video, with language fallback.
@@ -616,11 +621,22 @@ async def get_single_transcript(
             # Write transcript to file - more efficient by writing once
             write_start = time.time()
             with open(file_path, "w", encoding="utf-8") as f:
-                # Write header with available info
-                if video_title:
+                # Write header with available info based on formatting options
+                if include_video_title and video_title:
                     f.write(f"Video Title: {video_title}\n")
-                f.write(f"Video ID: {video_id}\n")
-                f.write(f"URL: https://www.youtube.com/watch?v={video_id}\n\n")
+                if include_video_id:
+                    f.write(f"Video ID: {video_id}\n")
+                if include_video_url:
+                    f.write(f"URL: https://www.youtube.com/watch?v={video_id}\n")
+
+                # Add separator if any header was written
+                if (
+                    (include_video_title and video_title)
+                    or include_video_id
+                    or include_video_url
+                ):
+                    f.write("\n")
+
                 f.write(transcript_text)
             write_end = time.time()
             logger.info(
@@ -646,7 +662,14 @@ async def get_single_transcript(
 
 
 async def start_channel_transcript_download(
-    channel_name: str, max_results: int, user_id: str
+    channel_name: str,
+    max_results: int,
+    user_id: str,
+    include_timestamps: bool = False,
+    include_video_title: bool = True,
+    include_video_id: bool = True,
+    include_video_url: bool = True,
+    concatenate_all: bool = False,
 ) -> str:
     """
     Start the asynchronous process of downloading transcripts for a channel.
@@ -699,6 +722,12 @@ async def start_channel_transcript_download(
             "credits_deducted": 0,
             "initial_user_credits": None,  # Will be set when first credit is deducted
             "credits_reserved": len(videos),  # Total credits that will be deducted
+            # Formatting options
+            "include_timestamps": include_timestamps,
+            "include_video_title": include_video_title,
+            "include_video_id": include_video_id,
+            "include_video_url": include_video_url,
+            "concatenate_all": concatenate_all,
         }
 
         # Start the background task to process transcripts
@@ -712,7 +741,14 @@ async def start_channel_transcript_download(
 
 
 async def start_selected_videos_transcript_download(
-    channel_name: str, videos: List[Dict[str, Any]], user_id: str
+    channel_name: str,
+    videos: List[Dict[str, Any]],
+    user_id: str,
+    include_timestamps: bool = False,
+    include_video_title: bool = True,
+    include_video_id: bool = True,
+    include_video_url: bool = True,
+    concatenate_all: bool = False,
 ) -> str:
     """
     Start transcript download for a user-selected list of videos from a channel.
@@ -774,6 +810,12 @@ async def start_selected_videos_transcript_download(
             "credits_deducted": 0,
             "initial_user_credits": None,  # Will be set when first credit is deducted
             "credits_reserved": num_videos,  # Total credits that will be deducted
+            # Formatting options
+            "include_timestamps": include_timestamps,
+            "include_video_title": include_video_title,
+            "include_video_id": include_video_id,
+            "include_video_url": include_video_url,
+            "concatenate_all": concatenate_all,
         }
 
         # Start the background task to process transcripts
@@ -901,9 +943,16 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
 
         # Add a timeout to prevent any single video from taking too long
         try:
-            # Get transcript with timeout to prevent hanging
+            # Get transcript with timeout to prevent hanging - use job formatting options
             transcript_task = asyncio.create_task(
-                get_single_transcript(video_id, video_dir, include_timestamps=False)
+                get_single_transcript(
+                    video_id,
+                    video_dir,
+                    include_timestamps=job["include_timestamps"],
+                    include_video_title=job["include_video_title"],
+                    include_video_id=job["include_video_id"],
+                    include_video_url=job["include_video_url"],
+                )
             )
             _, file_path, metadata = await asyncio.wait_for(
                 transcript_task, timeout=60.0
@@ -988,6 +1037,12 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
         "credits_reserved": job["credits_reserved"],
         "initial_user_credits": job["initial_user_credits"],
         "current_user_credits": current_credits,
+        # Formatting options
+        "include_timestamps": job.get("include_timestamps", False),
+        "include_video_title": job.get("include_video_title", True),
+        "include_video_id": job.get("include_video_id", True),
+        "include_video_url": job.get("include_video_url", True),
+        "concatenate_all": job.get("concatenate_all", False),
     }
 
     # Add credit usage summary
@@ -1003,6 +1058,7 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
 async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:
     """
     Create a ZIP archive of all transcripts for a completed job.
+    If concatenate_all is True, creates a single concatenated file instead of individual files.
 
     Args:
         job_id: The job identifier
@@ -1029,17 +1085,86 @@ async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:
     # Create a BytesIO buffer for the ZIP file
     zip_buffer = io.BytesIO()
 
-    # Create a ZIP file with all transcripts
-    with zipfile.ZipFile(zip_buffer, "w") as zip_file:
-        for file_info in job["files"]:
-            file_path = file_info["file_path"]
-            filename = os.path.basename(file_path)
-            zip_file.write(file_path, filename)
+    # Check if we should concatenate all transcripts into a single file
+    if job.get("concatenate_all", False):
+        # Create a single concatenated file
+        concatenated_content = await create_concatenated_transcript(job_id)
+
+        with zipfile.ZipFile(zip_buffer, "w") as zip_file:
+            # Use the channel name for the concatenated file
+            safe_channel_name = sanitize_filename(job["channel_name"])
+            filename = f"{safe_channel_name}_all_transcripts.txt"
+            zip_file.writestr(filename, concatenated_content)
+    else:
+        # Create a ZIP file with individual transcript files
+        with zipfile.ZipFile(zip_buffer, "w") as zip_file:
+            for file_info in job["files"]:
+                file_path = file_info["file_path"]
+                filename = os.path.basename(file_path)
+                zip_file.write(file_path, filename)
 
     # Seek to beginning of buffer for response
     zip_buffer.seek(0)
 
     return zip_buffer
+
+
+async def create_concatenated_transcript(job_id: str) -> str:
+    """
+    Create a single concatenated transcript from all individual transcript files.
+
+    Args:
+        job_id: The job identifier
+
+    Returns:
+        String containing all transcripts concatenated with separators
+
+    Raises:
+        ValueError: If job not found
+    """
+    if job_id not in channel_download_jobs:
+        raise ValueError(f"Job not found with ID: {job_id}")
+
+    job = channel_download_jobs[job_id]
+    concatenated_parts = []
+
+    # Add header with channel information
+    concatenated_parts.append(f"CHANNEL: {job['channel_name']}")
+    concatenated_parts.append(f"TOTAL VIDEOS: {job['completed']}")
+    concatenated_parts.append(f"GENERATED: {time.strftime('%Y-%m-%d %H:%M:%S')}")
+    concatenated_parts.append("=" * 80)
+    concatenated_parts.append("")
+
+    # Read each transcript file and add it to the concatenated content
+    for i, file_info in enumerate(job["files"], 1):
+        file_path = file_info["file_path"]
+        video_id = file_info["video_id"]
+
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                content = f.read()
+
+            # Add section separator
+            concatenated_parts.append(f"[VIDEO {i}/{job['completed']}]")
+            concatenated_parts.append("-" * 60)
+            concatenated_parts.append(content)
+            concatenated_parts.append("")  # Empty line between videos
+            concatenated_parts.append("=" * 80)
+            concatenated_parts.append("")  # Empty line between sections
+
+        except Exception as e:
+            logger.error(f"Error reading transcript file {file_path}: {str(e)}")
+            # Add error message to concatenated content
+            concatenated_parts.append(
+                f"[VIDEO {i}/{job['completed']}] - ERROR READING TRANSCRIPT"
+            )
+            concatenated_parts.append(f"Video ID: {video_id}")
+            concatenated_parts.append(f"Error: {str(e)}")
+            concatenated_parts.append("")
+            concatenated_parts.append("=" * 80)
+            concatenated_parts.append("")
+
+    return "\n".join(concatenated_parts)
 
 
 def get_safe_channel_name(job_id: str) -> str:
