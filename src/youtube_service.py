@@ -481,6 +481,7 @@ async def get_single_transcript(
     include_video_title: bool = True,
     include_video_id: bool = True,
     include_video_url: bool = True,
+    include_view_count: bool = False,
 ) -> Tuple[str, Optional[str], Dict[str, Any]]:
     """
     Get transcript for a single YouTube video, with language fallback.
@@ -592,6 +593,7 @@ async def get_single_transcript(
 
             # Try to get video metadata, but continue even if it fails
             video_title = None
+            video_view_count = None
             try:
                 metadata_start = time.time()
                 video_info = await asyncio.wait_for(
@@ -599,6 +601,7 @@ async def get_single_transcript(
                     timeout=5.0,  # Don't wait more than 5 seconds for metadata
                 )
                 video_title = video_info.get("title", "Untitled")
+                video_view_count = video_info.get("viewCount", 0)
                 metadata_end = time.time()
                 logger.info(
                     f"Video metadata fetch took {metadata_end - metadata_start:.3f}s for video {video_id}"
@@ -608,11 +611,13 @@ async def get_single_transcript(
                     f"Metadata fetch timed out for video {video_id}, using fallback title"
                 )
                 video_title = "Untitled_Video"
+                video_view_count = 0
             except Exception as e:
                 logger.warning(
                     f"Failed to get metadata for video {video_id}, using fallback title: {str(e)}"
                 )
                 video_title = "Untitled_Video"
+                video_view_count = 0
 
             # Create a sanitized filename from the video title (or ID if title not available)
             safe_title = sanitize_filename(video_title) if video_title else video_id
@@ -628,12 +633,15 @@ async def get_single_transcript(
                     f.write(f"Video ID: {video_id}\n")
                 if include_video_url:
                     f.write(f"URL: https://www.youtube.com/watch?v={video_id}\n")
+                if include_view_count and video_view_count is not None:
+                    f.write(f"View Count: {video_view_count:,}\n")
 
                 # Add separator if any header was written
                 if (
                     (include_video_title and video_title)
                     or include_video_id
                     or include_video_url
+                    or (include_view_count and video_view_count is not None)
                 ):
                     f.write("\n")
 
@@ -669,6 +677,7 @@ async def start_channel_transcript_download(
     include_video_title: bool = True,
     include_video_id: bool = True,
     include_video_url: bool = True,
+    include_view_count: bool = False,
     concatenate_all: bool = False,
 ) -> str:
     """
@@ -727,6 +736,7 @@ async def start_channel_transcript_download(
             "include_video_title": include_video_title,
             "include_video_id": include_video_id,
             "include_video_url": include_video_url,
+            "include_view_count": include_view_count,
             "concatenate_all": concatenate_all,
         }
 
@@ -748,6 +758,7 @@ async def start_selected_videos_transcript_download(
     include_video_title: bool = True,
     include_video_id: bool = True,
     include_video_url: bool = True,
+    include_view_count: bool = False,
     concatenate_all: bool = False,
 ) -> str:
     """
@@ -815,6 +826,7 @@ async def start_selected_videos_transcript_download(
             "include_video_title": include_video_title,
             "include_video_id": include_video_id,
             "include_video_url": include_video_url,
+            "include_view_count": include_view_count,
             "concatenate_all": concatenate_all,
         }
 
@@ -952,6 +964,7 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
                     include_video_title=job["include_video_title"],
                     include_video_id=job["include_video_id"],
                     include_video_url=job["include_video_url"],
+                    include_view_count=job["include_view_count"],
                 )
             )
             _, file_path, metadata = await asyncio.wait_for(
@@ -1042,6 +1055,7 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
         "include_video_title": job.get("include_video_title", True),
         "include_video_id": job.get("include_video_id", True),
         "include_video_url": job.get("include_video_url", True),
+        "include_view_count": job.get("include_view_count", False),
         "concatenate_all": job.get("concatenate_all", False),
     }
 

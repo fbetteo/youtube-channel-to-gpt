@@ -384,6 +384,9 @@ class ChannelRequest(BaseModel):
     include_video_url: bool = Field(
         default=True, description="Include video URL in header"
     )
+    include_view_count: bool = Field(
+        default=False, description="Include video view count in header"
+    )
     concatenate_all: bool = Field(
         default=False,
         description="Return single concatenated file instead of individual files",
@@ -444,6 +447,9 @@ class SelectedVideosRequest(BaseModel):
     )
     include_video_url: bool = Field(
         default=True, description="Include video URL in header"
+    )
+    include_view_count: bool = Field(
+        default=False, description="Include video view count in header"
     )
     concatenate_all: bool = Field(
         default=False,
@@ -1002,6 +1008,7 @@ async def start_channel_transcript_download(
             include_video_title=request.include_video_title,
             include_video_id=request.include_video_id,
             include_video_url=request.include_video_url,
+            include_view_count=request.include_view_count,
             concatenate_all=request.concatenate_all,
         )  # Return job ID for polling status
         return {
@@ -1133,6 +1140,7 @@ async def download_selected_videos(
             include_video_title=request.include_video_title,
             include_video_id=request.include_video_id,
             include_video_url=request.include_video_url,
+            include_view_count=request.include_view_count,
             concatenate_all=request.concatenate_all,
         )
 
