@@ -3,11 +3,14 @@
 YouTube Service - Service layer for YouTube transcript downloading and processing
 """
 import asyncio
+import gc
 import io
 import logging
 import os
+import psutil
 import re
 import tempfile
+import threading
 import time
 import uuid
 import zipfile
@@ -24,10 +27,191 @@ from config_v2 import settings
 # Configure logging
 logger = logging.getLogger(__name__)
 
+# Memory tracking logger - separate logger for memory metrics
+memory_logger = logging.getLogger("memory_tracker")
+memory_logger.setLevel(logging.INFO)
+
+# Memory tracking variables
+_memory_monitoring_active = False
+_memory_monitor_thread = None
+_memory_stats = {
+    "peak_memory_mb": 0,
+    "peak_memory_percent": 0,
+    "last_gc_time": time.time(),
+    "gc_count": 0,
+    "memory_warnings": 0,
+}
+
+
+class MemoryTracker:
+    """Memory tracking utility for monitoring system resources."""
+
+    def __init__(
+        self,
+        warning_threshold_percent: float = 85.0,
+        critical_threshold_percent: float = 95.0,
+    ):
+        self.warning_threshold = warning_threshold_percent
+        self.critical_threshold = critical_threshold_percent
+        self.process = psutil.Process()
+
+    def get_memory_info(self) -> Dict[str, Any]:
+        """Get current memory usage information."""
+        try:
+            # Process memory info
+            process_memory = self.process.memory_info()
+            process_memory_mb = process_memory.rss / 1024 / 1024
+            process_memory_percent = self.process.memory_percent()
+
+            # System memory info
+            system_memory = psutil.virtual_memory()
+            system_memory_mb = system_memory.used / 1024 / 1024
+            system_memory_percent = system_memory.percent
+
+            # Update peak tracking
+            global _memory_stats
+            if process_memory_mb > _memory_stats["peak_memory_mb"]:
+                _memory_stats["peak_memory_mb"] = process_memory_mb
+            if process_memory_percent > _memory_stats["peak_memory_percent"]:
+                _memory_stats["peak_memory_percent"] = process_memory_percent
+
+            return {
+                "timestamp": time.time(),
+                "process_memory_mb": round(process_memory_mb, 2),
+                "process_memory_percent": round(process_memory_percent, 2),
+                "system_memory_mb": round(system_memory_mb, 2),
+                "system_memory_percent": round(system_memory_percent, 2),
+                "system_memory_available_mb": round(
+                    system_memory.available / 1024 / 1024, 2
+                ),
+                "peak_memory_mb": round(_memory_stats["peak_memory_mb"], 2),
+                "peak_memory_percent": round(_memory_stats["peak_memory_percent"], 2),
+            }
+        except Exception as e:
+            logger.error(f"Error getting memory info: {str(e)}")
+            return {}
+
+    def log_memory_usage(
+        self, context: str = "", level: str = "info"
+    ) -> Dict[str, Any]:
+        """Log current memory usage with context."""
+        memory_info = self.get_memory_info()
+        if not memory_info:
+            return {}
+
+        log_msg = (
+            f"Memory usage {context}: "
+            f"Process: {memory_info['process_memory_mb']}MB ({memory_info['process_memory_percent']}%), "
+            f"System: {memory_info['system_memory_percent']}%, "
+            f"Available: {memory_info['system_memory_available_mb']}MB, "
+            f"Peak: {memory_info['peak_memory_mb']}MB"
+        )
+
+        # Check thresholds and log accordingly
+        if memory_info["process_memory_percent"] >= self.critical_threshold:
+            memory_logger.critical(f"CRITICAL: {log_msg}")
+            _memory_stats["memory_warnings"] += 1
+        elif memory_info["process_memory_percent"] >= self.warning_threshold:
+            memory_logger.warning(f"WARNING: {log_msg}")
+            _memory_stats["memory_warnings"] += 1
+        elif level == "debug":
+            memory_logger.debug(log_msg)
+        else:
+            memory_logger.info(log_msg)
+
+        return memory_info
+
+    def force_garbage_collection(self) -> Dict[str, Any]:
+        """Force garbage collection and log results."""
+        try:
+            before_memory = self.get_memory_info()
+
+            # Force garbage collection
+            collected = gc.collect()
+            _memory_stats["gc_count"] += 1
+            _memory_stats["last_gc_time"] = time.time()
+
+            after_memory = self.get_memory_info()
+
+            memory_freed = before_memory.get("process_memory_mb", 0) - after_memory.get(
+                "process_memory_mb", 0
+            )
+
+            memory_logger.info(
+                f"Garbage collection completed: "
+                f"Objects collected: {collected}, "
+                f"Memory freed: {memory_freed:.2f}MB, "
+                f"Memory before: {before_memory.get('process_memory_mb', 0):.2f}MB, "
+                f"Memory after: {after_memory.get('process_memory_mb', 0):.2f}MB"
+            )
+
+            return {
+                "objects_collected": collected,
+                "memory_freed_mb": memory_freed,
+                "before_memory": before_memory,
+                "after_memory": after_memory,
+            }
+        except Exception as e:
+            logger.error(f"Error during garbage collection: {str(e)}")
+            return {}
+
+
+# Global memory tracker instance
+memory_tracker = MemoryTracker()
+
+
+def start_memory_monitoring(interval_seconds: int = 30) -> None:
+    """Start background memory monitoring."""
+    global _memory_monitoring_active, _memory_monitor_thread
+
+    if _memory_monitoring_active:
+        logger.info("Memory monitoring already active")
+        return
+
+    def monitor_memory():
+        while _memory_monitoring_active:
+            try:
+                memory_tracker.log_memory_usage("periodic_check", "debug")
+                time.sleep(interval_seconds)
+            except Exception as e:
+                logger.error(f"Error in memory monitoring thread: {str(e)}")
+                time.sleep(interval_seconds)
+
+    _memory_monitoring_active = True
+    _memory_monitor_thread = threading.Thread(target=monitor_memory, daemon=True)
+    _memory_monitor_thread.start()
+
+    memory_logger.info(f"Started memory monitoring with {interval_seconds}s interval")
+    memory_tracker.log_memory_usage("monitoring_start")
+
+
+def stop_memory_monitoring() -> None:
+    """Stop background memory monitoring."""
+    global _memory_monitoring_active
+    _memory_monitoring_active = False
+    memory_logger.info("Stopped memory monitoring")
+
+
+def get_memory_stats() -> Dict[str, Any]:
+    """Get comprehensive memory statistics."""
+    current_memory = memory_tracker.get_memory_info()
+    return {
+        **current_memory,
+        "gc_count": _memory_stats["gc_count"],
+        "last_gc_time": _memory_stats["last_gc_time"],
+        "memory_warnings": _memory_stats["memory_warnings"],
+        "monitoring_active": _memory_monitoring_active,
+    }
+
+
 # Initialize YouTube API client with retry for transient failures
 try:
     youtube = build("youtube", "v3", developerKey=settings.youtube_api_key)
     logger.info("YouTube API client initialized successfully")
+
+    # Initialize memory monitoring when the service starts
+    memory_tracker.log_memory_usage("service_initialization")
+
 except Exception as e:
     logger.error(f"Failed to initialize YouTube API client: {str(e)}")
     # Fallback to None, will re-attempt connection when needed
@@ -498,6 +682,10 @@ async def get_single_transcript(
         ValueError: If transcript cannot be retrieved
     """
     start_time = time.time()
+
+    # Track memory at start of transcript processing
+    memory_tracker.log_memory_usage(f"transcript_start[{video_id}]")
+
     logger.info(f"Starting transcript fetch for video {video_id}")
 
     try:
@@ -541,6 +729,9 @@ async def get_single_transcript(
             f"API fetch took {fetch_end - fetch_start:.3f}s for video {video_id}"
         )
 
+        # Track memory after API fetch
+        memory_tracker.log_memory_usage(f"transcript_fetched[{video_id}]", "debug")
+
         # Create metadata with language info
         selected_language = transcript.language_code
         metadata = {
@@ -558,6 +749,9 @@ async def get_single_transcript(
         logger.info(
             f"Raw data conversion took {raw_data_end - raw_data_start:.3f}s for video {video_id}"
         )
+
+        # Track memory after raw data conversion
+        memory_tracker.log_memory_usage(f"transcript_raw_data[{video_id}]", "debug")
 
         # Format transcript - optimize by using string builder approach
         format_start = time.time()
@@ -582,6 +776,9 @@ async def get_single_transcript(
         logger.info(
             f"Transcript formatting took {format_end - format_start:.3f}s for video {video_id}"
         )
+
+        # Track memory after formatting (this can be memory-intensive for long videos)
+        memory_tracker.log_memory_usage(f"transcript_formatted[{video_id}]")
 
         # Save to file if output directory is specified
         file_path = None
@@ -658,13 +855,33 @@ async def get_single_transcript(
 
         end_time = time.time()
         total_time = end_time - start_time
+
+        # Track memory at completion and log final stats
+        final_memory = memory_tracker.log_memory_usage(
+            f"transcript_complete[{video_id}]"
+        )
+
         logger.info(
             f"Total transcript processing took {total_time:.3f}s for video {video_id}"
         )
 
+        # Clean up large variables to help with memory management
+        del transcript_data
+        if "transcript_lines" in locals():
+            del transcript_lines
+
+        # Force garbage collection if memory usage is high
+        if (
+            final_memory.get("process_memory_percent", 0)
+            > memory_tracker.warning_threshold
+        ):
+            memory_tracker.force_garbage_collection()
+
         return transcript_text, file_path, metadata
 
     except Exception as e:
+        # Track memory on error too
+        memory_tracker.log_memory_usage(f"transcript_error[{video_id}]")
         logger.error(f"Error getting transcript for video {video_id}: {str(e)}")
         raise ValueError(f"Failed to get transcript for video {video_id}: {str(e)}")
 
@@ -859,16 +1076,23 @@ async def download_channel_transcripts_task(job_id: str) -> None:
     videos = job["videos"]
     user_id = job["user_id"]
 
+    # Track memory at start of batch processing
+    memory_tracker.log_memory_usage(f"batch_start[{job_id}]")
+
     # Create directory for this specific job
     output_dir = os.path.join(settings.temp_dir, user_id, job_id)
     os.makedirs(output_dir, exist_ok=True)
 
     # Process videos concurrently with a limit on parallelism
     # Process in batches to avoid overwhelming the API
-    batch_size = 5  # Process 5 videos at a time
+    batch_size = 20  # Process 5 videos at a time
 
-    for i in range(0, len(videos), batch_size):
+    for batch_num, i in enumerate(range(0, len(videos), batch_size), 1):
         batch_videos = videos[i : i + batch_size]
+
+        # Track memory before each batch
+        memory_tracker.log_memory_usage(f"batch_{batch_num}_start[{job_id}]")
+
         tasks = []
 
         # Create tasks for each video in the current batch
@@ -884,13 +1108,40 @@ async def download_channel_transcripts_task(job_id: str) -> None:
         # Run the batch concurrently and wait for all to complete
         await asyncio.gather(*tasks)
 
+        # Track memory after each batch and force GC if needed
+        batch_memory = memory_tracker.log_memory_usage(
+            f"batch_{batch_num}_complete[{job_id}]"
+        )
+
+        # Force garbage collection after each batch if memory usage is getting high
+        if (
+            batch_memory.get("process_memory_percent", 0)
+            > memory_tracker.warning_threshold
+        ):
+            logger.info(
+                f"High memory usage detected after batch {batch_num}, forcing garbage collection"
+            )
+            memory_tracker.force_garbage_collection()
+
     # Mark job as completed when all videos are processed
     job["status"] = "completed"
     job["end_time"] = time.time()
     job["duration"] = job["end_time"] - job["start_time"]
 
+    # Final memory tracking
+    final_memory = memory_tracker.log_memory_usage(f"batch_final[{job_id}]")
+
     logger.info(
         f"Job {job_id} completed. Processed {job['completed']}/{job['total_videos']} videos successfully."
+    )
+
+    # Log memory summary for the entire job
+    memory_logger.info(
+        f"Job {job_id} memory summary: "
+        f"Peak memory: {_memory_stats['peak_memory_mb']:.2f}MB ({_memory_stats['peak_memory_percent']:.2f}%), "
+        f"GC runs: {_memory_stats['gc_count']}, "
+        f"Memory warnings: {_memory_stats['memory_warnings']}, "
+        f"Final memory: {final_memory.get('process_memory_mb', 0):.2f}MB"
     )
 
 
@@ -1252,6 +1503,9 @@ def cleanup_old_jobs(max_age_hours: int = 24) -> None:
     Args:
         max_age_hours: Maximum age of jobs to keep in hours
     """
+    # Track memory before cleanup
+    memory_tracker.log_memory_usage("cleanup_start")
+
     current_time = time.time()
     max_age_seconds = max_age_hours * 3600
 
@@ -1308,6 +1562,93 @@ def cleanup_old_jobs(max_age_hours: int = 24) -> None:
             logger.warning(f"Error removing job {job_id} from dictionary: {str(e)}")
 
     logger.info(f"Cleanup complete. Removed {len(jobs_to_remove)} old jobs.")
+
+    # Force garbage collection after cleanup and track memory
+    if jobs_to_remove:
+        memory_tracker.force_garbage_collection()
+        memory_tracker.log_memory_usage("cleanup_complete")
+
+
+# Convenience functions for external use
+def init_memory_monitoring(interval_seconds: int = 30, auto_start: bool = True) -> None:
+    """
+    Initialize memory monitoring for the YouTube service.
+
+    Args:
+        interval_seconds: How often to log memory stats in background
+        auto_start: Whether to start monitoring immediately
+    """
+    if auto_start:
+        start_memory_monitoring(interval_seconds)
+
+    memory_logger.info(
+        f"Memory monitoring initialized with {interval_seconds}s interval"
+    )
+
+
+def get_memory_report() -> Dict[str, Any]:
+    """
+    Get a comprehensive memory report for the service.
+
+    Returns:
+        Dictionary with current memory stats and historical data
+    """
+    current_stats = get_memory_stats()
+
+    return {
+        "current": current_stats,
+        "thresholds": {
+            "warning_percent": memory_tracker.warning_threshold,
+            "critical_percent": memory_tracker.critical_threshold,
+        },
+        "recommendations": _get_memory_recommendations(current_stats),
+    }
+
+
+def _get_memory_recommendations(stats: Dict[str, Any]) -> List[str]:
+    """Generate memory usage recommendations based on current stats."""
+    recommendations = []
+
+    memory_percent = stats.get("process_memory_percent", 0)
+
+    if memory_percent > 90:
+        recommendations.append(
+            "CRITICAL: Memory usage above 90%. Consider restarting the service."
+        )
+    elif memory_percent > 75:
+        recommendations.append(
+            "HIGH: Memory usage above 75%. Monitor closely and consider reducing batch sizes."
+        )
+    elif memory_percent > 50:
+        recommendations.append(
+            "MODERATE: Memory usage above 50%. Consider running garbage collection."
+        )
+
+    if stats.get("memory_warnings", 0) > 5:
+        recommendations.append(
+            "Multiple memory warnings detected. Consider reducing concurrent operations."
+        )
+
+    if stats.get("gc_count", 0) == 0:
+        recommendations.append(
+            "No garbage collections performed yet. This is normal for new processes."
+        )
+
+    return recommendations
+
+
+def log_memory_checkpoint(checkpoint_name: str) -> Dict[str, Any]:
+    """
+    Log a memory checkpoint with a custom name.
+    Useful for tracking memory at specific points in your application.
+
+    Args:
+        checkpoint_name: Name for this checkpoint
+
+    Returns:
+        Current memory information
+    """
+    return memory_tracker.log_memory_usage(f"checkpoint[{checkpoint_name}]")
 
 
 # ytt_api = YouTubeTranscriptApi()
