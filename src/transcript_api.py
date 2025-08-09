@@ -331,6 +331,148 @@ class CreditManager:
             if conn:
                 conn.close()
 
+    @staticmethod
+    def reserve_credits(user_id: str, credit_count: int) -> str:
+        """
+        Reserve credits for a batch operation. Returns reservation ID if successful.
+
+        Args:
+            user_id: User identifier
+            credit_count: Number of credits to reserve
+
+        Returns:
+            Reservation ID string for tracking
+
+        Raises:
+            HTTPException: If insufficient credits or database error
+        """
+        import uuid
+
+        conn = None
+        try:
+            logger.info(
+                f"Attempting to reserve {credit_count} credits for user: {user_id}"
+            )
+            from db_youtube_transcripts.database import (
+                get_connection_youtube_transcripts,
+            )
+
+            conn = get_connection_youtube_transcripts()
+            cursor = conn.cursor()
+
+            # First check if user has enough credits
+            cursor.execute(
+                "SELECT credits FROM user_credits WHERE user_id = %s",
+                (user_id,),
+            )
+            result = cursor.fetchone()
+
+            if not result:
+                logger.warning(f"User {user_id} not found in credits table")
+                raise HTTPException(
+                    status_code=status.HTTP_404_NOT_FOUND,
+                    detail="User credits not found",
+                )
+
+            current_credits = result[0]
+            if current_credits < credit_count:
+                logger.warning(
+                    f"User {user_id} has insufficient credits: {current_credits} < {credit_count}"
+                )
+                raise HTTPException(
+                    status_code=status.HTTP_402_PAYMENT_REQUIRED,
+                    detail=f"Insufficient credits. Need {credit_count}, have {current_credits}",
+                )
+
+            # Reserve the credits by deducting them immediately
+            cursor.execute(
+                "UPDATE user_credits SET credits = credits - %s WHERE user_id = %s",
+                (credit_count, user_id),
+            )
+
+            # Generate reservation ID for tracking
+            reservation_id = str(uuid.uuid4())
+
+            cursor.close()
+            logger.info(
+                f"Reserved {credit_count} credits for user {user_id}, reservation: {reservation_id}"
+            )
+
+            return reservation_id
+
+        except HTTPException:
+            # Re-raise HTTP exceptions from credit checks
+            raise
+        except Exception as e:
+            logger.error(
+                f"Error reserving credits for user {user_id}: {type(e).__name__}: {e}",
+                exc_info=True,
+            )
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to reserve credits",
+            )
+        finally:
+            if conn:
+                conn.close()
+
+    @staticmethod
+    def finalize_credit_usage(
+        user_id: str, reservation_id: str, credits_used: int, credits_reserved: int
+    ) -> None:
+        """
+        Finalize credit usage for a reservation. Refunds unused credits.
+
+        Args:
+            user_id: User identifier
+            reservation_id: Reservation ID from reserve_credits
+            credits_used: Actual credits used
+            credits_reserved: Credits that were reserved
+        """
+        conn = None
+        try:
+            unused_credits = credits_reserved - credits_used
+
+            if unused_credits > 0:
+                logger.info(
+                    f"Refunding {unused_credits} unused credits to user {user_id} "
+                    f"(reservation: {reservation_id})"
+                )
+
+                from db_youtube_transcripts.database import (
+                    get_connection_youtube_transcripts,
+                )
+
+                conn = get_connection_youtube_transcripts()
+                cursor = conn.cursor()
+
+                # Refund unused credits
+                cursor.execute(
+                    "UPDATE user_credits SET credits = credits + %s WHERE user_id = %s",
+                    (unused_credits, user_id),
+                )
+
+                cursor.close()
+                logger.info(
+                    f"Successfully refunded {unused_credits} credits to user {user_id}"
+                )
+            else:
+                logger.info(
+                    f"No refund needed for user {user_id}, used {credits_used}/{credits_reserved} credits"
+                )
+
+        except Exception as e:
+            logger.error(
+                f"Error finalizing credit usage for user {user_id}: {type(e).__name__}: {e}",
+                exc_info=True,
+            )
+            # Don't raise exception here - we don't want to fail the job completion
+            # but log the error for investigation
+            logger.error(f"Credit finalization failed but job will complete normally")
+        finally:
+            if conn:
+                conn.close()
+
 
 def get_user_or_anonymous(
     credentials: Optional[HTTPAuthorizationCredentials] = Depends(security),

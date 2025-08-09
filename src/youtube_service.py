@@ -293,6 +293,156 @@ def sanitize_filename(filename: str, max_len: int = 30) -> str:
     return sanitized[:max_len]
 
 
+async def pre_fetch_videos_metadata(
+    video_ids: List[str], batch_size: int = 50
+) -> Dict[str, Dict[str, Any]]:
+    """
+    Pre-fetch metadata for multiple videos in parallel batches using YouTube API batch requests.
+
+    Args:
+        video_ids: List of YouTube video IDs
+        batch_size: Number of videos to process in each API batch (max 50 for YouTube API)
+
+    Returns:
+        Dictionary mapping video_id to metadata dict, or empty dict if failed
+    """
+    logger.info(
+        f"Pre-fetching metadata for {len(video_ids)} videos in batches of {batch_size}"
+    )
+
+    metadata_results = {}
+
+    # Process videos in batches using YouTube API batch requests
+    for batch_num, i in enumerate(range(0, len(video_ids), batch_size), 1):
+        batch_video_ids = video_ids[i : i + batch_size]
+
+        logger.info(
+            f"Processing metadata batch {batch_num}/{(len(video_ids) + batch_size - 1) // batch_size} ({len(batch_video_ids)} videos)"
+        )
+
+        try:
+            # Use YouTube API batch request for efficiency
+            batch_results = await get_videos_metadata_batch(batch_video_ids)
+
+            # Process results
+            for video_id in batch_video_ids:
+                if video_id in batch_results:
+                    metadata_results[video_id] = batch_results[video_id]
+                else:
+                    logger.warning(f"No metadata returned for video {video_id}")
+                    metadata_results[video_id] = {}  # Empty dict for failed metadata
+
+        except Exception as e:
+            logger.warning(
+                f"Metadata batch {batch_num} failed: {str(e)}, using fallback data"
+            )
+            for video_id in batch_video_ids:
+                metadata_results[video_id] = {}
+
+        # Small delay between batches to be respectful to the API
+        if i + batch_size < len(video_ids):
+            await asyncio.sleep(0.2)  # Reduced delay since we're using fewer API calls
+
+    successful_fetches = sum(1 for metadata in metadata_results.values() if metadata)
+    logger.info(
+        f"Successfully pre-fetched metadata for {successful_fetches}/{len(video_ids)} videos"
+    )
+
+    return metadata_results
+
+
+async def get_videos_metadata_batch(video_ids: List[str]) -> Dict[str, Dict[str, Any]]:
+    """
+    Get metadata for multiple videos in a single YouTube API batch request.
+
+    Args:
+        video_ids: List of YouTube video IDs (max 50)
+
+    Returns:
+        Dictionary mapping video_id to metadata dict
+    """
+    if not video_ids:
+        return {}
+
+    if len(video_ids) > 50:
+        raise ValueError("YouTube API batch request supports maximum 50 video IDs")
+
+    try:
+        # Join video IDs with commas for batch request
+        video_ids_str = ",".join(video_ids)
+
+        def _fetch_videos_batch():
+            request = youtube.videos().list(
+                part="snippet,contentDetails,statistics",
+                id=video_ids_str,
+                maxResults=50,
+            )
+            return request.execute()
+
+        # Run the blocking API call in a thread pool with timeout
+        video_response = await asyncio.wait_for(
+            asyncio.to_thread(_fetch_videos_batch),
+            timeout=10.0,  # 10 second timeout for batch request
+        )
+
+        if not video_response.get("items"):
+            logger.warning(f"No videos found for batch of {len(video_ids)} video IDs")
+            return {}
+
+        results = {}
+
+        # Process each video in the response
+        for video_data in video_response["items"]:
+            video_id = video_data["id"]
+            snippet = video_data["snippet"]
+            statistics = video_data["statistics"]
+            content_details = video_data["contentDetails"]
+
+            # Format duration string (PT1H2M3S -> 1:02:03)
+            duration = content_details.get("duration", "PT0S")
+            duration_str = _format_duration(duration)
+
+            # Extract thumbnail URLs
+            thumbnails = snippet.get("thumbnails", {})
+            best_thumbnail = (
+                thumbnails.get("maxres")
+                or thumbnails.get("high")
+                or thumbnails.get("medium")
+                or thumbnails.get("default")
+                or {}
+            )
+
+            # Build metadata dictionary
+            metadata = {
+                "id": video_id,
+                "title": snippet.get("title", "Untitled"),
+                "description": snippet.get("description", ""),
+                "channelId": snippet.get("channelId", ""),
+                "channelTitle": snippet.get("channelTitle", ""),
+                "publishedAt": snippet.get("publishedAt", ""),
+                "thumbnail": best_thumbnail.get("url", ""),
+                "duration": duration_str,
+                "viewCount": int(statistics.get("viewCount", 0)),
+                "likeCount": int(statistics.get("likeCount", 0)),
+                "commentCount": int(statistics.get("commentCount", 0)),
+                "url": f"https://www.youtube.com/watch?v={video_id}",
+            }
+
+            results[video_id] = metadata
+
+        logger.info(
+            f"Successfully fetched metadata for {len(results)}/{len(video_ids)} videos in batch"
+        )
+        return results
+
+    except asyncio.TimeoutError:
+        logger.error(f"Timeout fetching metadata batch for {len(video_ids)} videos")
+        raise
+    except Exception as e:
+        logger.error(f"Error fetching metadata batch: {str(e)}")
+        raise
+
+
 async def get_video_info(video_id: str) -> Dict[str, Any]:
     """
     Get detailed metadata for a YouTube video.
@@ -666,6 +816,7 @@ async def get_single_transcript(
     include_video_id: bool = True,
     include_video_url: bool = True,
     include_view_count: bool = False,
+    pre_fetched_metadata: Optional[Dict[str, Any]] = None,
 ) -> Tuple[str, Optional[str], Dict[str, Any]]:
     """
     Get transcript for a single YouTube video, with language fallback.
@@ -674,6 +825,11 @@ async def get_single_transcript(
         video_id: YouTube video ID
         output_dir: Optional directory to save the transcript file
         include_timestamps: Whether to include timestamps in the transcript
+        include_video_title: Whether to include video title in file header
+        include_video_id: Whether to include video ID in file header
+        include_video_url: Whether to include video URL in file header
+        include_view_count: Whether to include view count in file header
+        pre_fetched_metadata: Optional pre-fetched metadata to use instead of fetching
 
     Returns:
         Tuple of (transcript text, file path if saved, metadata dict)
@@ -788,33 +944,43 @@ async def get_single_transcript(
             # Create directory if it doesn't exist
             os.makedirs(output_dir, exist_ok=True)
 
-            # Try to get video metadata, but continue even if it fails
+            # Use pre-fetched metadata if available, otherwise fetch it
             video_title = None
             video_view_count = None
-            try:
-                metadata_start = time.time()
-                video_info = await asyncio.wait_for(
-                    get_video_info(video_id),
-                    timeout=5.0,  # Don't wait more than 5 seconds for metadata
+
+            if pre_fetched_metadata:
+                # Use pre-fetched metadata (much faster)
+                video_title = pre_fetched_metadata.get("title", "Untitled_Video")
+                video_view_count = pre_fetched_metadata.get("viewCount", 0)
+                logger.debug(
+                    f"Using pre-fetched metadata for video {video_id}: {video_title}"
                 )
-                video_title = video_info.get("title", "Untitled")
-                video_view_count = video_info.get("viewCount", 0)
-                metadata_end = time.time()
-                logger.info(
-                    f"Video metadata fetch took {metadata_end - metadata_start:.3f}s for video {video_id}"
-                )
-            except asyncio.TimeoutError:
-                logger.warning(
-                    f"Metadata fetch timed out for video {video_id}, using fallback title"
-                )
-                video_title = "Untitled_Video"
-                video_view_count = 0
-            except Exception as e:
-                logger.warning(
-                    f"Failed to get metadata for video {video_id}, using fallback title: {str(e)}"
-                )
-                video_title = "Untitled_Video"
-                video_view_count = 0
+            else:
+                # Fallback to fetching metadata (slower, with timeout)
+                try:
+                    metadata_start = time.time()
+                    video_info = await asyncio.wait_for(
+                        get_video_info(video_id),
+                        timeout=10.0,  # Increased timeout to 10 seconds when not pre-fetched
+                    )
+                    video_title = video_info.get("title", "Untitled_Video")
+                    video_view_count = video_info.get("viewCount", 0)
+                    metadata_end = time.time()
+                    logger.info(
+                        f"Video metadata fetch took {metadata_end - metadata_start:.3f}s for video {video_id}"
+                    )
+                except asyncio.TimeoutError:
+                    logger.warning(
+                        f"Metadata fetch timed out for video {video_id}, using fallback title"
+                    )
+                    video_title = "Untitled_Video"
+                    video_view_count = 0
+                except Exception as e:
+                    logger.warning(
+                        f"Failed to get metadata for video {video_id}, using fallback title: {str(e)}"
+                    )
+                    video_title = "Untitled_Video"
+                    video_view_count = 0
 
             # Create a sanitized filename from the video title (or ID if title not available)
             safe_title = sanitize_filename(video_title) if video_title else video_id
@@ -931,6 +1097,12 @@ async def start_channel_transcript_download(
         for v in videos:
             logger.info(f"  - {v['id']}: {v['title']}")
 
+        # Pre-fetch metadata for all videos
+        video_ids = [v["id"] for v in videos]
+        logger.info(f"Pre-fetching metadata for {len(video_ids)} videos...")
+        videos_metadata = await pre_fetch_videos_metadata(video_ids)
+        logger.info(f"Metadata pre-fetching completed")
+
         # Create a unique job ID
         job_id = str(uuid.uuid4())  # Initialize job entry in the tracking dictionary
         channel_download_jobs[job_id] = {
@@ -945,9 +1117,10 @@ async def start_channel_transcript_download(
             "videos": videos,
             "start_time": time.time(),
             "user_id": user_id,
-            "credits_deducted": 0,
-            "initial_user_credits": None,  # Will be set when first credit is deducted
-            "credits_reserved": len(videos),  # Total credits that will be deducted
+            "credits_reserved": len(videos),  # Total credits reserved upfront
+            "credits_used": 0,  # Track actual credits used per video
+            "reservation_id": None,  # Will be set when credits are reserved
+            "videos_metadata": videos_metadata,  # Pre-fetched metadata
             # Formatting options
             "include_timestamps": include_timestamps,
             "include_video_title": include_video_title,
@@ -1009,15 +1182,22 @@ async def start_selected_videos_transcript_download(
 
         # Log the list of videos to be downloaded
         logger.info("Selected videos to be downloaded:")
+        video_ids = []
         for v in videos:
             try:
                 # Handle both dictionary access and object attribute access
                 video_id = v.id if hasattr(v, "id") else v["id"]
                 video_title = v.title if hasattr(v, "title") else v["title"]
                 logger.info(f"  - {video_id}: {video_title}")
+                video_ids.append(video_id)
             except Exception as e:
                 logger.error(f"Error accessing video properties: {str(e)}")
                 logger.error(f"Video object type: {type(v)}")
+
+        # Pre-fetch metadata for all selected videos
+        logger.info(f"Pre-fetching metadata for {len(video_ids)} selected videos...")
+        videos_metadata = await pre_fetch_videos_metadata(video_ids)
+        logger.info(f"Metadata pre-fetching completed")
 
         # Create a unique job ID
         job_id = str(uuid.uuid4())
@@ -1035,9 +1215,10 @@ async def start_selected_videos_transcript_download(
             "videos": videos,  # Store the selected videos list
             "start_time": time.time(),
             "user_id": user_id,
-            "credits_deducted": 0,
-            "initial_user_credits": None,  # Will be set when first credit is deducted
-            "credits_reserved": num_videos,  # Total credits that will be deducted
+            "credits_reserved": num_videos,  # Total credits reserved upfront
+            "credits_used": 0,  # Track actual credits used per video
+            "reservation_id": None,  # Will be set when credits are reserved
+            "videos_metadata": videos_metadata,  # Pre-fetched metadata
             # Formatting options
             "include_timestamps": include_timestamps,
             "include_video_title": include_video_title,
@@ -1075,6 +1256,29 @@ async def download_channel_transcripts_task(job_id: str) -> None:
     job = channel_download_jobs[job_id]
     videos = job["videos"]
     user_id = job["user_id"]
+
+    # Reserve credits upfront for all videos (Phase 2: Batch Credit Management)
+    try:
+        from transcript_api import CreditManager
+
+        credits_to_reserve = job["credits_reserved"]
+        logger.info(
+            f"Job {job_id}: Reserving {credits_to_reserve} credits for user {user_id}"
+        )
+
+        reservation_id = CreditManager.reserve_credits(user_id, credits_to_reserve)
+        job["reservation_id"] = reservation_id
+
+        logger.info(
+            f"Job {job_id}: Successfully reserved {credits_to_reserve} credits, reservation: {reservation_id}"
+        )
+
+    except Exception as e:
+        logger.error(f"Job {job_id}: Failed to reserve credits: {str(e)}")
+        job["status"] = "failed"
+        job["end_time"] = time.time()
+        job["duration"] = job["end_time"] - job["start_time"]
+        return
 
     # Track memory at start of batch processing
     memory_tracker.log_memory_usage(f"batch_start[{job_id}]")
@@ -1123,6 +1327,22 @@ async def download_channel_transcripts_task(job_id: str) -> None:
             )
             memory_tracker.force_garbage_collection()
 
+    # Finalize credit usage - refund unused credits (Phase 2: Batch Credit Management)
+    try:
+        if job.get("reservation_id"):
+            CreditManager.finalize_credit_usage(
+                user_id=user_id,
+                reservation_id=job["reservation_id"],
+                credits_used=job["credits_used"],
+                credits_reserved=job["credits_reserved"],
+            )
+            logger.info(
+                f"Job {job_id}: Finalized credit usage - used {job['credits_used']}/{job['credits_reserved']} credits"
+            )
+    except Exception as e:
+        logger.error(f"Job {job_id}: Error finalizing credit usage: {str(e)}")
+        # Don't fail the job for credit finalization errors
+
     # Mark job as completed when all videos are processed
     job["status"] = "completed"
     job["end_time"] = time.time()
@@ -1148,7 +1368,7 @@ async def download_channel_transcripts_task(job_id: str) -> None:
 async def process_single_video(job_id: str, video_id: str, output_dir: str) -> None:
     """
     Process a single video for transcript download.
-    Deducts 1 credit per video attempt and updates job statistics.
+    Note: Credits are handled at the job level via reservation system.
 
     Args:
         job_id: The job identifier
@@ -1160,45 +1380,9 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
         return
 
     job = channel_download_jobs[job_id]
-    user_id = job["user_id"]
     video_dir = os.path.join(
         output_dir, video_id
     )  # Use video ID as subdirectory for isolation
-
-    # Deduct credit before attempting transcript download
-    try:
-        # Import CreditManager here to avoid circular imports
-        from transcript_api import CreditManager
-
-        # Store initial credits on first deduction
-        if job["initial_user_credits"] is None:
-            job["initial_user_credits"] = CreditManager.get_user_credits(user_id)
-            logger.info(
-                f"Job {job_id}: User {user_id} started with {job['initial_user_credits']} credits"
-            )
-
-        # Deduct 1 credit for this video attempt
-        if CreditManager.deduct_credit(user_id):
-            job["credits_deducted"] += 1
-            logger.info(
-                f"Job {job_id}: Deducted credit for video {video_id}. Total deducted: {job['credits_deducted']}"
-            )
-        else:
-            # This shouldn't happen since we checked upfront, but log it
-            logger.error(
-                f"Job {job_id}: Failed to deduct credit for video {video_id} (insufficient credits)"
-            )
-            job["failed_count"] += 1
-            job["processed_count"] += 1
-            return
-
-    except Exception as e:
-        logger.error(
-            f"Job {job_id}: Error deducting credit for video {video_id}: {str(e)}"
-        )
-        job["failed_count"] += 1
-        job["processed_count"] += 1
-        return
 
     try:
         # Create a separate subdirectory for each video to isolate failures
@@ -1206,7 +1390,10 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
 
         # Add a timeout to prevent any single video from taking too long
         try:
-            # Get transcript with timeout to prevent hanging - use job formatting options
+            # Get pre-fetched metadata for this video
+            video_metadata = job.get("videos_metadata", {}).get(video_id, {})
+
+            # Get transcript with timeout to prevent hanging - use job formatting options and pre-fetched metadata
             transcript_task = asyncio.create_task(
                 get_single_transcript(
                     video_id,
@@ -1216,6 +1403,7 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
                     include_video_id=job["include_video_id"],
                     include_video_url=job["include_video_url"],
                     include_view_count=job["include_view_count"],
+                    pre_fetched_metadata=video_metadata,
                 )
             )
             _, file_path, metadata = await asyncio.wait_for(
@@ -1223,7 +1411,7 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
             )  # 60 second timeout
 
             if file_path:
-                # Update job statistics
+                # Update job statistics and track credit usage
                 job["files"].append(
                     {
                         "file_path": file_path,
@@ -1233,6 +1421,7 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
                     }
                 )
                 job["completed"] += 1
+                job["credits_used"] += 1  # Track credit usage for finalization
                 logger.info(
                     f"Downloaded transcript for video {video_id} ({job['completed']}/{job['total_videos']})"
                 )
@@ -1241,11 +1430,13 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
             logger.error(
                 f"Transcript processing for {video_id} timed out after 60 seconds"
             )
+            job["credits_used"] += 1  # Count failed attempts as credit usage
             raise ValueError(f"Transcript processing timed out")
 
     except Exception as e:
         # Log failure but continue with other videos
         job["failed_count"] += 1
+        job["credits_used"] += 1  # Count failed attempts as credit usage
         logger.error(f"Failed to process video {video_id} for job {job_id}: {str(e)}")
 
     finally:
@@ -1297,9 +1488,8 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
         "start_time": job["start_time"],
         "end_time": job.get("end_time"),
         "duration": job.get("duration"),
-        "credits_deducted": job["credits_deducted"],
         "credits_reserved": job["credits_reserved"],
-        "initial_user_credits": job["initial_user_credits"],
+        "credits_used": job["credits_used"],
         "current_user_credits": current_credits,
         # Formatting options
         "include_timestamps": job.get("include_timestamps", False),
@@ -1311,11 +1501,10 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
     }
 
     # Add credit usage summary
-    if job["initial_user_credits"] is not None:
-        status_info["credits_used_this_job"] = job["credits_deducted"]
-        status_info["credits_remaining_for_job"] = max(
-            0, job["credits_reserved"] - job["credits_deducted"]
-        )
+    status_info["credits_used_this_job"] = job["credits_used"]
+    status_info["credits_remaining_for_job"] = max(
+        0, job["credits_reserved"] - job["credits_used"]
+    )
 
     return status_info
 
