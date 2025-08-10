@@ -5,6 +5,7 @@ YouTube Service - Service layer for YouTube transcript downloading and processin
 import asyncio
 import gc
 import io
+import json
 import logging
 import os
 import psutil
@@ -238,6 +239,88 @@ def get_ytt_api() -> YouTubeTranscriptApi:
 
 # Dictionary to track channel download jobs
 channel_download_jobs: Dict[str, Dict[str, Any]] = {}
+
+# Add persistent job storage
+JOBS_STORAGE_DIR = os.path.join(settings.temp_dir, "jobs")
+os.makedirs(JOBS_STORAGE_DIR, exist_ok=True)
+
+
+def save_job_to_file(job_id: str, job_data: Dict[str, Any]) -> None:
+    """Save job data to persistent storage"""
+    try:
+        job_file = os.path.join(JOBS_STORAGE_DIR, f"{job_id}.json")
+        # Convert non-serializable objects to serializable format
+        serializable_data = {
+            k: v
+            for k, v in job_data.items()
+            if k not in ["videos_metadata"]  # Skip large objects
+        }
+        # Add basic info about metadata
+        if "videos_metadata" in job_data:
+            serializable_data["metadata_count"] = len(job_data["videos_metadata"])
+
+        with open(job_file, "w") as f:
+            json.dump(serializable_data, f, default=str)
+        logger.debug(f"Saved job {job_id} to persistent storage")
+    except Exception as e:
+        logger.error(f"Failed to save job {job_id}: {e}")
+
+
+def load_job_from_file(job_id: str) -> Optional[Dict[str, Any]]:
+    """Load job data from persistent storage"""
+    try:
+        job_file = os.path.join(JOBS_STORAGE_DIR, f"{job_id}.json")
+        if os.path.exists(job_file):
+            with open(job_file, "r") as f:
+                job_data = json.load(f)
+            logger.debug(f"Loaded job {job_id} from persistent storage")
+            return job_data
+        return None
+    except Exception as e:
+        logger.error(f"Failed to load job {job_id}: {e}")
+        return None
+
+
+def update_job_progress(job_id: str, **updates):
+    """Update job progress and save to persistent storage"""
+    if job_id in channel_download_jobs:
+        # Update in-memory job
+        channel_download_jobs[job_id].update(updates)
+        # Save to persistent storage
+        save_job_to_file(job_id, channel_download_jobs[job_id])
+        logger.debug(f"Updated job {job_id} progress: {updates}")
+    else:
+        logger.error(f"Cannot update progress for unknown job: {job_id}")
+
+
+def recover_jobs_from_storage() -> List[str]:
+    """Recover jobs from persistent storage on startup"""
+    recovered_jobs = []
+    try:
+        if os.path.exists(JOBS_STORAGE_DIR):
+            for filename in os.listdir(JOBS_STORAGE_DIR):
+                if filename.endswith(".json"):
+                    job_id = filename[:-5]  # Remove .json extension
+                    job_data = load_job_from_file(job_id)
+                    if job_data:
+                        # Only recover jobs that are still processing
+                        if job_data.get("status") == "processing":
+                            # Mark as failed since we lost the process
+                            job_data["status"] = "failed"
+                            job_data["error"] = "Process restarted during execution"
+                            job_data["end_time"] = time.time()
+                            job_data["duration"] = job_data.get(
+                                "end_time", time.time()
+                            ) - job_data.get("start_time", time.time())
+
+                        channel_download_jobs[job_id] = job_data
+                        recovered_jobs.append(job_id)
+
+        logger.info(f"Recovered {len(recovered_jobs)} jobs from storage")
+        return recovered_jobs
+    except Exception as e:
+        logger.error(f"Error recovering jobs: {e}")
+        return []
 
 
 def extract_youtube_id(url: str) -> str:
@@ -1130,6 +1213,10 @@ async def start_channel_transcript_download(
             "concatenate_all": concatenate_all,
         }
 
+        # Save job to persistent storage immediately after creation
+        save_job_to_file(job_id, channel_download_jobs[job_id])
+        logger.info(f"Created and saved job {job_id} for channel {channel_name}")
+
         # Start the background task to process transcripts
         asyncio.create_task(download_channel_transcripts_task(job_id))
 
@@ -1228,6 +1315,12 @@ async def start_selected_videos_transcript_download(
             "concatenate_all": concatenate_all,
         }
 
+        # Save job to persistent storage immediately after creation
+        save_job_to_file(job_id, channel_download_jobs[job_id])
+        logger.info(
+            f"Created and saved selected videos job {job_id} for channel {channel_name}"
+        )
+
         # Start the background task to process transcripts
         # Uses the same task processor as the full channel download
         asyncio.create_task(download_channel_transcripts_task(job_id))
@@ -1278,6 +1371,17 @@ async def download_channel_transcripts_task(job_id: str) -> None:
         job["status"] = "failed"
         job["end_time"] = time.time()
         job["duration"] = job["end_time"] - job["start_time"]
+        job["error"] = f"Credit reservation failed: {str(e)}"
+
+        # Save failed job status to persistent storage
+        update_job_progress(
+            job_id,
+            status=job["status"],
+            end_time=job["end_time"],
+            duration=job["duration"],
+            error=job["error"],
+        )
+
         return
 
     # Track memory at start of batch processing
@@ -1347,6 +1451,11 @@ async def download_channel_transcripts_task(job_id: str) -> None:
     job["status"] = "completed"
     job["end_time"] = time.time()
     job["duration"] = job["end_time"] - job["start_time"]
+
+    # Save final job status to persistent storage
+    update_job_progress(
+        job_id, status=job["status"], end_time=job["end_time"], duration=job["duration"]
+    )
 
     # Final memory tracking
     final_memory = memory_tracker.log_memory_usage(f"batch_final[{job_id}]")
@@ -1422,6 +1531,15 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
                 )
                 job["completed"] += 1
                 job["credits_used"] += 1  # Track credit usage for finalization
+
+                # Update progress with persistence
+                update_job_progress(
+                    job_id,
+                    files=job["files"],
+                    completed=job["completed"],
+                    credits_used=job["credits_used"],
+                )
+
                 logger.info(
                     f"Downloaded transcript for video {video_id} ({job['completed']}/{job['total_videos']})"
                 )
@@ -1437,16 +1555,23 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
         # Log failure but continue with other videos
         job["failed_count"] += 1
         job["credits_used"] += 1  # Count failed attempts as credit usage
+
+        # Update progress with persistence
+        update_job_progress(
+            job_id, failed_count=job["failed_count"], credits_used=job["credits_used"]
+        )
+
         logger.error(f"Failed to process video {video_id} for job {job_id}: {str(e)}")
 
     finally:
-        # Increment processed count
+        # Increment processed count and update progress
         job["processed_count"] += 1
+        update_job_progress(job_id, processed_count=job["processed_count"])
 
 
 def get_job_status(job_id: str) -> Dict[str, Any]:
     """
-    Get the current status of a transcript download job.
+    Get the current status of a transcript download job with persistence fallback.
 
     Args:
         job_id: The job identifier
@@ -1457,10 +1582,20 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
     Raises:
         ValueError: If job ID is not found
     """
-    if job_id not in channel_download_jobs:
-        raise ValueError(f"Job not found with ID: {job_id}")
-
-    job = channel_download_jobs[job_id]
+    # First try in-memory storage
+    if job_id in channel_download_jobs:
+        job = channel_download_jobs[job_id]
+        logger.debug(f"Found job {job_id} in memory")
+    else:
+        # Fallback to persistent storage
+        job = load_job_from_file(job_id)
+        if job:
+            # Restore to in-memory storage
+            channel_download_jobs[job_id] = job
+            logger.info(f"Restored job {job_id} from persistent storage to memory")
+        else:
+            logger.error(f"Job not found in memory or persistent storage: {job_id}")
+            raise ValueError(f"Job not found with ID: {job_id}")
 
     # Calculate progress percentage
     total = job["total_videos"]

@@ -677,6 +677,42 @@ def read_root():
     }
 
 
+@app.on_event("startup")
+async def startup_event():
+    """Run when the application starts - recover jobs and set up background tasks"""
+    logger.info("Starting YouTube Transcript API...")
+
+    # Recover jobs from persistent storage
+    try:
+        import youtube_service
+
+        recovered_jobs = youtube_service.recover_jobs_from_storage()
+        if recovered_jobs:
+            logger.info(f"Recovered {len(recovered_jobs)} jobs from persistent storage")
+        else:
+            logger.info("No jobs to recover from persistent storage")
+    except Exception as e:
+        logger.error(f"Failed to recover jobs on startup: {e}")
+
+    logger.info("YouTube Transcript API startup complete")
+
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    """Clean up resources on FastAPI shutdown"""
+    logger.info("Shutting down YouTube Transcript API...")
+
+    try:
+        import youtube_service
+
+        # Note: We could add a cleanup_resources function to youtube_service if needed
+        logger.info("Cleanup completed")
+    except Exception as e:
+        logger.error(f"Error during shutdown cleanup: {e}")
+
+    logger.info("YouTube Transcript API shutdown complete")
+
+
 # =============================================
 # PAYMENT ENDPOINTS
 # =============================================
