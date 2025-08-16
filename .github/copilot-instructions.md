@@ -90,6 +90,24 @@ WEBSHARE_PROXY_USERNAME=your_proxy_user
 WEBSHARE_PROXY_PASSWORD=your_proxy_pass
 ```
 
+### Current Active API Endpoints (Post-Cleanup)
+**Core Transcript Functionality** (quota-optimized):
+- `GET /channel/{channel_name}` - Channel info with video listing
+- `GET /channel/{channel_name}/all-videos` - Complete video list with duration categorization
+- `POST /channel/download/selected` - Download transcripts for selected videos  
+- `GET /channel/download/status/{job_id}` - Check download progress
+- `GET /channel/download/results/{job_id}` - Download completed transcripts
+- `POST /download/transcript/raw` - Individual video transcript download
+- `GET /video-info` - Single video metadata
+
+**User Management & Billing**:
+- `GET /user/credits` - Check credit balance
+- `GET /user/profile` - User profile information
+- `POST /payments/create-checkout-session` - Stripe checkout
+- `POST /payments/webhook` - Stripe webhook handler
+
+**Notes**: Redundant endpoints have been removed to streamline the API surface while preserving all core functionality. The remaining endpoints provide quota-efficient operations with 99%+ API quota savings.
+
 ### Testing Transcript API Endpoints
 ```bash
 # Download single video transcript (existing)
@@ -97,7 +115,7 @@ curl -X POST "http://localhost:8001/download/transcript" \
   -H "Content-Type: application/json" \
   -d '{"url": "https://youtu.be/VIDEO_ID"}'
 
-# Download selected videos with formatting options (NEW)
+# Download selected videos with formatting options (CURRENT)
 curl -X POST "http://localhost:8001/channel/download/selected" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
@@ -109,16 +127,16 @@ curl -X POST "http://localhost:8001/channel/download/selected" \
     "concatenate_all": true
   }'
 
-# Download channel transcripts with concatenation (NEW)
-curl -X POST "http://localhost:8001/channel/download/async" \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  -d '{
-    "channel_name": "channelname",
-    "max_results": 10,
-    "concatenate_all": true,
-    "include_timestamps": false
-  }'
+# Get all videos for a channel for selection (CURRENT)
+curl -X GET "http://localhost:8001/channel/channelname/all-videos"
+
+# Check download progress (CURRENT)
+curl -X GET "http://localhost:8001/channel/download/status/your-job-id" \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"
+
+# Download completed transcripts (CURRENT)
+curl -X GET "http://localhost:8001/channel/download/results/your-job-id" \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"
 
 # Check user credits (authenticated)
 curl -X GET "http://localhost:8001/user/credits" \
@@ -127,7 +145,7 @@ curl -X GET "http://localhost:8001/user/credits" \
 
 ## Transcript API Specific Patterns
 
-### Advanced Formatting Options (NEW)
+### Advanced Formatting Options (CURRENT)
 ```python
 # Frontend can now control transcript formatting via request body:
 {
@@ -140,6 +158,28 @@ curl -X GET "http://localhost:8001/user/credits" \
   "concatenate_all": false          // Single file vs individual files
 }
 ```
+
+### Streamlined API Workflow (CURRENT)
+The API has been streamlined to focus on core functionality with quota-optimized operations:
+
+1. **Video Discovery**: `GET /channel/{channel_name}/all-videos`
+   - Returns complete list with duration categorization (short/medium/long)
+   - Uses efficient uploads playlist approach (99%+ quota savings)
+   - Includes metadata for user selection
+
+2. **Selected Download**: `POST /channel/download/selected`
+   - Downloads only user-selected videos
+   - Supports all formatting options
+   - Returns job ID for progress tracking
+
+3. **Progress Monitoring**: `GET /channel/download/status/{job_id}`
+   - Real-time status updates
+   - Credit usage tracking
+   - Error reporting
+
+4. **Result Retrieval**: `GET /channel/download/results/{job_id}`
+   - Download completed transcript ZIP
+   - Supports both individual files and concatenated formats
 
 ### Single File Concatenation
 - **Individual Files** (default): ZIP contains separate .txt files per video
@@ -186,13 +226,23 @@ metadata = {"project": "transcript-api", "user_uuid": user_id}
 
 ## Integration Points (Transcript API)
 
-### YouTube API Usage (`youtube_service.py`)
+### YouTube API Usage (`youtube_service.py`) - QUOTA OPTIMIZED
 ```python
 # Channel/video ID extraction and validation
 async def extract_youtube_id(url: str) -> Tuple[str, str]
 
 # Video metadata fetching with retry logic
 async def get_video_info(video_id: str) -> Dict
+
+# QUOTA EFFICIENT: Channel video discovery using uploads playlist
+async def get_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]
+# Uses playlistItems.list (1 unit) + batch videos.list (1 unit per 50 videos)
+# Replaces expensive search.list calls (100 units each)
+# Achieves 99%+ quota reduction for video discovery
+
+# Duration categorization with efficient batch processing
+def _categorize_duration(duration_seconds: int) -> str:
+    # Returns 'short' (≤60s), 'medium' (61s-20min), 'long' (>20min)
 
 # Transcript extraction with proxy support
 def get_ytt_api() -> YouTubeTranscriptApi:

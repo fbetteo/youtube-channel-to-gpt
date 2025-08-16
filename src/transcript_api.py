@@ -891,108 +891,108 @@ async def get_user_profile(payload: dict = Depends(validate_jwt)):
 # =============================================
 
 
-@app.post("/download/transcript")
-async def download_transcript_by_url(
-    request: DownloadURLRequest,  # From JSON body: {"youtube_url": "...", "include_timestamps": false}
-    fastapi_request: Request,  # From HTTP metadata: client IP, headers, etc.
-    user_info: Dict = Depends(get_user_or_anonymous),
-    session: Dict = Depends(get_user_session),
-):
-    """
-    Download a transcript for a single YouTube video by URL.
-    Returns a plain text file with the transcript.
+# @app.post("/download/transcript")
+# async def download_transcript_by_url(
+#     request: DownloadURLRequest,  # From JSON body: {"youtube_url": "...", "include_timestamps": false}
+#     fastapi_request: Request,  # From HTTP metadata: client IP, headers, etc.
+#     user_info: Dict = Depends(get_user_or_anonymous),
+#     session: Dict = Depends(get_user_session),
+# ):
+#     """
+#     Download a transcript for a single YouTube video by URL.
+#     Returns a plain text file with the transcript.
 
-    For authenticated users: deducts 1 credit per attempt
-    For anonymous users: rate limited to 3 downloads per hour per IP
-    """
-    endpoint_start = time.time()
+#     For authenticated users: deducts 1 credit per attempt
+#     For anonymous users: rate limited to 3 downloads per hour per IP
+#     """
+#     endpoint_start = time.time()
 
-    # Handle authentication and credit/rate limit logic
-    if user_info["is_authenticated"]:
-        user_id = user_info["user_id"]
+#     # Handle authentication and credit/rate limit logic
+#     if user_info["is_authenticated"]:
+#         user_id = user_info["user_id"]
 
-        # Deduct credit before attempting download
-        if not CreditManager.deduct_credit(user_id):
-            raise HTTPException(
-                status_code=status.HTTP_402_PAYMENT_REQUIRED,
-                detail="Insufficient credits. Please purchase more credits to continue.",
-            )
+#         # Deduct credit before attempting download
+#         if not CreditManager.deduct_credit(user_id):
+#             raise HTTPException(
+#                 status_code=status.HTTP_402_PAYMENT_REQUIRED,
+#                 detail="Insufficient credits. Please purchase more credits to continue.",
+#             )
 
-        logger.info(f"Authenticated transcript download for user {user_id}")
-    else:
-        # Apply rate limiting for anonymous users
-        rate_limit_info = check_anonymous_rate_limit(fastapi_request)
-        logger.info(
-            f"Anonymous transcript download from {rate_limit_info['client_ip']} "
-            f"({rate_limit_info['remaining_requests']} requests remaining)"
-        )
-    try:
-        # Extract YouTube video ID from URL
-        extract_start = time.time()
-        video_id = youtube_service.extract_youtube_id(request.youtube_url)
-        extract_end = time.time()
-        logger.info(f"URL extraction took {extract_end - extract_start:.3f}s")
+#         logger.info(f"Authenticated transcript download for user {user_id}")
+#     else:
+#         # Apply rate limiting for anonymous users
+#         rate_limit_info = check_anonymous_rate_limit(fastapi_request)
+#         logger.info(
+#             f"Anonymous transcript download from {rate_limit_info['client_ip']} "
+#             f"({rate_limit_info['remaining_requests']} requests remaining)"
+#         )
+#     try:
+#         # Extract YouTube video ID from URL
+#         extract_start = time.time()
+#         video_id = youtube_service.extract_youtube_id(request.youtube_url)
+#         extract_end = time.time()
+#         logger.info(f"URL extraction took {extract_end - extract_start:.3f}s")
 
-        # Create directories for this user
-        dir_start = time.time()
-        user_dir = os.path.join(settings.temp_dir, session["id"])
-        os.makedirs(user_dir, exist_ok=True)
-        dir_end = time.time()
-        logger.info(f"Directory creation took {dir_end - dir_start:.3f}s")
+#         # Create directories for this user
+#         dir_start = time.time()
+#         user_dir = os.path.join(settings.temp_dir, session["id"])
+#         os.makedirs(user_dir, exist_ok=True)
+#         dir_end = time.time()
+#         logger.info(f"Directory creation took {dir_end - dir_start:.3f}s")
 
-        # Get transcript using the new service
-        transcript_start = time.time()
-        transcript_text, file_path, metadata = (
-            await youtube_service.get_single_transcript(
-                video_id, user_dir, request.include_timestamps
-            )
-        )
-        transcript_end = time.time()
-        logger.info(
-            f"Transcript retrieval took {transcript_end - transcript_start:.3f}s"
-        )
+#         # Get transcript using the new service
+#         transcript_start = time.time()
+#         transcript_text, file_path, metadata = (
+#             await youtube_service.get_single_transcript(
+#                 video_id, user_dir, request.include_timestamps
+#             )
+#         )
+#         transcript_end = time.time()
+#         logger.info(
+#             f"Transcript retrieval took {transcript_end - transcript_start:.3f}s"
+#         )
 
-        if not file_path:
-            # If file_path is None, create a temporary file
-            tmp_start = time.time()
-            with tempfile.NamedTemporaryFile(
-                mode="w+", delete=False, suffix=".txt", dir=user_dir
-            ) as temp_file:
-                temp_file.write(transcript_text)
-                file_path = temp_file.name
-            tmp_end = time.time()
-            logger.info(f"Temporary file creation took {tmp_end - tmp_start:.3f}s")
+#         if not file_path:
+#             # If file_path is None, create a temporary file
+#             tmp_start = time.time()
+#             with tempfile.NamedTemporaryFile(
+#                 mode="w+", delete=False, suffix=".txt", dir=user_dir
+#             ) as temp_file:
+#                 temp_file.write(transcript_text)
+#                 file_path = temp_file.name
+#             tmp_end = time.time()
+#             logger.info(f"Temporary file creation took {tmp_end - tmp_start:.3f}s")
 
-        response_start = time.time()
-        response = FileResponse(
-            path=file_path,
-            media_type="text/plain",
-            filename=f"{video_id}_transcript.txt",
-        )
-        response.headers["X-Transcript-Language"] = metadata.get(
-            "transcript_language", "unknown"
-        )
-        response.headers["X-Transcript-Type"] = metadata.get(
-            "transcript_type", "unknown"
-        )
+#         response_start = time.time()
+#         response = FileResponse(
+#             path=file_path,
+#             media_type="text/plain",
+#             filename=f"{video_id}_transcript.txt",
+#         )
+#         response.headers["X-Transcript-Language"] = metadata.get(
+#             "transcript_language", "unknown"
+#         )
+#         response.headers["X-Transcript-Type"] = metadata.get(
+#             "transcript_type", "unknown"
+#         )
 
-        response_end = time.time()
-        logger.info(f"Response preparation took {response_end - response_start:.3f}s")
+#         response_end = time.time()
+#         logger.info(f"Response preparation took {response_end - response_start:.3f}s")
 
-        endpoint_end = time.time()
-        total_time = endpoint_end - endpoint_start
-        logger.info(f"Total endpoint execution took {total_time:.3f}s")
+#         endpoint_end = time.time()
+#         total_time = endpoint_end - endpoint_start
+#         logger.info(f"Total endpoint execution took {total_time:.3f}s")
 
-        return response
+#         return response
 
-    except ValueError as e:
-        logger.error(f"Invalid URL: {str(e)}")
-        raise HTTPException(status_code=400, detail=str(e))
-    except Exception as e:
-        logger.error(f"Error downloading transcript: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail=f"Failed to download transcript: {str(e)}"
-        )
+#     except ValueError as e:
+#         logger.error(f"Invalid URL: {str(e)}")
+#         raise HTTPException(status_code=400, detail=str(e))
+#     except Exception as e:
+#         logger.error(f"Error downloading transcript: {str(e)}", exc_info=True)
+#         raise HTTPException(
+#             status_code=500, detail=f"Failed to download transcript: {str(e)}"
+#         )
 
 
 @app.post("/download/transcript/raw")
@@ -1149,102 +1149,102 @@ async def get_channel_info(
         )
 
 
-@app.post("/channel/download/async")
-async def start_channel_transcript_download(
-    request: ChannelRequest,
-    payload: dict = Depends(validate_jwt),
-    session: Dict = Depends(get_user_session),
-):
-    """
-    Start asynchronous download of transcripts for all videos in a YouTube channel.
-    Returns a job ID that can be used to check progress and retrieve results.
+# @app.post("/channel/download/async")
+# async def start_channel_transcript_download(
+#     request: ChannelRequest,
+#     payload: dict = Depends(validate_jwt),
+#     session: Dict = Depends(get_user_session),
+# ):
+#     """
+#     Start asynchronous download of transcripts for all videos in a YouTube channel.
+#     Returns a job ID that can be used to check progress and retrieve results.
 
-    REQUIRES AUTHENTICATION: This endpoint requires sufficient credits for all videos.
-    Each video transcript attempt will deduct 1 credit.
-    """
-    channel_name = request.channel_name
-    max_results = request.max_results
-    session_id = session["id"]
-    user_id = get_user_id_from_payload(payload)
+#     REQUIRES AUTHENTICATION: This endpoint requires sufficient credits for all videos.
+#     Each video transcript attempt will deduct 1 credit.
+#     """
+#     channel_name = request.channel_name
+#     max_results = request.max_results
+#     session_id = session["id"]
+#     user_id = get_user_id_from_payload(payload)
 
-    try:
-        # Check if user has sufficient credits for the requested number of videos
-        user_credits = CreditManager.get_user_credits(user_id)
-        if user_credits < max_results:
-            raise HTTPException(
-                status_code=status.HTTP_402_PAYMENT_REQUIRED,
-                detail=f"Insufficient credits. You need {max_results} credits but only have {user_credits}. Please purchase more credits.",
-            )
+#     try:
+#         # Check if user has sufficient credits for the requested number of videos
+#         user_credits = CreditManager.get_user_credits(user_id)
+#         if user_credits < max_results:
+#             raise HTTPException(
+#                 status_code=status.HTTP_402_PAYMENT_REQUIRED,
+#                 detail=f"Insufficient credits. You need {max_results} credits but only have {user_credits}. Please purchase more credits.",
+#             )
 
-        # Start asynchronous transcript retrieval using the new service
-        job_id = await youtube_service.start_channel_transcript_download(
-            channel_name,
-            max_results,
-            # session_id,
-            user_id,  # Pass user_id for credit deduction
-            include_timestamps=request.include_timestamps,
-            include_video_title=request.include_video_title,
-            include_video_id=request.include_video_id,
-            include_video_url=request.include_video_url,
-            include_view_count=request.include_view_count,
-            concatenate_all=request.concatenate_all,
-        )  # Return job ID for polling status
-        return {
-            "job_id": job_id,
-            "status": "processing",
-            "total_videos": youtube_service.channel_download_jobs[job_id][
-                "total_videos"
-            ],
-            "channel_name": channel_name,
-            "user_id": user_id,
-            "credits_reserved": max_results,
-            "user_credits_at_start": user_credits,
-            "message": f"Transcript retrieval started. Credits will be deducted per video attempt (1 credit each). You have {user_credits} credits available. Use the /channel/download/status endpoint to check progress and credit usage.",
-        }
+#         # Start asynchronous transcript retrieval using the new service
+#         job_id = await youtube_service.start_channel_transcript_download(
+#             channel_name,
+#             max_results,
+#             # session_id,
+#             user_id,  # Pass user_id for credit deduction
+#             include_timestamps=request.include_timestamps,
+#             include_video_title=request.include_video_title,
+#             include_video_id=request.include_video_id,
+#             include_video_url=request.include_video_url,
+#             include_view_count=request.include_view_count,
+#             concatenate_all=request.concatenate_all,
+#         )  # Return job ID for polling status
+#         return {
+#             "job_id": job_id,
+#             "status": "processing",
+#             "total_videos": youtube_service.channel_download_jobs[job_id][
+#                 "total_videos"
+#             ],
+#             "channel_name": channel_name,
+#             "user_id": user_id,
+#             "credits_reserved": max_results,
+#             "user_credits_at_start": user_credits,
+#             "message": f"Transcript retrieval started. Credits will be deducted per video attempt (1 credit each). You have {user_credits} credits available. Use the /channel/download/status endpoint to check progress and credit usage.",
+#         }
 
-    except ValueError as e:
-        logger.error(f"Invalid channel request: {str(e)}")
-        raise HTTPException(status_code=400, detail=str(e))
-    except Exception as e:
-        logger.error(f"Error starting transcript download: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail=f"Failed to start transcript download: {str(e)}"
-        )
+#     except ValueError as e:
+#         logger.error(f"Invalid channel request: {str(e)}")
+#         raise HTTPException(status_code=400, detail=str(e))
+#     except Exception as e:
+#         logger.error(f"Error starting transcript download: {str(e)}", exc_info=True)
+#         raise HTTPException(
+#             status_code=500, detail=f"Failed to start transcript download: {str(e)}"
+#         )
 
 
-@app.get("/channel/{channel_name}/videos")
-async def list_channel_videos(
-    channel_name: str,
-    max_results: int = 30,
-    # auth: bool = Depends(verify_api_key),
-    session: Dict = Depends(get_user_session),
-):
-    """
-    Get a list of videos from a channel with their metadata.
-    Useful for selective transcript downloading.
-    """
-    try:
-        # Get channel info
-        channel_info = await youtube_service.get_channel_info(channel_name)
-        channel_id = channel_info["channelId"]
+# @app.get("/channel/{channel_name}/videos")
+# async def list_channel_videos(
+#     channel_name: str,
+#     max_results: int = 30,
+#     # auth: bool = Depends(verify_api_key),
+#     session: Dict = Depends(get_user_session),
+# ):
+#     """
+#     Get a list of videos from a channel with their metadata.
+#     Useful for selective transcript downloading.
+#     """
+#     try:
+#         # Get channel info
+#         channel_info = await youtube_service.get_channel_info(channel_name)
+#         channel_id = channel_info["channelId"]
 
-        # Get videos from channel
-        videos = await youtube_service.get_channel_videos(channel_id, max_results)
+#         # Get videos from channel
+#         videos = await youtube_service.get_channel_videos(channel_id, max_results)
 
-        # Return combined info
-        return {
-            "channel": channel_info,
-            "videos": videos,
-        }
+#         # Return combined info
+#         return {
+#             "channel": channel_info,
+#             "videos": videos,
+#         }
 
-    except ValueError as e:
-        logger.error(f"Invalid request: {str(e)}")
-        raise HTTPException(status_code=400, detail=str(e))
-    except Exception as e:
-        logger.error(f"Error listing channel videos: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail=f"Failed to list channel videos: {str(e)}"
-        )
+#     except ValueError as e:
+#         logger.error(f"Invalid request: {str(e)}")
+#         raise HTTPException(status_code=400, detail=str(e))
+#     except Exception as e:
+#         logger.error(f"Error listing channel videos: {str(e)}", exc_info=True)
+#         raise HTTPException(
+#             status_code=500, detail=f"Failed to list channel videos: {str(e)}"
+#         )
 
 
 @app.get("/channel/{channel_name}/all-videos")
