@@ -219,21 +219,39 @@ except Exception as e:
     youtube = None
 
 
+def get_youtube_client():
+    """
+    Create a thread-safe YouTube API client for each worker.
+    This prevents thread safety issues with the global client.
+    """
+    try:
+        return build("youtube", "v3", developerKey=settings.youtube_api_key)
+    except Exception as e:
+        logger.error(f"Failed to create YouTube API client: {str(e)}")
+        return youtube  # Fallback to global client
+
+
 # Remove global ytt_api initialization, only keep YouTube API client
 def get_ytt_api() -> YouTubeTranscriptApi:
     """
     Create a new YouTubeTranscriptApi instance with proxy config if needed.
+    Thread-safe implementation that creates fresh instances.
     Returns:
         YouTubeTranscriptApi instance
     """
-    if settings.webshare_proxy_username and settings.webshare_proxy_password:
-        proxy_config = WebshareProxyConfig(
-            proxy_username=settings.webshare_proxy_username,
-            proxy_password=settings.webshare_proxy_password,
-            retries_when_blocked=1,
-        )
-        return YouTubeTranscriptApi(proxy_config=proxy_config)
-    else:
+    try:
+        if settings.webshare_proxy_username and settings.webshare_proxy_password:
+            proxy_config = WebshareProxyConfig(
+                proxy_username=settings.webshare_proxy_username,
+                proxy_password=settings.webshare_proxy_password,
+                retries_when_blocked=1,
+            )
+            return YouTubeTranscriptApi(proxy_config=proxy_config)
+        else:
+            return YouTubeTranscriptApi()
+    except Exception as e:
+        logger.error(f"Error creating YouTubeTranscriptApi: {str(e)}")
+        # Fallback to basic instance
         return YouTubeTranscriptApi()
 
 
@@ -455,7 +473,9 @@ async def get_videos_metadata_batch(video_ids: List[str]) -> Dict[str, Dict[str,
         video_ids_str = ",".join(video_ids)
 
         def _fetch_videos_batch():
-            request = youtube.videos().list(
+            # Use thread-safe client
+            client = get_youtube_client()
+            request = client.videos().list(
                 part="snippet,contentDetails,statistics",
                 id=video_ids_str,
                 maxResults=50,
@@ -542,7 +562,9 @@ async def get_video_info(video_id: str) -> Dict[str, Any]:
     try:
         # This is a blocking call, so we run it in a thread
         def _fetch_video_info():
-            video_request = youtube.videos().list(
+            # Use thread-safe client
+            client = get_youtube_client()
+            video_request = client.videos().list(
                 part="snippet,contentDetails,statistics",
                 id=video_id,
             )
@@ -677,17 +699,19 @@ async def get_channel_info(channel_name: str) -> Dict[str, Any]:
         is_channel_id = re.match(r"^UC[\w-]{22}$", channel_name) is not None
 
         def _fetch_channel_info():
+            # Use thread-safe client
+            client = get_youtube_client()
             if is_channel_id:
                 # If it's a channel ID, fetch directly
                 logger.info(f"Using channel ID directly: {channel_name}")
-                request = youtube.channels().list(
+                request = client.channels().list(
                     part="snippet,statistics,contentDetails", id=channel_name
                 )
             else:
                 # For channel names/handles, try to fetch directly
                 # This will work for some formats but may fail for others
                 logger.info(f"Attempting direct channel lookup for: {channel_name}")
-                request = youtube.channels().list(
+                request = client.channels().list(
                     part="snippet,statistics,contentDetails", forHandle=channel_name
                 )
 
@@ -868,7 +892,8 @@ def _fetch_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
     logger.info(f"Fetching all videos from uploads playlist for channel {channel_id}")
 
     # Get channel info to access uploads playlist
-    request = youtube.channels().list(part="contentDetails", id=channel_id)
+    client = get_youtube_client()
+    request = client.channels().list(part="contentDetails", id=channel_id)
     response = request.execute()
 
     if not response.get("items"):
@@ -883,7 +908,7 @@ def _fetch_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
 
     # Paginate through all videos in the uploads playlist
     while True:
-        request = youtube.playlistItems().list(
+        request = client.playlistItems().list(
             part="snippet",
             playlistId=uploads_playlist_id,
             maxResults=50,
@@ -920,7 +945,7 @@ def _fetch_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
         video_ids = [video["id"] for video in batch_videos]
 
         # Fetch durations for this batch
-        request = youtube.videos().list(part="contentDetails", id=",".join(video_ids))
+        request = client.videos().list(part="contentDetails", id=",".join(video_ids))
         durations_response = request.execute()
 
         # Create a mapping of video_id to duration category
@@ -1010,14 +1035,19 @@ async def get_single_transcript(
     logger.info(f"Starting transcript fetch for video {video_id}")
 
     try:
+        # Create fresh API instance for thread safety
         ytt_api = get_ytt_api()
         fetch_start = time.time()
 
-        # 1. List available transcripts
-        transcript_list = await retry_operation(
-            lambda: asyncio.to_thread(ytt_api.list, video_id),
-            max_retries=2,
-        )
+        # 1. List available transcripts with better error handling
+        try:
+            transcript_list = await retry_operation(
+                lambda ytt_api=ytt_api: asyncio.to_thread(ytt_api.list, video_id),
+                max_retries=2,
+            )
+        except Exception as e:
+            logger.error(f"Failed to list transcripts for video {video_id}: {str(e)}")
+            raise ValueError(f"No transcripts available for video {video_id}: {str(e)}")
 
         transcript = None
         # 2. Try to find English, otherwise take the first available
@@ -1039,16 +1069,25 @@ async def get_single_transcript(
                 logger.error(f"No transcripts available at all for video {video_id}")
                 raise ValueError(f"No transcripts available for video {video_id}")
 
-        # 3. Fetch the selected transcript
-        fetched_transcript = await retry_operation(
-            lambda: asyncio.to_thread(transcript.fetch),
-            max_retries=2,
-        )
+        # 3. Fetch the selected transcript with better error handling
+        try:
+            fetched_transcript = await retry_operation(
+                lambda: asyncio.to_thread(transcript.fetch),
+                max_retries=2,
+            )
+        except Exception as e:
+            logger.error(f"Failed to fetch transcript for video {video_id}: {str(e)}")
+            raise ValueError(
+                f"Failed to fetch transcript for video {video_id}: {str(e)}"
+            )
 
         fetch_end = time.time()
         logger.info(
             f"API fetch took {fetch_end - fetch_start:.3f}s for video {video_id}"
         )
+
+        # Clean up API instance immediately after use to prevent memory leaks
+        del ytt_api
 
         # Track memory after API fetch
         memory_tracker.log_memory_usage(f"transcript_fetched[{video_id}]", "debug")
@@ -1368,7 +1407,7 @@ async def start_selected_videos_transcript_download(
         # Pre-fetch metadata for all selected videos
         logger.info(f"Pre-fetching metadata for {len(video_ids)} selected videos...")
         videos_metadata = await pre_fetch_videos_metadata(video_ids)
-        logger.info(f"Metadata pre-fetching completed")
+        logger.info("Metadata pre-fetching completed")
 
         # Create a unique job ID
         job_id = str(uuid.uuid4())
@@ -1500,6 +1539,10 @@ async def download_channel_transcripts_task(job_id: str) -> None:
         # Run the batch concurrently and wait for all to complete
         await asyncio.gather(*tasks)
 
+        # Add small delay between batches to reduce API pressure and prevent memory corruption
+        if batch_num < len(range(0, len(videos), batch_size)):
+            await asyncio.sleep(1.0)  # 1 second delay between batches
+
         # Track memory after each batch and force GC if needed
         batch_memory = memory_tracker.log_memory_usage(
             f"batch_{batch_num}_complete[{job_id}]"
@@ -1586,6 +1629,12 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
             # Get pre-fetched metadata for this video
             video_metadata = job.get("videos_metadata", {}).get(video_id, {})
 
+            # Log if we're using pre-fetched metadata
+            if video_metadata:
+                logger.debug(f"Using pre-fetched metadata for video {video_id}")
+            else:
+                logger.debug(f"No pre-fetched metadata for video {video_id}")
+
             # Get transcript with timeout to prevent hanging - use job formatting options and pre-fetched metadata
             transcript_task = asyncio.create_task(
                 get_single_transcript(
@@ -1600,8 +1649,8 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
                 )
             )
             _, file_path, metadata = await asyncio.wait_for(
-                transcript_task, timeout=60.0
-            )  # 60 second timeout
+                transcript_task, timeout=35.0
+            )  # 35 second timeout
 
             if file_path:
                 # Update job statistics and track credit usage
@@ -1633,7 +1682,7 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
                 f"Transcript processing for {video_id} timed out after 60 seconds"
             )
             job["credits_used"] += 1  # Count failed attempts as credit usage
-            raise ValueError(f"Transcript processing timed out")
+            raise ValueError("Transcript processing timed out")
 
     except Exception as e:
         # Log failure but continue with other videos
