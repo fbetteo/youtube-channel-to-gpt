@@ -1,0 +1,735 @@
+Video Title: I made these 10 SaaS (and earned $237,631)
+Video ID: D1BjJB-n9lg
+URL: https://www.youtube.com/watch?v=D1BjJB-n9lg
+
+[00:00] I have built these 10 software
+[00:02] businesses. Altogether, they made over
+[00:03] $200,000 US at around 90 to 95% profit
+[00:07] margin and everything is automated.
+[00:09] There is barely any customer support.
+[00:10] So, I'm literally making money while I
+[00:12] slip. In this video, I'm going to walk
+[00:14] you over those seven SAS that are still
+[00:16] active. I'm going to show you how I got
+[00:18] the ideal, how I got customers for $0
+[00:20] when I didn't even have an audience, and
+[00:22] how much revenue in total they have
+[00:24] generated. All right, first software is
+[00:26] Habit Garden. It's a little to-do list,
+[00:28] like a habit tracker, uh, that is
+[00:30] gamified, so people play games when they
+[00:32] track their habits. Uh, it is priced at
+[00:34] $5 a month or $47 for the lifetime deal.
+[00:37] And it has an iOS Android app. Actually,
+[00:40] this is what my uh this is what my
+[00:41] habits garden dashboard looks like. This
+[00:43] is my actual app. And once I have
+[00:45] completed my habits, they have like
+[00:47] those uh little missions where I have
+[00:49] quests, stuff, I can grow a garden, I
+[00:51] can play with friends, etc. Now,
+[00:52] revenue-wise, this app started in 2022,
+[00:56] and I made around $20,000 with this app.
+[00:59] This is a little bit of a complex story
+[01:00] because uh it started in 2022. I made
+[01:03] around $1,000 with the web app and
+[01:05] another $1,000 with the iOS Android app.
+[01:08] And then I didn't know how to grow the
+[01:09] startup more than that. And someone
+[01:11] reached out to me, offered to buy the
+[01:12] app for $10,000, zero call, just one DM.
+[01:14] I said yes because I was running out of
+[01:16] money. And a year later, this person
+[01:18] came back to me and said like, "Hey, I
+[01:19] don't have the time to uh grow the app.
+[01:21] I'll give it back to you for free. This
+[01:23] is really mindblowing. I'm so grateful
+[01:26] it happened to me. And so since that I
+[01:29] started a new Stripe account. So this is
+[01:31] the actual Stripe account and it's
+[01:33] around uh 40 monthly recurring revenue
+[01:35] right now on the web app and on the iOS
+[01:37] Android app it's around 140 in monthly
+[01:40] recurring revenue. And so I think in the
+[01:42] last 30 days it makes around $400. How
+[01:45] did I get this idea? So again I started
+[01:47] in 2022. Back then I just recovered from
+[01:49] a depression. I got a job as a software
+[01:51] engineer and got fired. And I just
+[01:53] wanted to build stuff on the internet. I
+[01:55] played this game World of Warcraft way
+[01:57] too much. Undead mage over 200 days of
+[02:00] game played way too much. But I know
+[02:02] that games can bring people to do right
+[02:04] things. And around the same time, I was
+[02:06] reading the book Why We Sleep by Matthew
+[02:09] Walker and I realized how much daily
+[02:10] habits like workouts, sleep, and diet
+[02:12] impact my mood. And I wanted to combine
+[02:15] those two and I created a habit tracker
+[02:17] that is gamified. Now getting customers
+[02:19] was the hard part because then I just
+[02:20] started the journey like building stuff
+[02:22] in public and I had no idea how to get
+[02:24] customers. One of the first thing I did
+[02:25] is to um create a Twitter account and
+[02:27] started sharing like screenshots of the
+[02:29] app I'm building. This is how I got the
+[02:31] first 10 or maybe 50 users. And then I
+[02:33] started to make videos like this that
+[02:34] are like promotional videos but in a fun
+[02:36] way. So it looks like a it looks like I
+[02:39] am playing like a World of Warcraft in
+[02:41] real life. And this is what got me
+[02:42] attention on Twitter in YouTube
+[02:44] initially. I I had to use my wife as a
+[02:46] character in the game. This was one of
+[02:49] the way of growing this app. The second
+[02:50] one and by far my favorite marketing
+[02:52] strategy is free tools. So I built bunch
+[02:55] of like little website like this one
+[02:57] visualizehabit.com
+[02:58] where it's like a free website where you
+[03:00] can create a little habit grid just like
+[03:02] this. So let's say you want to uh
+[03:04] meditate like I don't know 10 minutes
+[03:05] every day and you want to sleep let's
+[03:08] say 8 hours a day. Then you can have a
+[03:10] little grid like this where you can
+[03:12] visualize how much uh you will achieve
+[03:14] in one year. This is very visual. This
+[03:17] is uh something that people shared a
+[03:18] lot. And when you click next, then it
+[03:20] makes a promotion for my habit tracker.
+[03:21] And you can click and then it will just
+[03:23] start the habit tracker and it's going
+[03:25] to automatically import all of those
+[03:27] habits inside of the habit tracker. This
+[03:29] works so well because um it's sharable.
+[03:32] People can share it and it goes viral.
+[03:34] In fact, this is exactly what happened
+[03:35] on Reddit. I made these posts two was I
+[03:38] think it's over two years ago probably
+[03:39] like close to three years ago and the
+[03:41] pause got almost 6,000 likes. I got
+[03:44] really a bunch of users uh coming from
+[03:46] this visualize habit tool funnel to my
+[03:49] habit tracker. Now in 2025 I think it is
+[03:52] really hard to make an app that charge
+[03:54] recurring subscription for people who
+[03:56] are not businesses or B2C business with
+[03:58] a subscription. I think it is really
+[03:59] hard. If I had to start again, I would
+[04:02] probably do like Instagram and Tik Tok
+[04:04] like share bunch of videos like either
+[04:06] inspirational videos or challenges etc.
+[04:08] I would try to use those platform more
+[04:10] in order to grow my habit tracker
+[04:12] software. Number two, we have Indie
+[04:14] Page. It's a little website builder like
+[04:16] a no code builder for people who want to
+[04:18] create a little portfolio on the
+[04:19] internet. It is priced at $25 a year or
+[04:22] $45 for a lifetime deal. On the inside,
+[04:25] it looks like this like a a bunch of
+[04:27] form for people they can add their
+[04:28] website etc. It also connects
+[04:30] automatically with a Stripe account. So
+[04:32] if you know if you're an entrepreneur,
+[04:33] you want to share your revenue on the
+[04:34] internet, this is the the place to do
+[04:36] it. Now, revenue-wise, I started this
+[04:38] project around 2023 and made $43,000
+[04:42] from it. So this is the first Stripe
+[04:45] account. So when I started in 2023 and
+[04:47] since I changed my business, I had to
+[04:49] change the Stripe account as well. So
+[04:51] this is the secondary Stripe dashboard.
+[04:53] By the way, those spikes of revenue here
+[04:55] is what happens when I focus on
+[04:57] marketing. But uh unfortunately I got a
+[04:59] little bit bored and I moved on. Now how
+[05:01] did I get this idea and I love this
+[05:03] project because it is a perfect example
+[05:06] to show that startup ideas don't matter.
+[05:08] The best way to find a good startup idea
+[05:10] is to create stuff create a lot of noise
+[05:12] and then you will find signal out of it.
+[05:14] So for instance uh this is an really old
+[05:16] website of mine back then I had uh
+[05:18] because of the previous software I had a
+[05:20] little audience on Twitter like maybe
+[05:22] 100 people and I started to create a
+[05:25] little website like a personal website
+[05:27] where I would showcase all the little
+[05:28] projects I work on and I would add this
+[05:30] link to my Twitter bio and people
+[05:32] mention in my DM I would love to create
+[05:35] the same website as you and boom there
+[05:37] we go just like that I had this idea of
+[05:39] creating a website builder build builder
+[05:40] for entrepreneurs who want to showcase
+[05:42] their work now getting customers was
+[05:44] kind of fun for this one because I also
+[05:45] came up with a bunch of ideas. The first
+[05:47] one was to get the product into the
+[05:48] hands of famous people on Twitter. So,
+[05:51] Arvid, Damon, all those guys have
+[05:53] already over way over 10,000 followers
+[05:55] on Twitter. And I try to get them to use
+[05:57] my app so that I have some kind of
+[05:58] social proof to show on the landing
+[06:00] page. And then the second thing I did
+[06:02] once I had a little bit of social proof
+[06:03] was to launch on Product Hunt, a popular
+[06:05] platform for people to launch startups.
+[06:07] And it got a bunch of up votes. It got
+[06:09] the badge like number one of the days.
+[06:10] So the product was shared on newsletter,
+[06:12] social media, etc. And then the part you
+[06:14] see here where it's like growing and
+[06:16] spikes is because then I decided to
+[06:18] build more free tools. For instance, I
+[06:20] built this like a little Twitter bot
+[06:22] that is connected with my software and
+[06:24] then it's basically going to share
+[06:26] whenever someone makes a sale. So for
+[06:28] instance 6 hours ago, I know that I made
+[06:30] a $25 sale for this product. So it's
+[06:32] basically like a feed of all the makers
+[06:34] that are registered with the platforms
+[06:36] and how much money they're making. And
+[06:37] on top of that, and I think one of the
+[06:39] features that at the moment drive the
+[06:40] most revenue is because there is now a
+[06:42] solid user base. Uh I created this like
+[06:45] slash leaderboard page where I kind of
+[06:47] frame it as a challenge. Can you make
+[06:49] $1,000 online? Uh people here are
+[06:51] verified with Stripe. So they have
+[06:52] connected their Stripe account and I
+[06:54] compute their revenue in the last 30
+[06:56] days and alltime revenue. This guy is
+[06:58] absolutely crushing it and all the other
+[07:00] guys as well. This is something that you
+[07:02] can share on social media cuz it's very
+[07:03] interesting. You see all those people
+[07:04] making money online. It's inspirational.
+[07:06] It's sharable and this drives a lot of
+[07:08] traffic and creates a bunch of new user
+[07:10] accounts every day. Up next, we have SAS
+[07:12] number three and probably my biggest
+[07:14] mistake, workbook PDF. It's an AI
+[07:17] educational platform where people can
+[07:19] create workbook to practice their
+[07:20] language and learn a new well a new
+[07:22] language. It is priced at um it's a it's
+[07:26] a pass system. So, it's kind of like a
+[07:27] monthly without the recurring part. So,
+[07:29] if you want to access the app for 30
+[07:30] days, you'll have to pay $29 and you can
+[07:32] create unlimited workbooks. And students
+[07:34] will just go here, pick the language
+[07:35] they want to learn, what is their levels
+[07:37] and then they will pick topics on which
+[07:39] they want to create this workbook. They
+[07:41] would basically create a customized
+[07:43] language platform for them. Then they
+[07:45] would get PDF like this ones where um in
+[07:48] this case I'm want to learn Portuguese
+[07:49] with topics like the beach, surf, etc.
+[07:52] And then you will create a grammar
+[07:53] exercise, vocabulary exercise on based
+[07:55] on those topics. Uh revenue wise it uh
+[07:58] it's pretty much of a failure compared
+[07:59] to all of my other project. It made in
+[08:01] total $2.4,000. $4,000. I launched the
+[08:04] app somewhere in July 2023. There's a
+[08:07] little spike because then back then I
+[08:09] started to have a little audience. So
+[08:10] some people tried the app and then it
+[08:11] went down to almost zero. It's slowly
+[08:14] picking up at the moment. I will explain
+[08:16] what is going on with the marketing. How
+[08:17] did I get this idea? Uh well, I got
+[08:20] married to a beautiful Korean wife back
+[08:22] in 2023 and I was thinking I have to
+[08:24] learn Korean at some point. Since I am a
+[08:26] kid, I hate school. I hate the way
+[08:28] people teach me stuff because it's
+[08:30] usually very boring. And I was like,
+[08:31] what if I create a way for me to learn
+[08:33] Korean on topics I like to get
+[08:35] customers. So again, I did the launch
+[08:37] part at the beginning which created a
+[08:38] spike. And then the big part of the
+[08:40] marketing was on SEO site on this
+[08:43] workbookf.com. There are like hundreds
+[08:45] maybe thousands of pages indexed on
+[08:47] Google. The Google search console
+[08:48] actually looks like this. At the moment,
+[08:50] I tried to rank for a bunch of keywords
+[08:52] like English workbook PDF for
+[08:54] intermediate people, English workbook
+[08:55] PDF for advanced people, pre-workbook to
+[08:58] learn Japanese. There really are a bunch
+[08:59] of keywords out there and I'm just
+[09:00] trying to rank them on Google. SEO wise,
+[09:02] it's making sense because it's driving
+[09:04] at least 100 clicks per day and it keeps
+[09:06] growing up. Uh the thing is I don't
+[09:09] think this kind of educational app would
+[09:12] be a best feat on Google. I think it's
+[09:14] more something like you discover on
+[09:16] social media like you watch a Tik Tok of
+[09:18] someone that says they learn to learn a
+[09:19] language in like seven days and then
+[09:21] you're like, "Oh, what is the app you're
+[09:22] using?" I think if I had to grow this
+[09:24] app again, I would probably do this
+[09:26] social media strategy. Sess number four,
+[09:28] here we go. This is by dispute. It's a
+[09:32] no code tool to help people who have a
+[09:34] strap account not getting banned by
+[09:36] analyzing their payments and refunding
+[09:38] or at least alarming them if there is
+[09:41] something suspicious. For instance, if
+[09:42] the account received two payment with
+[09:44] the same card within 15 minutes, um you
+[09:46] might want to refund the last payment
+[09:48] because it's likely a fraud or someone
+[09:49] who made a mistake. On the inside, it
+[09:51] looks like this. It's a product that I
+[09:53] use for every single of my other
+[09:54] products. So um anyone can add a little
+[09:56] new stripe account. There are few sets
+[09:58] of rules and there are some actions to
+[10:01] prevent an eventual dispute. It is
+[10:03] priced in a system of credit. So for
+[10:05] instance a 100,000 protected transaction
+[10:08] would cost $219. Revenue wise uh we are
+[10:11] sitting at almost $8,000 since I
+[10:14] launched it about a year ago. Uh so
+[10:16] again I have two Stripe accounts. This
+[10:18] one uh back in 2023 and this new one
+[10:22] right now my new business. That's
+[10:24] roughly $8,000. I think that will bring
+[10:26] me to the uh idea, how I found the idea.
+[10:28] I'm going to go deeper into that. So,
+[10:30] back in 2022 when I was working on the
+[10:33] first SAS, I got banned overnight
+[10:35] overnight from Stripe. And being banned
+[10:37] from Stripe meaning like all my other
+[10:39] Stripe account will be frozen. This as a
+[10:41] business owner, even now in 2025, I am
+[10:43] scared as this is literally the worst
+[10:46] thing that can happen to me as a
+[10:47] business owner. And then I analyzed a
+[10:49] little bit of what happened and I
+[10:50] realized that all of those payments were
+[10:52] made by the same customer, the same
+[10:54] email address. And that's how the idea
+[10:56] of creating um a little tool that sits
+[10:59] in between Stripe and your business to
+[11:00] listen for transaction and find some uh
+[11:03] likely fraudulent patterns to eventually
+[11:05] refund payments so there's no dispute
+[11:06] possible. Getting customers initially
+[11:08] was launching on Twitter. I make this
+[11:11] video with Leonardo DiCaprio
+[11:16] where uh I I educate Leonardo DiCaprio
+[11:20] on why disputes are a big deal for
+[11:23] Stripe businesses and how to prevent
+[11:24] them. I already had a little audience
+[11:26] back then, but it did not matter. The
+[11:28] tweet went viral. I think it's like half
+[11:30] a million views and 2,000 likes. I
+[11:32] believe that anyone who would make a
+[11:34] similar kind of videos would also go
+[11:35] viral. And that brought the first batch
+[11:37] of users to the app. Uh the second thing
+[11:39] I did is is SEO like pure SEO boring
+[11:42] writing articles. I wrote around 10
+[11:44] articles that are now indexed on Google
+[11:46] and they bring somewhere from 7 10 um I
+[11:49] would say 5 to 20 uh qualified clicks
+[11:52] per day. The SEO articles are targeted
+[11:54] toward like stripe dispute. So this is
+[11:56] talking for people who are already
+[11:58] looking for a solution and I believe
+[11:59] this is how I get customers at the
+[12:02] moment for this product. So one more
+[12:03] time here marketing wise um the problem
+[12:05] here is I am not the right person to
+[12:06] grow this kind of product. Uh I think I
+[12:09] would need to target bigger companies
+[12:10] and for that cold emails and cold emails
+[12:13] to CEOs of big companies or if I really
+[12:15] wanted to stay in my niche of
+[12:16] entrepreneurs making smaller amount of
+[12:18] money then I would do to do some kind of
+[12:20] like fear-based marketing to make people
+[12:22] realized you could literally get banned
+[12:24] from Stripe tomorrow and all your
+[12:26] businesses will be closed. And that's
+[12:28] the truth because this is exactly what
+[12:29] happened to me. But I don't feel like
+[12:31] doing this kind of marketing. Like I
+[12:32] don't want to spread fear on Twitter. I
+[12:34] want to spread positivity. I want to
+[12:36] inspire people to do stuff. And so it's
+[12:38] just not a like a funer marketing fit.
+[12:41] Software number 565. Software number
+[12:44] five, Zenvoice. Oh, by the way, this
+[12:46] little um notification thing on the
+[12:47] right side brought a lot of customers
+[12:49] for this product. So what is this? Uh it
+[12:52] is for people who are using Stripe and
+[12:53] do not want to pay the 4% fee for every
+[12:57] invoices. It is priced at $49 for one
+[13:00] stripe account or $69 for unlimited
+[13:02] Stripe account. I do not charge a
+[13:04] recurring subscription even though it's
+[13:06] costing me a few cents per month. The
+[13:08] reason behind as I mentioned in other
+[13:09] videos is that uh subscriptions are
+[13:11] really hard to sell and I think I made
+[13:13] much more money by selling one time
+[13:15] payment than I would have if I were
+[13:16] selling like a$5 or $10 a month
+[13:18] subscription. Inside this is what the
+[13:19] customer dashboard looks like. So uh
+[13:21] they can just like buy dispute they can
+[13:23] add uh anyone can add a new Stripe
+[13:25] account right here by adding a Stripe
+[13:26] API key. And then all the Stripe
+[13:28] accounts will be listed right here. And
+[13:30] then people will get a link that they
+[13:32] can send to their customer. It looks
+[13:34] like this. Uh their customers can input
+[13:36] their email address right here and
+[13:38] receive a magic link with uh a link to
+[13:40] just download their invoices. Uh revenue
+[13:42] wise, it's a newish startup. I launched
+[13:45] it about a year ago. Actually, I
+[13:46] launched it exactly one year ago. It
+[13:49] made $15,000
+[13:51] since the launch. How did I get the
+[13:52] idea? And this is actually this one is
+[13:55] coming out of a pure frustration. Uh
+[13:57] this is one of my other stripe account
+[13:59] for one of my product called ship pass.
+[14:01] It is not a software. So uh the fact
+[14:03] that I made $200,000 here does not
+[14:05] count. But at least when I did my
+[14:07] accounting thing back at the end of
+[14:09] 2023, I realized that for every
+[14:11] transactions on this account, I paid
+[14:13] around $1 extra dollar on top of the
+[14:16] Stripe fee. So, I was curious what was
+[14:18] happening and I realized that if you
+[14:20] activate this option in Stripe, whether
+[14:22] you're using the Stripe user interface
+[14:24] or using the Stripe API to create a
+[14:26] checkout, Stripe will charge.4%
+[14:29] per transaction just to generate a PDF
+[14:32] invoice. I did the computation and
+[14:34] realized I lost $1.6,000
+[14:36] to generate PDF invoices. This this
+[14:39] drove me mad. And just like this, I knew
+[14:41] I had a new startup idea. And somehow
+[14:43] this $1.6,000 $6,000 loss converted into
+[14:46] $15,000 in revenue. So that's a 10x
+[14:49] investment. How did I get customers? Uh
+[14:51] what I did exactly a year ago again I
+[14:53] started doing YouTube videos. One of the
+[14:55] first thing I did on YouTube as you can
+[14:57] see here streamed one year ago is to
+[14:58] just stream myself building software and
+[15:00] I built this entire software. So from
+[15:02] day one just you know coding,
+[15:04] brainstorming etc. Today I think seven
+[15:07] or eight whatever launch like I did
+[15:09] marketing, coding, struggling, bug
+[15:11] design. I did everything in 9 days on
+[15:14] this YouTube live stream. And for some
+[15:15] reason YouTube pushed those videos to
+[15:18] more people to developers. And just like
+[15:20] that, before even launching the startup,
+[15:23] I already had a few batch of customers
+[15:25] who bought it because of the live
+[15:26] stream. Because it was live, people
+[15:27] could actually see me. They knew who was
+[15:29] behind the product. This builds trust
+[15:31] with customers. That's how I was able to
+[15:33] make money without even having a
+[15:35] product. This is a cheat code. You can
+[15:37] literally right now stream yourself even
+[15:39] if you don't feel comfortable with it.
+[15:41] You don't even have to talk. You can
+[15:43] just mention what you do in the
+[15:44] description. YouTube will push your
+[15:46] content out to developers because nobody
+[15:48] is doing this at the moment. Make a
+[15:50] beautiful visual thumbnail and you could
+[15:52] get people helping you debug, design,
+[15:54] and even purchase your product in the
+[15:56] live stream. And the second marketing
+[15:58] hack I did for this one, and it's
+[16:00] driving all of the revenue at the
+[16:01] moment, is adding this little badge
+[16:03] right here. So every of my customers
+[16:05] will get a unique link to share to their
+[16:07] customers. So this page could get
+[16:09] hundreds sometimes thousands of views
+[16:11] and this little badge here drive a bunch
+[16:13] of traffic to the website. And since
+[16:15] it's driving like people who are already
+[16:18] know how the product works instantly you
+[16:21] I can tell what happens sometimes is
+[16:22] like I have someone who sign up for
+[16:24] Zenvoice. They share the link with their
+[16:25] audience. They get 100 visitors and
+[16:27] within the next hours I would make
+[16:28] hundreds of dollars worth of sales.
+[16:31] Right. S number six and my favorite
+[16:33] pop-up. Uh this might sound like a joke,
+[16:35] but it actually made money and and
+[16:37] people are actually using it at the
+[16:38] moment. Those are like pop-up
+[16:40] notifications that uh you can you don't
+[16:43] have to code in order to display this on
+[16:45] your site. The goal here is to replicate
+[16:47] what I did with Zenvoice and to catch
+[16:49] attention to help whoever using poopup
+[16:51] to get more conversions on the website.
+[16:53] And for some reason, uh, this product
+[16:55] got the attention of the CEO of Versal,
+[16:58] and it has a poop emoji and the Damy's
+[17:00] poop. Anyway, this is pretty much what
+[17:02] the websites look like. I like to add
+[17:04] little demos of how you could use the
+[17:06] product that helps people know what they
+[17:08] could expect from it. Uh, it is priced
+[17:10] at $9 for one website and $19 for
+[17:13] unlimited websites. I knew I would not
+[17:16] push much updates to this product.
+[17:18] That's why I also did not force
+[17:19] recurring payments and I keep it with a
+[17:21] onetime payment. Once you're inside, you
+[17:23] have a dashboard where you can see all
+[17:25] the websites you've added. Uh if we take
+[17:27] this one like Zenvoice for instance,
+[17:28] those are some of the notifications I
+[17:30] show on the homepage. Uh you can
+[17:32] customize the text inside. You can add
+[17:34] uh images. You can change and make them
+[17:35] clickable. You can also customize when
+[17:37] they're fired, how long they stay on the
+[17:39] page, and view how it would actually
+[17:41] look like. Okay, now moving on to the
+[17:43] revenue part. It made six a little bit
+[17:46] close to $7,000.
+[17:48] I launched the product back in right
+[17:50] after Zenvoice actually in March 2024.
+[17:53] Uh getting the idea was unique. So when
+[17:57] I launched this website Zenvoice and
+[17:58] people keep mentioning about those
+[18:00] notifications here on the right and one
+[18:02] of my friend Dan told me like bro you
+[18:04] have to make a product out of it. There
+[18:05] was no business mindset behind it. I
+[18:07] just thought it was really fun. I
+[18:09] thought it would be an easy product to
+[18:10] make and I was like all right yeah let's
+[18:12] do it. Uh how did I get customers for
+[18:13] this one? Uh there is no secret sauce
+[18:15] source. I had already a little uh
+[18:18] Twitter audience. I knew it would be a
+[18:21] one-time thing. Product I launch and
+[18:22] then I just maintain the product and
+[18:23] move on. And so I didn't bother doing
+[18:25] any marketing. I did basically like a
+[18:27] launch strategy where uh I went on
+[18:30] product hunts and other launching
+[18:32] platforms. And that's pretty much
+[18:33] everything I did. There are two
+[18:35] takeaways from this product. The first
+[18:37] one is that it's really good to surround
+[18:38] yourself with good friends because if it
+[18:40] wasn't for Dan, I would not have built
+[18:42] this product and I wouldn't have a story
+[18:44] to tell you right now. And second is
+[18:46] that every startup idea I get comes from
+[18:49] the previous startups I built. So I
+[18:51] would never ever even think about making
+[18:54] poopup if I didn't create Zenvoice. And
+[18:56] Zenvoice would not exist if my other
+[18:58] onetime payment product didn't exist
+[18:59] before. Everything somehow connects. And
+[19:01] the only solution to get good at
+[19:03] marketing and to make money online is to
+[19:05] build stuff. Even though if it seems
+[19:07] pointless at the beginning is to just
+[19:08] create something. And that brings me to
+[19:10] SAS number seven and the last one, Dataf
+[19:12] Pass. It's currently in beta. It's a
+[19:14] tool that I launched just 3 months ago.
+[19:16] It's a web analytic tools for
+[19:18] entrepreneurs to link web analytics
+[19:21] traffic with their revenue data and try
+[19:23] to find some insights on how to grow
+[19:25] their startup. It is priced per kind of
+[19:27] like traffic or events. Uh the it starts
+[19:29] at 9 a month and it goes up as the
+[19:31] person gets more visitors and traffic.
+[19:33] Uh on the inside it looks like this. So
+[19:36] it's kind of like a central dashboard uh
+[19:38] where for each websites you can see in
+[19:40] orange the revenue and in blue the
+[19:42] traffic and then for any website it's
+[19:45] going to uh link those data. So for
+[19:47] instance I can see that on that day I
+[19:49] got 2.4,000 visitors and made almost
+[19:51] $1.5,000. It's going to calculate some
+[19:54] metrics like revenue per visitor
+[19:56] conversion rate. It's also going to link
+[19:58] the revenue to which traffic source
+[20:00] people are coming from. Uh same for the
+[20:02] country browser etc. Okay. Now,
+[20:05] revenue-wise, it's an early uh product
+[20:07] because it's been only 3 months, but it
+[20:08] made almost $6,000 so far. This is what
+[20:12] the Stripe dashboard looks like. Uh the
+[20:14] monthly recuring revenue is at one
+[20:16] almost $1.4,000 and it keeps growing up
+[20:18] while the subscriber turn rate is going
+[20:21] down. Uh this is potentially explained
+[20:23] because this is where I'm putting 80 or
+[20:25] 90% of my focus at the moment. How did I
+[20:27] get this idea? Well, it's very simple
+[20:29] and it's exactly the same way I got
+[20:31] ideas for most of my product. It come
+[20:34] from a personal need. Since I have built
+[20:36] now all of those tiny internet
+[20:38] businesses in the past three years, I
+[20:40] need to have a place to centralize
+[20:42] everything and having web analytics is a
+[20:44] great thing, but if it doesn't connect
+[20:46] with payment data, it's kind of useless.
+[20:48] And I yet haven't found a good solution
+[20:50] that's easy to use, sexy, and that
+[20:52] connects a web and and payment data. So,
+[20:54] I just build it myself. And now talking
+[20:56] about getting customers, uh since the
+[20:58] product is very new, it is hard for me
+[21:00] to confidently tell you what's working,
+[21:02] what's not working. What I'm doing at
+[21:03] the moment, I'm building this SAS
+[21:05] publicly on Twitter. So, this is how I
+[21:07] got my early customers. And I'm also
+[21:09] trying a new marketing strategy that
+[21:11] I've never tried before. That's Mr. R Y
+[21:14] seems to be working well so far, but I
+[21:16] will keep that for another video. Just
+[21:18] before I let you go, I wanted to share
+[21:19] with you three tips I've learned along
+[21:21] the way and as well as show you the
+[21:23] revenue for my other three SAS that are
+[21:25] now disconnected. Here they are. This is
+[21:27] what I made with those other software.
+[21:29] So, Viralbot is a project I started back
+[21:31] in 2018 when there was no one sharing uh
+[21:34] info about how to make money as a
+[21:36] developer on the internet. I had no idea
+[21:37] what I was doing. I was learning how to
+[21:39] code. It took me years to grow the
+[21:41] software. Uh I finally reached at some
+[21:42] point, I think over 4,000 in monthly
+[21:44] recurring revenue, which I was really
+[21:46] happy of, but the marketing was
+[21:47] extremely boring. I was sending cold
+[21:49] email to uh cold businesses. And that's
+[21:51] the entire marketing strategy. If you
+[21:53] think it's worth a YouTube video, let me
+[21:54] know and I'll create one. Uh then the
+[21:56] next one is game widget which made
+[21:57] $4.5,000.
+[21:59] Uh this is
+[22:00] Hey, my name is Mark. I am the creator
+[22:02] of the game widget. And in this quick,
+[22:04] this is me. Like this is a demo of me
+[22:06] back in 20 I think 21. I was awkward. I
+[22:08] was shy. I didn't know what I was doing.
+[22:10] I was really bad at marketing. I had no
+[22:12] idea how to sell anything. I built like
+[22:14] this uh little widgets that would sit on
+[22:17] a website to increase conversion rate of
+[22:18] a website. I made $200 with the product.
+[22:20] I sold it for $4.3,000.
+[22:23] And finally, make lending. This one,
+[22:25] it's a website generator using AI. It's
+[22:28] like basically you input text and the
+[22:30] the SAS will create an entire website
+[22:32] for you. I made around $15,000
+[22:35] in revenue, I think, in three to four
+[22:37] months. And then I sold it for $35,000
+[22:40] because I just had no idea how to grow
+[22:41] the product. All right. Now, three
+[22:43] takeaways from this. The first one is
+[22:45] that you don't need a brilliant startup
+[22:47] idea to get started. It's actually a
+[22:49] trap. Stop looking for ideas. Instead,
+[22:51] go build something. build just anything.
+[22:53] Either try something new like a new
+[22:55] hobby, a new sport. Go talk to some new
+[22:57] people and think about a potential app
+[22:58] idea that you could use along this way.
+[23:00] And if you still have no idea, just
+[23:02] rebuild something that you already use.
+[23:04] Rebuild your habit tracker, rebuild your
+[23:06] alarm clock, whatever it is, build
+[23:08] something because it's by building stuff
+[23:10] that you will discover real problems
+[23:13] that people will be willing to pay for.
+[23:14] Number two, find the right marketing
+[23:16] channel. This is so important. I burned
+[23:18] out back in 2018 because I was doing
+[23:21] marketing the wrong way. I was like
+[23:22] sending cold emails to cold businesses
+[23:23] and it was so boring. Now that I found
+[23:26] marketing with programmatic SEO,
+[23:27] building free tools, making fun launch
+[23:29] viral videos. This is making me happy.
+[23:32] If you think the product has some
+[23:33] potential, but you don't know how the
+[23:34] marketing, just just move on to the next
+[23:36] one. Find a product where marketing does
+[23:38] not feel like marketing. And finally,
+[23:40] number three is learn when to quit. I
+[23:42] see lots of people spending like a month
+[23:44] building something and then months
+[23:46] trying to grow it without getting
+[23:47] significant numbers. There's a little
+[23:49] voice inside of our head called
+[23:50] expectations. The longer you spend on
+[23:52] something, the higher your expectations.
+[23:54] And if the results never meet your
+[23:56] expectation, at some point you will just
+[23:58] burn out. Now that I have built over 30
+[24:00] tiny businesses, there's one thing I
+[24:02] noticed is that whenever I launched
+[24:03] after getting a,000 visitors, I know
+[24:06] instantly whether or not this product
+[24:08] could be a good fit. All right, that's
+[24:10] the end of this video. Now, if you're a
+[24:11] developer and you want to avoid some of
+[24:13] the common mistake I see other
+[24:14] developers make, you can watch this
+[24:16] video. And if you're just getting
+[24:17] inspired and you want to learn how to
+[24:18] code, I made this three hours long video
+[24:21] to learn how to code an entire software
+[24:23] from zero. Just make me a promise after
+[24:25] this video. Do not watch another video.
+[24:27] Go build something. Cheers.

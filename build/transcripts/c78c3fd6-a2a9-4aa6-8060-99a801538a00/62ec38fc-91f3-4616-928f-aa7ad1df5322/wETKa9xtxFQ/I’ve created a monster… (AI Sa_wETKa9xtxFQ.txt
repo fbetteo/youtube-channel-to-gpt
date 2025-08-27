@@ -1,0 +1,190 @@
+Video Title: I’ve created a monster… (AI SaaS)
+Video ID: wETKa9xtxFQ
+URL: https://www.youtube.com/watch?v=wETKa9xtxFQ
+
+[00:00] Imagine you own a small clothing shop.
+[00:02] Someone walks in and you know instantly
+[00:04] if they're going to buy. If they're not
+[00:05] very likely to buy, you let them browse
+[00:07] on their own. But if they're very likely
+[00:09] to buy, you send over your best
+[00:11] salesperson. You guide them. You show
+[00:13] them your best stuff. Because when you
+[00:14] know who is likely to purchase, you make
+[00:16] smarter decision. You focus on the right
+[00:18] customers and you make more money. Now,
+[00:20] I don't own a clothing shop, but I build
+[00:22] websites, a lot of them, like too many.
+[00:24] And every day, random people visit them.
+[00:26] Sometimes they buy something but most of
+[00:28] the time they don't. This is when I had
+[00:30] this dumb idea. Can AI predict when a
+[00:33] visitor is going to buy my product? And
+[00:35] if so, maybe AI can tell me when I will
+[00:38] get rich. It was a typical Monday
+[00:40] morning. I was switching between asking
+[00:42] an AI to build my next startup and
+[00:44] browsing Twitter. Then I got slapped in
+[00:46] the face. My database build past $1,000
+[00:50] per month. And it's not because I'm
+[00:51] storing videos or anything fancy. It's
+[00:53] just because I have a lot of data. I
+[00:55] built this product called Dataf Fast.
+[00:57] It's a web analytics. You add a script
+[00:59] to your site and it tracks your
+[01:00] visitors, where they come from, what
+[01:02] they click, and how long they stay. I've
+[01:04] got almost 200 paying customers. And he
+[01:06] makes around 2,000 in monthly recurring
+[01:08] revenue. Each of these customers track
+[01:10] at least one website. And if you
+[01:12] imagine, each sites gets a,000 visitors
+[01:14] per day. That's hundred of thousands of
+[01:16] page views getting recorded every single
+[01:19] day. I built fast, so I didn't really
+[01:21] care until the bill showed up. But here
+[01:23] is something I've learned after 7 years
+[01:25] building tiny internet startups. Big
+[01:27] problems usually mean there is an
+[01:29] opportunity somewhere. So instead of
+[01:31] trying to save database cost, what if I
+[01:33] could use all these data to help my
+[01:35] customers, including myself, make more
+[01:37] money online. So I went back to my desk
+[01:39] and I wanted a simple way to rank
+[01:41] visitors like giving them a score. Zero
+[01:43] means that they're cold, they're not
+[01:44] likely to buy. 50 is the average
+[01:47] baseline. And 100 mean they're hot,
+[01:49] they're very likely to purchase.
+[01:50] Luckily, I had everything I needed
+[01:52] because my product DataFast does not
+[01:54] just track pages. It tracks the entire
+[01:56] journey from the first click until they
+[01:59] make a payment. So, first I had to
+[02:00] analyze every website tracked with
+[02:02] datafast. And for each of them, I
+[02:04] generated a conversion profile. It's
+[02:06] like a fingerprint of what a good
+[02:08] customer looks like. I look at data like
+[02:11] where do most paying customers come
+[02:12] from? What device are they using? How
+[02:14] many times do they visit the site before
+[02:16] making a purchase? Then I wrote an
+[02:18] algorithm. Well, an AI wrote the
+[02:20] algorithm for me. It takes one visitor
+[02:21] data and compare it with a website
+[02:23] conversion profile and boom, it spits
+[02:26] out a conversion score. Something like
+[02:27] if the visitor is coming from the USA,
+[02:29] they might get an extra 10 points. If
+[02:31] they're using a MyBook Pro, they will
+[02:32] get 20 points and if the first time they
+[02:34] visit the website, they might lose five
+[02:36] points. Next, I wanted to test this data
+[02:38] to see how good my predictions are. So I
+[02:40] asked my AI code editor to extract data
+[02:43] and create a prompt for another AI to
+[02:46] test and visualize how good the data is
+[02:49] and surprisingly it was much better than
+[02:51] I thought it would be. I wanted to feel
+[02:53] what it meant to have visitors across
+[02:55] the planet hot cold moving in real time.
+[02:58] So I viodated a world map and the result
+[03:01] looked terrible like my drawing when I
+[03:03] was 5 years old. For about 5 minutes I
+[03:05] genuinely thought I'd give up. Maybe
+[03:06] this whole thing is just a stupid idea.
+[03:09] Then I found Mapbox and within a few
+[03:11] lines of code, the map looked great. Now
+[03:13] the fun part, placing visitors on the
+[03:15] map. I had to reverse engineer the world
+[03:17] from city name to longitude and latitude
+[03:19] to slap a tiny avatar exactly where the
+[03:22] visitors are. Then I added prediction
+[03:24] score. Each visitor would get a colored
+[03:26] dot, blue for cold, red for hot, and
+[03:28] gray for average. It started to feel
+[03:30] alive, but not enough. So, I added more
+[03:33] features showing the visitors hot to
+[03:35] cold range, estimate how much they're
+[03:37] worth, and display a percentage chance
+[03:39] that they will convert. I showed it on
+[03:40] Twitter and people loved it, which gave
+[03:42] me, of course, the permission to waste
+[03:43] more time on it. I added live events log
+[03:46] like World of Warcraft, showing page
+[03:48] views and page exit payments in real
+[03:50] time. Clicking on an event would fly
+[03:52] across the globe straight to the
+[03:53] visitor. Then, someone on Twitter said,
+[03:55] "You should make the map full screen and
+[03:56] auto rotate." So, I did that, too.
+[03:58] Another thing people kept asking is a
+[04:00] way to see the globe without having to
+[04:02] sign up for datafast. So I added this
+[04:03] new feature where datafas users can now
+[04:06] make their dashboard public and share it
+[04:07] with a link. So if you want to see the
+[04:09] globe in action, there will be a link
+[04:10] below this video. This real time map
+[04:12] feature make me feel like I was running
+[04:14] some sort of startup command center
+[04:16] while sitting in a coffee shop in Korea.
+[04:18] It was beautiful. It was exciting. It
+[04:20] was completely useless. It didn't do
+[04:22] anything for users apart giving them a
+[04:25] nice little dopamine hit. I needed to go
+[04:27] further. So I spent a few days designing
+[04:29] this big Apple keynote style visual
+[04:31] showing patterns, trends, deeper insight
+[04:33] about who is likely to buy. I launched
+[04:34] on Twitter and nobody cared. Then I
+[04:37] realized maybe instead of showing people
+[04:39] the data, I should give them the data.
+[04:41] So I went back to my laptop and built an
+[04:43] API, a really simple one. You send a
+[04:45] visitor's ID and you get back their
+[04:47] prediction score, confidence level, and
+[04:49] some metadata about who they are, like
+[04:51] where they come from, how many times
+[04:53] they visited, and what device they're
+[04:55] using. It sounds simple, but it actually
+[04:56] unlock lots of possibilities. For
+[04:58] example, on my own site, Codefast, I use
+[05:00] it to control when to show a lead
+[05:02] magnet. If a visitor is unlikely to buy
+[05:05] after 1 minute, I pop up a little offer
+[05:07] asking for their email. And I have
+[05:09] collected hundreds of emails in the past
+[05:11] couple day using that method. Of course,
+[05:13] if they're likely to buy, I leave them
+[05:14] alone and let them purchase. And these
+[05:16] predictions could be used for anything.
+[05:18] Show a discount offer to visitors
+[05:20] unlikely to buy or show a button to
+[05:22] schedule a call for visitors who are
+[05:24] likely to convert and build more trust.
+[05:26] Then I had this crazy idea. I asked an
+[05:29] AI to create an AI. Literally, I gave it
+[05:31] my own website data, thousands of page
+[05:34] views, events, and purchase. It created
+[05:36] a prediction model using machine
+[05:38] learning. It waited over 30 visitor
+[05:40] signals from clicks to visit counts to
+[05:42] session duration. And when I tested it,
+[05:43] the results were crazy good. way better
+[05:46] than anything I had built previously. It
+[05:48] was the first time I saw it clearly. We
+[05:50] are just scratching the surface. Today,
+[05:52] most websites show the same web page to
+[05:54] everyone. But what if the headline would
+[05:56] be customized to your preference? What
+[05:58] if the page would rewrite itself to
+[06:00] match your motivations? Not in a creepy
+[06:02] way, in a way that helps you find what
+[06:04] you're looking for. The future is not a
+[06:06] homepage. It's your page. And maybe,
+[06:09] just maybe, this stupid little project
+[06:11] is one small step toward that future.
+[06:16] [Music]

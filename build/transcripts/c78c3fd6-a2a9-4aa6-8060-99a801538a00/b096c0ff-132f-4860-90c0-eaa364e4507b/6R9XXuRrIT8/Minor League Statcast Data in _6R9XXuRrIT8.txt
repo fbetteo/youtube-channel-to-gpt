@@ -1,0 +1,369 @@
+Video Title: Minor League Statcast Data in Python!
+Video ID: 6R9XXuRrIT8
+URL: https://www.youtube.com/watch?v=6R9XXuRrIT8
+View Count: 484
+
+[00:00] hey everyone in this week's video I'm
+[00:02] going to show you how to acquire minor
+[00:06] league statcast data in Python and
+[00:11] what's really cool about it is you know
+[00:13] you can statcast search minor league
+[00:16] data now on baseball Sant but that
+[00:19] allows us to then acquire it in Python
+[00:23] via the minor leags now I pulled this
+[00:27] here from baseball savant
+[00:30] in terms of what tracking is available
+[00:33] so sack ass tracking is available since
+[00:35] 2021 for certain levels in ballparks
+[00:38] data is available for all AAA games
+[00:40] starting with last season in 2023 and
+[00:43] then Pacific Coast League games in
+[00:45] Charlotte home games since 2022 and then
+[00:49] as well in the single a Florida State
+[00:52] League 2021 so you can acquire all the
+[00:55] way back to 2021 to acquire minor league
+[00:59] stat Casta aleaa will have 2023 in full
+[01:03] but then Pacific Coast league and the
+[01:05] Charlotte Knights their home games for
+[01:09] 2022 allows you to get statcast data but
+[01:12] really cool so I'm going to show you
+[01:14] guys how to acquire that statcast data
+[01:17] but first you'll need to run this entire
+[01:20] statcast search minor leagues and the
+[01:23] beauty of it is you can go on my GitHub
+[01:26] and pull this
+[01:28] information to be able to run this
+[01:30] script or save this script however you
+[01:33] so please and I'll show you how to do
+[01:35] that via my GitHub um from the homepage
+[01:39] we'll say here in a second assuming
+[01:42] you're on my page my homepage for GitHub
+[01:45] github.com my name Robert
+[01:50] Fry you will go to repository so the
+[01:54] most popular one is YouTube click on
+[01:57] that and then you'll scroll down down to
+[02:01] M you can see minor league statcast data
+[02:04] in Python so you'll click on that and
+[02:07] then the SC search minor leagues that
+[02:11] script you'll click on the
+[02:13] raw and then you can copy this and paste
+[02:16] it into your script and save it do
+[02:19] whatever you want with it but that's an
+[02:22] efficient way a quick and easy way to be
+[02:24] able to pull that data and put it into
+[02:28] your python en environment whichever it
+[02:30] may be I use spider um I know there's
+[02:33] different Ides that people use but I'll
+[02:35] use spider in this example and then save
+[02:39] it and then you're able to run
+[02:43] it
+[02:45] now now we're back in Python and we're
+[02:49] going to run this entire
+[02:53] script by allowing us to then have those
+[02:57] functions to then pull this tcast data
+[03:00] so simply put you know if you copied and
+[03:03] paste it in here you can run this whole
+[03:05] script with spyer by just running run
+[03:08] file should be good to
+[03:11] go now we can go into writing our script
+[03:15] and real quick make sure you have numpy
+[03:18] pandas request 8 time IO in
+[03:22] your available packages I'll leave a
+[03:25] link below on how to install packages
+[03:28] through the terminal but basically if
+[03:30] you have Pip which is the python package
+[03:34] manager
+[03:36] essentially it allows you to then
+[03:38] install those those different python
+[03:40] packages and then you would just run it
+[03:42] in the terminal in this corner here uh
+[03:44] if you in spider but I'll leave a link
+[03:47] below on another way you can do it using
+[03:50] the command line um of your machine
+[03:54] so let's go into our data set so we will
+[04:00] say
+[04:01] import pandas SPD so make sure you have
+[04:04] pandas installed as well and then from
+[04:07] date time going to
+[04:10] import date time and then time Delta and
+[04:15] then import of course SQ light 3 so
+[04:17] we're going to create like a light
+[04:19] lightweight version of a SQL database so
+[04:22] let's connect to the database or create
+[04:25] an initial connection so we'll say SQ
+[04:28] light 3 connect
+[04:30] let's say minor league statcast
+[04:34] data you call it whatever you'd
+[04:37] like um in this case we'll just call it
+[04:39] minor Le statas
+[04:41] data. DB for that
+[04:45] database and then what we'll
+[04:50] do is
+[04:53] this we will
+[04:56] create we'll essentially test out that
+[04:59] uh
+[05:01] function that we created for that minor
+[05:03] Le statcast search and we'll acquire
+[05:06] we'll just do one day we'll acquire the
+[05:09] opening day in
+[05:11] AAA so OD OD
+[05:15] string and then we'll uh convert
+[05:21] the opening day um date time to a year
+[05:26] year year you know year month day format
+[05:30] so that way it fits that statcast search
+[05:33] and so we'll just call this DF opening
+[05:36] day again call this whatever you want
+[05:40] we'll do stat
+[05:41] cast minor
+[05:45] leagues which this function is very
+[05:49] similar to just regular stat cast with
+[05:52] um Pi baseball amongst others uh
+[05:56] baseball scraper I believe uses this as
+[05:59] well
+[06:01] but then we just say hey we want to
+[06:03] scrape that opening day now it should
+[06:05] give an error because we have it on a
+[06:07] separate script but if you're ins spider
+[06:09] and I can't be for certain if you use
+[06:12] other environments that this same thing
+[06:14] will happen but it will have this and so
+[06:19] now we'll run all
+[06:24] this and see what kind of data we
+[06:27] acquire so it might again
+[06:30] might take a couple of seconds uh to
+[06:32] acquire that minor league data but here
+[06:36] is opening day minor L data now I'm not
+[06:39] sure if you can
+[06:41] see the data set itself if not um it
+[06:47] just shows you know AAA statcast data on
+[06:49] opening day similar to what NLB statcast
+[06:52] data would look like um unfortunately
+[06:55] though there's no bat speed or swing
+[06:57] length data in the minor league so
+[07:00] you won't get uh the pleasure of seeing
+[07:02] that but you still get the same types of
+[07:06] columns that you would in with minor
+[07:08] league statcast data
+[07:11] so that's a good test for
+[07:14] it so now let's create a way to acquire
+[07:20] all the statcast data from opening day
+[07:23] up until present day to run through this
+[07:29] and then upload it to your database and
+[07:31] then you can query it however you'd like
+[07:33] so let's do current date and we'll say
+[07:37] opening
+[07:39] day and then
+[07:42] today date time
+[07:47] today and then we can say while current
+[07:51] date is less than or equal to
+[07:56] today add that colon and then we'll say
+[08:00] date
+[08:01] string equals current
+[08:06] date and then of course we'll convert
+[08:09] the time using the string F time
+[08:17] function into a year month day
+[08:23] format then while it's running why not
+[08:26] have
+[08:27] a thing that says you know let's fetch
+[08:31] minor leag stat cast data
+[08:35] for and then we'll just call this date
+[08:39] string so that way when you're running
+[08:41] it it'll print out saying hey we're
+[08:44] pulling this you know on this day and so
+[08:47] we'll say
+[08:49] DF stat cast minor leagues and again it
+[08:52] might give you an X because it's not
+[08:55] technically within the script again this
+[08:58] that might not apply for if you're in a
+[09:00] chuper notebook or elsewhere but
+[09:04] anyways say date
+[09:07] string and then this is solely up to you
+[09:10] but you can remove the index column
+[09:13] because when you pull this data it will
+[09:16] give you an index column but if you want
+[09:18] to get rid of it here's how you can
+[09:20] simply do it DF drop columns equals
+[09:24] DF columns zero
+[09:31] here axis equals one and then in place
+[09:36] equals
+[09:39] true we can
+[09:41] drop that index column and
+[09:44] then with the data set here again if you
+[09:47] can't see it my apologies in advance
+[09:52] but you if you do see it you'll see some
+[09:55] of them will have like pitcher period
+[09:57] one Fielder underscore 2 period one
+[09:59] basically meaning that there's multiple
+[10:01] columns with those so I want to get
+[10:04] change those that way when you query it
+[10:07] from uh SQL it's a little bit easier
+[10:10] since underscores are easier to work
+[10:12] with
+[10:12] periods um just in case
+[10:16] so simply put I'll just do DF rename and
+[10:20] then we'll
+[10:21] say picture period one
+[10:25] colon pitcher uncore one
+[10:31] comma Fielder undor 2 period
+[10:34] one then theelder
+[10:38] underscore
+[10:41] underscore and so they will pull that um
+[10:45] let's get rid of
+[10:47] the meant to put a squiggly bracket not
+[10:49] a square bracket so make sure to replace
+[10:52] those and then we'll say x is equals 1
+[10:54] and then same thing in place equals true
+[10:58] so that way we rename
+[10:59] those
+[11:00] columns then we're going to say if DF is
+[11:04] not none and not DF
+[11:08] empty so just making sure that as long
+[11:12] as there's rows of data in the data set
+[11:15] append to this database so then we can
+[11:18] say
+[11:20] DF period 2or
+[11:23] SQL and then name the table name it
+[11:26] whatever you want so this is the name of
+[11:29] the database and then here's the name of
+[11:31] the
+[11:32] table so you can call the statcast data
+[11:37] or minor
+[11:41] league um no that would mess with it so
+[11:44] I'll just call this statcast
+[11:46] data
+[11:48] MB for now and then the connection that
+[11:52] we created
+[11:54] so the CN is what we called it earlier
+[11:58] and then if it exists make sure you have
+[12:01] this so basically if the data table
+[12:05] exists append so meaning add that row of
+[12:09] data that you created to it and then
+[12:13] our
+[12:15] index is false so we don't want an
+[12:18] additional
+[12:19] index and
+[12:21] then we'll tab back out and then say
+[12:26] current
+[12:27] date Plus equals time
+[12:32] Delta days one which just basically
+[12:36] means hey we're going
+[12:39] to run
+[12:44] this and then Loop through each day so
+[12:48] this is a pretty simple way of just
+[12:50] saying hey we're going to Loop through
+[12:52] each individual day up until present day
+[12:56] and then at the end here just to make
+[12:59] sure we're going to run Connection close
+[13:03] all that does is just closes that
+[13:06] database connection that way you don't
+[13:07] accidentally write information or have
+[13:11] too much you know maybe double The
+[13:13] Columns or things like that
+[13:15] so what we're going to do so typically I
+[13:18] would run this but it would take a while
+[13:20] because it would run
+[13:21] from opening day up until present day so
+[13:25] instead what I'm going to do is change
+[13:27] today to just date
+[13:30] time you know
+[13:34] 2024 um we'll just add we'll just do
+[13:37] April 2nd and so that way you can kind
+[13:40] of see like the couple of days and what
+[13:42] it prints out and things like that
+[13:45] so going to run this run this and then
+[13:49] I'm going to highlight this entire
+[13:51] section and then you can look here in
+[13:53] the bottom right corner see what
+[13:56] happens so now seeing it saying is
+[13:59] fetching minor Le zcast data for you
+[14:01] know March 29th March
+[14:05] 30th and it should continue on now in
+[14:09] this case it will look a little a little
+[14:13] bit different because I changed it
+[14:15] to today and
+[14:19] not uh or I change it to uh April 2nd
+[14:22] and not
+[14:26] today because again that will take a
+[14:29] while to run all of that data but you
+[14:34] know on your own time you can definitely
+[14:36] run all of that data this is just for an
+[14:39] example so it'll show the first five
+[14:41] days of AAA
+[14:44] data and then so it ran seems like
+[14:48] there's no
+[14:50] errors so we'll close that
+[14:53] connection and now what we can do
+[15:00] is
+[15:06] this rerun this line so line 19 we can
+[15:11] rerun
+[15:14] it and then what we'll add is we'll just
+[15:17] call this DF and then we'll say PD from
+[15:20] pandas read SQL and then within it you
+[15:24] can say have a
+[15:26] query so we're going to say select star
+[15:31] from statcast
+[15:35] data
+[15:37] MB where release speed is greater than
+[15:42] or equal to 98 and then add a common to
+[15:46] know what database connection we're
+[15:48] pulling from and then we can run that
+[15:51] close connection again so essentially
+[15:54] what this query is going to do is it's
+[15:56] going to select all row where the
+[15:59] velocity was 998 or greater miles per
+[16:02] hour now depending on whether or not you
+[16:05] selected in terms of date the entire
+[16:08] season or up until April 2nd you'll have
+[16:12] a different amount of rows than what I
+[16:14] may have so we'll rerun
+[16:18] this and then we'll run
+[16:26] this and I messed up so so forgot the
+[16:29] from so select star from statcast data
+[16:33] MB where release speed is greater than
+[16:36] or equal to 198 or not 198 98 and then
+[16:41] we'll close that connection and so we
+[16:44] see at least here we have 123 rows of
+[16:47] pctures in that 5 day time span to throw
+[16:51] 98 or more again if you can see it great
+[16:54] if not I apologize but we have in triaa
+[16:58] Tony Santillan Colin
+[17:01] Holderman pelander baroa Bo breski and
+[17:05] you have a bunch of pokines makes sense
+[17:08] there Edward
+[17:10] Cabrera so from that it'll give you
+[17:14] basically you know a neat little query
+[17:17] that you can run but the moral of the
+[17:20] story is that statcast data has been
+[17:22] inserted into your database now and
+[17:26] so going forward what you could do is
+[17:31] you know let's say you run it for the
+[17:32] first time and you run it until you know
+[17:37] the allstar break or something like that
+[17:41] then you can change this
+[17:42] to you know current day is date time
+[17:48] today you know minus one and then date
+[17:51] time today and then that way change this
+[17:55] to
+[17:57] today and then in in the future you can
+[17:59] run this each day to then have an
+[18:03] entirely full years's worth of My Le
+[18:06] statcast data in Python so thank you so
+[18:10] much for watching really hope you do
+[18:12] enjoy this content if you did enjoy it
+[18:15] and you want to help me out and support
+[18:18] me and and and help you know if I've
+[18:21] supported you in a way and you want to
+[18:23] help return that favor I do have a link
+[18:26] for buy me a coffee your more than
+[18:29] welcome to but don't feel like you have
+[18:30] to I'm not forcing anyone to go say Hey
+[18:34] you know put this behind a pay wall or
+[18:35] anything like that but if you think my
+[18:38] work deserves support I'd be more than
+[18:41] happy and more than appreciative for
+[18:45] your support in helping you grow into
+[18:49] you know a better analyst and and
+[18:51] working with MLB data and other sports
+[18:53] worth of data so thank you so much for
+[18:56] watching I hope you have a great day y
+[19:00] [Music]

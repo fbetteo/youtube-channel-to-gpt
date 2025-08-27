@@ -1,0 +1,924 @@
+Video Title: Watch Me Build a Multi-Agent Newsletter System in n8n (step-by-step)
+Video ID: pxzo2lXhWJE
+URL: https://www.youtube.com/watch?v=pxzo2lXhWJE
+View Count: 20,030
+
+[00:00] Today, we're going to be building this
+[00:01] AI system that automates newsletter
+[00:03] creation. The idea is that when the
+[00:04] system goes off, it'll do some initial
+[00:06] research to find good topics for the
+[00:08] newsletter. Then, we'll do deeper
+[00:09] research on those topics, write some
+[00:11] sections, and then the editor agent will
+[00:13] take all those sections and style it
+[00:14] together in HTML and send it off to you
+[00:17] for human approval. Like I said, I'm
+[00:18] going to build this live right in front
+[00:19] of you guys so I can explain what I'm
+[00:21] doing and why I'm doing it. So,
+[00:22] hopefully you guys find this one
+[00:23] helpful. Let's get right into it. So,
+[00:25] this is what the finished product will
+[00:26] look like. You can see it's not too
+[00:28] complicated. It's just a linear flow of
+[00:30] nodes. There are three AI steps, which
+[00:32] are these three different agents, and
+[00:34] we'll break down what they're all doing.
+[00:35] But high level, what the flow is is that
+[00:38] we're going to do research, send that
+[00:39] initial research into the planning agent
+[00:41] to create topics. We'll then do deeper
+[00:43] research on all of those topics, write
+[00:45] those sections based on those topics,
+[00:47] and then when we aggregate everything
+[00:49] together, the editor agent will
+[00:50] basically approve the final copy and
+[00:52] push it over to us on Gmail. Anyways,
+[00:54] this is kind of what the final product
+[00:56] looks like and it's a really holistic
+[00:58] newsletter and you could basically get
+[00:59] this sent to you as a draft once a week
+[01:01] or every single day or whatever it is.
+[01:03] Send it out to your team, send it out to
+[01:04] your email list, whatever you want to
+[01:05] do. But this is going to cut down all
+[01:07] the time of actually doing like the
+[01:08] research and now that you have this
+[01:10] draft here, you could basically just
+[01:12] make your small tweaks and shoot it off.
+[01:14] And just to get you guys inside my
+[01:15] mindset, when I'm looking at building a
+[01:17] system and I kind of know what I want as
+[01:19] the end result, but I don't know how to
+[01:20] get there exactly, what I do is I go to
+[01:22] some sort of whiteboard program tool
+[01:25] like Excal or Miro or whatever you want
+[01:28] to call them. And you can see here I
+[01:30] basically was brainstorming. Okay, so
+[01:31] mine I'm going to have this be a weekly
+[01:33] trigger. When this goes off, the first
+[01:34] thing I want to happen is research over
+[01:36] the past week to basically make sure
+[01:38] that this newsletter goes off once a
+[01:40] week and it's capturing all of the most
+[01:41] recent news. Based on the research from
+[01:44] the past week, I'm going to feed this
+[01:46] into an AI step. So, in my mind, this
+[01:48] green is indicating AI. So, this AI
+[01:50] would read the initial research and
+[01:52] create the title of the newsletter and
+[01:53] topics for this edition. Then, we would
+[01:56] have three different topics. So, we
+[01:57] would do research on each of those three
+[01:59] topics. we would pass the three topics
+[02:00] with the research along to the next AI
+[02:04] which will write each of the individual
+[02:05] sections. So now we'll have three
+[02:07] different newsletter sections written
+[02:09] and then what we want to do is bring it
+[02:10] all together. So we'll use an aggregate
+[02:12] node to put it all together and then
+[02:13] finally we'll feed it to a last AI which
+[02:15] we call the editor AI. And this AI's job
+[02:18] is to make sure it's HTML formatted,
+[02:20] make sure it has an introduction and a
+[02:21] conclusion and that everything flows and
+[02:23] then it's basically done and we send off
+[02:24] the draft and that's the end of the
+[02:26] process. And because we're going to be
+[02:27] building this together, I wanted to show
+[02:28] you the tech stack is really lean. We're
+[02:30] obviously going to use NIDAN as the main
+[02:32] workflow builder. We're going to be
+[02:33] using Tavi twice for different research
+[02:36] steps. We're going to be using Gmail
+[02:37] just to send the actual newsletter. And
+[02:39] then Open Router is what we're using for
+[02:41] all our AI models. We're probably going
+[02:43] to stick with some GBT 5 models today
+[02:45] just cuz it's new and it's fun to try it
+[02:46] out. But you could also experiment on
+[02:48] Open Router with some Google models or
+[02:50] anthropic models or DeepSeek, whatever
+[02:52] you want to use. Open Router has a ton
+[02:54] of them in there. So, now that we
+[02:55] understand what the system is that we're
+[02:57] going to be building, let's head over to
+[02:58] a fresh workflow in Naden and get
+[03:00] started. And because we have our
+[03:02] wireframe already diagrammed out, this
+[03:04] is really easy. I already know exactly
+[03:05] where I need to go. This first thing
+[03:06] that we're going to do is grab a
+[03:07] schedule trigger. And because I want
+[03:09] mine to go off once a week, I'm going to
+[03:11] change the interval to weeks. I'm going
+[03:13] to have it go off one week in between.
+[03:15] We'll do Sundays at midnight. That's
+[03:18] fine by me. And this is basically how
+[03:20] often the system would go off once we
+[03:22] push it into production. So once we make
+[03:24] it an active workflow, now this trigger
+[03:26] would actually go off once a week on
+[03:28] Sunday at midnight. I'm just going to
+[03:30] turn this off because we don't want to
+[03:31] do that yet. And now let's get started
+[03:32] on the build. So I know that the first
+[03:34] step that we want to happen after the
+[03:36] trigger goes off is to do some research.
+[03:38] So I'm going to click on this plus and
+[03:39] I'm going to type in Tavi, which is the
+[03:41] tool that we're going to use for
+[03:42] research. If you don't see Tavi, what
+[03:44] you're going to have to do is go to your
+[03:46] admin panel or if you're self-hosting,
+[03:48] update your end in a different way. And
+[03:50] you'll have to make sure you're on 1
+[03:52] point I think it's 101 or higher and
+[03:54] also that you have verified community
+[03:55] nodes turned on. And then you'll spin
+[03:57] back up your end and you should see
+[03:58] Tavi. You'll install it. And then you're
+[04:00] going to grab the search action. Now if
+[04:02] you don't have a Tavi API key, you can
+[04:05] start one up for free. You can get a,000
+[04:07] searches a month which will last you a
+[04:08] long time. And once you come into here
+[04:10] and create a new credential, you'll just
+[04:12] go to tavly.com and then when you create
+[04:14] an account, there'll be a button that
+[04:15] says create an API key. You'll grab that
+[04:17] API key and just put that right in
+[04:19] there. Super simple. But now we have to
+[04:21] make our actual search. So the query
+[04:24] right here is where we enter your broad
+[04:27] category or niche or topic of your, you
+[04:29] know, newsletter. So let's say mine is
+[04:32] AI adoption for small businesses.
+[04:36] That's what I'm going to put right in
+[04:37] here. And this is going to stay the same
+[04:38] every single time this workflow goes
+[04:40] off.
+[04:42] Now I want to add some options. The
+[04:44] first thing that I'm going to add is a
+[04:45] topic. And these are all options that we
+[04:47] can use to change the way that Tableau
+[04:49] searches the web for us. So I'm going to
+[04:50] go to topic and instead of doing
+[04:52] general, I'm going to choose news
+[04:53] because then it's like more looking for
+[04:55] recent things and like headlines, stuff
+[04:57] like that. From there, I'm going to also
+[04:59] do time range. So I only want to search
+[05:02] within the past week. That way we know
+[05:05] it's all like things that are trending,
+[05:07] things that are currently happening. And
+[05:08] then you can see there's other things
+[05:10] that we can do. I'm also going to turn
+[05:11] on max results. You don't have to do
+[05:13] this, but I'm just going to go with
+[05:14] three for now. especially just because
+[05:16] I'm doing a live build demo. So, these
+[05:18] are the options that I currently want.
+[05:20] I'm going to hit execute step. And now
+[05:22] you can see we're going to get back
+[05:24] three different URLs with kind of like
+[05:26] some summarized content about small
+[05:29] business AI adoption. So, we have the
+[05:31] small business technology gap. We have
+[05:33] SMB's hoham on AI versus automation, all
+[05:37] this kind of stuff. And you can see the
+[05:38] publish date. These are all coming from
+[05:40] within the past week. So, we know our
+[05:42] options are working. Now, real quick,
+[05:44] just some workflow hygiene. I'm going to
+[05:46] rename this node. I hit spacebar, by the
+[05:48] way, when I clicked on it. And I'm just
+[05:50] going to say initial research. This is
+[05:52] just a good habit to get into so you can
+[05:54] know what each node is doing. Uh,
+[05:56] another good habit to get into is
+[05:57] pinning data. So, I can click on this
+[05:59] and hit P. And now we don't have to
+[06:01] re-trigger that API call if we
+[06:02] accidentally like refresh or whatever it
+[06:04] is. Um, just to keep all that live data
+[06:06] in there. Cool. So, we've done our
+[06:09] initial research. Next is well, let's
+[06:12] just go look at the di the the diagram
+[06:14] of the wireframe here. The next thing to
+[06:16] do is use AI to create titles and topics
+[06:19] out of that initial research. So, I'm
+[06:21] going to go back into the workflow. I'm
+[06:22] going to grab an AI agent. And now, we
+[06:24] need to do some configuration of this
+[06:26] step here. The first thing I'm going to
+[06:28] do real quick is add our chat model. So,
+[06:30] I'm going to go to Open Router like we
+[06:31] talked about. Same thing here. If you
+[06:33] don't have an Open Router account,
+[06:34] you'll go to open router.ai. You'll make
+[06:37] an account. And when you create an API
+[06:38] key, you basically just put that right
+[06:40] in here. So very simple. Again, we're
+[06:43] gonna actually go to GBT 5 mini for this
+[06:47] step. And now what we need to do is a
+[06:50] few other things. We need to configure
+[06:53] what the agent looks at, what the agent
+[06:56] instructions are, and then potentially
+[06:58] an output format. So I'll show you guys
+[07:00] what I mean by that. The first thing
+[07:01] that we need to do is we need to give it
+[07:04] basically like this is your message.
+[07:06] this is what you're looking at. So
+[07:07] instead of doing that here in the
+[07:09] connected chat trigger node, we have to
+[07:11] define that. And what we wanted to look
+[07:13] at is pretty simple. We wanted to look
+[07:15] at the research results from our Tavly
+[07:17] node. So basically what I would do is I
+[07:20] would say you know like here is article
+[07:25] oops I cannot type today. Here's article
+[07:26] one and then I would just basically like
+[07:28] drag in here's the URL here's the title
+[07:30] here is the content of article one. So
+[07:33] you could do that. It's a bit more
+[07:35] manual and you know obviously this looks
+[07:37] weird because the variables are all
+[07:38] smooshed together. You'd probably want
+[07:40] to format it like this. And now that's
+[07:41] article one. But what I'm going to do
+[07:43] instead is I'm going to go to this
+[07:44] resource pack which you guys can get in
+[07:46] my free school community. I'm going to
+[07:48] grab this function right here and I'm
+[07:50] just going to paste that in here. And
+[07:51] all that does is it's basically grabbing
+[07:54] this array of results and it's just
+[07:56] formatting it for us pretty much like
+[07:59] natively. And that way our agent can
+[08:01] read it and understand what it's looking
+[08:02] at. And this is just going to be a lot
+[08:04] easier and more dynamic than if we
+[08:06] basically hardfixed in different
+[08:07] variables and dragged them in. So in
+[08:09] order to actually grab this resource
+[08:10] pack and if you want to just download
+[08:12] the actual automation rather than build
+[08:14] it yourself, you can do that as well.
+[08:15] You're going to go to my free school
+[08:16] community. The link for that is down in
+[08:18] the description. When you get in here,
+[08:20] you're going to search for the title of
+[08:21] the video or go to YouTube resources and
+[08:23] find the post associated with this
+[08:25] YouTube video. And when you click on it,
+[08:27] there will be a JSON file to download.
+[08:29] There will be a PDF. you can download
+[08:30] all the resources that you need right
+[08:32] from this post. So that's how you'll get
+[08:34] everything and now that you have it,
+[08:36] follow along with the rest of the video.
+[08:37] So that's all that's going on here. But
+[08:40] once again, you could manually drag the
+[08:42] stuff in. So now that we have the agent
+[08:44] is looking at our three articles, we
+[08:46] need to tell it what to do with these
+[08:47] three articles. And that's where we come
+[08:49] down here and we add a system message.
+[08:51] So real quick, I'm just going to make
+[08:52] this an expression so we can open up
+[08:54] full screen. And I'm also going to go
+[08:56] back to the resource pack and I'm going
+[08:57] to copy in this system message that I'll
+[08:59] give you guys again in my free school
+[09:01] community and paste that in. So all I'm
+[09:04] saying here is that you are an expert
+[09:05] newsletter planner. You will receive
+[09:07] three articles from the past week. Your
+[09:09] job is to come up with a creative and
+[09:10] fun title as well as the main topics for
+[09:12] the newsletter. So this AI is
+[09:14] specialized in just this function. It
+[09:16] would be way too overwhelming if we gave
+[09:18] our agent all this research, all these
+[09:20] articles and said, "Hey, just write a
+[09:22] newsletter." So, I like to break it up
+[09:23] in steps and have each AI do something
+[09:25] very specialized. The instructions down
+[09:27] here say that the newsletter should flow
+[09:29] nicely, feel informative and holistic,
+[09:31] and that the topic should be three to
+[09:33] five words. So, what I'm going to do now
+[09:35] is just hit execute step. And what we're
+[09:37] going to see is that the agent's going
+[09:38] to use its brain. Right now, in order to
+[09:40] output the title and the three topics
+[09:43] for us, there is one thing that we're
+[09:45] going to have to do, but I just wanted
+[09:46] to run this first to show you guys the
+[09:47] difference here, and that is that we're
+[09:49] going to require a specific output
+[09:51] because what you see here is it did its
+[09:53] job. It output a title and then it
+[09:56] output different topics as you can see,
+[09:58] but it's all in one field. Meaning, if
+[10:00] we moved on to the next step, let me
+[10:01] just add like a set node just to show
+[10:03] you guys, it would all be in one
+[10:04] variable. And if we dragged it in, we
+[10:06] couldn't really separate it. like it's
+[10:07] it's all together. So, what we want to
+[10:09] do is just get it all separate. So, I'm
+[10:11] going to go back into the resource pack.
+[10:12] I'm going to copy the structured output
+[10:14] parser JSON and then I'm going to turn
+[10:17] on this option that says require
+[10:19] specific output format. And now we are
+[10:21] in even more control of the way the
+[10:23] agent outputs information. So, I'm going
+[10:25] to choose the structure output parser.
+[10:26] This part's important. I'm going to
+[10:28] change the type to define using JSON
+[10:30] schema. And then just paste in that
+[10:32] value that we got from that resource
+[10:33] pack. And I can hit play on the agent
+[10:36] right here. And this is going to do the
+[10:37] exact same thing except for now it's
+[10:39] going to put it in that format that we
+[10:40] were looking for. And you guys will see
+[10:42] the difference once this spins out. So
+[10:45] you can see now we have these things are
+[10:47] in different fields so we could actually
+[10:48] drag them differently. So that's great.
+[10:50] I'm also going to pin this data so we
+[10:52] don't have to rerun our agent if
+[10:54] something goes wrong. And we're going to
+[10:55] move on to the next step.
+[10:57] So what we're going to do now is we're
+[11:00] going to use a node called split out.
+[11:02] What this is going to do is it's going
+[11:03] to take this list of topics. As you can
+[11:05] see, we have topic one, two, and three.
+[11:07] And we are going to just split them out.
+[11:09] So now it went from one list, one item
+[11:11] to three items out here. And this is
+[11:13] nice because what we're going to do is
+[11:15] we're going to use Tavi again to do
+[11:17] research on each of these three things
+[11:18] individually. So I'm just going to pin
+[11:20] this data. I am going to grab another
+[11:23] Tavi node. We're going to do another
+[11:24] search. And I'm just going to drag in
+[11:27] the
+[11:28] um the topic into the query. So this is
+[11:31] going to run Tavi three separate times.
+[11:33] The first time it's going to run it for
+[11:34] bridging the tech gap. The second time
+[11:36] it's going to run it for SMB attitudes
+[11:38] towards AI. And the third time it's
+[11:40] going to run it for practical AI tools
+[11:41] guide. Before we run this, we need to do
+[11:44] some more options. So the first thing
+[11:46] I'm going to do is for topic, we're
+[11:47] going to leave that as general. So you
+[11:48] actually don't even have to add that.
+[11:50] It's general by default. Um you could
+[11:52] play with the time range if you want.
+[11:54] For for now, let's just say we're going
+[11:56] to go just the past month. But the main
+[11:59] important thing that I want to do is
+[12:01] include raw content. I'm going to turn
+[12:03] this on because you guys may have not
+[12:05] noticed, but in this first step, we had
+[12:08] include raw content turned off. And what
+[12:10] that meant is that we were getting
+[12:13] basically just like a summary from each
+[12:14] article, but we weren't getting the
+[12:16] actual raw content. And that's what we
+[12:18] want to write the newsletter. So, here
+[12:20] I'm going to make sure that's on. I'm
+[12:22] going to change this name to
+[12:25] research topics.
+[12:28] Okay. My fingers are a little cold, so
+[12:30] my typing has been awful. But anyways,
+[12:32] we're going to execute the step. And you
+[12:34] can see that there's three items going
+[12:35] in. There's going to be three items
+[12:37] coming out. So, there's going to be
+[12:38] different research on all those topics
+[12:40] like I already mentioned. Real quick,
+[12:42] guys, a word from the sponsor of today's
+[12:44] video, Hostinger. All end workflows need
+[12:46] a place to reliably run 24/7 and scale
+[12:48] up as you need to. And that's where
+[12:50] Hostinger comes in. What we're looking
+[12:51] at right here is Hostinger self-hosted
+[12:53] naden with unlimited workflows,
+[12:55] unlimited executions, community nodes,
+[12:57] and a one-click installation. So, I'm
+[12:58] going to show you guys how that works
+[12:59] real quick. You'll click on choose your
+[13:01] plan, and you can see they have
+[13:02] different options based on the amount of
+[13:04] storage and processing power that you
+[13:05] need. Right now, we're going to go with
+[13:06] KVM2, which is the most popular plan. On
+[13:09] this panel, you can see how long do you
+[13:10] want the period to run. You can get
+[13:11] daily backups. You choose your server.
+[13:13] And here's where you would choose NAND
+[13:15] as your application. And of course, if
+[13:16] you're getting a yearly plan, don't
+[13:18] forget to use code Nate Herk right here,
+[13:19] and you can get 10% off your NADN. Now
+[13:22] that I've paid, I just have to set up a
+[13:23] password, and we'll be all set. So, now
+[13:25] that everything is spun up, you can see
+[13:26] the overview right here. I just have to
+[13:28] click on manage app to the right of end
+[13:30] and it's just going to pull up our end
+[13:31] right here. Just spun up my account and
+[13:33] now you can see we have our self-hosted
+[13:34] end right here. And that took minutes.
+[13:37] So if you're like me, not super
+[13:38] technical, especially when it comes to
+[13:40] DevOps stuff, but you obviously know you
+[13:42] need somewhere safe and reliable to host
+[13:43] your ended workflows and have daily
+[13:45] backups stuff like that, then use the
+[13:47] link in the description to check out
+[13:48] Hostinger. And don't forget to use code
+[13:49] Nate Herk. So while this finishes up,
+[13:52] we're going to pin it when it's done so
+[13:53] we don't have to re-trigger the
+[13:55] research. So I'm just going to come in
+[13:56] here real quick and pin that data. And
+[13:58] now you can see that we are getting um
+[14:00] let's see schema might be the easiest
+[14:02] but we're getting research on different
+[14:03] topics. So the first one was bridging
+[14:05] the tech tech gap and then the next two
+[14:07] topics as well. So we have gotten our
+[14:12] title and topics. We have done the
+[14:13] research. Now we need to use AI again to
+[14:16] write the actual newsletter sections. So
+[14:18] I'm going to grab another AI agent right
+[14:20] here. We are once again real quick going
+[14:23] to connect open router. And actually a
+[14:24] fun trick, you can just hook them up to
+[14:26] the same model if you want them to use
+[14:27] the same model. Obviously, if you want
+[14:29] the agents to use different models, you
+[14:30] would have to create a new one, but
+[14:32] they're going to use the same one, so
+[14:33] that's fine. I'm going to change this
+[14:35] agent to let's see what I what I named
+[14:37] him in here, the section writer agent.
+[14:39] So, I'm just going to copy this
+[14:40] actually, and I'm going to change this
+[14:42] agent's name here. And now, same thing.
+[14:45] We have to configure the user message,
+[14:47] what the agent sees, and the system
+[14:49] message, its instructions. So, I'm going
+[14:51] to open this guy up. We're going to
+[14:52] first of all change the user message to
+[14:54] define below because we want to define
+[14:56] what it looks at. And what do we want it
+[14:59] to look at? We basically want it to look
+[15:01] at all of the search results for the
+[15:03] given topic as well as the query that it
+[15:06] was given. So what I'm going to do here
+[15:08] is basically just say um actually not
+[15:11] query, I'm going to say topic.
+[15:13] So basically I'm telling the the this
+[15:16] agent you're going to write a section of
+[15:18] a newsletter. here is the main topic or
+[15:20] heading and then I'm going to give you
+[15:22] these results down here. These are like
+[15:24] the article results. So that is what we
+[15:26] would give it. But we get this weird
+[15:28] object object thing. So we'd have to
+[15:30] like do a join expression to be able to
+[15:32] see it. Or obviously you could drag in
+[15:34] like you know here's the URL, here's the
+[15:37] title, here is the raw content from that
+[15:39] article, but we don't want to do it that
+[15:41] way because it's not as variable. So,
+[15:43] I'm going to go back to the resource
+[15:44] pack and I'm just going to grab this
+[15:47] JSON function, which is going to do the
+[15:49] same thing as it did earlier, where it
+[15:51] basically is just going to split out all
+[15:52] of the research in a way that the agent
+[15:54] can read really nicely. So, that's the
+[15:56] only reason we're using a function
+[15:58] there.
+[15:59] Cool. So, it gets the topic and
+[16:01] research. Once again, this agent's going
+[16:03] to do it three times. So, the first time
+[16:04] it's going to do bridging the tech gap.
+[16:06] Second time it's going to do SMB
+[16:07] attitudes towards AI. And the third time
+[16:09] it's going to do practical AI tools
+[16:11] guide. Now, we need to add another
+[16:13] system message so it can actually see,
+[16:15] okay, I'm getting this stuff. What do I
+[16:17] do with it? So, of course, for the sake
+[16:19] of time, I've already pre-written this.
+[16:20] I'm going to grab this system message,
+[16:22] which is actually pretty short. And once
+[16:24] again, you guys will get this in my free
+[16:25] school community. I'll show you guys
+[16:26] later how you actually do that. Um, and
+[16:29] what you do is you're going to come in
+[16:30] here and you're going to hit paste.
+[16:34] So, now we have this system message with
+[16:37] an overview, which is that you are
+[16:38] professional newsletter section writer.
+[16:40] Your only task is to write one
+[16:42] standalone section of a newsletter. Your
+[16:44] instructions are to always include a
+[16:45] clear section heading. Do not write an
+[16:47] overall title, introduction, or
+[16:49] conclusion. You're just writing one
+[16:50] little section. Write in a professional,
+[16:52] expert, and engaging tone in your if you
+[16:56] reference facts, data, or quotes. You
+[16:57] must site the source. Um, all this kind
+[16:59] of stuff. And these prompts, keep in
+[17:01] mind, are where you can really come in
+[17:03] here and make this newsletter a lot more
+[17:04] tailored towards your business, your
+[17:07] ICP, you know, anything like that. This
+[17:09] is where you can put your own spin on
+[17:10] it. This one and the editor one for
+[17:12] sure. But anyways, it's a good place to
+[17:14] start. And now what I'm going to do is
+[17:16] just hit execute step. And we don't need
+[17:19] a structured output parser here. You
+[17:21] could split them up in between like the
+[17:22] header and the body, but we're going to
+[17:24] combine it all together later either
+[17:25] way. So I'm just going to go ahead and
+[17:27] run this section writer agent right now.
+[17:30] All right. So the section writer just
+[17:31] finished up. We'll take a quick look. If
+[17:33] we go to the table view, we can see that
+[17:35] the first section comes out with this
+[17:36] heading and then we have um different
+[17:39] little pieces in here and it is using
+[17:41] its sources. So that's good. Here is the
+[17:44] second section which is SMB attitudes
+[17:45] towards AI adoption. And then the third
+[17:47] one comes out as well. So now that we
+[17:50] have all that figured out, let me just
+[17:51] move this back to the middle. What we
+[17:53] need to do now is first of all, I'm just
+[17:54] going to pin this so we don't lose it.
+[17:56] And now we need to bring it all back
+[17:58] together and then have an editor agent
+[18:00] make it stylized with HTML. So it looks
+[18:03] nice. So in order to get everything back
+[18:05] together, we're going to do another data
+[18:07] transformation node, which is called an
+[18:09] aggregate. And this is going to bring
+[18:11] our three items over here back into one.
+[18:13] As you can see right here, we basically
+[18:14] said 3 to one, bring it all together,
+[18:16] and then we're going to stylize and
+[18:17] edit. So all I have to do is say that
+[18:20] we're going to just combine this field
+[18:22] called output into one. So now we should
+[18:25] be getting one item over here that has
+[18:27] all three of those sections combined as
+[18:28] you can see. Perfect.
+[18:31] Now, I'm going to add another AI agent,
+[18:33] which is our final AI agent. We're going
+[18:35] to real quick go grab a chat model. And
+[18:37] the reason I'm grabbing one myself is
+[18:39] because for this writing, because it's
+[18:41] like HTML and we want it to really sound
+[18:43] nice, I'm going to use GBT5 rather than
+[18:46] these other ones where I was using GPT5
+[18:48] Mini. So, we're going to use GBT5 here.
+[18:51] I'm also going to call this guy real
+[18:52] quick, the editor agent. And again, we
+[18:56] have a couple things to set up. system
+[18:58] message, user message, and we are we are
+[19:01] going to again do a structured output
+[19:03] parser. So, first of all, let's do the
+[19:05] user message. We're not going to do
+[19:06] this. You only do this if you use a chat
+[19:08] trigger. So, we're not using a chat
+[19:10] trigger. So, we're going to define
+[19:11] below.
+[19:13] What we wanted to look at are the three
+[19:15] different sections. So, what you could
+[19:18] do is you could basically go like, you
+[19:20] know, here's section one, hit enter,
+[19:23] here's section two, hit enter a few
+[19:25] times, and then here's section three.
+[19:26] There's nothing wrong with that and you
+[19:28] certainly can. But just to get you guys
+[19:30] more comfortable with like the way you
+[19:31] can use functions to make things a bit
+[19:35] more dynamic. You could drag in this
+[19:37] array right here. And this is similar to
+[19:39] what we were doing earlier. You can
+[19:41] after the output type in join. And this
+[19:44] basically joins together the items of
+[19:45] the array. And then you can also in here
+[19:48] specify what to do between each join. So
+[19:51] let me find the good point right here.
+[19:53] So the second output starts with SMB
+[19:55] attitudes towards AI. So let me just
+[19:57] find that real quick. Um
+[20:01] we'll find it. We'll find it. We'll find
+[20:02] it.
+[20:05] Okay, I found it right here. SMB
+[20:06] attitudes towards AI. And you can see
+[20:08] that it basically starts
+[20:11] right away like combined with the end of
+[20:14] output one. So we don't want to do that.
+[20:16] So if I come here and I type in a quote
+[20:19] and do a new line symbol, it's going to
+[20:21] space it out. And if I do one more, and
+[20:23] if I do one more, it spaces it out even
+[20:24] more. So now it's very clear where this
+[20:28] second section basically starts. So
+[20:31] that's what we're going to do here. That
+[20:33] is what I did down here in the um what's
+[20:35] it called? The resource pack. I have the
+[20:37] sections with the three new lines after
+[20:39] a join. So once again, you could also
+[20:41] just grab this user message and then
+[20:44] paste that in there and you will get the
+[20:46] title and the sections.
+[20:48] The reason why the title is being weird
+[20:50] is because we grabbed the title back
+[20:52] from the initial agent called the
+[20:53] planning agent. And it's because I
+[20:55] didn't name it planning agent. So if I
+[20:57] literally just went back all the way
+[20:59] over here, oops, and I just named this
+[21:01] guy
+[21:03] planning agent. That should have fixed
+[21:05] it basically. So now it's green. You can
+[21:06] see I fixed it. Now it knows what's a
+[21:08] reference. So this editor agent is
+[21:10] receiving the title as well as all of
+[21:12] the sections of the newsletter. And now
+[21:14] all it has to do is it has to understand
+[21:16] I need to create the intro and the
+[21:17] conclusion and like a sources section at
+[21:19] the bottom. So that's where we're going
+[21:20] to tell it to do that in the system
+[21:22] message. So let me real quick just make
+[21:24] this full screen. Go to our resource
+[21:25] pack and I'm going to grab the system
+[21:27] message. You can see this is the longest
+[21:28] one out of all of the other ones that
+[21:30] we've had today. And I'm just going to
+[21:32] paste this in right here. I'm not going
+[21:35] to read the whole thing. You guys
+[21:36] obviously have access to the template.
+[21:38] You can also pause the video as I scroll
+[21:40] down if you want to be able to read the
+[21:41] whole thing. But what we're doing here
+[21:43] is we're defining its role. We're
+[21:45] telling it what to do. And then we're
+[21:47] giving it the structure of HTML so that
+[21:49] it has like headings and bold and and
+[21:51] clickable links and stuff like that. So
+[21:53] that's how we're doing it here. And what
+[21:55] I'm going to do now is before we
+[21:57] actually run it, explain why we need a
+[21:59] structured output parser. So I'm going
+[22:01] to connect the structure output parser
+[22:02] and then I'm going to explain why.
+[22:04] Because what we're doing is we're having
+[22:07] this editor agent output the title of
+[22:09] the email as a subject. or in a subject
+[22:12] field. And then it's going to output the
+[22:16] actual content of the newsletter in a
+[22:18] field called content. And the reason why
+[22:21] we need to do this is because we're
+[22:22] going to send the newsletter in Gmail.
+[22:25] And we want to have two fields that we
+[22:26] can drag off. The first one being the
+[22:28] subject, the second one being the email
+[22:29] body. So that's why we're doing a
+[22:30] structured output parser here. This is
+[22:32] probably going to take anywhere from 30
+[22:34] seconds to a minute and 30 seconds. So I
+[22:37] will let this spin. We will configure
+[22:40] the Gmail node and shoot that off and
+[22:41] then we'll take a look at it together.
+[22:42] So, all right. So, that run actually
+[22:44] took like four minutes. I earlier when I
+[22:47] was doing this, they weren't always
+[22:48] taking that long. I don't know, maybe
+[22:49] just the time of day. But either way,
+[22:51] before we actually read it and see how
+[22:53] it came out, I'm just going to pin this
+[22:54] data real quick so we don't have to wait
+[22:56] another four freaking minutes. And then
+[22:58] I'm going to add a Gmail node. So, I'm
+[23:00] going to grab this node. And what we're
+[23:02] going to do is create a draft. So, if
+[23:05] you don't have if you haven't connected
+[23:06] your Gmail account, you're basically
+[23:07] just going to sign in, create your
+[23:09] account, and now, like I said, we have
+[23:11] our subject and our message. And because
+[23:14] we actually already, you know, separated
+[23:16] them out with our structured output
+[23:17] parser. Super easy. We just drag in the
+[23:19] subject. We drag in the drag in the
+[23:21] content. And now the only thing we have
+[23:23] to do is change the email type to HTML
+[23:26] because we formatted it as HTML or our
+[23:30] editor agent did. And if we sent it as
+[23:32] text, then it would not actually be
+[23:34] formatted. It would just have this like
+[23:35] weird -p-p2.
+[23:38] It would just have that everywhere. So,
+[23:40] we have it as email. And then also, you
+[23:42] have options down here. So, you can send
+[23:43] it to someone, you can attach things,
+[23:44] you can send it to someone. I'm real
+[23:46] quick just going to send it to Nate
+[23:47] Herk8 Gmail, which is just like my test
+[23:50] email for all this end stuff. And now
+[23:52] that we have that set up, I can hit
+[23:54] execute step. And this is just going to
+[23:56] notify us that it was in fact sent. So,
+[23:58] I'm going to head over to the Gmail and
+[24:00] we're going to take a look at this
+[24:01] newsletter draft. All right. So, in my
+[24:03] drafts, here it is. You can see that we
+[24:05] have our title from gap to growth small
+[24:08] biz tech playbook. We have a quick
+[24:10] little brief which is, you know, as of
+[24:13] August 17th, 2025, many leaders are
+[24:15] tackling the same challenge from
+[24:16] different angles, closing tech gaps,
+[24:18] turning cautious interest in AI into
+[24:20] confident use, and giving teams a
+[24:22] practical toolkit. This edition connects
+[24:24] those threads with actionable steps,
+[24:25] evidence on SMB attitudes, and a fast
+[24:27] start guide to tools and governance. So,
+[24:30] what you see here is that we have our
+[24:31] three main source sections. We have
+[24:34] bridging the gap, we have SMB attitudes,
+[24:36] and we have practical tools guide. We
+[24:39] also have a list down here at the bottom
+[24:41] of sources. So, we know that all of this
+[24:43] newsletter was written by real sources
+[24:46] that have, you know, we can click into
+[24:48] these right here and it will take us
+[24:49] right to them and we can basically see
+[24:51] why it wrote that. We have a quick
+[24:53] little sign off. And then the thing to
+[24:56] notice here is that we also have sources
+[24:59] after each sentence. So, you can see
+[25:00] where each sentence came from. If you
+[25:03] don't like the way that it literally
+[25:04] just says source, you could easily go
+[25:05] back into the editor prompt and say, you
+[25:06] know, hey, like maybe this source should
+[25:09] be called Forbes because it came from
+[25:10] Forbes. And this one should be called,
+[25:12] that one's also Forbes. This one should
+[25:13] be called Euro News because it came from
+[25:15] there. All stuff that you can play with
+[25:17] in the system prompt to make it tailored
+[25:19] towards the way you want your newsletter
+[25:21] to be written. So, I'm not going to read
+[25:23] through this whole thing. I think you
+[25:24] guys can see how this works. Um, it
+[25:26] seems like it it's flowing very nice.
+[25:28] You could obviously play with the
+[25:29] different chat models. In the past when
+[25:31] I've done newsletter creation, I've
+[25:32] liked to use Claude because I really
+[25:34] like the way that it writes. But GBT5 so
+[25:36] far I've been very impressed with as
+[25:37] well. You can see down here we've got a
+[25:39] lot of different sources for different
+[25:41] tools, different AI tools. Apologies if
+[25:43] you hear the fire truck that's zooming
+[25:45] down the street down there. But anyways,
+[25:47] this is kind of what the final product
+[25:48] looks like. And it's a really holistic
+[25:50] newsletter. And you could basically get
+[25:51] this sent to you as a draft once a week
+[25:54] or every single day or whatever it is.
+[25:55] Send it out to your team, send it out to
+[25:57] your email list, whatever you want to
+[25:58] do. But this is going to cut down all
+[25:59] the time of actually doing like the
+[26:01] research and now that you have this
+[26:02] draft here, you could basically just
+[26:04] make your small tweaks and shoot it off.
+[26:06] So, in order to actually grab this
+[26:07] resource pack and if you want to just
+[26:09] download the actual automation rather
+[26:11] than build it yourself, you can do that
+[26:12] as well. You're going to go to my free
+[26:14] school community. The link for that is
+[26:15] down in the description. When you get in
+[26:17] here, you're going to search for the
+[26:18] title of the video or go to YouTube
+[26:20] resources and find the post associated
+[26:22] with this YouTube video. And when you
+[26:24] click on it, there will be a JSON file
+[26:25] to download. There will be a PDF. you
+[26:27] can download all the resources that you
+[26:29] need right from this post. So that's how
+[26:31] you'll get everything and now that you
+[26:32] have it, follow along with the rest of
+[26:34] the video. So that is pretty much the
+[26:36] whole system. You guys saw me build this
+[26:38] entire thing. Hopefully I explained kind
+[26:39] of like why I was doing things. I would
+[26:41] basically now want to just select all
+[26:42] these, hit P to unpin them if that
+[26:46] works. I thought that did work. I don't
+[26:47] know why it's not letting me do that.
+[26:48] Well, I'll just do it the manual way. So
+[26:50] I'm unpinning everything. I would save
+[26:51] it. I would push this into production by
+[26:54] making this active. So now this trigger
+[26:55] would actually go off every single week
+[26:58] and you pretty much have just built your
+[26:59] first workflow. Now from here there's a
+[27:01] lot of things you'd want to do next. The
+[27:03] first one that I would recommend is have
+[27:05] a log of all the newsletters that have
+[27:07] gone out. That way you can you can track
+[27:09] them when they've gone out. You can give
+[27:11] feedback in like a Google sheet and that
+[27:13] way you can see your feedback over time
+[27:15] in order to make these changes in the
+[27:17] different prompts of the agents if you
+[27:19] don't like how something's happening.
+[27:21] There's of course tons of other stuff
+[27:22] that you can do from here to make this
+[27:24] smarter. Not only do you want to log it
+[27:26] so you can revisit the prompting and
+[27:28] stuff, but you want to log so that you
+[27:30] can have error handling in place. And
+[27:32] you also want to be able to, you know,
+[27:34] customize your HTML styling and human in
+[27:36] the loop revision stuff like that. You
+[27:38] could also actually change the workflow
+[27:40] logic so that you're not just doing
+[27:41] research on Tavi. Maybe you want to use
+[27:43] Perplexity and Tableau and then bring
+[27:45] those back together. Or maybe you want
+[27:46] to use SER API and bring all that
+[27:48] together. So now it's really up to you
+[27:50] since you have this nice template to
+[27:51] start from. Understand what happens in
+[27:54] each step, how you're able to customize
+[27:56] each step, and if you want to improve
+[27:58] certain areas, you know, make it your
+[28:00] own. So I've showed you guys the free
+[28:01] community where you can download this
+[28:02] exact template if you just want to plug
+[28:04] it in right away and start playing with
+[28:05] it or if you want to grab this resource
+[28:07] pack, of course, with all the prompts
+[28:08] that we use today. But if you're looking
+[28:10] to take your skills further or you're
+[28:12] looking for, you know, some more
+[28:13] hands-on support, then definitely check
+[28:14] out my plus community. The link for that
+[28:16] is also down in the description. We've
+[28:17] got a great community of members who are
+[28:19] building with any every single day.
+[28:20] They're sharing their learnings, their
+[28:22] wins, their challenges, all this kind of
+[28:23] stuff. We also have a classroom section
+[28:25] with two full courses, agent zero, which
+[28:27] is the foundations for beginners, and
+[28:29] then 10 hours to 10 seconds where you
+[28:31] learn how to identify, design, and build
+[28:33] time-saving automations. So, if you like
+[28:34] the whole way that I go about, you know,
+[28:36] trying to understand the tech stack and
+[28:38] wireframing and everything before you
+[28:39] get into it, that's something that I
+[28:40] talk about in this course as well. So,
+[28:42] I'd love to see you guys in these
+[28:43] communities. But that's going to do it
+[28:44] for today. If you enjoyed the video or
+[28:46] you learned something new, please give
+[28:47] it a like. It definitely helps me out a
+[28:48] ton. And as always, I appreciate you
+[28:50] guys making it to the end of the video.
+[28:52] I'll see you all in the next one.

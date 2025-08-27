@@ -1,0 +1,971 @@
+Video Title: How to Build an Outlook Inbox Manager in n8n (Step-by-Step, No Code)
+Video ID: h7BLVKh7yzc
+URL: https://www.youtube.com/watch?v=h7BLVKh7yzc
+View Count: 55,306
+
+[00:00] today we're going to be walking through
+[00:01] step- by-step how to build an inbox
+[00:02] manager for Outlook yep you heard me
+[00:04] right not Google today we're looking at
+[00:06] Outlook by the end of this video you'll
+[00:07] have an inbox manager up and running in
+[00:09] your own nadn instance and I think
+[00:11] you'll be surprised how quick and easy
+[00:12] it is to set up so let's not waste any
+[00:14] time and get straight into the tutorial
+[00:15] okay so today we're going to be using
+[00:17] nadn to build an inbox manager and we're
+[00:19] going to be doing this using a routing
+[00:21] agent architecture so we're going to
+[00:23] have one agent up front that's going to
+[00:25] take our emails from our inbox and then
+[00:26] it's going to Route off to a different
+[00:28] logic path based on what type of email
+[00:30] it is so high priority customer support
+[00:32] promotion finance and billing in this
+[00:34] example today we'll just set up three
+[00:35] different paths but this is where you're
+[00:36] going to be able to really customize
+[00:37] this thing based on you know the
+[00:39] different branches you want but the cool
+[00:40] thing is we can customize what happens
+[00:42] based on each email coming through so we
+[00:44] could either have the agent send us a
+[00:45] message we could have the agent respond
+[00:47] to the message we could have the agent
+[00:48] create a draft you know whatever it is
+[00:50] we're able to get in there and customize
+[00:51] it and so whether you've been building
+[00:53] with naden for a while now or this is
+[00:54] going to be one of your first builds
+[00:55] don't worry we're going to break it down
+[00:57] make it as simple as possible so let's
+[00:58] hop into it okay so the first thing we
+[00:59] need to set up is the trigger of this
+[01:01] workflow so what has to happen for this
+[01:04] workflow to execute we're going to click
+[01:05] on ADD First Step I'm going to type in
+[01:07] Outlook and I'm going to grab an Outlook
+[01:09] trigger which is on message received so
+[01:11] essentially once we connect our Outlook
+[01:13] account every time we get a new email
+[01:15] this workflow is going to fire off and
+[01:16] then we decide what will happen based on
+[01:18] the type of email that comes through so
+[01:20] as you can see I've already connected my
+[01:21] credential but you'll have to come in
+[01:22] here if you haven't click create new
+[01:24] credential and it's super simple all you
+[01:26] have to do is click on connect my
+[01:27] account you'll sign in you'll have to
+[01:29] allow access for n end to read write
+[01:32] view whatever it is your inbox and then
+[01:34] once you allow that you'll hit save
+[01:36] it'll go green it'll say um you know
+[01:39] account has been connected successfully
+[01:40] you'll get an email in your inbox that
+[01:42] says a new app has access to your data
+[01:43] nadn connected to your account and then
+[01:46] you'll be good to go so within this
+[01:48] trigger configuration there's a few
+[01:50] things we can look at the first one is a
+[01:52] poll time so this is looking every
+[01:53] minute it's going to search your inbox
+[01:55] and see if you got new messages you can
+[01:56] obviously change the frequency I'm going
+[01:58] to leave mine at every minute then we
+[02:00] have trigger on so this is looking for a
+[02:02] specific operation right now it's easy
+[02:04] all we have to do is look for a message
+[02:05] received and then we have an output
+[02:07] option which is simplified or raw or we
+[02:09] could choose selected Fields what we're
+[02:12] going to do is hit fetch test event and
+[02:13] we're going to see an email come through
+[02:15] which is an example email that I sent
+[02:16] myself earlier just to test out some
+[02:18] stuff and as you can see um this is
+[02:20] simplified so what we're getting is a
+[02:22] body preview you can notice right here
+[02:24] that the email gets cut off so this is
+[02:26] probably not ideal when we're feeding it
+[02:27] into our routing agent because we want
+[02:29] the agent to be able to read the whole
+[02:30] message and then interpret which way to
+[02:32] send it but you can see there's also
+[02:34] other information we're going to get
+[02:35] like the subject of the email the email
+[02:37] ID which will be important for later the
+[02:39] conversation ID um who it's from all
+[02:41] this kind of stuff so I'm going to
+[02:42] change the output to Raw hit fetch test
+[02:45] event again it's going to pull in that
+[02:46] same email but now we have a lot more
+[02:48] information coming back about that email
+[02:49] we have the receive time the sent time
+[02:53] attachments um importance we have parent
+[02:55] folder we have all this kind of stuff
+[02:57] right and here's the actual full email
+[02:59] that we're getting within the body
+[03:00] content as you can see we have some kind
+[03:03] of nasty HTML tagging going on here so
+[03:06] um the agent can interpret this but just
+[03:08] for the sake of this video I'm going to
+[03:10] clean this up before we send it into our
+[03:12] routing agent just so that the video
+[03:13] makes more sense but keep in mind you
+[03:16] don't have to the agent will be able to
+[03:17] read this and understand the content of
+[03:19] the message which is really all it's
+[03:20] looking for right but anyways so that
+[03:22] that's why we want to do this raw rather
+[03:23] than simplified you can also filter
+[03:26] other things like you can only pull in
+[03:27] messages that are not that are red or
+[03:30] have certain attachments or within a
+[03:32] certain folder but for now we're just
+[03:33] doing a general inbox manager so we want
+[03:35] everything we're going to leave the
+[03:36] filter and the options as default so
+[03:40] from there like I said we're going to
+[03:42] try to clean up that that text coming
+[03:44] through before we send it off just so it
+[03:46] makes this tutorial easier to follow I'm
+[03:49] going to type in open Ai and I'm going
+[03:50] to grab a message a model node all we're
+[03:53] going to do here is connect to open AI
+[03:54] um same thing if you haven't created
+[03:56] this credential you'll create an open AI
+[03:57] account you'll have to load in like five
+[03:59] bucks
+[04:00] and then you'll just hit like generate
+[04:01] API key um if you need help you can
+[04:03] always click on open docs and it will
+[04:04] walk you through but once you have that
+[04:06] API key from open AI all you have to do
+[04:09] is plug that in right here and then hit
+[04:12] save you'll go green you're good to go
+[04:14] so I'm going to connect a model real
+[04:15] quick which is going to be 40 mini um
+[04:17] and then we have to set up a user
+[04:19] message real quick and a system message
+[04:22] the system message is basically like the
+[04:24] coding that goes on behind the scenes in
+[04:25] Chachi BT where it says like you know
+[04:28] this is your role but the user messages
+[04:30] every time you talk to chat gbt in that
+[04:31] little text bar at the bottom what
+[04:33] you're saying so what we're saying here
+[04:35] is like here is an incoming email and
+[04:39] all I'm going to do is give it the nasty
+[04:41] body content of the email right here
+[04:42] that has HTML tagging and we don't want
+[04:44] to read that and then the system message
+[04:46] I'm just going to say like this is me
+[04:48] telling this node what to do as if you
+[04:50] were telling an intern to take these
+[04:51] emails and do something with them so I'm
+[04:53] just going to say take the incoming
+[04:55] email and clean it up so it is more
+[05:00] readable what I mean by that is get rid
+[05:03] of the HTML
+[05:05] tagging but don't get rid of any of the
+[05:10] email content because we want to make
+[05:11] sure that it's not changing stuff around
+[05:13] right so now that it has its system
+[05:15] message and instructions and it has the
+[05:16] dynamically changing email that's coming
+[05:18] in every different time we'll hit test
+[05:20] up and on the right we'll see that it's
+[05:22] cleaning up the email and now we're
+[05:23] getting just the email although one
+[05:25] thing it did is it output a subject we
+[05:26] don't need that we so we'll come in here
+[05:28] to the system prompt and say don't
+[05:30] include a subject so now I'll send that
+[05:33] off again it should have gotten rid of
+[05:35] the subject on the right hand side we
+[05:37] should only be getting the actual body
+[05:38] content back and now we're good to go so
+[05:40] I'm just going to change this node and
+[05:42] say clean email just so we know what
+[05:44] it's doing and next we're going to move
+[05:46] into the routing aspect so here I'm
+[05:48] going to click on this plus I'm going to
+[05:50] type in text classifier because this is
+[05:52] an AI node that we're going to be saying
+[05:54] okay you're going to be getting this
+[05:55] text every time and what you have to do
+[05:57] is classify it into one of these three
+[05:59] paths and then and send it down that
+[06:00] correct path so first things first is
+[06:02] what text are you actually going to be
+[06:04] classifying as you can see right now
+[06:05] it's set to fixed we want to change this
+[06:07] to an expression because it's going to
+[06:09] be looking at something different every
+[06:10] time and what we can do is we can just
+[06:12] drag in the output of that clean email
+[06:14] node and we just can put in right here
+[06:16] so it's referencing json. message.
+[06:17] content but what it's actually pulling
+[06:19] in is the email that we got so this is
+[06:23] the variable this is an expression but
+[06:25] this is the actual content that we're
+[06:26] going to be having this text classifier
+[06:28] node look at every time
+[06:30] Okay cool so now that it knows what to
+[06:32] look through we have to give it
+[06:34] different categories so like I said
+[06:36] we're going to be doing three we're
+[06:38] going to be doing high
+[06:39] priority um billing and
+[06:43] promotion so we we have three categories
+[06:46] and now what you can see is that we now
+[06:47] have three paths leaving this text
+[06:49] classifier node so this would have been
+[06:51] just one but now once it sends it down
+[06:53] one of these three circles we can drag
+[06:55] out logic different ways to do different
+[06:57] things based on the type of email so
+[06:59] before we can do that though we have to
+[07:00] give a description so the AI knows what
+[07:02] type of email goes into which type of
+[07:05] category so first we're going to do high
+[07:08] priority so I'm going to paste in this
+[07:09] description here I'm going to it's going
+[07:12] to say emails that require immediate
+[07:13] action often involving urgent issues
+[07:16] escalations system failures or critical
+[07:18] business matters and then what can be
+[07:21] really helpful is giving it some common
+[07:22] words or phrases that are in here um
+[07:24] that may be found within a high priority
+[07:27] email so one thing to keep in mind here
+[07:29] here is you know you may not be setting
+[07:30] up the same categories as I am so when
+[07:32] you're setting up your categories you'll
+[07:33] want to test different emails to go
+[07:35] through obviously and if you see one not
+[07:37] being labeled correctly as it should
+[07:39] then what you want to do is come back
+[07:41] into here and give it some more examples
+[07:42] of you know let's say you wrote an email
+[07:45] and it didn't get labeled correctly you
+[07:47] could just put in this in this prompts
+[07:49] like examples of high priority emails
+[07:51] and give it some examples of like ones
+[07:52] that you would typically get um the more
+[07:55] examples and the more detailed your
+[07:57] description for each category is the
+[07:59] more accurate and consistent it's going
+[08:00] to be and by the way if you're enjoying
+[08:01] the step-by-step style and the Hands-On
+[08:03] approach then definitely check out my
+[08:04] paid Community the link for that's down
+[08:06] in the description we've got a great
+[08:07] Community with members that are always
+[08:08] you know asking questions about nadn
+[08:10] they're very dedicated to learning
+[08:11] sharing resources got a great classroom
+[08:13] section with deep dive topics like
+[08:15] building agents Vector databases apis
+[08:17] HTTP requests and then of course Deep
+[08:19] dive on step-by-step builds where I'm
+[08:21] doing step-by-steps of the videos I show
+[08:23] on YouTube so a great place to learn and
+[08:24] then also a calendar with five live
+[08:26] calls per week and then I've also got a
+[08:27] free community the link for that's also
+[08:29] down in the descript description and
+[08:30] this is where you can come into YouTube
+[08:31] resources and you can get the templates
+[08:33] for free for all my videos so this
+[08:34] template you can find you'll click on
+[08:36] the post associated with this video and
+[08:38] then you'll be able to get the template
+[08:39] right here and download that and then
+[08:40] you can import that straight into your
+[08:41] naden environment so anyways let's get
+[08:43] back to the video and set up a
+[08:45] description for billing so what I said
+[08:47] here was emails related to payments
+[08:48] invoices subscriptions Financial
+[08:50] transactions or account balances these
+[08:52] emails often include due dates payment
+[08:55] instructions or financial statements and
+[08:57] then once again we're giving it some
+[08:58] common words and phrases and then
+[09:00] finally let's do promotion so here we
+[09:01] said emails related to marketing
+[09:03] campaigns sales offers discounts
+[09:05] partnership opportunities or ads these
+[09:07] emails often sent in bulk and contain
+[09:10] promotional language and then once again
+[09:11] common words and phrases that may be
+[09:13] found in a promotional email so now that
+[09:15] we have all of these email categories
+[09:18] set up and we have the text to classify
+[09:20] also set up we can hit test step and
+[09:23] it's going to fail here and this is
+[09:24] because once again we're using AI to
+[09:27] read through this email and determine
+[09:28] which path to send it down so in order
+[09:30] to use AI we have to set up some sort of
+[09:31] AI brain so I'm going to come in here
+[09:33] and grab a flash 2.0 model I'm doing
+[09:37] this because it's pretty powerful it's
+[09:40] it's free and it just seems like a great
+[09:41] use case of categorizing these emails
+[09:43] especially if we're getting a ton don't
+[09:45] want to be wasting credits on something
+[09:46] that flash can take care of with a free
+[09:48] model so now if I hit play we'll see
+[09:50] that it's going to Output this item as
+[09:52] high priority because we have one item
+[09:53] down this branch and if we click into it
+[09:55] we can see high priority one item
+[09:57] billing zero items promotion zero items
+[09:59] so we know that this is working as it
+[10:01] should cool so next what we want to do
+[10:04] is we're going to configure the logic
+[10:05] for each type of email that's coming
+[10:07] through so we're going to start off with
+[10:09] high priority because we have a high
+[10:10] priority email here and the first thing
+[10:12] that I want to do is okay if I know I
+[10:14] have a high priority email I want
+[10:16] Outlook to move it into my folder an
+[10:18] Outlook called high priority as you can
+[10:20] see down here now in this example we're
+[10:23] doing high priority billing and
+[10:24] promotion and so you have to create
+[10:26] these folders and outlook before you can
+[10:27] set up this automation so under these
+[10:29] three dots click on create new folder
+[10:30] and then you can set up the different
+[10:31] paths you want so as you can see I have
+[10:33] them already set up so back in then and
+[10:35] then I'm going to click on the plus
+[10:36] after the high priority Branch I'm going
+[10:38] to type Outlook and I'm going to go down
+[10:40] to message actions and click
+[10:42] on um move a
+[10:44] message okay so this node is going to be
+[10:47] moving this message into the high
+[10:50] priority folder so that's what I'm going
+[10:52] to call the node to keep ourselves
+[10:53] organized you can see the resource you
+[10:55] can see the operation and now we can see
+[10:57] we're going to choose the folder which
+[10:58] as you can see a drop down we're
+[10:59] choosing high priority and now we have
+[11:01] to choose the actual message to move so
+[11:04] you can choose from a list which will
+[11:06] just have all of the emails in your
+[11:07] email but what we need to do is we need
+[11:09] to choose by ID so that we can
+[11:11] dynamically move in whatever email
+[11:14] triggered this whole workflow we can
+[11:16] select that one and move it into the
+[11:18] folder so for the sake of this video I'm
+[11:19] going to send off a new email to my
+[11:21] Outlook account that's called test I'm
+[11:23] going to hit send and then we're going
+[11:24] to move this one into a high priority
+[11:27] folder okay so I just refreshed email
+[11:29] you can see we have the test email which
+[11:32] is this high priority message right here
+[11:34] and I'm going to go back into the
+[11:35] workflow I'm going to hit test workflow
+[11:38] and it's not going to work because this
+[11:40] this node is erroring beforehand because
+[11:41] we haven't set anything up so I'm just
+[11:43] going to disconnect it real quick now
+[11:44] I'm going to hit test workflow it's
+[11:46] going to pull in that new email I just
+[11:47] got it's going to clean it classified as
+[11:48] high priority and now let's link it back
+[11:50] up here and then once we're in this node
+[11:52] what we want to do is once again we want
+[11:54] to change this to an expression not
+[11:55] fixed because it's going to be changing
+[11:57] every time we don't care about the text
+[11:59] classifier node right now we don't care
+[12:00] about cleaning email all we want to look
+[12:02] in is the trigger and we want to grab
+[12:04] the message ID of the message that we
+[12:06] got that fired off this workflow so now
+[12:08] every time that it gets down to one of
+[12:10] these nodes that moves a message into a
+[12:11] folder it'll be pulling the actual
+[12:13] message so all I want to do now is hit
+[12:16] test step we will see that we get a
+[12:17] success message if I go back into my
+[12:19] Outlook we can see that that message
+[12:20] just disappeared and it is now showing
+[12:22] up in the high priority folder within
+[12:25] our Outlook so that's how that works
+[12:27] okay cool back into out look this node's
+[12:29] taken care of and now it's just about
+[12:31] figuring out what logic do you want to
+[12:33] happen after you get a high priority
+[12:35] email in this case let's just say we
+[12:37] want to get notified we don't want the
+[12:39] workflow to draft an email or to send
+[12:41] anything off we just want to get a
+[12:42] notification so I'm going to add a
+[12:45] telegram node and I'm going to go down
+[12:46] to send a text message you'll have to
+[12:49] connect your telegram account you'll
+[12:51] click on create new credential you can
+[12:52] open docs and it will walk you through
+[12:53] how to set up your botfa and get your
+[12:56] API access token which you'll put in
+[12:57] right here super simple so follow that
+[12:59] documentation if you don't already have
+[13:01] this credential set up and then all we
+[13:02] have to do is send a message so you have
+[13:05] to get your chat ID so the best way to
+[13:07] do this is by um coming into into nadn
+[13:11] opening up Telegram and open up a
+[13:12] trigger which is on message received and
+[13:14] then all you have to do is hit fetch
+[13:17] test event message your yourself in
+[13:19] telegram you'll send a message in here
+[13:22] and then um when it comes through you'll
+[13:24] see a message ID and you'll see um the
+[13:26] text coming through so you'll just grab
+[13:27] that message ID and then you can just
+[13:29] plug that straight into here so I'm
+[13:31] going to grab my message
+[13:32] ID so I just Sav that in a word doc for
+[13:35] now so I have my message ID in there or
+[13:36] sorry my chat ID and now I want to also
+[13:39] come in here and turn off the append NN
+[13:40] attribution so that when we get a
+[13:42] message it doesn't say this was sent by
+[13:43] telegram or by NN sorry and then we just
+[13:46] have to Fig configure the text so this
+[13:49] is probably going to be dynamic right so
+[13:51] I'm going to click on expression and I'm
+[13:53] actually going to open this up full
+[13:54] screen so we can look at what we want to
+[13:55] do here we want to close out everything
+[13:58] because really all the information we
+[13:59] need is going to be coming from the
+[14:01] Microsoft Outlook trigger so our message
+[14:04] is going to be a mix of expressions and
+[14:06] things that are variable and also things
+[14:07] that we're kind of hardcoding into here
+[14:09] so I'm just going to say like um you
+[14:11] know
+[14:13] new high
+[14:15] priority email so we're able to hardcode
+[14:17] in new high priority email because
+[14:19] obviously it's only going to get to this
+[14:21] node if it was labeled as high priority
+[14:22] anyways what we want to do is just say
+[14:24] like who who it was from so um once
+[14:26] again we're going to get down to the
+[14:27] Microsoft Outlook trigger and just look
+[14:29] for the information we want so um let's
+[14:32] come down here to the sender so it's
+[14:35] going to be from and then we can just
+[14:37] drag in the sender
+[14:38] name we can say like what else do we
+[14:40] want to add into this we can add maybe
+[14:42] like you know the subjects just in case
+[14:44] they want a little snippet of what the
+[14:45] email is about um without having to
+[14:48] actually get in there yet and look at it
+[14:49] so we'll give the subject and then we
+[14:51] can also say like you know maybe what
+[14:53] time it was received so um date and then
+[14:56] we'll just say received date right here
+[14:58] um and and this is kind of a messy
+[14:59] format so what we actually can do is you
+[15:02] know this is basically going to be
+[15:03] triggered immediately as soon as the
+[15:05] email comes through so I'm just going to
+[15:08] basically come in here and do two curly
+[15:09] braces I'm going to type in now I'm
+[15:12] going to do format and then um we're
+[15:15] just going to leave it like that so it's
+[15:16] just going to be getting the who who
+[15:18] sent an email um what the subject was
+[15:20] and then what the date was that you got
+[15:22] it obviously all this kind of stuff can
+[15:23] be customized but that's what we're
+[15:24] going to leave it as for now and then we
+[15:26] will hit test step I'll open up my
+[15:28] Telegram and you can see see this is
+[15:29] what the email look or this is what the
+[15:30] text message looks like new high
+[15:32] priority email from Nate here's the
+[15:34] subject and here's the date
+[15:36] so obviously there's more stuff that you
+[15:38] could do but in this case we are just
+[15:39] going to leave it as simple as that for
+[15:41] a high priority email okay now we're
+[15:43] going to be taking a look at the billing
+[15:44] Branch so what I did is I sent myself an
+[15:45] email as you can see we have a payment
+[15:47] confirmation we have a billing email
+[15:49] right here in the Inbox and what we're
+[15:51] going to do is set up the logic over
+[15:52] here so I'm going to hit play on this
+[15:54] Outlook trigger let's just make sure
+[15:55] we're getting the correct email we can
+[15:57] see the subject is the one I just looked
+[15:58] at we'll have the AI clean it real quick
+[16:01] then we'll have the AI classify it and
+[16:02] then we'll set up the logic for the rest
+[16:04] of the billing flow so it correctly
+[16:06] labeled this one as a billing email and
+[16:09] all we want to do first is put it into
+[16:11] the billing folder so instead of
+[16:12] actually adding an Outlook node I'm just
+[16:14] going to copy this one paste it down
+[16:16] here we're going to click into it
+[16:18] obviously just change this to um you
+[16:20] know billing folder we're going to
+[16:22] change the folder that it's moving to
+[16:24] from higher priority to
+[16:27] billing and the reason we're doing doing
+[16:29] this is because we already have the
+[16:30] message ID of the original message
+[16:32] coming through mapped so as soon as I
+[16:34] drag this in it now has that connection
+[16:36] now you can see this is green and we
+[16:37] have the message ID correctly we'll hit
+[16:39] test step we will get a success message
+[16:42] go into our Outlook and we can see if we
+[16:43] open up the billing folder that message
+[16:45] just got put into there so save us a lot
+[16:48] of time we already have that configured
+[16:50] now it's just a matter of okay now that
+[16:52] we have that billing email in the right
+[16:55] folder what do we want to do in this
+[16:57] case like I said you can customize it
+[16:59] however you want but in this case let's
+[17:00] say that we're going to add an AI agent
+[17:02] that is going to respond to this email
+[17:04] as a draft so I am going to change this
+[17:06] to billing agent we're going to rename
+[17:09] it there we're going to change the user
+[17:11] message right now it's looking for
+[17:13] connected chat trigger node which just
+[17:15] means it would have been looking for
+[17:16] this thing right here that allows us to
+[17:18] chat in our interface of nadn and
+[17:20] because we don't have that we're not
+[17:21] using that as the user message we are
+[17:24] going to change the this thing so same
+[17:26] way we set up like the open AI node with
+[17:27] a user message and a syst system prompt
+[17:29] that's exactly what's going on here
+[17:30] here's the system prompt here's the user
+[17:32] message and what we want to give it as
+[17:34] context is the output of the clean email
+[17:36] node so I'm going to change this to an
+[17:38] expression I'm going to say here is the
+[17:40] email and I'm just going to drag in the
+[17:43] content of the clean email right here so
+[17:45] as you can see that is what it's getting
+[17:46] to respond to cool so now we just want
+[17:49] to set up the system message so I'm
+[17:51] going to tell it you know here's an
+[17:52] overview you are a I'm just going to say
+[17:55] billing assistant whatever that means
+[17:58] your job
+[18:00] is to respond to the incoming
+[18:06] emails in a
+[18:08] professional manner so we're just
+[18:11] wanting to Define sort of like its job
+[18:13] its role its end goal and you know how
+[18:15] it works so what we're going to do is
+[18:17] we're going to give it access to a tool
+[18:19] um to send to create drafts first thing
+[18:21] I want to give it a chat model so in
+[18:23] this case because we already used um
+[18:24] flash 4 flash 2.0 I'm just going to give
+[18:26] it for menu over here and we're going to
+[18:28] add a tool I'm going to type in
+[18:30] Outlook um we're going to rename this
+[18:33] tool create
+[18:35] draft and um we have the operation send
+[18:38] message that's not what we want to do we
+[18:40] want to change this to a draft and we
+[18:42] have operation now create draft so
+[18:43] that's perfect um we have we have we
+[18:47] have a couple things to fill out so we
+[18:48] have the subject of the draft we're
+[18:49] making and the message of the draft
+[18:51] we're making and all I'm going to do is
+[18:52] click on this button that lets the model
+[18:54] Define this parameter which is basically
+[18:56] just saying okay the agent you know this
+[18:59] main agent up here I'm going to get this
+[19:02] email I'm going to read through my
+[19:03] system prompt to understand I need to
+[19:05] respond to it by creating a draft and
+[19:07] then I'm going to send it to this tool
+[19:08] where I will automatically fill in the
+[19:10] subject I'll automatically fill in what
+[19:11] the message is going to be and anything
+[19:12] else I need to configure so in this case
+[19:14] we're we're creating a draft and we want
+[19:16] to be replying to
+[19:20] um the original sender that sent us the
+[19:23] email in the first place so Outlook this
+[19:25] is where it gets a little bit different
+[19:26] from Gmail in Gmail when you reply you
+[19:28] can send up a a reply ID so it
+[19:30] automatically responds in that thread
+[19:32] that's not how it works in Outlook and
+[19:34] you may think it's the reply too but
+[19:36] it's not this just puts a reply to email
+[19:38] as in like when you send an email um
+[19:42] usually there's like a reply to like
+[19:44] this email you know what I mean so
+[19:45] that's not what it is what we want to do
+[19:47] is just add a two so unfortunately it
+[19:49] won't put it in the same thread but we
+[19:50] can have it automatically send to the
+[19:53] person who sent us this email that
+[19:54] triggered the workflow so I'm going to
+[19:55] close out of text classifier we want to
+[19:56] get back to the trigger where we can get
+[19:58] this information
+[19:59] so every time we get an email right here
+[20:01] under sender we'll have the email
+[20:02] address of the person who sent us the
+[20:04] email so that's what we're going to map
+[20:05] in here so that is pretty much set up I
+[20:08] just have to change this to um the new
+[20:11] credential I was using the wrong
+[20:12] credential
+[20:14] and yeah I think that's it we will
+[20:17] basically test this thing out now so
+[20:19] actually first we want to give it a
+[20:20] system prompt about its tool so I'm
+[20:22] going to say tools let me make this
+[20:25] bigger so you guys can see it better so
+[20:27] tools I'm going to say um
+[20:29] create draft which is use this tool to
+[20:33] send an
+[20:35] email in response to the one you receive
+[20:40] so maybe that language isn't optimal
+[20:42] we'll see we're going to hit play on
+[20:43] this agent and we'll see it think about
+[20:44] it using its brain and then it should
+[20:46] hit this tool to create the draft there
+[20:47] we go um once it's done it's going to
+[20:50] tell us you know here's the response
+[20:53] let's actually go
+[20:54] into um Outlook we will click on drafts
+[20:57] so this one was a test from earlier here
+[20:59] is the draft that it just made as you
+[21:00] can see we have the re so it is an it is
+[21:03] a
+[21:04] um it actually looks like it is going to
+[21:06] be put in that thread we have the emails
+[21:09] responding to and then we have the um
+[21:12] message ID actually no so it's not
+[21:15] actually well maybe it is
+[21:17] because the the the subject was
+[21:19] generated by AI right but if we click
+[21:22] into the inbox manager all it's getting
+[21:26] is this email okay so I don't think it's
+[21:29] really responding in that thread I mean
+[21:30] we can easily just find out by hitting
+[21:32] send so here's the inbox that it came to
+[21:34] it was sent as an individual email so it
+[21:36] didn't come in the same thread even
+[21:37] though it has re um that was just the AI
+[21:40] being smart enough to make a subject
+[21:42] that was in response anyways um that's
+[21:45] we're getting off off topic here anyways
+[21:47] so that's how it works right but maybe
+[21:49] we still want to get notified that this
+[21:50] happened so in that case what we can do
+[21:52] is we'll copy in this telegram message
+[21:54] we'll hook it up because we already have
+[21:56] the chat ID configured but now what we
+[21:57] want to do is just change the message so
+[21:59] all we can do is say like
+[22:01] um you know
+[22:05] new new um billing you know
+[22:09] inquiry I don't know why it's Capital we
+[22:11] can just say new billing
+[22:14] inquiry
+[22:16] received at and then we can put the time
+[22:19] by doing um dollar sign now we can
+[22:21] format it so we can get the time and so
+[22:23] instead of looking for year year year
+[22:25] month month I think if I do
+[22:27] HH colon um
+[22:30] mm there we go and then how do I get
+[22:32] like am okay there we go so we have 4:48
+[22:35] p.m. um so now it's saying like you know
+[22:37] you got this new bill billing inquiry at
+[22:39] this time um we'll
+[22:41] say a draft has been
+[22:44] created and is sitting in your outlook
+[22:49] although maybe let's say like who it was
+[22:51] from so we'll say from once again we'll
+[22:53] close out of all the stuff we want to
+[22:54] get down to the Outlook trigger and at
+[22:57] the bottom we remember we can get the
+[22:58] from address but we can also get the
+[22:59] from name so I'm going to drag in the
+[23:01] from name right here so new billing
+[23:03] inquiry received at 4:48 p.m. from Nate
+[23:05] herkelman a draft has been created and
+[23:07] sitting in your outlook so that's what
+[23:08] we want every time we have this process
+[23:10] taking taking place we can see we got
+[23:12] that message in Telegram and that is the
+[23:14] end of the process for billing email so
+[23:16] that was high priority that was billing
+[23:18] let's set up the final Logic for a
+[23:19] promotional email also one more thing I
+[23:21] wanted to point out is if you didn't
+[23:23] like the way the email was structured if
+[23:25] you wanted to change like um you know
+[23:27] the sign off for any of the formatting
+[23:29] obviously would you could do that within
+[23:31] the system prompt of this agent you
+[23:32] could give it Like rules on how to
+[23:34] Output how to format an email and then
+[23:36] also you could do some of that stuff in
+[23:38] here so in the message description you
+[23:39] could say like you know sign off as you
+[23:43] know um Bob from ABC Corp or something
+[23:47] like that um you could also give it
+[23:48] rules on how to make a subject so that's
+[23:49] where you can add these little
+[23:50] descriptions to make this stuff even
+[23:51] more customized for how you like it but
+[23:54] anyways what we're going to look at is I
+[23:55] just sent an email to myself in here so
+[23:58] as you can see it's pretty promotional
+[23:59] boost your workflow um there's not even
+[24:01] a sign in or an introduction hey Nate um
+[24:04] 20% off all this kind of stuff right so
+[24:07] we're going to go back into our Outlook
+[24:09] um inbox manager hit play over here make
+[24:12] sure we're getting the correct email
+[24:13] which should be 20% off perfect and now
+[24:16] we're going to click clean email so it
+[24:18] creates human readable we're going to
+[24:20] have um this text classifier node as you
+[24:22] can see it outputed as promotion so if
+[24:24] we click in here promotion Branch one
+[24:26] item and now we're just going to set up
+[24:28] the Logic for promotion so the first
+[24:30] thing I'm going to do is copy in this
+[24:32] billing folder because we know that we
+[24:34] just want to move it to a promotional
+[24:35] folder so I'm going to come into the
+[24:37] folder section and change this to
+[24:39] promotion and that's all we have to do
+[24:41] besides change the name real quick
+[24:44] so promotion folder we will drag in this
+[24:47] item down here because now we will be
+[24:50] getting the correct mapping of the ID
+[24:52] perfect and now what do we want to do
+[24:54] for it's a promotional email maybe we
+[24:56] just we don't care if it's a draft
+[24:57] because it's otion we can just respond
+[24:59] every time with something like not
+[25:01] interested but thank you so once again
+[25:03] we're going to add an AI agent to do
+[25:06] this we are going to um connect it first
+[25:10] oh it is connected it's because it has
+[25:13] to look for oh we didn't run this okay
+[25:16] so we're going to run this previous one
+[25:17] so the so then the agent actually has
+[25:19] data to look at first of all we can see
+[25:21] that this is true we'll go into our
+[25:23] inbox and make sure that it got moved to
+[25:24] promotion as you can see there's that
+[25:26] email we were just looking at in
+[25:27] promotion now anyways back into here
+[25:29] let's look at what the agent's going to
+[25:31] do which is we have to first Define the
+[25:34] user message so once again we're going
+[25:35] to do the same thing pretty much here is
+[25:37] the incoming
+[25:39] email we're going to drag it from the
+[25:42] clean content node so now it's getting
+[25:44] the email and we're going to add a
+[25:46] system message that basically just says
+[25:49] um you will
+[25:52] receive um promotional emails
+[25:58] your job is to politely decline all
+[26:02] offers so should be as simple as that
+[26:05] use the send
+[26:09] email tool to do so okay so that's a
+[26:12] really really simple system prompt we're
+[26:14] going to keep it at that um I'm going to
+[26:16] connect it to the same chat model
+[26:17] because you actually can have two agents
+[26:19] using the same model it's no issue um
+[26:21] you don't have to it's just you know if
+[26:23] it if you think you don't like the
+[26:24] aesthetic of that but it keeps things
+[26:27] simple right so then we're going to add
+[26:28] the tool which is going to be an Outlook
+[26:30] tool um we're going to be sending a
+[26:31] message this time we're going to change
+[26:33] this to send email because that's how I
+[26:36] just to find it in the agent system
+[26:38] prompt and now we have the two the
+[26:40] subject and the message so once again I
+[26:43] have to go to the bottom down here in
+[26:45] the looking in the Microsoft Outlook
+[26:46] trigger for the message so there's the
+[26:48] email address or sorry not the message
+[26:50] the email address so I drag that in next
+[26:53] we can have the subject and the message
+[26:54] be automatically determined or we could
+[26:57] have this be fixed so let's say in the
+[26:58] case we don't care if the subject is
+[27:01] dynamic every time we'll just have the
+[27:02] subject say not interested okay so the
+[27:06] subject nowal is not interested the
+[27:07] message will be changing every time a
+[27:09] little bit and um yeah I think we're
+[27:12] good to go
+[27:14] here we could maybe just say at the end
+[27:16] like just to show you guys how this
+[27:17] works we'll say sign
+[27:20] off um sorry my end's a little laggy
+[27:23] sign off all emails as Frank
+[27:28] okay so now the the message is looking
+[27:31] at this description when it's deciding
+[27:33] how to make its message it's going to no
+[27:34] to sign off all emails as Frank um cool
+[27:37] so let's hit play on this agent it's
+[27:39] going to think about it it's going to
+[27:40] send an email and then we should get a
+[27:42] success message so I politely declined
+[27:44] the offer from AI Tech Solutions team
+[27:46] we'll come into our Outlook we can click
+[27:49] on sent items and here's the old one
+[27:51] let's give it a refresh we will see oh I
+[27:56] know what I did I didn't connect the
+[27:57] right credential so in my Outlook I was
+[27:59] using the wrong credential as you can
+[28:00] see so now I'm going to change it to the
+[28:01] right one I'm going to run it again it's
+[28:04] going to do the exact same
+[28:07] thing there we go we just got the same
+[28:09] exact message the email's been sent
+[28:11] we'll come in here now we have that not
+[28:12] interested because we set the subject as
+[28:14] not interested and then we have it
+[28:16] signing off as Frank so everything here
+[28:18] is working as it should and maybe we
+[28:20] don't even want a notification about
+[28:21] promotional because we just want less
+[28:23] noise as possible so that is this inbox
+[28:27] manager we
+[28:28] clean the email like I said you don't
+[28:30] need this step because the AI is able to
+[28:32] read that HTML stuff so you could easily
+[28:34] get rid of this hey guys one quick thing
+[28:36] while I was editing this video I just
+[28:37] noticed if you are to remove like if you
+[28:40] follow the step by step and you remove
+[28:41] that clean email node just be careful
+[28:44] because your agents that are looking at
+[28:47] the original email we referenced that
+[28:49] clean email node output so if you do
+[28:52] delete that node you're going to have to
+[28:53] remap some stuff later on you could also
+[28:56] just remap the email that comes through
+[28:58] from the main trigger instead of from
+[29:01] the clean clean email node or you could
+[29:03] remap that from the text classifier node
+[29:05] either way just you know I noticed if
+[29:07] you are to delete that node and you were
+[29:09] following this step by step exactly how
+[29:11] I did it your automation will break so
+[29:13] just wanted to let you guys know that
+[29:15] you just have to remap some stuff but it
+[29:16] should be good to go anyways back to the
+[29:18] video but what's important here is that
+[29:20] we have the trigger coming in we have
+[29:22] the text classifier sending it through
+[29:25] these different branches and only that
+[29:26] logic will take place and then what you
+[29:28] want to do after this is built out and
+[29:30] you like the way it's working and also
+[29:32] just cuz I don't want to get annoyed I
+[29:33] want to change this to a promotion agent
+[29:37] um now what you need to do is click on
+[29:40] activate so you'll activate this
+[29:41] workflow it's going to say your workflow
+[29:43] will now regularly check Microsoft
+[29:44] Outlook for events and Trigger
+[29:46] executions for them these executions
+[29:48] will not show up immediately in the
+[29:49] editor but you can see them in the
+[29:50] execution list so we'll click on got it
+[29:54] what that's saying is you know we saw
+[29:57] the very visual breakdown of which way
+[29:59] the logic was going if you sit here and
+[30:01] you send yourself an email to test
+[30:03] you're not going to see it live you're
+[30:04] not going to see it happen but when you
+[30:06] go into executions you will see like
+[30:08] you'll see a yellow line right here that
+[30:10] will say running and then it will show
+[30:12] and then once once it's finished you can
+[30:13] click into it and then you'll see then
+[30:16] you will see this visual breakdown like
+[30:17] this but it's just all going to be
+[30:18] happening in the back end but so if you
+[30:21] activate it as we know it'll be looking
+[30:23] in your outlook every minute or however
+[30:25] often you set this up and and then you
+[30:27] have you know an inbox manager so
+[30:30] hopefully that was super simple to set
+[30:31] up um I know I only did three paths down
+[30:34] here but you can get in there add as
+[30:35] many categories as you want and
+[30:37] customize the logic as much as you want
+[30:39] for your agents it can also get really
+[30:41] cool if you have like specific agents so
+[30:43] let's say you had a customer support
+[30:44] section perhaps you could have an agent
+[30:47] you could like give them access to like
+[30:48] a superbase vector store or even just
+[30:50] like a Google doc where you could have
+[30:52] them read a Google doc of customer
+[30:54] support policies and rules in order to
+[30:56] write that response so these can get
+[30:58] really really tailored and it can really
+[30:59] really save you a lot of time um you
+[31:01] know the more and more you build out the
+[31:03] details of what this stuff should be
+[31:04] doing and the different categories so
+[31:06] that's going to be it for this one if
+[31:07] you guys enjoyed this sort of
+[31:08] step-by-step style definitely check out
+[31:10] the paid Community Link for that will be
+[31:11] down in the description I do a ton of
+[31:13] step-by-step builds in there and that
+[31:14] whole Community is a ton of people
+[31:16] dedicated towards building AI agents and
+[31:18] learning sharing resources um all that
+[31:21] kind of stuff so if you enjoy the video
+[31:23] please give it a like definitely helps
+[31:24] me out I really appreciate you guys
+[31:26] making it to the end of this video and I
+[31:27] really appreciate all the support as of
+[31:29] lately and I will see you guys in the
+[31:31] next one thanks

@@ -1,0 +1,38 @@
+Video Title: Run DeepSeek R1 Locally in Under a Minute  #coding #artificialintelligence #n8n #deepseek
+Video ID: X-ilMpgqveo
+URL: https://www.youtube.com/watch?v=X-ilMpgqveo
+View Count: 37,299
+
+[00:00] here's how you can locally host deep
+[00:01] seek R1 in n8n in under a minute so step
+[00:04] one is that we have to have our n8n
+[00:06] self-hosted and the easiest way to do
+[00:07] this is to go over to the nadn
+[00:09] self-hosted AI starter kit so the first
+[00:10] thing you want to do is go to doer. and
+[00:12] download the desktop app if you choose
+[00:14] to do Docker we're going to be using the
+[00:15] nadn self-hosted AI starter kit so we're
+[00:18] going to do Docker here but you're going
+[00:19] to download the docker desktop for your
+[00:21] system and then you're going to go over
+[00:23] to the GitHub self-hosted AI starter kit
+[00:25] and all you're going to have to do is
+[00:26] copy a few commands into your terminal
+[00:27] and run them okay now to access locally
+[00:29] host posted models we're going to add an
+[00:31] AMA chat model we go to ama.com and you
+[00:34] don't even have to download it all we
+[00:35] have to do is click on models copy the
+[00:37] actual name of the model right here so
+[00:38] we're going to click into AMA but all
+[00:40] we're going to do is type in ama pull
+[00:43] and then we can copy in that deep seek
+[00:45] model that we want and now it's going to
+[00:47] go through the process of actually
+[00:48] pulling that in and right now it's
+[00:49] installing it locally on your machine
+[00:51] now we have deep seek R1 1.5 bilon
+[00:54] parameters so we can go ahead and test
+[00:55] this guy out let's give it um sort of a
+[00:58] riddle to reason through

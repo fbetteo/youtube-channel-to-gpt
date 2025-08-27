@@ -1,0 +1,69 @@
+Video Title: One Tool. 4,500+ Scrapers for ANYTHING.  #n8n #aiagent
+Video ID: LveqzSr3WMQ
+URL: https://www.youtube.com/watch?v=LveqzSr3WMQ
+View Count: 25,241
+
+[00:00] Here's the easiest way to scrape
+[00:01] anything with Ampify. So Apify is like a
+[00:03] marketplace for actors which essentially
+[00:05] let us scrape anything on the internet.
+[00:06] As you can see right here, we're able to
+[00:08] explore 4,500 plus pre-built actors for
+[00:10] web scraping and automation. And it's
+[00:12] really not that complicated. An actor is
+[00:13] basically just a predefined script that
+[00:15] was already built for us that we can
+[00:16] just send off a certain request to. So
+[00:18] you can think of it like a virtual
+[00:19] assistant where you're saying, "Hey, I
+[00:20] want you to I want to use the Tik Tok
+[00:22] virtual assistant and I want you to
+[00:23] scrape, you know, videos that have the
+[00:25] hashtag of AI content." Or you could use
+[00:27] the LinkedIn job scraper and you could
+[00:29] say, "I want to find jobs that are
+[00:30] titled business analyst." So there's
+[00:32] just so many ways you could use Appify.
+[00:33] You could get leads from Google Maps.
+[00:35] You could get Instagram comments. You
+[00:36] could get Facebook posts. There's just
+[00:38] almost unlimited things you can do here.
+[00:40] You can even tap into Apollo's database
+[00:41] of leads and just get a ton. So today,
+[00:43] I'm just going to show you guys in Naden
+[00:45] the easiest way to set up this Apify
+[00:47] actor where you're going to start the
+[00:49] actor and then you're going to just grab
+[00:50] those results. So, what you're going to
+[00:51] want to do is head over to Apify using
+[00:53] the link in the description and then use
+[00:54] code 30 Nate Herk to get 30% off. Okay.
+[00:57] Like I said, what we're going to be
+[00:58] covering today is a two-step process
+[01:00] where you make one request to Aify to
+[01:02] start up an actor and then you're going
+[01:04] to wait for it to finish up and then
+[01:05] you're just going to pull those results
+[01:06] back in. So, let me show you what that
+[01:07] looks like. What I'm going to do is hit
+[01:09] test workflow and this is going to start
+[01:10] the Google Maps actor. And what we're
+[01:12] doing here is we're asking for dentists
+[01:13] in New York. And then if I go to my
+[01:15] Appify console and I go over here to
+[01:17] actors and click on the Google Maps
+[01:18] extractor one. If I click on runs, we
+[01:20] can see that there's one currently
+[01:21] finishing up right now. And now that
+[01:23] it's finished, I can go back into our
+[01:24] workflow. I can hook it up to the get
+[01:26] results node. Hit test step. And this is
+[01:28] going to pull in those 50 dentists that
+[01:30] we just scraped in New York. And you can
+[01:33] see this contains information like their
+[01:34] address, their website, their phone
+[01:36] number, all this kind of stuff. So you
+[01:38] can just basically scrape these lists of
+[01:40] leads. If you want to watch the full
+[01:41] video, click on that play button right
+[01:42] here. I'll see you guys over there.

@@ -1,0 +1,299 @@
+Video Title: How to Trigger n8n AI Agents from ChatGPT (no code)
+Video ID: AGi3U79zMIM
+URL: https://www.youtube.com/watch?v=AGi3U79zMIM
+View Count: 34,231
+
+[00:00] On the left we have chatbt. On the right
+[00:02] we have my n&N assistant. And what I'm
+[00:03] going to do is send off this message
+[00:05] that's asking my NN assistant to send an
+[00:07] email to Dexter Morgan asking for an
+[00:09] update on project panda. I'm going to
+[00:10] allow my chatbt to talk to naden. And
+[00:12] now you can see it's going to grab that
+[00:14] message search through our contact
+[00:15] database and then it's going to come
+[00:17] over here and write that email using our
+[00:18] email agent. And then when it responds
+[00:20] to the web hook using this node right
+[00:22] here, we're going to get that response
+[00:23] in chat gbt on the lefth hand side. So
+[00:26] there you go. We just got the response.
+[00:27] The email has been sent to Dexter Morgan
+[00:29] asking if he has an update on Project
+[00:30] Panda. Is there anything else you'd like
+[00:32] to do? And as you can see over here, we
+[00:34] have that email that was successfully
+[00:35] sent to dextermiami.com.
+[00:38] So, what I'm going to be showing you
+[00:39] guys is how you can connect your chatbt
+[00:41] to an end web hook. And it doesn't have
+[00:42] to be an ultimate assistant. It could be
+[00:44] a workflow to update something in your
+[00:45] CRM or to parse an invoice or to do
+[00:47] whatever you want because you have the
+[00:49] functionality in edit end to build
+[00:50] custom workflows and then just have them
+[00:52] be triggered by chatgbt which you
+[00:54] probably are sitting there using every
+[00:55] day. It's not going to be too difficult
+[00:57] at all. So, let's get into it. Okay. So,
+[00:58] how the system works is we're going to
+[01:00] build a custom GPT and in that GPT,
+[01:02] we're going to give it an action, which
+[01:03] is the ability to send data to our NIDAN
+[01:06] web hook right here. So, the demo that I
+[01:07] just showed was a pretty fun example,
+[01:09] but we're going to go over an example of
+[01:10] a very practical one where you can drop
+[01:12] in a invoice into your custom GPT and
+[01:15] then it will send you that data to
+[01:16] upload to a database. And what's going
+[01:18] to be cool about this is chatgbt is the
+[01:20] one on the front end that is going to
+[01:22] use its vision to analyze the invoice
+[01:24] and extract the text. So we don't have
+[01:26] to worry about nadn setting up any sort
+[01:28] of OCR or document understanding tool
+[01:30] because chatgbt takes care of that. All
+[01:32] right, so let's get started. What we're
+[01:34] going to do is go to this custom GBT
+[01:36] which is one by chat GBT. It's called
+[01:38] actions GBT and it helps us create that
+[01:40] JSON schema that we need to give to our
+[01:41] custom GBT so that it can send data to
+[01:44] the web hook. So I'm going to have this
+[01:45] GBT linked in the description. Click on
+[01:47] that and then follow along what I'm
+[01:48] about to do here. Okay, so I said help
+[01:50] me create an open API 3.1.0 schema in
+[01:53] JSON so that I can give it to a custom
+[01:55] GPT and it will send data to my web hook
+[01:57] and then we're going to go into NADN and
+[01:59] we're going to open up this web hook and
+[02:01] grab this test URL real quick. Go back
+[02:04] into the actions GPT and paste that in
+[02:05] there. And then what I want to do is
+[02:07] tell it the parameters that it's going
+[02:08] to send over to this web hook. So in
+[02:11] that first example you saw I talked to
+[02:12] my ultimate assistant. I just told it
+[02:14] send over one field in the body called
+[02:16] request. But in this one, we want the
+[02:18] GPT to look at the invoice and pull out,
+[02:20] you know, the date, the invoice number,
+[02:22] the amount, all this kind of stuff. So,
+[02:24] I said here are the fields to send over
+[02:25] in the body request. And I gave it all
+[02:27] of the fields I want. And then I gave it
+[02:28] the data types, which all of these I
+[02:30] just put as strings. You could always
+[02:31] come back and change that, but for now,
+[02:33] we're just going to go ahead and send
+[02:34] this off. So, as you can see, it's
+[02:35] generating this JSON schema for us
+[02:37] that's going to have our web hook URL,
+[02:39] our path. It's going to have the things
+[02:40] that we need to send over to Nitn. And
+[02:43] then once we grab that data and end it
+[02:44] in, all we have to do is map it to a
+[02:46] Google sheet. So I'm going to go ahead
+[02:48] and copy this schema right here. I'm
+[02:49] going to open up my chatgpt and go to
+[02:51] custom GPTs. And then in the top right,
+[02:53] I'm going to click create. Okay. So this
+[02:55] is going to have you configure the name,
+[02:56] the description, and the instructions
+[02:58] for your GPT. You can go ahead and take
+[03:00] a look at what I put in here and copy
+[03:02] the instructions if you'd like. But
+[03:03] where the magic really happens is when
+[03:04] we give this agent access to actions. So
+[03:07] I'm going to scroll down to the bottom.
+[03:08] I'm going to check on this box that says
+[03:10] code interpreter and data analysis. And
+[03:12] I'm going to click on create new action.
+[03:14] And then right here in the schema, this
+[03:15] is where we paste in that open API
+[03:17] schema we just generated with that
+[03:18] custom GPT. And once I paste this in,
+[03:20] you're going to see down here with
+[03:22] available actions. It creates basically
+[03:24] a new tool called send invoice data. We
+[03:26] have our method as post and then we have
+[03:28] the web hook path. So what I'm going to
+[03:29] do real quick is we need to go to end
+[03:31] and we need to set our web hook as a
+[03:33] post method. So here's the web hook. I'm
+[03:35] going to change the HTTP method to post
+[03:37] and then I'm going to hit listen for
+[03:38] test event. So right now this web hook
+[03:40] is listening. We'll go back to the GPT
+[03:42] and I'll hit test. And what this is
+[03:43] going to do is it's basically going to
+[03:45] try to talk to our end cloud. I'll hit
+[03:48] confirm. And once we'll see that it's
+[03:50] going to talk to it. It has been able to
+[03:52] communicate. And now if I go back to my
+[03:54] workflow, you can see that we accepted
+[03:55] some data. And if I scroll all the way
+[03:57] down towards the bottom, you can see the
+[03:58] body parameters that got sent over were
+[04:00] date, invoice number, sold by, bill to,
+[04:03] products, and pricing, and total. So
+[04:06] this is exactly what it's going to
+[04:07] extract when we actually drop in an
+[04:09] invoice. So obviously this is just
+[04:11] sample madeup data. So we have our web
+[04:13] hook here and what I'm going to do is go
+[04:14] back into our custom GBT and we're
+[04:16] basically configured and I'm going to
+[04:17] hit create and I'm going to say only me
+[04:20] and then save it. And now that we just
+[04:21] created this GPT let's try to drop in an
+[04:23] invoice and test it out. Okay, so we
+[04:25] have an example invoice right here
+[04:26] that's a PDF and I'm going to send this
+[04:28] off and it's going to say please process
+[04:29] this invoice. You can see the GPT is
+[04:32] trying to talk to our Nitn. So I'm going
+[04:33] to hit confirm and then it's going to be
+[04:35] able to send that data.
+[04:38] Well, we have to make sure it's
+[04:39] listening for us. So, I'm going to go
+[04:40] back into the workflow. I'm going to hit
+[04:41] execute workflow. Now, it's listening.
+[04:43] And we'll try this again. Okay. So, I
+[04:44] said try again. I'm going to hit
+[04:46] confirm. And this time, it should be
+[04:47] able to read that invoice and send data
+[04:50] over. So, you can see we just captured
+[04:51] data in NN. I'm going to go to table
+[04:53] view just so we can look at it better.
+[04:54] And we can see we have a date, an
+[04:56] invoice number. We have sold by with an
+[04:58] address. We have bill to with an
+[05:00] address. And then we have our products
+[05:01] and pricing and our total. And here's
+[05:03] the actual example invoice we dropped
+[05:04] in. We can see the invoice number and
+[05:06] the date. Um those line up perfectly. We
+[05:09] can see the sold by and the bill to
+[05:10] which should be local store importing
+[05:12] company. Local store importing company.
+[05:14] We have the right email address and
+[05:16] address as well. We have two items.
+[05:17] Conveyor belt for 400, pole for 85. And
+[05:21] then in here we have pole for 85 and
+[05:23] conveyor belt for 400. And the total is
+[05:26] 702 which you can see matches up over
+[05:28] here. So like I said, we drop an invoice
+[05:29] into our custom GPT. It uses its vision
+[05:32] to analyze it and then it sends over the
+[05:34] parameters to us. And now all we have to
+[05:35] do is put that into a Google sheet. So I
+[05:37] have this template real quick which has
+[05:39] those exact parameters. I'm going to go
+[05:41] into here. I'm going to connect a Google
+[05:43] sheet and we're going to do append row
+[05:45] and sheet. Now all I have to do is link
+[05:46] up that sheet that we were talking about
+[05:48] called invoice database. I'll link it to
+[05:50] sheet one. And then this is going to pop
+[05:52] up with all of those columns that we
+[05:53] have set up in Google Sheets. So I would
+[05:55] just close out of headers and go to the
+[05:56] body. We have date, we have invoice
+[05:59] number, we have sold by, we have bill
+[06:01] to, we have products and pricing, and
+[06:03] then we have our total. So now all I'm
+[06:05] going to do is hit save. I'm going to
+[06:07] make this thing listen to us once again.
+[06:09] Then I'm going to go ahead back into our
+[06:10] chatbt. I'm going to drop in the invoice
+[06:12] once again and say process this, send it
+[06:16] off, and we should be able to talk to
+[06:18] the connector. I'll hit confirm. And now
+[06:20] we should see that once this is done,
+[06:22] we'll go ahead and come into here and we
+[06:24] should see that it's going to write that
+[06:25] data to this sheet. There we go. And so
+[06:28] two things I want to point out. The
+[06:29] first one is how do you want your
+[06:31] workflow in NN to respond to your custom
+[06:33] GPT. In that first demo, we basically
+[06:36] used the respond to web hook node
+[06:37] because sometimes we had to wait for
+[06:38] data to come back. But in this case, we
+[06:40] were just responding immediately. And
+[06:42] you can change that setting in the web
+[06:43] hook. So right here you have respond.
+[06:45] This one was set to immediately or you
+[06:47] can use the respond to web hook node
+[06:49] which will send back whatever comes at
+[06:51] the end of the workflow back to the
+[06:53] initial thing that triggered it. So
+[06:55] there's that. And then the other thing
+[06:56] is right now we're testing the web hook.
+[06:58] So we have to hit execute workflow. If
+[07:00] we wanted to switch this to active, we
+[07:03] would have to actually use the
+[07:04] production URL in here. So the only
+[07:06] difference is that after cloud/web hook,
+[07:09] the test one says test and the
+[07:11] production one doesn't say test. So,
+[07:14] what you could do is go back into your
+[07:15] custom GBT. You could open it up and say
+[07:17] edit GPT. And then in here, you would
+[07:19] just scroll down to your action, which
+[07:21] is the one that we configured. And all
+[07:23] you'd have to do is right here for the
+[07:24] path, you would just basically get rid
+[07:26] of the dash test and everything else
+[07:29] should already be configured. Then you'd
+[07:30] hit update up here and your GPT would be
+[07:32] saved and it would be able to talk to
+[07:34] your active workflow. And just to show
+[07:36] you guys how that respond to web hook
+[07:37] node thing works, I'm asking the GPT to
+[07:39] get Mark Johnson's contact information.
+[07:41] It's going to send that query off to our
+[07:43] ultimate assistant and it has to wait
+[07:45] over here until it actually gets Mark
+[07:47] Johnson's contact information. So the
+[07:49] agent's about to send it back to the web
+[07:50] hook and now our custom GPT can respond
+[07:53] to us. And just so you guys see that
+[07:54] that worked, we have Mark 2343 and 333
+[07:57] 444, which is exactly what we see for
+[08:00] Mark in our Air Table base. So if you
+[08:02] like this type of content and you want
+[08:03] to take your NADN learning a little bit
+[08:05] deeper, then definitely check out my
+[08:06] paid community. The link for that is
+[08:08] down in the description. got a great
+[08:09] community of members who are building
+[08:10] with end every single day for themselves
+[08:12] or for their businesses, always sharing
+[08:14] their resources and challenges that
+[08:15] they're running into. On top of that, we
+[08:17] have two full courses right now. One
+[08:18] called agent zero, which is like the
+[08:20] foundations for a automation. And then
+[08:21] this one is 10 hours to 10 seconds,
+[08:23] where you learn how to identify, design,
+[08:25] and build time-saving automations. We
+[08:28] also just announced a pretty cool
+[08:29] partnership where we're able to get our
+[08:30] members up to $3 million in savings
+[08:32] across some of the top AI tools like
+[08:34] Bolt, Air Table, Perplexity, Azure Cloud
+[08:37] Credits, stuff like that. So, if any of
+[08:39] that sounds interesting to you,
+[08:40] definitely check out the community. But
+[08:41] I appreciate you guys making it to the
+[08:43] end of the video. As always, if you
+[08:45] learned something new or you enjoyed the
+[08:46] video, please give it a like. Helps me
+[08:48] out a ton. And I'll see you all in the
+[08:49] next one. Thanks, guys.

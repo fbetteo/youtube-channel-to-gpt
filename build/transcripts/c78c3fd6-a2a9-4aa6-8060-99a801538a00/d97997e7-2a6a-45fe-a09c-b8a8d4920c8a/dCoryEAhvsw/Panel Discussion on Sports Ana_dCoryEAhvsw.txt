@@ -1,0 +1,1352 @@
+Video Title: Panel Discussion on Sports Analytics for Life: Many Different Paths [UCSAS 2024]
+Video ID: dCoryEAhvsw
+URL: https://www.youtube.com/watch?v=dCoryEAhvsw
+View Count: 49
+
+[00:01] all right we're gonna go ahead and get
+[00:02] started with the panel discussion um hi
+[00:06] everyone Brian McDonald uh you might
+[00:08] have seen me introduce myself earlier
+[00:10] today but um I'm uh I'm currently uh at
+[00:14] Yale um and with me on the panel here uh
+[00:19] we have Emily Wright from volleyball
+[00:22] Canada uh Paul Sabin from University of
+[00:26] Pennsylvania um Sean ahed from the
+[00:30] Pittsburgh Pirates and New Haven
+[00:33] Connecticut um Sean fiser from
+[00:36] Cincinnati Reds so we got uh you know
+[00:40] what is that uh one two onethird of the
+[00:44] panel is Sha's I don't know I don't know
+[00:47] why I should have just moved on um yeah
+[00:51] so
+[00:52] ccin and then we have Luke Ben uh at
+[00:56] Harvard and so I'm not going to read
+[00:59] their full bios they because the first
+[01:00] question is basically uh sort of about
+[01:02] this about their backgrounds and stuff
+[01:04] so I just kind of wanted to start this
+[01:06] panel uh is uh
+[01:08] basically uh about different careers in
+[01:11] sports and also different paths to uh
+[01:14] either a career in sports or working on
+[01:16] Sports analytics in some way if it's not
+[01:18] the main career um we good with audio
+[01:22] video
+[01:30] okay all right I can scooch
+[01:33] over um so I guess uh like I I kind of
+[01:37] just wanted to start um just by hearing
+[01:40] a little bit about um the career Paths
+[01:44] of everyone um including
+[01:48] like what kinds of stuff did you like to
+[01:50] do in high school and college or junior
+[01:54] high or before you even knew analytics
+[01:56] Sports analytics was actually a thing
+[01:58] what kinds of stuff did you like to do
+[02:01] um did that inform what you studied in
+[02:04] college uh and and so on so um yeah what
+[02:08] what what were your passions I guess
+[02:10] growing up as a as a
+[02:14] kid no no order we're not going down the
+[02:17] line I'm gonna I'll say that now we're
+[02:20] not going down the line just you just
+[02:23] said we're not going down I'll go fine
+[02:25] all right um I I love sports grown up
+[02:28] but as I mean as you can tell I was very
+[02:31] muscular as a kid as well so um always
+[02:35] always tall and skinny and so in a
+[02:37] certain point in high school uh you know
+[02:39] being a three-point shooter but getting
+[02:40] knocked around in football you know had
+[02:43] its limits and I I knew knew that I
+[02:46] wasn't going to play Collegiate or
+[02:47] anything in sports and so I you know I
+[02:49] was I was good to math and always
+[02:51] enjoyed that but I remember taking
+[02:52] calculus in high school and I was like
+[02:53] this is math isn't as fun um as like the
+[02:56] other math uh where you like you know
+[02:59] actually do stuff that like is real
+[03:01] world problems in other math classes
+[03:03] they would give you like world word
+[03:04] problems right and so I realized oh I
+[03:06] like I like applied stuff people always
+[03:08] told me that I should do engineering
+[03:10] because you know my mom was like it's
+[03:11] four years then you get a good job and
+[03:13] it's like an applied math and then I
+[03:15] went to an engineering class I left
+[03:16] Midway through the first day and signed
+[03:19] up to do statistics so um you know I
+[03:23] always always have just LED love sports
+[03:26] I always as a kid always would pay
+[03:28] attention like the box score stuff which
+[03:30] you know is ironic because now we rail
+[03:32] against box scores for a living but um
+[03:36] anyways that that's sort of my path I
+[03:38] studi statistics and whenever I had a a
+[03:41] problem or like an opportunity to pick a
+[03:43] project uh in a class to apply method
+[03:46] that we were learning I you know instead
+[03:48] of doing probably more useful work like
+[03:50] studying you know cancer or other actual
+[03:53] helpful things in the world I I enjoyed
+[03:55] Sports so I always picked a sports
+[03:57] problem instead
+[04:03] um my story is pretty similar to Paul's
+[04:06] in that there was definitely a point
+[04:08] where I realized not going to be playing
+[04:11] baseball football
+[04:12] basketball I'm G to run uh that's my
+[04:15] skill I so I ran in high school I ran in
+[04:19] college um and that was like what I did
+[04:22] to engage with sports mostly um I grew
+[04:25] up a fan of the big New England teams um
+[04:29] you know and followed them but
+[04:31] but math was never my my favorite
+[04:34] subject in school somewhat ironically
+[04:36] now um but when I got to college I
+[04:40] wanted to study literature signed up for
+[04:43] that major and somebody was like you
+[04:45] know sort of similar you might want a
+[04:48] job that pays you some money and um
+[04:51] they're like why don't you you know they
+[04:53] were like you're not bad at math just go
+[04:56] it's different than High School like go
+[04:57] do that and so I double maj in
+[05:00] literature and math and then went to
+[05:03] grad school in a completely unrelated
+[05:05] field um but that let me get a lot more
+[05:08] exposure to statistics uh Hands-On and
+[05:11] gave me the opportunity to do research
+[05:13] and projects and some of which I
+[05:15] eventually just started being moving
+[05:17] into that like I'm going to do them
+[05:18] about sports I'm going to do them about
+[05:20] sports away from the social sciency part
+[05:22] of it and
+[05:24] um eventually that became independent
+[05:26] projects the independent projects turned
+[05:28] into job applications
+[05:30] enough job applications turned into a
+[05:33] job which is you know the
+[05:36] goal I'm I'm happy to go next I don't
+[05:39] think my story is all that much
+[05:42] different I think um I very quickly
+[05:45] around the 8th or ninth grade saw three
+[05:48] curveballs and realized that I wasn't
+[05:50] going to you know make the major leagues
+[05:52] or anything like that and um I guess
+[05:55] like I sort of had a similar experience
+[05:58] where I saw proofs for the first time um
+[06:02] in college and I said this math which
+[06:05] you know I had liked a lot in high
+[06:06] school all of a sudden seems like a
+[06:09] waste of time you know you it seems like
+[06:11] you do something and it lives on a
+[06:13] Blackboard and like who really cares
+[06:16] about this stuff and if you do that like
+[06:20] all the more power to you it's you know
+[06:22] hard and I'm sure that it's important in
+[06:25] some context that I'm yet to figure
+[06:27] out um but i instead sort of learned
+[06:31] like statistics is this toolbox that you
+[06:34] can apply towards problems in any area
+[06:37] that you're interested in so for me
+[06:40] Sports has been one of those things and
+[06:42] kind of medicine and public health has
+[06:44] been another but I think that that's um
+[06:48] my favorite part about you know
+[06:49] statistics and data science more
+[06:51] generally it's really hard to ever get
+[06:52] bored because if you get bored of the
+[06:54] problem that you're working on the
+[06:56] skills are so transferable you can just
+[06:58] work on a different problem and you know
+[07:00] thankfully I I'm yet to get bored by
+[07:03] working on problems in sports but um you
+[07:06] know that's sort of my my path
+[07:08] there I can dovetail some somewhat off
+[07:12] that um I well to to start from how I
+[07:16] first got interested I always wanted to
+[07:18] work in baseball I remember the day when
+[07:20] I was 5 years old when I fell in love
+[07:22] with baseball going to a game at Tiger
+[07:24] Stadium uh for a friend's birthday and
+[07:26] was obsessed with it ever since not at
+[07:28] all from an analytical end it predated
+[07:31] Moneyball by some 15 years or at least
+[07:33] when Moneyball was set um and I um went
+[07:38] to to school um at the University of
+[07:41] Chicago I got an economics and a Latin
+[07:43] American studies uh minor was the latter
+[07:47] and I called that my baseball major and
+[07:49] I just did a lot of things in a lot of
+[07:51] different ways writing about baseball
+[07:53] working with the baseball team um and
+[07:55] just otherwise learning and and taking
+[07:57] stuff I was interested in and and my
+[08:00] first path into the game was actually
+[08:02] writing about baseball working in-house
+[08:04] Publications with the Chicago Cubs and
+[08:06] it wasn't until about six years after
+[08:09] that that I was directly using let's say
+[08:12] the quantitative economics part um so
+[08:15] I've always known I wanted to work in
+[08:16] baseball and always taken steps towards
+[08:19] doing that and it wasn't until kind of
+[08:22] later that uh a lot of the pieces came
+[08:27] together I wasn't planning oh can you
+[08:30] hear me can you hear me okay um so as if
+[08:34] it wasn't obvious and if you haven't
+[08:36] heard me say it a hundred times I am
+[08:38] Canadian I grew up on the east coast of
+[08:40] Canada in a really small town um and if
+[08:43] you've ever grown up in a small town you
+[08:44] know that there's absolutely nothing to
+[08:46] do um so I basically played every sport
+[08:49] Under the Sun and I was also kind of um
+[08:52] there's different terms for it whether
+[08:53] it's boy daughter or your Father's son
+[08:56] um I was the son of the family so I kind
+[08:59] of like did all the sports my father
+[09:01] played we watched Sports together y y y
+[09:03] so um that's how I got into sports
+[09:05] growing up um I went on and played
+[09:08] provincially and then I went and played
+[09:10] um volleyball in University I studied
+[09:13] pure math when I was in university um
+[09:16] kind of coincided with like covid
+[09:18] happening retirements injuries and I
+[09:21] actually kind of took I guess a
+[09:23] different turn than most where I hated
+[09:24] Sports I didn't want to touch them I
+[09:26] didn't want to go anywhere near them for
+[09:27] like three or four years and I went and
+[09:30] did my Master's in Montreal and I took a
+[09:32] sports analytics course and it was kind
+[09:34] of finally that like okay like I like
+[09:37] sports again but it was also my first
+[09:39] official mix of like oh there's a sport
+[09:42] side and there's like a math side um to
+[09:44] my life and I can kind of join them if I
+[09:47] so choose um so yeah that answer the
+[09:50] question
+[09:51] right good answer good answer um yeah I
+[09:56] mean so some of you touched on this
+[09:58] already um um but like just curious um
+[10:02] so you know some different paths
+[10:05] although everyone was interested in
+[10:07] sports I guess as a young at a young age
+[10:09] not surprisingly was expecting that
+[10:12] answer um but lots of different paths
+[10:16] and also you're what you're doing now is
+[10:18] different for a lot of people so we have
+[10:20] people that are in Academia people are
+[10:21] in the sports industry some people work
+[10:23] for teams some who don't work for teams
+[10:26] um some who used to work in media um
+[10:30] and um so lots of different choices
+[10:33] there so curious uh you know of the
+[10:36] things that you sort of just talked
+[10:38] about as far as like your your passions
+[10:41] um and and so forth growing up what made
+[10:44] you choose to go into sports or stay in
+[10:48] Academia or go sports to Academia or
+[10:50] back and forth bunch of times um that
+[10:54] that's me I guess not you but you went
+[10:57] back and forth once I guess
+[11:00] um and you know work for a team versus
+[11:03] not for a team um so on just so yeah
+[11:07] just talk about what sort of made you
+[11:10] choose your your current what your the
+[11:13] job that you're currently
+[11:17] in no can't go in the same order
+[11:20] Paul
+[11:23] um uh so I went to grad school for
+[11:28] communication I have a doctorate
+[11:30] effectively in political communication I
+[11:31] started that in August of 2016 which if
+[11:35] you're um versed in recent American
+[11:37] history was a hell of a time to be like
+[11:39] yeah let me study us political
+[11:42] partisanship especially in online media
+[11:45] it was
+[11:47] like it was a tough few years uh people
+[11:50] weren't that happy um but it was really
+[11:53] I mean it was interesting it was
+[11:54] informative like it was a great
+[11:55] experience but it was challenging right
+[11:57] like there are topics in a lot of the
+[12:00] I'm speaking from a social science
+[12:02] fields that can be really rewarding you
+[12:06] can do a lot of it work but make very
+[12:08] little impact and I actually when I
+[12:12] finished up grad school my first job out
+[12:14] was with a federal contractor doing
+[12:16] evaluation work um on the federal
+[12:21] government's covid vaccination Public
+[12:23] Health Campaign which again a little bit
+[12:26] different very impactful but like 10
+[12:28] times is depressing and so hit a point
+[12:32] where I was like I can't keep doing this
+[12:34] I do love sports like the goal is always
+[12:35] sort of to be in sports um and the
+[12:38] sports sort of became this opportunity
+[12:40] to be like the parts I like of my job
+[12:42] the things I've done over the last five
+[12:44] years were data um analysis research
+[12:48] communication Sports was the way to do
+[12:50] that without it being how do you click
+[12:52] on this ad how do you study political
+[12:55] partisanship in the United States at a
+[12:57] time when it is not good or covid at the
+[13:00] time um and then we went 62 in 100 the
+[13:05] first season so Rocky first year but we
+[13:08] we we rebounded and now it's much more
+[13:11] fun um just a quick followup question so
+[13:15] you said you studied political
+[13:16] Communication in particular yes sir what
+[13:21] um what from that I can imagine that
+[13:23] would potentially be useful is there
+[13:25] anything in particular that um you
+[13:27] really use a lot now that you're doing
+[13:29] sports analytics and need to communicate
+[13:31] with people at your team um because
+[13:34] there's sort of not exactly political
+[13:36] parties within an organization but there
+[13:38] are sometimes different camps no it's a
+[13:41] good question um luckily people usually
+[13:44] don't fracture quite so extremely
+[13:48] um I will I uh the nice part about grad
+[13:53] school and communication is you actually
+[13:54] study very little about how to
+[13:55] communicate so in terms of like this is
+[13:59] a good strategy this isn't a good
+[14:00] strategy um but so there's a lot of
+[14:03] methodological you know you're doing all
+[14:05] this stuff that you bring to your job
+[14:07] from the stat side but I do think the
+[14:09] like takeaways of just like it does help
+[14:12] you set some perspective setting to come
+[14:14] in and be
+[14:15] like we're not arguing about whatever
+[14:19] the political issue of the moment is um
+[14:23] you know we're arguing
+[14:25] over how often should we have Ellie
+[14:28] daily Cruz try to steal B you know I
+[14:29] mean you you come with some perspective
+[14:31] of just like is this the hill I want to
+[14:33] die on or is this thing where I can step
+[14:35] back sort of go yep I hear you let me
+[14:40] like not get I wouldn't say not too
+[14:43] invested but not too maybe
+[14:46] emotionally uh defensive of everything
+[14:49] because you're like nope I've
+[14:51] seen that side of it and like this is a
+[14:54] thing that is supposed to be hard but
+[14:56] fun
+[15:01] um to the the question about choosing
+[15:04] you know industry or team or not um I
+[15:08] think it's always been pretty obvious to
+[15:09] me that I want to work for a team uh and
+[15:12] it's only become increasingly so uh
+[15:15] though I will say that there are a lot
+[15:18] more interesting paths in sports either
+[15:21] Academia or uh interesting companies
+[15:24] like Paul's work for Su um Sports to
+[15:28] there's so many options now which is
+[15:29] great whatever your path is for me uh a
+[15:32] few things one I I realized I really
+[15:35] like impacting a team um seeing uh a
+[15:39] project directly to the stakeholder uh
+[15:42] communicating with those stakeholders
+[15:43] trying to anticipate their needs and and
+[15:45] seeing the impact on the field and when
+[15:48] you win it only becomes increasingly uh
+[15:51] I don't know intoxicating and exciting
+[15:54] to to be part of that and even now as I
+[15:57] think about you know I went previously I
+[16:00] was with the Chicago Cubs for six years
+[16:02] in R&D and now at the Pirates it was
+[16:04] really to me about wanting uh for my
+[16:08] second team to to go through a build uh
+[16:11] and and it's most fun when it manifests
+[16:14] in winning it wouldn't be worth it
+[16:16] otherwise but uh I enjoyed that build I
+[16:19] enjoy when you do win looking around at
+[16:22] your teammates that people have done
+[16:23] along with you and thinking we did this
+[16:26] together and and and sometimes you know
+[16:28] with that kind of naive optimism that
+[16:30] you can so for me it's always been
+[16:32] pretty obvious uh that a team is my path
+[16:36] and uh maybe I'm interested about others
+[16:39] uh because there's a lot of other
+[16:40] interesting more interesting ways than
+[16:42] there used to be now feel like I've done
+[16:45] everything that you haven't
+[16:47] done which is i' I've worked for ESPN
+[16:50] for seven years um so I'm local here to
+[16:53] Connecticut from that time and um so a
+[16:56] Media Sports media company I know I had
+[16:58] a really annoying boss for about a year
+[17:00] and a half 2019 to 2020 um just kidding
+[17:05] um and uh and worked for Sumer Sports
+[17:09] which is like a third party company that
+[17:10] worked you know we worked directly with
+[17:12] NFL teams and you know I back in
+[17:15] Academia so you know for me My Life
+[17:19] Choices have always kind of been one the
+[17:21] job at ESPN it was a dream like I told
+[17:24] you know I tell people like as a kid I
+[17:26] watch sports center every day not I know
+[17:29] kids don't do that anymore right media
+[17:31] has changed you can like look up who won
+[17:33] the game on your phone which why would
+[17:35] you want to watch an hour of TV just to
+[17:37] figure out who won a game but that's how
+[17:39] it used to be and um so you know it was
+[17:43] a dream like working at ESPN seeing the
+[17:45] work that I did show up on TV had its
+[17:47] downsides like you know being at dinner
+[17:50] and realizing that like something in my
+[17:52] model spit out doesn't look right and
+[17:54] seeing it on the TV behind behind me you
+[17:57] know at the bar at the restaurant you
+[17:59] know so there's downsides as well but
+[18:01] I've always kind of for me try to
+[18:02] prioritize like sports jobs with work
+[18:05] like balance and although I haven't
+[18:07] worked for a team from the many
+[18:09] conversations I've had with people that
+[18:10] do that's sometimes harder to have you
+[18:13] know stable nine to- five for a team
+[18:15] because teams don't play in between 9
+[18:17] and five during the day usually unless
+[18:19] it's baseball and it's like twice a week
+[18:21] they do that but um so you know that's
+[18:24] what's kind of led me to different
+[18:26] things here but you know I'm I'm the
+[18:27] type of person always likes to stay
+[18:29] intellectually curious and so you know
+[18:31] I've been fortunate to have things have
+[18:33] challenged me every step of the way and
+[18:35] I would always encourage people to you
+[18:37] know not get complacent and always be
+[18:39] learning you know no matter what you
+[18:41] do so Sean and Shan work life balance
+[18:45] any
+[18:47] thoughts it it is uh better than it used
+[18:51] to be in my observation it's definitely
+[18:53] I I'm sure compared to a lot of other
+[18:55] jobs and industries uh not the same uh
+[18:59] when I was in my time with the Cubs I
+[19:01] was probably in the office 330 out of
+[19:04] 365 days and I told that to a friend's C
+[19:07] co-worker spouse at one point she
+[19:08] thought I was crazy until I listed off
+[19:10] well there's Thanksgiving there's uh all
+[19:13] these other you know holidays or
+[19:15] something like that because she thought
+[19:16] I was like too low in my estimate so um
+[19:20] there work life balance was uh really
+[19:24] bad uh in a lot of ways I you know I
+[19:27] didn't actually always mind it myself I
+[19:29] was all in on on what it was but it
+[19:32] obviously has a ton of downsides is
+[19:34] exclusionary in a lot of ways and and
+[19:36] probably longterm not great now one of
+[19:38] the advantage there's uh at least in
+[19:42] baseball the the Relentless pace of the
+[19:44] schedule has not changed and the fact
+[19:46] that there's um different baseball
+[19:49] Milestones draft season offseason trade
+[19:52] deadline all that are constantly ongoing
+[19:54] so you can't escape kind of the yearr
+[19:56] round part of it within baseball
+[19:59] but as our teams have grown there's more
+[20:01] redundancy um there's more opportunity
+[20:04] for people to especially in like
+[20:06] research and development to um kind of
+[20:09] Sprint when inspired and then step back
+[20:11] at other times or kind of um you know
+[20:14] take secondary roles on things work more
+[20:16] on specific projects as opposed to
+[20:18] everything so I think this has gotten a
+[20:20] lot better um I've had in the last month
+[20:23] uh a couple people take one to two week
+[20:26] trips and that's as a season start
+[20:28] stting and stuff like that and it hasn't
+[20:30] brought down the team and and most
+[20:33] people really kind of embrace and
+[20:34] cherish that all the way up to R GM so
+[20:36] all improving um fact it seems like it
+[20:38] made the team better yeah that's right
+[20:41] that's right don't want to know what
+[20:43] happens when I
+[20:46] exactly um I don't have quite the same
+[20:49] overtime sense but I agree with what
+[20:52] you're saying about currently most teams
+[20:55] have larger and larger investments in
+[20:57] analytics are
+[20:59] the more people you have the easier it
+[21:01] is to to take time off and step away and
+[21:05] and um feel like the world isn't going
+[21:07] to fall while you're not there because
+[21:09] your teammates will help pick you up and
+[21:11] support you um and I think that's a huge
+[21:14] thing I think there's a lot of um
+[21:16] basically I at the Reds I guess it
+[21:18] sounds like at the Pirates too you know
+[21:21] there is a culture of like hey you need
+[21:23] to like your job shouldn't be your 100%
+[21:25] life right and like when that's the
+[21:27] priority when people from all the way at
+[21:29] the top down are saying that it actually
+[21:32] helps you know it lets me go to the
+[21:34] people I work with and say hey we just
+[21:36] pushed through whatever project we spent
+[21:39] four months on it it was a big deal we
+[21:41] did crunch probably we probably put some
+[21:42] extra time in hey if you need to like
+[21:45] this is the window to be flexible and we
+[21:47] try to find that identify it um it is
+[21:51] not the same as like a normal nine to
+[21:53] five you know um billable hour situation
+[21:57] or anything like that
+[21:59] um you know there are days that are very
+[22:06] long Luke you want to um Talk uh sort of
+[22:09] uh I guess answering the previous
+[22:11] question um getting back to that but you
+[22:14] could also talk about work life balance
+[22:15] being a PhD student because I imagine
+[22:17] there might not
+[22:19] be it might not be great yeah I'm not
+[22:22] sure if I'm I'm the right one to ask on
+[22:25] that yeah
+[22:29] no uh to your original
+[22:31] question I think like a fair question
+[22:34] for me is you know why haven't why don't
+[22:37] I have a job in sports right now and you
+[22:39] know is that something I eventually want
+[22:42] to do I think that's a question I asked
+[22:44] myself a lot um why like I didn't pursue
+[22:48] a a full-time career in sports uh right
+[22:52] out of undergrad say is I have other
+[22:55] interests as well and I I I think thing
+[22:58] about sports which is becoming
+[23:02] um you know bigger and bigger is that
+[23:05] there's ways to contribute in it without
+[23:07] it being your full-time job and I'm not
+[23:09] so sure that that's always true in other
+[23:12] Industries you know like if if I I have
+[23:15] interest in kind of medicine or public
+[23:17] health and I think that you know doing a
+[23:21] full-time job in sports and would kind
+[23:24] of require me to give up that part of my
+[23:27] passion
+[23:29] um you know I'm fortunate enough that
+[23:32] some of the research that I do as part
+[23:34] of my PhD can be on Sports
+[23:36] analytics um I work as a consultant for
+[23:39] the ivy league on problems related to
+[23:41] scheduling and tiebreakers and so I
+[23:44] think that that kind of scratches the
+[23:46] itch of you know doing meaningful work
+[23:49] in sports analytics uh while kind of
+[23:52] maintaining my other Hobbies uh but
+[23:55] that's not to say that you know it's not
+[23:57] still something something that I I think
+[23:59] about and consider and you know I'm kind
+[24:01] of fortunate that I have a little bit of
+[24:03] time left before I have
+[24:05] to get a job fulltime um but that that I
+[24:10] think that you
+[24:11] know even as someone up here on the
+[24:13] panel it's like an ongoing debate for me
+[24:16] so it shouldn't be like
+[24:17] a you know a scary thing if if some
+[24:21] people out there are having the same
+[24:22] kind of thoughts if you had to estimate
+[24:24] the probability Academia verse industry
+[24:27] what would it be right
+[24:29] now and has that changed over time can
+[24:31] you sketch a like a a line uh a Academia
+[24:36] probability chart behind you yeah I mean
+[24:38] I I actually I actually think that it's
+[24:41] it's like probably pretty low and I
+[24:42] think that it's it's it's kind of funny
+[24:45] I knew going into my PhD that I didn't
+[24:47] want to be like a
+[24:50] professor I think there's a lot of
+[24:52] things I like about Academia and doing
+[24:55] research and I I think actually a lot of
+[24:57] those um same qualities are kind of the
+[25:02] fun things that I would find appealing
+[25:04] about working in a sports team right you
+[25:06] kind of work on intellectually
+[25:07] stimulating problems there's not always
+[25:09] a right or clear answer I think that you
+[25:14] know like any
+[25:16] uh any job but particularly I think in
+[25:19] Academia there's a lot of red tape um so
+[25:23] I think that whatever I end up wanting
+[25:24] to do it will kind of
+[25:26] maximize doing research working on
+[25:29] intellectually stimulating problems um
+[25:31] having really good collaborators from
+[25:34] diverse uh backgrounds you know I've
+[25:37] actually found that every um team that
+[25:40] I've been a part of has had people from
+[25:43] kind of uh different paths to get there
+[25:46] and and those have been the most fun and
+[25:48] most productive teams I've been on and
+[25:51] you know whether that's in sports or
+[25:53] some kind of like industry research
+[25:55] setting um I guess TBD but
+[25:59] that's sort of the function that I'm
+[26:00] trying to maximize right
+[26:03] now
+[26:05] cool
+[26:10] Emily I was last twice just so you're
+[26:13] aware you can be first
+[26:15] next um oh okay so um I guess my career
+[26:22] path so far is pretty short um but I
+[26:25] this might be kind of relatable at least
+[26:27] um with was nearing like the end of grad
+[26:30] school I wasn't really sure if I wanted
+[26:31] to do a
+[26:32] PhD um and I kind of had that like
+[26:35] enough time I just finished like I said
+[26:38] I took a sports sance course I found it
+[26:40] really interesting I finished it and had
+[26:42] enough time but was also kind of like
+[26:43] okay I need to find a job
+[26:45] probably um and I gave myself I guess
+[26:49] kind of like a little window of like
+[26:51] okay I want to try and see if I can do
+[26:53] something in sports and if I can't find
+[26:54] it okay well then I'll switch gears and
+[26:56] just try to find a job in general to pay
+[26:59] the bills um and I got I say I got lucky
+[27:04] um and ended up getting a job in the
+[27:07] window but um got hired still while I
+[27:09] was in grad school um at volleyball
+[27:11] Canada and I've basically been there
+[27:13] since um and they were great kind of
+[27:16] letting me finish out grad school while
+[27:17] also working for a little while um but
+[27:21] yeah do you want me to comment on work
+[27:22] life balance at all yes okay um so I for
+[27:28] a governing body of sport we call them
+[27:30] like national sport organizations um so
+[27:33] nsos um we had this is like on a side
+[27:37] sorry um what we call high performance
+[27:39] Summit which is kind of just like
+[27:40] comparing for like high performance
+[27:42] Sports and we just did one within
+[27:43] volleyball Canada so like beach indoor
+[27:45] and sitting um and they made this joke
+[27:48] of like in in high performance sport um
+[27:51] there's like a ledge or um a peak and on
+[27:55] one side of the peak there's like a
+[27:56] valley that's like home and on the other
+[27:59] side it's like work and that we always
+[28:01] struggle to kind of sit equally in the
+[28:03] middle um sometimes we're heavy into one
+[28:05] and sometimes we're heavy into the other
+[28:08] um I work with the beach teams we have
+[28:10] 11 months of the year we are in season
+[28:12] we have 20 athletes teams within the
+[28:14] teams and there's like no off season
+[28:16] like I basically feel like I have teams
+[28:18] in they have teams in guadara right now
+[28:20] where it's just like there's something
+[28:21] going on at all moments in time um I
+[28:25] feel worse for our coaches where it's
+[28:27] like they have a lot more going on and
+[28:30] um they don't necessarily have the
+[28:32] flexibility that what we call our
+[28:34] integrated support team would have um so
+[28:36] there are times where it's um not great
+[28:40] Paris is probably going to be one of
+[28:41] them um but there are times where we try
+[28:43] to kind of like capitalize on those like
+[28:45] lower moments where it's like um Easter
+[28:48] weekend we do the same with our athletes
+[28:49] we give our athletes like a longer
+[28:51] Easter weekend um internal so taking the
+[28:54] longer Easter weekend for ourselves um
+[28:57] to kind of like even that out a little
+[28:59] bit I would also say that Olympic sports
+[29:01] are a lot um Elliot can probably agree
+[29:03] with me a lot poorer than um than like
+[29:06] professional sports teams um so
+[29:09] sometimes we can be worn thin um which
+[29:12] isn't fun um but it kind of comes with
+[29:14] the territory I guess of like working in
+[29:16] Olympic
+[29:19] sport I mean besides the fact that I'm
+[29:21] shocked that you can play beach
+[29:23] volleyball in Canada for 11 months um
+[29:26] but we have indoor courts okay
+[29:29] no I was gonna say um one of the
+[29:32] things okay so
+[29:36] snow I I'm I'm teasing I am a dual
+[29:39] Canadian citizen so um but um I was
+[29:43] going to say work like around work life
+[29:45] balance one thing I I struggled with for
+[29:47] a long time was you know Sports was like
+[29:50] a huge hobby of mine Sports analytics
+[29:52] like it was a huge Hobby and then it
+[29:54] became a career and then I was like
+[29:58] what's my hobby right because like
+[29:59] everything I did which used to be my
+[30:02] hobby and used to be fun like I I
+[30:04] personally don't believe in the well if
+[30:06] you love your job you never work in day
+[30:07] in your life slogan um because it's
+[30:10] still a job like and although I did have
+[30:13] you know good bosses at ESPN despite me
+[30:15] joking earlier like it's still a job you
+[30:17] still have to answer to people you still
+[30:19] have deadlines you still have things to
+[30:20] do and all those things cause stress
+[30:22] even if you love like the actual work
+[30:24] there's still stress involved and so you
+[30:28] know Accord you know what some of you
+[30:30] have also said is you know it's really
+[30:31] important to have other Hobbies like if
+[30:33] you want to work in sports that's
+[30:34] awesome and I encourage everyone to do
+[30:36] that but don't let that be like your
+[30:38] only hobby or your only passion because
+[30:40] then you won't have any left when it's
+[30:42] your full-time
+[30:47] job um this is I guess kind of tagging
+[30:50] on sorry um that like I played growing
+[30:54] up so like I play in an indoor recck
+[30:55] League like a retired person that I am
+[30:58] um and I have friends that are and I
+[31:02] have friends that are like oh my God
+[31:03] like you never talk about your job you
+[31:04] never talk about your job but I don't
+[31:05] tell anybody when I go to these things
+[31:07] like what I do or where I work or
+[31:09] anything because it's kind of that me
+[31:11] trying to give a divide of like this is
+[31:12] me this is my personal life I'm going to
+[31:15] keep my day job out of it um just to
+[31:19] give that kind of like divide even
+[31:21] though they are related like I said it's
+[31:22] basically the same kind of thing um but
+[31:25] yeah trying to keep them separate
+[31:26] sometimes is hard um sometimes feels
+[31:28] like you're keeping secrets but it's
+[31:29] really just to give yourself like your
+[31:31] own little personal like sanity I guess
+[31:35] right
+[31:37] incog yeah I don't wear any gear like
+[31:42] nothing the only thing I was gonna add
+[31:44] on to it actually a lot of that
+[31:45] resonated and and uh I suppose I do have
+[31:48] hobbies outside of baseball but
+[31:51] um for me one thing I I actually have
+[31:54] really liked about working baseball and
+[31:56] I am someone who thinks about
+[31:58] honestly baseball all the time is there
+[32:00] is a lot of variety within the sport and
+[32:03] um I I do think like your job if you're
+[32:06] looking to work in sports you can also
+[32:08] seek variety within your role um and and
+[32:11] not every role would probably be equal
+[32:13] but for for us research and development
+[32:15] at baseball season you go from thinking
+[32:18] about offseason moves and player
+[32:20] evaluation and deeper research to
+[32:23] getting ready for a season communicating
+[32:25] a lot with stakeholders uh educating
+[32:28] people implementing things to the
+[32:30] amateur draft where you're thinking
+[32:32] about 18y olds and 21 year olds as
+[32:34] opposed to fully mature Major Leaguers
+[32:37] uh Player Development and things like
+[32:39] that
+[32:40] so that is not sufficient variety for
+[32:44] everyone like that might resonate with
+[32:46] some of you and and not others but I do
+[32:48] think that's something that like really
+[32:50] keeps basball and research and
+[32:53] development like very Lively to me if I
+[32:54] had to do one exact sort of project
+[32:58] every day you know for a year I probably
+[33:00] would wear out very fast and not find it
+[33:02] so novel all the
+[33:04] time so some of you sort of touched on
+[33:07] this um we talking about pros and cons
+[33:09] and and um and stuff like that but was
+[33:13] curious if there's anything that you
+[33:14] really miss or you feel like you're
+[33:17] missing out on with your current job do
+[33:20] you have fomo about anything or do you
+[33:23] ever
+[33:25] um do you think that at some point in
+[33:28] the future you will want to change your
+[33:32] career like um it might be hard to to
+[33:36] answer if you're you don't maybe you
+[33:38] don't want to talk about it publicly I
+[33:39] guess if you're currently likeing for a
+[33:41] team or something but like I sort of
+[33:43] know knew I asked because I knew when I
+[33:45] went into the sports industry that I
+[33:47] would eventually go back to Academia
+[33:48] because I really like teaching and and
+[33:51] so I didn't know if it' be five 10 years
+[33:54] 20 years or whatever but I knew I would
+[33:56] go back eventually so I'm just C ious if
+[33:58] there's any anything um anything like
+[34:01] that with any of you I know Luke has a
+[34:03] fixed decision coming up so you already
+[34:06] kind of talked about that but I'm
+[34:08] curious you know if anyone else has sort
+[34:10] of thought about this you have fomo
+[34:12] about other career paths regrets things
+[34:15] like that I'll respond quickly and pass
+[34:17] off the my big time fomo guy all the
+[34:19] time and uh I what I want to work in
+[34:24] baseball the next 30 Years um I
+[34:28] was really influenced by one of my
+[34:30] former bosses uh at the Chicago Cubs
+[34:33] theep who uh put a Time onine himself
+[34:35] myself 10 years with the team uh and you
+[34:38] know I myself uh in research and
+[34:41] development specifically with six years
+[34:42] with the Cubs but then you know it was
+[34:44] about 10 years um total with them across
+[34:47] roles and I I think there's something to
+[34:50] that when you go somewhere else you
+[34:52] create new things you have to create new
+[34:54] connections that's revitalizing uh
+[34:57] there's it test you in new ways and so
+[34:59] um that's that's for me how I in part
+[35:02] seek
+[35:04] variety I was going to say when I was at
+[35:06] ESPN one of the things I felt like I had
+[35:08] fomo of is that you know I we it was
+[35:12] awesome in the sense that like we worked
+[35:13] on different sports and so like I got to
+[35:16] do football projects I got to do
+[35:18] basketball projects I did a very very
+[35:21] little hockey project one time I you
+[35:23] know but I got to do a few soccer you
+[35:25] know different things but then I always
+[35:26] felt like when I would go to conferences
+[35:29] I be like oh my gosh look at this
+[35:30] awesome stuff that like this person who
+[35:32] gets to spend a 100% of their time
+[35:34] thinking about just one sport how like
+[35:36] smart they are about it or all the like
+[35:38] new things that are being done and I'm
+[35:40] just like running around like a chicken
+[35:42] with his head cut off trying to keep up
+[35:43] with like five different sports at once
+[35:45] and so then of course my next job was
+[35:47] like football and you know so I you know
+[35:51] there's pros and cons to both right but
+[35:52] like that's one thing I've always kind
+[35:53] of struggled with it's like it's fun cuz
+[35:55] I love all I love all sports right some
+[35:57] more than others but I do love all
+[35:58] sports and so it was fun to work in all
+[36:00] of them but at the same time I was like
+[36:01] oh but like I'm also feeling like I'm
+[36:03] never caught
+[36:05] up um I feel like i' probably have a few
+[36:09] fos but again I get fomo about
+[36:11] everything um I am also like not never
+[36:15] want to like close a door I love
+[36:18] chatting I love whatever so I'm always
+[36:20] up like for new things or whatever and
+[36:23] like that aspect of the world but fomo I
+[36:25] feel like is definitely one I'm always
+[36:28] like oh I want to do this and this and
+[36:29] this and this and this and then I always
+[36:30] get a we don't have the budget for that
+[36:33] um so that one's always kind of like a
+[36:35] hard pill to
+[36:36] swallow um and then
+[36:39] fomo
+[36:41] great um so why don't we uh open it up
+[36:45] to the audience to ask uh some questions
+[36:48] of our
+[36:49] panelists and we'll pass the mic around
+[36:52] because uh this is being broadcast over
+[36:54] Zoom um so we'll just ask you to wait to
+[36:58] wait until you get a mic uh to ask your
+[37:00] question so
+[37:09] quickly
+[37:12] Police makes me think of hey um so I
+[37:16] know when you normally like think about
+[37:19] like your interactions with sports you
+[37:20] think of it as like a hobby or something
+[37:22] you do for fun how has um like working
+[37:26] in sports changed the way you view like
+[37:29] you view the sport you work in like can
+[37:30] you still like work in that sport or can
+[37:33] you still like I guess like like watch
+[37:36] it for fun in your leisure time or has
+[37:39] that kind of
+[37:44] changed feel like I sort of kind of
+[37:46] answered this already but
+[37:49] um I I mean it's it's like yes and no
+[37:53] right to both of those
+[37:55] um like I said like I I watched the
+[38:00] least amount of ESPN of my life during
+[38:03] the seven years I worked there um
+[38:07] because like yeah I would W and when I
+[38:10] would watch it would be to be like okay
+[38:12] how how are the anchors using the model
+[38:15] that I built and are they using it
+[38:18] correctly and like that's a work
+[38:20] question you know and it's like okay
+[38:22] like you know Scott vanel like good job
+[38:24] or oh maybe I should send an email to
+[38:26] your researcher so they can explain this
+[38:28] to you better um but at the same time
+[38:31] right like I still love sports right and
+[38:33] it's like it's not like I wouldn't watch
+[38:35] like the NBA finals or something just
+[38:37] because they would show our
+[38:39] probabilities before the game like you
+[38:41] know I would still watch but you know it
+[38:43] was a little bit more stressful knowing
+[38:44] that like oh like if I did something and
+[38:47] it gets on TV which is awesome because I
+[38:49] remember the first time that happened
+[38:50] too and I was like oh my gosh you know
+[38:52] like I look like I like I called my
+[38:54] whole like called everyone I knew like
+[38:57] look at this I like took a screenshot
+[38:58] you know and like this like I did this
+[39:02] um but yeah you know so it's like it's a
+[39:04] mixed bag like yes it's it is work so
+[39:06] it's a little bit different experience
+[39:07] than it used to be but you can still
+[39:09] enjoy it it's just it's like you have to
+[39:11] pick your battle sometimes at least
+[39:13] that's my
+[39:15] experience that moment's exciting when
+[39:17] it works and the Fielder's not in the
+[39:19] wrong spot um the a few things maybe
+[39:23] change one is uh the Sport's way more
+[39:26] complex and the the inside
+[39:29] decision-making minations are more
+[39:31] complex than even a lot of like
+[39:34] analytically forward analysis fully
+[39:37] realizes um and and probably for good
+[39:40] reasons and problematic bad reasons um
+[39:44] but it's it's that's one big thing a
+[39:47] second thing uh you might not watch
+[39:51] games in their entirety anymore uh you
+[39:55] might be working during a game you might
+[39:57] be catching the first few Innings and
+[40:00] then turn into something else so that if
+[40:04] um that that just that nature of um
+[40:07] enjoying the sport is a little bit
+[40:09] different you might be truly watching it
+[40:11] through a spreadsheet or video or
+[40:13] watching multiple games at a time um
+[40:16] trying to
+[40:17] think I I think I think those would be a
+[40:20] couple things I might
+[40:22] miss I think that that's like a pretty
+[40:25] fair way though of like when you're
+[40:26] working for a team in particular you
+[40:28] know you're going to see a lot of game
+[40:30] footage you're going to see the game in
+[40:32] a lot of different ways but I would
+[40:34] emphasize and I would assume it's
+[40:36] somewhat similar like when a guy hits a
+[40:39] ball really really far it's really
+[40:41] really fun still like it doesn't matter
+[40:43] when you're like I understand that this
+[40:44] is a problem of exit velocity or
+[40:46] whatever you know stat cast however they
+[40:48] want but you're like he hit ball far
+[40:50] that's very cool um which is probably
+[40:53] like some selection into like why you
+[40:55] work in the sport um if if that that's
+[40:58] still really enjoyable no matter how
+[41:00] many time how many hours in a week you
+[41:02] spend thinking about how do we do this
+[41:04] more
+[41:08] often I I did remember just one one
+[41:11] thing I would add one of the things I've
+[41:13] actually enjoyed the most about being
+[41:15] attached and and you can do this with
+[41:17] your own research as well or as you um
+[41:20] put out names if if you're even if
+[41:22] you're not working with team is um
+[41:24] seeing whatever is black and white in
+[41:26] the moment of a decision or a player
+[41:28] being better than another how gray it
+[41:30] becomes later is I think a fascinating
+[41:33] part about just making this your your on
+[41:36] you know constant thing um that it just
+[41:39] never is so linear clear um and and
+[41:42] that's the learning process that that's
+[41:44] actually what I've enjoyed the most and
+[41:46] how I've evolved the most is watching
+[41:47] how results are never quite what you
+[41:50] thought at the time uh and and you kind
+[41:52] of keep adapting to
+[41:55] that you want to I was going to say one
+[41:57] of the most interesting things is when
+[41:59] you work in sports and you watch games
+[42:02] is the internal struggle in your soul of
+[42:06] like oh like that was awesome but I know
+[42:08] that was a stupid thing for that player
+[42:10] to do or maybe it wasn't a bad decision
+[42:12] but like that was still awesome because
+[42:14] like the ball went in or like it was a
+[42:15] home run or like he probably shouldn't
+[42:17] have swung at that pitch but like hey he
+[42:18] hit out of the park awesome right and
+[42:20] you're always kind of like having that
+[42:21] internal debate of like enjoying the
+[42:24] sport versus like analyzing it at the
+[42:26] same time
+[42:28] I feel like my answer is probably really
+[42:29] different um I grew up playing indoor um
+[42:33] I played indoor in University and now I
+[42:34] work for the beach teams and although I
+[42:36] played Beach like recreationally I
+[42:38] wouldn't say I played it as competitive
+[42:39] as the athlete so like you'd watch it in
+[42:42] Tokyo or I'd watch it in Tokyo but that
+[42:43] was the extent of it um so then now I
+[42:47] feel like
+[42:48] watching like just beach volleyball in
+[42:50] general is part of my job because I
+[42:53] didn't really watch it leisurely before
+[42:56] um but I also work um I don't know how
+[42:59] Clos you guys work with like athletes
+[43:01] but I work with the athletes close
+[43:03] enough that I know them and I know them
+[43:05] fairly well so I try to like I guess
+[43:07] wear both hats where it's like I'm
+[43:09] watching the game and yes I'm thinking
+[43:10] about all the things going on at work
+[43:12] but I'm also trying to remember that
+[43:13] like I know the these people are human
+[43:15] and I know them like as people um and I
+[43:18] want them to succeed even if it isn't
+[43:20] necessarily kind of what the game plan
+[43:22] was going in um so you were like kind of
+[43:24] cheering for them on on one hand and
+[43:27] hoping everything goes well and they win
+[43:29] um and yeah it's kind of again I guess
+[43:31] an internal battle while you're watching
+[43:32] it um but uh yeah I think that's all I
+[43:37] have to
+[43:39] say oh but I watch other sports and I
+[43:41] feel like when you don't work in other
+[43:43] sports it's a lot easier to be like
+[43:44] Leisure about it
+[43:47] yeah so this was kind of just touched on
+[43:49] a bit but um kind of a two-part question
+[43:52] is one not on a very serious note what
+[43:56] is it like watching
+[43:57] the sport that you work in with friends
+[43:59] that don't work in the industry and two
+[44:03] with your co-workers you still have like
+[44:05] sport conversations that are super like
+[44:08] non-analytical and just like oh I think
+[44:10] LeBron's the goat because he
+[44:14] is um I guess I'll go um okay the first
+[44:18] one is I as much as I love my family I
+[44:22] find my family the most annoying to
+[44:24] watch with because they start asking
+[44:25] questions about like the player spe
+[44:28] what's their name and and and I'm just
+[44:30] like okay just watch the game um but
+[44:33] yeah sometimes I feel like when I'm
+[44:35] watching with like friends or something
+[44:36] I I try to think of it as like more of a
+[44:39] Pastime instead of like work so I try to
+[44:41] just keep that part away from me yeah
+[44:43] sometimes they'll ask questions but um
+[44:46] like try to keep it minimal and then
+[44:47] also just like if I don't want to answer
+[44:49] it I don't want to talk about it I'm
+[44:50] like yeah I can't talk about it um even
+[44:53] if I'm just kind of not in the mood um
+[44:55] and the second part of the question was
+[44:57] was somebody WR emotional debates right
+[45:00] oh um we have a lot of athletes and
+[45:03] coaches that are super big into betting
+[45:05] and I'm really not at all into the
+[45:07] vetting world and sometimes they'll be
+[45:09] like oh tell me who's going to do X Y
+[45:11] and Z and I'm like um this one and I
+[45:15] just like spit it out just because
+[45:16] that's what I was feeling in the moment
+[45:18] and I tell them that I'm like don't take
+[45:19] my word for it but like this is my guess
+[45:22] sometimes I'll verify and give them
+[45:23] whatever if they want sure um but yeah
+[45:27] yeah sometimes I'll contribute to those
+[45:28] like debates like the recent one was
+[45:31] March Madness so they play March Madness
+[45:34] um in the wait room when they're working
+[45:35] out and they're like always watching
+[45:38] something so like sometimes I'll come in
+[45:39] and just chime in um even though I
+[45:42] probably know nobody's name or know some
+[45:44] names but not everybody's name in
+[45:46] college basketball and I'll just like
+[45:47] make a comment and just to stir the Pod
+[45:49] almost and then like
+[45:51] leave so then they kind of like have
+[45:53] this big debate um which is kind of
+[45:55] funny but so yeah sometimes I guess I
+[45:59] mean everybody likes to shoot the a
+[46:00] little bit so I feel like you do it just
+[46:02] for fun oh sorry pleas please no
+[46:05] swearing say I I love my father but
+[46:09] watching watching sports with him has
+[46:11] become unbearable as an adult so um it's
+[46:14] just it's just things like you know H
+[46:16] complain get my dad actually watches
+[46:18] he's he likes to ref and so he actually
+[46:20] watches the officials sometimes over the
+[46:23] actual game itself which just in general
+[46:25] is really annoying but but um second is
+[46:29] you know he'll complain about decisions
+[46:31] and I'll be like like but actually that
+[46:33] like is kind of optimal now like I know
+[46:35] we didn't used to do it that way but
+[46:37] like it wasn't optimal then and it's
+[46:40] still not optimal now to do what you
+[46:41] want to do um but he you know I don't
+[46:44] want to get into the whole debate
+[46:46] because you know we're a stubborn bunch
+[46:48] and no one will ever yield so I I
+[46:50] typically just keep my mouth shut and
+[46:52] enjoy his company
+[46:54] so a
+[47:01] I would add getting younger family
+[47:04] involved is a lot of fun we watch Red's
+[47:07] games with my uh nieces who are um born
+[47:11] three so like the level of Engagement is
+[47:14] not that suboptimal it's like I like him
+[47:18] he's he's fast and you're like yep he's
+[47:20] fast and like but like it creates those
+[47:22] experience like those are like right I
+[47:24] think it's like those are the
+[47:26] experiences
+[47:27] at least for me that got me into sports
+[47:29] I was like sitting down and watching it
+[47:30] with older family members who are just
+[47:32] like yeah isn't it fun and like when you
+[47:35] can share that and it takes you a little
+[47:37] bit out of that like the anxiety of like
+[47:39] I've put some work on the line here it's
+[47:45] nice yeah I I'll just say like my um my
+[47:50] dad is kind of similar to
+[47:52] Paul you know I I think he's open-minded
+[47:55] about trying to you know like we'll be
+[47:58] watching some game and like he'll he'll
+[48:01] complain in NBA they shoot too many
+[48:03] threes and you know I like sort of say
+[48:06] well like a contestant mid-range jumper
+[48:09] while aesthetically maybe more pleasing
+[48:11] is not a very good shot and I think he
+[48:14] he listens but
+[48:16] um it it it resonated me with me what
+[48:19] you
+[48:21] said exactly
+[48:26] I was say I have a son and he always
+[48:28] asks me who's the best who's this is so
+[48:30] and so better or so and so better and
+[48:32] I'm all I mean that also is like uh I'm
+[48:35] a statistician so uh it's uncertain and
+[48:42] that's so from the academic side so I'm
+[48:46] a professor and I teach students and I
+[48:49] want to know a couple things uh first
+[48:51] question is what statistics or data
+[48:55] science skill do you think
+[48:57] you use the most and would want someone
+[49:00] who is entering your organization to
+[49:02] know like to have learned in graduate
+[49:03] school or
+[49:05] undergrad and the um second one is I
+[49:09] always have students ask me how do I get
+[49:12] into sports analytics or into a uh make
+[49:15] myself known so that I can get a job so
+[49:18] one of those two questions and maybe
+[49:20] they're related
+[49:27] stop on this for a little
+[49:29] bit
+[49:31] um I don't know that there's one magic
+[49:34] Silver Bullet skill um the ones I like
+[49:37] to tell people are you should know SQL
+[49:40] enough to like select from where Group
+[49:42] by join it's helpful um I forget what
+[49:46] the tech survey this year was but it's
+[49:47] like every team has got some large
+[49:51] sequel setup in Major League Baseball I
+[49:53] assume it's the same in every other
+[49:55] sport I assume it's the same at
+[49:57] ESPN uh so you need to be able to get
+[50:00] your data and then from there I like to
+[50:01] think of it as you need to know
+[50:04] regression pretty well um you should
+[50:06] know something probably a little bit
+[50:08] more advanced than regression so either
+[50:10] machine learning but causal inference
+[50:12] base like these are all really good
+[50:13] Advanced topics know something about
+[50:14] that um the more school you do I think
+[50:17] the more you should
+[50:18] know that advanced skill um and then
+[50:22] communication and that that's data viz
+[50:26] not actually to the degree of like
+[50:27] Greg's art contest at JSM but you know
+[50:30] it needs to be like coaches if something
+[50:33] doesn't look accessible won't read it
+[50:36] right like so if you're working for a
+[50:37] team you need needs to meet some minimum
+[50:40] standard um but also you're you're
+[50:41] writing you need to be able to write
+[50:43] about data and Analysis in a way that is
+[50:46] um accessible uh both to a technical
+[50:48] audience right we write a lot of
+[50:50] documentation uh but also to
+[50:51] non-technology and you'll hear that
+[50:53] about a lot of data science jobs but
+[50:54] it's really true in sports where
+[50:57] um I'll go from writing for my boss
+[50:59] who's a neuroscience PhD to writing for
+[51:02] guys who've played and coached baseball
+[51:05] for 40 years and those are two very
+[51:07] different um backgrounds right I can't
+[51:09] write the same thing I always say I'd
+[51:11] love to pay and you know to be a fly on
+[51:12] the wall if somebody went in and talked
+[51:13] about machine learning to David Bell
+[51:16] like it'd be an interesting conversation
+[51:19] um as to getting a job the biggest thing
+[51:21] is to apply um you can do Sports
+[51:23] analytics without being working for a
+[51:25] team or ESPN Luke is a great example
+[51:27] like do it do projects But ultimately if
+[51:30] you want a job in the industry um you
+[51:34] know talked to a few people today about
+[51:36] this right there are 30 MLB teams
+[51:38] there's like you know you multiply out
+[51:40] by however many leagues you want to
+[51:42] potentially work in in American
+[51:44] Sports let's say on average every team
+[51:46] hires two people a year that might be
+[51:49] generous in some leagues and for some
+[51:51] teams um in a bunch of different markets
+[51:54] uh that's not a lot of jobs every year
+[51:56] year that's not a lot of jobs that are
+[51:58] necessary fulltime the best chance you
+[52:00] have is to keep doing those projects
+[52:02] while applying it could take a little
+[52:04] while you know I don't mean to
+[52:06] be negative about it but like it might
+[52:09] take a while you just need to keep like
+[52:11] persevering through that and continue
+[52:16] applying yeah so I mean I don't work for
+[52:18] a team so maybe I won't talk about what
+[52:20] it takes to work for a team but I think
+[52:22] that I'll just Echo the communication
+[52:24] and data visualization part that uh Sean
+[52:28] touched on I think that you know a
+[52:31] common Pitfall a lot of people fall into
+[52:35] is you know to spend like a lot of time
+[52:37] working on some sophisticated model
+[52:39] because that's what excites you and
+[52:42] answers your question and then like the
+[52:44] data visualization is just something
+[52:46] that you need and like you obviously
+[52:49] understand it because you've spent you
+[52:50] know countless hours working on your
+[52:52] project but ultimately the the person
+[52:55] you know was whether you're working for
+[52:57] a team or you know just working at some
+[53:00] other job in general like the person who
+[53:02] ultimately makes a decision based off of
+[53:04] your project might look at that graph
+[53:05] for 15 seconds and if they can't sort of
+[53:09] get the clean takeaway that you spent
+[53:11] four months working on in those 15
+[53:13] seconds you probably didn't spend enough
+[53:15] time working on your data visualization
+[53:18] um or you know you didn't like
+[53:20] communicate the take-home message uh
+[53:23] effectively enough and so um I just
+[53:27] think that like you know don't overlook
+[53:29] the importance of such a basic um or
+[53:34] like Elementary data science skill
+[53:37] because it's not like as sexy as you
+[53:39] know machine learning or some of these
+[53:42] other like hot
+[53:46] topics well Eko the the list already
+[53:49] given is is great I don't really have
+[53:51] too too much to add I feel like probably
+[53:53] sport dependent and correct me if I'm
+[53:55] wrong um anybody who knows the sport of
+[53:57] volleyball knows it's kind of weird
+[53:59] there's a lot of it's probably similar
+[54:00] to like I find football hard to learn
+[54:02] personally but um there there's a lot of
+[54:05] like intricate little weird details and
+[54:07] they do say every once in a while I hear
+[54:08] people say it doesn't matter if you know
+[54:09] anything about the sport um I would say
+[54:12] that's probably sport dependent and team
+[54:15] dependent um when there's not too many
+[54:17] in a department I feel like knowing at
+[54:19] least some something about the sport um
+[54:22] is great um like I said volleyball is
+[54:25] super Niche and then Beach on top of it
+[54:26] has a lot more intricacies so like
+[54:29] knowing those things can be very helpful
+[54:31] I'm sure it's might be similar in other
+[54:33] sports um so that can help and then I
+[54:37] guess getting a job um I mean the worst
+[54:40] anybody can do or say to you is no um
+[54:43] which to me really isn't that bad so
+[54:45] like don't be scared to like put
+[54:47] yourself out there say hi talk to people
+[54:49] request coffee chats whatever um but if
+[54:53] you're GNA like want to talk to somebody
+[54:56] um I usually say like do a little bit of
+[54:59] research on who you're talking to get to
+[55:01] know like them their background their
+[55:03] path what they went through or asked
+[55:05] them about it um and don't just come out
+[55:07] flat and say like hey can I have a job
+[55:09] um so like and and even sometimes I
+[55:12] don't even mention you can just say I
+[55:14] just want to work in sport I want to
+[55:15] know how you got in there um that builds
+[55:17] kind of like a foundation and a good
+[55:19] network of like people in sports so that
+[55:22] you know either when you're ready or
+[55:23] when something's available maybe that
+[55:25] you will be the first person that they
+[55:26] think of or at least someone to be like
+[55:28] heyy I saw this job I just wanted you to
+[55:30] know that it was out there um so try to
+[55:32] like build a good rapport and
+[55:34] relationship um with people aside from
+[55:37] like applying obviously but um and
+[55:39] hopefully that will help I
+[55:43] guess all right that's unfortunately all
+[55:46] we have time for so let's give our panel
+[55:48] a hand

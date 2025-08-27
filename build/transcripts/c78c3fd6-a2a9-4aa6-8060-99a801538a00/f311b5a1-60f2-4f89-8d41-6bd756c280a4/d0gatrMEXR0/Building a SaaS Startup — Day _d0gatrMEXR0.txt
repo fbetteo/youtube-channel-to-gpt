@@ -1,0 +1,1495 @@
+Video Title: Building a SaaS Startup — Day 8
+Video ID: d0gatrMEXR0
+URL: https://www.youtube.com/watch?v=d0gatrMEXR0
+View Count: 4,837
+
+[00:14] streaming streaming streaming and
+[00:15] sending
+[00:18] data Bingo okay we are live welcome back
+[00:22] everyone it is day eight of building a
+[00:25] little software um in public here on
+[00:28] YouTube twitch and Twitter
+[00:30] uh we are coding from scratch a no code
+[00:33] tool to help stripe users manage their
+[00:36] invoices without having to pay the fee
+[00:39] to stripe and I'm going to go over that
+[00:41] in a minute uh if you have no clue who I
+[00:44] am my name is Mark I live in B and I
+[00:47] started building a small side projects
+[00:49] in public on Twitter uh two years ago um
+[00:52] I'm coding really tiny projects like
+[00:55] those ones I have 21 running at the
+[00:57] moment um some of them never made money
+[01:00] some of them did and now I have about
+[01:03] six that are generating Revenue uh for
+[01:07] $57,000 last month and one of the most
+[01:10] common requests I get in my emails is
+[01:13] can I get an invoice and as a stripe
+[01:15] user strip will charge you 0.4% of your
+[01:20] Revenue per invoice uh up to $2 uh which
+[01:24] um is very pricey so I am building a
+[01:28] little alternative to that
+[01:30] and it's called Zenvo it is a no code
+[01:33] tool it connects to a stripe account or
+[01:35] to multiple actually to any stripe
+[01:37] accounts you can have as many as you
+[01:39] want you securly connect with restricted
+[01:43] API Keys uh you have all your strip
+[01:45] accounts on the left and then you have a
+[01:47] unique link that you can send to your
+[01:49] customers and your customers can uh
+[01:51] securly retrieve all the payments they
+[01:53] made with your business and um view
+[01:56] generate and edit and download their
+[01:58] invoices so this is a local uh testing
+[02:01] but just to show you um this all these
+[02:04] are fake uh payments that I made and you
+[02:07] can see here um I can see my invoice I
+[02:10] have all the business details here this
+[02:11] is prepopulated even if stripe did not
+[02:14] generate an invoice for the business for
+[02:16] the customer um it will appear here and
+[02:19] the customer can edit their information
+[02:21] they can say uh you know whatever their
+[02:23] name is marlu and their vat details is 1
+[02:28] to3 um this is used tool especially if
+[02:30] you work with European customers who
+[02:31] need to add their V their business ID
+[02:34] tax ID whatever to their invoice and
+[02:36] they can download it and bingo they have
+[02:39] an invoice that is ready to show to
+[02:41] their accountant or
+[02:44] whatever this pretty much what we've
+[02:46] been doing so um we have built the
+[02:49] product in day 1 to six um yesterday we
+[02:52] made the Ling page uh it's a very raw
+[02:56] version It's not finished but it is
+[02:58] functional
+[03:00] you can see here this is what I'm going
+[03:02] to be finishing today this will be the
+[03:04] last day of coding um I think after that
+[03:08] we should be done the product is working
+[03:10] um I'm now sending it to a few friends
+[03:11] of mine who are STP customers and are in
+[03:14] need of the product so I can get that
+[03:15] testimonial and so we have um social
+[03:18] proof on the landing page today I'm
+[03:19] going to be editing a few pieces of the
+[03:21] landing page I actually have a list of
+[03:24] things we have to go over right
+[03:27] here and yeah that's pretty much it
+[03:30] um if you are joining the live please
+[03:32] let me know how is the quality of the
+[03:34] audio how is the quality of the stream
+[03:36] uh let me know also what you guys are
+[03:37] building if you're from Twitter I bet
+[03:39] you have some ideas in your mind let me
+[03:43] know if
+[03:44] everything is working and I should have
+[03:47] the chat normally on my phone so I
+[03:49] should be able to see the messages here
+[03:51] I I think my YouTube channel is getting
+[03:54] monetized yesterday I think I received
+[03:55] an email from them saying that and get
+[03:58] supers or stuff whatever so I'm very
+[04:01] curious this is the first time this
+[04:02] happens so maybe the stream interface on
+[04:06] YouTube will look a little bit different
+[04:08] this time there might be some super
+[04:09] stuff whatever uh not I'm not saying you
+[04:12] that you should send me supers but I'm
+[04:14] very curious how that looks like maybe
+[04:16] I'll I'll give it a little shot on the
+[04:20] phone so I'm going to share the link for
+[04:23] people joining on
+[04:25] Twitter there we
+[04:27] go is the quality is actually much
+[04:31] better on YouTube better
+[04:34] quality on
+[04:38] YouTube I'm awake early for this one yep
+[04:41] Bingo man um yeah today I was supposed
+[04:44] to Surf and I didn't go surf it was
+[04:47] raining a bit a bit stormy I think the
+[04:49] wavs were flat so I stayed home had a
+[04:52] little early breakfast read a book and
+[04:54] jump on the stream a little bit
+[04:58] earlier
+[05:00] what CSS framework are you using to
+[05:02] quickly create a UI so fast and I'm
+[05:05] using Tailwind CSS plus Daisy UI which
+[05:08] is a UI library that have some buil-in
+[05:11] components um I don't need I I don't use
+[05:15] most of the components but I use the
+[05:18] they have colors palett that I use and I
+[05:20] just sometimes swap
+[05:22] them to you know get the landing page up
+[05:25] and running and of course I am using
+[05:27] ship fast which is a bot that I created
+[05:30] which um has a bunch of premade
+[05:32] components maybe I can show you some of
+[05:34] them
+[05:35] there this is the documentation and you
+[05:37] have a bunch of components that come
+[05:39] with a ball PL including for instance a
+[05:42] pricing section um so what I do is I
+[05:44] just clone the ball plate and I deploy
+[05:47] the
+[05:48] page and I have Shi fast components up
+[05:51] and running right here and like you see
+[05:54] the pricing session that is right here I
+[05:56] can
+[05:57] reuse all right
+[06:01] is invoice an if frame you can embed or
+[06:03] just a link you give it it is a link you
+[06:05] give to your customers but you can um if
+[06:08] you have let's say a private user
+[06:10] dashboard for authenticated users you
+[06:12] can add a button that says get invoice
+[06:16] and then it's going to open the link and
+[06:18] they will be able to selfs serve uh
+[06:20] their invoices this is what I'm going to
+[06:22] do for ship fast for
+[06:24] instance are you the one who designed
+[06:26] all of your products unfortunately yes
+[06:30] um yeah let me show you real quick uh
+[06:34] because yeah this this one I mean Zeno
+[06:37] page landing page look better than my
+[06:40] very first sing page this is one of the
+[06:42] first sing page that I made this is like
+[06:44] 5 years old so you can see uh
+[06:48] repetition you know iteration over
+[06:52] um like doing the same thing over and
+[06:54] over at the end you make things better
+[06:57] um and so obviously now it's it's quite
+[07:00] zoom in now uh it looks better than it
+[07:02] was to be but my first landing pages
+[07:04] look kind of crapped um this is another
+[07:06] product that I built two years
+[07:08] ago and you can see there you you see
+[07:11] there's a slight progress over
+[07:16] it so yeah just keep repeating and and
+[07:19] building landing pages helps a lot and
+[07:20] also getting inspired by uh people like
+[07:23] Danny posma makes beautiful landing
+[07:25] pages for Hot Pro uh makeer box from Dan
+[07:28] kov or also beautiful landing pages
+[07:31] bunch of uh inspiration from the Indie
+[07:34] Community okay um yeah so what you see
+[07:37] here unscripted I have nothing planned
+[07:39] uh the entire startup will be in build
+[07:41] is built in public on YouTube so I don't
+[07:45] I think live so sometimes I'll be quiet
+[07:48] sometimes I'll say some shitty words
+[07:50] sometimes I will have stupid ideas um
+[07:52] this part of the process there is ABS I
+[07:54] I didn't put any thinking in the entire
+[07:57] process here the enti thinking goes live
+[08:00] um so yeah forgive me for some uh
+[08:02] mistakes that I might make uh there is
+[08:05] no
+[08:06] script all right so we are back to this
+[08:10] uh I think we can close that
+[08:16] yeah dashboard all right so what we need
+[08:19] to do today we will finish the L page um
+[08:21] I wrote a full couple things we need to
+[08:24] generate terms of
+[08:25] services because I think I believe now
+[08:32] we have ship fast temps or Services
+[08:34] probably yep I need to update
+[08:38] that so going back to
+[08:48] it we're going to use CH GPT for that it
+[08:51] is going to be a simple
+[08:58] one
+[09:00] let's take this part and copy
+[09:08] past hello here's some context the
+[09:11] website is Zenvo
+[09:14] doio name
+[09:17] invoice Mark
+[09:24] that's mg that's the description for the
+[09:28] startup is is a
+[09:30] no code tool for to
+[09:35] help
+[09:36] generate invoices made on their strip
+[09:42] accounts the product the software it's
+[09:45] actually a software the software
+[09:47] is
+[09:48] um
+[09:51] one the software access is granted to
+[09:54] the
+[09:56] user after A1
+[10:01] and payment which
+[10:05] give which gives
+[10:08] customers unlimited access to
+[10:12] the
+[10:14] product and
+[10:17] ownership actually yeah this is the
+[10:19] software access I think this should have
+[10:20] actually been
+[10:25] here should we allow refunds yes we're
+[10:27] going to allow refunds just in case is
+[10:30] granted to the user after once time
+[10:32] payment re customer unlimited access to
+[10:34] the
+[10:35] product which
+[10:38] includes
+[10:41] unlimited
+[10:44] unlimited tripe accounts
+[10:47] connected unlimited invoices they can
+[10:51] ask for may we just going to say up to
+[10:55] this is a crazy number
+[10:58] but just in
+[11:03] case and also same for strip account
+[11:06] where are they strip account we going to
+[11:07] say up to 100 accounts just in case for
+[11:11] edge cases this is not very
+[11:16] important this user data um we collect
+[11:19] the user we don't even collect the
+[11:20] username we just collect email and
+[11:23] payment information web
+[11:27] cookies the Privacy policies right there
+[11:31] governing a little
+[11:35] Singapore be updated by
+[11:39] emails
+[11:40] okay give us something
+[11:43] chpt and I probably want to say
+[11:53] update this is a little reminder for
+[11:55] myself or something that have nothing to
+[11:58] do with with this
+[12:01] app hey Mark yo Kelvin yo man you've
+[12:04] been showing
+[12:05] up you've been showing up every single
+[12:07] day man Nigeria and because I slept
+[12:10] early I'm up I'm up to up at 3:00 a.m.
+[12:13] buddy wow be working on hack fish
+[12:15] alongside with Mark working on Zen voice
+[12:17] good luck buddy what are you building
+[12:19] bosu yo my boy I was actually talking
+[12:22] about headshot Pro a few seconds ago
+[12:24] anding that I was inspired by all of
+[12:26] your great leing pages man I'm building
+[12:30] actually maybe this uh we could have
+[12:32] this conversation by message but um I'm
+[12:35] wondering if you turn on the option to
+[12:36] generate invoices for your customers
+[12:39] because the stripe
+[12:41] invoicing fee is
+[12:43] 4% 0.4% when you generate invoices for
+[12:46] onetime purchases which I think is what
+[12:48] you use for H
+[12:51] Pro um I did turn it on for ship fast
+[12:53] for a while and I think I end up
+[12:54] spending 1,000 bucks with st just to
+[12:57] generate invoices for most customers I'm
+[13:00] curious what you do for hot
+[13:10] Pro let's copy that little thing here
+[13:13] thanks for using the invoice is the
+[13:15] policy looks Gooding
+[13:19] software 200 account two
+[13:24] okay see uh yep but Mr Jud I think you
+[13:28] need to write this
+[13:43] in
+[13:49] see think this is a bit up yep
+[13:52] rewrite
+[13:54] this without the
+[13:57] formatting
+[14:05] it is pouring like crazy here in
+[14:07] [Music]
+[14:13] B oh
+[14:31] does it matter no maybe it doesn't
+[14:47] matter eight as a
+[14:57] scen
+[15:00] right there we
+[15:06] go this is what we
+[15:09] wanted data okay this is not very
+[15:13] important when you are shipping stuff
+[15:15] stripe requires a term of policy and it
+[15:19] takes 2 minutes to generate it with
+[15:21] chpt so at least we have a
+[15:27] proper a proper proper proper Services
+[15:32] okay okay we're going to do same for um
+[15:35] I guess a privacy
+[15:42] policy
+[15:49] that
+[15:57] help and reuse a bunch of information
+[16:00] there description and there's no
+[16:02] ownership
+[16:09] here
+[16:11] yeah we do not share data with other
+[16:13] party Char
+[16:20] nope invoice
+[16:25] iio please
+[16:27] WR
+[16:29] add the current
+[16:31] okay what cloud provider do you usually
+[16:34] use for your different set I guess AWS
+[16:37] uh nope I use I use mostly versal I
+[16:41] actually use only
+[16:44] versal see my apps are
+[16:47] here those are all the apps that I've
+[16:49] been posting on versal uh I use the API
+[16:52] from ver from versal as well so I don't
+[16:55] I barely don't have any other services
+[16:57] that I use I have a database
+[17:00] um I think mongodb Atlas where I have
+[17:03] database for each of those projects and
+[17:05] if I have some s special like a course
+[17:08] being hosted with lots of data I will
+[17:11] use AWS for like s S3 or Cloud
+[17:27] front blah blah blah the service we
+[17:30] collect email payment
+[17:33] information
+[17:36] okay this is good we have done
+[17:41] this all right now we're going to go
+[17:43] back to the Ling
+[17:44] page and we are going
+[17:51] to yes this is the part this is just the
+[17:53] Feature Part um I kept thinking about it
+[17:56] yesterday we built it but I think there
+[17:59] is something missing some context
+[18:01] missing it's a bit too thing too
+[18:06] simple so I think what I'm going to do
+[18:09] is we'll
+[18:12] add in future accordion part I will
+[18:16] probably add something called
+[18:18] [Music]
+[18:24] extra and I think we will do something
+[18:28] like
+[18:32] hero
+[18:34] icons say
+[18:39] Shield we going to say
+[18:42] uh
+[18:48] oops secured
+[18:50] with
+[18:55] stripe and I think we're going to say t
+[19:00] SM Bas content
+[19:05] secondary and we are going to add this
+[19:08] in the items
+[19:11] part we have a button index blah blah
+[19:14] blah and we have the accordion
+[19:16] description and here we want to
+[19:18] do uh right maybe we want to do this
+[19:24] here if you can hear the music please
+[19:27] let me know because I think YouTube will
+[19:29] take down the stream if you guys can
+[19:32] hear my music for whatever copyright
+[19:34] reasons so please let me
+[19:38] know and here we going to have
+[19:41] extras say that if extra we're going to
+[19:44] show the
+[19:45] extra and those extra will be
+[19:50] there normally now we should have yep we
+[19:54] need to rewrite that get a micro one
+[20:03] secured with tri restricted API keys I
+[20:06] think going to make this one mied
+[20:11] accent and there a oh wait we need to
+[20:13] format this as a flex Gap to a temp
+[20:20] Center and we probably also want to add
+[20:24] extra wait
+[20:26] actually I should have
+[20:30] this on my side window yep just like
+[20:34] this normally you should be able to see
+[20:36] the code I refresh it is
+[20:40] here we want to say oh actually maybe we
+[20:44] can make the entire text
+[20:56] second yes
+[20:59] here if it exists we want to say margin
+[21:01] top
+[21:02] two
+[21:07] three it is secured and here we are
+[21:10] going to say it
+[21:12] is text
+[21:27] S
+[21:29] we don't need to do that restri
+[21:41] secured right I think that add a little
+[21:44] bit of I think I'm going to do these for
+[21:47] all maybe we need some more SP spices
+[21:50] spices more
+[21:53] spices make it spicy um maybe we need
+[21:56] some more petting somewhere
+[22:19] okay yeah I think we going to do this uh
+[22:21] the order where is it y
+[22:26] here
+[22:36] text it's a bit too small
+[22:38] okay secur is resing API
+[22:46] Keys no I cannot hear the music okay
+[22:48] good good
+[22:49] good was that was that for the uh what
+[22:52] site is it for the EV SVG images it's
+[22:56] called hero icons
+[22:58] her icons.com which is from the creators
+[23:01] of twin CSS it is an absolute legendary
+[23:07] Library uh yep yeah I think we should it
+[23:26] one
+[23:29] maybe we can say it takes just a few
+[23:31] second to
+[23:40] add one
+[23:44] or GPT give me something add one or
+[23:46] multiple STP account to the
+[23:48] invoice just take one
+[23:56] minute L then
+[23:59] a minut no
+[24:03] coding no coding required Okay add one
+[24:06] or multiple STP accounts to Zenvo it
+[24:08] takes less one than a minute okay then
+[24:10] we have the other part connect your Zeno
+[24:14] get your Zeno
+[24:17] link so here we uh we want to do a few
+[24:20] things
+[24:25] here in the extra category we're going
+[24:28] to
+[24:34] say
+[24:35] [Music]
+[24:42] email just
+[24:46] mail let me use this
+[24:51] one send by
+[24:55] email or a account account maybe user
+[24:58] yeah there we
+[25:01] go where is it come
+[25:05] back send by email
+[25:14] or show on user
+[25:18] dashboard so here yes we have
+[25:21] something we are going Marin but some
+[25:25] one two
+[25:41] say this is too long your customers can
+[25:43] retrieve any successful payments on all
+[25:45] your s
+[25:50] accounts wait we can remove a bunch of
+[25:52] stuff
+[25:56] here
+[26:04] think need to
+[26:17] this5 right I'm doing something not
+[26:20] super
+[26:26] good
+[26:31] is y
+[26:36] 1.5
+[26:41] okay we probably want to reduce a little
+[26:44] bit the size of that
+[26:45] thing uh we have two columns maybe we do
+[26:49] something like
+[26:51] this yes why
+[26:54] not but maybe we want to make the
+[26:57] description a little
+[27:01] smaller x with SM
+[27:08] maybe okay I'm going to leave
+[27:14] it secured with strip res API keys by
+[27:18] email show on
+[27:26] dashboard
+[27:28] okay and here this part we want to say I
+[27:31] think three S three things
+[27:56] um
+[28:05] we want to say a few things we want to
+[28:08] say
+[28:11] um the extra part we're going to
+[28:19] say here yeah it is here we want to have
+[28:24] the shield icon and say secured with
+[28:29] one
+[28:42] with I need to write the description for
+[28:45] this to explain
+[28:48] that um what is the name of
+[28:51] it people can only retrieve their
+[28:53] invoices if they confirm their address
+[28:55] email email address
+[28:58] I want to say a really short sentence
+[28:59] that say secured with magic links
+[29:02] or or maybe
+[29:05] data
+[29:09] protected with magic links that's too
+[29:13] big and maybe if someone
+[29:18] is feeling
+[29:20] inspired I want to mention so I what I
+[29:23] want to mention here is that once I send
+[29:26] the link to
+[29:29] customer see
+[29:32] here if um there is a purchase that's
+[29:36] made under the customer's name they
+[29:38] won't be able to see anything so
+[29:40] customers won't be able to see other
+[29:42] customers data they will only be able to
+[29:45] see their own data and for that they
+[29:47] once they we retrieve a payment they
+[29:50] will receive an email that says click
+[29:53] this um private link or whatever there's
+[29:55] a token that is is sent to the email of
+[29:58] the person so that that person can only
+[30:00] view their invoices once they click the
+[30:02] email so we don't leak customer data and
+[30:05] I kind of want to highlight that in a
+[30:07] one sentence
+[30:08] [Music]
+[30:10] thing just don't know how to do
+[30:14] that customer generate their invoice so
+[30:16] once a customer find a successful
+[30:17] payment they receive a secure link to
+[30:19] generate
+[30:21] edit So Pro maybe we're just going to
+[30:23] say protected data protected
+[30:26] data
+[30:29] or
+[30:32] data I'm going to say protected data um
+[30:36] and I want maybe to say
+[30:39] it's uh
+[30:43] Europe
+[30:47] low
+[30:49] Justice
+[30:52] wait um lawyer no scale maybe oh yeah
+[30:57] yeah there we go and we kind of want to
+[30:59] say here that it
+[31:03] is
+[31:04] compliance
+[31:09] invoice formats
+[31:13] maybe I don't know that makes sense
+[31:15] compliant invoice
+[31:20] format invoice under
+[31:24] GST invoice template
+[31:28] compliant maybe compliant invoice
+[31:35] template they can also editable and also
+[31:39] editable
+[31:41] um here we must say
+[31:56] it's
+[31:57] we can say Euro compliance
+[32:03] template editable
+[32:05] invoices and we want to say probably
+[32:10] little pen here to do the
+[32:16] work so what we get here
+[32:18] editable once a customer F mon they can
+[32:21] they receive a secure link secure link
+[32:24] to generate edit and download invoices
+[32:32] all right I think that should be
+[32:35] enough did I make any typ of my poor
+[32:39] French
+[32:42] language I need to double check
+[32:44] everything that I write in
+[32:50] English that should be good no yep that
+[32:56] okay
+[32:57] when telling your when selling your
+[32:59] product on stripe do you have to share
+[33:01] your address with
+[33:03] customers
+[33:05] um it depends um you don't you don't
+[33:08] have technically you don't have to but
+[33:11] based on where the customers are some of
+[33:13] them I request that you
+[33:15] do um usually Europeans have more strict
+[33:20] invoicing
+[33:21] templates and so they will require you
+[33:24] to add your business uh this happens to
+[33:26] me every week where I need to have my
+[33:29] business um address added to the
+[33:37] invoice let's get back to
+[33:40] so connect strip accounts add one or
+[33:43] multiple stripe accounts to your invoice
+[33:45] it takes Les minutes no coding required
+[33:47] secur
+[33:52] TP your customers can retrieve any
+[33:54] successful payments on all their on all
+[33:56] your
+[34:03] any successful payments made on can
+[34:07] retrieve any successful payments made on
+[34:09] any and all your STP account made on all
+[34:13] your sh
+[34:21] accounts successful pment they receive a
+[34:23] secure link to generate edit and
+[34:24] download invoices they can
+[34:27] you can
+[34:48] also the8
+[34:50] number that
+[34:53] company here we can say uh company
+[34:56] details okay okay yeah that makes sense
+[34:57] fix typo Etc protected data editable
+[35:01] invoices Euro compliance
+[35:05] template should we settle with this
+[35:08] hello Mark F we're here final touches
+[35:11] here we go Brian yeah man last day of
+[35:13] coding tomorrow marketing strikes
+[35:18] again I think this is a bit better um
+[35:21] there is a part that I want to update in
+[35:25] the fiq I think one
+[35:30] question would be
+[35:34] why why do I need Z
+[35:42] invoice so to approach here either
+[35:46] people pay for stripe invoicing so I
+[35:49] need to talk about the fee or you don't
+[35:51] pay for stripe invoices and you have to
+[35:53] manually generate those
+[35:55] invoices
+[35:59] so maybe I will add a stripe invoicing
+[36:02] fee because some people might not even
+[36:04] know they pay for the stripe fee so
+[36:07] might want to add a link
+[36:10] say
+[36:14] one those fee applies on
+[36:24] to when you
+[36:43] charge one
+[36:45] time one time payments when you when you
+[36:49] sell One Time payments
+[36:51] products One Time payments products on
+[36:55] stripe
+[36:57] stri
+[37:05] charge
+[37:08] two
+[37:13] $2 I think I want to
+[37:15] say
+[37:18] here I need to add the link so people
+[37:22] have a little proof of what I'm talking
+[37:25] about
+[37:27] class and we're going to make it a link
+[37:29] link
+[37:31] access and Target equal H uh
+[37:36] blank stri takes a 0.4
+[37:40] cut so that is one thing we want people
+[37:44] to
+[37:49] know Z
+[37:55] voice see
+[38:05] with
+[38:07] Zen
+[38:10] you only a once and never
+[38:16] again and never
+[38:22] again right so that's the first part the
+[38:24] second part is
+[38:30] if you
+[38:33] don't if you don't generate if you don't
+[38:37] what is it you
+[38:39] don't pass uh if you don't
+[38:42] generate invoices for your custom wait
+[38:46] no if you don't pay for if you don't pay
+[38:49] for
+[38:51] stripe
+[38:54] invoicing you will
+[39:00] get customer
+[39:09] request asking for
+[39:12] invoices
+[39:16] receipts stripe receipts are not
+[39:25] AR
+[39:28] enough
+[39:30] for
+[39:36] most
+[39:40] regulations and
+[39:42] if and if you don't and if you don't
+[39:45] want to pay for stripe invoicing you
+[39:46] will get customer
+[39:48] request you you'll get customer request
+[39:50] asking for invoices stripe receipts
+[39:53] aren't enough for most countries
+[39:54] regulation and finally
+[39:59] finally stripe
+[40:11] invoices
+[40:13] editable your
+[40:22] customers
+[40:23] and and there
+[40:32] bat X
+[40:34] ID of Big T
+[40:37] close after the purchase
+[40:41] is
+[40:44] done and of course we're going to say
+[40:49] Zenvo
+[40:51] fixes all
+[40:53] that hey that is some serious confidence
+[40:57] copyrighting right
+[41:00] here I think the colors are off
+[41:05] though not
+[41:08] bad what do I need to
+[41:13] invoice where didate try Pi
+[41:19] a most countryes
+[41:25] regulations
+[41:30] our fix typos oh okay I didn't know typo
+[41:32] could be
+[41:34] plural after P done
+[41:42] okay where are you doing marketing when
+[41:44] you finish where
+[41:47] you where are you doing marketing when
+[41:49] you finish up the sess um where am I
+[41:52] doing
+[41:53] marketing I am going to the marketing on
+[41:56] I'm going to launch on product I'm going
+[41:57] to make a little video for that I'm
+[42:00] going to launch on um probably
+[42:02] communities like hiker
+[42:05] news yeah I can news for sure um I'll
+[42:08] see some subreddits maybe some stripe
+[42:10] related subreddits and some
+[42:12] entrepreneurs related
+[42:14] subreddit which I will also have to make
+[42:16] a video for that I will launch on
+[42:18] Twitter where I have now a little
+[42:20] audience of people who might have the
+[42:22] same issue as me I'll see if there's
+[42:24] some SEO to be done I don't think
+[42:26] there's anything
+[42:28] to that could work for us but I'll give
+[42:30] it a little
+[42:33] try I think that'll be all um it is a
+[42:36] product where I have no I don't have
+[42:38] much ambition this is mostly a fix for
+[42:40] me because I really need that thing
+[42:43] every
+[42:44] day
+[42:45] so I won't push too I won't be too you
+[42:49] know doing too much marketing I'll see
+[42:51] if there is a feat maybe some you know
+[42:53] maybe not everyone needs the product I
+[42:55] don't know
+[42:56] I'll see where how the market reacts so
+[42:58] I'm launching and I assess and see if
+[43:02] there is a good conversion rate on the
+[43:03] website if that's the case maybe it's
+[43:05] worth thinking more it's not the case
+[43:07] maybe it's better to just move on and
+[43:08] just you know keep using the product
+[43:10] benefits from soling my own
+[43:13] problems and
+[43:25] here
+[43:39] oh see how it works um so why do I need
+[43:42] invoice when you sell onetime payments
+[43:44] products stripe takes a 0.4%
+[43:48] cut
+[43:50] per
+[43:55] B
+[43:56] when you
+[43:59] charge same payments products charge per
+[44:06] sale invoice you only pay once and never
+[44:08] again and if you don't pay for strap
+[44:11] invoicing you will get customer request
+[44:13] asking for invoices Tri receipts aren't
+[44:15] enough for most countes regulations only
+[44:17] stri invoices aren't editable your
+[44:19] customers can't add the tax ID or fix
+[44:22] tles after the purchase is done voice
+[44:25] fix that do I have have to use stripe
+[44:27] yes sir does it work for one time
+[44:29] purchases yes it's made for one time
+[44:31] purchases to avoid paying the 0.2% fee
+[44:34] does it work if I don't use stripe
+[44:36] invoices yes cost okay does it work for
+[44:41] past transactions it does the invoice
+[44:43] will check for successful payments on
+[44:45] your stripe account accounts on your
+[44:50] stripe
+[44:52] accounts and generates invoices for any
+[45:00] successful is it secure yes we use
+[45:02] restricted API keys to access your strap
+[45:04] account using the minimum record data to
+[45:06] generate
+[45:08] invoices can customers see others
+[45:10] invoice customers can only view edit and
+[45:12] don't know their own invoices if your
+[45:14] customers retrieve a payment they will
+[45:15] have to config their email address to
+[45:17] access the payment
+[45:21] data okay that makes a little bit more
+[45:24] sense and don't have a business address
+[45:27] should I have or use my home address
+[45:31] right
+[45:33] um okay so I'm going to assume that you
+[45:36] you might be using stripe without having
+[45:38] a underlying
+[45:40] business in that case I
+[45:43] think
+[45:50] um no I wouldn't uh I wouldn't show your
+[45:53] personal address on your stripe invoice
+[45:58] is I think I mean the the solution here
+[46:00] for you is to open a business uh if you
+[46:03] don't have one and you're just getting
+[46:04] started and you make $100 online at the
+[46:06] very
+[46:08] beginning I've been there I've been
+[46:09] doing it for a few months and I think
+[46:13] it's okay to do that so don't show your
+[46:16] email but I would open a little business
+[46:18] as fast as you can so you
+[46:21] are um you know in regulation with your
+[46:25] uh cont know and you know I think the
+[46:27] worst thing that can happen is having
+[46:29] your your country uh IRS knock the door
+[46:32] and say hey you you shouldn't be doing
+[46:35] that you own us a little bit of money I
+[46:36] think for me at least that's the most
+[46:37] important part is to have an entire
+[46:40] Freedom where no one can knock my knock
+[46:42] my door and tell me you owe you owe me
+[46:43] taxes so I would I would open a proper
+[46:46] business and and add that business
+[46:49] address to the
+[46:53] invoice you are missing a word in the
+[46:55] first you question should say something
+[46:57] like when you charge
+[46:59] okay why do we need when you oh good
+[47:03] point good catch man thank you when you
+[47:08] sell one time payment product thanks man
+[47:13] we have the
+[47:17] fq the pricing stop wasting how is
+[47:20] maging stripe invoices dital stripe
+[47:22] invoice fee reduce customer support and
+[47:23] focus on your startup I think we have
+[47:28] maybe the launch discount could
+[47:34] be maybe we can do
+[47:38] animate also
+[47:45] something this is very tiny but just to
+[47:47] show that it's temporary that's very
+[47:51] tiny one time payment then need Ser
+[47:54] forever
+[47:57] oh yeah here I might want to add support
+[48:00] okay
+[48:02] login pricing working Affiliates
+[48:07] okay um I think I might be reusing
+[48:12] whatever barel maybe or did they do that
+[48:17] nope maybe buy
+[48:22] dispute yes okay I think I'm going to be
+[48:24] reusing by disputes this is
+[48:27] cute and I think I should be using that
+[48:30] so going to go in by
+[48:33] dispute making sure I don't have my AP
+[48:35] Keys being
+[48:40] shown I think this is the part
+[48:46] more the footer so yeah usually what I
+[48:49] do this is not you know a big marketing
+[48:51] thing but I have a few products running
+[48:56] so you can see
+[48:57] here for instance bu dispute would get
+[48:59] 130 visitors per
+[49:01] day so what I do is I try to always have
+[49:06] Links at the bottom of my lending
+[49:09] Pages where um I cross promote my
+[49:13] startups I this is a link to my
+[49:15] newsletter these are the links to other
+[49:18] little startups it boost
+[49:21] SEO and also you know you can get do
+[49:26] traffic here and
+[49:28] there
+[49:33] lngs more newsl from maker Indie page
+[49:36] ship fast and we want to say
+[49:41] maybe those
+[49:54] PES
+[50:03] and yeah I probably want to add my
+[50:04] little face there to add some kind
+[50:08] of wouldn't say trust cuz would he would
+[50:12] be have to be crazy to tr this french
+[50:13] guy but I I can tell a little
+[50:19] story there
+[50:24] um to add Mark oh I need to copy past my
+[50:28] face then
+[50:30] somewhere
+[50:33] um I'm going to go to buy
+[50:35] dispute and we have I think it's in
+[50:39] folder
+[50:40] probably yeah I'm going to duplicate
+[50:44] that and we are going to test my stupid
+[50:48] face right there okay and so now we have
+[50:52] haers a mark my Twitter link
+[50:56] uh you can follow my work on twit yeah
+[50:58] okay my IND page link and my Twitter
+[51:00] link we have by
+[51:03] disput ship fast Indie page and my
+[51:09] newsletter the footer oops close
+[51:12] the wrong
+[51:18] window's skip back to
+[51:21] it see one more
+[51:24] time
+[51:27] oh I need to fix whatever is going
+[51:29] on here with the
+[51:34] footer did I do that for by
+[51:43] disputes maybe with maybe this where
+[51:46] part is
+[51:54] difference
+[52:04] oh yeah it's probably this part we want
+[52:06] to
+[52:07] copy let's see how that goes okay we
+[52:09] have a little bit more
+[52:12] space just ugly here doesn't
+[52:16] matter um large device we have this okay
+[52:20] hey C I'm Mark I'm the creator of
+[52:21] invoice you can follow my work on
+[52:24] Twitter okay that's good enough we have
+[52:26] the
+[52:27] fq
+[52:29] the
+[52:31] racing
+[52:34] maybe should we do something like this
+[52:38] and power
+[52:54] glass
+[52:56] I launch discount
+[52:59] um okay SEC it's secured sendil show on
+[53:20] dashboard wasting how is managing stripe
+[53:22] invoices digital stripe invoice or
+[53:24] customer support and focus on your
+[53:25] startup okay this is a
+[53:28] clear a new
+[53:37] proposition how do you permanent
+[53:39] permanently live in b as a French bro uh
+[53:42] because I am soon to be not French
+[53:45] anymore u i mean I'm I'm going to be
+[53:48] French but I'm not going to be a French
+[53:49] tax resident so oh man that's a boring
+[53:52] part I was going through last year
+[53:54] basically
+[53:55] where you live more than 6 months per
+[53:57] year is the country you're supposed to
+[53:59] be a tax resident so it doesn't matter
+[54:02] where your nationality is except from
+[54:05] USA American people it's different story
+[54:08] I think Canadian as well but as a
+[54:11] European uh wherever you live in the
+[54:13] world for more than 6 months is supposed
+[54:15] to be the place where you pay taxes um I
+[54:18] spend more than 6 months a year here in
+[54:19] belly so I'm supposed to pay taxes here
+[54:21] in
+[54:22] Bell and that would be pretty much the
+[54:24] same for every
+[54:33] country inves L your customer generate
+[54:35] and invoices so you don't have to
+[54:37] generate and generate edit oh okay maybe
+[54:42] in the hereo section let here customers
+[54:49] generate edit and download their stripe
+[54:51] invoices so you don't have
+[54:53] to no stripe invoice oh maybe we didn't
+[54:56] say just no stripe invoice
+[54:59] CV not good setup reduce customer
+[55:06] support by
+[55:08] stripe it's invoice okay of managing Str
+[55:14] invoices create
+[55:24] invoice
+[55:32] certain 1 payments for unlimited
+[55:33] invoices no more customer support
+[55:37] editable invoices to stay
+[55:41] compliant I think we have something a
+[55:43] little bit
+[55:45] better
+[55:47] yiggy wish is say biggy uh no
+[55:54] biggie
+[56:02] [Music]
+[56:11] boogy man heig man but he so fun
+[56:17] man the new dad uh
+[56:21] here name
+[56:23] ch
+[56:30] is a friend of
+[56:32] mine do okay it's a friend of mine uh
+[56:36] that we surf together it's a little
+[56:39] boogie boarder and I'm a little Surfer
+[56:40] and we've been surfing uh some waves in
+[56:43] the South part of valy together it's
+[56:45] where Indie hacking Community meets the
+[56:47] surfing
+[56:48] community and he just recently became a
+[56:53] dad
+[56:55] [Music]
+[57:05] for we have done this examples with
+[57:10] icones okay this is done now we need to
+[57:13] add testimonials a very important part
+[57:15] of the Ling
+[57:17] page we are going to probably copy what
+[57:20] I did for
+[57:22] another maybe something like this
+[57:28] I think so yeah for now I have two
+[57:30] testimonials from uh
+[57:32] users probably going to add
+[57:38] one oh maybe oh yep I need to do the SEO
+[57:42] part is it on my list seo seo somewhere
+[57:46] okay SEO tags is on the list
+[57:53] okay this do
+[58:13] [Music]
+[58:23] ah
+[58:28] [Music]
+[58:37] [Music]
+[58:43] [Music]
+[58:54] say
+[59:03] [Music]
+[59:15] [Music]
+[59:17] okay we will need to okay we will need
+[59:19] to gather pictures from our
+[59:23] little
+[59:26] friends going to search for Mr Dan kov
+[59:30] and niik
+[59:33] J who finally changed his profile
+[59:37] picture that is a good thing he's not
+[59:40] split not SP split testing it
+[59:43] anymore so I'm going to seal Mr kov P
+[59:48] profile
+[59:50] picture
+[59:52] then is not here to make friends is is
+[59:57] going to be oh his entire name will be
+[60:00] there we go he's not here to make
+[60:02] friends whoever here knows this
+[60:07] guy his name will be is's not here to
+[60:10] make
+[60:10] friends this is what he
+[60:15] deserves and here Nico we're going to
+[60:17] say uh we're going to call him Bangkok
+[60:21] yeah Bangkok boy okay
+[60:25] and in the testimonial avatars we are
+[60:28] going to fetch
+[60:31] uh Dan
+[60:36] from unfortunately nope Dan is not here
+[60:39] to make
+[60:42] friends kind of proud of that one and
+[60:46] import
+[60:52] Nico and we call him Bangkok and I think
+[60:55] it's a g j no it's not a jpeg I think
+[60:57] Nico is a
+[60:59] p
+[61:01] bang I've never call him that way Bok G
+[61:06] there
+[61:09] Bing and we are going to import mark
+[61:12] because Mark is also
+[61:14] using zvo and we are going to
+[61:17] say
+[61:19] um here it's
+[61:22] done EO
+[61:34] Mark
+[61:42] Mark okay Nico was a PNG oh Nico was a
+[61:45] JPEG
+[61:46] okay such a
+[61:51] JPEG then Nico and Mark here perfect
+[62:01] here we don't have a source
+[62:10] yet okay we probably have to change that
+[62:13] later so I
+[62:23] think
+[62:25] all legit
+[62:37] okay all right
+[62:41] um 32 oh yeah we need to oh yeah yeah we
+[62:44] need to do that of course cuz right now
+[62:46] we don't
+[62:49] have
+[62:51] we we are actually not fetching
+[62:54] we need to add this thing
+[63:00] here because we want to revalidate this
+[63:03] page every hours here we're going to say
+[63:12] Zeno stripe subscriptions stripe
+[63:15] invoices
+[63:16] without the
+[63:20] fee now I think we're going to reuse
+[63:22] Focus install up not the invoices
+[63:26] wait actually let's see if there
+[63:30] is keyword
+[63:32] um right invoice let's see what we get
+[63:40] here stripe invoice
+[63:43] scam this is a good keyword I receive an
+[63:46] email from stripe oh okay no no
+[63:53] no oh okay no no that's a different scam
+[63:56] using strap invoice just don't pay bills
+[63:58] for people you don't know online you
+[64:01] won't have any trouble Captain Obvious
+[64:04] thank you man okay
+[64:08] now actually there a bunch of little
+[64:10] keywords probably most of them are
+[64:12] branded under stripe so it will be
+[64:15] impossible to rank send stripe invoice
+[64:18] let's see what they got here yeah stripe
+[64:20] will be on the first page oh we have
+[64:22] YouTube how to say invoices for
+[64:26] beginners interesting user adaption so
+[64:30] smooth you have magical powers oh if I
+[64:33] do that I'll get banned from oh yeah the
+[64:36] stream will be taken down okay okay okay
+[64:37] I cannot watch YouTube
+[64:40] videos let's see we're still live I
+[64:43] think I've been doing this
+[64:46] once and I think I got wait to be
+[64:49] careful when I go on YouTube when you
+[64:51] live stream otherwise you might get
+[64:53] banned
+[64:55] yeah I go directly on my channel to make
+[64:56] sure I don't it
+[65:00] up we're still live on YouTube
+[65:03] so okay no YouTube for now I cannot
+[65:06] procrastinate okay typ invo status STP
+[65:10] invoice reminders okay that is a invoice
+[65:13] templates yeah that could be an
+[65:15] interesting
+[65:23] keyword
+[65:25] invoice example with a stripe
+[65:28] dashboard maybe the stripe invoice
+[65:30] keyword could be interesting
+[65:35] um maybe the tired of managing stripe
+[65:41] invoices may we can do
+[65:45] this managing strip
+[65:50] invoices um let your customers edit so
+[65:53] you don't have have to that is
+[65:56] good invoice is a no code
+[66:04] solution and not to reduce C save money
+[66:07] on stength fees okay viers we don't need
+[66:11] any relative okay open
+[66:14] graph oh that could be
+[66:17] interesting managing Str noices and
+[66:20] here kind of want to do that
+[66:26] right so we have our SEO tags and here
+[66:28] we will need to
+[66:30] do
+[66:33] uh is it no I think it is not how it
+[66:37] works no oh yeah okay I mean yeah I'm
+[66:41] using another version of next in my head
+[66:46] so we need to connect to the database
+[66:50] first
+[66:53] import
+[66:56] and import
+[66:57] user and here we're going to do
+[66:59] something like
+[67:01] um assign
+[67:03] function and here we're going to do oh
+[67:06] yeah we also need that
+[67:08] Library let's go to
+[67:11] here
+[67:13] okay is it working no it's not in
+[67:19] that leavs
+[67:22] SEO where is it
+[67:28] here we
+[67:30] nope this all right ter of managing
+[67:33] stripe invoices okay
+[67:47] um okay little idea yeah
+[67:51] annoying invoice or refil
+[68:04] and here we want to say uh constant
+[68:08] user users total we going to say count
+[68:13] documents and because it's a we charge
+[68:16] before user create their accounts so
+[68:19] there will be as many users as they are
+[68:21] customers so it is safe to do this
+[68:24] and we can send this to the hero
+[68:28] section from the hero we can receive it
+[68:32] and pass it to
+[68:36] the testimonial
+[68:38] avatars
+[68:42] here and the testimonal Avatar section
+[68:45] we can receive that little
+[68:48] part and
+[68:52] say uh
+[68:54] where is it yep here we can say
+[68:57] this five solo prur sleep better and we
+[69:02] have the number that will be updated
+[69:03] every hour so it is transparent it's
+[69:06] relevant and it's
+[69:09] legit right now it's time
+[69:12] to add some testimonials to the landing
+[69:15] page
+[69:22] uh
+[69:24] I
+[69:36] think I think it makes sense to reuse a
+[69:40] small spread a few components like
+[69:46] this a little bit everywhere in the
+[69:52] app
+[70:06] what do we do for ship Fest how that
+[70:08] looks we testimonials like this yeah
+[70:12] this is exactly the same
+[70:16] thing I think we can reuse the same
+[70:20] template testimonial name and maybe
+[70:23] Twitter followers at the bottom to add
+[70:25] some social
+[70:26] proof that sounds good
+[70:52] um
+[71:13] you think right now we okay we'll
+[71:15] probably have a few testimonials I think
+[71:17] the this section shouldn't be touched
+[71:20] tired of managing stripe invoices should
+[71:24] we add something No Maybe not maybe we
+[71:26] should add a testimonial at the bottom
+[71:29] of this
+[71:31] page yeah probably we want to add a a
+[71:34] user testimonal here and probably
+[71:36] another one under the pricing
+[71:39] section and probably a big call to
+[71:42] action at the bottom okay let's get
+[71:45] coding features
+[71:52] cordion
+[71:57] maybe we can import Nico first or then
+[72:01] no we going to import then cuz I
+[72:16] think I need to send that video to then
+[72:22] must
+[72:37] right then you are live on the YouTube
+[72:40] video and as you can see I am uh adding
+[72:43] your testimonial and this is your name
+[72:45] in my
+[72:47] code I hope you I hope you enjoy the
+[72:50] file
+[72:52] name
+[72:56] then is nothing here to make friends
+[72:58] image okay so this will probably
+[73:04] be there's accordion probably be
+[73:07] underneath that
+[73:10] part and we are going to
+[73:13] browse where did I put that somewhere
+[73:16] here pricing testimonial
+[73:20] three where is it I'm going to just copy
+[73:22] pass the code that I have have already
+[73:23] for Ryan
+[73:32] Huber
+[73:34] Hoover features listic calls and I am
+[73:37] going to copy
+[73:40] past a piece of
+[73:52] code
+[74:00] then
+[74:02] kov feedback
+[74:05] for Zen
+[74:21] voice right we have done here that
+[74:27] says should make that a little
+[74:31] bigger right we get the testimonial from
+[74:34] them that says I don't want to
+[74:37] pay
+[74:40] okay why isn't something like bu like
+[74:43] already this will be a
+[74:52] div
+[75:02] and this will be another line
+[75:07] up and a
+[75:15] bus and I don't spend 10 minutes man
+[75:18] catching invoices either inv voice solve
+[75:20] this problem once and for all they happy
+[75:22] simple but but it Nails the job
+[75:26] perfectly okay um I think because it's a
+[75:29] bigger testal we are going to probably
+[75:31] make this a little bit
+[75:32] smaller space yeah y
+[75:38] two
+[75:40] okay um you are not Ryan you are Dan
+[75:51] kov probably we want to
+[76:01] do on semi bold and maybe
+[76:12] another where are we Mr
+[76:18] Den 23k maybe 24
+[76:22] 23.1 maybe
+[76:34] 23.1k X and
+[76:37] text
+[76:39] content
+[76:52] secondary
+[76:54] okay we might want to add a little bit
+[76:55] more spacing here maybe six and
+[77:02] eight we probably don't need to do
+[77:07] that and we might want to say the max
+[77:11] width to be
+[77:13] MD SM
+[77:22] Maybe
+[77:33] okay the text is too
+[77:46] big this is also a little bit too
+[77:52] big
+[77:59] pretty
+[78:00] good should
+[78:07] four what else do we have to
+[78:20] do okay
+[78:34] okay should we highlight that
+[78:39] part I don't want to spend 10
+[78:42] minutes
+[78:44] really it is a good testimonial so it's
+[78:46] very hard to know which part we should
+[78:48] or should not highlight maybe I'll just
+[78:50] leave it the way it
+[78:51] is
+[78:54] and just
+[78:56] add probably a little bit of margin at
+[79:00] the
+[79:12] top the leading
+[79:16] part that's
+[79:21] good
+[79:25] we can say this I don't want
+[79:27] to right for every invoices sometimes
+[79:30] when testimonal are a little bit
+[79:32] long not very long but longer than just
+[79:35] one sentence you might want to highlight
+[79:37] a sentence or
+[79:41] two I'm trying something
+[79:51] uh
+[79:56] I don't want to pay $2 to sty for every
+[79:59] invoice so I don't want to spend 10
+[80:01] minutes either CR okay all right I think
+[80:04] we get something
+[80:17] here right first testimonial
+[80:21] Luke
+[80:31] [Music]
+[80:44] [Music]
+[80:51] good
+[81:08] toay I don't want to spend 10
+[81:18] minutes factoring
+[81:21] uiu leave
+[81:26] the to the
+[81:34] [Music]
+[81:41] [Music]
+[81:51] point
+[81:55] [Music]
+[82:21] line
+[82:31] [Music]
+[82:32] maybe so I will probably
+[82:36] DOA
+[82:39] this and next item Center
+[82:51] justify
+[83:00] justify
+[83:04] Center okay and we will probably do ch
+[83:08] ch ch
+[83:10] up instead of having this I'm going to
+[83:13] re this
+[83:15] testimonial avatars
+[83:20] array yep I'm going to do that
+[83:23] and I am going to change this part here
+[83:25] for
+[83:26] that let
+[83:29] say
+[83:31] justify it's a flex right inine Flex
+[83:35] just oh maybe I should I have to make it
+[83:37] a flex
+[83:42] then is it working color is a bit off
+[83:48] though oh actually oh maybe okay okay
+[83:52] okay okay I know what I'm going to do
+[83:53] I'm going to
+[83:55] do here I'm just going to do text uh BG
+[84:01] yellow which is going to highlight this
+[84:03] part of a testimonial and we going to
+[84:06] make it maybe
+[84:08] 100 that too much maybe it's said a bit
+[84:11] too much I don't
+[84:21] know
+[84:26] right I feel like this is a decent
+[84:30] testimonial five stars I don't want to
+[84:33] pay
+[84:39] no
+[84:42] okay hey Mark I'm thinking about
+[84:44] building a product that helps folks like
+[84:46] you translate their product uh do you
+[84:48] think that could be valuable for
+[84:51] you
+[84:57] it is a good question I it doesn't come
+[84:59] to mine I could have tried to do it for
+[85:01] some of my products and I didn't for
+[85:03] some
+[85:13] reasons I know I think it's I kind of
+[85:16] need to see how that goes you know if
+[85:17] it's like one click thing for versal
+[85:21] maybe
+[85:23] I think if it's some like of
+[85:25] internationalization
+[85:27] thing not sure not sure curious to see
+[85:30] how you make it
+[85:32] work all right we have Dan testimonal
+[85:34] here now we need to
+[85:37] make nio testimonial somewhere
+[85:41] else for customers okay okay okay I
+[85:45] think yeah we're going to make nicoo
+[85:46] under the pricing
+[85:48] session import
+[85:51] ni image
+[85:54] from and we called him Bangkok boy I can
+[85:59] make fun of them here on the live stream
+[86:01] because I know they will probably not
+[86:04] join Nico will be Bok
+[86:08] uh and I'm stupidly proud of this joke
+[86:13] wow um we are going to make image and
+[86:17] here we're going to see
+[86:19] niik niik Janette
+[86:23] ni see feedback for
+[86:28] invoice
+[86:30] image and we need to import the image
+[86:40] part okay so we should have niik here
+[86:44] and we will just
+[86:46] change uh the right testimonial he said
+[86:49] not having many not having many manually
+[86:53] okay I need to fix the typo actually Le
+[86:56] is a good proof it's a real testimonial
+[86:57] not having manually to create not having
+[87:01] to to make invoices manually is saving
+[87:04] me tons of support work now I can just
+[87:07] send the link to customers and they
+[87:08] handle everything
+[87:12] themselves
+[87:15] okay um h ni we going to put you
+[87:20] here and we are going to copy that
+[87:24] little part
+[87:32] there saving mums of support work right
+[87:35] that's the part we want to
+[87:38] highlight now I
+[87:47] just is maybe we should just break this
+[87:50] in two sentences
+[87:53] um
+[87:57] BR that
+[88:01] looks how does it look Mr niik maybe
+[88:05] it's too big no maybe actually was good
+[88:07] he said one
+[88:21] sentence
+[88:42] right yeah Nico is not done I to make
+[88:46] sure we fix
+[88:48] that what is his name this guy is
+[88:51] supposed to to be my friend and I don't
+[88:53] even know his name is it Jan
+[88:57] Janette or
+[88:59] John we should fix Nico once and for all
+[89:02] Nico just niik
+[89:04] okay D
+[89:06] it I think we should vote for these guys
+[89:08] to entirely
+[89:11] rename his Twitter
+[89:15] name 21.7 B
+[89:20] go
+[89:24] not having to make invoices manually see
+[89:26] saving me tons of work now I can just
+[89:28] send a link to customers and they handle
+[89:30] everything themselves all right that
+[89:35] is
+[89:42] working what do we have here so we
+[89:46] have close close close close landing
+[89:50] page
+[89:59] maybe we should have the
+[90:01] ton wait no maybe that's too early
+[90:04] okay Z invoice Sol this problem for the
+[90:08] app simpol and
+[90:10] perfectly sa me is saving me tons of
+[90:14] support work now I can just send the
+[90:15] link to customers and they handle
+[90:16] everything themselves
+[90:18] good
+[90:20] um maybe we want to have a little C to
+[90:23] action somewhere there under the fq and
+[90:27] so yes I can reuse a ship F component
+[90:30] that is
+[90:31] good I think yeah I think I'll need to
+[90:34] import the button check
+[90:50] out and we go also going to import the
+[90:52] config file oh the config file is right
+[90:55] here we have a buy
+[91:01] button let's see what we got for
+[91:03] headlines oh I think we closed
+[91:09] it
+[91:11] ditch strike
+[91:20] invoice
+[91:26] each the stbe invoice invoicing fee your
+[91:30] startup and here we're going to say let
+[91:32] your
+[91:34] customers jpt you know the drill you've
+[91:38] seen that before let your
+[91:40] customers come on S serve their
+[91:50] invoices let your customers
+[91:54] um
+[91:56] generate edit and download
+[92:01] their invoice
+[92:03] invoices
+[92:09] themselves okay take space
+[92:13] content
+[92:16] secondary yes good good good
+[92:19] good we can remove
+[92:23] I think this might be too big yeah this
+[92:25] is it's probably a little bit too big
+[92:47] yeah each trip invoicing
+[92:50] fee
+[92:59] focused yeah I think we don't have to do
+[93:20] all
+[93:24] it should be
+[93:24] [Music]
+[93:43] enough see
+[93:46] pening before
+[93:49] okay go
+[94:01] we going to
+[94:03] sing
+[94:05] MD
+[94:07] 3648 and let's
+[94:09] go it's not centered what is going
+[94:18] on uh is it not set it right
+[94:22] yeah it is the content this part is
+[94:24] centered but this part is
+[94:28] not I done
+[94:37] here I need toize
+[94:48] that oh yeah I think it's the flex
+[94:51] that's messing
+[94:53] up te Center item Center and I think
+[94:56] justify
+[95:04] Center still
+[95:07] nots come on
+[95:20] Mark yes sir okay that was
+[95:34] it
+[95:39] with uh each strip invoicing fee and
+[95:42] focus on your
+[95:46] startup let you custom generate edit
+[95:48] andad invoices themselves gets invoice
+[95:50] button is working and we can move
+[95:55] on let's um
+[95:58] just put this on a real
+[96:03] screen okay

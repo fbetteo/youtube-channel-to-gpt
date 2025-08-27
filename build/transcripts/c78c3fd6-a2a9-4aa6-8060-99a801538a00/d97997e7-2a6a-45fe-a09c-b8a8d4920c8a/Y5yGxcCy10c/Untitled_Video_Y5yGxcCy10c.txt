@@ -1,0 +1,577 @@
+Video Title: Untitled_Video
+Video ID: Y5yGxcCy10c
+URL: https://www.youtube.com/watch?v=Y5yGxcCy10c
+View Count: 0
+
+[00:00] good morning everyone i'm jun yang a
+[00:03] professor of statistics at uconn
+[00:06] on behalf of the organizing committee
+[00:08] i'd like to extend the warmest welcome
+[00:11] to all of you to the 2020 yukon
+[00:14] sports analytics symposium uc says
+[00:17] hosted at uconn a world renowned school
+[00:21] for college sports
+[00:23] there are many sports analytics
+[00:24] conferences why this one
+[00:27] our distinctive feature is the focus on
+[00:30] students
+[00:31] the future workforce of sports analytics
+[00:34] our conference is designed to be
+[00:37] accessible in terms of technical level
+[00:40] cost and space to students and all our
+[00:44] missions are to showcase sports
+[00:46] analytics for students at an accessible
+[00:49] level train students in data analytics
+[00:52] with application to sports data and
+[00:55] foster collaboration between academic
+[00:57] programs and the sports industry
+[01:00] being virtual this year gives more power
+[01:03] to our conference
+[01:04] as of this moment we have
+[01:06] over 300 registrants which is about
+[01:09] three times of the size last year we
+[01:12] have a packed program ahead
+[01:14] four special guests will give welcoming
+[01:17] remarks the first one is dr carl
+[01:20] leachway provost and executive vice
+[01:23] president for academic affairs
+[01:26] university of connecticut
+[01:28] please join me in welcoming dr lijway
+[01:35] carl
+[01:40] okay great thank you uh so welcome
+[01:43] virtually to uconn a top 25 public
+[01:46] university that excels in the student
+[01:48] experience
+[01:50] research to drive discovery and further
+[01:53] expand that student experience and a
+[01:54] world-class sports program that draws
+[01:57] students to uconn
+[01:58] keeps our alumni connected and supports
+[02:01] the state of connecticut in so many
+[02:03] important ways i want to say
+[02:05] congratulations to the statistical data
+[02:07] science lab at uconn and dr yan for
+[02:10] pulling together
+[02:11] the 2020 yukon sports analytic
+[02:14] conference
+[02:15] as he mentioned there are some some
+[02:16] really unique and special aspects about
+[02:19] this conference uh particularly
+[02:21] and this also connects with what i had
+[02:23] said about you know the mission and
+[02:25] vision of our university is the way in
+[02:27] which the conference is unique in its
+[02:29] focus on students and this includes
+[02:32] excellent posters and and making the
+[02:34] conference accessible to students
+[02:37] uconn has you know a really terrific
+[02:40] statistics team that provides a base for
+[02:43] for us
+[02:44] kind of supporting and holding this and
+[02:47] and as dr yan mentioned it's a great
+[02:50] sports school and so it's a great place
+[02:52] to host this sort of event
+[02:54] i'll just say personally i i have a
+[02:56] connection to this world i
+[02:59] for a early part of my career have been
+[03:01] a consultant a college basketball teams
+[03:04] and and thinking about the interplay of
+[03:07] analytics but with mental health
+[03:10] and i just want to give you a quick
+[03:11] example
+[03:12] there was one team i was working with
+[03:14] and a
+[03:15] center who analytics easily told us that
+[03:19] in practice
+[03:20] he shot about 80 percent in his free
+[03:22] throws and in games he shot under 50
+[03:25] analytics also could tell us
+[03:27] that he almost always missed the first
+[03:30] free throw and almost always made the
+[03:32] second one but
+[03:33] what it couldn't tell us on its own is
+[03:35] is the way it is kind of the why
+[03:38] and and what is maybe the unique aspect
+[03:40] of that individual and it turned out in
+[03:42] this case
+[03:43] this was someone who went when he would
+[03:47] get uh
+[03:48] uh kind of out of breath from from
+[03:51] physical exertion would get anxious
+[03:54] and that anxiety made it really
+[03:56] difficult for him to shoot his free
+[03:58] throws so
+[03:59] by the second free throw he had calmed
+[04:01] down and it was much more like the way
+[04:03] he had practiced and so it was
+[04:05] interesting because what we tried to do
+[04:06] at first
+[04:07] was to say okay let's figure out how to
+[04:10] make him less anxious or to figure out
+[04:13] uh you know what are the ways in which
+[04:15] you know we can calm them down and
+[04:17] simply we couldn't figure it out it just
+[04:19] nothing was working
+[04:21] so then we thought okay let's simulate
+[04:24] the anxiety experience in practice so
+[04:27] we'd have him breathe into a paper bag
+[04:30] create
+[04:31] that kind of hyperventilation and then
+[04:33] that anxiety and have him practice
+[04:36] in the anxiety state
+[04:38] and you know i'll just say and of course
+[04:39] i'm cherry picking but um one of the
+[04:42] very last games of the season and a
+[04:43] victory over duke he shot 16 for 21 from
+[04:46] the free throw line and
+[04:48] paid almost all of his first free throws
+[04:50] so
+[04:51] mental health is something that's
+[04:53] important to me i'm a professor in
+[04:55] psychological sciences and and i know
+[04:58] data analytics is an incredibly powerful
+[05:00] tool and and i hope
+[05:02] that throughout the day
+[05:04] we can just think about you know kind of
+[05:06] our student athletes as as people and
+[05:09] and the kind of mental health aspect
+[05:11] but separately this
+[05:13] is really a great event i'm thrilled we
+[05:15] have it here at uconn and i love when
+[05:18] when we have the opportunity to really
+[05:20] take several areas of strengths in this
+[05:23] case what uconn can do in terms of
+[05:26] statistical analyses and understanding
+[05:29] data what uconn can do in terms of
+[05:32] bringing great partners and creating
+[05:33] collaborations and what yukon means in
+[05:36] terms of a great sports university
+[05:38] so thank you for letting me talk for a
+[05:40] few minutes and and i hope everyone has
+[05:42] a great conference today
+[05:45] thank you carl
+[05:46] next we have anthony grazo football
+[05:49] assistant strength and conditioning
+[05:51] coach university of our connecticut
+[05:54] let's welcome anthony
+[05:56] how you doing everybody thank you doc i
+[05:57] really appreciate that and i'm honored
+[05:59] to be able to be here and represent
+[06:01] athletics i quickly just want to shout
+[06:03] out the two statistics interns that have
+[06:05] actually helped me with a lot of the
+[06:06] catapult and gps data georgia
+[06:08] casparowicz and spencer tibbling uh
+[06:10] georgia actually submitted one of her
+[06:11] posters today so uh it should be pretty
+[06:13] interesting to see what what she's been
+[06:14] able to present and obviously come up
+[06:16] with uh and just to just to actually
+[06:18] build off what carl was talking about
+[06:19] it's a very interesting topic where
+[06:21] you're you're essentially taking a look
+[06:23] at and my vision of what sports science
+[06:25] is is where
+[06:26] science in general takes a look at what
+[06:28] is right what is happening what are what
+[06:31] are the truths behind what is happening
+[06:33] and obviously you guys are able to
+[06:34] gather some form of data that would
+[06:36] allow you to take some information in
+[06:38] about this particular basketball player
+[06:39] carl and you can say to yourself well
+[06:41] you were looking for the why right and
+[06:43] that's kind of where i see sport data
+[06:45] and analytics going even not even just
+[06:47] in the sports science sense but just in
+[06:49] general we want to take a look at what
+[06:50] is
+[06:51] and now we need to come up with and use
+[06:53] our brains to come up with what ought to
+[06:55] be and what are some of the robust
+[06:56] protocols and some of the some of the
+[06:58] some of the ways that we can actually
+[06:59] create planning and preparation for
+[07:01] these athletes to better
+[07:02] sort of combat some of the issues that
+[07:04] they may take in during that particular
+[07:06] point in time so you guys obviously
+[07:07] decided at that particular point in time
+[07:09] let's try and duplicate or simulate this
+[07:11] this particular point of anxiety that he
+[07:13] feels and let's just make sure that he
+[07:15] understands what he is going to face
+[07:16] when he gets into those particular
+[07:17] positions to be honest with you carl
+[07:19] that right there coming from yourself
+[07:21] who's obviously a provost at this
+[07:23] university i can i can firmly say that
+[07:26] that
+[07:27] thought process is farther along than
+[07:30] many of the thought processes that i
+[07:31] experience on a daily basis in the world
+[07:33] of sport performance right from sport
+[07:35] coaches from
+[07:36] whether sport coaches train coaches
+[07:38] athletic trainers whatever the case may
+[07:40] be right trying to figure out a way to
+[07:42] bridge the gap and really take a look at
+[07:43] truths and ways that we can look at the
+[07:44] game demands and actually understand
+[07:46] what the game asks of these players
+[07:49] then coming up with some of the plans
+[07:51] that we need to do to actually make
+[07:52] sensible decisions right so that's kind
+[07:54] of my vision for sports science and doc
+[07:55] wanted me to kind of talk about where i
+[07:57] see sports science going at uconn well
+[07:59] what i really tried to push forward and
+[08:01] i'm in the process of pushing forward
+[08:02] now is creating sort of a service
+[08:04] platform for basically all of the teams
+[08:07] that are that are prevalent at uconn so
+[08:10] taking a look at whether it be men's
+[08:11] soccer women's soccer basketball hockey
+[08:13] football whatever
+[08:14] being able to provide them with
+[08:16] obviously they have a sport coach they
+[08:17] have athletic trainers they have a
+[08:19] sports nutritionist they have
+[08:21] a team psychologist obviously they have
+[08:23] you know
+[08:24] a group of individuals but adding to
+[08:26] that a sports scientist that would be
+[08:28] sort of allotted to that particular
+[08:29] point in time particular team to make
+[08:32] sure that they had some sort of bridging
+[08:34] at the gap right bringing the lab to the
+[08:36] field bringing the field to the lab and
+[08:37] what this does is it would give
+[08:38] everybody a chance to obviously
+[08:40] collaborate because the training process
+[08:42] requires immense collaboration so
+[08:44] giving someone who may be interested in
+[08:46] sports science and spends a lot of time
+[08:47] down in the lab an opportunity to speak
+[08:49] to a sport coach or a strength coach and
+[08:51] giving them a little bit more feedback
+[08:52] on how they can actually work together
+[08:54] and create some sort of universal
+[08:55] language amongst all of the people at
+[08:57] uconn now
+[08:59] with any vision obviously there are
+[09:00] going to be obstacles right and i i
+[09:02] would be remiss to not point out the the
+[09:04] massive obstacles that are going to be
+[09:05] coming your way when we try to talk
+[09:07] about putting forth data and analytics
+[09:09] and actually getting it to a point where
+[09:10] people are listening and taking a look
+[09:12] at the actual facts of you know in my
+[09:14] specific right my work in the physical
+[09:16] sense right so we're taking a look at
+[09:18] the specific game demands as far as how
+[09:20] much ground do these guys cover right
+[09:22] what are the sport movements that they
+[09:23] perform the competition movements uh how
+[09:26] fast they perform them what are the
+[09:27] distances they perform them at uh and
+[09:29] obviously the speeds and the different
+[09:30] intensities some of them perform in a
+[09:32] high intensity fashion some movements
+[09:34] are performed at a certain amount of
+[09:35] time in low intensity fashions are these
+[09:37] time motion analysis have to be used to
+[09:39] really try to gather these truths but
+[09:40] the obstacles are obviously going to be
+[09:42] coming into play when you talk about
+[09:43] having an underdeveloped sports
+[09:45] structure here in america and maybe
+[09:47] another place as well but i can speak
+[09:49] specifically to that fractured support
+[09:52] structure and that's fractured sports
+[09:53] society that we have where in any other
+[09:56] profession you're going to have
+[09:58] individuals who have all kind of reached
+[10:00] a standard of excellence prior to
+[10:01] diverging in their separate pathways
+[10:03] here we do not really
+[10:05] that's not really the case in score
+[10:06] performance right you can kind of just
+[10:08] become a coach and you can be you can
+[10:09] work your way towards athletic training
+[10:10] but
+[10:11] in my opinion and what i really truly
+[10:14] believe is that it is not enough to
+[10:15] simply just be interested in your
+[10:17] particular realm and and no one is free
+[10:19] of this criticism there there are
+[10:20] strength coaches out there athletic
+[10:22] trainers sport coaches sports scientists
+[10:24] who
+[10:25] even in their interest in that
+[10:27] particular field are not doing what is
+[10:29] truly sensible for the athlete and so no
+[10:32] one is free of that criticism but it is
+[10:33] not enough to even just be interested in
+[10:35] your particular realm you need to be
+[10:37] interested in the holistic approach as
+[10:38] to how every single one of those
+[10:40] elements affects every single other one
+[10:42] of those elements and ultimately i
+[10:44] believe that the athlete will be the one
+[10:45] that will obviously reap the most
+[10:46] benefits which is the most important
+[10:48] piece of this and lastly i just want to
+[10:50] touch on the theme of explanation over
+[10:53] experience so i'll going through all
+[10:55] these posters and obviously i'm you know
+[10:57] fortunate enough to be a panelist we'll
+[10:58] look at some of this great work that's
+[10:59] been done
+[11:00] all of the explanations that were
+[11:02] created were incredible explanations
+[11:05] right you guys decided you you went a
+[11:06] certain route to try to decide on how
+[11:08] you could come to this explanation and
+[11:11] when you guys came to this explanation
+[11:13] you decided that that was the most
+[11:14] robust defense of your findings right so
+[11:17] when it comes to sport performance that
+[11:19] should be the case it should be your
+[11:21] explanation over your experience your
+[11:23] experience level and and how long you've
+[11:25] been doing something to me it's almost
+[11:27] meaningless because i know that if
+[11:29] regardless of how long you've been doing
+[11:30] something if i come to you with the
+[11:32] whole concept of the best idea wins if i
+[11:35] have an explanation as to why this may
+[11:36] be better for a particular athlete at
+[11:38] this particular point in time and my my
+[11:40] defense holds up stronger than yours
+[11:42] then my idea should win and if you are
+[11:44] someone who's been in the fields for x
+[11:45] amount of years but you don't have great
+[11:46] explanations for why the things are why
+[11:48] you're doing the things that you're
+[11:49] doing well i'm sorry but eventually
+[11:51] you're going to be overridden and you're
+[11:53] going to actually be pushed to the side
+[11:54] because the explanation needs to come
+[11:56] through
+[11:57] um
+[11:58] and so our one last thing i really have
+[11:59] to say the idea of hindsight bias is
+[12:01] something that we're plagued by in sport
+[12:02] structure and what i thought was so
+[12:04] interesting for you guys who are going
+[12:06] to obviously continue working forward
+[12:08] towards data and analytics and again
+[12:10] understanding what is
+[12:11] we often try to determine whether a
+[12:13] certain decision was a mistake or not
+[12:16] based off of the outcome right we always
+[12:18] do that we based off the outcome like oh
+[12:19] like i decided to go this route it
+[12:21] worked in my favor well that's great the
+[12:23] reality is decisions and mistakes are
+[12:26] made in the processes that led up to
+[12:28] that particular point in time right so
+[12:30] obviously given the information you had
+[12:32] at the point in time when you made that
+[12:34] decision is actually what determines
+[12:35] whether that was a mistake or not
+[12:37] regardless of the outcome and we see it
+[12:38] all the time in sport performance where
+[12:40] a coach will say
+[12:41] well we won so i must have done the
+[12:43] right things right and then obviously we
+[12:45] know that isn't the case so i i continue
+[12:47] to implore you to
+[12:49] try to find ways to have better
+[12:50] explanations for things and to create
+[12:52] more scenarios where you're making
+[12:54] decisions
+[12:56] pre
+[12:57] outcome that will help influence and get
+[12:59] at least get you a little bit closer to
+[13:01] be able to make more robust decisions
+[13:02] prior to finding out what those outcomes
+[13:04] are so um again this is a very deep
+[13:07] topic it's obviously what i'm very
+[13:08] passionate about i appreciate you guys
+[13:10] giving me the opportunity to talk about
+[13:11] this i really hope that you guys
+[13:13] continue to move forward and just try to
+[13:14] create more robust explanations as to
+[13:16] why you believe that your particular
+[13:19] work is the best and what can continue
+[13:21] to drive everybody in the right
+[13:22] direction thank you
+[13:24] thank you
+[13:25] our next speaker is deviant pluhler
+[13:28] director of analytics toronto football
+[13:30] club the team happens to be using uconn
+[13:33] stadium recently let's welcome devin
+[13:37] hello thanks for having me um you know
+[13:39] i'm going to keep it uh nice and short
+[13:42] and uh sharp here um you know my name my
+[13:44] name is evan pluhler i'm the director of
+[13:46] analytics at toronto fc i've been up
+[13:48] there about uh
+[13:50] five or six seasons now which is crazy
+[13:52] to think about i'm responsible for the
+[13:54] integration of analytics and data
+[13:56] science and all the sports facing uh
+[13:59] aspects of the
+[14:01] organization uh we're part of the larger
+[14:03] maple leafs and sports entertainment
+[14:04] group uh which has obviously been really
+[14:06] exciting over the last couple years with
+[14:07] the raptor success and we've had to bid
+[14:09] ourselves as well um you know largely
+[14:12] you know what i work on on a day-to-day
+[14:13] basis is are things like uh player
+[14:16] recruitment and opposition analysis and
+[14:19] how data science and
+[14:21] uh analysis can kind of make those
+[14:23] different pieces of our organization
+[14:25] more efficient and faster
+[14:27] i'm actually from the new england area
+[14:28] originally i'm from gloucester
+[14:30] massachusetts not not too far from from
+[14:33] uconn i definitely played quite a few
+[14:35] games down in the uh hartford area
+[14:37] growing up um
+[14:39] but uh because of covet i haven't been
+[14:41] home in about a year i haven't been home
+[14:43] since the mit conference back in what is
+[14:45] that february ish
+[14:48] so i'm happy to be visiting virtually uh
+[14:50] if nothing else um though i am
+[14:52] admittedly pretty happy to be hanging
+[14:55] out above the border uh for this last
+[14:57] month before before a certain election
+[14:59] happens um you know covet obviously has
+[15:02] been uh pretty awful um in a lot of
+[15:05] senses um and but it has made some
+[15:07] pretty funny bed fellows in toronto fc
+[15:09] and uh yukon uh and for those that don't
+[15:12] know uh we have made wrensler stadium
+[15:14] our home away from home and uh from
+[15:17] everyone that i've heard from on the
+[15:18] ground down there uh the staff has
+[15:20] really bent over backwards uh for us an
+[15:23] organization and really have made it
+[15:24] felt
+[15:25] genuinely like a home uh so i do want to
+[15:28] extend you know a sincere thank you from
+[15:30] our organization to the yukon sports
+[15:32] department uh and community uh for their
+[15:35] hospitality uh but but i have to say as
+[15:37] an analytics guy i was naturally pretty
+[15:39] suspicious of what the actual home field
+[15:42] advantage would be with using such a
+[15:44] surrogate home field um
+[15:46] but uh you know i'm not sure if our our
+[15:49] two wins and zero losses start as a
+[15:51] sufficient sample size to really draw
+[15:53] any real conclusions but but i am
+[15:56] optimistic so uh that's it for me thank
+[15:59] you uh and enjoy the enjoy the
+[16:01] conference
+[16:03] thank you devin our last speaker is dr
+[16:06] michael lopez director of football data
+[16:09] and analytics
+[16:10] national football league he's the one
+[16:12] behind the big data ball of the nfl
+[16:15] let's welcome mike
+[16:18] great thanks june and
+[16:20] devin i can assure you that two out of
+[16:22] two is 100 and so that's uh pretty
+[16:25] significant in my opinion
+[16:26] um i'm uh i work at the national
+[16:29] football league and i work in our
+[16:30] football data and analytics group our
+[16:32] job at the league office is to use data
+[16:34] to enhance and better understand the
+[16:36] game of football that comes in a variety
+[16:38] of ways that's the competitiveness on
+[16:40] the field
+[16:41] that's the health and safety
+[16:44] of our players
+[16:45] that's our officiating pace of play
+[16:47] player conduct all those types of things
+[16:49] i think given that this is a conference
+[16:51] driven for students i want to think back
+[16:53] to my days as a student quickly
+[16:55] when i was a college student
+[16:58] we were i was interested in doing
+[17:00] statistics
+[17:02] but at that point it was the early 2000s
+[17:03] and there wasn't a lot of data to look
+[17:05] into
+[17:07] and
+[17:08] at that point my only real option was to
+[17:11] go online and find baseball statistics
+[17:13] but there wasn't an easy way of getting
+[17:15] baseball statistics so as a result my
+[17:18] baseball thesis as an undergraduate at
+[17:20] bates college
+[17:21] consisted of copying and pasting all the
+[17:23] players with the last names a and b
+[17:26] into an excel spreadsheet and then
+[17:27] analyzing that data in r
+[17:30] why did i choose a and b well because it
+[17:31] was the start of the alphabet for first
+[17:33] and secondly because i like barry bonds
+[17:36] who who at the time in 2003 was was
+[17:39] hitting some home runs for various
+[17:40] reasons
+[17:41] in any case the world of sports looks a
+[17:43] lot different hopefully you wouldn't do
+[17:44] a senior thesis with players with the
+[17:46] last name a and b now
+[17:47] in large part because the data out there
+[17:49] is so much more expansive
+[17:51] correspondingly the opportunities for
+[17:53] folks in sports data analytics are much
+[17:55] wider than they are in 2003. i wrote my
+[17:57] thesis and i got a couple suggestions to
+[17:59] send via mail
+[18:01] to people on baseball teams and so i
+[18:04] sent out my thesis to random baseball
+[18:06] teams saying hey i wrote this get me a
+[18:08] job
+[18:09] not surprisingly that didn't lead to a
+[18:10] lot of opportunities it actually took me
+[18:13] about 15 years to actually get a
+[18:15] full-time job in sports and that's where
+[18:17] i am now
+[18:18] the opportunities for students now are
+[18:19] much wider i work in the league office
+[18:22] there's obviously jobs on teams
+[18:24] uh vendors that work with sports
+[18:26] organizations and football that would be
+[18:27] like pff telemetry sports uh those types
+[18:31] of organizations uh have have also
+[18:33] opportunities for folks in sports
+[18:35] anthony imagine sports science in
+[18:37] working with data that that deals with
+[18:39] players and their health and their their
+[18:40] practice data that's certainly an option
+[18:43] um so i encourage you to consider this
+[18:44] as a long-term option today you'll hear
+[18:47] a lot of excellent talks uh and the
+[18:49] keynote presentations will give you an
+[18:50] idea of sort of what goes on into into
+[18:53] transformative uh research that can help
+[18:55] professional organizations whether it be
+[18:57] teams or league office
+[18:59] on that note i'm going to introduce one
+[19:01] of our data analysts at the league
+[19:03] office tom bliss who's going to start
+[19:06] with a presentation about how our
+[19:08] football group can use data to better
+[19:10] understand the game of football

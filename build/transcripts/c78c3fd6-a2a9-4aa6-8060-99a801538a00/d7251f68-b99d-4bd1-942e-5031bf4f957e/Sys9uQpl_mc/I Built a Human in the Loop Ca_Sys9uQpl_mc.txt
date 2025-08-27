@@ -1,0 +1,53 @@
+Video Title: I Built a Human in the Loop Calendar Agent in n8n  #n8n #coding #agentgpt #artificialintelligence
+Video ID: Sys9uQpl_mc
+URL: https://www.youtube.com/watch?v=Sys9uQpl_mc
+View Count: 10,651
+
+[00:00] I just built a fully humanin thee Loop
+[00:01] calendar agent in nadn using no code so
+[00:03] what I'm going to say is create an event
+[00:04] for tonight with Michael Scott for
+[00:06] dinner at 5:00 p.m. but as you can see
+[00:07] we have a scheduling conflict so I set
+[00:09] that off to the agent it's going to look
+[00:10] at our calendar events as well as get
+[00:12] Michael Scott's contact information and
+[00:14] then it's going to send us a message to
+[00:15] approve so here's what we got back
+[00:16] you've requested to create an event for
+[00:17] dinner tonight at 5:00 p.m. with Michael
+[00:19] Scott although Michael has two email
+[00:21] addresses so which one do you want us to
+[00:22] send it to additionally I found an
+[00:24] existing event scheduled for today from
+[00:25] 4:17 to 517 which is a scheduling
+[00:28] conflict would you like us to proceed
+[00:30] with creating the event for 5:00 p.m. or
+[00:31] do you want to reschedule delete what do
+[00:32] you want to do so now I'm giving
+[00:34] feedback I said use his business email
+[00:35] and keep the time and as soon as we send
+[00:37] this off it goes back to the workflow to
+[00:39] go to the correction agent to make a
+[00:40] revision to our request now we can see
+[00:42] in telegram we have a new intent create
+[00:43] an event for dinner tonight at 5:00 p.m.
+[00:45] with Michael Scott using his business
+[00:46] email address as you can see we have the
+[00:48] details of the event right here with the
+[00:50] correct address and then it asks us to
+[00:52] confirm if this is correct so we can go
+[00:53] in here and say correct send that off
+[00:55] and then we'll see in the workflow it's
+[00:56] going up to the calendar agent and now
+[00:58] it's creating that event for us so we
+[00:59] ref fully in the loop making sure
+[01:01] everything was correct so now you can
+[01:02] see that the event has been created with
+[01:04] Michael's business email even though
+[01:05] there's a scheduling conflict it's okay
+[01:07] because we approved it ourselves if you
+[01:09] want to learn more about how I built
+[01:10] this or even download this workflow for
+[01:11] free then check out my channel see you
+[01:13] guys over there

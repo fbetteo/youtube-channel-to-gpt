@@ -1,0 +1,561 @@
+Video Title: How to Build a Google Scraping AI Agent with n8n (Step By Step Tutorial)
+Video ID: R36bpNPPIMs
+URL: https://www.youtube.com/watch?v=R36bpNPPIMs
+View Count: 40,900
+
+[00:00] so today I'm going to be walking through
+[00:01] step byep how to build this Google
+[00:03] scraping AI agent in NN in this specific
+[00:06] video I'll be using the agent to scrape
+[00:07] Google for LinkedIn profile URLs so
+[00:10] let's not waste any time by the end of
+[00:12] this video you guys all have a great
+[00:13] idea of how to get this up and running
+[00:14] and how to give your agent access to
+[00:16] different tools like the ability to
+[00:18] scrape Google so let's hop into a quick
+[00:20] demo real quick so we can see how the
+[00:22] agent Works before we actually see how
+[00:23] to build this thing so here's the agent
+[00:25] it's super simple we've only got these
+[00:27] three tools here and if this doesn't
+[00:29] make sense yet by the end of this video
+[00:30] it all will so don't worry about that
+[00:32] but what we're going to do is we're
+[00:33] going to chat with this agent and we're
+[00:35] going to ask it to get CEOs in real
+[00:40] estate in Chicago and so we're asking it
+[00:43] here and it's going to go through these
+[00:44] tools and this is the worksheet that
+[00:46] we're actually having the agent populate
+[00:49] these profiles into so as you can see we
+[00:50] just got 10 of them and if we click here
+[00:52] we go up and look at Jeff we will see
+[00:55] that he is indeed a CEO of real estate
+[00:59] in Chicago so we know that this tool is
+[01:01] working correctly and that is basically
+[01:03] how this thing works and you you'll be
+[01:05] able to ask for you know describe a type
+[01:07] of person that you're looking for and it
+[01:09] will go search Google and scrape Google
+[01:11] to get those profiles into a sheet like
+[01:13] this now that we've seen a demo of how
+[01:14] we chat with the agent and how it
+[01:15] actually works let's move into what we
+[01:17] need in order to build this thing so
+[01:19] first nadn that is the website that
+[01:21] we're building the workflows on for the
+[01:23] tool and for the agent then we've got
+[01:25] open AI API if you don't have an open AI
+[01:28] account you'll need to make one but
+[01:30] super quick and you'll just need to be
+[01:31] able to go in and get your API key there
+[01:33] and then finally Google Sheets um
+[01:35] everyone sort of knows what Google
+[01:36] Sheets is but that's like I said the
+[01:38] database where we're storing the URLs
+[01:40] into so finally we're building two
+[01:42] workflows today the first one is going
+[01:43] to be the tool that scrapes Google for
+[01:45] the URLs and then the second one is the
+[01:47] actual agent that we can interact with
+[01:50] so that's all for the prep stage let's
+[01:53] hop back into
+[01:54] NN and let's start a new workflow and
+[01:57] start building this thing okay so this
+[01:59] is the first workflow that we're going
+[02:00] to be building this is going to be the
+[02:01] one that grabs the LinkedIn URLs from
+[02:03] Google so the first step here is going
+[02:05] to be a when called by another workflow
+[02:08] trigger this is just saying that this
+[02:11] workflow will execute when another
+[02:12] workflow calls it which in this case the
+[02:15] AI agent is going to be thinking about
+[02:17] how do I actually scrape Google and it's
+[02:18] going to call this
+[02:20] workflow so we need to fill out this
+[02:22] node with with our data as you can see
+[02:24] this is just sort of the basics but we
+[02:26] want to fill it in with actual
+[02:28] parameters so when we are talking to the
+[02:32] agent we'll give it these parameters to
+[02:33] search Google for which are going to be
+[02:36] job title company industry and location
+[02:38] and we're going to fill this in with the
+[02:39] information that we used in the demo
+[02:41] just because we can actually test the
+[02:42] workflow to make sure that it's it's
+[02:44] scraping correctly so I'm going to fill
+[02:47] in this information here so that we can
+[02:49] test this workflow as we're building it
+[02:53] okay so here's our information the next
+[02:55] step is to connect an open AI node so
+[02:58] we're going to go grab an open AI and
+[03:00] message a
+[03:01] model so at this point if you haven't
+[03:03] set up an open AI account you'll need to
+[03:05] do so and once you have that set up
+[03:07] you're going to create a new credential
+[03:08] and as you can see we need an API key so
+[03:11] if you go to open AI on the left hand
+[03:13] side go to API Keys you can create a new
+[03:15] key up here name it whatever you want
+[03:17] and then it will give you this value to
+[03:19] copy into nadn which is the API key when
+[03:22] you hit save it'll turn green if you're
+[03:23] good to go and we're good to go so we're
+[03:27] going to leave it as text leave it as
+[03:28] message a model and then we need to
+[03:29] choose a GPT model to use I'm going to
+[03:32] use 40 it just seems to be the most
+[03:35] consistent but then in here we need to
+[03:37] give this not a system prompt so we are
+[03:40] going to say I'm just copying this in so
+[03:43] you guys don't have to watch me type but
+[03:45] we're going to say can you parse the
+[03:46] Json query which is this information
+[03:48] over here and then output it as the
+[03:50] following parameters separately so we
+[03:52] want job title company industry and
+[03:53] location output over here and we're
+[03:56] going to change this to a system prompt
+[03:57] because we're telling the node you know
+[03:59] we're giving instructions on how to act
+[04:01] and then we're going to add another
+[04:02] message because it needs the actual data
+[04:05] so all we're going to do is drag in
+[04:06] query and this will be you know this
+[04:08] will be variable based on what we say to
+[04:11] the agent so as you can see in this case
+[04:12] we've got job title CEO real estate and
+[04:16] Chicago so then finally we just want to
+[04:18] Output the content as Json and then we
+[04:21] can test this
+[04:22] step so we can see that the information
+[04:25] is coming through over here CEO real
+[04:27] estate and Chicago and one thing I just
+[04:29] thought of is we want to make sure that
+[04:31] this information is always coming
+[04:32] through as a string so in front of this
+[04:34] dollar sign if we type in json.stringify
+[04:37] and then open parenthesis and we close
+[04:41] it it'll go green so we know it works
+[04:43] and then we'll just test that step one
+[04:44] more time and that just ensures that all
+[04:46] the information coming out on the right
+[04:47] side of this node is going to be a
+[04:50] string now the next thing we need to do
+[04:53] is actually set up the node that's going
+[04:55] to call Google so we're going to go in
+[04:57] here and we're going to grab an HTTP
+[04:59] request
+[05:00] node so these nodes at least when I
+[05:03] first started playing with them they
+[05:04] just seem super um intimidating because
+[05:07] there's so much to fill out and there's
+[05:08] it looks like you're going to need to
+[05:10] know how to code but we'll make it as
+[05:12] simple as possible here so the first
+[05:14] thing is the method of the
+[05:16] request basically get just means that we
+[05:18] are wanting to have information returned
+[05:21] to us we're not updating information
+[05:23] we're not putting information anywhere
+[05:24] we're just getting information back so
+[05:26] we're getting the UR URL we're going to
+[05:29] use is just a simple Google search so
+[05:32] copying this in here Google search so
+[05:35] this is as simple as in here if you
+[05:38] typed in this exact thing that we're
+[05:40] copying it would bring you to the Google
+[05:41] search page so that is what this is
+[05:44] doing authentication we can leave this
+[05:46] as none for now but we do need to set up
+[05:49] parameters and headers so first thing is
+[05:52] a parameter um this is just saying once
+[05:55] we're in Google search what are we
+[05:56] actually looking for so the first thing
+[05:58] is going to be
+[06:00] um we're calling this one
+[06:02] q and the first part of this parameter
+[06:05] is we only want to see LinkedIn sites so
+[06:09] sitecon linkedin.com
+[06:12] slin and let me just show you guys if we
+[06:14] were to put this in this Google Search
+[06:16] we are seeing only LinkedIn
+[06:20] results so that is what is happening
+[06:22] right
+[06:23] here and now we need to fill in the
+[06:25] parameter with the variables that we are
+[06:28] telling the agent so we've got LinkedIn
+[06:31] and then we are going to say we're going
+[06:33] to be also searching for you know CEOs
+[06:35] or the job title then we're going to
+[06:37] also drag in we want their industry and
+[06:39] then we also want the location so now we
+[06:42] have a variable sort of search criteria
+[06:45] and let's see if we paste this in oops
+[06:47] if we paste this exact thing into Google
+[06:50] search we will be getting there's Jeff
+[06:53] that's the first um result that showed
+[06:55] up for us but now we're getting CEOs in
+[06:58] real estate industry in Chicago and only
+[07:00] LinkedIn results so that's what's
+[07:03] happening down here and finally which I
+[07:06] think is always the most confusing part
+[07:07] is we need to set up the
+[07:09] headers
+[07:11] so let me just paste in this information
+[07:13] here and then I can explain sort of how
+[07:15] I got it this information I did not know
+[07:18] myself right like this looks crazy Who
+[07:20] would know to type this in pretty much
+[07:23] all I did was um I came into chat gbt
+[07:26] here and on the left hand side you've
+[07:28] got explore gbt so if if you go in here
+[07:30] you can see different ones that people
+[07:32] have made and I just typed in NN and it
+[07:34] brought me
+[07:35] to um basically an n8n assistant GPT
+[07:39] which I don't know this is loading
+[07:40] forever but you can search it right here
+[07:42] Ann assistant so I clicked on this one
+[07:45] and I just started chatting with it and
+[07:46] I basically asked
+[07:48] like can you help me set up
+[07:53] header for HTTP request
+[07:56] [Music]
+[07:57] node um
+[08:00] I'm searching Google for
+[08:04] LinkedIn URLs okay so as you can see
+[08:08] it's really helpful it's going to show
+[08:09] you how to set up this node it's going
+[08:10] to tell you about the git method it's
+[08:12] going to tell you about how to set up
+[08:13] that URL but right here is what we're
+[08:14] looking for which is the header so the
+[08:16] header is named user agent and then
+[08:18] here's that Mozilla all the stuff that I
+[08:21] put in there and it says that some
+[08:23] websites like Google May block requests
+[08:25] if no user agent is specified so you
+[08:27] need to add one so that's exactly how I
+[08:29] got this information down here simple
+[08:33] okay so we're going to test the step to
+[08:34] see if we're actually getting
+[08:35] information back from Google and you
+[08:38] know this might look like it didn't work
+[08:39] but it did work so this is just a ton of
+[08:41] HTML huge chunk of nonsense that no one
+[08:44] you know can really interpret but if we
+[08:46] come in here and we search for
+[08:48] LinkedIn um you can see that it's like
+[08:50] pulling back data on LinkedIn and if we
+[08:53] click down far enough we will start to
+[08:55] see our actual search results so here's
+[08:57] linkedin.com slpa
+[09:00] we go up a little bit we should see Jeff
+[09:01] so here is Jeff's um LinkedIn profile so
+[09:05] we're getting information back from
+[09:07] Google now we just need to actually make
+[09:08] it digestible so the next node is going
+[09:12] to be a code node and this is going to
+[09:14] parse the information that we're getting
+[09:16] this nasty chunk of HTML and it's going
+[09:19] to parse it to only return what we want
+[09:21] which are the LinkedIn profile
+[09:24] URLs so once again I don't really know
+[09:28] how to code enough to get that out of
+[09:29] here especially in Java so what we're
+[09:31] going to do is we are going
+[09:33] to grab some of this let's actually go
+[09:37] down to the Jeff
+[09:41] example which is right here okay so I'm
+[09:44] just going to grab a chunk of this right
+[09:47] here and say that we're going to go back
+[09:50] into the chat assistant and we're going
+[09:51] to say can you write code to parse out
+[09:56] the
+[09:57] LinkedIn information
+[10:00] we're looking
+[10:02] for here is
+[10:04] the here is an example chunk of
+[10:09] HTML being
+[10:12] returned okay so let's see what we get
+[10:15] after that prompt okay so after a couple
+[10:17] tries I think we've gotten to a good
+[10:19] spot I gave it a screenshot it updated
+[10:21] the code a little bit it wasn't working
+[10:23] it gave me an error so I told it what
+[10:24] the error was and then we landed on some
+[10:26] more code and we did it again but now we
+[10:29] have this snippet and I think that this
+[10:30] one should work so let's test it out as
+[10:33] you can see we're getting 10 LinkedIn
+[10:34] profiles back from this super ugly chunk
+[10:37] of HTML over here so we know that this
+[10:39] one is working now we need to get these
+[10:41] URLs into our Google sheet so we're
+[10:44] going to do that with a Google Sheets
+[10:45] node you'll type in Google you can see
+[10:47] sheets and we want to append row within
+[10:51] a sheet so this is assuming that we
+[10:52] already have a sheet setup like as you
+[10:55] can see mine's right here it's called
+[10:56] Pro Prospects or proex um LinkedIn so
+[11:00] this is the one that we're populating
+[11:03] and so you should already have that set
+[11:04] up and then if you don't have um your
+[11:06] credentials already set up it's super
+[11:07] simple you'll go here create new
+[11:09] credential and you just have to sign in
+[11:11] with this node and this is kind of
+[11:13] assuming that you've already set up your
+[11:14] Google cloud service so if you haven't
+[11:16] anden has great docs on how to do this
+[11:18] it'll walk you through step by step how
+[11:20] to set up something like your ooth
+[11:21] consent screen and your different
+[11:23] enabled apis and services but it's super
+[11:25] simple you'll come in here and basically
+[11:27] just set up this screen that is giving
+[11:29] access to naden to access your
+[11:31] information so you can do that by adding
+[11:35] your email as a test user or publishing
+[11:36] the app but um if that doesn't make
+[11:38] enough sense then please go to the nadn
+[11:41] documents that walk you through how to
+[11:42] do that step by step so once we have
+[11:45] that set up you'll be able to access
+[11:46] your sheets so if we come in here or
+[11:47] your documents you can see all my other
+[11:49] documents and then we've got um the
+[11:51] prospects one and then from sheet we
+[11:54] want to choose just the first one
+[11:55] because that's all we
+[11:57] have so now we see that we want to match
+[11:59] each column manually so the only column
+[12:01] that we have is this one Prospect
+[12:03] LinkedIn URL and what information are we
+[12:05] wanting to put in that column that is
+[12:07] going to be over here from the code node
+[12:09] we're grabbing the LinkedIn URLs that we
+[12:11] just scraped from that
+[12:13] HTML so it's going to go through this
+[12:16] step until all 10 of those items are put
+[12:17] into our Google sheet so we can go here
+[12:19] and actually hit test step and if we pop
+[12:22] over to our Google sheet we should see
+[12:25] those 10 filling in right here as they
+[12:27] did so there we go
+[12:31] and it output those items correctly and
+[12:34] this is basically all we want the tool
+[12:35] to do so these are basically the five
+[12:37] nodes that we're running through and
+[12:39] then the last thing we need to do is we
+[12:40] need to add a set
+[12:43] node which we're going to name this
+[12:46] field response with the value of done so
+[12:50] all this is doing just to keep it as
+[12:51] simple as possible is we talked about
+[12:53] how this workflow is being called by the
+[12:55] agent and then it's going to go through
+[12:57] this process and then once it gets here
+[12:59] it's done but the agent doesn't know
+[13:00] that it's done and it doesn't know to
+[13:02] tell us okay we did that for you so this
+[13:05] this field is called response and it has
+[13:08] the value of done and so this is going
+[13:10] to come back and give this information
+[13:12] right here to the agent and then it's
+[13:13] going to know okay I can respond to the
+[13:15] human because we've done what it wanted
+[13:17] us to do so last thing before I save
+[13:19] this is I'm going to take out these hard
+[13:23] coded variables so that we can actually
+[13:26] test this thing dynamically so so we've
+[13:29] got that saved there now it's just a
+[13:30] query and we'll save this okay now that
+[13:33] we've built the tool we're in the
+[13:34] workflow that is going to be the actual
+[13:36] agent that will be calling the tool and
+[13:38] the good news is the agent workflow is
+[13:39] much simpler than the tool and a lot
+[13:42] quicker to set up so first thing again
+[13:44] is going to be a trigger we're
+[13:46] triggering this one by a chat message so
+[13:49] pretty self-explanatory this is just
+[13:51] when we talk to the agent with this chat
+[13:52] button down here so next we want to add
+[13:55] the actual agent so we type in AI agent
+[13:57] here we will get this guy
+[13:59] it's going to be a tools agent because
+[14:01] it's going to be accessing the tools
+[14:02] that we give it and we can just take the
+[14:04] prompt from the previous node
+[14:06] automatically this is also where you
+[14:07] could add a system message down here to
+[14:10] really give a a detailed prompt to the
+[14:13] agent if you have a lot of tools or if
+[14:14] you have you know very specific use case
+[14:15] but right here we can just leave this as
+[14:16] a helpful
+[14:18] assistant okay so once we have the agent
+[14:20] we need to give him the brain which is a
+[14:21] chat model which we always use open AI
+[14:24] chat model so you'll have this set up
+[14:26] already and I'm going to give this guy
+[14:29] 40 okay so the brain set up let's set up
+[14:32] the memory real quick super simple all
+[14:34] we got to do is click on window buffer
+[14:36] memory up here it's it's the easiest one
+[14:38] and we can leave the context Windows 5
+[14:40] for this specific case but this memory
+[14:43] is just giving the agent context for
+[14:46] what we're talking about so it's not
+[14:48] just like a question and answer and then
+[14:49] his brain is resetting and he's he woke
+[14:51] up again and he has another another
+[14:53] question answer but if you ask him a
+[14:54] question and he responds and then you
+[14:56] want to refer back to a previous
+[14:58] question or refer back back to what you
+[14:59] guys are talking about then he'll be
+[15:01] able to do so based on this
+[15:03] memory and then we got to add the tool
+[15:07] so there's a lot of different tools here
+[15:09] here's a Google search API which we can
+[15:11] get into in future videos but right now
+[15:13] we're just going to be using a workflow
+[15:15] that we already built which is super
+[15:16] cool about nnn so this is going to be
+[15:18] the one that grabs profiles so we will
+[15:21] just say grab
+[15:23] profiles and up here do the same thing
+[15:29] and then you need to give this tool a
+[15:30] description of when to be called so we
+[15:33] just going to say call this tool
+[15:36] to get um yeah LinkedIn
+[15:40] profiles okay keep that simple where is
+[15:44] the workflow coming from it's coming
+[15:45] from our database and it's really nice
+[15:47] that NN gives you the ability to just
+[15:49] choose from a list so you can see all
+[15:50] the different tools I have and we are
+[15:52] going to be using grab profiles
+[15:55] demo and then this is the response field
+[15:57] that we talked about earlier with that
+[15:59] that set field that we set response to
+[16:01] done basically telling the agent you
+[16:03] know once this tool is done it's going
+[16:05] to return the response and then the
+[16:08] agent is going to know that we did
+[16:11] it okay so that really should be it um
+[16:15] there's a chance I may be forgetting
+[16:16] something and it might air but why are
+[16:19] we already oh yeah this can't have a
+[16:20] space in it apparently which is super
+[16:22] crucial um so we'll save that and let's
+[16:25] just test this thing out to make sure
+[16:26] it's working so let's reset those and we
+[16:30] will come in here and we'll just try the
+[16:32] CEO one for now and then we'll try
+[16:33] another one but can you get CEOs in real
+[16:39] estate in
+[16:43] Chicago okay so I've obtained LinkedIn
+[16:46] profiles for CEOs in the real estate
+[16:47] sector in Chicago if you need anything
+[16:49] else let me know so as you can see we
+[16:52] got that back we got Jeff we got all
+[16:53] these guys let's um just make sure that
+[16:56] we are actually you know it's correct
+[16:58] and that we're not just using you know
+[16:59] hard-coded variables so let's
+[17:01] do um Founders
+[17:04] in um Tech in San
+[17:09] Francisco maybe I'll say technology
+[17:11] though
+[17:13] technology you Founders and technology
+[17:15] in San
+[17:17] Francisco I've obtained LinkedIn
+[17:19] profiles okay let's see we got these new
+[17:21] people in here so let's go to this guy
+[17:25] see what him he his profile is looking
+[17:27] like Tech comedy with hint of Truth San
+[17:30] Francisco and um he seems to be a
+[17:33] Founder let's just check one more guy
+[17:35] we'll go
+[17:36] here founder and CEO at motive San
+[17:40] Francisco okay so looks like that's
+[17:42] working and you can always go to your
+[17:44] executions over here and we can check
+[17:48] sort of how the data is actually moving
+[17:49] through based on each request that we've
+[17:51] done so this is the most recent request
+[17:54] and naturally it's going to take a
+[17:55] couple seconds to load up but it's
+[17:58] coming through as Founders and and
+[17:59] Technology coming through here the title
+[18:01] is Founders Industries technology
+[18:03] location San Francisco and then again
+[18:06] you know grabbing this huge ugly chunk
+[18:08] of HTML we're getting the profiles
+[18:10] through here and then we're putting it
+[18:12] into the Google
+[18:14] sheet so that is kind of how this one
+[18:16] works um now if you guys are wondering
+[18:19] sort of why we're only returning 10
+[18:22] responses and if you wanted to do more
+[18:24] how could that work so my understanding
+[18:26] is that we would need to be using a an
+[18:29] actual Google search API like Sur API in
+[18:31] order to do that and I'll show you guys
+[18:33] exactly why I think that is but let's go
+[18:35] back into this workflow to grab um grab
+[18:39] profiles so here's our request and like
+[18:43] I said we had parameters of what to do
+[18:46] so if we came into here and we added
+[18:48] another parameter and we called this one
+[18:50] start and we gave it the value of
+[18:54] 10 so now we're seeing for example we
+[18:58] come into this LinkedIn search um at the
+[19:01] end of this
+[19:02] query if we
+[19:04] add start equals 10 it's going to give
+[19:09] us page two of these um results so this
+[19:14] is page two and this is what we'd want
+[19:15] to be
+[19:17] scraping but if you come into here and
+[19:20] we
+[19:22] see we're getting items back here we're
+[19:24] getting like the HTML back but then when
+[19:26] we go to actually get the profile
+[19:29] we're only getting two um so sometimes
+[19:33] it's I think that there's just an issue
+[19:35] with scraping Google based on HTTP
+[19:39] request that when you're doing this and
+[19:40] you're going through that Google's may
+[19:42] be providing a capka to to find out if
+[19:45] it's a human or if it's really a robot
+[19:47] scraping information but if anyone else
+[19:50] has more insight into that please let me
+[19:51] know because I I was looking into it and
+[19:53] that's sort of like what my conclusion
+[19:55] was but the purpose of this video was
+[19:58] more to you know how do I set up a
+[19:59] workflow to scrape information and two
+[20:01] parts information especially if I don't
+[20:02] know how to code and that was with you
+[20:05] know the NAD and assistant on chat which
+[20:07] is super super helpful and also just
+[20:09] showing you how to you know update rows
+[20:10] and sheets and then combine an agent
+[20:13] with a tool so um yeah so that's it for
+[20:16] this one please leave a like if you've
+[20:18] enjoyed and definitely let me know in
+[20:19] the comments what else you guys want to
+[20:20] see so I can continue to add to my list
+[20:23] of videos that I want to make and stuff
+[20:24] to learn about so that I can sort of
+[20:26] help all you guys out so thanks guys

@@ -1,0 +1,1145 @@
+Video Title: I Built a Marketing Team with 1 AI Agent and No Code (free n8n template)
+Video ID: ldETapkr8Hg
+URL: https://www.youtube.com/watch?v=ldETapkr8Hg
+View Count: 644,727
+
+[00:00] Today I'm going to be showing you guys
+[00:01] how I built this AI marketing team with
+[00:03] just one AI agent. So as you can see
+[00:05] this agent has access to these six
+[00:07] tools. It can create videos, LinkedIn
+[00:09] and blog posts, create images, edit
+[00:11] those images, and also search through
+[00:12] its image database. And working from
+[00:14] left to right here, these are what the
+[00:16] workflows look like. So this is the
+[00:17] creating videos. This is LinkedIn posts.
+[00:19] This is blog posts. This is creating an
+[00:21] image. This is editing an image. And
+[00:23] then this is searching the image
+[00:24] database. So there are a lot of
+[00:26] resources that you'll need if you want
+[00:27] to plug this in. different templates,
+[00:29] all these different workflows, and I'll
+[00:30] show you guys how to download all that
+[00:31] for free and set it all up near the end
+[00:33] of the video. But first, let's get into
+[00:34] a live demo, and then we'll break down
+[00:36] the builds. And of course, I'll also
+[00:38] touch on pricing and what it actually
+[00:39] costs to run this whole system. So, as
+[00:41] you can see, we communicate with our
+[00:42] agent here through Telegram, and that
+[00:44] can be either voice or text. So, I'm
+[00:46] going to move this over to the side
+[00:47] here. I'm going to open up my Telegram.
+[00:49] As you can see, here's a video that we
+[00:50] had it create earlier for us, but I'm
+[00:52] going to ask it to create an image for
+[00:53] us. Create an image for a flyer for cat
+[00:56] food. And there's a flash sale. Okay, so
+[00:59] we just sent that off. You can see it's
+[01:00] transcribing that audio, hitting the
+[01:02] marketing team agent, and it's going to
+[01:03] hit its create image tool. And right
+[01:05] now, that workflow is processing. And
+[01:07] I'll check back in a sec when we get
+[01:08] that image. Okay, looks like it just
+[01:10] finished up. As you can see, we just got
+[01:11] our message. Here's your flyer image for
+[01:14] cat food with flash sale. Um, looks like
+[01:16] it's a pretty cool image of a cat. Now,
+[01:18] let's say we wanted to edit that and
+[01:19] make it a little more realistic. So
+[01:20] before we ask it to edit that quickly,
+[01:22] let's just take a look at first of all
+[01:23] in our log. We now have a new image
+[01:26] which was cat food/sale. It's an image.
+[01:28] Here's the prompt and here's the link
+[01:29] that it got where we can click into it
+[01:30] and it's the image that's in our Google
+[01:32] Drive. But anyways, let's have it make
+[01:34] that a little more realistic. So can you
+[01:36] edit that image and make it more
+[01:38] realistic? Send that off. It's going to
+[01:40] use its image database to grab the
+[01:42] actual image to edit. And now it's going
+[01:43] to go edit that. And I'll check back in
+[01:45] when we get that edited image. Okay, so
+[01:48] that just finished up. And just so you
+[01:49] guys are aware, it takes about a minute
+[01:50] per image and per edit. So, let's take a
+[01:53] look. As you can see, now we have the
+[01:54] updated, more realistic flyer. It's a
+[01:56] very realistic looking orange cat eating
+[01:58] cat food. And there's a flash sale. And
+[01:59] we can also see that if we go to our
+[02:01] marketing team log, we have the new
+[02:02] picture right here. And it's a type
+[02:04] edit. We have the prompt. And then we
+[02:06] also have the link for our Google Drive
+[02:08] with the new image. Okay. Now, let's try
+[02:10] one of these content creation ones. Can
+[02:12] you please create a blog post about the
+[02:14] effect of sleep on productivity? All
+[02:16] right. We'll send that off. So anyways,
+[02:18] this workflow was inspired by a actual
+[02:20] full workflow video that I did a few
+[02:22] days back. I'll tag that right up here.
+[02:23] And I basically had that doing LinkedIn
+[02:26] content. Obviously, it's doing some
+[02:27] research, creating the post, and then
+[02:29] it's creating an image prompt, and then
+[02:30] it's getting that image for us. And then
+[02:32] we're logging it, sending the content,
+[02:33] all that kind of stuff. So, if you want
+[02:34] to see that full breakdown, watch the
+[02:36] video up here. Okay, so the agent just
+[02:38] finished up. Let's click into this
+[02:39] Telegram, and we'll see what we got.
+[02:40] Here's our graphic. Well-rested minds
+[02:42] get more done. You can see it has some
+[02:44] up arrows and stuff like that. And then
+[02:46] we have our actual blog post. And at the
+[02:48] bottom, it includes some references for
+[02:49] us. And if we click into our log, we can
+[02:51] see that we have our actual blog post.
+[02:53] And you can see I did the same example
+[02:55] earlier. And this is what the picture
+[02:56] looked like. So this one was a different
+[02:58] type of graphic that had some more
+[02:59] statistics in there. But then this one
+[03:01] that we just did looks like this. And
+[03:03] they're both still very good graphics
+[03:04] that I would definitely feel confident
+[03:06] posting with a blog. But as you can see,
+[03:08] this is the most recent run. We got a
+[03:09] title, we have a type, which was post,
+[03:11] and then we have the actual post content
+[03:13] over here. And then finally, let's just
+[03:15] do a quick video. So, can you please
+[03:17] create a video of a beaver building a
+[03:19] house? So, we'll send that off and we'll
+[03:21] see what happens. And then while this is
+[03:22] running, I just wanted to explain
+[03:24] something to you guys here. So, it's
+[03:25] calling the video workflow, which looks
+[03:27] like this. And this run takes
+[03:30] typically 2 to 3 minutes, maybe even a
+[03:32] little more. We have these weights
+[03:33] because we have to wait for the images
+[03:34] to be generated as well as the videos to
+[03:36] be generated. And so, what actually
+[03:37] happens is the actual marketing agent
+[03:40] right here, as you can see, it's
+[03:41] waiting. this guy times out and then we
+[03:44] don't get a response back right here. So
+[03:45] what I've done is we actually get the
+[03:47] response in the form of this workflow.
+[03:49] So this is where it will download the
+[03:50] video, send it to us on telegram and
+[03:52] then also log the outputs. So it's just
+[03:55] the way n kind of works right now with
+[03:57] subflows having weight steps where right
+[03:59] now it's waiting on the agent level
+[04:00] rather than the tool level. So it's
+[04:02] going to error right here, but you'll
+[04:04] see we still get the actual video in our
+[04:06] telegram. So I'll just show you guys
+[04:08] that once this run finishes up. Okay,
+[04:11] looks like that just finished up. And as
+[04:12] you can see, the Telegram node here
+[04:14] failed because the agent aired out, but
+[04:16] obviously you can see that we still got
+[04:17] the video. So, let's click into this and
+[04:19] watch it real
+[04:21] quick. We got some nice sound
+[04:25] effects. Okay, looks like he's building
+[04:27] a dam, not a house. I was kind of hoping
+[04:29] for more of an actual house,
+[04:31] but either
+[04:35] way, there we go. At the end, he's got a
+[04:38] finished house. Anyways, just to show
+[04:39] you guys that the run actually did
+[04:40] finish up. I'll switch over to
+[04:41] executions of the faceless video tab.
+[04:43] Let me just refresh this here. So, you
+[04:45] can see that this thing succeeded and
+[04:46] the message that came in was a beaver
+[04:48] building a house showing the beaver
+[04:49] gathering sticks, blah blah blah. And
+[04:51] then it goes through the process of
+[04:52] actually creating that video with sound
+[04:54] effects. So, anyways, I know it's not
+[04:55] perfect because of this aspect, which
+[04:57] I'm sure is currently working on, as
+[04:59] well as the fact that the beaver doesn't
+[05:01] look the exact same in all four of the
+[05:02] clips, but that can be kind of worked on
+[05:04] with prompting and other aspects. But,
+[05:06] this is kind of a great template to get
+[05:07] you started. Okay, so now that we've
+[05:09] seen a demo and how some of these tools
+[05:10] work, we're going to get into sort of
+[05:12] breaking down all the workflows. But
+[05:13] before that, just wanted to mention if
+[05:15] you want to get all these resources for
+[05:16] free, you can do so by joining my free
+[05:18] school community. Link for that's down
+[05:19] in the description. You can search for
+[05:21] the title of the video or click on
+[05:22] YouTube resources and you'll find the
+[05:24] post associated with this video. And
+[05:25] when you click on it, you can have the
+[05:27] JSON right here to download. And
+[05:29] there'll also be the link to the Google
+[05:30] sheet template you'll need and the
+[05:32] Creatmate rendering template you'll
+[05:34] need. And more towards the end of the
+[05:35] video, I'll actually show you like what
+[05:36] you need to do and how you need to set
+[05:38] everything up because you'll have to
+[05:39] download these six different workflows
+[05:40] and make sure they're plugged in as
+[05:41] well. But now, let's get into the actual
+[05:43] breakdown. Okay, so just to kick us off
+[05:45] here, let's talk about the actual
+[05:47] marketing team agent and what it's
+[05:49] getting as well as what we're telling it
+[05:50] to do. So it can get voice or text. So
+[05:53] what we did is we standardized both of
+[05:55] these outputs here and it gets fed into
+[05:57] the agent in a field called text. So we
+[05:59] just reference that as JSON.ext.
+[06:01] basically just meaning if it's voice or
+[06:03] if we type the agent will still be able
+[06:05] to look at it as if it's the same. And
+[06:08] then we can see the actual system prompt
+[06:09] which is not too difficult for how many
+[06:11] tools it has. We said overview you are a
+[06:14] marketing team AI agent. Your job is to
+[06:15] help the users create edit images based
+[06:17] on the request or create content. The
+[06:20] next thing I always like to do is tell
+[06:21] it what tools it has and when to use
+[06:22] each one. And as you can see this is
+[06:24] very very simply laid out. Create image.
+[06:26] Use this to create an image. Edit image.
+[06:28] Use this to edit an image. The user
+[06:30] might also say make rather than edit. So
+[06:32] like for example, if I asked it to
+[06:33] create an image for me and then I said,
+[06:35] you know, make that more realistic, it
+[06:36] would know to edit. Then we gave it the
+[06:38] image database. Use this to search in
+[06:40] the image database. Blog post, LinkedIn
+[06:42] post, video, and then also the think
+[06:44] tool, which if you aren't aware of what
+[06:45] that is, it's just this think tool down
+[06:47] here. I made a video. I'll tag it right
+[06:48] up here. But anyways, we're just telling
+[06:50] it what tools it has and when to use
+[06:52] each one very simply. And then just a
+[06:54] few instructions like if the user asks
+[06:56] to edit that image or make that
+[06:58] something this indicates that they want
+[06:59] to edit the last image in the database,
+[07:01] the most recent one. So we can either
+[07:03] use its memory to grab that image ID to
+[07:05] pass over to actually edit it or it can
+[07:07] search the database and just grab the
+[07:08] last one. And finally, if the user
+[07:10] requests a blog post or a LinkedIn post,
+[07:12] use the tools and then output here's the
+[07:14] post you requested. Hope you enjoy it
+[07:16] because we have that actual workflow
+[07:18] sending over the content of the post. So
+[07:19] we just don't want it to get sent over
+[07:21] twice. Then finally, we just wanted to
+[07:22] return everything as a clickable link in
+[07:24] our Telegram. And as you can see, we're
+[07:26] able to click into all of this stuff in
+[07:27] our Telegram, whether it's an image, if
+[07:29] it's an edit, whatever it is, we just
+[07:31] want to be able to actually click into
+[07:32] it. Cool. So, that's basically all
+[07:34] that's going on here. Um, you know, it's
+[07:36] getting the input from Telegram and it's
+[07:37] responding in Telegram. But then where
+[07:38] the magic really happens are these six
+[07:40] tools down here. So, let's start off
+[07:42] with the create image tool. Obviously,
+[07:43] we called it create image. Call this
+[07:45] tool to create an image. And then what
+[07:46] we did is we linked our workflow. So
+[07:49] when you guys download the create image
+[07:50] workflow, you'll basically just have to
+[07:52] choose from a list and search, you know,
+[07:54] whatever you name it. I named mine
+[07:55] create image and then all you have to do
+[07:56] is search for that and then just make
+[07:58] sure you link the correct workflow to
+[07:59] call. So from there, we set up workflow
+[08:02] inputs. So we basically just told this
+[08:04] this main agent, what do you send over
+[08:05] to this sub workflow? And the way that
+[08:08] you specify that is in this create image
+[08:10] subworkflow, it has to start with a when
+[08:12] executed by another workflow trigger
+[08:14] because it's being called by a main
+[08:16] agent. And in this trigger, you can
+[08:18] choose the input. So rather than doing
+[08:19] accept all data, we defined three fields
+[08:22] we want, which are the image title, the
+[08:24] image prompt, and then the Telegram chat
+[08:26] ID. So we can actually send it back to
+[08:28] Telegram. So when you actually define
+[08:30] those three fields in this trigger, then
+[08:32] you'll have these workflow input options
+[08:34] pop up in your call nadn workflow tool
+[08:36] for your agent. And then what we did is
+[08:39] we used this button right here, which
+[08:40] lets the model define sort of how to
+[08:42] fill in this parameter. We told it to
+[08:44] fill in the image title parameter with
+[08:45] the title of the image. Should be no
+[08:47] more than four words. We told it to fill
+[08:49] in the image prompt with the image
+[08:50] requested by the user. And then for the
+[08:52] chat ID, we're just using a dynamic
+[08:54] variable that's coming from the Telegram
+[08:56] chat trigger. So when we talk to this
+[08:57] Telegram, I'll just I'll just do
+[08:59] something real quick. I'm just going to
+[09:00] say hi. We'll see that it gets the input
+[09:03] even though it was text. It responds to
+[09:05] us and says, you know, hi. But then what
+[09:07] it does is it basically has this chat ID
+[09:10] right here in our Telegram. And then
+[09:12] that's what we pass over to this
+[09:14] workflow right here. You can see now
+[09:16] it's that dynamic variable that gets
+[09:17] passed over and we can reference that
+[09:19] later in this workflow to actually send
+[09:21] the photo back to the right spot.
+[09:23] Anyways, let's just click into the
+[09:24] execution that we did for this live demo
+[09:26] so we can see data moving through. The
+[09:28] first thing is an image prompt agent.
+[09:30] And as you can see, this was the cat
+[09:31] food/ flash sale. So we give it the
+[09:33] image prompt from that main workflow.
+[09:36] And then we have a system prompt here
+[09:37] which basically is just telling it how
+[09:38] to make a text image prompt. Not going
+[09:41] to read this whole thing. If you guys
+[09:42] download the template, you'll obviously
+[09:43] have this in there. We basically just
+[09:45] wanted it to be, you know, very
+[09:47] descriptive, have the main subject, the
+[09:49] background, the style, any additional
+[09:51] details like that. And then you can see
+[09:52] over here, it spits out a cheerful,
+[09:54] attention-grabbing flyer designed to
+[09:56] appeal to pet owners, blah blah blah.
+[09:57] And it just tells the image model, which
+[10:00] we're using Chatchabt's new image model,
+[10:02] which is insane, how to make the image.
+[10:04] And so this is where we format that HTTP
+[10:06] request to OpenAI's image generation
+[10:09] model. So I'm not going to go too into
+[10:10] the weeds of setting up this request and
+[10:12] how that all works, but I've made a
+[10:13] pretty much a full video on it and I'll
+[10:14] tag that right up here if you want to go
+[10:16] check that out. But anyways, we're
+[10:17] basically just passing over the image
+[10:19] prompt right here. And you can see this
+[10:20] is where we're using the new image
+[10:21] model. But we're passing over that image
+[10:23] prompt from that previous agent. And
+[10:25] what it spits out is basically a really
+[10:27] huge like base 64 JSON string. And my
+[10:30] computer's lagging because it's so big.
+[10:31] And all we want to do is we want to take
+[10:33] that JSON string and turn that into a
+[10:35] binary data that's actually a picture.
+[10:38] So that's why we use this convert to
+[10:39] file node. We're dragging in this this
+[10:41] field right here. All I did was drag
+[10:42] that in like that. And then we're
+[10:44] telling it to output it in a field
+[10:45] called data which we get right here. And
+[10:47] if I click on view, we can see the
+[10:49] actual image that it generated for us.
+[10:51] And then because we have binary and we
+[10:53] want to do two things with the binary. I
+[10:54] split the paths. So the first thing it's
+[10:56] going to do because n when you split
+[10:58] paths, it's going to work from top to
+[10:59] bottom. The first thing that it does is
+[11:01] send the picture back to us in Telegram.
+[11:03] And then what we do is we want to write
+[11:05] to our drive and our Google sheet. So
+[11:08] all we did in here was we said, "Hey,
+[11:10] here's our chat ID. This is what we
+[11:11] pulled in from that trigger." As you can
+[11:13] see, we're referencing the when executed
+[11:14] by another workflow trigger. And then we
+[11:17] just said we're going to send over a
+[11:18] binary file. It's in the field called
+[11:20] data. As you can see, data is right
+[11:21] here. And then we just send that over.
+[11:23] Simple as that. And then what we do is
+[11:25] we take that binary data and we want to
+[11:26] upload it to our Google Drive. So, the
+[11:28] file name, I basically just pulled in
+[11:30] the title that that the main agent sent
+[11:32] over. I put the title.png. I chose the
+[11:34] folder in my drive. And if you guys are
+[11:36] having trouble setting up your Google
+[11:37] credentials, um, check out this tutorial
+[11:39] I made right up here. Anyways, this got
+[11:41] put in our drive as cat food/sale. And
+[11:44] if I go into my Google Drive right here,
+[11:45] I can see cat food/ flash sale flyer.
+[11:47] And I click into it and it is our cat
+[11:49] food picture. And here's a little
+[11:51] illusion. You can also see the other one
+[11:52] right here, which is the edited one, is
+[11:54] the one that we asked it to make it more
+[11:55] realistic. Cool. So after it's put into
+[11:57] our Google Drive, we then just want to
+[11:59] log that output in our sheet. So once
+[12:02] again, we're signing in with Google. We
+[12:04] are referencing the document called
+[12:05] marketing team log, the first sheet. And
+[12:07] then we're just mapping what columns we
+[12:09] want to send over. So we have title,
+[12:11] type, request, ID, link, and post. For
+[12:14] this one, I just left the post blank,
+[12:16] but the title, I pulled in the title
+[12:17] from that first trigger. All I would do
+[12:19] is I scroll all the way down on this
+[12:20] lefth hand side to the trigger, and I
+[12:23] just dragged in image title right here.
+[12:25] The type I fixed in here that this is
+[12:27] always going to be type image. For the
+[12:29] request, I dragged in the image prompt.
+[12:31] For the ID, I went to the Google Drive
+[12:33] ID, which is what we need in order to
+[12:35] later edit it. And I dragged in the ID
+[12:37] right here down there. And then for the
+[12:39] link, I grabbed the web view link from
+[12:41] Google Drive, which it would have been
+[12:43] found right here, which basically lets
+[12:44] us actually view it. And that's what the
+[12:47] main agent would send back in Telegram
+[12:48] and say, "Hey, here's the image. You can
+[12:50] click on this link if you want to look
+[12:51] at it." Okay, so that was the create
+[12:53] image workflow. Now let's take a look at
+[12:54] the edit image workflow. So it's very
+[12:56] similar in the sense of we're
+[12:58] referencing a workflow. We're defining
+[12:59] certain inputs which are the image, the
+[13:02] request, the chat ID, and the picture
+[13:04] ID. And this is important because with
+[13:06] the OpenAI's endpoint for editing an
+[13:08] image, you have to send one in, and then
+[13:10] you say, "Hey, can you edit that?" So
+[13:12] like here's a good example of making
+[13:13] sure that they stay sort of like
+[13:15] consistent. So this first one, I asked
+[13:16] it to make a crocodile lifting weights.
+[13:18] And you can see it has like, you know,
+[13:20] it's got two two dumbbells. Actually,
+[13:21] this one's a little messed up. It's got
+[13:23] these signs in the background. And then
+[13:25] what I can do is I can ask it to edit
+[13:26] that image and it's going to keep it,
+[13:28] you know, sort of similar. So you can
+[13:29] see here it was an edit. The request was
+[13:31] add headphones on the crocodile's head.
+[13:33] And now it's like the same picture
+[13:35] pretty much except for now he just has
+[13:36] headphones. So that's how you can do
+[13:38] editing an image rather than just
+[13:40] creating a new one. Anyways, this is the
+[13:42] kind of stuff we're passing over. Let me
+[13:43] open up this workflow and we'll look at
+[13:45] the live run and break it down. Okay, so
+[13:47] here's the run that you guys saw in the
+[13:48] demo. It was the cat food flash sale
+[13:51] flyer and it said make the image more
+[13:53] realistic. And if you remember in the
+[13:54] demo, it was able to pass over the
+[13:56] correct picture ID because what it did
+[13:58] is it searched the database first and
+[14:00] then it sent over the correct picture
+[14:02] ID. Anyways, now we have that right ID
+[14:04] and what we can do is we can download
+[14:05] that file from our Google Drive. So it
+[14:07] sends in that ID. We click view. We can
+[14:10] see that it's the correct one. And now
+[14:11] this is the one that we can send to
+[14:13] OpenAI to edit. So that's why the next
+[14:15] step is we're hitting OpenAI's endpoint.
+[14:17] This time instead of using the
+[14:19] generation endpoint, we're using the
+[14:21] edit endpoint. And then all we're doing
+[14:22] is we're sending over the binary file
+[14:24] right here called data. We're sending
+[14:26] over the prompt which says make the
+[14:28] flyer more realistic with a lifelike
+[14:30] photograph of a cat enjoying delicious
+[14:32] cat food. Blah blah blah. And then it
+[14:34] was able to say, "Okay, here's the
+[14:35] picture. Here's the request. Um, here's
+[14:37] your new image basically." And it does
+[14:39] the exact same thing. It spits out a
+[14:41] nasty string of B 64. So then we convert
+[14:44] it once again. As you can see, we
+[14:46] convert it. We get the actual new edit
+[14:48] image which is right here. And then we
+[14:50] do the exact same thing in the sense of
+[14:52] we send it to Telegram and then we write
+[14:54] to drive and we write to sheets. Okay.
+[14:57] So now let's take a look at this search
+[14:59] images tool which is an interesting one.
+[15:01] So the idea here is there's there's two
+[15:03] things you can kind of do. So let me
+[15:04] just quickly open this up. So we'll take
+[15:05] a look at it. The idea here was that you
+[15:08] could say, hey, like remember that image
+[15:10] I made a while ago about the crocodile?
+[15:12] Can can I look at that? and you could
+[15:13] ask, you know, get my crocodile picture
+[15:15] and it would send it over to you. Or the
+[15:18] other case is where you need to make an
+[15:19] edit on an image and all you need is
+[15:21] that image ID. So, let me explain what I
+[15:23] mean by that. When this workflow gets
+[15:25] called, it's going to send over the
+[15:27] intent, which is either going to be does
+[15:28] the user want to get an image or does
+[15:30] the user want to edit an image? Because
+[15:32] that will kind of change how the
+[15:33] workflow works. Then, of course, we have
+[15:35] the image title that gets passed over.
+[15:37] Whether you're getting or you're
+[15:38] editing, you still need to know what
+[15:39] image you're going to get or edit. And
+[15:41] then of course we're pretty much always
+[15:42] passing over that Telegram chat ID so we
+[15:44] can send stuff back to the user. But
+[15:47] anyways, hopping back into the workflow.
+[15:49] Let's open up the live execution real
+[15:51] quick that we saw in the demo, which
+[15:53] this one basically was just getting an
+[15:55] image and passing that um picture ID
+[15:57] back to the main workflow. So when this
+[16:00] workflow triggered, we got the intent
+[16:02] was edit. The image was the cat food/
+[16:05] flash sale and then of course the chat
+[16:06] ID. And then we pass it into an image
+[16:08] search agent where we say, "Hey, here's
+[16:10] the title of the image." And all you
+[16:12] need to do is you are an image retrieval
+[16:14] agent. You need to look in your image
+[16:16] database tool and return the name, ID,
+[16:19] and the link of the image. But if you
+[16:20] can't find one, you would output not
+[16:22] found. And so over here, it outputs the
+[16:24] name, ID, and and the image, and then a
+[16:26] status. The status would be not found if
+[16:28] it couldn't find that picture in the
+[16:29] database. And that's why we have a
+[16:31] structured output down here to actually
+[16:32] define, hey, here's how you should
+[16:34] output information. And then here is the
+[16:36] tool, the image database tool where
+[16:38] we're basically just giving it access to
+[16:39] that sheet. And actually, it's called
+[16:41] marketing team log. I switched the name,
+[16:43] but it would just be searching through
+[16:44] it. And then it would have all the
+[16:45] information it needs. And then it would
+[16:47] basically just output whatever we're
+[16:48] looking for. And then we have two if
+[16:50] checks here. So the first one basically
+[16:52] says is the status not found. If that's
+[16:55] true, you're going to go up here and
+[16:56] return to the main agent and say image
+[16:58] wasn't found in the database. But if the
+[17:01] image is found, you're going to move on
+[17:02] to this next check, which is basically
+[17:03] saying, what's the intent of the user?
+[17:05] If the intent is just to get an image,
+[17:07] then you're going to go down this branch
+[17:09] where you'll download that file and just
+[17:10] send the content over. But if the intent
+[17:13] is to actually edit an image, we don't
+[17:14] need to send the photo. We just need to
+[17:16] send the the image ID back to that main
+[17:19] workflow. So in this case, the intent
+[17:21] was edit. It passes down this way. And
+[17:23] then what we send back over to the main
+[17:25] agent is the image ID as well as the
+[17:27] image name. And then it can basically
+[17:29] say, "Okay, here's the image ID. I'm
+[17:31] just going to send that over to the edit
+[17:32] image tool." And now it has all the
+[17:34] information it needs to actually go make
+[17:36] that edit. Okay, cool. Let's just keep
+[17:38] chugging along here. I'm only going to
+[17:40] review one of these because they're
+[17:42] basically the exact same thing. The
+[17:43] prompting is just a little different.
+[17:44] You can download both of them, of
+[17:45] course, and the full video about the
+[17:47] LinkedIn post one I'll I'll plug up
+[17:49] here. But anyways, let's look at the
+[17:50] blog posting one. So, very similar. We
+[17:53] referenced the workflow that we plugged
+[17:54] in. We are sending over a blog topic
+[17:56] which is defined by the model. It says
+[17:58] the topic of the blog. We're defining
+[18:00] the target audience. So the target
+[18:02] audience for the blog because the
+[18:03] content will be written in a way that's
+[18:05] kind of tailored towards this target
+[18:06] audience. And then of course we're
+[18:07] sending over the chat ID. So here's what
+[18:09] this workflow looks like. And as you can
+[18:11] see in the trigger, we define those
+[18:12] things over here. Same as the other
+[18:14] ones. And let's click into the execution
+[18:16] we saw in the demo. So what got passed
+[18:18] over here was the effect of sleep on
+[18:20] productivity. It was tailored towards
+[18:22] working professionals and students. and
+[18:24] then our chat ID. And first we hit a
+[18:26] blog posting agent which has access to
+[18:28] Tavali to do web search. And let's take
+[18:30] a look real quick at what it's getting
+[18:32] in its system prompt. So we're passing
+[18:34] it in the topic of the blog and the
+[18:36] target audience. So as you can see right
+[18:37] here, this is what it's looking at. And
+[18:40] then in order to actually make that blog
+[18:42] post, it has to read through its system
+[18:43] prompt which says, "You are an AI agent
+[18:45] specialized in creating professional,
+[18:47] educational, and engaging blog articles
+[18:49] based on the topic provided by the user.
+[18:52] The objective is to always begin by
+[18:54] conducting real-time web search using
+[18:55] Tavali. The blog article should be
+[18:57] written to appeal towards the provided
+[18:59] target audience. So anyways, we just
+[19:01] tell it like how to do its research, how
+[19:03] to start the blog, all this kind of
+[19:04] stuff. And then we make sure that it
+[19:06] uses its sources at the bottom as a
+[19:08] clickable link and then just a quick
+[19:09] example workflow of like order of
+[19:11] operations type of thing. But then as
+[19:13] you can see, it spits out a full blog
+[19:14] post for us. You can see there's a few
+[19:16] sources down here at the bottom and a
+[19:17] little reminder which is a well-rested
+[19:19] mind is a productive mind. So it
+[19:21] basically takes this blog post and we're
+[19:23] just going to feed that into the next
+[19:24] agent which is a image prompt agent. So
+[19:26] we're saying hey here's the blog post.
+[19:28] As you can see it's getting the entire
+[19:29] blog post and then we say using that
+[19:32] post make a sort of a graphic or a
+[19:35] visual that will go really well with
+[19:36] that post. So that's why in some of the
+[19:38] examples you'd see there's like
+[19:39] statistics in the visual or you know it
+[19:41] really aligns with the actual content
+[19:44] and that's the whole goal, right? So,
+[19:46] not going to read this whole thing, but
+[19:47] basically we're just telling it to read
+[19:48] and analyze the post, identify the main
+[19:50] message, like what are some key
+[19:51] highlights, and then make a text image
+[19:54] prompt for that blog post, and then
+[19:56] pretty much you're going to output that
+[19:57] that image prompt right here. But we
+[19:59] have it outputting a title as well as a
+[20:01] prompt because we want to use a title
+[20:02] later. So, anyways, we're doing that
+[20:05] again with a structured output parser
+[20:06] where we're saying output a title and
+[20:08] output a prompt. And that's exactly what
+[20:09] it did. So, then we can use them later.
+[20:11] You'll see what I'm talking about down
+[20:13] here.
+[20:14] Anyways, this next step is the exact
+[20:16] same as creating an image. We're hitting
+[20:18] the same endpoint for creating an image.
+[20:20] We're just passing in the prompt that
+[20:21] came from the previous one. And if you
+[20:23] see these little functions in here where
+[20:25] you see like the variable with the
+[20:27] dotreplace, I I need to change this so
+[20:29] all of them have that. But basically, in
+[20:31] an HTTP request, if you're passing over
+[20:34] double quotes, it's going to fail. So
+[20:37] right here, you can see there's like
+[20:38] single quotes. And if I wouldn't have
+[20:39] had this function, it would have made
+[20:40] double quotes here and it probably would
+[20:42] have failed. So this is just a good
+[20:43] check to replace those with single
+[20:45] quotes. So anyways, obviously we're
+[20:47] converting that to binary, right? As you
+[20:49] can see right here, here is our graphic
+[20:51] for that blog. We're sending that in.
+[20:54] We're sending the photo and then we're
+[20:55] also sending the blog content. So this
+[20:57] is two different steps. The first one is
+[20:59] we're sending the binary data. And then
+[21:01] the second one is we're sending the
+[21:02] actual text content. They're both
+[21:04] obviously using the same chat ID, but
+[21:06] this one is the output from the blog
+[21:07] post agent. And the previous one is just
+[21:09] the binary data that's right here. Then
+[21:11] of course we're writing to drive into
+[21:12] sheets because we want to have those
+[21:14] images to access later. So same thing
+[21:16] we're uploading to drive. We're using
+[21:18] the title right here to title that
+[21:20] picture. So this is why we wanted to
+[21:22] have the image prompt agent spit out a
+[21:23] title and a prompt. So there's the title
+[21:26] and then pretty much same thing here
+[21:28] when we're logging that back into
+[21:29] sheets. So like I said, this is the
+[21:32] exact same flow for the LinkedIn one.
+[21:33] The only difference is that we have
+[21:35] different writing style in this agent
+[21:37] for LinkedIn posts and then we have
+[21:38] different writing style here for the
+[21:40] text image generation. Um just so the
+[21:42] LinkedIn graphics are a little bit
+[21:43] different than like a more of a general
+[21:45] blog graphic. Cool. And then the last
+[21:47] one we have is the video generation. So
+[21:49] clicking into here, let's take a look at
+[21:51] what we're passing over. This one's a
+[21:52] little simpler on this front, but the
+[21:54] actual workflow is probably the most um
+[21:56] complicated. But we're just passing over
+[21:57] a topic of the video as well as the chat
+[22:00] ID. So here's what the workflow looks
+[22:02] like. This was inspired by another one I
+[22:05] did a full video on it where I did
+[22:06] faceless shorts. So, if you want to
+[22:08] check that one out, I'll tag that right
+[22:09] up here. But anyways, let's click into
+[22:11] the execution from the demo and we'll
+[22:13] watch that data move through. So, what
+[22:15] we got sent over was a beaver building a
+[22:17] house showing the beaver gathering
+[22:18] sticks, arranging them by a riverbank,
+[22:20] creating a dam, all this kind of stuff,
+[22:21] and the chat
+[22:23] ID. And what we wanted to do is
+[22:25] basically what we're doing is, as you
+[22:27] can see, there's four items passing
+[22:28] through. We're basically creating four
+[22:30] images and four 5-second long videos and
+[22:32] rendering it all together in a 20 second
+[22:34] clip. So the image prompt agent we are
+[22:38] basically feeding in that video topic
+[22:39] and then we told it this long system
+[22:41] prompt here is basically you're a master
+[22:43] visual story structuring agent. Your
+[22:45] task is to take a given short video
+[22:47] topic which is about the beaver building
+[22:49] a house and you need to create four
+[22:51] parts that are cohesive and you're going
+[22:53] to turn those four parts into a text
+[22:55] image generation prompt. But also we had
+[22:58] to give it a output parser. So whenever
+[23:00] we do that we have to flick on this
+[23:01] little box right here that says um
+[23:03] require specific output format. And we
+[23:05] just gave it part one, part two, part
+[23:07] three, part four. And you can see that's
+[23:08] how it outputs over here. And so even
+[23:11] though we have those four parts, it's
+[23:12] still only one item. So that's why we
+[23:13] use the split out to turn in, you know,
+[23:15] these four parts and one item into
+[23:17] actually four different items so that we
+[23:19] can create four different images and
+[23:20] videos for each of these little image
+[23:22] prompts. So that's exactly what happens
+[23:24] next. We're hitting PI API's endpoint in
+[23:26] order to generate those images. So, like
+[23:28] I said in the full video where I did on
+[23:29] faceless shorts, you'll see a little bit
+[23:31] more in depth about how I set this up,
+[23:32] but basically we're just hitting the
+[23:34] endpoint for Flux image generation. We
+[23:37] are sending over the image prompt. And
+[23:39] as you can see, this is going to send
+[23:40] over four requests. So, the first one is
+[23:41] a stocky beaver. The second one is the
+[23:44] same detailed beaver. The third one is a
+[23:46] close-up dramatic scene where he's
+[23:47] placing sticks. And then the fourth one
+[23:48] is he has the actual home. And so,
+[23:50] that's how it creates four different
+[23:51] images. You can see that right here.
+[23:53] What happens is it spits out, you know,
+[23:55] all of these are still pending, so it
+[23:56] takes a little bit to actually generate
+[23:57] them. And so that's why we wait for 90
+[23:59] seconds and then we're just basically
+[24:01] making a request to a different endpoint
+[24:03] as a get where we're going to just go
+[24:05] check on the status um of these
+[24:07] requests. And now you can see they're
+[24:08] all completed and we have like a link to
+[24:10] the actual picture, which would be right
+[24:12] here, we have image URL. If I just go to
+[24:14] this, you can see this is one of the
+[24:15] images about our beaver. And so one
+[24:17] thing to keep in mind, optimally, you
+[24:19] probably want to have this set up to be
+[24:20] polling where you're not just waiting 90
+[24:22] seconds and just taking a guess because
+[24:24] if it's not done after 90 seconds, the
+[24:26] workflow wouldn't be complete and you'd
+[24:28] pass over, you know, maybe three of the
+[24:30] images are done, but the fourth one
+[24:31] isn't and you just would be missing one.
+[24:32] So polling basically just means you'd be
+[24:34] checking and if they're not done, you'd
+[24:35] loop back, wait a little bit, and check
+[24:37] again. And that just kind of ensures
+[24:38] that you don't move on from this step
+[24:39] until all four images are done. If you
+[24:41] want to see a quick example of that, I
+[24:43] did a little example in a fire call
+[24:45] video. I'll tag that right up here.
+[24:46] Anyways, from there we have those images
+[24:48] and they come through as URLs. And then
+[24:50] we're hitting runway to turn those URL
+[24:52] images into videos. So what we're
+[24:54] passing over here in the body request is
+[24:56] the prompt image. And as you can see,
+[24:58] we're sending over the URL. And there's
+[24:59] going to be four different URLs. And
+[25:01] then we're sending over prompt text,
+[25:02] which helps the model turn the images
+[25:04] into a video. And this prompt text is
+[25:06] the same one that we used in the text
+[25:09] image generation. And now we're just
+[25:10] using it again for the imagetovideo
+[25:12] generation because obviously like this
+[25:13] kind of has like a little story
+[25:14] involved. Anyways, what this one does is
+[25:17] it spits out four IDs and then later
+[25:19] again we have to wait for them to
+[25:21] actually be generated and then we're
+[25:22] going to check if those IDs are done
+[25:24] yet. And so when they are done after
+[25:26] about 60 to 90 seconds, you can see all
+[25:28] of these statuses are succeeded. And
+[25:30] then we get the outputs in the form of a
+[25:31] link which if I clicked into this one,
+[25:34] this would be an actual video. But of
+[25:36] course there's no sound effects yet. So
+[25:37] that's kind of the next step is we have
+[25:39] to make a sound effect for each clip and
+[25:41] then we want to render everything
+[25:42] together. Okay. So the way we do that is
+[25:44] with a sound agent. So what I did here
+[25:46] is I passed over each scene
+[25:48] individually. So scene one, scene two,
+[25:50] scene three, scene four. And then what
+[25:52] we told it in its system prompt is that
+[25:53] you're a master sound prompt generator.
+[25:55] Your task is to create vivid immersive
+[25:57] sound prompts based on the given scene.
+[25:59] And they should all just kind of be like
+[26:00] background sound effects. And as you can
+[26:02] see, it spits out these four different
+[26:03] outputs, which are all just like
+[26:05] different sound effect prompts. and
+[26:07] we're going to feed those in to 11 Labs
+[26:09] to turn this text into a 5-second clip
+[26:12] of sound. So that's why right here we
+[26:14] are sending a request to 11 Labs. We're
+[26:16] basically saying, "Hey, here's the text
+[26:18] that you're going to turn into a sound
+[26:19] effect." And then right here you can see
+[26:20] we have four different clips and they're
+[26:22] all 5 seconds long of sound effects. So
+[26:25] I know I'm going through this a little
+[26:26] fast, but don't want this video to be
+[26:28] too long. And I have a full breakdown of
+[26:29] the video that I sort of linked earlier.
+[26:31] So definitely check that out if you want
+[26:32] to understand a little bit more of
+[26:34] what's going on. But this is the final
+[26:36] step down here where we're rendering it
+[26:37] and then logging it back. So we're
+[26:39] merging everything together so we can
+[26:40] have those four items with, you know,
+[26:43] here's the video and here's the audio.
+[26:45] And so that's what we get right here.
+[26:46] You can see we have four items and all
+[26:49] of their success messages, the different
+[26:50] links we need. And then we just
+[26:51] basically wanted to clean it up and
+[26:53] split it out. So now we have here's item
+[26:55] one and basically here's the audio for
+[26:57] item one and here's the video for item
+[26:59] one. And then we have all four of those
+[27:01] so that we can really easily pass it
+[27:03] into this create a mate template right
+[27:05] here. So all we're doing is we're
+[27:06] passing over the four variables down
+[27:07] here. So once you have my Cremate
+[27:09] template script, once you're in
+[27:11] creatate, all you have to do is go to
+[27:12] the source editor up here. You'll paste
+[27:14] in that script right here. And then
+[27:16] you'll click on um use template API
+[27:18] integration and then you'll hit this
+[27:19] curl command. And then all you have to
+[27:21] do is when you're in Nitn, you'll just
+[27:23] want to import your curl to this HTTP
+[27:25] request and paste that in there. And
+[27:27] then you'll have your template ready to
+[27:28] go. And then you would just basically
+[27:29] drag in, you know, I need the four video
+[27:31] sources right here and the four audio
+[27:33] sources right here, which are the web
+[27:35] content link
+[27:37] sources. So, as you can see, they just
+[27:39] kind of count up from zero to three,
+[27:40] which means we have all four and then we
+[27:42] have pretty much everything we need to
+[27:44] stitch it all together and create a
+[27:45] mate. And so, this is like very similar
+[27:48] to when we're creating the images and
+[27:49] videos where it comes through and says,
+[27:51] "Hey, okay, like basically we're
+[27:52] processing it." So, we have to wait for
+[27:54] 25 seconds and then we're just going to
+[27:55] go hit that endpoint to download the URL
+[27:57] that it gives us and we get the URL from
+[27:59] that previous step and then it comes
+[28:03] back as you can see with a full video
+[28:06] that actually has the sound effects
+[28:07] rendered there. So, then because we have
+[28:09] the video right here as binary, we're
+[28:11] just going to send that back to us in
+[28:12] Telegram. And then we create a title
+[28:14] real quick and then we put that title
+[28:16] and everything else we need in the log.
+[28:19] Okay, so that was kind of how all of
+[28:21] these different tools work. And
+[28:23] apologies if I went a little fast. I
+[28:24] just didn't want this video to go too
+[28:26] long. But now let's talk about pricing
+[28:28] real quick and then how you can actually
+[28:30] set this up in your own NAN. Okay, so
+[28:32] here's a little doc I threw together
+[28:34] about the pricing of the system. So
+[28:36] obviously Naden is where we're pretty
+[28:38] much hosting all this. So if you're on
+[28:39] the cloud, which in this video I'm using
+[28:41] the cloud, so it's about, you know, the
+[28:43] 27 bucks a month or whatever that plan
+[28:44] is. Um, so you've got that cost. The
+[28:46] first thing I'll touch on is the image
+[28:48] creation. So, we're using pretty much
+[28:50] the new OpenAI, which is the GPT image
+[28:52] one, which is the pretty much the same
+[28:54] generation model as in the chat GPT40.
+[28:57] And so, this is about 19 to 20 cents per
+[28:59] image, as well as 19 to 20 cents per
+[29:01] image edit. And we also are using this
+[29:04] model in the um LinkedIn and blog
+[29:06] posting agents as well. So, just keep
+[29:09] that in mind. That's going to be about
+[29:10] 20 cents per run for those. But in that
+[29:12] create image endpoint, you also have the
+[29:14] option to use the different models like
+[29:16] Dolly 2 or Dolly 3, which are a little
+[29:18] bit cheaper. The prices are listed right
+[29:19] here. Um, and as you can see, like if we
+[29:21] go into the request, there's a parameter
+[29:23] right here called model. And this is
+[29:24] where you could switch out that model if
+[29:26] you wanted it to be cheaper. You could
+[29:27] even have that be dynamic if you wanted
+[29:28] your agent to say, okay, you know, like
+[29:30] what type of thing are we doing? Let's
+[29:31] use a cheaper model, whatever it is. But
+[29:33] then, anyways, in the video creation
+[29:35] workflow, when we're creating those
+[29:36] images, we're using Flux through PI API,
+[29:39] which is about 1 and a half cents per
+[29:41] image. So, that's like obviously a much
+[29:43] cheaper route. Okay. Now, for video
+[29:45] creation, we're using Runway, which is
+[29:47] about 25 cents per 5-second video clip.
+[29:49] I think it's 50 cents for a 10-second
+[29:51] clip, but we're making four 5second long
+[29:53] clips. So, it's about a dollar per run
+[29:55] there. And you also have to add on the
+[29:56] cost of the um images. Okay. And then
+[29:59] for Creative, I'm currently on the free
+[30:01] trial, which gives you 50 free credits.
+[30:03] And if you see here, I've got, you know,
+[30:05] three successful renders, and I've used
+[30:08] three of my 50 credits. So, I I'm
+[30:10] assuming that means like one credit per
+[30:12] 20 second render. But then down here,
+[30:14] um, when I did some research, it said
+[30:15] 2,000 credits was suitable for
+[30:17] approximately 200 videos. Actually, if I
+[30:19] click back into create a mate and I go
+[30:21] to upgrade my plan, you can see this is,
+[30:23] uh, 2,000 credits and 200 plus videos or
+[30:25] 2,000 images. So, not exactly sure
+[30:27] there, but so far I've done three
+[30:29] renders and it seems three credits. Then
+[30:30] for sound effects, we're using 11 Labs.
+[30:32] And on the starter plan of five bucks a
+[30:34] month, you're going to get a generous
+[30:35] amount of credits. You probably won't
+[30:37] even run through that. I haven't had to
+[30:38] upgrade my plan yet. So, that's about
+[30:40] five bucks a month. And then for all of
+[30:41] the text generation and reasoning for
+[30:43] all the different workflows and agents,
+[30:45] I've been using 4.1 mini and 4.1 for
+[30:47] this entire workflow. I've obviously
+[30:49] been doing that through Open Router, but
+[30:52] they're not too bad. So 41 is $2 for a
+[30:54] million input tokens, eight bucks for a
+[30:56] million output tokens, and 41 mini is 40
+[30:59] cents for a million input tokens, and
+[31:01] $1.60 for a million output tokens.
+[31:03] Anyways, I'll have this document
+[31:05] attached in the free school community
+[31:06] with all the other resources you need.
+[31:08] Okay, so when it actually comes to
+[31:09] setting all this up, first step is
+[31:11] you'll go to the Free School community
+[31:13] and you'll have to get the resources. So
+[31:15] you'll join the Free School community.
+[31:17] You can either search for the title of
+[31:18] the video or if you click on YouTube
+[31:19] resources and look for the post
+[31:21] associated with this video, you can find
+[31:23] all of the JSON templates in here and
+[31:25] you'll have to download those. So
+[31:27] there'll be seven total workflows, you
+[31:28] know, the main agent and the six tools.
+[31:30] And you'll have to import each of those
+[31:31] into an individual workflow. So you'll
+[31:32] come up here, click import from file.
+[31:34] Once you click on that workflow, the
+[31:36] JSON workflow, it will pop up like this
+[31:38] and you'll have it all set up. I'll also
+[31:39] have like a setup guide somewhere over
+[31:41] here which will tell you the different
+[31:42] things you need to grab like your API
+[31:44] keys or whatever it is. And then you
+[31:45] have to like configure the workflows. So
+[31:47] when you import the search images
+[31:49] workflow, you'll have to come into here
+[31:51] and make sure that it's referencing the
+[31:52] one that you want. So you'll have to
+[31:54] make sure like whatever you name it in
+[31:55] your instance, if it's called search
+[31:57] images, you'll just have to make sure
+[31:58] you click on it and that it's linked.
+[31:59] And you can always check by clicking on
+[32:01] this to open up that workflow in a new
+[32:03] tab. So, of course, you'll have all your
+[32:05] different API keys to plug in like your
+[32:06] OpenAI, your Open Router, your Google
+[32:08] Drive, your Google Sheets, all that. But
+[32:10] the next step really would be to do the
+[32:12] Google Sheets template. So, I'll have a
+[32:14] link to this template in the community
+[32:16] as well. You'll have to click on file
+[32:17] and you'll make a copy and then you can
+[32:19] just like have that in your own Google
+[32:21] suite and use that to log everything.
+[32:23] You know, the names will always be
+[32:24] consistent. So, when you run it, it
+[32:26] should basically update this
+[32:27] automatically and you'll be good to go
+[32:28] there. And then, of course, you'll have
+[32:30] to get the creatate template which will
+[32:32] look like this. I'll post that in there
+[32:33] as well. And you'll just open up a new
+[32:35] template when you're in CreativeMate,
+[32:36] start from scratch, open up the source
+[32:38] editor, and paste that in there. And
+[32:40] then you can click on use template API
+[32:41] integration, and then you'll import that
+[32:43] curl into the faceless video step down
+[32:45] here where you want to actually render
+[32:47] the video together. You'll import that
+[32:49] curl command, and it will have
+[32:50] everything filled out. You'll just need
+[32:51] to drag in the variables. Or what you
+[32:53] could do is leave all the variables here
+[32:54] and you just need to switch out the
+[32:56] template ID from your creatate. And then
+[32:59] I think the only other thing you need to
+[33:00] plug in is like your Telegram
+[33:01] credential. Um, hopefully I'm not
+[33:04] missing anything, but like I said, I'll
+[33:05] have like a setup guide and then you
+[33:06] should be good to go to start running
+[33:07] this thing and using this agent. And so
+[33:09] if you're a complete beginner or you
+[33:11] have a little bit of experience, but
+[33:12] you're looking to take your knowledge a
+[33:13] little further, then definitely check
+[33:14] out my paid community. The link for that
+[33:16] will be down in the description. We got
+[33:17] a great community of over 1100 members
+[33:19] who are using Nen and building
+[33:21] automations every day. We've got a
+[33:22] classroom section with a full course on
+[33:24] building agents, different deep dive
+[33:25] topics like vector databases and APIs
+[33:27] and HTTP requests, as well as some
+[33:29] step-by-step builds. Um, and then we
+[33:31] have five live calls per week, which are
+[33:32] always recorded to make sure you're
+[33:34] never getting stuck. And currently
+[33:35] working on a few new courses that will
+[33:37] help someone that's a complete beginner
+[33:38] sort of start with the foundations and
+[33:40] then work their way up to automating
+[33:41] processes. Anyways, would love to see
+[33:43] you guys in the community. Would love to
+[33:44] see you on a live call. But that's going
+[33:46] to do it for this video. If you enjoyed
+[33:47] this one or you learned something new,
+[33:48] definitely give it a like. Helps me out
+[33:49] a ton. And as always, appreciate you
+[33:51] guys making it to the end of this one.
+[33:52] I'll see you in the next video. Thanks.

@@ -1,0 +1,892 @@
+Video Title: How I Automated Product Videography with AI (Step by Step n8n Tutorial)
+Video ID: qV7xOEKEBDA
+URL: https://www.youtube.com/watch?v=qV7xOEKEBDA
+View Count: 41,315
+
+[00:00] Okay. So, all I have to do in this form
+[00:01] submission is enter in a picture of a
+[00:03] product, enter in the product name, the
+[00:05] product description, and my email
+[00:06] address. And we'll send this off, and
+[00:08] we'll see the workflow over here start
+[00:10] to fire off. So, we're going to upload
+[00:11] the photo. We're going to get an image
+[00:13] prompt. We're going to download that
+[00:14] photo. Now, we're creating a
+[00:16] professional graphic. So, after our
+[00:17] image has been generated, we're
+[00:18] uploading it to a API to get a public
+[00:20] URL so we can feed that URL of the image
+[00:23] into Runway to generate a professional
+[00:25] video. Now, we're going to wait 30
+[00:27] seconds and then we'll check in to see
+[00:28] if the video is done. If it's not done
+[00:29] yet, we're going to come down here and
+[00:31] pull, wait five more seconds, and then
+[00:32] go check in. And we're going to do this
+[00:34] infinitely until our video is actually
+[00:35] done. So, anyways, it just finished up.
+[00:37] It ended up hitting this check eight
+[00:39] times, which indicates I should probably
+[00:40] increase the wait time over here. But
+[00:42] anyways, let's go look at our finished
+[00:43] products. So, we just got this new
+[00:45] email. Here are the requested marketing
+[00:46] materials for your toothpaste. So,
+[00:48] first, let's look at the video cuz I
+[00:49] think that's more exciting. So, let me
+[00:50] open up this link. Wow, we got a
+[00:51] 10-second video. It's spinning. It's 3D.
+[00:54] The lighting is changing. This looks
+[00:56] awesome. And then of course it also
+[00:57] sends us that image in case we want to
+[00:59] use that as well. And one of the steps
+[01:00] in the workflow is that it's going to
+[01:02] upload your original image to your
+[01:03] Google Drive. So here you can see this
+[01:04] was the original and then this was the
+[01:06] finished product. So now you guys have
+[01:07] seen a demo. We're going to build this
+[01:09] entire workflow step by step. So stick
+[01:11] with me because by the end of this
+[01:12] video, you'll have this exact system up
+[01:14] and running. Okay. So when we're setting
+[01:15] up a system where we're creating an
+[01:17] image from text and then we're creating
+[01:19] a video from that image, the two most
+[01:21] important things are going to be that
+[01:22] image prompt and that video prompt. So
+[01:24] what we're going to do is head over to
+[01:25] my school community. The link for that
+[01:26] will be down in the description. It's a
+[01:27] free school community. And then what
+[01:29] you're going to do is either search for
+[01:30] the title of this video or click on
+[01:32] YouTube resources and find the post
+[01:34] associated with this video. And when you
+[01:35] click into there, there'll be a dock
+[01:37] that will look like this or a PDF and it
+[01:39] will have the two prompts that you'll
+[01:40] need in order to run the system. So head
+[01:42] over there, get that doc, and then we
+[01:44] can hop into the step by step. And that
+[01:45] way we can start to build this workflow
+[01:47] and you guys will have the prompts to
+[01:48] plug right in. Cool. So once you have
+[01:50] those, let's get started on the
+[01:52] workflow. So, as you guys know, a
+[01:53] workflow always has to start with some
+[01:55] sort of trigger. So, in this case, we're
+[01:57] going to be triggering this workflow
+[01:58] with a form submission. So, I'm just
+[02:00] going to grab the native NAN form on new
+[02:02] form event. So, we're going to configure
+[02:04] what this form is going to look like and
+[02:05] what it's going to prompt a user to
+[02:06] input. And then whenever someone
+[02:08] actually submits a response, that's when
+[02:10] the workflow is going to fire off. Okay.
+[02:12] So, I'm going to leave the
+[02:13] authentication as none. The form title,
+[02:15] I'm just putting go to market. For the
+[02:16] form description, I'm going to say,
+[02:18] "Give us a product photo, title, and
+[02:21] description, and we'll get back to you
+[02:23] with professional marketing
+[02:25] materials." And if you guys are
+[02:26] interested in what I just used to
+[02:27] dictate that text, there'll be a link
+[02:29] for Whisper Flow down in the
+[02:30] description. And now we need to add our
+[02:31] form elements. So, the first one is
+[02:33] going to be not a text. We're going to
+[02:35] have them actually submit a file. So,
+[02:37] click on file. This is going to be
+[02:38] required. I only want them to be allowed
+[02:40] to upload one file, so I'm going to
+[02:41] switch off multiple files. And then for
+[02:44] the field name, we're just going to say
+[02:46] product photo. Okay. So now we're going
+[02:48] to add another one which is going to be
+[02:50] the product title. So I'm just going to
+[02:51] write product title. This is going to be
+[02:52] text. For placeholder, let's just put
+[02:54] toothpaste since that was the example.
+[02:56] This will be a required field. So the
+[02:57] placeholder is just going to be the gray
+[02:59] text that fills in the text box so
+[03:00] people are kind of they know what to put
+[03:02] in. Okay, we're adding another one
+[03:04] called product description. We'll make
+[03:06] this one required. We'll just leave the
+[03:08] placeholder blank because you don't need
+[03:09] it. And then finally, what we need to
+[03:10] get from them is an email, but instead
+[03:12] of doing text, we can actually make it
+[03:14] require a valid email address. So, I'm
+[03:16] just going to call it email, and we'll
+[03:18] just say like
+[03:19] nameacample.com so they know what a
+[03:21] valid email looks like. We'll make that
+[03:22] required because we have to send them an
+[03:24] email at the end with their materials.
+[03:26] And now we should be good to go. So, if
+[03:27] I hit test step, we'll see that it's
+[03:29] going to open up a form submission and
+[03:30] it has everything that we just
+[03:31] configured. And now, let me put in some
+[03:33] sample data real quick. Okay, so I put a
+[03:35] picture of a clone bottle. The title's
+[03:37] clone. I said the clone smells very
+[03:39] clean and fresh and it's a very
+[03:40] sophisticated scent because we're going
+[03:42] to have that description be used to sort
+[03:44] of help create that text image prompt.
+[03:46] And then I just put my email. So I'm
+[03:47] going to submit this form. We should see
+[03:48] that we're going to get data back right
+[03:50] here in our Nad, which is the binary
+[03:52] photo. This is the product photo that I
+[03:54] just submitted. And then we have our
+[03:55] actual table of information like the
+[03:58] title, the description, and the email.
+[04:00] And so when I'm building stuff step by
+[04:02] step, what I like to do is I get the
+[04:03] data in here and then I pretty much will
+[04:05] just build node by node, testing the
+[04:07] data all the way through, making sure
+[04:08] that nothing's going to break when
+[04:10] variables are being passed from left to
+[04:12] right in this workflow. Okay, so the
+[04:13] next thing that we need to do is we have
+[04:15] this binary data in here and binary data
+[04:18] is tough to reference later. So what I'm
+[04:19] going to do is I'm just going to upload
+[04:20] it straight to our Google Drive so we
+[04:22] can pull that in later when we need it
+[04:24] to actually edit that image. Okay, so
+[04:26] that's our form trigger. That's what
+[04:27] starts the workflow. And now what we're
+[04:29] going to do next is we want to upload
+[04:30] that original image to Google Drive so
+[04:33] we can pull it in later and then use it
+[04:34] to edit the image. So what I'm going to
+[04:36] do is I'm going to click on the plus.
+[04:38] I'm going to type in Google Drive and
+[04:39] we're going to grab a Google Drive
+[04:40] operation that is going to be upload
+[04:43] file. So I'll click on upload file. And
+[04:45] at this point you need to connect your
+[04:46] Google Drive. So I'm not going to walk
+[04:48] through that step by step, but I have a
+[04:49] video right up here where I do walk
+[04:51] through it step by step. But basically
+[04:53] you're just going to go to Docs. you
+[04:54] have to open up a sort of Google Cloud
+[04:57] profile or a console and then you just
+[04:59] have to connect yourself and enable the
+[05:00] right credentials and APIs. Um, but like
+[05:03] I said, that video will walk through it.
+[05:04] Anyways, now what we're doing is we have
+[05:06] to upload the binary field right here to
+[05:09] our Google Drive. So, it's not called
+[05:11] data. We can see over here it's called
+[05:12] product photo. So, I'm just going to
+[05:13] copy and paste that right there. So,
+[05:15] it's going to be looking for that
+[05:16] product photo. And then we have to give
+[05:18] it a name. So, that's why we had the
+[05:20] person submit a title. So, all I'm going
+[05:22] to do is for the name, I'm going to make
+[05:24] this an expression instead of fixed
+[05:26] because this name is going to change
+[05:27] based on the actual product coming
+[05:29] through. I'm going to drag in the
+[05:30] product title from the left right here.
+[05:32] So, now the the photo in Google Drive is
+[05:35] going to be called cologne. And then I'm
+[05:36] just going to in parenthesis say
+[05:38] original. So, because this is an
+[05:40] expression, it basically means whenever
+[05:42] someone submits a form, whatever the
+[05:44] title is, it's going to be title and
+[05:45] then it's going to say original. And
+[05:47] that's how we sort of control that to be
+[05:48] dynamic. Anyways, then I'm just choosing
+[05:50] what folder to go in. So, in my drive,
+[05:52] I'm going to choose it to go to a folder
+[05:53] that I just made called um product
+[05:56] creatives. So, once we have that
+[05:57] configured, I'm going to hit test step.
+[05:59] We're going to wait for this to spin. It
+[06:01] means that it's trying to upload it
+[06:02] right now. And then once we get that
+[06:03] success message, we'll quickly go to our
+[06:05] Google Drive and make sure that the
+[06:06] image is actually there. So, there we
+[06:08] go. It just came back. And now I'm going
+[06:10] to click into Google Drive, click out of
+[06:11] the toothpaste, and we can see we have
+[06:13] cologne. And that is the image that we
+[06:14] just submitted in NAN. All right. All
+[06:16] right. Now that we've done that, what we
+[06:18] want to do is we want to feed the data
+[06:19] into an AI node so that it can create a
+[06:22] text image prompt. So I'm going to click
+[06:23] on the plus. I'm going to grab an AI
+[06:25] agent. And before we do anything in
+[06:28] here, I'm first of all going to give it
+[06:29] its brain. So I'm going to click on the
+[06:30] plus under chat model. I'm personally
+[06:32] going to grab an open router chat model,
+[06:34] which basically lets you connect to a
+[06:36] ton of different things. Um, let me see.
+[06:38] Open router.ai. It basically lets you
+[06:40] connect your agents to all the different
+[06:42] models. So if I click on models up here,
+[06:44] we can see that it just lets you connect
+[06:46] to Gemini, Anthropic, OpenAI, DeepSeek.
+[06:48] It has all these models and all in one
+[06:50] place. So go to open router, get an API
+[06:52] key, and then once you come back into
+[06:53] here, all you have to do is connect your
+[06:55] API key. And what I'm going to use here
+[06:56] is going to be 4.1. And then I'm just
+[06:59] going to name this so we know which one
+[07:00] I'm using here. And then we now have our
+[07:03] agent accessing GBT 4.1. Okay. So now
+[07:07] you're going to go to that PDF that I
+[07:08] have in the school community. And you're
+[07:10] just going to copy this product
+[07:12] photography prompt. Grab that. Go back
+[07:15] to the AI agent. And then you're going
+[07:17] to click on add option. Add a system
+[07:19] message. And then we're basically just
+[07:20] going to I'm going to click on
+[07:22] expression and expand this full screen
+[07:23] so you guys can see it better. But I'm
+[07:25] just going to paste that prompt in here.
+[07:26] And this is going to tell the AI agent
+[07:28] how to take what we're giving it and
+[07:30] turn it into a text image optimized
+[07:33] prompt for professional style, you know,
+[07:36] studio photography. So we're not done
+[07:39] yet. because we have to actually give it
+[07:41] the dynamic information from our form
+[07:42] submission every time. So that's a user
+[07:45] message. That's basically what it's
+[07:46] going to look at. So the user message is
+[07:48] what the agent's going to look at every
+[07:49] time. And the system message is
+[07:51] basically like here are your
+[07:52] instructions. So for the user message,
+[07:54] we're not going to be using a connected
+[07:55] chat trigger node. We're going to define
+[07:57] below. And when we want to make sure
+[07:59] that this changes every time, we have to
+[08:00] make sure it's an expression. And then
+[08:02] I'm just going to drill down over here
+[08:04] to the form submission. And I'm going to
+[08:06] say, okay, here's what we're going to
+[08:07] give this agent. It's going to get the
+[08:10] product which the person submitted to us
+[08:12] in the form and we can drag in the
+[08:14] product which was cologne as you can see
+[08:16] on the right and then they also gave us
+[08:18] a description. So all I have to do now
+[08:21] is drag in the product description and
+[08:23] so now every time the agent will be
+[08:24] looking at whatever product and
+[08:26] description that the user submitted in
+[08:28] order to create its prompt. So I'm going
+[08:29] to hit test step. We'll see right now
+[08:32] it's using its chat model GPT4.1 and
+[08:34] it's already created that prompt for us.
+[08:36] So let's just give it a quick read.
+[08:37] hyperrealistic photo of sophisticated
+[08:39] clone bottle, transparent glass, sleek,
+[08:41] minimalistic design, silver metal cap,
+[08:43] all this. But what we have to do is we
+[08:45] have to make sure that the image isn't
+[08:47] being created just on this. It has to
+[08:49] look at this, but it also has to look at
+[08:51] the actual original image. So that's why
+[08:53] our next step is going to be to
+[08:54] redownload this file and then we're
+[08:56] going to push it over to the image
+[08:57] generation model. So at this point, you
+[08:59] may be wondering like why are we going
+[09:01] to upload the file if we're just going
+[09:02] to download it again? And the reason why
+[09:04] I had to do that is because when we get
+[09:06] the file in the form of binary, we want
+[09:08] to send the binary data into the HTTP
+[09:11] request right here that actually
+[09:12] generates the image. And we can't
+[09:14] reference the binary way over here if
+[09:16] it's only coming through over here. So
+[09:18] we upload it so that we can then
+[09:19] download it and then send it right back
+[09:21] in. And so if that doesn't make sense
+[09:22] yet, it probably will once we get over
+[09:24] to this stage, but that's why. Anyways,
+[09:27] next step is we're going to download
+[09:28] that file. So I'm going to click on this
+[09:29] plus. We're going to be downloading it
+[09:31] from Google Drive and we're going to be
+[09:33] using the operation download file. So,
+[09:36] we already should be connected because
+[09:37] we've set up our Google credentials
+[09:38] already. The operation is going to be
+[09:40] download the resources a file and
+[09:42] instead of choosing from a list, we're
+[09:44] going to choose by ID. And all we're
+[09:45] going to do is download that file that
+[09:47] we previously uploaded every time. So,
+[09:48] I'm going to come over here, the Google
+[09:50] Drive upload photo node, drag in the ID,
+[09:53] and now we can see that's all we have to
+[09:54] do. If we hit test step, we'll get back
+[09:56] that file that we originally uploaded.
+[09:58] and we can just make sure it's the
+[09:59] cologne bottle. Okay, but now it's time
+[10:01] to basically use that downloaded file
+[10:03] and the image prompt and send that over
+[10:05] to an API that's going to create an
+[10:07] image for us. So, we're going to be
+[10:09] using OpenAI's image generator. So, here
+[10:11] is the documentation. We have the
+[10:13] ability to create an image or we can
+[10:15] create an image edit, which is what we
+[10:17] want to do because we want it to look at
+[10:18] the photo and our request. So, typically
+[10:21] what you can do in this documentation is
+[10:23] you can copy the curl command, but this
+[10:25] curl command is actually broken, so
+[10:26] we're not going to do that. if you
+[10:27] copied this one up here to actually just
+[10:29] create an image. That one would work
+[10:30] fine, but there's like a bug with this
+[10:32] one right now. So, anyways, I'm going to
+[10:34] go into our NAND. I'm going to hit the
+[10:36] plus. I'm going to grab an HTTP request.
+[10:38] And now, we're going to configure this
+[10:41] request. So, I'm going to walk through
+[10:42] how I'm reading the API documentation
+[10:44] right here to set this up. I'm not going
+[10:46] to go super super in-depth, but if you
+[10:47] get confused along the way, then
+[10:49] definitely check out my paid course. The
+[10:50] link for that's down in the description.
+[10:52] I've got a full course on deep diving
+[10:54] into APIs and HTTP requests. Anyways,
+[10:56] the first thing we see is we're going to
+[10:58] be making a post request to this
+[11:00] endpoint. So, the first thing I'm going
+[11:01] to do is copy this endpoint. We're going
+[11:03] to paste that in and then we're also
+[11:04] going to make sure the method is set to
+[11:06] post. So, the next thing that we have to
+[11:07] do is authorize ourselves somehow. So,
+[11:09] over here I can see that we have a
+[11:11] header and the name is going to be
+[11:12] authorization and then the value is
+[11:14] going to be bearer space our open key.
+[11:17] So, that's why I set up a header
+[11:19] authentication already. So, in
+[11:20] authentication, I went to generic and
+[11:22] then I went to header. And then you can
+[11:24] see I have a bunch of different headers
+[11:25] already set up. But what I did here is I
+[11:27] chose my OpenAI one where basically all
+[11:29] I did was I typed in here authorization
+[11:31] and then in the value I typed in bearer
+[11:34] space and then I pasted my API key in
+[11:36] there. And now I have my OpenAI
+[11:37] credential saved forever. Okay. So the
+[11:40] first thing we have to do in our body
+[11:41] request over to OpenAI is we have to
+[11:44] send over the image to edit. So that's
+[11:46] going to be in a field called image. And
+[11:47] then we're sending over the actual
+[11:49] photo. So what I'm going to do is I'm
+[11:51] going to click on send body. I'm going
+[11:53] to use form data. And now we can set up
+[11:56] the different names and values to send
+[11:57] over. So the first thing is we're going
+[11:59] to send over this image right here on
+[12:00] the lefth hand side. And this is in a
+[12:02] field called data. And it's binary. So
+[12:04] I'm going to choose instead of form
+[12:05] data, I'm going to send over an NAN
+[12:06] binary file. The name is going to be
+[12:08] image because that's what it said in the
+[12:10] documentation. And the input data field
+[12:12] name is data. So I'm just going to copy
+[12:14] that, paste it in there. And this
+[12:15] basically means, okay, we're sending
+[12:17] over this picture. The next thing we
+[12:19] need to send over is a prompt. So the
+[12:21] name of this field is going to be
+[12:23] prompt. So I'm just going to copy that,
+[12:24] add a new parameter, and call it prompt.
+[12:27] And then for the value, we want to send
+[12:28] over the prompt that we had our AI
+[12:30] agent, right? So I'm going to click into
+[12:31] schema, and I'm just going to drag over
+[12:33] the output from the AI agent right
+[12:35] there. And now that's an expression. So
+[12:37] the next thing we want to send over is
+[12:38] what model do we want to use? Because if
+[12:40] we don't put this in, it's going to
+[12:41] default to dolly 2. but we want to use
+[12:44] gpt-image- one. So, I'm going to copy
+[12:48] gpt-image-1. We're going to come back
+[12:49] into here and I'm gonna paste that in as
+[12:51] the value, but then the name is model
+[12:54] because as you can see in here, right
+[12:56] there, it says model. So, hopefully you
+[12:57] guys can see that when we're sending
+[12:58] over an API call, we just have all of
+[13:01] these different options where we can
+[13:02] sort of tweak different settings to
+[13:04] change the way that we get the output
+[13:06] back. And then you have some other
+[13:08] options of course like quality or size.
+[13:10] But right now we're just going to leave
+[13:11] all that as default and just go with
+[13:12] these three things to keep it simple.
+[13:14] And I'm going to hit test step and we'll
+[13:15] see if this is working. Okay, never
+[13:17] mind. I got an error and I was like,
+[13:19] okay, I think I did everything right.
+[13:20] The reason I got the error is because I
+[13:22] don't have any more credits. So if you
+[13:24] get this error, go add some credits.
+[13:26] Okay, so added more credits. I'm going
+[13:28] to try this again and I'll check back
+[13:29] in. But before I do that, I wanted to
+[13:31] say me clearly. I've been like spamming
+[13:34] this thing with creating images cuz it's
+[13:36] so cool. It's so fun. But everyone else
+[13:38] in the world has also been doing that.
+[13:39] So, if you're ever getting some sort of
+[13:40] like errors where it's like a 500 type
+[13:43] of error where it means like something's
+[13:44] going on on the server side of things or
+[13:47] you're seeing like some sort of rate
+[13:48] limit stuff, keep in mind that there's
+[13:50] there's a limit on how many images you
+[13:52] can send per minute. I don't think
+[13:53] that's been clearly defined on GPT-
+[13:55] image- one. But also, if the OpenAI
+[13:58] server is receiving way too many
+[13:59] requests, that is also another reason
+[14:01] why your requests may be failing. So,
+[14:04] just keep that in mind. Okay. Okay, so
+[14:05] now it worked. We just got that back.
+[14:07] But what you'll notice is we don't see
+[14:08] an image here or like an image URL. So
+[14:10] what we have to do is we have this base
+[14:12] 64 string and we have to turn that into
+[14:15] binary data. So what I'm going to do is
+[14:17] after this node, I'm going to add one
+[14:19] that says um convert to file. So we're
+[14:22] going to convert JSON data to binary
+[14:24] data and we're going to do B 64. So all
+[14:27] I have to do now is show this data on
+[14:28] the lefth hand side. grab the base 64
+[14:30] string and then when we hit test step we
+[14:32] should get a binary file over here which
+[14:34] if we click into it this should be our
+[14:36] professional looking photo. Wow, that
+[14:38] looks great. It even got the wording and
+[14:40] like the same fonts, right? So that's
+[14:41] awesome. And by the way, if we click
+[14:43] into the results of the create image
+[14:45] where we did the image edit, we can see
+[14:47] the tokens. And with this model, it is
+[14:50] basically $10 for a million input tokens
+[14:52] and $40 for a million output tokens. So
+[14:55] right here you can see the difference
+[14:56] between our input and output tokens. And
+[14:58] this one was pretty cheap. cheap. I
+[14:58] think it was like 5 cents. Anyways, now
+[15:00] that we have that image right here as
+[15:02] binary data, we need to turn that into a
+[15:04] video using an API called runway. And
+[15:07] so, if we go into Runway and we go,
+[15:08] first of all, let's look at the price.
+[15:10] For a 5second video, 25 cents. For a
+[15:12] 10-second video, 50 cents. So, that's
+[15:13] the one we're going to be doing today.
+[15:15] But if we go to the API reference to
+[15:17] read how we can turn an image into a
+[15:19] video, what we need to look at is how we
+[15:21] actually send over that image. And what
+[15:23] we have to do here is send over an HTTPS
+[15:26] URL of the image. So, we somehow have to
+[15:28] get this binary data in Nadn to a public
+[15:31] image that runway can access. So, the
+[15:33] way I'm going to be doing that is with
+[15:34] this API that's free called image BB and
+[15:38] um it's a free image hosting service and
+[15:40] what we can do is basically just use its
+[15:42] API to send over the binary data and
+[15:44] we'll get back a public URL. So, come
+[15:46] here, make a free account, you'll grab
+[15:48] your API key from up top and then we
+[15:50] basically have here's how we set this
+[15:52] up. So, what I'm going to do is I'm
+[15:53] going to copy the endpoint right there.
+[15:55] We're going to go back into nen and I'm
+[15:56] going to add an HTTP request and let me
+[15:59] just configure this up. We'll put it
+[16:01] over here just to keep everything sort
+[16:03] of square. But now what I'm going to do
+[16:04] in here is paste that endpoint in as our
+[16:07] URL. You can also see that it says this
+[16:09] call can be done using post or git. But
+[16:11] since git requests are limited by the
+[16:13] max amount of length, you should
+[16:14] probably do post. So I'm just going to
+[16:15] go back in here and change this to a
+[16:16] post. And then there are basically two
+[16:18] things that are required. The first one
+[16:19] is our API key. And then the second one
+[16:21] is the actual image. Anyways, this
+[16:24] documentation is not super intuitive. I
+[16:26] can sort of tell that this is a query
+[16:28] parameter because it's being attached at
+[16:30] the end of the endpoint with a question
+[16:31] mark and all this kind of stuff. And
+[16:33] that's just because I've looked at tons
+[16:34] of API documentation. So, what I'm going
+[16:36] to do is go into nit. We're going to add
+[16:38] a generic credential type. It's going to
+[16:40] be a query off. Where where's query?
+[16:42] There we go. And then you can see I've
+[16:44] already added my image BB. But all
+[16:46] you're going to do is you would add the
+[16:47] name as a key and then you would just
+[16:48] paste in your API key. And that's it.
+[16:50] And now we've authenticated ourselves to
+[16:52] the service. And then what's next is we
+[16:54] need to send over the image in a field
+[16:56] called image. So I'm going to go back in
+[16:57] here. I'm going to send over a body
+[16:59] because this allows us to actually send
+[17:01] over n binary fields. And I'm not going
+[17:04] to do n binary. I'm going to do form
+[17:05] data because then we can name the field
+[17:07] we're sending over. Like I said, not
+[17:09] going to deep dive into how that all
+[17:10] works. But the name is going to be
+[17:11] image. And then the input data field
+[17:13] name is going to be data because that's
+[17:15] how it's seen over here. And this should
+[17:17] be it. So, real quick, I'm just going to
+[17:18] change this to get URL. And then we're
+[17:21] going to hit test step, which is going
+[17:22] to send over that binary data to imageb.
+[17:25] And it hopefully should be sending us
+[17:27] back a URL. And it sent back three of
+[17:29] them. I'm going to be using the middle
+[17:30] one that's just called URL because it's
+[17:32] like the best size and everything. You
+[17:33] can look at the other ones if you want
+[17:35] on your end. But this one is going to
+[17:36] load up. And we should see it's the
+[17:39] image that we got generated for us. It
+[17:40] takes a while to load up on that first
+[17:41] time, but as you can see now, it's a
+[17:43] publicly accessible URL. and then we can
+[17:45] feed it into runway. So that's exactly
+[17:48] our next step. We're going to add
+[17:49] another request right here. It's going
+[17:51] to be an HTTP and this one we're going
+[17:53] to configure to hit runway. So here's a
+[17:55] good example of we can actually use a
+[17:57] curl command. So I'm going to click on
+[17:58] copy over here when I'm in the runway.
+[18:00] Generate a video from image. Come back
+[18:03] into naden. Hit import curl and paste
+[18:05] that in there and hit import. And this
+[18:07] is going to basically configure
+[18:08] everything we need. We just have to
+[18:09] tweak a few things. Typically most API
+[18:12] documentation nowadays will have a curl
+[18:13] command. The edit image one that we set
+[18:15] up earlier was just a little broken.
+[18:17] Image BBB is just a free service. So
+[18:19] sometimes they don't always. But let's
+[18:21] configure this node. So the first thing
+[18:23] I see is we have a header off right
+[18:24] here. And I don't want to send it like
+[18:26] this. I want to send it up as a generic
+[18:27] type so I can save it. Otherwise, you'd
+[18:29] have to go get your API key every time
+[18:31] you wanted to use Runway. So as you can
+[18:33] see, I've already set up my Runway API
+[18:35] key. So I have it plugged in. But what
+[18:36] you would do is you'd go get your API
+[18:38] key from Runway. And then you'd see,
+[18:40] okay, how do we actually send over
+[18:41] authentication? It comes through with
+[18:43] the name authorization and then the
+[18:46] header is bearer space API key. So
+[18:48] similar to the last one and then that's
+[18:50] all you would do in here when you're
+[18:51] setting up your runway credential.
+[18:53] Authorization bearer space my API key.
+[18:56] And then because we have ourselves
+[18:57] authenticated up here, we can flick off
+[18:59] that headers and all we have to do now
+[19:01] is configure the actual body. Okay, so
+[19:03] first things first, what image are we
+[19:05] sending over to get turned into a video?
+[19:06] in that name prompt image. We're going
+[19:08] to get rid of that value and I'm just
+[19:10] going to drag in the URL that we wanted
+[19:12] that we got from earlier which was that
+[19:14] picture I s I showed you guys. So now
+[19:16] runway sees that image. Next we have the
+[19:18] seed which if you want to look at the
+[19:20] documentation you can play with it but
+[19:21] I'm just going to get rid of that. Then
+[19:23] we have the model which we're going to
+[19:24] be using Gen 4 Turbo. We then have the
+[19:26] prompt text. So this is where we're
+[19:28] going to get rid of this and you're
+[19:29] going to go back to that PDF you
+[19:31] downloaded from my free school and
+[19:33] you're going to paste this prompt in
+[19:35] there. So, this prompt basically gives
+[19:36] us that like 3D spinning effect where it
+[19:38] just kind of does a slow pan and a slow
+[19:40] rotate. And that's what I was looking
+[19:42] for. If you're wanting some other type
+[19:43] of video, then you can tweak that
+[19:45] prompt, of course. For the duration, if
+[19:47] you look in the documentation, it'll say
+[19:49] the duration only basically allows five
+[19:52] or 10. So, I'm just going to change this
+[19:53] one to 10. And then the last one was
+[19:55] ratio, and I'm just going to make the
+[19:56] square. So, here are the accepted ratio
+[19:58] values. I'm going to copy 960 by 960,
+[20:01] and we're just going to paste that in
+[20:02] right there. And actually before we hit
+[20:04] test step, I've realized that we're
+[20:05] missing something here. So back in the
+[20:08] documentation, we can see that there's
+[20:09] one thing up here which is required,
+[20:11] which is a header x-runway- version. And
+[20:14] then we need to set the value to this.
+[20:16] So I'm going to copy the header, and we
+[20:19] have to enable headers. I I deleted it
+[20:20] earlier, but we're going to enable that.
+[20:21] So we have the version, and then I'm
+[20:23] just going to go copy the value that it
+[20:24] needs to be set to, and we'll paste that
+[20:26] in there as the value. Otherwise, this
+[20:28] would not have worked. Okay, so that
+[20:30] should be configured. But before we test
+[20:32] it out, I want to show you guys how I
+[20:34] set up the polling flow like this that
+[20:36] you saw in the demo. So, what we're
+[20:38] going to do here is we need to go see
+[20:40] like, okay, once we send over our
+[20:43] request right here to get a video from
+[20:45] our image, it's going to return an ID
+[20:47] and that doesn't mean anything to us.
+[20:49] So, what we have to do is get our task.
+[20:51] So, that is the basically we send over
+[20:53] the ID that it gives us and then it'll
+[20:55] come back and say like the status equals
+[20:57] pending or running or it will say
+[20:59] completed. So, what I'm going to do is
+[21:01] copy this curl command for getting task
+[21:03] details. We're going to hook it up to
+[21:05] this node as an HTTP request. We're
+[21:08] going to import that
+[21:10] curl. And now that's pretty much set up.
+[21:12] We have our authorization, which I'm
+[21:13] going to delete that because, as you
+[21:15] know, we just configured that earlier as
+[21:17] a header off. So, I'm just going to come
+[21:18] in here and grab my runway API key.
+[21:22] There it is. I couldn't find it for some
+[21:23] reason. Um, we have the version set up
+[21:26] and now all we have to do is drag in the
+[21:27] actual ID from the previous one. So,
+[21:30] real quick, I'm just going to make this
+[21:31] an expression. Delete ID. And now we're
+[21:34] pretty much set up. So, first of all,
+[21:35] I'm going to test this one, which is
+[21:37] going to send off that request to runway
+[21:38] and say, "Hey, here's our image. Here's
+[21:40] the prompt. Make a video out of it." And
+[21:42] as you can see, we got back an ID. Now,
+[21:44] I'm going to use this next node, and I'm
+[21:46] going to drag in that ID from earlier.
+[21:48] And now, it's saying, "Okay, we're going
+[21:50] to check in on the status of this
+[21:51] specific task." And if I hit test step,
+[21:54] what we're going to see is that it's not
+[21:55] yet finished. So, it's going to come
+[21:56] back and say, okay, status of this run
+[21:58] or status of this task is running. So,
+[22:01] that's why what I'm going to do is add
+[22:02] an
+[22:03] if. And this if is going to be saying,
+[22:06] okay, does this status field right here,
+[22:09] does that equal running in all caps?
+[22:11] Because that's what it equals right now.
+[22:13] If yes, what we're going to do is we are
+[22:16] going to basically wait for a certain
+[22:18] amount of time. So, here's the true
+[22:19] branch. I'm going to wait and let's just
+[22:22] say it's 5 seconds. So, I'll just call
+[22:24] this five seconds. I'm going to wait for
+[22:26] 5 seconds. And then I'm going to come
+[22:27] back here and try again. So, as you saw
+[22:30] in the demo, it basically tried again
+[22:31] like seven or eight times. And this just
+[22:33] ensures that it's never going to move on
+[22:35] until we actually have a finished photo.
+[22:38] So, what you could also do is basically
+[22:39] say, does status equal completed or
+[22:41] whatever it means when it completes.
+[22:43] That's another way to do it. You just
+[22:45] have to be careful to make sure that
+[22:46] whatever you're setting here as the
+[22:47] check is always 100% going to work.
+[22:50] And then what you do is you would
+[22:52] continue the rest of the logic down this
+[22:53] path once that check has been complete.
+[22:56] And then of course you probably don't
+[22:57] want to have this check like 10 times
+[22:58] every single time. So what you would do
+[23:00] is you'd add a wait step here. And once
+[23:02] you know about how long it takes, you'd
+[23:04] add this here. So last time I had it at
+[23:06] 30 seconds and it waited like eight
+[23:07] times. So let's just say I'm going to
+[23:09] wait 60 seconds here. So then when this
+[23:11] flow actually runs, it'll wait for a
+[23:12] minute, check. If it's still not done,
+[23:14] it'll continuously loop through here and
+[23:16] wait 5 seconds every time until we're
+[23:18] done. Okay, there we So, now status is
+[23:20] succeeded. And what I'm going to do is
+[23:21] just view this video real quick.
+[23:23] Hopefully, this one came out nicely.
+[23:24] Let's take a
+[23:27] look. Wow, this is awesome. Super clean.
+[23:30] It's rotating really slowly. It's a full
+[23:32] 10-second video. You can tell it's like
+[23:34] a 3D image. This is awesome. Okay, cool.
+[23:37] So, now if we test this if branch, we'll
+[23:40] see that it's going to go down the other
+[23:41] one, which is the false branch, because
+[23:42] it's actually completed. And now we can
+[23:44] with confidence shoot off the email with
+[23:47] our materials. So, I'm going to grab a
+[23:48] Gmail node. I'm going to click send a
+[23:50] message. And we are going to have this
+[23:52] configured hopefully because you've
+[23:53] already set up your Google stuff. And
+[23:55] now, who do we send this to? We're going
+[23:57] to go grab that email from the original
+[23:58] form submission, which is all the way
+[24:00] down here. We're going to make the
+[24:02] subject, which I'm just going to say
+[24:04] marketing materials, and then a colon.
+[24:07] And we'll just drag in the actual title
+[24:09] of the product, which in here was
+[24:11] cologne. I'm changing the email type to
+[24:13] text just because I want to. Um, we're
+[24:16] gonna make the body an expression. And
+[24:17] we're just gonna say like,
+[24:20] hey, here is your photo. And obviously,
+[24:25] this can be customized however you want.
+[24:26] But for the photo, what we have to do is
+[24:28] grab that public URL that we generated
+[24:30] earlier. So, right here, there is the
+[24:32] photo URL. Here is your video. And for
+[24:36] the video, we're going to drag in the
+[24:38] URL we just got from the output of that
+[24:40] um, runway get task check. So, there is
+[24:43] the video URL. And then I'm just going
+[24:45] to say cheers. Last thing I want to do
+[24:48] is down here append naden attribution
+[24:50] and turn that off. This just ensures
+[24:52] that the email doesn't say this email
+[24:55] was sent by naden. And now if we hit
+[24:57] test step right here. This is pretty
+[24:58] much the end of the process. And we can
+[25:00] go ahead and check. Uh-oh. Okay. So not
+[25:03] authorized. Let me fix that real quick.
+[25:04] Okay. So I just switched my credential
+[25:06] because I was using one that had
+[25:07] expired. So now this should go through
+[25:08] and we'll go take a look at the email.
+[25:10] Okay. So did something wrong. I can
+[25:12] already tell what happened is this is
+[25:13] supposed to be an expression and
+[25:15] dynamically come through as the title of
+[25:16] the product, but we accidentally somehow
+[25:18] left off a curly brace. So, if I come
+[25:20] back into here and and add one more
+[25:22] curly brace right here to the
+[25:23] description or sorry, the subject. Now,
+[25:26] we should be good. I'll hit test step
+[25:27] again. And now we'll go take a look at
+[25:29] that email. Okay, there we go. Now, we
+[25:31] have the cologne and we have our photo
+[25:33] and our video. So, let's click into the
+[25:34] video real
+[25:37] quick. I'm just so amazed. This is this
+[25:39] is just so much fun. and it looked the
+[25:41] the lighting and the the reflections.
+[25:42] It's it's all just
+[25:45] perfect. And then we'll click into the
+[25:47] photo just in case we want to see the
+[25:48] actual image. And there it is. This also
+[25:50] looks awesome. All right, so that's
+[25:52] going to do it for today's video. I hope
+[25:54] you guys enjoyed this style of walking
+[25:56] step-by-step through some of the API
+[25:57] calls and sort of my thought process as
+[25:59] to how I set up this workflow. If you're
+[26:01] interested in more step-by-step styles
+[26:03] or you like the way that I teach, then
+[26:05] definitely check out my paid community.
+[26:06] The link for that's down in the
+[26:07] description. Like I said, we've got a
+[26:09] great community of members that are
+[26:10] doing so much stuff with AI automation
+[26:12] with Naden. So, a great place to learn
+[26:14] and collaborate as well as we have a
+[26:15] full classroom section with deep dive
+[26:17] topics like APIs, vector databases,
+[26:20] classroom on building AI agents. And
+[26:22] then I'm right now working on two
+[26:23] courses which is like for beginners to
+[26:25] start here, understand the foundations
+[26:26] of LLMs and APIs and all this kind of
+[26:28] stuff before you hop into this course
+[26:30] called 10 hours to 10 seconds where you
+[26:32] learn how to identify, design, and build
+[26:35] time-saving automations. So anyways, I'd
+[26:37] love to see you guys in the community.
+[26:38] We also have five live calls per week.
+[26:40] But that's going to do it for this
+[26:41] video. Really appreciate you guys as
+[26:43] always making it to the end of the
+[26:44] video. If you enjoyed this or you
+[26:46] learned something new, please give it a
+[26:47] like. Helps me out a ton. And I'll see
+[26:49] you all in the next one. Thanks
+[26:51] everyone.

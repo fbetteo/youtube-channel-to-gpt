@@ -1,0 +1,277 @@
+Video Title: Locally Host n8n AI Agents for FREE (step by step)
+Video ID: F1psr8uFwUU
+URL: https://www.youtube.com/watch?v=F1psr8uFwUU
+View Count: 56,368
+
+[00:00] By the end of this video, you'll be able
+[00:01] to run AI agents on NN for completely
+[00:03] free. Now, I know that local AI can be
+[00:05] pretty intimidating and I myself don't
+[00:07] really have that technical background or
+[00:09] understand entering commands to a
+[00:10] terminal, but we're going to go through
+[00:12] this journey together and by the end of
+[00:13] this video, you'll have it all set up
+[00:14] and you'll see it's not too bad. And
+[00:16] along the way, I'm going to try to
+[00:17] explain the stuff as simply as I can.
+[00:19] Okay, so step one is click on the link
+[00:20] in the description and we're going to go
+[00:21] to the self-hosted AI starter kit, which
+[00:24] is a GitHub repository. All we're going
+[00:25] to have to do is basically copy one
+[00:27] command into our terminal and then
+[00:28] that's like the worst of it. So once we
+[00:30] run this self-hosted starter kit, we're
+[00:32] going to have nadnama quadrant and
+[00:34] postgress. So it gives us good building
+[00:36] blocks to start building agents and
+[00:38] workflows. So before we actually install
+[00:40] it, there's one prerequisite which is go
+[00:41] to docker.com and you're going to have
+[00:43] to download Docker Desktop. And this
+[00:45] just basically lets us have a
+[00:46] containerized environment for our
+[00:47] starter kit that has all of that stuff
+[00:49] in it. And don't worry, I'm going to
+[00:50] explain what that all means. But what
+[00:52] you're going to do is come here, hit
+[00:53] download Docker Desktop, and then
+[00:55] obviously make the download for your
+[00:56] system. Okay, once you've got that
+[00:58] downloaded, let's go back over to the
+[00:59] self-hosted starter kit, and we'll come
+[01:01] down here to installation, and all we're
+[01:03] going to do is find which commands we
+[01:04] need to run. So, for me, I've got a PC
+[01:06] with Nvidia GPU, so I'm going to use
+[01:08] this one. If you've got AMD GPU on
+[01:10] Linux, or if you got Mac, then you'll
+[01:12] use these ones down here. But all I'm
+[01:14] going to do is hit copy on these three
+[01:15] little lines right here. I'm going to
+[01:17] open up my terminal, and I'm going to
+[01:19] run this as an administrator. And now
+[01:21] that I'm in here, I'm just going to
+[01:22] paste in what we copied from the
+[01:24] self-hosted starter kit. It's going to
+[01:25] run that first one, which is basically
+[01:27] just cloning that GitHub repository. So,
+[01:29] it just cloned the self-hosted starter
+[01:31] kit. Now that that's done, we basically
+[01:33] just used a CD, which means we're
+[01:34] changing our directory into the
+[01:36] self-hosted starter kit. And you don't
+[01:37] really need to know this, but anyways,
+[01:39] now we're just going to actually spin it
+[01:40] up. So, right here, I'm just going to
+[01:42] click enter. And what this is going to
+[01:43] do is it's going to pull in six things.
+[01:45] It's going to pull in nadn import
+[01:47] nadnama
+[01:50] postgress lama GPU and quadrant. And
+[01:52] this is just going to take a minute or
+[01:54] two and it's going to pull in these
+[01:55] different things and then we'll be in
+[01:57] docker and I'll show you guys how that
+[01:58] all works. So while we're waiting for
+[01:59] this stuff to load in let me just pull
+[02:01] up a quick excalaw where I've visualized
+[02:03] what is going on right now. So in docker
+[02:06] the three main things we're going to be
+[02:07] looking at are containers images and
+[02:10] volume. So right now we're basically
+[02:12] pulling in four images which are
+[02:14] Postgress, Quadrant, Olama and Naden.
+[02:17] And these images are basically just
+[02:18] open- source code repositories that we
+[02:21] can pull into our Docker or whatever we
+[02:22] want to. And then we use them together
+[02:26] to basically run a container. So all of
+[02:29] these are going to be going on within
+[02:30] our self-hosted starter kit container.
+[02:32] Now where volume comes into play is this
+[02:35] is basically like the persistent storage
+[02:36] of memory. So when we're in Nadn and we
+[02:38] build workflows and we set up
+[02:39] credentials, we want to save those in
+[02:41] our volume because if we save them in
+[02:43] our container, every time the container
+[02:45] like shuts down and we spin it back up,
+[02:47] it's going to have lost all of that. So
+[02:49] what it does is the container and the
+[02:50] images all store this memory in volume.
+[02:52] And I'll show you guys that once we get
+[02:54] into Docker, but basically that's it. At
+[02:56] a high level, it's very simple. We have
+[02:58] images which are different services we
+[02:59] want to use. We have the container which
+[03:01] basically controls all of the images
+[03:02] inside of it. And then that's how we
+[03:04] have like one containerized environment
+[03:06] where all of these things can talk to
+[03:08] each other locally. And then we have our
+[03:10] memory which I'll show you guys again
+[03:12] all of this stuff in Docker. Okay. So
+[03:14] let's pull back up the terminal and
+[03:15] we'll see it's still pulling the stuff
+[03:16] in. So I'll check in with you guys once
+[03:18] we have everything in there. And I guess
+[03:20] while we're waiting for that to finish
+[03:21] up, we may as well cover some real quick
+[03:23] pros and cons of local N and AI setup.
+[03:26] So obviously a big pro is going to be
+[03:27] the cost. Unlimited free use. But the
+[03:29] con of that is that you have to manage
+[03:31] your own hardware, electricity, and
+[03:32] maintenance. Another pro, we're going to
+[03:34] have full data control because we know
+[03:36] we're keeping it locally on our own
+[03:37] environment. And then the con is just
+[03:39] we're responsible for security and
+[03:40] compliance. Another pro is that we have
+[03:42] full customization to modify code and do
+[03:44] whatever we want to do with local
+[03:45] models. One of the cons here is that it
+[03:47] can be intimidating and requires some
+[03:48] technical knowledge. Security kind of
+[03:50] goes along with privacy and control. And
+[03:52] then we also have pros and cons to the
+[03:53] scalability and reliability as well. All
+[03:55] right. So, now that that finished up,
+[03:57] we're able to open up Docker and see
+[03:59] what's going on. And we can also go
+[04:00] ahead and access our local Nad. Also,
+[04:02] not sure why mine doesn't, but yours
+[04:04] will probably right here say editor is
+[04:06] now available via localhost 5678. Either
+[04:09] way, we'll be able to get to it. If I
+[04:10] open up my Docker right now, what we're
+[04:11] looking at is the self-hosted starter
+[04:13] kit container. So, if I close this out,
+[04:15] we can see we have this container called
+[04:16] the self-hosted starter kit. If I open
+[04:17] it up, we can see what's actually inside
+[04:19] there. And we have Olama, Postgress,
+[04:21] Quadrant, and Naden that are currently
+[04:23] running. And right here is where we
+[04:24] could get to that port. If I clicked
+[04:25] onto this, it would open up in our
+[04:27] browser localhost 5678. You guys can't
+[04:30] see it, but my URL up here says
+[04:31] localhost col 5678. And now it just
+[04:34] needs us to set up our account. And now
+[04:36] that we got that set up, you can see we
+[04:37] have n. The reason we have a demo
+[04:39] workflow is because in that starter kit,
+[04:41] we had like an nn import, which was this
+[04:43] workflow in there. And what happens is
+[04:45] when we come in here, we can see that we
+[04:46] actually have n. We have lama already
+[04:48] set up as well because that starter kit
+[04:50] had lama in it. Anyways, before we test
+[04:52] this out, let's go back into Docker and
+[04:54] let's just take a look at what's going
+[04:55] on here. So, like I said earlier, we
+[04:57] have containers, images, and volumes.
+[05:00] So, here is the container. As you can
+[05:01] see, selfless AI start. If we click over
+[05:03] here on images, we can now see the
+[05:05] different images that we have. So, we
+[05:07] had Quadrant, Postgress, Naden, and
+[05:09] Olama. And these are images that anyone
+[05:11] can access. They're open source. And if
+[05:12] I came into here and I wanted to just
+[05:14] download Naden image in my docker, I
+[05:16] would just search NAND. And now you can
+[05:18] see right here we'd be able to pull in
+[05:20] the latest version of Nitnen. And then
+[05:22] finally of course we have our volumes
+[05:23] which we talked about was kind of like
+[05:25] the storage. So here in the volumes you
+[05:26] can see we have niten storage, Olama
+[05:29] storage, Postgress storage and quadrant
+[05:31] storage. Anyways I remember when I first
+[05:33] did something like this I understood
+[05:35] like the difference between containers,
+[05:36] images and volumes but I didn't
+[05:38] understand how they actually all linked
+[05:39] together. So the way it does that is
+[05:42] when you have a container you basically
+[05:43] have a docker compose file. So, if I
+[05:46] came into this container, we can see the
+[05:48] stack, but I could click right here into
+[05:49] view configurations. And this is going
+[05:51] to show us the Docker compose file for
+[05:53] this self-hosted AI starter kit
+[05:55] container. And in this compose file is
+[05:57] where we're able to look at what are the
+[05:59] volumes. We're able to change different
+[06:00] things like environment variables. And
+[06:02] it basically configures this whole
+[06:03] container. So right here, you can see
+[06:05] here are the volumes NAN, Postgress, O
+[06:06] Lama, and Quadrant just like we saw when
+[06:08] we went to our volumes. Here we can see
+[06:10] NAN and the different environment
+[06:12] variables. So, this is where you'd come
+[06:13] in here and, you know, if you needed to
+[06:15] set up a tunnel, which we'll talk about
+[06:16] in a future video, um, you would come in
+[06:18] here and set that as a web hook URL. You
+[06:20] could also set up different environment
+[06:21] variables. If you needed to use stuff
+[06:22] like community nodes and enable that as
+[06:24] tools or whatever it was, you could do
+[06:26] that in this compose file. But I know it
+[06:28] seems a little intimidating, but it's
+[06:29] not too bad. As you can see here, we
+[06:31] have services. So, we know we have our
+[06:32] Postgress image, our NN import, which
+[06:34] was that one workflow that I showed you
+[06:36] guys, our NN, our quadrant, and then our
+[06:38] different lamas. And right now we're not
+[06:40] going to touch it, but in a future video
+[06:42] I'll show you guys how we can edit this
+[06:43] file. Anyways, what I'm going to do is
+[06:45] just basically turn off the container.
+[06:47] So I'm just going to stop it. If we go
+[06:48] back into anything right here, you can
+[06:50] now see it says connection lost. And if
+[06:52] I was to refresh, this is not going to
+[06:54] work because the container is off and
+[06:56] it's just not running locally anymore.
+[06:58] So now that we understand that, I would
+[06:59] basically just start this container back
+[07:01] up. It's going to spin up all of our
+[07:02] different images that we need. And then
+[07:04] once the N8N1 is available, we're just
+[07:06] going to be able to click right here to
+[07:07] access that localhost 5678 port. And we
+[07:10] should still have that exact same
+[07:12] workflow. And if we would have set up
+[07:13] any other credentials or anything like
+[07:14] that, they'd still be there. So I'm
+[07:16] going to open this up. We can see we
+[07:17] already have signed in, so we're good to
+[07:18] go. And we have the workflow already
+[07:20] good to go. And of course, because we
+[07:23] have the Lama image in this container,
+[07:25] we don't need to create a credential.
+[07:26] We're already connected to that base URL
+[07:28] locally using Lama. And now we could go
+[07:31] ahead and just say hello. And this is
+[07:33] going to use the Alama model that we
+[07:35] just downloaded on our own environment
+[07:37] locally to respond to us with AI and
+[07:39] say, "How can I assist you today?" All
+[07:41] right, so that's going to do it for this
+[07:42] one. There's a lot more complexities
+[07:43] that come into running NADN and
+[07:45] different AI models locally, which we'll
+[07:47] explore in future videos. But if you
+[07:49] enjoyed this one and you learned
+[07:50] something new, please give it a like. It
+[07:51] definitely helps me out a ton. And I'll
+[07:53] see you guys in the next video. Thanks
+[07:55] everyone.

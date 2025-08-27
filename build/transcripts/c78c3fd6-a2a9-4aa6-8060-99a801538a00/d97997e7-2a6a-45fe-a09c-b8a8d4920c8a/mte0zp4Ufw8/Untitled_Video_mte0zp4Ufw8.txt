@@ -1,0 +1,538 @@
+Video Title: Untitled_Video
+Video ID: mte0zp4Ufw8
+URL: https://www.youtube.com/watch?v=mte0zp4Ufw8
+View Count: 0
+
+[00:02] Welcome to the webinar introduction to the 2024.
+[00:07] S. L. P. C. D. the challenge webinar introduction.
+[00:12] My name is Julianne. I'm from, you can department statistics. Some of you may know me as 1 of the organized behind the behind the.
+[00:24] Tonight we have, uh, uh, panelists, you can see, uh, Elliot from a use us.
+[00:34] Oh, and, uh, uh, Brian mcdonald's from Yale, uh, statistics and data science and it's a founding, uh, who's my PhD student, uh, from statistics and he's also the person who, uh, prepared the, uh.
+[00:54] Uh, get hub rappel tonight our agenda we have a few items, uh, the 1st, 1, Elliot will give a overview introduction to the competition. And then.
+[01:08] Since Brian is on the train and edit, we will then, uh, give the introduction about the judging criteria. And then last, I will, uh, show, uh, a submission template, which is also part of this.
+[01:24] And and hopefully all these 3 items, we can be done.
+[01:28] In 30 minutes, and we can leave the last 30 minutes for open questions and answers.
+[01:34] All right Elliot, you want me to start.
+[01:40] Sure, Jim, thank you. Uh, if you could just stop sharing, then I'll share my slides. Perfect. All right.
+[01:54] Okay, so thanks everyone for attending today. Welcome to the.
+[01:59] 2020 for data challenge I am a data analytics consultant at the that's the U. S. Olympic and Paralympic committee.
+[02:10] I work on a team that's called performance innovation.
+[02:13] And what our team does is basically leverage data analytics and technology.
+[02:17] To support athlete, performance, health and wellbeing.
+[02:21] So, what I'll cover today, june's already got the introductions. So, bullet 1 is already done. I'll talk about the data challenge problem.
+[02:32] Then, I'll describe the format of Olympic men's and women's artistic gymnastics competition.
+[02:39] So, I'll talk about like, what the typical, like, sequence of competition days are, how many medals are available and what they are.
+[02:46] Some things to consider around team composition.
+[02:51] I'll talk a little bit about the data sets and then I'll just remind you of some timelines and important dates that are also on the data challenge website.
+[03:00] And then after June.
+[03:04] Talks about his part, then we'll get into some questions from all of you.
+[03:11] So, um, the overall objective for this data challenge.
+[03:16] Is to come up with an analytics tool to identify the group of 5 athletes who will enable Team USA, men's and women's artistic gymnastics teams to maximize the number of medals. They win at the Olympic Games in Paris, 2024. so the men's team.
+[03:36] Can have 5 athletes, the women's team can have 5 athletes.
+[03:39] And they compete separately, uh, the analytics part of it is for you to develop a model that can be used.
+[03:49] To identify and compare the expected metal counts with various possible combinations of the 5 team members for each gender. The specific number of metals differs.
+[04:03] Between men and women, so, in the men's competition there, 8 Medal events 1 is the team all around. 1 is the individual all around so I'll get into some details about what these mean.
+[04:17] And then there's individual apparatus events, or sometimes called event finals.
+[04:22] For the men, there are 6 more exercise.
+[04:26] Palmer horse still rings vault, parallel bars and high bar and you can see, I'd put in parentheses a 2 letter acronym or 2 letter symbol for each apparatus. And these are the symbols that you'll see in the dataset to identify.
+[04:43] The apparatus on which the particular score was achieved.
+[04:46] In the women's competition, like the man, there's a team all around and an individual all around, but the women only compete on 4 different apparatus.
+[04:56] So, for their event finals, there's vault.
+[04:59] And even bars balance, beam and floor exercise.
+[05:04] So, the men and the women have vault in common.
+[05:07] And they also have floor exercise in common, although the women's floor exercise has music and a lot more dance elements than the men's version of the floor exercise, which has no music.
+[05:22] So, here's an illustration of the schedule of the competition for Paris because.
+[05:28] Unless you're a real gymnastic fan, it's probably an unfamiliar format for you. So, at the top, what I've shown is so this is the actual schedule for Paris.
+[05:37] So, on the July 27th of July, 28, you see empty circles and that indicates that there's competition, but no medals will be awarded.
+[05:48] You can also see that in the spreadsheet below where you can see on the 27th and 28 there's.
+[05:55] Um, cues, which means qualification events and again, so no medals will be awarded.
+[06:01] And then on the 29th through the 1st.
+[06:05] There are metal events on the 29th and the 30th you have the men's team all around, and the women's team all around on the 30th. Then on the 31st, you have the men's individual all around competition.
+[06:20] And on the on August, 1st, you have the women's individual all around competition and then.
+[06:26] From the, uh, 3rd through the 5th of August you can see there are event finals or apparatus finals competitions.
+[06:35] And they, they have events for the, they have 2 events for the men on each of those days.
+[06:41] And you can see there's 2 events for the women on the 1st day the 3rd and then 1 each on the 4th and the 5th.
+[06:49] Ok, so the competition stretches out over more than a week. It's, um.
+[06:54] You can see it spread over 10 days. So, um, so some gym, this could be performing routines as many as 4 times.
+[07:02] Over the course of a competition. All right.
+[07:08] We have the world championships coming up, so, and Belgium.
+[07:14] Is hosted in the 2023 world gymnastics championships and.
+[07:19] If you want to get a good idea of the competition format for the Olympics, you can follow the 2023 world gymnastics competition. So, I, it follows the same format as the Olympics where.
+[07:31] There are some days of qualification world championships, allow more athletes than Olympics. So the qualification days were actually stretched out over 3 days instead of 2. so it starts off with the men.
+[07:44] And then the men finish up on the morning of day 2 that's October. 1st, and then the women start and then on October 2nd, the women finish up their qualifications.
+[07:56] And so there are several what they call subdivisions in each of those qualifications sessions, and countries are randomly assigned to subdivisions. So, like, team, USA, men and team USA women will be competing in a randomly drawn subdivision.
+[08:11] On the, it'll be on 1 of those.
+[08:15] Either the 30th or the 1st and the women will be either on the 1st or the 2nd.
+[08:20] Trying to qualify for the team finals so you can see again, like, with the Olympics, there's team final then there's men and women have their individual finals and in the case of the world championships, the apparatus or the event finals.
+[08:33] Are over 2 days, instead of 3, but, um, it's a good way to get a sense of how a gymnastics competition runs.
+[08:41] And, uh, Liverpool hosted the world championships last year. So.
+[08:48] If you're interested in looking at the results of a competition that's already occurred. Um, they also use the same format as.
+[08:56] What's going to be used in Paris and what was used what's going to be used in this year? The only exception was that the women went. 1st so the women's did their qualification and then the men, the women did their team final and then the men.
+[09:09] The women did their individual all around final, and then the men and the event finals were done in a similar way to what you're gonna see. And towards this year.
+[09:21] So, in terms of some more details about the format, so both at the Olympics, and that, this year's world championships.
+[09:28] And the qualifications the format is known as 503. so each country.
+[09:35] And have 5 team members, and then, well, each country that's qualified a, a team to compete has 5 team members and the format is known as it's 503 because it's 4 up 3, count on each apparatus. So, out of those 5 team members, 4 of them.
+[09:53] Can compete on each apparatus and the top 3 scores are added together and they count.
+[09:58] So, that qualification is really critical because.
+[10:03] It basically opens the door to everything that comes after. So, in the qualification.
+[10:09] The teams are trying to qualify for the team all around.
+[10:13] And then individual athletes are trying to qualify for the individual all around and for the individual apparatus finals or what's called event finals.
+[10:22] So those qualification days are really critical to what comes afterward.
+[10:27] So, in the team, all around the top 8 countries qualify and the competition format in that team, all around, or what sometimes they call team finals.
+[10:37] Is 533 and you may also hear it called 3 up 3 count. So it means for among the 5 team members, only 3 can compete on each apparatus and every score counts.
+[10:51] So it's a little bit in the qualification. The teams get a little bit of insurance or a little bit of a cushion.
+[10:59] That they can drop their lowest score in the team all around finals. There's no such opportunity. Every 1 that goes up counts.
+[11:07] Even if they score a 0 or score something really low.
+[11:11] I mentioned the qualification also dictates who competes in the individual all around.
+[11:18] So, the requirement is that athletes have to compete on all apparatus in the qualifications.
+[11:24] To qualify for the individual all around, because that's the only way that you can have an, all around score. 24 athletes will qualify and it's a maximum 2 athletes per country.
+[11:35] So that's true for both Paris and Antwerp world championships this year.
+[11:40] The individual apparatus or event finals.
+[11:44] 8 athletes qualifying each apparatus.
+[11:48] Again, with a maximum of 2 per country.
+[11:51] And 1 thing I should note because this affects your data analysis, the men's and the women's vaults are a little bit tricky.
+[11:59] So, in the qualification, and then in the event final for vault.
+[12:03] The men and the women have to perform 2 different vaults.
+[12:08] So, for for the team competition.
+[12:11] And for the individual, all around competition, each athlete only needs to perform 1 vaults.
+[12:16] But again, in the event final, they have to perform 2 different vaults and in order to qualify for the event final, they have to do 2 different vaults in the qualifications.
+[12:29] If they want to have an opportunity to be qualified.
+[12:32] So, kevin's says, let's see.
+[12:39] Team events will feature 12 teams of 5 athletes. Each of the men's and the women's events. Yes. So, Kevin, you're right. 12 teams and so for Paris, 12 teams are gonna be able to compete in the qualifications. But then on the team, all around final, only 8 that top 8 countries will qualify.
+[12:59] So, yeah, thank you for noticing that Thank you for reading it in such great detail.
+[13:03] And I apologize for any confusion there, so it's 12 so, 12 teams, 12 full teams in the qualification and in Paris and then topic qualify. Thanks, Kevin. All right.
+[13:16] Next slide. Um, so just, um.
+[13:22] So, I'm mentioning some details about what happened at the Tokyo.
+[13:27] 2020 Olympics, which actually took place in 2021.
+[13:31] They had a different competition format and so.
+[13:35] In case you decide to use data from the previous quadrennial.
+[13:41] Which was actually 5 years long so, 2017 to 2021.
+[13:46] I'm just providing some details here about that format. It was.
+[13:50] It was a format that was only used in in Tokyo and.
+[13:54] It wasn't used before and it's not being used after. So.
+[13:59] In the quality, so each team had 4 team members.
+[14:03] But then each country, in addition to those 4 team members, they could also have 2 individual athletes.
+[14:10] Who were not able to compete with the team so in the qualifications, it was a 403 format. So all 4 athletes could compete on all 4 apparatus.
+[14:22] Or, sorry, each for all 4 athletes could compete on all apparatus with only 3 of them counting. So, again, it was 4 up 3 count.
+[14:30] The 2 individual athletes.
+[14:34] Representing a country who didn't count on the team results could also compete on every apparatus in the qualifications in order to try to try to qualify for the individual all around.
+[14:47] And the individual apparatus event finals.
+[14:50] So, the team all around, it was similar in that topic countries qualified, and it was 3 up 3 count. It was just 3 up 3 count from among 4 team members.
+[15:03] Instead of 5, uh, individual all around again, 22, top, 24, Max, 2 per country and.
+[15:12] And included those 2 individual athletes so, like, in the USA women had 4+2, the USA men had 4+1.
+[15:21] And then finally, the individual apparatus finals, um.
+[15:26] Again, it was 8 athletes on each apparatus, Max to per country and that again included the individual athletes.
+[15:33] Who weren't counting as part of the team. So if you if you like, the reason I'm describing this is.
+[15:41] If you want to try to validate or test any models, you develop using Tokyo.
+[15:46] You know, so 22017to2021then it's important to understand that the slight differences in the competition format.
+[15:59] So, okay, so the team composition, I'll talk about that for, you know, again for Paris and.
+[16:05] It's a 5 person team no individual competitors.
+[16:09] So some things to consider in the team composition, and the reason why.
+[16:14] We're asking you to complete this project for the data challenge.
+[16:18] 1 thing to consider is whether the rights, like, in every country can have its own strategy is it best to put together a team of what we call all rounders? So, people who typically compete on all apparatus.
+[16:33] Or is it more advantageous to focus on events specialists? So people.
+[16:38] Who may only compete on 1 event, or may compete on some subset of the full set of events.
+[16:44] Or do you want to mix do you want to mix up all around or is that event specialists?
+[16:50] Another thing to consider in optimizing or maximizing the total medal count for team. Usa is do you try to create a team.
+[16:59] That maximizes your team score so that you optimize for a team event metal.
+[17:05] Or not like, is it, when is it advantageous?
+[17:08] To focus on a team of individual stars, or people who are good at maybe a subset of events.
+[17:15] In order to maximize our medals, if we're not so likely to win a team level.
+[17:19] And so I'm showing you, like, Here's an example, um, from the 2022 world championships, the last year in Liverpool.
+[17:29] And for that competition, the U. S actually decided.
+[17:33] To have 4 people who were.
+[17:36] For all intents and purposes all around us. So that was Asher Hong brought him alone colt Walker and danelle whittenberg and Steven, that elastic is a Palmer horse specialists. So he only competed on that event.
+[17:50] In the qualification, and then also in the team final.
+[17:54] And so, that was a strategy the U. S used to because Steven had the potential of having a very high score. Like, you can see his score in qualification was.
+[18:04] Almost 2 points higher than anyone else on team, USA. Um, unfortunately in the team final, he didn't do as well. And so that gamble didn't quite pay off in the team final when the metals were really at stake.
+[18:18] And so that's something that a team has to consider, you know, as a risk.
+[18:23] So, it's a real risk reward question. Um, a little bit of detail on the data sets that the phone is putting together for us. So.
+[18:34] There, if you go to the get hub, there are 2 main data sets and we're separating those data because we want to make sure you don't try to combine them.
+[18:42] Because they're data from different quads, as we talk about Quadrant and, like, the period of time leading up to an Olympic games. And so, you know, of course, the 2020 Olympics were actually in 2021. so we had a 5 year quad there. And then.
+[18:58] After that quad ended, we started with the new Quad in 2022 so this, this quad will only be 3 years.
+[19:07] And the reason why we have them as different data sets is.
+[19:11] Because, um, every Quad, the, um, which is the International Federation for gymnastics, they changed the scale of values of skills.
+[19:20] And so we wanted to make sure that we kept the data set separate because the scores aren't necessarily directly comparable.
+[19:28] I think it also makes things easier for, for all of you.
+[19:31] We are actively updating both data sets and all I can say there is that.
+[19:37] Data scraping takes time as you probably all know.
+[19:40] We actually thought about making data scraping part of the challenge.
+[19:44] But because of the volume of data, and just because of the.
+[19:48] The challenges with different competition formats and different competitions we thought that we would do it for you and let you focus really on the analytics part of the project.
+[19:59] The last competition whose results will be included in the 2223 data set.
+[20:06] Will be the upcoming 2023 world championships in, and those end on October 8th I can't promise we're gonna have that data ready for you on October 8th or October 9th, but just to know that.
+[20:17] The last competition that we are going to include in our data set.
+[20:22] Is that competition at the world championships skipping to the bottom this know there's also on the website, you can also use any additional data that you choose.
+[20:33] As long as that data is publicly available. So if there are any competitions, like, in early 2024 that you want to include.
+[20:40] You can, you can scrape that data and add it to your dataset.
+[20:44] Um, but you need to make sure you include that data set and your submission.
+[20:48] And it, it needs to be included in your final submission for reproducibility cause we will run.
+[20:54] The code that you provide, and the data that you provide.
+[20:58] And then the other thing we've been.
+[21:02] Working feverishly to scrape the data and have it ready for you. Um, but we're noticing things that aren't perfect in the data. Um, and.
+[21:10] It's I'll say it's good practice for you as you go into the, I'll say real world because.
+[21:16] Data sets are never perfectly clean and perfectly correct. And so what I'll say here for the purpose of the.
+[21:23] Challenge is if you notice anything wrong in the data, or if you have any questions about it.
+[21:29] Um, you can email me and I'll help you clear up those problems. Okay. Um, but, yeah, we're trying to make it as clean as possible for you. So I mentioned we're continuing to update the data set. So, keep checking the get hub.
+[21:44] To see, if we've made any updates, um, the phone is tracking any changes that we make but, you know, we've got some data in there and obviously to help you get started. Um, but again that data is gonna be updated.
+[21:56] Uh, in the coming weeks, um, some more details on the dataset so each row of data.
+[22:05] Corresponds to 1 genesis performance on 1 apparatus.
+[22:10] In 1 round or phase of 1 competition.
+[22:14] Note that different competitions have different formats. So I described the format for the world championships and the Olympics that format is not.
+[22:27] I don't think that format is used at any other competition. So like U s championships, men and women each have 2 full days of all around competition but there's no event finals.
+[22:41] At some World Cup competitions.
+[22:44] There's no all around competition. There's only.
+[22:47] Um, individual event, qualification and individual event finals and so that's some of the reason why we wanted to.
+[22:55] Provide this data to you and clean it for you because there's a lot to understand. Um, but just know that different competitions have different formats. When you start looking at the data set. Um.
+[23:06] Something else to note an individual gymnast may have 2 or more versions of their name and the dataset.
+[23:13] So, that's something that we haven't cleaned for you yet and not sure that we will.
+[23:18] So, an example, I'm showing you is right at the very top of the data set you'll see, there's a gymnast from Norway named Frederick us and you can see Frederick is listed with 2 separate versions of his name. But.
+[23:31] We have checked and they are, in fact, the same person. So that's something to be mindful of. As you look for the at this data is.
+[23:39] Is it the same person or are they actually different people?
+[23:42] And that's something you're going to see in the real world. So.
+[23:45] Again, if we don't if we don't identify all those for you, then.
+[23:50] Plan to come up with a way to identify them yourself. I want to mention some details about the vault cause I'm.
+[23:57] All the other apparatuses they can, as I mentioned each row in the data set is 1 generic performance on 1 apparatus in 1 round of 1 competition volts a little tricky. You're gonna see for the different possible entries under apparatus in that field.
+[24:16] You'll see V. T. V. so VT indicates that only 1 vault was performed.
+[24:23] If you see, that may indicate that only 1 vault was performed.
+[24:30] Um, in that given phase of competition, or it could indicate that the 1st of 2 volts was performed if that were performed. So, if it's like, if it's an event final.
+[24:41] And 1, you should also be looking for there should be a entry. Um, in that case.
+[24:49] And in the qualification for that event final, you should also see and.
+[24:56] But, like, in an, all around competition either, like, for the team.
+[25:00] Final or the individual all around competition.
+[25:04] There they, each athlete will only complete 1 vault and that may show up in the data set.
+[25:09] As, or if that's not clear, just ask questions. Um, another note is just scoring of gymnastics. Um, the basic equation is D score, which D stands for difficulty.
+[25:25] Plus a score which stands for execution minus penalty.
+[25:31] Some people also, sometimes you see penalty as or neutral deductions that equals the score and some events, or some apparatus don't have penalty and some do, like, floor exercise is 1 that does and an example of a penalty would be going out of bounds.
+[25:47] Vault has a penalty also if you go outside.
+[25:50] The white lines that are on the mat that would also constitute a penalty.
+[25:55] But other apparatus that do not have a penalty.
+[25:59] Um, the D score difficulty score.
+[26:02] Is something that the gymnast obtains by.
+[26:05] Doing difficult skills in their routine and.
+[26:09] In theory, there's no maximum difficulty score value, but I would say in general, like a good D score value, like internationally.
+[26:17] Is in the range of, like, 6.0 would be a high D score on.
+[26:22] Pretty much every apparatus E score stands for execution.
+[26:27] And that's going to range from 0 to 10. so, 10 is the maximum execution score. It means the judge.
+[26:34] The judges did not take any deductions for any reason on that routine in terms of how the athlete executed.
+[26:41] And then I'll add so in the dataset.
+[26:45] A score of 0 almost always indicates that the gymnasts did not compete on that apparatus. And I say almost always because there are cases where.
+[26:54] Agendas actually performed and has a disaster.
+[26:57] And get to 0, so, like an example, I'll go back a couple of slides.
+[27:02] When I showed the U s team at the world championships so if you look at Don whittenberg on vault.
+[27:09] In the qualification danelle, unfortunately had a real mishap on the vault, he didn't injure himself thankfully, but he didn't execute a vault. And he actually, he actually was received a score of 0 in the team. So, in the qualification for the team, that wasn't such a big deal, because.
+[27:29] Yeah, the 3 scores, we're fine, but in a 3 up 3 count team final a 0 would have been a disaster.
+[27:40] And, okay, so some timelines and important dates, the data challenge was released in August. We're doing our training session now.
+[27:50] Uh, submission deadline for the data challenge is January 15th.
+[27:54] Um, the finalists will be notified.
+[27:57] On February 15th, the submission deadline for the abstracts for anyone who's presenting.
+[28:04] At the symposium is March 15th and then the registration deadline for the symposium is April 5th.
+[28:11] Brian, are you able to talk about judging or do you want me to cover that?
+[28:26] Okay, I'm not hearing brian's so I will cover the judging.
+[28:30] So, we will have a panel of judges from across academia and sports, especially USA gymnastics, they'll judge your submissions based on the following criteria. So, 1 is the originality. How original is your analysis?
+[28:45] Certainly, we want it to be a, we want you to produce a tool that's very useful to the U. S. and to USA gymnastics. So, the question is how applicable is the analysis of the applicability.
+[28:57] How appropriate were the methods used.
+[29:01] To analyze and model the data and then finally how well did you communicate your findings and communication, you know, includes multiple forms. It's both your written text.
+[29:12] And your visualizations, how did you use the how did you use facts?
+[29:17] Data supported narratives, anecdotes, anecdotes, et, et cetera to support your storytelling.
+[29:23] Okay, and I guess communication could also include how well you.
+[29:28] Um, comment in your code cause that's something that's very important to understanding.
+[29:34] How you did your, how you did your project, how you executed it?
+[29:37] All right, so that's questions, but I'm going to let June take over now and then we'll get to your questions. So, again, thanks so much again for attending today. It's really a thrill to see so many of you interested in this project.
+[29:54] Thank you Elliot, um, uh, participants, if you have questions, please post your questions in and Elliot, you can go, uh, go through the QC. And after I give a brief, um, a demonstration of of what we expect in submission, and then you can start answering questions.
+[30:14] Uh, let me share my screen and.
+[30:23] Um, all of you have, uh, I mean, you have found the data, the data set that's the, that's this, uh, clean data folder but this, uh, this, um.
+[30:35] Grapple itself, it's June 2024 data. This report is the report that contains not only the clean data, but also the R code that the fun used to do the cleaning. Remember the, the, uh, the raw data actually came in PDF format. So this is.
+[30:55] Very nice data science, a demonstration of how to use, uh, our code or scripting to, uh, script data from PDF files. Um, in this folder I recently added a, um, a folder called a submission in the submission here.
+[31:14] I, we left some examples, so this is a PDF example uh, could could be what we expect in a PDF format and then you can put your code in in a code folder in this code folder. You see, we have some, uh, yeah, I just changed made some small changes this this afternoon.
+[31:34] Um, so you can have your, your, some of you, if you use R, right? You can use the, uh, our Markdown package and, uh, make your data analysis and description in 1 file and that.
+[31:50] Makes your, uh, analysis reproducible. So this is very simple. Uh, just analysis. Of course, you can add text in there and put sections in there. And I, in the future, I will make this more, uh, this template more comprehensive.
+[32:05] And if you have additional data, you use, and this is a place I would recommend you put your additional data in here. So, everything is reproducible and for example, in here, in the example code here actually, I'm accessing the clean the data. Right? You can see this is I'm accessing the, uh, clean.
+[32:25] The CSV file through relative path so that, that so you go back and then, uh.
+[32:33] When the reviewer looks at this, uh, your submission, and it will be nice if you have a have a GitHub repo, right? I mean, I, I strongly recommend that you your GitHub rep. or you can actually fork our, and then, uh, make a new branch of your, uh, your own work.
+[32:52] Because if make you on get hub, you can make this public and then this would be, uh, a nice item on your CV on your resume. You can put a link on your resume. And then maybe the potential employers can look at your project. And if you use Python, then you could put your Python notebook.
+[33:12] A, Jupiter notebook or whatever notebook in here and then, and this is, uh, the code some code that's a fun put as an example code.
+[33:22] So, anyway, um, so we, at the end, we will, uh, we will set up a Google form to accept to accept your submissions. But, uh, it will be nice when you submit and you can make a GitHub wrapper and fork from our Apple and then make your own work.
+[33:42] Branch, so I will stop.
+[33:46] Here, um, now.
+[33:51] Elliott, and did you get a chance to look at the Q and A's?
+[33:56] Yes, and I did, I saw kevin's question which we already.
+[34:02] Be answered. Oh, oh, that's.
+[34:04] In the chat window there is oh, I'm sorry if you click on the.
+[34:08] 3 thoughts at the lower right corner.
+[34:12] Oh, got it. Okay. Thank you. Thank you. Jen. Okay.
+[34:16] All right, so a question from Ethan Chicago, where can we find and refer back to this PowerPoint after tonight's seminar finishes.
+[34:34] You already answered it. Alright. You already answered to see the slides and video recording will be made available on the website. Great.
+[34:40] Um, okay, sanka asks, okay didn't get what the, all around means.
+[34:45] And so June answered that, okay, so it's 1 athlete performing on all apparatus. So I'll explain a little bit more. So.
+[34:53] Team all around means the team competes on all apparatus. Right? And in the qualification, I mentioned, it's the 4 up 3 count and the team final. It's 3 up 3, count on each apparatus and in the individual all around competition for.
+[35:13] 24 athletes to qualify each athlete performs on each apparatus once.
+[35:18] All right, Warner Gephardt asks, um, is the qualifications to qualify for the Olympics or to qualify for the finals of the Olympics yeah. Great question Warner. So.
+[35:30] What I'm talking about qualifications here, you know, what's happening in and square for what's happening in Paris it's qualification.
+[35:39] Within that competition in order to qualify for the team all around the individual, all around and the individual apparatus or event finals.
+[35:49] Where does that make sense? Go ahead and type in the Q and a, if that if that makes sense to you now.
+[35:56] Okay, wonderful. Thanks. Yeah. Awesome. Okay.
+[36:02] Next question, Harper f are all day we'll all data be posted on the website so.
+[36:11] All data for the competitions that we're providing.
+[36:15] You know, and and the last 1 is the 2023 world championships.
+[36:19] We'll be posted in the get hub. Um, but as we mentioned.
+[36:24] If there's other data that you can find publicly, it's publicly available, you're allowed to scrape and use that in your project.
+[36:32] Joanna Mark asks if the athletes have similar execution scores, difficulty, scores and performance history does Team USA, consider Olympians defending their titles.
+[36:46] Joanna, that's a great question.
+[36:51] I would say for the purpose of this analysis, I would say, no.
+[36:57] I can't say that that would not necessarily.
+[37:02] Be considered in a committee's decision, but.
+[37:06] I don't see how we could. Well, I guess you could account for that but thing are they a former Olympian or not? Um.
+[37:11] I guess I'll leave that up to you if you want to try to consider that, but.
+[37:16] I would say I can't give you a clear yes. Or no on that. 1.
+[37:20] It is 1 of the many tricky aspects of Olympic team selections, though. So it's good that you're thinking about that.
+[37:27] Josh asks and events with 2 volts.
+[37:32] How much time is the lab between the competitors vaults Josh a great question. I'm not sure there may be a rule around how much time is allowed. Well, actually thinking about gymnastics. Like, the way gymnastics works is the athlete basically has to be ready to perform and.
+[37:50] Like, between the vault, I think they're given a reasonable amount of chance, reason amount of time to go back.
+[37:57] To, like, the starting point for the vault, like, where the run up would start.
+[38:01] But there's a screen facing them, and they're typically the athlete is ready before the judges are ready. The judges will give them like a green light when it's okay for them to go. And then that's where they do their salute.
+[38:13] And then that's when they perform, they perform the vault. So I'm not sure that there's any rules around how much time is allowed, because it's typically dictated by how quickly the judges get their job done.
+[38:23] Um, okay, um, bot asked.
+[38:29] Should we be developing a model that can predict the metal counts?
+[38:32] For different combinations of athletes, or should we be picking 5 specific athletes to send? So initial? What I would say is certainly the former, like, you should be developing a model that can predict metal counts.
+[38:44] For different combinations of athletes, um.
+[38:48] But then when you're part of what we'll be interested in seeing is like.
+[38:52] What is your rank order?
+[38:56] Of different possible combinations, in terms of the number of metals that can be achieved, including who would be the best team of 5 based on maximizing metals.
+[39:07] Um, please, let me know if that answered your question sufficiently.
+[39:16] Let's see. Okay. Um, all right, we'll check on that later.
+[39:22] Uh, let's see where I was I'm just scrolling back up. Okay, Harper Wang asks.
+[39:27] For the presentation should 1 group present the final report.
+[39:30] Or just 1 person will do the presentation. All right so, June, that's a question for you.
+[39:39] Uh, the presentation, uh, is will be in the form of a poster.
+[39:47] So, uh, when we get the finalists, and then, uh, we.
+[39:54] While the verbal, uh, uh, presentation, if you have fun this way, we invite the families to come to the conference that will be in poster for your final report. Then of course, you can divide the work, uh, 3 authors right?
+[40:08] Right but I think I think was probably asking about, like, at the symposium.
+[40:13] Um, so the presentation will be a poster rather than a formal presentation.
+[40:18] Correct right? It will be.
+[40:21] The poster, right? Okay. And then how many so, if there is a team of students.
+[40:27] How many of those students will this symposium pay for? And how many can the.
+[40:31] Have maximum. Oh, yes good. Uh, we pay for 1 presenter.
+[40:36] Uh, yeah, we have limited funding. We would like to pay all. We have.
+[40:42] The funding yeah, right but the team can choose to have other members.
+[40:48] Well, correct yeah.
+[40:49] The expense, right? Yes, exactly. And also could participate in being.
+[40:54] The poster, right? Yes, of course. Yes.
+[40:57] Okay, great. Just want to clarify that. And then what's the maximum number per team?
+[41:01] I think we have, we send us 3.
+[41:04] Is on the 3 is what's on the website? Yeah.
+[41:07] Okay, so more says the website says undergrads are evaluating the same category as grad students. Is that accurate? We'll double. Check that to but my understanding is undergrads.
+[41:23] And high school students are in 1 category, and grad students are in a separate category.
+[41:28] Right. So we'll double check that and you please take a look at that again. Yourself but those are the categories it's high school slash undergrads in 1 category and grad students in another.
+[41:40] Okay.
+[41:41] All right, um, crystal uranga asks.
+[41:45] What technology is allowed our Python what else? Saas tableau. Other June. How would you answer that? 1.
+[41:55] I would say, uh, anything, uh, is, okay, and we prefer open source software but, uh, I mean, for the commonly use the software, like Sass, I think our reviewers will have access to. But if you use some.
+[42:13] Peculiar software that's, uh, proprietary that won't that will make, uh, uh, give problems in reproducing reproducibility.
+[42:24] Okay, great. And by open source change.
+[42:27] To in Python.
+[42:29] Julia Julia is another 1. Yep. Thank you. Okay, great. Um, she can ask for how we communicate our result. You mentioned that visualization would be counted.
+[42:40] Um, so, are we expecting a web page or a poster, or some plots we can include in the essay?
+[42:48] I would say your visualization if you have your code in your in your code in your report, remember, our reviewers will have access full access to your code and the reviewer can choose to re, run your analysis on his or her own computer. So it's okay. And you can even have other visualizations done.
+[43:10] Your code, and you could, but remember the final, the report has a has a limit and you could you have to be selective selective on what which graph uh, you want to put in the in the final report.
+[43:24] Thanks Jim Lilly Stockbridge asks if you graduate in December 2023, are you still eligible to participate?
+[43:35] Uh, that's a good question. I.
+[43:42] Uh, I would say, yes, right. Yeah, I vote. I vote. Yes.
+[43:45] Yeah, I mean, the, the final submission is.
+[43:49] January 15th.
+[43:51] January 15th.
+[43:52] Right. So yeah, the work is done when you want us to yeah, the work is for the most part done.
+[43:57] So, Lily please participate.
+[44:01] That's my votes, um.
+[44:04] Let's see. Okay, Josh Lee asks, is it relevant to ask about which specific athletes might be selected for the team or is our model is supposed to be adaptable for any possible athletes for these events.
+[44:17] This is a really good question. Josh. Um, what I would say is, um.
+[44:22] I mean, it's certainly for an effort to be selected they have to be, um, competing elite.
+[44:27] Next year, um, that's like the highest level. Um.
+[44:31] So, I would say for all intents and purposes, like, it could be any athlete in the dataset.
+[44:38] That's what I would say, like, if you don't see them in the data set, or I guess if you scrape them into your dataset, then you could consider them. But.
+[44:46] I would say in order to consider them, we're going to have to have some data on them so I would say it could be anyone who's in the dataset. So, I would say, yeah, your model should be able to adapt to looking at all, like combinations of 5 athletes from.
+[45:01] Among whatever number of team, USA athletes that are in the data.
+[45:05] Um, okay, Eric Gerber asks for the team metals is the final score the sum of all team members.
+[45:16] And is there a medal for each apparatus, or does 1 team metal for all apparatus? So okay, great question, Eric. So, um, in the team. So there's only 1 team metal. Um, and, or say there are 3 team metals, right? For the 3 countries who finished at the top, but there's only 1, like, team metal events and that's the team.
+[45:36] All around, um, the final score. So I mentioned the format in the final is 3 up 3 count. So.
+[45:43] For the men since there are 6 apparatus 3 times 6, there are 18 scores.
+[45:48] That count and they're all summed together for the women. There are 4 apparatus. So, 3 times 4 that's 12.
+[45:55] So, there are 12 scores that count and they're added together there's sums.
+[45:59] In order to determine the country's score, uh, there is not a team metal.
+[46:05] For each apparatus, so just the 1 team metal for all apparatus.
+[46:10] Okay, I'm re, Brewster asks just to confirm, should our final project include 5 athletes from the women's team?
+[46:19] And 5 athletes from the men's team, or total or 5 total athletes in 1 group. Yeah. So it's.
+[46:25] It's a team of 5 men, a team of 5 women compete completely separately. There's no, there's no. So a lot of Olympic sports have mixed gender events now.
+[46:36] Artistic gymnastics does not so men and women are totally separate so you'll see.
+[46:41] You'll see men and women in your in each dataset.
+[46:45] But the 1st thing I would do is pull them apart.
+[46:49] Um, like, there's no circumstance under which you'd want to consider men and women together.
+[46:55] So, they're completely separate, um.
+[47:00] Let's see. Yeah. And the reason why we made this a project is like the same methodology you use for men can be used for women. The only difference is that the men have 6 apparatus, and the women have 4.
+[47:15] Um, okay, that white a** is the goal to maximize metals total or maximize gold medals in particular. So now that's a really great question.
+[47:26] Um, I would say I can leave that up to you, you know, certainly there is a desire for the U. S to win the metals table in terms of.
+[47:37] Number of gold medals, and to win the total number of metals. So I would say.
+[47:41] Both matter, um.
+[47:45] If I had to pick 1 of the over the other, I would say.
+[47:49] Maximize total number of metals, but, um, but it might be interesting to look at maximizing gold medals and.
+[47:56] That could be something original that you add to your project. Um, excuse me.
+[48:03] Skip to 1 question. Oh, okay. Good questions.
+[48:06] This question from Saturday, I notice in the data for the men's, the rounds are call a final team, final final and what is the difference between just a, versus a final.
+[48:22] And a call. Oh, okay. So the fun. Could you answer that question?
+[48:27] Sarah oh, yeah. Um, so How's it for? 1st I'm sorry there. There's an, that was a mistake. I've already fixed that today that if you look at the which gymnastic have the round of it only.
+[48:43] Shows up in the social media kind of championships so I fixed that today. So, from now, on, if you pull your wrap up again, you won't see a there will only be like.
+[48:58] A final, or well, uh, a quote is not very common because in a lot of times the, a, and the appearances finance, they share the same qualification. So I just caught that term as.
+[49:13] Well, in general, so for now, they were.
+[49:17] Not be any 8, 8 as a.
+[49:20] I said.
+[49:22] Hey, he's no longer. It's no longer there. And I can verify that. I just I downloaded the data just before this webinar and I see there's no more a, um, listed.
+[49:33] Or there's no AA in the in the round field.
+[49:37] So, thanks, thanks for taking care of that. Giovanni ROM asks what is the final submission supposed to look like, in terms of our final results?
+[49:48] So, I know so you talked about that a bit already is there anything you want to add to what you said already.
+[49:54] Um, we want, uh, I think in the, it's in our website, we want the, uh, report as written report, summarizing your findings and we also want the reproducibility. So we want their code and any additional data. So we could just hit that button. And then.
+[50:14] The re, the results, uh, are reproduced.
+[50:17] Excellent, thank you. And a new ship. Bot your 2nd question can you clarify what the final submission contact or sorry? The mission content should be just the model or also the 5 athletes the model selects for and so.
+[50:31] June just answered that question like, you need to include all these different components and.
+[50:36] You know, in your report, you can certainly highlight like.
+[50:40] What what's your optimum team of 5 men and your optimum team of 5.
+[50:43] And how you need to just.
+[50:46] To find your selection, right? Exactly. Yep. Yeah, we want to see your work. Okay.
+[50:52] Alex Richardson asked do TV. This is a good 1. do teammates have to be from the same school?
+[51:09] So, could you have a team with someone from.
+[51:13] Stanford, and someone from Stanford that you have.
+[51:18] Or could you have someone from? Yeah working with someone from Harvard? Is that allowed June?
+[51:23] Oh, this is, um, I think it should be okay.
+[51:28] Yeah, I vote yes on this 1 too. Yeah. Yeah, I think that would be cool.
+[51:33] Yeah, yeah, it's up to you.
+[51:36] Eric asks, can there be multiple teams from the same university?
+[51:43] Assuming each team is made up of at most 3 students.
+[51:46] Yeah, I vote yes on this 1 too. Yeah. Yeah, absolutely more the more the merrier Eric. Yeah. And same thing to you.
+[51:54] Alex, like, the more the merrier we want, we want to do everything we can to encourage encourage participation. Um.
+[52:01] Okay, evan's nanny asks.
+[52:04] And the data set, there are instances where scores are missing for certain apparatus, given the context of gymnastics.
+[52:11] What it would it be appropriate to interpret missing scores as indicating that that Jim, this didn't compete on that apparatus and thus replaced them with zeros? So I would say.
+[52:21] It would be appropriate to interpret missing scores as indicating the agenda didn't compete.
+[52:27] But I wouldn't give it a 0 I would delete the record.
+[52:31] Right, because you don't want if you're if you're calculating an average or mean, which I expect everyone will be doing in some fashion.
+[52:38] You don't want an average in a 0, um, if they didn't actually compete. So.
+[52:43] That's how I would handle that. I showed you the example of the unfortunate example with Donna whittenberg, like.
+[52:51] He actually did compete evolve that received a 0 So that result should be in there. But and that's why I say in almost all cases.
+[52:59] A 0, or no record means they didn't actually compete, but I would not average in a 0, uh, for any case, except for.
+[53:07] Involved with the world championships or any other case, you know about that were an athlete actually earn to 0.
+[53:13] But I think you might want somehow to account for that effect and we don't I don't know how to do that, but you might want to somehow account for that fact.
+[53:24] Yeah, I mean, again, in simplest terms, I would say ignore the record. Is there anything you would say about that?
+[53:32] Oh, yeah, uh.
+[53:35] Well, uh, could you be more specific like, which kind of score did you see that have a name in it? Like a, is it from the just score or from the score or E score? So, in general generally, speaking, whenever you encounter.
+[53:52] An E. N. A. N. D. score in difficulty that's not like a, that that that's that's most likely means that they.
+[54:01] The gymnastics didn't participate in that at all. So I remember I kind of delighted. Oh, the.
+[54:08] Record open lines that with a blank.
+[54:11] The score, uh, because I tried to try to eliminate the record that didn't happen, but perhaps there are some, some remaining. But, uh, in in a case that could be having a lot of.
+[54:24] For another reason for yeah, I'll show you the fun. I mean, there's actually quite a few records that have no scores. I'll share my.
+[54:31] Screen and show you now.
+[54:32] Okay, so if you look at, you know, just quickly, I just pulled it up in Excel and just quickly filtered on score. You know, where it was blank.
+[54:42] So you can see, like, all these records, you know, most of them, there's nothing for g, score score penalty or score.
+[54:49] Okay, yeah, I, I can't be in like, 99% sure that.
+[54:53] That this person, this person doesn't, um.
+[54:57] Complete that specific appearances, checking leader also. 1 thing I would do.
+[55:05] Too, is that I'll try to an icon.
+[55:08] Yeah, I like this question. Like, if you saw that there's some record with the difficulty score of 0 does that means that, um.
+[55:19] The he or she didn't complete the, the game.
+[55:23] Yeah, I would say if you see a D, if you see a difficulty score of 0, I would take that to me and that the.
+[55:30] You know, again, in all cases, but whittenberg vault at world championships last year, I would consider a D score of 0 with no other information to mean that the athlete did not compete.
+[55:40] Yeah, maybe I should just try to it.
+[55:44] And they told the record yeah, let's let's work together on checking some of these records cause I wouldn't want to pull out records that shouldn't be there like.
+[55:51] We need to do some work on this, so everyone keep your eyes on the dataset more to come. But this is a great question. And this is.
+[56:00] Some of the data cleaning that we need to work on and here's another example a good 1 is, um, if you see lines 645 and 646. so, Brandon briones.
+[56:10] From the recent 2023 U. S. championships.
+[56:14] We only have a D score and an E score for him, but no total.
+[56:18] And we can check why that happened, but.
+[56:23] He competed on, he did parallel bars on both days of competition so he should have a.
+[56:28] Score oh, yeah, that that is probably an error that I've made in scraping right?
+[56:35] Yeah, it looks like it came up at the 20. yeah, I see it for Jackson Harrison as well at the U. S. championships. So all right. So that's something else that we can clean up. So.
+[56:46] Yeah, that's good to see, like, data cleaning and data scraping is not easy work. Um.
+[56:52] So, keep asking these questions if you notice anything that looks suspect, because we want to we want to help you answer those. But these are the kinds of things that you encounter.
+[57:01] In a data analytics project, um.
+[57:06] Let's see, Joshua dweck asks I know quite a few elite GMS are going to college. Now. I know college has no difficulty scores to Howard collegiate and lead scoring related. So, Josh, where you were absolutely right on the women's side.
+[57:21] Um, women are scored with the old 10.0 system where.
+[57:25] There's some sort of accounting for, like, there's some sort of difficulty requirements that an athlete has to have to determine their so called start value.
+[57:35] Which, you know, whether it's a 10 or something less, and then the judge takes deductions.
+[57:40] Um, and then a lead scoring is very different. Um.
+[57:44] So I would say, there's essentially, there's really very little relationship, because collegiate scoring in general is a lot more lax. Um, and they're also even allowed in their landing position in tumbling. They're allowed a landing position that would be a, they were allowed to do a landing position in tumbling.
+[58:03] And receive no deductions for things that in a lead they would receive deductions for. So there's a lot of differences. Um.
+[58:11] The men in college actually compete in the elite scoring system. So the men in college are actually competing under the system that's used internationally. But the women are not.
+[58:21] And they're very different, um, Warner asks, um, should there be separate models for men and women or should the model be the same.
+[58:31] I mean, I would say the, so as far as analyzing the data, if you want to keep men and women separate, but.
+[58:36] Your approach to the problem.
+[58:39] I mean, it's up to you to figure it out, but I would say the approach to the problem I would at least I would start off with using the same approach to the problem.
+[58:47] You know, it's just the men have 6 apparatus, and the women have 4, but.
+[58:53] Again, I'd start off with the same approach and the same modeling methodology, but, you know, I would look at the results I get and then see if there's any good reason to make to, to change something.
+[59:04] That's my tip Julia want to.
+[59:08] Say anything in response to that question. I agree with you.
+[59:10] Okay all right. Great. Um, Colton Smith asks.
+[59:15] To all countries submit their team members at the same time. So, this is a great question.
+[59:20] The answer is no different countries, like, will name, like their teams after typically they're national championships or their Olympic trials and different countries do them at different times.
+[59:35] And so no countries will not necessarily submit their team members at the same time. And, like, even what you see, like, for world championships right now.
+[59:44] Like, even within the U. S. the U. S men announced their team of 5 and their alternate.
+[59:51] Right after the national championships a few weeks ago.
+[59:54] The women are having a selection camp next week.
+[59:58] To determine who the team of 5 at the world championships will be. So.
+[60:03] Even within the same country, we're not consistent and then among all the other countries, they're not consistent. And what I see for world championships now. So again, the U. S.
+[60:12] Name their team of 5, some countries have named their teams for world championships, but they've.
+[60:18] Listed 6 people and 1 of those 6 people will be the alternate, but they haven't identified who that is yet. So.
+[60:25] It's, it's not consistent at all. Um, corissa asks is there a limit of how many teams have 3 from 1 school can participate? So we asked we answered that earlier. There is no limit. We incur. So just.
+[60:39] Each person can only be on 1 team.
+[60:42] Whether that team is from their school or from multiple schools, but there's no limit on. How many can participate from 1.
+[60:50] Yeah, yeah, because we have encouraging professors at many universities to use the data set for their final projects. So yeah, multiple projects from the same university. Of course.
+[61:02] Yeah, absolutely. That's great. Um, okay, so, Sarah, that's the question that you addressed already June and that is the phone answered for us.
+[61:11] So, Sarah's question is answered. Okay, you got that already you hung JT asked well, the scores of the Asian games.
+[61:19] To be held from September 23rd to October 8th be included in the data set. Okay. Yeah. Great. Thank you for. Calling that out. That is the same time with the world championships. So, the answer is yes.
+[61:30] We will include that in the data set as well. Okay. Sonic group to ask what is D score and score and the dataset D stands for difficulty.
+[61:42] And that's assessment so, there's a code of points that comes from the, that's the International Federation. They identify the difficulty of every skill that is executed. And the way gymnastics handles difficulty is they do it by letters.
+[61:59] A B. C. D. and so on and an, a is worth a 10th of a point a B2 tenths C a 10th of a point. And so on.
+[62:08] So that's how the D scores accumulated bulk. There's only 1 vault executed. So the vault, the given vault has a difficulty score.
+[62:16] But for all the other apparatus for women, the difficulty score comes from the 8, most difficult skills.
+[62:24] Plus points for distribution or element requirements.
+[62:29] And for the men, that's the 10, most difficult skills.
+[62:32] Plus again, element requirements.
+[62:35] And then there's also something called connection bonus, which involves connecting different skills together and there are rules around that for each apparatus, except for vault.
+[62:45] Ease score is execution score so that has the maximum of 10 and the judges with each athlete, regardless if difficulty start at 10, and they're noting deductions throughout the routine for.
+[62:58] Stefan landings and tumbling any kind of form.
+[63:03] Like, arms legs or anything in the body that's not correct. Like, there's a lot of detail that the judges are looking for.
+[63:11] So you'll like to get an execution score um.
+[63:14] Um, on vault, anything above, I'll say, like, 9 or 9 to 5 is quite good. Um, on a lot of the other apparatus, like an execution score above.
+[63:24] 8.5 is exceptional and above 8 is really good.
+[63:29] Um, and I think we, uh.
+[63:33] Running out of time. Okay. Do you want me to stop.
+[63:35] Now, what do you, I'm going to try to finish the process and try this question from.
+[63:39] Okay, but be brief, let's say, hey, Louis asks, should our results include an alternate.
+[63:45] That would be an element of originality in your project if you wanted to do it. Lewis.
+[63:51] So, if you come up with a way to do it great.
+[63:57] Evan said we reviewed the data set title data 2017 to 2021.
+[64:02] Located in the get hub among my preliminary examination, I observed the following with respect to missing data.
+[64:09] Yep, so there are columns with the missing values.
+[64:13] Penalty has missing entry so I mentioned.
+[64:16] And a lot of the apparatus, there is no penalty. Um.
+[64:21] So, it could either. Yeah, so it means they incurred no penalty or so there could be there's no penalty on that apparatus or they had 0 penalties. I would say the vast majority of routines.
+[64:33] I have no penalties only vote and.
+[64:36] The floor exercise yeah. Exercise trying to think if there's anything else. Um.
+[64:42] Yeah, I can't, yeah, I can't think of anything else that has a penalty, but there must there might be I'll have to double check that, um.
+[64:51] How is the originality of the analysis judged?
+[64:55] Brian, are you in a position to talk at this point?
+[65:06] Okay, I mean, I'll, I'll answer it then. I mean, I would say, what did you participate?
+[65:10] Judging last year no, I was 9.
+[65:13] Okay, so to me, originality is just like.
+[65:16] What did you come up with? Okay, Brian can't talk. So originally I was it's the word original so it's subjective, but it's.
+[65:23] What have you done in your analysis or are you in your approach or in your methodology?
+[65:29] Or in your reporting, that's different than the norm, then that's different from everybody else and, you know, we want to, you know, and if it's original, we want it to be relevant.
+[65:38] Right like, it should demonstrate insight additional insight. It shouldn't just be original for the sake of being original.
+[65:50] Nice. Um, yeah, these are really great questions. I'm glad you're thinking also you're all thinking so deeply.
+[65:56] Got it yeah, thank you. Elliot. And thank you. Everybody for participating. The recording will be made available and I think the transcript, the questions and answers there will be generating the transcripts. We will we will do some quality control on the transcripts, and they may compose a.
+[66:17] Q, and a document and posted on the website, and as we moved on, maybe later in the semester, uh, it's possible that we and please send us questions if possible if needed we will host another webinar. Maybe in the at that time, we should have all the data completed and then you, you guys may have done some preliminary.
+[66:37] Analysis then our conversation can be more insightful.
+[66:42] Uh, well, yeah, I mean, sorry, June, I'd add 1 more thing I quickly look through the data at the penalties and.
+[66:50] We do have non 0 values for penalties on some apparatus other than.
+[66:55] Vault and floor exercise so I think the phone and I need to go back and make sure that those are correct.
+[67:01] Okay, okay.
+[67:03] All right, so, uh, thank you all for coming. And thank you Elliott. This is a great introduction and thank you for the fun for your hard work.
+[67:13] Uh, we look forward to receiving your questions and submission in January.
+[67:19] Have a good evening guys. Bye. Bye.

@@ -1,0 +1,310 @@
+Video Title: How I built 21 startups in 2 years
+Video ID: gQuS8N6fyJU
+URL: https://www.youtube.com/watch?v=gQuS8N6fyJU
+View Count: 28,437
+
+[00:01] when I got fired as a software engineer
+[00:02] in November 2021 I started to build side
+[00:05] project fast forward to today I launched
+[00:07] 21 side project 10 of them became
+[00:09] profitable startups and I'm now earning
+[00:11] $55,000 a month as a solo entrepreneur
+[00:14] in this video I am going to share how I
+[00:16] get startup IDs and why building them
+[00:18] really fast was the key to 5x my
+[00:20] software engineer salary let's get into
+[00:23] it all right so let's talk about how to
+[00:26] find startup idas there are three ways
+[00:28] to find them the first one is to solve
+[00:30] your own problems let me illustrate this
+[00:32] with an example those are all my 21 site
+[00:35] projects and 10 of them are making money
+[00:38] and one of the most common customer
+[00:39] requests I receive is can I get a proper
+[00:41] invoice I work with stripe to process
+[00:45] all the payments that go through my
+[00:46] startups and sometimes the receipt is
+[00:48] not enough in customer uh mostly
+[00:49] Europeans want to have an invoice that
+[00:52] is properly formatted and as a business
+[00:54] owner this is not a very fun part so I
+[00:56] bu I'm building Zen voice it's a little
+[00:59] uh wrapper around the stripe API that
+[01:02] gives stripe business owners a special
+[01:03] link that they can send to the customers
+[01:05] where they input their email addresses
+[01:07] and then they can retrieve all the
+[01:08] purchases they've made with the business
+[01:11] and then they can see the invoice they
+[01:12] can uh edit some details to it add their
+[01:14] name or their business detail like V8
+[01:17] number all that kind of things and they
+[01:18] can download their invoice and they're
+[01:19] happy uh this is my way of solving my
+[01:22] own problems and yours might be
+[01:23] different so you might want to look at
+[01:25] what's going on around in your life that
+[01:26] you can solve a perfect example to do
+[01:29] that is to look around if you have a job
+[01:31] what's going on there uh maybe uh it
+[01:33] could be a little piece of software for
+[01:34] your team to be more productive during
+[01:36] meeting using and AI uh video summary
+[01:38] tool or something like that there are a
+[01:39] bunch of uh problem that you can search
+[01:41] around if this is not in your job you
+[01:43] can look around in your hobbies for
+[01:45] instance maybe you feel lonely playing
+[01:47] tennis by yourself and you need to find
+[01:48] a partners that are relevant um skills
+[01:51] with you and you could make an app to
+[01:53] find some of those people those kind of
+[01:56] IDs are the best because first if your
+[01:59] stup fail you still end up having a
+[02:01] solution to your own problem so you're
+[02:02] happy with that and second it's much
+[02:04] easier to sell a uh software or whatever
+[02:07] a product if you speak the language of
+[02:09] your customer so if it's for a problem
+[02:10] that you've been
+[02:12] experiencing uh sometimes you might not
+[02:14] have any uh problem in mind and you want
+[02:17] to solve Universal problems un what I
+[02:20] call Universal problems are problems
+[02:21] like um every businesses want to make
+[02:23] more money and everybody in life wants
+[02:25] to have good quality sleep um eat
+[02:28] healthy food and um whatever read books
+[02:31] or be productive um those are PR that
+[02:34] pretty much anyone could experience and
+[02:35] those are good way to get started in
+[02:37] entrepreneurship if you don't find any
+[02:38] problem so for instance that's how I
+[02:41] made my first internet uh dollar um I
+[02:44] used to work with escape room businesses
+[02:46] and I used to sell them a mini tool like
+[02:48] a little piece of software that will
+[02:50] help improve the conversions on their
+[02:51] websites I do not care about the Escapo
+[02:54] industry at all whatsoever but I found
+[02:57] out that if I manage to get more money
+[02:59] for for some businesses so Universal
+[03:02] need using one of my uh software product
+[03:04] then this is a perfect combo they're
+[03:06] happy I'm happy uh this is a quick demo
+[03:08] this is one of my customer um that is
+[03:10] actually still paying after 5 years uh
+[03:12] for my software this is an escape room
+[03:14] business and they you they use my
+[03:16] software at the bottom left this little
+[03:18] key here will be shown to every visitor
+[03:20] and if you visit the website of the
+[03:21] escape room business you'll be able to
+[03:22] play an escape room small online escape
+[03:25] room game on the Business website so
+[03:28] this is a tool that just in to convert
+[03:30] to have some fun engaging game for
+[03:32] visitors and to convert those visitors
+[03:34] into more customers and in never Ed
+[03:36] businesses that I work with would get
+[03:38] 10% more customers from their website
+[03:39] which is really great I ended up um
+[03:42] ditching the business because I have no
+[03:43] specific care for the Escape rooms
+[03:44] industry but that was a really great way
+[03:46] to get stting into entrepreneurship
+[03:48] because you still have to build a
+[03:50] product do the marketing launching and
+[03:52] all that and in the case you have no uh
+[03:55] problem that you want to solve and you
+[03:58] uh you don't want to do this like
+[03:59] solving those Universal problems there's
+[04:01] nothing that comes to your mind you can
+[04:03] try experiencing a brand new life uh
+[04:05] that means traveling abroad and meeting
+[04:07] new people that means starting a new
+[04:09] hobby um try new stuff with an open mind
+[04:12] where you will experience new problems
+[04:14] that will come to your life and that
+[04:15] could bring you some startups ideas once
+[04:17] you get an IDE the next part is to
+[04:19] actually build it and we're going to
+[04:21] talk about this to make sure that you
+[04:22] build it fast so in the case it's a flop
+[04:24] you don't burn out all right so let me
+[04:26] tell you a little story when I started
+[04:28] entrepreneurship in 20 16 I believed I
+[04:30] was Mark zukerberg and I had a secret
+[04:33] brilliant ID in mind that was that was
+[04:35] going to become a unicorn after spending
+[04:37] a year in my bedroom building that ID I
+[04:40] ended up having zero users and Zer in
+[04:42] Revenue I burned out um I quit the
+[04:45] product I couldn't see it anymore I also
+[04:47] uh left my girlfriend and go change
+[04:49] travel to a new country and change my
+[04:51] life um the thing is when you spend so
+[04:53] much time building a product the brain
+[04:56] start to have some expectations and the
+[04:57] more time you spend on it the more your
+[04:58] expectations will be be so the better
+[05:00] the reward will be expected and if the
+[05:02] reward isn't uh coming as it's mostly
+[05:04] the case in entrepreneurship you will
+[05:06] burn out and you want to avoid that at
+[05:07] all cost and the second reason is that
+[05:10] most startups fail um the main reason is
+[05:13] that people don't actually need the
+[05:14] startup I think the number is around 90%
+[05:16] of startup fail so you want to avoid um
+[05:18] losing your time on something that might
+[05:20] not even work out and so that's why U
+[05:22] building and shipping fast is very
+[05:24] important and at the same time when you
+[05:26] ship fast you going to learn how to
+[05:28] Market your startup how to launch it how
+[05:30] to handle customer support tax legal and
+[05:32] a bunch of other things that will be
+[05:33] useful for the future and at the same
+[05:36] times if you like um you know sharing
+[05:39] what you uh learn along the way you can
+[05:40] grow a little audience like I did in the
+[05:42] last two years on my Twitter where uh
+[05:44] now I have over 70k followers uh because
+[05:47] I was sharing everything that I was
+[05:48] doing and learning just like I'm doing
+[05:49] now on YouTube all right so now that
+[05:51] we've set up the mindset it's important
+[05:53] to know which feature you will or will
+[05:55] not build and as a general rule of themb
+[05:58] build just one Fe feature that feature
+[06:00] that you cannot remove from your product
+[06:03] otherwise it just doesn't exist so for
+[06:05] every feature that you have in mind ask
+[06:06] yourself is it necessary for the users
+[06:09] to have this feature if the answer is
+[06:11] yes keep it but if it's not a necessary
+[06:13] like absolute necessary feature just
+[06:15] remove it let's get to a concrete
+[06:18] example of Zenvo the startup that I'm
+[06:20] building right now the goal is to
+[06:22] simplify stripe invoices for small
+[06:24] business owners like me and the main
+[06:26] feature is just this people input their
+[06:28] email and they get their invoice from
+[06:30] stripe I have a bunch of other IDs for
+[06:33] invoice so U business owners to be able
+[06:34] to view all the invoices that have been
+[06:36] generated um to simplify the texting to
+[06:39] interact with a stripe API to upload
+[06:41] those invoices and ab like really a
+[06:43] numerous number of features that I want
+[06:45] to implement but I'm going to launch
+[06:47] with just one feature this one that I
+[06:49] just show you right now which is
+[06:50] generating invoices that way I will be
+[06:52] able to launch my startup faster to get
+[06:54] customers feedback earlier and it's
+[06:57] likely that nobody will actually need
+[06:59] the the product maybe it's just me or
+[07:00] maybe I'm faking a need in my head and
+[07:03] nobody will want to use it so this is
+[07:05] why I will spend about 2 weeks finishing
+[07:07] the product launch it and see how the
+[07:09] market react and once you're going to go
+[07:11] on launching your product the pricing is
+[07:13] also very important because that will
+[07:15] determine whether you validate or not a
+[07:17] need um as a general Ru them there are
+[07:20] two things you want to avoid or at least
+[07:22] make better is at first you want to
+[07:23] avoid free users um in the VC world it's
+[07:26] very common to have um free plans and to
+[07:29] burn a lot of money get a lot of users
+[07:31] and then later convert those users into
+[07:33] pay plans but as a solo entrepreneur uh
+[07:35] like me if you have a limited budget you
+[07:37] might not be able to burn lots of money
+[07:39] or you might not be able to bring
+[07:40] millions of visitors to your website and
+[07:43] most of free users never convert to paid
+[07:45] plans so if you have uh a pay a free
+[07:48] plan that might be killing your paid
+[07:50] plan and and reducing your uh actual
+[07:52] income so you want to get rid of that
+[07:54] the second part is that there is a real
+[07:56] subscription headache going on out there
+[07:58] there are subscriptions for
+[07:59] absolutely everything nowadays and it's
+[08:01] much harder to sell a $99 a month
+[08:04] subscription than it is to sell a 100
+[08:06] bucks onetime payment this is what I'm
+[08:08] going to do for my new startup Zenvo um
+[08:11] TR business owners could use my product
+[08:13] every day every week so it could make
+[08:15] sense to have some recurring payments
+[08:17] but I'm not going to do that instead I'm
+[08:18] going to go with one time payments and
+[08:21] so that I can validate the le as soon as
+[08:23] I can and if I see that there are some
+[08:25] customers who actually use the product
+[08:27] and want more of that then later on I
+[08:29] can eventually switch to a recuring um
+[08:32] membership but for now I'm going to
+[08:33] stick to the simplest which is onetime
+[08:35] payment and finally when you're about to
+[08:36] build you want to choose a text tack so
+[08:39] if you are a programmer and you already
+[08:40] know your text tacks you're familiar
+[08:42] with that you can build anything on web
+[08:44] apps or whatever stick with it don't
+[08:45] change it the customers don't care about
+[08:47] the text tack so there is no need to
+[08:48] change uh any of the things that you're
+[08:49] using stick with what you already know
+[08:51] and if you are getting started this is
+[08:53] my textt here I'm using uh react and
+[08:55] nextjs on top of it uh stripe for
+[08:57] payments tailin CSS for the components
+[09:00] uh with Daisy UI as a library mongodb as
+[09:03] a database next authentification for uh
+[09:06] user authentification accounts and all
+[09:08] that and mail gun for uh email
+[09:10] transactional emails uh this is also a
+[09:13] little product that I built it's a ball
+[09:14] plate that encapsulates all those uh
+[09:17] stack that I'm using and if you want to
+[09:19] check it out it's called chipas if you
+[09:21] are curious about the coding part of it
+[09:23] I am actually live streaming myself
+[09:25] coding Zen voice in public on YouTube so
+[09:28] you can see my YouTube channel all the
+[09:30] replays from the last couple days uh you
+[09:33] will see me mostly trying to debug my
+[09:35] own code um currently the product is uh
+[09:38] working so people can create accounts
+[09:40] they can connect their stripe accounts
+[09:41] to it and have a little link that they
+[09:43] can share to the customers so they can
+[09:45] input their email and retrieve their
+[09:47] invoice edit them and download them um
+[09:49] I'm going to spend the next weeks or so
+[09:51] finishing the product before launching
+[09:52] it on platforms like reddits productons
+[09:55] and Twitter the strategy I'm using in
+[09:57] this video about finding IDs and
+[09:58] building them pass is the exact same
+[10:00] strategy that I used to build my 21 side
+[10:02] project and this is working better and
+[10:04] better for me as you can see here my
+[10:06] heat rate um is increasing in 2023 more
+[10:09] of the startups that I built are
+[10:11] profitable and making more money than
+[10:13] they used to in 2022 when I got started
+[10:15] from scratch I'm taking also YouTube
+[10:18] seriously this year and I'm going to be
+[10:19] sharing one video per week so if you
+[10:22] want to uh see what I'm doing and what
+[10:24] I'm learning uh you can subscribe to
+[10:25] your channel and if you like the video
+[10:26] you can like the video cheers

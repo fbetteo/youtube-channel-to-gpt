@@ -1,0 +1,481 @@
+Video Title: Turn Any Website Into LLM Ready Data in Seconds with n8n & Firecrawl
+Video ID: Ee9WtEEd300
+URL: https://www.youtube.com/watch?v=Ee9WtEEd300
+View Count: 74,921
+
+[00:00] so fir craw is going to allow us to turn
+[00:01] any website into llm ready data in a
+[00:04] matter of seconds and as you can see
+[00:05] right here it's also open source so once
+[00:07] you get over to fire craw click on this
+[00:08] button and you'll be able to get 500
+[00:10] free credits to play around with as you
+[00:12] can see there's four different things we
+[00:13] can do with fir crawl we can scrape we
+[00:15] can crawl we can map or we can do this
+[00:17] new extract which basically means we can
+[00:20] give firec a URL and also a prompt like
+[00:22] can you please extract the company name
+[00:24] and the services they offer and an
+[00:26] icebreaker out of this URL so there's
+[00:28] some really cool use cases that we can
+[00:30] do with fir crawl so in this video we're
+[00:31] going to be mainly looking at extract
+[00:33] but I'm also going to show you the
+[00:34] difference between scrape and extract
+[00:36] and we're going to get into NN and
+[00:37] connect up so you can see how this works
+[00:38] but the playground is going to be a
+[00:40] really good place to understand the
+[00:41] difference between these different
+[00:43] endpoints all right so for the sake of
+[00:44] this video this is the website we're
+[00:46] going to be looking at it's called
+[00:47] quotes to scrape and as you can see it's
+[00:49] got like 10 on this first page and it
+[00:50] also has different pages of different
+[00:52] categories of quotes and as you can see
+[00:54] if we click into them there are
+[00:55] different quotes So what I'm going to do
+[00:56] is go back to the main screen and I'm
+[00:58] going to copy the URL of this website
+[01:00] and we're going to go into NN we're
+[01:02] going to open up a new node which is
+[01:03] going to be an HTTP request and this is
+[01:05] just to show you what a standard git
+[01:07] request to a static website looks like
+[01:09] so we're going to paste in the URL hit
+[01:11] test step and on the right hand side
+[01:13] we're going to get all the HTML back
+[01:15] from the quotes to scrape website like I
+[01:17] said what we're looking at here is a
+[01:19] nasty chunk of HTML it's pretty hard for
+[01:21] us to read but basically what's going on
+[01:22] here is this is the code that goes to
+[01:24] the website in order to have it be
+[01:26] styled and different fonts and different
+[01:28] colors so right here what we're looking
+[01:29] at is the entire first page of this
+[01:31] website so if we were to search for
+[01:33] Harry if I copy this we go back into
+[01:35] niden and we contrl F this you can see
+[01:38] there is the exact quote that has the
+[01:39] word Harry so everything from the
+[01:41] website's in here it's just wrapped up
+[01:42] in kind of an ugly chunk of HTML now
+[01:45] hopping back over to the firec
+[01:46] playground using the scrape endpoint we
+[01:48] can replace that same URL we'll run this
+[01:51] and it's going to Output markdown
+[01:52] formatting so now we can see we actually
+[01:54] have everything we're looking for with
+[01:56] the different quotes and it's a lot more
+[01:58] readable for a human so that's what a
+[02:00] web scrape is right we get the
+[02:02] information back whether that's HTML or
+[02:03] markdown but then we would typically
+[02:05] feed that into some sort of llm in order
+[02:07] to extract the information we're looking
+[02:08] for in this case we'd be looking for
+[02:10] different quotes but what we can do with
+[02:13] extract is we can give it the URL and
+[02:14] then also say hey get all of the quotes
+[02:17] on here and using this method we can say
+[02:19] not just these first 10 on this page I
+[02:21] want you to crawl through the whole site
+[02:23] and basically get all of these quotes
+[02:24] all of these quotes all of these quotes
+[02:26] all of these quotes so it's going to be
+[02:27] really cool so I'm going to show how
+[02:29] this works in fir craw and then we're
+[02:30] going to plug it into nadn all right so
+[02:32] what we're doing here is we're saying
+[02:33] extract all of the quotes and authors
+[02:35] from this website I gave it the website
+[02:37] and now what it's doing it's going to
+[02:38] generate the different parameters that
+[02:39] the llm will be looking to extract out
+[02:42] of the content of the website okay so
+[02:45] here's the run we're about to execute we
+[02:46] have the URL and then we have our schema
+[02:48] for what the llm is going to be looking
+[02:50] for and it's looking for text which
+[02:52] would be the quote and it's a string and
+[02:54] then it's also going to be looking for
+[02:55] the author of that quote which is also a
+[02:56] string and then the prompt we're feeding
+[02:58] here to the llm is extract all quotes
+[03:00] and their corresponding authors from the
+[03:02] website so we're going to hit run and
+[03:04] we're going to see that it's not only
+[03:06] going to go to that first URL it's
+[03:08] basically going to take that main domain
+[03:09] which is quot
+[03:15] scrape.on there also quick plug go ahead
+[03:18] and use code herk 10 to get 10% off the
+[03:20] first 12 months on your fir crawl plan
+[03:23] okay so it just finished up as you can
+[03:24] see we have 79 quotes so down here we
+[03:27] have a Json response where it's going to
+[03:29] be an object called quotes and in there
+[03:31] we have a bunch of different items which
+[03:32] is you know text author text author text
+[03:35] author and we have pretty much
+[03:37] everything from that website now okay
+[03:39] cool but what we want to do is look at
+[03:41] how we can do this in N end so that we
+[03:42] have you know a list of 20 30 40 URLs
+[03:45] that we want to extract information from
+[03:47] we can just Loop through and send off
+[03:49] that automation rather than having to
+[03:50] come in here and type that out in fir
+[03:52] crawl okay so what we're going to do is
+[03:54] go back into idn and I apologize cuz
+[03:56] there may be some jumping around here
+[03:57] but we're basically just going to clear
+[03:58] out this http request and grab a new one
+[04:02] now what we're going to do is we want to
+[04:03] go into fir craws documentation so all
+[04:05] we have to do is import the curl command
+[04:06] for the extract Endo rather than trying
+[04:08] to figure out how to fill out these
+[04:10] different parameters so back in fir craw
+[04:12] once you set up your account up in the
+[04:13] top right you'll see a button called
+[04:14] docs you want to click into there and
+[04:16] now we can see a quick start guide we
+[04:18] have different endpoints and what we're
+[04:19] going to do is on the left scroll down
+[04:20] to features and click on extract and
+[04:23] this is what we're looking for so we've
+[04:25] got some information here the first
+[04:26] thing to look at is when we're using the
+[04:28] extract you can extract structure data
+[04:30] from one or multiple URLs including wild
+[04:32] cards so what we did was we didn't just
+[04:34] scrape one single page we basically
+[04:36] scraped through all of the pages that
+[04:37] had the main base domain of um quotes
+[04:54] scrape.on parse all the URLs it can
+[04:56] discover then extract the requested data
+[04:58] and we can see that's how it works
+[04:59] worked because if we come back into the
+[05:00] request we just made we can see right
+[05:02] here that it added a slash with an
+[05:03] asterisk after close to
+[05:08] scrape.on this is basically going to
+[05:10] fill out the method which is going to be
+[05:11] a post request it's going to fill out
+[05:13] the endpoint it'll fill out the content
+[05:15] type and it'll show us how to set up our
+[05:16] authorization and then we'll have a body
+[05:18] request that we'll need to make some
+[05:20] minor changes to so in the top right I'm
+[05:23] going to click copy and I'm going to
+[05:24] come back into Ed end hit import curl
+[05:26] paste that in there hit import and as
+[05:28] you can see everything pretty much just
+[05:29] got populated so like I said the method
+[05:32] is going to be a post we have the
+[05:33] endpoint already set up and what I want
+[05:35] to do is show you guys how to set up
+[05:36] this authorization so that we can keep
+[05:37] it saved forever rather than having to
+[05:39] put it in here in the configuration
+[05:41] panel every time so first of all head
+[05:43] back over to your fir craw go to API
+[05:45] keys on the left hand side and you're
+[05:47] just going to want to copy that API key
+[05:49] so once you have that copied head back
+[05:50] into NN and now let's look at how we
+[05:52] actually set this up so typically what
+[05:54] you do is we have this as a header
+[05:56] parameter not all authorizations are
+[05:58] headers but this one is a header and the
+[06:00] key or the name is authorization and the
+[06:03] value is Bearer space your API key so
+[06:06] what you typically do is just paste in
+[06:08] your API key right there and you'd be
+[06:09] good to go but what we want to do is we
+[06:11] want to save our fir craw credential the
+[06:13] same way you'd save you know a Google
+[06:15] Sheets credential or a slack credential
+[06:18] so we're going to come into
+[06:19] authentication click on generic we're
+[06:21] going to click on generic type and
+[06:23] choose header because we know down here
+[06:24] it's a header off and then you can see I
+[06:26] have some other credentials already
+[06:27] saved we're going to create a new one
+[06:29] I'm just going to name this fir crawl to
+[06:31] keep ourselves organized for the name
+[06:33] we're going to put authorization and for
+[06:35] the value we're going to type Bearer
+[06:36] with a capital b space and then paste in
+[06:39] our API key and we'll hit save and this
+[06:40] is going to be the exact same thing that
+[06:42] we just did down below except for now we
+[06:44] have it saved so we can actually flick
+[06:47] this field off we don't need to send
+[06:48] headers because we're sending them right
+[06:49] here and now we just need to figure out
+[06:51] how to configure this body request okay
+[06:54] so I'm going to change this to an
+[06:55] expression and open it up just so we can
+[06:56] take a look at it the first thing we
+[06:57] notice is that by default there are
+[06:59] three URLs in here that we would be
+[07:00] extracting from we don't want to do that
+[07:02] here so I'm going to grab everything
+[07:03] within the array but I'm going to keep
+[07:04] the two quotation marks now all we need
+[07:06] to do is put the URL that we're looking
+[07:08] to extract information from in between
+[07:10] these quotation marks so here I just put
+[07:12] in the quotes to
+[07:14] scrape.on asterisk after that so that it
+[07:17] will go and crawl all of the pages not
+[07:20] just that first page and which would
+[07:21] only have like nine or 10 quotes and now
+[07:23] the rest is going to be really easy to
+[07:24] configure because we already did this in
+[07:26] the playground so we know exactly what
+[07:27] goes where so I'm going to click back
+[07:29] into our playground example first thing
+[07:31] is this is the quote that fir crawl sent
+[07:32] off so I'm going to copy that go back
+[07:34] into edn and I'm just going to replace
+[07:36] the prompts right here we don't want the
+[07:38] company Mission blah blah blah we want
+[07:39] to paste this in here and we're looking
+[07:41] to extract all quotes and their
+[07:43] corresponding authors from the website
+[07:45] and the next is basically telling the
+[07:46] llm what are you pulling back so we just
+[07:49] told it it's pulling back quotes and
+[07:51] authors so we need to actually make the
+[07:52] schema down here in the body request
+[07:54] match the prompt so all we have to do is
+[07:57] go back into our playground right here
+[07:58] is the scheme that we sent over in our
+[08:00] example and I'm just going to click on
+[08:01] Json View and I'm going to copy this
+[08:03] entire thing which is wrapped up in
+[08:05] curly braces we'll come back in ID end
+[08:07] and we'll start after schema colon space
+[08:10] replace all this with what we just had
+[08:13] in um fir crawl and actually I think
+[08:15] I've noticed the way that this copied
+[08:17] over it's not going to work so let me
+[08:18] show you guys that real quick if we hit
+[08:20] test step it's going to say Json
+[08:21] parameter needs to be valid Json so what
+[08:23] I'm going to do is I'm going to copy all
+[08:24] of this now I came in chat GPT and I'm
+[08:26] just saying fix this Json what it's
+[08:28] going to do is it's going to just
+[08:29] basically push these over when you copy
+[08:32] it over from fir craw it kind of aligns
+[08:34] them on the left but you don't want that
+[08:35] so as you can see it just basically
+[08:36] pushed everything over we'll copy this
+[08:38] into our nadn right there and all it did
+[08:40] was Bump everything over once and now we
+[08:42] should be good to go so real quick
+[08:44] before we test this out I'm just going
+[08:45] to call this extract and then we'll hit
+[08:47] test step and we should see that it's
+[08:49] going to be pulling and it's going to
+[08:50] give us a message that says um true and
+[08:53] it gives us an ID and so now what we
+[08:55] need to do next is pull this idid back
+[08:57] to see if our request has been fulfilled
+[08:59] yet so I'm back in the documentation and
+[09:01] now we are going to look at down here
+[09:03] asynchronous extraction and Status
+[09:05] checking so this is how we check the
+[09:07] status of a request as you saw we just
+[09:09] made one so here I'm going to click on
+[09:11] copy this curl command we're going to
+[09:13] come back into NN and we're going to add
+[09:14] another HTTP request and we're going to
+[09:17] import that in there and you can see
+[09:18] this one is going to be a git command
+[09:20] it's going to have a different endpoint
+[09:22] and what we need to do if you look back
+[09:23] at the documentation is at the end of
+[09:25] the extract slash we have to put the
+[09:27] extract ID that we're looking to check
+[09:30] the status of so back in NN the ID is
+[09:33] going to be coming from the left hand
+[09:35] side the previous node every time so I'm
+[09:37] just going to change the url field to an
+[09:39] expression put a backs slash and then
+[09:41] I'm going to grab the ID pull it right
+[09:43] in there and we're good to go except we
+[09:45] need to set up our credential and this
+[09:47] is why it's great we already set this up
+[09:48] as a generic as a header and now we can
+[09:51] just pull in easily our fire crawl off
+[09:54] and hit test step so what happens now is
+[09:57] our request hasn't been done yet so as
+[09:59] you can see it comes back as processing
+[10:01] and the data is an empty array so what
+[10:03] we're going to set up real quick is
+[10:04] something called polling where we're
+[10:05] basically checking in on a specific ID
+[10:07] which is this one right here and we're
+[10:09] going to check and if it's if it's empty
+[10:11] if the data field is empty then that
+[10:13] means we're going to wait a certain
+[10:14] amount of time and come back and try
+[10:16] again so after the request I'm going to
+[10:18] add a if so this is just basically going
+[10:20] to help us create our filter so we're
+[10:22] dragging in json. dat which as you can
+[10:24] see is an empty array and we're just
+[10:25] going to say is empty but one thing you
+[10:28] have to keep in mind mind is this
+[10:30] doesn't match as you can see we're
+[10:31] dragging in an array and we were trying
+[10:33] to do a filter of a string so we have to
+[10:35] go to array and then say is empty and
+[10:37] we'll hit test step and this is going to
+[10:39] say true the data field is empty and so
+[10:43] if true what we want to do is we're
+[10:44] going to add a weight and this will wait
+[10:46] for you know let's in in this case we'll
+[10:48] just say 5 seconds so if we hit test
+[10:50] step it's going to wait for 5 seconds
+[10:52] and um I wish actually I switched the
+[10:54] logic so that this would be on the
+[10:56] bottom but whatever and then we would
+[10:57] just drag this right back into here
+[10:59] and we would try it again so now after 5
+[11:02] Seconds had passed or however much time
+[11:04] we would try this again and now we can
+[11:05] see that we have our item back and the
+[11:07] data field is no longer empty because we
+[11:09] have our quotes object which has 83
+[11:12] quotes So it even got more than that
+[11:14] time we did it in the playground and I'm
+[11:15] thinking this is just because you know
+[11:17] the extract is kind of still in beta so
+[11:19] it may not be super consistent but
+[11:21] that's still way better than if we were
+[11:22] to just do a simple get request and then
+[11:25] as you can see now if we ran this next
+[11:27] step this would come out
+[11:30] ah but this is interesting so before it
+[11:32] knows what it's pulling back the json.
+[11:34] DAT field is an array and so we're able
+[11:36] to set up is the array empty but now
+[11:38] it's an object so we can't put it
+[11:40] through the same filter because we're
+[11:41] looking at a filter for an array so what
+[11:44] I'm thinking here is we could set up
+[11:46] this continue using error output so
+[11:48] because this this node would error we
+[11:49] could hit test step and we could see now
+[11:51] it's going to go down the false branch
+[11:53] and so this basically just means it's
+[11:55] going to let us continue moving through
+[11:56] the process and we could do then
+[11:57] whatever we want to do down here
+[11:59] obviously this isn't perfect because I
+[12:00] just set this up to show you guys and
+[12:02] ran into that but that's typically sort
+[12:04] of the way we would think is how can we
+[12:05] make this a little more dynamic because
+[12:07] it has to deal with empty arrays or
+[12:09] potentially full objects anyways what I
+[12:11] wanted to show you guys now is back in
+[12:13] our request if we were to get rid of
+[12:15] this Aster what would happen so we're
+[12:16] just going to run this whole process
+[12:18] again I'll hit test workflow and now
+[12:19] it's going to be sending that request
+[12:21] only to you know one URL rather than the
+[12:25] other one Aha and I'm glad we are doing
+[12:27] live testing because I made the mistake
+[12:29] of putting this in as json. ID which
+[12:31] doesn't exist if we're pulling from the
+[12:33] weight node so all we have to do in here
+[12:35] is get rid of json. ID and pull in a
+[12:38] basically a you know a node reference
+[12:40] variable so we're going to do two curly
+[12:42] braces we're going to be pulling from
+[12:44] the extract node and now we just want to
+[12:46] say item. json. ID and we should be good
+[12:50] to go now so I'm just going to refresh
+[12:52] this and we'll completely do it again so
+[12:53] test workflow we're doing the exact same
+[12:56] thing it's not ready yet so we're going
+[12:57] to wait 5 seconds and then we're going
+[12:58] to go check again we hopefully should
+[13:01] see okay it's not ready still so we're
+[13:02] going to wait 5 more seconds come check
+[13:04] again and then whenever it is ready now
+[13:06] as you can see it goes down this branch
+[13:08] and we can see that we actually get our
+[13:10] items back and what you see here is that
+[13:12] this time we only got 10 quotes um you
+[13:14] know it says nine but computers count
+[13:16] from zero but we only got 10 quotes
+[13:19] because um we didn't put an aster after
+[13:22] the URL so fir crawl didn't know I need
+[13:25] to go scrape everything out of this
+[13:27] whole base URL I'm only going to be
+[13:28] scraping in this one specific page which
+[13:31] is this one right here which does in
+[13:32] fact only have 10 quotes and by the way
+[13:35] super simple template here but if you
+[13:36] want to try it out and just plug in your
+[13:37] API key and different URLs you can grab
+[13:40] that in the fre School Community you'll
+[13:42] hop in there you will click on YouTube
+[13:43] resources and click on the post
+[13:45] associated with this video and you'll
+[13:46] have the Json right there to download
+[13:48] once you download that all you have to
+[13:49] do is import it from a file right up
+[13:51] here and you'll have the workflow so
+[13:53] there's a lot of cool use cases for fir
+[13:55] crawl it'd be cool to be able to pull
+[13:56] from a a sheet for example of 30 40 or
+[13:59] 50 URLs that we want to run through and
+[14:01] then update based on the results you can
+[14:04] do some really cool stuff here like
+[14:05] researching a ton of companies and then
+[14:06] having it also create some initial
+[14:08] Outreach for you so let me know if you
+[14:09] guys want to see that type of stuff also
+[14:11] if you're looking for more Hands-On
+[14:12] approach with naden and learning to
+[14:14] build AI automations then definitely
+[14:15] check out my paid Community the link for
+[14:17] that is also down in the description
+[14:18] we've got a great community of members
+[14:19] who are dedicated towards learning NN
+[14:21] sharing the problems that they're
+[14:22] running into and we have a great
+[14:24] classroom section with deep dive topics
+[14:25] like building agents Vector databases
+[14:28] API and HT CP requests and step-by-step
+[14:30] builds we've also got five live calls
+[14:32] per week as you can see we've been
+[14:33] bringing in some pretty cool guest
+[14:34] speakers and the calls are always
+[14:36] recorded if you cannot make it so i'
+[14:37] love to see you in those live calls and
+[14:39] in the community but that's going to be
+[14:40] it for this video I know it was a
+[14:41] quicker one and it was a little bit
+[14:43] different style I showed you guys some
+[14:44] live sort of troubleshooting different
+[14:46] issues that we saw but I hope you
+[14:47] enjoyed if you did please leave a like
+[14:49] always helps me out and I really
+[14:50] appreciate you guys making it to the end
+[14:52] of the video I'll see you guys in the
+[14:54] next one thanks everyone

@@ -1,0 +1,52 @@
+Video Title: Easily Turn Your n8n Agents into Voice Assistants  #aiagent #n8n #artificialintelligence
+Video ID: 5csF0zsk-wI
+URL: https://www.youtube.com/watch?v=5csF0zsk-wI
+View Count: 20,761
+
+[00:00] Here's how you can easily connect voice
+[00:01] to your NAD workflows in minutes. So,
+[00:03] we're going to head back over to 11 Labs
+[00:05] real quick. And what we're going to do
+[00:06] is on this left-hand side, we are going
+[00:08] to go to agents. So, up in the top left,
+[00:11] you're going to click on these arrows
+[00:12] and you're going to choose
+[00:13] conversational AI. And now we can set up
+[00:15] a voice agent. So, I'm going to click on
+[00:17] agents and we're going to create a new
+[00:19] one, which I'm just going to start from
+[00:20] a blank agent. So, right here is where
+[00:22] you could choose the language. You could
+[00:23] also go in here and choose the voice.
+[00:25] We're just going to leave it as default
+[00:26] for now. And then we can set up
+[00:28] something like a first message. Here's
+[00:30] where you could customize letting your
+[00:31] agent end the call. We can have it
+[00:33] transferred to a different agent,
+[00:34] transfer to a number, all this kind of
+[00:36] stuff. What we're looking to do is add a
+[00:38] custom tool, which will let us send data
+[00:40] to n. And then nadn can send data back
+[00:42] to our agent. And now we have to go get
+[00:44] our naden web hook URL to send data to.
+[00:47] So we'll go back into n. We're going to
+[00:49] add a web hook. And right now we are
+[00:52] basically just going to grab this URL
+[00:54] right here. But we also have to make
+[00:55] sure that this is changed to post since
+[00:57] that we have it set up as in 11 labs.
+[01:00] >> Hello, how can I help you today?
+[01:02] >> Hello, I am looking to do some research.
+[01:04] Can you please find out the difference
+[01:05] between dogs and cats?
+[01:08] >> Okay, I can definitely help you with
+[01:09] that. I will use my search tool to find
+[01:12] the key differences between dogs and
+[01:14] cats. Give me a moment to gather the
+[01:16] information.
+[01:18] Okay, I have found some information for
+[01:20] you. Dogs and cats differ significantly
+[01:22] in several ways. If you want to watch
+[01:24] the full breakdown, click on that play
+[01:25] button right here.

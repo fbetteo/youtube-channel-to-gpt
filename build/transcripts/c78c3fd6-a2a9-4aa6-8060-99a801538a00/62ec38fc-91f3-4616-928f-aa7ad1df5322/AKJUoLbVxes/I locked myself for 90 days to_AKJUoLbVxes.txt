@@ -1,0 +1,576 @@
+Video Title: I locked myself for 90 days to build this SaaS...
+Video ID: AKJUoLbVxes
+URL: https://www.youtube.com/watch?v=AKJUoLbVxes
+
+[00:02] [Music]
+[00:04] [Applause]
+[00:06] [Music]
+[00:15] 3 months ago I had a business IDE in
+[00:17] mind and I told myself I'm going to grow
+[00:18] it to $1 million no matter what so I
+[00:21] locked myself in this room for 90 days
+[00:23] to build the
+[00:27] product this software I launched it a
+[00:29] couple days ago and it's already making
+[00:31] money so I'm going to show you how I
+[00:33] build really fast using AI because if it
+[00:35] wasn't with AI I would probably spend an
+[00:37] entire year making this product I'm
+[00:40] going to show you the exact Revenue
+[00:41] numbers and how I'm able to always find
+[00:44] business ideas that are almost
+[00:45] guaranteed to make money but uh before
+[00:49] we get started
+[00:53] [Music]
+[01:05] it's my 25th business but there is half
+[01:08] of the space left on the wall so I guess
+[01:10] I got to ship
+[01:12] faster okay so this is the Ling page of
+[01:15] my new software called Data fast it's an
+[01:18] analytic tool for people who have a
+[01:20] business and want to grow their business
+[01:22] using data so on the learning page
+[01:24] section on the hero section I show here
+[01:25] a big screenshot of what the dashboard
+[01:28] looks like then there is a section of
+[01:29] about how simple it is to use the
+[01:31] product so first you need to add a
+[01:32] little script to your website then you
+[01:34] can connect with your Revenue data
+[01:36] provider like a strip or lemon squeezy
+[01:38] and then data fast my software is going
+[01:40] to show you some insights how to
+[01:42] leverage more how to get more revenue
+[01:44] from your traffic then there is a little
+[01:46] feature sections where I highlight the
+[01:48] core features uh they're web analytics
+[01:50] related features so there is a playable
+[01:52] video for each of them that uh goes
+[01:55] deeper into each of the features of the
+[01:57] product and there is one as well for the
+[01:59] growth insight features then there's a
+[02:01] little section about my story why did I
+[02:03] build this product because I am not a VC
+[02:05] company I am not a big company anyway um
+[02:08] it's just me so here I show my little
+[02:11] story I have also a video in the past
+[02:14] three years me going over my software
+[02:16] and explaining how to use it how to get
+[02:18] the most out of it I feel like adding a
+[02:20] little Personal Touch is very important
+[02:22] for people like me who are working solo
+[02:24] and uh then there's the pricing section
+[02:26] so it goes from nine a month U there's a
+[02:29] monthly and a yearly plan the yearly
+[02:30] plan gives two month free uh it starts
+[02:32] at 9 a month and the pricing is based
+[02:34] per events or page views how many
+[02:36] visitors the site will get and it goes
+[02:38] from anywhere to from 9 to um whatever
+[02:42] whatever pricing there's also a 14 days
+[02:45] of free trial which normally I don't
+[02:47] recommend ver but um since uh there are
+[02:50] lots of comp it's actually a product
+[02:52] that has lots of competitors and they're
+[02:54] all doing it and since for now the
+[02:56] product is too early to be so different
+[02:58] so special that it's good to use other
+[03:01] competitors pricing to make mine and
+[03:03] then there is the fq section here where
+[03:07] um you know question and answer thing
+[03:08] and at last call to action so everything
+[03:10] goes to this login or sign up page
+[03:12] people can log in with Google and can
+[03:14] log in with an email and to increase
+[03:16] conversion on the left side I autoplay a
+[03:18] video of the software to remind people
+[03:20] why they're on this page um I'm going to
+[03:22] go with Google because this is what I
+[03:24] use for uh well I use the product for
+[03:26] myself so this is uh how I'm going to
+[03:28] log into the app when people logged into
+[03:30] the app normally there is nothing here
+[03:32] they will have to add their websites so
+[03:35] there are three steps uh first you input
+[03:37] the domain name of your site then you
+[03:38] have a little script to install and
+[03:40] optionally you can connect your payment
+[03:42] provider um since I already have built
+[03:44] other startups these are all of my
+[03:46] projects the one you see on the back on
+[03:48] the wall and uh it gives you a little
+[03:51] glimpse of what happened in the last 24
+[03:52] hours and for each s same it gives you a
+[03:55] little Glimpse as well um now let's pick
+[03:57] a site here for instance in page it will
+[04:00] give me lots of data for the past 24
+[04:02] hours or if I want for today if this
+[04:04] week this month all the time it is
+[04:06] really up to the person so here I have a
+[04:08] little chart where I can see in blue the
+[04:10] visitors per hour and the revenue per
+[04:12] hour I also have some metrics like what
+[04:14] is how much revenue do I get per unique
+[04:16] visitor what is the conversion rate what
+[04:18] is the bounce rate um how many visitors
+[04:20] are on the site right now and if I
+[04:22] scroll I will have a bunch of other
+[04:23] information like how do people find my
+[04:25] websites um you can see that a lot of
+[04:27] them for the last 24 hours are coming
+[04:29] from TW Twitter which Pages do they
+[04:31] visit the map of my visitors as well as
+[04:33] which countries and city they're from
+[04:35] which brother they're using etc etc and
+[04:38] in Orange here I can see this is a
+[04:40] payment this means I get $90 from the
+[04:43] source of Revenue and I got $45 from
+[04:46] mar.com and I can also see which
+[04:48] countries are bringing the most revenue
+[04:50] and for this example it's the United
+[04:52] States recently I shipped a new feature
+[04:54] called goals where uh people can input a
+[04:56] new goal like uh tracking something
+[04:58] specific so for instance for this app I
+[05:00] track the number of signups and the
+[05:02] number of payments and then later I'm
+[05:04] going to add a little funnel like a
+[05:05] visual chart to uh see what is actually
+[05:07] going on and then I am working on this
+[05:09] new feature though this is very early um
+[05:11] I'm showing this to you uh but the
+[05:13] feature is not live but I guess when
+[05:15] this video will be live this feature
+[05:16] will be live too so here it is this is
+[05:18] the customer Journey so those are three
+[05:20] of my customers and then for each of
+[05:22] them I can click on their profile and I
+[05:24] see uh a bunch of information I see
+[05:26] first where they're uh where they're
+[05:28] from uh which shitty which desktop they
+[05:30] using and then I see what brought them
+[05:33] to buy the app so the first visit
+[05:36] happened was I think it's like two weeks
+[05:38] from now and how they found my website
+[05:40] th through my personal website what they
+[05:43] did back then and then the person didn't
+[05:45] do anything and moved on and then on
+[05:47] October 15th the person came again
+[05:49] visited some of other person's uh page
+[05:52] etc etc this user has actually been
+[05:55] really busy uh Sunday 20 and then if I
+[05:58] keep scrolling until till the ends um
+[06:00] the final part the part that I'm
+[06:02] interested in here is the payments so I
+[06:04] can see the entire Journey everything
+[06:06] the customer has did um that led to
+[06:09] making an actual payment okay and
+[06:11] finally something I built that um I used
+[06:14] to collect feedback from my users in
+[06:16] order to build the best hopefully the
+[06:18] best analytics product out there is this
+[06:20] little dashboard here this is something
+[06:22] I built by myself and uh people who are
+[06:24] logged into my app can suggest some
+[06:27] features and upvote the one that they
+[06:29] would like to see in the app the most
+[06:31] and they can also have a little uh
+[06:32] conversation anywhere here where they
+[06:35] can leave comments if they want and what
+[06:37] I do is I just use that I pick the
+[06:39] feature that is the most requested and I
+[06:41] build
+[06:42] it okay so this is the text tag I used
+[06:45] to build this product so it's a nextjs
+[06:47] project everything is UN with next I
+[06:49] have the API endpoint on next and I'm
+[06:51] hosting everything on versal I'm using
+[06:53] twin and my own ends to design
+[06:55] everything I'm going to go over some
+[06:56] design tips in a minute I'm using not
+[06:58] Mel gun but resend to send emails I
+[07:01] recently switched over to resend because
+[07:04] it's easier to set up and I feel like um
+[07:07] I need to send follow-up emails to my
+[07:09] customers after like for instance when I
+[07:10] build a product in public I need to tell
+[07:12] them hey this feature is available mun
+[07:14] is purely transactional emails and res
+[07:16] Recon I can create audiences I can
+[07:18] create a group of people to which I can
+[07:20] broadcast a message which is absolutely
+[07:22] useful so this is the audience for
+[07:24] datafast for instance there are 676
+[07:26] people in it at the moment and every
+[07:28] time I build something new I easily in a
+[07:31] click send them a broadcast like this
+[07:33] one for instance and um I'm also using
+[07:35] next oath for the authentification I
+[07:37] think now it's called OJs I have to
+[07:39] login log in with Google which is very
+[07:40] important because people want to click
+[07:42] on a button and log in instantly and as
+[07:44] a backup I have a magic link feature and
+[07:46] finally for the database I am using
+[07:48] mongod DB some people question the
+[07:50] choice for analytics I am used to
+[07:52] mongodb so this is what I'm using at the
+[07:54] moment for now it's it's fast enough um
+[07:57] this is the cluster that I have it was
+[07:59] zero gabt a few days ago and uh now it's
+[08:02] already costing a decent amount of of
+[08:04] money I think databases are pretty
+[08:06] expensive anyway so um I guess uh that
+[08:08] will be probably the highest cost uh of
+[08:11] to run this business two tips one about
+[08:13] design one about copyrighting I am not a
+[08:16] designer but I design all of my products
+[08:18] and for that I get inspired from what I
+[08:20] see on the internet I pick a little bit
+[08:22] of this here a little bit of that there
+[08:24] and I apply everything to my product so
+[08:25] for instance this is a site that I think
+[08:27] is really beautiful and you can see I'm
+[08:29] using the exact same orange color as
+[08:31] they do I'm also reusing the this
+[08:34] background color this like grayish
+[08:35] background color and the length the size
+[08:37] of the borders and and at the same time
+[08:39] I love versal the platform where I host
+[08:42] all of my project I love this design
+[08:44] those like a overall design where you
+[08:46] see all of your projects and I'm using
+[08:48] this again to get inspired to design my
+[08:50] own product now if you want to get
+[08:52] better at designing and you know
+[08:53] absolutely nothing I wrote a couple
+[08:56] articles on my blog it's 100% free you
+[08:58] can check it out it's right here
+[09:00] marbi and you will see there like
+[09:02] articles about how do you Endor spacing
+[09:04] how do you write text how do you write
+[09:06] headlines how do you choose the right
+[09:08] colors for your site and now about
+[09:10] copyrighting um this section the hero
+[09:12] section this is what all of your
+[09:14] visitors will see and this is the most
+[09:16] important part of your site based on
+[09:18] what people see this is the first
+[09:19] impression that matters a lot this will
+[09:22] dramatically impact how many people sign
+[09:23] up for your products how many people
+[09:24] decide to give you money so the design
+[09:27] of this hero section has to be crystal
+[09:29] clear super simple to read there needs
+[09:31] to be a headline a little bit explainer
+[09:33] on how to that actually that thing
+[09:35] actually work a beautiful call to action
+[09:38] and a demo of your product and what
+[09:40] matters even more than the section is
+[09:41] the headline itself it's very important
+[09:44] to pick an headline that is not about
+[09:46] your product but is about the outcome
+[09:48] for the customer my product is an
+[09:50] analytic tool that gives you data but
+[09:53] this does not matter to customers what
+[09:54] matters to them is growing a startup
+[09:57] that's why in the headline in big and
+[09:59] bold it says grow your startup and then
+[10:02] in the section below I explained how to
+[10:04] actually grow the startups so make sure
+[10:06] you build your hero section about the
+[10:08] outcome for your customers and not about
+[10:09] your product it took me around 90 days
+[10:12] to build a software and I would have
+[10:13] never be able to do that without two
+[10:16] main factors the first one is that I use
+[10:18] AI heavily I used to use visualized
+[10:21] Studio code with GitHub compilot but
+[10:23] since the release of cursor AI I made
+[10:25] the switch because it's so much better
+[10:28] so what happens is that I use my own
+[10:30] code base my own ball plate for my
+[10:32] project so I start the project with an
+[10:34] existing code base and then on top of
+[10:37] that I add features but because I'm lazy
+[10:39] um I'm a programmer after all I just
+[10:42] chat with the AI and I ask the AI to add
+[10:45] features for me so for instance this is
+[10:47] the script that collects uh information
+[10:50] that collects the page views the events
+[10:52] the visitors and I wanted to add a
+[10:54] feature where users of my software could
+[10:56] see the viewport of their own users that
+[10:59] means I need to update the script I need
+[11:00] to update the even the model in the
+[11:02] database I need to update the API
+[11:04] endpoint that returns data I need to
+[11:06] update the UI that show it to the users
+[11:09] and um instead I just say that to Cloe
+[11:12] Sonet and replies with all the steps all
+[11:15] the things I have to do and since I know
+[11:18] how the code works I just have to double
+[11:20] check make sure that everything makes
+[11:21] sense and then I just click apply and
+[11:23] continue and I have the working code so
+[11:26] now my job is not to write code is just
+[11:28] to review the code that is made by the
+[11:30] AI and I think the AI generate around
+[11:32] 80% of all the code another part that's
+[11:35] very very important is that I ship the
+[11:38] minimal version of my app I believe
+[11:40] every startups has a 24 hours version if
+[11:43] we take the big famous startups Airbnb
+[11:46] could be a Google spreadsheet if we take
+[11:48] Instagram it could be a public Google
+[11:50] Drive and if we take magdonal it could
+[11:51] be just a popup store I always start
+[11:53] with the 24 hours version of my startup
+[11:56] if I had to launch tonight what would my
+[11:58] startup look looks like and from that
+[12:00] version I build just the minimum amount
+[12:02] of features I need in order to show it
+[12:04] to customers and this is very important
+[12:08] because by shipping the startup I get
+[12:10] real feedback from The Real World not my
+[12:12] own thoughts created features but real
+[12:15] features like things that people need
+[12:17] sometimes I ship something people don't
+[12:18] care sometimes people tell me something
+[12:20] and I'm like oh that could be a feature
+[12:22] and then it's actually a feature that
+[12:23] people love using that's why it's very
+[12:25] important to go to market as fast as
+[12:27] possible actually I only spend 3 months
+[12:29] on the product because it's my MVP this
+[12:31] time usually it's about a week this time
+[12:33] it took 3 months but the final version I
+[12:36] have four data fast for this software
+[12:38] it's much bigger than that but I had to
+[12:40] ship as soon as I can because now it's
+[12:42] in the hand of users and they give me
+[12:45] the right feedback I need to build a
+[12:46] proper
+[12:48] product now let's talk about numbers I
+[12:51] launched the startup a couple days ago
+[12:53] maybe 20 days ago I think with one tweet
+[12:56] and only one tweet I posted that the
+[12:58] Tweet went pretty pretty well 700 likes
+[13:00] which brought a decent number of
+[13:02] visitors the fact that I have an
+[13:04] audience really helps but you will see
+[13:06] in a minute that it does not change
+[13:07] anything to the fact that you can make
+[13:09] lots of money even though you're just
+[13:11] getting started so now looking at the
+[13:12] numbers I'm using well data fast to
+[13:14] track the metrics on data fast so in
+[13:17] total there we go we have the date here
+[13:19] on the 1st October I launched and it has
+[13:21] got around 30,000 visitors um it's
+[13:24] mostly coming from that tweet and you
+[13:26] know like retweets Etc as well as a few
+[13:29] people trying to hack my system all the
+[13:31] time that obviously brings a lot of
+[13:33] visitors on the site as well which is
+[13:34] not the kind of traffic I want to have
+[13:36] anyway um so you can see here most
+[13:37] traffic is actually coming from Twitter
+[13:39] and a little bit from other platforms as
+[13:41] well uh the traffic mostly coming from
+[13:43] United States India and Europe now let's
+[13:45] look at stripe and the numbers okay this
+[13:47] is for today so $18 for today in total
+[13:50] uh in the last 20 days it made $600 um
+[13:53] there were in the last 20 days since I
+[13:55] launched there 14 days of free trial so
+[13:58] there are 14 days where there was Zero
+[14:00] revenue for 14 days so this is basically
+[14:02] $600 in the past um I don't I would say
+[14:05] like a week or something the monthly
+[14:07] recuring revenue is at 353 it's slowly
+[14:10] growing but it's pretty slow but I'm
+[14:12] very happy nonetheless um it's
+[14:13] interesting to see that it's half of the
+[14:16] gross volume which means that lots of
+[14:18] people go for the yearly plan uh which I
+[14:21] guess it's a good thing means that they
+[14:23] trust the product enough so that they
+[14:25] are willing to pay for an entire year in
+[14:27] exchange of two month for free um
+[14:28] there's one thing that's really wrong
+[14:30] here is the turn rate which is 8 28%
+[14:33] which is a lot like really a lot earlier
+[14:35] I just said that having an adance does
+[14:36] not matter let me show you this guy Jack
+[14:39] freaks he's been my friend we've been
+[14:40] chat we've never met each other in real
+[14:42] life but uh we've been chatting on
+[14:43] Twitter for a little long time now he
+[14:45] has made this tweet around the same time
+[14:48] I launched my software uh it's a very
+[14:50] simple tweet he just saying what he's
+[14:52] working on and he showed a demo of his
+[14:55] software the twin went viral like crazy
+[14:57] viral and he DM me and he's already at
+[15:01] like this is a screenshot that gets a
+[15:02] couple days old now I think he's at 600
+[15:05] in monthly recording Rue so he has
+[15:07] double of my monthly recing Revenue even
+[15:09] though the guy has 88,200 followers
+[15:12] which is great but nothing compared to
+[15:14] my 13,000 followers and the guy is
+[15:16] making double the money that I make with
+[15:19] my new software so here it's very
+[15:20] important because having followers being
+[15:22] lucky having money to spend on ads can
+[15:25] help a little bit but the things that
+[15:27] matters the most is that you build a
+[15:30] good product that solves a real problem
+[15:33] and now let's go over that part
+[15:36] specifically I found two ways to create
+[15:39] startups that will make money the first
+[15:41] one and my favorite one by far is to
+[15:43] scratch your own itches if you have a
+[15:46] problem and you are able to fix it with
+[15:49] a solution a product that you create
+[15:51] someone else might have the same problem
+[15:53] as you for instance this is my personal
+[15:55] website and people kept saying like oh
+[15:57] it's a it's a beautiful website I wish I
+[15:58] could create create the same so um I
+[16:00] just built IND the page a little
+[16:01] software where uh people can you know
+[16:04] create the same website as I just did
+[16:06] kind of like a link in BIO tool and then
+[16:08] because I have launched all of those
+[16:10] startups I realized I was doing the same
+[16:11] thing over and over so I created this
+[16:13] little codebase Boer plate for
+[16:15] developers so I can ship my startups
+[16:17] faster I'm scratching my own itches and
+[16:20] we if we go back to Jack freaks the guy
+[16:22] I just showed you earlier this man has
+[16:24] been posting on Instagram every single
+[16:26] day for like I don't know 200 days or
+[16:28] maybe even more than that that and he's
+[16:29] also posting on Twitter Tik Tok Etc
+[16:31] every day he has to open those four
+[16:33] platforms and he has to post upload a
+[16:36] video to each of them it's annoying it's
+[16:37] painful so he has just scratched his own
+[16:40] itch and he created this product here
+[16:42] where he can just upload one video and
+[16:44] he's going to automatically post on
+[16:45] Twitter Youtube Tik Tok and Instagram
+[16:47] he's scratching his own itches and this
+[16:50] is how he's making a product that makes
+[16:51] money now sometimes you don't have any
+[16:53] problem in your life or you just don't
+[16:55] see it in that case you can use the
+[16:57] second strategy which is stop looking
+[16:59] for ideas and just use something that is
+[17:01] already working so find a market you
+[17:03] care about some people or group of
+[17:05] people that you have some kind of
+[17:07] interest and then copy a product that
+[17:09] people are already paying for add your
+[17:11] own signature make it cheaper make it
+[17:13] more expensive make it better makeing it
+[17:15] more beautiful more easy to use this is
+[17:16] up to you but make it yours this is
+[17:18] another easy way to make money because
+[17:20] you know people are already paying for a
+[17:22] solution to a real problem so here's an
+[17:24] example this website here is how I made
+[17:27] my first dollar on the internet I love
+[17:29] games so I wanted to work with escape
+[17:31] room businesses and just like any other
+[17:33] business businesses need to get more
+[17:35] customers so if I make a game that helps
+[17:37] Escape rooms get more customers then
+[17:40] they will pay for it if I ask them to
+[17:41] give me $1 and I give them back $2 they
+[17:44] will definitely pay for it this is what
+[17:45] happens if you look at now the business
+[17:47] is over because I I stopped working on
+[17:49] it I moved on to something else but if
+[17:51] you look at it this is the business
+[17:52] starting in 2018 and it has made around
+[17:56] $70,000 just with a simple simple simple
+[17:59] simple idea I knew businesses will pay
+[18:01] to get more customers and now there are
+[18:03] tons of other businesses that you could
+[18:05] replicate for instance if you took the
+[18:06] famous um Kenly the software to book
+[18:10] calls um you can make your own version
+[18:13] specifically for I don't know
+[18:14] veterinarians doctors uh whatever
+[18:17] whatever this is you know like maybe a
+[18:19] segment of Market that you know better
+[18:20] than others and you can make a product
+[18:22] tailored for them at the same time you
+[18:25] could also think about like these
+[18:27] subscription that everybody ate I hate
+[18:29] paying monthly subscriptions maybe there
+[18:31] is a calendly version where you only pay
+[18:33] like I don't know
+[18:34] $99 and never again and then you access
+[18:37] the software unlimited you can compete
+[18:38] with the pricing you can compete because
+[18:40] you choose the right Market segment you
+[18:42] can compete because you make a better
+[18:43] product there tons of way to compete now
+[18:46] for the new software I just created this
+[18:48] is a mix of those two it's first
+[18:50] scratching my own itches because I've
+[18:52] always wanted to have web analytics
+[18:54] combined with Revenue data as well as
+[18:57] the typical web analytics people are
+[18:58] already paying to know what's going on
+[19:01] on their website so I know I couldn't go
+[19:03] really wrong and then you just have to
+[19:04] do the work share it with the world
+[19:06] remember this guy he just made a very
+[19:08] simple tweet that went viral everybody
+[19:11] has a chance if you show up on social
+[19:13] media if you share transparently what
+[19:15] you're working on you will get your
+[19:17] chance my challenge with data fast is to
+[19:20] reach $1 million in valuation that means
+[19:23] $25,000 in monthly recurring revenue and
+[19:25] I will never get there with the actual
+[19:27] version of the product I will never
+[19:29] actually get there by adding features I
+[19:31] will get there with the right marketing
+[19:34] angle to explaining you what is
+[19:36] marketing angle let's go back to my
+[19:38] codebase ship vest in about a year this
+[19:41] project made a million dollars in
+[19:43] Revenue I don't think there is any other
+[19:45] codebase for developer that had reach
+[19:47] this amount and the reason is is because
+[19:50] I used a marketing angle that was
+[19:52] untouched so far every great codebase
+[19:55] you could see out there were marketed
+[19:56] for the features build this there is
+[19:58] that feature there is this feature for
+[20:00]  fast I took an entirely new
+[20:02] approach this is the headline and this
+[20:04] is an emotional headline I'm not talking
+[20:07] about the features I'm talking about the
+[20:08] benefit for customers we developers
+[20:10] always overthink when making products we
+[20:13] over engineer everything I know that
+[20:15] because I have been there myself that's
+[20:17] why I have branded I have marketed chip
+[20:19] fast as the structure that developers
+[20:21] need in order to stop overthinking and
+[20:24] finally ship that side project and it's
+[20:26] because of the right marketing angle
+[20:28] that I became a millionaire with a
+[20:30] GitHub repository now I want you closing
+[20:33] this YouTube tab open your code editor
+[20:36] build something and share it with the
+[20:38] world and until the next video I hope
+[20:40] you just ship it

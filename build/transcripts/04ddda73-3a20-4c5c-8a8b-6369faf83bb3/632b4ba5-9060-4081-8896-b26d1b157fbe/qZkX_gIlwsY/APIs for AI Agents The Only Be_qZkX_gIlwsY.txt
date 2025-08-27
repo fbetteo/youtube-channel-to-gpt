@@ -1,0 +1,828 @@
+Video Title: APIs for AI Agents: The Only Beginner’s Guide You’ll Ever Need (n8n)
+Video ID: qZkX_gIlwsY
+URL: https://www.youtube.com/watch?v=qZkX_gIlwsY
+View Count: 31,243
+
+[00:00] If you're building AI agents, but you
+[00:01] don't really understand what an API is
+[00:02] or how to use them, don't worry. You're
+[00:04] not alone. I was in that exact same spot
+[00:06] not too long ago. I'm not a programmer.
+[00:08] I don't know how to code, but I've been
+[00:09] teaching tens of thousands of people how
+[00:11] to build real AI systems. And what
+[00:13] changed the game for me was when I
+[00:14] understood how to use APIs. So, in this
+[00:16] video, I'm going to break it down as
+[00:18] simple as possible, no technical jargon,
+[00:20] and by the end, you'll be confidently
+[00:21] setting up API calls within your own
+[00:23] Agentic workflows. Let's make this easy.
+[00:25] So the purpose of this video is to
+[00:26] understand how to set up your own
+[00:28] requests so you can access any API
+[00:30] because that's where the power truly
+[00:31] comes in. And before we get into Nitn
+[00:33] and we set up a couple live examples and
+[00:35] I show you guys my thought process when
+[00:37] I'm setting up these API calls. First I
+[00:39] thought it would just be important to
+[00:40] understand what an API really is. And
+[00:43] APIs are so so powerful because let's
+[00:44] say we're building agents within NAND.
+[00:47] Basically we can only do things within
+[00:49] NAND's environment unless we use an API
+[00:51] to access some sort of server. So
+[00:53] whether that's like a Gmail or a HubSpot
+[00:55] or Air Table, whatever we want to access
+[00:58] that's outside of Niden's own
+[00:59] environment, we have to use an API call
+[01:01] to do so. And so that's why at the end
+[01:03] of this video, when you completely
+[01:05] understand how to set up any API call
+[01:06] you need, it's going to be a complete
+[01:08] gamecher for your workflows and it's
+[01:10] also going to unlock pretty much
+[01:12] unlimited possibilities. All right, now
+[01:14] that we understand why APIs are
+[01:15] important, let's talk about what they
+[01:18] actually do. So API stands for
+[01:19] application programming interface. And
+[01:21] at the highest level, in the most simple
+[01:23] terms, it's just a way for two systems
+[01:25] to talk to each other. So, Naden and
+[01:27] whatever other system we want to use in
+[01:28] our automations. So, keeping it relevant
+[01:30] to us, it's our Naden AI agent and
+[01:32] whatever we want it to interact with.
+[01:34] Okay, so I said we're going to make this
+[01:36] as simple as possible. So, let's do it.
+[01:37] What we have here is just a scenario
+[01:39] where we go to a restaurant. So, this is
+[01:40] us right here. And what we do is we sit
+[01:42] down and we look at the menu and we look
+[01:44] at what food that the restaurant has to
+[01:46] offer. And then when we're ready to
+[01:47] order, we don't talk directly to the
+[01:49] kitchen or the chefs in the kitchen. We
+[01:51] talk to the waiter. So we'd basically
+[01:52] look at the menu. We'd understand what
+[01:54] we want. Then we would talk to the
+[01:55] waiter and say, "Hey, I want the chicken
+[01:57] parm." The waiter would then take our
+[01:59] order and deliver it to the kitchen. And
+[02:00] after the kitchen sees the request that
+[02:02] we made and they understand, okay, this
+[02:04] person wants chicken parm. I'm going to
+[02:05] grab the chicken parm, not the salmon.
+[02:08] And then we're basically going to feed
+[02:09] this back down the line through the
+[02:10] waiter all the way back to the person
+[02:12] who ordered it in the first place. And
+[02:14] so that's how you can see we use an HTTP
+[02:16] request to talk to the API endpoint and
+[02:19] receive the data that we want. And so
+[02:21] now a little bit more of a technical
+[02:22] example of how this works in NN. Okay,
+[02:24] so here is our AI agent and when it
+[02:26] wants to interact with a service, it
+[02:27] first has to look at that services API
+[02:29] documentation to see what is offered.
+[02:32] Once we understand that, we'll read that
+[02:33] and we'll be ready to make our request
+[02:35] and we will make that request using an
+[02:37] HTTP request. From there, that HTTP
+[02:40] request will take our information and
+[02:41] send it to the API endpoint. The
+[02:43] endpoint will look at what we ordered
+[02:44] and it will say, "Okay, this person
+[02:46] wants this data. So, I'm going to go
+[02:48] grab that. I'm going to send it back.
+[02:49] Send it back to the HTTP request." And
+[02:51] then the HTTP request is actually what
+[02:53] delivers us back the data that we asked.
+[02:55] And we know that it was available
+[02:57] because we had to look at the API
+[02:58] documentation first. So, I hope that
+[03:00] helps. I think that looking at it
+[03:01] visually makes a lot more sense,
+[03:03] especially when you hear, you know, HTTP
+[03:05] API endpoint, all this kind of stuff.
+[03:07] But really, it's just going to be this
+[03:08] simple. So now let me show an example of
+[03:11] what actually this looks like in Nen and
+[03:12] when you would use one and when you
+[03:14] wouldn't need to use one. So here we
+[03:15] have two examples where we're accessing
+[03:16] a service called open weather map which
+[03:18] basically just lets us grab the weather
+[03:20] data from anywhere in the world. And so
+[03:22] on the left what we're doing is we're
+[03:24] using open weather's native integration
+[03:25] within n. And so what I mean by native
+[03:27] integration is just that when we go into
+[03:29] n and we click on the plus button to add
+[03:31] an app and we want to see like you know
+[03:32] the different integrations. It has air
+[03:34] table it has affinity it has airtop it
+[03:37] has all these AWS things. It has a ton
+[03:39] of native integrations and all that a
+[03:41] native integration is is an HTTP request
+[03:44] but it's just like wrapped up nicely in
+[03:45] a UI for us to basically fill in
+[03:48] different parameters. And so once you
+[03:50] realize that it really clears everything
+[03:51] up because the only time you actually
+[03:53] need to use an HTTP request is if the
+[03:55] service you want to use is not listed in
+[03:57] this list of all the native
+[03:59] integrations. Anyways, let me show you
+[04:01] what I mean by that. So like I said on
+[04:02] the left we have open weather maps
+[04:04] native integration. So basically what
+[04:06] we're doing here is we're sending over,
+[04:07] okay, I'm using open weather map. I'm
+[04:09] going to put in the latitude and the
+[04:10] longitude of the city that I'm looking
+[04:12] for. And as you can see over here, what
+[04:14] we get back is Chicago as well as a
+[04:15] bunch of information about the current
+[04:17] weather in Chicago. And so if you were
+[04:19] to fill this out, it's super super
+[04:20] intuitive, right? All you do is put in
+[04:21] the Latin long, you choose your format
+[04:23] as far as imperial or metric, and then
+[04:25] you get back data. And that's the exact
+[04:27] same thing we're doing over here where
+[04:28] we use an HTTP request to talk to Open
+[04:31] Weather's API endpoint. And so this is
+[04:33] just looks a little more scary and
+[04:34] intimidating because we have to set this
+[04:36] up ourselves. But if we zoom in, we can
+[04:38] see it's pretty simple. We're making a
+[04:39] get request to open weather maps URL
+[04:42] endpoint. And then we're putting over
+[04:44] the lat and the long, which is basically
+[04:46] the exact same from the one on the left.
+[04:48] And then, as you can see, we get the
+[04:50] same information back about Chicago and
+[04:52] then some weather information about
+[04:53] Chicago. And so the purpose of that was
+[04:55] just to show you guys that these native
+[04:57] integrations, all we're doing is we're
+[04:59] accessing some sort of API endpoint. it
+[05:01] just looks simpler and easier and
+[05:03] there's a nice user interface for us
+[05:05] rather than setting everything up
+[05:06] manually. Okay, so hopefully that's
+[05:08] starting to make a little more sense.
+[05:09] Let's move down here to the way that I
+[05:11] think about setting up these HTTP
+[05:13] requests, which is we're basically just
+[05:15] setting up filters and making
+[05:17] selections. All we're doing is we're
+[05:18] saying, okay, I want to access server X.
+[05:21] When I access server X, I need to tell
+[05:23] it basically, what do I want from you?
+[05:25] So, it's the same way when you're going
+[05:26] to order some pizza. You have to first
+[05:27] think about which pizza shop do I want
+[05:29] to call? And then once you call them,
+[05:31] it's like, "Okay, I need to actually
+[05:32] order something. It has to be small,
+[05:33] medium, large. It has to be pepperoni or
+[05:35] cheese." You have to tell it what you
+[05:37] want and then they will send you the
+[05:39] data back that you asked for. So when
+[05:41] we're setting these up, we basically
+[05:42] have like five main things to look out
+[05:43] for. The first one you have to do every
+[05:45] time, which is a method. And the two
+[05:47] most common are going to be a get or a
+[05:48] post. Typically, a get is when you're
+[05:50] just going to access an endpoint, and
+[05:52] you don't have to send over any
+[05:53] information. You're just going to get
+[05:54] something back. But a post is when
+[05:55] you're going to send over certain
+[05:56] parameters and certain data and say okay
+[05:59] using this information send me back what
+[06:01] I'm asking for. The great news is and
+[06:02] I'll show you later when we get into end
+[06:04] to actually do a live example. It'll
+[06:06] always tell you to say you know is this
+[06:08] a get or a post. Then the next thing is
+[06:10] the endpoint. You have to tell it like
+[06:12] which website or you know which endpoint
+[06:14] you want to actually access which URL.
+[06:16] From there we have three different
+[06:17] parameters to set up. And also just
+[06:18] realize that this one should say body
+[06:20] parameters. But this used to be the most
+[06:22] confusing part to me, but it's really
+[06:24] not too bad at all. So, let's break it
+[06:26] down. So, keep in mind when we're
+[06:27] looking at that menu, that API
+[06:29] documentation, it's always going to
+[06:31] basically tell us, okay, here are your
+[06:32] query parameters, here are your header
+[06:33] parameters, and here are your body
+[06:34] parameters. So, as long as you
+[06:36] understand how to read the
+[06:37] documentation, you'll be just fine. But
+[06:39] typically, the difference here is that
+[06:40] when you're setting up queer parameters,
+[06:42] this is basically just saying a few
+[06:44] filters. So if you search pizza into
+[06:46] Google, it'll come
+[06:47] google.com/arch, which would be Google's
+[06:49] endpoint. And then we would have a
+[06:51] question mark and then Q equals and then
+[06:53] a bunch of different filters. So as you
+[06:54] can see right here, the first filter is
+[06:56] just Q equals pizza. And the Q is, you
+[06:58] know, it stands for query parameters.
+[07:00] And you don't even have to understand
+[07:01] that. That's just me showing you kind of
+[07:02] like a real example of how that works.
+[07:04] From there, we have to set up a header
+[07:06] parameter, which is pretty much always
+[07:07] going to exist. And I basically just
+[07:09] think of header parameters as, you know,
+[07:11] authorizing myself. So, usually when
+[07:13] you're doing some sort of API where you
+[07:14] have to pay, you have to get a unique
+[07:16] API key and then you'll send that key.
+[07:18] And if you don't put your key in, then
+[07:20] you're not going to be able to get the
+[07:21] data back. So, like if you're ordering a
+[07:22] pizza and you don't give them your
+[07:24] credit card information, they're not
+[07:25] going to send you a pizza. And usually
+[07:27] an API key is something you want to keep
+[07:28] secret because let's say, you know, you
+[07:30] put 10 bucks into some sort of API
+[07:32] that's going to create images for you.
+[07:33] If that key gets leaked, then anyone
+[07:35] could use that key and could go create
+[07:37] images for themselves for free, but
+[07:39] they'd be running down your credits. And
+[07:41] these can come in different forms, but I
+[07:42] just wanted to show you a really common
+[07:44] one is, you know, you'll have your key
+[07:46] value pairs where you'll put
+[07:47] authorization as the name and then in
+[07:49] the value you'll put bearer space your
+[07:51] API key or in the name you could just
+[07:54] put API_key and then in the value you'd
+[07:56] put your API key. But once again, the
+[07:58] API documentation will tell you how to
+[08:00] configure all this. And then finally,
+[08:02] the body parameters if you need to send
+[08:04] something over to get something back.
+[08:06] Let's say we're, you know, making an API
+[08:08] call to our CRM and we want to get back
+[08:10] information about John. We could send
+[08:12] over something like name equals John.
+[08:15] The server would then grab all records
+[08:16] that have name equal John and then it
+[08:18] would send them back to you. So those
+[08:20] are basically like the five main things
+[08:21] to look out for when you're reading
+[08:22] through API documentation and setting up
+[08:25] your HTTP request. But the beautiful
+[08:28] thing about living in 2025 is that we
+[08:30] now have the most beautiful thing in the
+[08:32] world, which is a curl command. And so
+[08:35] what a curl command is is it lets you
+[08:36] hit copy and then you basically can just
+[08:38] import that curl into naden and it will
+[08:41] pretty much set up the request for you.
+[08:43] Then at that point it really is just
+[08:44] like putting in your own API key and
+[08:47] tweaking a few things if you want to. So
+[08:49] let's take a look at this curl statement
+[08:50] for a service called Tavi. As you can
+[08:52] see that's the endpoint is
+[08:53] api.tavi.com. All this basically does is
+[08:56] it lets you search the internet. So you
+[08:57] can see here this curl statement tells
+[08:58] us pretty much everything we need to
+[09:00] know to use this. So it's telling us
+[09:02] that it's going to be a post. It's
+[09:03] showing us the API endpoint that we're
+[09:05] going to be accessing. It shows us how
+[09:06] to set up our header. So that's going to
+[09:08] be authorization and then it's going to
+[09:09] be bearer space API token. It's
+[09:12] basically just telling us that we're
+[09:13] going to get this back in JSON format.
+[09:15] And then you can see all of these
+[09:16] different key value pairs right here in
+[09:18] the data section. And these are
+[09:19] basically going to be body parameters
+[09:21] where we can say, you know, query is who
+[09:23] is Leo Messi? So that's what we would be
+[09:24] searching the internet for. We have
+[09:26] topic equals general. We have search
+[09:28] depth equals basic. So hopefully you can
+[09:30] see all of these are just different
+[09:31] filters where we can choose okay do we
+[09:33] want you know do we want one max result
+[09:35] or do we want four or do we have a time
+[09:37] range or do we not. So this is really
+[09:40] just at the end of the day. It's
+[09:41] basically like ordering Door Dash
+[09:43] because what we would have up here is
+[09:44] you know like what actual restaurant do
+[09:46] we want to order food from? We would put
+[09:48] in our credit card information. We would
+[09:49] say do we want this to be delivered to
+[09:51] us? Do we want to pick it up? We would
+[09:53] basically say you know do you want a
+[09:54] cheeseburger? No pickles. No onions.
+[09:56] Like what are the different things that
+[09:57] you want to flip? Do you want a side? Do
+[09:59] you want fries? Or do you want salad?
+[10:00] Like, what do you want? And so once you
+[10:02] get into this mindset where all I have
+[10:04] to do is understand this documentation
+[10:06] and just tweak these little things to
+[10:08] get back what I want, it makes setting
+[10:10] up API calls so much easier. And if
+[10:13] another thing that kind of intimidates
+[10:14] you is the aspect of
+[10:16] JSON, it shouldn't because all it is is
+[10:18] a key value pair like we kind of talked
+[10:20] about. You know, this is JSON right here
+[10:22] and you're going to send your body
+[10:23] parameter over as JSON and you're also
+[10:25] going to get back JSON. So the more and
+[10:27] more you use it, you're going to
+[10:28] recognize like how easy it is to set up.
+[10:30] So anyways, I hope that that made sense
+[10:32] and broke it down pretty simply. Now
+[10:33] that we've seen like how it all works,
+[10:35] it's going to be really valuable to get
+[10:37] into NEN. I'm going to open up a API
+[10:40] documentation and we're just going to
+[10:41] set up a few requests together and we'll
+[10:44] see how it works. Okay, so here's the
+[10:46] example. You know, I did open weather's
+[10:47] native integration and then also open
+[10:49] weather as an HTTP request. And you can
+[10:51] see it was like basically the exact same
+[10:52] thing. Um, so let's say that what we
+[10:54] want to do is we want to use Perplexity,
+[10:56] which if you guys don't know what
+[10:57] Perplexity is, it is basically, you
+[10:59] know, kind of similar to CatchBebt, but
+[11:01] it has really good like internet search
+[11:02] and research. So let's say we wanted to
+[11:04] use this and hook it up to an AI agent,
+[11:07] so it can do web search for us. But as
+[11:10] you can see, if I type in Plexity,
+[11:12] there's no native integration for
+[11:14] Perplexity. So that basically signals to
+[11:16] us, okay, we can only access Perplexity
+[11:18] using an HTTP request. And real quick
+[11:20] side note, if you're ever thinking to
+[11:21] yourself, hm, I wonder if I can have my
+[11:24] agent interact with blank. The answer is
+[11:27] yes, if there's API documentation. And
+[11:28] all you have to do typically to find out
+[11:30] if there's API documentation is just
+[11:32] come in here and be like, you know,
+[11:33] Gmail API documentation. And then we can
+[11:35] see Gmail API is a restful API, which
+[11:37] means it has an API and we can use it
+[11:40] within our automations. Anyways, getting
+[11:42] back to this example of setting up a
+[11:43] perplexity HTTP request. We have our
+[11:45] HTTP request right here and it's left
+[11:47] completely blank. So, as you can see, we
+[11:49] have our method, we have our endpoint,
+[11:51] we have query, header, and body
+[11:53] parameters, but nothing has been set up
+[11:55] yet. So, what we need to do is we would
+[11:56] head over to Perplexity, as you can see
+[11:58] right here. And at the bottom, there's
+[12:00] this little thing called API. So, I'm
+[12:01] going to click on that. And this opens
+[12:03] up this little page. And so, what I have
+[12:05] here is Perplexity's API. If I click on
+[12:07] developer docs, and then right here, I
+[12:09] have API reference, which is integrate
+[12:11] the API into your workflows, which is
+[12:13] exactly what we want to do. This page is
+[12:15] where people might get confused and it
+[12:17] looks a little bit intimidating, but
+[12:18] hopefully this breakdown will show you
+[12:20] how you can understand any API doc,
+[12:22] especially if there's a curl command.
+[12:23] So, all I'm going to do first of all is
+[12:25] I'm just going to right away hit copy
+[12:27] and make sure you know you're in curl.
+[12:28] If you're in Python, it's not the same.
+[12:30] So, click on curl. I copied this curl
+[12:32] command and I'm going to come back into
+[12:34] nit, hit import curl, and all I have to
+[12:36] do is paste. Click import. And
+[12:38] basically, what you're going to see is
+[12:39] this HTTP request is going to get
+[12:41] basically populated for us. So now we
+[12:43] have the method has been changed to
+[12:45] post. We have the correct URL which is
+[12:47] the API endpoint which basically is
+[12:49] telling this node, okay, we're going to
+[12:50] use Perplexity's API. You can see that
+[12:52] the curl had no query parameter so
+[12:54] that's left off. It did turn on headers
+[12:56] which is basically just having us put
+[12:58] our API key in there. And then of course
+[13:00] we have the JSON body that we need to
+[13:02] send over. Okay, so at this point what I
+[13:03] would do is now that we have this set
+[13:05] up, we know we just need to put in a few
+[13:07] things of our own. So the first thing to
+[13:08] tackle is how do we actually authorize
+[13:11] ourselves into Perplexity? All right.
+[13:12] So, I'm back in Perplexity. I'm going to
+[13:14] go to my account and click on settings.
+[13:16] And then all I'm going to do is
+[13:17] basically I need to find where I can get
+[13:18] my API key. So, on the lefth hand side,
+[13:20] if I go all the way down, I can see API
+[13:22] keys. So, I'll click on that. And all
+[13:24] this is going to do is this shows my API
+[13:26] key right here. So, I'll have to click
+[13:27] on this, hit copy, come back into nit,
+[13:30] and then all I'm going to do is I'm
+[13:32] going to just delete where this says
+[13:33] token, but I'm going to make sure to
+[13:34] leave a space after bearer and hit
+[13:37] paste. So now this basically authorizes
+[13:40] ourselves to use Perplexity's endpoint.
+[13:42] And now if we look down at the body
+[13:43] request, we can see we have this thing
+[13:45] set up for us already. So if I hit test
+[13:47] step, this is real quick going to make a
+[13:49] request over. It just hit perplexity's
+[13:51] endpoint. And as you can see, it came
+[13:52] back with data. And what this did is it
+[13:54] basically searched Perplexity for how
+[13:57] many stars are there in our galaxy. And
+[13:59] that's where right here we can see the
+[14:00] Milky Way galaxy, which is our galaxy,
+[14:02] is estimated to contain between 100
+[14:04] billion and 400 billion stars, blah blah
+[14:06] blah. So we know basically okay if we
+[14:08] want to change how this endpoint works
+[14:10] what data we're going to get back this
+[14:11] right here is where we would change our
+[14:13] request. If we go back into the
+[14:14] documentation we can see what else we
+[14:16] have to set up. So the first thing to
+[14:18] notice is that there's a few things that
+[14:19] are required and then some things that
+[14:21] are not. So right here we have you know
+[14:23] authorization that's always required.
+[14:24] The model is always required like which
+[14:27] perplexity model are we going to use?
+[14:29] The messages are always required. So
+[14:30] this is basically a mix of a system
+[14:32] message and a user message. So here the
+[14:34] example is be precise and concise and
+[14:36] then the user message is how many stars
+[14:38] are there in the galaxy. So if I came
+[14:39] back here and I said you know um be
+[14:42] funny in your answer. So I'm basically
+[14:45] telling this model how to act and then
+[14:47] instead of how many stars are there in
+[14:48] the galaxy I'm just going to say how
+[14:51] long do cows live and I'll make another
+[14:54] request off to perplexity. So you can
+[14:56] see what comes back is this longer
+[14:58] content. So it's not being precise and
+[14:59] concise and it says so you're wondering
+[15:01] how long cows live. Well, let's move
+[15:04] into the details. So, as you can see,
+[15:05] it's being funny. Okay, back into the
+[15:07] API documentation. We have a few other
+[15:09] things that we could configure, but
+[15:11] notice how these aren't required the
+[15:12] same way that these ones are. So, we
+[15:14] have max tokens. We could basically put
+[15:16] in an integer and say how many tokens do
+[15:18] you want to use at the maximum. We could
+[15:20] change the temperature, which is, you
+[15:21] know, like how random the response would
+[15:23] be. And this one says, you know, it has
+[15:24] to be between zero and two. And as we
+[15:26] keep scrolling down, you can see that
+[15:28] there's a ton of other little levers
+[15:29] that we can just tweak a little bit to
+[15:31] change the type of response that we get
+[15:32] back from Plexity. And so once you start
+[15:34] to read more and more API documentation,
+[15:36] you can understand how you're really in
+[15:38] control of what you get back from the
+[15:39] server. And also you can see like, you
+[15:41] know, sometimes you have to send over
+[15:43] booleans, which is basically just true
+[15:44] or false. Sometimes you can only send
+[15:46] over numbers. Sometimes you can only
+[15:48] send over strings. And sometimes it'll
+[15:50] tell you, you know, like what will the
+[15:51] this value default to? and also what are
+[15:53] the only accepted values that you
+[15:55] actually could fill out. So for example,
+[15:56] if we go back to this temperature
+[15:58] setting, we can see it has to be a
+[15:59] number and if you don't fill that out,
+[16:01] it's going to be 0.2. But we can also
+[16:03] see that if you do fill this out, it has
+[16:05] to be between zero or two. Otherwise,
+[16:07] it's not going to work. Okay, cool. So
+[16:09] that's basically how it works. We just
+[16:11] set up an HTTP request and we change the
+[16:13] system prompt and we change the user
+[16:14] prompt and that's how we can customize
+[16:16] this thing to work for us. And that's
+[16:18] really cool as a node because we can set
+[16:20] up, you know, a workflow to pass over
+[16:21] some sort of variable into this request.
+[16:23] So it searches the web for something
+[16:24] different every time. But now let's say
+[16:26] we want to give our agent access to this
+[16:27] tool and the agent will decide what am I
+[16:30] going to search the web for based on
+[16:31] what the human asks me. So it's pretty
+[16:33] much the exact same process. We'll click
+[16:34] on add a tool and we're going to add an
+[16:36] HTTP request tool only because
+[16:38] perplexity doesn't have a native
+[16:39] integration. And then once again you can
+[16:41] see we have an import curl button. So if
+[16:42] I click on this and I just import that
+[16:44] same curl that we did last time once
+[16:46] again it fills out this whole thing for
+[16:47] us. So we have post, we have the
+[16:49] perplexity endpoint, we have our
+[16:51] authorization bearer, but notice we have
+[16:53] to put in our token once again. And so a
+[16:55] cool little hack is let's say you know
+[16:57] you're going to use perplexity a lot.
+[16:58] Rather than having to go grab your API
+[17:00] key every single time, what we can do is
+[17:02] we can just send it over right here in
+[17:04] the authentication tab. So let me show
+[17:06] you what I mean by that. If I click into
+[17:08] authentication, I can click on generic
+[17:10] credential type. And then from here, I
+[17:12] can basically choose, okay, is this a
+[17:14] basic O, a bearer O, all this kind of
+[17:16] stuff. A lot of times it's just going to
+[17:17] be header off. So that's why we know
+[17:19] right here. We can click on header off.
+[17:20] And as you can see, we know that because
+[17:22] we're sending this over as a header
+[17:23] parameter, and we just did this earlier
+[17:24] and it worked. So as you can see, I have
+[17:27] header offs already set up. I probably
+[17:29] already have a perplexity one set up
+[17:31] right here, but I'm just going to go
+[17:32] ahead and create a new one with you guys
+[17:33] to show you how this works. So I just
+[17:35] create a new header off and all we have
+[17:37] to do is the exact same thing that we
+[17:39] had down in the request that we just
+[17:41] sent over which means in the name we're
+[17:43] just going to type in authorization with
+[17:44] a capital A and once again we can see in
+[17:46] the API docs this is how you do it. So
+[17:48] authorization and then we can see that
+[17:50] the value has to be capital B bearer
+[17:53] space API token. So I'm just going to
+[17:55] come into here bearer space API token
+[17:59] and then all I have to do is you know
+[18:00] first of all name this so we can save it
+[18:02] and then if I hit save now every single
+[18:05] time we want to use Plexity's endpoint
+[18:08] we already have our credentials saved.
+[18:09] So that's great and then we can turn off
+[18:11] the headers down here because we don't
+[18:12] need to send it over twice. So now all
+[18:14] we have to do is change this body
+[18:17] request a little bit just to make it
+[18:18] more dynamic. So in order to make it
+[18:20] dynamic the first thing we have to do is
+[18:22] change this to an expression. Now, we
+[18:24] can see that we can basically add a
+[18:25] variable in here. And what we can do is
+[18:27] we can add a variable that basically
+[18:28] just tells the AI model, the AI agent,
+[18:31] here is where you're going to send over
+[18:34] your internet search query. And so, we
+[18:37] already know that all that that is is
+[18:38] the user content right here. So, if I
+[18:40] delete this and basically if I do two
+[18:43] curly braces and then within the curly
+[18:45] braces, I do a dollar sign and I type in
+[18:47] from, I can grab a from AI function. And
+[18:49] this from AI function just indicates to
+[18:51] the AI agent I need to choose something
+[18:54] to send over here. And you guys will see
+[18:56] an example and it will make more sense.
+[18:58] I also did a full video breaking this
+[18:59] down. So if you want to see that, I'll
+[19:01] tag it right up here. Anyways, as you
+[19:02] can see, all we have to really do is
+[19:04] enter in a key. So I'm just going to do,
+[19:06] you know, two quotes. And within the
+[19:07] quote, I'm going to put in search term.
+[19:10] And so now the agent will be reading
+[19:11] this and say, okay, whenever the user
+[19:13] interacts with me and I know I need to
+[19:14] search the internet, I'm just going to
+[19:16] fill this whole thing in with the search
+[19:18] term. So, now that that's set up, I'm
+[19:20] just going to change this request to um
+[19:22] actually I'm just going to call it web
+[19:23] search to make that super intuitive for
+[19:25] the AI agent. And now what we're going
+[19:27] to do is we are going to talk to the
+[19:29] agent and see if it can actually search
+[19:30] the web. Okay, so I'm asking the AI
+[19:32] agent to search the web for the best
+[19:34] movies. It's going to think about it.
+[19:36] It's going to use this tool right here
+[19:38] and then we'll basically get to go in
+[19:39] there and we can see what it filled in
+[19:41] in that search term placeholder that we
+[19:43] gave it. So, first of all, the answer it
+[19:44] gave us was IMDb, top 250, um, Rotten
+[19:48] Tomatoes, all this kind of stuff, right?
+[19:50] So, that's movie information that we
+[19:51] just got from Perplexity. And what I can
+[19:54] do is click into the tool and we can see
+[19:56] in the top left it filled out search
+[19:57] term with best movies. And we can even
+[20:00] see that in action. If we come down to
+[20:01] the body request that it sent over and
+[20:03] we expand this, we can see on the right
+[20:04] hand side in the result panel, this is
+[20:07] the JSON body that it sent over to
+[20:09] Perplexity and it filled it in with best
+[20:11] movies. And then of course what we got
+[20:13] back was our content from Perplexity
+[20:15] which is you know here are some of the
+[20:16] best movies across major platforms. All
+[20:19] right then real quick before we wrap up
+[20:20] here I just wanted to talk about some
+[20:22] common responses that you can get from
+[20:24] your HTTP requests. So the rule of thumb
+[20:27] to follow is if you get data back and
+[20:29] you get a 200 you're good. Sometimes
+[20:31] you'll get a response back but you won't
+[20:32] explicitly see a 200 message. But if
+[20:34] you're getting the data back then you're
+[20:36] good to go. And a quick example of this
+[20:38] is down here we have that HTTP request
+[20:40] which we went over earlier in this video
+[20:42] where we went to open weather maps API.
+[20:44] And you can see down here we got code
+[20:46] 200 and there's data coming back and 200
+[20:49] is good. That's a success code. Now if
+[20:51] you get a request in the 400s that means
+[20:53] that you probably set up the request
+[20:55] wrong. So 400 bad request that could
+[20:57] mean that your JSON's invalid. It could
+[20:59] just mean that you have like an extra
+[21:00] quotation mark or you have you know an
+[21:02] extra comma something as silly as that.
+[21:04] So let me show a quick example of that.
+[21:06] We're going to test this workflow. And
+[21:07] what I'm doing is I'm trying to send
+[21:08] over a query to Tavi. And you can see
+[21:10] what we get is an error that says JSON
+[21:12] parameter needs to be valid JSON. And
+[21:14] this would be a 400 error. And the issue
+[21:16] here is if we go into the JSON body that
+[21:18] we're trying to send over, you can see
+[21:20] in the result panel, we're trying to
+[21:21] send over a query that has basically two
+[21:24] sets of quotation marks. If you can see
+[21:26] that. But here's the great news about
+[21:27] JSON. It is so universally used and it's
+[21:30] been around for so long that we could
+[21:31] basically just copy the result over to
+[21:33] chatbt. Paste it in here and say, I'm
+[21:36] getting an error message that says JSON
+[21:38] parameter needs to be valid JSON. What's
+[21:40] wrong with my JSON? And as you can see,
+[21:41] it says the issue with your JSON is the
+[21:43] use of double quotes around the string
+[21:44] value in this line. So now we'd be able
+[21:46] to go fix that. And if we go back into
+[21:48] the workflow, we take away these double
+[21:50] quotes right here. Test the step again.
+[21:52] Now you can see it's spinning and it's
+[21:53] going to work. and we should get back
+[21:55] some information about pineapples on
+[21:56] pizza. Another common error you could
+[21:58] run into is a 401, meaning unauthorized.
+[22:01] This typically just means that your API
+[22:02] key is wrong. You could also get a 403,
+[22:04] which is forbidden. That just means that
+[22:06] maybe your account doesn't have access
+[22:07] to this data that you're requesting or
+[22:09] something like that. And then another
+[22:10] one you could get is a 404, which
+[22:12] sometimes you'll get that if you type in
+[22:13] a URL that doesn't exist. It just means
+[22:15] this doesn't exist. We can't find it.
+[22:17] And a lot of times when you're looking
+[22:18] at the actual API documentation that you
+[22:20] want to set up a request to, so here's
+[22:22] an example with Tavi, it'll show you
+[22:24] what typical responses could look like.
+[22:26] So here's one where, you know, we're
+[22:27] using Tavly to search for who is Leo
+[22:29] Messi. This was an example we looked at
+[22:30] earlier. And with a 200 response, we are
+[22:33] getting back like a query, an answer
+[22:35] results, stuff like that. We could also
+[22:37] see we could get a 400, which would be
+[22:39] for bad request, you know, invalid
+[22:41] topic. We could have a 401, which means
+[22:43] invalid API key. We could get all these
+[22:45] other ones like 429, 432, but in general
+[22:48] 400 is bad. And then even worse is a
+[22:51] 500. And this just basically means
+[22:53] something's wrong with the server. Maybe
+[22:54] it doesn't exist anymore or there's a
+[22:56] bug on the server side. But the good
+[22:58] news about a 500 is it's not your fault.
+[23:00] You didn't set up the request wrong. It
+[23:02] just means something's wrong with the
+[23:03] server. And it's really important to
+[23:05] know that because if you think you did
+[23:06] something wrong, but it's really not
+[23:08] your fault at all, you may be banging
+[23:09] your head against the wall for hours. So
+[23:11] anyways, what I wanted to highlight here
+[23:13] is there's never just like a
+[23:15] one-sizefits-all. I know how to set up
+[23:16] this one API call so I can just set up
+[23:18] every single other API call the exact
+[23:20] same way. The key is to really
+[23:21] understand how do you read the API
+[23:23] documentation? How do you set up your
+[23:25] body parameters and your different
+[23:26] header parameters? And then if you start
+[23:27] to run into issues, the key is
+[23:29] understanding and actually reading the
+[23:31] error message that you're getting back
+[23:32] and adjusting from there. All right, so
+[23:34] that's going to do it for this video.
+[23:36] Hopefully, this has left you feeling a
+[23:38] lot more comfortable with diving into
+[23:39] API documentation, walking through it
+[23:41] just step by step, using those curl
+[23:43] commands, and really just understanding.
+[23:45] All I'm doing is I'm setting up filters
+[23:47] and levers here. I don't have to get
+[23:48] super confused. It's really not that
+[23:50] technical. I'm pretty much in complete
+[23:52] control over what my API is going to
+[23:54] send me back. The same way I'm in
+[23:56] complete control when I'm, you know,
+[23:57] ordering something on Door Dash or
+[23:58] ordering something on Amazon, whatever
+[24:00] it is. And if you want to dive even
+[24:01] deeper into APIs and HTTP requests, or
+[24:04] if you want to be able to have some tech
+[24:05] support whenever you want, then
+[24:06] definitely check out my paid community.
+[24:07] The link for that is down in the
+[24:08] description. We have a great community
+[24:10] of over 1.4,000 members who are building
+[24:12] with naden every day. I also just
+[24:14] launched these two courses within this
+[24:16] community where we have agent zero is
+[24:17] like the foundational knowledge you need
+[24:19] to actually automate processes and then
+[24:21] 10 hours to 10 seconds where we pretty
+[24:23] much go over, you know, from step one,
+[24:24] picking a process into actually
+[24:26] automating it. And obviously there's
+[24:28] some more resources in here about APIs.
+[24:30] Anyways, that's going to do it for this
+[24:31] one. Really appreciate you guys made it
+[24:33] to the end of the video. As always, if
+[24:34] you learned something new or you
+[24:36] appreciated this video, please give it a
+[24:37] like. Definitely helps me out a ton. And
+[24:39] I will see you guys in the next one.
+[24:40] Thanks so much everyone.

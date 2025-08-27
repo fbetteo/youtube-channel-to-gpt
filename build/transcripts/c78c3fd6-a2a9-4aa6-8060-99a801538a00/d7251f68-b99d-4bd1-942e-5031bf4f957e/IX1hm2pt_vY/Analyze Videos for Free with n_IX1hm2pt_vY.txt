@@ -1,0 +1,45 @@
+Video Title: Analyze Videos for Free with n8n and Google  #aiagent #n8n #googlegemini
+Video ID: IX1hm2pt_vY
+URL: https://www.youtube.com/watch?v=IX1hm2pt_vY
+View Count: 20,687
+
+[00:00] Here's how you can use AI Vision to
+[00:01] analyze any YouTube video. Okay, so I'm
+[00:03] going to go ahead and hit test workflow,
+[00:04] which is going to open up this form
+[00:05] that's going to prompt us to insert a
+[00:07] video that we want to get analyzed. So,
+[00:08] now that I've chosen my MP4 file, I'm
+[00:10] going to submit that and then we'll
+[00:11] watch this workflow kick off, which is
+[00:13] basically going to upload that file to
+[00:15] Google Gemini, and then it's going to
+[00:16] analyze it. And you can see that it's
+[00:17] going to wait for about 5 seconds, go
+[00:19] check in on the status, and it looks
+[00:21] like it is already done on that first
+[00:23] try. So, it took under 5 seconds to
+[00:25] analyze this video. And let's go take a
+[00:27] look at what it says. So, here's the
+[00:28] analysis that we just got back from
+[00:29] Google. And what I'm going to do is just
+[00:30] open up the full video right here, and
+[00:32] we can see if it matches up. So, the
+[00:34] video presents a series of artistic
+[00:35] renderings where well-known beverage
+[00:36] containers are reimagined as buildings
+[00:38] or structures. Number one is a Coca-Cola
+[00:40] bottle. The video begins with a tall
+[00:41] Coke bottle-shaped building seemingly
+[00:44] located in a city. The building has
+[00:45] multiple floors, appears to be a
+[00:46] restaurant or cafe. The exterior has a
+[00:48] spiral staircase. So, as you can see,
+[00:50] the description of the Coke bottle is
+[00:51] super detailed. So, as you can see, we
+[00:53] got a really detailed analysis on this
+[00:54] video with four different parts. As you
+[00:56] can see, four different drinks. And all
+[00:58] of this was free of charge. If you want
+[01:00] to watch the full video, click on that
+[01:01] little play button right here.

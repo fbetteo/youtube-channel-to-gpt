@@ -1,0 +1,938 @@
+Video Title: Fantasy Football Draft Modeling
+Video ID: KqrkeUnRSy0
+URL: https://www.youtube.com/watch?v=KqrkeUnRSy0
+View Count: 130
+
+[00:03] welcome everyone into this pre-draft
+[00:06] stream before this Fantasy Football
+[00:10] Draft today I'm going to show you guys
+[00:14] what you can do with the available kind
+[00:17] of data that you can look at and then be
+[00:19] able to build out like
+[00:23] a fairly simple type of like metric that
+[00:27] you want to use for your fantasy
+[00:30] football league and be able to say hey
+[00:33] like this guy is valuable this guy is
+[00:36] not valuable so on and so forth
+[00:40] so with that being
+[00:45] said let's get right into it so we're
+[00:49] going to go right into
+[00:51] our open up our open up our library so
+[00:56] we're going to start with FF analytics
+[00:58] which is short Her Fantasy football
+[01:01] analytics and then our next package
+[01:04] which we'll just use D for now um if I
+[01:07] have time
+[01:09] I'll go play around with uh tidyverse
+[01:13] and using other things like that but
+[01:17] we'll start there so let's start
+[01:22] with kind of what you can do
+[01:26] in fantasy football so f F
+[01:31] analytics
+[01:33] um let's go
+[01:36] home and we'll search up in the corner
+[01:39] here FF
+[01:42] analytics so that way we can learn a
+[01:44] little bit about it and help us you know
+[01:48] solve issues there so
+[02:03] there's a way to be able to see
+[02:18] that don't need to do that all right
+[02:23] well what we can do
+[02:27] is here we can go to help
+[02:30] maybe instead of FF analytics we can
+[02:32] call this function called scrape
+[02:36] data and the cool thing about scrape
+[02:38] data is it gives you kind of some of
+[02:40] these options for now that you have to
+[02:45] basically pull rankings and you know
+[02:48] projected points across multiple
+[02:51] platforms so here it's mentioned it's
+[02:54] got CBS ESPN fantasy pros Fantasy Sharks
+[02:58] fantasy football to Day Flea Flicker
+[02:59] number Fire Fantasy Football nerd NFL RT
+[03:02] Sports and alter
+[03:04] football and your arguments are you can
+[03:07] get positions you can even go down to
+[03:10] defensive positions if your league is
+[03:12] like that um I won't be messing with it
+[03:15] anywhere today in today's stream mainly
+[03:18] because again I don't I don't use that
+[03:20] so use that and
+[03:23] then season and week so you can see
+[03:27] there in the season let me actually
+[03:30] expand this a little bit more so you can
+[03:31] read it
+[03:32] better so kind of some of these sources
+[03:36] you can scrape from we won't use all of
+[03:38] them feel free to pick and choose which
+[03:40] one you like I've chosen eight of
+[03:44] them that interest
+[03:47] me um because I know Yahoo is one that
+[03:49] doesn't work right
+[03:52] now oh which one of these one of these
+[03:55] has like a pay wall so it's no longer
+[03:57] accessible so there there's a reason why
+[04:00] I don't pick some of these
+[04:03] so we're going to go look at some of
+[04:06] this other stuff as well so season week
+[04:09] so on and so forth
+[04:12] so let
+[04:13] me
+[04:21] first put in
+[04:27] LinkedIn go home
+[04:57] no it's not
+[04:58] it
+[05:00] share copy
+[05:06] link okay
+[05:10] so now that we're back in
+[05:14] it first let me check my draft position
+[05:18] before we get started
+[05:24] there let's see
+[05:29] all right looks like I
+[05:31] have pick number seven in the draft so a
+[05:35] little bit late
+[05:39] but not something I'm really complaining
+[05:41] about our league is a little bit
+[05:43] different this year so this is year one
+[05:45] of where we actually added a third wide
+[05:49] receiver so a wide rece a third wide
+[05:52] receiver is going to be a little bit
+[05:53] more part including the flex so it's one
+[05:55] quarterback two running backs three
+[05:58] receivers a tight end
+[06:00] a flex defense and
+[06:03] kicker so what we're going to do is
+[06:06] we'll just
+[06:12] say um we'll just call this dat short
+[06:16] for data and we call the scrape data
+[06:20] function and our sources we go
+[06:24] CBS
+[06:26] ESPN fantasy pros
+[06:30] number
+[06:33] fire um let's do NFL can't forget that
+[06:38] RT Sports and then Walter Football again
+[06:44] that's not all the capabilities of them
+[06:46] you can see here listed here's some of
+[06:49] the sources you can
+[06:51] see see I
+[06:53] explain expand it even more but some of
+[06:55] the sources you can
+[06:58] see and I'm only concerned
+[07:02] about quarterbacks receivers running
+[07:05] backs and tight
+[07:07] ends um defense is not
+[07:10] particularly crazy to
+[07:12] me and then we have season we'll just
+[07:16] set it to null and then week also set it
+[07:20] to null that way we just acquire full
+[07:23] season data and of the current season so
+[07:26] if season is null should be set to the
+[07:28] current season
+[07:33] now to kind
+[07:35] of run through it it'll take a little
+[07:37] bit of time it'll give you the URL of
+[07:39] where they're pulling these projections
+[07:41] so if you want to see for yourself like
+[07:43] where those projections are coming from
+[07:45] now it will be a PPR link and you can
+[07:48] adjust it because obviously you can see
+[07:50] there excuse me doesn't have a
+[07:55] PPR this isn't a PPR URL they do have a
+[07:58] PPR URL
+[08:00] but um you can still adjust it
+[08:04] so the next thing we'll look at is
+[08:06] something that is
+[08:08] called I think
+[08:10] projections
+[08:15] table and so what you can do here
+[08:21] is you have your data result your
+[08:24] scoring rules which we can adjust here
+[08:26] and I'll show you how to do that briefly
+[08:29] and then weights so like
+[08:32] if this is something where maybe on your
+[08:36] own you can figure out hey which ones
+[08:38] you know which projection systems
+[08:40] actually hold the most value and then
+[08:44] you can acquire that data and then use
+[08:47] the certain weights in the source
+[08:50] weights part of the function or the
+[08:53] source weights argument and be able to
+[08:55] say hey like you know for example ESPN
+[08:58] holds the most value so we'll give it
+[09:00] you know a weight of
+[09:02] 04
+[09:04] um and you can click here where default
+[09:07] weight so these are the default weights
+[09:09] that are given so CBS is a 344 ESPN's
+[09:14] 329 NFL
+[09:15] 329 fantasy football today 379 number
+[09:18] fire 322 fantasy pros is a zero I don't
+[09:22] know where these
+[09:24] weights uh originated but these are the
+[09:28] default weights we'll just use default
+[09:29] weights for
+[09:32] now but then we can adjust the scoring
+[09:35] rules because these scoring rules that
+[09:37] are listed on there in the terms of the
+[09:39] scoring
+[09:42] settings
+[09:44] um it's basically it's non
+[09:47] PPR and I think they
+[09:50] add a NE add a Nega one so instead of
+[09:55] negative -2 it' be neg -3 for both
+[09:58] interceptions and and
+[10:03] fumbles let me expand yeah while I'm
+[10:06] doing this
+[10:07] like feel free
+[10:10] to um you know ask
+[10:13] questions regarding this because this is
+[10:16] kind
+[10:17] of interesting stuff but we get all that
+[10:23] information now we essentially set up
+[10:25] our
+[10:26] league um and so there's arguments that
+[10:30] you basically need to set up
+[10:32] your data inside of a list a giant list
+[10:36] where it's then a list within a list
+[10:38] where we have different elements like
+[10:40] passing
+[10:41] rushing receiving so on and so forth
+[10:44] so we'll do this PPR scoring we'll
+[10:48] create a
+[10:49] list add a couple lines just so I can
+[10:52] kind of space it out and show you and so
+[10:55] you need the argument pass which is you
+[10:57] know you're passing
+[10:59] data and you can add in like pass
+[11:03] attempts completion so like if you have
+[11:05] certain points for
+[11:07] there or any incompletions pass yards
+[11:11] which is a common nominator in most
+[11:13] leagues you know 0.04 pass touchdowns
+[11:17] are
+[11:18] four um pass interceptions I believe are
+[11:22] negative -2 and many standard leagues
+[11:25] and then if your league has things like
+[11:29] this
+[11:30] this you can add it in there I'm just
+[11:32] going to set them as default but I'm
+[11:34] showing you like the options you can
+[11:37] have for that so pass 400
+[11:41] yards so you know some fantasy leagues
+[11:44] might have points where hey if you have
+[11:46] a pass over 40 yards you get bonus
+[11:48] points if your quarterback throws over
+[11:49] 300 yards in a game you get bonus points
+[11:52] so on and so forth
+[11:54] so it allows us
+[11:58] to create
+[12:00] that so it gets our passing metrics and
+[12:04] then now it gets our rushing
+[12:07] metrics and so we'll say rushing and
+[12:10] we'll say all positions equals true
+[12:13] mainly because again like a quarterback
+[12:15] can run the ball a receiver could
+[12:17] theoretically run the ball I remember a
+[12:20] few years ago having John new Smith on
+[12:21] my fantasy team he got a rushing
+[12:23] touchdown because it was like a a Jet
+[12:26] Sweep for the tight end um so what this
+[12:30] does it just allows you to calculate
+[12:33] like rushing yards for every position
+[12:35] and we'll just go here so point one for
+[12:37] every rushing
+[12:39] yards again if you get bonuses for
+[12:42] attempts you can put it in here so like
+[12:44] attempts any rushes over 40 yards Rush
+[12:47] touchdowns is
+[12:49] six um bonuses for like a 100
+[12:53] yards 150
+[12:57] yards um then go Rush 200 yards again
+[13:02] solely up to
+[13:04] you whether or not you want to have this
+[13:08] but then we'll add in receiving list
+[13:12] again all positions equals
+[13:15] true and this is where we can say
+[13:18] receptions equals one you know reception
+[13:20] yards equals
+[13:22] 0.1 reception touchdowns equals
+[13:25] six any 40 plus yards list is zero
+[13:30] anybody that has 100 yards list is
+[13:34] zero anything that has
+[13:37] 150 so on and so forth so let me to kind
+[13:42] of save time because I know whoever's
+[13:45] watching
+[13:46] this you know you probably don't really
+[13:49] care much
+[13:51] on
+[13:56] um let me make sure I can
+[14:00] sign into the
+[14:02] chat okay so I do have the chat up again
+[14:05] if you have any questions don't hesitate
+[14:07] to reach
+[14:09] out um with that being said like I said
+[14:13] I will just copy all of this just to
+[14:16] save your time because I know you you
+[14:17] guys aren't really that interested in
+[14:21] all this other information
+[14:23] so I'll just go you know one by one so
+[14:27] miscellaneous
+[14:30] is you know fumbles lost or you know
+[14:33] two-point
+[14:34] conversions kicks from various yards so
+[14:38] 19 and under three you know 20 to
+[14:40] 293 30 to 393 40 494 50 plus 4 field
+[14:46] goal
+[14:48] miss I believe in our Le get negative
+[14:50] one so we'll add that returns again
+[14:54] return touchdowns are a
+[14:57] possibility and then this is like
+[14:59] individual defensive
+[15:02] player these are the automatic defaults
+[15:05] again like they have default scoring
+[15:07] settings in there so just pulls from
+[15:09] there and it shows you like the
+[15:11] different types of indiv individual
+[15:14] defensive players again if I can leave
+[15:17] that as is it won't affect anything
+[15:20] because my league does not have
+[15:21] individual defensive players then you
+[15:23] have defensive special team so different
+[15:25] points there and then lastly you have
+[15:27] the points bracket
+[15:30] because teams will or your defense will
+[15:34] lose points based on a certain you know
+[15:36] amount of points they've given up so
+[15:38] they've given up six or less fewer
+[15:40] points um or no five or fewer points
+[15:43] they get 10 you know 6 to 19 at 7 20 to
+[15:48] 33 4 34 and up
+[15:53] zero or excuse
+[15:55] me anything seven and Below you get
+[16:00] um 10 then so on and so forth
+[16:04] so we get that in there as
+[16:08] well let me make sure
+[16:11] this spacing is good so now we can pass
+[16:15] that PPR
+[16:18] scoring and now what we can do I'll just
+[16:21] call this as
+[16:23] all and we'll call this we'll call the
+[16:26] projections table and we'll say our our
+[16:29] scrape which is just
+[16:31] that and then our scoring rules again
+[16:35] that's one of the arguments listed here
+[16:37] and we'll say PPR
+[16:40] scoring and then you have different
+[16:42] average types feel free to play with any
+[16:44] of them
+[16:46] but
+[16:49] um the different ones are you know just
+[16:52] raw average a robust average which I
+[16:56] believe according to the source code
+[16:59] kind of takes
+[17:00] in the standard
+[17:03] deviation within
+[17:10] deviations
+[17:12] um and then weighted is again taking
+[17:16] those default weights and then averaging
+[17:19] out by those weights so giving more
+[17:21] value to you know CBS
+[17:25] over um something like fantasy pros
+[17:30] so on and so forth
+[17:32] so we'll
+[17:34] do we'll do robust for now because I
+[17:37] think that one encapsulates it pretty
+[17:40] well so we can run
+[17:44] this and we have the average type their
+[17:48] play position points standard deviation
+[17:51] points a drop
+[17:53] off basically what their floor is in
+[17:55] terms of projector points across all of
+[17:58] the
+[18:00] sources that we've selected and then
+[18:03] their ceiling points the max points and
+[18:06] then the points v stands for the points
+[18:10] over a replacement player so think about
+[18:12] it if you know like you replace a
+[18:16] quarterback like Josh
+[18:18] Allen this is how many points you would
+[18:21] have above him if you replace him with
+[18:24] you know your next available quarterback
+[18:25] on your bench or on the waiver wire
+[18:29] and then the floor which is again across
+[18:32] those
+[18:34] eight eight sources you know what's the
+[18:36] minimum amount of points they're above a
+[18:39] replacement player and then what's the
+[18:41] maximum then like what's their rank
+[18:44] floor rank ceiling rank um their
+[18:46] position rank and then it's divided into
+[18:50] tiers which we have you know various
+[18:52] amounts of tiers based on position so 22
+[18:55] tiers for
+[18:56] quarterback um it looks like
+[19:00] 22 for no 24 for running
+[19:05] back so on and so forth more for wide
+[19:08] receiver again it just goes
+[19:10] to how the tier is calculated is
+[19:13] essentially taking a certain point
+[19:15] threshold and then going to the next
+[19:18] lower threshold um based on these so
+[19:23] like those these Point thresholds are
+[19:26] relatively tight because you can see
+[19:28] here like this person person's average
+[19:29] points is 305 while this one is 311 and
+[19:32] they're in different tiers so it's just
+[19:34] basically
+[19:36] taking the amount of data and then
+[19:39] deriving um tiers within it to be able
+[19:43] to say hey here's the you know here's
+[19:47] the highest tier quarterback you can get
+[19:49] think of it as like scaling you know
+[19:52] like here's 100th percentile here's you
+[19:55] know 97th percentile so on and so forth
+[19:58] right
+[20:00] so as we're going
+[20:03] on continue to break it down again but
+[20:06] you're like Robert where's where's the
+[20:08] names of the players We'll add that in
+[20:11] there here in a bit because there is you
+[20:13] know unique little functionality that we
+[20:15] can add but let me add in some other
+[20:19] like metrics that we can add
+[20:22] so one thing I'd like to add is ECR
+[20:26] which is short for expert consensus
+[20:28] range ing so basically each of those
+[20:31] sites is experts where they rank them
+[20:35] what's the consensus of that
+[20:37] site amongst those experts and then the
+[20:40] consensus across all Sites amongst
+[20:43] experts so I think that's very useful in
+[20:47] determining different things like what's
+[20:49] the average you know expert ranking of
+[20:51] this player compared to this player and
+[20:53] then what's the standard deviation
+[20:55] meaning you know is there a lot of
+[20:57] variability you know like I know there
+[21:01] might be a big change in terms of Kiren
+[21:03] Williams you right because now he's
+[21:05] taking he has been told that he's the
+[21:08] pun returner even though he's the
+[21:10] primary running back so there might be
+[21:12] changes there or there might be a lot of
+[21:16] deviation in ter or consensus rankings
+[21:19] in terms of a guy like Devon Anan from
+[21:21] the Dolphins
+[21:23] because he had incredible efficiency
+[21:27] last year but he didn't have a lot of
+[21:29] value and so are the Dolphins you know
+[21:33] with the dolphins how they run their
+[21:36] offense I believe they're going with a
+[21:39] lot of 21 Personnel this year which is
+[21:41] two running backs two receivers and a
+[21:44] tight end you know how frequent do you
+[21:47] see maybe aan and moer on the field at
+[21:50] the same time and then you know does hn
+[21:53] take a big leap in terms of snapshare
+[21:55] when both he and mostard are healthy you
+[21:58] know the are things you factor in but
+[22:00] you don't necessarily have to do that
+[22:01] yourself you can kind of take the this
+[22:04] way of doing it is taking the expert
+[22:06] consensus rakings ideas and saying okay
+[22:09] here's what we think about that
+[22:11] so we'll add in that so add in
+[22:17] ECR and another thing I like to add is
+[22:20] uncertainty and
+[22:22] so I will try to explain best I can but
+[22:25] I will also show it here
+[22:29] which basically it's just scaling the
+[22:30] standard deviation tables variables
+[22:32] averaging them and then creating a
+[22:35] within position percentile rank ranging
+[22:38] from one to 99 a score of one in case
+[22:42] there's very little uncertainty and then
+[22:44] a score 99 large degree of uncertainty
+[22:48] so with that being said essentially what
+[22:51] it's doing is taking the standard
+[22:53] deviation of projected points across all
+[22:56] those SES and the standard deviation of
+[23:00] the I believe expert consensus ranking
+[23:03] to then be able to
+[23:05] say so yeah right here so it uses
+[23:08] standard deviation points standard
+[23:09] deviation ECR to compute
+[23:13] uncertainty and so basically saying like
+[23:15] what kind of risk is it with this player
+[23:18] so if you think about it this way in
+[23:20] terms of consensus ranking in points you
+[23:22] know a guy that's low risk typically
+[23:25] guys that are drafted higher will have
+[23:26] lower risk so like mcaffer will have
+[23:29] very low risk whereas like I mentioned
+[23:32] earlier like Devon Anan might have
+[23:34] higher risk um guys who are maybe On The
+[23:37] Fringe so like you know thinking of like
+[23:40] deep quarterback leagues maybe two
+[23:42] quarterback leagues you know it gets to
+[23:45] the point
+[23:46] where there's a lot of uncertainty
+[23:49] between who's goingon to start between
+[23:50] Russell Wilson and Justin
+[23:53] Fields so on and so
+[23:56] forth but
+[24:00] with that being said now so we're going
+[24:02] to add in that
+[24:04] uncertainty and another thing we're
+[24:06] going to
+[24:07] add is the
+[24:10] ADP and so
+[24:13] again what the ADP does is gets the
+[24:16] player's average draft position across
+[24:19] each site so you know
+[24:22] maybe oh there was one example I think
+[24:26] it was etn but don't quote me on that
+[24:30] one side had etn in like the top 12
+[24:34] another side had them you know just
+[24:36] outside the top 20 in terms of average
+[24:38] draft position so there's there's big
+[24:41] differences there and so basically when
+[24:44] we want to add that we want to
+[24:46] encapsulate that and determine like hey
+[24:48] like is there a lot of
+[24:50] deviation within that and then
+[24:53] lastly I know the the part you want to
+[24:56] ask for which is adding player info
+[24:59] so we run all
+[25:03] this looks like it it
+[25:06] ran and now we have certain things so
+[25:10] like expert consensus ranking overall
+[25:13] their position expert contestant ranking
+[25:17] so basically overall you know across all
+[25:21] those
+[25:22] sites those experts think Josh Allen is
+[25:25] the 23rd ranked player
+[25:29] um Jaylen Herz is the 27th ranked player
+[25:33] so on and so forth so experience it
+[25:35] looks
+[25:36] like I guess I don't know what they use
+[25:39] for experience I can adjust that though
+[25:42] right now I'll just add a mutate call
+[25:45] here and say experience equals
+[25:47] experience plus
+[25:48] four looks like I had to rerun this line
+[25:51] to get this
+[25:53] one
+[25:55] okay so
+[25:59] we can look at that and say okay who has
+[26:02] the highest ECR Christian mcaffrey makes
+[26:06] sense um and then positionally we can
+[26:09] filter that down too and you can see
+[26:11] uncertainty obviously there's some
+[26:13] uncertainty but not a whole lot let say
+[26:16] the lowest uncertainty guy at least from
+[26:19] this list looks like it's between AJ
+[26:22] Brown and Jamar chase that makes sense
+[26:26] and Justin Jefferson sure he has a new
+[26:30] quarterback but he can still have a lot
+[26:34] of confidence like there's a lot of
+[26:35] uncertainty with Bree hall
+[26:41] because you know he was relied on a lot
+[26:45] last year and now you're coming back
+[26:47] assuming with a healthy Aaron
+[26:51] roders how much does his play get
+[26:54] affected there as well so
+[26:58] now we're going going into there like
+[27:00] puka
+[27:01] AA amazing first season you know there's
+[27:05] some C uncertainty there saquon Barkley
+[27:07] going from the Giants where he was
+[27:09] essentially like the Workhorse to the
+[27:12] Eagles where he'll be part of a dynamic
+[27:14] more Dynamic
+[27:16] offense you know how much does that
+[27:18] affect because you know like goal line
+[27:21] touches is an important thing he's going
+[27:23] to be losing a lot of goal line touches
+[27:25] especially if the Eagles continue doing
+[27:28] this tush push with Jaylen
+[27:29] Herz and so on so forth so rookies will
+[27:32] te typically have higher uncertainty
+[27:34] because you don't know what to expect
+[27:36] out of them you know Devonte Adams Drake
+[27:40] London Chris Olive Josh Allen has a lot
+[27:44] of uncertainty and it's because now he
+[27:47] doesn't
+[27:48] have sure he he is a good quarterback
+[27:51] but he doesn't have a guy like Stefon
+[27:54] Diggs now remains to see whether or not
+[27:57] Keon Coleman
+[27:58] can fill in that role but again it
+[28:01] serves the point that there's a lot of
+[28:02] uncertainty here
+[28:06] so now that we have
+[28:09] that
+[28:11] let's create
+[28:15] essentially a value
+[28:18] score and so what I'm going to
+[28:22] do here is get
+[28:29] basically number of tiers so we're going
+[28:31] to say
+[28:32] all Group by position and then
+[28:38] summarize Max
+[28:40] tier equals Max tier and then we'll just
+[28:45] remove Naas just in
+[28:47] case so we'll look at that and so
+[28:50] there's 32 wide receiver tiers there's
+[28:53] 21 tight end tiers 24 running back tiers
+[28:57] and 22 two quarterback
+[29:01] tiers so when we're maybe creating some
+[29:05] kind of score calculation that we'll
+[29:07] start
+[29:09] now we can factor that in so there's a
+[29:12] few different ways we can go about it
+[29:15] and I
+[29:18] think one way we can go about it
+[29:22] is basically getting
+[29:26] a um
+[29:31] um maybe how above are
+[29:36] they in terms of
+[29:39] ADP so we can say
+[29:42] like difference of ADP and we'll just
+[29:45] say
+[29:48] d8p and this is very similar to like
+[29:51] your zcore uh type of you know
+[29:55] calculation so we'll take that person's
+[29:58] ADP and then take the average
+[30:02] ADP of the entire
+[30:06] population and then let's
+[30:10] say oh let's then divide by the standard
+[30:13] deviation of that player's ADP so how
+[30:16] much
+[30:17] deviation how different are you from the
+[30:20] sample and then how much do you differ
+[30:23] in terms of different consensus in terms
+[30:27] of or different sides in terms of
+[30:28] average draft
+[30:31] position so we'll start
+[30:33] there then we'll go to u m which is is
+[30:37] like an uncertainty
+[30:39] measure which will just take the
+[30:41] standard deviation of a player's
+[30:43] points and the standard deviation of the
+[30:45] expert consensus ranking divided by
+[30:49] two and so what that'll do is basically
+[30:53] saying you know the lower points the
+[30:56] better and if those are very you know
+[30:59] again this
+[31:01] is you can also use the uncertainty
+[31:03] measure but we want to scale it to a way
+[31:06] that points can seem
+[31:10] relative
+[31:14] then we have I know I want to
+[31:17] incorporate something with replacement
+[31:21] players so
+[31:25] maybe we take like we call it like an
+[31:28] expected
+[31:30] points above a
+[31:33] replacement because again like drafting
+[31:36] these players you want guys with
+[31:40] high expected
+[31:44] over
+[31:46] um expected over a replacement
+[31:51] because that just means you're getting
+[31:53] more points you're scoring more points
+[31:54] in your fantasy league so on and so
+[31:56] forth so let's start within
+[32:00] there and you can simply just take the
+[32:03] projected points of the value over a
+[32:06] replacement and then take the lower
+[32:08] level of a value over replacement which
+[32:11] is the floor and just subtract those
+[32:15] two
+[32:18] then we'll call this like a a tier value
+[32:22] component so like a
+[32:25] TVC and we can say like
+[32:29] you know case
+[32:31] when position equals
+[32:34] QB then we can take tier divided
+[32:38] by
+[32:41] 22 then position equals running
+[32:45] back tier divided by
+[32:49] 24 and then position equals tight
+[32:54] end tier divided by
+[32:58] 21 and then lastly position equals wide
+[33:02] receiver tier divid
+[33:05] 32 that way we have all those tiers
+[33:10] mentioned and we can get that value
+[33:14] component and
+[33:18] then we can create like a score and
+[33:21] we'll call this like fantasy value
+[33:25] score maybe this can be like the initial
+[33:28] which then we take the expected points
+[33:30] above replacement
+[33:32] player add it with the tier
+[33:35] value um
+[33:39] component then we can subract
+[33:43] the um I guess the ccore of the ADP
+[33:50] essentially and then subtract it by the
+[33:54] uncertainty
+[33:55] measure and then divide that whole thing
+[33:58] by 10 so that way it's on a I guess a
+[34:01] bigger scale because the scale will look
+[34:05] kind of kind of
+[34:07] different so let run that look like e oh
+[34:13] 80P SD so
+[34:15] now run
+[34:18] it we have differing fanasy value scor
+[34:22] so in this
+[34:23] one you know this I like to think tries
+[34:27] to take take in that player's ADP so
+[34:29] basically it's saying like hey you know
+[34:32] dra drafting Christian mcaffrey 1
+[34:35] extremely valuable then going like
+[34:37] Tyreek Hill one two could be extremely
+[34:39] valuable so on and so forth and like
+[34:42] just going down the line
+[34:45] now the issue I kind of come across
+[34:49] is I wouldn't really say much of an
+[34:51] issue because the the
+[34:54] value goes
+[34:58] negative around player
+[35:00] 53 you can kind of see here like hey it
+[35:03] becomes negative value once that
+[35:06] [Music]
+[35:07] player
+[35:12] is around you know pick 53 which in a
+[35:15] 10-man league you know you're roughly
+[35:17] five rounds in and you're only getting
+[35:19] players with negative value now we can
+[35:21] scale it to adjust for it and I can show
+[35:26] you that here in a second
+[35:29] but this at least gives us a good idea
+[35:32] of understanding okay you know taking
+[35:35] like Tyreek Hills ADP is you know 3.9 so
+[35:40] roughly you know you round you round up
+[35:42] he's
+[35:44] a you know a fourth overall pick meaning
+[35:49] if you take him at Fourth overall you're
+[35:51] going to get a lot of value out of it
+[35:54] Breeze Hall is a you know fifth overall
+[35:56] pick you're going to get a lot of value
+[35:58] of it Orban so on and so forth you know
+[36:00] am manra so on and so forth so continue
+[36:04] to go down the
+[36:06] line
+[36:08] so
+[36:10] again are you getting a lot of value out
+[36:13] of guys after the fifth round
+[36:16] typically not
+[36:19] really
+[36:21] but we can then scale it so this is kind
+[36:24] of like a a more of a like a playground
+[36:26] session here because we're just going to
+[36:28] mess around and you know figure out
+[36:31] different ways to solve for this
+[36:33] so one way we could do this is
+[36:37] maybe
+[36:40] FES scaled and we can say
+[36:43] scale you know all fantasy value
+[36:49] score and so you can kind of
+[36:52] see this scale where a lot of it's
+[36:56] negative there's a lot
+[36:59] Nas perfectly
+[37:01] fine but it
+[37:04] creates of a more you know zero to one
+[37:07] scale so like obviously this one is
+[37:09] Christian mcaffrey
+[37:12] let's let's be real with
+[37:20] that so that's one way of doing it or if
+[37:24] you wanted to you could do this as well
+[37:29] and say like what's the median of the
+[37:31] fantasy value
+[37:37] score that's right there's na so let's
+[37:40] remove
+[37:41] Nas and so it's negative 0.91 so then we
+[37:45] can treat that
+[37:48] as
+[37:53] the median value and we can just adjust
+[37:56] it so that way it matches you know the
+[38:01] original original median value meaning
+[38:06] anybody who
+[38:08] actually
+[38:10] is in terms of fantasy value score below
+[38:14] you know negative.
+[38:16] N1 which now we get to roughly 109
+[38:20] players so now we're about 10 Rounds
+[38:24] in um now you get a little a bit more
+[38:28] value out of
+[38:29] that
+[38:31] so maybe we can create another one where
+[38:34] it's basically like fvs adj which is
+[38:37] short for fvs you know
+[38:41] adjusted we can say fantasy value
+[38:44] score and since it's negative we can do
+[38:47] minus the median value so minus negative
+[38:50] equals plus
+[38:52] positive run
+[38:55] that now we have an adjusted fantasy
+[38:58] value score for now more players are
+[39:00] getting valued again we're roughly 109
+[39:03] players in so in a 10-man league you're
+[39:06] roughly getting to the 11th round where
+[39:09] players are considered you know
+[39:12] valued at their
+[39:16] ADP so like some
+[39:19] guys down here so like James
+[39:22] Conor at his ADP of 52 is actually you
+[39:27] you're kind of losing a little bit of
+[39:28] value there like maybe you can go
+[39:30] elsewhere in terms of picking guys of
+[39:35] value um so on and so forth
+[39:40] so looking at it in in certain ways I
+[39:44] kind of find it
+[39:47] interesting but hey that's that's the
+[39:50] whole point of it finding it interesting
+[39:52] so we can see those those fantasy values
+[39:58] and see just you know how good Christian
+[39:59] mcaffrey is above the value that he has
+[40:03] based on his projections again these are
+[40:05] all
+[40:08] projections that are from
+[40:11] CS CBS ESPN fantasy pros number fire and
+[40:17] oh wait no am I in the right one
+[40:20] yeah did I forget a
+[40:30] I
+[40:31] did I forgot to add fantasy football
+[40:33] today so let's add fantasy football
+[40:36] today and rerun this from the beginning
+[40:38] so we'll pull all this data adjust it
+[40:41] for PPR
+[40:49] scoring and then go from there
+[41:03] and yeah if you have any questions
+[41:05] regard don't hesitate to leave something
+[41:08] in the
+[41:11] chat and so you scrape all these
+[41:13] projections from all these different
+[41:17] sites um and we're gonna just go through
+[41:21] it one more time just kind of show you
+[41:23] what's about before I head out and go Dr
+[41:27] valuable
+[41:31] players but then yeah so I I think it
+[41:34] makes sense
+[41:37] because after about I think it's fair to
+[41:40] say after about the 10th round that's
+[41:42] where you start entering like the law of
+[41:43] diminishing returns
+[41:46] like hey if I if he's not valuable at
+[41:50] this ADP don't draft him you know if he
+[41:53] is extremely valuable that's the guy who
+[41:55] you should be drafting
+[41:58] um you know the reason why guys
+[42:01] are in their spots and being valuable is
+[42:05] because of this you know
+[42:07] like maybe you wouldn't think of you
+[42:10] know if
+[42:12] the adjusted you know fantasy score
+[42:16] value or fantasy value
+[42:18] score of bejan Robinson you know if he
+[42:21] was the consensus
+[42:23] one it would be a lot lower whereas
+[42:27] for mcaffrey it's a lot
+[42:30] higher now we do
+[42:33] that PPR scoring again we'll do robust
+[42:38] averages mainly because again
+[42:41] deviation we'll add in ECR uncertainty
+[42:45] risk ADP again very important player
+[42:48] info get
+[42:52] tiers looks like they didn't change
+[42:54] except tight end did change so tight end
+[42:56] actually added three three more tiers as
+[42:59] a quarterback dropped a
+[43:04] tier and we run this
+[43:07] again we should still
+[43:10] get you know more or less the same so
+[43:14] now this one values jir Gibbs a little
+[43:17] bit more cidi lamb a little bit
+[43:20] less uh so on and so
+[43:25] forth meaning again it's valued at so
+[43:28] basically it's saying like hey if it's a
+[43:32] positive number it's meaning hey at his
+[43:34] average draft position he would be
+[43:37] considered
+[43:40] valuable so if he's around four maybe
+[43:44] treat that as like the minimum it's one
+[43:45] way to think about it hey if you know
+[43:48] Tyreek Hill is a minimum of four he's
+[43:51] going to get a lot of value now with a
+[43:53] number like 11 you'll still see positive
+[43:55] value
+[43:59] with you know within that ADP and you
+[44:02] can build out another way you can kind
+[44:04] of think about this too is create like a
+[44:07] model just
+[44:09] say
+[44:11] LM you know
+[44:15] um fds
+[44:18] adjusted equals
+[44:20] [Music]
+[44:23] the we'll say the 0p
+[44:28] and then data is
+[44:32] all
+[44:34] and get the summary so yeah that's
+[44:36] obviously very important then we can
+[44:42] predict their you know adjusted fantasy
+[44:46] value so
+[44:51] if if let's say
+[44:58] or excuse I I think no wait I think I
+[45:01] did it the other
+[45:06] way yeah I did it the other way around
+[45:09] so we can say
+[45:12] predict our model and then we'll just do
+[45:15] a tibble by saying you
+[45:18] know their fantasy
+[45:21] value adjusted so like CD lamb it's a
+[45:25] five point
+[45:28] six4 we'll just round
+[45:31] it and then type equals
+[45:38] response so that's
+[45:43] saying interesting that's saying his EDP
+[45:46] is should be 46 which we both know
+[45:50] that's
+[45:51] not that's not right
+[45:58] okay but we can we can scrap that um
+[46:02] because I know I I won't have enough
+[46:04] time to actually kind of debug it in a
+[46:07] way but it gives you that that
+[46:11] players adjusted fantasy value
+[46:15] score and then being able to say hey
+[46:17] like at
+[46:18] this would I draft this person at this
+[46:23] ADP and if there is a lot of value
+[46:28] then
+[46:29] yes we should so on and so forth
+[46:32] so that is about all I have um feel free
+[46:37] to like this or if you want to see more
+[46:40] content like this you know don't
+[46:43] hesitate to be like hey I I want to see
+[46:45] more content like this you know maybe
+[46:48] hey can you show me how to make a GT
+[46:49] table of this hey can you show me how to
+[46:52] make a shiny app out of this I'd be more
+[46:54] than happy to do it you know this is
+[46:57] part of it is just hey you just got to
+[46:59] ask hey can can you make something out
+[47:02] of this or show me how to make something
+[47:04] out of this I'd be happy to
+[47:06] so that will conclude the stream
+[47:09] hopefully you learned a thing or two
+[47:11] about acquiring you know different
+[47:13] projection sets from different sites how
+[47:16] to set your scoring how to add you know
+[47:20] expert consensus rankings ADP player
+[47:23] info player experience so on and so
+[47:25] forth and then be able to create a score
+[47:27] that then you can use to model it but
+[47:31] that being said thank you so much for
+[47:33] watching I generally hope you have a
+[47:35] great rest of your day

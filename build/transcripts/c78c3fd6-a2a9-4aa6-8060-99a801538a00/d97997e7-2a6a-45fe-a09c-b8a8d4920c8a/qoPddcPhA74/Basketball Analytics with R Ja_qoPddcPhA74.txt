@@ -1,0 +1,748 @@
+Video Title: Basketball Analytics with R: Jackson Lautier [2021 UConn Sports Analytics Symposium]
+Video ID: qoPddcPhA74
+URL: https://www.youtube.com/watch?v=qoPddcPhA74
+View Count: 348
+
+[00:02] Okay, so we, uh, we're officially underway here. This is the basketball analytics with our workshop.
+[00:09] I really enjoy doing this. I got a chance to do this last year. This is my 2nd year.
+[00:16] Few logistics before we really get started is.
+[00:21] Just for, um, logistics here, I have everyone muted when you come in.
+[00:26] I do have access to the chat if you have questions there.
+[00:30] Um, I also plan to have a little bit of time at the end for question.
+[00:35] that's where i can actually unmute you um 
+[00:38] You know, if you have a question, um, so.
+[00:42] I hope, you know, given this format and, uh, the potential number of participants, I hope using a chat and then maybe trying to individually unmute people with questions. Will.
+[00:54] you know we'll work for everybody and last year i i thought 
+[00:59] We had a really nice discussion so I hope some of the things you see today.
+[01:04] You know, are interested in thing and I, I, as, as we go along.
+[01:11] And I guess the other thing I would say is this, this is scheduled for 50 minutes, but I, I, I'm keeping the Webex event room open.
+[01:19] For, like, 2 hours. So, um, I love doing this stuff. So if for some reason there's a ton of questions.
+[01:25] I'm happy to stay on afterwards, so I just want to say that before we begin.
+[01:33] Okay, so this.
+[01:38] agenda for today um 
+[01:43] It is so if if this is your 2nd year in this workshop, it's similar to last year. I, I've updated.
+[01:49] Some of the statistical case studies with the most recent MBA season.
+[01:53] And I've, I've done some updates some edits, but I, I think there's enough material here where.
+[02:00] It will be, you know, new, and certainly if this is your 1st time with this workshop, this is your 1st year then I think a lot of this.
+[02:08] You know, hopefully be useful to get you started.
+[02:11] And get you well, in your way to, um, doing some cool.
+[02:15] Basketball analytics, so I.
+[02:18] I'm going to talk quickly about this package. Basketball, analyze our.
+[02:23] Um, pretty much everything I put together in here.
+[02:28] What is done using this package? It is, uh, really easy to install and actually.
+[02:34] Very easy to use and what you'll see is, I go along, I focus a little bit less on the actual code, all that stuff out there and the GitHub website.
+[02:44] And I think, you know, it's there's enough comments hopefully where you can kind of get up to speed and I want to talk.
+[02:50] A little bit more about, like, the analytical side and maybe how to use some of this output.
+[02:55] And, um, you know, how you can use our to get what I think is some interesting.
+[03:00] Interesting visualizations and try to tell some interesting stories.
+[03:04] Um, but everything under here is with this package so I'll talk more about this package.
+[03:10] And I do spend a couple of minutes about how to get.
+[03:13] Some some data, so, um, there's also some code out there.
+[03:18] To help you get some data sets on your own, um, to start, you know, really playing around with this and really focus on whatever you find interesting. And.
+[03:27] Uh, I do, I, I kept us in here from last year. I want to just talk about some, like, fundamental basketball statistics. I, I'm kind of under the assumption there might be a wide.
+[03:35] Range of students, so I, I think even some of these.
+[03:39] You know, quote unquote, basic statistics are worthwhile to review.
+[03:43] And then the vast majority of today's discussion will be case studies.
+[03:47] And I think this really highlights the package. It highlights.
+[03:51] that there's really you know some neat stuff 
+[03:55] That you can come up with with this package and.
+[03:58] Most importantly, how you might interpret that and thumb some things to be careful with and some things to.
+[04:05] you know really think about and hopefully kind of peek your curiosity for some of the things you can research on your own 
+[04:12] When when we're done today, so.
+[04:18] Without, uh, too much of a of delay here, just to get get right into it. So, this, this is the package basketball analyze are.
+[04:26] And I got introduced to it through this textbook.
+[04:29] It's, you know, textbook wise, it's not that expensive.
+[04:33] It's, um, you know, available, I think, in Amazon or through the publisher.
+[04:38] And the, the great thing about it is.
+[04:41] It walks through kind of some introductory.
+[04:47] Material about a specific statistical technique.
+[04:51] And some of the things in here are pretty advanced, like, machine learning, um.
+[04:55] Network analysis, we'll talk to them about about some of that stuff, but it also walks you through the, our code.
+[05:00] And you can really do it side by side. So if you're kind of brand.
+[05:06] Done basketball analytics and maybe other software, like Excel or stuff on your own, you want to use our.
+[05:12] I, I really can't say enough good things about this book. There's, you know, kind of website links here where it has some supporting material online.
+[05:20] And I just want to make sure I get this out of the way because this was my major reference.
+[05:26] And in building presentation.
+[05:33] So, when we talk about this package, so the nice thing about it is, you know, I'm assuming most people here are pretty familiar with are.
+[05:41] You have a lot of built in functions that do a lot of the hard work for you.
+[05:46] And, you know, a lot of these will be using today, like, shot chart, 4 factors, uh, assist that expected points.
+[05:54] These things you just have to understand how the functions work enough where you need to put the inputs in.
+[06:00] And then you get output, so the huge advantage of a package, like, this is with very little.
+[06:07] Initial effort, you can do a lot quickly.
+[06:10] Of course, as you get more seasoned, some of the downsides are, you are a little bit constrained in what your output might look like. And that's when you get a little bit more advanced, you can kind of dive into the actual.
+[06:22] Underlying code for these functions and maybe edit them and see how they work and then write your own functions.
+[06:27] But the reason I, I like this package, I want to highlight it is like.
+[06:32] It's just so quick to get up and running and doing a ton of stuff that, um.
+[06:36] I think it's certainly certainly worth a look and, um, you know, like all good our packages. It includes preloaded data sets.
+[06:44] For which starting to become kind of a long time ago. The 2017, 2018, NBA season.
+[06:50] So this is what the textbook itself references, so.
+[06:55] Again, you don't have to spend time, like, digging for data, trying to figure out what's going on.
+[07:00] You immediately have these in front of you, you can open them in our you can see what the data input looks like.
+[07:07] So then when you bring in new data, you can model it to be able to use these functions right away.
+[07:12] So, it's it's.
+[07:15] You know, a very easy package to to use to get started with. It's kind of self self contained.
+[07:22] And, you know, I mentioned this at the top, but I'll re, emphasize that if you go to the associated GitHub website.
+[07:30] For these slides, you'll see all of the code I used in last year's presentation, this year's presentation.
+[07:37] Yeah, it's totally free. You can just jump out there. You don't need a password. You can just download the article and yourself.
+[07:44] And you can even run these alongside with me, or keep the slides to decide and try to recreate the figures.
+[07:51] There's a little bit of a nuance I'll talk about later, but, um.
+[07:55] I think, you know, with this package, with the introduction of today's presentation, and with the code on this Web site.
+[08:02] I think you'll really be up and running pretty quick and you can do some, some neat stuff.
+[08:11] A little bit of a sidebar I.
+[08:14] I wanted to update a lot of the data from last year, so.
+[08:18] As I'm sure, you know, or you'll find out soon a huge part of like, data science, data analytics.
+[08:25] Um, whatever you want to think about it, even just statistics in general is trying to find good data. So.
+[08:32] There is some other workshops on that, um.
+[08:35] For MBA specific I found this other package MBA. Stat. R.
+[08:40] It's not as when I did this presentation, I think it was in August August it wasn't out on.
+[08:47] The CRN, I don't know what you call it repository yet.
+[08:52] So, to download it, you need to and install it. You need to do a little bit of like.
+[08:57] A certain convention, which, which sounds overwhelming. It's really not. If you go to this website, they walked you through what to do.
+[09:04] Um, so it's, it's pretty easy it's just not 1 of those things where you can do.
+[09:09] Installed that packages as of when I did this presentation.
+[09:14] Worth another look, maybe it's, it's up there now and, uh, the reason I, I mentioned this is I used this package to update team and player box score data.
+[09:24] And that code, I used to update the team in box score player box for data as well as get it into a format for this.
+[09:33] Basketball analyze our package is on the GitHub website.
+[09:37] So that's a little more than nitty gritty stuff, but if you want to get data, you want to get started. There is code out there.
+[09:45] 1 thing I learned going through this process is the MBA uses, um.
+[09:50] A game ID, which, I mean, most database management, you need some type of unique identifier. This is what the MBA uses.
+[09:57] And once you kind of get familiar with this lingo.
+[10:01] You can update some of the, um, entries for this package here. Nba stat are and you can get.
+[10:07] Pre season data, if that's what you want regular season, all star games.
+[10:11] Play offs, um, so you can kind of set that that.
+[10:15] Prefixed, and then you just type in a year, you want.
+[10:19] And, um, the games.
+[10:22] Are individually numbered for this is for a regular season. So if you have 30 teams.
+[10:26] 30 times 82 is, uh, it's going to be twice this, so.
+[10:32] That is, I think 2460.
+[10:35] And then, obviously 2 teams playing 1 game.
+[10:39] So this is the total number of individual games per season.
+[10:43] And, you know, through this package, um, you might have to do a little bit of manual inputs as this package is still under development, but you can get, you know, any season you want.
+[10:53] Back as far as I can't remember the start date.
+[10:59] Uh, when this, this data was freely available, but the, the MBA.
+[11:03] Dot com is is pretty, um, exhaustive, so you can get a lot of season stuff. You're interested in.
+[11:09] You can focus on and whatever, but this, this is like a framework to really get you.
+[11:13] Any data you want in conjunction with this package.
+[11:18] And then I'll also mention the play by play data.
+[11:22] Is a little bit different. I personally.
+[11:27] Went out to this website, this big data ball com and, uh, I just paid 30 bucks for a single season.
+[11:34] The nice thing about it is it already matches the format for basketball analyze our.
+[11:39] And I know, you know, when I was an undergrad, I used to like.
+[11:43] Be definitely opposed to paying money for anything.
+[11:46] Um, but if you really think about it, 30 dollars is very cheap.
+[11:50] For the amount of time you have to spend to find the play by play data and then any editing you'd have to do to get it into this package. So.
+[11:58] I mentioned this because I paid this money, I got to play by play data for the most recent season.
+[12:04] The only downside for you is an attendee.
+[12:08] Is I did not include this data and the GitHub website because it is behind a paywall.
+[12:12] Um, but if you want to.
+[12:15] Replicate some of the play by play stuff. I would point you to my GitHub website and see last year's presentation.
+[12:22] I used the 2017, 2018 MBA season.
+[12:25] Or, you know, just kind of pay 30 dollars, which, um.
+[12:30] You know, just think about your time here, it might might be worth it.
+[12:34] So this is this is just a quick aside about how to get data, which, um.
+[12:39] Yeah, of course is a very important part of.
+[12:43] Doing some cool analytics. All right, so, let's, uh.
+[12:49] Let's start to get into it. We'll dip our toe here into some.
+[12:53] Some basketball analytics, uh, these are not, um.
+[12:58] I guess what I would say, sexy by the machine learning criteria and stuff like that, but.
+[13:03] This is really this is a paper, um, from 2007 and if you are a fan of a.
+[13:10] Usps dot com, you read some of their stuff you might recognize Kevin Hilton, his name.
+[13:15] He was 1 of the authors on his paper. I think some of the other.
+[13:19] People on this paper have worked within the NBA some teams.
+[13:23] And this is.
+[13:26] Some early.
+[13:29] You know what they've called a starting point for analyzing basketball statistics but this is where they tried to get a little bit more into.
+[13:37] Some of the nuance of how basketball is played, and some of the rules and again, you know, looking at it from a lens of 2021.
+[13:46] Nothing here is is extraordinary, but this is kind of like the 1st step and.
+[13:51] And something like effective, feasible percentage. I'm sure you've heard if you've listened to a broadcast.
+[13:57] Uh, for an MBA game where you've done some reading.
+[14:01] But it really just takes into consideration that. Well.
+[14:04] Some field goals are worth 2 points so we should take a weighted average.
+[14:10] Of your makes where, you know, if you shoot 50% from 2 point.
+[14:15] Territory it is not as valuable as shooting 50% from 3 point territory.
+[14:21] So, just something simple like, this was actually like a start of, um.
+[14:27] A huge change in the way the MBA was played and I think most people are aware of this. If you're at this conference that.
+[14:32] A lot of teams emphasized 3 point chats and it really just kind of starts with like, a slight adjustment.
+[14:38] Of something as simple as feasible percentage, rather than just take all the makes or the misses.
+[14:43] Think about waiting it where you give more valuable makes more weight.
+[14:49] And, you know, similar stuff here, like, turnover ratio.
+[14:53] How many times do you turn the ball over versus how many possessions you have.
+[14:57] And then you can look at this defensive side where you just flip it around.
+[15:01] These subscription is, you could think of it like your team. You could think of the O, like, opponent.
+[15:06] And then other things like rebound percentage, you know, how many rebounds are you grabbing.
+[15:11] And how many opportunities for rebounds are there?
+[15:14] Again, this is, this is right, this is a little bit different than just counting the number of rebounds.
+[15:20] And free throw rate, you know, how many free throws are you making? Not just attempting are you making versus how many shots you take.
+[15:28] And some of these things can be very useful because there are measures of like, efficiency.
+[15:33] How efficient is your office? Are you taking the most valuable shots?
+[15:39] Are you avoiding giving a, by the way? Are you good at finishing possessions and getting rebounds?
+[15:44] Are you taking, you know, are you putting yourself in position to make free throws?
+[15:50] On the opposite end, are you putting yourself in position to give away a lot of freedoms?
+[15:54] So, I just put this here because.
+[15:57] You know, when you hear sports analytics, you might immediately default to some of these, um.
+[16:02] You know, very detailed, even exotic looking like visualizations.
+[16:07] And we'll certainly do that today, but don't don't forget that some of these, like, foundational things just doing this, taking the ratios.
+[16:14] Being a little bit more thoughtful about how you present basic information.
+[16:20] Is is still analytics and can still be very useful.
+[16:27] So, we're going to get into the case studies here and, uh, these are just these are just warm ups.
+[16:32] Just to kind of get our our, I guess I'll say our analytical juices going. Um, and to highlight, of course, the basketball analyze our package. So this is just a basic chat chart.
+[16:44] Output a few things right away. You can see like, the package gives you this nice outline of a basketball court.
+[16:52] And then it creates the, um, there's like an X Y, coordinate.
+[16:56] Underlying it here and it measures all the, uh.
+[16:59] The shots this is built with play by play data so you'll need to either, um.
+[17:05] You know, get access to that data set for the most recent season, or focus on some of the other seasons. But this is.
+[17:11] A collection of every shot taken, and you can also keep track of makes it misses.
+[17:18] And you can sort by play, so I've given you a little bit of time to look at this and think about.
+[17:24] You know what player this might be in the MBA.
+[17:27] And for the sake of time here, this is.
+[17:32] Well, if you look at this, you know, this is someone who obviously shoots.
+[17:37] Pretty much only near the basket does not take a lot of 3 point chats.
+[17:40] You see this at 1st glance, you might think that this is.
+[17:44] You know, like a center, someone who plays closer to the basket.
+[17:47] But this is actually a Ben Simmons chart chart for the most recent season.
+[17:53] If you're if you're not familiar, Ben Simmons is, uh.
+[17:58] Is a guard actually, he plays it the ball a lot.
+[18:01] On the 70 Sixers and, you know, I think if you're if you're anywhere close to basketball.
+[18:07] You're pretty aware that, uh, there's been.
+[18:10] You know, some, uh.
+[18:13] Commentary that he would be.
+[18:17] A different kind of player if he was more willing to shoot from outside.
+[18:21] And I think you can kind of watch it you can kind of look at it, but when you actually see the chart.
+[18:26] I mean, Ben sentences a player who really does not shoot.
+[18:29] From outside, you know, it's known as the pain very often at all.
+[18:34] So.
+[18:37] A picture can really convey something a lot differently. So this is this has been.
+[18:41] Now, this very different shots, um.
+[18:45] You see, certainly a lot more 3 point attempts. Um, there seems to be.
+[18:49] You know, a decent amount of blue out here, but there's also some red here too.
+[18:55] This looks like a pretty good 3 point shooter, you see tons of shots in the mid range. And the thing that stuck out to me, right away is tons of mix. This is this is someone who makes a lot of mid range jump shots.
+[19:06] And, of course, tons of shots near the rim.
+[19:09] Certainly a very different shop profile than player. 1.
+[19:13] Been sending this, and this particular player is Devon Booker. So.
+[19:19] Devon bookers on the Phoenix sons he's known as somewhat of like a mid range. Very, very elite, mid range score.
+[19:26] You can you can see that here. There really isn't.
+[19:29] A place on the floor that he shoots from, that he does not shoot very well.
+[19:36] And I say that, I guess in the mid range, and we'll actually we'll look at another way.
+[19:42] To look at, um, Devin bookers kind of shop profile.
+[19:47] Um, later on in this presentation, but this is certainly very different. So.
+[19:51] Again, this is not super fancy stuff, but you can see right away.
+[19:55] You have a huge difference between 2 players 3rd player here.
+[20:00] You could see pretty much takes 3 point shots.
+[20:04] And shots at the basket, almost no mid range attempts.
+[20:08] So you can see here if if you, um.
+[20:13] Some of the analytics we'll see later about, uh, like, expected points by shot distance. You could see this is a player who's heard.
+[20:21] That taking midbrain shots is not an efficient shot for most players.
+[20:26] And this is a player who kind of abides by that.
+[20:30] So this is a chat chart for James hard.
+[20:34] And I, I think what I would, what I take away from this is so this was last season. So this is kind of partway on the rockets. But then mostly on the nets.
+[20:46] Is I think, you know, we give a lot of credits sometimes to like.
+[20:51] General managers, front offices about determining what's an efficient shot and implementing a strategy. But I think sometimes.
+[20:59] We don't give a lot of credit to the players for really understanding.
+[21:03] What is a really officially to play basketball and, um.
+[21:08] You know, there's, there's been a lot of stuff said about James harden, but I, I give him a lot of credit because.
+[21:15] He's someone who I think, you know, really understood what, um.
+[21:20] What the rockets are talking about and they are talking about trying to play efficiently.
+[21:23] And he's, he's doing the hard part, right? He's actually doing it on the floor and you can see a chart like this.
+[21:29] This is like an sports analytics right? Dream shot chart here.
+[21:34] Right. You're just taking efficient shots going to shout to the rim.
+[21:38] And threes, um, so very different player profiles. These are all guards they play very differently.
+[21:44] But I think, again, super easy to to get this up, and you can plug in your favorite player, you could do a comparison of a ton of different players. You could really start playing around this. So.
+[21:55] And there's different versions of fat charts, you can implement, like, a time factor. How much time is left in the shot clock. You can include percentages.
+[22:04] This is just something to started with so.
+[22:09] Switching gears this is, um, much.
+[22:15] Much different type of analysis and I did this a little bit last year, but I'm going to kind of dive into it again because I, I think it's neat and we've updated it.
+[22:23] With the most recent player information.
+[22:27] So, what we're trying to do here is.
+[22:32] Compare players who are similar.
+[22:37] And this, this sounds, you know, like a reasonable goal something we might be interested in.
+[22:43] And there's a lot of different ways to get at what we are going to try something called multi dimensional scaling.
+[22:50] And, um, this is a pretty.
+[22:53] Fancy sounding term, but what you're trying to do is reduce dimensionality.
+[22:59] And your data set, so I know there could be a wide range of people with physical backgrounds on here. But I think the thing that helps me internalize this a little bit.
+[23:08] As if you've taken, like, a linear algebra class, and you have your Matrix, and you have some vectors and your matrix.
+[23:15] Potentially some of those vectors are redundant, right? They're linearly dependent on other roads.
+[23:21] So this is a way.
+[23:24] To do something sort of similar to try to remove.
+[23:27] Information that is not.
+[23:31] It's like redundant and in particular.
+[23:36] You are starting with, like, uh, a vector of variables. So it might be like, in our case rebounds shots.
+[23:42] Assist steals whatever you have a full vector size.
+[23:47] For 1 player, you have another player who has P entries.
+[23:51] And you're going to come up with some type of metric to measure the distance between the 2 players.
+[23:57] Now, there's a ton of different distance metrics out there and then if you think about it, you have however many players say it's 100 by 100 you're going to have a huge matrix, right? You're going to have like.
+[24:09] Steph Corinne. Lebron James are going to have a distance. Um.
+[24:13] Janice enter the combo is going to have a distance with Joel and versus.
+[24:17] You know, Chris, Middleton, whoever so.
+[24:21] What we're using is is a pretty standard measure of distance you put in distance again, you think about what's going on here and you have 2 P vectors.
+[24:29] You're taking the difference between each terms. So, like, 2 players assists.
+[24:34] 2 players, rebounds, 2 players, um, you know, steals whatever.
+[24:38] You're taking a square sum and then you're taking a square root.
+[24:41] A couple things to think about what a distance is, it should always be positive. Right? You can't really have a negative distance. We've, we've ensured that with taking the square root and squaring a bunch of terms.
+[24:51] And there's a couple other properties you need to satisfy. I won't get into too much of the details.
+[24:56] But you can see right away that this is something that takes.
+[24:59] Uh, a p input vector and tries to turn it into a single number.
+[25:04] And that's kind of the goal right? You're trying to reduce the dimension. You're trying to turn.
+[25:09] A vector of, uh, peace statistics into some type of single number.
+[25:15] Now, in our case, um, well.
+[25:19] Generally speaking, you're starting with P. you're trying to get down to.
+[25:23] Uh, we're trying to do a data data visualization, so Q really has gotta be either, like, 2 or 3, or it's gonna be really hard to see.
+[25:30] Or even 1, I guess, because you can compare the size of.
+[25:35] Numbers and, um, there's there's.
+[25:39] A lot of different ways to measure how effectively you've reduced.
+[25:43] The dimension, we're using something called stress index.
+[25:47] And basically, that says, you know, how much information.
+[25:51] Do you still have versus what you started with? And how many did you how much did you lose.
+[25:56] So phrase differently we have 0% here is a perfect fit.
+[26:01] That would happen if these P vectors.
+[26:04] These data points where all the same right? Because then they're all redundant.
+[26:09] So, you're not really losing anything by taking out all of the.
+[26:14] You know, genuinely linearly, dependent information.
+[26:19] So, you just want to avoid getting a stress above 20% because then you're really kind of changing the information too much.
+[26:27] So, I know it's a super fast introduction. I think something, you know, more interesting is if we actually do this.
+[26:35] We end up with this 2 by 2 plat of all players from last season.
+[26:40] Who played over 5,500 minutes and R.
+[26:44] Vector of stats is 8 dimensional. It's total points.
+[26:49] three's made twos, made rebounds, assist turnovers, steals and blocks.
+[26:54] So, we could spend a lot of time looking at this. I think this is a really neat.
+[26:58] Display I am going to.
+[27:04] Talk about a few things I I think are interesting. Um.
+[27:07] 1st of all, I think, you know, players who, um.
+[27:14] Because I'm getting a question, what are the axes measure again? So.
+[27:18] That's that's a great question. It's, it's, um, there's a question about what, what do these represent.
+[27:24] And it's, it's actually kind of hard to interpret what exactly is plotted here.
+[27:30] The goal is, you have an 8 dimensional input.
+[27:34] And then you're turning that 8 dimension into some 2 point coordinates.
+[27:39] And the theory is, if 2 players have a very similar.
+[27:44] Vector here of points. three's rebounds, et cetera.
+[27:48] They're going to be plotted close to each other so you're trying to go from 8 dimensions to 2.
+[27:54] So, it's, it's hard to, to, to say exactly what this is other than, like.
+[28:00] A scale of difference so someone like a, you know, Russell Westbrook.
+[28:04] Is gonna have, um, very high numbers in probably a lot of these categories.
+[28:09] So, he gets assigned this coordinate versus, you know, like a Jimmy Butler.
+[28:15] And you try to use this to say these 2 guys.
+[28:18] Are this different relative to another 2 guys so.
+[28:24] You're kind of getting on 1 of the things I wanted to talk about, which is.
+[28:28] You got to be a little careful at the interpretation here and, um.
+[28:35] Follow up question do you use dimensionality reduction?
+[28:39] I, I'm going to I might save that question for a little bit later, um, to.
+[28:45] To kind of dive into a little bit more. I want to make sure to focus on the material. So I'll save that question for later. Richard.
+[28:55] Now, we have all the players thrown up in front of us.
+[28:59] Okay, um, at 1st glance.
+[29:03] You see some players that stand way out and generally speaking.
+[29:06] Uh, these are players that are like, all all MBA level players.
+[29:10] So your 1st instinct might be okay these players.
+[29:15] Are excellent, right? Like Nicole.
+[29:22] Topic was the MVP, right? Um, you have, like, uh, stuff, Curry, et cetera.
+[29:29] But you also have, like, a different side of players that stand up, like a realms the well.
+[29:35] Really go bear these are players that might be more focused on whether it's defense or they only shoot at the basket or.
+[29:44] Focused on rebounding things like that. So it's, it's not quite like a measure of.
+[29:50] How quote unquote, good or excellent of players.
+[29:55] It's just a, it's just a way to try to get everybody up here.
+[29:58] In front of us and look at how players might compare against each other.
+[30:02] Are they similar or not, you know, is like, um.
+[30:08] Damien little or instead Curry, right? This is kind of sniff test. Are they similar? Yes. Right. They both take a lot of 3 point shots. They're both excellent. Excellent 3 point shooters.
+[30:17] So this kind of helps you, um.
+[30:21] Hopefully, the interpretation, I think where something like this could be really useful.
+[30:26] Is if you were thinking about maybe making a trade or or trying to find a certain play so if you're.
+[30:34] 1 of the examples I use say, you're a general manager of a team you want your defense to be a lot better. Well, I know.
+[30:41] Rudy go bear is an excellent defensive player. It's very hard to get where to go. Bear.
+[30:48] But maybe I can get a player that's sort of similar to Rudy.
+[30:52] And the guy that jumps out is clean capella and.
+[30:56] I think the other thing you can try to overlay with this.
+[31:00] Is, um, some of the salary information.
+[31:05] So, again, I'm, I'm not trying to.
+[31:08] Uh, say, 1 player is worth more than another 1.
+[31:12] I'm trying to make the point that you have players that are similar.
+[31:16] Maybe you can find like, a market inefficiency, so to speak.
+[31:22] And if you compare the salaries of, like, a Rudi go bear.
+[31:28] He's making 41Million dollars a year, just on average.
+[31:32] And when i1st did, this was making it, and he actually signed an extension. So, maybe maybe his agent saw this presentation or something. But.
+[31:41] You can see there's a difference in their pay and they are kind of similar.
+[31:46] Right. I'm not saying they're as good, but.
+[31:49] This is something you could try to do to, like, approximate another player.
+[31:53] Um, some other ideas of things to think about.
+[31:56] So, you know, this is another comparison here um.
+[32:00] You see, and Julius Randall, they're very close together. Um, again, I'm not making the case that.
+[32:08] These players are, uh, the same they're as good.
+[32:12] But this kind of, I think highlights that julie's Randall really had an exceptional season.
+[32:18] Right if this is where he's coming, and if you're the next.
+[32:22] You know, maybe it's obviously it's very hard to get a Luca. He's 1 of the.
+[32:28] Be the best players in the league, but maybe you can try to approximate him.
+[32:32] With, like a Julius Randall, and then that difference in their salaries that 10Million, maybe you can.
+[32:39] You know, use it somewhere else to try to.
+[32:42] Maybe make the case that okay if I can have it Julie Randall.
+[32:47] At 30Million player Y, at 10,000,000.
+[32:50] I can get similar value to like a Luka at 41,000,000.
+[32:56] Maybe something, I think it could be cool. Hallmark.
+[33:00] Is you know, and.
+[33:05] julie's Randall are very close together, but they're still in some ways. Very far apart. Right? I think, um.
+[33:13] Most people would given the choice between the 2. you might.
+[33:18] Lean towards Luca, and maybe you could do some additional analysis to say, what's that difference between the 2.
+[33:25] It's 1 thing for 2 players to be close, but if you have 2 very, very good players, and 1 of them is just a little bit farther.
+[33:32] It's like that extra little bit. That's really, really valuable. Um, it's just something to think about.
+[33:38] Another thing I thought was interesting if you take another 2 players that are generally considered pretty similar. I'm getting a little bit more into the weeds here.
+[33:46] But, like, uh, a Duncan Robinson, right? Kind of a 3 point specialist on the Miami heat.
+[33:52] A buddy healed also a 3 point specialists, but on the Sacramento Kings.
+[33:56] You can see they're pretty close together.
+[34:01] But, but healed makes a little bit more for season than Duncan Robinson.
+[34:06] And again, 1 thing you could try to argue with analysis like this, you'd have to really get into the details, but.
+[34:14] Because buddy healed plays in Sacramento.
+[34:17] And Duncan Robinson plays in Miami maybe this is like the premium.
+[34:22] That smaller markets have to pay to attract similar players. This is like the upcharge.
+[34:28] That the kings have to play, have to pay for a similar player.
+[34:31] Because they plan Sacramento versus Miami, it's just 1 theory you'd have to really dig into this.
+[34:37] And try to get at, but I think there's a lot of like, interesting questions that just come from.
+[34:43] 1 display like this a few words, a caution.
+[34:47] I think you have to be careful with the interpretation and this is, uh, the question that Richard had a little bit.
+[34:52] Earlier go and just basically saying, what are what are these access measuring.
+[34:59] And the punch line is it's kind of like a made up.
+[35:04] Made up measure of this, it's not made up, but it's based on a formulaic way to compare it. 2 things.
+[35:10] So you want to be a little bit careful for a couple of things 1st, of all.
+[35:14] You see a player like TJ McConnell down here he's pretty close to stuff.
+[35:19] Now, I'm not, I think most people would prefer Steph created TJ in the con.
+[35:24] So 1 thing you have to do, when you see, this is you have to do like, this initial sniff test why is this player?
+[35:30] Coming up like this, my understanding.
+[35:34] Is when I go, because I actually wondered this when I dug into it a little bit is, uh, TJ McConnell is actually remarkably efficient.
+[35:41] He, he really takes shots that he makes. He doesn't shoot at a high volume. Doesn't play the same type of minutes as it's definitely.
+[35:48] Obviously, but he, he shoots a very high percentage from the mid range.
+[35:52] He doesn't miss a lot. He gets a lot of steals.
+[35:56] So, he's actually kind of a similar.
+[35:59] Similar efficient type of player as a staff Curry, but the volume is way different.
+[36:05] So you want to be a little bit careful about that also obvious things. Like you'll see LeBron James is name, kind of buried in the middle of all of these players.
+[36:14] And, you know, I think if you, if you follow the MBA close last year, LeBron James missed half the season.
+[36:21] So, in some ways, it's kind of remarkable that he, he missed half the season yet was still.
+[36:27] Basically, an average MBA player, um, but you obviously we'd want to know something like that, because this is on a cumulative.
+[36:34] Type of level, so just just small stuff like that, but there's, there's a lot of really interesting things to look at this.
+[36:42] So, you can try to find your favorite player on here you could try to make the case for your player versus another player.
+[36:49] I know if you're on here last year, I think I compared like, tray young to Lou Williams, which.
+[36:56] Is not not looking great right now. Uh, but if you're a big tray young fan, you could really use this to say, like, hey, look at the players he's grouped with Chris Paul.
+[37:04] Like, is is very, very good.
+[37:08] Or a very, very impactful player maybe that's a better way to say it.
+[37:13] So, I think there's really neat stuff and I spend a long time. I want to make sure we get to some of the other stuff, but.
+[37:19] You know, I think this is this is pretty okay, so this is, um, a little bit different. This is network analysis so.
+[37:29] This is, um.
+[37:32] We are trying to basically plot a system so, um, you know, there's a lot of different types of network. There's obviously things like the Internet phone networks.
+[37:43] You could think about like, traffic right? Like traffic flows through intersections and certain highways.
+[37:49] And you might want to measure how many cars go through at a certain time, or what might cause accidents.
+[37:54] Um, but you can also think of like an MBA team as, like, a network.
+[37:58] And each player is a node, and because we have play by play data.
+[38:02] We can see who passed to who before they scored.
+[38:06] So, you get an idea of kind of how the ball might flow around.
+[38:11] Within an MBA 18, so.
+[38:15] Again, this is a high level review.
+[38:18] But you take the play by play data, you look at.
+[38:23] Players who, uh, so this is what an output looks like. This is the Miami.
+[38:29] You can see the arrows identify who passed to who before they scored.
+[38:35] And you can see the number of assists, so when it's red.
+[38:40] That means these 2 players connected a lot. So, 1 thing, I think is really interesting. This is the Miami heat. You basically see 2 major nodes.
+[38:49] You see a Jimmy Butler, you see a bam out of bio.
+[38:52] So their offense really runs through these 2 players.
+[38:55] And it's it's a little bit egalitarian split between these 2.
+[38:59] You see some like a Duncan Robinson, right? We talked a little bit about him. He's a 3 point specialists. You could see arrows pointed at him.
+[39:07] He's the recipient of a lot of assists and that that is something you'd, you'd expect to see.
+[39:11] Kind of similar with a Tyler hero.
+[39:15] Someone like a bam, right? He's got arrows going out in that and towards him. So he's someone who finishes plays. He's also someone who initiates often same thing with like a Jimmy Butler.
+[39:25] So this is this is kind of interesting and maybe so much.
+[39:29] It's, it's not too too informative for for 1 team.
+[39:34] But I think when you start comparing teams, so this is the Dallas Mavericks.
+[39:39] And you can see their entire offence basically, is everything runs through him.
+[39:45] All the arrows start here and they go out towards different players.
+[39:48] And he is the number the number 1 feeding assist mechanism in the system.
+[39:55] For this offence very different than the Miami heat.
+[40:00] And, you know, for this particular player, I think most people just by watching, you could say, wow, who really has the ball out, but sometimes seeing it like, this really highlights.
+[40:09] How much this 1 player is doing for this offense.
+[40:13] And certainly, it can help you kind of game plan.
+[40:16] For the 2 different offices, you're going to have to think very differently about a Miami Heat type off.
+[40:21] Then a Dallas Mavericks hip offense, and you can, of course, do this with your team.
+[40:26] And you could try to figure out what things look like and it's just, it's just a way to visualize what you might see on video. And even a huge, you know.
+[40:35] Kind of data set mission you can kind of get up here.
+[40:38] Quickly now, this is, um.
+[40:44] Something else I did last year, it's kind of been updated.
+[40:47] I think if if you again or even like a.
+[40:51] Peripheral fan the MBA you've heard somewhat of the, this idea of taking.
+[40:56] Where, if you aren't familiar with this, basically, the MBA tries to create equity among the teams.
+[41:03] By if you were a team with a very bad record.
+[41:07] You have a higher probability of getting a very high traffic.
+[41:10] For the new level of amateur players coming into the.
+[41:14] The theory being, you know, you have 1st choice and you could try to get a better player and That'll balance out the team's.
+[41:19] Now, some teams have pretty much.
+[41:23] Decided that trying to get a very high draft pick and getting a player in the draft is our best hope.
+[41:29] Of becoming like a very, very good team and, um.
+[41:33] They almost update they basically try to lose games on purpose.
+[41:38] And, um, you know, I'm, I'm making fun of Sam hinkie here. He's kind of become like the.
+[41:43] The poster child this, but teams are doing this right now. I just kind of got.
+[41:48] He was he was 1 of the 1st people to be very open about it.
+[41:51] And but it is certainly a strategy that a lot of teams used and are using right now.
+[41:58] So the reason I say this is.
+[42:02] If you're kind of, say, your general manager at a team, and you're trying to decide your direction, you know, should we focus on.
+[42:10] A cliche rebuilt, or we should should we quote unquote? Go for it.
+[42:14] You might be interested in.
+[42:18] Using statistics in particular clustering to see what might be your best.
+[42:23] Action, so what do I mean, by that? Well.
+[42:27] Clustering is a type of a unsupervised.
+[42:31] Classification unsupervised and you think of it like machine learning, whatever.
+[42:35] And basically what you're trying to do is come up with a criteria, some type of distance. Right? We've talked about this concept a little bit before.
+[42:44] Where everything within 1 cluster is quote, unquote, similar.
+[42:49] Yet different enough from other clusters.
+[42:53] Where they're separate so, um, you know, where you see this a lot.
+[42:58] Is like, uh, like, maybe image recognition or something? Um, that's kind of.
+[43:05] For example, where you're just, you're trying to classify things.
+[43:09] But we could do this with MBA teams right? There's nothing stopping us from doing that. And we can focus on those 4 factors I reviewed earlier.
+[43:17] And we can, we'll use something here called K means clustering. There's a lot more details in chapter for.
+[43:24] Of, uh, the textbook I, I referenced.
+[43:27] But we can, we can cluster teams together.
+[43:32] So this is gonna it's based on the 4 factors.
+[43:36] A couple things to get our bearings. These are points that your team scored. So if you're in this quadrant or on this side, you didn't score a lot of points.
+[43:45] This is points that your opponent's scored, so if you're down here, you have a good defense. If you're up here, then you tend to give up a lot of points.
+[43:52] And the other thing I think is neat is the size of the ball is how many wins you had so you can see, like the bucks the nets, the jazz.
+[44:01] They won a lot of games, um.
+[44:04] Houston rockets won, so a few games you can't even see their ball.
+[44:07] And other teams had had smaller amounts of wins.
+[44:11] And then you also see the colors so, uh, apologies for anyone who might be, um.
+[44:17] Colorblind are not able to see the different colors, but.
+[44:21] There is, uh, like, I guess, a pink or a purple color here, there's a red.
+[44:25] There's green, so you can kind of see who your team has been clustered with.
+[44:30] And this, this is all about this. This is.
+[44:35] A list of the clusters, and we'll talk a little bit more about this.
+[44:39] But you can see, like the Brooklyn next the Milwaukee bucks, Utah, jazz, Ellie Clippers they were all in 1 cluster. You might think of this as the quote, unquote, best, the best teams in the MBA.
+[44:49] Um, you could see kind of secondary clusters like the.
+[44:55] New York Nick's Lakers 76 years now gets hawks grizzly Celtics.
+[44:59] So someone like this, you know, I'm a Knicks fan, I could make the argument. Some people think the next.
+[45:04] It's kind of a fluke they want more games, and they would have an otherwise normal season, whatever.
+[45:10] Something like this based on the 4 factors based on the way they play would suggest well, they're clustered with teams like the Lakers, the 76 dollars and nuggets.
+[45:18] You know, the hawks with good teams. So, maybe they are a good team.
+[45:22] On the flip side, you might look at this if you're the Washington wizards.
+[45:27] You want a decent amount of games, right? You have a decent sized ball.
+[45:31] And you're clustered with.
+[45:34] Uh, some teams that basically are trying to lose on purpose.
+[45:37] So this might point out to you that, hey, you might be, um.
+[45:43] A little bit careful about what you decide to do like, maybe you 1 more games.
+[45:47] Because of luck, or you got a little bit of a favorable bounce here and there.
+[45:51] And, um, actually, you know, I don't know if the wizards maybe did something similar, but they, they traded Russell Westbrook.
+[45:57] So, maybe they, they also view themselves more of like a rebuilding key. I don't know.
+[46:02] I got a question here. Very good question.
+[46:05] From gentile are the Chicago Bulls the green color.
+[46:10] Answer yes, so you see the nets clippers, Box, jazz and the bulls all in the same cluster.
+[46:17] So, I thought that was pretty strange and, um.
+[46:21] I would give you 2 kind of ways to try to interpret that.
+[46:25] 1st, there's no reason you need to pick 5 clusters.
+[46:29] That's 1 of the tricky thing about K means clustering. You need to decide, Kay ahead of time.
+[46:35] And there's actually some, I'll give this kind of his homework open, ended homework. You need to.
+[46:40] There's a, there's a number of different ways.
+[46:44] To evaluate whether you have the quote unquote, right? Number of clusters.
+[46:48] So sniff test might say, I don't think so, because I have the bulls with the nets and the bucks, you know, whatever.
+[46:55] Now, bulls fan might say, well, wait a minute, you know, maybe it's just we played really well. We just got really unlucky. We had some injury you luck and maybe we are actually much better.
+[47:08] And if you look at the bowls off season, they did make, they signed, I think, lends a ball tomorrow to Rosen. They are quote unquote going for it. They're trying to be a better team and.
+[47:19] I certainly want to give team's credit for trying to win.
+[47:22] Versus, like what's going on with the icon city thunder.
+[47:26] But that's, you know, that's my own soapbox. So.
+[47:31] Um, and I'm getting, um, a couple of questions here, what I want to do is to try to wrap up in the last couple of minutes and then if it's all right, I'll, I'll answer some of these questions at the end.
+[47:41] And we can come back to this, but this, this is something like, you could change the number of clusters. Maybe you do 2 clusters, try to see what the play off teams should be versus non teams.
+[47:52] See, if any team got lucky, not unlucky you could see where your favorite team is.
+[47:56] And kind of decide if you're general manager is taking the right strategy or not.
+[48:03] Okay, kind of the last idea here is this, um, this idea of expected points.
+[48:09] So, again, I know there might be a wide range of of people with physical backgrounds here.
+[48:15] We're going to do something called expected points and that's based on this idea of expected value.
+[48:20] And basically, expected value is a weighted average in a discrete context of.
+[48:26] You take the probability of your event times, the value of that event.
+[48:30] So, you know, very loosely speaking, very basic if we, if we talk in terms of, um.
+[48:37] A player shooting a ball, right? 2 point shot. You have 2 outcomes either. You make it.
+[48:44] Or you miss it, and if you make it, you get a value of 2. if you miss. Of course, you get a value of 0.
+[48:50] If you're a 45% shooter, then your expected value.
+[48:56] Is the probability of a make times to plus the probability of the miss in this case time? 0.
+[49:02] But there's no reason it has to be a 0, right? This could be a bunch of different numbers.
+[49:07] And on average this player, which would get 0.99 points.
+[49:11] Per shot so.
+[49:16] This is a plot of your expected points.
+[49:20] By shot distance and I picked a couple of players from the MBA finals. These are regular season stats, but I want to spend just a minute talking about this.
+[49:29] You can see right away if you're close to the basket.
+[49:32] Very efficient and then you see this big mid range, the.
+[49:36] And then right around, I think it's 23 feet.
+[49:39] 9 inches is the 3 point line and you could see it as pop.
+[49:43] And expected points, this is if you've heard people talk about why a mid range shot is not efficient, and why everyone is trying to take threes and shots the basket. This is why this this bump here.
+[49:55] I'm sure, you know, years ago, whatever the sum of the 1st teams were, the Houston rockets.
+[50:01] Even like the 7 seconds or less Phoenix Suns, they had some semblance.
+[50:05] Of this type of graph a couple of things I think are really interesting. 1st of all. I think the COMPO.
+[50:11] Uh, look at this, he's getting almost 1.6 points per shot when he's at the rent, which is unbelievable.
+[50:18] And this is kind of, you know, what everyone talks about, where you got to keep this guy away from the rim.
+[50:24] This is an unbelievable level of efficiency might be 1 of the best shots of basketball. Yannis is close to the.
+[50:31] Other things that are neat. Well, and then, of course, you see a big drop for Janice. Um, so they.
+[50:36] You know, when people shake their head, why is he taking a 3 point shot? This is why.
+[50:39] You know, you're down here versus up here.
+[50:44] And, uh, 2nd thing is.
+[50:48] You see a couple players here. This is dev and Booker. We talked about Chris.
+[50:53] They're kind of much more efficient in the mid range. It's almost not too bad of a shot for them.
+[50:58] In fact, uh, Chris Paul midbrain shot is certainly more efficient.
+[51:03] Then like a 3 point chat. Um, so it's not every player and some players are much more efficient in the mid range.
+[51:10] The last thing I highlight, and then I'll try to take some questions.
+[51:14] Is you look at Devon Booker here? So dev Booker very efficient in the mid range.
+[51:20] But then kind of a little bit less efficient from 3 point.
+[51:23] And the reason I just want to highlight this is, I remember.
+[51:27] Watching the MBA finals as a, um.
+[51:31] Someone rooting for the walkie bucks, and I used to get so frustrated because I felt like the bucks kept leaving them and book are open from 3. 0.
+[51:38] And my guess would be they saw something like this and they realized that a Devin Booker 3 point shot.
+[51:45] Is actually for him less efficient than a mid range.
+[51:49] So, had I seen this, I would have been, you know, less frustrated.
+[51:53] So, again, I think most people have some semblance of this of this kind of shape.
+[51:59] Um, from, uh, just kind of listening to basketball, but here is a really.
+[52:04] A way to see it and, uh, just to quickly wrap up.
+[52:08] And I'll take some of the questions that I that I see in the chat here.
+[52:13] Um, you know, this package, I think it's great, gets you up and running very quickly.
+[52:18] Don't overlook, you know, getting data. This is like a hugely important step and making sure it's good data and cleaning it.
+[52:27] Um, take those computer science classes, take those database management classes.
+[52:31] Make sure you're very comfortable in manipulating data, especially if you're targeting, like, an entry level job don't don't overlook.
+[52:40] This step here cause, you know.
+[52:43] The statistics looks great, but if your input is not good.
+[52:46] Then you obviously don't have any meaningful results.
+[52:51] We talked about some of the case studies, um.
+[52:54] My contact information, if you jump out to my website, you can find my email.
+[52:59] Happy to take questions if you want to get into anything more or.
+[53:03] You think of a question later feel free to contact me.
+[53:07] Start with the website and the very last thing I would say before I take some questions is.
+[53:11] 1, other big part of, I think, sports analytics in general, but particularly basketball.
+[53:17] Is taking the effort to learn the nuances of basketball.
+[53:22] Try to learn like, basic stuff like the rules, but even some of the strategies different teams employee.
+[53:29] Try to get familiar with the lingo, like dribble hand offs and.
+[53:34] You know, different what they call sets or plays.
+[53:38] And being able to speak that language, I think is going to make your statistical analysis that much more powerful.
+[53:44] And something, uh, that someone might be more receptive to, um, so try to hang around.
+[53:50] Whether it's, you know, your your basketball team at your local school um.
+[53:54] Maybe, they'll, they'll kind of let you sit in on some practices or whatever, but just don't discount.
+[53:59] Spending some time to learn about basketball itself.
+[54:03] And That'll really make you a well balanced sports analytics type of person.
+[54:08] Okay, so that's I want to. Yeah, thank you for anyone. Who's going to drop off now I do have some questions I'm going to spend time with, but thank you so much for coming today. Feel free to contact me with questions.
+[54:19] Afterwards or anything else. Now, a few questions I, I missed.
+[54:24] Welcome to throw them in the chat.
+[54:27] Let's see, I think, uh, 1 question I want to talk about.
+[54:33] I got a question on the clustering, um, from.
+[54:36] Richard, what factors determine what cluster a team is in seems like the wins and points scored and giving up aren't huge factors in this.
+[54:45] That's true. So this is this is based on the 4 factors.
+[54:49] If you remember way early on this.
+[54:55] So, these, these are like the metrics for each team.
+[55:00] And so, 2 teams would be similar if they have similar effective field what percentage? Similar turnover ratios similar ribbons.
+[55:08] Percentage and free rate. So the reason I do this is.
+[55:15] You're basically making the argument that sometimes wins and losses are a little bit random.
+[55:19] And you're trying to get at, like, how a team plays.
+[55:23] So this is where, again, it might be a little bit of a reach, but if you're the Chicago Bulls, you're like, hey, wait a minute if you look at, like, our, our.
+[55:31] You know, more efficient stats. We didn't Winslow.
+[55:35] Out of games that we play, like really good teams. So, um, it's actually a way to try to get at, um.
+[55:42] Try to remove some of like, the inherent randomness and things like wins and losses.
+[55:48] Um, so you're right, it is, it is not based on that and it's trying to actually.
+[55:51] You know, provide a different different perspective.
+[55:56] But I would say, too, like, teams in this cluster are teams that are.
+[56:01] Uh, don't score a lot of points and give up a lot of points and.
+[56:04] They're all generally speaking the same cluster so.
+[56:08] It's not like how many points you gave up and, um.
+[56:12] Your opponents scored don't have some information, but then certainly, when you get, like, here.
+[56:17] You know, these teams are all pretty close, but they're all in different different colors.
+[56:22] Uh, let's see another question does he expected.
+[56:25] Points account for an N.
+[56:28] So, this this graph.
+[56:32] Does not, but when you are.
+[56:38] Thinking about how efficient a player is, you certainly want to account for free throws.
+[56:43] Because generally speaking, right a free throw is going to be an extremely efficient shot.
+[56:49] So, if you think about this year.
+[56:52] Right if I'm if I'm a staff curry and I shoot, basically, 90% from the free throw line.
+[56:57] And I get to take 3 shots say, I get followed on a 3.
+[57:02] Then I'm going to have my effective points for that are point 9 times 3 right? 2.7 points extremely efficient possession.
+[57:09] Right. That's much better than Ian is done. Um.
+[57:13] So you want to think about that, too so, I think it's a great question, but this particular graph no, this is just based on.
+[57:19] Play by play data and, um.
+[57:24] I think, uh, a shot where you're filed.
+[57:27] Would not be classified as a field goal attempt so that's something.
+[57:31] That, you know, you can even look into like, how might you adjust this?
+[57:36] For free, throw rate, um, like, someone like Yanis, not only are you shooting this? Good? But he's also getting a lot.
+[57:42] So, I think that's a very good question and maybe I'll kind of give it to you as homework.
+[57:47] Let's see, there is another question here.
+[57:53] Do you use dimensionality reduction?
+[57:56] Question from Richard is that.
+[58:00] I'll come back to this and Richard, maybe you can clarify is this like, in my personal research, or is this specific to.
+[58:06] The multi dimensional scaling.
+[58:10] So, I'll let you clarify that Richard if that's okay. Question was do you use dimensionality reduction?
+[58:16] I'm just curious if you mean me personally or specific to the application.
+[58:21] Question from gentile play by play data is obtained also by official agency. So.
+[58:31] The play by play data, there's 2 ways to get it. If you don't care if you just want to get up and running.
+[58:38] The package basketball analyze are includes play by play data.
+[58:43] For the Golden State Warriors, only for the 2017 2018 season.
+[58:50] To get to play by play data.
+[58:53] You can get up for an entire season.
+[58:57] From this website for 30 dollars.
+[59:00] That's a ton of data think about that that's play by play for every single team.
+[59:06] And it's only 30 bucks and you get a giant CSV file.
+[59:11] So, you know, I generally, I promise you, I don't make any money.
+[59:17] From big data at bald sales, but.
+[59:20] The other nice thing is, if you buy from this website, it's already in a format that you can use with this package.
+[59:30] Uh, let's see, here, how did you collect this data? Is it possible to collect the same data for another support?
+[59:38] So generally speaking.
+[59:41] It's a question from my Jan.
+[59:44] And here's kind of a quick answer. So.
+[59:49] There is, if the sport you're interested in is kind of like a major sport, like a basketball, a soccer, uh, football my guess would be there's packages out there.
+[60:00] You could also check out Lucas his workshop on downloading scraping data from the website from the Internet.
+[60:07] But you kind of want to dig around a little bit.
+[60:10] And in this case, like, there's some data available, I use this package and then you can buy data.
+[60:16] But it's kind of, if it's a different sport, you got a little bit learn a nuance that sport.
+[60:22] On the flip side, you could really take some of those programming classes.
+[60:26] And even like a language like Python, it's really not that much effort.
+[60:31] To learn how to scrape data from a website especially if it's like.
+[60:35] A well maintained website so, uh, check out Lucas his workshop. If you haven't done so already check out the recording.
+[60:42] But the best way to really get data is to be somewhat competent.
+[60:47] Jumping out there online and scraping it and, uh, you might get lucky if it's like a big sport like an MBA.
+[60:54] There might be packages that help you collect that and, uh, there's things like even things for, like, financial data by now there's a ton of packages that help you. So.
+[61:03] Hopefully, that that helps your question. Um.
+[61:11] Okay, so I think the follow up from Richard, I was referring to the plat, displaying a factors onto a 2 D plot.
+[61:17] So, this.
+[61:21] I'll I'll try to answer your question. I think generally.
+[61:27] So, here's your this is, this is for Richard here. This is your original.
+[61:32] Variable, so each player had a total points made 3 points made 2 points made.
+[61:37] So, in other words, this was your input so, each player is going to have 8. so P is 8, right?
+[61:47] And what we're trying to do is turn this 8 dimensional vector.
+[61:52] Into a 2 dimensional vector.
+[61:56] And plot it, and there's a lot of different ways to do that. And I, I appreciate the fact I'm glancing over this very quickly.
+[62:05] But that's effectively what you're doing.
+[62:09] So, if you look at, like, a Julius Randall, right? He, it looks like he's proud of that 0 negative 5.
+[62:15] So, whatever he had for.
+[62:20] Uh, this 8 dimensional stats, our algorithm here.
+[62:25] Are multidimensional scaling says well, actually, if you plot him at 0, negative point 5.
+[62:31] Relative to everyone else, you get some idea of how different or similar he is.
+[62:39] Versus, like, uh, R. J. um.
+[62:45] So, hopefully, that helps so it's it is dimension reduced, right? We went we started at 8 and now we're only in 2.
+[62:52] And right. It's very hard to plot to plot an 8 by 8 dimensional. You know, I can't even visualize that.
+[63:01] Hopefully, hopefully that helps. Uh, Richard, um, Christopher here question from Christopher. How do MBA teams.
+[63:07] Specifically, utilize this information to improve their masters.
+[63:11] Super broad question, Christopher, I tried to give you.
+[63:15] Some general ideas, how that might happen.
+[63:19] Some other examples, right? We'll look at this.
+[63:22] Maybe let's say we're general managers right? You, Chris for you and me were a general manager of your team. Our interior defense is not good.
+[63:30] Um, now something we know.
+[63:34] Right. Is really go. There is very good defensively.
+[63:38] Really hard to get him.
+[63:41] It's similar to where to go there. Think about the Atlanta hawks, right? They traded for clinical.
+[63:47] Maybe, they ran some type of analysis like this not saying they did not saying they didn't.
+[63:53] But this is somewhere you could say, okay if we can get a clinical.
+[63:57] We can get a rough approximation.
+[64:01] Uh, really go there. It's going to help our defense. Um.
+[64:05] You know, other types of things in here, you know, you try to target certain players.
+[64:10] Uh, you can kind of compare a couple, um.
+[64:13] Something like, uh, they try to give you another.
+[64:18] I mean, the major major 1, right is.
+[64:21] This plot right here. So.
+[64:25] 1 thing, I think it'd be a really interesting homework for you.
+[64:29] Is give me a James harden shot chart.
+[64:35] From, you know, when he 1st started in the week.
+[64:40] I bet he takes a lot of mid range that that'd be my guess.
+[64:43] So you could do this, get some data for James harden his early seasons. Maybe I'm the Oklahoma City. Thunder.
+[64:49] Gets to the rockets, the rocket say.
+[64:53] Hey, James look at this now, James.
+[65:02] Shoots like, this does not take midbrain shots.
+[65:06] That's the way like the player specifically they change the way they play.
+[65:10] To improve their team no some of the network analysis, like, I talked about some of the cap stuff. Um, but it, it's it's a broad questions. I know. I'm, I think I'm starting to.
+[65:24] You get a little to starting around a little bit Christopher, but hopefully, hopefully that helps.
+[65:30] Give you some ideas yeah, I think that, um.
+[65:38] That's it for the questions, you know, thank you so much. Like I said.
+[65:43] Feel free to reach out to me. I really like talking about this kind of stuff.
+[65:47] So, hopefully, this, this was helpful to, you.
+[65:51] And thanks for the time, and this will also be recorded. If you want to jump back later.
+[65:56] And, of course, don't forget the website because then you can really get started.
+[66:00] So, thank you so much and best wishes, and certainly good luck to everybody out.
+[66:04] There who's in the midst of their undergraduate studies.
+[66:08] And everything else, thank you.

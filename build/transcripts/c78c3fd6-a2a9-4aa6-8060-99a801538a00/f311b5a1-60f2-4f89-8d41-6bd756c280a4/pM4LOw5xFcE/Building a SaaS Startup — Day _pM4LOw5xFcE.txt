@@ -1,0 +1,1770 @@
+Video Title: Building a SaaS Startup — Day 1
+Video ID: pM4LOw5xFcE
+URL: https://www.youtube.com/watch?v=pM4LOw5xFcE
+View Count: 51,667
+
+[00:28] you
+[00:48] [Music]
+[00:58] kind
+[01:04] I'm going to fix the
+[01:28] microphone
+[01:45] watch visit
+[01:51] getting
+[01:58] this
+[02:25] try
+[02:26] this all right this is another try to
+[02:29] see if that works any
+[02:49] better okay good okay okay okay I think
+[02:52] I don't need the microphone then it's
+[02:54] weird this little thing [ __ ] it
+[02:58] up
+[03:08] okay okay so we're live on
+[03:11] Twitter let's see that works on YouTube
+[03:13] as well
+[03:21] okay shut the
+[03:24] up and maybe a little sorry I'm a total
+[03:29] noob when it comes to OBS so trying to
+[03:33] trying to make sure uh it's not terrible
+[03:35] for you
+[03:40] guys right can you guys let me know if
+[03:44] uh the window is a good size if uh the
+[03:49] sound is okay
+[03:58] quality
+[04:15] I do I do I do I do I have a YouTube
+[04:17] live stream if you guys
+[04:19] prefer
+[04:28] YouTube
+[04:32] think there's literally someone coming
+[04:34] in my
+[04:36] garden what is going on
+[04:39] here right I'm going to pretend nothing
+[04:41] is
+[04:45] happening back
+[04:58] and
+[05:01] and I can see normally I should be able
+[05:03] to
+[05:04] shoot don't give
+[05:06] a these are not
+[05:10] messages can I see what you guys are
+[05:12] doing okay so you know okay both good
+[05:15] everything fter Twitter is lagging yeah
+[05:19] I think that not be able to
+[05:25] improve
+[05:28] okay
+[05:31] hello everyone uh sorry it took a little
+[05:35] time well well back it's been I think
+[05:37] it's been five month without any uh
+[05:39] stream and uh kind of lacked some
+[05:42] productivity last month I didn't do much
+[05:44] and uh feel like you know going live is
+[05:47] a good way to get things done so we're
+[05:50] back uh this is uh if if you're from
+[05:54] YouTube and you have no clue who I am I
+[05:56] am marku and mostly build many startups
+[06:00] on Twitter uh I have roughly 20 products
+[06:05] uh live some of them are making money
+[06:08] most of them are not making any money um
+[06:12] and today I'm going to at least this
+[06:14] week I'm going to try to create one new
+[06:16] startup or a mini startup or product
+[06:18] whatever this is called um this is going
+[06:21] to be a
+[06:23] stripe invoice uh generator and invoice
+[06:27] Handler so the reason is uh I because of
+[06:32] my products right now I receive emails
+[06:34] from customers that want to have uh
+[06:36] invoices I get confused sometimes which
+[06:38] product they want to get the invoice
+[06:40] sometime they want to edit the invoice
+[06:41] like add their business details to it or
+[06:44] some things that uh are tricky to make
+[06:46] in stripe so the goal is to create a
+[06:49] really tiny product that's connected to
+[06:50] my stripe accounts and I would be able
+[06:53] to send a link to customers they would
+[06:55] find their invoice and if they want they
+[06:57] can edit it themselves uh my friend Nico
+[07:00] made something
+[07:01] [Music]
+[07:06] similar
+[07:09] finally don't know where this is but
+[07:11] anyway if you guys you you probably guys
+[07:13] know Nico
+[07:15] already he's made a invoice generator
+[07:18] for his um uh course and the idea is to
+[07:22] take this to a tiny uh higher level by
+[07:26] letting anyone create an account and
+[07:29] having your stripe account connected so
+[07:31] the customers can already retrieve the
+[07:33] invoice edited the way they want and so
+[07:36] this again this is absolutely unscripted
+[07:39] so I have no idea where I'm going I just
+[07:41] have an ID for the the little product
+[07:44] I'm making is going to be called
+[07:47] Zenvo already purchased the domain
+[07:51] name Zenvo it's literally someone in my
+[07:54] garden God damn
+[07:57] it the stream is already going wrong
+[08:00] there's there's someone in my garden I
+[08:01] have no idea
+[08:03] what wait I got to cut this little thing
+[08:06] I'll be
+[08:28] back
+[19:22] okay we are definitely
+[19:25] back sorry this was a disaster
+[19:31] live okay we're still alive sorry I just
+[19:33] looked it up completely the people next
+[19:36] to my house are gardening and they
+[19:38] someone took off the a tree of mine that
+[19:41] was literally going uh on their garden
+[19:44] and instead of cutting them they just
+[19:45] pull them so it's it ripped off a tree
+[19:48] that is in my garden I just had to go
+[19:51] there and make sure that uh it doesn't
+[19:53] go too
+[19:55] far all right uh okay I think think
+[19:58] everything is still fine
+[20:01] um okay cool sorry about that so I'll be
+[20:06] back
+[20:08] uh what we're we're going to be doing uh
+[20:11] I think I'm going to spend about a week
+[20:13] to build a mini product um it's going to
+[20:16] be similar to buy dispute uh except that
+[20:19] it's for generating invoices for
+[20:21] customers on stripe so um quick recap if
+[20:24] you haven't been here I have a couple uh
+[20:26] startups live um some that are making
+[20:30] money have customer support about people
+[20:33] wanting wanting to have their invoice
+[20:35] and sometimes people wants to have uh
+[20:37] their invoice edited means they need to
+[20:40] I don't know sometimes edit like the
+[20:42] business details or they forget to add
+[20:43] their business and they need to add
+[20:44] their V8 number or something uh which is
+[20:47] timeconsuming for me so I'm going to
+[20:49] build this like really tiny tool where
+[20:52] as a stripe business owner I can add all
+[20:54] my stripe accounts I will have a unique
+[20:57] link and whenever a customer ask for an
+[21:00] invoice or edit an invoice I will send
+[21:02] them the link and then a customer with
+[21:04] their email they will be able to
+[21:05] retrieve their invoices and edit them
+[21:07] and download them uh so this is inspired
+[21:10] by what my friend Nico did couple I
+[21:13] think weeks ago a couple days ago uh I
+[21:16] just went going to make this little
+[21:18] product uh I am really bad at
+[21:21] prototyping but to make things B clearer
+[21:25] um so yeah this is unscripted I have
+[21:27] nothing
+[21:28] nothing is prepared um so I'm I'm
+[21:31] literally going to build whatever I have
+[21:34] this ID in mind I have no code prepared
+[21:36] I'm going to be reusing pieces of code
+[21:38] that I have uh I just bought a domain
+[21:40] name I call the product Zenvo so it
+[21:43] would be it's uh like a easy easy name
+[21:47] to
+[21:48] remember and we are going to do a little
+[21:50] bit of
+[21:51] drawing
+[21:53] so we going to have like a try these
+[21:57] owners
+[22:00] that would be you that would be me that
+[22:01] would be anyone who has uh one or
+[22:04] multiple strip accounts and here we
+[22:06] would have
+[22:09] customers so as a strip business owner
+[22:12] sometimes I need
+[22:14] to I need to look so connect my STP
+[22:23] accounts and get a so this is connect
+[22:27] this is more like add or
+[22:29] remove accounts and get
+[22:40] a okay this is what the people will be
+[22:44] able to do and then through this unique
+[22:49] link they will send them to
+[22:53] customers and so the customer can type
+[22:56] in
+[22:58] your
+[23:04] email to retrieve
+[23:09] invoice and finally edit
+[23:13] invoice and
+[23:15] finally download the
+[23:24] invoice that is pretty much the gist of
+[23:27] it
+[23:29] this is a very simple
+[23:34] product I think we can jump straight
+[23:36] into the code uh if you guys are curious
+[23:40] how that work uh for the unique link and
+[23:42] connect the stripee account we're going
+[23:43] to be using restricted API keys from
+[23:46] stripe which will let my app request
+[23:51] access
+[23:52] to people stripe accounts with limited
+[23:56] permissions what I'm using for by
+[24:14] disputes yeah this is it so as so this
+[24:18] is another product of mine that's using
+[24:19] a
+[24:21] similar uh you know like
+[24:23] strictor here I can get a restricted API
+[24:27] key
+[24:29] and that will not I will not give the
+[24:31] service the entire access to my uh strip
+[24:35] account instead I'll choose which
+[24:37] permissions they want to give access to
+[24:41] and so in this case I don't and me
+[24:43] especially as a business owner I don't
+[24:44] want to access strap account the entire
+[24:46] strap account of my customers I just
+[24:48] want to make sure uh it's enough to
+[24:50] generate invoices for their customers I
+[24:52] want to use restricted API keys I don't
+[24:54] want to mess up with u you know keys
+[24:57] that could leak or something so I'd
+[24:59] rather use those little restricted API
+[25:01] Keys here this is
+[25:06] it okay um yeah I'm wow it's been such a
+[25:11] long time I haven't done a live stream
+[25:14] uh is everything thanks to working okay
+[25:17] it's
+[25:19] live okay we're
+[25:22] live is a part of me that doesn't
+[25:24] believe it
+[25:26] okay okay you don't see the screen
+[25:37] okay
+[25:39] code
+[25:42] must the videos on
+[25:44] YouTube get
+[25:45] [Music]
+[25:47] prefer prefer YouTube sh the
+[25:53] link this is actually my first time
+[25:55] broadcasting on Twitter
+[25:59] and this is actually pretty
+[26:19] [Music]
+[26:21] nice I doing this
+[26:26] right
+[26:29] okay
+[26:30] okay so okay
+[26:35] yeah no that's the right thing okay all
+[26:39] right time to
+[26:42] build that's
+[26:45] hard um and so I will so this this
+[26:50] entire live stream uh will last I think
+[26:53] about a week um I will go from I will
+[26:56] build the landing page
+[26:58] that will create the user dashboard
+[27:01] login users process payment with stripes
+[27:03] um send transactional emails if we need
+[27:05] to I'll go I'll go I'll do the full
+[27:08] stack thing um and I hope it can be done
+[27:11] within a week and I think I'll hold the
+[27:13] stream until we go launch on product T
+[27:16] we actually managed to get this product
+[27:18] off the ground which I don't even know
+[27:20] I'm going to give it a try um yeah
+[27:23] obviously I'm going to be using ship
+[27:25] fast um which I built few month ago is
+[27:29] going to speed things
+[27:32] up there we go
+[27:50] invoice oh and yeah one last thing I'm
+[27:53] not really good at thinking and talking
+[27:56] at the same time
+[27:58] so I might go silence for a while when
+[28:01] I'm
+[28:21] cutting this is a quick setup normally
+[28:24] so I'm going to be spending most of the
+[28:26] time here on the editor if it's too
+[28:29] small too big um let me
+[28:33] know I don't know how you see this from
+[28:35] your
+[28:43] side okay that's the code I'm going to
+[28:46] leave the screen on for just a few
+[28:47] second I will check the chat let me know
+[28:49] if if you guys can see the code
+[28:52] properly before I jump straight
+[28:56] in
+[29:10] hey we have a troll in the YouTube chat
+[29:13] make your box thing I think this person
+[29:15] should be
+[29:16] banned Manu oh we have the is the team
+[29:19] is the hero fit team
+[29:21] Manu yo everyone okay so it looks like
+[29:24] you guys can see my my screen
+[29:27] good enough
+[29:34] video yep for that I don't know we'll
+[29:36] see I guess we'll see at the end of this
+[29:39] stream
+[29:56] okay
+[30:04] all
+[30:13] right all right so there there are a few
+[30:15] things that needs to be done I think
+[30:17] we'll do the copywriting for the
+[30:19] learning page after I need to have a
+[30:21] little clue of what the product will do
+[30:23] because I might not I'm not even sure we
+[30:24] can do everything that I imagined
+[30:27] so uh I will try to build a really tiny
+[30:31] version of the product hopefully today
+[30:32] or tomorrow and then once this is done I
+[30:36] think we'll do the branding the colors
+[30:39] um and all that after I think I'll will
+[30:42] make a very tiny version of the product
+[30:43] because it's actually pretty simple so
+[30:44] I'm going to start with that
+[30:48] so go back to figma
+[30:51] um yeah one user would have couple
+[30:54] stripe accounts so yeah I think I'll
+[30:55] reuse the code from by thisp
+[31:11] okay okay yeah will need so
+[31:18] need somewhere
+[31:26] here
+[31:50] that's do we need no we don't need to
+[31:52] listen to
+[31:56] REM
+[32:17] pleas that should be enough I think we
+[32:19] don't need
+[32:26] this
+[32:34] think we don't need this
+[32:36] okay this
+[32:40] thing hey
+[32:45] um yeah in order to log in I think I
+[32:49] need to set up my environment variables
+[32:51] I'm going to be using going have to hi
+[32:53] this for a little while going to use um
+[32:57] other variables that I use for other
+[33:00] startups for
+[33:03] now making sure that I'm not lecking my
+[33:06] my
+[33:25] variables
+[33:46] okay we're back I just set up my
+[33:49] environment variables just so that it
+[33:51] can log in
+[33:55] users
+[33:59] yeah I think so we're going to get rid
+[34:01] of Google oath I think we're going to
+[34:03] sign users only with emails for this
+[34:11] one so because I have set up emails for
+[34:15] other projects I already have my
+[34:19] Parables config here I can already send
+[34:22] emails and normally if I go in my
+[34:24] mailbox I should be able to find
+[34:29] okay all right so I am signed
+[34:34] up this is
+[34:38] me right so here what we want is we want
+[34:41] to let
+[34:42] users add STP accounts so that their
+[34:46] customers will be able to search their
+[34:48] invoices for each STP accounts that the
+[34:51] business owner
+[34:53] owns um I think I built this for bu
+[35:06] this
+[35:15] one we're going to copy that button it's
+[35:18] just a little I think it's a little
+[35:19] model let me lets the user create a new
+[35:25] uh add a new
+[35:41] account oh yep I'll need that
+[35:54] thing I'm also going to create a little
+[35:56] f
+[35:57] I'll explain in details later how to
+[35:59] create restricted API keys for
+[36:02] stripe for now I need to create some
+[36:04] kind of like Le
+[36:17] helper so here what what we have here is
+[36:19] a list of permissions that when the
+[36:22] person will click on add a new strip
+[36:26] account it's going to open stripe for
+[36:29] the user and it's going to prefill some
+[36:32] of the permissions that are required
+[36:35] to get the right API key so in some
+[36:40] cases you want to be able to write uh
+[36:43] new webbook things for your customer so
+[36:45] you might need this permission one in
+[36:47] our case we won't need it um there a
+[36:50] bunch of permissions the the
+[36:52] documentation is not very clear there
+[36:54] are bunch of permissions that you can uh
+[36:55] request um I will have to think about
+[36:58] which one we request for our app but for
+[37:00] now I'm going to just create a URL that
+[37:02] is going to open strip
+[37:05] dashboard API Keys create name
+[37:10] using
+[37:13] invoice okay normally
+[37:19] [Music]
+[37:25] here
+[37:41] I
+[37:42] mess I think I imported the wrong
+[37:55] button
+[38:02] oh yeah okay Import in the wrong
+[38:05] button like
+[38:08] edit okay that's the
+[38:19] one
+[38:25] cl
+[38:37] change all that
+[38:55] later
+[39:22] we need the
+[39:25] model this is just going to be the model
+[39:27] where customer can input restricted API
+[39:41] key is that
+[39:55] it
+[39:58] user
+[40:00] credit oh yeah I think we won't have any
+[40:04] credit in this app so we can remove
+[40:21] it okay this is
+[40:25] working
+[40:29] I'm going to check if that
+[40:36] works okay there we go so what do we
+[40:40] have here so there is this uh
+[40:42] component I'm going to remove that part
+[40:45] because we don't need the entire API key
+[40:47] but here there is this link if I click
+[40:50] on it it sends the user to the stripe
+[40:55] dashboard it creates a restricted API
+[40:58] key with the name of my app already and
+[41:00] some pretty fine permissions so here for
+[41:02] charges I already if the user accepts I
+[41:05] will have write permission for charges
+[41:08] and read permission for customers I
+[41:10] think I will keep this one and then at
+[41:12] the bottom I would have to click create
+[41:15] key which will give me an API key like
+[41:18] with a bunch of numbers and then I will
+[41:20] just past it here in
+[41:24] Bingo um
+[41:27] yeah okay so now I need to make
+[41:41] this maybe I just keep the exact same
+[41:55] layout
+[42:06] all right I think here we
+[42:11] can I think there is someone at the
+[42:25] door
+[42:55] grosseries
+[42:58] is that
+[43:01] enough yeah I think it'll be enough for
+[43:12] now all right that will be enough okay
+[43:14] so we'll get the stri from this
+[43:20] for we need to save it
+[43:23] somewhere nextra
+[43:34] he working
+[43:36] yep I'm going to reuse the code also I
+[43:40] have there conect
+[43:43] strip copy past
+[43:55] tting
+[44:05] models we have the
+[44:06] [Music]
+[44:08] user we probably won't be we might be
+[44:12] using
+[44:22] this oh okay so here we we're calling
+[44:25] the stripe AP okay I need to
+[44:32] have we already have those helper
+[44:34] function no we don't have those need to
+[44:37] pick them up retrieve account those are
+[44:40] just
+[44:42] um little helper functions to um connect
+[44:46] with this do stuff with the stripe API
+[44:49] here we're going to retrieve the
+[44:50] [Music]
+[44:51] accounts make sure this is the account
+[44:54] on stripe exists and make sure the
+[44:56] account was not added by someone
+[45:02] else yeah also for Branding um it's
+[45:07] simple because I already have the code
+[45:09] but I
+[45:10] can get the logo of the user stripe
+[45:13] account so that's when the person
+[45:15] connects the when a potential C like
+[45:17] when a customer of my customers will go
+[45:19] on the page to get their invoice they
+[45:22] could see the name of the the strap
+[45:24] account the logo of the strap account so
+[45:25] we create some branding and it's already
+[45:28] here so we're going to keep it this
+[45:33] way oh okay I deleted it but I shouldn't
+[45:36] have
+[45:46] okay yeah those little thing here we get
+[45:50] them from stripe and we get the primary
+[45:52] color of stripe support
+[45:54] email information that can be helpful
+[46:00] later and then we add it to the user and
+[46:03] we save the user we
+[46:05] don't create a Web
+[46:10] book
+[46:13] and
+[46:14] works oh we have a delete function as
+[46:20] well I'm basically rediscovering my code
+[46:23] from
+[46:24] November
+[46:31] remove
+[46:35] the okay we have two functions we added
+[46:38] two functions one two API routes One
+[46:41] lets the user add a strap account to
+[46:43] their account and the other one let user
+[46:46] delete the strap account and so normally
+[46:49] if I go
+[46:51] here create a restricted API key with
+[46:55] probably the wrong permissions for now
+[46:57] but just to give it a try we check the
+[46:59] database everything is fine see here um
+[47:02] Zenvo API key was Crea I'm copy paste
+[47:06] it go
+[47:08] back be
+[47:10] here of course it's not working yeah
+[47:14] credits need to oh yeah don't about oh
+[47:19] maybe oh the payment thing I haven't
+[47:21] thought about it yeah okay we're going
+[47:22] to remove these for
+[47:24] now I don't care
+[47:28] and the key is it still
+[47:43] working oh
+[47:50] May
+[47:54] no nuts
+[48:27] oh I think I didn't put it at the place
+[48:30] yep it should
+[48:33] be oh yeah
+[48:38] okay
+[48:39] [Music]
+[48:54] user
+[49:03] yep yep
+[49:05] yep because on the user model we don't
+[49:09] have we don't have the stripe account
+[49:14] thing it this is going to be an array on
+[49:17] the user model that's going to for all
+[49:21] the IDS of every stripe
+[49:24] account
+[49:28] I think this one is going to
+[49:33] work oh okay I think yep I added
+[49:39] it this is a local database
+[49:43] MB find which those is the right
+[49:54] one voice there we
+[49:56] go so we have STP accounts we already
+[50:00] added
+[50:01] it time
+[50:08] finally all right bingo so Tri account
+[50:12] was added to the database we have the
+[50:14] restricted access token that we're going
+[50:16] to be using later to retrieve customers
+[50:19] information we have some information
+[50:22] primary color this is null because it's
+[50:25] a test account for now but later here
+[50:27] there should be the logo the primary
+[50:30] color the business name so we have some
+[50:32] information to display and we don't have
+[50:33] to get those information from people on
+[50:37] the dashboard we directly get get it
+[50:38] from stri to make it super
+[50:41] simple then normally here I have my user
+[50:44] Mark glue with Y my variable populated
+[50:49] with is it yeah it big enough know maybe
+[50:54] this is really tiny
+[51:10] hey ho hey that's the little Twitter
+[51:12] family here Andre you're my
+[51:15] friend live on yeah you could do I
+[51:17] didn't know too it's pretty it's pretty
+[51:19] nice live on Twitter and
+[51:24] YouTube
+[51:30] man I want to reply so
+[51:34] bad
+[51:37] okay so we have the database populated
+[51:41] um now we want to show the startups to
+[51:45] the
+[51:47] user going to be doing Brer or refresh
+[51:50] yeah we need to have somewhere in the
+[51:53] dashboard we need to show a link least
+[51:57] of the accounts the user add
+[52:01] added um that's it's very similar again
+[52:06] what I did before copy pass the code one
+[52:09] more
+[52:21] time data and we
+[52:24] have
+[52:56] I'm going
+[52:57] to
+[53:14] more we do
+[53:24] here
+[53:27] and here we are going to display so we
+[53:29] are
+[53:30] getting the data on it's a it's a server
+[53:34] component we're getting the data from
+[53:36] the database here basically fetching all
+[53:39] the accounts the user own and populating
+[53:42] them so we have data about them and here
+[53:45] we're going to display
+[53:54] them
+[53:56] give me some magic J here we
+[54:00] go okay here STP
+[54:13] accounts actually
+[54:17] pret oh I think we can even create a
+[54:20] component for that because the user
+[54:21] should be able to delete
+[54:24] those accounts just in
+[54:46] case new components going to call it
+[54:49] just stripe accounts is going to
+[54:52] be a display of the stripe data plus um
+[54:56] a way to delete
+[55:24] it can make to the
+[55:25] [Music]
+[55:54] dashboard
+[57:07] oh okay
+[57:15] yeah
+[57:23] okay
+[57:36] time to copy past
+[57:38] everything much
+[57:53] simpler
+[58:10] we can delete the
+[58:20] accounts
+[58:23] okay
+[58:26] have this here
+[58:28] and account here
+[58:32] okay we have a basic very
+[58:36] basic user dashboard where people once
+[58:39] they're logged in they can add rep
+[58:41] accounts with the restricted API key the
+[58:43] account appears here person can edit the
+[58:46] key I think I'm going to remove that
+[58:48] part once yeah I think I'm going to
+[58:50] remove it but anyway and delete it
+[59:17] enough
+[59:23] pict
+[59:47] okay yeah I need to buy a new internet
+[59:52] connection oh wow
+[59:55] hello everyone so
+[60:04] cool there's a chat
+[60:07] okay oh that's
+[60:09] cool it makes Twitter and YouTube
+[60:12] comments that is
+[60:18] nice it keeps buffering so maybe if
+[60:23] that
+[60:26] yeah maybe that's a restream problem
+[60:28] maybe that's not
+[60:38] actually anyway if YouTube is working at
+[60:40] least there is
+[60:44] something
+[60:53] yep
+[60:55] all
+[60:58] right
+[61:11] validation right now I'm I'm going to
+[61:14] create special link so that once you
+[61:18] have added your strap accounts you can
+[61:19] send that link to
+[61:21] customers and and we're going to be
+[61:23] building there but yeah the idea is I
+[61:26] don't know if I should make
+[61:29] a
+[61:31] link page that is statically generated
+[61:34] or a page that
+[61:35] fetches whatever let me
+[61:53] think
+[62:17] what we're going to be
+[62:19] doing okay we're going to go here we're
+[62:22] going to create a folder hold
+[62:29] p and in that folder we're going to
+[62:33] create a I think user
+[62:38] ID which will be the
+[62:42] parameter let me search
+[62:46] figma I'm going to get the unique link
+[62:48] and I
+[62:49] think we want that link to be something
+[62:53] like
+[63:02] I.P
+[63:07] s we we can change that later eventually
+[63:10] but the idea would be this this would be
+[63:13] your private link that you can send to
+[63:16] customers where they could find their
+[63:23] invo
+[63:26] right does anyone has an an idea if that
+[63:31] is better to do with this way is a uh
+[63:35] static
+[63:37] page whatever static
+[63:40] page
+[63:46] or or
+[63:48] a dynamic
+[63:50] [Music]
+[63:52] whatever I don't know how that called
+[63:55] end
+[63:56] page something like this
+[63:59] where
+[64:07] P
+[64:09] this in one case in this case the page
+[64:13] is created on the server and then it
+[64:15] sends by direct to the client with
+[64:17] already all the stripe accounts or it's
+[64:21] a page that is the same for everyone and
+[64:24] then on the clients it checks the he
+[64:27] check it checks the
+[64:30] ID here make a request to the ser and
+[64:34] when the user input the
+[64:37] email and I have so much respect for
+[64:39] people doing live when coding this is so
+[64:41] hard I cannot even think my brain is
+[64:46] numb hopefully you get
+[64:48] me if you didn't I will just move on
+[64:51] with one or the other let me check
+[64:58] literally feel
+[65:03] like yeah the recording will be on
+[65:10] YouTube I think I
+[65:14] should okay link is here if you guys on
+[65:17] Twitter uh want to see a offline version
+[65:19] of this the link is right
+[65:23] underneath
+[65:25] sta would work
+[65:27] okay last
+[65:29] boss static would work so we're going to
+[65:32] go
+[65:35] static um yeah here we go P user ID and
+[65:39] here is going to be a
+[65:52] page going to see how SM is GitHub
+[65:59] copilot page
+[66:19] displays inut at the
+[66:23] bottom
+[66:34] uh coding in 2000 no you're no GitHub no
+[66:39] yeah I don't give me that information
+[66:43] um
+[66:53] pleas
+[67:12] what okay okay I'll be a bit too
+[67:22] optimistic
+[67:52] uh
+[67:58] haven't done much
+[68:01] um however this is called when pages are
+[68:05] as aeter and you generate like basically
+[68:07] get static path in
+[68:09] nextjs I used to use the P
+[68:13] the pages router but for the app router
+[68:18] I'm
+[68:21] not with it so
+[68:26] not
+[68:37] this
+[68:40] okay do I know how many pages will be
+[68:43] generated from
+[68:52] this
+[69:03] CRA I haven't looked at this piece of
+[69:05] cod for like three three months and I
+[69:06] don't remember how this
+[69:16] [Music]
+[69:22] works
+[70:10] generate
+[70:11] itic right
+[70:15] here okay we can remove the
+[70:18] block
+[70:22] this
+[70:28] we will need to make a page for
+[70:33] each page for accounts that was
+[70:39] created and we need to
+[70:41] find yeah
+[70:43] [Music]
+[70:52] users
+[70:58] is this going to
+[71:04] work yeah we don't
+[71:22] care
+[72:13] normally that
+[72:14] [Music]
+[72:22] user
+[72:26] probably not going to
+[72:34] work oh yeah
+[72:44] okay
+[72:47] okay L is a bit weird though oh okay
+[72:50] okay
+[72:52] okay
+[73:07] um oh maybe I don't have to return oh
+[73:10] yeah I think I have to return user ID oh
+[73:13] okay okay now that's working okay so we
+[73:16] have a
+[73:19] page for each user okay okay now we
+[73:23] going to get so we
+[73:25] here this is a page that's going to face
+[73:29] anyone on the internet potentially so we
+[73:31] need to return only the
+[73:33] data no restricted API key for
+[73:36] instance I'll make
+[73:42] sure this private
+[73:48] okay so here we're going to
+[73:51] get all the strip accounts that the user
+[73:58] owns a get data
+[74:09] function
+[74:22] this
+[74:32] counts let's see we got okay we
+[74:36] got the stri counts I think we want
+[74:39] actually we want to render yeah we just
+[74:41] want to render the stri
+[74:48] accounts this is going to
+[74:52] work
+[75:10] oh yeah actually wait yeah I should have
+[75:12] done
+[75:15] that
+[75:19] do
+[75:22] oh
+[75:24] each account we
+[75:37] render I think it's actually best if we
+[75:40] just search the trp accounts the
+[75:43] username
+[75:45] so
+[75:46] [Music]
+[75:49] account
+[75:52] do
+[75:54] can
+[76:05] lean
+[76:08] work oh
+[76:12] yeah oh
+[76:22] [ __ ]
+[76:52] okay
+[76:56] turn the
+[76:57] array and here we can
+[77:00] say
+[77:02] count
+[77:05] here okay and here we're going to
+[77:15] display each we're going to have like
+[77:19] a
+[77:20] [Music]
+[77:22] invoice
+[77:30] oh
+[77:48] wait we don't even need to get the STP
+[77:52] accounts we can get that later when we
+[77:54] make the call I think here we just need
+[77:56] to get
+[77:58] the user
+[78:17] email we didn't need that but
+[78:20] anyway we need a button
+[78:24] [Music]
+[78:26] customer
+[78:32] emails opy
+[78:43] that we need to
+[78:51] get
+[79:19] waight Le we would say
+[79:21] something
+[79:30] Point can
+[79:51] going
+[80:17] maybe that's not best way to do it
+[80:21] because so customer will put their
+[80:22] invoice in the form it's going to make a
+[80:25] call to the API to
+[80:30] retrieve all potential customers with
+[80:33] that email from the STP
+[80:36] account and then we're going to display
+[80:38] the
+[80:42] invoices probably I need to make this
+[80:45] thing
+[80:48] here and
+[80:50] components not like this need
+[80:54] the server
+[81:21] components oh okay
+[81:23] okay yeah I'm kind of new to next year
+[81:26] Brer
+[81:28] so maybe we leave it as a server
+[81:31] component and then we pass on everything
+[81:34] to some kind of a sub
+[81:46] component
+[81:49] um we don't need that
+[81:57] here think we're going to
+[82:12] call think we're going to create a big
+[82:16] component component that's going to
+[82:21] be in Voice
+[82:51] page
+[83:02] this is going to be a client
+[83:08] component
+[83:10] that I think we're going to throw
+[83:11] everything at these
+[83:13] components so we need
+[83:21] um
+[83:23] this component here we need to get user
+[83:30] email we need to be able to search query
+[83:34] API to get
+[83:45] invoices
+[83:49] display play
+[83:51] invoices
+[83:53] and we are going to add a
+[83:55] button to
+[83:58] download each
+[84:02] invoice and button to edit each
+[84:08] invoice that's pretty
+[84:10] much with this
+[84:21] component
+[84:27] use both clients
+[84:47] and
+[84:51] okay
+[84:55] we
+[85:18] things yeah
+[85:21] okay
+[85:25] is the
+[85:26] function uh to
+[85:32] get and
+[85:40] the
+[85:45] it's
+[85:46] [Music]
+[85:51] four
+[86:28] okay here in the thing we get the user
+[86:31] ID which we're going to pass later on we
+[86:35] need to
+[86:38] email need to disable the
+[86:51] thing type in the
+[86:54] email we need to create a route that
+[86:57] anyone can
+[86:58] use that is going to get user ID and the
+[87:03] email email and we'll need to pass the
+[87:05] user
+[87:09] idea also here we're going to have a
+[87:12] list of
+[87:15] invoices
+[87:21] invoices
+[88:51] okay
+[89:17] okay think I need a
+[89:20] tee
+[89:28] barely see my face [ __ ] oh wait
+[89:30] actually I'm pretty small so maybe that
+[89:31] would make sense my audio issue
+[89:40] damn um how bad is that thing let me
+[89:43] check my
+[89:50] phone
+[89:58] hello
+[89:59] [Music]
+[90:04] everyone okay yeah is
+[90:08] not guess you don't see anything if I go
+[90:11] on
+[90:19] computer there is a really long
+[90:24] delay wow it's like probably like 15
+[90:27] seconds between when I see on my phone
+[90:31] and I I
+[90:37] say
+[90:49] okay it's a
+[90:58] Inception another the
+[91:05] best
+[91:14] okay okay well give
+[91:16] me give me just two seconds I'm going to
+[91:20] get myself a little te and we got finish
+[91:22] that uh
+[91:33] link yeah I
+[91:35] think this is my real room upstairs like
+[91:40] a mix of planet Mars and belly I think
+[91:44] because the camera
+[91:46] moves the camera moves with my face oh
+[91:49] wow that is a Next Level Hollywood style
+[91:52] I'll be back in two
+[92:20] minutes
+[95:20] heyo be
+[95:50] fun
+[96:17] okay bit laggy do just me yep I think
+[96:20] you guys if you guys are in Twitter you
+[96:22] might want to use the YouTube link I
+[96:25] don't know why this is not good there I
+[96:28] think it's much better on
+[96:30] YouTube there's a link under the uh
+[96:36] broadcast
+[96:38] okay so we are back get your
+[96:42] invoice can put your email and no
+[96:46] invoice found so we need to
+[96:50] have we're going to call customers
+[96:59] customers will be just one
+[97:02] RS very simple
+[97:10] thing oh
+[97:20] Gus
+[97:33] and
+[97:46] E
+[97:50] is
+[97:54] and and
+[97:55] [Music]
+[98:03] queries user
+[98:17] email I'm a bit
+[98:20] optimist
+[98:23] come on give me
+[98:29] something and I need to give it a little
+[98:37] push you need to see an
+[98:41] example these will
+[98:44] need
+[98:50] account
+[98:53] we don't need
+[98:55] that oh
+[99:02] yeah
+[99:10] this
+[99:13] mod ah there
+[99:20] a
+[99:22] yeah we get quy
+[99:25] okay find all the stripe accounts user
+[99:29] ID that's
+[99:30] correct
+[99:35] and yeah that sounds about
+[99:39] right we're going to do this for
+[99:44] each
+[99:47] account look for invoices with the user
+[99:52] email to
+[100:05] e each
+[100:12] trip perf but
+[100:19] this
+[100:27] all right the Fun Party begins now we
+[100:29] can to around with a stri
+[100:35] API
+[100:43] search do qu
+[100:49] language
+[100:54] okay if you're joining um we are making
+[100:58] a simple invoice Retriever and editor
+[101:01] for stripe so people will get a page
+[101:06] customers will get a page like this
+[101:09] one invoice blah blah blah with an
+[101:14] ID and then this is basically going to
+[101:18] query R API
+[101:28] I am very talented at growing as you can
+[101:31] see
+[101:48] on well this is
+[101:54] beautiful
+[101:56] drawing now we're doing this part here
+[102:00] we have the user
+[102:01] email and we are going to query for each
+[102:04] trp account we are going to
+[102:06] query the API and try to get all the
+[102:09] invoices that the customer had made for
+[102:12] the
+[102:13] business
+[102:18] so the data
+[102:26] should we get customers typ invoices
+[102:31] wait
+[102:45] inv maybe
+[102:47] invoices be
+[102:49] interesting
+[102:54] search
+[102:57] query we can do something like this
+[102:59] probably and we search with a query
+[103:02] language I think probably using
+[103:06] emails there we
+[103:11] go get bunch of
+[103:18] invoices uh
+[103:29] here we
+[103:33] go so you're live on
+[103:49] the
+[104:19] spe
+[104:21] this this man saved the the the live
+[104:30] stream you're playing you're playing
+[104:32] steam steam deck right now or you're
+[104:34] making the the Facebook ads
+[104:47] guide
+[104:49] [ __ ] yeah guide coming in
+[105:01] 2025 okay buddy I'll see you
+[105:06] later thank
+[105:11] you okay I think later this week
+[105:13] probably uh me from from
+[105:19] Wednesday okay
+[105:22] all right buddy I'll see
+[105:27] you all right that was uh Mr Nico from
+[105:32] Twitter who uh I don't know if some of
+[105:34] you
+[105:35] remember think it was back
+[105:39] in maybe
+[105:41] September
+[105:46] maker this person
+[105:49] here
+[105:51] called me same during a live and uh and
+[105:56] he said that the scream was off or
+[105:57] something and he kind of saved the live
+[105:59] stream so thank you tibo thank you
+[106:07] niik is
+[106:14] he all right so on um so we're back
+[106:18] we're back with this thing we're going
+[106:20] to get
+[106:21] invoices this
+[106:24] way is there a way that display the
+[106:28] invoice I think I will have to rebuild
+[106:30] the entire
+[106:32] invoice as it looks on
+[106:49] stri
+[107:07] here let's TR let's create a rout and
+[107:10] see where we go with
+[107:13] that so we need to
+[107:18] create three we need to create
+[107:23] something retrieve
+[107:27] invoices wow I love
+[107:30] it I think we're going to limit to 30
+[107:40] and
+[107:42] that's
+[107:46] much inves this custom okay
+[108:02] see if didn't do any
+[108:05] bug found that would make sense I think
+[108:08] I will have to create a strap
+[108:10] account I'll have to connect
+[108:13] to fre yeah
+[108:15] okay let me show
+[108:19] you
+[108:29] test mode I think in these account we've
+[108:32] made
+[108:33] already a
+[108:35] few payments think I tested the product
+[108:38] few times yeah we have a few fake
+[108:41] customers
+[108:44] here which is good now we need to create
+[108:47] the API key so let's see how our app is
+[108:50] working for
+[108:54] them this is working perfectly here we
+[108:59] go why did you work
+[109:16] here what are we
+[109:19] done
+[109:20] oh
+[109:47] wait okay this is working this is an
+[109:50] ugly dashboard we're going to work on
+[109:52] that later for now I'm going to try to
+[109:54] create a new restricted API key
+[110:01] for okay so this is a different strip
+[110:04] account I'm going to create a stripe
+[110:06] restricted stripe Aki key for my app
+[110:09] called
+[110:11] Zenvo create the key at the bottom I
+[110:14] might not have the right permissions for
+[110:15] now have to check on that later here get
+[110:19] the key
+[110:21] C past
+[110:23] it
+[110:24] and we have a new account this is the
+[110:28] one here and so
+[110:31] normally
+[110:36] normally I think
+[110:49] it's
+[110:51] start again um you know what I'm going
+[110:53] to make a button because that's bit
+[110:55] annoying on the dashboard I want to have
+[111:03] L I think a strip account and
+[111:07] [Music]
+[111:10] here want to get my link so here it this
+[111:14] is going to
+[111:18] be
+[111:56] Local
+[112:04] Host
+[112:07] plus
+[112:09] b
+[112:18] e
+[112:24] slash slash the
+[112:28] user ID
+[112:34] is any
+[112:46] M and we're going to underline that
+[112:49] thing
+[112:53] okay that's the link customers will
+[112:59] share again I'm not doing any styling
+[113:02] here just making things work normally I
+[113:05] get okay I get this link so customer
+[113:06] will see this and if I didn't mess up
+[113:10] normally I should be able to get the
+[113:13] invoice of course not I should normally
+[113:16] be able to get some of those invoices
+[113:18] here if I type my
+[113:30] email okay yeah I have a bunch of emails
+[113:33] here payments made under my name a lot
+[113:36] of money on my own
+[113:44] business let's see that we didn't mess
+[113:47] up anywhere need to console
+[113:52] L
+[113:53] [Music]
+[113:54] accounts and email what we
+[113:59] go actually that's also bit boring I'm
+[114:02] going to stop removing the email from
+[114:05] the
+[114:08] form
+[114:12] here
+[114:16] and again invoices
+[114:20] I think I'm not calling the right
+[114:25] API okay yeah we're not even calling the
+[114:27] API R so that wouldn't
+[114:30] work oh we're going to post to use
+[114:34] um
+[114:37] customers it's
+[114:43] voice and it is going to be I think a
+[114:46] get uh
+[114:48] actually
+[114:50] yep that should be a get another a plus
+[114:59] here there we
+[115:04] go as it is
+[115:09] [Music]
+[115:13] undefined
+[115:18] oh
+[115:37] do I get the query bar
+[115:48] out
+[116:03] request oh I think that's somewhere in
+[116:14] here there we go next
+[116:16] [Music]
+[116:18] URL
+[116:41] working
+[116:45] [Music]
+[116:48] here
+[117:08] getting
+[117:18] rusty
+[117:31] y
+[117:33] Moran he's a stri
+[117:39] fanboy
+[117:48] yeah
+[118:40] okay okay we got something we're now
+[118:42] calling
+[118:44] the else do we get inv request
+[118:48] here
+[118:50] provide an API key okay let's work on
+[118:54] that we
+[118:58] are okay invoices
+[119:01] promise
+[119:09] map access
+[119:18] token
+[119:28] try
+[119:35] again not working what else do
+[119:39] we Okay does not have the record
+[119:41] permission okay this is where the R
+[119:47] Credit okay this Cur this is where it
+[119:50] gets interesting so earlier we added
+[119:53] restricted API keys to the
+[119:56] account and by default I've enabled some
+[120:00] permissions so I think we don't need to
+[120:02] write we going we're going to rewrite
+[120:04] the permissions we need from those Tri
+[120:08] so in stripe here they're telling me
+[120:12] that I need this
+[120:14] permission need to
+[120:18] write
+[120:20] you don't need to I need to write files
+[120:25] I get the logo there was something like
+[120:27] this I remember we don't need to write
+[120:30] subscriptions at
+[120:32] all this also for some information and
+[120:38] read okay we're going to create a second
+[120:40] API
+[120:43] key we need to
+[120:48] remove
+[120:57] eight and what is the permission with it
+[121:00] Credit Credit
+[121:12] notes probably need
+[121:15] invoices I'm sure I'm pretty sure anyway
+[121:20] will be telling me but I'm pretty sure
+[121:21] we need
+[121:25] this and leave
+[121:29] know be waiting for the
+[121:33] striction
+[121:36] message we have the account we go back
+[121:46] page okay right credit note read yeah
+[121:49] what I
+[121:52] just I reading the right
+[122:01] message yeah that's the
+[122:07] one I didn't refresh this
+[122:16] right it's yeah I do have the right
+[122:25] read oh I think oh I know why okay
+[122:30] because of the first accounts that
+[122:31] didn't have the right
+[122:36] permissions okay I delete that one
+[122:45] is yeah we get a different era now see
+[122:48] unknown parameter customer email did you
+[122:50] mean customer
+[122:58] yes
+[123:17] here
+[123:21] invoices my list what is the difference
+[123:23] with
+[123:24] this is that
+[123:30] something no list doesn't exist
+[123:35] right okay this my G of copilot getting
+[123:38] tired I
+[123:40] guess so we are going back to the
+[123:43] searching stripe invoices
+[123:47] search
+[123:55] email think that's how stripe handle
+[123:59] their
+[124:00] and a
+[124:04] limit but
+[124:06] think
+[124:08] I
+[124:10] don't example query
+[124:17] above
+[124:38] you have properly puted values okay
+[124:47] put
+[125:08] still not
+[125:14] working email is
+[125:17] unsupported
+[125:25] okay it is not supported
+[125:28] see can build a product f for invoice
+[125:31] currency is
+[125:34] customer no no no no no no
+[125:36] no oh
+[125:42] [ __ ] okay I
+[125:47] think
+[125:51] okay I think then so we cannot query by
+[125:53] email so I think we have to query
+[125:55] customers first and then get all the
+[125:58] invoices from the
+[126:01] customer very feels
+[126:04] for okay we can query by what is that
+[126:10] thing why does it
+[126:13] have
+[126:14] this
+[126:16] okay we query the customer
+[126:22] we
+[126:31] get okay then we going to
+[126:35] get
+[126:38] here
+[126:47] invoice
+[126:56] we create the customers and we need to
+[126:58] get the invoices for for customers
+[127:01] but I don't
+[127:04] get return to
+[127:10] data it's weird because we need to get
+[127:13] customers all the invoices from the
+[127:17] customer I'm not
+[127:24] sure
+[127:26] object
+[127:29] um
+[127:32] perix oh otherwise okay we get all the
+[127:34] customers and then we get the customer
+[127:37] ID and we cry invoices by customer ID I
+[127:41] think that's is going to be this
+[127:46] way gra for invoices customer okay we
+[127:49] can do that
+[127:51] good we
+[128:10] need for each account we
+[128:15] retrieve
+[128:17] so
+[128:19] per account one or more
+[128:23] customers and each customer one or more
+[128:27] invoices
+[128:30] retrieve
+[128:33] here least we retrieve the customer and
+[128:37] customers uh customers data okay
+[128:40] retrieve invoices here we don't need the
+[128:42] email but we need the
+[128:44] customer
+[128:47] need
+[128:52] and invoices search
+[128:54] [Music]
+[128:55] query here should
+[128:56] [Music]
+[129:02] be
+[129:06] okay
+[129:07] Bingo going back here in the
+[129:11] routes
+[129:15] it's
+[129:17] invoice here for each rep
+[129:20] account
+[129:39] luk
+[129:40] email each and for each customer all the
+[129:46] invoices give me some magic
+[130:00] think let's see if we do have something
+[130:03] that's
+[130:11] works
+[130:17] iello
+[130:21] you did not provide an API key H what do
+[130:24] we have Yep this is access toen
+[130:30] man you know
+[130:44] that
+[130:47] and
+[130:51] wow no
+[130:52] errors that is something
+[130:56] already um L the customers see okay we
+[131:00] have
+[131:00] customers there we go this is
+[131:08] good and we have a list of customers and
+[131:11] each customer as ID so for each
+[131:13] customers we're going to map over each
+[131:15] of them re
+[131:17] invoices
+[131:19] and pass on the customer ID something
+[131:23] went wrong I think in that
+[131:37] function we
+[131:39] make might be a bunch of
+[131:46] them is it how it's supposed
+[132:00] to oh where did I
+[132:04] MPE
+[132:15] invoices inv
+[132:17] is
+[132:21] query a random
+[132:23] query instead of
+[132:41] this that is literally the example
+[132:45] here amount is unsupported
+[132:50] sear what are you talking
+[133:03] about go back to that STP accounts and
+[133:06] see how
+[133:16] many
+[133:38] three
+[133:46] rhms
+[134:00] this is
+[134:08] literally
+[134:11] someone
+[134:14] a what you're building yep every um the
+[134:18] details are in the description have a
+[134:25] look yeah we will do an invoice
+[134:27] generator
+[134:31] stripe maybe that's not the clearest
+[134:46] descri
+[134:54] you're telling
+[135:11] me Oh is this actually
+[135:16] working wait
+[135:18] yeah this is working
+[135:20] wow
+[135:29] beautiful wait where did I mess up
+[135:46] um
+[135:58] we have invoices
+[136:01] [Music]
+[136:10] um okay so this is an object
+[136:15] okay so invo the data
+[136:18] in the
+[136:23] area right
+[136:46] here
+[136:56] oh I think I'm not
+[137:10] yep all right okay we
+[137:14] got we
+[137:16] get oh okay yeah
+[137:35] do
+[137:46] something
+[137:48] we can do is
+[137:54] push and we send back those
+[137:57] invoices
+[137:59] here um let simply show those
+[138:16] invoices
+[138:22] okay if that's going to
+[138:24] work no
+[138:27] invoices still not
+[138:32] work get inv
+[138:46] voice
+[138:57] oh
+[138:58] maybe oh yeah okay
+[139:16] okay
+[139:20] if is
+[139:25] it oh
+[139:46] yeah
+[140:45] what am I doing
+[140:53] oh yeah of course F components not going
+[140:56] to go far if I don't search
+[140:59] okay oh damn
+[141:07] it now we going to have okay we have the
+[141:16] invoices
+[141:19] but this those are the invoices although
+[141:22] this is a bit strange because I think
+[141:33] much uh yeah there's 70
+[141:46] invoices
+[142:16] B
+[142:35] is it possible that we have so few
+[142:42] invoices any duplicates no they are not
+[142:44] duplicates those are
+[142:52] let's go
+[143:16] back
+[143:25] see this from the
+[143:27] beginning any customers we have found 10
+[143:29] customers back okay I think the problem
+[143:32] is then customers I believe this is
+[143:36] possible under my
+[143:39] email maybe he didn't
+[143:46] create
+[144:01] oh maybe it's because I didn't add a Oh
+[144:04] by default maybe there is a
+[144:07] limit oh I think that's probably
+[144:14] why yep customers least oh I think this
+[144:16] is
+[144:18] it I mean it's unlikely that a customers
+[144:21] would have purchased more than 10 times
+[144:23] for a bus or maybe a subscription maybe
+[144:26] a monthly
+[144:32] subscription customer is okay and the
+[144:34] limit it's by 10 by default default is
+[144:37] said okay right the limit
+[144:41] to whatever
+[144:45] 100
+[144:47] and then we should get more 53 customers
+[144:55] okay oh [ __ ] we hit the rate
+[145:00] limit
+[145:12] um is the rate limit on
+[145:15] strip
+[145:30] 20 operations per
+[145:39] second
+[145:42] C Business no no I think actually that
+[145:45] makes sense we don't need to we
+[145:48] have we just need one eventually yeah
+[145:51] okay there will never be actually no no
+[145:53] there will never be more than 10
+[145:55] customers actually they should never be
+[145:57] more than
+[145:58] one so we can leave it this way for the
+[146:01] invoices though there might be more
+[146:05] mightbe 10 or
+[146:07] something it should be at least one
+[146:09] invoice per customer so there is no
+[146:11] limit
+[146:11] here right I think this is working I'm
+[146:15] going to be testing this live later but
+[146:17] I think this
+[146:29] is all right now we're going
+[146:33] to do that think I will have to recreate
+[146:37] stripe invoices
+[146:39] UI so that customers can edit them this
+[146:43] this is a bit uh of a some hard work but
+[146:48] I think that's the only way I can do
+[146:50] it I look here I don't
+[146:56] think let's see what we get when we send
+[146:59] the invoices
+[147:01] back invoices
+[147:05] data we get those invoices
+[147:08] invoice information is
+[147:11] the I don't think there is
+[147:14] a there's no link
+[147:17] hosted oh we have a hosting oh that's
+[147:19] nice oh actually
+[147:28] maybe okay that's pretty
+[147:34] cool we have the invoice PDF
+[147:40] Bingo right that should make
+[147:43] things
+[147:45] simp
+[147:48] so okay good good good normally
+[147:52] uh
+[147:53] [Music]
+[148:15] Buton
+[148:45] and
+[148:47] create a link that will download the
+[148:48] invoice
+[149:15] automatically
+[149:36] search uh voice oh no the rate
+[149:41] limiter tyy voice yet uh send me give it
+[149:45] to me where are those
+[149:57] voices uh
+[150:01] yep oh okay maybe there is
+[150:11] there back 10 invoices what are you
+[150:13] talking
+[150:15] about
+[150:50] where are
+[151:07] those
+[151:10] oh
+[151:15] okay
+[151:43] all right and here what do we have
+[151:46] going to download The Voice yes
+[151:50] sir here we
+[151:53] go this is
+[151:56] good we can retrieve invoices download
+[152:01] them see if we can
+[152:06] edit
+[152:15] and
+[153:02] yeah that's the
+[153:15] problem
+[153:23] oopsy
+[153:27] doopsy I think yeah we have to
+[153:30] recreate
+[153:45] invo we'll need to recreate the invoice
+[153:47] because we can download
+[153:50] it we
+[153:52] can't edit it for
+[153:59] now I have all those
+[154:05] invoices but if I want to add my
+[154:07] business details to it I'm
+[154:15] screwed is
+[154:23] it yeah that could be
+[154:26] a that could be tomorrow stream let's
+[154:29] see 15 more minutes I'll do little
+[154:35] something let's see if I can give a pre
+[154:38] invoice feeling to those
+[154:45] stuff
+[155:00] display the
+[155:15] invoices
+[155:20] [Music]
+[155:44] one
+[156:02] room for
+[156:14] the
+[156:32] have a
+[156:32] [Music]
+[156:36] button get rid of
+[156:39] this I think we just going to recreate
+[156:42] the stripe UI for
+[156:44] that frequency invoice
+[157:04] number em email already delete du
+[157:11] and
+[157:14] create
+[157:21] and we are have a
+[157:44] button
+[157:54] come on get give me
+[158:02] something my GitHub did we even
+[158:05] connected to the
+[158:07] internet
+[158:09] live I'm here yes I'm
+[158:12] here yeah the connection didn't drop
+[158:18] okay we're still
+[158:23] live
+[158:27] connection sound is really bad
+[158:35] okay pretty
+[158:38] bad um anyone else could confirm how the
+[158:42] sound is just to make sure I don't touch
+[158:45] the mic if it's not worth
+[158:57] it ah
+[159:14] okay uh
+[159:16] a few test
+[159:32] sorry all right I'm trying this new
+[159:35] setup uh let me know if it's
+[159:40] better
+[159:44] okay
+[159:49] okay yeah I think it's probably one of
+[159:51] the filters I
+[160:01] use all right you let me know if that's
+[160:04] uh worse or or better this should should
+[160:07] hear me better but you might hear some
+[160:10] maybe some sounds from my uh AC or
+[160:14] something
+[160:25] no of
+[160:44] not
+[160:59] invoice
+[161:06] number two dates
+[161:14] baby
+[161:16] I can zoom on
+[161:19] that oh yeah I can zoom
+[161:44] cool
+[161:49] I don't care about
+[161:52] that let's
+[161:57] see okay
+[162:02] um currency the currency the
+[162:14] currency
+[162:18] you
+[162:21] attemped currency
+[162:23] USD I think I'll need a library currency
+[162:27] string to
+[162:44] sign
+[162:48] no
+[162:51] be really
+[162:55] optimistic if anyone knows how to
+[162:57] convert
+[162:59] currency string to currency sign like
+[163:03] USD to the US dollar
+[163:11] sign
+[163:13] currency to sign
+[163:29] Cy yeah I guess I'm going to have to use
+[163:31] this
+[163:35] Library
+[163:37] nope it's probably your J object
+[163:39] precomputed for these
+[163:42] pairs I searched the stripe and reply
+[163:46] and I couldn't find
+[163:51] any so fun to Mak live on Twitter so
+[163:58] cool okay yeah can see Twitter like
+[164:01] stream is not very happy oh no now the
+[164:03] quality is
+[164:04] better the chat is
+[164:06] gone
+[164:14] okay
+[164:17] G functions
+[164:28] okay I think I'm going to be I'm going
+[164:31] to end up using one of
+[164:36] those European for actually it's going
+[164:39] to be boring well otherwise you know
+[164:41] what I think it really doesn't
+[164:44] matter
+[164:46] yeah I don't think it really
+[164:49] matters I think I'm just going to
+[164:51] display
+[164:53] probably the
+[164:54] currency in capital letters and we'll be
+[164:57] happy with
+[164:58] this invoice.
+[165:09] currency class capitalize peer case I
+[165:13] think it's called okay a little
+[165:18] space and probably we need a
+[165:21] stripe uh
+[165:23] API
+[165:25] amounts I think there are always two
+[165:27] extra
+[165:32] zeros
+[165:35] balance
+[165:38] cation oh actually no it's a
+[165:41] thing Mak can me charge for the
+[165:44] rec
+[166:12] Fu in sense all right so I think it's
+[166:16] safe to say we can divide this by 100
+[166:20] and just in
+[166:44] case
+[166:46] oh
+[166:47] wow right let me check that on YouTube
+[166:50] what do we have here format new
+[166:53] Intel
+[166:57] currency oh wow okay let me try this
+[167:02] out sick format new Intel format State
+[167:07] currency B we need to pass on a
+[167:13] currency
+[167:19] give it that
+[167:28] and uh we
+[167:32] need
+[167:33] yeah two uppercase yeah two uppercase
+[167:43] okay
+[167:49] [Music]
+[167:55] we give it this and replace
+[167:58] that to case is not a function
+[168:03] yep do we
+[168:13] have
+[168:34] I think I [ __ ] up
+[168:36] somewhere you guys are much more than me
+[168:38] let me check for
+[168:41] oh
+[168:43] format
+[168:58] oh
+[169:13] okay
+[169:37] Bingo wow
+[169:43] sick
+[169:49] so
+[169:50] format we give you the currency and then
+[169:53] we give
+[169:55] format and we going to give this thing
+[170:03] here which means potentially we would
+[170:06] get something working
+[170:13] now
+[170:16] okay wow thank you guys it's
+[170:21] working looks good Creed we need to
+[170:25] display the date
+[170:29] um okay you know you know you know
+[170:34] yep okay it's working and the download
+[170:38] link okay I think we have something
+[170:40] that's
+[170:43] working
+[170:49] yep let's see it again we fch the
+[170:52] invoice and boom we have all the
+[170:54] invoices the
+[170:56] customers ever created and Stripes
+[171:01] somehow and we can click here download
+[171:04] the
+[171:08] invoice there we go
+[171:11] $49 that's is it okay so this is working
+[171:16] I'm self sending myself some
+[171:20] compliments this is a good this is a
+[171:22] good start I think it's getting late
+[171:25] here um tomorrow I will be working on
+[171:27] the editing part this is going to be
+[171:30] this is going to take a little while
+[171:32] because I need to recreate the invoice
+[171:35] so basically I think I'll need to
+[171:36] recreate this thing with
+[171:40] HTML add an input form here so that
+[171:44] customers can actually change those
+[171:47] information and then add an export
+[171:50] function something that will I think
+[171:53] just probably like a canva that will
+[171:56] extract or a PDF library that will
+[171:58] extract this HTML to some
+[172:02] file and we should be good to go and
+[172:04] then yeah and then the next part will
+[172:06] probably be adding
+[172:10] a the next part will be
+[172:13] adding
+[172:16] a the pricing for this app I have no
+[172:18] idea how much we're going to charge but
+[172:20] there might be some onetime payment
+[172:22] thing somewhere and finally we're going
+[172:24] to work on the cop the entire branding
+[172:27] like uh colors
+[172:29] phones all things and the copyrighting
+[172:33] for the websites and then we should be
+[172:35] ready to launch I hope I hope we should
+[172:38] be ready to launch by the end of the the
+[172:40] week um probably for something like next
+[172:43] Monday
+[172:45] y could be fun all right I think it's
+[172:48] pretty much it um I'm around the I'll
+[172:50] stay around the chat for a few minutes
+[172:51] finishing my uh tan so if you guys have
+[172:54] any question any
+[172:57] suggestions or if you just want to talk
+[172:59] about life and uh and the purpose of
+[173:13] life
+[173:22] that's
+[173:41] cool I don't think so I think you need
+[173:44] you need to have an
+[173:52] account yeah yeah Stripes worth with
+[173:54] currencies yeah yeah you you'll need to
+[173:56] have a bank account here but I'm I'm a
+[173:59] I'm wearing the stripe t-shirt but I am
+[174:01] definitely not a stripe employee or
+[174:03] endorsed by striping anyway so you might
+[174:05] want to double check
+[174:06] that all right I think that's a wrap
+[174:10] um I will come back tomorrow uh probably
+[174:14] ear
+[174:14] and and probably spend more time on it
+[174:17] um I was a bit overwhelmed with starting
+[174:18] the stream again today and also my
+[174:21] neighbors doing some weird stuff in the
+[174:23] garden so uh tomorrow we'll achieve a
+[174:26] little bit more thank you everyone for
+[174:28] tuning in and I wish you have a good day
+[174:32] rest of the day evening or night
+[174:33] whatever

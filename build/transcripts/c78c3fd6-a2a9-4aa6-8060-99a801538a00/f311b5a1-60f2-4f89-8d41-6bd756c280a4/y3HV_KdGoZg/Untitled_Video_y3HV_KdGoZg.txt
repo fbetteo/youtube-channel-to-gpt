@@ -1,0 +1,365 @@
+Video Title: Untitled_Video
+Video ID: y3HV_KdGoZg
+URL: https://www.youtube.com/watch?v=y3HV_KdGoZg
+View Count: 0
+
+[00:01] I have a little trick When I visit a
+[00:02] website I go straight to the pricing
+[00:04] section and within seconds I know
+[00:06] exactly what the product does and if
+[00:08] it's worth my time because pricing is
+[00:11] marketing and it can make or break your
+[00:14] startup when I studied the journey I was
+[00:16] not really sure how to price my product
+[00:18] so I followed traditional business
+[00:19] advices but none of them really worked
+[00:21] and I was stuck at $0 for month I build
+[00:24] 24 tiny businesses and try all sorts of
+[00:26] unconventional pricing methods and
+[00:28] that's how I ended up making a million
+[00:30] as a solo developer so in this video I'm
+[00:32] going to share the five pricing mistakes
+[00:35] I made that kept my startups from
+[00:37] growing and we're going to start with
+[00:38] the spiciest one subscription yep your
+[00:41] software probably don't need a
+[00:42] subscription model now everybody is
+[00:44] saying that we should Char subscription
+[00:46] because that's how we make passive
+[00:47] income that's how we earn money when we
+[00:49] sleep but they forget one thing people
+[00:52] hate subscriptions as a customer when I
+[00:54] see $9 per month I know it's not just $9
+[00:58] it's $108 per year and it piles up with
+[01:00] my Netflix Spotify and Wi-Fi
+[01:03] subscriptions and sometimes I just want
+[01:05] to try the product so I have to set up a
+[01:07] reminder to cancel the subscription to
+[01:08] make sure I'm not charged for a service
+[01:10] I don't use subscription raise
+[01:12] objections in your customers mind and
+[01:14] Confused customers don't buy so it
+[01:16] lowers your conversion rate I would
+[01:18] argue that it is as hard as selling a
+[01:20] $10 a month subscription than it is to
+[01:23] sell a $100 one time payment product
+[01:26] let's take a quick example okay let's
+[01:27] say we have two products one is a sub
+[01:29] subcription product that cost $10 a
+[01:31] month and that has a 10% turn rate so
+[01:34] every month 10% of the customers will
+[01:36] turn which means they will cancel the
+[01:38] subscriptions and let's say we have a
+[01:39] onetime payment product that cost $100
+[01:42] up front and of course no recurring cost
+[01:45] after now let's say that instantly we
+[01:47] get 100 customers for both of those
+[01:49] products after one month you make
+[01:51] $11,000 with a subscription product and
+[01:53] you will make $10,000 with the one time
+[01:55] payment product and um Until the End
+[01:58] you'll make zero extra r Vue now for the
+[02:00] subscription product on the second month
+[02:02] you'll made 900 bucks because you had
+[02:04] the 10% turn rate and you'll have
+[02:06] another 10% of these 900 bucks so $810
+[02:09] on month three and by the end of the
+[02:11] year you would make $7
+[02:13] 7,176 and if you wants to make
+[02:16] $10,000 as for the onetime payment
+[02:18] product you would have have to wait for
+[02:20] 4 years until you get the same amount of
+[02:23] money so do you want $10,000 right now
+[02:26] or $10,000 spread across the next 4
+[02:28] years your probably doesn't need
+[02:31] recurring payments a lifetime deal
+[02:33] access is a great competitive advantage
+[02:35] against all the big software guns like
+[02:38] cenly or typ form now it raises the
+[02:40] concern of yes but what if people
+[02:42] overuse my product and I end up losing
+[02:44] money there are two cases first there
+[02:47] are the negligible costs cost where it's
+[02:49] so cheap that you would have your users
+[02:51] to use the product for like 300 days
+[02:53] every single day in order to lose money
+[02:56] I'm talking about bandwidth I'm talking
+[02:57] about emails well actually let me show
+[02:59] you a little little example okay so this
+[03:02] is the web traffic on all of the
+[03:03] products I built and uh that is about
+[03:06] 200,000 page views in the last 2 weeks
+[03:09] so that's roughly half a million page
+[03:11] views a month now if I go to versal for
+[03:14] the same billing cycle this is about 266
+[03:18] GB of data transfer that's roughly the
+[03:21] bandwidth now if we look at versal
+[03:23] pricing I am on the Pro Plan so normally
+[03:25] I get one tab included but for this
+[03:28] example let's pretend that I'll pay 15
+[03:30] cents per gigabyte transferred so we're
+[03:32] going to do 15 cents times 266 gabt and
+[03:36] we're going to do times 2.5 so we round
+[03:38] this to like a month of data that means
+[03:41] I would spend 100 bucks a month with
+[03:44] Verso one of the most expensive hosting
+[03:46] platform out there in order to serve
+[03:48] half of a million page views this is
+[03:51] definitely negligible let's take another
+[03:53] example let's go to my emails I'm
+[03:55] sending email for all my mes for people
+[03:57] to sign up for reminders and I'm even
+[04:00] selling email in some of my products I
+[04:02] send around um 150 to 200 emails per day
+[04:06] and this is the bill I got from mail gun
+[04:10] last month actually
+[04:12] 4,800 emails send per month this cost $5
+[04:17] this is absolutely negligible cost and
+[04:20] unless my customers would use the
+[04:22] product for 300 days every single day I
+[04:25] would never lose money on those costs
+[04:28] and then there are the more expensive
+[04:30] costs so that could be ads for marketing
+[04:32] or that could be GPU open AI or database
+[04:34] cost for your software in that case you
+[04:36] can offer a credit base system for
+[04:39] instance you can have an image
+[04:40] generation platform where people can
+[04:42] create photos of themselves using Ai and
+[04:45] you could charge $10 for like 100 photos
+[04:47] that way you get rid of the subscription
+[04:50] headache from the customer's mind and
+[04:51] you're sure that your customer never
+[04:53] overuse your product if no one pays for
+[04:56] your one-time payment product no one
+[04:58] will pay for a subscription but if no
+[05:01] one pays for your subscription product
+[05:03] maybe some people will pay for one-time
+[05:05] payment version of your product so shoot
+[05:08] large at first and then refine later you
+[05:10] can always add subscription down the
+[05:12] road when your product starts to get
+[05:14] traction now I'm not saying that
+[05:15] subscriptions are useless and should be
+[05:17] ignored one of my good friend Dan say
+[05:20] that recurring value equal recurring
+[05:22] payments usually subscriptions are great
+[05:24] for B2B product but remember they come
+[05:27] at a cost and it's worth exploring a
+[05:29] one- time payment or a credit
+[05:31] alternative mistake number two not
+[05:33] anchoring your price when you buy a
+[05:36] coffee based on where you are in the
+[05:37] world or where you buy the coffee you
+[05:39] would expect to spend somewhere between
+[05:41] $1 to $5 but now when you're buying a
+[05:44] software to generate blog articles with
+[05:46] AI it's kind of hard to know what it's
+[05:48] worth so as a business owner where you
+[05:50] have only one pricing plan on your
+[05:52] landing page you make your customer
+[05:55] thoughtful because they have nothing to
+[05:56] compare with that's when the price and
+[05:59] core comes comes in a price enor is a
+[06:01] marketing strategy that consists in
+[06:03] creating an initial price so that
+[06:05] customers can compare with the actual
+[06:07] price you had in mind and it will make
+[06:09] this price more reasonable by comparison
+[06:11] let me show you a quick example of how I
+[06:13] do price anchoring for all of my
+[06:14] products okay first let's start with an
+[06:16] example of Zenvo it's a little tool I
+[06:18] build for people to avoid paying the
+[06:20] stripe invoicing fee of 4% and so in the
+[06:24] pricing section I have this price which
+[06:26] is the one I wanted to go for $69 um I'm
+[06:29] not sure why I wanted to press it that
+[06:31] way but that's what I had in mind when I
+[06:32] got started then I needed a price for
+[06:34] people to compare with an Anor price and
+[06:36] so I created this price here which give
+[06:39] you access to very similar feature
+[06:40] except that with the more expensive plan
+[06:43] you get the unlimited strap accounts
+[06:45] feature and you only get one strip
+[06:47] account with this plan so this one in
+[06:49] comparison looks cheaper and more
+[06:51] reasonable let's take another example of
+[06:53] Indie page it's a little Linkin bio tool
+[06:56] for people to Showcase their projects
+[06:58] their portfolio and um I wanted to go
+[07:01] with lifetime deals I never wanted to
+[07:02] charge any subscription here so this is
+[07:04] the price I had in mind from the
+[07:06] beginning you pay $45 and you have
+[07:08] access the product for a lifetime now
+[07:10] again what's the worth of this what is
+[07:12] the worth of a linoln bio tool that's
+[07:14] why I added this like one year pass plan
+[07:16] it has the exact same features but the
+[07:18] difference is that after one year the
+[07:20] pass is removed and you don't have
+[07:22] access to the product which makes the
+[07:23] lifetime deal planned reasonable and
+[07:26] cheaper in
+[07:28] comparison so so try to always have a
+[07:30] price anchor to help your customers
+[07:33] understand what your product is worth
+[07:34] and you can even decline your price in
+[07:36] three categories good better and best it
+[07:38] usually works pretty well but just avoid
+[07:40] having more than three prices because
+[07:43] then it becomes a burden in your
+[07:44] customers mind now let's talk about
+[07:46] mistakes
+[07:47] number
+[07:50] three this is one of my first startup
+[07:54] 150,000 visitors and $6,000 in Revenue
+[07:58] unless you're watching this video in
+[08:00] 20150 you remember how Facebook started
+[08:03] a free app that's free users loved and
+[08:05] spread the word so that everybody knows
+[08:07] about it and it's going viral and
+[08:08] they're starting monetization years down
+[08:10] the road with ads grow first monetize
+[08:13] later that's a good story but as a
+[08:15] soloer the journey is a little different
+[08:17] I value Freedom over unicorns I won't
+[08:20] raise money so I won't raise a team of
+[08:22] marketers and growth hackers I operate
+[08:25] with fewer resources so I have to make
+[08:27] some tradeoffs and removing fre plans is
+[08:30] one of them let me show you the math
+[08:32] behind that okay let's start with the
+[08:34] goal first and let's say we want to make
+[08:36] $33,000 per month and we have a product
+[08:40] with a free plan and a Premium plan at
+[08:42] $5 per month now as a general rule of
+[08:46] Thum 3% of people upgrade from free to
+[08:49] plan this is a standard in the software
+[08:52] industry that means if you want to make
+[08:53] $3,000 you will need 600 premium users
+[08:57] which means you would need 20,000 users
+[08:59] to sign up for your product because of
+[09:01] the 3% conversion rate and to get 20,000
+[09:05] signups on a product we can safely
+[09:07] assume you have a 15% conversion rate so
+[09:09] 15% of people will create an account and
+[09:11] start a free um plan which means you
+[09:15] would need
+[09:17] 133,000 visitors to get $33,000 a month
+[09:22] I don't know how about you but that
+[09:23] sounds insane removing free plan is
+[09:25] removing pain as a developer I used to
+[09:28] struggle to ask for money but here is
+[09:31] what happened after I removed free plans
+[09:33] from all of my products first I get
+[09:35] better users users who are skin in the
+[09:37] game they provided their credit card so
+[09:39] they're giving me real feedback and I
+[09:41] build better products second I got more
+[09:44] motivation there's something magical
+[09:45] about making money on the internet it's
+[09:47] exciting and it helped me focus on the
+[09:49] work and third I saved money most of the
+[09:52] user base were made of free users so
+[09:55] it's only costing something after
+[09:56] removing the free user base there is no
+[09:59] cost associated with that so consider
+[10:01] ditching your free plans and add a pay
+[10:04] wall of thres and that way you'll become
+[10:06] profitable faster mistake Number Four
+[10:09] free trials the problem with free trials
+[10:11] is that people don't commit they can use
+[10:14] your entire product for free for a
+[10:15] couple days and that results in a huge
+[10:18] drop in conversion rate after a couple
+[10:20] days live got busy they went on a
+[10:21] holiday and they don't come back because
+[10:23] they didn't commit in first place now
+[10:26] you might be wondering yeah but I want
+[10:28] people to be able to try the product to
+[10:29] know if it's worth it there are three
+[10:31] ways to fix that the first one is to
+[10:33] look upfront on your landing page
+[10:36] usually if your landing page copy is not
+[10:38] triggering an emotional reaction and
+[10:39] there is not a clear demo of your
+[10:41] software that means you going over a
+[10:43] little camera and explaining demoing how
+[10:45] the software Works customers don't know
+[10:47] what they're buying so you can make a
+[10:49] better landing page explain clearly what
+[10:51] your product does demo all the features
+[10:54] and that could remove the need for a
+[10:55] free trial second you can offer free
+[10:58] credits you let people use your software
+[11:00] for a limited number of actions and not
+[11:02] a duration for instance you could offer
+[11:04] them to generate three images at no cost
+[11:07] with your AI software generation tool or
+[11:09] they can send 10 emails at no cost but
+[11:12] make sure it's tied to an action
+[11:14] something that they could perform so
+[11:15] that after using your software for a
+[11:17] couple of minutes they will face a pay
+[11:19] wall and they know exactly what they're
+[11:20] paying for you want them to commit when
+[11:22] they are right now here on your landing
+[11:24] page not days down the road and
+[11:26] alternative number three you can still
+[11:28] try free trials but reduce the length
+[11:31] from 30 days to 7 days and ask for a
+[11:33] credit card upfront an email is not a
+[11:36] commitment a credit card is and final
+[11:39] mistake pricing to chip I see lots of
+[11:42] developers getting started who price
+[11:44] like $10 to use their product cheap is
+[11:47] expensive in the long run the value is
+[11:50] what your product is worth its
+[11:51] usefulness what's how much time people
+[11:53] save with it and perceived value is how
+[11:57] much a customer thinks your product is
+[11:59] worth and it's influenced by factors
+[12:02] like design and especially pricing when
+[12:05] you price too cheap you signal that your
+[12:07] product does not have value so as a rule
+[12:10] of thumb always try to price a little
+[12:12] higher than you think it's worth if you
+[12:14] charge onetime payments avoid anything
+[12:17] below $19 if you're charging
+[12:19] subscriptions avoid anything below $5
+[12:21] per month and I noticed a side effect of
+[12:24] pricing a little higher is that
+[12:26] customers will value the product more
+[12:28] and they will get most out of it think
+[12:30] about Udi where you can buy this course
+[12:32] for like $10 to learn the entire
+[12:33] JavaScript world or you can have this
+[12:36] like premium $200 course made by a
+[12:38] creator that you love this is the course
+[12:41] you want to go for because spending $200
+[12:44] on this course will make you value the
+[12:47] course more and you will likely get more
+[12:49] out of it and if you don't know how to
+[12:51] price at all probably someone has
+[12:53] already figure it out for you so look at
+[12:55] your competitors and try to price in a
+[12:57] similar range now this uh these mistakes
+[13:00] I made um it's tailored for me and for
+[13:03] the tiny 24 businesses I built it's also
+[13:05] what I've seen from lots of solo
+[13:07] developers building in public on Twitter
+[13:09] but it's flexible that means you can
+[13:11] come up with your own rules and I hope
+[13:12] you prove me wrong and uh before we
+[13:15] close this video I want to just mention
+[13:16] that I am not affiliated with any of the
+[13:18] products that you saw in this video I
+[13:20] don't take any sponsorship on this
+[13:22] channel and in fact I could not care
+[13:24] less about the text tag I use as long as
+[13:27] it's helping me move fast and until the
+[13:29] next video I hope you just ship it
+[13:36] [Music]

@@ -1,0 +1,346 @@
+Video Title: I made $83,212 in March | Solopreneur Diary
+Video ID: aGyaL-AyDkQ
+URL: https://www.youtube.com/watch?v=aGyaL-AyDkQ
+View Count: 101,020
+
+[00:00] [Music]
+[00:08] this is going to
+[00:11] happen hey it's Mark and welcome back
+[00:13] for this video I'm starting this new
+[00:15] series where I will make a short video
+[00:17] about everything that happens in my life
+[00:19] as a solo entrepreneur I go over things
+[00:22] that I built like softwares and products
+[00:23] I'll over marketing things that I tried
+[00:25] that worked and didn't the revenue that
+[00:27] I earned and everything else like if I
+[00:29] travel or nice books that I read
+[00:31] workouts stuff that I learned I'll try
+[00:33] to share everything and be as
+[00:35] transparent as possible so I will share
+[00:37] the good parts but also the parts I
+[00:39] struggle with so if you like this Ser
+[00:40] please let me know so I do it more oh
+[00:42] and also here is my story really quick I
+[00:44] got fired 2.5 years ago as a software
+[00:47] engineer and I discovered at the
+[00:48] community of developers building tiny
+[00:50] startups in public on Twitter meaning
+[00:52] that solo developers a q Andi who have
+[00:54] no ambition to build a unicorn to raise
+[00:56] money for VC or even to have any
+[00:58] employee just building their tiny little
+[01:00] product and I fell in love with the
+[01:02] mindsets so I started to build my own
+[01:04] project and today 2.5 years later I have
+[01:07] grown a little audience of 880,000
+[01:09] people on Twitter where I also met a
+[01:11] bunch of friends there this is actually
+[01:13] the t-shirt from one of my Twitter
+[01:15] friends I also built 21 projects and
+[01:18] currently I have 10 stream of income and
+[01:20] in average my salary is around $50,000
+[01:23] per month so I'm going to share
+[01:24] everything that happens in the month of
+[01:26] March let's go all right so now let's
+[01:28] talk about work I created a new very
+[01:30] tiny software called popup the idea is
+[01:33] to increase the website conversion rate
+[01:35] by displaying popup notifications it's
+[01:37] almost started as a joke the inspiration
+[01:40] came from another product of mine called
+[01:41] Zenvo one of my friend actually the
+[01:43] friend that gave me the T-shirt Dan told
+[01:45] me to make it a product and there it was
+[01:47] I spent 3 days building it I used AI
+[01:50] heavily in order to build a software
+[01:51] I'll share a link somewhere here where
+[01:53] you can see the video on how I built the
+[01:55] product really fast and I launched it
+[01:57] without any expectation and 24 hours
+[01:59] later it made $1,000 and about 2 weeks
+[02:03] later it was at $25,000 in Revenue it's
+[02:06] almost pure profit so it was overall
+[02:08] pretty nice a very interesting
+[02:09] experience and it also gets results for
+[02:11] people I've seen a lot of customers
+[02:13] coming back to me that says they love
+[02:14] the product and it's working well for
+[02:16] them so tiny experiments that turn out
+[02:18] to be a good thing all right and so far
+[02:20] the product that brings the most Revenue
+[02:21] to my income is ship fast it's a b plate
+[02:24] for developers to ship startups faster
+[02:26] and I got a testimonal from a customer
+[02:28] who made 2.6 th000 Us in 9 days and this
+[02:32] is probably the biggest testimonial like
+[02:34] Revenue Wise from a customers that
+[02:36] shares the revenue publicly just as a
+[02:38] comparison this took me years to reach
+[02:40] that point I was stuck at $1,000 per
+[02:42] month for so long so big kudos to him I
+[02:45] also shipped a new component for the Vol
+[02:47] plate called with without it's tiny
+[02:49] component that people would typically
+[02:51] use under the hero section of their
+[02:53] website to show what it is to live
+[02:56] without the product they're selling and
+[02:57] to live with it it's like basically a
+[02:59] before after and this is also really
+[03:01] good to improve website conversion rate
+[03:03] and I usually get inspiration from all
+[03:05] the other products that I make in order
+[03:06] to get inspiration for ship fast
+[03:09] components so I know what's working and
+[03:10] what's not working I also added a new
+[03:12] feature for Zenvo my little software for
+[03:14] stripe users to generate invoices for
+[03:16] their customers without paying the
+[03:18] stripe fee now it displays the stripe
+[03:21] account name when the email is being
+[03:23] sent about two months ago I did a little
+[03:26] experiment with AI and SEO so I have a
+[03:29] product called logo fast which is a free
+[03:31] logo maker it has a little bit of AI in
+[03:33] it where if you want a logo for your
+[03:35] business you could describe your
+[03:36] business ID the AI will reply with the
+[03:40] icon that would fit and the colors that
+[03:42] would fit and it will suggest you three
+[03:44] logos when the user clicks on one of the
+[03:46] three suggestions it will save the logo
+[03:48] in a database and my server will create
+[03:51] an HTML page optimized for Google in
+[03:53] order to rank and a few weeks ago Google
+[03:56] started to rank all those pages so I
+[03:58] have generated now almost 3,000 logos so
+[04:01] I have 3,000 pages that are now indexed
+[04:03] by Google and I hope that these pages
+[04:06] will rank hopefully if it happens it
+[04:08] should happen within 3 to 6 months I
+[04:10] will definitely report uh the
+[04:12] experiments but I think it's pretty fun
+[04:13] to see how AI plus a little bit of a
+[04:16] human touch could create those valuable
+[04:19] HTML pages that could potentially rank
+[04:20] on Google I have 21 products and seven
+[04:23] are making money and so I sometimes get
+[04:25] drowned into data which app should I
+[04:28] focus on where should I spend my time
+[04:29] and attention and I found a new metric
+[04:33] that really helps me to decide which is
+[04:36] worth my time it's the kpi is the
+[04:38] revenue generated per unique visitor so
+[04:41] if a product gets 1,000 unique visitors
+[04:43] and generate $1,000 this is a $1 per
+[04:47] unique visitor as a matter of comparison
+[04:49] my best product ship fast gets 93 cents
+[04:52] per visitor and my worst conversion
+[04:55] product is by dispute which gets 06 Cent
+[04:59] per visitor it's very simplified you
+[05:01] know there are opportunities for some
+[05:03] mistakes in there but overall I found it
+[05:05] really helpful and very clear on where
+[05:08] to put my attention on I also did a
+[05:10] podcast with Arvid KH he's like the
+[05:13] father of solo entrepreneur is a really
+[05:16] nice person I will link to the podcast
+[05:17] somewhere in here if you want to listen
+[05:19] to it we go over the addiction of
+[05:21] building apps and all those kind of
+[05:23] things filed startups in the past and I
+[05:25] would drive my mind crazy I would spend
+[05:27] a year building a product that nobody
+[05:28] would ever want and finally the probably
+[05:31] the biggest highlight of the month
+[05:33] work-wise was YouTube I have been making
+[05:35] one video per week every week since
+[05:38] January this year and my channel was
+[05:40] around 5 to 6,000 followers most of the
+[05:43] people were probably watching from my
+[05:45] audience on Twitter nothing was really
+[05:47] happening and suddenly YouTube decided
+[05:49] to take one of my video and pop it up
+[05:51] and it's crazy in 6 days my channel went
+[05:53] from 8,000 followers to 15,000 followers
+[05:57] which is absolutely crazy to me my
+[05:59] channel was already monetized but it was
+[06:01] making $2 to $3 per day which is not
+[06:03] crazy and now it's making about 40 to
+[06:06] $50 per day which is here in B it's like
+[06:10] a living this could pay the bills so
+[06:12] this is overall absolutely crazy it's
+[06:15] also the first time for me to Outsource
+[06:17] a task I do everything solo from product
+[06:20] building to marketing to customer
+[06:21] support to legal things and I hired
+[06:23] someone to make those videos so uh let
+[06:25] me know what you think about them all
+[06:26] right now a little health update I
+[06:29] search every day about 2 hours and 6
+[06:31] months ago I hurt my back I have some
+[06:33] back pain in the bottom and one of my
+[06:35] friends actually the same friend who the
+[06:37] same friend who gave me the t-shirt and
+[06:39] who told me to create the poop up
+[06:41] startup gave me a pull-up bar and so I
+[06:44] do pull-up and chinups every day and
+[06:46] also bar hang to flatten my back and
+[06:48] this is actually really helpful it has
+[06:50] eased the pain to a point where I almost
+[06:52] don't feel it anymore and my wife and I
+[06:54] are trying a new experiment where we do
+[06:56] not eat any food after 5:00 p.m. and go
+[06:59] to bed at 10: p.m. and this is working
+[07:02] really well we've tried this for the
+[07:03] past 10 days and we have a very good
+[07:05] restorative slip I also bought a ring
+[07:08] the aura ring sleep tracker a couple
+[07:11] months ago and I got rid of it it was
+[07:13] nice but I felt anxious about getting
+[07:15] the perfect sleep score and ironically
+[07:17] it would trick me and make me anxious
+[07:19] about it and get a worse sleep so I got
+[07:21] rid of it and my sleep is better okay
+[07:23] now little life update I was reading the
+[07:25] book called same as ever by Morgan howel
+[07:29] it's it's a book about things that never
+[07:31] change in the world it is a really good
+[07:33] book for anyone whether you are
+[07:34] Developer entrepreneur whatever this is
+[07:36] a book that will teach you how the brain
+[07:38] works it's a lot of psychology it helps
+[07:41] understand how people behave it's very
+[07:42] interesting my wife and I also went to
+[07:44] Taiwan for 2 weeks we would break our
+[07:47] home routine every month or two and go
+[07:50] to a different country in Asia we love
+[07:52] Taiwan we have a new routine there
+[07:54] you're a star you're Hollywood
+[07:58] famous
+[08:00] so we would wake up around 6:00 a.m. and
+[08:03] then we would go straight to a workout
+[08:05] after drinking a coffee we always work
+[08:07] out together so it's easier to find the
+[08:10] motivation to get things done then we
+[08:11] would do a little stretch have a healthy
+[08:14] breakfast together around 7:30 8:00 a.m.
+[08:17] and then we would both go on our
+[08:18] computers and work for 4 hours straight
+[08:21] where we stay offline so no Twitter no
+[08:23] emails just basically most of the time
+[08:26] coding or making those videos writing my
+[08:28] newsletter but like pure 4 hours of
+[08:30] focus then we'll close the computer for
+[08:32] the day and we rent a scooter and we
+[08:35] would just go around places and wherever
+[08:37] this is we're boring tourists we don't
+[08:39] do any specific places we want to visit
+[08:42] we just get lost with the scooter or by
+[08:45] walking and uh this is pretty uh good
+[08:48] fit for us we usually finish the day
+[08:50] with a 1 hour to 30 minutes
+[08:54] walk you got a new
+[08:58] friend what
+[09:02] and then we come back home take a shower
+[09:04] and sometimes watch a movie and go to
+[09:06] bed and start the exact same day the day
+[09:08] after and in Taiwan we also met a friend
+[09:10] from Twitter and I love the fact that
+[09:12] now we can find connection Interest
+[09:14] online and then meet in real life now
+[09:16] let's talk about Revenue I made
+[09:28] $83,200 I've been sharing my revenue on
+[09:30] Twitter for the past 2.5 years and this
+[09:33] is my Revenue in March 2023 back then I
+[09:36] made 1,000 us from my product and this
+[09:38] month I earned 833 times my salary back
+[09:41] then that's absolutely crazy I guess
+[09:43] that's why entrepreneurship is so
+[09:45] addictive and probably the power of
+[09:47] showing up every day now let's break
+[09:48] down the revenue for these startups
+[09:49] first the most important one that brings
+[09:52] the most revenue is ship fast the
+[09:53] revenue almost double this month making
+[09:55] about
+[09:56] $75,000 in the last 30 days this is my
+[09:59] Tri dashboard but I also collect payment
+[10:01] from other sources like PayPal I guess
+[10:02] the revenue double because YouTube
+[10:04] picked up my video and decided to put it
+[10:06] on the homage so that increase the
+[10:08] number of visitors and eventually the
+[10:10] revenue and the revenue for my other
+[10:12] products like any page or by dispute is
+[10:14] pretty steady I barely don't do any
+[10:15] marketing for them so I don't expect it
+[10:17] to change much I'm happy the way it is
+[10:19] because it's solving my own itches and I
+[10:22] just like it this way my YouTube channel
+[10:23] got monetized back in February this year
+[10:25] back then I made $50 and this month It
+[10:28] Grow significantly we're sitting now at
+[10:30] about $800 for this month and this is
+[10:33] pretty nice I would literally pay for my
+[10:35] villa here in Valley okay so that was
+[10:36] for the money in now let's talk about
+[10:38] the money out for business expenses I
+[10:40] spend about $4,000 a month for
+[10:43] everything plus 3.5% goes to stripe to
+[10:47] process payments there is about $300
+[10:50] that goes for the tech stack so my
+[10:51] newsletter affiliate program servers
+[10:53] database and all that $700 goes to
+[10:56] affiliate people who like my product and
+[10:58] Market them in exchange of a commission
+[11:00] I also spent about $1,000 in ads I'm not
+[11:04] very good with ads a friend of mine Nico
+[11:06] is helping me with it and usually
+[11:08] $11,000 in would bring $2 to $3,000 out
+[11:12] and I also spent about $2,000 to
+[11:14] Outsource a few tasks like the video
+[11:16] editing right now I also lost one income
+[11:18] stream it's viral but it's a little
+[11:20] software that I created back in 2018
+[11:23] when I started my first solo prer
+[11:25] project the wrong way everything was
+[11:28] tough back then I stopped I abandoned
+[11:29] the product in 2020 and it kept making
+[11:31] money until this month where the last
+[11:34] customer turned it was a 200 bucks per
+[11:36] month subscription so yeah that hurts
+[11:40] it's the end of a passive income era and
+[11:42] it was a good time and for personal
+[11:44] expenses my wife and I rent this place
+[11:47] for about $800 per month and we spend I
+[11:50] think in total about $2,000 for basic
+[11:53] stuff like food we don't like buying
+[11:55] physical stuff uh we sometimes go to a
+[11:57] good restaurants but we barely don't
+[11:58] spend anything I think my most addictive
+[12:01] thing is coding apps and luckily that is
+[12:03] free all right and just one more thing
+[12:05] my YouTube channel recently popped up
+[12:06] and if you look at my previous videos it
+[12:08] looks like I am doing some kind of
+[12:09] overnight success making 50,000 bucks a
+[12:12] month I want you to know that it took
+[12:14] 2.5 Years starting from zero to get here
+[12:16] I have been struggling a lot finding
+[12:18] motivation to get things done and
+[12:20] sometimes even questioning my entire
+[12:22] work thinking that it's absolutely
+[12:24] useless and if you actually dig deeper
+[12:26] in my story you will see that I have
+[12:27] been in the game for about six years not
+[12:30] very seriously at the beginning but I've
+[12:31] tried a bunch of stuff felt a lot of
+[12:33] stuff really a lot of stuff yeah this is
+[12:35] not an overnight success but I hope this
+[12:37] shows you that if you stick to something
+[12:39] and you show up daily then you would get
+[12:41] good results all right that was it if
+[12:43] you enjoyed the video please subscribe
+[12:44] to the channel That would really means a
+[12:45] lot all right cheers

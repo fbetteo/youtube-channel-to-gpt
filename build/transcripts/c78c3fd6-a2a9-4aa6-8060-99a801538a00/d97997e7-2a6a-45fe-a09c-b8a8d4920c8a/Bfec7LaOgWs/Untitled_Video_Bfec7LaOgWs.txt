@@ -1,0 +1,241 @@
+Video Title: Untitled_Video
+Video ID: Bfec7LaOgWs
+URL: https://www.youtube.com/watch?v=Bfec7LaOgWs
+View Count: 0
+
+[00:03] So, it's a bit past 145 when this is supposed to start. So I'm just gonna get rolling here. So welcome. Everyone. I hope you guys are enjoying the symposium. So far as, you know, it's the 1st, time it's back in person since covered, which is really exciting.
+[00:15] So, in this workshop, we're gonna be covering web scraping and Python. Right? So just a little bit about myself. My name is Patrick. I'm a junior. a junior
+[00:24] At the University of Connecticut I'm majoring in computer science and mathematics and statistics and I'm also the vice president of the data science clubs here on campus.
+[00:33] So, obviously, throughout this presentation will be going over some core ideas within web scraping. So, the 1st thing I'll cover is just, what is web scraping, how it works and just why it's important. So we'll go more into the intuition behind web scraping in that section.
+[00:47] Then, we're gonna jump over to a Jupiter notebook where we'll focus on the request beautiful soup and panda's libraries. So I'll go over some toolkits that you can use in terms of getting data from a webpage. And I'm going to briefly cover selenium and sequel. Now SONYA. And sequel are very powerful. They present a whole different way of.
+[01:02] How you can scrape the web, so I'm only introducing the ideas here. Hopefully it's motivation for you guys to look further on. From what I tell you here let's be a brief introduction to those packages. Then I'll talk about the legality of web scraping.
+[01:14] Unfortunately, it's not legal to scrape all the websites and specific data. So I'll tell you how you can pick and choose what websites to scrape from.
+[01:21] So, we'll 1st, start off obviously, by talking about some of the intuitive ideas behind web scraping.
+[01:28] Now, web scraping at its core right. Can be simply defined as extracting data from a web page. Right? And data comes in all kinds of forms. You have textual data you can have dates you can have numbers, you can have images, you can almost anything. Right?
+[01:42] And generally speaking anything on the webpage can be considered as data. Obviously this data has to be stored somewhere and because it's stored in somewhere, the web browser is able to render it onto the screen.
+[01:52] So more specifically, it stored in the HTML of a web page. So, just to simply show you that if I go over here.
+[01:59] To NFL dot com, this is Tom Brady site on NFL dot com. I notice that there's a good amount of data here. Right? You have his name his number, the team, whether he's an active player now and so much more so on many modern browsers.
+[02:11] If you hit control shift, I, it'll take you to some of the HTML regarding the actual webpage. If you click on this small icon over here and select specific component.
+[02:20] It shows you where in the HTML that specific part of the webpage is located. So clearly you can see here that Tom brady's weight, which is a decently relative data point. If that's something you're looking for is stored right here in the HTML.
+[02:33] And the same is true for everything else all the images, all the numbers and texts is stored in the HTML and that's very important for us because we need to be able to locate where the data is. And it's right here. It's pretty obvious in the HTML.
+[02:45] So, going back to slide 7, so all the data is in the HTML, and that's a very important idea that I'm going to stress and repeat myself multiple times. So before I go any further, I'm going to zoom out here. I'm going to talk about the data science pipeline.
+[02:58] Now, many of you guys probably came across this pipeline and the steps involved in it, because it's pretty important for any data, science or analytics project. Right? You 1st, start off by asking the question and like all data oriented questions. You need data for it. So, that's what the 2nd step is about. The 2nd, step is getting data.
+[03:13] Now, nowadays, you can get data on practically everything. Right? There's many governmental websites that have free, freely, available data. You have many with the free API key. You can get data from them and there's also like, source of lots of prebuilt datasets. Right?
+[03:26] I mean, I bet all of you guys here, I've heard of Kaggle, right? So there's lots of data on there. I think, honestly, yesterday, when I was looking at it, I found a dataset on walnuts. Right, my point being is that, like, you can find data on anything nowadays. Right? So after that stuff is the main part right?
+[03:40] You clean up your dataset because there's going to be 5 new data. So there's going to be missing.
+[03:43] Added values, and then you go on to modeling and validating, you go in this little loop before you deploy it. Right?
+[03:49] So, the reason why I skipped over the last few steps is because web scraping really fits into the beginning part of the project and the very 1st, few steps of the data science pipeline, where you need to get your data and you want to gather that data. And there's a few advantage.
+[04:01] Is that web scraping offers over prebuilt datasets for example with the people dataset. You're not in complete control over the data source. How the data's being collected and maybe the different features of your data center and web scraping gives you complete control over this.
+[04:14] You can choose where your data sources are, which is the specific web pages. You'll be scraping. You can choose how many features that it is that you're going to have and so much more. So there's a lot of flexibility involved with web scraping and it's pretty simple. So, that's where I'll be talking about, who has welcome.
+[04:28] So before I continue, I want to lay out some for general steps for web scraping and these are 4 steps that I like to follow the most. So, I'll walk you guys through this later on, in an actual Jupiter notebook session, but the 1st thing you do is obviously find a data source. Right?
+[04:40] So, in this case, we'll be scraping data from NFL dot com. So There'll be our data source. That's the webpage. We'll be scraping our data from the next step is to get the HTML. So, like, I just showed previously all the data is stored in the HTML.
+[04:52] So it makes sense that you need to be able to access the HTML to grab specific parts of it. And grabbing specific.
+[04:57] Parts of it is the 3rd step, right? Like I said, if I go back here.
+[05:01] Tom brady's weight in this sense right. Is stored in this part of the HTML it's not above. It's not below. It's nowhere else in the HTML except for that specific part. So how do we get that specific part of the HTML? How do we extract it?
+[05:13] Well, that's what the 3rd step is all about, and we'll be using CSS selected for that. Once again. If you're not familiar with HTML CSS, the next slide is dedicated to that. So, just bear with me for now.
+[05:22] And obviously, the last step is storing your data, right? There's no point in extracting the data, if you're not going to store it and you store the data for later parts of the data science pipeline, we'll clean up your data and then you modify your data, et cetera.
+[05:32] So, I mentioned a lot about each team on CSS just now so I'm just going to go a bit deeper into those.
+[05:38] Right. Hdml just stands for hypertext markup language and it's basically a way to tell the web browser how to display data and media onto the web page. Right? So right here is a very simple HTML document and just notice a few things here. Right?
+[05:52] We have a bot and in a closing body tag, we have each 1 and then a closing H1 tag. tag
+[05:58] So, syntactically, speaking, HTML is made up of a bunch of tags and everything between the tag has a specific meeting. So take this P tag, for example, right? The P tag tells a web browser that this is a paragraph. So everything between there is a paragraph.
+[06:12] Say that each 1 tag everything between the H1 tag stands for a header. So when the web browser receive this information, it knows to render the screen by specifying that this here is a paragraph. This here is, um, a header for the exact article.
+[06:25] So obviously it's a simple 1 here, but there's a downside of HTML, which is that it doesn't tell you how to visually structure the elements on the web page so say, that you want the background color to be read you want there to be some kind of bold font, et cetera. Well, you don't do that in HTML. You do that in CSS.
+[06:40] So CSS specifies the visual layout aesthetics of a webpage.
+[06:43] So, that's what this image here shows so say, for example, the header, the headers usually the main part of the webpage. So you want to make it like local right? So over here, I'm selecting for the H1 tag right here.
+[06:55] And then I'm applying a background color of red and the font size of large. I know it's a bit small here, but I can't really zoom into this presentation but that is what it's doing, right? I am selecting for the H1 tag by specifying H1. And then applying CSS properties after that.
+[07:08] And added score, that's what CSS lockers do it selects for specific parts of the HTML page, and it applies CSS properties to it. Now, we won't be worrying about those CSS properties. But the CSS electric comes into very handy for us. Right?
+[07:20] We need to locate specific parts of the HTML that have our data and CSS letters. Lets us do that because it lets us select for specific parts of the HTML.
+[07:28] So now, hopefully, I gave you a brief introduction as to web scraping and how it works. I'm going to quickly jump over to a Jupiter notebook. We'll be talking about the request and beautiful soup libraries.
+[07:37] Now, all of this material is available on the webpage for there's a link to my GitHub. So you can follow that to either clone it and then use this stuff there or you can just follow along over here because I'll be going over the same thing.
+[07:49] Now, after you find a data source, the 1st thing I mentioned is getting the HTML, that's a request, lets us do request let's send something called http request we won't get into the details of this, but just know that a get request lets you get the HTML content of a webpage, so we'll be using requests for that.
+[08:04] The next step is obviously parsing through the HTML and getting specific aspects of it. That's what beautiful suplexes do. Right? Beautiful. Beautiful. Takes take some CSS factors and returns the specific HTML tags that correspond to those CSS.
+[08:18] And lastly, the panda's library is used to store your data, which many of you might be familiar with. So, in this case, we'll be storing everything into a CSV file. We can store into many other file types.
+[08:28] So, let me just quickly jump over to the Jupiter notebook.
+[08:32] Which is right here. Awesome. All right. So if you don't have the patches install already, you can just use some simple pick commands here. Just Pip, install requests, beautiful support and panels.
+[08:42] Now, obviously, once you have these installed, uh, you have to import them. Now, the import statements are pretty common in terms of the syntax or the beautiful soup. 1 gets a little.
+[08:52] Okay, so I just want to explain that to make sure we're on the same page. Right? So, the package is called, which is short for beautiful soup form and within that package, there's an object called beautiful soup. So, from the package, we're importing the beautiful soup object.
+[09:05] Now, if you're anything like me, I suck at typing and I'm very bad at spelling. So instead of having to type a beautiful soup, every time, I'm just alien seeing it as so every time I want to refer to the object. I can just refer to letters DNS and same thing with pandas. Instead of having to type out panels. Every time.
+[09:20] I can just refer to as PD.
+[09:22] So, now we're going to make a data set, right? And I'll walk you through the general stats here.
+[09:26] So, the 1st step obviously is finding a data source, a webpage and don't worry. I already did that for you, which is this web page right here.
+[09:34] So, we click on him and then go to my computer's a bit slow. Right? So you can notice here that well, there's a lot of data, right? So this is going to be the top, I believe 25 quarterbacks in the 2021 season right?
+[09:44] So, we got tangled up up there, Justin Herbert, a lot of people, and there's clearly a lot of data stored in this table, like format. Right? We have towards the left, the number of yards they pass and towards the right the number of sites and so much more. sites and so much more
+[09:56] So, this is a really useful information and also, if we click on specific players, I say that we go to Tom radio over here. It redirects us to the specific players page on NFL dot com. So this is the page I was looking at before, and there's a good amount of data here. That's not on the previous page.
+[10:12] You have their height, their weight. Some of the data here is missing, but, I mean, that's nothing. You'll always find some missing data when going about your data source collection.
+[10:19] So clearly, there's a lot of data here, so I'm going to walk you through how you're going to web scrape all of that.
+[10:24] Right now the last thing I want to mention is look at the change in the URL. Uh, let's see if that goes away. So right now this is the web page that we're currently on when we click on a player link, the URL changes to something else.
+[10:35] Right. It goes to Tom brady's page URL before it was this long the subdomain I'll keep this in mind because this is pretty important for later on but I do want to point that out right now.
+[10:45] So now we just did the 1st step. We're just finding a data source. So the 2nd step is basically making a request to get the HTML.
+[10:53] So, it's syntactically speaking, it's pretty simple. Use the get command within the request library. So request doc.
+[10:59] And you add onto the URL so right. There's NFL dot com, which is a domain name and then everything else, which is in the add on variable is the sub domain within NFL dot com that has the web page that we were just looking at.
+[11:10] So, request doc, here essentially what it does is that clearly our webpage is stored somewhere out there on the Internet on some server. What that does is that makes a request to that server saying, hey, can I have the HTML of this webpage?
+[11:22] And it sends back a response so I'm storing the response back in a variable called response.
+[11:26] Now, if I run the cell, I hadn't import it always be treated in the libraries.
+[11:33] Give me a 2nd here. Yes. So when I run the cell.
+[11:36] And they looked at the type of the response notice how to respond to object, which makes sense because the server is giving us some kind of response.
+[11:43] Now, if I print out the status code here right you'll see it's a 200 status code. You might be familiar with other kinds of status codes, like a 400.
+[11:51] For code, right? That means that the server responded back saying that the page you're looking for isn't found a 200 status code is like, kind of the opposite. It says the page is found and here it is so it's like an okay response. Like, you're perfectly good to go.
+[12:02] Now, before I do realize, I think all the outputs are there, so I'm just going to delete all the outputs. So you don't get a sneak peek.
+[12:08] Yes, now, like I said, the main thing we're looking for is the content of the webpage. Right? The HTML content. That's what we need. That's what we want to get into this step of the web scraping process. So response to that content returns that out to us. And it's gonna be pretty long, so my computer hopefully doesn't crash.
+[12:23] Yeah. So you can see here that this is all the content of the webpage, which is clearly a lot of information, but everything you see here is the webpage and HTML that makes up this. Right here.
+[12:32] So, the content is what we need, so we've successfully finished the 2nd step right? Which is getting the HTML content.
+[12:39] Now, the 3rd step is the step that's kind of the most like, it's the most NIT picky, because there's a lot of stuff you have to do there. So I'm gonna walk you through that part, which is parsing through the HTML with the help of CSF selectors.
+[12:51] So we're going to use the beautiful soup object to do this, right?
+[12:54] So, we pass into the beautiful soup object, keep in mind that I alias it as a, we're going to pass in the content of the HTML, which is response to content and we're going to specify the beautiful soup that I want you to parse through the HTML using your HTML parser,
+[13:08] which basically creates some kind of tree structure that allows you to navigate and query the HTML document because everything in HTML you can think of it as a tree because you have tags and there's tags nested within the tags. So it's all rooted. And.
+[13:20] Federal data structure is a par street, which you won't get into, but a really cool topic. If you do want to look into it.
+[13:25] So, over here, I'm creating a beautiful soup object called soup player stats, because that's the player stats page that you're going off of. And obviously the object is a beautiful soup object.
+[13:35] So we now have an object, this beautiful soup object that has the HTML stored within it. Now, it's just a matter of querying everything. So we can get specific parts of that. So we'll be using the dots select command.
+[13:47] And what God select does is that it takes in a CSS selector, and it outputs everything that matches that CSS selector. So, if I go back to the webpage here, everything here is stored in a table.
+[13:57] So, let's just look at the HTML behind this. Uh, let's see.
+[14:02] Right. So if I click on this little cursor command, and then click elsewhere on the webpage.
+[14:07] It takes us to a specific part of the web page, and we can look at it more. If you'd like.
+[14:12] But notice how there's something called a T body tag. A T body is just short for the table body, right? And then within this tea body tag, we have a bunch of rows. So notice how, as a hover over these rows, the specific rows in the table are being highlighted.
+[14:26] Which makes sense, because this is where the HTML is pointing to towards all the data here.
+[14:31] So, I want to get a CSS selector for the table. Right? Because the table has all the data that I'm trying to scrape. So simple way to do this. And Chrome makes it very easy.
+[14:39] Is that if you right click in and you go over to copy and you hit copy selector over here, this will copy the CSS selector that selects for the T body tag. And, like, I just showed everything within the T, body tag has all the rows of the data set that we're trying to website.
+[14:53] So, if I hit copies selected here, it's all loaded in over here, but I can just copy and paste it here. So you can see that's the same.
+[15:00] Now, something to notice here is that this is a very long selector. There's a lot of, like, arrows. There's a lot of syntactical stuff going on, but also noticed that you don't really need to know how to make a CSS selector to get a CSS selected. Right?
+[15:11] Most common browsers allow you to just copy the selector based off of inspecting the web page source.
+[15:16] So, when you run this, right and then you print out how it's stored.
+[15:21] It returns a list of everything that match that CSS selector. Now obviously, this isn't being printed and formatted in a pretty way but you can notice here just from the general structure that it is a list. It's returning everything as a list.
+[15:32] Now, an interesting thing that I do want to point out.
+[15:35] Is that the length of this list is going to be 1.
+[15:38] Right and I think that's an important thing to specify because I'm only selecting for 1 tag. Right? I'm only selecting for the tea body tag.
+[15:46] And though, there's a bunch of nasty tags within it at the end day. I only generated selected for 1 of the tags, which is T body, which is why I returned the list of length 1. however, it's more useful for me to get a list of 25. so, there's 25 quarterbacks in this webpage, and as a result, there's 25 rows.
+[16:01] Right. So I can dive deeper by scraping that specific element. And that's what I'm doing over here. I'm selecting all the table rows. So that's what starts like it's like all the rows within that, uh, T, body tag and it returns to me all those rows.
+[16:15] So, if I hit run here, notice how the length of this list is now, 25, because everytime you, 25 rows based off the 25 rows in the previous dataset on the previous table. the previous table
+[16:25] So, I can show this to you, but it's not going to make much sense. Just cause it doesn't format it nicely.
+[16:30] So, let's just go back, so now let's look deeper into the HTML. So this right here is the rows specifying Tom Brady, right? If you click on this arrow, it shows all of the data right? So, we have, for example, 7.4, which, which is the yards a lot of data here as we go along.
+[16:45] So, TD is data cell, right? So we have the table and we have a table row and each row, and the table consists of multiple data cells. So, once again, it makes sense to go even a level deeper and extract the data from the data cells. data cells
+[16:59] So that's what this next line over here does right?
+[17:02] The next line over here is selects for all the data cells for now, just within the 1st row. So, when I'm indexing, I'm selecting the 1st row, which is Tom radius row and within Tom brady's role, I'm selecting for all the TD cells, which are all the beta cells within as well.
+[17:17] Well, now, when I run this once again, it's going to look like a lot of jargon bulk notice how all the information is here. So we're getting closer to the data that we want. Right?
+[17:26] And there's a lot of information up here, cause Tommy's image is also, during the cell, if you look over here, there's there's a link we'll get more into how to clean that up a little bit later. But for now, if we were to access all the other elements, right? For example, his name, right?
+[17:39] So, his name is an important part that we want when scraping the web. And that's what this line does. If you look a bit closely. Hopefully you can see this, there's an, a tag right here.
+[17:47] Right.
+[17:48] Within the a tag is Tom brady's name. So, by selecting the 1st element of the list.
+[17:53] Dot a, I get that a tag and using that string. I get that specific element within it. So notice how that gets me the, a tag over here. And then with that string, I'm able to return his name.
+[18:06] So, I just want to marvel this for a 2nd, right because within the Python environment beforehand, we had nothing there. I'm sorry just like regular Python libraries and nothing but over a course of a few lines we're able to get Tom lady's name into our Python environment. And it's stored, right?
+[18:19] I think that's pretty remarkable. And that's just the power of web scraping and you can really apply this for any website. Obviously in the theme of sports analytics, we're going off of our football here.
+[18:28] Now, everything else in the Python R list right? So, for example, all these different stats, not just his name is stored in a TD tag, and it's not useful to into a TD tag. Right? You'd rather have it as, like, integers within a list that you can use later on.
+[18:41] So that's what this function does right here. This is more related to regular Python. It doesn't have much to do with the request a beautiful libraries. I'm not going to go too deep into it, but essentially, what I'm doing is I'm moving through all these elements and I'm extracting the dots string element within it. Right? So, when I do, so.
+[18:56] All I'm doing here is I get Tom, pretty specific attributes, and I'm also just going through every single element in the original list so to break it down even more previously, I just focused on Tom Brady as well.
+[19:06] But simply in this whole loop, I'm going through all the rows in the data set and for each of the data set, I'm extracting different data, sell values and I'm just printing it out. So, you know, when it's finished and when it's running.
+[19:16] So, right now, we have all the data. That was previously right here. So, everything in this table is currently stored in our Python environment currently that. I mean, it's being printed out. So, now, let's move on to another step. If you remember from before.
+[19:29] I mentioned how, if you click on say, tambourines link, there's a change in the URL, and it goes to another part of the website that's dedicated to Tom Brady and there's also lots of useful information here that wasn't on the previous page. So say that you want that image, right? Well, there's a problem here, right?
+[19:43] You can't click on it right?
+[19:45] You're doing some kind of like Python manipulation, requesting the HTML and everything. There's no way you can tell Python to click on the actual link. Right? So how do we fix this?
+[19:55] Will you fix this once again by using route HTML? So every tag has something called an H graph element right? So you can see over here that there's an element called dash players.
+[20:06] Backslash Tom Brady which if you notice is the same as this string right here.
+[20:11] Right. So the way the way you click elements using requests and beautiful soup is that you extract that element and you append it on to the domain name, which in this case is NFL dot com and then you make a separate request for that specific webpage.
+[20:24] And you keep doing that over and over again, we'll talk about some of the positives and negatives for that.
+[20:28] But just know that by accessing the hrf element, which can, which you can do syntactically over here. Right? So this returns that specific URL.
+[20:36] All you can do there is that you have the HF element you added on to the domain name.
+[20:41] You make a separate request, then you use a separate beautiful soup object and then you have a CSS.
+[20:47] That selects for your data, so though it's for a different webpage. Everything here we've just done for the previous webpage. Right? We previously made a request. We store it into a beautiful soup object and then we use CSS selectors to get all that data.
+[21:01] Now, this CSS selector is basically the selector that selects for this table right here. I already figured out beforehand so that we could, uh, I wouldn't have to show you because I showed you previously how to get a CSS selector, but that's electric gets for all the data here.
+[21:13] So, when I run this, right, you'll see that for Tom Brady. We have his height, which is 64. we have his weight to 55. there's some missing values here and we have his hometown in some more recent values. But that's what this is doing here.
+[21:25] We essentially just clicked on this link by making a separate request by accessing the HF element. hf element
+[21:31] So, now I'm going to do the same thing, except for all the players, but we're going to go to all the players over here.
+[21:38] So, now, when I run this, it's going to take a little bit of time. I am running multiple applications at the same time. So, it's going to take a few seconds, but notice, I was able to go through each of the links within the web page. Click on it.
+[21:49] Right I'm using quotation marks here because it's not technically clicking on it, accessing those tables right? Or.
+[21:54] Values and printing them out. So you can see over here that say Justin, Herbert, that's his height and all this data is stored within his page of NFL. Com and request is able to.
+[22:04] I guess take that extra attribute and make a separate request here.
+[22:09] So, yes, this finished up running and so I'm doing the same thing as I'm doing up here, just looping through all the players in the table.
+[22:16] So, now we're going to the last step. Right? So, we use CSS letters to find where our data's being located. We were able to make sure that everything's located properly and parse through the HTML. So we're almost there. And the last step is storing the data. Right?
+[22:30] And strong data is pretty important, because you want to be able to access your data later on.
+[22:34] So, I'll be using the panda's library over here now, though, it looks like a large chunk of code. We just did everything you see here right? So, what I'm doing is I'm making a request to that table right? That table over here.
+[22:45] Right but I'm just throwing everything into a list. So over here, I'm making a list called passwords and appending that specific position. So, the very 1st, element of the return list is the passwords, which you can see are right here. The very 2nd, element is the yards over here so that's what I'm passing over here.
+[23:00] So though it looks just different, because I'm using a different syntax to make it easier to read everything that you see here. We just did. I'm just appending it onto a list. So, later on, I can store it into a data set.
+[23:10] Now, I'm not going to run this for a few reasons. 1. if you look down here, I'm also doing that clicking thing. I talked about earlier clicking. It takes a lot of time, because if you think about it, we're sending a separate request, every single time, and every single time we're parsing it.
+[23:24] We're parsing different web pages and every single time we're storing different data and we're doing that. Same thing 25 times. Right? So, it takes up a lot of time and computational power, but that's just the way you have to do it in request in beautiful soup. soup
+[23:36] So, I'm not going to run this just for just because it's going to take a while, but at the end of day, after you get all that data, you can use a simple panda's library. You can use this panel's library to store everything and.
+[23:46] To a data frame, which is what this is doing right here. And then after that. Okay.
+[23:53] So, I would say, obviously, there's going to be going through the entire list over here, but also within the list itself, we're going through another separate get request. I get request takes a while, just because it has to contact the server and come back to you. So, I'm not sure how long that will take.
+[24:07] It really depends on the server itself, but theoretically, right here it is, it's just the fact that, because a request takes varying amount of time it's going to add on more on top of that. So it's nested. So, it's often times a certain amount.
+[24:19] Now, yeah, like I said, the data's being stored in the data frame here and then I'm saving everything here to a CSV file. So to just to show you how that looks over here.
+[24:28] So this is all the data that we previously scraped right? And now everything's actually stored in a file that you can use. There's a lot of missing values here. Some of the data isn't formatted properly. But once again, that's the steps later on in the process, right? Later on you clean it later on you Pre process it and model it for.
+[24:43] Now, we're just getting data and that's what we've successfully done here. Right? So, all the data that was stored in those individual lists. We were able to convert it to a data frame and then from there, we're gonna use this later on.
+[24:53] So, that's it for request and beautiful soup there. So moving on 1 of the packages that I was talking about before was selenium and sequel.
+[25:01] Now, like I said, selenium and sequel are very powerful, they have when they came out, they kind of just transformed the way you interact with the web. So it's very revolutionary in terms of the way they work. So, I don't want go so deep into them, because it is pretty confusing, but, in essence, right.
+[25:15] Selenium allows you to actually interact with the web browser. Previously. I talked about how you can't really click and request and beautiful soup, but you can insulate them. Right? Because the waste Millennial works is that it connects to a Chrome executable. So I'll be using Chrome. You can also use Firefox or anything else.
+[25:29] You can download these executables online.
+[25:31] But just searching up, like downloading Chrome drivers, and then basically, by connecting to the driver, it's able to interact with the web page itself.
+[25:40] I'll show you how that works in a bit the next package is sequel like, 3, it's a built in package and Python and allows you to do sequel queries in Python itself. Now, sequel allows you to create databases.
+[25:50] It's just basically a database is a collection of tables and that's what allows you to do, allows you to query different tables within a database. Right? So combining selenium and sequel is very powerful. So that's what I'm going to show you right now.
+[26:03] Once again, the purpose of this isn't to get too caught up on, like, the technical aspects.
+[26:08] But it is to just yes, but it's just to show you that. There's like a lot of powerful stuff out there so to briefly run through the code here. Right? Let me zoom in a little bit.
+[26:19] I'm doing is importing selenium and then I'm creating some sequel tables right? Using Python. So, over here are some sequel tables that have the player stats, and in the player info. So those 2 little pages I showed you beforehand and then I'm connecting to a Chrome executable.
+[26:32] So, I have already downloaded beforehand.
+[26:34] Right so the Chrome extension.
+[26:40] And from there, I'm loading in this web page, which is the same web pages before.
+[26:44] And basically, from there, I'm using a whole bunch of like, CSS selectors to access specific parts of that table, which once again, we just went over.
+[26:51] And then after that, I'm executing this command inserts all the data into the sequel table.
+[26:56] So, if I were to quickly run this, let's see, hopefully might be a Cisco terminal runs.
+[27:03] Uh, you know, let me open up the folder cause it's not going directly into that.
+[27:17] Okay, okay.
+[27:22] Sorry, my computer gets very slow. Yeah. So, as you can see my Chrome executables over here and now, when I run this program.
+[27:32] Give me a 2nd, so when I run this, I spoke Python. Like I said, I'm very basketball.
+[27:42] Uh, so you can see here, like, I'm not doing anything, but able to interact with the Chrome browser.
+[27:52] Right. And soon you're going to see a pop up. Right? So it loads that specific URL. There's a pop up. So I click later on to it.
+[28:00] It's going to take a few seconds I click later and now it's going through the entire data set, and it's extracting those elements, and it's storing it into that sequel database that I mentioned before notice also how it's able to click on those links. Right?
+[28:12] So, it's clicking on the top radio link, extracting that data, and it's going back and then going through the exact same process, except for a different quarterback this time. Right?
+[28:20] So, it goes through those individual elements, and it keeps doing that over and over again until it reaches the end of the table because that's the way it programmed it to do. Now, like I said, this is going to take a while.
+[28:29] Do just because my computer is super slow, but I have already run this program before. It's all the data's stored in the database already. But hopefully this, this is pretty cool. At least in my opinion, you can do a lot of powerful stuff with here.
+[28:39] I'm doing is just clicking and going back, but you can just imagine you can search stuff up and you can make your own box that do a lot of stuff in terms of scraping dataset from different types of websites. You can open up new tabs, go to different URLs, gets data from different sources and put them onto a different database.
+[28:54] Oh, okay oh, no, you're good. Mm. Hmm.
+[28:58] Like, a box it's on a PDF. Mm. Hmm. Easy to work around. Yeah, I guess so, yeah, it definitely is. But that's like, the power of selenium is just that you can access to any website through the Chrome browser itself.
+[29:09] So, it's easier to just send a request, uh, separately, just with selenium, because it allows you to actually interact with the web page. Does that answer your question?
+[29:17] We have the 1 page, and then you have the PDF if there's a workaround. Oh, so if there's a PDF already in the webpage yeah, because you can select with it.
+[29:24] So, with selenium, you can also interact with JavaScript, which I'm not going to go in, but like I said, with JavaScript, also, a lot of the web is kind of like, rendered in JavaScript as well. You can use, like, react, for example, to load and different types of HTML components. So if your PDF is something like that, it allows you to interact with it.
+[29:39] So it's very powerful. It's very versatile.
+[29:42] Um, so, let me just, uh, execute this and then terminate the program. Now. Like I said, everything here was stored in a sequel database. Right? So, I'm gonna open up sequel studio, just to show you the full process.
+[29:54] So, all all the data here was stored into a database called quarterbacks master right now I can execute basic sequel commands.
+[30:02] And get all the data from there was, this is just a simple select from this table, and I can do even something, even more complicated such as selecting, and then using some kind of condition and joining on a specific key or ID column right?
+[30:15] Once again, the purpose of this isn't going to go into selenium, but just to show you the full process of how you can use to let him in sequel to get some pretty good insights.
+[30:23] So, within the last few minutes.
+[30:26] Let me just pull up the presentation again. Right? So, within the last few minutes, I'm going to quickly.
+[30:32] All right, so we're on time yeah, within the last few minutes, I'm just gonna quickly go over the legality of web scraping. Now. I do think this is a very, it's like 1 of the topics right? That's a very important topic on the left. Right?
+[30:44] Like, I just said, it's not legal to scrape every single web page out there. There's a lot of web pages. You can't.
+[30:51] Right. There are a few examples of some lawsuits that happen when certain companies are certain people scrape data from a website that they weren't allowed to not saying that you guys will get a lawsuit on you. I really hope you guys don't if you do.
+[31:01] I just want you guys know that I'm not responsible for that, but to just to just like, kind of like.
+[31:07] I guess expose you to the idea that be careful out there, because not all data is public, even though it is visible to you. So, a good way of knowing whether or not, you can scrape a web. Right? Many government sites have really publicly available data sets that you can use.
+[31:20] Right they also have APIs, you might have to register for an API key, but you can get data from there as well. Right, but I'll get source that I always use is something called the robots that file that's attached to the domain of a webpage.
+[31:32] I'll talk about that right now so say LinkedIn, LinkedIn has a lot of data has tremendous amounts of data, right? Just not people on companies on specific job applications, lots of data, but if I want to web, scrape it, right? Well, I'm going to get my LinkedIn account band and here's why so, let's go to LinkedIn dot com.
+[31:47] Oh, yes.
+[31:50] Yeah, I'm going to go I'm going to go over to Chrome because.
+[31:53] I like Chrome better so link dot com slash robots at T.
+[32:02] Right so LinkedIn dot com is obviously the domain name and robots is just a sub domain. Now if I click enter.
+[32:09] And, yeah, you can notice here. Let me just do me a little.
+[32:14] Right the use of robots, or other automated means to access LinkedIn without explicit permission of LinkedIn is strictly prohibited. Right? I mean, this explicitly says don't scrape LinkedIn even the data is publicly available of sorts. Right? You don't really need a LinkedIn account, perhaps to see job applications or something.
+[32:29] Linkedin explicitly tells you, you shouldn't scrape our Web so don't do it. Right? If we go to NFL dot com that we were previously just web scraping.
+[32:37] And fell dot com slash robust, which I already have.
+[32:42] Right. I want you to know something important here. Right? There's a user agent and then there's a milestone this basically says all users, no matter who they are in terms of, like, robots are automated means cannot website from these following URLs.
+[32:54] So you can't the website from NFL dot com slash account, or you can't web scrape from NFL dot search or slash search, but also put it down here. Nfl dot com slash stat, slash players.
+[33:04] That's what we were previously web scraping so basically I'm gonna get kicked out. I'm sorry but I had to sacrifice my account for this. Right?
+[33:10] No, I'm kidding if you look at the actual thing, it says media partners. Google right? So, basically, if you're working for a Google, say Google AdSense or like the Google search engine or something like that, you're not allowed to web scrape this. But anyone else is right? I wish I was working for Google, but I'm not, but so I'm allowed to web script.
+[33:25] So I guess there are some posts not working for Google, right?
+[33:29] So, uh, that's just a quick introduction to the robots, at there's a lot more syntactical stuff that goes into it. So there are a few resources that I gave towards the end of the presentation, in terms of how you can read a robust file.
+[33:41] Now, once again, requests and beautiful soup are far more complicated and there's so many different more things you can do with it. So hopefully you guys got some motivation in terms of.
+[33:49] That's how it works, how to get data from web page and how to go through that process on making a dataset. Even though we did just make a far more simpler data sets.
+[33:56] So, that's it for this presentation there are more resources here and on the actual website. So I hope you guys got something from this and we do have a few minutes left. So if you have any questions feel free to ask.
+[34:07] Yeah, well, just multiple pages so, uh, the point I wanted to split the 500 instead of.
+[34:17] I have to do yeah, so if I go back to the NFL page, right? Oh, wait, Where's my Chrome.
+[34:25] Here right here that's not Chrome.
+[34:30] Okay, so if I go back to the NFL page over here, there is only 25 being displayed here.
+[34:35] If you go to the next page, we'll get the change in the URL. Right? It's a different URL. So you're gonna have to do the same thing of clicking right? Where you get that specific element, get the HF element appended on.
+[34:45] And now you now you get the request element for this entire webpage, then you get the next 25, then you go back down here. So it's an iterative process. So it's just a full loop every time the full loop. You get the next page every time. So, that's how you'd create a dataset of even more quarterbacks.
+[34:59] I only do 25 here, just because it takes time for it to scrape through. scrape through
+[35:03] Mm, hmm I think it was another quick. Yes. Yeah.
+[35:09] So just like that, that.
+[35:14] Depends on what says so, if it says like user, if it says allowed with the backslash and everything is allowed, if it says disallow with the access and nothing is allowed.
+[35:23] Yeah, so I think like LinkedIn, it's like, not allowed with a backslash, which means basically everything after this domain name, which is really everything on a web page is not allowed.
+[35:34] Yeah, like that so, yeah, you can't scrape and be, I believe. Yeah.
+[35:38] Any other questions so let me ask you.
+[35:43] Yeah, yeah, so.
+[35:48] Yeah, so it depends on the amount of data that you took, and just like, how you're using the data. So I know that every time you send a request, the server gets the address of where it's sending the information to. So, every time I send a request here, then it gets like my ID, because I might just be the way he's getting the request from.
+[36:03] So, maybe, for example, LinkedIn, they can get.
+[36:06] Your AP vendor account, or they might not I mean, it really depends on the security features. I'm not a big expert on that. So, I mean, I don't know if that's even true. But, like, if they do get your power link your information from there, then they could be in your account.
+[36:18] Awesome. Are there any more questions if not.
+[36:33] All right.

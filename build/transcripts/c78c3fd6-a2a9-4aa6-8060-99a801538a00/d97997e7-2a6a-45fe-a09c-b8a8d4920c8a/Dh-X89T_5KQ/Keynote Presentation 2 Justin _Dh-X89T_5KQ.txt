@@ -1,0 +1,1766 @@
+Video Title: Keynote Presentation 2: Justin Jacobs [2021 UConn Sports Analytics Symposium]
+Video ID: Dh-X89T_5KQ
+URL: https://www.youtube.com/watch?v=Dh-X89T_5KQ
+View Count: 60
+
+[00:00] um my name is uh dr huggins i'm a
+[00:02] assistant professor in the department of
+[00:04] kinesiology at the university of
+[00:06] connecticut i work at the corey stringer
+[00:09] institute um and it's my pleasure uh to
+[00:12] welcome justin jacobs
+[00:15] justin is a phd principal research
+[00:18] statistician for sandia national
+[00:20] laboratories
+[00:21] and a remote researcher for the national
+[00:24] basketball association
+[00:25] graduated from the university of
+[00:27] maryland baltimore county with a phd in
+[00:29] statistics prior to working as a faculty
+[00:31] at coppin state university within the
+[00:33] department of defense
+[00:35] during his tenure at the dod and
+[00:37] national laboratories justin worked on
+[00:39] various projects fusing statistical
+[00:42] analyses
+[00:43] data science and intel analyst analysis
+[00:46] in helping solve some of the nation's
+[00:47] most challenging problems
+[00:49] ultimately earning his agency's first
+[00:52] ever presidential early career award in
+[00:54] science and engineering
+[00:56] a career award
+[00:57] and an odni medallion award aside from
+[01:01] his work in national security justin has
+[01:03] also served either as a consultant or a
+[01:07] remote researcher and full-time
+[01:09] researcher for multiple nba teams since
+[01:12] 2013
+[01:13] most recently the houston rockets from
+[01:16] 29 2018 through 2020
+[01:19] so please welcome justin jacobs and he's
+[01:23] going to be presenting on a square
+[01:25] integrable methodology into play
+[01:27] registration for nba tracking data
+[01:34] all right thank you um so there will be
+[01:36] an exam on everything that was just said
+[01:39] so uh i hope you're all paying attention
+[01:42] um
+[01:43] so uh thanks for thanks for having me um
+[01:46] early this morning um
+[01:48] i kind of wanted to give
+[01:51] insight of how we think about what can
+[01:54] seem like really complex ideas in
+[01:56] statistics uh show how they apply to
+[01:59] problems and then extract out the what's
+[02:01] really going on um
+[02:04] and the uh the the core component here
+[02:07] is to
+[02:08] uh kind of show you the actual mechanics
+[02:11] of it so this is going to be a little
+[02:13] bit of an academic lecture uh so
+[02:15] apologies in advance um
+[02:18] but don't be intimidated i will show
+[02:21] as much as humanly possible each step so
+[02:24] we're going to go pretty slow
+[02:26] but i want to show you something really
+[02:27] cool
+[02:29] let's see here which way can i do this
+[02:32] there we go
+[02:33] all right so um
+[02:35] what we're going to do is we're going to
+[02:36] start with a non-sports example so
+[02:38] at the end of this story i want you to
+[02:41] think a keep reminding yourself of this
+[02:43] non-sports example because this
+[02:44] non-sports example is going to carry out
+[02:46] through the entire theme even though we
+[02:48] might seem to deviate quite a ways away
+[02:51] and um if you know uh if you know a
+[02:54] little bit about me huge marx brothers
+[02:56] fans you're going to see a bunch of
+[02:57] markzware's quotes as we go through
+[02:59] um
+[03:00] the non-sports example is going to be
+[03:02] dealing with like facial recognition so
+[03:04] you know grouch mark says i never forget
+[03:06] a face but in your case i'll be glad to
+[03:07] make an exception
+[03:10] and what we're going to talk about here
+[03:11] is iris scanning and registration
+[03:14] so i'm not sure if you know this but
+[03:17] your iris is actually like a snowflake
+[03:19] it effectively builds a unique bar code
+[03:22] to identify who you are
+[03:24] and um what happens is when you're born
+[03:26] as a baby and when you come out as a
+[03:28] baby your rods and cones haven't quite
+[03:30] formed fully and over those first three
+[03:33] months they start to fracture and break
+[03:35] and that's what builds this unique
+[03:36] pattern
+[03:38] so
+[03:38] let's suppose there's a situation where
+[03:40] you're a child who's just gone through
+[03:42] this process couple years into your life
+[03:45] you're abducted and then you disappear
+[03:47] uh off the face of the earth effectively
+[03:49] right so it's not like you're abducted
+[03:50] and they say oh you're somewhere in the
+[03:51] neighborhood like you're just gone
+[03:52] there's 30 years that pass
+[03:54] how do we still keep finding these these
+[03:56] folks that have been missing
+[03:58] this is actually a methodology that we
+[04:00] came up with uh that would
+[04:03] that actually does find people in the
+[04:04] wild so we can use the irises to extract
+[04:08] out those barcodes and then say are you
+[04:09] a match so since this process ends three
+[04:12] months in if i have a photo of you at
+[04:14] two years old and then all of a sudden i
+[04:17] see a photo of you pop up online in some
+[04:19] general repository i can run this
+[04:21] algorithm extract out the barcode and
+[04:24] see whether or not you're that person
+[04:26] and it's it's pretty amazing that we can
+[04:28] actually do this and and find missing
+[04:30] children
+[04:31] um so for example here if you can see i
+[04:33] get over here um can you guys see my
+[04:35] mouse
+[04:36] if anyone wants to hop on
+[04:40] uh yes we can see your mouse awesome
+[04:42] great
+[04:43] so
+[04:44] what we do here is we uh have an edge
+[04:46] detection algorithm um that's outside of
+[04:48] the point here of what we're going to
+[04:50] look at but we have an edge detection
+[04:51] algorithm that says all right here's the
+[04:52] iris
+[04:53] and we're going to take this little area
+[04:55] in between right the actual iris and
+[04:57] then we're going to unravel it and then
+[04:59] run
+[04:59] math magic over it and we're going to
+[05:01] extract out effectively this barcode
+[05:03] which is in the upper left corner
+[05:06] and that's what's going to be that
+[05:07] registration
+[05:08] or that that's that scan that we can use
+[05:10] for registration
+[05:12] so once we have a collection of barcodes
+[05:14] we can actually run them over each other
+[05:17] and uh compute the hamming distance so
+[05:19] when i say run them over each other um
+[05:22] wherever you're going to slice because
+[05:23] it's circular wherever you're going to
+[05:24] slice that's going to be the left end
+[05:26] point
+[05:26] um and we want to do that left
+[05:28] endpoint's actually the same everywhere
+[05:32] the easiest way to explain it is if
+[05:34] you're faced on the slice let's say it
+[05:36] goes down but if you're tilted slightly
+[05:38] you're the slice is no longer down it's
+[05:40] off to the side so what we do is we'll
+[05:42] take the barcode and just slide it
+[05:43] across and compute hamming distance
+[05:45] when we do that we're going to get a
+[05:46] number of pixels that match in this case
+[05:49] so this distribution we actually get
+[05:51] like this this bimodal distribution that
+[05:53] pops out this left-hand distribution is
+[05:56] the probability of a non-match and most
+[05:58] people don't match because they're all
+[06:00] everyone's got you know their their own
+[06:02] unique barcodes in fact most people have
+[06:04] two uh barcodes and those barcodes don't
+[06:07] even match your left and i right eyes
+[06:08] don't match either
+[06:10] we're going to have a very hot spot but
+[06:11] we actually see this like 0.8 region
+[06:14] kind of pop out so the x axis here is
+[06:17] the percentage of bits that match and
+[06:19] the y-axis is the resolution of the
+[06:21] photo and as the worst resolution occurs
+[06:25] you see the probability of matching kind
+[06:27] of get worse and worse which is kind of
+[06:28] what we expect
+[06:30] but if we get some pretty nice
+[06:31] resolution photos we get a really nice
+[06:33] separation boundary
+[06:35] so we developed this back in uh 2011 i
+[06:38] say mcgarvey at all i'm part of the at
+[06:40] all in this situation
+[06:42] building these distributions out and
+[06:44] ensuring the robustness of the filters
+[06:47] we were able to apply apply this into
+[06:49] the national center for missing
+[06:50] exploited children and this algorithm
+[06:52] has been off and running and doing
+[06:53] fantastic stuff
+[06:56] so if i put this process together
+[06:59] what i've done here is i've taken an
+[07:01] iris and i apologize if you're creeped
+[07:03] out by eyes um
+[07:05] but i take the iris i do an unwrapping
+[07:08] and here's where i did that segmentation
+[07:10] so this is the actual picture of the
+[07:11] iris
+[07:12] and then i run this filter over it this
+[07:14] is what's called a gabor filter and i i
+[07:17] don't want to like stress you guys out
+[07:18] about this i just want to show you what
+[07:20] the pictures look like but it's a
+[07:21] particular filter that tries to look for
+[07:24] the relationships and frequencies but
+[07:26] between the grayscale components of the
+[07:28] iris
+[07:30] and those relationships those hard
+[07:33] shifts in the grayscale components um
+[07:36] ones that should be separated greatly do
+[07:38] get separated some that are that are
+[07:40] kind of off will get lumped together um
+[07:42] think of it kind of as like a as like a
+[07:44] weird sigmoid like the sigmoid tries to
+[07:47] push out uh
+[07:49] far away components and pull in closer
+[07:51] close components meaning if i have a
+[07:52] grayscale value of like 200 versus 205
+[07:55] they'll kind of get together and then a
+[07:57] very a value of like 105 versus 210
+[08:00] they'll push them farther out
+[08:01] but here i don't want to just do that
+[08:03] and this is why i said it's a weird
+[08:05] sigmoid what i want to do is i want to
+[08:07] look not just for
+[08:09] jumps that kind of get closer and
+[08:10] farther away but i also want to look at
+[08:11] some where i might want to pull them
+[08:13] together that are farther away meaning
+[08:14] that uh if i look at two to three pixel
+[08:18] segments and even though i have a 205
+[08:20] and 210 next to each other that 205
+[08:22] might be linked to a couple 100s and
+[08:24] that 210 might be linked to a couple
+[08:26] 200s and now i want to push those far
+[08:28] away so it's kind of doing this
+[08:30] multi-layering effect and that's what
+[08:32] helps build this barcode and then we
+[08:34] just run hamming distance
+[08:36] so
+[08:37] it ends up being an incredibly simple
+[08:39] algorithm because all you do is is
+[08:42] extract out the image that's kind of the
+[08:44] little hard part but you extract out the
+[08:46] image you unwrap it you convert to
+[08:48] grayscale you run a gabor filter which
+[08:50] is a function call and some parameter
+[08:52] tuning and you run a hamming distance
+[08:55] um so the question is like could we do
+[08:58] something similar for this because we've
+[08:59] seen this work very effectively for
+[09:01] registration of children
+[09:03] uh or even adults um could we see if
+[09:06] this works in the um
+[09:08] in the sports world
+[09:10] so what we're going to do is we're going
+[09:11] to try and build
+[09:13] instead of using a gabor filter right
+[09:14] away because
+[09:16] you guys don't know what a gabor filter
+[09:17] is and i can't tell you easily what a
+[09:19] good war filter is so i think all of us
+[09:21] are at a loss for trying to use it so
+[09:23] let's try to build up a methodology that
+[09:25] makes sense so that when we do get
+[09:28] matches we can start to explain why does
+[09:29] this match
+[09:31] the google filter doesn't really give
+[09:32] you that it just tells you it is a match
+[09:35] so what we're gonna do is we're gonna
+[09:36] start with the frequency space
+[09:38] and um the quote here is you pay us a
+[09:41] little we'll be a little tough but if
+[09:42] you pay us a lot we'll be a lot tough
+[09:44] and it's a chico marks quote um
+[09:47] the idea here is that if you put a
+[09:50] little bit of effort into the frequency
+[09:52] uh decomposition algorithm you're going
+[09:54] to get a little bit of help you're going
+[09:56] to be able to represent that function a
+[09:58] little bit but if you put a lot of
+[09:59] effort into the frequency decomposition
+[10:02] algorithm you're going to get a lot of a
+[10:04] lot of power
+[10:05] so
+[10:06] if you're familiar with the fourier
+[10:08] series then you've already got a leg up
+[10:10] but if you're not uh we're you're going
+[10:12] to learn some things today
+[10:14] so we're going to start with a simple
+[10:15] numerical analysis example um
+[10:18] what we're going to do is we're going to
+[10:19] take a function f and i'm going to
+[10:20] convert this to s i'm using saying s for
+[10:22] signal but we're going to have this
+[10:24] function little f
+[10:25] and this functional f is going to be our
+[10:28] route that's being run whether it is
+[10:31] football or hockey or basketball if we
+[10:33] have tracking data you have routes
+[10:36] and what we want to do is uh take this f
+[10:39] of x and we want to represent it in some
+[10:42] frequency space which we're going to
+[10:43] call like big f okay so we're going to
+[10:45] transform this collection of track paths
+[10:48] and convert to some fundamental
+[10:50] frequency
+[10:52] so
+[10:53] the way we're going to do that that
+[10:54] nasty looking integral is we're going to
+[10:56] do it by example um
+[10:59] we're going to
+[11:00] sensitive there we go
+[11:03] what we're going to do is uh we're going
+[11:04] to take this function here and let's
+[11:06] suppose uh for the sake of argument uh
+[11:09] we are looking at a little league game
+[11:11] that has tracking data and here's a kid
+[11:12] who's just literally running serpentine
+[11:15] uh down the field
+[11:16] um i picked this function we're gonna
+[11:19] we're going to cheat a lot today because
+[11:22] i want to show you the mechanics and
+[11:23] we'll discuss in the real world how this
+[11:25] really works
+[11:26] but let's suppose we can represent the
+[11:28] serpentine route as 3 times cosine plus
+[11:30] 10 times sine with a frequency of 7
+[11:33] minus 3 times cosine of the frequency of
+[11:35] 11. that's going to be our signal in the
+[11:37] real world we don't know this we just we
+[11:39] just see the path so we can approximate
+[11:41] this
+[11:42] but let's suppose now we know this
+[11:45] when we convert over the fourier series
+[11:48] the fourier series is actually a
+[11:50] particular solution
+[11:52] of the
+[11:53] second derivative of euclidean space
+[11:57] so
+[11:57] the way to think about that is we know
+[11:59] the distance between two points is a
+[12:01] straight line
+[12:02] how do you define a straight line um
+[12:07] you do it by saying that the second
+[12:08] derivative is equal to zero everywhere
+[12:11] so if i solve that the second derivative
+[12:13] equals zero everywhere
+[12:15] um
+[12:16] then i solve that function um or sorry i
+[12:19] do the second derivative of a function
+[12:21] in euclidean space so the square the d
+[12:23] squared f
+[12:25] equals negative f kind of thing
+[12:26] i get uh sine and cosine is the
+[12:28] solutions
+[12:30] so these sines and cosines actually form
+[12:32] an orthonormal basis that
+[12:35] will be able to represent the entire
+[12:37] space in euclidean space
+[12:38] and what i care about is is these b of
+[12:41] k's afk is an a naught
+[12:43] so what i'm going to do is i'm going to
+[12:44] take this function and rewrite it in its
+[12:47] basis
+[12:48] and i need to figure out what those
+[12:50] coefficients are um
+[12:52] so
+[12:53] the way that works is i get this nice
+[12:56] little result it's the fourier integral
+[12:58] transform
+[12:59] all i have to do is take each
+[13:02] fundamental frequency or its basis
+[13:04] element
+[13:05] for some frequency k
+[13:07] multiply it by the signal and then
+[13:08] compute this integral
+[13:10] all right and this is pretty
+[13:12] straightforward this is this is calc 1
+[13:13] at this point so
+[13:15] let's let's actually do that
+[13:17] um so we're going to do a naught
+[13:19] remember my s of x so it's s of x times
+[13:22] uh
+[13:23] cosine zero of x so it's just the
+[13:26] integral of s s of x dx um
+[13:29] i go and uh put in s of x and i can
+[13:32] compute this integral and equals zero so
+[13:34] a naught is zero and you can go ahead
+[13:36] and verify this at home
+[13:38] now if i go and do i'm going to pick a3
+[13:41] and i pick a3 for a reason uh so s of x
+[13:45] times cosine um uh
+[13:50] i think i goofed here oh yeah i goofed
+[13:52] up this should be a three so apologies
+[13:54] so this is cosine of three x um
+[13:57] when i do this integral for cosine of
+[14:00] three x is that right oh no i did this
+[14:02] right this is a1 oh geez i'm sorry guys
+[14:04] that is my fault i copied three to three
+[14:06] so this is a1 um
+[14:09] this should be a1 yeah sorry uh
+[14:12] so i do the integral of s of x cosine of
+[14:14] x when i do this integral you can verify
+[14:16] that this is going to equal 3.
+[14:19] so
+[14:19] i know that so this is actually the
+[14:22] first fourier coefficient
+[14:24] so if i get this 3 i get 3 cosine x and
+[14:29] that is actually the first part of f of
+[14:31] x
+[14:32] so if i go and plot that that's my
+[14:34] approximate
+[14:36] run of the route
+[14:38] and uh that's
+[14:41] not good it's really not good i have i
+[14:44] have a
+[14:44] i get the general mean path but i have
+[14:47] nothing with the serpentine process
+[14:50] but if i go and do the other levels of
+[14:52] these coefficients
+[14:54] right i know because i set this function
+[14:56] up the way it is i know that the first
+[14:58] for corey fourier coefficient is going
+[15:00] to be 3
+[15:01] i know that the seventh fourier
+[15:03] coefficient under sine is going to be 10
+[15:05] and i know the 11th fourier coefficient
+[15:08] of um
+[15:10] of the 11th fundamental frequency is
+[15:12] gonna be negative three and you can go
+[15:14] and verify that at home and what happens
+[15:16] is this green dashed line is going to be
+[15:18] the first fourier coefficient
+[15:21] uh component plus
+[15:23] the third fourier coefficient or seventh
+[15:26] sorry seventh one and then with red it's
+[15:28] going to be the 11th and you see that
+[15:30] the red just masks the entire blue
+[15:33] so
+[15:34] we'll end up with a perfect fit here
+[15:35] that's fantastic um
+[15:38] the uh perfect fit should happen we pick
+[15:40] the function that matches the
+[15:42] fundamental frequencies perfectly
+[15:46] um
+[15:47] so from there what we're gonna do is
+[15:48] we're gonna apply this to a um
+[15:51] to an actual path
+[15:53] um
+[15:54] so we're going to cheat a little bit
+[15:55] here and i'll explain what we're going
+[15:56] to do um and we're going to do sports so
+[15:59] the zeppelmark's quote is you can't have
+[16:01] a good football team unless you have
+[16:02] good football players
+[16:03] uh zeppelmarks was a gm uh obviously
+[16:07] um
+[16:08] but here what we're after is uh we're
+[16:10] going to have this particular track
+[16:13] and how i'm going to cheat is is i'm
+[16:15] going to make sure that the track
+[16:16] doesn't self-intersect means that
+[16:19] you're not going to come backwards it is
+[16:21] an actual function
+[16:22] um and the reason i'm doing that is
+[16:24] because we want to be able to
+[16:26] represent this uh
+[16:28] the this path in the fourier space when
+[16:31] they come back and self-intersect uh it
+[16:33] doesn't it doesn't work anymore and in
+[16:35] fact we have to do something completely
+[16:37] different uh
+[16:39] we have to move to like two-dimensional
+[16:40] or temporal
+[16:41] domain versions
+[16:43] um
+[16:44] so with this path we can now represent
+[16:47] the downfield location as the x-axis and
+[16:51] then across field is going to be their
+[16:53] y-axis and we want to be able to
+[16:56] characterize this route right because
+[16:57] we're going to think of that iris
+[16:58] problem we want to build like a barcode
+[17:00] for it and then we can use that barcode
+[17:02] to do whatever statistics we want to do
+[17:04] so
+[17:06] what i'll do is i'll compute the first
+[17:09] integral and that first integral is
+[17:10] going to be the integral of my
+[17:13] particular function
+[17:15] times 1 right because cosine fundamental
+[17:17] frequency zero cosine zero is one so i'm
+[17:20] going to do the integral of this path
+[17:22] now i don't know this path
+[17:25] right
+[17:26] we all we know all we see is just a
+[17:28] collection of x y components
+[17:30] so when that happens
+[17:33] this integral that i'm trying to compute
+[17:35] this constant co this constant
+[17:37] coefficient
+[17:39] uh
+[17:40] has to be done numerically so i have to
+[17:42] use a numerical solver
+[17:44] so i'll use trapezoid rule or simpson's
+[17:46] rule um and when i do that i'll get a
+[17:49] coefficient a naught so i plot a naught
+[17:51] all right there we go that is the
+[17:53] zero order fourier series approximation
+[17:55] of the route and that is uh that is
+[17:58] terrible so we're not anywhere close to
+[18:00] the route it doesn't even give you the
+[18:01] mean average of the route like it's just
+[18:03] it's just a straight line that's that's
+[18:05] off by like 10 to 20 feet
+[18:08] but
+[18:09] if i go to the first 10 levels and
+[18:11] compute that numerical integration for
+[18:13] each of those 21 first coefficients
+[18:16] um and then i multiply them by the the
+[18:19] basis function all of a sudden
+[18:22] you see i'm now seeing that the path as
+[18:25] the mean trajectory
+[18:27] of the fourier representation
+[18:30] and i can keep going
+[18:31] and you'll see this just
+[18:34] start to connect
+[18:36] and this is pretty cool like we're like
+[18:37] all right this is fantastic uh i have a
+[18:39] representation
+[18:41] and i have a signature that's associated
+[18:44] with this and i'll show you quick what
+[18:45] it looks like that's the signature of
+[18:47] the path that's my iris bar code all i
+[18:50] have to do is take this guy and then run
+[18:51] effectively hamming distance against it
+[18:53] and i can search all tracking data in
+[18:56] this space and find all those routes
+[18:58] almost immediately
+[18:59] but
+[19:00] there's a little subtle problem here
+[19:03] the first problem is not all routes are
+[19:05] the same so if i've got this player to
+[19:07] run this route again
+[19:09] then he might come out on this bend an
+[19:12] extra two three feet and the question is
+[19:14] is what happens there
+[19:16] this is a global effect this is a global
+[19:20] uh
+[19:21] approximator so if i have a small change
+[19:24] on the bend here i'm going to see
+[19:26] changes out at the beginning of the
+[19:28] route
+[19:29] and that's
+[19:31] it's understandable but it's not
+[19:33] desirable
+[19:35] so what will happen is in the
+[19:36] coefficient space
+[19:38] um i'll see these guys adjust a little
+[19:40] bit but i'm also going to see these
+[19:41] these big components the big fundamental
+[19:44] frequencies um
+[19:46] those will adjust too
+[19:48] and that
+[19:49] so we really want to find like more of
+[19:50] like a local
+[19:52] a localization
+[19:55] and the reason this occurs
+[19:58] this that ringing will occur out here is
+[20:00] back again to
+[20:02] these equations
+[20:06] here
+[20:07] this these cosine k of x to the sine k
+[20:09] of x's if we have a small adjustment in
+[20:11] that s of x that's going to throw this
+[20:13] entire cosine of kx a little out of
+[20:16] whack this a of k is going to change
+[20:17] accordingly so we multiply a k by cosine
+[20:21] k of x and that's what we're plotting
+[20:23] when we put that on
+[20:24] this slight adjustment is going to be
+[20:26] affecting this cosine function which
+[20:28] operates over the entire path
+[20:31] so
+[20:32] the fourier series is not the way you
+[20:34] want to go for doing play registration
+[20:36] but
+[20:37] this is like the the the ground zero of
+[20:40] getting on to what we actually do
+[20:43] which is apply a localization based
+[20:46] approach and the most common
+[20:48] localization based way is to use
+[20:50] wavelets
+[20:51] um
+[20:52] i've done the first three hearts marx
+[20:54] brothers uh the fourth mark's brother is
+[20:56] harpo and if you know anything about
+[20:57] harpo he doesn't really speak um so hong
+[21:00] kong
+[21:01] here we go
+[21:03] uh so the wavelet model is going to take
+[21:04] effect of the fourier setup this is why
+[21:07] we start with fourier and instead of
+[21:10] writing the function f of x we're
+[21:12] actually going to
+[21:13] use a different type of basis and we
+[21:15] call this a multi-resolution basis and
+[21:17] what multi-resolution means is that um
+[21:21] in the fourier series we have the big
+[21:23] fundamental frequencies like the
+[21:25] constant coefficient or the one period
+[21:27] sine wave that covers the entire space
+[21:30] um
+[21:31] but we also get
+[21:33] uh
+[21:34] smaller squares so we've like the higher
+[21:35] frequency components but instead of
+[21:37] covering the entire space like cosine k
+[21:39] of x does we're going to look at like
+[21:41] little
+[21:42] little little sticks little square
+[21:44] regions and you'll i'll show that in
+[21:45] just a moment but that gets represented
+[21:48] by this type of chopping up of the space
+[21:51] the sample space
+[21:53] um so the way of thinking of
+[21:55] multi-resolution is i have a big square
+[21:57] that operates and i want to see what
+[21:59] happens to the big square but then
+[22:00] inside i have little squares and inside
+[22:02] those little squares i have even smaller
+[22:04] squares
+[22:05] so i'm getting like varying sizes of of
+[22:08] uh resolutions hence the
+[22:10] multi-resolution
+[22:12] and one such construction we'll use and
+[22:15] this is like the most simple is the hard
+[22:16] wavelet and i'm going to use the heart
+[22:18] wavelet because it is discontinuous at
+[22:20] certain spots and the pictures look
+[22:22] really nice
+[22:23] when we do see them
+[22:25] and the hard wavelet has two components
+[22:27] it's called a father wavelet and a
+[22:28] mother wavelet oh man this
+[22:30] sorry
+[22:31] when my mouse moves it kicks the slides
+[22:34] for some reason um
+[22:37] this is the father wavelet here and this
+[22:39] we're going to operate over the unit
+[22:40] interval because it's simple to
+[22:42] recognize
+[22:43] um
+[22:44] so we have the father wavelet here and
+[22:46] then um
+[22:48] that is just a constant function one and
+[22:50] then the mother wavelet here
+[22:53] is um it's it's a piecewise constant
+[22:56] function where i have a negative
+[22:58] one that operates over uh zero and
+[23:01] one-half and then a uh positive one that
+[23:04] operates over one-half to one so it's
+[23:07] we'll show the picture in a sec but
+[23:08] what's happening is that i'm i'm looking
+[23:10] at a big square
+[23:12] and splitting it into two smaller
+[23:14] squares where one is a negative one and
+[23:16] the other is a positive one
+[23:19] and then um because of which where are
+[23:22] we going here there we go
+[23:23] because of this
+[23:25] uh multi-resolution that i'm using here
+[23:27] it's two to the j
+[23:31] um
+[23:32] then i can index this by j and k and i
+[23:35] just keep taking each half interval and
+[23:38] splitting those into positive and
+[23:39] negative ones and what happens is this
+[23:42] actually builds me an orthonormal basis
+[23:45] uh just like the sines and cosines did
+[23:47] but i now get this locality uh
+[23:50] this ability to capture locality and i
+[23:52] can rewrite my signal or my route or my
+[23:55] function
+[23:56] um in the exact same way that the
+[23:58] fourier series is i
+[24:00] have to just compute these these
+[24:02] coefficients computing the coefficients
+[24:05] is exactly the same as the fourier
+[24:08] series i just do the convolution and
+[24:10] take the integral um
+[24:12] and uh
+[24:13] you just have the only there's only one
+[24:15] subtle thing here is you have to
+[24:16] remember that there's good there's a
+[24:17] coefficient that's going to normalize
+[24:18] this this function so i'm assuming that
+[24:20] these are actually normalized
+[24:22] um but i can extract out those
+[24:24] coefficients alpha here is called the
+[24:26] state scaling coefficient that's like
+[24:28] that constant function and then the
+[24:30] betas are going to be the detail
+[24:32] coefficients and that's what's going to
+[24:33] adjust the uh the different heights of
+[24:36] the basis functions
+[24:38] all right
+[24:40] so all we have to do is compute those
+[24:41] again again we have to do numerical
+[24:43] integration or out in the wild but here
+[24:45] we're going to do it in um
+[24:48] using real functions actually i'll
+[24:49] actually do this with um
+[24:51] the uh
+[24:52] route so we'll see the numerical result
+[24:54] all right so this is what a har wavelet
+[24:57] looks like
+[24:58] so this line here that is the father
+[25:00] wavelet that's the constant function
+[25:02] that goes through
+[25:03] um the entire domain
+[25:06] and then the first mother wavelet
+[25:07] remember is negative one for the first
+[25:09] half
+[25:10] and positive one for the second half and
+[25:12] if you notice they're not quite uh
+[25:14] negative one
+[25:15] and positive one they're actually
+[25:16] adjusted to be
+[25:18] the uh
+[25:19] corresponding height um and it's a
+[25:21] little trippy when you look at this this
+[25:23] picture because the father wave that's
+[25:25] actually at one half he's not at zero
+[25:27] and that makes sense because he's got to
+[25:28] have some weight to him um so don't
+[25:31] don't get hung up on the distance
+[25:33] between
+[25:34] the father wavelet the mother wavelet
+[25:36] um but this is that negative one over
+[25:38] the first half that's that positive one
+[25:39] over the second half and then the second
+[25:41] set of mother wavelets are these blue
+[25:43] ones and i'm splitting the first half of
+[25:46] the interval into a negative one and
+[25:47] positive one of course scaled fourth and
+[25:50] orthonormality
+[25:51] and then the other half i have yet
+[25:53] another
+[25:54] now here's where it gets a little tricky
+[25:57] when i go and fit a function
+[26:00] if i can go this way when i go and fit
+[26:02] this function identify the coefficients
+[26:04] it's over the psi of j k
+[26:07] so what's not happening is i'm not
+[26:09] fitting it for this guy
+[26:11] i'm fitting it for this guy
+[26:13] and this guy simultaneously
+[26:16] all right so that is
+[26:18] that's a little bit more of a challenge
+[26:19] here to try and connect those dots but
+[26:22] as we as they do fit for this one
+[26:25] this left side the negative one here
+[26:27] gets split again into a smaller
+[26:30] resolution and that smaller resolution
+[26:32] is going to pick up the detail that this
+[26:35] blue wavelet is not going to capture and
+[26:37] that's where we're getting our locality
+[26:40] um so here's the fit of the wavelet
+[26:43] structure so this is the father wavelet
+[26:45] in the top left
+[26:47] it actually looks like a mean constant
+[26:48] route that's way better than the fourier
+[26:50] series
+[26:51] at least in my opinion it's still
+[26:52] terrible but it's a good fit uh uh for
+[26:55] the mean at least
+[26:56] um then we go to the level zero wavelets
+[26:58] we've included that uh
+[27:02] this red one right here so that's with
+[27:04] the red mother wavelet and we get this
+[27:06] step function and we start to see as we
+[27:08] include more and more mother wavelets we
+[27:10] see everything start to converge on the
+[27:12] path to the point that when we get to
+[27:14] the level seven wavelet we've almost got
+[27:16] this thing pretty much nailed and
+[27:17] fortunately there's enough curvature
+[27:18] here that we see the step function
+[27:20] running up
+[27:22] so we still do see it's actually a step
+[27:24] function and me not just plotting the
+[27:25] orange on top of the blue
+[27:28] but we get ourselves a signature and
+[27:30] that is the signature of the route and
+[27:32] we can use this as our barcode and just
+[27:34] run it over as if it's a
+[27:36] uh run it over all routes
+[27:39] um
+[27:40] to to uh with this hamming distance to
+[27:43] be able to extract out the different
+[27:44] routes so
+[27:46] um not only do we get like the spatial
+[27:48] resolution uh or the spatial information
+[27:50] the local spatial information but we
+[27:52] also get this multi-resolution so the
+[27:54] way that i've stacked this is based on
+[27:56] what's called a coefficient number so
+[27:58] the the father wavelet is actually zero
+[28:00] the first level the zero level mother
+[28:02] wavelets the first level of mother
+[28:03] wavelets they're down here around you
+[28:05] know like one to
+[28:07] three or something like that
+[28:08] and then uh the detail coefficient
+[28:10] numbers the smaller the smaller segments
+[28:14] of those little sticks those little
+[28:15] rectangles are out here
+[28:17] and as you see a bunch of these are
+[28:18] effectively all zero and that kind of
+[28:20] makes sense because there's there's
+[28:22] parts of the path that are relatively
+[28:23] flat and once it's flat and we've got it
+[28:26] pretty much captured
+[28:28] that those new portions of the wailets
+[28:30] aren't going to introduce anything uh
+[28:32] important
+[28:33] um but if you ran serpentine you would
+[28:36] see these guys kind of triggering and
+[28:37] doing a little little dance um now
+[28:40] here's the really cool thing about that
+[28:42] um
+[28:43] if
+[28:44] i have
+[28:45] uh that we run this route again and it
+[28:48] comes out a little bit farther here
+[28:50] we'll see a little bit of change in the
+[28:53] father the father wavelet he might shift
+[28:55] slightly down
+[28:57] right it's not going to be huge but the
+[28:59] more important thing is that these guys
+[29:01] over here are almost are almost
+[29:03] completely unaffected
+[29:05] and the guy who gets affected are going
+[29:07] to be the ones it'll be this way but
+[29:09] here
+[29:10] so this right hand wavelet um and then
+[29:12] when we get to uh this level two wavelet
+[29:15] picture here the guys who's affected are
+[29:17] just these two
+[29:19] um and these guys are pretty much all
+[29:21] the same
+[29:22] so
+[29:23] uh if we do have a big change in this in
+[29:25] the route or if there's different routes
+[29:27] that are the same if there's different
+[29:29] trajectories that represent the same
+[29:30] route we're able to still capture those
+[29:33] routes and it'll be within variation you
+[29:36] have to build the statistical test to
+[29:37] capture that
+[29:38] and that statistical test is like those
+[29:40] that iris bar code by modal distribution
+[29:43] that i showed you before
+[29:46] all right
+[29:47] so um so i showed you how to do it with
+[29:49] a particular route now we're going to
+[29:51] expand this out to basketball and um
+[29:53] there's actually a fifth mark's brother
+[29:54] so if there's one thing you can take
+[29:56] away if you know the marks brothers you
+[29:57] always hear like the three or the four
+[29:58] martha marx brothers who's actually a
+[30:00] fifth
+[30:01] so gumbo marks he says nothing he's a
+[30:02] nun in the movies um
+[30:05] but we're gonna expand this out to
+[30:06] basketball and
+[30:09] we started with this so what we've built
+[30:11] is a non-parametric methodology for
+[30:13] comparing two trajectories from tracking
+[30:15] data this is just like the iris problem
+[30:17] i have two irises i want to know if it's
+[30:19] the same person so i build this
+[30:21] methodology to extract out a unique
+[30:24] barcode uh doing signal processing and
+[30:27] then i run a statistical test over it
+[30:29] here we're going to do the same thing
+[30:30] for tracking data we're going to
+[30:33] do a frequency decomposition we're going
+[30:36] to to put it into a non-parametric
+[30:37] domain we're going to
+[30:39] then apply uh a um
+[30:42] hamming code or some statistic
+[30:44] statistical distribution to be able to
+[30:46] say that these two track paths are the
+[30:48] same
+[30:49] and
+[30:50] we showed the fourier series to get
+[30:52] those coefficients that's like a
+[30:54] traditional way to do it and it's a good
+[30:56] segue to get you into wavelets
+[30:58] but the wavelets are what's going to
+[31:00] capture the spatial properties
+[31:02] and we also get the multi-resolution so
+[31:03] those deviations and the paths you know
+[31:05] we actually capture some of that without
+[31:08] doing global changes
+[31:10] but
+[31:10] remember i said i cheated we used a
+[31:13] track path that didn't self-intersect
+[31:15] and in reality these paths do intersect
+[31:17] so what we have to do is we we have to
+[31:20] move to
+[31:21] um
+[31:22] a two-dimensional domain
+[31:24] and that gets a little bit more
+[31:26] challenging here
+[31:28] so what happens is that we're going to
+[31:31] chop up the space and we're using the
+[31:33] hard way let's still but we're going to
+[31:35] chop the space into a series of
+[31:37] rectangles
+[31:38] and this is going to be um wavelet's a a
+[31:41] level 4 no level 2 wavelets there's a
+[31:44] level 2 wavelet here and it's just going
+[31:46] to keep chopping up more and more and
+[31:48] more
+[31:49] so what will happen is if we run a
+[31:50] particular play um let's just say
+[31:53] there's a lift right so if we run a lift
+[31:55] that
+[31:56] comes up the side of the three-point
+[31:58] line um from in the corner you're just
+[32:01] gonna see these two boxes interacting
+[32:03] um
+[32:04] if you see it down here you're gonna see
+[32:06] it across three different boxes if you
+[32:07] see it here you're gonna see it uh on a
+[32:09] hand like
+[32:10] four or five boxes and it's gonna keep
+[32:12] getting smaller and smaller but
+[32:16] i don't want you to take away like oh
+[32:18] we're just going to count how many
+[32:20] how many things are in the box it's not
+[32:22] it's not that simple what's happening is
+[32:25] is we're coming back to here remember
+[32:28] each box is related so each of the box
+[32:30] is going to be each branch here
+[32:32] so uh when we looked at the um
+[32:36] the the the left hand upper left hand
+[32:38] corner that dallas mavericks
+[32:40] court um that's like
+[32:43] one box is this branch remember this
+[32:45] branch doesn't get estimated alone it
+[32:47] gets estimated with the box next to it
+[32:50] um that so that's going to be similar
+[32:52] here
+[32:53] so if i have a path that's going here
+[32:56] i'm not only going to look at
+[32:58] this is a this is a plus one and this is
+[33:00] a minus one let's say but i'm also going
+[33:02] to look at this is a plus one and this
+[33:04] is a minus one and this is a minus one
+[33:07] and this is a plus one and you're
+[33:08] actually going to get like a three um a
+[33:11] four choose three combination here uh
+[33:14] four choose two
+[33:16] combination and
+[33:18] the the number of coefficients kind of
+[33:19] explodes um
+[33:21] that's fine we can still do that that
+[33:23] computation will uh but we have to be
+[33:26] very careful that this is not just a box
+[33:28] counting thing
+[33:29] um and that gabor filter that i showed
+[33:31] you is basically what we're
+[33:33] reconstructing even though it's going to
+[33:34] be a two-dimensional heart wavelet but
+[33:35] you saw how like it was a
+[33:36] two-dimensional picture
+[33:38] uh with the iris codes and how it kind
+[33:40] of went up and down and left and right
+[33:42] that's the same thing that's happening
+[33:43] here
+[33:45] so if i was to take the a bucks ram play
+[33:47] um so this is a play they ran hundreds
+[33:51] of times last season um
+[33:54] so bucks ram is they run a player just
+[33:56] inside the free throw line uh run comes
+[33:58] down set screen
+[34:00] uh at the at the charge circle player
+[34:03] comes up set screen at top so that's
+[34:04] kind of a ram screen
+[34:06] bucks ram is they set it with
+[34:09] two very particular players such that uh
+[34:12] this
+[34:12] screener comes down and that screener
+[34:14] comes off the roll
+[34:16] um
+[34:17] so
+[34:18] if we go and look in the the
+[34:21] coarse
+[34:22] wavelet grid
+[34:23] uh we see that we're affecting one two
+[34:26] three
+[34:27] um we find trajectories that are
+[34:28] affecting three boxes here and we're
+[34:31] finding that effects two so if i see a
+[34:33] bend if we run this play multiple times
+[34:35] and this guy sets the screen a little
+[34:36] bit higher
+[34:37] um if he sends if he sets the screen
+[34:39] higher we're going to see a different
+[34:40] type of bend to his screen
+[34:42] or his trajectory but he's still
+[34:44] operating in these two boxes
+[34:46] so you're just going to see the segment
+[34:48] of points coming across you can do the
+[34:49] numerical integration and you'll see
+[34:51] that these coefficients aren't going to
+[34:53] change dramatically
+[34:55] however in the more finer
+[34:57] uh
+[34:57] case you're going to see those
+[34:59] coefficients change quite a bit
+[35:02] the good news is that even though these
+[35:03] coefficients change quite a bit
+[35:06] you you're going to get the deviations
+[35:08] measured here but you're not going to
+[35:10] say it's not the same path
+[35:12] um because of these type of wavelets
+[35:14] that will help out um and i make it
+[35:17] looks like a big jump that's here but
+[35:19] this is the difference between these two
+[35:21] is
+[35:22] several this is this is like a a level
+[35:24] um this is a level two uh this is more
+[35:27] like a level um i'm just gonna guess
+[35:30] uh like six or five
+[35:33] um
+[35:34] so
+[35:35] you know you're gonna have a lot of
+[35:36] levels in between so don't think that
+[35:38] it's just a jump between left and right
+[35:41] but we can build the signatures for this
+[35:43] uh and then we can go and look at all
+[35:45] segments now uh segments and do the
+[35:47] hamming distance and then whatever guys
+[35:49] have a high probability of matching
+[35:51] across the spectral coefficients then
+[35:53] that is our that's our play
+[35:56] so it's a way to basically uh do look up
+[35:59] right necessary registration is
+[36:01] so
+[36:03] that's the two-dimensional case now the
+[36:04] natural questions that come out of this
+[36:06] is what is like a stopping and starting
+[36:07] criterion how do i build plays so i've
+[36:11] just talked about two trajectories here
+[36:13] right so i have one player goes up so
+[36:15] i'm gonna get one signature there i have
+[36:16] one player comes down that's the
+[36:18] signature uh what we miss here is the
+[36:20] temporal information so this screen has
+[36:22] to happen before this screen right
+[36:23] because if they don't happen it looks
+[36:25] kind of goofy
+[36:26] so you're going to see this guy come and
+[36:28] this guy go
+[36:29] so the way that we do that is we build a
+[36:32] waterfall plot
+[36:34] and the way to do a waterfall plot is
+[36:36] the
+[36:37] one way to do it is
+[36:39] we set the temporal domain going north
+[36:42] and south
+[36:43] and then east and west is going to be
+[36:46] the spectral coefficients
+[36:47] so
+[36:49] as the time goes we're going to take
+[36:51] each each row is going to be like a
+[36:52] frame effectively
+[36:54] and uh a frame being a
+[36:56] sample segment of tracking data and then
+[36:59] we're going to um
+[37:01] and then uh we're going to put the
+[37:03] coefficients for that for that
+[37:04] particular frame
+[37:06] so what you can do is you can go
+[37:07] backwards you can lead backwards to
+[37:10] some stopping and starting criterion for
+[37:12] the player um the obvious one that
+[37:15] pretty much everyone that i know that
+[37:17] does this uses is they look at the
+[37:19] velocity of a player so if the player
+[37:21] starts to come at rest or hits some sort
+[37:23] of acceleration criterion um
+[37:26] that will be the signal to end
+[37:29] uh to end a segment and then when that
+[37:31] player starts to pick up steam maybe
+[37:33] some high load component or they just
+[37:36] say velocity gets bigger than x um
+[37:39] then they start a new segment for
+[37:40] tracking that particular player
+[37:43] so you can build those segments you're
+[37:44] going to have a running waterfall plot
+[37:46] for the entire period of play
+[37:48] and then you can just build a uh you
+[37:51] just build a window that searches for um
+[37:54] like a ram screen because you know
+[37:55] roughly how long a ram screen is put a
+[37:57] little padding in there um and then you
+[37:59] can just run that uh hamming distance
+[38:02] from left to right just like we do for
+[38:03] irises and you'll see the play pop
+[38:06] but the north south would be the uh
+[38:09] temporal
+[38:10] the
+[38:10] left right would be the um
+[38:14] the wavelet coefficients so to be the
+[38:19] signal like this
+[38:21] they're going left right and then you're
+[38:22] actually going to have a third dimension
+[38:24] that comes out and this is why i didn't
+[38:25] want to like display what the
+[38:26] coefficients would look like for this
+[38:28] thing so it'll look really confusing
+[38:29] when you plot them
+[38:30] but coming out at you are the different
+[38:32] players because you have five players
+[38:33] running simultaneously so you're
+[38:35] effectively building like a tensor
+[38:37] um and then your hamming distance is
+[38:39] taking over the tensor space
+[38:41] the good news is uh
+[38:45] it's actually pretty straightforward
+[38:47] it's a sparse setup so you can write a
+[38:49] pretty clever way to do that
+[38:51] so that's how we would register plays um
+[38:54] the important point from this talk again
+[38:56] was just to show how to do the
+[38:57] integration
+[38:59] and you can swap out the numerics for it
+[39:01] to show what an orthonormal basis looks
+[39:02] like and how we convert a signal to an
+[39:05] orthonormal basis
+[39:06] um
+[39:08] so
+[39:08] uh we kind of have that in hand we know
+[39:11] what we could do for the next steps
+[39:14] the natural questions from that point is
+[39:16] okay cool
+[39:17] is this a powerful
+[39:19] tool and the big takeaway from this tool
+[39:22] is
+[39:23] it is powerful
+[39:25] meaning that it does get you results it
+[39:28] is interpretable uh so if you do see two
+[39:30] players on the same you can actually
+[39:31] crack it open look at the coefficients
+[39:33] and be like okay well these are the
+[39:34] coefficients that are different that
+[39:35] tells me that
+[39:37] these uh these basis functions are a
+[39:39] little a little off what are those basis
+[39:41] functions okay it's the high curvature
+[39:43] component that tells me to look at say
+[39:45] the acceleration that might tell me
+[39:47] intuition of how much does this player
+[39:48] actually turn himself
+[39:50] uh in a play
+[39:51] and you can work with the performance
+[39:52] team on understanding how well players
+[39:54] can read by looking at the shifts of
+[39:55] shoulders but we don't have shoulder
+[39:57] data and basketball so it's one way to
+[39:59] start inferring body position
+[40:03] but
+[40:04] it is a computationally exhaustive
+[40:07] approach
+[40:08] so it is slow it is it is very slow and
+[40:11] in 2013 days when we started building
+[40:12] this it was even slower than what we can
+[40:14] do now with gpus and parallel processing
+[40:17] um
+[40:19] but uh we can use algorithms like what's
+[40:21] called lifting so we can use lifting
+[40:23] algorithms to uh more quickly identify
+[40:26] the coefficients but we do sacrifice
+[40:27] some of the interpretability in doing
+[40:29] that
+[40:29] um the other natural question asked is
+[40:32] what's the benefit of doing something
+[40:33] like this versus a neural network like a
+[40:34] convolutional neural net
+[40:36] the benefit is we get interpretability
+[40:38] in convolutional neural networks you
+[40:40] lose a lot of the interpretability um
+[40:43] and you can get you can start
+[40:44] misdiagnosing plays if your job is to
+[40:46] just classify plays i would encourage
+[40:48] you to use convolutional neural nets but
+[40:50] if your job is to diagnose plays
+[40:53] um
+[40:54] where prediction is no longer king like
+[40:56] you want to be able to predict but you
+[40:58] need to be able to
+[40:59] explain um then convolutional neural net
+[41:02] works are not really the way to go um if
+[41:06] you do a different style of neural nets
+[41:07] some folks will just build boxes and
+[41:09] then do heat map counting like look out
+[41:11] how many uh uh times the player was in a
+[41:13] box and running all night over that
+[41:15] you sacrifice the orthonormal basis
+[41:19] requirements uh you'll probably get a
+[41:21] good prediction but again you're going
+[41:23] to fail an interpretability
+[41:25] um
+[41:27] so um
+[41:30] right so
+[41:32] that's the other thing is like when
+[41:34] curve matching approaches i know there's
+[41:35] a few papers out there about curve
+[41:36] matching
+[41:37] um
+[41:39] uh sorry i'm seeing all these chat
+[41:41] pop-ups um
+[41:43] for curve matching approaches um trying
+[41:45] to align those coefficients uh takes a
+[41:48] great deal of effort
+[41:50] so with trajectories used you have to
+[41:52] identify at the stop and start times
+[41:54] in the start location and then the
+[41:56] associated uh parameters of the curve
+[41:59] so you get a great interpretability of
+[42:01] those algorithms but they're very
+[42:02] sensitive to changes in the distribution
+[42:05] so multi-resolution becomes an issue for
+[42:07] them
+[42:08] so that's pretty much all i got here
+[42:11] so i guess i should open the floor for
+[42:13] questions
+[42:14] so i appreciate everything that um
+[42:17] uh i appreciate you guys having me here
+[42:19] and allowing me to to ramble my way
+[42:21] through the talk at
+[42:23] six something in the morning
+[42:31] yes thank you dr jacobs um
+[42:34] any
+[42:35] questions that we have please make sure
+[42:37] you put them into the chat
+[42:44] dr yann did you want to go through the
+[42:46] questions or would you like me to do
+[42:47] that
+[42:49] you go rob thank you
+[42:53] all right so
+[42:55] we we do have a question for me from
+[42:58] lyle danley which i will answer separate
+[43:00] uh to this
+[43:02] but there
+[43:03] there are um
+[43:09] there is a question here from mr zang it
+[43:13] says thanks for interesting presentation
+[43:14] i wonder if you could give some more
+[43:16] details on the interpretation of the
+[43:18] coefficient and the k parameter
+[43:22] oh sure
+[43:31] yeah apologies if this feels like a fire
+[43:33] hose
+[43:34] um
+[43:36] i wanted to get as much information out
+[43:38] there as possible to tell the story
+[43:40] um typically when you learn fourier
+[43:43] series in undergrad it's
+[43:45] between two and four classes so
+[43:47] a uh 10 minute
+[43:49] fire hose is not quite enough all right
+[43:52] so each k
+[43:54] is effectively the frequency
+[43:58] so
+[43:58] if i have k equals zero k equals zero is
+[44:01] just going to be a straight line
+[44:04] if i have k equals one
+[44:06] um i'm doing cosine so it's actually up
+[44:08] here it's going to be just that usual
+[44:10] cosine function but you're just going to
+[44:12] see that just one period through
+[44:15] and then if i have two you're going to
+[44:17] see two periods so the k is
+[44:20] effectively
+[44:22] the number of periods that go through
+[44:25] the space the domain so here my domain
+[44:27] is like 0 to 10.
+[44:30] because i have
+[44:32] a
+[44:33] sinusoidal function and i know it's a
+[44:35] sinusoidal uh
+[44:38] actual sinusoidal function by
+[44:40] construction
+[44:42] that tells me that i can integrate over
+[44:43] negative pi to pi
+[44:45] but in reality if i'm over like 0 to 10
+[44:48] i should be putting 0 to 10 in here and
+[44:50] i should be putting in whatever that
+[44:51] period is here so it's really like um
+[44:54] 2 divided by the period so i would have
+[44:56] 2 over um 2 over 10 so i should have
+[44:59] like a 1 5 here
+[45:00] and that will actually pull out those
+[45:02] coefficients
+[45:03] all right that was the k part what was
+[45:05] the the interpretability so
+[45:08] if i get a
+[45:10] a0 so like for instance here i know i
+[45:12] have a one period cosine like the one
+[45:15] period cosine builds this and i can
+[45:17] realize it and again i apologize for
+[45:19] this this is the first
+[45:20] fourier coefficients this is a1
+[45:23] um
+[45:24] i actually see
+[45:26] that cosine period come through
+[45:30] and um
+[45:32] so that's that k one
+[45:34] now
+[45:36] if i go for the sine seven
+[45:38] sine seven i'm gonna have seven periods
+[45:39] that are ringing through here
+[45:41] and um ten is just the amplitude so when
+[45:44] i look at the coefficients the
+[45:45] interpretability is telling me how much
+[45:47] weight
+[45:48] how much weight do i have of that
+[45:50] frequency
+[45:52] so this tells me that i have like three
+[45:53] units worth of
+[45:55] a um
+[45:56] a period one cosine function
+[45:59] in the wavelet domain
+[46:07] it's the best way to put it in the
+[46:08] wavelet domain
+[46:09] the alpha 0 is going to tell me how much
+[46:11] weight exists for this so let's suppose
+[46:13] that um
+[46:16] we have a flat function that's coming
+[46:17] through here so it's like zero all the
+[46:19] way until
+[46:21] uh it moves then i expect all these
+[46:24] coefficients here to offset whatever the
+[46:26] first father wavelet's going to do
+[46:28] so if i see a zero function and then i
+[46:31] see like a y equals x function out here
+[46:33] um
+[46:35] it's this father wave it's not going to
+[46:37] be zero because there is a positive
+[46:39] weight here the function goes up like
+[46:40] this so it's going to find wherever that
+[46:43] average is and put it let's just say
+[46:44] it's right here then i know that the
+[46:46] blue is going to pull this .5 back
+[46:49] towards zero because i need to estimate
+[46:51] that zero
+[46:52] and then i know that these and these
+[46:54] blue guys will do a really good job of
+[46:56] it like they're they're going to um
+[46:58] probably flip and and have uh whatever
+[47:01] the approximate value of this to pull
+[47:03] down and then the black these black
+[47:06] portions if this pulls it all the way
+[47:08] down to zero everything below it is
+[47:10] going to be zero so i know immediately
+[47:12] i've captured the locality of this
+[47:14] region and i can go and look at those
+[47:15] coefficients and i'll see them all as
+[47:17] zero so if i see a bunch of zeros within
+[47:19] a subset because it's called a
+[47:21] multi-resolution basis if i see
+[47:23] everything in the sub resolutions to be
+[47:24] zero then i know that i have a locally
+[47:27] flat uh position which means my player
+[47:29] is running in a straight line at that
+[47:31] point
+[47:32] um
+[47:33] and approximating straight lines is you
+[47:35] know we can already do that but
+[47:37] keeping that idea in mind now tells me i
+[47:39] can start that these coefficients are a
+[47:41] little different are actually capturing
+[47:43] the curvature of the play
+[47:44] which is effectively how much that
+[47:46] player is bending how how quickly
+[47:47] they're turning um
+[47:50] it gets us into the subtleties of the
+[47:52] actual player player reaction capability
+[48:00] we have one more question here um
+[48:02] from kevin it says
+[48:04] do you think it is possible to create a
+[48:07] one-number catch-all metric in
+[48:09] basketball
+[48:11] no
+[48:13] no
+[48:14] um
+[48:15] i think i think they're always fun but
+[48:17] um
+[48:19] no
+[48:20] it's it's the job in basketball is not
+[48:23] to
+[48:24] rank players with a single number
+[48:25] ultimately you have to say how much a
+[48:27] player is worth or valued um you know x
+[48:30] amount of dollars over so many years
+[48:32] kind of thing because that's ultimately
+[48:33] how you
+[48:34] uh put players on your team
+[48:36] but um
+[48:38] you need a lot more that goes into that
+[48:40] effort and and uh catch all it's going
+[48:42] to miss how well a guy boxes out how
+[48:44] well a guy disrupts passing lanes
+[48:47] if you optimize for one uh aspect of the
+[48:50] game you're going to
+[48:51] undersell other players
+[48:53] so what number metrics are fun for uh
+[48:56] bar discussions um but
+[48:59] they're they don't really uh they're not
+[49:02] they're not the most important thing
+[49:06] dr jacobs in response to your first uh
+[49:09] question
+[49:11] there was a follow-up from the same
+[49:12] individual it says thanks for your
+[49:14] explanation
+[49:15] and i also would like to ask how it
+[49:17] could be used as guidelines for
+[49:19] basketball players in real basketball
+[49:22] court or coaches a kind of curious
+[49:25] question
+[49:27] so going back to your coefficient and k
+[49:29] parameter interpretation explanation
+[49:32] could i can i ask how to
+[49:34] i don't know how to interpret that
+[49:36] question so like guidelines like uh
+[49:39] like to try and instruct coaching
+[49:42] staff from players or what its
+[49:44] guidelines mean
+[49:47] mr zhang if you wouldn't
+[49:49] mind
+[49:50] adding
+[49:54] maybe helping to
+[49:56] detail out that that question
+[50:01] so if
+[50:02] if it's my interpretation as he starts
+[50:04] to put it in if i interpret is like how
+[50:06] do you relay these results to a coaching
+[50:08] staff or players or someone who's
+[50:10] interested um like say a front office is
+[50:13] interested in quantifying
+[50:14] um
+[50:15] then
+[50:16] you do not you know under no
+[50:19] circumstance do you take any of this
+[50:21] work and go and put it in front of a
+[50:22] player or a coach or any anyone but
+[50:24] pretty much yourself and the analytics
+[50:26] person you're working with um what you
+[50:29] do
+[50:30] or what i what i've done in the past is
+[50:33] um
+[50:35] you work with another analyst or you
+[50:36] work with your director and you have a
+[50:38] discussion about all right this is what
+[50:40] i'm seeing this is how i interpret it um
+[50:45] how like how do we want to frame this to
+[50:47] have that discussion and more times than
+[50:49] not like when i started talking about
+[50:50] like this is how a player curves
+[50:52] the the next logical steps that we do is
+[50:55] we go and since we now know exactly
+[50:56] where those plays are and we can find
+[50:58] those plays without having to search
+[50:59] video
+[51:00] um we can go to the video because we now
+[51:02] know when they happen and extract out
+[51:04] those plays and then we say okay so we
+[51:07] see what the subtle differences are in
+[51:08] our coefficients what do we see in the
+[51:11] play that matches to that
+[51:13] and we'll we'll somehow convince
+[51:15] ourselves that that might be the right
+[51:16] answer and we'll once we put together a
+[51:19] good story of okay we see this bend
+[51:21] radius that's coming out and
+[51:23] you know we might convince ourselves
+[51:25] that this is how the player is
+[51:27] navigating a particular screen because i
+[51:29] didn't put i didn't put i was showing
+[51:31] you offensive player trajectories i'm
+[51:32] not showing you defensive player
+[51:33] trajectories
+[51:35] uh if it's just offense only that
+[51:37] curvature when we pull the video it's
+[51:38] like oh
+[51:40] these screeners are taking an extra step
+[51:42] left and they're doing that to disrupt
+[51:44] the action and in these cases the
+[51:46] screeners not there the screener is
+[51:48] behind the player doing a chase
+[51:50] and we can go we can now say okay well
+[51:52] what does that mean for that player to
+[51:54] to be setting those screens what what is
+[51:56] it that they're picking up on and then
+[51:57] we'll go to the next layer of analytics
+[51:59] which is um how does that how does that
+[52:02] affect whether or not we make that pass
+[52:03] if it's an off-ball action um does this
+[52:06] lead to a shot
+[52:07] so if we have the action with no
+[52:09] screener it's out do they shoot do they
+[52:10] not shoot
+[52:11] and we can start building like a
+[52:13] diagnosis of how does that action
+[52:15] disrupt our plays
+[52:17] but we wouldn't know that that screen
+[52:20] would be the case until we saw that
+[52:22] deviation say okay what's really going
+[52:23] on here and pull the video
+[52:25] um
+[52:26] so
+[52:27] we would then craft that story to uh we
+[52:30] would craft that story to come back to
+[52:31] the coaching staff saying hey
+[52:33] we're noticing this type of action have
+[52:35] you seen this nine times out of nine the
+[52:37] coaching staff already knows that that
+[52:39] action's occurring but we're already
+[52:41] armed with all the supplementary
+[52:42] material this is what happens when that
+[52:44] action is occurring and we can now color
+[52:46] in the details of uh our our probability
+[52:49] of pass goes down 56 which then
+[52:51] translates to we're like half as likely
+[52:54] to make those passes and you know this
+[52:56] this is what happens next
+[52:58] and um those little dialogues allow
+[53:01] those coaches to be like all right video
+[53:02] team
+[53:03] go back and check to see how this play
+[53:05] this defensive player interacts with our
+[53:06] team and then they'll come up with their
+[53:08] scheme to to either change it if they
+[53:10] think it's detrimental to their game
+[53:12] plan if it's not detrimental they'll be
+[53:13] like all right that's cool thanks for
+[53:15] the knowledge keep up the good work and
+[53:17] you know that's pretty much where this
+[53:18] would enter itself but i would yeah if
+[53:21] you sho if you're showing yourself if
+[53:22] you're showing this model to a coach you
+[53:24] are
+[53:25] in such the wrong direction of having
+[53:27] that conversation
+[53:33] i i actually have a
+[53:34] question for you as an athletic trainer
+[53:36] uh and someone who's constantly trying
+[53:38] to
+[53:39] you know prevent injury and or
+[53:43] you know
+[53:44] maybe highlight areas of dysfunction
+[53:47] that i can work on to through
+[53:49] rehabilitation and or with the coaching
+[53:51] or strength conditioning staff to
+[53:53] improve a player's performance what can
+[53:56] you speak to maybe an example that where
+[53:58] your work has has maybe assisted in in
+[54:01] that realm or the behavior of a player
+[54:04] as they approach
+[54:05] you know a specific move uh within
+[54:08] basketball or on the court
+[54:12] um
+[54:14] not with this work necessarily
+[54:17] this work was pretty much
+[54:19] specific for
+[54:20] um
+[54:22] this was pretty much specific for trying
+[54:23] to find plays
+[54:24] without having to write
+[54:26] 7000 filters for each different play
+[54:28] type um and find them robustly um there
+[54:32] are other ways that we've done this so
+[54:35] um if i do look at a trajectory there's
+[54:36] some areas where i've looked at
+[54:37] trajectories it'll be the next level
+[54:39] after doing this but it's to look at um
+[54:41] like how do players navigate screens
+[54:43] that's why i brought it up because i
+[54:44] worked on that quite a bit
+[54:46] but um there's a newer algorithm that
+[54:48] came out from carnegie mellon i think i
+[54:50] want to get i'll give them props whether
+[54:52] or not they made it or not um
+[54:54] but it's called part affinity fields
+[54:57] and um it basically is modeling the
+[55:00] joint connectedness of a player and you
+[55:03] can actually see like their limbs move
+[55:04] around
+[55:06] and there's some work that i've done
+[55:08] where i've tinkered with their algorithm
+[55:10] to try and build uh distributional
+[55:12] tendencies of players because you can
+[55:13] actually see them like twist when
+[55:15] they're going around screens and you can
+[55:17] see like how much how much acceleration
+[55:20] of their shoulders like twists when they
+[55:22] get hit when they're coming around the
+[55:23] screen um
+[55:25] and it was it was curious because you
+[55:26] know the the first guy i always look at
+[55:28] is steph curry because he gets just i
+[55:31] don't just watch him on a play even if
+[55:32] he doesn't have the ball just watch him
+[55:34] get rocked on some of these screens
+[55:37] um like he'll come in his his uh
+[55:40] sorry he's on defense usually but these
+[55:42] guys will come in and hit him when he's
+[55:44] on defense and you'll see him just spin
+[55:46] hard whereas like you see another guy
+[55:49] like um
+[55:50] eric gordon he doesn't get hit that hard
+[55:53] and the question is like could we
+[55:54] identify the way like we use loads
+[55:57] sometimes to measure how much an athlete
+[56:00] is burning energy out on the court but
+[56:02] like loads don't capture how much these
+[56:04] guys get rocked and it's like can you
+[56:07] know we found like
+[56:08] uh we've tried building like energy
+[56:10] methods to see um
+[56:13] to see how much energy or energy models
+[56:15] like work models to see how much energy
+[56:17] is expended by a player and we've tried
+[56:18] to say all right well we don't know the
+[56:19] heart rate like we don't know their
+[56:21] internals so we can't quite measure it
+[56:23] but let's let's just say the amount of
+[56:25] rotation is just some amount of work and
+[56:27] we'll do the physical model and treat
+[56:28] them like a simple system and then just
+[56:30] add that work on and then we'll look at
+[56:32] things like their field goal percentage
+[56:35] um or their uh their plus minus in a
+[56:38] play and when i say plus minus i mean
+[56:39] points i mean their amount of speed
+[56:42] versus the speed of the play so if guys
+[56:44] are like zipping down the court and one
+[56:46] guy is like a negative three percent or
+[56:48] negative 30 percent for speed that means
+[56:51] the play is moving fast and the guy's
+[56:52] trotting behind the play he's probably
+[56:55] tired he's probably given up on the play
+[56:57] um
+[56:58] and we want to try we've looked at to
+[57:00] see if if uh
+[57:02] those guys are getting hit if they're
+[57:03] getting hit and we're seeing that
+[57:04] decline in those numbers like their
+[57:06] their negative differential speed their
+[57:08] field goal percentage or their their
+[57:10] field goal plus if we see those drop
+[57:13] um
+[57:14] then that might tell us that we need to
+[57:15] get that guy out or more importantly how
+[57:17] do we re-scheme our defense so he's not
+[57:19] getting hit as hard
+[57:22] but that's like the closest that i get
+[57:23] to the performance side rehabilitation i
+[57:27] don't i haven't quite worked with on
+[57:29] that
+[57:31] thank you
+[57:32] there is one other question here
+[57:34] from nick it says how much total impact
+[57:37] do you think maximizing play calling has
+[57:40] in nba basketball
+[57:42] it depends on who your players are
+[57:45] i mean if we if we go to 1989
+[57:47] um what was the what was the play called
+[57:50] give michael the ball and get out of the
+[57:51] way
+[57:52] um you know there's it depends on the
+[57:56] personnel
+[57:57] um
+[57:58] there are some teams that are just
+[58:00] phenomenal at scheming
+[58:02] um but sometimes the talent of a player
+[58:04] will will over dominate the scheme
+[58:07] so it really depends from situation to
+[58:10] situation uh if you're if you're more of
+[58:13] like a middling team who doesn't have
+[58:16] a breakout player that can just take
+[58:18] over a game
+[58:19] um and i don't wanna i'm hesitant to
+[58:21] name team names because you know i don't
+[58:23] want to
+[58:24] put any teams on blast but um if you
+[58:27] don't have that that team then schemes
+[58:30] um
+[58:31] at least at least just a simple scheme
+[58:33] like a first action
+[58:35] like i'll pull one on blast so for
+[58:37] houston
+[58:38] um
+[58:39] one thing that that we always want to do
+[58:42] with houston is we always want to run
+[58:43] pistol every chance we can get we want
+[58:45] to run pistol because that would disrupt
+[58:47] disrupt the parameter the perimeter
+[58:50] defending guards and if we could disrupt
+[58:52] them then that allows us to get quick
+[58:54] open looks early or creates driving
+[58:56] lanes to attack
+[58:58] and uh if that didn't happen the next
+[59:00] logical thing after that was to reset
+[59:02] and set up brimrod when we have clinton
+[59:04] so
+[59:06] we know that those actions were going to
+[59:08] occur like out of 100 possessions you're
+[59:11] going to see each of those like 70 times
+[59:15] but that wasn't like the first scheme
+[59:17] after that it's kind of like all right
+[59:18] diagnose how the defense is we have our
+[59:21] set methods to go and attack and at the
+[59:23] end of the day
+[59:24] james is going to do what james is going
+[59:26] to do
+[59:27] he's going to read the play
+[59:29] chris and russ were going to do the
+[59:31] things that they needed to do
+[59:33] and they knew how to adapt they knew how
+[59:35] to play within
+[59:36] d'antoni's scheme
+[59:38] but um
+[59:40] you know ski schemes are pretty
+[59:41] important but you know it really depends
+[59:43] on the roster
+[59:47] all right um doesn't look like we have
+[59:50] any more questions at this time and i
+[59:51] believe we are
+[59:53] at our time for the end of this session
+[59:55] so
+[59:56] um dr jacobs thank you so much for your
+[59:58] presentation
+[60:00] and i will turn it back over to dr yan

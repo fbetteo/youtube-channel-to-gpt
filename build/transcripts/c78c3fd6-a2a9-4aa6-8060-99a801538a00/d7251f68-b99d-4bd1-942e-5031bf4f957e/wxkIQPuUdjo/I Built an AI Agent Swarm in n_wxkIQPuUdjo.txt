@@ -1,0 +1,61 @@
+Video Title: I Built an AI Agent Swarm in n8n in an Hour  #artificialintelligence #aiagent #n8n
+Video ID: wxkIQPuUdjo
+URL: https://www.youtube.com/watch?v=wxkIQPuUdjo
+View Count: 32,019
+
+[00:00] I just built an agent swarm that can do
+[00:01] anything in N8N. Please find me four
+[00:04] high performing YouTube videos about N8N
+[00:06] and then send that as an email to Dexter
+[00:09] Morgan. And then finally also let me
+[00:11] know about the weather today in Chicago.
+[00:13] All right, so I just sent that off and
+[00:14] now our agent's basically going to get
+[00:16] that transcribed audio and now it's
+[00:18] going to decide between its five
+[00:19] different agents which ones to call. So
+[00:21] you can already see it finished up
+[00:22] calling the web agent to get the
+[00:24] weather. It called the contact agent to
+[00:25] get Dexter Morgan's email address and
+[00:28] now it's calling the YouTube agent in
+[00:29] order to actually find YouTube videos
+[00:31] that are high performing and about NN.
+[00:33] And so that's the power of an agent
+[00:34] swarm. This main orchestrator parent
+[00:37] agent, all it has to do is understand,
+[00:38] okay, I have five different agents.
+[00:40] Which ones should I use? Rather than
+[00:42] saying, okay, I have like 30 tools.
+[00:44] Which tools do I use? And this framework
+[00:46] makes our results more consistent and
+[00:47] higher quality. And now that the agent
+[00:49] has all it needs, it decides, okay, now
+[00:51] I can call the email agent to send that
+[00:53] email to Dexter Morgan. All right, so it
+[00:54] just finished up. I got my Telegram
+[00:56] message back, but I'm just going to pull
+[00:57] it up on my desktop so you guys can see
+[00:58] it as well. It said, I have found four
+[01:00] high performing videos about NAND and
+[01:02] sent them in an email to Dexter Morgan.
+[01:04] When I hop over to my email, we can see
+[01:05] that we just have one sent to
+[01:07] dextermiami.com
+[01:09] and it has four high performing videos
+[01:11] about NAND. So that's awesome. It did
+[01:12] what we wanted it to. It called the
+[01:14] right agents, but not only did it do the
+[01:16] right tasks, but it also logged
+[01:18] everything so we can look and have full
+[01:19] visibility. So that's exactly what's
+[01:21] going on in this portion of the
+[01:22] workflow. So if I head over to this
+[01:23] Google sheet, you can see that we have
+[01:25] the time of the run, we have the inputs,
+[01:27] we have the outputs, we have the actions
+[01:29] that were taken, and then also how many
+[01:31] tokens were used up. You want to watch
+[01:33] the full tutorial, click on that play
+[01:34] button right here, and I'll see you guys
+[01:35] over

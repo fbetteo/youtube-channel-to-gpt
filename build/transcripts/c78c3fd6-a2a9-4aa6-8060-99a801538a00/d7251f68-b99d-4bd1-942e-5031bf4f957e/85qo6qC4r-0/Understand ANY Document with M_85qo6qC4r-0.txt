@@ -1,0 +1,453 @@
+Video Title: Understand ANY Document with Mistral OCR in n8n (Step-by-Step)
+Video ID: 85qo6qC4r-0
+URL: https://www.youtube.com/watch?v=85qo6qC4r-0
+View Count: 51,158
+
+[00:00] today I'm going to be showing you guys
+[00:01] how to set up mystal ocr's API within
+[00:03] nadn to understand any of the documents
+[00:05] you may have so here is the mystal OCR
+[00:08] homepage introducing the world's best
+[00:09] document understanding API we're not
+[00:11] going to spend too much time here I'll
+[00:12] link this in the description if you want
+[00:13] to take a look but I just wanted to show
+[00:15] you some of these really impressive
+[00:16] results of on the left we have the
+[00:18] tables and figures and then on the right
+[00:19] we have the actual OCR result same thing
+[00:22] with um math as you can see we have
+[00:23] these different equations and then
+[00:24] they're coming through very clear with
+[00:25] this OCR we also have um Hindi so
+[00:28] different languages are able to to be
+[00:30] you know recognized as well and and
+[00:32] translated over and then something like
+[00:34] scan documents if you have scanned
+[00:35] invoices or pictures of textbooks as you
+[00:37] can see we're getting that all back
+[00:39] pretty clearly over here so this is
+[00:41] really cool and we're able to get in
+[00:42] here and connect it into nadn and play
+[00:44] around with it for free so let's dive
+[00:46] into how you actually set that up okay
+[00:48] so real quick demo before we get into
+[00:49] the step-by-step tutorial also this
+[00:51] template is available in the free school
+[00:53] Community if you want to download that
+[00:54] to follow along with this video but
+[00:56] what's going on here is we have three
+[00:58] steps and I'm going to walk through what
+[00:59] they do but but we have a form
+[01:00] submission so if I hit test workflow we
+[01:02] have this form pop up I'm going to drop
+[01:04] in a document now that we've uploaded
+[01:05] our invoice I'll hit submit and we will
+[01:07] watch it run through these three steps
+[01:09] that quick it's already done it uploaded
+[01:10] to mistel we got the URL back and then
+[01:12] we got our OCR results which are now
+[01:14] coming through and as we can see we have
+[01:16] all of this markdown which is everything
+[01:18] that's in the document even if it looks
+[01:20] a little weird we have all this
+[01:21] information back and I I validated it it
+[01:23] is accurate the only mistake was that
+[01:25] instead of saying forwarding agent it
+[01:27] said form marting agent so it messed up
+[01:30] the W and the M but all the numbers are
+[01:31] accurate here so let's get into the
+[01:33] breakdown of setting up each of these
+[01:35] requests so the first thing that we want
+[01:36] to do is go to this website so that we
+[01:38] can actually try the API for free you'll
+[01:40] click up here try the API and this will
+[01:42] prompt you to create an account you'll
+[01:44] log in and then once you get in here
+[01:46] before we can actually get our API key
+[01:48] we need to have some sort of
+[01:50] subscription plan you don't have to put
+[01:51] in any billing information it'll just
+[01:53] ask you to verify your phone number and
+[01:54] you can click on the experiment plan
+[01:56] which will be free and then from there
+[01:58] we'll come into here API key and we will
+[02:00] want to grab a new key so I'm going to
+[02:02] create a new one for the sake of this
+[02:03] demo we're going to call this one demo
+[02:05] to because I did a demo earlier today
+[02:08] and I'm going to click create new key
+[02:10] and then it's going to give you an API
+[02:11] key obviously to copy and store that
+[02:13] somewhere because you won't be able to
+[02:15] grab it again so now that we have that
+[02:17] key created we're just going to come up
+[02:18] to the top right and click on docs which
+[02:20] is going to take us to the documentation
+[02:21] of the different ways that we can use
+[02:23] mistal AI so on the left hand side we're
+[02:25] looking for capabilities and we're going
+[02:26] to click on OCR and document
+[02:28] understanding now we see here are we
+[02:30] have a bunch of different end points
+[02:32] that we can hit and different
+[02:33] functionality within this OCR like you
+[02:36] know document OCR processor OCR with PDF
+[02:39] uploaded PDF with image all this other
+[02:41] stuff and so what we have to do today is
+[02:43] kind of a three-step approach where
+[02:45] we're going to be getting a binary file
+[02:46] into NN we have to upload it to mistl we
+[02:50] have to pull back a URL from mistl and
+[02:52] then we feed that URL into the OCR to
+[02:54] actually get our text result back so it
+[02:56] may seem a little confusing but we're
+[02:57] going to walk through it step by step
+[02:59] it's not too bad at all but real quick
+[03:01] before we set up this OCR let's talk
+[03:03] about why we actually need this so
+[03:05] looking at NN real quick let's set up a
+[03:07] form trigger and there's multiple ways
+[03:09] that you could get your binary data into
+[03:10] Ed end for the sake of the video we're
+[03:12] just going to set up a quick form where
+[03:14] we're just going to be calling this you
+[03:15] know invoice processing please upload
+[03:19] your invoice and then we just want one
+[03:22] file drop we're going to have a required
+[03:24] field we're going to have just one file
+[03:26] allowed and it's just going to be called
+[03:28] invoice and so all this is doing here is
+[03:30] we just set up a really quick interface
+[03:32] where when we click test step this is
+[03:34] what gets pulled up and this is where
+[03:35] the user will click on choose file and
+[03:37] drop in a PDF so right here I just
+[03:40] dropped in a fake PDF this is what it
+[03:42] looks like it's just kind of a a really
+[03:43] simple template and it has different
+[03:45] information like you know the tracking
+[03:46] number invoice number um the cost all
+[03:49] that kind of stuff and so because I'm
+[03:51] going to submit this we will get that
+[03:54] binary data now within our NN as you can
+[03:56] see this is the PDF that we were just
+[03:58] looking at and I just want to highlight
+[04:00] real quick the typical way that we would
+[04:02] try to extract text from here is we
+[04:04] would type an extract we would grab an
+[04:05] extract from PDF and we would be looking
+[04:08] to extract from a certain field which is
+[04:11] a binary field and by default that's
+[04:13] going to be data we don't have a field
+[04:14] over here called Data so if I hit test
+[04:16] step it would give us an error there's
+[04:18] no binary field called Data so this is
+[04:20] the actual name of the binary field over
+[04:22] here invoice so I'm going to copy that
+[04:24] paste it into there and now we should be
+[04:26] able to extract text however we can see
+[04:28] that the text that we actually extracted
+[04:30] is not accurate so all we're actually
+[04:32] pulling back are sort of the field names
+[04:34] so we're looking at forwarding agent
+[04:36] date invoice number tracking number paid
+[04:38] by order ID but if we actually go to the
+[04:40] document we're not getting any of the
+[04:42] actual values back we're just getting
+[04:44] sort of these headers so this is a good
+[04:46] example of when just extracting straight
+[04:48] away from a PDF file is not going to
+[04:50] work okay so what we're going to do is
+[04:51] drag this down here delete that
+[04:53] connection and we are going to set up an
+[04:54] HTTP request to actually hit mistol so
+[04:58] before we configure that at all let's go
+[04:59] back into the documentation from mistl
+[05:02] and explain what's going on here so the
+[05:04] first thing you want to do is I think
+[05:05] when you open this up by default it's
+[05:06] going to be on python just switch this
+[05:08] over to curl all we want to look at is
+[05:10] curl because we're able to copy these
+[05:11] curl commands and the HTTP request will
+[05:15] basically be populated for us which is
+[05:16] great so first thing that we need to do
+[05:19] is actually upload our binary file from
+[05:21] NN to mistl and so all we have to do
+[05:24] here is just take it step by step we
+[05:26] have this endpoint which is upload a
+[05:27] file or sorry a function and so we just
+[05:29] have this curl command you're going to
+[05:31] hit copy which is right here go back
+[05:33] into nadn open up your HTTP request hit
+[05:36] import curl and we can paste that curl
+[05:38] command and then hit import and what
+[05:40] this is going to do is it's going to
+[05:41] automatically populate this request for
+[05:43] us which is great it fills out the
+[05:45] method the URL the authorization all we
+[05:48] have to do now is drop our API key and
+[05:50] then configure what actually are we
+[05:51] sending over so right here we're
+[05:54] basically telling mistl that we are
+[05:56] sending over um this information for the
+[05:58] purpose of OCR and then we have to
+[06:00] explain what actual file are we sending
+[06:02] over so we're using end binary file the
+[06:05] file name is or sorry the name of this
+[06:08] value is file and then we're saying okay
+[06:11] what's the actual file we're looking at
+[06:12] and it's going to look for a binary
+[06:14] field once again so like we just saw up
+[06:17] here we couldn't put this in as data we
+[06:20] had to put this in as the binary field
+[06:21] from the left hand side of the input so
+[06:24] I'm just going to copy that into there
+[06:26] and now all we have left to do is set up
+[06:27] our actual authorization so this is
+[06:29] where you would drop in your API key the
+[06:32] name has to be authorization the value
+[06:34] has to be Bearer space and then we put
+[06:36] in our API key which I have copied and
+[06:39] it is right here so this is how you
+[06:41] typically do it but one thing I want to
+[06:42] show you guys is because this is a
+[06:43] header parameter header authorization we
+[06:46] don't want to do it like this so I'm
+[06:48] just going to copy this real quick and
+[06:49] we are going to add a predefined
+[06:51] authentication so that we can save it
+[06:53] because if you remember I said we have
+[06:54] to do three different a HTTP requests if
+[06:57] we save our credential we don't have to
+[06:59] do each time so I'm going to come down
+[07:01] here and do generic credential type we
+[07:03] know because we see right here that this
+[07:04] is a header off we can click on header
+[07:06] off and then we just have to set one up
+[07:08] and as you can see I already have my
+[07:09] mistal OCR credentials set up but I'm
+[07:11] going to walk through creating a new one
+[07:13] so this we're just going to call it
+[07:14] mistal OCR demo and then you can save
+[07:18] all of your credentials as you saw I had
+[07:19] different ones for like Twitter tavali
+[07:22] um 11 Labs I have all my credentials
+[07:24] saved so I don't have to go get them
+[07:25] again later so we know that we have to
+[07:27] make the title here author authorization
+[07:30] and then for the value I'm going to make
+[07:31] it an expression so we can actually see
+[07:33] if you have it fixed it's just going to
+[07:34] come up like this so you won't be able
+[07:36] to see it and so what we want to put in
+[07:37] is Bearer space r API key and make sure
+[07:40] there's a space there we'll hit save we
+[07:42] should be connected successfully and now
+[07:44] we have our header off already saved so
+[07:47] we can turn off the send headers we
+[07:48] don't need to send that over again and
+[07:50] now let's just rename this node upload
+[07:53] to mistal so we will hit test step and
+[07:57] we should be good to go one thing to
+[07:58] keep in mind here is if you just created
+[08:00] your mistel account and you just got
+[08:02] your API key it may error because it may
+[08:05] take like 5 to 10 minutes to warm up so
+[08:06] if you're seeing that that's why don't
+[08:08] worry you probably set this up correctly
+[08:10] if you did exactly what I did just just
+[08:12] now okay so the next step is now that
+[08:14] we've uploaded it to mistl we have an ID
+[08:16] for our document we're going to request
+[08:19] mistl to pull back this ID and it's
+[08:21] going to give us a URL because what we
+[08:23] need to do is feed m a URL on the third
+[08:26] step in order to actually do its optical
+[08:29] character recognition so um I'm just
+[08:31] going to pin this data just in case we
+[08:33] refresh by accident and we don't want to
+[08:34] have to make another request we're going
+[08:36] to hit the plus we're going to do
+[08:37] another HTTP request and now we're going
+[08:40] to go back to the documentation to see
+[08:42] how we actually set up this request so
+[08:45] you can see here we have this is the one
+[08:47] we're looking for the function is called
+[08:48] get signed URL and this is going to
+[08:50] return a URL that we can access the PDF
+[08:53] so we'll see what this looks like but
+[08:54] all we have to do real quick is hit the
+[08:56] copy curl command go back into naden hit
+[08:59] import curl paste in the new curl and
+[09:02] hit import so as you can see now it's
+[09:04] been populated our method is get the URL
+[09:06] endpoint is populated we have our expiry
+[09:10] we have our um same thing down here and
+[09:12] actually I'm going to just turn off
+[09:13] headers completely because we don't need
+[09:15] it we already know that we've set up our
+[09:16] credential so we're just going to come
+[09:17] in here grab credential or grab generic
+[09:20] grab header and then we can just grab
+[09:22] our mistal OCR demo that we just set up
+[09:25] and all we have to change here is within
+[09:27] the actual URL as you can see it's
+[09:29] looking for an ID so we need to change
+[09:32] this to an expression and then after the
+[09:34] files and the URL between the two
+[09:36] slashes get rid of ID and we're just
+[09:38] going to drag an ID from the left hand
+[09:40] side right in between those two slashes
+[09:42] and now every time we run this every
+[09:45] time someone drops a new form this is
+[09:47] going to be pulling the ID that actually
+[09:49] came through so now I'm just going to
+[09:50] change this to get signed URL rename
+[09:54] that node so we know what's going on and
+[09:56] hit test step and now we're getting an
+[09:58] actual URL pulled back which we can copy
+[10:00] into our browser and we will see that
+[10:02] this is in fact or sorry it just
+[10:04] downloads the the file but this is in
+[10:05] fact the invoice that we were just
+[10:07] looking at so perfect these two steps
+[10:10] are working let's pin this data and now
+[10:13] let's set up a another step which is
+[10:15] going to be um actually getting the OCR
+[10:18] results back so it's going to be our
+[10:20] third and final HTTP request and what
+[10:23] we're going to do here is come into M's
+[10:25] OCR API documentation and this time what
+[10:28] we're doing is is we are doing OCR with
+[10:33] PDF because as you can see what we fill
+[10:35] in here is a URL of the document so now
+[10:37] that we have that we can copy this curl
+[10:39] command we can come into here hit import
+[10:42] curl and paste that in and we should now
+[10:45] see that we have the actual body filled
+[10:47] out so first thing we're going to do
+[10:49] before we set anything up turn off our
+[10:51] headers and just grab our credential
+[10:52] that we had already set up I think that
+[10:54] this is the best way to do it cuz it's
+[10:55] always going to be Sav but if you think
+[10:57] it's a hassle don't worry about it but
+[10:59] now we have our credential and now all
+[11:01] we have to do down here is we have um
+[11:03] the Json body that we're sending over so
+[11:05] let me change this to an expression and
+[11:06] make this full screen so what we see is
+[11:08] that we have the model that we're
+[11:10] hitting is mystal OCR latest the
+[11:12] document is going to be um document URL
+[11:14] that's what we're feeding in and then we
+[11:16] actually have to give it the document
+[11:18] URL so instead of this example URL we're
+[11:21] going to delete that and we're just
+[11:23] going to drag in the URL from the left
+[11:24] hand side right in between those two
+[11:26] quotation marks and on the right you can
+[11:28] see we're getting that f URL back and
+[11:30] now we should be good to hit test step
+[11:33] and we should get a output and what
+[11:36] we're now getting as you can see is a
+[11:37] binary field of the actual Json and
+[11:40] maybe we don't want it like this so
+[11:41] let's fix that all we'd have to do here
+[11:43] is turn off this response and if we hit
+[11:45] test step once again it should now be
+[11:47] coming through as actual text that we
+[11:49] can access right here rather than binary
+[11:51] so you have the flexibility if that's
+[11:53] how you want to get it back but I don't
+[11:55] want that in this case and I'm just
+[11:56] going to change this to get OCR
+[11:59] results so pin this we have our three
+[12:03] HTTP requests set up and now we can do
+[12:05] whatever we want to do with it as far as
+[12:07] you know do we need to push it into a a
+[12:09] Google sheet do we need to send an email
+[12:11] do we need to extract certain text out
+[12:13] of it so what I would recommend from
+[12:14] here is that you're going to use an
+[12:17] extract information extractor node which
+[12:20] basically this uses AI to look through
+[12:22] all of this markdown if you drag it in
+[12:25] so you would be right here telling it
+[12:27] you know what text am I looking through
+[12:29] and then you can set up your different
+[12:30] attributes to pull back so let's say
+[12:32] right now we were just to say you know
+[12:34] date and change this to a date variable
+[12:35] type and say the date of the invoice and
+[12:39] then we could say you know invoice
+[12:41] number and we could say you know just
+[12:43] the
+[12:44] number of the invoice and I know that
+[12:47] this seems a little bit redundant but
+[12:50] the idea for this node is that it's not
+[12:51] always going to be a one toone match of
+[12:53] like this field has this sometimes
+[12:55] you're going to be using this node to
+[12:56] read through a whole email and then just
+[12:59] extract a couple key bits of information
+[13:01] so you'll give it a description of what
+[13:02] that looks like like we said it's an AI
+[13:04] node so you're going to have to connect
+[13:06] some sort of AI model in this case let's
+[13:08] just grab a Google Gemini um 20 flash
+[13:11] let me grab that real quick and then in
+[13:14] here the beauty of this is once you run
+[13:16] it it's going to Output the different
+[13:18] information already as a um separate
+[13:20] Fields so that we could you know if we
+[13:22] were putting this into Google sheet you
+[13:23] could easily drag and drop each output
+[13:26] field into a specific cell within your
+[13:28] Google sheet so it makes it really easy
+[13:30] it splits it all out and keep in mind
+[13:32] something like an invoice number when
+[13:33] you're setting the variable type you may
+[13:35] think it's a number but if we were to
+[13:36] run this it's going to be wrong because
+[13:38] the invoice number has an F in it and it
+[13:40] has a slash and so we don't get the full
+[13:42] invoice number so just something to keep
+[13:43] in mind as you saw when we had this as a
+[13:45] string it actually came over correctly
+[13:47] there we go back to a string and that's
+[13:49] the correct invoice number as you see
+[13:52] right over here right there there it is
+[13:55] and so I know I went through this
+[13:56] tutorial a little bit fast but if you
+[13:57] like that step-by-step sty then
+[13:59] definitely check out the paid Community
+[14:01] I have a deep dive on like apis and HTTP
+[14:03] requests and also this stepbystep
+[14:05] section I actually just uploaded um a
+[14:08] video where I walked through that but
+[14:09] then we also talked about how you could
+[14:11] set up a Google sheet to automatically
+[14:13] process or even upload that PDF that was
+[14:15] dropped into Google drive as well and
+[14:17] just different ways to expand on on that
+[14:19] sort of flow we've also got five live
+[14:21] calls per week as well as bringing in
+[14:23] some pretty cool guest speakers and all
+[14:25] the calls are always recorded if you
+[14:26] can't make them so I'd love to see you
+[14:28] guys in these calls but anyways that's
+[14:30] going to be it for now as always you can
+[14:32] download this workflow for free in my
+[14:33] free school Community if you want to
+[14:35] just you know this is already going to
+[14:36] be configured so you can download it and
+[14:38] just start dropping in files and playing
+[14:39] around with that but thanks for making
+[14:42] it to the end of the video guys always
+[14:43] appreciate it and if you enjoyed please
+[14:46] leave a like it definitely helps me out
+[14:47] a ton and I'll see you guys in the next
+[14:49] one thanks so much everyone

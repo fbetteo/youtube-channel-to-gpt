@@ -1,0 +1,2185 @@
+Video Title: Untitled_Video
+Video ID: S3nccJ2_voA
+URL: https://www.youtube.com/watch?v=S3nccJ2_voA
+View Count: 0
+
+[00:06] it's 2m let's start our
+[00:08] session so good afternoon everyone thank
+[00:11] you for coming Welcome to our session on
+[00:13] Sports analytics beyond the field I will
+[00:17] be the chair for disc session I am Mary
+[00:19] salv I am an assistant professor at the
+[00:22] department of Statistics here
+[00:25] at we will have four speakers in this
+[00:28] session each speaker will have 17
+[00:30] minutes for
+[00:32] presentation followed by five minutes of
+[00:35] Q&A if any questions arise during the
+[00:38] presentation please reserve them till
+[00:40] the speaker is
+[00:42] done let's begin with our first Speaker
+[00:46] Dr Jackson laier from bethley University
+[00:50] his talk is about a new framework to
+[00:52] estimate return on investment for player
+[00:55] salaries in the National Basketball
+[00:58] Association let's welcome
+[01:05] thank you very much thank you for nice
+[01:07] introduction so as alluded to today's
+[01:10] goal is kind of a financial exercise but
+[01:13] also statistical so you know we'll try
+[01:19] to relate everything together here but
+[01:20] really the objective is imagine yourself
+[01:22] you're in the financial world you're
+[01:23] trying to decides between two asset
+[01:25] classes to invest a very natural
+[01:28] starting point well let me look at the
+[01:30] historically current between fund a and
+[01:32] fund B and when you're in the financial
+[01:35] World typically what's going in the
+[01:37] investment is money and it's coming out
+[01:39] with money so it's kind of a finance 101
+[01:41] calculation I think where things get a
+[01:43] little bit interesting is when the thing
+[01:45] going in is monetary like a player's
+[01:47] contract and the thing coming out is
+[01:49] non-monetary like rebounds points what
+[01:52] exactly is that worth how well are you
+[01:54] doing relative to others so that's kind
+[01:56] of the goal
+[01:58] today and I mentioned Finance 101 I know
+[02:01] this is one of stats conference so what
+[02:04] you're looking at here this is a cash
+[02:05] flow timeline and cf0 typically is your
+[02:09] investment in so imagine you're buying
+[02:10] like a rental property that's how much
+[02:12] you purchase the property cf1 cf2 all
+[02:15] the way up to CFN those are what the U
+[02:18] cash flows you receive so generally
+[02:21] speaking kind of a starting point how
+[02:23] you calculate how well this particular
+[02:25] investment is doing is that equation at
+[02:27] the bottom you want the money that
+[02:29] you're invested in to equal the
+[02:32] discounted present value of cash flows
+[02:34] throwing so what you're trying to find
+[02:36] is that rate R so our goal is to
+[02:40] replicate this equation using salary
+[02:43] data and what's happening on the course
+[02:45] right so we're going to try to build
+[02:47] here now just very high level like
+[02:50] review what's out there so there's a
+[02:52] this is a basketball and Linux is a very
+[02:54] big field it's growing rapidly but
+[02:56] there's really three check boxes I tried
+[02:58] to hit number one I want to operate on a
+[03:00] per game basis and the reason for that
+[03:02] is I want to treat each game like a
+[03:05] potential cash flow that's kind of Step
+[03:06] One also I want to try to use some of
+[03:09] the more recent player tracking data
+[03:11] that's available and then finally the
+[03:13] big one I want to consider salary and
+[03:15] oncore performance together and I think
+[03:18] this is really kind of the final
+[03:20] frontier of where at least professional
+[03:22] level analy analytics goes because you
+[03:25] know think about it two people sell a
+[03:26] house for different amounts who does
+[03:29] better well you really have to know how
+[03:30] much they paid for that house through a
+[03:32] formal calculation so it's a similar
+[03:34] type of analysis
+[03:36] here so this this slide this is really
+[03:38] the entire manuscript and it's a
+[03:41] five-part process so I think this is the
+[03:44] intended novelty here and then we'll
+[03:47] talk about each component and even I
+[03:49] think a future is you can kind of take
+[03:50] out stuff you don't like put stuff you
+[03:52] do like into different spots so the
+[03:55] first goal is you want to select a time
+[03:56] period this is pretty natural so we're
+[03:58] pretty much going to use one NBA regular
+[04:00] season but it could be the last five
+[04:01] years could be the last month that's the
+[04:03] first thing you need to set next you
+[04:06] need to do two things at the same time
+[04:08] for each game in that time Horizon you
+[04:11] need
+[04:12] to
+[04:14] uh I like okay so you need to do two
+[04:19] things for each game in that time period
+[04:20] number one figure out a way to
+[04:21] distribute credit for each player within
+[04:24] each game okay so this is one thing I'm
+[04:26] going to spend some time with and the
+[04:28] second thing is you need to estimate a
+[04:30] dollar value of every single game in
+[04:32] that investment rice once you have those
+[04:34] two things they kind of smash together
+[04:36] in part four where you're basically
+[04:38] giving each player a dollar share after
+[04:41] the game based on how they perform so a
+[04:43] very good game get a big share a very
+[04:45] before even negative game might actually
+[04:47] owe money in this theoretical metric and
+[04:50] then at the very end you have your cash
+[04:51] flows you have your salary you can
+[04:53] perform your Roi calculation so if we do
+[04:55] this right we will achieve this as we go
+[04:58] forward
+[05:04] okay so part one I'm going to focus on
+[05:07] one NBA regular season so now I want to
+[05:09] talk a little bit about how to
+[05:10] redistribute uh credit so there's a
+[05:14] couple things that are out there one if
+[05:15] you've been on basketball reference at
+[05:16] all there is something called the game
+[05:17] score it's a bit of a you know us it
+[05:20] just box score statistics has some
+[05:22] hardcore coefficients that's fine it's
+[05:24] nice it's one game so I'm going to track
+[05:26] this as well there's also something
+[05:28] that's gone through a little bit more of
+[05:29] a peer review this is called a win score
+[05:31] similar approach just kind of calculate
+[05:34] some statistics at the end try to give
+[05:35] you a score based on that game so I'm
+[05:38] going to propose something called the
+[05:39] wind logic to do this but I'm also going
+[05:41] to track these two just as a comparison
+[05:45] point so this idea of a wind logic it's
+[05:47] kind of a three-step thing just for the
+[05:49] sake of time I'm sort of zooming over
+[05:51] this at at a little bit higher level but
+[05:53] number one I want to fit a logistic
+[05:55] regression so the thing I think is
+[05:57] important is wins different approach
+[05:59] might be champ championships might be
+[06:00] maximizing Revenue I'm going to imagine
+[06:02] wins is the goal here so you can fit a
+[06:05] logistic regression at the team level
+[06:07] but then looking at the way Team
+[06:09] statistics and basketball accumulate for
+[06:11] each player I'm going to try to
+[06:12] distribute that logic to each of the
+[06:14] players based on that and then finally
+[06:17] at the end there do this uh
+[06:20] standardization where start with uh an
+[06:23] average uniform share and then
+[06:25] redistribute away from that average
+[06:27] based on the performance in the game I'm
+[06:29] going to try to walk through each of
+[06:30] these to get our credit month so first
+[06:34] of all logistic regression super high
+[06:36] level here each game is a brely random
+[06:38] variable that probability of success
+[06:40] that probability of a win through this
+[06:42] linking function is a linear equation
+[06:45] based on some coar so like rebounds
+[06:48] turnovers things like that what happens
+[06:50] on the court so our goal is to estimate
+[06:52] the beta coefficient for all the games
+[06:55] in our data set at the team
+[06:57] level now what's the case for basketball
+[07:00] statistics and I think most most the
+[07:02] statistics is what happens at the team
+[07:05] level so here's the Celtics here the
+[07:08] team total for the most part is the
+[07:10] total of the individual players so a
+[07:13] couple big things here there's some
+[07:14] assumptions that I'm kind of loosely
+[07:15] saying like Independence but especially
+[07:17] this beta zero that intercept term if
+[07:19] that's zero then what you can do is
+[07:23] translate the team win probability to
+[07:26] each of the individual players as their
+[07:28] contribution so this is how it's trying
+[07:30] to be uh allocated here
+[07:34] so from this so that logic PM that's
+[07:38] each of the players fitted logic based
+[07:40] on reallocating this team contribution
+[07:42] the index is changing a little bit here
+[07:44] I focused only on players in a game so I
+[07:46] apologize for the formulas I'm just
+[07:48] talking at at a high level but there's I
+[07:50] want to focus on this equation at the
+[07:51] bottom because this is how I'm
+[07:53] Distributing credit so first of all that
+[07:55] logic there equation two at the bottom
+[07:58] that's what's fitted from the model what
+[08:00] I'm subtracting is the average for all
+[08:02] the players versus all the games in the
+[08:03] data set and then it's standardized and
+[08:06] it's multiplied by one over M Bar what's
+[08:08] m it's the average number of players in
+[08:10] a game so I'm saying when the game
+[08:12] starts everyone gets an average share
+[08:14] and then if you have an above average
+[08:15] game you get a little bit more if you
+[08:17] have a below average game you get some
+[08:18] taken away and if you have exactly
+[08:20] average game you just get your uniform
+[08:23] share so this is basically uh the credit
+[08:27] model and you can do the same kind
+[08:29] adjustment for game score win score so
+[08:31] I'm using this loged approach you could
+[08:33] pick your favorite metric and then try
+[08:34] to do the same thing this is like a
+[08:36] wealth redistribution tool want to think
+[08:38] about it that
+[08:39] way so what are some results look like
+[08:43] this is uh where all the data comes from
+[08:45] it's all publicly available I think the
+[08:46] important thing for us is down at the
+[08:48] bottom if you want this data if you want
+[08:49] this code it's it's free it's out there
+[08:51] so you can download
+[08:53] it so I look you at the 2022 2023 NBA
+[08:57] regular season first first thing here is
+[09:00] just what is the distribution of these
+[09:01] different credit models look like the
+[09:03] wind logic that's blue you can see it's
+[09:05] symmetric you can see it's they all have
+[09:07] the same mean they all the same standard
+[09:09] deviation so that one over Nar so
+[09:11] they're all standardized that way but
+[09:13] how they're distributed based on credit
+[09:14] is different depending on the model wind
+[09:16] score game score a little bit more right
+[09:18] skewed win logic more symmetric again
+[09:21] same mean same standing
+[09:24] deviation one thing I also think is
+[09:27] important just coming from a finance
+[09:28] background a little bit is I really want
+[09:30] to focus on what's happening on the
+[09:32] court and in particular for a Miss game
+[09:36] I want that to be a zero um the
+[09:37] financial interpretation would be that's
+[09:39] like a default so you define uh this
+[09:43] equation three where you either get a
+[09:45] zero or you get your games win lodic and
+[09:47] then just assuming a zero interest rate
+[09:49] you can just sum up over your entire
+[09:51] season so this is like a present value
+[09:53] of wind lodges over the entire season so
+[09:57] what I think is nice about this is let's
+[09:58] compare two here so at the top this is
+[10:01] Kevin Durant this is his 2022 2023 NBA
+[10:04] season Kevin Durant had an excellent
+[10:06] season in the 47 games he played but due
+[10:09] to injury there's a lot of missed games
+[10:11] at the bottom this is tar e t e had a
+[10:13] very solid season tar e played in all 82
+[10:16] games what I think is important from
+[10:18] this slide is this pvw that sum total is
+[10:21] 4.5 for each player so this creates like
+[10:24] a break even analysis for how many games
+[10:27] does the Kevin Durant need to miss to be
+[10:29] become a tar e or vice versa so this is
+[10:31] just something I really haven't seen I
+[10:33] thought is important when you're trying
+[10:35] to think of this cash flow type
+[10:40] analysis additionally just how does this
+[10:42] metric look so I looked at uh the presid
+[10:45] valley win logic so that's some total
+[10:46] per season for all the players in the
+[10:48] NBA I Want to Break It Out by position
+[10:50] just because of the nature of basketball
+[10:52] you know this we've heard the big man
+[10:54] bias that's kind of coming true here as
+[10:55] well but if you look at the five
+[10:57] positions if you look at the lers all
+[10:59] the way to the right these are the names
+[11:01] that you know passes the sniff test at
+[11:03] least seems pretty solid in that way
+[11:06] it's interesting to see a couple Celtics
+[11:07] up there um so again if you want all the
+[11:09] loot all the results for all the players
+[11:11] check out GitHub all the details are out
+[11:15] there the other thing that's I think
+[11:17] interesting is you can compare them so
+[11:19] if you use a win logic and game score
+[11:22] win score or your favorite this is a
+[11:25] percentile plot so if they agreed
+[11:27] completely you would get everything down
+[11:29] that diagonal from the top left to the
+[11:31] bottom right they'd all be on top of
+[11:32] each other nice line where you get the
+[11:34] disagreements is the off diagonals this
+[11:36] is where the metrics disagree between
+[11:38] certain players so you can see that game
+[11:41] score win score on the top right pretty
+[11:43] similar generally but then you go to the
+[11:44] win loget pretty different in certain
+[11:47] players so just I know this is a little
+[11:49] bit more of a student Focus conference
+[11:51] so how how might you use something like
+[11:53] this just as an example this is a trade
+[11:56] that happened this season between the
+[11:57] Knicks and the Raptors so if you look at
+[12:00] the players that each team receives if
+[12:02] you go all the way to the right if you
+[12:03] just look at the game score present
+[12:05] value game score column it would appear
+[12:08] that the Raptors probably won this trade
+[12:10] uh just based on this metric if you look
+[12:11] at the Players they received at the
+[12:13] bottom those are pretty high percentiles
+[12:15] compared to what the Knicks received on
+[12:17] the other hand different player credit
+[12:19] model you go to the wind lodic all the
+[12:21] way to the left
+[12:23] here how it feels about RJ Barrett is a
+[12:26] lot different how it feels about
+[12:27] pressure suchu is a lot different all of
+[12:28] a sudden this looks a lot closer and
+[12:30] then what you would need to get out of
+[12:32] that draft pick to kind of get the
+[12:34] difference so the only point of this
+[12:35] slide different player valuation metrics
+[12:38] this is how markets are made right teams
+[12:39] feel differently about certain players
+[12:41] and this is how trades come
+[12:44] together okay so that's part one part
+[12:48] two now assuming we have a player credit
+[12:50] model you feel good about we need a
+[12:52] dollar value of each game you could go
+[12:55] crazy with this the model I want to use
+[12:57] is just that the value of a game depends
+[13:00] on how many people saw it so the first
+[13:02] thing is how many people attended it at
+[13:04] the gate and then whether or not it was
+[13:06] on television so you get the television
+[13:08] Revenue you get the advertising Revenue
+[13:09] the simplistic model for which games are
+[13:11] more valuable different approach might
+[13:13] be standings related you have to decide
+[13:15] on that but this is just if more people
+[13:17] see it it's worth
+[13:19] more so pretty standard so now we have a
+[13:22] way to distribute credit a dollar value
+[13:25] so we need to create the cash flows
+[13:27] rather than throw a bunch of formulas at
+[13:28] you I'll just give you an example so
+[13:30] this is Lebron James Lebron james' game
+[13:32] values he's on the Lakers this is that
+[13:34] first Vector first Vector here sgb first
+[13:38] game is worth $26.3 million according to
+[13:40] my model second game $26.4 million all
+[13:44] the way out to the last game what was
+[13:46] his win logic apologize for all the
+[13:48] decimals but this WL Vector that's his
+[13:50] share according to my model so 8% the
+[13:53] first game 99.7% the next game uh second
+[13:56] to last game of the season below average
+[13:58] game a little bit of a negative share
+[14:00] and then 133% big number at the end how
+[14:02] do you create the cash flows just a
+[14:04] pairwise product that's what this little
+[14:06] circle dot supposed to mean a computer
+[14:08] science term so for example that 2.2 in
+[14:10] that bottom Vector that's 26.3 time 08
+[14:14] so now we have a vector of cash flows
+[14:17] right so how do you calculate the return
+[14:18] on
+[14:19] investment our last step here well back
+[14:22] to LeBron James right his salary is 44.4
+[14:25] million that's cash flow zero his cash
+[14:28] flows we got in the previous step these
+[14:30] become the future cash flows so you
+[14:32] solve for that rate R such that both
+[14:35] sides are equal and you have estimated
+[14:37] the return on investment for LeBron
+[14:39] James based on last season couple things
+[14:41] here if that number feels low LeBron
+[14:43] missed 27 games so there's a lot of
+[14:45] zeros in there that's not pictured also
+[14:47] doesn't include playoff games so you
+[14:48] might want to make an adjustment that
+[14:51] way so that's it so what does these
+[14:53] results look like for uh this group
+[14:56] overall so
+[14:59] the estimated game values these are just
+[15:01] those Alpha coefficients these are basic
+[15:03] uh estimates you know just a standard
+[15:05] kind of average here again nice sniff
+[15:07] test what are the top five teams with
+[15:09] the most value Lakers Warriors Celtics
+[15:12] you know these are Big Market teams and
+[15:14] one caveat from this is if you are a
+[15:16] player on a team with more valuable
+[15:18] games all it's equal you're going to
+[15:19] generate a higher
+[15:21] Roi so then this is the ROI of all the
+[15:24] players in the league for last season
+[15:27] just based on the win logic uh so on the
+[15:29] vertical axis this is return on
+[15:31] investment on the horizontal axis this
+[15:33] is a log of the player salary no
+[15:35] surprise as the salary is higher right
+[15:37] it's harder to generate a higher return
+[15:39] and I think what uh you can take away
+[15:42] from this is just what are some of the
+[15:43] players that stand out right uh versus
+[15:46] the players that don't generate a higher
+[15:48] return and the one thing I would
+[15:50] emphasize from this is there's no
+[15:51] minimums game play the only thing that's
+[15:53] I control for here is you need a league
+[15:55] A league minimum salary that's the only
+[15:58] thing so if you don't even play playing
+[15:59] two games that's going to affect your uh
+[16:03] Roi one other thing you can do from this
+[16:06] treat the positions as asset classes
+[16:08] right so this is a basic Financial term
+[16:11] really statistics term it's coefficient
+[16:13] of variation standard deviation divided
+[16:15] by the mean Roi for the players in that
+[16:18] position the goal here is what how much
+[16:21] uh risk am I taking per return so
+[16:24] something like this in the First Column
+[16:25] the wind logic would say point guard is
+[16:28] where there's kind of have a lot of
+[16:29] volatility in your return versus the
+[16:31] center position a little bit safer it's
+[16:34] interesting to compare game scores kind
+[16:36] of flatter among the different positions
+[16:38] just an example the type of metric you
+[16:39] could do uh when you're making player
+[16:42] Personnel
+[16:44] decisions okay so just kind of a wrap up
+[16:46] slide here so I think this is the first
+[16:48] thing I've seen that tries to combine
+[16:49] everything together right so you get
+[16:51] this Encore performance and then how
+[16:53] does it get this uh return on investment
+[16:56] I think in addition to like NBA teams
+[16:57] right this might be interesting them but
+[16:59] also the players right you can advocate
+[17:00] for more you're being underpaid things
+[17:02] like that and finally this has all been
+[17:05] a retrospective analysis right
+[17:06] historical return but you can instead
+[17:08] project what's going to happen on the
+[17:10] court and then do that to generate your
+[17:12] cash flows and discount that back and
+[17:15] then finally I really want to emphasize
+[17:16] this is you can customize this however
+[17:18] you want right you don't like the wind
+[17:19] lodic fine plug your own in there get
+[17:21] your own cash flows you can do more
+[17:23] precise salaries uh you could include
+[17:26] off Court Revenue like jersey sales you
+[17:28] want playoff games in there whatever and
+[17:30] then finally maybe this could apply to
+[17:33] uh other sports okay so this is the
+[17:37] framework again this is the intended uh
+[17:40] paper here and then this is my
+[17:42] information like I said there's a GI
+[17:44] GitHub out there has all this code has
+[17:46] this data latest version of the
+[17:48] manuscript I have a couple minutes for
+[17:50] questions I know I kind of Bove through
+[17:52] that but
+[18:00] questions question to Dr so I have a
+[18:03] question on I I saw Derek White's value
+[18:06] was very high uh that was like you know
+[18:08] interesting and uh you know that
+[18:11] happened from the trade from Sports to
+[18:13] Celtics but you know I thought I don't
+[18:14] think Celtic was like expecting that
+[18:17] because you know they're quite was good
+[18:19] in sports but like wasn't like this good
+[18:21] right uh so like what would you like so
+[18:25] like you you saying that we can like
+[18:27] change the model to like consider for
+[18:28] like different trade and stuff uh but
+[18:31] also like there's an interaction between
+[18:32] like teams right uh if we want to like
+[18:34] make prediction like like because if
+[18:37] like the manager want to use this model
+[18:39] for like uh planning maybe that would be
+[18:42] a like important Point like you have any
+[18:44] insight on like how to make this
+[18:47] interaction that like we have never
+[18:49] seen yeah I mean this is kind of the
+[18:51] inherent trickiness right
+[18:54] so Financial perspective you might try
+[18:56] to find a distressed asset right think
+[18:59] okay if we bring it in here with our uh
+[19:01] orchestration turn it around and you can
+[19:05] you can go as crazy as you want with
+[19:07] part two here so really try to control
+[19:09] for different things maybe what w games
+[19:12] for the Celtics approach versus the
+[19:14] Spurs and then try to translate that
+[19:16] player so what would this player
+[19:18] generate within our team versus another
+[19:20] team so just have your own model I think
+[19:23] the one trade-off of this is I want to
+[19:25] emphasize the overall thing and the more
+[19:28] crazy I go with part two it distracts
+[19:30] from the overall so you're absolutely
+[19:32] right but uh that's not necessarily in
+[19:35] here it's kind of average
+[19:38] across questions there's a lot of
+[19:42] players that are contributing
+[19:45] II I'm making less
+[19:48] money
+[19:50] yes so I mean I don't know much who
+[19:54] those so can you tell us something about
+[19:57] those those people up
+[20:00] there so at the tip up like 90% Roi yeah
+[20:04] these These are players making like the
+[20:05] league minimum that happen to get more
+[20:07] playing time so they're a little bit
+[20:09] unusual um okay the NBA is a little bit
+[20:12] unique in that player salaries are kind
+[20:14] of dictated by contract length sometimes
+[20:16] so if you have a player very early in
+[20:18] that career who's really outperforming
+[20:20] it's a big Market inefficiency very
+[20:22] regulated oh I see so that's a little
+[20:24] bit what's happening whereas all the way
+[20:25] to the right these are the max salary
+[20:28] players very hard to get that back at
+[20:30] least based on
+[20:34] regular
+[20:35] [Music]
+[20:37] questions yeah do you think that some
+[20:39] adjustment for like salary cap based off
+[20:42] different teams now increases over the
+[20:44] years would be necessary if you were to
+[20:46] try and build
+[20:47] that so that's uh I guess the
+[20:51] interesting thing there is the salary is
+[20:53] the percentage of the cap so it's not
+[20:56] necessarily the salary cap number but I
+[20:59] do think there's penalties for how far
+[21:01] you go over so if say you're a team
+[21:04] that's on the edge and you need a center
+[21:06] you might try to get no avom right what
+[21:08] you're going to get based on that salary
+[21:10] that might help you that way so like uh
+[21:13] but a more complete analysis would be
+[21:15] how much does it cost this team versus
+[21:17] another team I
+[21:22] agre
+[21:23] [Music]
+[21:25] questions I have a question what does a
+[21:27] negative share
+[21:30] they don't the theoretical value right
+[21:33] so it's not actually money back but it's
+[21:36] more this is what an average player
+[21:38] based on this model would have produced
+[21:40] this is what you produced it is less
+[21:43] therefore you have
+[21:48] short
+[21:49] [Music]
+[21:53] questions more questions
+[22:02] let's go to our second speaker
+[22:06] sh from Yale
+[22:08] University Shin will talk about
+[22:11] estimating the age condition average
+[22:14] treatment effect curves application for
+[22:17] assessing load management strategies in
+[22:19] NBA
+[22:30] let's give a round
+[22:32] [Music]
+[22:33] of I'm very honored to speak here and
+[22:36] actually like the early version of this
+[22:38] project was presented two years ago in
+[22:42] this conference it was a very early
+[22:43] version now we have prep like submission
+[22:46] on this so huge thanks for the organizer
+[22:49] for all the effort it has been great for
+[22:51] M the development at least this project
+[22:54] and I'm a fourth year PD student at in
+[22:56] statistic and data science this work is
+[22:59] collaboration with Laura forer and
+[23:02] Bri so um so the objective of this like
+[23:06] a presentation is to connect age carb
+[23:09] and causal inference and so if you don't
+[23:12] understand my framework that's fine if
+[23:13] you can you know take a if you can get
+[23:16] something from AG Cal inference that
+[23:18] would be uh enough for my presentation I
+[23:21] would be very happy uh so this is H it's
+[23:23] very simple so this is a Kobe Bran's
+[23:25] Point per game per uh like xaxis Ag and
+[23:29] why have his performance and when he
+[23:31] starts um like in the league like first
+[23:35] he start no but he start like getting
+[23:37] more experience and his performance gets
+[23:39] better and once he gets in the peak like
+[23:41] he declin because he gets old right so
+[23:44] this is it's it's very simple
+[23:46] um concept I don't know like which is
+[23:49] the best ter is like we call Edge curve
+[23:51] but I know one Greg called like eding
+[23:54] curve so I I I don't really know like
+[23:56] which is the right term um so but Ard
+[23:59] could be very like different so like
+[24:02] like I was showing the Kobe bran one but
+[24:04] if we see for like different players uh
+[24:07] there's different pattern for the
+[24:08] decline so this is very interesting like
+[24:10] Ed C like the shape of the Ed card it
+[24:12] will like reveal us how fast they would
+[24:15] decline or like whether like that
+[24:17] depends on position or like it's it's
+[24:20] very important to understand what like
+[24:21] drives them to drop because like you
+[24:24] know this would like um give us a good
+[24:27] information on how many years we should
+[24:29] like extend the contract or how much
+[24:31] money we should pay for the each player
+[24:34] and like the shape also different looks
+[24:36] different uh if we change from point per
+[24:38] game to rebound per game for example
+[24:40] look quite different even in the rebound
+[24:43] rebounds consist uh rebound consists of
+[24:46] offensive part and defensive part if we
+[24:48] see that defensive part offensive part
+[24:50] sorry it declined much faster because um
+[24:53] offensive rebound is much more physical
+[24:56] than defensive rebounds so this is a
+[24:59] veryy short intro on H curve and the
+[25:02] contribution of our paper is three Vols
+[25:05] so the first thing we did is uh we
+[25:08] incorporate the game level data so if we
+[25:10] compare uh if we see the literature on
+[25:13] Ed curve uh most of the like the model
+[25:16] that um is like presented is season
+[25:18] level data so like so like we it could
+[25:21] be helpful for like contct determination
+[25:24] but game level data like actually um has
+[25:27] a very rich information such as like
+[25:29] back to back games or team you play for
+[25:31] team you compete against and Etc there
+[25:33] are so many compounder that like Drive
+[25:36] the performance of each of the player
+[25:38] and this will make us enable us to make
+[25:40] the decision for each of the games
+[25:42] instead of just the contr so for example
+[25:45] if like you are the Lakers um manager
+[25:47] and Lebron James playing against Denver
+[25:49] like tomorrow then maybe you could like
+[25:51] predict what would be the treatment what
+[25:53] would be the their the performance in
+[25:56] like that specific scenario
+[25:59] and in the second like contribution is
+[26:01] that like we provide a framework to
+[26:03] invest estimate H conditional treatement
+[26:05] effect so we have some treatment in our
+[26:07] case is the rest like whether the game
+[26:10] is back to back or not back to back and
+[26:12] we will provide a framework or to
+[26:15] estimate that uh treatment effect of
+[26:17] like rest whether that rest like
+[26:19] actually matters or not because there's
+[26:20] a lot of like controversy in load
+[26:22] Management in NBA and finally we assess
+[26:25] I use this framework to assess that load
+[26:28] management strategy in uh
+[26:30] NBA okay so how many of you I mean I
+[26:34] know this is a very student like Focus
+[26:36] conference so I wanted to give a very
+[26:37] very short introduction of Cal how many
+[26:39] of you know what's the difference
+[26:41] between correlation and
+[26:43] causation okay so yeahh I will then I
+[26:47] will spend a little bit time on this so
+[26:49] so this is a shk and ice cream cells
+[26:51] right and it's pretty correlated so does
+[26:54] eating ice cream cause me to being
+[26:56] attacked by by shark
+[26:58] you think that sounds like
+[27:02] reasonable yeah so maybe not right maybe
+[27:05] like eating ice cream like doesn't have
+[27:07] anything to do with the shark but what
+[27:08] is really happening is that in the
+[27:10] summer like the temperature goes out you
+[27:12] go to the
+[27:13] beach then like you maybe receive like
+[27:16] shark attack or like you eat more like
+[27:18] ice cream right so so what it is really
+[27:20] causing is the Sun or the temperature
+[27:23] and these are the byproduct because the
+[27:25] sun is Shifting those two barable in the
+[27:27] same direction
+[27:28] right uh but you know this is a sports
+[27:31] conference so I'm not going to talk
+[27:32] about sharp and ice cream and you know
+[27:35] this could be like um translated on our
+[27:39] problem so maybe like there's a
+[27:40] correlation between like you know if one
+[27:43] player is good scoring uh they could be
+[27:45] good on rebounding like itself but the
+[27:48] amount you score doesn't cost you more
+[27:51] like rebound I mean in the game the play
+[27:53] byplay game like it that it it might be
+[27:57] true because if you do the rebound maybe
+[27:59] you can score more but if you see in the
+[28:01] game level maybe this is just a
+[28:03] correlation of the and what we want to
+[28:05] know is like whether resting one or two
+[28:07] more days actually it ca uh this
+[28:10] performance let go up
+[28:13] right um okay so there's another example
+[28:17] that I have so let's say like we have
+[28:19] three players and um the treatment is
+[28:22] whether like you're playing back Tob
+[28:23] back games and this is the observe point
+[28:26] for game so like looking at this like
+[28:27] play play one who didn't play a back to
+[28:30] back game uh scored sorry it should have
+[28:34] been on example but okay so okay never
+[28:38] mind um so let's say the player one
+[28:40] didn't uh play back to back and scored
+[28:43] like 20 and okay let's let's say that
+[28:46] this is
+[28:47] yes the player one like did play back to
+[28:51] back and scor 20 and player two and
+[28:53] three um is arrested and they scor like
+[28:57] St
+[28:58] is this going to be enough to determine
+[29:01] that actually like resting is like
+[29:03] effective so that's that's one of the
+[29:05] question and this could be Sol by one of
+[29:07] the poten like most renowned framework
+[29:10] in Cal inference called potential
+[29:12] outcome frame and potential outcome
+[29:14] framework actually is a missing value
+[29:16] problem so we observe this value like I
+[29:20] mean I will sorry I miss no yes but we
+[29:24] observe this value because like we
+[29:26] observe the value of player one when
+[29:28] they played back to back games but we
+[29:30] didn't observe the value of the player
+[29:32] one when he did uh play the back to back
+[29:35] game so this is a missing B right and
+[29:38] why this is important this is important
+[29:40] because if the potential outcome is
+[29:44] something like this after like there's
+[29:47] no effect so like estimating the the
+[29:50] after like Conta uh would actually give
+[29:53] us the the true treatment effect and not
+[29:56] um like so the frequen is approach would
+[29:58] not be enough like just a is not enough
+[30:02] but like be like looking at the
+[30:03] potential outcome uh enable us to
+[30:07] discover more like true causal uh thing
+[30:10] rather than like not just a correlation
+[30:12] so now that we are in the same page on
+[30:15] causal inference and what did let me
+[30:17] explain my framework uh so the framework
+[30:20] like there's two ingredients on the
+[30:22] framework the first one is the
+[30:24] expectation function sorry for a lot of
+[30:26] like notations but basically the
+[30:28] takeaway is that new zero is the
+[30:30] expectation of the control group so
+[30:32] control group in this case is the um
+[30:34] players who are playing back to back and
+[30:36] mu1 is a treatment group who are more
+[30:39] rested so like you have like two
+[30:41] different expectation for the player on
+[30:43] different contos and under this
+[30:46] framework we can Define that each
+[30:48] conditional treatment as a difference of
+[30:50] those so it's it's quite simple it looks
+[30:52] more difficult in like mathematical poll
+[30:54] because people likees to impress people
+[30:57] by using
+[30:58] more complicated notations but it's
+[31:01] actually simple um so how okay so now
+[31:05] that we define estimate how do we define
+[31:08] estimate this like a and we use like
+[31:11] three metal learning approach provided
+[31:14] by kunel in
+[31:15] 2019 uh and like it will allow us to use
+[31:18] any predictive model or any supervised
+[31:20] machine learning model that it's on your
+[31:22] like head uh traditional AG curve like
+[31:26] analysis is done like based on ol but
+[31:29] the problem is that it's hard to capture
+[31:31] the nonlinearity of like or interaction
+[31:33] because you have to specify the the
+[31:35] interaction rather than like you do uret
+[31:38] or random Forest it can capture the
+[31:41] nonlinearity like by the intrinsic F of
+[31:44] the intrinsic like construction of the
+[31:47] model right so there is a three types of
+[31:49] learner I'm not going over like those
+[31:51] details but s learner is the simplest
+[31:54] and X learner is the most complicated
+[31:56] one there is those like algorithm
+[31:58] um if there's question I can go over it
+[32:01] but basically this m means that you are
+[32:04] putting any machine learning model it
+[32:05] could be like o so like if you are have
+[32:08] used any R like notation it would be
+[32:11] like this is the outcome and these are
+[32:14] the C so like you can see as this is
+[32:16] fitting a regression when m is like
+[32:18] regression so like basically what you
+[32:20] fit one model where the treat and the
+[32:22] treatment is the coefficient of your uh
+[32:25] like the the treatment variable the
+[32:28] effect is the treat variable is a x
+[32:31] Learner in the T learner you fit two
+[32:33] models like what you fit one model for
+[32:36] control group and one model for
+[32:37] treatment group so you fit like two
+[32:39] regression or any mod uh so the one like
+[32:43] intive way to see in like U like pro and
+[32:48] con is that in s learner you're fting
+[32:51] only one model so you don't need a lot
+[32:53] of data set so because like um you it's
+[32:56] less complicated but in learner let's
+[32:58] say like you use the 100 observation
+[33:00] here you split up in case like treatment
+[33:03] group and group are like the same number
+[33:05] you now are putting like two models on
+[33:08] 50 observations so like this will like
+[33:10] uh suffer more
+[33:12] the the number number sample is like a
+[33:15] smaller Lear more complicated it has to
+[33:18] be with like the whole machine learning
+[33:20] thing that the biases when if you do
+[33:22] this and like this makes like more like
+[33:25] unbiased estimator but I'm not going to
+[33:27] over
+[33:28] that okay so now so this is the way I'm
+[33:32] estimating the
+[33:34] town and okay so I'm saying like oh this
+[33:37] is flexible and you can use any machine
+[33:39] learning model and we have three
+[33:40] Learners so now the problem is okay
+[33:43] which combination should we use we can
+[33:44] use ol lines like uh the curing curve
+[33:49] literature has done combined with any of
+[33:51] the learner we can use OLS SL with s and
+[33:54] PX or you can we can use more complex
+[33:57] random for model with like any of the
+[34:00] combination so at least there's six
+[34:02] combinations that we can try out and uh
+[34:05] you know you can try neet you can try ex
+[34:07] and and you know then like you have more
+[34:10] comination that like you
+[34:12] try and uh to determine which
+[34:22] combination I still have six minutes six
+[34:26] minutes five minutes
+[34:29] question
+[34:31] uh okay so so I was talking about all
+[34:35] the combination possible combination and
+[34:37] we have to choose pick which would be
+[34:39] the best for our like problem so we
+[34:42] devis this scenario um us usually based
+[34:46] on like one the you know author of The
+[34:48] Ed like paper that is present in this uh
+[34:52] so what the first um scenario is Conant
+[34:55] effect so if we see control group and
+[34:58] treatment group they have the same shift
+[34:59] and it's just shifted and the second
+[35:01] scenario is line treatment effect so
+[35:03] this means that the rest is affecting
+[35:06] more if you are older so like the the
+[35:09] effect of the treatment effect is bigger
+[35:11] as you get like older and finally the
+[35:14] last scenario is like the totally like
+[35:15] very complex one where like the treated
+[35:18] group and control group is like looks
+[35:19] totally different and we evaluated like
+[35:22] our uh approaches uh on those cases and
+[35:26] one thing that I want to know is that
+[35:28] that like du to the fundamental problem
+[35:30] of caal inference which is that you
+[35:32] never observe your contracture right so
+[35:34] let's say like your contracture is
+[35:36] taking aspirin or not taking aspirin you
+[35:38] only observe the case if you take the
+[35:40] aspin you only observe taking the aspin
+[35:42] like your your you wouldn't observe your
+[35:44] headache when you didn't take the ASP So
+[35:46] like um this simulation like this C
+[35:50] effect models can be Al only evaluated
+[35:53] using the simulation uh because in that
+[35:56] case like you have the fure like both of
+[35:58] the values that could be simulated so
+[36:01] this is a result of the simulation uh as
+[36:04] we expected the most the simplest model
+[36:06] which
+[36:07] ISS does very well in the simplest
+[36:10] scenar like simulation uh which is like
+[36:13] almost the error is almost zero but as
+[36:15] as it gets like complicated which in
+[36:18] simulation two where the treatment
+[36:20] effect was like linear the learner with
+[36:22] random Forest gets got the lowest MC and
+[36:27] for the most complex one actually the ex
+[36:29] learner with ROM Forest got the least MC
+[36:33] okay now based on this scenario which
+[36:35] one should we use for our NBA data
+[36:38] probably in NBA data is complex enough
+[36:41] uh as in simulation 3 because it has a
+[36:43] lot of Compounders such a temperature or
+[36:45] like how many hours they travel whether
+[36:47] it is back to back and there are so many
+[36:49] Compounders so maybe like the good like
+[36:52] a combination of the learner and base
+[36:54] learner would be the X learner with
+[36:56] random for
+[36:58] uh so we appli this to NBA data to
+[37:01] assess the load management uh bit of the
+[37:04] background on like load management the
+[37:06] success is that coer in 2018 and 2019
+[37:09] season he only play 60 games out of 82
+[37:12] and he was a top form playoff and go the
+[37:14] championship there's critique since this
+[37:16] season uh there's a player participation
+[37:19] policy I require St players participate
+[37:22] more frequently and our contribution is
+[37:24] that we did this
+[37:26] quantitatively um there's a note but I'm
+[37:29] still okay so these are the results for
+[37:32] the KE learner uh with like condition
+[37:34] expectation function it's the first
+[37:36] ingredient I was so for xer with random
+[37:39] for that I said that it's the best model
+[37:40] we cannot FL both of them because uh the
+[37:43] nature of L Crossing we can only uh we
+[37:46] get only the car for the treatment
+[37:48] effect itself uh in key Lear um the
+[37:52] taking the advantage is that you can
+[37:53] actually PL the both of the the pattern
+[37:56] for example uh uh mu1 is a treatment
+[37:59] group so like mu1 the red one is AR
+[38:01] rested players and mu zero is the not
+[38:04] the back to back players and we can see
+[38:06] that me rating is generly significant in
+[38:08] a booster up confidence interval 90% but
+[38:11] mainly it's coming from defensive end if
+[38:14] you see the the effect is way sign way
+[38:16] more significant in defensive end rather
+[38:18] than offensive end and this might be
+[38:20] because you know if you are like um tier
+[38:23] and you're playing maybe like you you
+[38:26] you have to play well in opens because
+[38:27] you have a lot of attention but in
+[38:29] defense you can just like relax a little
+[38:30] bit little bit and um so like the
+[38:34] treatment effect of resting uh would get
+[38:37] higher in a in the defensive end rather
+[38:39] than offensive
+[38:40] end and we did this for like both close
+[38:44] but um due to the time I think I skip
+[38:46] most of it uh but like the is deled
+[38:50] ining like stronger but here like um the
+[38:54] only one that are kind of significant
+[38:56] are um blocks and skills where like
+[38:59] which are the Box statistics that are
+[39:01] more like physically like requiring
+[39:04] right and then we did um analysis for
+[39:07] field go percentage and we see that the
+[39:11] to the left is the field General field
+[39:13] go percentage and the middle one the
+[39:15] three point and this is a true shooting
+[39:17] and we can see that for threep pointer
+[39:20] um like less significant than General
+[39:24] field cure like a percentage in the that
+[39:27] the right and this might be because as
+[39:29] you get closer to the rim like gets more
+[39:32] physical so like you need more like more
+[39:35] or when you are like closer to the rim
+[39:37] rather than three pointer right um we
+[39:40] did the same thing for the excler with
+[39:42] FR Forest as I mentioned like not as a d
+[39:45] learner where we can plot both of the
+[39:47] shapes we can only plot the treatment
+[39:49] effects and we can see the same thing
+[39:51] that the defensive rating is way more
+[39:53] significant than than offensive end so
+[39:56] concluding that the W matters more in
+[39:58] defense rather than
+[40:01] offense and uh this is for the shooting
+[40:04] percentage we could also see that uh the
+[40:06] red one is a three point percentage so
+[40:08] if that overlaps with zero means that
+[40:11] the rest is not significant uh we could
+[40:13] see also that the field call percentage
+[40:15] more significant than in frequence
+[40:17] shooting and this is my last slide uh so
+[40:20] breast matters somewhat um but more in
+[40:24] defensive end and uh we advanced
+[40:28] literature by incorporating reach game
+[40:30] level data deving a framework to
+[40:31] incorporate the cality and we allow
+[40:35] capure nor linear Trends using those
+[40:37] machine learning techniques uh the
+[40:38] future work would be to do a multile
+[40:40] treatment so like we can differentiate
+[40:42] between like now we are doing back to
+[40:44] back and not back to back but maybe we
+[40:46] can differentiate about one day of rest
+[40:48] was a two day rest or two day rest as a
+[40:50] three day rest and like we estimate that
+[40:52] those effect would be going to be like
+[40:54] some kind of low shape and we can also
+[40:57] like appli to fa index that was talking
+[40:59] in the the morning okay that's that's it
+[41:02] thanks so much for the
+[41:09] uh a few minutes for questions one
+[41:14] minute any
+[41:18] questions did you have any measures of
+[41:20] uncertainty associated with your oh I
+[41:23] mean I have the Boost shop uh like
+[41:26] interval right uh I missed that Sor yeah
+[41:28] so so there is
+[41:32] the yeah those BS are good comp interval
+[41:36] uh it's hard to get it like distribution
+[41:39] because um the model gets more complex
+[41:41] than
+[41:44] tral so you copy at
+[41:47] 4 NBA players NBA players oh yeah
+[41:52] actually there are not many like player
+[41:54] in my data set after 13 age so there
+[41:57] here's the appendix we can see that at
+[41:59] 42 I have uh only 10 games and like
+[42:04] mainly non back to back like player
+[42:06] older like with 42 age never played a
+[42:09] back to back game like according to this
+[42:12] so uh we cut because in there is a
+[42:16] overlap assumption so at least you have
+[42:18] to have uh like one observation in
+[42:20] certain group and for 41 and 42 we have
+[42:23] the um violation of that assumption so
+[42:26] we the uh I think we
+[42:29] have and what that's a great point that
+[42:32] I I forgot to mention is that the
+[42:34] confidence span for like older player is
+[42:37] way wider because of the small sample
+[42:39] size
+[42:46] yes yeah it's hard to survive in NBA
+[43:01] yeah yeah that's a great Point yeah it's
+[43:02] because of it could be because of
+[43:04] survival but also because uh when
+[43:07] players are too old um like the as we
+[43:11] can see in the band the estimate is not
+[43:13] very accurate because U you know there's
+[43:15] a lot of that mean might be yeah that's
+[43:19] a good
+[43:20] point more
+[43:23] questions no more then let's
+[43:47] way from Leola University Chicago she's
+[43:50] going to talk about empirical
+[43:52] determination of basketball baseball
+[43:55] erors a most for analysis in Major leag
+[43:59] Baseball let's welcome
+[44:10] Dr okay hopefully that works start this
+[44:15] okay so kind of a you know fancy title
+[44:18] but all I'm trying to say is that I'm
+[44:21] using data to talk about something that
+[44:23] people have publically discussed and
+[44:26] debated for a while and I'm just like I
+[44:28] went and did the I did it um and really
+[44:32] I would like also to say that I'm a
+[44:34] statistician first and foremost and I
+[44:37] did this work with Greg Matthews who I'm
+[44:39] sure you've seen a hundred times at this
+[44:40] conference um and we were chatting and I
+[44:45] was like oh I I I know the methodology
+[44:47] to answer this question think this what
+[44:49] I do all the time um oh there we go so
+[44:53] I'll kind of introduce the problem the
+[44:55] methodology just like a little babyit
+[44:57] and then really go through a lot of the
+[44:58] results because we have a lot of
+[45:00] interesting results that I think you
+[45:01] guys will think are interesting so high
+[45:04] level I think this can be used in a ton
+[45:06] of applications and I would like more
+[45:08] people to do it um especially in sports
+[45:10] it's so like full of data so basically
+[45:13] does a sport like major league baseball
+[45:15] change over time like there's changes to
+[45:17] how the game is played all of this is
+[45:20] about we now have data to understand how
+[45:22] we can change the game um so how do
+[45:25] aspects and measures the game change
+[45:27] over time and then if they do change
+[45:30] when are they changing and so what we
+[45:33] want is to understand understand shifts
+[45:35] in baseball and I look at a couple of
+[45:37] other things like within a team and so
+[45:39] basically what we're asking here is what
+[45:41] are the eras of baseball and then
+[45:44] specifically within a team or what I
+[45:46] will say is a
+[45:47] franchise um are there dynasties or
+[45:50] collapses of dynasties um within a
+[45:55] team again okay okay so people have
+[45:57] hypothesize this they're like dead ball
+[45:59] era life ball era la la la eras of
+[46:02] things um and so people have
+[46:05] hypothesized a lot of these written
+[46:06] about them and it has been done
+[46:08] empirically a couple of times through uh
+[46:11] what I'm going to use but there were
+[46:12] only looking at a single statistic so
+[46:14] like how do home runs change over time
+[46:17] how do other things change over time so
+[46:20] they did it on slugging home runs um
+[46:24] batting and RBIs
+[46:27] um uh batting average and then uh
+[46:31] somebody did it on a single player of
+[46:33] very bonds and looking at like did he
+[46:35] have a change due to steroid use in in
+[46:39] some of his metrics um and then they've
+[46:42] also done it for competitive balance
+[46:44] where was The Economist in there I'm
+[46:45] also working on paper right now about
+[46:47] competitive balance stu um for all leags
+[46:50] using the same methodology so these were
+[46:52] all just done one person one statistic
+[46:55] but is that an era of baseball how does
+[46:58] the whole game change together we need
+[47:00] to account for more than just home runs
+[47:03] right we want to think about them all
+[47:05] together so I want to identify and
+[47:07] confirm these changes overall in the
+[47:10] game um then specifically by those game
+[47:12] metrics and then I also want to look
+[47:14] within teams and find these kind of
+[47:16] Dynasty teams um and I want to do that
+[47:20] multivariately I want to do that
+[47:21] together where I'm accounting for all of
+[47:23] these things changing together where I
+[47:25] say they have one change B on all of
+[47:27] these different
+[47:29] things so change Point methodology I
+[47:32] don't think anyone's done that too much
+[47:35] so I wanted to introduce a univariate
+[47:37] case this is a very easy visual change
+[47:39] point where you can see it's just kind
+[47:40] of bouncing around at this constant flat
+[47:42] rate and then it jumps to up here so
+[47:45] you're like this location in time is the
+[47:47] change point this is very easy to see
+[47:49] with our eyes but in real life it's much
+[47:51] more
+[47:51] complicated and how do you how do you
+[47:54] empirically determine that the easiest
+[47:57] function to use is the Q sum statistic
+[48:01] which basically is a weighted average of
+[48:03] if I take a segment here and then I look
+[48:05] at the rest of the segment how big is
+[48:07] their difference and it's like a
+[48:09] weighted average so if I just look
+[48:12] really at a small place here and then
+[48:14] the rest of this I'm not going to say
+[48:16] that that's too different from each
+[48:17] other and so this statistic at the
+[48:19] bottom is taking along and saying okay
+[48:22] if I cut it right here this is the Q sub
+[48:25] suggested we can see that Max is out
+[48:27] here where if I took this segment I'm
+[48:30] going to say that it's very different
+[48:31] than this segment okay so that's a c
+[48:34] you're kind of working across time and
+[48:36] so what's important to remember for this
+[48:38] in the rest of the presentation is ay
+[48:40] this is looking in the past so don't ask
+[48:42] me about the future um and B it depends
+[48:46] on how much time we're looking at so if
+[48:48] we're too close to those sides it's
+[48:50] really hard to detect anything so when
+[48:53] you think about 2020 which is the end of
+[48:55] my data I can't tell anything else
+[48:57] because it's too close to the end um so
+[49:01] that's Q sum basically um and again this
+[49:04] is univariate so what do I do quick
+[49:07] method slide um there's something called
+[49:10] a double Q sum that uh these creators
+[49:13] came up with which basically is doing it
+[49:15] multivariately so I have all these time
+[49:18] series and I have a bunch of Q sums for
+[49:21] all of them across every single time
+[49:24] point and so what they do is they order
+[49:26] and kind of rank them and I'm looking at
+[49:29] just the biggest ones where they're all
+[49:31] happening across all the time series so
+[49:33] like certain changes if they're really
+[49:37] present across the whole game of
+[49:38] baseball should come up in lots of
+[49:40] sports
+[49:42] measures um and so they also use an
+[49:45] algorithm normally Univar use binary
+[49:48] segmentation which is like a tree and it
+[49:50] kind of just splits it and it's like I
+[49:51] found a change point so we'll get this
+[49:53] half and the second half and you keep
+[49:55] going recursively until you can't find
+[49:56] any more and scarified binary
+[49:58] segmentation is a high dimensional
+[50:02] version of the same algorithm so simple
+[50:04] things push to the multivariant case and
+[50:07] high dimensionality
+[50:09] okay um
+[50:11] again okay so got this data from the
+[50:15] Llama data set uh kind of like late
+[50:18] 1800s to 2020 was when it
+[50:21] ended and uh there was honestly not that
+[50:25] much missing data in there which was
+[50:26] pretty impressive so I just did like
+[50:28] simple um imputation for that and then I
+[50:32] standardized everything to as a year so
+[50:35] I just have the year average of these
+[50:38] things for the different teams um and I
+[50:41] standardize them to kind of per game
+[50:44] rates because different seasons will
+[50:46] play different amounts of
+[50:49] games and then specifically I'm doing
+[50:51] these three types of different analyses
+[50:54] um which I'm going to call leak level
+[50:55] metric level and franchise level so
+[50:58] League level that's like does baseball
+[51:00] change over time and so that I look at
+[51:04] four statistics across 16 teams um from
+[51:08] 1900 to 2020 so all of them had to exist
+[51:11] for this whole period of time and all
+[51:13] four these statistics we deemed crucial
+[51:16] to like the league of baseball and like
+[51:19] stayed consistently important to
+[51:20] baseball throughout the whole period of
+[51:22] time home runs strikeouts walks and
+[51:24] solar bases so that's the lead level and
+[51:28] the panel the thing of replicated time
+[51:30] series is those metrics so I'm looking
+[51:33] at those four statistics together then
+[51:36] the metric level
+[51:38] stats um are I'm basically looking where
+[51:43] I'm
+[51:45] repeating um I'm repeating 16 teams so
+[51:49] those are the repeated things that I'm
+[51:51] looking at now and I'm looking at um
+[51:54] home runs strikeouts walk Sol and BAS
+[51:56] runs and then attendance so now I'm just
+[51:58] looking at these different metrics to
+[52:00] see how they change in time kind of by
+[52:02] themselves but across these teams that
+[52:03] have existed for this whole period of
+[52:05] time and then the last one which I think
+[52:08] is the coolest and what everyone is
+[52:10] probably going to ask questions about
+[52:11] because they' be like there's my team
+[52:13] let me ask questions about that um the
+[52:16] 32 modern franchise teams we basically
+[52:18] look at within the
+[52:21] team uh kind of a offense versus defense
+[52:25] kind of um
+[52:27] combination of metrics runs home runs um
+[52:32] hits walks strikeouts and then basically
+[52:35] the against version so if you have like
+[52:38] kind of an average team they should
+[52:40] Plateau around zero but if you're like a
+[52:42] really good team compared to the rest of
+[52:44] the whole league you should be a
+[52:45] positive kind of team otherwise you'll
+[52:47] be a negative kind of team looking at
+[52:50] all those um so those are kind of how
+[52:53] the data is structured which is why I'm
+[52:55] going to go through a lot of results
+[52:57] but so again League level is like does
+[52:59] baseball change um metric specific is
+[53:02] like how do these statistics change over
+[53:04] time and then franchise level is like
+[53:07] are there dynasties like are you a
+[53:08] really good team or a really bad
+[53:11] team um okay so leag level
+[53:14] analysis so there are four change points
+[53:18] here and actually secret I also looked
+[53:20] at variance change points I only describ
+[53:23] how talk about a me but there's also
+[53:25] variability um you can kind of see
+[53:27] visually with your eyes this is like
+[53:28] early early baseball they are all over
+[53:30] the place cross um walks home rad Sol
+[53:34] bases strike El huge variability here
+[53:37] and then a variance change point and
+[53:38] then closely after a mean change point
+[53:41] and so you can kind of think of like
+[53:43] this is an ERA this is an ERA this is an
+[53:45] era and so on okay so me put those into
+[53:51] words um the variance era the very first
+[53:54] one is probably the beginning of the
+[53:56] live era and then in 24 that's the end
+[54:00] of the dead ball era going into more
+[54:03] live ball
+[54:04] era um 54 is basically um changes in
+[54:11] philosophy of the game um and how the
+[54:13] Umpire and how you manage um I can talk
+[54:17] more about that
+[54:18] specifically um and then 1993 is a lot
+[54:21] of expansion time of the
+[54:23] 90s something the 90s um
+[54:27] and then basically
+[54:29] 2009 there's um changes in the strike
+[54:34] zone um reductions of walks and honestly
+[54:37] I would kind of call this the more data
+[54:38] driven one like now that we have more
+[54:42] understanding well how are we changing
+[54:44] the game differently to adapt to what
+[54:46] will score us runs or make us one the so
+[54:51] this is overall baseball changes and
+[54:53] these are really good results because
+[54:54] the people who have done this with one
+[54:57] um statistic this matches up with what
+[54:59] we saw before so this is a little bit
+[55:02] done before but it's good that we're
+[55:03] getting similar results to what people
+[55:06] have talked about and what has been done
+[55:07] before but we did it looking at all of
+[55:09] these statistics
+[55:12] together so this one is the metric
+[55:16] specific um and so every single team the
+[55:19] 16 teams are kind of printed and great
+[55:21] and then I just highlighted the average
+[55:23] with variability on top um um and so you
+[55:28] can kind of see that attendance has been
+[55:29] growing like I really feel like this to
+[55:32] here is where it became like aerican
+[55:35] time in terms of attendance um and he
+[55:38] can look like this is right about the
+[55:40] end of the war really became very
+[55:42] popular and has been boring ever since
+[55:44] and then actually this obviously dropped
+[55:46] off because of Co um and I'm really
+[55:48] curious to actually see what happens in
+[55:50] terms of attendance they've been
+[55:51] changing like Stadium sizes um and like
+[55:55] you can't fill it up the way that you
+[55:56] used to
+[55:59] before um the other interesting one is
+[56:02] obviously home runs and I think this one
+[56:04] is the most volatile it has the most me
+[56:07] and variance changes so when you look at
+[56:09] these just kind of think about like I a
+[56:11] flat line across them how they're kind
+[56:13] of going up or down or a lot of
+[56:15] variability in all of
+[56:18] them um so I I can talk more about that
+[56:22] in a second um but like walks and runs
+[56:25] changing about the same period of time
+[56:28] Chang the game of like how you're
+[56:30] pitching how you're trying to get people
+[56:32] out of Base things like that um similar
+[56:35] time period with strikeouts and solid
+[56:42] bases oh doing get our of time okay so a
+[56:46] lot of the um home runs so live ball era
+[56:52] postwar stuff changes to the mound
+[56:55] changes to steroid use or non-steroid
+[56:58] use um and then this kind of more recent
+[57:01] change about how we are getting home
+[57:03] runs differently than we had in the past
+[57:06] using probably more
+[57:08] data um runs kind of end of the dead
+[57:13] ball 1940s um integration era bringing
+[57:16] more people in
+[57:19] um stolen bases strikeouts a lot of
+[57:22] things have to deal basically with how
+[57:25] the game is being played
+[57:26] so back to those kind of eras of
+[57:28] baseball overall are still fitting into
+[57:30] these individual measures of the
+[57:34] statistics um okay then this one is the
+[57:37] best graphic I think I've ever made um
+[57:41] so for each of these there's 10
+[57:43] statistics going on within a single team
+[57:47] and I couldn't show you every single
+[57:49] change point and every single thing on
+[57:50] it that's 32 * 10 that's too much stuff
+[57:53] to look at so what this is is basically
+[57:55] the bands are the existence of the team
+[57:59] so if it's really short that's really
+[58:00] hard to detect change points because you
+[58:02] have to determine where those brakes are
+[58:04] happening and if it's really long you
+[58:06] can see they've been around for a long
+[58:07] time and then a circle is a change in
+[58:10] the me and a diamond is or triangle as a
+[58:14] change in the
+[58:15] variance um and then I use breaks like
+[58:18] team colors package um so they all match
+[58:20] the colors of the team and looks very
+[58:24] fancy it took a lot of work but I really
+[58:26] like this visual um because you can kind
+[58:29] of see especially up and down where like
+[58:32] teams get added
+[58:34] in how there's change points right
+[58:37] around the same time because you're
+[58:38] adding more players in you're adding
+[58:41] more teams and so it's going to create
+[58:43] this kind of like pressure change of
+[58:45] like now we have dynastes now we have
+[58:47] collapses because there's just more
+[58:49] there to play with um and so since here
+[58:54] Austin red a couple change points even
+[58:57] more recent one change in
+[58:58] variability B one
+[59:01] though um so some highlights to pull
+[59:05] out
+[59:11] um okay I'm doing so like in the 90s
+[59:15] 1990 uh the Braves had a change point
+[59:19] where they had a lot of early
+[59:21] success um in like lots of World Series
+[59:25] and and um really they believe that that
+[59:28] was due to really good pitching um
+[59:32] cville and Guardians
+[59:34] 1993 uh really good hitting team but
+[59:37] fell short of winning the World Series
+[59:38] during their Peak but they still kind of
+[59:40] had like a dynasty shift there so they
+[59:42] had a bunch of changes in all their
+[59:44] metrics um the Rays uh transitioned from
+[59:48] years of poor performance because
+[59:49] they're in expansion team so they
+[59:50] started they had some of the lower
+[59:53] players they had a lot of
+[59:54] variability and and then they moved into
+[59:57] being really good really fast in one
+[59:59] World Series um and so this was kind of
+[60:01] like the birth of a dynasty here and
+[60:05] then same thing with the Nationals and
+[60:07] again these are franchises so when they
+[60:10] move that's one franchise in this data
+[60:13] set okay um but they basically were
+[60:17] terrible and then got really good all of
+[60:19] a sudden um after after their relocation
+[60:24] and that uh sparked a kind of Dynasty
+[60:26] change for them in a positive
+[60:29] way um
+[60:32] so overall we found a lot of the
+[60:35] traditional eras that people
+[60:37] hypothesized about um dead ball
+[60:40] integration steroid posteroid even some
+[60:43] more modern eras of like using data
+[60:45] analytics and like changing the way the
+[60:46] game is played a little bit and then
+[60:49] classified some kind of dynasties for
+[60:51] teams and I didn't really talk about the
+[60:53] clients because that s of a moment I
+[60:55] tried to good ones um and then basically
+[60:59] I think this could be used all the time
+[61:01] I'm already writing another paper right
+[61:02] now with um competitive balance measures
+[61:05] to see like when more competition leads
+[61:08] to more changes in the game um but
+[61:10] there's tons of uses to do this to other
+[61:12] sports the only drawback is you just
+[61:14] need a lot of time data so we looked at
+[61:16] it every year so we needed you know 120
+[61:19] years this pretty good place to start
+[61:21] but other things like I tried to look at
+[61:24] women's sports but there wasn't enough
+[61:25] data but if I looked at it her game and
+[61:27] I had a much gular um level of game over
+[61:31] time you could also that as well so
+[61:35] right for determining eras in the past
+[61:37] and kind of saying what was coming out
+[61:41] there
+[61:43] so thank you
+[61:50] question em um thank you that was
+[61:54] awesome thinking about the talks
+[61:56] recently about like some of the women's
+[61:58] college basketball and like the CH in
+[62:00] like um some of them Ed kind of the NBA
+[62:03] did you find any change points that
+[62:05] maybe like corresponded to timing of
+[62:06] like generational talent and things like
+[62:08] that that like end the week yeah I think
+[62:10] this is too high level because it it's
+[62:14] like especially for the team stuff it's
+[62:17] about team performance where we kind of
+[62:18] put like a positive and a negative so
+[62:21] even if you're really good for like one
+[62:23] or two years and that person like plays
+[62:26] for the same team forever maybe that
+[62:28] might create a dynasty but it has to be
+[62:30] everyone from together so I think you
+[62:33] could take this same idea I also thought
+[62:35] about this within like really good
+[62:37] players and like looking at their change
+[62:39] points just like they did with bar Bond
+[62:41] said the techero used to be like when
+[62:43] were they in their like Heyday of doing
+[62:47] stuff and I had a student actually
+[62:49] propose when I was I presented this to
+[62:51] him first he's exactly he's a senior
+[62:54] about to graduate in our uh data science
+[62:56] program and I was like what do you think
+[62:57] what questions do you have and he was
+[62:59] like oh I want to look at um almost like
+[63:03] hot hands kind of stuff in basketball I
+[63:06] was like that would be really
+[63:07] interesting yeah that's a good question
+[63:10] thank you yeah
+[63:27] yes so none of this is causal that's a
+[63:29] really really good question so this is
+[63:30] why I was a satisfiction is I was like I
+[63:33] can do all the math and I made all these
+[63:35] pretty graphics for you and I was like
+[63:37] now you have to go figure out what was
+[63:39] happening at this time period so I work
+[63:41] with Greg and Brian Mills who's at Texas
+[63:44] um they know baseball a lot better than
+[63:46] I did and so we just hypothesized what
+[63:48] was changing around those times we're
+[63:51] just saying this is when the data is
+[63:52] telling us that it's changing um but
+[63:55] they were always is really close to like
+[63:57] changes in the picture mou changes to
+[63:59] like rules of how they like did
+[64:02] strikeouts or things like that um so
+[64:04] they were always closely aligned and
+[64:06] it's interesting to look at I look at
+[64:08] change point for a lot of different
+[64:09] things but it's kind of like if I
+[64:10] implemented a policy it might not impact
+[64:14] right away when I implement it it might
+[64:16] impact two years later or if people are
+[64:19] like uh thinking that the change will
+[64:22] come they might change their strategy
+[64:23] before and I can actually see a change
+[64:25] before happens so that's kind of why we
+[64:27] look at it like imper through the data
+[64:29] and not say it's exactly this or it's
+[64:31] exactly this it's kind of um here's what
+[64:34] the data is saying and so we think these
+[64:36] things but that's a really good question
+[64:37] there's no Cal imprints of
+[64:40] um change Point
+[64:44] analysis yeah just so I like to talk lot
+[64:47] like way it's pictured a small
+[64:48] suggestion would be at the league level
+[64:51] have the same plot with the different
+[64:53] Commissioners underneath it so
+[64:56] yeah we tried to look at it for um who
+[64:58] owned the team as well because a lot of
+[65:01] there's so much with the 32 teams
+[65:03] because both of them had their own teams
+[65:05] and they really looked into those and
+[65:07] like determined those and that was
+[65:08] something that we came up with um who
+[65:12] own the team and then Commissioners as
+[65:14] well that's that's a really good point I
+[65:15] like that one as well because I think
+[65:17] something in like
+[65:20] the I can't remember but they they
+[65:22] talked about this as well like the gold
+[65:25] of
+[65:27] the high level yeah yeah like just
+[65:31] selfishly as a Yankee fan I saw like the
+[65:34] I think that's when Steiner bought the
+[65:35] team and it's a change Point yes and
+[65:38] like an econ uh economics graphs a lot
+[65:41] you'll see like Republican party tax
+[65:42] rates go down yeah Democrats tax rates
+[65:45] go up so just be interesting to see that
+[65:47] that's very true I'm I'm pretty sure
+[65:49] that's written in the paper that's why I
+[65:50] remember this is is exactly that so I
+[65:54] just pulled out a couple of highlights
+[65:55] but then the paper we try to talk about
+[65:56] as many of the teams as possible one
+[66:00] last
+[66:01] question okay um so I had a quick
+[66:03] question when you were showing the uh
+[66:05] your plots of each of the
+[66:08] different um statistics one of the uh
+[66:11] here this one here when you were looking
+[66:14] at attendance were you count counting
+[66:16] for population um at the time no no and
+[66:19] that was the thing is that um when we
+[66:22] looked at some of these like some of
+[66:24] them were really high I was like that's
+[66:26] crazy why are they so high is that um we
+[66:30] don't know like per Stadium like what's
+[66:32] the per Stadium size and they like uh
+[66:35] with the ones in New York I think they
+[66:37] just changed the city recently to CIT so
+[66:39] there's no like um anything like that
+[66:43] especially because teams so changeed
+[66:45] locations over time so this was just
+[66:47] kind of like raw attendance but but uh
+[66:51] any kind of appropriation would be
+[66:54] pretty good we did standardized by how
+[66:56] many games were played what does that
+[66:59] even kind of mean it's kind of just like
+[67:01] a per game
+[67:18] attendance our last speaker is Dr Dale
+[67:22] Zimmerman from University of Iowa it's
+[67:25] going to talk about pyrometric outline
+[67:27] fitting to track the evolution of the F
+[67:30] Strike Zone to the Major League Baseball
+[67:32] from 2008 2023 let's give a warm Round
+[67:36] of Applause to
+[67:41] Dr okay so um my talks got some overtone
+[67:46] similar to the previous talk in that I'm
+[67:50] looking trying to explore what's
+[67:52] happening over time I'm not looking for
+[67:54] specific change points though and I
+[67:56] focused only on one object the called
+[67:59] strike zone as opposed to lots of
+[68:02] different things in baseball um at the
+[68:05] risk of telling you something you
+[68:07] already know on these first couple
+[68:08] slides here's a a formal definition of
+[68:11] the of the strike zone from the official
+[68:13] rules of
+[68:14] baseball not going to read it so I'm
+[68:17] going to show you a picture in just a
+[68:20] second and then this is another part of
+[68:22] it strike is a legal pment so-called by
+[68:24] the Empire which if not struck at if if
+[68:26] any part of the ball passes through any
+[68:28] part of the strike zone and so here's a
+[68:30] here's a picture okay so it's
+[68:32] rectangular in shape and that's kind of
+[68:35] our reference point for some of the
+[68:38] called strike zones I've was showing you
+[68:40] now I'm sure this comes as a great
+[68:42] surprise to most to to all of you that
+[68:44] umpires make mistakes on call pitches
+[68:48] and may even adhere to a strike zone
+[68:51] somewhat different than what the rule
+[68:53] book specifies it should be
+[68:55] and we call this alternative Strike Zone
+[68:57] the called strike zone that's sort of a
+[69:00] term that's been accepted now uh and
+[69:04] it's defined Loosely for now I'll say as
+[69:07] the largest smooth outline region
+[69:09] containing those points in which a
+[69:10] called pitch is more likely we called a
+[69:12] strike from the ball I'll tell you how
+[69:15] we actually
+[69:16] formally determine it in a later slide
+[69:20] but I want to point out that it's a
+[69:21] fluid object it uh varies across time
+[69:25] that's what I'm going to focus on today
+[69:26] varies across pitchers pitchers have
+[69:29] different strike zones called strike
+[69:30] zones batters umpires that's a really
+[69:33] interesting phenomenon you can study the
+[69:36] called strike zones of specific umpires
+[69:38] you know some call the the the outside
+[69:43] on the left side of the plate uh pitch a
+[69:45] strike more often than others so it's
+[69:48] interesting to compare different umpires
+[69:51] game situations affect the call Strike
+[69:54] Zone greatly um when the count is full
+[69:59] or when I'm sorry when it's a it's a a
+[70:02] 30 Count Strike Zone expands drastically
+[70:06] U from what it is
+[70:09] when at other counts our Focus today
+[70:12] will be on changes in the called strike
+[70:14] zone over time and so here's a graphic
+[70:17] that shows you read left to right down
+[70:19] the page just like you would reading a
+[70:21] book to see the timeline and you can see
+[70:24] that in 2008 when data were first
+[70:27] collected of this time or data were
+[70:29] first Avail widely available um of this
+[70:32] phenomenon the strike zone called strike
+[70:36] zone was a rather SWAT object it was
+[70:39] wide not so tall as time went on it got
+[70:42] taller and less
+[70:44] wide and in recent
+[70:47] years up to 2022 it's now visually at
+[70:51] least in Fairly good conformance with
+[70:54] the uh rule book strikes some I I put
+[70:58] boxes up there for reference the uh
+[71:01] horizontal I mean vertical lines are
+[71:04] well defined by
+[71:07] the rule book strikes own definition the
+[71:10] upper and lower lines are determined by
+[71:12] the batter and so those aren't fixed for
+[71:14] each batter but these are shown which
+[71:17] the ones that are shown are averaged
+[71:18] overall batters that came to that and
+[71:21] that well that that were had called
+[71:23] strikes on strikes called on them in
+[71:27] that uh that
+[71:29] year so it appears that the called
+[71:31] strike zone got taller and narrower over
+[71:34] time but how can we attach some measures
+[71:37] of statistical significance to that um
+[71:42] and is the called strike zone becoming
+[71:45] measurably more like the rule book
+[71:46] Strike Zone visually it certainly seems
+[71:48] to
+[71:49] be so we developed methodology for
+[71:52] addressing these questions using the
+[71:54] available data
+[71:56] um over the nine-year period from 2008
+[71:59] to
+[72:00] 2016 the system that collected the data
+[72:03] was called the pitch FX system and then
+[72:06] uh it was switched over to the trackman
+[72:08] system uh from 2017 to
+[72:11] 20122 basically it changed from cameras
+[72:14] to
+[72:16] radar stop the radar but and and the
+[72:20] locations of the cameras is different
+[72:23] than the location of the radar but it's
+[72:25] all accepted and it's part of the
+[72:26] official Major League Baseball data
+[72:29] that's available to anybody that wants
+[72:30] it
+[72:33] now over the period we consider this
+[72:35] 15-year period there were roughly five
+[72:38] million called pitches corresponding to
+[72:41] several thousand pitchers and batters
+[72:42] and about 200 home plate
+[72:45] umpires of those nearly five billion
+[72:49] called pitches a little over two-thirds
+[72:51] were called balls and the rest were
+[72:52] called strikes and that ratio that
+[72:56] breakdown has been very uh constant
+[72:59] consistent over
+[73:01] years of the called balls about 5% were
+[73:07] incorrectly called they were inside the
+[73:08] rule book Strife zone of the called
+[73:12] strikes more than 22% were outside The
+[73:15] Rook strike zone so that the the
+[73:19] misclassifications are more with the um
+[73:23] pitches that should have been called
+[73:24] balls that they called
+[73:26] strikes and overall umpires
+[73:29] misclassified about 10% of the called
+[73:31] pitches over this 15year period but it's
+[73:34] not been constant over time their uh
+[73:39] accuracy has improved quite a vent and
+[73:42] very
+[73:43] steadily no no major change point there
+[73:46] it's a it's very consistent
+[73:49] Evolution both in the um misclassified
+[73:53] balls and the mclassified stripes are
+[73:55] both going down even just last year well
+[73:59] the last year of the uh shown here which
+[74:02] is
+[74:03] 2022 um there was a very large drop in
+[74:06] the proportion of of uh pitches that
+[74:10] were called incorrectly as
+[74:14] strikes so when this will end nobody
+[74:17] knows but it's ongoing hasn't hasn't
+[74:20] stopped yet now accuracy isn't
+[74:22] everything right um fans and managers
+[74:24] will tolerate some lack of accuracy as
+[74:27] long as a umpire is consistent in what
+[74:30] they call so not too long ago uh people
+[74:34] started looking at this data with
+[74:36] respect to Within game
+[74:39] consistency and U one measure of Within
+[74:43] game consistency is shown here that the
+[74:47] basically you're subtracting from one
+[74:50] the ratio of the number of balls within
+[74:51] the convex hole of called strikes over
+[74:54] the total number of called
+[74:56] balls so it focuses on the on the called
+[74:59] balls and any you're inside the the
+[75:02] Umpire strike zone for that game as
+[75:05] determined by the convex hole that's a
+[75:07] Mis that's regarded as an inconsistent
+[75:12] pitch so here's just an example from one
+[75:15] game broken down by right-handers and
+[75:19] leanders and the uh right-handers there
+[75:22] were no inconsistencies called by the
+[75:24] Umpire in that game but on the
+[75:26] left-handers there was one ball that was
+[75:29] inside the convex ball so how is this
+[75:32] consistency measured trending over time
+[75:34] well just like accuracy it's been
+[75:36] improving a lot too improving
+[75:40] steadily so these these are all good
+[75:43] things right there's been some clamor
+[75:45] for um for the baseball to get rid of
+[75:48] umpires and make it an automated system
+[75:50] and everything
+[75:52] um they could
+[75:53] argue Major League Baseball could argue
+[75:56] well things are improving so your your
+[75:58] arguments don't have as much
+[76:00] U import perhaps now let me show these
+[76:05] outlines again I want to tell you um
+[76:09] where they're coming from and what we're
+[76:11] going to do with them because I'm not
+[76:13] just I'm not quite satisfied just with
+[76:15] an overall accuracy and overall
+[76:18] consistency Trend I want to see what's
+[76:20] happening actually to the strike zone to
+[76:22] its geometry at a finer scale so what
+[76:25] these outlines are are outlines that are
+[76:28] determined by applying a a discriminant
+[76:31] analysis procedure basically Cal density
+[76:34] based on the horizontal and vertical
+[76:38] coordinates of all called pitches in
+[76:40] that year and the outline determines
+[76:43] where a pitch is more likely to be
+[76:46] called a strike than a ball that's the
+[76:49] Shaded region and the outside regions
+[76:51] what it's more likely to be called a
+[76:52] ball than a strike
+[76:55] and as you saw the called strike zone
+[76:58] was not centered on the rulebook Strike
+[77:00] Zone it's historically been shifted
+[77:03] slightly left although um it's as I'll
+[77:08] argue in a minute it's re about spot on
+[77:12] now in terms of its horizontal
+[77:16] shift it was considerably wider at its
+[77:18] widest point uh than the rule book
+[77:21] Strike Zone that's still slightly true
+[77:23] but not as much as as we'll see and the
+[77:26] shape is not
+[77:28] rectangular the edges are curved so it's
+[77:30] not conforming to the rule book Stripes
+[77:33] own shape which is supposed to be a
+[77:36] rectangle furthermore the upper
+[77:39] margin the upper out part of the outline
+[77:42] the upper half of the outline is more
+[77:43] rounded than the bottom
+[77:45] half you can convince yourself of that
+[77:48] if you tilt your head upside down and
+[77:49] then it really pops out at you that the
+[77:52] the bottom half is more straight across
+[77:54] there than the upper half
+[77:57] is so what's the shape of this region
+[78:01] well it's not rectangular it's all it's
+[78:03] somewhat
+[78:04] elliptical but because it has this
+[78:07] um this more rounded sorry more rounded
+[78:11] Corners it falls into the family of what
+[78:13] are called super
+[78:15] ellipses more rounded than a rectangle
+[78:18] but less rounded than a than an ellipse
+[78:20] actually it falls into the family of
+[78:22] what are called super ellipses
+[78:24] and some years ago when I was a graduate
+[78:27] student working in a at Iowa State in
+[78:30] their egg experiment station I had done
+[78:32] some work with some
+[78:34] biologists they do this stuff called
+[78:36] morphometric analysis where they're
+[78:38] trying to study the shapes of objects
+[78:40] like the shapes of uh skulls of animals
+[78:44] or the wings of insects or something
+[78:46] like that and then they try to you know
+[78:48] classify or figure out the evolution of
+[78:51] these these uh animals over time
+[78:55] using these shapes and things within
+[78:58] Genera to compare the the shapes so I it
+[79:03] occurred to me I could use borrow some
+[79:05] of those ideas to study the outline of
+[79:08] the called strike zone what you have to
+[79:11] do is digitize the outline and then
+[79:14] somehow quantify the geometric
+[79:16] information in the
+[79:18] outline and once you Quantified that
+[79:20] geometric information then I'm going to
+[79:23] plot that versus year and then carry out
+[79:25] a simple
+[79:26] non-parametric uh T test for time uh
+[79:29] Trend to see if there's been a
+[79:32] significant change in those at geometric
+[79:35] attributes over
+[79:38] time specifically the model that I fit
+[79:41] was a super elliptic model or a more
+[79:43] generalized version
+[79:46] um there's many different models have
+[79:49] been proposed some are non-parametric
+[79:51] the elliptic 4A models are sometimes
+[79:54] used
+[79:55] uh but this particular super generalized
+[79:57] super elliptic model called The
+[79:59] Atlas um that's an acronym for hold on
+[80:03] for it
+[80:05] asymmetrically transform no apine
+[80:08] transformed latitudinally asymmetric
+[80:11] superellipse by saying that real fast
+[80:14] two
+[80:15] times apine transformed means it it
+[80:18] allows some skew it doesn't have to be
+[80:21] you know oriented straight up and down
+[80:23] it can have some skew to it
+[80:25] latitudinally asymmetric means the top
+[80:27] half can be more rounded than the bottom
+[80:31] half and then it's super ellipse so
+[80:34] here's a basic equation of a super
+[80:36] ellipse if um put put in rals 1 there
+[80:41] and you would have the equation of an
+[80:42] ellipse right with X knot and Y knot
+[80:45] being the center of the ellipse and a
+[80:47] being the width and B being the
+[80:50] height um or half half width and half
+[80:53] height actually but but uh so that' be
+[80:56] an ellipse but that R is a parameter
+[80:58] that controls how rectangular the object
+[81:01] is it's a
+[81:03] rectangularity index and so you can get
+[81:05] objects that range from the ellip the
+[81:07] top look at the top line here an ellipse
+[81:11] to a a rectangle depending on the
+[81:13] magnitude of that R and the strike zone
+[81:16] is more kind of like something in the
+[81:18] middle two there but also it had a
+[81:21] little bit of skew to it so it's it
+[81:23] needs to we need to take care of that
+[81:26] and it had a more rounded top like the
+[81:27] things on the the right hand bottom
+[81:30] there more rounded top than uh than the
+[81:33] bottom Edge okay so that's what we need
+[81:36] this this Atlas model for adds a couple
+[81:39] more parameters but is more flexible to
+[81:43] fit what visually the called strike zone
+[81:45] looks like so this um this model has a a
+[81:50] sheer parameter s that allows for that
+[81:53] slant
+[81:54] and then it has two distinct
+[81:57] rectangularity indexes one for the top
+[81:59] half one for the bottom
+[82:01] half and that model just fits great it
+[82:04] really it's almost impossible to see any
+[82:08] discrepancy between some of the called
+[82:11] strike zone pictures there and the best
+[82:14] fitting generalized super lips this this
+[82:17] Atlas
+[82:19] model and all of these parameters are
+[82:21] readily interpretable that's the beauty
+[82:23] of this this model as opposed to some of
+[82:24] the others that have been proposed okay
+[82:28] so this plot I need to explain it a
+[82:30] little bit it shows the time trend of
+[82:32] each of the each of the parameters so
+[82:34] starting in the upper left that's the
+[82:36] horizontal center of the called Strife
+[82:38] Zone and you see that except for a kind
+[82:41] of
+[82:44] a glitch in 2009 there's been a steady
+[82:47] Trend towards the middle of the strike
+[82:50] zone so that's been improving over time
+[82:53] the vertical
+[82:55] Center is next to that in the top row
+[82:57] the middle one in the top row that's
+[82:59] been steadily improving although maybe
+[83:01] leveling off uh these only this these
+[83:04] plots only go up to 2016 not up to
+[83:08] 2022 um and then the a is the half width
+[83:12] of the uh super ellipse and that's
+[83:16] steadily been uh decreasing over
+[83:20] time to where it's actually gotten a
+[83:22] little bit narrower than the
+[83:24] um rule book Strike Zone rule book
+[83:27] Strike Zone's width is 1.0 there we
+[83:30] surpassed it a little bit uh the next
+[83:32] the first one in the middle row is the
+[83:35] vertical half RIT width that's been
+[83:39] increasing and it's shot past what the
+[83:43] um vertical height of the average
+[83:46] rulebook strike zone
+[83:49] is I think I'll go down to the bottom
+[83:51] row the the the R1 and the R2 there
+[83:54] those are the rectangularity indexes
+[83:57] those have both been increasing over
+[83:59] time which means the corners the the
+[84:02] four corners of the strik called strike
+[84:04] zone have been well four corners of the
+[84:07] rule book Strike Zone have been filling
+[84:09] in with the T Strike Zone the called
+[84:12] Strike Zone's been becoming more
+[84:14] rectangular U and filling in those empty
+[84:18] spots in the corners that used to be
+[84:20] there so that's a great thing um the
+[84:22] sheer parameter on the bottom right
+[84:24] hasn't changed much so all parameters
+[84:27] except height area and Shear have gotten
+[84:30] closer to the values for the rulebook
+[84:32] Strike
+[84:34] Zone these are just plots again I
+[84:37] haven't produced anous plots and trends
+[84:39] for the the last six years here I had
+[84:42] hoped to by this meeting but I didn't
+[84:44] didn't get it done but I'm sure what I'm
+[84:47] going to see is the shift of the called
+[84:49] strike zone to the right is continued uh
+[84:51] to the point where it's almost centered
+[84:53] on the center of the plate now now and
+[84:55] if you look at 2022 there's no tilt to
+[84:59] that at all the shear is gone and I'm
+[85:02] sure I'll see that but one thing that's
+[85:05] interesting is that the high strike is
+[85:07] being called more
+[85:09] now and so there's a little bit of an
+[85:12] extension above the rule book Strike
+[85:14] Zone that didn't used to didn't used to
+[85:16] be
+[85:18] there so
+[85:21] conclusions statistical analyses confirm
+[85:24] what Baseball fans have said for a long
+[85:26] time the uh called strike zone and the
+[85:29] rule book Strike Zone differ
+[85:30] significantly called strike zone is not
+[85:32] rectangular and has changed
+[85:34] significantly over time the atlas model
+[85:37] fits it very well and the nice thing
+[85:39] about that model is that its geometric
+[85:41] features are readily interpretable so we
+[85:44] can say specifically that the width has
+[85:47] changed or not or the shears changed or
+[85:51] not or the rectangularity changed or not
+[85:53] those sorts of aspects I think are
+[85:55] interesting to comment on about the uh
+[85:59] called strike
+[86:01] zone um the height and area of the
+[86:05] strike zone have increased a little bit
+[86:07] over time those are the things that have
+[86:10] and runs scored per game are strongly
+[86:12] negatively correlated with the area of
+[86:13] called strike zone excuse me so over
+[86:17] that period from 2008 to 2016 where the
+[86:21] area was really increasing runs per game
+[86:23] did go down now I think that's just an
+[86:26] association I don't can't prove that's
+[86:29] positive you
+[86:31] know not something that should surprise
+[86:34] us and improvements in Empire
+[86:36] performance since 2008 have been
+[86:39] remarkable if you ask me I think the
+[86:41] institution of this feedback system to
+[86:43] the umpires has really been helpful in
+[86:45] improving their performance at some
+[86:48] point though it's got to level off right
+[86:49] I mean they there's an upper bound on
+[86:52] how accurate they could be so um you
+[86:55] know 100% accuracy so at some point it's
+[86:57] got to level off and I'm just curious to
+[86:59] know whether that'll happen in my
+[87:02] lifetime or or not so we'll
+[87:06] see if you want to see the um kind of
+[87:09] the results up to
+[87:11] 2016 that that first paper there has
+[87:13] more details on this and then we're
+[87:16] writing a paper with u with the more
+[87:18] recent
+[87:19] results as soon as we get them as the
+[87:22] second paper here so thank you for your
+[87:28] attention for Dr
+[87:31] Zimmer yeah this might be a dumb
+[87:33] question but how much of the rounding is
+[87:36] due to the fact ball is
+[87:40] round yeah so the question was how much
+[87:42] of the rounding is due to the fact that
+[87:45] the outline is round
+[87:46] itself um I don't know I mean the the a
+[87:51] ball is called a strike if any part of
+[87:53] the ball
+[87:54] touches
+[87:56] the it's supposed to be called a strike
+[87:58] if any part of the ball touches the rule
+[88:00] book strik
+[88:01] on
+[88:03] um I don't know if that addresses your
+[88:06] question or not so in the bottom of the
+[88:09] stri yeah what uh what's that edge is it
+[88:13] like the center of the ball or is it no
+[88:17] it's the edge of the ball it's any part
+[88:19] of the ball touching okay so that so
+[88:21] that bottom left rounded part that the
+[88:23] very top right of the baseball correct
+[88:26] got
+[88:27] it your guess is as good as mine I don't
+[88:29] know if the shape of the ball
+[88:31] actually makes that difference I think
+[88:33] more what makes the edges rounded is the
+[88:36] tendency I think people have done some
+[88:38] psychological tests on this people tend
+[88:40] to smooth things over when they make
+[88:44] when they make Falls of things not just
+[88:46] on strikes but they tend to report
+[88:49] objects as being more rounded than they
+[88:51] actually
+[88:53] were formula wise doesn't have any what
+[88:57] formula is just the very edge points
+[89:01] yeah yeah
+[89:04] yeah I don't know much about baseball
+[89:07] but my question has to do with the math
+[89:10] so you in in your so estimated the
+[89:13] parameters R1 R2 s how did you do that
+[89:17] you observe XY right right for each year
+[89:20] okay but but you have to have a lost
+[89:22] function yeah yeah so I I glossed over
+[89:26] that b squares B squares is how we did
+[89:30] it there's there are available
+[89:32] algorithms out there for fitting
+[89:35] outlines to Curves by minimizing the sum
+[89:37] of square deviations from the normals to
+[89:41] those
+[89:42] curves yeah so this yeah I good question
+[89:47] yeah so so the observe minus whatever
+[89:51] the the function is squ
+[90:02] I think my question was similar to his
+[90:03] is like should it naturally be more
+[90:05] rounded because when you think about
+[90:07] like noise like a lot of the change
+[90:09] stuff I do is is about what detecting
+[90:11] noises and when you look at noise
+[90:14] especially like a spatial sense it's
+[90:15] more circular like just Randomness
+[90:18] should come more circularly if like
+[90:20] you're trying to hit it right at the
+[90:21] middle so like I can like should they
+[90:24] even have those little Corners like in
+[90:26] the stri zone like should they do you
+[90:29] think like they should just actually
+[90:30] make it more circular do I think the
+[90:34] poers to speed in baseball to change the
+[90:36] shape with the rule book Strike Zone
+[90:38] like like conservative in that aspect
+[90:41] want baseball to change yeah do those
+[90:45] Corners even matter because like
+[90:46] naturally maybe this is a mathematical
+[90:48] physics question because like what does
+[90:50] it mean to go like if you're trying to
+[90:51] shoot for the dead middle that corner
+[90:54] seems
+[90:55] unnatural right unless you're trying to
+[90:58] aim for the qu because it's the hardest
+[91:00] spot to hit
+[91:03] oh still time to take question
+[91:14] okay without doing what
+[91:36] ex you got a rectangle you just put the
+[91:38] ball right you know it's tangent right
+[91:42] the
+[91:43] corner not just so it touches the corner
+[91:46] yeah it wouldn't be tangent one last
+[91:48] Yeah you mentioned the differences
+[91:49] between umpires did you look at any
+[91:52] umpire transformation over time like
+[91:54] specific to individual umpires no we
+[91:57] didn't look at specific umpire
+[91:58] Transformations over time that would be
+[92:00] fun to do yeah see you know if
+[92:03] individual umpires especially those that
+[92:06] were um older had been in the league
+[92:08] longer were less they were more stubborn
+[92:11] and less willing to to to to make these
+[92:14] changes over time yeah or if any of even
+[92:17] got work we've studied whether that's
+[92:18] the case with resp to with respect to
+[92:21] overall accuracy but not on these
+[92:24] individual geometric attributes and they
+[92:26] are more stubborn Yeah the more
+[92:29] experienced umpires actually performed
+[92:32] were were less the the less wellbe
+[92:35] performing ones as as time went on

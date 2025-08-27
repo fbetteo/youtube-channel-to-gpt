@@ -1,0 +1,192 @@
+Video Title: Local n8n AI Agents in 5 Minutes (FREE and no code)
+Video ID: DcEMf2K6cPQ
+URL: https://www.youtube.com/watch?v=DcEMf2K6cPQ
+View Count: 30,815
+
+[00:00] Today I'm going to show you guys how you
+[00:01] can use your NAND AI agents for
+[00:03] completely free. There's a ton of
+[00:04] different open source models that we can
+[00:05] install and use, and I'm going to show
+[00:07] you guys how simple it is to set up. All
+[00:09] you got to do is follow along with this
+[00:10] video. So, let's get started. So, as a
+[00:12] prerequisite, I'm assuming that you've
+[00:13] already set up your locally hosted NN
+[00:15] using the self-hosted AI starter kit. If
+[00:17] you haven't done that, watch this video
+[00:18] that I'll tag right up here real quick
+[00:20] and then hop back over to this video.
+[00:22] So, once you've got that all set up, you
+[00:24] can see what we have right now is a
+[00:25] completely locally hosted version of
+[00:26] NIDAN running. We have our Olama which
+[00:28] is a local model but in here all we can
+[00:31] see is that we have Llama 3.2 latest. So
+[00:34] what we need to do is basically go to
+[00:35] Olama and choose from all the different
+[00:38] open source models that are available
+[00:39] and just install them on our machine
+[00:41] really quick. And all this is going to
+[00:42] be free. So let me show you guys how we
+[00:44] do that. So you're going to go to
+[00:45] ola.com. I'll put the link in the
+[00:46] description. And you don't have to even
+[00:48] come here and download anything. Just go
+[00:49] here, click on models. And now we have
+[00:51] all the different models that we can
+[00:53] actually download and start using with
+[00:54] our Naden AI agents. So, we've got
+[00:56] DeepSeek, which has been the most
+[00:57] popular open source model, 48.1 million
+[01:00] polls. We have all these other ones to
+[01:02] choose from. We have some more llama
+[01:03] models. And this is basically our
+[01:06] repository of different AI models that
+[01:07] we can test out for free. And just to
+[01:09] show you guys an example, let's do
+[01:10] DeepSeek R1, which is a thinking model.
+[01:12] And all we're going to do is we're going
+[01:13] to click on it. And now we have a few
+[01:15] things to look at. So, first of all, we
+[01:17] have the different parameters that the
+[01:18] open- source version of DeepSeek are
+[01:20] offered in. So, we've got 1.5 billion, 7
+[01:22] billion, 8 billion, all this kind of
+[01:24] stuff. And down here you can see all the
+[01:26] different models with their sizes and
+[01:27] their context windows. And I'm not
+[01:29] really an expert at like hardware and
+[01:30] everything, but what I would do is I
+[01:32] would go to Perplexity or chat and say,
+[01:33] "Hey, these are the specs of my
+[01:34] computer. Here's my RAM, my VRAMm, my
+[01:37] processing power, all this kind of
+[01:38] stuff." And I would say like, "Which
+[01:40] model should I be able to use?" And just
+[01:41] for reference, these are pretty tiny.
+[01:43] Like if we go over here to my Perplexity
+[01:45] Search, if we look at some of the most
+[01:47] popular closed source models like GBT
+[01:49] and Claude, GPT4 is 1.8 trillion almost,
+[01:52] which is just massive. you know like
+[01:54] GBT40 is 200 billion. Cloud 3.5 sonnet
+[01:57] is around 175 billion. So these closed
+[02:00] source models are going to be much
+[02:01] faster and more powerful than most of
+[02:03] these open source ones. That gap is
+[02:05] slowly closing and one day there will be
+[02:06] open source models that are just as
+[02:08] powerful as these. But right now that is
+[02:10] the sort of limitation of open source
+[02:11] models. And you're also going to be
+[02:13] limited based on the actual local
+[02:15] machine that you're going to be
+[02:16] installing and running these models on.
+[02:18] But anyways, now that that's out of the
+[02:19] way, let's just for example in this case
+[02:21] download DeepS R1. That's 1.5 billion
+[02:24] parameters. So all I'm going to do is go
+[02:25] ahead and click this copy button right
+[02:26] here. So I'm just copying the name
+[02:28] DeepSseec-r1 col 1.5B. I'm going to open
+[02:32] up our Docker. We can see our container
+[02:34] with all of these different containers
+[02:35] in them. And what I'm going to do is
+[02:37] basically just open up the Olama
+[02:38] container that has the Olama image in
+[02:40] it. And all I need to do is click on
+[02:42] exec. And I'm just going to type
+[02:45] pull. I'm just going to paste in what we
+[02:47] just copied, which was DeepSec R1. I'm
+[02:50] going to hit enter. Right now, what it's
+[02:51] doing is it's pulling in DeepSseek. It's
+[02:53] installing it on our machine. And then
+[02:55] once this is done, we'll be able to
+[02:56] access that in NAN. Okay, so we just got
+[02:58] our success message. I'm going to go
+[03:00] back into our local NAN and open up this
+[03:02] OAMA node. And now if I click this
+[03:04] arrow, we see DeepSseek R1 right here.
+[03:06] So I've switched over. Now we're using
+[03:08] DeepSeek. And let's just test out that
+[03:09] it works. I'm just going to say tell me
+[03:11] a joke. And now we're no longer
+[03:13] accessing our local model. We're using
+[03:16] our local DeepSeek R1. And you can tell
+[03:19] because it's a thinking model and it
+[03:20] said think. Why don't skeletons fight
+[03:22] each other? Because they don't have the
+[03:24] guts. And so it's really that simple.
+[03:25] And now all we'd have to do is come back
+[03:27] into Lama, click on models, and we could
+[03:29] look at all the different AI models as
+[03:31] well as the different parameters that
+[03:32] that are offered and just pull them into
+[03:34] our Docker. So for example, let's say we
+[03:36] wanted to pull in Quen, and I want to
+[03:38] pull in Quen 1.7 billion parameters. I
+[03:40] would just copy the name, go into our
+[03:43] Olama on Docker. In the exact tab, we're
+[03:46] gonna say lama pull. And I'm just going
+[03:48] to paste in that value. And now we're
+[03:50] just going to pull in Quen. Just like
+[03:52] that. Super simple. We got our success
+[03:53] message. I'm going to go back into NN.
+[03:55] Click into O Lama. And we open up. And
+[03:57] we can see now we have our Quen 3 1.7
+[04:00] billion parameter model. And this is
+[04:01] just so cool because once again, this is
+[04:03] running locally on my PC down there.
+[04:05] It's all going to be completely free.
+[04:06] And we have so many different options to
+[04:08] choose from. And like I said, I'm not an
+[04:09] expert at model weights and parameters,
+[04:11] but just keep in mind, I probably
+[04:13] wouldn't rely too much on a 1.7 billion
+[04:15] parameter or 1.5 billion parameter for
+[04:17] anything besides very basic
+[04:19] conversational use. If you want to have
+[04:21] agents with tool calling and all this
+[04:22] kind of stuff using local models, you're
+[04:24] probably going to want at least like 14
+[04:26] billion or 32 billion. But once again,
+[04:28] they're completely free, so you can just
+[04:30] test out as much as you want. Anyways,
+[04:31] let me just show you guys a few helpful
+[04:33] commands that you can use inside this
+[04:35] exec of the OAMA container. So, let's
+[04:38] say you just kind of want to see which
+[04:39] models you have available. You can go
+[04:40] ahead and type O Lama list. And this is
+[04:42] going to show us, okay, you've got Quen,
+[04:44] DeepSeek, and Llama 3.2. Now, let's say
+[04:46] we wanted to get rid of one. Let's just
+[04:48] get rid of the Quen that we just
+[04:49] installed. I would just type in Olama
+[04:50] RM, which stands for remove. And I would
+[04:53] just be able to paste in the name of the
+[04:54] model we want to remove. Hit enter. And
+[04:56] now it says it's deleted Quen. If I go
+[04:58] back into our local models, we open this
+[05:00] guy up. We no longer have Quen. As you
+[05:02] can see, we just have DeepSeek or Llama
+[05:03] to choose from. And it's that simple. It
+[05:05] updates in real time. You don't even
+[05:06] have to like, you know, docker compose
+[05:08] down and spin it back up. We're
+[05:10] basically good to go. That quick and
+[05:11] easy. And like I said, you got all these
+[05:13] models to choose from. So, that's going
+[05:14] to do it for this one. I know it was a
+[05:15] quick one, but just wanted to show you
+[05:17] guys how simple and easy it is to get
+[05:18] these different local models running.
+[05:20] And it it may seem a little intimidating
+[05:21] at the beginning, but after this video,
+[05:23] you can see it's not too bad at all. So,
+[05:25] if you learned something new or you
+[05:26] appreciated this video, give it a like.
+[05:27] It definitely helps me out a ton. And
+[05:28] I'll see you guys all on the next one.
+[05:30] Thanks everyone.

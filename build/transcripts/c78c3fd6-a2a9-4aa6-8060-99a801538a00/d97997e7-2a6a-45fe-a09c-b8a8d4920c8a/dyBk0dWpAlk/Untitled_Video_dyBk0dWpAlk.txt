@@ -1,0 +1,346 @@
+Video Title: Untitled_Video
+Video ID: dyBk0dWpAlk
+URL: https://www.youtube.com/watch?v=dyBk0dWpAlk
+View Count: 0
+
+[00:00] well good morning everyone
+[00:02] i'm jun yan a professor of statistics at
+[00:06] yukon
+[00:07] on behalf of the organizing committee
+[00:09] the uconn statistical data science lab
+[00:13] and the yukon department of statistics
+[00:16] i'd like to extend a warm welcome to you
+[00:18] all to the third uconn sports analytics
+[00:21] symposium
+[00:24] started in 2019
+[00:26] a unique feature of this symposium is
+[00:29] the focus on students
+[00:30] the future workforce of sports analytics
+[00:34] we try our best to make the symposium
+[00:37] accessible to students in terms of
+[00:39] technical level cost and space
+[00:43] as of six o'clock this morning we have a
+[00:46] 301 registrants
+[00:48] about a third registered through our
+[00:50] international hubs thank our partners of
+[00:53] uh professor marcos preetus in brazil
+[00:57] tension one in china and san hook on in
+[01:00] korea
+[01:02] we have three special guests to give
+[01:05] welcoming remarks
+[01:07] the first one is dr andy wannabe the
+[01:11] interim president of the united
+[01:13] university of connecticut
+[01:15] please join me in welcoming dr awanabi
+[01:26] thank you professor yan for that kind
+[01:28] introduction
+[01:30] uh it's great to be here uh welcome to
+[01:32] all of the the students who are here the
+[01:35] panelists the keynote speakers the
+[01:37] people who will be running the workshops
+[01:40] it's just going to i think it's going to
+[01:41] be a fascinating symposium
+[01:43] i'm particularly uh excited that our our
+[01:47] panelists are all um experts are all
+[01:50] women
+[01:51] experts uh i i think is is fitting um
+[01:55] particularly since at uconn where we're
+[01:58] so
+[01:59] invested in um as our many universities
+[02:02] on our uh uh women women athletes
+[02:06] so uh this is wonderful on behalf of the
+[02:09] university of connecticut it's my
+[02:10] pleasure to welcome all of the
+[02:12] participants to the 2021 uconn sports
+[02:15] athletics analytics symposium
+[02:18] uh
+[02:19] now as professor yan said it's in its
+[02:21] third year and i know that the symposium
+[02:24] has already grown significantly since it
+[02:26] began which is a testament to the depth
+[02:29] and breadth of interest in the field of
+[02:30] sports analytics
+[02:32] this is a growing discipline as you know
+[02:34] that has applications everywhere from
+[02:37] league offices to news media to the
+[02:39] average fan in the bleachers
+[02:42] as the use of data science and sports
+[02:44] becomes more common demand for these
+[02:46] skills will only grow
+[02:48] this symposium therefore is not only a
+[02:51] forum to demonstrate a fascinating
+[02:53] application of statistical science it's
+[02:56] a platform to shape the future of a
+[02:58] growing industry
+[03:00] the university of connecticut makes an
+[03:02] ideal host we think for an event like
+[03:04] this
+[03:05] first and this probably goes without
+[03:07] saying for this group but we do have a
+[03:09] bit of a national profile in college
+[03:11] athletics we're very proud of our women
+[03:14] basketball players
+[03:16] our coaching staffs draw on analytics
+[03:19] and data when drawing up plays or
+[03:21] filling out lineup cards which is
+[03:23] increasingly the standard at all levels
+[03:26] of athletic competition
+[03:28] and and whether uh athletics teams are
+[03:31] are are winning or are nationally
+[03:33] recognized or not
+[03:35] um they all rely on this to some to some
+[03:38] extent and um
+[03:40] and it's just very important
+[03:42] also uconn is taking seriously the need
+[03:44] to prepare students for participation in
+[03:48] the growing field of data science
+[03:50] with both an undergraduate major in data
+[03:52] science and a master's of engineering in
+[03:55] data science the university of
+[03:57] connecticut is fully engaged in the
+[03:59] development of this exciting discipline
+[04:02] this symposium is an excellent
+[04:04] demonstration of that commitment
+[04:07] so in closing i won't say something as
+[04:10] cliched as play ball
+[04:12] but i will wish all participants the
+[04:14] best in today's symposium i'm excited to
+[04:17] learn what insights you gain from
+[04:19] today's talks and i look forward to
+[04:21] seeing how they will come to shape the
+[04:23] future of sports analytics so thank you
+[04:25] and enjoy the symposium
+[04:28] thank you very much dr wannabe
+[04:31] our next special guest is paul caddy
+[04:34] head coach of uconn field hockey
+[04:37] they just won a game yesterday and will
+[04:39] play boston university tomorrow
+[04:40] afternoon i'm very grateful for pause
+[04:43] being here with us at this moment from
+[04:45] his very busy schedule let's welcome
+[04:47] paul
+[04:50] thanks jun i i really appreciate uh the
+[04:52] the honor to uh to open the symposium
+[04:55] here and following dr aguinalbe is
+[04:58] you know super nice of you to invite me
+[05:00] um
+[05:00] so i want to talk a little bit about uh
+[05:02] how we use analytics within our within
+[05:05] our program um so we we use a lot of uh
+[05:09] video analytics
+[05:11] and gps data
+[05:13] to forge
+[05:14] uh tacticals
+[05:16] and
+[05:18] physiological things for our team
+[05:20] so they become a really key factor uh
+[05:23] for us in uh
+[05:26] kind of finding the secret the slight
+[05:28] edge uh between winning and losing um so
+[05:30] we're very fortunate here that we have
+[05:32] the statistical department and a great
+[05:34] sport science department which are the
+[05:35] two factors that have become really key
+[05:38] in elite sport um in finding those small
+[05:41] edges between the competition
+[05:43] um so i just wanted to talk a little bit
+[05:45] about the background of how i i came
+[05:47] upon jun and his departments
+[05:49] so
+[05:50] a good friend of mine is the head coach
+[05:52] of dartmouth and uh he uh he called me
+[05:54] and he's like
+[05:56] you have a sports symposium at uconn um
+[05:59] and uh with it with analytics um and you
+[06:02] should reach out to jun and so i did um
+[06:06] and we we developed a nice relationship
+[06:08] and we had a conversation with uh myself
+[06:10] john and greg one of his former students
+[06:13] um
+[06:14] and the beginning of the conversation uh
+[06:16] we started talking about the gps data
+[06:19] um and you know both of them were on the
+[06:22] edge of their seats as we talked about
+[06:23] gps data
+[06:25] and
+[06:26] they said how many years data do you
+[06:28] have and and i said i think we have
+[06:30] about five
+[06:32] um and for for for jun and greg it was
+[06:35] like christmas day um and
+[06:39] you know for all of us within our own
+[06:41] individual fields we feel passion and
+[06:43] excitement um for what we do in our
+[06:46] daily lives and for me to to to feel
+[06:49] that passion and excitement from june
+[06:50] and greg was was unbelievable um and it
+[06:53] made me even more interested in the
+[06:55] analytics uh part of our part of our
+[06:58] product here at uconn with our field
+[06:59] hockey um so it's with my uh uh honor i
+[07:04] uh open help uh introduce and open uh
+[07:07] this sports uh analytics symposium at
+[07:09] uconn and uh and i thank jun uh for um
+[07:13] uh uh having me in the uh sports
+[07:16] analytics kind of community at uconn
+[07:21] well thank you very much paul and good
+[07:22] luck tomorrow
+[07:24] thank you so much yeah
+[07:26] uh
+[07:26] our last special guest is seth partner
+[07:30] special advisor to the ceo
+[07:32] at
+[07:34] statsbond
+[07:35] seth also provides mba and basketball
+[07:38] analytics for the athletic
+[07:41] and he was formerly the director of
+[07:43] basketball research for the milwaukee
+[07:45] bucks let's welcome seth
+[07:49] uh thank you for professor yan thank you
+[07:52] for having me uh
+[07:54] the
+[07:54] when i was wondering what uh i should
+[07:57] talk about today uh professor yan was
+[07:59] kind enough to
+[08:01] to give me some advice that the the
+[08:03] topic he's most interested in hearing
+[08:06] on is what a university like connecticut
+[08:09] and and sort of academic institutions in
+[08:12] general can do
+[08:14] to
+[08:15] advance the field of sports analytics
+[08:17] but more importantly prepare students
+[08:19] uh for for careers for for
+[08:23] to enter almost the the workforce in
+[08:25] sports analytics and really the the
+[08:28] skills and and and traits which are
+[08:30] valuable in in sports analytics are
+[08:33] uh broadly transferable across the the
+[08:36] sort of the wide range of
+[08:37] of applications of data in in industry
+[08:40] so it's not just sort of the narrow
+[08:43] um the the the small yet growing field
+[08:45] of people working in and around
+[08:48] sports whether professional collegiate
+[08:50] well what have you um
+[08:53] the first thing and i think this is it's
+[08:54] it's really wonderful that this
+[08:55] symposium is doing this is is having the
+[08:58] the concurrent sessions that are this
+[09:00] afternoon which are actually providing
+[09:02] uh some some hands-on training with some
+[09:04] of the tools that are are very important
+[09:07] uh you know there's the i see that
+[09:09] there's there's in intros to r and
+[09:11] python and um
+[09:14] everything up to web scraping just
+[09:16] figuring out how to find and manipulate
+[09:18] data i think that's
+[09:21] that is a key skill uh and it is
+[09:23] necessary but it's not
+[09:26] it's necessary but not sufficient for
+[09:28] performing these jobs uh but
+[09:31] um
+[09:32] getting the data
+[09:33] is is the first step and and really the
+[09:36] two traits that i think that
+[09:38] should really be focused on uh
+[09:40] instilling in the traits and skills i
+[09:42] think should the uh academia should be
+[09:44] focused in instilling in students are
+[09:46] um the ability to communicate and the
+[09:49] ability to to be creative um usually
+[09:53] when when communication is discussed in
+[09:55] the context of sports analytics it's
+[09:58] it's about um the presentation whether
+[10:00] it's your data visualization your
+[10:03] your your written work uh getting in
+[10:05] front of of
+[10:06] stakeholders whether it's coaches or
+[10:08] personnel decision makers or ownership
+[10:11] and and speaking i want to talk about it
+[10:13] a little bit more as on the other end
+[10:15] sort of the the receiving end of
+[10:17] communication because i think that's an
+[10:19] area where
+[10:20] uh the things things can fall down as
+[10:23] well um
+[10:24] really becoming attuned to
+[10:27] um
+[10:28] listening to the problem someone has
+[10:31] even if they don't
+[10:33] exactly have the vocabulary in
+[10:37] in statistical or mathematical or data
+[10:39] science computer science terms
+[10:42] as you progress in those skills you kind
+[10:45] of learn the the jargon the term journal
+[10:48] the the terms of art um if if you're
+[10:50] working with a coach or a player or a
+[10:53] general manager they won't know those
+[10:55] terms they'll know what they want they
+[10:57] might try to ask
+[10:59] a question
+[11:00] in a statistical format but that's not
+[11:02] really what they want to know
+[11:04] if if someone asks for who is the
+[11:08] the best three-point shooter in the nba
+[11:10] they're not asking you who has the
+[11:12] highest three-point percentage they're
+[11:14] asking something much more complicated
+[11:17] uh and much more nuanced uh and that
+[11:19] gets to my second point which is which
+[11:21] is uh creativity
+[11:23] um
+[11:24] taking that question that that as you
+[11:27] understand and really
+[11:29] um
+[11:30] engaging your imagination in the the
+[11:32] best way to
+[11:33] approach an answer to it um
+[11:36] sports analytics as a still developing
+[11:38] field is
+[11:39] uh has both the opportunity and the
+[11:41] challenge that we're largely making it
+[11:43] up as we go
+[11:45] so
+[11:46] there isn't always a road map for how to
+[11:48] do something or what the right stat to
+[11:50] use is or
+[11:52] how to create what you want to create so
+[11:54] that's where uh
+[11:56] as as an analyst you have to engage your
+[11:59] creativity in
+[12:01] okay here's the data i have availability
+[12:04] what is the best approach i can use from
+[12:06] a from a technical standpoint from a
+[12:08] presentational standpoint from a
+[12:10] communication standpoint to
+[12:12] uh
+[12:13] give the information give the give the
+[12:15] answer give a story
+[12:17] of of that that properly answers the
+[12:20] question
+[12:21] that's that that whoever is i'm dealing
+[12:24] with has asked um and those things are
+[12:26] are are very difficult it's it's it's
+[12:29] it's difficult but relatively easy to
+[12:31] learn the technique um applying it via
+[12:35] you know listening and being creative is
+[12:38] much harder and it takes reps it takes
+[12:40] humility it takes persistence
+[12:42] and i think that the thing i would
+[12:44] encourage um in in academia is really
+[12:48] creating more opportunities for for
+[12:51] students to to try and and frankly to
+[12:54] try and fail um and on on on those
+[12:57] things
+[12:58] so that students can can uh
+[13:01] learn to walk before they try to run in
+[13:03] in sort of the professional setting um
+[13:06] so i think
+[13:09] that's the admonishment i guess i would
+[13:11] i would leave with and uh and again i
+[13:12] thank uh professor yan for for allowing
+[13:15] me to speak to you for a couple minutes
+[13:21] thank you very much seth
+[13:23] this concludes the welcoming remarks

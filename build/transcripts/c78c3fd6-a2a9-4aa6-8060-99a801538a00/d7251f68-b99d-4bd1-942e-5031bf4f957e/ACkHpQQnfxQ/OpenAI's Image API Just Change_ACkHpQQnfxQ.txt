@@ -1,0 +1,605 @@
+Video Title: OpenAI's Image API Just Changed the Game (save 10+ hours/week, n8n tutorial)
+Video ID: ACkHpQQnfxQ
+URL: https://www.youtube.com/watch?v=ACkHpQQnfxQ
+View Count: 61,101
+
+[00:00] So, this workflow right here, all I had
+[00:01] to do was enter in ROI on AI automation
+[00:04] and it was able to spit out this
+[00:05] LinkedIn post for me. And if you look at
+[00:07] this graphic, it's insane. It looks
+[00:09] super professional. It even has a little
+[00:10] LinkedIn logo in the corner, but it
+[00:12] directly calls out the actual statistics
+[00:14] that are in the post based on the
+[00:16] research. And for this next one, all I
+[00:17] typed in was mental health within the
+[00:19] workplace. And it spit out this post.
+[00:21] According to Deote Insights,
+[00:22] organizations that support mental health
+[00:24] can see up to 25% increase in
+[00:26] productivity. And as you can see down
+[00:28] here, it's just a beautiful graphic. So,
+[00:30] a few weeks ago when CHABT came out with
+[00:31] their image generation model, you
+[00:33] probably saw a lot of stuff on LinkedIn
+[00:34] like this where people were turning
+[00:36] themselves into action figures or some
+[00:38] stuff like this where people were
+[00:39] turning themselves into Pixar animation
+[00:41] style photos or whatever it is. And
+[00:43] obviously, I had to try this out myself.
+[00:45] And of course, this was very cool and
+[00:46] everyone was getting really excited. But
+[00:48] then I started to think about how could
+[00:49] this image generation model actually be
+[00:51] used to save time for a marketing team?
+[00:54] Because this new image model is actually
+[00:55] good at spelling and it can make words
+[00:57] that don't look like gibberish. It opens
+[00:59] up a world of possibilities. So, here's
+[01:01] a really quick example of me giving it a
+[01:02] one-s sentence prompt and it spits out a
+[01:04] poster that looks pretty solid. Of
+[01:06] course, we were limited to having to do
+[01:08] this in chatbt and coming in here and
+[01:10] typing, but now the API is released, so
+[01:12] we can start to save hours and hours of
+[01:14] time. And so, the automation I'm going
+[01:15] to show with you guys today is going to
+[01:17] help you turn an idea into a fully
+[01:18] researched LinkedIn post with a graphic
+[01:21] as well. And of course, we're going to
+[01:22] walk through setting up the HTTP request
+[01:24] to OpenAI's image generation model. But
+[01:26] what you can do is also download this
+[01:28] entire template for free, and you can
+[01:30] use it to post on LinkedIn, or you can
+[01:32] also just kind of build on top of it to
+[01:34] see how you can use image generation to
+[01:36] save you hours and hours within some
+[01:38] sort of marketing process. So, this
+[01:40] workflow right here, all I had to do was
+[01:41] enter in ROI on AI automation, and it
+[01:44] was able to spit out this LinkedIn post
+[01:46] for me. And if you look at this graphic,
+[01:47] it's insane. It looks super
+[01:49] professional. It even has a little
+[01:50] LinkedIn logo in the corner, but it
+[01:52] directly calls out the actual statistics
+[01:54] that are in the post based on the
+[01:55] research. So 74% of organizations say
+[01:58] their most advanced AI initiatives are
+[02:00] meeting or exceeding ROI expectations
+[02:02] right here. And on the other side, we
+[02:04] can see that only 26% of companies have
+[02:06] achieved significant AIdriven gains so
+[02:08] far, which is right here. And I was just
+[02:10] extremely impressed by this one. And for
+[02:12] this next one, all I typed in was mental
+[02:13] health within the workplace. and to spit
+[02:15] out this post. According to Deote
+[02:17] Insights, organizations that support
+[02:18] mental health can see up to 25% increase
+[02:21] in productivity. And as you can see down
+[02:23] here, it's just a beautiful graphic,
+[02:25] something that would probably take me 20
+[02:26] minutes in Canva. And if you can now
+[02:28] push out these posts in a minute rather
+[02:30] than 20 minutes, you can start to push
+[02:31] out more and more throughout the day and
+[02:33] save hours every week. And because the
+[02:35] post is being backed by research, the
+[02:37] graphic is being backed by the research
+[02:38] post, you're not polluting anything into
+[02:40] the internet. A lot of people in my
+[02:42] comments call it AI slop. Anyways, let's
+[02:44] do a quick live run of this workflow and
+[02:46] then I'll walk through step by step how
+[02:47] to set up this API call. And as always,
+[02:49] if you want to download this workflow
+[02:50] for free, all you have to do is join my
+[02:52] free school community. Link is down in
+[02:54] the description and then you can search
+[02:55] for the title of the video. You can go
+[02:57] into YouTube resources. You need to find
+[02:59] the post associated with this video. And
+[03:01] then when you're in there, you'll be
+[03:02] able to download this JSON file and that
+[03:04] is the template. So you download the
+[03:06] JSON file, you'll go back into Nitn,
+[03:08] you'll open up a new workflow and in the
+[03:10] top right, you'll go to import from
+[03:12] file.mp import that JSON file and then
+[03:14] there'll be a little sticky note with a
+[03:15] setup guide just sort of telling you
+[03:17] what you need to plug in to get this
+[03:18] thing to work for you. Okay, quick
+[03:20] disclaimer though. I'm not actually
+[03:21] going to post this to LinkedIn. You
+[03:22] certainly could, but um I'm just going
+[03:24] to basically send the post as well as
+[03:26] the attachment to my email because I
+[03:28] don't want to post on LinkedIn right
+[03:30] now. Anyways, as you can see here, this
+[03:32] workflow is starting with a form
+[03:34] submission. So, if I hit test workflow,
+[03:35] it's going to pop up with a form where
+[03:37] we have to enter in our email for the
+[03:39] workflow to send us the results, topic
+[03:42] of the post, and then also I threw in
+[03:43] here a target audience. So, you could
+[03:45] have these posts be kind of flavored
+[03:46] towards a specific audience if you want
+[03:48] to. Okay, so this form is waiting for
+[03:50] us. I put in my email. I put the topic
+[03:51] of morning versus night people and the
+[03:53] target audience is working adults. So,
+[03:55] we'll hit submit, close out of here, and
+[03:57] we'll see the LinkedIn post agent is
+[03:58] going to start up. It's using Tavi here
+[04:00] for research and it's going to create
+[04:02] that post and then pass the post on to
+[04:05] the image prompt agent and that image
+[04:07] prompt agent is going to read the post
+[04:08] and basically create a prompt to feed
+[04:10] into
+[04:11] OpenAI's image generator. And as you can
+[04:14] see, it's doing that right now. We're
+[04:16] going to get that back as a base 64
+[04:18] string and then we're just converting
+[04:20] that to binary so we can actually post
+[04:22] that on LinkedIn or send that in email
+[04:24] as an attachment. and we'll break down
+[04:25] all these steps, but let's just wait and
+[04:27] see what these results look like here.
+[04:29] Okay, so all that just finished up. Let
+[04:31] me pop over to email. So in email, we
+[04:32] got our new LinkedIn post. Are you a
+[04:34] morning lark or a night owl? The science
+[04:36] of productivity. I'm not going to read
+[04:37] through this right now exactly, but
+[04:39] let's take a look at the image we got.
+[04:40] When are you most productive? In the
+[04:42] morning, plus 10% productivity or night
+[04:45] owls thrive in flexibility. I mean, this
+[04:47] is insane. This is a really good
+[04:48] graphic. Okay, so now that we've seen
+[04:50] again how good this is, let's just break
+[04:52] down what's going on. We're going to
+[04:53] start off with the LinkedIn post agent.
+[04:55] All we're doing is we're feeding in two
+[04:57] things from the form submission, which
+[04:59] was what is the topic of the post as
+[05:00] well as who's the target audience. So,
+[05:02] right here, you can see morning versus
+[05:03] night people and working adults. And
+[05:06] then we move into the actual system
+[05:07] prompt, which I'm not going to read
+[05:09] through this entire thing. If you
+[05:10] download the template, the prompt will
+[05:11] be in there for you to look at. But
+[05:13] basically, I told it you are an AI agent
+[05:14] specialized in creating professional,
+[05:16] educational, and engaging LinkedIn posts
+[05:18] based on a topic provided by the user.
+[05:21] We told it that it has a tool called
+[05:22] Tavali that it will use to search the
+[05:24] web and gather accurate information and
+[05:26] that the post should be written to
+[05:28] appeal to the provided target audience.
+[05:30] And then basically just some more
+[05:31] information about how to structure the
+[05:32] post, what it should output and then an
+[05:34] example which is basically you receive a
+[05:36] topic. You search the web, you draft the
+[05:39] post and you format it with source
+[05:40] citations, clean structure, optional
+[05:42] hashtags and a call to action at the
+[05:44] end. And as you can see what it outputs
+[05:45] is a super clean LinkedIn post right
+[05:48] here. So then what we're going to do is
+[05:50] basically we're feeding this output
+[05:52] directly into that next agent. And by
+[05:54] the way, they're both using chat GBT 4.1
+[05:56] through open router. All right, but
+[05:58] before we look at the image prompt
+[05:59] agent, let's just take a look at these
+[06:00] two things down here. So the first one
+[06:02] is the chat model that plugs into both
+[06:04] image prompt agent and the LinkedIn post
+[06:06] agent. So all you have to do is go to
+[06:07] open router, get an API key, and then
+[06:09] you can choose from all these different
+[06:10] models. And in here, I'm using Gbt 4.1.
+[06:13] And then we have the actual tool that
+[06:15] the LinkedIn agent uses for its
+[06:17] research, which is Tavi. And what we're
+[06:19] doing here is we're sending off a post
+[06:20] request using an HTTP request tool to
+[06:23] the Tavali endpoint. So this is where
+[06:26] people typically start to feel
+[06:27] overwhelmed when trying to set up these
+[06:28] requests because it can be confusing
+[06:30] when you're trying to look through that
+[06:31] API documentation which is exactly why
+[06:33] in my paid community I created a API and
+[06:36] HTTP request deep dive because
+[06:37] truthfully you need to understand how to
+[06:39] set up these requests because being able
+[06:42] to connect to different APIs is where
+[06:44] the magic really happens. So, Tavi just
+[06:46] lets your LLM connect to the web and
+[06:48] it's really good for web search and it
+[06:50] also gives you a thousand free searches
+[06:51] per month. So, that's the plan that I'm
+[06:53] on. Anyways, once you're in here and you
+[06:54] have an account and you get an API key,
+[06:56] all I did was went to the Tavly search
+[06:58] endpoint. And you can see we have a curl
+[07:00] statement right here where we have this
+[07:02] endpoint. We have post as the method. We
+[07:05] have this is how we authorize ourselves.
+[07:06] And this is all going to be pretty
+[07:08] similar to the way that we set up the
+[07:09] actual request to OpenAI's image
+[07:11] generation API. So, I'm not going to
+[07:13] dive into this too much. When you
+[07:14] download this template, all you have to
+[07:15] do is plug in your Tavi API. But later
+[07:18] in this video when we walk through
+[07:20] setting up the request to OpenAI, this
+[07:22] should make more sense. Anyways, the
+[07:24] main thing to take away from this tool
+[07:26] is that we're using a placeholder for
+[07:27] the request because in the request we
+[07:29] sent over to Tavi, we basically say,
+[07:31] okay, here's the search query that we're
+[07:32] going to search the internet for. And
+[07:34] then we have all these other little
+[07:35] settings we can tweak like the topic,
+[07:37] how many results, how many chunks per
+[07:39] source, all this kind of stuff. All we
+[07:40] really want to touch right now is the
+[07:42] query. And as you can see, I put this in
+[07:45] curly braces, meaning it's a
+[07:46] placeholder. I'm calling the placeholder
+[07:48] search term. And down here, I'm defining
+[07:50] that placeholder as what the user is
+[07:52] searching for. So, as you can see, this
+[07:54] data in the placeholder is going to be
+[07:55] filled in by the model. So, based on our
+[07:57] form submission, when we asked it to,
+[07:59] you know, create a LinkedIn post about
+[08:01] morning versus night people, it fills
+[08:03] out the search term with latest research
+[08:05] on productivity, morning people versus
+[08:07] night people, and that's basically how
+[08:09] it searches the internet. And then we
+[08:10] get our results back. And now it creates
+[08:12] a LinkedIn post that we're ready to pass
+[08:14] off to the next agent. So the output of
+[08:17] this one gets fed into this next one,
+[08:19] which all it has to do is read the
+[08:20] output. As you can see right here, we
+[08:22] gave it the LinkedIn post, which is the
+[08:24] full one that we just got spit out. And
+[08:26] then our system message is basically
+[08:27] telling it to turn that into an image
+[08:29] prompt. This one is a little bit longer.
+[08:31] Not too bad, though. I'm not going to
+[08:33] read the whole thing, but essentially
+[08:34] we're telling it that it's going to be
+[08:36] an AI agent that transforms a LinkedIn
+[08:38] post into a visual image prompt for a
+[08:41] textto-image AI generation model. So, we
+[08:44] told it to read the post, identify the
+[08:46] message, identify the takeaways, and
+[08:48] then create a compelling graphic prompt
+[08:50] that can be used with a textto image
+[08:52] generator. We gave it some output
+[08:53] instructions like, you know, if there's
+[08:54] numbers, try to work those into the
+[08:56] prompt. Um, you can use, you know, text,
+[08:58] charts, icons, shapes, overlays,
+[09:00] anything like that. And then the very
+[09:02] bottom here, we just gave it sort of
+[09:03] like an example prompt format. And you
+[09:05] can see what it spits out is a image
+[09:08] prompt. So it says a dynamic split
+[09:09] screen infographic style graphic. Left
+[09:11] side has a sunrise, it's bright yellow,
+[09:13] and it has morning larks plus 10%
+[09:15] productivity. And the right side is a
+[09:17] morning night sky, cool blue gradients,
+[09:20] a crescent moon, all this kind of stuff.
+[09:21] And that is exactly what we saw back in
+[09:23] here when we look at our image. And so
+[09:26] this is just so cool to me because first
+[09:27] of all, I think it's really cool that it
+[09:29] can read a post and kind of use its
+[09:30] brain to say, "Okay, this would be a
+[09:32] good, you know, graphic to be looking at
+[09:34] while I'm reading this post, but then on
+[09:36] top of that, it can actually just go
+[09:37] create that for us." So, I think this
+[09:39] stuff is super cool. You know, I
+[09:40] remember back in September, I was
+[09:41] working on a project where someone
+[09:43] wanted me to help them with LinkedIn
+[09:45] automated posting and they wanted visual
+[09:47] elements as well and I was like, uh, I
+[09:48] don't know, like that might have to be a
+[09:50] couple month away thing when we have
+[09:52] some better models and now we're here.
+[09:53] So, it's just super exciting to see. But
+[09:55] anyways, now we're going to feed that
+[09:56] output, the image prompt into the HTTP
+[10:00] request to OpenAI. So, real quick, let's
+[10:02] go take a look at OpenAI's
+[10:04] documentation. So, of course, we have
+[10:06] the GBT image API, which lets you
+[10:08] create, edit, and transform images.
+[10:10] You've got different styles, of course.
+[10:12] You can do like memes with a with text.
+[10:14] You can do creative things. You can turn
+[10:16] other images into different images. You
+[10:18] can do all this kind of stuff. And this
+[10:19] is where it gets really cool, these
+[10:21] posters and the visuals with words
+[10:23] because that's the kind of stuff where
+[10:24] typically AI image gen like wasn't there
+[10:26] yet. And one thing real quick in your
+[10:29] OpenAI account, which is different than
+[10:30] your chatbt account, this is where you
+[10:32] add the billing for your OpenAI API
+[10:34] calls. You have to have your
+[10:36] organization verified in order to
+[10:38] actually be able to access this model
+[10:39] through API. Right now, it took me 2
+[10:42] minutes. You basically just have to
+[10:43] submit an ID and it has to verify that
+[10:45] you're human and then you'll be verified
+[10:46] and then you can use it. Otherwise,
+[10:48] you're going to get an error message
+[10:49] that looks like this that I got earlier
+[10:50] today. But anyways, the verification
+[10:52] process does not take too long. Anyways,
+[10:54] then you're going to head over to the
+[10:55] API documentation that I will have
+[10:56] linked in the description where we can
+[10:58] see how we can actually create an image
+[11:00] in NAD. So, we're going to dive deeper
+[11:02] into this documentation in the later
+[11:04] part of this video where I'm walking
+[11:05] through a step-by-step setup of this.
+[11:07] But, we're using the endpoint um which
+[11:09] is going to create an image. So, we have
+[11:11] this URL right here. We're going to be
+[11:12] creating a post request and then we just
+[11:15] obviously have our things that we have
+[11:16] to configure like the prompt in the
+[11:18] body. We have to obviously send over
+[11:20] some sort of API key. We have to, you
+[11:22] know, we can choose the size. We can
+[11:24] choose the model. All this kind of
+[11:25] stuff. So back in NN, you can see that
+[11:27] I'm sending a post request to that
+[11:29] endpoint. For the headers, I set up my
+[11:31] API key right here, but I'm going to
+[11:32] show you guys a better way to do that in
+[11:34] the later part of this video. And then
+[11:35] for the body, we're saying, okay, I want
+[11:37] to use the GBT image model. Here's the
+[11:39] actual prompt to use for the image which
+[11:40] we dragged in from the image prompt
+[11:42] agent. And then finally the size we just
+[11:44] left it as that 1024 * 1024 square
+[11:47] image. And so this is interesting
+[11:49] because what we get back is we get back
+[11:51] a massive base 64 code. Like this thing
+[11:55] is huge. I can't even scroll right now.
+[11:56] My screen's kind of frozen. Anyways, um
+[11:59] yeah, there it goes. It just kind of
+[12:00] lagged. But we got back this massive
+[12:01] file. We can see how many tokens this
+[12:03] was. And then what we're going to do is
+[12:06] we're going to convert that to binary
+[12:08] data. So that's how we can actually get
+[12:09] the file as an image. As you can see now
+[12:11] after we turn that nasty string into a
+[12:15] file. We have the binary image right
+[12:16] over here. So all I did was I basically
+[12:19] just dragged in this field right here
+[12:20] with that nasty string. And then when
+[12:22] you hit test step, you'll get that
+[12:24] binary data. And then from there you
+[12:26] have the binary data, you have the
+[12:27] LinkedIn post. All you have to do is,
+[12:29] you know, activate LinkedIn, drag it
+[12:31] right in there. Or you can just do what
+[12:33] I did, which is I'm sending it to myself
+[12:35] in email. And of course, before you guys
+[12:37] yell at me, let's just talk about how
+[12:38] much this run costed me. So, this was
+[12:41] 4,273 tokens. And if we look at this API
+[12:43] and we go down to the pricing section,
+[12:45] we can see that for image output tokens,
+[12:47] which was generated images, it's going
+[12:49] to be 40 bucks for a million tokens,
+[12:51] which comes out to about 17 cents. If
+[12:53] you can see that right here, hopefully I
+[12:54] did the math right. But really, for the
+[12:56] quality and kind of for the industry
+[12:57] standard I've seen for price, that's on
+[12:59] the cheaper end. And as you can see down
+[13:00] here, it translates roughly to 2 cents,
+[13:02] 7 cents, 19 cents per generated image
+[13:05] for low, medium, blah blah blah blah
+[13:06] blah. But anyways, now that that's out
+[13:08] of the way, let's just set up an HTTP
+[13:10] request to that API and generate an
+[13:13] image. So, I'm going to add a first
+[13:14] step. I'm just going to grab an HTTP
+[13:16] request. So, I'm just going to head over
+[13:18] to the actual API documentation from
+[13:19] OpenAI on how to create an image and how
+[13:22] to hit this endpoint. And all we're
+[13:23] going to do is we're going to copy this
+[13:24] curl command over here on the right. If
+[13:26] it you're not seeing a curl command, if
+[13:27] you're seeing Python, just change that
+[13:28] to curl. Copy that. And then we're going
+[13:30] to go back into nitn hit import curl.
+[13:33] Paste that in there. And then once we
+[13:35] hit import, we're almost done. So that
+[13:37] curl statement basically just autopop
+[13:38] populated almost everything we need to
+[13:40] do. Now we just have a few minor tweaks.
+[13:42] But as you can see, it changed the
+[13:43] method to post. It gave us the correct
+[13:45] URL endpoint already. It has us sending
+[13:47] a header, which is our authorization,
+[13:49] and then it has our body parameters
+[13:50] filled out where all we'd really have to
+[13:52] change here is the prompt. And if we
+[13:54] wanted to, we can customize this kind of
+[13:55] stuff. And that's why it's going to be
+[13:57] really helpful to be able to understand
+[13:58] and read API documentation so you know
+[14:01] how to customize these different
+[14:02] requests. Basically, all of these little
+[14:04] things here like prompt, background,
+[14:06] model, n, output format, they're just
+[14:08] little levers that you can pull and
+[14:10] tweak in order to change your output.
+[14:11] But we're not going to dive too deep
+[14:13] into that right now. Let's just see how
+[14:14] we can create an image. Anyways, before
+[14:16] we grab our API key and plug that in,
+[14:18] when you're in your OpenAI account, make
+[14:20] sure that your organization is verified.
+[14:21] Otherwise, you're going to get this
+[14:22] error message and it's not going to let
+[14:23] you access the model. Doesn't take long.
+[14:25] just submit an ID and then also make
+[14:27] sure that you have billing information
+[14:28] set up so you can actually pay for um an
+[14:31] image. But then you're going to go down
+[14:33] here to API keys. You're going to create
+[14:35] new secret key. This one's going to be
+[14:37] called image test just for now. And then
+[14:40] you're going to copy that API key. Now
+[14:42] back in any then it has this already set
+[14:44] up for us where all we need to do is
+[14:46] delete all this. We're going to keep the
+[14:48] space after bearer and we can paste in
+[14:49] our API key like that and we're good to
+[14:51] go. But if you want a better method to
+[14:54] be able to save this key in Nadn so you
+[14:56] don't have to go find it every time,
+[14:58] what you can do is come to
+[14:59] authentication, go to general or
+[15:02] actually no it's generic and then you're
+[15:03] going to choose header off and we know
+[15:05] it's header because right here we're
+[15:06] sending headers as a header parameter
+[15:08] and this is where we're authorizing
+[15:09] ourselves. So we're just going to do the
+[15:10] same up here with the header off and
+[15:12] then we're going to create a new one.
+[15:14] I'm just going to call this one OpenAI
+[15:16] image just so we can keep ourselves
+[15:18] organized.
+[15:19] And then you're going to do the same
+[15:21] thing as what we saw down in that header
+[15:22] parameter field. Meaning the
+[15:25] authorization is the name and then the
+[15:27] value was bearer space API key. So
+[15:31] that's all I'm going to do. I'm going to
+[15:32] hit save. We are now authorized to
+[15:35] access this endpoint. And I'm just going
+[15:37] to turn off sending headers because
+[15:39] we're technically sending headers right
+[15:40] up here with our authentication. So we
+[15:43] should be good now. Right now we'll be
+[15:44] getting an image of a cute baby sea
+[15:46] otter. Um, and I'm just going to say
+[15:49] making pancakes. And we'll hit test
+[15:51] step. And this should be running right
+[15:53] now. Um, okay. So, bad request. Please
+[15:55] check your parameters. Invalid type for
+[15:57] n. It expected an integer, but it got a
+[16:00] string instead. So, if you go back to
+[16:01] the API documentation, we can see n
+[16:04] right here. It should be integer or
+[16:06] null, and it's also optional. So, I'm
+[16:08] just going to delete that. We don't
+[16:09] really need
+[16:10] that. And I'm going to hit test step.
+[16:12] And while that's running real quick,
+[16:14] we'll just go back at n. And this
+[16:15] basically says the number of images to
+[16:17] generate must be between 1 and 10. So
+[16:19] that's like one of those little levers
+[16:20] you could tweak like I was talking about
+[16:22] if you want to customize your request.
+[16:24] But right now by default it's only going
+[16:26] to give us one. Looks like this HTTP
+[16:28] request is working. So I'll check in
+[16:30] with you guys in 20 seconds when this is
+[16:33] done. Okay. So now that that finished
+[16:34] up, didn't take too long. We have a few
+[16:36] things and all we really need is this
+[16:38] base 64. But we can see again this one
+[16:40] costed around 17. And now we just have
+[16:43] to turn this into binary so we can
+[16:45] actually view an image. So I'm going to
+[16:47] add a plus after the HTTP request. I'm
+[16:49] just going to type in binary. And we can
+[16:52] see convert to file, which is going to
+[16:54] convert JSON data to binary data. And
+[16:57] all we want to do here is move a B 64
+[16:59] string to file because this is a B 64
+[17:02] JSON. And this basically represents the
+[17:03] image. So I'm going to drag that into
+[17:05] there. And then when I hit test step, we
+[17:07] should be getting a binary image output
+[17:10] in a field called data. As you can see
+[17:12] right here, and this should be our image
+[17:13] of a cute sea otter making pancakes, as
+[17:16] you can see. Um, it's not super
+[17:18] realistic, and that's because the prompt
+[17:20] didn't have any like photorealistic,
+[17:22] hyperrealistic elements in there, but
+[17:24] you can easily make it do so. And of
+[17:26] course, I was playing around with this
+[17:26] earlier, and just to show you guys, you
+[17:28] can make some pretty cool realistic
+[17:29] images, here was um a post I made about
+[17:33] um if ancient Rome had access to
+[17:35] iPhones. And obviously, this is not like
+[17:37] a real Twitter account. Um, but this is
+[17:39] a dinosaurs evolved into modern-day
+[17:41] influencers. This was just for me
+[17:42] testing like an automation using this
+[17:44] API and auto posting, but not as
+[17:47] practical as like these LinkedIn
+[17:48] graphics. But if you guys want to see a
+[17:50] video sort of like this, let me know. Or
+[17:52] if you also want to see a more evolved
+[17:53] version of the LinkedIn posting flow and
+[17:55] how we can make it even more robust and
+[17:57] even more automated, then definitely let
+[17:58] me know about that as well. But that's
+[18:00] going to do it. That is how you set up
+[18:01] this HTTP request right there. And then
+[18:03] we can turn that 64 into a binary image
+[18:07] that we can then use for whatever we
+[18:09] want. So, thanks for watching everyone.
+[18:10] If you enjoyed this one, if you found it
+[18:12] helpful, please give it a like.
+[18:13] Definitely helps me out a ton. And as
+[18:15] always, appreciate you making it to the
+[18:16] end. I'll see you guys in the next
+[18:18] video. Thanks so much everyone.

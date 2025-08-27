@@ -1,0 +1,1026 @@
+Video Title: Web Scraping for Sports Data with R: Yaqiong Yao [2020 UConn Sports Analytics Symposium]
+Video ID: w5j6PShQ_j8
+URL: https://www.youtube.com/watch?v=w5j6PShQ_j8
+View Count: 70
+
+[00:07] okay
+[00:09] so my workshop will contain the
+[00:11] following three aspects first i will
+[00:13] give a short introduction about the
+[00:17] webscribing technique and then i will
+[00:19] talk about how to
+[00:21] use
+[00:25] and then i will talk about how to use
+[00:26] web scoping techniques
+[00:28] using our and i will talk about three
+[00:31] situations uh the first one is how to
+[00:34] import uh files
+[00:36] downloaded from website directly into
+[00:38] our the second one is about like how to
+[00:41] web scrapping the static data using r
+[00:44] and the last one will be how to
+[00:48] scrap the dynamic data using r and at
+[00:52] last i will give a short summary about
+[00:54] this workshop
+[01:01] okay
+[01:02] so web scrapping technique is used for
+[01:05] capturing data from the websites
+[01:08] so the motivation of of web scrapping
+[01:11] many content two parts
+[01:13] the first part is like
+[01:15] we will have a
+[01:17] website and
+[01:18] uh in that website we we have some data
+[01:20] that we want to extract then we need
+[01:22] some technique
+[01:24] to help us to extract that kind of data
+[01:27] and then uh webscribing also provide us
+[01:31] a reproducible way of capturing data
+[01:34] from the websites
+[01:37] i will talk about these two kinds of
+[01:39] parts in later by an example
+[01:42] and also since our workshop today is
+[01:46] mainly about the works crabby using r
+[01:49] and
+[01:49] uh to do the what's crappy using r it
+[01:52] require us to have first have some
+[01:54] experience with r and
+[01:57] second it requires us to have a laptop
+[01:59] with r and r studio instead
+[02:04] so
+[02:04] next i will use an example to show of
+[02:09] the
+[02:09] why webscrapping techniques is important
+[02:14] in the
+[02:15] real world
+[02:17] so
+[02:18] look at this website this website is the
+[02:21] college basketball school index it
+[02:23] requires a basketball index for it for
+[02:27] different school and we can say here
+[02:29] here there are different schools and
+[02:32] schools and
+[02:33] different records for each school so in
+[02:35] this website if we want to scrap all
+[02:38] those data from this website
+[02:41] we can consider two ways the first one
+[02:43] is like we can
+[02:45] copy and paste each cells by ourself so
+[02:49] copy each data in each cell by ourselves
+[02:52] but obviously this way is really time
+[02:54] consuming
+[02:56] so all here
+[02:58] in this case web scraping technique can
+[03:00] help us to capture
+[03:03] to capture this data
+[03:04] efficiently
+[03:07] and another advantage of web scripting
+[03:10] is that once this this data in the
+[03:13] website changes
+[03:15] we can
+[03:16] use a several a few lines of code to
+[03:19] reproduce all the all these results
+[03:21] instead of we copy and paste in another
+[03:25] time
+[03:26] so this is how web scrapping helped us
+[03:29] in the real data example
+[03:34] so you know for the web scripting
+[03:38] different when we
+[03:39] when we have different kinds of data we
+[03:42] need different kinds of web describing
+[03:44] techniques so in our in this workshop i
+[03:48] will mainly discuss
+[03:50] the following kinds of situation
+[03:53] the first one when we have data that
+[03:56] have been organized
+[03:58] really well into files so in this case
+[04:02] we can directly download the data from
+[04:05] the website and import the data into our
+[04:08] so this case uh is is com
+[04:11] is relatively simple compared to other
+[04:14] situations
+[04:16] so when the data so a top case is that
+[04:19] when the data are contained in the html
+[04:22] pages so the data are
+[04:25] not organized into files into files
+[04:29] so in this case
+[04:30] there are two kinds of data in this case
+[04:33] uh one is statistic data the other one
+[04:36] is dynamic data and for different kinds
+[04:38] of data we require we require different
+[04:41] kinds of web scribing techniques to
+[04:44] extract them
+[04:48] next i will talk about the first
+[04:50] situation so import data files from set
+[04:54] directory
+[04:56] so if we have a
+[04:58] data file that in the website and it it
+[05:02] is stored in the csv file or for format
+[05:05] files so in this case we can
+[05:09] import this data by the use of
+[05:12] read dot csv functions by this kind of
+[05:15] function
+[05:16] so this kind of function can help us to
+[05:19] directly import the data from a website
+[05:23] so for example if we want to if we want
+[05:27] to extract the most recent australia
+[05:30] open tennis championships match from
+[05:33] this website
+[05:35] so from this website
+[05:39] so we can see the most recent
+[05:41] championship match the record for the
+[05:43] most recent championship
+[05:46] match
+[05:48] is for
+[05:50] 2020 so we want and this data is stored
+[05:53] in a csv file so if we want to
+[05:57] directly import
+[05:59] this data file into r
+[06:01] so the first thing we can do we can
+[06:05] we can do this with the read dot csv
+[06:08] function and the first thing is to
+[06:10] obtain the link address of this data
+[06:13] file so we can obtain this address by
+[06:16] right click
+[06:18] and
+[06:19] by choosing the copy link address
+[06:25] so by doing this
+[06:27] so here is the url for that
+[06:32] for that csv file so we you can see we
+[06:34] can directly download it from here
+[06:37] so here is the the link for uh for for
+[06:41] that csv file
+[06:42] so by using this link we read we use
+[06:45] read dot says we function
+[06:47] to this link
+[06:49] and we store the result in the in in in
+[06:52] this tennis aus
+[06:54] element
+[06:56] and here it it will contains all the uh
+[06:59] all the data in this file so let me go
+[07:03] to r and show
+[07:04] the result of this one
+[07:09] so we can say
+[07:12] in this
+[07:14] this is a data frame and it has
+[07:18] 127 observations with 36 variables
+[07:23] we can see the the data is shown as here
+[07:32] so this is like this is how we extract
+[07:35] the data how we import the data files
+[07:38] from website directly using r
+[07:42] however most of data in the web
+[07:45] web pages are not organized into files
+[07:48] so in this case in that case we cannot
+[07:51] directly import the data file into r
+[07:55] so
+[07:56] we need other techniques
+[07:59] that can help us
+[08:01] we need other techniques to deal with
+[08:03] that kind of data so before we capture
+[08:06] uh this kind of data
+[08:08] we need we need to determine whether the
+[08:11] data are static or dynamic based on the
+[08:15] source code because uh
+[08:17] instead because different deductions we
+[08:19] have different kinds of methods to
+[08:21] extract
+[08:22] so static data has
+[08:25] has its own method and then
+[08:27] has has has its own method so we need to
+[08:31] determine whether the data are static or
+[08:34] dynamic based on the source code
+[08:37] so
+[08:38] in such uh so in this case
+[08:42] so the static data is the data that can
+[08:45] be sent in the source code and the
+[08:47] dynamic data is the data that cannot be
+[08:50] seen in the source code to determine
+[08:53] this kind of data
+[08:55] the
+[08:56] the
+[08:59] to determine this kind of data
+[09:03] the first thing we need to do is to
+[09:06] uh it it's too is to know how to view
+[09:09] the source code
+[09:16] to view the source code in the chrome
+[09:19] so the thing we need to do is to go to
+[09:21] view
+[09:22] and go to developer and the choose the
+[09:25] view source code
+[09:26] we choose the view source
+[09:29] in chrome
+[09:30] so the the other way
+[09:33] the other way is
+[09:34] is to right click the website and choose
+[09:37] the real page sounds
+[09:42] okay
+[09:43] so i
+[09:44] i say someone asked me to mute the
+[09:49] the cells for
+[09:51] people coming
+[10:01] sorry
+[10:02] let me try to
+[10:04] build the sunflower
+[10:24] okay
+[10:47] okay so in this case it should be no
+[10:49] sound for
+[10:51] april
+[10:53] sorry for the
+[10:54] interruption
+[10:58] let us continue
+[11:02] in this case
+[11:04] uh
+[11:06] we need to know how to view the source
+[11:08] code
+[11:09] uh
+[11:10] for each website so in chrome we can do
+[11:13] this by go to we will go to choosing
+[11:16] developer
+[11:18] and
+[11:19] choosing new cells from here
+[11:22] so uh another way is to just
+[11:25] when we have a website is to simply
+[11:28] right click the web page and choose real
+[11:30] page source so this kind of procedure
+[11:35] is how to view the source code in chrome
+[11:38] so if you use other kind of
+[11:41] browser you need to
+[11:43] you need to learn how to do that
+[11:46] in different browser
+[11:51] so
+[11:51] uh the
+[11:54] so as i said
+[11:56] as i said the static data is the data
+[11:59] that can be seen in the source code and
+[12:00] the dynamic data
+[12:02] is the data that cannot be seen in the
+[12:04] source code
+[12:05] so after we knowing how to build the
+[12:08] source code in the quran or let's say
+[12:10] two examples
+[12:11] so we are going to determine the data in
+[12:14] this following two websites
+[12:17] are static or dynamic
+[12:20] so let's look at the first one
+[12:23] this one
+[12:25] so we can say there is there is a table
+[12:27] data table like this
+[12:29] and uh to uh to determine uh the static
+[12:33] whether this data aesthetic or dynamic
+[12:36] we need to go to the source page so we
+[12:39] click
+[12:40] right click and choose the real page
+[12:42] cells
+[12:44] and here we can see this the source code
+[12:47] of that page
+[12:50] so from here
+[12:52] we can say
+[12:54] for uh
+[12:55] for each cells for for for the data in
+[12:58] each cell there is
+[13:00] a data
+[13:02] there has a corresponding data in the
+[13:05] page source
+[13:07] so in this case this website
+[13:09] is a static
+[13:11] the data in this website is static
+[13:15] and then let's look at the second one
+[13:21] so this data this website is like
+[13:24] it contains the basketball
+[13:27] records
+[13:28] for uconn
+[13:30] so let's look at the source code of this
+[13:33] page the real page cells
+[13:38] so this is a very long
+[13:41] source code
+[13:43] but
+[13:44] if we
+[13:45] if we want to find
+[13:47] the elements
+[13:49] the data in each cells
+[13:52] actually we cannot find it from the
+[13:54] source code
+[13:58] so in this case
+[14:00] the data in this website
+[14:03] is dynamic
+[14:07] so the first one is static data and the
+[14:10] second one is dynamic data
+[14:14] so for different kinds of for different
+[14:16] kinds of data
+[14:17] we need different kinds of web scraping
+[14:20] techniques and
+[14:22] the first one let's let's talk about how
+[14:24] to use web scraping
+[14:26] technique for the static data in r
+[14:31] so uh
+[14:32] here i will discuss two kinds of uh two
+[14:36] ways of you of
+[14:38] two kinds of web describing techniques
+[14:40] for statistic data in r the first one is
+[14:44] the is to use the red lines function
+[14:47] so this function gives us the source
+[14:49] code of all the source code of the html
+[14:53] pages
+[14:54] and the second method
+[14:56] is to use the rvest package
+[14:59] so this package
+[15:00] is to capture the useful data by
+[15:03] identifying the elements containing the
+[15:06] data in the source code
+[15:08] so let's discuss these two kinds of
+[15:10] methods one by one
+[15:12] so the first one the redlines function
+[15:16] let's look at this example
+[15:18] so if we want to use redline's function
+[15:21] to extract the data in this webpage
+[15:25] so in this web page
+[15:29] we you we use the realize function
+[15:31] directly to the url
+[15:34] of of this web page
+[15:36] and we use the head function
+[15:39] to show the top 10
+[15:41] results
+[15:43] so from here we can see
+[15:46] we can see the results
+[15:48] and we can also we can also show the
+[15:52] page source of this website
+[15:56] so compare with the page cells
+[15:59] and
+[16:00] the results shown in here
+[16:02] so we can say actually the red lines
+[16:05] this function is gives us all the source
+[16:08] codes
+[16:10] and
+[16:11] and since it gives us all the source
+[16:13] codes we only
+[16:15] and the only thing we need for this
+[16:17] website is it's only the data so in this
+[16:20] case we need a lot of data cleaning
+[16:23] procedure and the data organization
+[16:25] procedures
+[16:28] so the read lines they so the read lines
+[16:30] function uh
+[16:32] is like it is a little bit complicated
+[16:35] when we consider this data cleaning
+[16:38] procedure and organization procedure
+[16:43] so next we will talk about how to
+[16:45] use a web scribing technique and how to
+[16:48] use rest
+[16:50] to web scrap
+[16:51] the static data in r
+[16:54] so the rest this package
+[16:57] it
+[16:58] helps us to extract data by locating the
+[17:01] elements containing the data
+[17:04] in the source code
+[17:07] so what what does this mean so
+[17:12] so it um it wants us to locate the html
+[17:17] element first and the uh
+[17:19] to locate the html elements containing
+[17:22] which containing the data first and then
+[17:25] by
+[17:26] by finding by locate this element we can
+[17:29] extract the data in that element
+[17:33] so the procedure is is doing like this
+[17:37] when first we need to right click the
+[17:39] page and choose inspect
+[17:41] and the second
+[17:43] we we need to click this button
+[17:47] and then we can locate the html elements
+[17:52] by
+[17:53] finding the cs selector and the xpath
+[17:56] code so let me illustrate this by
+[17:59] example
+[18:01] for example if we want to extract the
+[18:04] data in this website
+[18:07] so we can see there is a data table here
+[18:09] and we want to extract all the data
+[18:13] in this table
+[18:15] so the first step
+[18:17] is to go to the
+[18:20] inspect
+[18:21] here
+[18:24] and then we can say there is a button
+[18:26] here there is a button that selects an
+[18:29] element in the page to inspect element
+[18:33] so we click this
+[18:35] and and then we move
+[18:38] we remove the mouse we can see
+[18:41] for each cell it gives us the location
+[18:44] of that cell
+[18:47] in the source code
+[18:51] so in this in in this table
+[18:55] we can see there is this one is a table
+[18:57] so we can
+[18:59] target
+[19:00] this table
+[19:02] in here
+[19:04] so we can say once we click this
+[19:07] the
+[19:08] the blue area is the table
+[19:11] which means
+[19:13] which means
+[19:14] this one gives
+[19:15] we can use this one to target
+[19:18] the table from the source code
+[19:21] so we can say here the id is report
+[19:24] table under the class is the table
+[19:26] sorter so we can use this id and this
+[19:29] class to
+[19:31] identify the
+[19:33] html table
+[19:35] and
+[19:37] the id and the cluster is used as the
+[19:39] css
+[19:42] selector
+[19:47] so let me approve this
+[19:53] okay
+[20:01] so in such way
+[20:02] we can find the id and the class for
+[20:05] this
+[20:06] html table and by
+[20:09] by using this id all this class we can
+[20:12] extract all the data in this table
+[20:18] so except the id and class we could also
+[20:21] use the xpath code to identify this this
+[20:25] html table
+[20:28] by right click
+[20:29] and choosing the copy and choosing the
+[20:32] copy xpath
+[20:37] okay
+[20:39] so from here we can say in this website
+[20:43] the table has a cs select selector with
+[20:47] id
+[20:48] with report table with class as table
+[20:51] sorter
+[20:53] so this is how to identify the select
+[20:55] css selector
+[20:58] and then
+[21:00] we can we can
+[21:02] by this option and we can see the xpath
+[21:06] code is like this
+[21:09] so after identifying
+[21:11] these html elements by the css selector
+[21:15] and xpath
+[21:18] we can trying to use we can try to use
+[21:20] arrest to do the web scraping
+[21:24] the first step to do
+[21:26] to use arrest to do the web scrapping is
+[21:28] to install
+[21:30] the ios package
+[21:32] so the rms package can be installed
+[21:35] by this
+[21:36] two lines of code the first one is two
+[21:38] is to install this packet from the crown
+[21:42] and the second line is to
+[21:44] load this package into r
+[21:49] and the next step is to do the web
+[21:51] scripting
+[21:53] using the
+[21:54] using the css selector
+[21:57] or the xpath code
+[21:59] so here
+[22:01] is the is the link is the ul url of this
+[22:06] website
+[22:07] and we use the read html for this link
+[22:12] and we
+[22:13] store the
+[22:15] store the information into the web page
+[22:19] and then
+[22:21] after we have this web page
+[22:24] we can use the html node function
+[22:30] to identify the html elements so the
+[22:34] first the hit so
+[22:36] here i use the css selector class
+[22:40] to identify the html elements
+[22:43] because we can we can see from the
+[22:46] previous page
+[22:47] the class is the table sorter and the id
+[22:50] is report table so we can we can first
+[22:52] use the table sorter to identify the
+[22:55] html
+[22:57] elements
+[22:58] so here we are using the class to
+[23:00] identify that elements that table
+[23:03] and the html
+[23:06] table function this function is to
+[23:08] extract the table
+[23:10] from the element that we targeted in
+[23:13] this step
+[23:15] okay so this is like how we use
+[23:18] the class to extract the table
+[23:21] information
+[23:23] and here
+[23:25] this part gives us
+[23:27] how to use the css id
+[23:31] to extract the info to extract
+[23:34] the data from this
+[23:37] website so this is the same way so the
+[23:40] web page is just what we read from here
+[23:44] and the html node
+[23:47] is to use uh gives us
+[23:50] the the the css selector i need to use
+[23:53] css selector id to identify the html
+[23:57] elements that table and this function
+[24:00] is also like
+[24:02] extract the table from
+[24:05] the elements
+[24:07] so we compare these two results the two
+[24:10] tables that we obtained
+[24:13] by
+[24:15] by a
+[24:16] different
+[24:17] selectors one is by uh id wise by class
+[24:21] and we compare
+[24:22] the results
+[24:24] so
+[24:25] we can say actually these two these two
+[24:28] results they are identical
+[24:33] and the next
+[24:34] we
+[24:35] i use the x path code to extract that
+[24:39] that table so the only difference is
+[24:41] here so in the html nodes we use the x
+[24:44] x-path code to identify the element
+[24:48] and we also compare the result
+[24:51] extracted by
+[24:53] targeted by the x-path code under the
+[24:56] result by the css selector
+[24:58] we can say
+[25:00] these two elements they are the same
+[25:02] thing
+[25:04] so here gives us
+[25:06] gives us
+[25:07] the
+[25:08] the table that we extracted
+[25:11] by
+[25:12] by the by
+[25:13] those codes
+[25:15] so because we can say
+[25:17] the table shows here
+[25:19] just the just exactly the same as
+[25:22] the table shows here
+[25:25] okay
+[25:30] so
+[25:31] this is the step that uh how we use the
+[25:34] rest for the web scrapping
+[25:41] and except the html nodes and html table
+[25:45] that we talked from we talked in this
+[25:48] example there are many other frequently
+[25:51] used functions in rest
+[25:53] for example the html nodes so
+[25:57] the difference between the html nodes
+[25:59] and html and the html node and html
+[26:04] nodes is that
+[26:05] this one
+[26:07] just like
+[26:08] extract extract one uh one element and
+[26:12] this
+[26:13] this one can extract several elements
+[26:17] so
+[26:18] uh
+[26:19] the html text is to extract the text
+[26:23] from from the the targeted element
+[26:27] and the html attributes is to extract
+[26:30] attributes from the targeted element
+[26:34] and the html forms form is to extract
+[26:37] forms from the element
+[26:41] okay
+[26:42] so here is just a a brief introduction
+[26:45] about the arbest if you want to learn
+[26:48] more about this you can
+[26:49] go to the
+[26:51] crown for more information
+[26:53] and
+[26:54] and except
+[26:57] except how we
+[26:59] accept how how how we like uh
+[27:02] determine the css selector and x path in
+[27:06] by this way
+[27:07] by go to the inspect and
+[27:10] use the use this button we can also
+[27:12] consider
+[27:14] to use the selector garage
+[27:18] to identify the css selector so this
+[27:21] this one is a very common it is a
+[27:23] convenient tool
+[27:24] so you it it
+[27:27] it can give us the css selector under
+[27:29] the the x path codes very quickly so you
+[27:34] can try it
+[27:37] so after the uh after talking about the
+[27:40] web scrapping for static data
+[27:44] i'm going to talk about the web
+[27:45] scripting for dynamic data in r so the
+[27:48] dynamic data
+[27:51] what dynamic data displayed in the
+[27:53] website can be changed
+[27:55] in response to the user interaction so
+[27:57] that means if the
+[28:00] if we like we click different things in
+[28:03] the in that website
+[28:05] the data can be changed
+[28:07] so in that case we need to auto automate
+[28:11] the web browsing processing in our for
+[28:13] the dynamic data
+[28:15] and to automate to automate this web
+[28:18] web browsing process we need this we
+[28:21] need help with this package our selenium
+[28:24] package
+[28:25] and this package
+[28:27] it it
+[28:29] provides the connection to this selenium
+[28:31] server which can be uh which is used to
+[28:35] webscribing
+[28:37] okay to install this package we can
+[28:39] install it from the github
+[28:41] and
+[28:42] we can we need to load this package by
+[28:45] the required function into r
+[28:50] so also i will use an example to
+[28:52] illustrate how to use our selenium
+[28:54] package to extract data
+[28:58] for example we
+[29:00] what happens
+[29:04] for example we want to extract the data
+[29:06] in this in this website
+[29:10] so uh
+[29:12] for here it's just as as what we did for
+[29:15] the static data we want to uh we need to
+[29:18] identify the html elements
+[29:22] containing the data first
+[29:24] so
+[29:24] it's just the same thing
+[29:27] as what what we did for the static data
+[29:29] we go to the inspect
+[29:32] and
+[29:34] select
+[29:36] we can select this
+[29:37] button
+[29:41] and then we can select the elements here
+[29:47] so for example
+[29:49] example i will use i will use
+[29:52] the the class as that box here
+[29:55] to identify
+[29:58] to uh
+[29:59] to uh to identify this html element to
+[30:02] identify the data in here
+[30:04] so for example i will use this one
+[30:10] and after after
+[30:12] targeting the html elements
+[30:17] let's go to
+[30:19] let's
+[30:21] let me show how to use the r selenium
+[30:23] package
+[30:26] to use the r selenium package the first
+[30:28] step is to connect to a select m server
+[30:32] and open the browser
+[30:37] so to connect the selenium server we we
+[30:39] use the we use this function the rs
+[30:42] drive function and the reset part
+[30:46] and here we also choose the chrome
+[30:49] chrome version
+[30:52] and these two steps these two lines of
+[30:54] code help us to
+[30:57] to open
+[30:58] the browser
+[31:00] and the next step to
+[31:02] use
+[31:04] and the next step is to extract
+[31:06] information
+[31:08] and organize the data
+[31:10] so here
+[31:12] the is the url
+[31:14] of the of of this
+[31:16] website and we use the navigate function
+[31:20] to navigate the web browser
+[31:23] to this url
+[31:26] to this website
+[31:28] and after doing that doing that
+[31:30] we use the fun elements function
+[31:34] to targeting the html elements
+[31:38] by using the css selector
+[31:40] so here we use the css selector class
+[31:44] which is the step table
+[31:50] so after doing after doing this
+[31:54] we can
+[31:55] we can use
+[31:57] this this
+[31:58] this step to get the element to get all
+[32:02] the text
+[32:03] in in that html
+[32:06] in that html element
+[32:09] and
+[32:12] and after all
+[32:13] and
+[32:14] organizing all this element
+[32:17] you can see the result is shown here
+[32:20] so this is the web
+[32:22] the top six element in the web element
+[32:25] in this
+[32:27] in this vector
+[32:29] and after doing this after uh extracting
+[32:32] the the data that we need we need to
+[32:35] close the browser
+[32:37] by using this
+[32:39] by using the close function
+[32:42] okay so this is like the steps to do the
+[32:46] web scripting for dynamic data in r and
+[32:49] i will sh i will also show
+[32:54] show the output i will do this in the
+[32:56] art and
+[32:58] show how it works so first and we need
+[33:01] to load this
+[33:03] package to our
+[33:05] and
+[33:06] here it gives us
+[33:08] is to connect to the to this
+[33:12] to the web browser
+[33:17] and this file and this this this step
+[33:20] here is to navigate
+[33:23] the web browser
+[33:25] to this url to the targeted website
+[33:32] and then we can send the elements
+[33:35] we can target the elements by the css
+[33:38] selector
+[33:41] and then
+[33:42] we can organize our element
+[33:45] and here
+[33:46] and the last last step is to close
+[33:52] is to close the web browser so
+[33:55] it is gone
+[33:59] so this is the steps of how to using
+[34:02] uh how to use
+[34:04] our selenium to do the web scraping for
+[34:06] dynamic data
+[34:09] so the frequently used function of the
+[34:12] our selenium includes the rs driver
+[34:15] which is to start a selenium server and
+[34:18] navigate which is to navigate
+[34:22] the web pages
+[34:24] and the fun elements which is to find
+[34:26] fundamental elements in the web page by
+[34:29] using css selector or expat
+[34:32] get page sources which is to get the
+[34:34] current page cells
+[34:36] and the click element the click element
+[34:38] is is is is the function which can
+[34:42] mimic the
+[34:44] mouse action which means it can help us
+[34:47] to click different kinds of button
+[34:51] in this website
+[34:54] also our selenium
+[34:55] have more details so if you are
+[34:58] interested in that package you can go to
+[35:01] that one
+[35:02] to check
+[35:03] more information
+[35:07] and next i will i will show another
+[35:09] example of this uh
+[35:12] of the uh our selenium of how to do the
+[35:15] web scrapping for dynamic data
+[35:17] so this web
+[35:19] we need to web scrap the data in this
+[35:21] website
+[35:23] so this website gives us the basketball
+[35:26] records for
+[35:27] for uconn so it is the history record
+[35:32] so we want to extract the data
+[35:35] in here
+[35:36] in this table
+[35:39] but the difficult thing in this website
+[35:41] is that
+[35:43] there is show more matches which means
+[35:46] uh
+[35:47] which is like if we click here it will
+[35:49] click show more matches it gives it
+[35:52] continuous gives us
+[35:56] more results more records so if we click
+[35:59] it
+[36:01] it
+[36:02] continues gives us the records for
+[36:04] different years
+[36:06] so we need to use our selenium package
+[36:08] we need to use our code
+[36:11] to mimic
+[36:12] this option to to mimic this action to
+[36:15] this click action
+[36:17] to obtain all the records all the
+[36:19] history
+[36:20] records for yukon
+[36:23] this is the difficult part so to do this
+[36:28] i will directly show you my code
+[36:31] so to do this
+[36:32] uh
+[36:33] the first the first step is to oh is to
+[36:37] connect to the selenium server
+[36:41] it's just what we have
+[36:44] what i
+[36:45] have shown before so connect it to the
+[36:47] server and open the web browser
+[36:56] and
+[37:02] then we can navigate to the web browser
+[37:05] to this
+[37:06] url we can see
+[37:10] and we want we want
+[37:12] we want a function we want to mimic uh
+[37:16] the click mouse
+[37:18] action so to do this i use a repeat i
+[37:22] use a loop function in r to mimic that
+[37:25] action
+[37:27] so we can see here it continues gives us
+[37:31] results
+[37:33] and mimic
+[37:35] the click action
+[37:37] so until until it gives us the history
+[37:41] records until 2008 2008
+[37:46] okay
+[37:47] so after doing that we have we have the
+[37:50] full table and then we can
+[37:54] we can web scrap we can extract all the
+[37:57] all the data in that table
+[38:05] so it takes a little bit time
+[38:08] so here i extract
+[38:11] the data
+[38:15] the data for the time for these two
+[38:19] schools and
+[38:20] i also recall
+[38:22] the data
+[38:23] of the score and the result
+[38:29] okay
+[38:31] so this is like how to do the
+[38:33] webscribing in this example
+[38:43] and after doing this
+[38:48] we can see the basketball
+[38:50] we can see our
+[38:52] organize the data data frame
+[39:09] never mind
+[39:12] to organize the data frame really looks
+[39:14] like this so it gives us the time the
+[39:16] whole the array and the score for the
+[39:19] whole the score for the way and the
+[39:21] result
+[39:22] the last step
+[39:24] is to close
+[39:26] after doing this the last step is to
+[39:27] close
+[39:28] the remote drive
+[39:37] we can see it from here
+[39:39] it gives us the full list
+[39:42] of that data table
+[39:45] and
+[39:45] we need to close the remote driver
+[39:53] this is how to do the webscribing
+[39:56] for this website
+[40:02] yeah uh then i will give a
+[40:06] brief summary in this workshop i'm going
+[40:08] to talk about three kinds of uh web
+[40:10] scripting techniques for uh
+[40:13] [Music]
+[40:15] three kinds of web scripting techniques
+[40:16] using our the first one is if if that we
+[40:19] have the
+[40:21] very well organized files from the web
+[40:24] pages we can directly import it by using
+[40:27] read says wave functions like this
+[40:30] read csv functions and the second one if
+[40:33] we have static data
+[40:36] which is the data cannot can be seen in
+[40:39] the or in the page source
+[40:42] we can extract that kind of data by
+[40:44] using our rest package
+[40:46] and the last fold of dynamic data we can
+[40:49] use the our selenium package to extract
+[40:52] the dynamic data
+[40:55] okay
+[40:56] and here is some useful resources
+[41:00] that
+[41:01] if you are interested you can discover
+[41:04] and uh okay
+[41:09] uh thanks for coming
+[41:10] i think uh my presentation will stop
+[41:13] here so if you have any questions
+[41:16] uh
+[41:17] please talk to me
+[41:19] just let me know
+[41:24] is there any questions
+[41:25] yeah uh yeah
+[41:27] this is a link
+[41:28] um hi can you explain like how do we set
+[41:32] up port and chrome error parameters in
+[41:35] the aslan package
+[41:38] okay
+[41:43] okay it's here
+[41:44] so
+[41:45] for the part there is a default part so
+[41:49] but typically the default part it it
+[41:52] should just be occupied by
+[41:54] so it is occupied by
+[41:57] other
+[42:00] uh so for in this case we just like
+[42:04] change uh change we can change the part
+[42:07] by by assigning it to a number so we we
+[42:11] we can change any number here so for
+[42:13] example
+[42:16] for example here
+[42:18] i set the prototype this one so we can i
+[42:20] can also set it to this
+[42:24] and it it opens
+[42:28] the port
+[42:29] and for the conversions i think for
+[42:32] different computer for different kinds
+[42:34] of uh
+[42:35] browser you should have different things
+[42:38] so for here is just
+[42:40] the
+[42:41] chrome version that i have
+[42:43] so if you if you run this can this this
+[42:46] line it continues
+[42:48] gives you error or
+[42:51] uh you can like change change change you
+[42:54] can like try to change the chrome
+[42:55] version here
+[43:04] if that answer your question
+[43:06] oh yeah thank you
+[43:22] yes the the the chrome version means
+[43:24] yeah the
+[43:26] vr means the conversion
+[43:28] and on the part you choose one that is
+[43:30] not in use
+[43:34] yes yes you can render you can randomly
+[43:36] choose a part that is not in use
+[43:46] any other questions
+[44:04] okay so
+[44:11] okay
+[44:15] so if
+[44:19] if there is no questions we can
+[44:21] stop this workshop here
+[44:24] i think there is a
+[44:26] question in the chat group
+[44:28] okay
+[44:30] because there are too many message too
+[44:32] many messages
+[44:34] why
+[44:42] yes
+[44:55] yes the
+[44:57] the part and the conversion options can
+[44:59] can change
+[45:05] or how can i take my part and the chrome
+[45:07] order so the part you can just choose
+[45:10] the number that you want the chrome
+[45:11] version i think
+[45:13] uh there is a function that should check
+[45:15] the chrome version but i just forgot it
+[45:18] but
+[45:18] [Music]
+[45:28] what do you mean the headless
+[45:52] okay
+[45:58] just curious what are your specific
+[46:00] motivations what to focus on sports data
+[46:03] and have you gone
+[46:05] so i i only have limited uh
+[46:08] resource research experience on the
+[46:10] sports data
+[46:11] so
+[46:12] uh i'm taking this workshop because i
+[46:16] have some experience with the
+[46:17] webscribing
+[46:20] but i think this the sports data is very
+[46:22] interesting so i i i may consider to
+[46:26] include that part into my research topic
+[46:29] in some day
+[46:32] if you select this three dotted line at
+[46:35] the top right of the
+[46:38] it will it will show you the word yes
+[46:41] thank you
+[46:53] and other questions
+[46:55] yeah um
+[46:56] when you're using the our selenium
+[46:58] package for the dynamic data
+[47:01] so like well the function that you use
+[47:04] to
+[47:05] um like try to replicate the user
+[47:08] interaction will that just vary then
+[47:11] from website to website depending on
+[47:13] like
+[47:14] whatever however it's set up
+[47:16] yes yes you need to change change it
+[47:19] because different website has different
+[47:21] kinds of settings so you need to
+[47:24] change that with a different website
+[47:29] thanks so much
+[47:49] these are selenium equipped with
+[47:51] functionality to automate
+[47:55] of logging into a site
+[47:58] oh
+[47:59] that's kind of it is interesting i never
+[48:01] tried this but
+[48:05] okay
+[48:17] any other questions
+[48:36] thank you
+[48:44] thanks for coming guys
+[49:00] thank you
+[49:31] yes i think so i have recorded this
+[49:34] presentation and
+[49:35] all the slides are available on github
+[49:42] thank you

@@ -1,0 +1,593 @@
+Video Title: Best Model for RAG? GPT-4o vs Claude 3.5 vs Gemini Flash 2.0 (n8n Experiment Results)
+Video ID: _DbZjllXDv8
+URL: https://www.youtube.com/watch?v=_DbZjllXDv8
+View Count: 12,401
+
+[00:00] wow flash was 6.7 seconds GPT was 11
+[00:04] seconds and then open AI or anthropic
+[00:07] CLA was almost 21 seconds so that's
+[00:10] that's kind of a big jump here so we all
+[00:12] know that rag is so so important when
+[00:14] we're building out our AI agents but the
+[00:16] question is which large language model
+[00:18] is actually the best for rag So today
+[00:20] we're going to be answering this
+[00:21] question by putting these three popular
+[00:22] models to the test we've got open AI GPT
+[00:25] 40 anthropics Cloud 3.5 Sonet and then
+[00:27] Google's Gemini flash 2.0 so so make
+[00:30] sure you stick to the end of this one so
+[00:31] you can see who takes the throne so real
+[00:33] quick before we get into the experiment
+[00:34] I'm going to keep this really high level
+[00:35] but we have to understand what rag is so
+[00:37] rag stands for retrieval augmented
+[00:39] generation and it's basically just the
+[00:41] process of your agents going out to get
+[00:43] information that it doesn't already have
+[00:45] in its sort of training data or it's
+[00:46] prompt so the r is retrieval it's going
+[00:49] out to retrieve the information the a is
+[00:51] augmented it pretty much takes that
+[00:52] information that gets back from the
+[00:53] vector database or whatever database
+[00:55] you're sort of having it access it
+[00:57] augments that data and information with
+[00:59] other stuff that came through in the
+[01:00] query and the prompt and then finally
+[01:02] it's handing that off to the large
+[01:03] language model to create to generate the
+[01:06] response that makes sense to the human
+[01:07] based on the context of its role and
+[01:09] also the query that originally came in
+[01:11] and so we'll hop into nadn and you'll
+[01:13] see the three different agents we have
+[01:14] and we'll actually run through this
+[01:15] process it'll make a lot more sense but
+[01:17] real quick this is kind of what it looks
+[01:18] like the process starts with a user
+[01:20] submitting a query to the large language
+[01:22] model that model then creates a prompt
+[01:24] to actually feed it into a vector
+[01:26] database as you can see right here
+[01:27] within the vector database that prompt
+[01:29] sort of gets vectorized and then the
+[01:31] nearest vectors around it are pulled
+[01:33] back right here as you can see that's
+[01:34] where we're retrieving content and then
+[01:36] from there that content is fed back to
+[01:38] the large language model to actually
+[01:39] generate response generate a response
+[01:42] for the human to read and then um at
+[01:43] that point it's just a matter of other
+[01:45] any follow-up questions if yes it
+[01:47] happens again otherwise the process ends
+[01:49] so let's hop in NN we'll take a look at
+[01:51] the three different agents that we have
+[01:52] and we'll walk through sort of the data
+[01:54] that's in the vector database and we'll
+[01:55] start testing out these agents and
+[01:57] seeing which one's the best so the idea
+[01:59] of this EXP experiment is to keep
+[02:00] everything as consistent as possible
+[02:02] we're going to limit the variability as
+[02:04] much as we can by doing the following
+[02:05] things we're going to test eight
+[02:08] different parameters or sorry seven
+[02:09] different parameters information recall
+[02:11] query understanding um response
+[02:13] coherence and completeness speed context
+[02:15] window management conflicting
+[02:17] information and Source attribution so
+[02:18] for each of these tests that we're
+[02:19] running we're going to be feeding in the
+[02:21] exact same prompt to each of the agents
+[02:23] and then evaluating their
+[02:24] responses as you can see within each
+[02:26] agent we have the exact same system
+[02:28] prompt which is basically your an agent
+[02:30] responsible for retrieving and
+[02:31] summarizing nvidia's financial and
+[02:33] earnings information that's what's in
+[02:34] the vector store that we have so we're
+[02:36] telling it how to call the tool what it
+[02:38] does and I mean it's very very simple
+[02:39] that's really the only thing this this
+[02:41] agent is doing is calling its Vector
+[02:43] databases um as you can see all these
+[02:45] guys have the exact same prompt so
+[02:47] pretty much feeding in the same
+[02:48] information running it through the same
+[02:50] prompt and then running that prompt
+[02:51] through the exact same Vector database
+[02:53] with the exact same information and then
+[02:54] as far as actually grading the responses
+[02:56] I had done this once before and it was
+[02:58] kind of hard for me to like score for
+[03:00] each response out of 10 and um sometimes
+[03:02] there was like a Baseline and I had to
+[03:03] compare different models responses so
+[03:05] what I'm going to be doing just to keep
+[03:06] this consistent is I'm going to be
+[03:08] running the responses through um chat
+[03:10] gbt that has access to the original PDF
+[03:13] that we have in all of these Vector
+[03:14] databases here and I'm not going to say
+[03:16] like which response is from which model
+[03:18] but I'm just going to tell it to give
+[03:20] all three of the responses sort of like
+[03:21] a rating out of 10 and so we're going to
+[03:23] do that with all of the responses coming
+[03:25] back just so it's like a consistent
+[03:26] grader and we'll see who has the highest
+[03:28] average score at the end before we
+[03:29] actually start that experiment we're
+[03:30] going to do one example to see how this
+[03:32] process works um sort of going back to
+[03:34] this diagram but let's actually see it
+[03:36] within nadn so I hooked up the chat
+[03:38] trigger to the CLA agent and in the chat
+[03:40] trigger I'm just going to say what was
+[03:42] nvidia's qy1 fiscal 2025 data center
+[03:45] Revenue we'll see the process happening
+[03:47] obviously but what we are interested in
+[03:48] here is looking at the log so once this
+[03:50] finishes up we will click into the agent
+[03:52] and look at this log and see what
+[03:54] happened so the agent looks over its
+[03:56] system prompts as well as the actual
+[03:58] query that it just got from the human
+[03:59] and in order to decide what it needs to
+[04:01] do next in this case it says to answer
+[04:03] this question accurately I'll need to
+[04:04] use the Nvidia tool to retrieve the most
+[04:06] up-to-date information about nvidia's
+[04:08] earnings report let me do that for you
+[04:10] so at that point it takes our original
+[04:12] question and it turns it into a query to
+[04:15] actually send off to the vector database
+[04:17] so it sends off this query what was
+[04:19] nvidia's q1 fiscal data center Revenue
+[04:21] in this case it didn't really change our
+[04:23] query from the human query but sometimes
+[04:24] it actually does um and then it gets a
+[04:26] response back from the vector database
+[04:28] which as you can see we've got some
+[04:29] information here and so this process
+[04:30] looks like hitting the actual Vector
+[04:32] store sending off that query to the
+[04:34] vector store looking through the
+[04:35] information using the embeddings model
+[04:37] to once again look through the
+[04:38] embeddings and then it gets an answer
+[04:40] back and then with that answer that it
+[04:42] gets back from the vector database it
+[04:44] uses its model again claw 3.5 Sona in
+[04:46] this case to actually structure that
+[04:48] into an output that's human readable and
+[04:50] that makes sense to us okay I hope that
+[04:52] quick example paints a little bit of a
+[04:53] better picture in your mind of the way
+[04:55] that the agent and the vector databases
+[04:56] talk to each other how the query is sent
+[04:58] off um but let's get start with the
+[05:00] experiment so the first section here is
+[05:01] information recall I've got a prompt
+[05:03] ready which is how much did nvidia's Gap
+[05:05] operating income grow year-over-year in
+[05:07] q1 fiscal 2025 so we're going to send
+[05:09] this off and obviously this is going to
+[05:11] be the same prompt that we use when
+[05:12] we're testing um gbt 40 as well as
+[05:15] Google Gemini flash 2.0 so here's what
+[05:17] we got from Claude nvidia's Gap
+[05:18] operating income grew by 690
+[05:20] year-over-year in q1 fiscal 2025 it
+[05:23] breaks it down a little further and then
+[05:24] it sort of gives us a good recap at the
+[05:26] end it's structured very nicely it's
+[05:28] very human readable so right here we've
+[05:30] got the Gap operating income it's up 690
+[05:32] year-over-year right here as you can see
+[05:34] and then it gave us the figures of 169
+[05:36] and 214 which we can also see right here
+[05:39] so it is correct and we're going to
+[05:40] enter this as one of the responses into
+[05:42] gbt to grade so we saw that the response
+[05:45] coming back from cloud was correct I
+[05:46] copied this over to a GPT and let me
+[05:48] just show you what this looks like so
+[05:49] you guys understand how these are being
+[05:51] graded once again I'm not like a
+[05:53] scientist or an experiment expert but I
+[05:55] just thought that this would be a cool
+[05:56] way to keep things consistent and leave
+[05:58] it less up to my own inter
+[05:59] interpretation anyways I gave it the PDF
+[06:01] I told it to read it and now I'm going
+[06:02] to say for each test based on the PDF
+[06:05] give each response a rating out of 10 um
+[06:08] and so here's response one and then
+[06:10] we're going to grab response two and
+[06:11] three from um these different agents and
+[06:13] then we'll see what what the the GPT
+[06:15] says as far as giving them a grade so
+[06:17] anyways let's send this same query off
+[06:20] um right here so we reposted the message
+[06:22] to the GPT 40 agent and we'll give it a
+[06:26] quick scan I'm not going to read over
+[06:28] every single response from every single
+[06:30] model um for all different seven tests
+[06:33] because that would make this video way
+[06:34] too long but as you can see here we got
+[06:36] Gap operating income grew by 690
+[06:38] year-over-year in q1 fiscal 2025 so that
+[06:41] is correct however you know you can
+[06:43] already see that anthropics response was
+[06:44] better just because it was a little more
+[06:45] detailed and then finally let's hook up
+[06:47] our Gemini model real quick we'll hit
+[06:50] retest or sorry repost message and then
+[06:52] we'll see what Google comes up with as
+[06:54] far as our answer that one actually
+[06:55] looks like it finished up really quick
+[06:58] um and they actually gave us complete
+[07:00] identical results so this will be
+[07:02] interesting to see how chat gbt grades
+[07:04] these okay this is interesting um even
+[07:06] though response 2 and three were
+[07:08] identical um they got different grades
+[07:11] so anyways anthropic got a nine open AI
+[07:14] got a seven and Gemini got a six so in
+[07:16] here we're going to go 9 7 six just to
+[07:19] keep things consistent um you know like
+[07:21] I said this is not a perfect experiment
+[07:23] but we're going to be throwing
+[07:24] everything into there so hopefully it's
+[07:26] at least a little consistent so let's
+[07:27] move on to the next one which is query
+[07:29] understanding okay so it's also going to
+[07:31] be important to switch up the order a
+[07:32] little bit as far as the responses that
+[07:34] we're putting into chat gbt so this time
+[07:36] we're going to start with Google Gemini
+[07:37] so he said tell me about growth in
+[07:39] nvidia's segments and how is nvidia's
+[07:41] dividend policy changing so it's kind of
+[07:42] vague and it's also mult it's also
+[07:44] multi-art um but here looks we got a
+[07:46] pretty good answer back so I'll copy
+[07:48] that over and then we'll move on to open
+[07:49] AI all right firing it off to open AI
+[07:52] now okay so we got the response back one
+[07:53] thing I've already noticed is that
+[07:55] Gemini is you know much quicker so
+[07:57] that's kind of cool when it comes to
+[07:58] maybe the speed test we'll see there but
+[08:00] here's our answer from um open AI it
+[08:03] structured a little differently but let
+[08:04] me copy this one over to our grer okay
+[08:07] we're hooked up to Claude let's send it
+[08:08] over um I think this is already super
+[08:10] interesting just the way we're seeing
+[08:11] differences and responses um the way
+[08:13] they go in depth or not and um also if
+[08:16] we were to come in here and look at the
+[08:17] executions and look at the different
+[08:19] queries that are actually being sent
+[08:20] over from the agent to the pine cone
+[08:22] Vector store we'd see some differences
+[08:24] I'm sure okay so we just got claw's
+[08:26] answer I'm going to check the PDF make
+[08:27] sure everything's accurate and then
+[08:28] we're going to send off to The Grater
+[08:30] and see what we get back for these
+[08:31] scores okay and while the grer is
+[08:33] working I just wanted to look at this
+[08:34] real quick so in this log we'll see that
+[08:37] it hit Nvidia a couple times so it sent
+[08:39] off two queries the first one was what
+[08:40] is growth in nvidia's different segments
+[08:43] second one was how is nvidia's dividend
+[08:45] policy changing so you can see that the
+[08:46] agent took the query that we sent and
+[08:49] broke it into two different queries and
+[08:51] now what I want to do is look at the
+[08:52] executions we'll go into the second most
+[08:54] recent one which was open Ai and we'll
+[08:56] see the way that open AI did it too so
+[08:59] click into the agent let's go to logs um
+[09:02] so it did the same thing the first one
+[09:03] is what is the current growth in
+[09:04] nvidia's business segments and then it
+[09:06] said how is nvidia's dividend policy
+[09:08] changing recently okay so that's cool
+[09:10] and now let's quickly look at the way
+[09:12] that Gemini did it and as you can see
+[09:14] Gemini took 4.9 seconds open AI took
+[09:17] 10.9 and then Claude took 18.2 so also
+[09:21] just something interesting to note we'll
+[09:22] look right here and Gemini only went
+[09:24] once to the vector store so it said tell
+[09:26] me about growth in nvidia's segments and
+[09:28] how is nvidia's divid policy changing so
+[09:30] do with that as you will but I think
+[09:32] that's kind of interesting to look at
+[09:33] anyways let's see here
+[09:35] so one was Gemini two was open Ai and
+[09:38] three was anthropic so um you know it's
+[09:43] pretty similar but interesting to see
+[09:44] here so for round two we got 798 it's a
+[09:47] pretty tight race um open Ai and
+[09:50] anthropic right now are tied which is
+[09:51] interesting but Gemini is not too far
+[09:52] behind and we have speed coming up which
+[09:55] as you can see it's been pretty killer
+[09:56] so let's move into response coherence
+[09:58] and completement okay this time we're
+[09:59] starting with open AI I'm going to paste
+[10:01] in the query here and send this off and
+[10:03] I'm not going to show you guys the
+[10:03] process from now on of me doing it with
+[10:05] every single agent because that would
+[10:07] just take too long the video would be
+[10:08] too long but um I'll show you guys all
+[10:10] the responses and you how they're graded
+[10:13] but anyways for this one we said
+[10:14] summarize the key financial highlights
+[10:15] of nvidia's q1 fiscal 2025 result so
+[10:19] I'll let you guys know okay we just got
+[10:20] the grade back so if you want to like
+[10:22] you know pause and see what it's talking
+[10:23] about you can but the first one was open
+[10:25] AI the second one was anthropic and this
+[10:27] one was Gemini so I'm going to update
+[10:28] our scoreboard okay now we're moving on
+[10:31] to speed which is exciting because I
+[10:32] think that Gemini May pick up some
+[10:33] ground here so let's hop back into NN
+[10:35] and send off these prompts okay we're
+[10:37] going to start with Gemini here and I
+[10:39] said summarize in video's q1 fiscal 2025
+[10:41] growth drivers and how they plan to
+[10:43] address the generative AI Market that
+[10:45] was really quick um and what we're going
+[10:47] to be doing here for this one is
+[10:49] actually just looking at the execution
+[10:51] time and then um assessing based on that
+[10:54] so we've got this um let's send off the
+[10:56] same question to um what's his name open
+[11:00] AI so we'll hit this off um and I know
+[11:03] you know maybe it's not a perfect
+[11:04] experiment because we're not actually
+[11:06] evaluating the content in this test
+[11:09] parameter but this one I just wanted to
+[11:11] send off like a multi-step query and
+[11:13] just see how long it takes so we've got
+[11:15] that one now and let's go to anthropic
+[11:19] finally um and send this one off and so
+[11:22] you know one time I was doing this
+[11:23] experiment kind of just for fun between
+[11:25] Claude and
+[11:26] gbt and I was using like the timer on my
+[11:29] phone to actually do this but I realized
+[11:31] so much smarter to just look at the
+[11:32] execution that has the actual
+[11:34] milliseconds of of speed so yeah okay so
+[11:38] that one just finished up we'll click at
+[11:39] executions and we'll see wow flash was
+[11:43] 6.7 seconds GPT was 11 seconds and then
+[11:47] open a or anthropic CLA was almost 21
+[11:50] seconds so that's that's kind of a big
+[11:52] jump here okay so here's my reasoning I
+[11:55] decided to go flash 10 open AI 8 and
+[11:58] anthropic 6
+[12:00] because um open a was basically double
+[12:03] the time it took for Google and then
+[12:06] anthropic was basically double the time
+[12:07] it took for open a so that's what we're
+[12:09] going to go with let's keep going down
+[12:11] this experiment so for test number five
+[12:13] we've got context window management and
+[12:15] I didn't know a great way to test this
+[12:16] so I'm just going to say summarize as
+[12:18] much of the earnings report as possible
+[12:20] and we'll just see how much comes back
+[12:22] and how accurate it is and um we'll give
+[12:25] the grade based on that okay here's what
+[12:27] we got from anthropic let me paste that
+[12:28] into the and then we'll move on to open
+[12:30] AI now we're sending it off to open Ai
+[12:32] and then last but not least let's hook
+[12:34] up our Gemini agent and send it off to
+[12:36] that guy as well okay so this is
+[12:38] interesting I said the exact same prompt
+[12:39] obviously to the the three agents but
+[12:42] when I did it to Gemini it said okay I
+[12:44] understand I'll use the Nvidia tool to
+[12:45] retrieve the latest earnings and provide
+[12:47] a summary please provide your query so
+[12:49] I'm just going to I'm just going to say
+[12:52] summarize at all we'll see if it does
+[12:55] the same thing again okay it's doing the
+[12:56] same thing again I'm an AI agent
+[12:58] specializing in Nvidia financial data
+[13:00] I'll use the tool blah blah blah um I
+[13:02] will focus on accuracy and avoid
+[13:04] speculation providing only factual
+[13:05] information okay so I'm not sure what to
+[13:08] do here you know I decided we gave it
+[13:10] two chances so I'm not going to um give
+[13:13] it a third we're going to just spit out
+[13:15] what it actually said to us so anthropic
+[13:18] right now as you can see got a 10 out of
+[13:19] 10 open AI is getting an 8 out of 10 and
+[13:22] Gemini got 3 out of 10 so you know come
+[13:25] at me in the comments if you will maybe
+[13:27] this experiment isn't perfect but I
+[13:29] think it's kind of interesting so I
+[13:30] updated that in the scoreboard and I
+[13:31] just put an asterisk here because you
+[13:33] know maybe if this would have been a six
+[13:34] or a seven it wouldn't be so far behind
+[13:36] as far as you know Gemini wouldn't be so
+[13:37] far behind so maybe at the end we'll
+[13:39] look at that again but for now let's
+[13:40] keep moving on um with number six so for
+[13:44] handling conflicting information what
+[13:45] I'm going to do is in here as you can
+[13:47] see we have the total current assets at
+[13:49] 53 729 or over here 44 345 so in um NN
+[13:55] what I'm going to say is can you give me
+[13:57] a breakdown of the total current assets
+[13:59] why is it 88500 so we'll send this off
+[14:01] and it should come back and say like
+[14:03] that's actually not what it is um here's
+[14:05] the information so I apologize for the
+[14:07] confusion the total current assets as of
+[14:09] April is 53 million not 88 million um
+[14:13] and I do not have the ability to explain
+[14:14] why it's 53 million okay now we're going
+[14:16] to send this one off to open AI so it
+[14:18] breaks down the total current assets
+[14:19] which it says it's 49 so it did the I
+[14:22] don't know where it actually got that 49
+[14:24] from but at least it corrects us and
+[14:25] says that the 88 isn't actually in there
+[14:28] so we'll see but anyways finally let's
+[14:30] send this one off to anthropic and so
+[14:32] maybe it's because you know we put in a
+[14:34] PDF to Pine Cone and just the way that
+[14:35] we split it and the way it got
+[14:37] vectorized maybe wasn't ideal as far as
+[14:39] just like a wall of of text because this
+[14:41] was like a PDF and it was kind of like a
+[14:42] table chart format but anyways anthropic
+[14:45] gives us a pretty good response back it
+[14:46] also highlights that we didn't find the
+[14:49] 88 so maybe we found that elsewhere but
+[14:51] let's see what the grades look like for
+[14:53] this test okay so number one was from
+[14:56] Google we got a 5 out of 10 number two
+[14:58] was from open a we got a 7 out of 10 um
+[15:01] it also it points that it mistat the
+[15:03] total current assets is 49 instead of
+[15:05] the correct 53 so and then anthropic
+[15:08] gets a nine so I'm curious as to why
+[15:10] Google got a worse score than open AI
+[15:12] it's because it does not provide a
+[15:13] breakdown or explain where the
+[15:15] discrepancy might stem from um although
+[15:18] if I was to be grading this I would have
+[15:20] gave Google a better score than open AI
+[15:22] but just want to keep it consistent so
+[15:24] anyways maybe it's because I'm using an
+[15:26] open ey tool to create open eyes
+[15:27] responses even though it doesn't know
+[15:29] which one's which but I don't know
+[15:31] finally we've got Source attribution so
+[15:33] what I'm going to do is say please tell
+[15:34] me exactly in the document where to find
+[15:37] stock-based compensation so hopefully
+[15:38] it's able to search through the
+[15:39] different tables and the different pages
+[15:41] find the stock-based compensation maybe
+[15:43] even give us a breakdown of it and then
+[15:44] tell us like what section in there we
+[15:46] can actually go find it if we want to go
+[15:48] look by ourselves and get more
+[15:50] information right now open AI is doing
+[15:52] the same thing stock based compensation
+[15:53] details can be found in section B which
+[15:55] covers expenses blah blah blah finally
+[15:57] hitting it off to Google Gemini flash
+[15:59] which I've been very impressed by the
+[16:00] speed of flash probably why it got its
+[16:02] name but anyways let's see what we get
+[16:04] back from this guy so in this one the
+[16:06] first response was anthropic it got a 9
+[16:08] out of 10 it provided a good detailed
+[16:10] guide on where to find it opening eye
+[16:12] got a 6 out of 10 and then flash got an
+[16:14] 8 out of 10 so again I know I'm not
+[16:16] going super in depth about each
+[16:17] responses strengths and weaknesses just
+[16:19] thought this would be a cool way to
+[16:20] grade but feel free to pause the video
+[16:22] if you want to read more about sort of
+[16:24] the responses and why each of them got
+[16:26] the number that they did okay so here
+[16:27] are the end results Claude 3.5 in first
+[16:30] place with
+[16:31] 8.6 GPT 40 second place 7.7 and then
+[16:34] Gemini flash 2.0 got a 6.9 so I thought
+[16:38] this was super interesting the green is
+[16:40] the highest score per test and then we
+[16:42] had three Perfect 10 which was Cloud 2.5
+[16:45] with response coherence and completeness
+[16:47] Gemini with speed and then Cloud 3.5
+[16:50] with context window management in
+[16:52] general what I've sort of seen is that I
+[16:55] like to use gbt 40 a lot for agentic
+[16:58] functions like calling and sort of that
+[16:59] reasoning aspect anything that has to do
+[17:01] with like creating information so in
+[17:04] this case Claude is creating queries to
+[17:06] send a the vector databases and then
+[17:08] also taking that augmented response from
+[17:10] the vector database and creating content
+[17:12] for us that's more human-like human
+[17:13] readable um if you saw my video about
+[17:16] creating the newsletter assistant or the
+[17:18] team of like research assistants to help
+[17:20] with creating newsletters I was using
+[17:21] Claude 3.5 for the research and for the
+[17:24] editing because I just really like the
+[17:25] way that Claud structures its its
+[17:27] responses and then you know Gemini is
+[17:29] super powerful and for being a free
+[17:32] model that you can hook up super super
+[17:34] fast it's really quick like it blew both
+[17:36] of these models out of the water on
+[17:38] speed that's obviously why it got a 10
+[17:39] and like keep in mind this um this
+[17:43] section it didn't actually understand
+[17:44] the query so it got a three but if it
+[17:46] would have understood the query and
+[17:47] returned something back it probably
+[17:49] would have been you know like maybe a
+[17:50] six or a seven um if you give it a six
+[17:53] here it's like almost tied with open AI
+[17:55] like even if this would have got you
+[17:56] know a seven or an eight it's right up
+[17:58] there too so that's one sort of like you
+[18:01] know outlier I would say but you know
+[18:02] they're all obviously great models when
+[18:04] it comes to actually trying to figure
+[18:05] out which one's the best I don't really
+[18:07] think there's like the best option it
+[18:09] really just comes down to what's the use
+[18:10] case what am I looking for here do I
+[18:12] have any restrictions as far as cost or
+[18:14] um I want to self host that kind of
+[18:16] stuff um or sorry run it locally so it
+[18:18] really just comes down to testing for
+[18:20] your use case um usually at the end of a
+[18:22] project I'll throw in different models
+[18:23] and do a lot of testing there um and
+[18:25] just see which which kind of outputs I
+[18:27] like better as far as like I said tool
+[18:28] calling or the actual output so I hope
+[18:30] you guys enjoyed this one I know it
+[18:31] wasn't Perfect by any means and I was
+[18:33] using an open AI model to grade all of
+[18:35] these different models um I just wanted
+[18:37] to keep things consistent and show you
+[18:38] guys what it looks like to run the same
+[18:40] prompt through different models but
+[18:42] that's going to be it for this one
+[18:43] definely found a like if you found this
+[18:44] one helpful or interesting or funny in
+[18:46] some way I always appreciate you guys
+[18:47] making it to the end of these videos and
+[18:49] I'll see you guys in the next one

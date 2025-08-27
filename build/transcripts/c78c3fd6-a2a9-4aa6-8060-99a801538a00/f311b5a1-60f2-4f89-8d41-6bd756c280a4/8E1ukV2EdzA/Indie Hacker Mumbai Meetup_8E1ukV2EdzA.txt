@@ -1,0 +1,1701 @@
+Video Title: Indie Hacker Mumbai Meetup
+Video ID: 8E1ukV2EdzA
+URL: https://www.youtube.com/watch?v=8E1ukV2EdzA
+View Count: 9,912
+
+[04:08] Check. Check. Check here.
+[18:01] very
+[18:02] friendly. Nice to meet you, man. Okay,
+[18:05] we Okay, we got guys like just go, you
+[18:09] know, like in front of me. Yeah. Yeah.
+[18:11] Yeah. Like really uh like face to face.
+[18:16] Okay. You can even come in the center if
+[18:18] you want. Sit down. It's up to you.
+[18:21] Okay. Sit down. Why not? Okay. That's
+[18:23] fun. We we tried this morning to imagine
+[18:25] how and imagine but just perfect you
+[18:27] know. Okay.
+[18:30] Um
+[18:32] so I think we uh can like we have
+[18:35] everything
+[18:36] live Twitter every like everything
+[18:39] working. We have no Okay. Okay. So we
+[18:42] can start. Okay. Okay. Okay. Uh well
+[18:44] pardon me. I'm also a little stressed
+[18:45] because uh I normally never do
+[18:47] presentation. That's the first time I
+[18:48] take a microphone. So my heart is
+[18:51] bumping like crazy at the moment.
+[18:54] Um, I'm super grateful for all of you
+[18:56] coming here. Um, we're going to we have
+[18:58] cooked a few stuff this morning. So,
+[19:00] we're going to have fun. Um, we're going
+[19:02] to start with uh this. I want to show
+[19:04] you this those two things. You can scan
+[19:06] this if you want. Uh, during the meetup,
+[19:08] you will need this uh QR code at some
+[19:10] point. We're going to do some kind of
+[19:12] like Q&A. So we actually built a mini
+[19:14] app this morning where you can submit
+[19:17] question about them like product hunt
+[19:19] but for this meetup specifically and
+[19:23] this is a this is a weird experiment
+[19:25] where if you flash it you will see all
+[19:27] of you guys in this room and maybe the
+[19:29] people watching the live stream uh on
+[19:31] the globe. So this is a this this is
+[19:34] just a fun experiment. I will show this
+[19:36] later if you want but it's good if you
+[19:37] scan it now because you'll have to
+[19:38] create an account for this to submit
+[19:40] questions. So hopefully we we limit the
+[19:42] spam. Uh I don't know where that's going
+[19:44] to go but we can give it a try. Okay.
+[19:48] Curious who here uh came and flew or
+[19:51] took a train who is not from
+[19:53] Mumbai. Oh wow. That's about half of the
+[19:56] room. That's sick.
+[19:58] Okay. Super cool. Okay. Thanks. Thank
+[20:00] you all of you for coming. This is
+[20:02] amazing. Um a few questions. Who who
+[20:05] here can code or vibe
+[20:09] code? So we literally have GitHub here.
+[20:12] Okay. Okay. Cool. Who has built some
+[20:16] sort of like tiny side project and push
+[20:18] to
+[20:19] production? Almost the entire room as
+[20:21] well. Who is who has made $1
+[20:24] online or Indian
+[20:27] rupia? Okay. Okay. And who makes enough
+[20:30] to not have a
+[20:33] job? That's so cool. Oh, so nice. Okay.
+[20:36] Okay. And who is retired?
+[20:38] [Laughter]
+[20:42] Okay. Um, well, I wanted to start really
+[20:44] quick with a a little story. This is
+[20:47] 2021. This was one of the very first
+[20:49] tweets I made. Um, I think we most of us
+[20:52] are here because of this person here,
+[20:54] Peter Levels, who inspired most of us to
+[20:57] get started. Uh, for me it started in
+[20:59] 2021 and I started sharing my thoughts
+[21:01] on the internet and back then I had uh,
+[21:04] no goal. I just packed three years of
+[21:06] kind of failure. I would say nothing
+[21:08] crazy was really happening but I just
+[21:10] thought you know I would start again the
+[21:11] journey with a simple approach just make
+[21:14] a bunch of apps uh build them fast see
+[21:17] what sticks and just move on quickly
+[21:20] obviously my stripe dashboard would look
+[21:21] like this most of the days um but after
+[21:24] keeping practicing for months and maybe
+[21:26] years I one of my projects started to uh
+[21:30] take off and a few others later and that
+[21:33] things change and um and life you become
+[21:37] even uh better. So I was really happy
+[21:39] and I wanted to mention that it is like
+[21:42] we often call it luck or something else
+[21:44] but this is not about you know getting
+[21:47] lucky. This is not about being super
+[21:49] smart or have massive skills or
+[21:51] anything. In the end the my journey at
+[21:53] least came from people the people I've
+[21:56] met across this journey are the one who
+[21:58] helped me get from like the zero stage
+[22:01] to uh talking to all of you guys right
+[22:03] now. Um those are some of the people I
+[22:06] met that have literally changed my life.
+[22:08] The guy who initiated me about
+[22:10] marketing. Um I mean those guys too. Uh
+[22:12] those are like they they inspired me so
+[22:14] much. Uh I got a chance to at some point
+[22:17] talk to them and they shaped they they
+[22:19] would tell me what I was doing wrong.
+[22:20] They would tell me what I should do
+[22:22] instead. And I've been listening to them
+[22:23] and that's the those are the part of the
+[22:25] journey that made me go from like
+[22:27] nothing to uh again this. And so since
+[22:30] it's mostly about people, that's why I
+[22:33] started organizing those little events.
+[22:35] Uh I started in France where I'm from
+[22:37] back was it four months ago. The first
+[22:39] one was in January this year. Uh people
+[22:42] loved it because um again the idea is to
+[22:44] help you guys find someone next to you
+[22:47] who hopefully can become your
+[22:48] co-founder, can inspire you, can
+[22:50] challenge you. It's very important to
+[22:51] challenge each other. Um so I'm trying
+[22:53] to make those events in order for you
+[22:55] guys to you know connect because you
+[22:57] already have something in common. you
+[22:58] are apparently all developers which is a
+[23:00] good thing. You also have this like
+[23:02] desire to create your own project. So
+[23:04] that's why you're all here together
+[23:05] today. Um talking about other people, my
+[23:09] wife who is right here is one of also
+[23:12] the person that really impacted a lot in
+[23:14] the journey. Um she's been supportive
+[23:16] for everything and this is very
+[23:18] important. And I wanted to show this
+[23:20] photo of my good friend Wahab here. Uh
+[23:23] we could see right on with the pink
+[23:25] shirt. uh he we started working together
+[23:28] last year. He has been the brain and he
+[23:31] still is the brain behind uh data fast a
+[23:33] web analytics tools that I made. Uh he
+[23:35] handles all the server stuff and um and
+[23:38] again like this wouldn't be possible
+[23:40] without him and it's just wanted to you
+[23:42] know really uh emphasize on how
+[23:44] important people around you
+[23:47] are. Um okay this is a very nice chip
+[23:52] generative image with the quote to
+[23:54] summarize it's all about the people
+[23:56] around you that will uh help you in this
+[23:58] journey. So what we're going to do for
+[24:00] this meetup because the goal is uh I
+[24:02] hope you come back with you know friends
+[24:03] and stuff. So we're going to do start
+[24:05] with a little fireside fireside chat. Uh
+[24:07] we're going to be is going to be 30
+[24:09] minutes. We're going to use the cure
+[24:10] code. I'm going to go over that later.
+[24:12] Uh then we're going to go over a little
+[24:13] debug my startup session where uh the
+[24:16] stage will disappear. You guys will hang
+[24:17] out with five people and you will try
+[24:20] each other to debug uh whatever bug
+[24:22] you're having at the moment. I'm going
+[24:23] to explain also a little later what
+[24:24] we're going to do and we're going to
+[24:25] finish uh with whatever time we have
+[24:27] left with vibe chatting u you know just
+[24:30] no mic and we're going to be around here
+[24:32] and if you guys want to chat or whatever
+[24:34] we're going to be doing just that. Um I
+[24:37] also wanted to mention one thing this
+[24:38] company here uh was so kind to sponsor
+[24:41] this meetup. So this entire venue is
+[24:42] possible because of uh code rabbit. It's
+[24:45] a little tool that help you ship safe.
+[24:47] It reuses your code when you push to
+[24:49] prod. Uh they also very kind to give me
+[24:50] a coupon code. Actually, I think I read.
+[24:53] No, I don't. Oh, yeah. Like Marlue, if
+[24:55] you use this code, you will get two
+[24:57] months for free, which is very nice of
+[24:58] them. So, thank you, God Rabbit. Um with
+[25:02] nothing further ado, we can start with a
+[25:03] fireside chat. So, for that,
+[25:06] um what we So, it's going to be some
+[25:09] sort of a Q&A. Hear me out. I'm trying
+[25:10] something here. It's going to be a sort
+[25:12] of a Q&A if you so you will have this uh
+[25:15] QR code here where you can ask questions
+[25:17] or we can also ask questions just like
+[25:19] this. The person who asked the question
+[25:20] will come with me on the stage. It's
+[25:22] it's scary. I I'll admit like my heart
+[25:24] is still bumping but it's fun. We're
+[25:26] going to give you a mic and you can ask
+[25:28] any questions because I receive lots of
+[25:30] uh DM from people and I realize that
+[25:32] often the questions are kind of similar
+[25:33] and I I hope that I could answer like
+[25:35] help in any way answer those questions
+[25:38] uh live because you might have the same
+[25:40] question as your neighbor, the person
+[25:41] next to you or anything. So, um feel
+[25:44] free to ask anything. There's a you'll
+[25:45] see there's a form uh we're going to I
+[25:47] think we're going to ask people who've
+[25:50] been working. I didn't make this up.
+[25:51] This is what helped you who uh build the
+[25:54] entire MVP this morning. And we're going
+[25:56] to see which questions are coming up.
+[25:58] And there we go. Do we have any like we
+[26:03] have lots of questions. Oh, sick. Maybe
+[26:05] you want to do you want to come on the
+[26:08] stage? I know. Okay. I know you don't
+[26:10] like stage. Okay. Maybe I'll just take
+[26:12] the phone
+[26:13] then. Thanks.
+[26:18] Okay. Okay.
+[26:21] Okay. All right. How do you build
+[26:24] distributions from Vich V? Do we have
+[26:28] Vich V here?
+[26:30] V I S HV.
+[26:33] Yeah. Come on in,
+[26:34] buddy. Do we have the second mic as
+[26:36] well? Yeah. Uh, okay. We You know what?
+[26:41] Nice to meet Nice to meet you. Your name
+[26:43] is Vish, right? Visha. Okay. So, what
+[26:47] are you working on at the moment? Uh, I
+[26:49] have built a concept mapmaker. Um so it
+[26:52] generates content. Um so like the
+[26:56] problem it solve is that when you enter
+[26:58] any info in chat GPD you keep on asking
+[27:01] it question so you have to scroll all
+[27:02] the way down and then find it again and
+[27:04] again. So my app what it does is it
+[27:07] makes maps around the content like let's
+[27:09] say you want to study computer science
+[27:11] so it will map a content on the screen.
+[27:13] You can drag the nodes and elements.
+[27:15] It's quite interactive like it's not um
+[27:18] it's not a normal website. You can
+[27:21] generate um content any concept you can
+[27:24] study. Uh you can even link YouTube
+[27:26] videos research paper and now I'm
+[27:28] working on Wikipedia plug-in to pull
+[27:30] Wikipedia information inside that. Okay.
+[27:34] Okay. And at the moment do you have have
+[27:36] you launched to prod? Uh yeah it's
+[27:41] live man do you think we could get his
+[27:43] website on the projector that would be
+[27:46] super fun.
+[27:48] What is what is your URL? What is where
+[27:51] could we find the the site? Uh
+[27:55] onel concept map AI concept map. Um
+[28:00] should I type it? Yeah, actually yeah.
+[28:02] It's fine.
+[28:07] So I think the question is about
+[28:09] distribution which is probably the
+[28:10] number one question people ask me. It's
+[28:13] like mostly marketing.
+[28:17] So hopefully we get something out of
+[28:33] the So this is
+[28:41] it. Okay.
+[28:45] So,
+[28:47] oh, okay. So, can you walk us around how
+[28:51] does it does it work like real quick?
+[28:53] Um, okay.
+[28:59] Oh, it's like is it you make map like
+[29:01] road maps? Uh, no concept map. It uh
+[29:04] links the information about any thing
+[29:06] you are learning. Okay. Okay. Okay. So,
+[29:09] what are the numbers at the moment? Like
+[29:10] how many users do you have? Uh, no.
+[29:13] Zero. Zero. Okay. You're Okay. You're
+[29:14] about to push it live. Uh, it is live,
+[29:16] but um I don't have any users yet. Okay.
+[29:19] Okay. What how did you set up your
+[29:21] pricing for this one? I haven't. It's
+[29:23] open source. Like if you if you have
+[29:25] your open uh open API, you can use it
+[29:28] locally. Oh, okay. So, you're targeting
+[29:30] developers mostly. Yeah, like the open
+[29:32] source kind kind of thing. Yeah. And so,
+[29:35] you the question was about distribution.
+[29:37] Your goal is to get more contributors.
+[29:39] Uh, yeah. And users. I I want people to
+[29:41] use it.
+[29:43] Okay. Okay. Okay.
+[29:45] Okay. And so it's completely free. Yeah.
+[29:48] Okay. Um can you could you scroll the to
+[29:52] the hero
+[29:56] section? Yeah. If you can like scroll
+[29:58] back to the top of the site just to see
+[29:59] the
+[30:03] headline. Okay. It's so you said so you
+[30:06] you have zero users using it at the
+[30:08] moment but have you have you had people
+[30:10] sign up? Uh mostly my friends I don't
+[30:13] have like organic real users for this.
+[30:15] Okay. And did you launch on Twitter like
+[30:18] all the launching platforms? Uh yeah I
+[30:20] tried uh get uh Twitter and then um
+[30:23] Reddit. Okay. How they go?
+[30:27] Uh no views. No views. Okay. Okay. Okay.
+[30:31] Um, I think in your case you want you
+[30:34] either want to like be super specific to
+[30:36] the people who would be using this. So
+[30:38] find like a I don't know like
+[30:40] developers/d doctors or something like
+[30:42] like really a specific niche of people
+[30:43] and speak their language and like find
+[30:46] 10 people who absolutely love the app.
+[30:48] 10 people that you don't know that
+[30:50] absolutely love the app. Okay, that's I
+[30:52] think that's would be one way to do
+[30:57] it. Let me think.
+[31:01] I think have you considered making it
+[31:03] paid because you're you're it solves a
+[31:06] problem like a a strong problem for
+[31:08] people. Have you considered opening like
+[31:10] adding a pricing p page on it or
+[31:12] something? No, but I can think about
+[31:13] pricing and all.
+[31:15] Okay. I think you might there's one
+[31:18] thing also I've learned is the fact that
+[31:20] you ask people for like a payment ahead
+[31:23] or not necessarily ahead but the fact
+[31:25] that you make something paid makes
+[31:28] people value your work. When it's free
+[31:30] there's a tendency of like oh it's free
+[31:32] I'll check it out later. When it's paid
+[31:34] you pay attention because you know that
+[31:36] there is something there there could be
+[31:37] some value out there for you. Okay. So I
+[31:40] think I would probably consider the
+[31:41] paying
+[31:42] road especially if you're targeting
+[31:44] developers because developers usually
+[31:45] have you know like they have they have
+[31:47] money
+[31:48] so I'm targeting uh general audience
+[31:51] like students, teachers, professor like
+[31:53] you can learn anything on this like not
+[31:55] developer specific but you said you have
+[31:58] to use your open AI key right? Yeah. If
+[32:00] you want to set up locally you can use
+[32:01] it. Okay. I would be crystal clear about
+[32:03] that. You want to I think it's a it's a
+[32:06] positioning thing here. You want to know
+[32:08] who would be using this app. Maybe
+[32:10] you're doing it maybe for your sister
+[32:12] who is, I don't know, studying how to
+[32:13] become a vet or something. You want to
+[32:15] target those people and speak their
+[32:16] language because if you land on a site
+[32:18] and you show too many options, people
+[32:20] will tend to just drop and not care
+[32:23] because there are too much things
+[32:24] available for them. That's why one of
+[32:26] the things that I love the most is to
+[32:28] launch the minimal version of a product,
+[32:30] the simplest one, like ultra very
+[32:32] targeted towards one specific type of
+[32:34] people, and then you pass the message
+[32:36] directly to them. And if it's a flop,
+[32:38] you can just rebrand and make a new, now
+[32:40] you say concept map.AI, you can rebrand
+[32:43] it, rename it or something, and try a
+[32:45] new launch of the same concept, but for
+[32:47] a different niche. Okay. And that way
+[32:49] you have multiple shots and you can you
+[32:51] can keep the same product with a
+[32:52] different landing page and shot multiple
+[32:55] times for different niche and hopefully
+[32:57] at some point one will stick. Yeah. Any
+[32:59] Yeah. Okay. Yeah. I got it. Okay. Cool.
+[33:05] [Music]
+[33:05] [Applause]
+[33:11] Oh, if you find something interesting.
+[33:13] This is interesting. Okay. This one the
+[33:16] the first line is interesting. First
+[33:18] dollar is always the hardest like a
+[33:20] pull-up. So if you have to start today,
+[33:23] how would you market your product with a
+[33:24] zero dollar budget from Kai? Do we have
+[33:28] a Kai? You have a Kai. Do you want to
+[33:29] come on stage? Yeah. Nice. Okay. Nice,
+[33:32] man. So your name is Kai, right? No. No.
+[33:34] My name is S like I use some other
+[33:36] account. Okay. Nickname. Nice. Yeah.
+[33:40] Fine. So yeah, it's always the first
+[33:42] pullup is always a difficult like even
+[33:44] it was with my case and many of others.
+[33:46] I guess the second, third, fourth is
+[33:47] easier. Similarly with our startups, the
+[33:49] first dollar is the hardest one to get
+[33:51] the first customer. So if you want to if
+[33:53] you are starting today not on 2021, how
+[33:56] you you market your products to get your
+[33:58] first dollar with zero audience, you
+[34:00] don't have 100k like you have that on
+[34:02] Twitter or somewhere.
+[34:04] Okay. Uh do do you want me to answer
+[34:07] specifically about you or do you want me
+[34:08] to answer how would I do it really?
+[34:10] Yeah. How you will be doing it like with
+[34:12] zero budget? Because see this helps me
+[34:14] to learn how you are thinking like what
+[34:16] are the other ways other channels that I
+[34:17] can also use. Okay. And there I think
+[34:20] there are many ways to get customers.
+[34:21] There are some guys who are crushing it
+[34:23] with being completely anonymous. My
+[34:25] thing I like building an audience
+[34:26] because this is happening and this is
+[34:28] amazing. So I would definitely build an
+[34:31] audience again. I would start from
+[34:33] scratch. Whatever I would do to try
+[34:35] building an audience. I think Twitter is
+[34:37] a really good place to get started
+[34:38] because it's easy to make a tweet. Okay.
+[34:41] And sometimes you don't know, you can
+[34:42] randomly go viral. So, I would go with
+[34:44] Twitter, but I wouldn't use Twitter as
+[34:46] my go-to place. I would probably think
+[34:49] difference and have either an account on
+[34:52] Instagram, Instagram, Tik Tok, like
+[34:54] those short form platform or more
+[34:56] long-term videos with a proper YouTube
+[34:58] channel. Okay, I would start like this
+[35:01] because Twitter is also getting more
+[35:03] competitive. If you were on Twitter like
+[35:05] in 2018, there were barely any indie
+[35:07] hackers. It was small smaller community.
+[35:09] it was kind of easier to get your
+[35:10] product outside but also you would get
+[35:12] less traffic. So a different story now.
+[35:14] I think it's getting busier. You can
+[35:16] still stand out but it's there's more
+[35:18] competition. So if you go for other
+[35:20] platforms where like to be honest like
+[35:22] indie hacking the soloreneur journey
+[35:25] none of my friends who are not part of
+[35:27] this community they still have no idea
+[35:28] how developers make money with their own
+[35:29] project. So you project so if you reach
+[35:33] out to them on YouTube, Instagram, Tik
+[35:34] Tok, you get a way bigger audience. It's
+[35:37] like 10x the size of Twitter. And so you
+[35:39] would have to find what you feel
+[35:41] comfortable with. Um, for instance, if
+[35:43] you're really good at making photos,
+[35:44] like taking beautiful photos and writing
+[35:46] a nice story, you can go on Instagram
+[35:48] and tell your stories through photos.
+[35:49] But if you're like a good with videos
+[35:52] and you like to, you know, you like to
+[35:54] edit videos, I like editing my own
+[35:55] videos is fun. You can make a YouTube
+[35:57] channel. It's slower than Twitter, but
+[35:59] each videos has way more chance and way
+[36:01] more um expansion that you would have on
+[36:03] Twitter. Yeah, got it. So, that was the
+[36:06] thing I wanted to know. Thanks for
+[36:08] asking. Yeah.
+[36:10] [Applause]
+[36:14] Yes, sir.
+[36:19] Just to follow up on his question.
+[36:21] Sorry, I I couldn't hear you super well.
+[36:22] Follow his question. Oh, the Oh, yeah.
+[36:24] Sure, sure. Sure. You mentioned
+[36:26] Instagram. Yeah.
+[36:29] Yeah.
+[36:32] I am 30 years old and I suck at YouTube
+[36:35] shorts because I don't use it myself.
+[36:39] I I tried a little bit. I think there's
+[36:41] some guys crushing it. Maybe you guys
+[36:43] have heard of Jack Freaks. He makes like
+[36:45] short form content and he makes a lot of
+[36:47] them and it's kind of similar to the way
+[36:49] we do little startups. Like most of them
+[36:52] will fail, but if one takes off, you can
+[36:55] get lots of traffic. I think the
+[36:57] downsides of shorts is you don't it's
+[37:00] hard it's harder to build a brand that
+[37:02] people really trust because you see it
+[37:03] really quick and you move on. But for
+[37:05] starting a project, I think this is a a
+[37:07] killer way to, you know, get your first
+[37:09] thousand visitors on the site.
+[37:13] Where is it?
+[37:18] Oh, that's a tricky one. Yeah. Is it?
+[37:20] Oh, okay. I mean, you can scroll. Yeah.
+[37:24] That's pretty fun. I do. We know how
+[37:26] many questions have been asked. It's the
+[37:29] whole In total, yeah, in total. I don't
+[37:31] know. It's pretty fun.
+[37:38] Uh, oh, that's a good one. Actually, a
+[37:41] lot of indie people we see online prefer
+[37:43] web apps over mobile apps. Why did you
+[37:46] never give a go at mobile apps? From
+[37:49] Mustafa. Do you have Mustafa? Yeah, come
+[37:51] on in. Do we have
+[37:54] a what's up? Hi. Hi. I'm good. Uh, thank
+[37:58] you for first of all making your way all
+[37:59] the way to Mumbai and hosting this
+[38:00] meetup. So yeah, the question I had is I
+[38:03] see a lot of these developers online,
+[38:05] they have these huge web apps or they
+[38:07] mostly prefer web apps. Is it because
+[38:09] it's easier to set up, billing is
+[38:12] simple, no review process or why is the
+[38:14] reason why you've never ventured into
+[38:15] making mobile apps? I think most
+[38:18] developers have this like really desire
+[38:20] for freedom and having someone reviewing
+[38:22] your app and telling you no, no, no, you
+[38:25] cannot pass the app store review there.
+[38:27] There's a frustration inside of me that
+[38:30] is like a how dare you saying me no.
+[38:31] Yeah. Uh I actually I tried a few ones.
+[38:35] I I have three apps on the stores.
+[38:36] They're just tiny apps.
+[38:39] Um I think this part like the the fact
+[38:42] that it's as you say it's easier. Uh
+[38:44] it's also it takes longer to ship your
+[38:46] app. If it takes like two weeks to be
+[38:48] reviewed from the app store, it's kind
+[38:50] of a momentum killer. You want to be in
+[38:52] the flow of you make a bunch of apps
+[38:53] until one sticks. And if you have to
+[38:55] wait for what do you do for two weeks
+[38:57] you know like now that that's a myth
+[38:59] that it takes two weeks at least now it
+[39:01] takes one or two days at best so it's
+[39:03] good but now that you have distribution
+[39:04] setup so for instance Danny Postma he
+[39:06] has headshot pro very successful product
+[39:09] but not on the app store at all where
+[39:11] most people would be more inclined to
+[39:14] just posting their pictures and getting
+[39:15] head shot or something. I want to know
+[39:17] why would a developer like Peter Levels
+[39:19] also has cracked it. People would
+[39:21] probably be wanting a more mobile
+[39:22] friendly app of his or something. So why
+[39:25] would they never think of making a
+[39:26] mobile app out of it? I think this is
+[39:28] about to change right now. There are
+[39:30] multiple reasons as you said it's much
+[39:31] easier to make a web app and like making
+[39:35] an app for iOS and Android. If you
+[39:37] either if you go native, you have to
+[39:38] make two apps. And if you use erect
+[39:40] native as the web developer, you have to
+[39:41] learn a new
+[39:42] language, but and also the the app store
+[39:45] payments, they they get like a 30% cut,
+[39:48] but you're getting zero dollars anyway
+[39:50] on it, right? So if it's like at least
+[39:53] you make money and you still give 30%,
+[39:55] it's fine than making no money, right?
+[39:56] Oh, yeah. No, no. I mean, honestly, I'm
+[39:58] with you 100%. I think it used to be a
+[40:00] time where it was hard and you know, now
+[40:02] there are two things that are happening.
+[40:03] The first one is AI. So it's much easier
+[40:05] to build a mobile app. The second one is
+[40:07] like you've seen guys the Apple news
+[40:09] like they got they lost the lawsuit. So
+[40:12] now you can have a stripe link to your
+[40:13] app which is absolutely amazing. I think
+[40:15] there will be much more apps made from
+[40:17] indies because of that and I think
+[40:20] you're right and this is an untapped
+[40:22] segment and I think there's a huge
+[40:24] opportunity for indies. You just take an
+[40:25] app that's working on the web and you
+[40:26] make it as a web app. Yeah cuz I've been
+[40:28] an indie dev on mobile for like uh 6
+[40:31] years now or 5 years I don't remember.
+[40:32] So I've been full-time indie dev. Now I
+[40:35] have a small company. So I have a small
+[40:36] indie studio. So we make indie apps
+[40:38] ourselves. And what we've done is we've
+[40:40] always focused on mobile. We've never
+[40:42] thought let's make a web app because
+[40:44] distributing a web app is tough because
+[40:46] people on the internet are not really
+[40:48] searching for products and on mobile
+[40:51] people are like hey let me find my task
+[40:52] manager, let me find my calendar app and
+[40:55] all of these things, right? So, I always
+[40:56] thought mobile was the way to go. And
+[40:59] seeing people making these web apps for
+[41:01] all things that could be mobile apps.
+[41:03] Like I'm Danny makes a lot of money, but
+[41:05] I know a lot of other headshot tools on
+[41:07] mobile making a lot more money. Yeah.
+[41:09] Right. So, why wouldn't he want to jump
+[41:11] on to that action and be the guy on the
+[41:13] web? So, that was my main confusion.
+[41:15] We're going to pass a message to Denny
+[41:16] Posar right here watching the stream.
+[41:18] Why are you not making a mobile app?
+[41:20] We'll probably question him on Twitter.
+[41:21] Yeah. Perfect. Awesome. That's it's I
+[41:23] think it's a really good point. I think
+[41:24] if you're considering joining on the
+[41:26] journey, consider making mobile apps
+[41:28] because it's easier than ever because
+[41:30] now Apple doesn't get a cut on on it.
+[41:32] And as you said, technically only in the
+[41:34] US though, but isn't it where most of
+[41:36] the money comes from? Yeah, that's true.
+[41:38] 90% of the revenue is America. Okay,
+[41:41] that's it. Thank you so much. That's a
+[41:42] good man. Thanks.
+[41:43] [Music]
+[41:52] Oh, maybe this one is I think it's a
+[41:54] good one. Yeah. Yeah. Yeah. Okay. The
+[41:56] name is Rish Risha. Rishab H. Rishab.
+[42:00] Oh, maybe I should the question. What
+[42:02] advice would you give to someone
+[42:04] launching their first startup today
+[42:06] while having a 9 to5?
+[42:09] Rishab H. Is Richab on the room with us?
+[42:13] Come on here.
+[42:16] What's the man? Nice.
+[42:19] Yeah.
+[42:21] Okay. So, what's your 925? Uh my 925 is
+[42:24] basically being a software engineer uh
+[42:26] at Insure Tech. So right now I'm
+[42:28] planning to like previously I was uh
+[42:31] building uh like AI voice agents uh
+[42:34] previous in my previous work uh but
+[42:36] right now I wanted to continue it as my
+[42:38] own venture but having let's say
+[42:41] financial constraints such as student
+[42:43] debts or anything like parents or
+[42:45] something. So in that case how I'm
+[42:48] supposed to like break through uh and
+[42:50] having like uh someone just mentioned
+[42:52] earlier like h uh even if uh we don't
+[42:55] have uh like distribution while I let's
+[42:58] say I have built a product I I want to
+[43:00] distribute in the Twitter as well I
+[43:02] don't have much of followers so in that
+[43:05] case how I'm supposed to crack that out
+[43:09] okay how much do you like how much free
+[43:11] time do you have uh let's say four or
+[43:14] five hours per day. Okay. You work from
+[43:18] home? Yes. Okay. This is this is really
+[43:20] good. Okay.
+[43:21] Um I think I think it's it's it comes
+[43:25] down to your personal preference whether
+[43:26] or not you should quit your job or not.
+[43:28] Yeah. Like some people first some people
+[43:31] live with very few money and they do
+[43:33] well. Some people are more frugal and
+[43:35] they need more money. So it really
+[43:37] depends on how you feel. And also if you
+[43:39] make lots of money you can also have the
+[43:41] stress of not making enough money. So
+[43:43] it's, you know, it's like it's really
+[43:44] inside of your head to make this
+[43:46] decision or not whether you should quit
+[43:48] your 9 to5. I think it has been proven
+[43:50] now the community is big and we've seen
+[43:52] lots of people that you can make it as a
+[43:54] solo like full-time entrepreneur or as a
+[43:58] part-time like 9 to5 building on the
+[44:00] side on weekends. Um I think Tony Din if
+[44:03] I'm not mistaken where he started he was
+[44:06] like on part-time which is a big maker.
+[44:09] So like it's you know like there are a
+[44:10] bunch of people who made it on both uh
+[44:12] sites. So I wouldn't you know if you I
+[44:15] would really let your heart speak and
+[44:17] decide or not if it's worth quitting the
+[44:18] job. Let's say I'm uh doing it uh having
+[44:21] both on the sides. Uh but in that case
+[44:24] uh how I can crack it while having the
+[44:27] distribution.
+[44:29] The distribution I think it's it does
+[44:32] it's not something that you can you know
+[44:34] have or not have. I think it come with
+[44:35] the time and you will get it based on
+[44:37] the hours you put in. I think in the end
+[44:39] the the journey is always the same. You
+[44:41] want to make stuff, you want to get
+[44:42] people's attention and then you grow a
+[44:44] tiny audience which give you a tiny
+[44:45] distribution and then you repeat repeat
+[44:47] repeat and at some point one will take
+[44:49] off and then you will have a more like
+[44:51] like higher leverage with a bigger
+[44:53] distribution at this time. Um but again
+[44:56] distribution is you know like what I do
+[44:59] mostly with Twitter and stuff. It's like
+[45:00] a social media but you have tons of
+[45:02] other distribution channel. I made my
+[45:04] first internet dollar with cold emails.
+[45:07] It's boring. Really boring as
+[45:09] Takes time as well. Yeah. But but it's
+[45:11] much easier and you have way higher uh
+[45:13] return on investment early because right
+[45:16] now you could go go back sit and send a
+[45:18] cold email and within 15 minutes you
+[45:20] could have tested your idea. That's is
+[45:22] much easier to do that than building an
+[45:24] audience. An audience on the long term
+[45:26] it gives you like it's a massive asset
+[45:28] is really good. But you can start with a
+[45:29] cold email and actually knowing that you
+[45:31] have limited time, I'll probably give it
+[45:34] a try to like have those either ads or
+[45:36] cold emails channels that are like that
+[45:39] makes sense. Yeah. Okay. Thank you so
+[45:40] much. Welcome. Thank you so much.
+[45:43] [Applause]
+[45:54] Should we go take Huh?
+[45:58] Maybe this one. Yeah. Yeah. Okay. How?
+[46:00] Yeah. Because the take. Yeah. Read tap
+[46:03] tap refer. That's interesting. How do
+[46:04] you manage so many things like shipping
+[46:06] projects, YouTube, fitness, meetup and
+[46:09] whatnot? What
+[46:11] not? It was from it's not a named who
+[46:15] asked this question here. I'm not sure
+[46:17] this
+[46:19] is okay. I don't think we have the
+[46:21] person who has the question because
+[46:22] there was no name. But it's okay. I can
+[46:25] Okay. Tap reapfer. Tap refer. Yeah. Oh,
+[46:28] I think I know it's a software, huh? Do
+[46:30] you guys know tap refer? Oh, yeah. Okay.
+[46:33] Okay. I don't know how this this
+[46:34] question come, but it seems legit. So,
+[46:37] um, how do you manage to do stuff? It's
+[46:40] I think I think time management is
+[46:42] mostly prior priorities. There used to
+[46:46] be a time where shipping lots of app was
+[46:48] my number one priority and that's how I
+[46:50] made so many. And so I would wake up in
+[46:52] the morning, I would have one goal is to
+[46:54] ship something by the end of the day or
+[46:56] by the end of the week. Uh now things
+[46:59] change a little bit and f uh like health
+[47:02] becomes another new priority. So like
+[47:05] starting the day with a workout also
+[47:07] becomes my number one priority. So
+[47:08] there's not a single day where I skip a
+[47:10] workout. And so you know like this this
+[47:14] is how you this is I manage my time
+[47:15] because I I want to achieve the number
+[47:17] one priority and it just comes with the
+[47:20] time. They It's hard to show how it was
+[47:24] before, but things were much more
+[47:26] chaotic than they were now. And things
+[47:28] right now are also much more chaotic
+[47:30] than what I show on on Twitter and
+[47:32] YouTube. Um there's no, you know, like
+[47:35] there's nothing perfect. There's no
+[47:36] illusion of a perfect day where I crush
+[47:38] six hours of work and everything
+[47:39] imperfect. I'm happy. I eat healthy.
+[47:42] Yeah. Like there's always a little bit
+[47:44] like a Yeah, there's always a little bit
+[47:45] of hard part during the day, struggles,
+[47:48] unhappiness, and all that. So uh yeah I
+[47:50] guess it's a constant battle. I don't
+[47:51] think it really goes away. I don't think
+[47:53] there's a secret source. I think it
+[47:54] matters really on what you know what you
+[47:56] really want to achieve and the priority
+[47:57] the schedule the the productivity will
+[48:00] come with it.
+[48:02] Good. Okay.
+[48:07] Maybe we do one more. Yeah. Yeah. Okay.
+[48:10] So what is it? Our patch. Our patch.
+[48:15] The patch. Oh, what is it?
+[48:18] Oh, do you want to come?
+[48:23] Oh. Oh, okay. Yeah, I'll be happy to do
+[48:26] that, but at the end of the meet up.
+[48:27] Okay. No, it's actually it'll be fun
+[48:29] here. Yeah. I mean, in short, uh I mean,
+[48:32] it's up to you. Okay, guys. I think it'd
+[48:34] be fun.
+[48:36] We We do.
+[48:38] Okay. Okay. Let's make a vote. It's up
+[48:41] to you guys. How about pitching a
+[48:42] startup live? Raise your hand if you
+[48:44] want to do it or you prefer to do it at
+[48:46] the
+[48:47] end. Okay, we have a mixing. Okay, we'll
+[48:49] we'll do it. We'll do it at the end.
+[48:50] Okay. Yeah.
+[48:53] Okay.
+[48:55] Um Oh, okay. This Yeah, Shakib. Okay. I
+[48:59] have two ideas in my mind and I am
+[49:00] always confused about the audience.
+[49:03] Should I start should I start finding
+[49:05] people or users initially for my own
+[49:07] country or globally or should I first
+[49:10] launch
+[49:11] it? Huh? So was it was the name was
+[49:14] Shakib. Do we have Shakib here?
+[49:17] Oh yeah, man. Come on in.
+[49:22] What's up? Nice to meet you. Nice to
+[49:24] meet you too. So um I'm a beginner. I'm
+[49:27] a self developer at I'm 17 and I'm
+[49:30] building I have two mind I mean I have
+[49:33] two ideas in my mind. One is a idea
+[49:35] smash app a web app. Basically you can
+[49:38] just come and post your ideas and then
+[49:41] see who likes it and you know you know
+[49:43] sometimes you you are confused that our
+[49:45] ideas are not good or bad you know and
+[49:49] we come to people and say no I pitched
+[49:52] our idea you know and people just rate
+[49:54] it it's good or bad so I'm just making
+[49:56] an uh social media app in which you can
+[49:59] just post your ideas and get get a like
+[50:02] or fl basically we have two options hate
+[50:05] it or flop it Okay, just like and
+[50:08] dislike. Okay. So yeah, this is one idea
+[50:11] and one idea is creating a social
+[50:13] platform for basically exclusively for
+[50:16] coders and techy peoples in which we can
+[50:20] have fun you know we have LinkedIn but
+[50:22] it's professional we have Instagram but
+[50:24] it's for it's just for fun for everyone
+[50:26] there's no any social media platform for
+[50:29] specifically for coders you know so my
+[50:33] main question is uh what should I do I
+[50:36] should find the I mean audience audience
+[50:38] the peoples who will going to register
+[50:40] to my uh platform first. I should find
+[50:43] audience first or I should just uh
+[50:46] launch it first and then wait for
+[50:47] audience. Okay. I think you have two uh
+[50:51] two great ideas. I think the first one I
+[50:54] would make it ASAP and launch it ASAP.
+[50:56] Don't care about the users just make it
+[50:58] this is something that anyone can
+[51:00] understand. Make it in a way that can go
+[51:03] viral. Um this is again take my like
+[51:06] take my words with a pinch of salt. I
+[51:08] don't think you will be able to make
+[51:09] money from this, but you will be able to
+[51:11] go viral and you would use that to grow
+[51:14] your audience. It's fun. Like pinch it
+[51:17] or leave it or whatever you come up
+[51:18] with. Like there's a, you know, kind of
+[51:20] like Tinder for ideas. There's a, you
+[51:22] know, you can get something here that
+[51:24] can go viral that people can relate and
+[51:26] you add a link to your Twitter or
+[51:28] whatever this is you're building on and
+[51:30] people will follow you and like, oh,
+[51:31] this guy is cool. Like he has fun ideas.
+[51:33] It's fun. It will also teach you about
+[51:35] launching platforms like product hunts
+[51:36] and you know a bunch of you know those
+[51:38] launch platforms. So you're going to
+[51:39] level up your skills using that. And
+[51:42] then your second idea I think like
+[51:44] you're like a like social media
+[51:46] marketplace it's more advanced. So I
+[51:48] would do it
+[51:50] after I would I would probably
+[51:54] it's I don't know I I think you if you
+[51:58] you want for these kind of ideas you
+[51:59] want to start with your friends. You
+[52:01] want to have a little group of friends
+[52:02] who are similar and would use your app
+[52:05] not just because you made it but because
+[52:07] they need it. Cuz a social media can go
+[52:09] really big but it's also really hard to
+[52:11] create another social media because now
+[52:12] we have Twitter, uh YouTube, Instagram,
+[52:14] Tik Tok and so it's it's also you know
+[52:16] like going on and switching for another
+[52:18] social media that's a lot of work as a
+[52:20] user too. So you really need to to solve
+[52:22] a specific thing for people because I
+[52:24] think a social media for developer is
+[52:26] big. There are like millions of
+[52:27] developers across the world. So you
+[52:29] might want to find like for developers
+[52:30] who built on this platform or something
+[52:33] like this like really specific social
+[52:35] media for developer I I think it's white
+[52:37] but again take with a pinch of salt
+[52:39] because I have seen project that I
+[52:42] thought were stupid and they took off
+[52:44] and the same time you know like it's
+[52:45] it's a ideas are are not that important.
+[52:50] It's how you execute on this idea. How
+[52:52] you turn it into like a final product
+[52:54] that matters the most. So build both.
+[52:57] Start with the easy one first. go viral,
+[52:59] grow an audience, and launch the second
+[53:00] one. Thanks.
+[53:06] [Applause]
+[53:08] Okay, so it was the first time. Wow. Oh,
+[53:13] okay. Didn't expect to see that. That's
+[53:14] a bunch of people. Um, it's the first
+[53:16] time I do this kind of like a fireside
+[53:20] chat. I hope you guys liked it. It was
+[53:23] fun. Now we're going to move on to the
+[53:25] next one where I'm going to get my
+[53:28] controller right here and we're going to
+[53:30] this is something I call debug master
+[53:31] startup. It's basically we're going to
+[53:32] form groups of like five people. So
+[53:35] you're going to meet you're going to be
+[53:36] with five people. Every five minutes one
+[53:39] person will introduce their project and
+[53:41] ask one problem they struggle with. So
+[53:44] um we've had like you know which of my
+[53:46] ideas should I work on? You can share
+[53:48] that share it quickly so people
+[53:50] understand what you're working on and
+[53:51] then the other four will try to help
+[53:52] you. And then every five minutes I'll
+[53:54] say in the m with a mic you're going to
+[53:56] rotate. Someone else will ask a question
+[53:58] and the other four are going to help him
+[54:00] or her. And we're going to do that for
+[54:01] five minutes. So one person will get to
+[54:03] five minutes to ask their problems and
+[54:04] the rest of the time you guys will be
+[54:06] help try to help a person. Sound
+[54:09] good? Okay. Okay. So what you can do is
+[54:13] you can just scatter around the room. We
+[54:14] have the entire space. So just move
+[54:16] around like um you know meet with your
+[54:19] neighbor like ask questions um and try
+[54:21] to find group of five. I'll give you one
+[54:23] minute to find five people and then
+[54:26] we're going to start the
+[54:27] timer. All right. Run around. Go left.
+[54:31] Go right. Turn.
+[54:35] Is it okay? Yeah.
+[54:42] I know.
+[54:52] Okay, I think we are
+[55:00] I think
+[55:01] they're okay. I'll have
+[55:04] to I think I give this just one more
+[55:07] minute.
+[55:22] Okay, guys. If you struggle for space,
+[55:24] there's a little bit of space here.
+[55:39] Okay.
+[55:44] Okay. So, we are going to start in five,
+[55:48] four, 3, two, one. Go ahead. One person
+[55:53] ask a question and try to help this
+[55:58] person. How did we do? How did we do?
+[56:02] Okay. Yeah.
+[56:03] Yeah. Sure. Sure. That's a fun one.
+[56:06] Yeah. So, we have All right. Nice. Who
+[56:08] wants to start?
+[56:09] Uh yes. So basically I have a
+[56:21] like President
+[56:47] [Music]
+[56:59] It's like a you have a banner that is
+[57:01] consistent. You can like it's like a
+[57:02] piece of code I can put everywhere.
+[57:04] Yeah. Like basically what user
+[57:44] That's
+[58:04] why I think in your case uh Because in
+[58:08] this case, what you want is you if you
+[58:09] want to validate an idea, you want
+[58:11] people to pay for it. It's only valid.
+[58:13] Like it's easy for me to put a like
+[58:14] because I like you and I like your idea.
+[58:17] But now putting my credit cards and
+[58:18] paying for your ideas for his idea, it's
+[58:21] another type of validation. I think in
+[58:23] this case, in your case, you want you
+[58:24] want people to use your app. Yes. How do
+[58:26] you monetize? What is your pricing like?
+[58:28] Uh like there there are multiple
+[58:30] templates for like multiple designs
+[58:32] basically. One one design will be free
+[58:34] and other will be paid. Okay. Why are
+[58:37] you doing this? Because I think people
+[58:41] people need consistent branding like
+[58:43] they don't have a particular brand brand
+[58:45] or identity.
+[59:03] [Music]
+[59:18] Do you have any specific segment of
+[59:19] people you want to target? Are you like
+[59:21] companies, entrepreneurs, developers,
+[59:24] students? Yes, indie hackers.
+[59:28] Okay. It's a raw feedback.
+[59:30] I think it's hard to make money with
+[59:32] that because it's like a vitamin. it
+[59:35] falls in the vitamin category. And so
+[59:37] it's a nice thing. Now, if I'm starting,
+[59:40] if I'm getting started, I don't have a
+[59:42] lot of money, I'm going to invest my
+[59:43] money only on things where I know it's
+[59:45] going to double the revenue. And so, in
+[59:47] your case, I would rather do it myself
+[59:50] than take the time to understand your
+[59:52] product, eventually pay and do it with
+[59:54] your service. So I think either what you
+[59:57] can do is you can you can target like
+[59:59] bigger companies who have lots of money
+[60:01] and then yes in this case like
+[60:03] consistent branding for instance like
+[60:04] you have those like AI head shot you
+[60:06] know like a company right where they
+[60:08] have like all blue background or they're
+[60:09] all professional or they all look all
+[60:11] casual all you know Indian style or
+[60:13] whatever then in this case it makes
+[60:15] sense because they're a company so they
+[60:16] have lots of money and they struggle
+[60:18] really with it because if they want to
+[60:20] change the branding of like their team
+[60:22] page they need to change the photo of
+[60:24] person A person B person C and then in
+[60:26] this case you solve it's not a vitamin
+[60:28] you solve like an actual problem. Okay,
+[60:31] that would be my takeaway. Yeah, you
+[60:33] guys have a take away. Yeah, I think he
+[60:35] need to start.
+[61:30] makers, but companies very different. If
+[61:31] you go for that, I think cold emails is
+[61:34] definitely one of the number one thing
+[61:35] you can do. This with SEO and just call
+[61:38] outreach in general, I think would work.
+[61:40] Also, how much does it cost?
+[61:59] Yeah. And usually it's very professional
+[62:01] and stuff. Yeah. Worth giving a try.
+[62:04] Okay. Okay. You guys want to you guys
+[62:06] want to rotate? I have a question. I
+[62:09] asked for the pen. Okay. What is your
+[62:12] what what are you building and what do
+[62:13] you struggle with? Actually want to show
+[62:14] it because it's lowkey a funny. I made
+[62:16] it all the way here. The ultimate pitch
+[62:18] is like you fund my runway and I quit
+[62:20] tomorrow. That is the gist of it and
+[62:23] I'll give you like what the product does
+[62:25] and what the other two ideas are. So
+[62:27] like 6 month run and the one product is
+[62:29] already ready. It's an AI video and I'll
+[62:31] be targeting companies with it. I need
+[62:33] your like mentorship like for 6 months
+[62:36] to explain to me how like this dynamic
+[62:38] works, how do I price this, how do I uh
+[62:41] like basically I'll be doing everything.
+[62:42] I just want your input. Is this correct?
+[62:44] Is this the way to go about it or not? I
+[62:46] think it's a good place for you to share
+[62:47] your ideas with the group. So the idea
+[62:49] is basically an AI video. You put in a
+[62:52] prompt, you give it a screen, you give
+[62:53] it whatever you want. You can literally
+[62:55] give it like one word like World War II
+[62:57] inflatable tanks. That would be a prompt
+[62:59] and create an entire video with a voice
+[63:01] over with images with videos with
+[63:03] captions all of it. Right now I'm
+[63:05] working on like custom
+[63:08] updation. So you can literally get give
+[63:11] one image and it'll integrate the
+[63:12] product in the story. So it'll also
+[63:14] create the story and integrate the
+[63:16] actual product in the story and then
+[63:17] custom avatars can create infinite
+[63:19] avatars. And these are the two things
+[63:21] that most AI video editors are not
+[63:22] doing. And the reason for me to like
+[63:23] venture to you for your mentorship as
+[63:25] well as the runway is when I started
+[63:27] this I was ahead of the curve but now I
+[63:29] see all the features that I have all the
+[63:30] AI video that they just have thoseh
+[63:34] features but now I want to like you know
+[63:37] get ahead of that. So for that why have
+[63:39] you launched your first idea? Uh no you
+[63:42] have to launch it man. Yeah. Otherwise
+[63:44] this is what you're doing. You know
+[63:44] you're jumping onto the next one. No I'm
+[63:46] not jumping. It's like building feature
+[63:48] onto it. I need the runway to launch the
+[63:49] idea. That's the thing. I've tried
+[63:51] building it with my corporate job with
+[63:53] everything. It's not working out.
+[63:55] You really got to launch it. That's very
+[63:57] I think especially now it's like it's
+[63:59] booming right. Yeah exactly. I was ahead
+[64:01] of the curve and now I'm behind the
+[64:02] curve. So that's why I need to like get
+[64:04] ahead of the curve and then launch it
+[64:05] again. I think we I'll be launching it
+[64:07] within the first week anyway, but I'll
+[64:08] be working on the uh like in the first
+[64:11] month. So, I'll launch it in the first
+[64:13] week and then keep iterating on it. So,
+[64:16] I like take the lead. Yeah. I I think
+[64:18] you're we're still way ahead of the
+[64:20] curve. Like the AI like you don't see
+[64:22] good AI video, right? Images are getting
+[64:25] really good. I'm already using that
+[64:28] videos are really bad. All videos are
+[64:30] really bad. So, I think you got you got
+[64:32] something now. You're going to put it
+[64:33] outside. That's what I was saying. And
+[64:34] the pitch is actually funny. That's why
+[64:35] I wanted to like to show it to everyone
+[64:37] as well. Yeah. And I have two more ideas
+[64:39] and that I'll be building in these 6
+[64:41] months time only. One of them is you
+[64:42] guys have heard of portions
+[64:45] right? So no do you know like 3D uh
+[64:48] scans photoggramometry. So the concept
+[64:51] of that is have you guys played
+[64:54] clubmanropica any of the games massively
+[64:57] multiplayer role playing games or the
+[64:58] fighting ones? Browser based online
+[65:00] games. Have you played any games?
+[65:02] Runescape. No, I haven't. I heard that.
+[65:04] You know, you know what it is, right?
+[65:06] It's like a multiplayer online role
+[65:07] playing game. So, the idea here is this
+[65:09] is a mobile based game. You basically
+[65:11] scan yourself in 3D and then you have a
+[65:12] 3D car of yourself and then you are in
+[65:14] this RPG world which is a mobile based
+[65:16] game and then you chat with people. You
+[65:18] play mini games and yeah that is one
+[65:20] idea. The other idea is celebrity
+[65:22] combat. He has so many ideas and he has
+[65:24] to shift.
+[65:26] Yeah, we have to make him shift and that
+[65:28] is the pitch. I need to shift. I need
+[65:30] your help. I need your ship. That's the
+[65:31] pitch. Yeah. You want sgest from all of
+[65:33] us or just No, I want sgest from all
+[65:37] mentorship
+[65:39] from you know, right? Yeah. Yeah. Yeah.
+[65:43] Oh I totally forgot. I I'm also a
+[65:45] YouTuber. I also make content. I also
+[65:46] need to go on that. I do that. Yeah. We
+[65:50] obviously like I had a in
+[65:55] a try to show it to people like not
+[65:59] because he made those product because
+[66:02] the reason for me to pitch is because I
+[66:04] want to be I don't have the time to be I
+[66:07] don't have the money to be I like
+[66:11] you have too many ideas if you scatter
+[66:13] all of it then you will think about lot
+[66:15] of one idea only the AI like I an entire
+[66:19] road map. I'm not scattering myself.
+[66:21] Like even this the ideas came after you
+[66:23] cutting down like 100 ideas. That's
+[66:27] how you have to give yourself a
+[66:28] deadline. That's the deadline. You get
+[66:30] rid of the project and you move on to
+[66:31] the next one.
+[66:34] I need to launch it. You got to make a
+[66:35] amendment. You have to commit to one
+[66:37] deadline with the group. So say it out
+[66:40] loud. I will finish. I will
+[66:42] quit and launch my products as soon as
+[66:45] possible. No.
+[66:47] We
+[66:48] need 20 as soon as possible. What date?
+[66:51] What? What date is it? First launch.
+[66:54] Which date? Give us give us Yeah. 14th
+[66:57] of May. 14th May. Yeah. 14th May works.
+[67:00] Just the website, not the back end
+[67:01] connected. Okay. Maybe a back end with
+[67:03] like one prompt. Maybe the back end.
+[67:04] It's coming again. Maybe the back end
+[67:06] with one prompt. You can like No, you
+[67:08] have a link on May 14th. You have a
+[67:09] link. People can do whatever. Do
+[67:12] whatever. They can sign up. They can I
+[67:13] get their emails and if they email me
+[67:15] the prompt I send them the videos. It's
+[67:17] up to you. But you will be you have to
+[67:18] be public about the Yes. Yes. Yes. I'll
+[67:19] be Yeah. You sign one week. Yeah. You
+[67:21] sign May 14th.
+[67:23] I'll do you even better. May 14th. You
+[67:25] you set a deadline for May 14th and you
+[67:27] you know what you you send me a DM and
+[67:30] you show me the project. How about not
+[67:32] even 14th? 12th May. Next Monday. 12th
+[67:35] May works too. Okay. Dill. Okay. E 12th
+[67:38] of May. I should have recorded
+[67:40] this. I recorded this. He's the guy with
+[67:41] the GoPro. I all recorded and all
+[67:43] remember
+[67:45] how does this question okay if you were
+[67:48] 18 today would you choose to go to
+[67:50] college or go all in in AI right now
+[67:54] it's a tough one because I'm not a
+[67:56] parents so I don't know like I know
+[67:58] especially in India parents are like
+[67:59] really care about their kids I'm 18
+[68:00] that's why I'm asking what should I do
+[68:02] right now like because I'm getting
+[68:04] confused because I have to go to college
+[68:07] and pursue the CS degree and I'm working
+[68:09] on apps and ideas so what should I do
+[68:12] like should I go all in in AI or because
+[68:15] I feel like I'm missing out on this
+[68:17] context do both you can actually show to
+[68:21] people if you get the traction if you
+[68:23] have the money you can opt out if you
+[68:25] want if your problem is not having
+[68:27] enough network you should definitely
+[68:29] pursue college that way you can build
+[68:30] network
+[68:33] I I think I I just finished I think you
+[68:37] as you say like you could do both I
+[68:40] think you are here on a Sunday
+[68:41] afternoon. This is not like you're not
+[68:43] just playing around getting drunk with
+[68:45] your friends. You're here because of a
+[68:46] reason. I would follow that. And so I'll
+[68:49] probably go and follow my passion for
+[68:51] AI. In the worst case, you can still go
+[68:52] university at 19. Yeah, that's one way
+[68:54] of do it. Thank you. That's good. I for
+[68:57] you.
+[69:01] I came from all the way just to Okay. I
+[69:04] just finished 9 years ago. Okay. Okay.
+[69:07] So we made this project uh while in like
+[69:10] uh space season 5 and
+[69:14] there I'm actually M uh we we are both
+[69:18] oh sh Oh man yeah so we we did like 600
+[69:24] in gross revenue till now 630 but I
+[69:27] don't know how to develop this more like
+[69:29] what features to add and uh like how to
+[69:33] grow this is just abandoned right now
+[69:35] this is just staying and we are not
+[69:37] working on it. Okay. And you want to
+[69:39] give it the second life. Why do you want
+[69:42] to give it the second life? Um because I
+[69:44] I see the potential. Um at the time I
+[69:47] had two people working with me. They
+[69:50] were helping on the code side.
+[69:53] I
+[70:03] don't college.
+[70:06] Okay. So now with one of my friends or
+[70:11] in
+[70:12] person that's a good story. So like I
+[70:15] don't know what features to add now like
+[70:17] how to develop this company. How does it
+[70:18] work? How do I use your product to go
+[70:20] viral? So this is like you can paste in
+[70:24] any YouTube video. So this was just the
+[70:26] first prototype. You can paste in any
+[70:28] YouTube video like Neville's video and
+[70:30] you will get like 10 or 20 short post
+[70:33] that you can post over time to build
+[70:35] your personal brand to to be active on X
+[70:38] and to be active on X and to get the
+[70:41] eyeballs to your profile and then to
+[70:42] your product. So this is my vision. You
+[70:45] extract shorts. Yeah. And you make we
+[70:48] extract YouTube videos and we make and
+[70:51] short short post on Twitter. Okay,
+[70:54] thanks. So like can I show you right
+[70:56] now? Yeah. Yeah, sure. Just one second.
+[71:01] So basically I will give you a link.
+[71:02] You'll give me a uh I'll give you a
+[71:04] YouTube link and you will extract those
+[71:06] the um I mean the transcription and then
+[71:10] uh the back end will process it. I mean
+[71:12] no it's normal prompt. Okay. Yeah. You
+[71:14] create shorts with AI. No, kind of. No,
+[71:16] it's not like a video creat.
+[71:22] He doesn't create videos. You make a
+[71:24] Twitter post. Okay. Yeah. Oh, okay. I
+[71:26] see. If you want to create videos from
+[71:30] long form, you can use Yeah. Yeah. I
+[71:32] Yeah, that's why I was asking because I
+[71:34] know there are a bunch of great tools.
+[71:35] Yeah. ask really intimate
+[71:38] question. Oh, that's a great one. So, so
+[71:43] there is like um this one um share ask
+[71:49] your uh Okay, let's let's do the
+[71:52] mark. Let's do the mark. I I watch all
+[71:55] the videos.
+[71:57] Oh,
+[71:58] videos
+[72:00] live a while back. Okay. Okay.
+[72:04] Yeah, about Zen voice. I think that was
+[72:07] so so here I have portion of thread long
+[72:10] post or short post. So I'll I'll opt in
+[72:13] for long post
+[72:18] and you're going to make a thread. Yeah.
+[72:20] Just one single long post the new
+[72:22] feature. Okay. You summarize the video
+[72:23] where Okay. Yeah. Exactly. And how do
+[72:26] you price at the moment? Um this is like
+[72:28] $15 and
+[72:30] $30. I mean the the pricing right now on
+[72:33] the product. Okay. One time payment. No.
+[72:37] Oh. $15 per month. Yeah. Per month
+[72:39] subscription. Okay. We have right now um
+[72:43] like $30 a month. Okay. Okay. So, what I
+[72:47] would do I think the monthly recurring
+[72:49] revenue makes sense. What I would do is
+[72:51] the Jack Freak strategy. Okay. Yeah.
+[72:53] Jack. So you you you want to show
+[72:56] that this works for someone who is not
+[73:00] even on Twitter. You want to basically
+[73:03] show that you can grow a Twitter account
+[73:04] from zero to a,000 followers using just
+[73:07] your app. Like kind of you see on
+[73:09] YouTube videos those like those videos
+[73:10] that says like oh I made $1,000 with a
+[73:13] faceless YouTube channel. You want to be
+[73:15] the person who create those YouTube
+[73:17] those Twitter accounts and you want to
+[73:18] be able to go from zero to 1,000
+[73:20] followers just using mostly using your
+[73:22] tool and show that you see guys it's so
+[73:24] easy I just pass YouTube videos I create
+[73:25] threads I publish them on Twitter and I
+[73:27] get 1,000 followers after a month then
+[73:30] it's like it's connected to a vision
+[73:32] it's connected to exactly like a goal
+[73:34] people want that and you show like hey
+[73:35] you know I don't even have a personal
+[73:36] branding but I can use this product to
+[73:39] get a th000 followers and then you know
+[73:40] thousand followers is something that
+[73:41] people say so you can get from zero to
+[73:43] a,000 followers in I don't know 30 days
+[73:46] or something. This is like a big selling
+[73:48] point for people.
+[73:50] So, uh I just took this video of yours
+[73:54] and this is the post like can you can
+[73:56] you read the book and and like can you
+[73:57] give any rating from 1 to 10?
+[74:04] This is good man. You can you can you
+[74:05] can I think it's it's it's good way good
+[74:09] enough. Super simple prototype. It
+[74:11] doesn't matter. That's the goal. It's
+[74:12] like super simple. You want a link and
+[74:14] you give me a tweet and eventually a
+[74:16] button for me to publish it or at least
+[74:17] copy and and push it. What's important
+[74:20] here is you want success stories and you
+[74:22] have to be the first user who can go
+[74:24] from zero to,000 followers to make this
+[74:26] product. True. And you want to show that
+[74:27] anyone can do it. Like kind of you want
+[74:29] to play like oh I'm just a dumb guy you
+[74:31] know I just input this and I get that
+[74:32] out and it works. If you're able to show
+[74:34] that then people be like oh wow that's
+[74:36] amazing. and they want to try to that
+[74:37] way in this like journey of trying to go
+[74:40] from zero to a th00and from zero like
+[74:42] really from zero you're going to learn
+[74:43] stuff you're going to improve the
+[74:44] product for yourself because you'll be
+[74:45] like oh okay now I realize I need to
+[74:47] schedule the tweets in the US time zone
+[74:49] oh I need to update how the tweets are
+[74:50] written and stuff so you're going to
+[74:52] make yourself you're going to make the
+[74:53] product better by using it and then in
+[74:55] the end you have case studies like oh
+[74:56] this is working look I did it for me I
+[74:58] did it for this random guy and try to
+[75:00] get once you get a bit of momentum try
+[75:02] to get two or three or five people to
+[75:04] get in the journey with you because If
+[75:06] you also have people who have results
+[75:07] like I did with ship pass, it worked
+[75:09] because some people like, "Oh, I I
+[75:10] shipped my app in like two days or
+[75:11] something." You want to get that true
+[75:13] and so start with you. Show that it
+[75:15] works and then bring people over.
+[75:17] Pleasure. Thank you. Yeah. Pleasure.
+[75:18] Yeah.
+[75:20] Yeah. I I'll just go real quick and then
+[75:23] we're good. So, I used to watch your
+[75:25] streams and I've been with you for a
+[75:27] year. Yeah. So, I made this website.
+[75:31] Okay.
+[75:39] I mean this is a good and the marketing
+[75:43] strategy I've been using is using Tik
+[75:45] Toks even though it's when in India I'm
+[75:47] using BPA and okay and
+[75:50] Instagram and from that I've generated
+[75:53] $300 but it's really hard to make
+[75:56] content like every day I have to
+[75:58] post that Tik Tok Tik Tok. So how do you
+[76:01] make you make your product makes Tik
+[76:02] Tok? How does it work? No. So, first of
+[76:04] all, a user comes, a student comes and
+[76:07] he uploads his PDFs, for example, his
+[76:10] college PDFs like for a subject he's
+[76:12] studying. He can upload YouTube videos,
+[76:14] he can upload article URL. Yeah. And AI
+[76:18] will extract all the text from it and
+[76:21] generate quizzes and flash cards from it
+[76:23] that they can scroll. See here. So, it's
+[76:26] a learning platform. See, it's just like
+[76:29] but it speaks to us.
+[76:32] Oh, that's okay.
+[76:35] [Music]
+[76:37] That's cool. That's I think you got uh
+[76:40] how how did you get the first you said
+[76:43] $300?
+[76:44] How did you get it? Like how what how
+[76:48] was your what was your marketing and who
+[76:49] paying? So first of all, I said on
+[76:52] Reddit and I got 600 ups. Three two
+[76:55] posts were viral and most first I kept
+[76:59] it free. So the students tried it and
+[77:01] gave me feedback and I improved a lot.
+[77:20] So you have
+[77:23] one
+[77:33] [Music]
+[77:35] $7. So that's how I
+[77:39] like I like it.
+[77:46] So it's very hard for me to
+[77:48] make
+[77:52] another. So you just upload
+[77:55] your
+[77:57] videos. This is only for people who are
+[78:02] [Music]
+[78:08] in very
+[78:13] You
+[78:14] just like the
+[78:17] video for
+[78:19] me and you
+[78:28] just
+[78:30] are
+[78:32] you
+[78:34] just and then this is the
+[78:37] platform and AI added all these captions
+[78:43] Okay. I think in your
+[78:47] case I think you would say the same
+[78:49] strategy
+[78:50] as it's exactly the same. This only is
+[78:54] valuable for people if you're able to
+[78:55] show that it
+[78:57] works. So and what when I mean it works
+[79:00] it means it has an outcome like a real
+[79:02] outcome for people. The same as Jack's
+[79:04] strategy. It works because you was able
+[79:06] to prove that using his stories he was
+[79:08] able to drive millions of people on
+[79:09] autopilot and so I think I would go back
+[79:12] to your previous app and use this on top
+[79:14] of your previous app and try to get so
+[79:17] much the results right yeah and yeah
+[79:20] exactly I haven't launched it yet I just
+[79:22] completed coding it uh yesterday Oh nice
+[79:25] congrats yeah I made it in like a month
+[79:28] it was very complicated because
+[79:30] rendering hundreds of videos at the same
+[79:32] time
+[79:33] it's very complicated So I use AWS
+[79:35] Lambda. So it can scale infinitely.
+[79:38] Okay. And in only 5 minutes it can
+[79:41] generate 100. That's cool man. I think
+[79:43] if I was using VPS it would take me like
+[79:46] 3 days or something because it's like
+[79:49] it's like you one video after another
+[79:51] but in Lambda all the like 400 lambdas
+[79:55] are in go at the same time. That's good.
+[79:56] Here you have to forget about your
+[79:58] developer like we want to do that. I
+[80:00] know me too. I'm the same. I'm very but
+[80:02] remember that people using that will be
+[80:03] students. So you want to make sure like
+[80:05] I mean not the previous app you want to
+[80:06] make sure you help those students get
+[80:08] their learning materials and it works
+[80:10] for them or at least you have and then
+[80:11] you want to show that with that you're
+[80:12] able to drive hundreds and thousands of
+[80:14] visitors to this app. It doesn't matter
+[80:16] if your previous app makes lots of money
+[80:18] but you want to show you want to show
+[80:19] that this is able to drive lots of
+[80:21] visitors for any app using this and once
+[80:25] you have this you're good running little
+[80:27] time so we can resume 30 minutes
+[80:30] already. Okay. So we can resume. Okay.
+[80:33] Okay. Okay. You can call. Okay. I I'll
+[80:36] get back to Okay, guys. I will you can
+[80:38] talk about it. I we I just finished this
+[80:41] and then we wrap and I will be back
+[80:42] again. I promise. I promise we're going
+[80:43] to have a chat after everything. Okay.
+[80:47] Quick thing. Yeah. Same thing. I I I
+[80:49] really sorry. I will be here. I just
+[80:50] want to wrap you up now. I'll be here
+[80:52] again. I promise we're going to chat.
+[80:53] Yeah. I'll be around. Okay. Sure. Okay.
+[80:56] Uh I wanted you to talk about like uh
+[81:00] it's a bit vulnerable question because
+[81:02] like uh you went from someone who worked
+[81:04] at the cafe to being a visionary who can
+[81:06] like have a freedom to like work from
+[81:08] anywhere and like leave a life that
+[81:10] makes other people inspire and want to
+[81:12] change like how did that transition
+[81:15] happen? Like what mindset uh shifts help
+[81:17] you get there? Like most of us out here
+[81:19] right now most of us are like at the
+[81:21] bottom of that wealth dynamic and like a
+[81:24] beginning. So like I really want to
+[81:27] understand it like I have been doing
+[81:28] indirecting from like a 6 years
+[81:29] something. Uh I have not made much but
+[81:32] like my life was little so it was enough
+[81:34] for me but like right now I'm a lot more
+[81:37] and I want to understand where to get to
+[81:39] that that top of like being a visionary
+[81:41] level like and I'm I'm at the paycheck
+[81:44] to paycheck kind of type of person at
+[81:45] this point. So like I think it will
+[81:47] come. I think it will it's
+[81:50] a I think it's you know it's like a
+[81:52] steps like Yeah. I think it's a matter
+[81:55] of like show like showing off doing your
+[81:57] own thing. I know it's it's hard. Yeah.
+[82:00] But it will always be hard like no
+[82:02] matter what stage you are you will have
+[82:04] always problems. When you make more
+[82:05] money you will wonder like oh I struggle
+[82:07] with stacks and system and then when you
+[82:09] start hiring people it's like oh this
+[82:10] person is not working enough or
+[82:11] something. There's always love to see
+[82:13] you talk about the struggles because uh
+[82:15] most of your videos you never talked
+[82:17] about the struggles like you mentioned
+[82:19] the base thing uh like that you work in
+[82:22] and all that but like you don't dive too
+[82:25] deep into like what will you get out of
+[82:27] that the the paycheck to paycheck
+[82:33] um emails cold emails is how I got it
+[82:36] there I literally went from like a very
+[82:39] base salary minimum
+[82:40] to having an that was making the same
+[82:42] amount of money but from my computer so
+[82:44] I could leave anywhere and I moved to
+[82:46] Bali and it's because of cold emails. If
+[82:48] you build an audience it takes a lot of
+[82:49] time. It will take you a year to get to
+[82:51] a point where you get something
+[82:52] significant. Yeah. If you start cold
+[82:54] emails ads is tricky but cold emails at
+[82:57] least you can get to someone you sell to
+[82:59] B2B and you can get someone who pays a
+[83:01] lot. Yeah. Start from B2B because if
+[83:05] you're really paycheck to paycheck and
+[83:06] you need money go for B2B code emails.
+[83:08] It's boring, but you have the grief
+[83:09] inside of you because you want to get
+[83:10] out of the paycheck to paycheck life.
+[83:12] Yeah. Yeah. And then once you're out of
+[83:13] there, right, guys, we're going to do
+[83:21] I we we chat after I need to just wrap
+[83:23] the meet up. Okay. Well, cool.
+[83:28] Same.
+[83:30] Okay. Um All right, everyone. I think uh
+[83:35] well you guys are you guys okay this is
+[83:38] literally like a startup center and uh
+[83:40] everybody's having fun should we even
+[83:41] end up this meetup
+[83:45] anyway I think my okay my job is
+[83:48] accomplished now this is what I wanted
+[83:50] like people hanging out and there we go
+[83:54] um is there
+[83:58] anyone what is the strategy to make
+[84:00] people come here
+[84:07] It's working. Hey everyone,
+[84:10] I I it's amazing you're having Sophen at
+[84:12] the back. I just wanted to wrap up the
+[84:13] meet up. So, if you can come one last
+[84:16] time here, we might make a big photo.
+[84:19] One more
+[84:23] shout. Okay, guys, come on in. Come on
+[84:25] in. You can you can even move forward.
+[84:27] It's all good.
+[84:30] Okay. Uh
+[84:33] Oh, wow.
+[84:35] Wow. Okay. Maybe Oh, just maybe one
+[84:38] second and I'm just going to like little
+[84:41] closure and then we can make a photo all
+[84:42] together here. Okay. Okay. Uh Okay. At
+[84:46] the back, please come on
+[84:48] in. Um we have Oh, can we just leave
+[84:52] just a little bit of space for the
+[84:53] projector? Yeah. Where is my
+[84:57] thing? Do you get Do you has the
+[85:03] Where did I put it?
+[85:06] Oh, thank
+[85:12] you. Okay. Uh, where are
+[85:15] we? I made you all the way to show you
+[85:18] [Laughter]
+[85:21] this. Okay. Um, okay. So, I'm going to
+[85:25] be staying around. We have the venue
+[85:26] until 5:00 p.m. so we can hang out, um,
+[85:30] talk, whatever. Um, I just wanted I know
+[85:32] lots of you by raising their hands, you
+[85:34] said that you were coming here with a
+[85:35] plane, a train or something. I'm super
+[85:37] grateful for all of you guys who came
+[85:40] from far and also came from Mumbai. Uh,
+[85:42] it's amazing that you're here. I hope
+[85:44] you'll leave this meetup with a
+[85:46] co-ounder, a friend, an idea, some
+[85:47] motivation. Someone here mentioned that
+[85:49] they'll ship an app on the 14th of May.
+[85:52] So we're Yep. 12th of May. So yeah, make
+[85:55] those deadlines like like you know
+[85:57] commit to something here, find someone
+[85:59] and um and a big thanks for coming.
+[86:07] Uh okay, before we scatter everywhere
+[86:10] around, should we make a big photo?
+[86:13] Okay. Where uh what do you think would
+[86:16] be a nice uh place for a photo like
+[86:18] this?
+[86:21] Okay. Yeah, that's a good idea. better
+[86:23] lighting. Um, how do we how do we turn
+[86:26] off the projector? That's a good qu. Can
+[86:27] Okay, so can we someone turn off the
+[86:30] projector?
+[86:32] Thanks. And I
+[86:35] think Okay, should we get this angle
+[86:38] like we all gather here?
+[86:40] Okay, let's go.
+[86:43] Uh, I think facing the projector looking
+[86:45] that way like this.
+[86:48] Okay,
+[86:50] there's way more people now than there
+[86:52] were at the beginning. Wow.
+[87:08] Ah. Uh I think as as there are so many
+[87:10] people so the first rule would be sit
+[87:13] down completely and then like gradually
+[87:16] like a little bit. Yeah. Yeah. Maybe.
+[87:19] Yeah. Oh, no. Good. I think just lower.
+[87:24] Maybe more front. Can you guys come to
+[87:28] the front to see the face for everyone?
+[87:31] Yeah. I think there's so many.
+[87:36] Yeah. Okay. Maybe maybe a little bit
+[87:39] low. Low.
+[87:40] Yeah. Mark, do you want to be in the
+[87:43] center? Yeah. Yeah.
+[87:47] Everyone wants to see your ka.
+[87:55] Oh, the the people from the back you can
+[87:57] come front too. Yeah, there are more
+[88:00] space. So, please come front so that we
+[88:03] can see everyone.
+[88:08] Yeah. And maybe middle middle row a
+[88:11] little bit like a bend the knee for
+[88:13] people for the back. Okay. Okay. Sounds
+[88:17] looks better.
+[88:21] Okay. All
+[88:23] good. So, let's take a photo.
+[88:30] Okay. Okay. Oh,
+[88:32] like wow. Even iPhone cannot
+[88:37] get they need to develop
+[88:41] 0.1 zoom. Okay. Let's take one. Oh,
+[88:45] yeah. Oh, wait. Okay. Oh, he's awesome.
+[88:50] Okay.
+[88:56] Wow. Nice tool.
+[89:01] Oh, sorry.
+[89:10] Okay. Good.
+[89:17] Yes. Yes, sir. Wait, wait, wait, wait,
+[89:20] wait. Yes. Yes. Yes.
+[89:23] [Music]
+[89:25] Wait, wait, wait. Okay. Okay. Maybe I
+[89:27] hold the mic. Okay.
+[89:36] One time. Yeah.
+[89:39] Okay. One, two, three. One, two, three.
+[89:45] [Music]
+[89:49] Everybody's thumbs. Thumbs

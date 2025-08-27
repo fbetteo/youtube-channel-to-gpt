@@ -1,0 +1,482 @@
+Video Title: This AI Agent Picks Its Own Brain (10x Cheaper, n8n)
+Video ID: gwCQF--cARA
+URL: https://www.youtube.com/watch?v=gwCQF--cARA
+View Count: 37,888
+
+[00:00] If you've ever wondered which AI model
+[00:01] to use for your agents and you're tired
+[00:03] of wasting credits or overpaying for
+[00:05] basic tasks, then this video is for you
+[00:07] because today I'm going to be showing
+[00:08] you a system where the AI agent picks
+[00:10] its brain dynamically based on the task.
+[00:12] This is not only going to save you
+[00:13] money, but it's going to boost
+[00:14] performance and we're also getting full
+[00:16] visibility into the models that it's
+[00:18] choosing based on the input and we'll
+[00:20] see the output. That way, all we have to
+[00:21] do is come back over here, update the
+[00:23] prompt, and continue to optimize the
+[00:24] workflow over time. As you can see,
+[00:26] we're talking to this agent in Slack.
+[00:28] So, what I'm going to do is say, "Hey,
+[00:29] tell me a joke." You can see my failed
+[00:30] attempts over there. And it's going to
+[00:32] get this message. As you can see, it's
+[00:33] picking a model, and then it's going to
+[00:35] answer us in Slack, as well as log the
+[00:37] output. So, we can see we just got the
+[00:39] response, why don't scientists trust
+[00:40] atoms? Because they make up everything.
+[00:42] And if I go to our model log, we can see
+[00:44] we just got the input, we got the
+[00:45] output, and then we got the model which
+[00:47] was chosen, which in this case was
+[00:48] Google Gemini's 2.0 Flash. And the
+[00:51] reason it chose Flash is because this
+[00:52] was a simple input with a very simple
+[00:54] output, and it wanted to choose a free
+[00:55] model. So, we're not wasting credits for
+[00:57] no reason. All right, let's try
+[00:58] something else. I'm going to ask it to
+[00:59] create a calendar event at 1 p.m. today
+[01:01] for lunch. Once this workflow fires off,
+[01:04] it's going to choose the model. As you
+[01:05] can see, it's sending that over to the
+[01:07] dynamic agent to create that calendar
+[01:09] event. It's going to log that output and
+[01:10] then send us a message in Slack. So,
+[01:13] there we go. I just have created the
+[01:14] calendar event for lunch at 1 p.m.
+[01:16] today. If you need anything else, just
+[01:17] let me know. We click into the calendar
+[01:18] real quick. There is our launch event at
+[01:20] 1. And if we go to our log, we can see
+[01:22] that this time it used OpenAI's GBT 4.1
+[01:25] Mini. All right, we'll just do one more
+[01:27] and then we'll break it down. So, I'm
+[01:28] going to ask it to do some research on
+[01:29] AI voice agents and create a blog post.
+[01:32] Here we go. It chose a model. It's going
+[01:33] to hit Tavly to do some web research.
+[01:36] It's going to create us a blog post, log
+[01:38] the output, and send it to us in Slack.
+[01:40] So, I'll check in when that's done. All
+[01:41] right, so it just finished up and as you
+[01:43] can see, it called the Tavly tool four
+[01:45] times. So, it did some in-depth
+[01:46] research. It logged the output and we
+[01:48] just got our blog back in Slack. As you
+[01:50] can see, wow, it is pretty thorough. It
+[01:53] talks about AI voice agents, the rise of
+[01:55] voice agents. Um, there's key trends
+[01:57] like emotionally intelligent
+[01:59] interactions, advanced NLP, real-time
+[02:01] multilingual support, all this kind of
+[02:02] stuff. Um, that's the whole blog, right?
+[02:04] It ends with a conclusion. And if you're
+[02:06] wondering what model it used for this
+[02:07] task, let's go look at our log. We can
+[02:09] see that it ended up using Claude 3.7
+[02:11] sonnet. And like I said, it knew it had
+[02:13] to do research. So, it hit the table
+[02:14] tool four different times. The first
+[02:16] time it searched for AI voice agents
+[02:18] trends, then it searched for case
+[02:20] studies, then it searched for growth
+[02:22] statistics, and then it searched for
+[02:24] ethical considerations. So, it made us a
+[02:27] pretty like holistic blog. Anyways, now
+[02:29] that you've seen a quick demo of how
+[02:30] this works, let's break down how I set
+[02:32] this up. So, the first things first,
+[02:34] we're talking to it in Slack and we're
+[02:36] getting a response back in Slack. And as
+[02:38] you can see, if I scroll up here, I had
+[02:39] a a few fails at the beginning when I
+[02:41] was setting up this trigger. So, if
+[02:42] you're trying to get it set up in Slack,
+[02:44] um it can be a little bit frustrating,
+[02:45] but I have a video right up here where I
+[02:46] walk through exactly how to do that.
+[02:48] Anyways, the key here is that we're
+[02:50] using Open Router as the chat model. So,
+[02:52] if you've never used Open Router, it's
+[02:53] basically a chat model that you can
+[02:55] connect to and it basically will let you
+[02:57] route to any model that you want. So, as
+[02:59] you can see, there's 300 plus models
+[03:00] that you can access through Open Router.
+[03:02] So, the idea here is that we have the
+[03:04] first agent, which is using a free model
+[03:06] like Gemini 2.0 Flash. we have this one
+[03:08] choosing which model to use based on the
+[03:10] input. And then whatever this model
+[03:12] chooses, we're using down here
+[03:14] dynamically for the second agent to
+[03:16] actually use in order to use its tools
+[03:18] or produce some sort of output for us.
+[03:20] And just so you can see what that looks
+[03:21] like, if I come in here, you can see
+[03:22] we're using a variable. But if I got rid
+[03:24] of that and we change this to fixed, you
+[03:25] can see that we have all of these models
+[03:27] within our open router dynamic brain to
+[03:29] choose from. But what we do is instead
+[03:31] of just choosing from one of these
+[03:33] models, we're basically just pulling the
+[03:34] output from the model selector agent
+[03:37] right into here. And that's the one that
+[03:38] it uses to process the next steps. Cool.
+[03:41] So let's first take a look at the model
+[03:43] selector. What happens in here is we're
+[03:45] feeding in the actual text that we sent
+[03:47] over in Slack. So that's pretty simple.
+[03:49] We're just sending over the message. And
+[03:51] then in the system message here, this is
+[03:52] where we actually can configure the
+[03:54] different models that the AI agent has
+[03:55] access to. So I said, "You're an agent
+[03:57] responsible for selecting the most
+[03:58] suitable large language model to handle
+[04:00] a given user request. Choose only one
+[04:02] model from the list below based strictly
+[04:04] on each model's strengths." So we told
+[04:06] it to analyze the request and then
+[04:07] return only the name of the model. We
+[04:09] gave it four models. Obviously, you
+[04:11] could give it more if you wanted to. And
+[04:12] down here, available models and
+[04:14] strengths. We gave it four models and we
+[04:16] basically defined what each one's good
+[04:17] at. You could give it more than four if
+[04:18] you wanted to, but just for this sake of
+[04:20] the demo, I only gave it four. And then
+[04:22] we basically said, return only one of
+[04:24] the following strings. And as you can
+[04:26] see in this example, it returned
+[04:27] anthropic claude 3.7 sonnet. And so one
+[04:30] quick thing to note here is when you use
+[04:32] Gemini 2.0 flash, for some reason it
+[04:34] likes to output uh a new line after a
+[04:36] lot of these
+[04:38] strings. So all I had to do later is I
+[04:40] clean up this new line and I'll show you
+[04:42] exactly what I mean by that. But now we
+[04:44] have the output of our model and then we
+[04:46] move on to the actual Smartyp Pants
+[04:47] agent. So in this one, we're giving it
+[04:49] the same user message as the previous
+[04:51] agent where we're just basically coming
+[04:52] to our Slack trigger and we're dragging
+[04:54] in the text from Slack. And what I
+[04:56] wanted to show you guys is that here we
+[04:57] have a system message and all I gave it
+[04:59] was the current date and time. So I
+[05:01] didn't tell it anything about using Tavi
+[05:02] for web search. I didn't tell it how to
+[05:04] use its calendar tools. This is just
+[05:05] going to show you that it's choosing a
+[05:06] model intelligent enough to understand
+[05:08] the tools that it has and how to use
+[05:10] them. And then of course the actual
+[05:12] dynamic brain part. We looked at this a
+[05:14] little bit, but basically all I did is I
+[05:16] pulled in the output of the previous
+[05:18] agent, the model selector agent. And
+[05:20] then, like I said, we had to just trim
+[05:22] up the end because if you just drag this
+[05:24] in and Open Router was trying to
+[05:26] reference a model that had a new line
+[05:28] character after it, it would basically
+[05:30] just fail and say this model isn't
+[05:31] available. So, I trimmed up the end and
+[05:33] that's why. And you can see in my Open
+[05:35] Router account, if I go to my activity,
+[05:37] we can see which models we've used and
+[05:39] how much they've costed. So, anyways,
+[05:41] Gemini 2.0 Flash is a free model, but if
+[05:43] we use it through open router, they have
+[05:44] to take a little bit of a, you know,
+[05:46] they got to get some kickback there. So,
+[05:47] it's not exactly free, but it's really,
+[05:49] really cheap. But the idea here is, you
+[05:51] know, Claude 3.7 sonnet is more
+[05:53] expensive and we don't need to use it
+[05:54] all the time, but if we want our agent
+[05:56] to have the capability of using Claude
+[05:58] at some point, then we probably would
+[06:00] just have to plug in Claude. But now, if
+[06:02] you use this method, if you want to talk
+[06:03] to the agent just about some general
+[06:05] things or looking up something on your
+[06:06] calendar or sending an email, you don't
+[06:08] have to use Claude and waste these
+[06:09] credits. You could go ahead and use a
+[06:11] free model like 2.0 Flash or still a
+[06:13] very powerful cheap model like GPT 4.1
+[06:16] Mini. And that's not to say that 2.0
+[06:17] Flash isn't super powerful. It's just
+[06:19] more of a lightweight model. It's very
+[06:21] cheap. Anyways, that's just another cool
+[06:22] thing about Open Router. That's why I've
+[06:24] gotten in the habit of using it because
+[06:25] we can see the tokens, the cost, and the
+[06:27] breakdown of different models we've
+[06:28] used. From there, we're feeding the
+[06:30] output into a Google sheet template,
+[06:31] which by the way, you can download this
+[06:33] workflow as well as these other ones
+[06:35] down here that we'll look at in a sec.
+[06:36] You can download all this for free by
+[06:37] joining my Free School community. All
+[06:39] you have to do is go to YouTube
+[06:40] resources or search for the title of
+[06:42] this video and when you click on the
+[06:44] post associated with this video, you'll
+[06:45] have the JSON which is the end workflow
+[06:47] to download as well as you'll see this
+[06:49] Google sheet template somewhere in that
+[06:51] post so that you can just basically copy
+[06:52] it over and then you can plug everything
+[06:54] into your environment. Anyways, just
+[06:57] logging the output of course and we're
+[06:58] sending over a timestamp. So I just said
+[07:00] you know whatever time this actually
+[07:01] runs you're going to send that over. the
+[07:03] input, so the Slack message that
+[07:04] triggered this workflow. The output, I'm
+[07:07] basically just bringing the output from
+[07:08] the Smartyp Pants agent right here. And
+[07:10] then the model is the output from the
+[07:11] model selector agent. And then all
+[07:13] that's left to do is send the response
+[07:15] back to the human in Slack where we
+[07:16] connected to that same channel. And
+[07:18] we're just sending the output from the
+[07:20] agent. So hopefully this is just going
+[07:22] to open your eyes to how you can set up
+[07:23] a system so that your actual main agent
+[07:26] is dynamically picking a brain to
+[07:27] optimize your cost and performance. And
+[07:30] in a space like AI where new models are
+[07:32] coming out all the time, it's important
+[07:33] to be able to test out different ones
+[07:35] for their outputs and see like what's
+[07:36] going on here, but also to be able to
+[07:38] compare them. So, two quick tools I'll
+[07:40] show you guys. This first one is Vellum,
+[07:42] which is an LLM leaderboard. You can
+[07:43] look at like reasoning, math, coding,
+[07:46] tool use. You have all this stuff. You
+[07:48] can compare models right here where you
+[07:50] can select them and look at their
+[07:52] differences. And then also down here is
+[07:54] model comparison with um all these
+[07:56] different statistics you can look at.
+[07:57] You can look at context, window, cost,
+[07:59] and speed. So, this is a good website to
+[08:01] look at, but just keep in mind it may
+[08:02] not always be completely up to date.
+[08:04] Right here, it was updated on April
+[08:06] 17th, and today is the 30th, so doesn't
+[08:08] have like the 4.1 models. Anyways,
+[08:10] another one you could look at is this LM
+[08:12] Arena. So, I'll leave the link for this
+[08:13] one also down in the description. You
+[08:15] can basically compare different models
+[08:16] by chatting with them like side by side
+[08:18] or direct. People give ratings and then
+[08:20] you can look at the leaderboard for like
+[08:21] an overview or for text or for vision or
+[08:24] for whatever it is. just another good
+[08:26] tool to sort of compare some models.
+[08:28] Anyways, we'll just do one more quick
+[08:29] before we go on to the example down
+[08:31] below. Um because we haven't used the
+[08:33] reasoning model yet and those are
+[08:34] obviously more expensive. So, I'm asking
+[08:36] you a riddle. I said you have three
+[08:38] boxes. One has apples, one has only
+[08:39] oranges, and one has a mix of both.
+[08:41] They're all incorrectly labeled and you
+[08:43] can pick one fruit from the box without
+[08:45] looking. How can you label all boxes
+[08:47] correctly? So, let's see what it does.
+[08:49] Hopefully, it's using the reasoning
+[08:50] model. Okay, so it responded with a
+[08:52] succinct way to see it is to pick one
+[08:54] piece of fruit from the box labeled
+[08:55] apples and oranges. Since that label is
+[08:57] wrong, the box must actually contain
+[08:59] only apples or only oranges. Whatever
+[09:01] fruit you draw tells you which single
+[09:03] fruit box that really is. Once you know
+[09:05] which box is purely apples or purely
+[09:07] oranges, you can use the fact that all
+[09:09] labels are incorrect to deduce the
+[09:10] proper labels for the remaining two
+[09:12] boxes. And obviously, I had chatbt sort
+[09:14] of give me that riddle and that's
+[09:16] basically the answer it gave back. So,
+[09:17] real quick, let's go into our log and
+[09:19] we'll see which model it used. And it
+[09:21] used OpenAI's01 reasoning model. And of
+[09:24] course, we can just verify that by
+[09:25] looking right here. And we can see it is
+[09:27] OpenAI 01. So, one thing I wanted to
+[09:29] throw out there real quick is that Open
+[09:30] Router does have sort of like an auto
+[09:32] option. You can see right here, Open
+[09:34] Router/auto, but it's not going to give
+[09:36] you as much control over which models
+[09:38] you can choose from, and it may not be
+[09:40] as costefficient as being able to define
+[09:43] here are the four models you have, and
+[09:44] here's when to use each one. So, just to
+[09:46] show you guys like what that would do if
+[09:47] I said, "Hey," it's going to use its
+[09:49] model and it's going to pick one based
+[09:50] on the input. And here you can see that
+[09:52] it used GPT4 mini. And then if I go
+[09:54] ahead and send in that same riddle that
+[09:56] I sent in earlier, remember earlier it
+[09:58] chose the reasoning model, but now it's
+[10:00] going to choose probably not the
+[10:01] reasoning model. So anyways, looks like
+[10:02] it got the riddle right. And we can see
+[10:04] that the model that it chose here was
+[10:05] just GPT40. So I guess the argument is
+[10:07] yes, this is cheaper than using 01. So
+[10:09] if you want to just test out your
+[10:10] workflows by using the auto function, go
+[10:12] for it. But if you do want more control
+[10:14] over which models to use, when to use
+[10:16] each one, and you want to get some
+[10:17] higher outputs in certain scenarios,
+[10:18] then you want to take probably the more
+[10:20] custom route. Anyways, just thought I'd
+[10:22] drop that in there. But let's get back
+[10:23] to the video. All right, so now that
+[10:24] you've seen how this agent can choose
+[10:25] between all those four models, let's
+[10:27] look at like a different type of example
+[10:28] here. Okay, so down here we have a rag
+[10:30] agent. And this is a really good use
+[10:31] case in my mind because sometimes you're
+[10:34] going to be chatting with a knowledge
+[10:35] base and it could be a really simple
+[10:36] query like, can you just remind me what
+[10:38] our shipping policy is? Or something
+[10:39] like that. But if you wanted to have
+[10:41] like a comparison and like a deep lookup
+[10:43] for something in the knowledge base,
+[10:45] you'd probably want more of a, you know,
+[10:47] a more intelligent model. So, we're
+[10:48] doing a very similar thing here, right?
+[10:50] This agent is choosing the model with a
+[10:51] free model and then it's going to feed
+[10:53] in that selection to the dynamic brain
+[10:55] for the rag agent to do its lookup. And
+[10:57] um what I did down here is I just put a
+[10:59] very simple flow if you wanted to
+[11:01] download a file into Superbase just so
+[11:03] you can test out this Superbase Rag
+[11:05] agent up here. But let's chat with this
+[11:07] thing real quick. Okay, so here's my
+[11:09] policy and FAQ document, right? And then
+[11:11] I have my Superbase table where I have
+[11:13] these four vectors in the documents
+[11:14] table. So what we're going to do is
+[11:16] query this agent for stuff that's in
+[11:17] that policy and FAQ document. And we're
+[11:20] going to see which model it uses based
+[11:21] on how complex the query is. So if I go
+[11:24] ahead and fire off what is our shipping
+[11:25] policy, we'll see that the model
+[11:27] selector is going to choose a model,
+[11:28] send it over, and now the agent is
+[11:30] querying Superbase and it's going to
+[11:32] respond with here's TechHaven's shipping
+[11:34] policy. Orders are processed within 1 to
+[11:35] two days. standard shipping takes 3 to
+[11:37] seven business days blah blah blah. And
+[11:38] if we compare that with the actual
+[11:40] documentation, you can see that that is
+[11:42] exactly what it should have responded
+[11:43] with. And you'll also notice that in
+[11:45] this example, we were not logging the
+[11:46] outputs just because I wanted to show a
+[11:48] simple setup. But we can see the model
+[11:50] that it chose right here was GPT 4.1
+[11:53] mini. And if we look in this actual
+[11:55] agent, you can see that we only gave it
+[11:57] two options, which was GPT 4.1 mini and
+[11:59] enthropic cloud 3.5 sonnet, just because
+[12:01] of course I just wanted to show a simple
+[12:03] example. But you could up this to
+[12:05] multiple models if you'd like. And just
+[12:07] to show that this is working
+[12:08] dynamically, I'm going to say what's the
+[12:10] difference between our privacy policy
+[12:11] and our payment policy. And what happens
+[12:13] if someone wants to cancel their order
+[12:15] or return an item? So we'll see.
+[12:17] Hopefully it's choosing the cloud model
+[12:18] because this is a little bit more
+[12:20] complex. Um it just searched the vector
+[12:22] database. We'll see if it has to go back
+[12:24] again or if it's writing an answer. It
+[12:25] looks like it's writing an answer right
+[12:26] now. And we'll see if this is accurate.
+[12:28] So privacy versus payment. We have
+[12:30] privacy focuses on data protection.
+[12:32] payment covers accepted payment methods.
+[12:34] Um, what happens if someone wants to
+[12:35] cancel the order? We have order
+[12:36] cancellation can be cancelled within 12
+[12:38] hours. And we have a refund policy as
+[12:40] well. And if we go in here, we could
+[12:42] validate that all this information is on
+[12:44] here. And we can see this is how you
+[12:46] cancel. And then this is how you refund.
+[12:49] Oh yeah, right here. Visit our returns
+[12:51] and refund page. And we'll see what it
+[12:52] says is that here is our return and
+[12:54] refund policy. And all this information
+[12:56] matches exactly what it says down here.
+[12:59] Okay. So, those are the two flows I
+[13:00] wanted to share with you guys today.
+[13:01] Really, I just hope that this is going
+[13:02] to open your eyes to the fact that you
+[13:04] can have models be dynamic based on the
+[13:07] input, which really in the long run will
+[13:08] save you a lot of tokens for your
+[13:11] different chat models. If you guys are
+[13:12] really serious about building AI agents
+[13:14] with something like Nitn, then
+[13:15] definitely check out my paid community.
+[13:16] The link for that is down in the
+[13:17] description. We've got a great community
+[13:19] of members who are learning NDN,
+[13:20] building with it every day, and sharing
+[13:22] insights. And of course, we've got a
+[13:23] classroom section with different deep
+[13:24] dive topics like vector databases, APIs,
+[13:26] and HTTP requests, course on building
+[13:28] agents, and we have two new courses
+[13:30] launching soon. And of course, we also
+[13:32] do five live calls per week to make sure
+[13:33] you're meeting people in the community,
+[13:34] never getting stuck. We've got guest
+[13:36] speakers, Q&As's, we do coffee chats, as
+[13:38] well as tech support sessions. So, I'd
+[13:40] love to see you guys in these calls. But
+[13:41] that's going to do it for this video. If
+[13:43] you appreciated it or you learned
+[13:44] something new, please give it a like.
+[13:46] Definitely helps me out a ton. And as
+[13:47] always, I appreciate you guys making it
+[13:49] to the end of the video. See you all on
+[13:50] the next one.

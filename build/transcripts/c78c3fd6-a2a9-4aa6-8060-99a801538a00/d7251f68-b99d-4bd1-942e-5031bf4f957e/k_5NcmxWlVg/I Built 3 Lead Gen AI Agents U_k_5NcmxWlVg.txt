@@ -1,0 +1,535 @@
+Video Title: I Built 3 Lead Gen AI Agents Using ONLY My Words (beginner tutorial)
+Video ID: k_5NcmxWlVg
+URL: https://www.youtube.com/watch?v=k_5NcmxWlVg
+View Count: 17,192
+
+[00:00] Today I'm going to be building a lead
+[00:01] generation and outreach system right
+[00:03] here in front of you guys just using my
+[00:04] natural words. So let's get started.
+[00:07] This interface right here is what's
+[00:08] prompting me to use natural language in
+[00:10] order to explain what kind of agent I
+[00:12] want to build. So I'm just going to
+[00:14] paste in this request that says build an
+[00:16] agent that generates leads for me. It
+[00:18] will find the name, role, company,
+[00:20] company size, and email address of
+[00:22] people based on my request of industry
+[00:24] and location. It's also going to store
+[00:26] all the results in a Google sheet. So
+[00:27] I'm going to send this off. And what's
+[00:29] going to happen is the agent is going to
+[00:30] look at this request and it's going to
+[00:32] start to figure out how to build this
+[00:34] for us. And now that it has that
+[00:35] information, it wants us to go to the
+[00:37] flow editor where we can actually watch
+[00:38] it build out the different nodes and the
+[00:40] connections right in front of us. So
+[00:42] right here on the left, we have our
+[00:43] agent builder which allows us to have a
+[00:45] conversation with our words to build
+[00:47] something. And then over here on the
+[00:49] right is the actual like visual flow
+[00:51] editor where it will connect nodes and
+[00:54] stuff and that's where we can see the
+[00:55] configuration. So, the first thing
+[00:57] you'll notice over here is that the
+[00:58] agent builder asks us some follow-up
+[01:00] questions to make sure that it's going
+[01:02] to build the system exactly like we want
+[01:04] it to. So, it's asking me where to find
+[01:06] the leads from if I already have a
+[01:07] Google sheet set up, which I do. What's
+[01:09] the input method? And then the lead
+[01:11] criteria. So, I'm answering its
+[01:13] questions by saying to use people data
+[01:15] labs for the leads. I told it I already
+[01:17] have a sheet set up, which is right
+[01:18] here. We've got name, ro, company,
+[01:20] company size, email. I said I will talk
+[01:23] to the agent. That's how it'll basically
+[01:25] get triggered. and no criteria for
+[01:27] leads. We're just going to find all of
+[01:28] them. So now it's basically saying,
+[01:30] okay, here is what I think you want. Let
+[01:32] me make sure it's correct. And I'm just
+[01:33] going to say yes, and we'll basically
+[01:35] see what happens. Okay, so I think it's
+[01:37] finished up. You can see all the
+[01:38] different steps it went through. It had
+[01:40] a few things where it had to figure out
+[01:41] what to do, but it did. And ultimately,
+[01:43] we came over to this workflow where we
+[01:45] have these three nodes. And so before we
+[01:48] actually run the test to see how it
+[01:50] works, let's just make sure we
+[01:51] understand what we're actually looking
+[01:53] at. I think that natural language to
+[01:54] workflow building is super super cool. I
+[01:56] love to see where this technology is
+[01:57] going. But I am worried about the false
+[02:00] sense of security that it may bring to
+[02:01] people if they start using their words,
+[02:03] building all this stuff and then just
+[02:04] like throwing it into production or
+[02:06] starting to use it without actually
+[02:08] understanding what's going on within
+[02:09] each step. I think that's what's going
+[02:10] to be really really crucial because this
+[02:12] agent builder type of stuff will be
+[02:13] really good at getting you to a first
+[02:15] template, a first PC, then you
+[02:17] understand it and then you can sort of
+[02:18] iterate upon it. So anyways, what we see
+[02:20] here is that the trigger of this
+[02:22] workflow is a message. So we'll open up
+[02:24] a chat and we'll start talking with the
+[02:26] agent and probably telling it I want
+[02:28] leads in this industry in this location.
+[02:30] And then what's next is it will send it
+[02:31] off to people data labs to search for
+[02:34] those leads. You can see that it's going
+[02:36] to be searching using claude for sonnet.
+[02:38] It sends off a search query which will
+[02:40] be filled in with AI and it's limiting
+[02:43] to 10 leads. So it's only going to find
+[02:45] 10. We could obviously move this up or
+[02:47] down if we wanted to, or we could have
+[02:49] the AI actually choose how many to find.
+[02:51] But right now, we're just going to leave
+[02:52] that at manual 10. And so after it finds
+[02:55] those leads, it moves on to this agent
+[02:57] step. And you can tell it's an agent
+[02:58] because of the little robot or because
+[02:59] of the blue arrows. And now we have a
+[03:03] prompt for this AI agent. And remember,
+[03:05] I didn't make this prompt. The agent
+[03:06] builder did it for us. So what it says
+[03:09] is that you will receive a list of
+[03:10] people from the lead search. For each
+[03:12] person on the list, add them to the
+[03:14] Google sheet by calling the add tole
+[03:15] lead sheet action which is down here.
+[03:18] This is kind of like when you connect a
+[03:19] tool or an action to an agent and it
+[03:21] decides when to use it and it will send
+[03:23] over the name, the role, the company,
+[03:25] the company size and the email. So now
+[03:27] we understand kind of exactly what's
+[03:29] going on. I'm going to hit run test and
+[03:31] we're going to see this thing kick off.
+[03:34] So we have to tell the lead generation
+[03:36] agent what industry and location we're
+[03:38] looking for. So, I'm just going to say
+[03:40] real estate agents
+[03:43] in Chicago and fire that off. And then
+[03:45] we should see it basically send that off
+[03:47] to people data labs. Grab 10 leads back
+[03:50] and then our AI agent should be putting
+[03:52] that in a Google sheet. All right. So
+[03:54] then when we moved on to the agent step,
+[03:56] it started processing them one at a
+[03:57] time. And what happens was it, you know,
+[03:59] it processed the first one, then said,
+[04:00] "Okay, now I'll do the the next nine,
+[04:01] and then I'll do this one, and now I'll
+[04:03] do the next six." And it actually, for
+[04:05] some reason, stopped after five. If you
+[04:07] see the sheet, it did add them correctly
+[04:08] and we have this information we were
+[04:10] looking for, but it only sent five of
+[04:12] them for some reason. So, we'll come
+[04:14] back to the AI agent builder and see if
+[04:15] it can fix that. But, it is good to
+[04:17] validate that it did what we wanted, but
+[04:18] we just need to identify why it stopped
+[04:20] after five. I think it potentially could
+[04:22] have been because of an exit condition
+[04:24] or something like that. But what I'm
+[04:25] going to do is just tell the agent
+[04:27] builder what went wrong and see what it
+[04:28] has to say about it. All right, so I
+[04:30] told it that it worked, but it only
+[04:31] added five of the leads to the sheet,
+[04:33] not all 10. and it said I see the issue
+[04:35] blah blah blah and now I'm going to try
+[04:36] to fix that. So I'll check back in once
+[04:39] it is done and we'll just give it
+[04:40] another run. All right, so it says that
+[04:41] it fixed it. I deleted everything from
+[04:43] the sheet and this time I'm going to say
+[04:45] dentist in New York. We'll fire that off
+[04:47] and I'll check back in with you guys and
+[04:49] see if we got all 10. Okay, so this time
+[04:51] after it found the leads, it did in fact
+[04:53] do all 10. You can see that it very
+[04:54] explicitly went through each individual
+[04:56] person. So I think it was a prompting
+[04:58] thing, gave us a quick summary and you
+[04:59] can see the Google sheet now has 10
+[05:01] leads. One thing that's a little strange
+[05:03] is this first one came through as a
+[05:04] solution consultant from Adobe. The rest
+[05:07] do look like at least somewhere in the
+[05:08] medical field. And the reason why this
+[05:10] happened is because of in the people
+[05:13] data labs node that searches for leads.
+[05:16] You can see it basically searches using
+[05:17] a kind of SQL query and it's looking for
+[05:20] job occupations like healthcare or like
+[05:22] blank, like dentist. So it's doing kind
+[05:25] of like a similar search, not exactly an
+[05:27] explicit search. Obviously, that's stuff
+[05:29] that we could fix later. But anyways,
+[05:31] now that we have this very simple system
+[05:32] that basically gives us leads on demand,
+[05:35] we want to have another system that
+[05:36] takes these leads, enriches them, and
+[05:39] helps us write a personalized outreach
+[05:40] email. So, I'm going to go back out to
+[05:42] the home screen of Lindy, and we're
+[05:43] going to talk with our words again to
+[05:45] make a different agent. But real quick,
+[05:47] I wanted to touch on something that I'm
+[05:48] sure some of you guys are wondering if
+[05:50] you've been following my channel for a
+[05:51] while is why am I making a video on
+[05:53] Lindy? What about Eniden? So, I don't
+[05:55] want to dive too deep into the specifics
+[05:57] of the differences between Eniden and
+[05:59] Lindy. I think they both have pros over
+[06:01] each other. So, it really depends about
+[06:03] your use case. But when I started up
+[06:05] this channel, my whole motivation was to
+[06:08] go into like no code tools and show how
+[06:10] easy it is to build some of these AI
+[06:12] automations because I don't come from a
+[06:13] technical background and you don't have
+[06:15] to to build stuff that really saves
+[06:17] time. So, like I said, each one has
+[06:18] their pros and cons. Niden, you can
+[06:20] self-host. Lindy, you can't. I think
+[06:22] that Lindy is a lot less technically
+[06:24] overwhelming and intimidating when you
+[06:25] look at it because you don't have all
+[06:26] these variables to pass over. The way it
+[06:28] works with Lindy is the context kind of
+[06:31] stacks throughout the whole workflow.
+[06:33] What I mean by that is node 2 is going
+[06:34] to receive all the context from
+[06:36] everything before it and then node 3
+[06:37] would receive all the context from
+[06:39] everything before it compared to an end
+[06:40] where you choose pretty specifically the
+[06:42] inputs and outputs for each node. This
+[06:44] does not by any means mean that I'm done
+[06:46] with nitn. I'm still a very very big fan
+[06:48] of the product and will continue to be
+[06:50] making editing content just like I have
+[06:52] been. But this update from Lindy
+[06:53] recently was super cool because not only
+[06:55] do they have this agent builder sort of
+[06:57] interface, but they also have some
+[06:59] native computer use functionality which
+[07:00] we won't really build too much of that
+[07:02] today. But if you guys are interested,
+[07:04] definitely let me know. And if you do
+[07:05] want to get into Lindy and try this
+[07:06] stuff out, there's already a ton of
+[07:08] pre-built agents out here that you can
+[07:09] use for meetings, for sales, for brand
+[07:11] monitoring, for productivity support.
+[07:14] and I was able to work with Lindy and
+[07:15] bring you guys a discount code. All you
+[07:16] got to do is join my free school
+[07:18] community which will be linked in the
+[07:19] description. And then once you get
+[07:20] there, you'll be able to claim that
+[07:22] exclusive discount which will be 30% off
+[07:24] and you'll have a free trial before you
+[07:26] even have to pay. But anyways, let's
+[07:27] move on to the second agent that we need
+[07:28] to build for this system. So for the
+[07:30] second one, I'm saying build an agent
+[07:32] that takes in leads from my Google sheet
+[07:34] and enriches them by finding their
+[07:35] company's pain points. So we'll shoot
+[07:37] this off and we'll go through that same
+[07:38] process of watching the agent spin it
+[07:41] up. Okay, looks like this one finished
+[07:43] up. You can see all the steps that it
+[07:44] took and how it was able to fix itself.
+[07:46] And now we have a system that when we
+[07:48] trigger it, it's going to get the leads
+[07:49] from the sheet. The AI here will
+[07:52] basically enrich them by searching
+[07:54] through the web, looking for pain
+[07:55] points, and then writing that data back
+[07:57] to the Google sheet and then let us know
+[07:58] that it's done. Real quick before we run
+[08:00] this, I wanted to talk about why did I
+[08:02] split this up into a separate flow.
+[08:03] Well, I like to think, especially when
+[08:05] you're using natural language to
+[08:08] workflow building, you're going to get
+[08:10] better results if you break things down
+[08:11] into pieces. You could always later on
+[08:13] combine it all together, but I think
+[08:14] that if you chuck that much stuff at an
+[08:16] AI that's trying to build AI systems,
+[08:18] it's just going to get messy. So that's
+[08:20] why I like to start, you know, very
+[08:21] small piece by piece and then bring it
+[08:23] together later. Anyways, now that that's
+[08:25] out of the way, let's go ahead and run
+[08:26] this thing and we'll see how it works.
+[08:29] So this one actually doesn't give us a
+[08:30] welcome message. I'm just going to go
+[08:32] ahead and say enrich the leads. And that
+[08:35] should fire off the flow. And now it's
+[08:37] going to go to the Google sheet. It's
+[08:38] going to pull in these leads that we
+[08:40] have right here, these 10. And now it's
+[08:42] basically searching the internet. As you
+[08:44] can see, it's processing and enriching
+[08:45] the leads. And once it finds
+[08:47] information, it'll write it all back.
+[08:49] So, I'll check in with you guys once
+[08:50] that's done. Okay. So, I went ahead and
+[08:51] stopped the workflow just because I
+[08:53] don't want it to do all 10 because I
+[08:54] don't want to sit here and wait and go
+[08:55] through credits. I just wanted to prove
+[08:57] that this works. And you can see that we
+[08:58] have our first four leads enriched with
+[09:01] pain points about their business and
+[09:02] their industry. And then AI solutions.
+[09:05] And this is what we can use to write a
+[09:06] really good outreach message. So to
+[09:08] break down the system that the agent
+[09:10] built for us, the leads come in from the
+[09:12] Google sheet. You know, we saw exactly
+[09:13] how that worked. It pulls in 10 leads.
+[09:16] Then it moves on to this agent step that
+[09:18] has access to searching the web and
+[09:20] updating the Google sheet. So you can
+[09:22] see what it does is it researches each
+[09:24] person individually. It started to
+[09:25] research the first guy, then it moved on
+[09:27] to Henry and it finds this information
+[09:29] and then it decides it needs to write it
+[09:31] back to Google Sheets. And what's cool
+[09:33] is we didn't even have to configure how
+[09:34] to update it. It knows how to find the
+[09:36] unique identifier. It knows to write it
+[09:38] to the data field. And after it was
+[09:41] doing this individually for each person,
+[09:42] I was like, "Okay, I don't want to run
+[09:43] through my credits." And um yeah, we got
+[09:46] our research back here. And so the idea
+[09:48] is that we'd run the first workflow to
+[09:50] get these leads. The second one would
+[09:51] automatically fire off when a new row
+[09:53] comes in and it would start to enrich
+[09:55] the leads. And then we'd have a fourth
+[09:56] one fire off once the lead is enriched.
+[09:59] and that is the one that's going to
+[10:00] write an outreach message. So, let's
+[10:02] head back into Lindy. Let's open up
+[10:04] another fresh workflow and use natural
+[10:07] language to create that. All right, so
+[10:08] here is the prompt I'm putting in here.
+[10:10] Build an agent that will write
+[10:11] personalized outreach messages for our
+[10:13] enriched leads from our Google Sheets
+[10:14] database. It will craft the message and
+[10:16] store it as a Gmail draft, but do not
+[10:18] send it. All right, so the agent builder
+[10:20] and I had a little bit of a back and
+[10:21] forth. I answered some of the questions
+[10:23] and then I realized that I also wanted
+[10:25] to have it update the row in our lead
+[10:27] sheet and say that the draft was created
+[10:29] if one has been created. So now we have
+[10:31] this final flow. I'm happy with it. I'm
+[10:33] going to say yes. You can see also in
+[10:35] the lead generation sheet, I added
+[10:37] another column called status for the
+[10:39] agent to actually update. And now we can
+[10:40] go in here and watch it. It's actually
+[10:42] getting started building this agent now.
+[10:43] So I'll check back in when it's done and
+[10:45] we'll give it a run. Okay, so it looks
+[10:47] like we are finished up. We've got our
+[10:49] manual trigger. We're going to pull in
+[10:50] the enriched leads from the spreadsheet.
+[10:52] We have an AI agent that's going to
+[10:54] write that personalized email. You can
+[10:56] see that this was already created for us
+[10:58] using AI as well. And after that, it's
+[11:00] going to send an a Gmail draft, not an
+[11:03] actual Gmail. We've got the two and the
+[11:05] subject and the body all being automated
+[11:07] with AI. And then we have this being
+[11:09] saved as a draft. And then finally, it
+[11:11] goes back to the sheet and updates the
+[11:12] status of that lead as draft created.
+[11:15] So, we're going to go ahead and run this
+[11:16] thing. I'm just going to go ahead and
+[11:18] say go in here. here. And just keep in
+[11:19] mind, we're only going to be doing four
+[11:21] leads because only four of them actually
+[11:23] have been enriched at this point. So,
+[11:24] we've pulled in all the data and now we
+[11:26] should see that the AI is writing those
+[11:28] messages. Okay, so this just finished
+[11:30] up. However, what I realized that is
+[11:33] that it only pulled in one, I think. So,
+[11:35] when it got the spreadsheet limit was
+[11:38] a,000. Okay, it pulled in all 10, but
+[11:40] did it do all 10? I'm not sure. If we go
+[11:42] to the Google sheet, we can see that we
+[11:44] only have one draft created for the
+[11:46] first lead. But let's go take a look at
+[11:47] it real quick. Okay, so I do have the
+[11:49] email in my draft. We've got the two,
+[11:50] the subject, and the body filled out.
+[11:52] And we can see that it addresses
+[11:54] basically his role and his company. And
+[11:57] then it goes into how our AI solutions
+[11:59] could address their problems that
+[12:01] they're currently seeing. And then
+[12:02] there's a call to action at the bottom.
+[12:04] It also signs off as Nate. And then we
+[12:06] could also get rid of this sent via
+[12:07] Lindy automated message. So the issue
+[12:10] now is that it only processed one. So
+[12:12] what I'm going to do is say that that
+[12:13] worked, but only one of them got
+[12:14] processed. similar to what we had to do
+[12:16] in one of the that first example. And
+[12:18] this is actually a really great point
+[12:19] that I want to touch on real quick
+[12:20] because you want to also think about as
+[12:22] the system is actually running, how can
+[12:24] we make sure it doesn't error. And one
+[12:26] thing that would currently cause us to
+[12:28] error besides the fact that the AI
+[12:29] originally built this wrong or not
+[12:31] wrong, but it didn't take everything
+[12:32] into consideration is that now that
+[12:34] we're going to rerun this, we'd be
+[12:36] duplicating outreach messages to Alex
+[12:38] because there's already one created, but
+[12:40] it's the first row, so it would go
+[12:41] again. So, you'd probably want to make
+[12:42] sure you're setting up a filter where if
+[12:44] the status equals draft created, you're
+[12:46] not going to push it through the rest of
+[12:47] the pipeline and create another draft.
+[12:49] So, just something I wanted to throw out
+[12:50] there, but let's make this change and
+[12:51] then we'll test it again. And actually,
+[12:52] you can see that was the third option
+[12:54] that the AI suggested was to process all
+[12:56] leads that don't have a draft created
+[12:58] status. So, that's what we're going to
+[12:59] do. All right, so it said it made those
+[13:00] changes. I'm going to go ahead and run a
+[13:02] test and we'll see. So, I'm just going
+[13:04] to say go. We'll fire that off and let
+[13:06] it get to work. Okay, so this one worked
+[13:08] as expected. As you can see, it went
+[13:10] through all of the leads, but then what
+[13:12] it said is that out of the 10, it only
+[13:14] did two because one of them already had
+[13:16] draft created, and then the other seven
+[13:18] had no data, as you can see. So, we
+[13:21] stopped it after just these first three
+[13:22] had data. So, it only decided to create
+[13:24] drafts for these two rows right here.
+[13:25] Real quick, let me go to my drafts and
+[13:27] make sure that it has a good flow. So,
+[13:29] here's the one we got for Jim. AI
+[13:30] solutions for dental practice management
+[13:32] challenges. I noticed your role as this
+[13:34] at this company. here are different
+[13:35] challenges that you're facing and how
+[13:37] our AI solutions can help address those
+[13:39] specific challenges. Would you be open
+[13:41] to a 15-minute call to see how we can
+[13:43] benefit you? So, considering that we did
+[13:45] no prompting in here ourselves and that
+[13:47] this entire thing was mapped, all the
+[13:50] variables were processed, all of the
+[13:51] mapping from the spreadsheets and
+[13:52] everything like that was processed all
+[13:54] by this agent builder right here. And
+[13:56] all three of these agents took me about
+[13:57] 30 minutes to build tops. Really, really
+[14:00] impressed. And from here, what we'd want
+[14:01] to do is actually iterate, continue to
+[14:03] test, and make these even better. Which
+[14:05] is why it's really important that we
+[14:07] went through the process of like talking
+[14:09] to the agent, having it develop
+[14:10] something, and then we still want to go
+[14:12] into every single node and understand
+[14:14] what's going on. Because now what we
+[14:15] could do is branch off these different
+[14:17] conditional paths and say, okay, you
+[14:18] know, like now let's create a follow-up
+[14:20] agent and make sure every 2 3 days we're
+[14:22] going to continue to follow up with
+[14:23] these leads. We could even then start to
+[14:25] go back to the other agents that we had
+[14:26] built for lead genen and enrichment and
+[14:28] figure out okay how do we actually link
+[14:30] these together and make the enrichment
+[14:32] even better because I think ideally
+[14:34] these would all just be one big flow
+[14:36] with multiple agents or it would
+[14:38] basically be like I said earlier when
+[14:40] the leads come in the second flow to
+[14:42] enrich them automatically kicks off and
+[14:44] then once the data is enriched there the
+[14:46] third flow to write that outreach
+[14:47] automatically kicks off and then you'd
+[14:49] build up another flow to do the
+[14:50] follow-ups and so on and so on maybe
+[14:52] even all the way into like onboarding
+[14:54] stuff like that. So, I don't want this
+[14:56] video to go on too long, but you can see
+[14:58] in just the past 30 minutes that we were
+[15:00] sitting here together, I built pretty
+[15:01] much a fully automated system. All I
+[15:03] have to do is connect those pieces and
+[15:05] now I can ask for leads on demand and
+[15:07] get all the drafts created
+[15:08] automatically. And it's only going to
+[15:10] get better and better as I improve the
+[15:11] prompts and the search criteria and the
+[15:13] lead criteria and stuff like that. So,
+[15:15] there's a lot of stuff in Lindy that I
+[15:16] haven't yet talked about that's very new
+[15:18] and very cool, especially the computer
+[15:19] use. That's probably my favorite feature
+[15:21] so far. So, if you guys do want to see
+[15:23] more videos about Lindy, let me know in
+[15:24] the comments. And don't forget that you
+[15:26] can get 30% off Lindy if you join my
+[15:28] free school community. There'll be a
+[15:30] link in there where you can get a
+[15:31] special exclusive discount code so you
+[15:33] can try out Lindy for a lot cheaper. But
+[15:35] you can also get started for free. But
+[15:36] go grab that code for my community. So,
+[15:38] when you're ready, you've got that
+[15:40] discount. But that's going to do it for
+[15:41] this one. If you guys enjoyed or learned
+[15:42] something new, please give it a like. It
+[15:44] definitely helps me out a ton. And as
+[15:45] always, I will see you all in the next
+[15:46] one. Thanks everyone.

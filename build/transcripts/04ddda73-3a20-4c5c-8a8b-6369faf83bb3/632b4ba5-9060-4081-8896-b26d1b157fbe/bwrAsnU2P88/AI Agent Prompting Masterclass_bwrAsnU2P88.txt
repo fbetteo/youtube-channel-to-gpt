@@ -1,0 +1,1257 @@
+Video Title: AI Agent Prompting Masterclass: Beginner to Advanced
+Video ID: bwrAsnU2P88
+URL: https://www.youtube.com/watch?v=bwrAsnU2P88
+View Count: 19,552
+
+[00:00] all right we are back with another
+[00:01] master class this one is about prompting
+[00:03] and prompting specifically for AI agents
+[00:06] this course is designed to take you from
+[00:07] a complete beginner to almost an expert
+[00:09] in creating effective prompts
+[00:10] specifically for AI agents by the end of
+[00:13] this you'll be able to design prompts to
+[00:15] make your agents handle complex tasks
+[00:17] autonomously confidently and reliably
+[00:20] wanted to start off with showing a quick
+[00:21] agenda of what we're going to be going
+[00:22] over in the master class today that way
+[00:24] you can see what you're in for and see
+[00:25] how each module is sort of going to
+[00:26] build on the last one but if you're not
+[00:28] a complete beginner feel free to skip
+[00:29] around if you want to go towards the end
+[00:31] because we're going to start off with
+[00:32] the basics and sort of build our way up
+[00:34] from there but anyways five total
+[00:36] modules today with a bonus module at the
+[00:37] end the end is just going to talk about
+[00:39] some emerging Trends and some of my
+[00:40] thoughts about the prompt Engineering in
+[00:42] the AI space and anyways module one is
+[00:46] sort of an introduction to prompt
+[00:47] engineering for AI agents module two we
+[00:49] get into Core Concepts of prompt
+[00:51] engineering three essential prompting
+[00:53] techniques four mastering structured
+[00:56] prompt Frameworks and then five Advanced
+[00:58] tools and techniques for prompt
+[01:01] optimization real quick just wanted to
+[01:02] mention if you guys like this type of
+[01:04] content please feel free to join my free
+[01:05] school Community the link is down in the
+[01:07] description um we have a great community
+[01:09] of people that like to talk about NN
+[01:10] primarily but just all things sort of AI
+[01:12] automation related I also post all of
+[01:14] the resources I use in my YouTube videos
+[01:16] on this school Community for free so
+[01:18] workflows and end and end and stuff like
+[01:20] that then if you want to take your a
+[01:22] automation skills one step further I've
+[01:23] got a paid community that you can join
+[01:24] as well great Community great network of
+[01:26] people in this space we have multiple
+[01:28] live weekly calls as well well as uh
+[01:30] monthly competition with real prizes
+[01:32] we've got a classroom of different
+[01:33] modules that are going to be
+[01:34] continuously updated every week and
+[01:36] expanded as the space rapidly changes so
+[01:39] I'd love to see you guys in either of
+[01:40] these communities get the chance to meet
+[01:41] you and definitely just reach out okay
+[01:43] so welcome to module one which is
+[01:45] Introduction to prompt engineering for
+[01:46] AI agents in this module we'll introduce
+[01:48] you to the concept of prompt engineering
+[01:50] and explore why it's critical for
+[01:52] working with AI agents so let's just
+[01:54] Dive Right In here so what is prompt
+[01:56] engineering simply put prompt
+[01:58] engineering is the process of creating
+[01:59] inst instructions called prompts that
+[02:01] guide an agent to perform a task exactly
+[02:04] the way that you want it to so sort of
+[02:06] like programming but instead of using
+[02:07] Code you're using natural language so
+[02:09] almost as if you're talking to someone
+[02:11] you're basically just telling the AI
+[02:13] what to do in plain simple terms but
+[02:16] prompt engineering is more than just
+[02:18] writing instructions it's about thinking
+[02:20] carefully how you phrase things to get
+[02:22] the right output every time so think of
+[02:25] it like you're giving directions to
+[02:26] someone who can only listen to you one
+[02:28] time there's no back and forth
+[02:30] conversation you're not able to clarify
+[02:32] things you need to be precise from the
+[02:34] very beginning so here's a simple
+[02:36] example let's say you're using an AI to
+[02:39] help with scheduling a clear prompt
+[02:41] might be something like create a meeting
+[02:42] for Thursday at 3 p.m. with John and
+[02:45] include a video link that prompt you
+[02:47] know it's very specific it's very
+[02:49] actionable and it leaves almost no room
+[02:51] for
+[02:53] misunderstanding so why is prompt
+[02:55] engineering important this is because it
+[02:57] makes your agent more reliable so when
+[02:59] when your prompts are clear well
+[03:01] structured the agent is going to perform
+[03:03] tasks accurately and consistently and
+[03:05] this is obviously important for things
+[03:07] like um things that are going to happen
+[03:09] repeatedly or things that involve a lot
+[03:10] of data like customer support data
+[03:13] processing or scheduling so in this
+[03:15] master class you'll learn how to design
+[03:18] prompts that are precise efficient and
+[03:20] optimized specifically for AI agents you
+[03:23] know mastering prompt engineering will
+[03:24] allow you to create prompts that make
+[03:25] your agents handle more complex
+[03:28] workflows on their own which which is
+[03:29] sort of you know the whole goal of AI
+[03:31] agents so now let's talk about why
+[03:33] prompting AI agents is different and
+[03:36] also important than just prompting you
+[03:38] know a large language model or chat
+[03:40] gbt so when you're talking to chat gbt
+[03:43] it can be very conversational it's like
+[03:45] you're asking them to answer questions
+[03:46] and you can sort of follow up so you can
+[03:48] go back and forth like I said you can
+[03:50] follow up you can clarify you can fix
+[03:53] errors as you go but with an AI agent
+[03:55] you pretty much put that prompt in there
+[03:57] when you're building out your your
+[03:58] workflow and that's it they have to
+[04:01] understand and execute what you want
+[04:03] your instructions in just one single
+[04:06] try so imagine the scenario you're
+[04:08] running a business and an AI agent is
+[04:10] set up to manage hundreds of customer
+[04:12] inqueries every day it has to answer
+[04:14] each question or request correctly
+[04:17] timely without needing extra
+[04:19] clarification and you also don't have
+[04:21] the time to go check and make sure that
+[04:23] every single response is correct the
+[04:25] agent just has to work and you have to
+[04:26] trust that it's going to work so that's
+[04:28] why prompt engineering for agents is so
+[04:30] important because it's all about getting
+[04:32] it right that first time so this becomes
+[04:34] even more critical when you're using an
+[04:36] agent for you know tasks like data entry
+[04:38] or lead qualification that kind of stuff
+[04:41] they need to be accurate they need to be
+[04:42] reliable and if they're vague or unclear
+[04:45] the agent is going to produce
+[04:46] inconsistent results which could lead in
+[04:48] errors which could lead to errors in
+[04:50] customer interactions or within your
+[04:52] internal business processes which is
+[04:54] obviously what we're trying to avoid so
+[04:56] you know basically it's all about
+[04:57] precision and Clarity and by the end of
+[04:59] this course you'll be able to know
+[05:01] exactly how to design these prompts to
+[05:02] empower your agents to do their jobs
+[05:04] autonomously okay already on to module 2
+[05:07] which is Core Concepts of prompt
+[05:09] engineering so in this module we're
+[05:11] going to dive into the essential
+[05:12] building blocks of every good prompt
+[05:15] we're going to understand that these
+[05:16] core components will give you the tools
+[05:17] that you need to craft effective prompts
+[05:20] for any task let's talk about the key
+[05:23] components of a prompt so each component
+[05:25] plays an important role in telling your
+[05:27] agent what to do think of these
+[05:28] components as sort of like a checklist
+[05:30] to make sure that your prompts are clear
+[05:32] structured and you know set up you and
+[05:34] your agent for Success the first
+[05:36] component is background so you want to
+[05:38] give your agent background information
+[05:40] so it has a basic understanding of the
+[05:42] task or context that it's working in
+[05:44] this can include details about the
+[05:46] subject the company or the specific
+[05:48] context that might influence how the
+[05:50] agent is going to respond so here's an
+[05:53] example if the agent is helping with
+[05:54] customer support you might include you
+[05:57] are a customer support assistant for a
+[05:59] tech company that values quick and
+[06:01] empathetic service so obviously it's a
+[06:03] very simple example but that's sort of
+[06:04] the kind of stuff we'd be looking at
+[06:07] here next is context this is all about
+[06:10] narrowing down the focus for the agent
+[06:12] so you want to give it specific
+[06:13] information on how it needs to handle
+[06:15] the tasks accurately so if your agent is
+[06:17] scheduling a meeting you might add the
+[06:19] calendar should prioritize meetings with
+[06:21] department heads and limit meeting times
+[06:23] to no more than an hour this way the
+[06:25] agent has a much better understanding of
+[06:27] the conditions to actually work within
+[06:28] and how to go about its
+[06:32] tasks then we have instructions so this
+[06:35] is kind of the heart of the prompt this
+[06:36] is where you tell the agent exactly what
+[06:38] to do instructions here need to be you
+[06:40] know obviously clear and specific so for
+[06:42] example you want to write you want an
+[06:45] agent to write a product description you
+[06:47] could say write a 100w description for a
+[06:50] smartwatch highlighting its Battery Life
+[06:52] Fitness tracking and water resistance so
+[06:55] as you can see here not much room for
+[06:58] misinterpretation there it's very clear
+[07:00] very
+[07:02] specific then we have tools so obviously
+[07:05] when you're working with an AI agent
+[07:06] you're going to give them different
+[07:07] tools so that they can actually take
+[07:08] action on your behalf and you need to be
+[07:11] able to define the tools and when to use
+[07:14] each tool so that it knows what to do
+[07:16] and that it's not um you know calling an
+[07:18] email tool when it really should be
+[07:20] getting information from a database so
+[07:23] the agent's going to have multiple tools
+[07:24] usually so that's why you need to Define
+[07:26] it very clearly so obviously you would
+[07:28] like list out here are the tools you
+[07:30] have access to and then you put calendar
+[07:32] tool and a bunch of other tools and then
+[07:35] for each tool you wanted to find it like
+[07:36] use this to find free time slots for
+[07:38] scheduling meetings this is also
+[07:40] interesting because in a multi-step
+[07:43] workflow you could say like let's say
+[07:44] you have a tool to get contact data you
+[07:46] have a tool to um make an appointment
+[07:49] and then you have a tool to send an
+[07:50] email you could bake in the steps when
+[07:52] you're defining each tool for example
+[07:55] with a contact database or with emails
+[07:59] in one of those steps you can say like
+[08:01] you must call the contact database tool
+[08:03] first so that you know the email address
+[08:05] to send in the email tool so you can
+[08:07] sort of make like a flow by defining how
+[08:09] the tools work in conjunction with each
+[08:12] other and then finally in this section
+[08:15] what we're talking about as far as
+[08:16] components um we have examples examples
+[08:19] are incredibly valuable they show the
+[08:21] agent what kind of response that you
+[08:23] expecting so this is going to help the
+[08:25] agent understand tone format um details
+[08:28] flow so for example if the agent needs
+[08:31] to get contact information from a vector
+[08:33] database then use that email to reach
+[08:35] out and then schedule a calender event
+[08:38] you would want to give an example of the
+[08:40] query the agent would get and then the
+[08:42] actions that the agent needs to take so
+[08:44] like I said just giving an example of
+[08:46] what it should expect and then what you
+[08:48] should expect type of thing but anyways
+[08:51] each of these components these five
+[08:53] components are going to help the agent
+[08:54] understand exactly what you're looking
+[08:55] for using these in your prompts makes it
+[08:58] more likely that your AI agent agent is
+[08:59] going to deliver the results you want
+[09:01] every time but there's also a fine line
+[09:02] because you don't want to just pack it
+[09:04] full of information and we'll get into
+[09:06] you know how you make your your prompts
+[09:08] effective without just info dumping
+[09:11] basically so yeah next we're going to
+[09:14] talk about tokens understanding tokens
+[09:16] and cost efficiency when it comes to
+[09:17] tokens um so a token is a term that's
+[09:20] Central to understanding how prompts
+[09:22] work and how a i processes them in the
+[09:24] simplest terms possible a token is just
+[09:26] a piece of language a unit of data that
+[09:29] the AI is going to read and understand
+[09:32] um what you're asking for so think of a
+[09:34] token like a chunk of text so in this
+[09:36] example AI is amazing each part of this
+[09:39] sentence may be its own token even
+[09:41] punctuation so this could have four
+[09:44] tokens right here AI is one of them is
+[09:46] is one of them amazing is one of them
+[09:48] and then the exclamation mark would be
+[09:50] the fourth token there so you have
+[09:52] different options of how you want to
+[09:53] split up your tokens that sort of thing
+[09:55] but just in general think of it as the
+[09:57] way your text is being split up and um
+[10:00] it doesn't have to just be text but the
+[10:01] way something's being split up and put
+[10:03] into um a way that the AI can understand
+[10:07] what you're asking for why do tokens
+[10:09] matter so the more tokens you use in a
+[10:11] prompt the more computational power and
+[10:14] cost that it's going to take for the
+[10:16] agent to process so this is especially
+[10:18] important if you're using AI for tasks
+[10:20] that happen frequently or involve a lot
+[10:22] of data because those tokens will start
+[10:24] to add up you know they directly impact
+[10:27] how much your agent interaction will
+[10:29] cost cost if you're using an API that
+[10:31] charges by the token like open AIS so if
+[10:33] you have a 500 token prompt it's going
+[10:35] to cost more obviously than like a 200
+[10:37] token prompt so that's why learning to
+[10:40] write very lean but still very efficient
+[10:43] and clear prompts is a very important
+[10:45] skill which obviously this is kind of
+[10:47] why I wanted to make this course and so
+[10:49] why do tokens matter obviously it's
+[10:51] about saving money but efficiency isn't
+[10:54] just about saving money it's also about
+[10:55] getting the AI to respond faster and in
+[10:57] a more streamlined way so for instance
+[11:00] if you have a prompt that's way too long
+[11:02] and complex it's going to slow down the
+[11:04] response times which you know how long
+[11:06] your agent takes to respond and get the
+[11:07] job done but also it's going to increase
+[11:10] the likelihood of error within your
+[11:12] workflow so whenever you're crafting a
+[11:14] prompt think about the tokens you're
+[11:16] using and um you know think about if
+[11:18] they're all necessary could you make
+[11:20] your prompt more concise without losing
+[11:23] you know the context and the clarity
+[11:25] without losing the information you
+[11:26] already have in the prompt this is where
+[11:28] the skill of promp compression comes
+[11:30] into play we'll cover this more in depth
+[11:32] in module 5 but you know prompt
+[11:34] compression really going to come in
+[11:35] handy here when you're going over your
+[11:37] prompts but just wanted you guys to
+[11:39] understand tokens and the aim for cost
+[11:42] efficiency which is going to help you
+[11:43] make smarter choices when you're
+[11:44] creating your prompts as far as keeping
+[11:46] them clear and um budget friendly at the
+[11:48] end of the day now that we have an
+[11:51] understanding of the main components of
+[11:52] prompt and we understand tokens let's
+[11:55] introduce a concept that's at the core
+[11:56] of prompt engineering for AI agents
+[11:58] which is structured prompting and this
+[12:00] is just basically a way of organizing
+[12:01] your prompt in a clear logical format
+[12:04] unlike a casual conversation where you
+[12:06] can sort of be vague or backtrack a
+[12:08] little bit structured prompting make
+[12:10] sure the agent has all the information
+[12:11] it needs upfront in a specific order so
+[12:14] why does this structure matter it's
+[12:16] because it guides the AI through the
+[12:18] prompts like a set of instructions it's
+[12:19] going to tell the agent what's most
+[12:21] important what to pay attention to and
+[12:23] how to proceed step by step structured
+[12:26] prompting is especially valuable for AI
+[12:28] agents because a lot of times they need
+[12:29] to handle complex tasks autonomously so
+[12:32] imagine you're giving instructions to
+[12:33] someone who can only listen once without
+[12:35] the chance to answer questions this is
+[12:37] going to help you be precise so that the
+[12:39] agent doesn't misunderstand or Overlook
+[12:41] important details you know each part of
+[12:43] the prompt has a purpose and a place
+[12:44] sort of like a recipe with um specific
+[12:47] steps to follow in the correct order
+[12:50] let's break this down with a quick
+[12:51] example so suppose you're designing a
+[12:53] prompt to get an AI to draft an email a
+[12:56] structured prompt could look like this
+[12:57] so we've got the roll object or sorry
+[13:00] role objective context instructions and
+[13:03] example the role is that you're a
+[13:04] professional assistant writing an email
+[13:06] on behalf of an executive the objective
+[13:08] is the goal of the email is to thank a
+[13:10] partner company for their recent
+[13:12] collaboration context the partner
+[13:14] company helped with a recent event that
+[13:16] was a success and we want to emphasize
+[13:17] our appreciation and hopes for future
+[13:19] projects So the instructions are to
+[13:21] start with a greeting mention the
+[13:23] success of the event thank them for
+[13:24] their contributions and close with a
+[13:26] line about looking forward to Future
+[13:28] collaborations and then as far as an
+[13:30] example we want to outline sort of the
+[13:32] input that the agent's going to get and
+[13:33] then the way that it should respond so
+[13:36] the user here would say draft an email
+[13:38] to thank ABC Corp for their partnership
+[13:40] on the recent marketing event the AI
+[13:42] agent would then respond with um dear
+[13:44] ABC Corp I wanted to extend a heartfelt
+[13:48] thank you on behalf of our entire team
+[13:50] for your invaluable support in making
+[13:51] the recent marketing event of success
+[13:53] your expertise and dedication truly made
+[13:54] a difference and we appreciate all the
+[13:56] hard work blah blah blah signs it off as
+[13:59] email so as you can see because it had
+[14:01] all of you know the background
+[14:02] information about its role and its
+[14:04] objective and its context um it knew
+[14:06] sort of how to structure that email and
+[14:08] then this is going to give us consistent
+[14:09] time consistent results every time we
+[14:11] ask this agent to sort of make an email
+[14:13] for us obviously each part um guides the
+[14:17] AI in a very logical flow and it's going
+[14:19] to proove the accuracy consistency and
+[14:22] all that good stuff before we finish
+[14:24] module two there's an important concept
+[14:26] I wanted to talk about real quick that
+[14:28] you may have heard about
+[14:29] in regards to AI agents which is AI
+[14:32] hallucination AI Hallucination is the
+[14:35] term used when an AI generates a
+[14:37] response that seems plausible but it's
+[14:39] actually like completely made up or
+[14:41] incorrect and this happens when the
+[14:43] agent fills in gaps in knowledge with
+[14:45] information that it just invented it
+[14:47] sort of hallucinated and gave you that
+[14:49] response it's going to be common in very
+[14:52] complex or ambiguous prompts where the
+[14:54] agent might not have clear guidance on
+[14:56] what to do next what to say and so this
+[14:58] happens when the agent doesn't know
+[15:01] information in the way that we do so
+[15:03] instead they predict the most likely
+[15:05] next word sort of based on their
+[15:07] training data or based on the model and
+[15:09] sometimes they will overreach and they
+[15:12] try to provide information that they
+[15:13] weren't trained on yet or that they
+[15:14] don't you know know so this leads to
+[15:17] them making up details so for example if
+[15:20] you ask an agent about a specific but
+[15:22] fun but fictional event it's going to
+[15:25] create details around that event to give
+[15:27] you a coherent answer even if these
+[15:29] details aren't accurate so like on the
+[15:32] one hand it's super cool that we're at
+[15:34] this point in technology where we have
+[15:35] generative AI that can be creative and
+[15:37] that can make things up and help you
+[15:38] with ideas but at the end of the day we
+[15:40] need to make sure that we're structuring
+[15:41] our prompts efficiently and effectively
+[15:44] so that they don't you know go to this
+[15:47] space where they hallucinate and make up
+[15:49] information especially in you know a use
+[15:51] case where like let's say you were in
+[15:53] you know the healthcare world and you
+[15:55] needed help with the medicine and they
+[15:56] just start making up answers that is Bad
+[15:59] News Bears then the question is how do
+[16:01] we actually reduce AI hallucination
+[16:03] using our prompts so I I don't know if
+[16:07] it can be like completely eliminated you
+[16:09] can definitely reduce it to a bare
+[16:11] minimum and mitigate that risk by having
+[16:14] clear concise prompts so here are my
+[16:17] tips for doing so obviously you want to
+[16:19] be specific the more precise that you
+[16:21] are the less likely it is that the agent
+[16:22] will stray away from the facts that it
+[16:25] has so avoid ambiguous questions or
+[16:27] leaving too much room for interpretation
+[16:29] so like instead of saying um explain the
+[16:33] causes of recent business Trend you
+[16:36] would say like list three specific
+[16:39] factors that contributed to the increase
+[16:42] in um online shopping during Co 2020s so
+[16:46] that sort of thing very specific and now
+[16:48] it's going to it knows what to zero in
+[16:49] on rather than just you know making up
+[16:51] things next we have providing context
+[16:53] and constraints so include background
+[16:56] information that guides the agent and
+[16:58] sort of sets limits on the type of
+[17:00] information it should give so you know
+[17:02] tell me about climate Solutions is going
+[17:05] to leave it up very vaguely that's why
+[17:08] again with same same thing the last
+[17:09] example you want to say like list only
+[17:11] three solutions that were backed by
+[17:14] science for climate you know that sort
+[17:16] of thing I'm no scientist um anyways
+[17:20] request known information only so if
+[17:22] it's possible ask the agent to only
+[17:25] provide responses based on widely
+[17:27] accepted knowledge rather than
+[17:28] hypothetical um scenarios and then
+[17:31] finally check for consistency so when
+[17:33] you're working with the agent for
+[17:35] complex tasks it is good practice to
+[17:37] verify the output especially if the
+[17:39] agent is used in situations where
+[17:42] accuracy is crucial like customer
+[17:44] support or decision- making or um like
+[17:47] medicine like I previously talked about
+[17:49] that sort of stuff but those four tips
+[17:51] are you know they'll definitely put you
+[17:53] down the right path as far as you know
+[17:55] making sure your agent is not
+[17:56] hallucinating and making up stuff quick
+[17:59] recap of module 2 we talked about prompt
+[18:01] components we talked about tokens and
+[18:03] understanding the cost efficiency and
+[18:05] then we talked about structured
+[18:06] prompting and AI hallucination so now
+[18:09] that you've got these Concepts under
+[18:10] your belt have a solid foundation to
+[18:13] start creating effective prompts so
+[18:14] we're going to go into that next module
+[18:16] where we talk about essential techniques
+[18:18] so let's just move on to module three
+[18:21] okay module three is essential prompting
+[18:24] techniques in this one we're going to
+[18:26] dive into the essential prompting
+[18:28] techniques to make your prompts more
+[18:29] precise and effective for AI agents role
+[18:32] prompting we have briefly talked about
+[18:34] it in that previous section with
+[18:35] structured prompting we talked about
+[18:37] outlining the role at first but
+[18:38] basically role prompting is just
+[18:40] defining a specific role or you might
+[18:42] hear persona for the agent to adopt in
+[18:44] order to align its responses with a
+[18:46] specific tone specific expertise and a
+[18:49] specific um focus so for example you
+[18:52] wanted the agent to handle customer
+[18:53] service queries you would assign it the
+[18:56] role of a customer service
+[18:57] representative and that helps the agent
+[18:59] you know be friendly and professional in
+[19:01] the way that uh customer service rep
+[19:03] would be so here's why role prompting
+[19:06] matters when you define the role it's
+[19:08] going to understand you know the
+[19:09] language and the level of expertise and
+[19:11] the approach that it should use so yeah
+[19:14] pretty self-explanatory let's let's get
+[19:16] into it quick example suppose you want
+[19:18] the AI to explain a complex product
+[19:21] feature you could prompt it like saying
+[19:23] you are a technical expert explaining
+[19:25] explaining this feature to a customer
+[19:27] with basic knowledge you simp simple
+[19:28] language but provide detailed insights
+[19:31] into how the feature works so this is
+[19:33] going to be super helpful as we move
+[19:34] into more advanced tasks where you need
+[19:36] to make sure that you and your agent are
+[19:38] both aligned on the type of tone and
+[19:40] focus that it's going to be taking on
+[19:43] then you might have heard of few shot
+[19:44] prompting so this is a technique where
+[19:46] you provide the agent with a few
+[19:48] examples of inputs and outputs this
+[19:50] helps guide the agent's response style
+[19:52] format flow and even sort of helps them
+[19:55] categorize decisions so I'll show an
+[19:57] example of categorization in a sec but
+[20:00] by showing the the agent examples you
+[20:02] sort of set the standard for its
+[20:03] responses and it's going to make them a
+[20:05] lot more reliable and
+[20:06] consistent so here's an example where
+[20:09] let's say you're using an agent to
+[20:10] classify customer feedback and it can be
+[20:12] positive neutral or negative and then
+[20:14] you can prompt it by showing these
+[20:16] examples of what a positive feedback
+[20:18] looks like what a negative feedback
+[20:20] looks like and what a neutral feedback
+[20:21] looks like um which is going to you know
+[20:23] just help the consistency of the agent's
+[20:26] responses coming back then we have Chain
+[20:28] of Thought in which is especially useful
+[20:30] for tasks that involve multiple steps or
+[20:33] sort of logical reasoning to go through
+[20:35] to take place with this type of
+[20:37] technique you can ask the agent to Think
+[20:39] Through tasks step by step and that's
+[20:41] going to help it process information in
+[20:43] a logical order and it's going to
+[20:44] improve the accuracy of sort of the
+[20:46] final result so like I said IDE deal for
+[20:49] complex tasks you know with like
+[20:50] calculations or comparisons or you know
+[20:53] multi-steps within a step so this is
+[20:55] when you'd want the AI to make sure it's
+[20:57] following a sequence of instructions
+[20:59] let's say you want the agent to
+[21:00] calculate total cost of an order with a
+[21:02] bulk discount and a shipping fee if you
+[21:05] just told it that I don't know if I I
+[21:08] don't think it would do it correctly um
+[21:09] so anyways the prompt you could say you
+[21:11] calculate the total of total cost of 100
+[21:14] units price at $10 each you would apply
+[21:16] a 20% discount and um for anything over
+[21:20] 50 orders you would add a $25 shipping
+[21:21] fee so your Chain of Thought prompting
+[21:24] you can show the actual steps
+[21:25] multiplying the units by the price and
+[21:28] applying the discount and then the
+[21:30] shipping fee and then you get to your
+[21:31] final answer so this obviously just
+[21:33] shows an example for the AI agent of
+[21:35] breaking down the tasks making fewer
+[21:38] errors and probably producing a more
+[21:40] reliable answer and just super crucial
+[21:43] when you're working with um multi-step
+[21:45] tasks but it's always you know a lot of
+[21:47] times you don't have to just know
+[21:49] exactly what to do when to do it and
+[21:51] later we'll talk about sort of the way
+[21:52] that you can provide feedback and you
+[21:53] can like test but a lot of times it's
+[21:55] just like playing around seeing seeing
+[21:58] if it did it correctly or incorrectly
+[21:59] seeing why adding something in running
+[22:01] it again taking things out running it
+[22:03] again so you it's definitely something
+[22:05] that you just sort of get the hang of
+[22:06] but these are good Concepts to know um
+[22:08] at a high level and then I think just to
+[22:11] close off this module we'll talk about
+[22:12] markdown formatting real quick um if you
+[22:14] don't know what it is it's just
+[22:15] basically the way you can add structure
+[22:17] and organization to text it's not even
+[22:18] specific for prompting or AI agents I
+[22:20] think it's just a thing but um it makes
+[22:23] it easier for both humans and agents to
+[22:25] read things and understand importance in
+[22:27] certain things so you can use headers
+[22:29] bold text bullet points stuff like that
+[22:32] so I'll just fly through this section
+[22:33] because it's not too
+[22:35] complicated but um you know the first
+[22:36] one we'd have headings so obviously
+[22:38] allows you to organize information into
+[22:40] settings it helps the AI recognize that
+[22:43] things are separate which is helpful for
+[22:45] multi-steps or topics and you would do
+[22:47] this by using um the pound sign so this
+[22:50] symbol the hashtag the pound whatever
+[22:52] you want to call it this is you know
+[22:54] like you can do one for a top level
+[22:56] heading two for second level and three
+[22:58] for third level heading and just kind of
+[22:59] break stuff down then we've got bold
+[23:02] text obviously we all know what bold is
+[23:04] and we all know how we want to use this
+[23:05] to highlight importance in markdown you
+[23:07] would do um double asterisk you could
+[23:10] also just do one asterisk but double is
+[23:11] going to be like more important so as
+[23:13] you can see these examples let's say we
+[23:15] wanted to say please make sure to double
+[23:16] check all data points that's super
+[23:17] important you have to double check just
+[23:19] throw that in
+[23:20] bold and we got bullet points um this is
+[23:23] pretty self-explanatory too but you use
+[23:25] a dash or you could use asteris too um
+[23:27] just at the beginning obviously but you
+[23:29] could I pretty much always just use
+[23:30] dashes and then the agent knows it's
+[23:32] like okay these things sort of all
+[23:33] relate because they're all like a list
+[23:35] or instructions that sort of thing then
+[23:38] we've got horizontal lines which are
+[23:39] good just to separate actions to create
+[23:41] a very visual break in a prompt or in
+[23:44] you know some sort of information so
+[23:46] when you're when a prompt gets pretty
+[23:48] long and you just want to break things
+[23:50] up throw in a line it's just a simple as
+[23:52] throwing in a line then here's just a
+[23:54] quick example just to show it all sort
+[23:56] of piece it all together we've got a
+[23:58] header up top and a header at the bottom
+[24:00] so that we know these are like sections
+[24:02] we've got a numbered list 1 through four
+[24:04] and each of those numbered
+[24:06] lists um are bolded like the actual
+[24:08] information and then within each of
+[24:10] those sort of numbered lists we've got
+[24:12] bullet points within those two so that
+[24:14] lets me easily see like what I'm looking
+[24:16] at and also the agent is able to
+[24:18] interpret that too I didn't throw in
+[24:19] horizontal lines here but let's say at
+[24:21] the bottom after the conclusion you
+[24:23] could throw in a horizontal line and
+[24:24] then below that line you could have just
+[24:25] like extra notes in case you wanted to
+[24:28] just highlight a few extra things but
+[24:30] that's sort of you know how it looks
+[24:31] just to finish off this module real
+[24:33] quick we've got a section about
+[24:34] emotional manipulation and importance so
+[24:36] kind of similar to the idea of markdown
+[24:39] with like making things bold and making
+[24:40] things look more important but this
+[24:43] technique involves using language that
+[24:44] adds a sense of urgency or importance or
+[24:46] even emotional weight in some cases so
+[24:49] it sounds dramatic but adding urgency
+[24:51] can really help ensure that the agent
+[24:53] prioritizes certain parts of a task so
+[24:56] you know by using strong language the
+[24:57] agent will understand what's
+[24:59] non-negotiable and what is like
+[25:01] particularly more important than the
+[25:03] rest of the prompt quick example let's
+[25:04] say you're using an agent to send a
+[25:06] reminder email for an urgent deadline
+[25:08] you could prompt it like saying draft an
+[25:10] email reminder to the client about their
+[25:11] upcoming deadline it is absolutely
+[25:13] essential that the client understands
+[25:15] the urgency of submitting their
+[25:16] materials by the deadline missing this
+[25:18] deadline will ruin the project timeline
+[25:21] so words like essential urgency ruin
+[25:24] ruin in all caps um you could even make
+[25:26] some of those words bold if you want but
+[25:28] it adds you know an emotional weight to
+[25:29] the task and single signals the agent
+[25:32] that the message needs to convey some
+[25:34] sort of urgency and it can be very
+[25:35] effective when you're when you need to
+[25:37] prioritize certain details or you have
+[25:39] you know deadlines or safety hazards or
+[25:42] you know anything critical you can
+[25:43] definitely use some emotional
+[25:45] manipulation there quick recap of module
+[25:47] 3 we covered role prompting few shot
+[25:50] prompting Chain of Thought prompting
+[25:51] markdown and emotional manipulation and
+[25:54] importance all of these techniques you
+[25:57] can sort of bake into your prompts which
+[25:59] are going to make them more reliable and
+[26:00] sort of help you align your agent with
+[26:02] your goals so now we're going to get
+[26:04] into module 4 which we're going to talk
+[26:06] about some structured Frameworks for
+[26:07] organizing prompts that are really going
+[26:09] to help you take them to the next level
+[26:11] all right module 4 we have mastering
+[26:14] structured prompt Frameworks in this
+[26:16] module we're going to explore structured
+[26:18] Frameworks to help you organize your
+[26:19] prompts effectively using these
+[26:21] Frameworks can help you make your
+[26:22] prompts once again the common theme
+[26:25] making them more accurate and reliable
+[26:27] so let's get into this module so when
+[26:30] you're prompting an agent there's
+[26:32] usually two sort of structured
+[26:33] Frameworks you want to use it's either
+[26:35] long structured or short structured or
+[26:38] at the end we'll talk about a more agent
+[26:39] specific one but either way long
+[26:42] structured you have the key components
+[26:43] of roll objective context instructions
+[26:46] examples and notes when you combine
+[26:48] these elements the agent is going to
+[26:49] have all the information it needs to
+[26:50] generate a comprehensive accurate
+[26:52] response these long structured ones are
+[26:55] usually better for tasks where there's
+[26:58] multiple steps obviously and things are
+[27:00] critical like generating a report or
+[27:02] analyzing data or providing some sort of
+[27:04] detailed summary and it has to grab
+[27:05] information from somewhere else and then
+[27:08] the short structured is kind of just
+[27:10] like a streamlined version of the long
+[27:11] structured prompt because sometimes you
+[27:13] don't want to overwhelm your agent
+[27:14] that'll actually just confuse it and
+[27:16] once again you know like a lot of times
+[27:18] I'll start off with sort of a long
+[27:19] structured and then test it a few times
+[27:21] and then take things out and see if it's
+[27:22] still working and it obviously is more
+[27:24] efficient and then it's going to be
+[27:25] cheaper with your tokens but it doesn't
+[27:27] need much context or detail in this
+[27:29] version it's going to be more
+[27:30] straightforward tasks like quick
+[27:32] responses or summaries or even
+[27:34] classifications where the AI doesn't
+[27:36] really need a ton of background
+[27:37] information it's just something that it
+[27:38] could do right away because it's a task
+[27:41] if that makes sense but here you're just
+[27:42] going to give it an objective what it
+[27:44] needs to do how it does it and then if
+[27:45] you even need to you can give an example
+[27:48] so a lot of times I'll use like a long
+[27:50] structured one in like an agent that has
+[27:53] multiple tools to call or multiple
+[27:55] workflows to call and then a short
+[27:57] structure you could use use for
+[27:58] something like a message and model node
+[28:00] or even like one of those sub agents in
+[28:03] a larger agent workflow where it only
+[28:04] has access to just email actions or
+[28:06] something like that so you kind of got
+[28:08] to play around with it but it's
+[28:09] important to understand the two
+[28:10] different
+[28:12] Frameworks or of course the third
+[28:14] framework we have a more agent specific
+[28:17] one and I think that this one I like to
+[28:19] think is more when you've got an agent
+[28:20] with multiple tools or multiple agents
+[28:23] that it has access to but anyways this
+[28:25] is tailored towards the a agents because
+[28:26] they need to make decisions inter act
+[28:28] with more tools um handle tests that are
+[28:31] a higher degree of autonomy basically so
+[28:33] in this framework we incorporate some
+[28:35] extra components that help the agent
+[28:37] understand sort of its its standard
+[28:39] operating procedures and all the
+[28:41] available tools so we're telling it its
+[28:44] role objective it's sop tools and sub
+[28:47] agents so that's sort of why this one's
+[28:48] more specific for agents and then
+[28:50] obviously instructions with examples at
+[28:52] the end so by including you know like an
+[28:55] sop and Tool descriptions it's going to
+[28:57] give this agent more guid
+[28:58] and give it the information it needs to
+[29:00] act autonomously which is kind of the
+[29:02] goal of AI agents obviously so it's
+[29:05] ideal for you know self-guided agents
+[29:06] that want to operate within a specific
+[29:08] set of guidelines and responsibilities
+[29:09] and when you do this right it can be
+[29:12] super super effective as far as the
+[29:14] agent being able to just completely be
+[29:16] like a virtual assistant basically so
+[29:19] module 4 was really quick just want to
+[29:21] recap we did long structured short
+[29:23] structured agent specific and like I
+[29:24] said you kind of want to play around but
+[29:26] these are good Frameworks to help you
+[29:28] approach crafting your prompts and
+[29:30] testing them and um you know making
+[29:32] changes as necessary but let's move on
+[29:34] to module 5 this module is all about
+[29:36] Advanced tools and techniques for prompt
+[29:38] optimization we're going to explore some
+[29:40] other tools you can look at not go too
+[29:42] in depth but just kind of open your eyes
+[29:43] as to how you can get more advanced and
+[29:46] you know like refine manage test and
+[29:49] give feedback to the AI so let's get
+[29:51] into this module so just a high level
+[29:54] overview of two tools we'll talk about
+[29:56] which is prompts layer and using cost
+[29:58] calculators and I'm not going to dive
+[30:00] too deep into these tools but obviously
+[30:01] just wanted to give you a sense of how
+[30:03] you could optimize but prompts layer is
+[30:05] a tool that's going to help you track
+[30:07] test and manage multiple versions of a
+[30:09] prompt so that's how it really comes
+[30:10] into play where you can you know store
+[30:12] this one and test out this one and
+[30:13] document responses and all this kind of
+[30:15] stuff but yeah like I said it's going to
+[30:17] allow you to sort of run a a andb tests
+[30:19] compare different versions see what
+[30:20] works best you can track your history
+[30:22] you can measure changes for accuracy and
+[30:25] performance so this is going to help you
+[30:27] choose the most effective prompt for
+[30:29] your specific task and um it's it's cool
+[30:31] you can kind of store these and look
+[30:33] back at them and then later when you
+[30:34] have a similar use case or a complete
+[30:36] different use case you know sort of what
+[30:37] to do what not to do and then we've got
+[30:39] cost calculators which I think are super
+[30:41] cool especially you know earlier we
+[30:42] talked about tokens and cost and
+[30:44] efficiency but when you're working with
+[30:46] large language models you know obviously
+[30:48] we have our tokens and they impact the
+[30:49] cost so you can use a cost calculator
+[30:51] like this one I think I just typed in
+[30:52] open aai cost calculator pops up or no
+[30:55] open Ai tokenizer and then you can put
+[30:57] in prompt so in this example we have
+[30:59] super simple prompt about acting as
+[31:01] customer support for small online
+[31:03] clothing store and it shows us that it
+[31:05] was 35 tokens 223 characters and you can
+[31:07] choose a different model that you're
+[31:08] going to be running it through but
+[31:10] they'll tell you exactly how much you
+[31:12] know you how many tokens so that you can
+[31:13] kind of control the cost and adjust your
+[31:15] prompts to reduce your token count which
+[31:18] is pretty cool so this kind of stuff
+[31:19] like I said it's going to allow you to
+[31:20] streamline the process of your testing
+[31:22] and your cost estimation which is going
+[31:24] to be super big when you start running
+[31:26] agents at scale and you just you know
+[31:28] running them over and over multiple
+[31:29] times a day jumping off of that wanted
+[31:31] to talk about prompt compression and how
+[31:33] you actually make them smaller and save
+[31:35] money um you know this is obviously all
+[31:37] about reducing unnecessary tokens
+[31:39] without sacrificing the quality which is
+[31:41] the most important part because you
+[31:42] still need the actual content of your
+[31:43] prompt to get through to the agent so
+[31:46] after this module if you want to know
+[31:47] more about the technical details behind
+[31:49] prompt compression and how you actually
+[31:50] get in there and really do it um go
+[31:52] check out Mark cf's Channel I I just
+[31:54] watched a video from him about um promp
+[31:57] compression and that's where you know
+[31:59] these next slides two methods that he
+[32:00] talks about is that's what I'm going to
+[32:01] talk about but he goes way more in depth
+[32:03] and great video so go check that out but
+[32:06] anyways he talks about two methods to
+[32:08] actually compress your prompts the lazy
+[32:10] method and the technical method and I
+[32:11] completely understand why it's called
+[32:13] that because I definitely use the lazy
+[32:14] method but this one just involves
+[32:16] manually removing redundant or
+[32:18] unnecessary words from a prompt using
+[32:20] like chat gbt or using AI to make your
+[32:23] AI type of thing so you know there's
+[32:25] also custom prompt compressing gpts but
+[32:27] basically you just want to tell it that
+[32:29] the goal is to keep the core elements
+[32:31] and communicate the same information but
+[32:33] just get rid of the unnecessary wording
+[32:35] so in this example we have an original
+[32:37] prompt um which is I would like you to
+[32:39] please generate a detailed summary of
+[32:41] this report focusing especially on the
+[32:43] areas that are most important but you
+[32:45] could also just compress this down to
+[32:46] summarize the key areas of this report
+[32:48] and pretty much gets the same message
+[32:49] across so obviously it's just like the
+[32:51] same concept of like when you're writing
+[32:53] an email or when you're writing a draft
+[32:55] or a report like you just want your
+[32:56] wording to be concise so same concept
+[32:58] here and then the technical method uses
+[33:01] um you know algorithms or different
+[33:02] Tools in order to identify which
+[33:05] specific tokens are high value and then
+[33:07] which ones can just be taken out and
+[33:09] this method is really interesting
+[33:11] because these tools analyze the prompts
+[33:12] and identify specific words that don't
+[33:14] actually impact the response so it'll
+[33:17] take them out and it's obviously very
+[33:19] useful when you're working with long
+[33:20] prompts and sort of a high volume um
+[33:22] environment as far as your workflow
+[33:24] because it's going to maintain the
+[33:25] consistency but keep your cost down
+[33:28] and it's interesting because the outputs
+[33:30] don't always make sense to us because
+[33:32] it'll take out some you know filler
+[33:33] words that are you know important for
+[33:35] gramar and for like flow of conversation
+[33:38] in our head but the AI can still
+[33:40] understand what's going on because it
+[33:41] has those high value tokens in there and
+[33:43] they're you know placed in a specific
+[33:45] order so just to recap efficient promp
+[33:48] compression will significantly reduce
+[33:50] your cost over time and um you can do
+[33:52] that in a couple methods and if you want
+[33:54] to check out technical method definitely
+[33:56] go check out Mark's Channel now let's
+[33:58] talk about iterative refinement and
+[33:59] feedback loops so in prompt engineering
+[34:02] it's rare to create the perfect prompt
+[34:03] on the first try that would be pretty
+[34:06] impressive but you often have to test
+[34:08] refine and adjust your prompts based on
+[34:10] the performance and based on the output
+[34:11] you're getting from your agent so this
+[34:14] process is known as iterative refinement
+[34:16] and so there's sort of three ways to use
+[34:18] iterative refinement first one is
+[34:20] testing and adjusting you'll run your
+[34:22] initial prompt you'll assess the agent's
+[34:24] output if it doesn't meet your
+[34:26] expectations which it probably won't
+[34:28] always exactly the first time then
+[34:29] you'll identify what parts of the prompt
+[34:31] might be confusing or unnecessary or too
+[34:34] loaded or not loaded enough and then
+[34:37] obviously you'll adjust your prompt add
+[34:38] Specific Instructions or remove specific
+[34:40] details and then you'll try again and
+[34:43] adjust and also you can document your
+[34:45] changes so when you make the changes you
+[34:47] document The Prompt and then you note
+[34:49] what you did and then you can note like
+[34:52] how it came out and that way you can
+[34:53] compare different versions and see what
+[34:55] worked best so something like prompt
+[34:56] layer obviously makes that really easy
+[34:58] for you to do storing your versions and
+[35:00] allowing you to track what changes led
+[35:02] to Improvement and then you have example
+[35:04] based learning which is providing
+[35:06] specific examples within your prompt to
+[35:08] guide your agent so we talked about this
+[35:10] a little bit but these examples are
+[35:11] going to help reinforce the desired
+[35:13] output so easier to understand the
+[35:15] context and requirements for your agent
+[35:18] super quick example of iterative
+[35:20] refinement initial prompt Is Write a
+[35:22] brief summary of the feedback report
+[35:23] covering all areas where customers
+[35:25] mentioned concerns and then you would
+[35:27] adjust it to summarize the feedback
+[35:28] report focusing on the top three
+[35:30] customer concerns as you can see in this
+[35:32] example the initial prompt was vague so
+[35:35] we refined it by saying top three
+[35:36] customer concerns to make it more
+[35:38] focused and then through iterative
+[35:40] refinement we also had guided the AI to
+[35:42] produce responses that better match our
+[35:45] expectations finally let's explore
+[35:47] creating and managing feedback loops a
+[35:49] feedback loop is a way to continuously
+[35:51] improve the agent's accuracy over time
+[35:53] especially in a high volume environment
+[35:55] so you want to provide feedback based on
+[35:57] past resp responses that will help your
+[35:58] agent learn from previous interactions
+[36:01] which will make the future responses
+[36:02] more reliable trustable so there's three
+[36:05] things again here we have first
+[36:07] providing clear feedback when the agent
+[36:09] produces an output that's of Target you
+[36:11] want to correct it in a um very you know
+[36:13] in a helpful way directly in the prompt
+[36:16] or through your instructions so for
+[36:18] example if the agent consistently
+[36:20] includes unnecessary details add a note
+[36:22] that says Focus only on the main points
+[36:25] avoid extra details so one example of
+[36:28] doing something like this is if you've
+[36:29] watched some of those email videos i'
+[36:31] done maybe in end end a lot of times the
+[36:33] agent would sign off with um like square
+[36:36] brackets your name your company name and
+[36:38] we would just directly go in there and
+[36:39] say like never never include square
+[36:42] brackets with a variable like always
+[36:43] fill it in with Nate herkelman or
+[36:45] something like that then you want to
+[36:47] establish a standard operating procedure
+[36:50] so if you're using an agent for
+[36:51] repetitive task tasks establish an sop
+[36:55] um for feedback so this could involve
+[36:56] steps like documenting common errors
+[36:59] noting
+[37:00] improvements um setting reminders that
+[37:03] sort of stuff and then obviously you
+[37:06] want to use itative testing we just
+[37:07] talked about that but run different
+[37:08] versions see how they adapt and then
+[37:11] rinse and repeat so to recap this module
+[37:14] covered you know Advanced tools for
+[37:16] testing and optimization we talked about
+[37:17] cost savings as far as prompt
+[37:19] compression talked about iterative
+[37:21] refinement and feedback loops and then
+[37:23] also creating and managing those
+[37:24] feedback loops um within your your
+[37:27] environment all right and now bonus
+[37:29] module just some stuff I thought that
+[37:30] would also be important to include but I
+[37:32] didn't really know exactly where to put
+[37:33] it but the space is obviously changing
+[37:36] so fast so you have to understand that
+[37:38] like prompting may also change and have
+[37:41] to adjust a little bit and like when you
+[37:43] have an agent workflow is running
+[37:45] consistently in a month it may stop
+[37:47] running consistently and you need to go
+[37:48] in and fix the prompting but anyways
+[37:51] we've covered you know Core Concepts
+[37:53] core Frameworks um and techniques but AI
+[37:56] is going to continue to advance and new
+[37:57] trends are going to emerge so I just
+[37:59] thought we'd briefly talk about you know
+[38:01] like these Trends and what's give a
+[38:03] sense of what's on the horizon okay so
+[38:06] advancements in AI models one of the
+[38:08] biggest drivers of change in prompt
+[38:09] engineering is the rapid advancement of
+[38:11] AI models like I just mentioned like gbt
+[38:14] turbo 01 and then the anticipated 5 but
+[38:18] each new generation of models comes with
+[38:20] many different things it comes with
+[38:21] refine capabilities um you know could
+[38:24] have greater accuracy greater
+[38:26] understanding greater efficiency but you
+[38:27] never know sort of how that's going to
+[38:29] affect your current prompts these
+[38:30] advancements mean that these future
+[38:32] models could require less handholding
+[38:34] they could be better understanding
+[38:36] context with fewer examples and they
+[38:38] could be more Adept at following your
+[38:39] structured instructions or they actually
+[38:41] may need more prompting in certain areas
+[38:43] and you know Less in some as well but as
+[38:46] these models grow more
+[38:48] complex they will also probably become
+[38:50] better at picking up subtle nuances that
+[38:52] may require more advanced prompts like I
+[38:54] said to fully utilize their capabilities
+[38:56] so some prompts may include more refined
+[38:58] role assignments or Specific
+[39:01] Instructions to help a model act more
+[39:02] like an expert within you know a
+[39:04] specific field then also tools within AI
+[39:07] agents so this is you know something
+[39:10] that we're doing right now but I could
+[39:11] just see it this space changing a little
+[39:12] bit in the sense of the way tools work
+[39:15] but that's one of the most exciting
+[39:16] things right now is Agents can have
+[39:18] tools and take action on many different
+[39:20] things so because they're being
+[39:22] continuously integrated with different
+[39:23] tools that allow them to access
+[39:24] different things calendar email
+[39:26] calculations databases whatever it may
+[39:29] be this is going to shift prompt
+[39:31] engineering strategies because you have
+[39:32] to make sure you're always outlining
+[39:34] these tools and how they're going to
+[39:35] work so this may require a new approach
+[39:38] to prompts like specific instructions on
+[39:40] how to handle them and I know we talked
+[39:42] about this but just something that um I
+[39:44] wanted to bring up because as tools get
+[39:47] more complex and you know we're already
+[39:48] getting to the place where you have
+[39:49] agents that manage multiple agents and
+[39:52] then those agents manage more agents so
+[39:54] just something to sort of keep in the
+[39:56] back of your mind as far as
+[39:57] prompting them and then finally the last
+[40:00] thing I had was just a specialization
+[40:02] and advanced customization so you know
+[40:04] models are becoming more specialized and
+[40:06] we're seeing that Trend towards
+[40:08] customizable agents so they can perform
+[40:11] tasks within specific domains you know
+[40:14] Finance Healthcare customer support and
+[40:16] they're going to start to be able to
+[40:17] understand probably like industry
+[40:19] specific jargon and like Advanced
+[40:22] metrics of you know like if they're in
+[40:24] finance they'll have Advanced Financial
+[40:25] metrics and finance specific jargon
+[40:27] stuff like that um so this trend is
+[40:30] going to allow prompt Engineers to
+[40:31] customize these prompts further and
+[40:33] really integrate like a domain specific
+[40:36] instructions and terminology into their
+[40:38] agent workflows and so really the point
+[40:41] of these last couple slides was just to
+[40:43] remind you of like just to to always be
+[40:45] looking ahead in the space because
+[40:48] you'll get something set in stone and
+[40:49] like that doesn't mean it's going to
+[40:50] work like things will things will change
+[40:52] and things will break but that's like
+[40:54] kind of the beauty of it is because
+[40:55] everything's so new and like we're we're
+[40:57] we're on the front end of this curve
+[40:59] right now we get to do a lot of
+[41:00] experimenting and just understanding
+[41:02] what works and what doesn't and
+[41:03] specifically what works for you and what
+[41:04] doesn't work for you because you know
+[41:06] everyone operates a little different but
+[41:07] just sort of a reminder to always stay
+[41:09] looking ahead but that is going to be it
+[41:12] for this master class where we talked
+[41:14] about prompting specifically for
+[41:15] prompting AI agents um you know if if
+[41:18] there's any doubts still I know we
+[41:19] started to get a little more advanced at
+[41:20] the end but there's definitely still a
+[41:22] lot of room for learning more about
+[41:24] prompting so any doubts um feel free to
+[41:26] join my free school community the link
+[41:27] for that is down in the description um
+[41:29] you can hop in there and shoot me a DM
+[41:31] and I'll I'll get back to you as soon as
+[41:32] I can I love to help you guys out and I
+[41:33] love to meet you guys so yeah um I
+[41:36] really appreciate you guys making it to
+[41:38] the end of this video if you did and
+[41:39] I'll see you in the next one so thanks
+[41:41] guys

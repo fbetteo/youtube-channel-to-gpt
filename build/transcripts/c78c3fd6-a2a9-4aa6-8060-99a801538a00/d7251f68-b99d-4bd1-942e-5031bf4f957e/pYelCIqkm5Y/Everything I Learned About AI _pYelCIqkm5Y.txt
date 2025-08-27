@@ -1,0 +1,644 @@
+Video Title: Everything I Learned About AI Agents in 2024 in 19 Minutes
+Video ID: pYelCIqkm5Y
+URL: https://www.youtube.com/watch?v=pYelCIqkm5Y
+View Count: 19,668
+
+[00:00] imagine having a team of workers that
+[00:01] never sleeps handles repetitive tasks
+[00:03] with precision and costs a fraction of
+[00:05] hiring a human welcome to the world of
+[00:07] AI agents this year I discovered their
+[00:09] potential and it changed everything for
+[00:11] me if you guys don't know me my name is
+[00:13] Nate I've been working in automation for
+[00:14] a while now but when I started learning
+[00:16] about AI agents earlier this year
+[00:17] something clicked and I knew I had to
+[00:19] throw myself at it completely so I quit
+[00:21] my full-time job to throw myself
+[00:22] entirely at mastering and building AI
+[00:24] agents because I saw how these tools
+[00:26] could cut costs transform workflows and
+[00:28] unlock potential in ways that tradition
+[00:30] automation never could in this video I'm
+[00:32] going to unpack everything that I've
+[00:33] learned about building AI agents over
+[00:35] the past year into the next 19 minutes
+[00:37] we'll cover the foundations challenges I
+[00:39] faced and the secrets to building
+[00:40] scalable systems that actually work I'm
+[00:42] going to move pretty fast through these
+[00:44] Concepts so let me know in the comments
+[00:45] if I touch on anything that you'd like
+[00:46] to see a more detailed video on so stick
+[00:49] around because by the end of this video
+[00:50] you'll have the tools and insights to
+[00:51] start building your own AI agents today
+[00:53] all the AI agents you see right here I
+[00:54] built out in NN so if you're interested
+[00:56] in NN and building agents check out my
+[00:58] channel cuz I've got lots of resources
+[01:00] there real quick I just wanted to say
+[01:01] thank you guys so much for 10,000 Subs
+[01:03] it makes me so happy to see that we were
+[01:04] able to hit this Milestone within just
+[01:06] under 3 months so I'm super super
+[01:08] appreciative for each and every one of
+[01:09] you because of this we're doing a $100
+[01:11] giveaway the winner will be announced
+[01:12] January 1st and all you have to do to
+[01:14] enter is join the free school community
+[01:16] and then comment down below your school
+[01:17] username so let's not waste any time and
+[01:19] hop into the key components of AI agents
+[01:21] real quick I just wanted to break down
+[01:23] the difference between an assistant and
+[01:24] an agent an AI assistant is a reactive
+[01:26] system that performs tasks through
+[01:28] direct user interaction like setting
+[01:30] reminders or answering questions but an
+[01:32] AI agent operates autonomously so the
+[01:34] key word here is autonomy they're able
+[01:36] to proactively manage complex multi-step
+[01:38] processes and make decisions without
+[01:40] constant input so like I said the key
+[01:43] difference lies in autonomy and
+[01:44] complexity assistance require Direction
+[01:46] whereas agents strategize and act
+[01:48] independently so breaking down the core
+[01:50] components of AI agents first up we have
+[01:52] the core agent think of this as the
+[01:53] brain of the operation the core agent is
+[01:55] the central processing unit that
+[01:57] integrates all functionalities every
+[01:59] decision every action it all stems from
+[02:01] the core without it the AI agent is just
+[02:03] a bunch of disconnected tools and data
+[02:05] next we have memory this is really a
+[02:06] game Cher because the memory is what
+[02:08] allows the agent to store and retrieve
+[02:09] information so that it can maintain
+[02:12] context and continuity over time which
+[02:14] means that the agent doesn't have to
+[02:15] start from scratch every time it wants
+[02:16] to tackle a new task so it's like
+[02:18] imagine you have an assistant that can
+[02:20] remember every single detail of your
+[02:22] last conversation and previous
+[02:23] conversations so that's what the memory
+[02:25] is going to do then we have tools these
+[02:27] are the external resources or apis that
+[02:29] the agent is going to use in order to
+[02:31] perform specific tasks and take action
+[02:33] whether it's like sending emails or
+[02:34] managing your calendar pulling data from
+[02:36] a database tools are what give the agent
+[02:39] the arms and legs the more tools that
+[02:40] you give your agent the more versatile
+[02:41] it becomes but it's all about finding
+[02:43] that balance finally and probably most
+[02:45] importantly we have the prompt this is
+[02:47] where the magic of problem solving
+[02:48] really happens The Prompt helps the
+[02:50] agent analyze problems devise a strategy
+[02:53] and ultimately determine the steps that
+[02:54] the agent needs to take to get the job
+[02:56] done it's what makes the agent more than
+[02:58] just reactive it makes the agent agent
+[03:00] proactive tackling tasks with a clear
+[03:02] plan in mind so now that we understand
+[03:04] the core components let's talk about the
+[03:05] capabilities of AI agents the first one
+[03:07] is Advanced problem solving the agent
+[03:09] can analyze situations plan tasks and
+[03:11] then execute on those plans whether it's
+[03:13] generating a detailed project report
+[03:15] writing functional code or creating
+[03:17] summaries of vast data agents are able
+[03:19] to handle repetitive tasks that would
+[03:21] take humans hours to complete next we
+[03:23] have self- reflection and Improvement
+[03:25] this is one of the most impressive
+[03:26] capabilities of AI agents they can
+[03:28] analyze their own output identify
+[03:29] problems propose Solutions and even
+[03:31] communicate with other agents which is
+[03:33] super cool this ability to improve
+[03:35] through iteration sets them apart from
+[03:37] static automation systems then we have
+[03:39] tool utilization so obviously tools are
+[03:41] what give the agents the power to act
+[03:43] and they use them in a lot smarter ways
+[03:45] than you may originally think once you
+[03:47] hook up different tools to an agent and
+[03:48] Define what each tool does they're able
+[03:50] to decide which ones they want to use
+[03:52] and in what order obviously as the use
+[03:54] case gets more complex you're going to
+[03:56] have to you know work in some more
+[03:57] structured prompting but these agents
+[03:59] are gen genely pretty good at
+[04:00] understanding how to conduct themselves
+[04:02] when they're given a role and an
+[04:03] incoming query finally we have
+[04:05] collaborative multi-agent Frameworks
+[04:07] like I touched on earlier agents can
+[04:08] speak to each other which is super cool
+[04:10] one might handle planning one might
+[04:11] handle critiques one might offer
+[04:13] feedback and this iterative Loop where
+[04:15] agents can collaborate and talk to each
+[04:16] other dramatically enhances their
+[04:18] performance all right so moving on to
+[04:19] something that I've realized over the
+[04:21] past months is so so important the
+[04:23] foundation which is data and context
+[04:26] we've all seen what they're capable of
+[04:27] but we need to talk about the fuel that
+[04:29] powers these capab abilities which is
+[04:30] data and context without high quality
+[04:32] data up-to-date data even the most
+[04:34] advanced AI agents it's like having a
+[04:36] car without gas so data is key we've all
+[04:39] heard the phrase data is the new oil and
+[04:41] when it comes to AI agents it couldn't
+[04:42] be more true an agent is only going to
+[04:44] be as good as the data that it has
+[04:45] access to if the data is outdated or
+[04:47] incomplete the agent will make poor
+[04:49] decisions and ultimately give you
+[04:50] inaccurate results it's not just about
+[04:52] the data though the agent also needs
+[04:54] context context gives the data meaning
+[04:57] without context even accurate data will
+[04:59] lead to poor results agents need to
+[05:01] understand the situation that they're
+[05:02] working in in order to make the right
+[05:04] decisions for you the question then
+[05:05] becomes how do we give agents the data
+[05:07] they need while also maintaining context
+[05:10] this is where Vector databases come into
+[05:11] play these tools allow us to store and
+[05:14] retrieve data in a way that's both fast
+[05:15] and contextually aware systems like pine
+[05:18] cone for example let agents search vast
+[05:20] amounts of information and find exactly
+[05:21] what's relevant to their task a vector
+[05:23] database basically stores information in
+[05:25] a way that captures meaning and context
+[05:27] of data and not just exact matches it
+[05:30] represents data as numerical vectors
+[05:32] which allows the AI agent to quickly
+[05:34] search through and retrieve the most
+[05:35] relevant data based on similarity even
+[05:37] if the exact words or phrases don't
+[05:39] match sort of like when you do a Google
+[05:40] Search and so diving into the agent
+[05:42] space you're going to hear a lot about
+[05:44] Vector databases and you're going to
+[05:45] also hear a lot about rag which is
+[05:46] retrieval augmented generation and as
+[05:48] you can see based on this image it's
+[05:50] just the process of the agent going out
+[05:52] to retrieve information and then getting
+[05:53] it back and generating an answer as I
+[05:56] alluded to earlier another key factor
+[05:57] here is keeping the data up to date
+[05:59] business data changes constantly New
+[06:01] Leads come in deals close projects
+[06:03] evolve if your agent isn't working with
+[06:05] the latest information its performance
+[06:07] is going to suffer so how do we have the
+[06:09] right mindset when we're approaching
+[06:10] building out an AI agent or an agent
+[06:12] framework when I approach building an AI
+[06:14] agent I don't jump straight into NN
+[06:16] which is what I typically use I don't
+[06:18] jump straight in there and start
+[06:19] dragging around nodes and connecting
+[06:21] things and writing prompts the first
+[06:23] step before you build anything is
+[06:24] setting up the data Foundation this
+[06:26] means asking yourself how can I most
+[06:28] optimally take all this information that
+[06:29] I have have over here and organize it
+[06:31] and structure it in a way that the agent
+[06:32] can accurately retrieve and use so Step
+[06:35] One is building a robust data framework
+[06:37] it's going to be a big big chunk of the
+[06:39] process getting all your information
+[06:40] into a database like a vector database
+[06:42] in a way that's clean organized and
+[06:44] optimized for the agent to use
+[06:46] efficiently this is the foundation if
+[06:48] the agent doesn't have access to
+[06:49] Accurate well structured data like we
+[06:51] talked about it's not going to perform
+[06:52] well then another huge chunk is Road
+[06:55] mapping your goals once your data
+[06:56] Foundation is in place you need to
+[06:58] understand what are you trying to
+[06:59] accomplish
+[07:00] what specific tasks do you want the
+[07:01] agent to Handle by breaking down your
+[07:03] objectives into smaller actionable tasks
+[07:05] you can build out an agent framework
+[07:07] with Clarity and purpose what we're
+[07:09] trying to avoid here is building out an
+[07:10] agent that initially works but then 3
+[07:12] months later having to rebuild that
+[07:13] agent then we move into the build phase
+[07:15] which won't take as long if you have all
+[07:17] your data in place and you have goals so
+[07:19] this is where you can actually get into
+[07:20] nadn start dragging and dropping Tools
+[07:22] around plugging in workflows assigning
+[07:24] tools and testing your agent
+[07:26] functionality but even here testing an
+[07:28] itation IS key which moves into the
+[07:30] fourth step testing and refining this is
+[07:32] the final piece of the puzzle it isn't
+[07:33] just about seeing if your agent works
+[07:35] it's about exposing it to different
+[07:36] scenarios identifying gaps in your logic
+[07:38] because trust me there will be gaps and
+[07:40] then testing helps you uncover these
+[07:42] edge cases to refine your database and
+[07:44] your workflows further so by starting
+[07:46] with a strong Foundation you set
+[07:47] yourself up for long-term success a
+[07:49] robust framework not only makes the
+[07:51] initial build smoother but also makes it
+[07:53] easier to update and scale your agent
+[07:54] over time this mindset is going to help
+[07:56] you prioritize building up a good
+[07:57] foundation which is what separates a
+[07:59] functional agent from one that's
+[08:00] constantly breaking or requiring fixes
+[08:02] down the line this leads gr into the
+[08:05] point of architecture and why
+[08:07] architecture matters it matters because
+[08:09] we want to build out agents that are
+[08:10] scalable and that we won't have to
+[08:11] rebuild later by architecting these
+[08:13] agents with the goal of continuing to
+[08:14] add on top of them we can create some
+[08:16] really cool systems that don't require
+[08:18] the infrastructure to be reset if we
+[08:20] want to make changes later on so here
+[08:22] are the things that you need to think
+[08:23] about first thing is to think about your
+[08:25] inputs and your outputs when you're
+[08:26] planning out the I agent you need to
+[08:28] think about what is the agent going to
+[08:29] receive and then what do we want the
+[08:30] agent to give us the simple step is
+[08:32] really important in understanding the
+[08:34] tasks that the agent needs to perform so
+[08:36] let's say You're Building some sort of
+[08:37] email agent the input is reading an
+[08:38] email and the output is responding to an
+[08:40] email some tasks within that process
+[08:43] between the input and output are going
+[08:44] to happen every time but others are
+[08:46] going to be situational like let's say
+[08:47] we need to scrape availability or let's
+[08:49] say we need to generate some sort of
+[08:50] quote or let's say we need to check a
+[08:52] knowledge base those things are going to
+[08:54] be situational based on the input so
+[08:56] thinking through these scenarios will
+[08:57] help you decide what tools the agent
+[08:59] should have access to and which ones
+[09:00] should be baked into the logic of the
+[09:02] workflow that are going to happen every
+[09:04] time for example if you want every
+[09:05] single conversation to be stored in some
+[09:07] sort of database you wouldn't want to
+[09:09] give the agent a tool that can do that
+[09:11] if it happens every time you want to
+[09:12] bake it into the logic of the output or
+[09:14] following the output so breaking things
+[09:17] down it's super important to do this for
+[09:18] every project every workflow within the
+[09:20] project and every task within every
+[09:22] workflow so that we can have these tasks
+[09:24] that we can connect like Legos each Lego
+[09:26] has a clearly defined job and together
+[09:28] they perform complete system this
+[09:30] modular approach ensures that your
+[09:32] agents are focused reliable and easy to
+[09:34] update the best approach here is to
+[09:36] create job function-based agents each
+[09:38] agent specializes in a particular
+[09:40] workflow like email management or
+[09:42] scheduling or lead qualification the
+[09:44] specialization makes them more efficient
+[09:46] and easier to debug ultimately this is
+[09:48] going to make your systems more modular
+[09:50] and modular design is key to scaling
+[09:51] your systems like we talked about
+[09:53] breaking your agents down into smaller
+[09:55] independent modules you can easily
+[09:57] remove or add or insert or update
+[09:59] specific functions without having to
+[10:00] redo the entire infrastructure because
+[10:02] you can just sort of plug and play these
+[10:03] things in and then when you have all
+[10:05] these different agents that have
+[10:06] different specific functions you're able
+[10:08] to connect them to different tools so
+[10:09] let's say you build an agent workflow
+[10:10] that sends emails you can now have this
+[10:12] tool be called by multiple other
+[10:14] workflows whenever you need that
+[10:15] function of sending an email okay so now
+[10:18] this sort of relates back to thinking
+[10:19] about your inputs and your outputs
+[10:21] sequential versus parent chaining on the
+[10:23] left we have the sequential and on the
+[10:24] right we have parent chaining so what is
+[10:26] sequential chaining it's exactly what it
+[10:28] sounds like one agent performs its task
+[10:30] passes the output directly to a next
+[10:32] agent which takes that input from the
+[10:34] agent and then performs a task and then
+[10:35] passes the output to another agent this
+[10:37] linear approach is straightforward and
+[10:39] it works well for processes where each
+[10:40] step depends on the previous one the
+[10:42] biggest Advantage here is its Simplicity
+[10:45] it's easy to set up and debug because
+[10:46] each step follows logically from the
+[10:48] last however it can become a bottleneck
+[10:50] if one agent takes too long to complete
+[10:52] its task or just fails entirely then we
+[10:54] have parent chaining which involves a
+[10:55] central parent agent that coordinates
+[10:57] multiple child agents instead of a
+[10:59] linear flow the parent agent evaluates
+[11:01] the situation and then it's able to
+[11:03] delegate tasks to different child agents
+[11:05] appropriately the parent collects their
+[11:06] outputs and then integrates them into
+[11:08] one cohesive result which is the output
+[11:10] this system is going to be a lot more
+[11:11] flexible and resilient compared to
+[11:13] sequential chaining because if one child
+[11:15] fails the parent can reroute the task to
+[11:17] another agent or have the child agent
+[11:18] try again and handle the error more
+[11:20] gracefully however it does require more
+[11:22] planning and a little bit more
+[11:23] complexity in terms of the architecture
+[11:26] so how do you choose between these two
+[11:27] systems it really depends on the
+[11:28] workflow sequential training is best for
+[11:30] straightforward processes with a clear
+[11:32] order of tasks and parent training is
+[11:34] ideal for complex or more Dynamic
+[11:36] scenarios where multiple tasks can run
+[11:37] in parallel and where some of the tools
+[11:39] are situational understanding these
+[11:41] methods is crucial for Designing
+[11:43] effective AI agent workflows whether you
+[11:45] go with sequential or parent or even
+[11:46] like a hybrid approach choosing the
+[11:48] right method will determine how well
+[11:49] your system performs all right so now
+[11:51] moving on to like I said what is
+[11:53] probably the most critical skill for
+[11:55] making agents that work as expected
+[11:57] which is prompt engineering the quality
+[11:59] quality of your prompts determines the
+[12:00] quality of your agent's output a
+[12:02] well-crafted prompt guides the agent's
+[12:04] reasoning ensures it understands the
+[12:06] tasks and reduces errors so it's super
+[12:08] super important so there are a few
+[12:10] essential components to every strong
+[12:11] prompt and breaking these down will help
+[12:13] you engineer them
+[12:14] effectively starting off with the
+[12:16] objective you need to define the agent's
+[12:17] overall goal this gives the agent a
+[12:18] clear sense of purpose then we have
+[12:20] context this provides the agent with all
+[12:22] of the relevant background information
+[12:24] and it helps it understand the
+[12:25] environment that it's working in
+[12:26] obviously we have tools you want to
+[12:28] outline each tool the agent can access
+[12:30] what each tool does and when to use each
+[12:32] one then we have instructions you want
+[12:34] to be explicit about what you want the
+[12:35] agent to do and how you want it to take
+[12:37] action output requirements specify
+[12:40] exactly what the output should look like
+[12:42] and finally we have examples these are
+[12:43] really the Lyn pin of a good prompt they
+[12:45] show the agent what a successful flow
+[12:47] and what a successful output looks like
+[12:49] reducing ambiguity if you want a deeper
+[12:51] dive on prompting for AI agents
+[12:52] specifically check out this video that
+[12:54] I'll tag right here where I sort of dive
+[12:55] into this topic obviously this process
+[12:58] of prompt engineering is not a one
+[12:59] andone you're going to need to test
+[13:01] refine and retest your prompts to get
+[13:03] consistent results start simple observe
+[13:05] where the agent struggles and adjust
+[13:07] accordingly like I mentioned earlier
+[13:09] exposing the agent to different
+[13:10] scenarios to see where it has gaps is an
+[13:12] essential part of making sure that your
+[13:13] agents can be trusted and testing and
+[13:15] refining the prompts is a huge chunk of
+[13:17] this now I want to talk about challenges
+[13:19] that I face when I'm building a agents
+[13:21] it's a very fun and exciting process but
+[13:23] trust me it's not without its challenges
+[13:25] because you're going to run into a lot
+[13:26] of issues and there's going to be a lot
+[13:27] of headaches so let's dive into some
+[13:29] some common hurdles that I face and how
+[13:31] you they can derail your process but
+[13:33] also what you can do to overcome them so
+[13:35] the first thing is data quality it's
+[13:37] easy to overlook how your data is being
+[13:39] prepared and fed into the database
+[13:41] especially when everything is initially
+[13:42] working because you think you're good to
+[13:44] go but trust me you want to get it right
+[13:46] the first time I've gotten to the end of
+[13:48] a build only to realize that the
+[13:49] information in my Vector database was
+[13:51] unoptimized missing metadata and even
+[13:53] had some nonsensical vectors so I knew
+[13:56] this would only cause the agent to get
+[13:57] confused as we continue to and more data
+[14:00] so it forced me to go back and fix the
+[14:01] entire data pipeline the takeaway here
+[14:04] is to pay close attention to how your
+[14:05] data is being chunked what the metadata
+[14:07] looks like and how it's stored in your
+[14:08] vector database try to automate the data
+[14:10] ingestion process to ensure everything
+[14:12] is consistent and always test the
+[14:13] database early and often during the
+[14:15] build to catch issues before they
+[14:16] snowball if you want to understand
+[14:18] better how your data is being chunked
+[14:19] and split and ultimately fed into a
+[14:21] vector database then go ahead and watch
+[14:22] this video I'll tag it right up here
+[14:24] where I sort of show a lot of examples
+[14:25] of how that works next we have poor
+[14:27] planning another challenge I faced a ton
+[14:30] is building a system that works
+[14:31] initially but ultimately it's not
+[14:33] scalable you know early on I start
+[14:35] building an agent with a specific
+[14:36] workflow in mind it works well but then
+[14:38] when I try to add new features I
+[14:39] realized that the architecture couldn't
+[14:41] handle it so I ended up having to start
+[14:43] over from scratch the takeaway here is
+[14:45] planning out your builds is crucial
+[14:47] before you jump into NN or any other
+[14:48] agent building platform you want to map
+[14:50] out your goals your workflows your tasks
+[14:52] that your agent needs to handle not just
+[14:54] now but in the future because you're
+[14:56] probably going to end up adding on more
+[14:57] capabilities like we talked about you
+[14:59] want to adopt a modular design breaking
+[15:01] tasks into reusable components or tools
+[15:04] that multiple agents will be able to
+[15:05] call on later this not only makes your
+[15:07] builds more scalable but also saves you
+[15:09] time when you need to Pivot or add
+[15:10] features later on third we have the
+[15:12] balance between Simplicity and
+[15:14] flexibility there's the challenge of
+[15:15] balancing these things because if your
+[15:16] workflows are too rigid adding new
+[15:18] features becomes difficult but if
+[15:20] they're too overly complex it can be
+[15:22] harder to manage and debug you want to
+[15:24] start simple and focus on making
+[15:25] workflows modular as your agent
+[15:27] capabilities grow you can layer lexity
+[15:29] without breaking the system finally just
+[15:31] wanted to talk about the mindset of
+[15:32] having realistic expectations agents are
+[15:35] not perfect and they will break and they
+[15:37] will fail but whether that's due to
+[15:39] something you did or changes in the data
+[15:41] or um shifts in the platform and the
+[15:43] tools that they rely on breakdowns are
+[15:45] inevitable and it's okay so the takeaway
+[15:47] here is that you can't expect Perfection
+[15:50] but you want to prepare yourself for
+[15:51] troubleshooting and learning from those
+[15:52] failures because every time an agent
+[15:54] breaks you're gaining insights into how
+[15:56] it operates and how to make it better so
+[15:58] adopt a mindset of curiosity
+[15:59] adaptability view every issue as an
+[16:02] opportunity to understand your agent
+[16:03] better and refine it over time you're
+[16:05] going to develop a troubleshooting
+[16:07] process that not only solves your
+[16:08] problems but makes your future builds
+[16:10] stronger okay so the future of AI agents
+[16:13] starting to wrap up here but let's zoom
+[16:15] out and think about the bigger picture
+[16:16] what does the future hold for AI agents
+[16:18] and why should you start building them
+[16:19] and understanding them today this isn't
+[16:22] just a passing Trend this is the future
+[16:24] of work and automation as these systems
+[16:26] become more advanced they're poised to
+[16:28] replace repetitive low value tasks
+[16:30] freeing up humans to focus on creativity
+[16:32] strategy and innovation in the past
+[16:35] businesses scaled by hiring more people
+[16:37] in the future scaling will mean building
+[16:38] smarter AI agents to handle complex
+[16:40] workflows with minimal human input and
+[16:43] so there's some concern around this
+[16:44] right but the future isn't about AI
+[16:46] replacing humans it's about how can
+[16:48] humans and AI work together how can
+[16:50] humans leverage AI to act as teammates
+[16:53] not just tools collaborating with us to
+[16:55] achieve goals faster and more
+[16:56] efficiently why is right now the time to
+[16:58] start because the technology is still
+[16:59] evolving we're still pretty early in
+[17:01] this paradigm shift but that's exactly
+[17:03] why right now you want to get involved
+[17:04] by starting early you can sort of
+[17:06] position yourself as a leader in the
+[17:08] space gaining experience and insights
+[17:09] that you need to stay ahead of the curve
+[17:11] so here are a few trends that I think we
+[17:12] need to keep our eyes on within the next
+[17:14] few years the first one is increase
+[17:15] autonomy agents are obviously going to
+[17:17] become more self-reliant and smarter and
+[17:19] there will be a day when agents can
+[17:20] build other agents which will will be
+[17:22] pretty cool but also maybe a little
+[17:23] scary um anyways number two enhanced
+[17:26] collaboration multi-agent systems will
+[17:28] become more common with agents working
+[17:30] together to handle these more complex
+[17:32] workflows we're going to have broader
+[17:33] accessibility so no code and local
+[17:36] platforms are already super accessible
+[17:37] but these will be even better for more
+[17:39] you know non-developers non-technical
+[17:41] users and then finally more integration
+[17:43] into everyday tools so this is already
+[17:45] happening but agents are going to be
+[17:46] embedded more often in tools we use
+[17:48] every day like our crms our email
+[17:50] platforms and project management systems
+[17:52] stuff like that it's just going to
+[17:53] become super super common so the
+[17:55] takeaway here is that AI agents are not
+[17:56] just the future they're the present so
+[17:58] the sooner you start learning
+[17:59] experimenting and building the better
+[18:01] you're positioning yourself to take
+[18:02] advantage of this paradigm shift in the
+[18:04] future so if you haven't joined my free
+[18:05] school Community for the giveaway
+[18:06] already I would encourage you to do so
+[18:08] it's a great Community you can get your
+[18:09] questions answered it's a committed
+[18:11] group of people that are you know
+[18:12] dedicated towards building out AI agents
+[18:14] and learning how they can help
+[18:15] businesses and also any videos that I
+[18:16] make in the future all the resources
+[18:18] will be on there for free then I also
+[18:20] have a paid community that you can check
+[18:22] out in the description if you want to
+[18:23] take your skills a little bit further if
+[18:24] you want access to five weekly calls
+[18:26] real project insights and stuff like
+[18:28] that then my last call to action is if
+[18:30] you're looking to have this sort of
+[18:31] stuff built out for you or for your
+[18:32] business or you're looking for AI
+[18:34] consultancy Services then book a call
+[18:35] using the link to my website in the
+[18:37] description but that's all really
+[18:38] appreciate you guys making it to the end
+[18:40] really appreciate all the support so far
+[18:41] and I'll see you guys in the next one
+[18:42] thanks

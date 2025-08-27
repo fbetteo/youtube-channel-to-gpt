@@ -1,0 +1,51 @@
+Video Title: I Built an AI Resume Analysis System with No Code in n8n #aiagent #n8n #artificialintelligence
+Video ID: LuAeKRDLofY
+URL: https://www.youtube.com/watch?v=LuAeKRDLofY
+View Count: 18,183
+
+[00:00] Watch me build an AI resume screening
+[00:01] system and edit in with no code. All
+[00:03] right, so we know that the trigger of
+[00:05] this workflow is going to be Gmail. So
+[00:06] I'm going to type in Gmail. We're going
+[00:08] to grab this guy and we're going to grab
+[00:09] the trigger on message received. And I
+[00:11] just sent myself an email with a resume
+[00:13] from a fake character named Jordan
+[00:15] Reeves. And it is a Word doc. We should
+[00:17] see the binary image right here, which
+[00:19] is Jordan Reeves resume as a Word doc.
+[00:21] Okay. So the next thing to do is we want
+[00:23] to have a switch that sends the data
+[00:25] different ways based on the file type.
+[00:27] So I'm going to add a new node. I'm
+[00:29] going to type in switch. And what I'm
+[00:31] going to do here is first of all, we're
+[00:32] just going to worry about word docs
+[00:34] because that's what we have right here.
+[00:35] And then we'll come back later and do
+[00:37] PDF and text file. Okay. So, we have the
+[00:40] resume, we have the job title and
+[00:42] description. Now, we want to feed it
+[00:44] into an AI to analyze the two of them.
+[00:47] So, I'm going to click on the plus and
+[00:48] I'm going to add an AI agent.
+[00:51] But before we can run this, we need to
+[00:53] connect a brain. So, I'm going to click
+[00:54] on the chat model button, and I'm just
+[00:56] going to choose a OpenAI chat model
+[00:58] because I want to use a reasoning model.
+[01:01] You'll see that it's going to give us
+[01:02] our strengths, weaknesses, all the stuff
+[01:04] we asked for in different fields. And
+[01:07] we'll be able to drag it later into
+[01:08] Google Sheets really easily. So, there
+[01:10] we go. It just finished up and now we
+[01:11] have a list of candidate strengths. It
+[01:13] found seven things. It found four
+[01:15] weaknesses. It said low risk factor with
+[01:17] an explanation, high reward factor, a
+[01:20] nine overall rating, and a
+[01:21] justification. If you want to watch the
+[01:23] full tutorial, click on that play button
+[01:24] right here.

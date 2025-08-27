@@ -1,0 +1,477 @@
+Video Title: Untitled_Video
+Video ID: SDZNw1RrhU0
+URL: https://www.youtube.com/watch?v=SDZNw1RrhU0
+View Count: 0
+
+[00:05] So, again, everyone welcome 1 back Welcome back to this room or, um, welcome to this room.
+[00:13] If you were in a different 1 before, um, yeah, in this session, we're gonna talk a bit about how we can use Tensor flow for sports analytics.
+[00:21] Um, yeah, and I just want to like, make 1 note before I start.
+[00:26] So, if you've seen, like, the sports and for you, the sports symposium, um.
+[00:30] Like, the website, it says that I was going to talk a bit about fantasy football.
+[00:36] So, um, I will not actually be talking about trying to see football because, like, I had some reevaluation, like, when it came to, like, what we are doing in this workshop.
+[00:45] And I want to make it easy for everyone to understand and then I've as such I have made this.
+[00:51] Very, very beginner friendly when it comes to, like, and, um, like, just Tensor flow in general.
+[00:56] So, um, I guess with that, I'll just start and say a few things about myself. So, my name is.
+[01:04] I am a senior and I, um.
+[01:08] Uh, doing a dual degree in computer science, and I'm doing an individualized major as well in data science.
+[01:14] Um, also the president of the Yukon data science club, and I will, uh, give a link to join that later as a little bit of a self promotion.
+[01:23] But, um, yeah, for now, I'll talk a bit about, like, uh, how we can use Tensor flow to predict some NFL data.
+[01:30] So, uh, this is just like an, uh, an outline of how we're going to proceed today.
+[01:37] A table of contents, so 1st, I'll introduce a bit about Tensor flow, give some history. Some background, um, talk a bit about how, like, it works on a lower level. Explain the idea of, like a neural network.
+[01:48] We're gonna make our model and, um, yeah, let's just, let's just get into it.
+[01:53] So Tensor flow, um.
+[01:56] The 1st question is if you've never heard of it, like, what exactly is it and how can it be used? It's been thrown a lot around lately given how there's been like an L boom lately given how processing is better in computers.
+[02:09] And, um, these algorithms allow for, like, very powerful things to happen.
+[02:13] So that's a flow as an open sourced, deep learning library that, um, makes creating models, more easy, flexible, fast and reproducible, which is why it's very popular in industry at the moment.
+[02:25] But it's also very popular for other applications because it's very.
+[02:29] You can do like many things. It's like a very powerful tool that can be leveraged.
+[02:33] And just has a bit of history around TensorFlow. So this is the product of the Google brain team.
+[02:40] And it was this, uh, software itself has evolved from.
+[02:44] A previous software that the brain team was creating called, uh, disbelief, which was, um, they were working on it in 2011, but, um, they turned the.
+[02:54] Machine learning code that they had at the time into Tensor flow because, uh, something a piece of hardware called the, uh, the tenser processing unit.
+[03:04] Was released at that time and, um.
+[03:08] Yeah, that was like, in 2015 Tensor flow was released.
+[03:12] So, um, and it's been like, heavily used, um, ever since.
+[03:17] So, let's talk about the alternatives Tensor flow and why we should use Tensor flow.
+[03:21] So, that's info is often preferred by people in companies who are doing a lot of work, because it's easily deployable.
+[03:30] To many servers and projects, and it's also very versatile.
+[03:34] Some other, uh, alternatives are pie, torch and cafe. These are 2 other, um, alternatives being 1 of the more popular ones. So is preferred by people doing research because, like, it's easily bookable.
+[03:46] There's a bit of a joke going around in the computer science, um, community that, like, uh, people who use pie torch.
+[03:54] Or a little bit pretentious, which is why we have this name here saying when you're the only 1 of your friends who uses instead of Tensor flow. But, um.
+[04:02] That's up to debate, but, um, regardless cafe is also like, it's, it's not as known, but, like, it's also used by a lot of researchers and startups and it has very.
+[04:13] Well, good, uh, capabilities for small, but specific, fast use cases. But why did you learn Tensor flow? So.
+[04:19] Um, I mentioned the, the tentative processing unit, so the biggest advantage of Tensor flow is the idea of a sensor.
+[04:27] So, what exactly is Tensor. Um, tenser is just like a word for, like, uh, data, which has dimension.
+[04:34] So, for example, if you have a 0 dimensional sensor.
+[04:39] That's something that's going to this killer. Um, I mentioned earlier in the prerequisites that.
+[04:45] A bit of linear algebra knowledge would be necessary.
+[04:48] And, um, this this concept becomes a lot easier to understand if you understand, like, just the idea of how data works for dimension. So if you have a vector, that's a 1.
+[04:59] We could also have a 2 denser, which is a matrix.
+[05:04] So, cancer specifically, the is optimized so you can do many linear algebra operations.
+[05:12] Such as vector matrix operations, and there's a lot of gradient. Um.
+[05:17] Calculations when you're working on Tensor flow, and this is very dominant when it comes to, like, machine learning and deep learning.
+[05:24] And it basically on a low level, it leverages the.
+[05:28] Structure of this GPU, the graphical processing unit to, um, solve powerful, uh, very complex sensor operations.
+[05:37] Okay, so.
+[05:41] You don't necessarily need to install Tensor flow locally, but, um, if you, if you'd like to do it, there are a few ways to do it. So, if anyone has anaconda as a managing package management system.
+[05:52] Anaconda is good because, like, it allows you to, like, sort of compartmentalize some things, but, um, keep in mind.
+[05:58] I'm going to show you an alternative where you don't need to install anything locally, but if you're interested in installing anything locally, the slides will be up and these are the commands that you have to run to install these things.
+[06:09] Um, but, yeah, let's talk a bit about what test flows and, like, what the components are. I talked a bit about the sensor processing unit, but let's, let's see how that sort of works. So, um, initially, Tensor flow, uh, was composed of.
+[06:23] These different, um, these different, uh, concepts, which I'll elaborate a bit further with an example. But, um, you know, you have the operations, as I mentioned earlier, there's a lot of linear algebra involved when you're actually doing some low level Tensor flow encoding and, um.
+[06:38] For that reason, you have, like, uh, many different, uh, packages, which is optimized to work with the hardware. Um, there are also nodes, which are 2 different types of variables known as constants and variables.
+[06:50] Constance, as the name implies, um, are constant and variables, uh, the differences that, while you have to declare it with the value in the beginning, you can change those values.
+[07:01] Um, but think of it as, like, re, learning sort of another programming language in the sense.
+[07:07] Where if you understand these concepts, then you can like, sort of create like, neural networks from scratch.
+[07:13] And then there's something called a session which.
+[07:17] It provides the flow and the Tensor flow. We talk about pencil so.
+[07:20] How does it flow but it's not used anymore in version 2 and I will get to that soon.
+[07:24] Okay, so, um, this might be a bit difficult to get your head around. So I will illustrate it through an example to show.
+[07:32] How it works um, how many of you have played this game at any point in your lifetime?
+[07:36] Raise your hand yeah, it's a pipe game, right? So, um.
+[07:40] And this is a perfect way to describe how pipes, how, uh, Tensor flow it works.
+[07:46] So, as I mentioned earlier, the notes.
+[07:50] Hold the data, right? They're just like, uh, they're like the bones of the skeleton in a sense.
+[07:56] And, you know, how you can like, uh, move these pipes around. Like, I think the objective for those who haven't played this game. I should've mentioned that. 1st.
+[08:03] But the objective is to get the pipes flowing to the output.
+[08:09] And you have like, a bunch of pipes, and if you click on them, I'm pretty sure they, like, turn.
+[08:12] And, um, if you click on these pipes, they turn like, they rotate.
+[08:19] And that should like, basically, you're trying to redirect the water flow.
+[08:25] So imagine, this valve is close shot.
+[08:29] So, that's what we're beginning. 1st, so, that's the flow. 1. how it works is that imagine these, uh, hold the data but the data set is coming from the session object.
+[08:38] And it's traveling through the nodes and it's being transformed by the operations, the operations being the connections.
+[08:45] Between the pipes and, like, just the way that you can turn the pipes.
+[08:49] And this whole structure is called a graph.
+[08:54] Um, so the way Tensor flow 1 used to work is that you used to have, like, all of these structures, but you need to have like, the.
+[09:03] The flow chart, basically set before you can actually feed in any data and this is good. Like, when it comes to, like, uh, deploying your model, right? Because you don't want your, you don't want a machine learning model, like, breaking on you like, when it's actually in production. But, um.
+[09:18] You know, like 1 of your debugging it it, it makes it a bit difficult to work with.
+[09:23] And, um, we'll we'll explore how that works and that's because.
+[09:28] Test flavor for 2 years is something called eager execution so when I found out about this, I was like, or or like this guy up here. Um.
+[09:35] Because, like, the eager execution is a very interesting, um.
+[09:41] Concept that helps simplify these things. So.
+[09:44] This is the workflow for Tensor flow. 1, right? You have the nodes, you.
+[09:48] Set them up with you put the operations in place.
+[09:51] You make a graph structure, and then you start a session and that's how you get the data in. And then that's when the data comes in.
+[10:00] On the other hand version, 2, pencil, ego, execution basically what it does it allows you to do it, uh, piece by piece.
+[10:07] In the sense that you can flow in the data, and you can work with the data as it's being pushed through the systems.
+[10:15] So, um, let's take a look at a look at it. So, um, if you go to the, um.
+[10:21] The sports analytic symposium website, when you find a link to my GitHub repo.
+[10:26] And, um, you want to open this file 1st, to just show, like, how eager execution works and how it's different.
+[10:32] So, I'm going to ask a very hard question.
+[10:37] Can you tell me what 1+2 is? 5.
+[10:42] Those 300 to 3. um, so, yeah, that's correct. So, this is, we're using cancer flow 2 on the spot themselves.
+[10:51] And we'll show that 1st, and here see, it says that we have a tenser that has the value 3 here. I'm not sure. Let me maximize this so that it's easier to see. Can everyone see this.
+[11:04] Uh, it's called, uh, it's encoded in the code folder.
+[11:16] Um, zoom in on this.
+[11:22] Oh, okay there we go. Okay. So, uh, you know, it prints out 3, but let me show you what you have to do beforehand.
+[11:31] Um, beforehand, we're going to use something where we disable our eager execution.
+[11:40] And we're going to see what happens now.
+[11:46] Okay, so what what does everyone think will happen.
+[11:51] Next time, does anyone have any ideas.
+[11:58] I have an idea, like, um, so as we expected it earlier.
+[12:03] Um, I, I would assume that, like, since we have 2 constants with the values 1 and 2.
+[12:09] We got 3, but a loss. We don't, we just get an empty tenser.
+[12:16] So the reason why I remember how I talked about earlier, you have your graph in place before you start flowing in your data.
+[12:22] Um, so you still need to have this so, like, in order to this, you'd have to actually run it with a session object and then you can get the last line.
+[12:32] You can get like the answer that we're expecting, which is 3.
+[12:35] And I'll show that here. Let's see, we have 3 now, but, like, uh, it's so much code for something that we could have done, like, very easily here.
+[12:44] So which is why I personally, I prefer Tensor flow to for development.
+[12:49] Um, but some, some defenders of TensorFlow 1 will be like, oh, but you lose the.
+[12:55] The, um, speed and the precision, like, when you move to TensorFlow 1, because you have easier execution, it takes more time.
+[13:03] For the model to work well, to those haters, I have something to say. There's something called the, uh, TF dot function.
+[13:10] Method and that basically gives you all the benefits of cancer for 1.
+[13:14] Um, what tends to look so this is something very low level stuff. You might be wondering, how can we make our computers like, think like humans.
+[13:22] Using all of this stuff and to show you how to do that, I'm going to make you all make your own neural networks.
+[13:30] From scratch no, I'm joking. Um, like, fortunately, uh, there's a lot of research.
+[13:36] In this field, and in order to make our neural networks, like, uh, we're gonna use a lot of APIs.
+[13:42] Which are prominent and Tensor flow too, because, um.
+[13:49] We're going to use a lot of APIs that are permanent Tensor flow use, uh, 2 from the API.
+[13:55] Which handles a lot of stuff for us and I'll just give you a big, uh, an overview of what we're gonna do. However, how are we going to make.
+[14:01] Our code think like a human. I'll also, um, these are just some common, um.
+[14:07] Matrix multiplication and, uh, operations that you could be using if you want to do stuff from scratch.
+[14:14] We're not doing that so learning.
+[14:23] Machine learning that's a very commonly used buzzword but, um, it's, it's very simple in concept when you think about it.
+[14:31] Because, basically all, we're doing, we look at ourselves inside.
+[14:36] Um, we, we, we think about how we ask people.
+[14:40] In order to actually, um, implement these things because that's that's what all the machine learning is based on.
+[14:46] So, um, has anyone here ever taking any courses.
+[14:54] Well, um, so basically, there's the actual, uh, thing in your brain called neurons and, like, their systems of neurons, right?
+[15:02] Yes, um, so, like, in the scope of the workshop, we're gonna be covering, which are known as artificial neuro networks, which is not very, it's called artificial because it's not like an organic neural network that is known in your brain.
+[15:15] But it's something where we can make the machine itself.
+[15:18] Uh, mimic a brain in that sense. So, uh, we start with the idea of a neuron right? So approach it like a black box with an input and output. Like, people tend to complicate this a lot but.
+[15:30] In essence, that's all you have right now you put stuff in you got stuff out.
+[15:34] So, I'll explain a bit more in detail what that actually reversed. So we have different parts of it.
+[15:40] We have the note itself, right? So That'll have like, a bias value in itself.
+[15:44] And, um, there are also weights which connect different nodes so you might have seen like, the diagrams right with the circles and, like, lines connecting them. That's basically what this this.
+[15:55] I'm sorry guys, um.
+[15:59] But also, we have like, something called an activation function. So let's say that. So that basically determines how the neuron blue fired. So, as I mentioned earlier, this is how neurons, uh, in the brain work.
+[16:10] So, let's say we have 2 nodes right that are feeding and data to this, uh, big circle note over here. So I'll just explain what that's what's happening.
+[16:18] So, that connection between the, uh, input node into this node is, uh, connected by something called wait. Right? So, we have a weight of 1 here from this note.
+[16:29] And we have a weight of 2 from the simple note. So, basically you would take the data you would multiply by the, uh.
+[16:36] The wait, right and then you'd add the bias and you'd put it through an activation function.
+[16:41] Which basically is a function, which you can use to.
+[16:45] Uh, determine like what the output of the note will be. So there are different types of activation functions, which I will cover a bit later.
+[16:53] Um, but in essence, this is all under 1 is so the thing is for neural networks, right? You just back like a lot of these together.
+[17:01] So, that you have, um, so so that you have, like, essentially a network, right?
+[17:06] And that's what this looks like. So, uh, we have the, we either 3 different types of layers.
+[17:12] Um, in our networks, we have input layers and layers and output layers.
+[17:16] So, input and output lyrics, they're only 1 of each.
+[17:20] As I mentioned earlier, like, think about the black box, right? You put stuff in stuff comes out.
+[17:25] Um, but the thing is in between.
+[17:29] Um, you have, like, these hidden, uh, layer nodes, which basically do perform a lot of computations and try to and it adjusts itself, which is why it's so different from.
+[17:39] Um, other, uh, machine learning, like, why it's a different from other things that we do in programming when we're programming, uh, systems.
+[17:47] Because it has the ability to reflect on itself and, like, change it's waste based on, like, um.
+[17:53] And the feedback it's getting, and the results it's getting, so you can have multiple hidden.
+[17:59] But, in essence, the only layer that you can directly affect is the input layer.
+[18:05] By deciding, like, what sort of, um, data you want to pass through that.
+[18:10] And, um, I mentioned earlier, right um.
+[18:14] The training, it's basically it'll I mentioned that the neural network.
+[18:19] Reflects on its performance and it uses it does that through a concept known as a back propagation.
+[18:27] So, for propagation is basically what I mentioned right now, where you feed the data through this thing, it gets transformed by the hidden learn neurons.
+[18:36] And then it gives out an output, but back propagation is when you see the output, and you compare it to.
+[18:42] What the actual score is, because you are trying to predict something, right?
+[18:48] But what if that prediction is wrong and if it's if it's wrong, then it will go back.
+[18:53] And it will try to improve the accuracy. So, the difference between the actual score that you're getting, and the expected score, that's something called loss.
+[19:03] It's also called cost and some disciplines.
+[19:06] But I will call loss for this, uh, this lecture.
+[19:09] And basically to determine you want to minimize loss, right? Because you want your neural network to make something that's as close as possible to the real, like, data itself because you're creating a system that predicts well, and that is done through a.
+[19:24] Uh, method called gradient so there's this formula over here and if you understand if you're, like very well versed in the statistics.
+[19:31] You may be able to understand it, but, um, I'll just, like, explain it in plain words. So that, um, it's a bit easier to grasp.
+[19:38] So you have a feedback cycle, right? You have this beta hat T +1, which is going to be the, uh, new way.
+[19:45] And you basically take it by taking the old way and descending down you basically find the derivative or the gradient of the, the loss. I wrote lost function. But it's actually lost function. So, keep that in mind. Um, but you want to find like the minimum, right?
+[20:00] Because you want to find the point, like, where.
+[20:02] Um, can we, when when do we no longer have more loss?
+[20:06] Um, we want to make that number as low as possible and, um, the best way to do that is to find the minimum using calculus.
+[20:14] Now, unfortunately, you don't have to actually implement this because this has been implemented and, um, it's optimized essentially. And.
+[20:22] Hmm, we can basically go to go look into that code ourselves.
+[20:27] So, the sportsmanlike symposium, okay also a high to, for whoever gets the question, right?
+[20:32] So, I know this is a baseball snack, but sports.
+[20:36] Right. So who's this coach? Does anyone know.
+[20:40] Just raise your hand. Yes yes.
+[20:46] I need to do some learning myself to prove that I didn't provide the right.
+[20:50] But don't worry, there will be many more opportunities to get these high trees.
+[20:55] Um, you'll see that shortly. Okay. Bye. Bye.
+[20:58] Um, as I mentioned, right, you're using prediction models in order to do this, you're trying to predict data.
+[21:04] So, um, does anyone know what play by play analysis is.
+[21:11] Yes, do you want to mention it? Mm. Hmm.
+[21:18] What time it is.
+[21:23] Exactly, exactly and like, all of that data is somehow publicly available.
+[21:27] Uh, due to web scraping, if you took the last course, or, like, by a bunch of officials who've released these reports. So I got my data from. So.
+[21:37] In so, basically, what I'm saying is in a CSV, I have.
+[21:40] Every single play that was done in the 2021 to 2022 season.
+[21:45] And, um, if you want to find it out there, they have it for, like, every year. But I'm just gonna be using 1 season for this, uh, model.
+[21:52] And let's try to create a model that predicts whether the next play is going to be a 1st down, um, given some data that we have beforehand.
+[21:59] So, in order to see this, uh, data, you have to go into the get hub again.
+[22:05] And you want to open the I, the notebook file that's called.
+[22:11] 2022 and, um, I'll explain it. So, um, remember earlier I mentioned, you don't have to download it locally. If you already have Tensor flow. Good for you, you can do that on your machine, but just to.
+[22:22] Keep some results constant I'm gonna be doing this on something called Google. Collab which is google's cloud based. Um.
+[22:29] Uh, and be like, uh, file system.
+[22:34] Because, like, the, once you get are much more consistent.
+[22:38] And just get some good stuff. So let's start by importing pandas.
+[22:44] Now, you might be wondering this isn't a pandas workshop. This is Tensor flow workshop.
+[22:48] So, why am I using this? So, what's the most important steps when you're, um, working on creating a model is you have to have good data remember how I said earlier.
+[22:58] Neural networks is just you put stuff in and stuff comes up. There's a very common phrase. Um, that is used for this thing. It's called garbage in garbage out. So you don't want to put garbage in garbage out. Right? So you want to have some good data.
+[23:10] And you want to have it clean so, um.
+[23:13] Even though this was script, right? We see a lot of problems here. Anyone does anyone want to notice like anything? So, this function basically just shows the 1st, 10 values of the, um, data frame that we have. So, we're basically just taking the.
+[23:27] Um, the Python, like, the data that we have this is the play by play data from NFL.
+[23:33] And this is what it looks like. Oh, wait, let me let me run this from scratch. So I need to import the, it's going to give me an error because I need to import the, uh.
+[23:45] Well, so, let me just show you how to do it on Google. Collab really quickly.
+[23:50] So, um, you basically just have to do file, um.
+[23:56] You wanna you wanna go navigate yourself to here. You want to click this button.
+[24:02] Um, if you haven't get clone this on your local machine already, I recommend you do that.
+[24:08] But if if you don't have it now, you can just do it later. So, don't worry too much about it.
+[24:12] But, um, let me just find the.
+[24:17] Yes, here it is. Okay. So we're going to upload the play by play notebook.
+[24:27] And, yeah, it says upload files we'll get deleted 1 this 1 time is recycled. So.
+[24:31] Every time you start a new run time, you have to upload it, which is maybe why you'd want to, like.
+[24:37] Do this with, like, an older, like, with your own laptop as well?
+[24:42] But, um, for our purposes, it's fine.
+[24:48] Okay, so here we have a lot of.
+[24:51] An, or like, not a number of values, right? That's 1 of the problems that we have. Because, like, if the data frame sees these values, it's not going to know what to do with that.
+[25:02] So, we have to find some way to handle those values.
+[25:06] And the way to see how many not a number of values there are is by using this method.
+[25:11] Wait, let me just so you can see this a bit better.
+[25:16] Can everyone see this a bit better now? Okay sorry about that earlier.
+[25:21] Okay, but yeah, uh, this column takes every single this Commandments, every single column in the data frame and tells you how many, uh, N, values there are.
+[25:32] And here, we can see an offensive team defensive team.
+[25:36] Uh, there are a lot of values there's also something called name, right? So, that's because, uh, when you get it from, for some reason, they have, like, empty columns so we kind of just have that, right? Because that that sort of thing and then, like, also, it doesn't give us any useful information.
+[25:52] So, basically, what I'm saying is, we've got to drop it, like, it's hot.
+[25:55] Um, but, yeah, so this is how we're going to do it, so we're gonna think about what we need. So firstly, let's drop some empty rows like empty columns ready.
+[26:05] Um, and, yeah, so this basically, this command drops those empty columns, so that's good. We don't have those anymore.
+[26:13] Then we want to get rid of where there's no play occurring because they have some no clarifying rows, but that's not something that we need for our model.
+[26:21] It's going to be irrelevant and, like, honestly, it, um, it's it's the source of a lot of any ends that we have here. So, I think that it's, uh, good if we get rid of that, but the analysis we want to do, maybe if you want to do some different analysis, you'd want to handle this differently. But.
+[26:35] Um, we don't need it, so we're getting rid of it getting rid of it.
+[26:38] So, similarly, um, we have offensive.
+[26:41] We're getting rid of roles where there's no teams playing.
+[26:44] Because sometimes and no play like that misses.
+[26:48] Sometimes you miss some stuff and, like, I remember when I was looking back at the values, there was still a lot of.
+[26:54] And so, um.
+[26:57] Yeah, we got rid of those roles as well and if we look at this, we will get some different values.
+[27:05] And also there's 1 more thing we want to do. So, uh, there were a lot of features. Do you remember seeing a lot of those? Right? So.
+[27:12] I was thinking about which ones are the most relevant to the question we want to solve, right?
+[27:17] What's the chance of getting a 1st down and I feel like these values, like the quarter.
+[27:22] Uh, the quarter of that's being played the minute the 2nd.
+[27:27] Who's on the team? Who's the defensive team? The current down.
+[27:31] How many yards to go until the next down the yard line.
+[27:35] And the serious 1st time is the value of we're going to see because that is basically saying if it's a 1.
+[27:40] That means that the next, uh, that means you successfully got a 1st step.
+[27:44] If not then it's going to be 0, there's also formation, right? Because that I feel matters like a lot.
+[27:51] There's also, like, play type, um, whether the there was a sack.
+[27:58] There was an interception or a fumble, because I feel like those things are all like.
+[28:01] Very important to think. Well, I mean, all of this stuff is pretty much important and, um, I think the other ones are just a bit intuitive.
+[28:08] So, I'll just leave it like that. So, basically, what we're gonna do is we're going to trim our data so we're gonna get rid of all the other rows because.
+[28:15] A lot of the other rules has data that we don't want to work with.
+[28:18] Um, because it's either has too many non member values and earth not really relevant.
+[28:24] Um, so what that is, is up to you when you're deciding your model, but since I'm making this model for following my roles so, um, we're going to keep these values.
+[28:33] So this is how you keep these values and how does our data look now? Uh, we're going to look at the non numbers and look at that. We, we have a value in every field.
+[28:44] So this is good so there's something called data Pre processing that we need to do.
+[28:48] Um, well, let me just make sure I ran this.
+[28:51] It's not play. Oh, yeah, because I ran it once.
+[29:01] Notebooks going to be a bit annoying. Sometimes I'm just gonna write what that again.
+[29:11] Okay, see, that works. So now.
+[29:14] We have some categorical variables, right?
+[29:17] But 1 of the problems is, uh, Tensor flow since it's based on a lot of computations.
+[29:23] Doesn't handle written data wealth so how are we going to change our brain data? Right?
+[29:28] Um, the way to do, that is something called encoding you have to process your data before you can feed it in within your own network.
+[29:35] In order for it to work. So, 1 thing we can do is call 1, hot encoding.
+[29:39] So, let's say we have, like, a bunch of formations, right? Like, um, I, I can think a few on my hands, like, well, firstly, here, um.
+[29:47] I should've asked this, like, much earlier, but how many of you are familiar with the ball to an extent.
+[29:51] Okay, okay that's a good amount. Um, yeah, the formations is like, how the team basically prepares themselves to, um, get to the next down, right?
+[30:00] Like, there's some positions, some popular ones or shotgun.
+[30:04] There's no Huddle. There's, um, yes.
+[30:09] Yes, thank you. Um, but yeah, those are some popular formations right? So, let's say.
+[30:14] We have not done right basically, 1 hot encoding is if we had a role where.
+[30:20] I can show you the information I actually, so.
+[30:24] Uh, let me get you to the place.
+[30:28] Yeah, we have under center shotgun, right?
+[30:32] So, um, I said text is a problem, right? So, 1 thing we can do is we can just create a different row for every different type of formation. There is.
+[30:40] And if that is, the formation of the team is going with.
+[30:45] You make it a, make it a 1 if it's not then it's a 0.
+[30:49] So that's a very simple way to, um, encoded. So, let's, uh, so we're going to do that.
+[30:54] For, like, some of these things, so out of all the values we have over here, uh, we have some categorical values and we're gonna do that with formation and yard line direction.
+[31:03] So, in order to do that, you do something called dot so if you're familiar with statistics.
+[31:09] This is an idea of, like, making dummy variables.
+[31:12] That's basically all 1 hard encoding is so that's what we're gonna do this, uh, care function that allows us to do that. Now, this plan does function. Sorry?
+[31:20] Allows us to do that pretty easily and we're also going to do that for a yard line direction.
+[31:25] Um, and this access 1 just means it's going to be in a row, right?
+[31:32] So, uh, we're going to drop, so we're going to change these.
+[31:36] We're going to make these 1 hot encoded. We're going to join them together.
+[31:40] Into a data frame, we're gonna drop the original rows and we're just gonna add it back. So, how will that look.
+[31:48] So these are our, like, a place that we have here. Basically, I should mention that. And these are the guideline directions.
+[31:53] So, we changed some things, right? So, every time there's a dummy, right? So, like, if we're going with a field goal formation, then, um, it's going to be a 1 for yadda, yadda, yadda.
+[32:04] It's going to keep going like that. Um.
+[32:08] But, yeah so but.
+[32:11] Can anyone see a problem with this? I'm going to move up.
+[32:15] There are no spoilers. Can anyone see a problem with, like, creating a new category? Every time there's something different.
+[32:24] Yes, yes there can be so many columns right? And like, especially given that, this is a lot of matrix multiplication.
+[32:31] Um, since this is a matrix notification.
+[32:36] These are going to be very cool. Actually I hear it.
+[32:41] Uh, I don't know this whole thing that we have to spend nice.
+[32:47] It should be, you should be the NFL you should be doing some data science about you, but anyways.
+[32:54] Um, yeah, so, yeah, you're right since you're doing a lot of complex modifications, you want to reduce the number of columns you have because if you have too many columns, then, um,
+[33:09] just processes will take a long time. So, 1 way to, um, uh, deal with this is something called count frequency encoding.
+[33:16] Which isn't very popular because it has some disadvantages, but for our purposes, I think it should be fine.
+[33:21] Um, but basically, how what it works is that, um, it just finds the frequency that, um.
+[33:28] Some some, the category is repeated, right?
+[33:33] So question, does anyone know how many, uh, teams there are in the NFL?
+[33:38] Correct, correct? Well, a lot of people know that. Um, but.
+[33:41] See, we have like, a category called offensive team and defensive teams. So if we were gonna make.
+[33:47] We need to make 32 categories for each of those. So, instead another thing we can do is just like, we can find the frequency.
+[33:54] Using this is unique method and, um, we can find how often they're used and we can do this with play type as well because I feel like there were a lot of those as well. So, you want to count you want to, like, basically, it's just like a frequency list, right?
+[34:07] So you have every time, like, let's say, New England Patriots shows up, um, like, uh, you add 1 count to that. And this way the reason why you're doing this is so that you don't have any biases. Because technically you could just assign some arbitrary number. But remember earlier when I was talking about weights.
+[34:22] Yeah, that you could lead to some problems there. So this is 1 way to balance it.
+[34:26] But 1 of the problems, if you preprocess like this is that, sometimes you might have.
+[34:30] Some values with the same weights, but I think for our purposes are statistically similar enough that, like, um, it our model still works.
+[34:38] But, yeah, this is basically we're just counting frequency coding everything here.
+[34:44] Okay, now we're going to train this is now we're going to actually start using this doing some machine learning.
+[34:49] So, how, um.
+[34:55] How machine learning learning models work is that you have to split the data set into.
+[35:01] Um, a training set and the testing set, so the testing is gonna be for later when you want to verify how, how accurate your model is.
+[35:09] And, um, the training set is for, like, actually getting that remember, I was talking about back propagation.
+[35:14] That's done with the training model so, uh, there's another popular package called not model selection and, uh, there's a method called train test, split.
+[35:23] And that's basically what we're going to be using because it does it easy and neatly for us.
+[35:28] So, basically, we're going to split it in half, which is why we have test size over right here.
+[35:32] We have a value for the X variable on the White variable. So does anyone know what the why variable is without looking at the thing?
+[35:40] Okay, everyone's looking at the thing so, um, it doesn't matter. Yeah, but like we're looking for how likely is it that we're are we going to get a next, uh, where our model is going to determine if we're gonna get a 1st down for the next, uh, place so that's going to be our why variable?
+[35:53] All over all of the other categories that we've kept in are going to be our ex variable. So that's going to be our input nodes essentially the X variables and we're going to have 1 output node, which is the why variables?
+[36:03] And, um, yeah, we're just splitting it 50, 50. so, are we, we're just going to use this method over here to make sure that it is 50, 50.
+[36:10] And, uh, we're just going to do that by looking at the shapes.
+[36:14] So, yeah, um, okay, this, it's technically 1 more, but that's because like, it's an odd number. You can't really do much about that. Um, but yeah.
+[36:21] So this is, we're just processing the data for training.
+[36:25] Also, another thing is that you want a lot of the data to be very similar.
+[36:29] So you do something called, like, standardizing it where you transform the data.
+[36:33] In order to make sure that it's in a specific range that you want.
+[36:37] I'm sorry, I'm going a bit faster right now, but, um, we're running a bit shorter on time so I'm going to try to get this done but, uh, as as we see here, we, uh, scaled.
+[36:52] And let me just run all of this, we scaled our data here and it looks right right because like, all of a sudden, we have much more close values to what we wanted.
+[37:07] And, um, yeah, so our Pre processing is done now, we're going to create our neural network.
+[37:13] So this is a bit arbitrary, but we have some things that are, um.
+[37:18] I decided beforehand, so a sigmoid function is a specific type of activation function, which basically determines whether it's like, log logistic.
+[37:27] In the sense that you can get a 1 or a 0.
+[37:31] And it's basically to determine that, so this will be our output.
+[37:36] There and this will determine like, how this will basically give a binary output.
+[37:43] And, um, we also have a, which is a very popular function as well.
+[37:47] For the layers in between, so it's just gonna do some computations on that end.
+[37:52] And we have 1 binary output node so, um, we have to specify a loss function, right? Because how are we gonna calculate the loss?
+[38:00] Since we have 1 categorical output, we want to use binary cross entropy to determine the loss.
+[38:07] And because that's a very good model for, like, the purpose that we're looking for.
+[38:13] And here, basically, we're just defining some things where we, um.
+[38:18] We're just looking for some metrics right? Which can help us analyze this dataset.
+[38:23] something's been true positives. Um, actual results. True positives.
+[38:29] Predicted results and, um, we have.
+[38:33] Recall, which is like, the ratio of all true values to the total.
+[38:37] So, we're gonna be using these to do some, uh, metrics later and we're determining this by.
+[38:42] We're gonna see this happen in real time. Is it going to take some time? So I have something fun planned while we're doing this but, um.
+[38:50] But, uh, yeah, let's just have it run if no 1 has any questions here. Now.
+[38:55] Okay, so this is going to run is going to take some time because epochs basically means like it's running it's doing back propagation ones. Right? So we're going to do it 100 times.
+[39:04] Okay, so now I'm going to put the support from the sports and what symposium so we're going to do a little bit of trivia. So.
+[39:10] Um, if you get, like, if you raise your hand and get the answer, uh, right then I'm just not sure. Can you hear you.
+[39:15] So, let's see. Okay, so, 1st document which team? 1, the 1st, Super Bowl in 1967.
+[39:22] Yes. Okay. All right.
+[39:29] Okay, 2nd question which team has the most suitable? Wins.
+[39:33] Yes, isn't doing right now? Yes.
+[39:40] 2nd question which team has the most approval? Apparently. Okay.
+[39:44] Yes, no worries. Um, um.
+[39:49] Okay, which team is known as America's team How's this going?
+[39:53] Yes, yes correct. Okay. Got it for a 2nd.
+[39:58] Um, yeah, right now we're on our 30 30. okay, so we have time. Okay.
+[40:04] So, um, which city did the ranch originally play it?
+[40:08] From the beginning yes. Uh, Rob from the 1st? Yes No.
+[40:17] No, but it's clean 1.
+[40:25] Oh, okay. So what teams use this.
+[40:29] What are the 2 teams that use the same stadium for for games?
+[40:34] Yes, yes. Is that so.
+[40:39] I'll get with you, so giants.
+[40:43] Also, do you follow me? Yeah.
+[40:47] Okay, what are the follow up questions who won? What? Where is MetLife sticking? Completely.
+[40:52] Yes.
+[40:55] Yes, sorry I was wondering.
+[41:00] But tomorrow evening.
+[41:03] Oh, really? You know that, um.
+[41:07] Who won the Super Bowl in 6 and 2016 when was coming so.
+[41:14] 2016, it was the Broncos.
+[41:19] I have to try it. Yeah. Oh, no. Was it.
+[41:22] Okay, next question, um, how many points is a touch number.
+[41:26] Sorry, this is correct.
+[41:30] Um, who was the only player to be rated all star in baseball and football.
+[41:39] Inventor of the paper. Okay. Um.
+[41:43] Which team had completely, uh, completely undefeated season.
+[41:48] I think, yes, I would say 1st, um.
+[41:56] Um, okay, who is the coaches new.
+[41:59] You're going with that.
+[42:02] Oh, they're done. Okay. Okay. That's it. Everyone. Okay.
+[42:10] Welcome to this company, but, um, okay, so.
+[42:15] The epochs are done, right? So we have a loss here. It's sort of stagnated here, but.
+[42:20] There's a better way we can see this data and we're going to do that using that potluck.
+[42:28] And we're gonna we're gonna plot those metrics that we were talking about a bit earlier as well. So, here.
+[42:33] Uh, what we can notice is that we do get some accuracy, but, um, it's for stagnating right?
+[42:38] So this indicates that, maybe we ran it too long, maybe I did that on purpose so I could do this event, but, um, who knows? Right. It could just be a data quality problem. But so theoretically, it could be improved, but we, we reached a pretty good accuracy as it was.
+[42:52] So, um, we could just leave it like that for now.
+[42:56] Um, but if you're interested, there are some functions that we can go over. But, um, we don't have the time for that at the moment.
+[43:02] So, uh, so now, the question is, how do we actually do the predictions right?
+[43:07] Because that's what I was talking about this whole time. It helps predict. So.
+[43:11] The way we do this is we take our skilled X values, and we can feed them in.
+[43:16] To the model, and by using this model about predict.
+[43:19] Um, function, we will get what we want so there's something strange about this output.
+[43:27] Yes, yes, yes, yes. And that might seem strange at the beginning. Right because like, why are so many of them or something going wrong with our model so.
+[43:38] But also consider 1 thing, right? Like, how frequent is like, someone getting a, um.
+[43:45] The 1st, down on any play, like, this really requires some like football knowledge, I guess, but it's not it's not super easy to do. Right? It's like, it takes it takes a few minutes, take some price.
+[43:55] So, that's why it it shows up like this and, um, so.
+[43:59] That's why that's why it's an important thing to have, like, some domain knowledge whenever you're doing some sort of data science problem.
+[44:04] Um, but, yeah, so this is, uh, this is what our data looks like.
+[44:09] And we're going to use this to evaluate model to just, uh, test the loss.
+[44:13] Accuracy precision, and recall on our, um, training.
+[44:18] On our testing set, right? Because so far we've only been using our training.
+[44:21] But now we're going to actually use the remember that half of the data, we sort of side.
+[44:26] 1st, seeing how good our model is because, um, basically.
+[44:30] Like, let's say that, um, training, let me just illustrate simply so.
+[44:35] Let's say that I, I'm with someone right? Who knows what a big goal and I don't know it is, but I've never seen a big 1 done it before.
+[44:43] And that person who knows what it is, will like, show me quiz me.
+[44:47] And asked me, like, if they'll show me, like, a picture of a big alert on it, right? And they'll ask me what it is, but they will know what it is beforehand.
+[44:55] Um, so if I, if I say it, right, then, like, I'll know that okay, don't let's look a bit more like this or beagles look a bit more like this. But if I get it wrong, then I'll, uh.
+[45:05] Take some knowledge to the front end. So that's what training is like right testing is like, um, if you just give some other data to me, and then, like, I determine it myself.
+[45:14] Like, basically, essentially, it's like you're going from a controlled environment to something where you're using, like, real data.
+[45:21] In a sense. Okay so this, this part has been done. Um, we have a loss of this much. We have this accuracy 70, 46, which might sound like, uh, not not great but like, honestly, that that's a pretty good, uh, accuracy for, like, most models.
+[45:36] models
+[45:37] Um, we can take it and I can probably make it a bit better, but, like, for our purposes, I think that's pretty good. If you get, like.
+[45:42] 3 fourths of the chance of getting the 1st down right?
+[45:46] Then I think that it's a pretty good percentage. We also have precision and recall it. It's pretty precise.
+[45:52] The recall could have been improved a bit, but, um.
+[45:57] Okay, so this is something called a confusion Matrix, which, uh, proves that a bit more.
+[46:02] So, just this is a diagram how complete fusion matrix work so remember how we have, like.
+[46:07] A binary output, right? It's right or it's, uh.
+[46:11] Basically, we're saying that it's successful, or it's not successful 1 or 0. so it could either be true or false and this is basically how it works. So we have true positives over here, which is when we said that. Yes. Um, 1st time this successful.
+[46:24] And, um, this is how we predict it and then the, this 1, where we have, like, it's not successful and it was true.
+[46:30] Um, but we also like, sometimes we get it wrong, right? So we can see how it would work here.
+[46:35] Um, here we have a lot of true positive, good amount of food negatives.
+[46:40] So, we also have some errors here, like, where we have, like, false positives.
+[46:44] But we also have some false negatives, but I feel like, uh, if you look at the proportions, it's that's still pretty good.
+[46:49] And here, we just have some more information about accuracy.
+[46:55] And, yeah, that's what this is just for some of our final outputs.
+[46:58] And this is just a way where you can save your model for later because, like, maybe, let's say you want to use it again.
+[47:05] So, um, this is how you do it in Google collab specifically, because remember, it's not your own computer. You're using, like, uh, cloud computing.
+[47:11] But this, uh, exclamation mark indicates that you're doing, like, some console commands, like, uh, terminal, like, commands rather, um, to do the things. So, like, you're creating a directory for the same model. You're saving it there.
+[47:23] And, um, basically for Google cloud, you can only take up files instead folders but models will save as folders. So you need to turn into a zip.
+[47:31] And then if you have your model, if you load it, then.
+[47:34] All you have to do is, uh, use the simple command over here.
+[47:38] And, uh, yeah, that's, uh, how we do this part.
+[47:41] So, is there any big takeaways from this? Uh.
+[47:45] Where did it go there? Is there any big takeaways from this?
+[47:52] Uh, remember data engineering is a big part drop values in order to get an empty redundant or outlying influential points and code categorical data using techniques, like 1, hot encoding or, um.
+[48:01] Or the other 1 that we use the frequency based 1, normalize your data before you use it. And when you analyze it, if you're using something where it's like a classification problem.
+[48:11] Uh, use the segment activation function, right? Because we have an output layer for 1 node and we're using binary cross entropy as a loss function and watch out for overpaying.
+[48:19] Um, but, yeah, that's the main thing. This is thank you for listening. This is just some shameless promo here as I mentioned earlier. I'm the president of the data science clubs. That's Hardy. Who's the vice president who just, um, presented as well?
+[48:32] So, if you're interested in joining our club, if you're if you kind of student.
+[48:36] Then, you can join our new contact over there. We also have a discord server where we just, like, have a very fun community that talks about data science and, like, what's going on at Yukon. But, um, uh, if that's all like, um, uh, I'll open up the Florida questions, but thank you for your time.
+[48:51] Listening, I definitely.
+[48:58] I use 3 in there, so good question.
+[49:03] Um, specifically, yeah, 3 handlers, because, like, I felt like that that that much competition was, uh.
+[49:10] A good amount, but like, generally people use some anywhere from, like.
+[49:13] Uh, 3 to 5 for, like, most processing problems, but keep in mind um, the more handlers you add.
+[49:19] The longer the competition takes now, let me let me just show you the there so that I can.
+[49:26] Specifically set up a lot of the box.
+[49:33] Yeah, we have 3 of them here. Thank you.
+[49:41] Yeah, I think this is also time so if you have anywhere else to go, then feel free to do that. But, um, yes.
+[49:48] Thank you. Thank you. Yes.
+[49:58] Okay, that's a good question. So, like, if I'm going to be honest, I sort of did it randomly for this point, because just like the hidden layers, it doesn't matter too much, but there's like a formula that people suggest, where you, uh, let me see if I can find it. In my thing, I think it's probably in the images.
+[50:13] But, uh, yeah, yeah, this is the equation. So.
+[50:23] They suggest that if you use the number of input runs, uh, this equation will give you like a good amount of neurons for the handlers.
+[50:39] Okay, then thank you everybody for your time.

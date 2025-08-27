@@ -1,0 +1,544 @@
+Video Title: 5 n8n Tips You NEED to Know
+Video ID: Ctr89Q2Nei8
+URL: https://www.youtube.com/watch?v=Ctr89Q2Nei8
+View Count: 10,555
+
+[00:00] what's going on guys in today's video
+[00:01] we'll be diving into these five tips
+[00:02] that everyone needs to know if you plan
+[00:04] on using NAD to automate workflows or
+[00:06] build AI agents make sure you watch this
+[00:08] one all the way through because at the
+[00:09] end I'll be going over a bonus tip let's
+[00:10] not waste any time and get straight into
+[00:12] tip number one the first thing that
+[00:13] we're going to be talking about is
+[00:14] continuing on error this means setting
+[00:16] up your workflow that if a single item
+[00:17] doesn't go through it's not going to
+[00:19] break the whole automation so we've got
+[00:20] three examples to walk through in this
+[00:22] tip here's the first example what we're
+[00:24] doing here is we have three URLs
+[00:26] McDonald's chipotle and then a fake one
+[00:28] and We're looping through each of those
+[00:29] URLs to scrape the website content and
+[00:31] right here in this HTTP request if you
+[00:33] look at the settings and you go to on
+[00:34] error we're stopping the workflow if
+[00:36] anything errors so when that third URL
+[00:38] errors it's going to stop the whole
+[00:40] workflow and if there was more logic
+[00:41] taking place over here it wouldn't
+[00:43] matter the whole thing would break so
+[00:44] let's hit test step we will see that now
+[00:47] um in this HTTP request we have the
+[00:49] third run errored but then the first and
+[00:51] the second one actually had content come
+[00:53] back so now you can see why that broke
+[00:55] the whole automation so here's example
+[00:57] number two everything's the same except
+[00:58] for in the HTTP request if we go into
+[01:01] settings we're having it continue on
+[01:02] error so let's run this real quick and
+[01:04] we'll see what happens the first two are
+[01:06] going to go through and even though the
+[01:07] third one aired the workflow didn't
+[01:09] error the workflow didn't break so in
+[01:11] here we can see that there were three
+[01:12] items coming back and if we go to Json
+[01:14] we can see that the first two got
+[01:16] scraped and the third one had nothing
+[01:18] but the workflow is going to continue
+[01:19] going down this path as if nothing
+[01:21] happened and it's not going to break the
+[01:22] whole thing and now here's the third
+[01:24] example let's say that even though it's
+[01:26] continuing on error we want to see which
+[01:27] one's ered so now we have in theop Loop
+[01:30] over items we can go to settings and on
+[01:32] error it's going to continue but it's
+[01:33] not just going to continue it's going to
+[01:35] have an extra output called error so as
+[01:37] you can see right here we have done Loop
+[01:39] and error and if we go back into the
+[01:40] previous example we only had done and
+[01:42] loop so this is cool because now we will
+[01:45] be getting anything that airs out of
+[01:47] this Loop is going to come down here in
+[01:49] a set field just an example and we'll be
+[01:51] able to see what's running and what's
+[01:52] not so if we hit test workflow we'll see
+[01:54] that we got this worked no errors we
+[01:56] have two items coming back in the done
+[01:58] branch which is now you know the
+[02:00] McDonald's and the HD or the McDonald's
+[02:01] and the Chipotle got scraped but if we
+[02:03] go to the error URLs we can see this URL
+[02:05] errored because it's just an example URL
+[02:08] nothing to scrape and it's invalid so
+[02:10] that's how you could sort of see what's
+[02:11] going on based on the way you choose to
+[02:13] continue on error or continue on error
+[02:15] with an error output tip number two
+[02:17] we're going to dive into how you can
+[02:18] have agents talk to each other so that
+[02:20] your workflows are smarter and more
+[02:21] efficient so two workflows we're going
+[02:23] to talk about in this one we have a
+[02:25] parent agent which would be your
+[02:26] standard sort of tools agent that's
+[02:27] going to um have access to different NAD
+[02:29] workf you may have already built out so
+[02:31] this one we have a child agent and then
+[02:33] if we switch over to the child agent
+[02:34] this is what it looks like it's just a
+[02:36] simple tool with Wikipedia and I'll get
+[02:38] into what's going on here but basically
+[02:40] we have these different um response
+[02:41] Fields right so in the parent agent when
+[02:44] we go into the workflow it's going to be
+[02:46] looking for a field called response once
+[02:48] we sort of give it that query it'll hit
+[02:50] this this agent right here and then it
+[02:51] will be waiting until the child agent
+[02:53] responds and that way it can take action
+[02:55] in another tool or maybe respond back to
+[02:57] us so what we did in the child workflow
+[02:59] we have these different areas where it
+[03:01] could respond so in this case um if the
+[03:04] the original query we're looking for if
+[03:05] it exists or not um which is the query
+[03:07] that the parent agent would be sending
+[03:08] over sometimes it just won't include a
+[03:10] query and you don't want that because
+[03:12] then the rest of the workflow won't run
+[03:13] as it's supposed to do so in here we're
+[03:15] simulating that the agent the parent
+[03:17] agent sends over a query that doesn't
+[03:18] actually exist if we run this now this
+[03:21] branch is going to send it this way
+[03:23] which is a response field just telling
+[03:25] the parent agent no query exists please
+[03:27] try again and that way it sees what it
+[03:28] did wrong and then it will send over a
+[03:30] new query so that's an initial step you
+[03:32] could do and you could have these this
+[03:33] logic implemented in multiple steps but
+[03:35] then we have the agent will get the
+[03:37] answer from Wikipedia and then we have
+[03:38] this model which is just checking if the
+[03:40] the answer is quality um if it's quality
+[03:42] or not and then if it is good it will
+[03:44] output the response and if the answer is
+[03:46] not good it will tell the agent to try
+[03:48] again answer wasn't good quality send a
+[03:50] new query to child agent obviously
+[03:52] that's a very simple use case but you
+[03:54] could have different sort of filters
+[03:55] going through um if you want to make
+[03:57] sure things are sounding human-like if
+[03:59] you want to make make sure um let's say
+[04:01] you need actual requirements so you need
+[04:02] to make sure that um you know number of
+[04:04] guests is filled out you need to make
+[04:06] sure that the email is filled out and if
+[04:07] that stuff isn't filled out it'll send
+[04:09] it back and try again so we'll show a
+[04:11] quick example we ask can you search
+[04:12] Wikipedia for information about Steve
+[04:14] Jobs it's going to hit the child agent
+[04:16] and obviously it's looking for the field
+[04:17] called response so once we get this
+[04:19] information back we'll go into the child
+[04:21] um workflow and we'll see exactly what
+[04:23] happened we'll see that it evaluated the
+[04:25] answer as good or bad um so we got the
+[04:27] answer back from Wikipedia we'll go into
+[04:29] the child agent go to executions and
+[04:31] this is the one that just took place
+[04:33] let's give it a sec to load
+[04:36] up so as you can see the query existed
+[04:38] so it sent it off to the agent then it
+[04:40] sent it off to the opena model to make
+[04:42] sure it was good or not in here we got
+[04:43] the acceptable response um the json.
+[04:46] message. content equal good as you can
+[04:48] see so because it was good it sent it
+[04:50] off to the final response for our agent
+[04:52] and actually we probably don't want the
+[04:53] response to be done we would have wanted
+[04:55] the actual um message coming back from
+[04:57] the agent which would have been this
+[04:58] output so this should have been json.
+[05:00] output but either way that's sort of how
+[05:02] talking to agents works all right tip
+[05:05] number three we're going to be talking
+[05:06] about error workflows so in NN you can
+[05:08] set up air workflows so that way if you
+[05:11] know something goes wrong and it's an
+[05:12] automated workflow you'll get you can
+[05:14] either get notifications about it or you
+[05:15] can send an email to a client to a team
+[05:18] um basically telling them that the error
+[05:20] has happened and we're working on fixing
+[05:21] it so this is uh a fake sort of parent
+[05:25] workflow so it has options to send
+[05:26] emails some stuff like that and one
+[05:28] thing to know is if you want to set up
+[05:29] error workflows the parent one that
+[05:31] you're checking for errors has to be
+[05:33] active so now switching over to the
+[05:35] actual error workflow we can see here
+[05:37] that we have an error trigger so you
+[05:39] would just come in here type error and
+[05:40] you can see the error trigger right
+[05:41] there so this workflow is going to
+[05:42] execute whenever the parent workflow
+[05:44] errors and we'll I'll show you how to
+[05:45] set that up in a sec but let's just grab
+[05:47] a test event real quick um so right now
+[05:49] we have like an example error message
+[05:50] all this kind of stuff you can see how
+[05:51] it's coming through and then like in
+[05:53] telegram we could test the step and we
+[05:55] would see what's coming through which is
+[05:57] right here um error example workflow
+[05:59] flow message and you can set up like a
+[06:01] link to the workflow this is just stuff
+[06:03] that I set up in case you want to be
+[06:04] able to click on that and go into the
+[06:05] workflow and see what happened and then
+[06:07] I also just have it set up to send an
+[06:08] email that would say you know hey team
+[06:09] we received an error in the following
+[06:11] workflow we're working on resolving the
+[06:12] issue and you know that sort of stuff so
+[06:15] let's go into the parent workflow real
+[06:17] quick and if you go to settings up here
+[06:20] we can see error workflow and then
+[06:22] you'll choose the error workflow that
+[06:23] you set up obviously this workflow needs
+[06:24] to start with an error trigger so this
+[06:26] is the one that we just looked at we
+[06:27] choose error handling and now we're good
+[06:30] to go so let's pull up our
+[06:32] telegram we'll chat with this agent
+[06:34] right here we're just going to say hello
+[06:36] and as you can see we're going to get
+[06:38] that error workflow message back parent
+[06:39] workflow error demo no prompt specified
+[06:42] and then that's why it ered and also you
+[06:44] can see let's say we wanted to do this
+[06:47] we would once again say hello and now
+[06:49] it's going to error and say a chat model
+[06:51] subn node must be connected because it
+[06:53] has no brain then real quick just
+[06:55] pulling up that email that was sent off
+[06:56] based on that previous error which was
+[06:58] the subject we made it a chat model
+[07:00] subnode must be connected we received an
+[07:01] error in the parent workflow um we're
+[07:03] resolving the issue and then let me just
+[07:05] hop back into the actual error workflow
+[07:06] we'll go to executions and let's look at
+[07:08] the most recent one that just took place
+[07:10] as you can see it automatically got
+[07:11] triggered because it aired and then it
+[07:13] filled out the information right here in
+[07:15] Gmail and then also within our telegram
+[07:17] so it's super handy and you can also
+[07:19] connect an error trigger you can connect
+[07:21] multiple workflows to the same airor
+[07:22] workflow so if you want one thing to be
+[07:24] set up for every single time any
+[07:26] workflow in your nadn instance errors
+[07:28] you can connect this to all all your
+[07:29] different active parent workflows okay
+[07:31] moving on to the next tip we're going to
+[07:33] be looking at the difference between
+[07:34] question marks or pipe operators within
+[07:37] sort of a variable call so real quick
+[07:39] let's go over the difference so we've
+[07:41] got two pipes two question marks the
+[07:44] pipes are going to be a logical or so
+[07:46] you're going to put like let's say
+[07:47] you're referencing json. output you'll
+[07:49] put json. output and then you'll put two
+[07:51] pipes and then a fallback value so it's
+[07:53] going to be looking for if this value
+[07:55] over here the json. output is falsy it's
+[07:58] just going to automatically grab that
+[07:59] fallback value to make sure that there's
+[08:01] no errors moving through so this like I
+[08:03] said the pipes are looking for something
+[08:04] falsy false values are false zero empty
+[08:07] strings or null or undefined so then in
+[08:10] that case it's going to use a fallback
+[08:12] value and we'll get into an example
+[08:13] where I'll show this the difference and
+[08:15] then the two question marks is actually
+[08:16] looking for only missing information so
+[08:19] null or undefine that's it if
+[08:20] something's zero or it's an empty string
+[08:22] it's still going to use that original
+[08:23] value and it won't go to the fallback
+[08:26] value so the key difference here is
+[08:29] pipes are empty things and question
+[08:31] marks are for null or undefined so
+[08:33] anything empty like a zero you'll use
+[08:34] pipes anything that could be null or
+[08:37] undefined you're going to use question
+[08:38] marks so in here we have this
+[08:41] information which is username is null
+[08:42] age is zero email is
+[08:45] empty we'll test this workflow and we'll
+[08:46] look at three different examples so in
+[08:48] this first one we've got json. username
+[08:50] is what we want to pull back and if the
+[08:53] username comes back null then we're
+[08:55] going to be using the fallback value of
+[08:57] guest user and so as you can see both
+[08:59] case where we use the question mark or
+[09:00] the pipe are coming back with guest user
+[09:03] this is because username is null is
+[09:06] considered falsy so the pipes are going
+[09:07] to result to the fallback value and
+[09:09] username is null the question marks
+[09:11] consider that actually null of course so
+[09:13] it's going to use the fallback
+[09:15] value in the second example we're using
+[09:17] age which is zero so the pipes treat
+[09:20] zero as falsy that's why it uses the
+[09:22] fallback value of 18 and then the
+[09:24] question marks zero is zero it's not
+[09:27] missing it's not unfined it's actually
+[09:29] there's information in the age field
+[09:31] that's zero so it doesn't have to fall
+[09:33] back it just uses what's there and then
+[09:35] finally we've got email so we're using
+[09:38] json. email and I actually I use uh
+[09:41] close brackets or square brackets with
+[09:43] the um field because it's just another
+[09:45] way you can reference things and the
+[09:47] pipes went to the fallback value of no
+[09:49] email provided because email there's
+[09:51] nothing there but the question marks
+[09:53] went with the original value of email
+[09:55] which was empty and it didn't have to
+[09:57] fall back and so the reason it's doing
+[09:59] this even though there's nothing here is
+[10:01] because in the you know Json we set up
+[10:04] email is it exists it's an empty string
+[10:07] and it still exists so that's why it it
+[10:09] just pulls it in for the the question
+[10:11] marks but because it's an empty string
+[10:13] the pipe
+[10:14] operators consider that falsy and so
+[10:17] because there's no email provided that's
+[10:18] falsy it goes to the fallback value so
+[10:22] hope that makes sense that's something
+[10:23] that I recently discovered could be
+[10:24] definitely very useful if you're trying
+[10:25] to maybe merge some data and you want to
+[10:27] grab one or the other and you can just
+[10:29] basically we check which one exists and
+[10:30] then have it automatically pull in that
+[10:32] one so um yeah cool tip there all right
+[10:35] so the last tip before the bonus tip is
+[10:37] using from AI when you're setting up AI
+[10:39] agents and giving them tools so if we
+[10:41] come down to an AI agent here obviously
+[10:43] you're going to give them access to
+[10:44] tools and if you click on this plus you
+[10:45] can see that there's other tools already
+[10:46] stored in here so maybe if you wanted to
+[10:48] take action in email or calendar you
+[10:50] wouldn't have to set up a whole another
+[10:52] workflow that does the calendar actions
+[10:54] it's just going to happen right here so
+[10:56] let's say that we're grabbing a calendar
+[10:57] tool right um and we're obviously going
+[11:00] to connect our calendar what we need to
+[11:01] do to create an event is we need to give
+[11:03] it a start time an end time and then we
+[11:05] can add other fields like attendees we
+[11:07] can add
+[11:09] um uh the summary which would be the
+[11:11] title that shows up in the calendar
+[11:13] event and then we could add like a
+[11:14] description so let's leave it at this
+[11:16] for now and as you can see it's going to
+[11:17] say use the Expression from Ai and then
+[11:20] you put a placeholder name so that the
+[11:22] model the AI model is going to
+[11:23] automatically fill out start time end
+[11:25] time all this kind of stuff based on the
+[11:26] query that you feed into the a agent so
+[11:29] um I'm going to really quick just show
+[11:31] an example but if you want to get a more
+[11:32] of a detailed breakdown of why this is
+[11:34] so cool then I'll tag a video right here
+[11:36] where I sort of broke it down in in more
+[11:38] detail but anyways we'll come into here
+[11:41] and we're going to be configuring this
+[11:43] node so for expression we're going to
+[11:46] reference from AI which you can see is
+[11:47] right here and then all we have to do is
+[11:49] put in quotes start time so then it's
+[11:52] going to automatically fill in this
+[11:54] information when um we talk with his
+[11:56] agent we'll do the same thing for end
+[11:58] time in quotes
+[12:00] and time and then we'll I'll really
+[12:03] quickly I'll fill in the same thing with
+[12:04] attendees description and summary okay
+[12:05] so I filled in the other stuff to
+[12:07] automatically be filled in by the model
+[12:09] one thing I want to point out is let's
+[12:10] say for description it's not pulling it
+[12:11] out right you could come in here add a
+[12:13] comma and then you can add a description
+[12:15] of the key which the key is description
+[12:17] and just say like a summary of the event
+[12:21] and now the model has more information
+[12:22] on what it's looking to what it's
+[12:24] looking for to fill in the description
+[12:26] for this event okay and just to test it
+[12:28] out real quick we said create a meeting
+[12:29] with John for December 2nd from 8:00
+[12:31] a.m. to 10: a.m. for a project Panda
+[12:33] discussion and work session so this
+[12:35] calendar event tool is going to take
+[12:36] this query that we just sent it and it's
+[12:38] going to automatically understand the
+[12:40] start time the end time the attendees
+[12:43] the description and the summary so as
+[12:44] you can see this stuff got filled out
+[12:46] really quick and if we go to calendar we
+[12:48] can see we got a project Panda
+[12:49] discussion and work session with the
+[12:51] right time with the right summary and
+[12:53] with the description that was generated
+[12:55] based on the model so super cool tip um
+[12:59] and it's really going to help out when
+[13:00] you're you know giving agents tools
+[13:01] although I wouldn't recommend giving
+[13:03] this agent like all the actions you
+[13:05] don't want to maybe overload it with too
+[13:07] many tools because then it you know the
+[13:08] prompting can get confusing and stuff
+[13:09] like that um but it's super way super
+[13:11] cool way to get stuff up and running
+[13:13] very quick as you can see that took like
+[13:15] a minute so real quick before the bonus
+[13:17] tip just wanted to say if you're finding
+[13:18] this video useful please consider giving
+[13:19] it a like it really helps me out also
+[13:21] wanted to mention to check out my school
+[13:23] communities they will be linked down in
+[13:24] the description you know we'll go more
+[13:25] Hands-On with real use cases production
+[13:27] ready workflows and and live calls stuff
+[13:30] like that all right that's it I'd love
+[13:31] to see you guys in there but let's go on
+[13:33] to that final bonus tip finally the
+[13:34] bonus tip really quick just wanted to
+[13:36] talk about referencing nodes something
+[13:38] that's really good practice to just get
+[13:40] in the habit of for you know when you
+[13:42] want to change your workflows later on
+[13:43] so as we know when we have information
+[13:45] right so in here we have a fruit apple
+[13:48] vegetable carrot and so when we want to
+[13:50] access this information so I'm just
+[13:51] going to grab a set field all we have to
+[13:53] do is um you know you can drag it in
+[13:55] right so if you drag in the fruit right
+[13:57] here we get json. fruit which comes back
+[13:59] comes back with the answer of apple and
+[14:02] then let's just say we want to go
+[14:03] veggies or I guess it would just be
+[14:05] veggie but anyways json. vegetable and
+[14:07] now we're referencing it because if we
+[14:09] take dollar sign json. something it's
+[14:11] going to be pulling the information that
+[14:13] was directly before it right so that's
+[14:15] fine it works well but now let's say we
+[14:17] realize oh okay we actually want to do
+[14:19] something with this data in between
+[14:20] these two steps so let's just say we
+[14:22] wanted to grab an aggregate node um
+[14:25] we're just going to put all data into a
+[14:27] single list so now we have let's just
+[14:29] say that did something cool for the rest
+[14:31] of automation so now we have this
+[14:32] information coming back and then if we
+[14:34] come in here right we want to test the
+[14:36] step and it's not going to work because
+[14:37] everything that we had previously
+[14:38] reference referenced which is json.
+[14:40] fruit it's now looking for fruit and
+[14:43] vegetable within the aggregate node
+[14:45] because that's directly before it it's
+[14:46] no longer the trigger that's directly
+[14:48] before it so now we'd have to come in
+[14:50] here the whole automation would break
+[14:51] and we would obviously drag in the fruit
+[14:53] here which we still be able to get the
+[14:55] same information back but it's no longer
+[14:57] just json. fruit it's json. data um 01
+[15:00] or sorry o and then do fruit so if we
+[15:04] were to always reference the nodes
+[15:05] originally
+[15:07] so um let's say get rid of this again so
+[15:10] we're coming back to this example I
+[15:12] don't know why I saved that but anyways
+[15:13] we're coming back to this example so
+[15:15] instead of just pulling in From Here
+[15:16] json. Fruit we want to actually Define
+[15:19] it by the node so if we come in here I
+[15:22] don't know why it always does that okay
+[15:23] now if we come in here and then we
+[15:24] reference the workflow right so now
+[15:26] we're taking it from the actual node
+[15:28] which is when clicking test workflow and
+[15:30] then we do item.
+[15:32] json. fruit now we're getting the same
+[15:35] thing which is referencing apple and if
+[15:36] we do the same thing down here we will
+[15:39] get um we want to reference the
+[15:42] node do item.
+[15:45] Json vegetable so now we're getting that
+[15:47] information back and then if we decide
+[15:49] we want to throw something in here once
+[15:50] again we'll just do an aggregate for the
+[15:52] sake of the example um all items now we
+[15:56] get this back and if we test the step
+[15:58] we're still getting our information back
+[15:59] because the set field knows to reference
+[16:02] the node before aggregate not just
+[16:04] whatever is previously coming back so
+[16:06] that will make your workflows more um I
+[16:09] don't know I guess easier to
+[16:10] troubleshoot or more sustainable when
+[16:12] you're wanting to add things in between
+[16:13] and when you're wanting to make changes
+[16:15] so if you get in the habit of always
+[16:16] referencing the specific node even if
+[16:18] this was you know that looks weird but
+[16:21] anyways even if your information's
+[16:22] coming directly beforehand if you want
+[16:24] to do you know json. blank is easier
+[16:26] when you just drag it right in but if
+[16:28] you actually you can get into the habit
+[16:29] of referencing the node you'll be able
+[16:31] to move these things around and it won't
+[16:32] matter the order you'll always be
+[16:34] getting the information that you wanted
+[16:35] to reference all right that's going to
+[16:37] do it for this one really appreciate you
+[16:38] guys taking the time to watch this one
+[16:40] to the end let me know in the comments
+[16:41] what else you want to see and I will see
+[16:43] you guys in the next video thanks

@@ -1,0 +1,551 @@
+Video Title: The Best RAG System On YouTube (Steal This!)
+Video ID: Kvf-Pr1LRe4
+URL: https://www.youtube.com/watch?v=Kvf-Pr1LRe4
+View Count: 47,750
+
+[00:00] all right guys super excited to share
+[00:01] this new rag system with you today it
+[00:03] uses a combination of n8n superbase and
+[00:05] postgress for memory and it is the best
+[00:07] one that I've shown yet on this channel
+[00:09] so it's going to be watching a Google
+[00:10] drive folder and then when you upload a
+[00:12] file it's automatically going to figure
+[00:14] out what type of file it is the
+[00:15] respective logic is going to take place
+[00:16] for that type of file it's going to put
+[00:18] it into your vector database with
+[00:19] relevant metadata like file ID the name
+[00:23] when it was created when it was last
+[00:24] modified stuff like that then we have
+[00:26] another workflow that's watching those
+[00:27] files for updates if they're updated
+[00:29] it's going to delete the original record
+[00:30] from superbase it's going to change the
+[00:32] version history from V1 to V2 to V3 and
+[00:35] then it's going to reupert them into
+[00:37] super base with the relevant metadata if
+[00:40] you enjoy this type of content please
+[00:41] consider giving it a like it really
+[00:42] helps me out but without further Ado
+[00:44] let's get into the video okay this is
+[00:45] the workflow we're going to be getting
+[00:46] into today we have three main parts so
+[00:48] up here in the yellow we have the rag
+[00:50] agent we're not going to spend too much
+[00:51] time here if you want to learn how to
+[00:53] set this up step by step as far as the
+[00:54] postgress and the super base go check
+[00:56] out a previous video I'll link it up top
+[00:58] right now and that one will walk through
+[01:00] that kind of stuff so we've got the
+[01:01] agent that we'll be talking to for rag
+[01:03] then we have this green section which is
+[01:05] watching for files that are created
+[01:06] within the folder we have a trigger here
+[01:08] it's going to Loop through download
+[01:10] those files figure out what type of file
+[01:12] they are it'll go through respective
+[01:13] logic to extract the text um you know
+[01:16] optimally for that type of file and then
+[01:18] finally it'll put into superbase and
+[01:20] then when we're loading the information
+[01:21] we're going to load up all all different
+[01:23] types of metadata we'll get into that um
+[01:25] when we're walking through an example
+[01:26] and then finally we have in the blue the
+[01:29] same fold folder but we're watching for
+[01:30] files updated rather than created so
+[01:33] this is going to obviously it's going to
+[01:35] grab that file ID so it can delete the
+[01:37] original record that we just uploaded in
+[01:39] the previous workflow it's then going to
+[01:41] set the version so in the metadata we'll
+[01:43] have version one version two version
+[01:45] three and so on and so forth and then
+[01:47] same exact logic of going through figure
+[01:49] out what type of file it is putting it
+[01:50] into superbase with our metadata if you
+[01:53] guys want to download this workflow go
+[01:54] to the free school Community Linked In
+[01:56] the description click on YouTube
+[01:57] resources and then go to the Post
+[01:59] associated with the video you'll be able
+[02:00] to download the workflows right away
+[02:02] then if you're looking to take your
+[02:03] learning A little bit farther check out
+[02:04] the paid Community also linked in the
+[02:05] description we've got a great classroom
+[02:07] here with with deep dive topics I'm
+[02:08] doing one about Vector databases right
+[02:10] now this resource library is going to be
+[02:12] continuously updated every week we've
+[02:14] got a really great community in here all
+[02:15] your questions are guaranteed to get
+[02:16] answered we also are doing about five
+[02:18] live calls per week um so I'd love to
+[02:20] see you guys in here finally if you're
+[02:22] interested in me building out this type
+[02:23] of stuff for your business or you're
+[02:24] interested in AI Consulting then check
+[02:26] out my website link down below and book
+[02:28] in a call okay anyways back to the video
+[02:29] real quick just wanted to give a shout
+[02:30] out to Victor from the free school
+[02:32] Community he helped me out with this one
+[02:33] so really appreciate that Victor but
+[02:35] let's get into this actual build so we
+[02:37] have our agent we have our super base um
+[02:40] table which is just called documents in
+[02:42] this case and real quick we're just
+[02:44] going to chat with this guy ask um what
+[02:47] projects do we have in the database and
+[02:50] this is basically going to say we have
+[02:52] nothing so this is kind of just proving
+[02:54] that there's nothing in there we're
+[02:55] going to upload a project brief and then
+[02:57] we will be able to chat with it so
+[02:58] there's no projects in there now let's
+[03:00] add something so um looking at this
+[03:02] first logic as you can see we have two
+[03:04] triggers this one's deactivated because
+[03:05] when there's two triggers in the same
+[03:07] workflow and you hit test workflow they
+[03:09] can get confused so we're just
+[03:10] deactivating that bottom one for now um
+[03:13] okay so I've got project brief for
+[03:16] project wheel it's just got some
+[03:17] information in here we are going to take
+[03:19] project wheel drag it into our folder
+[03:21] called projects and that is the one that
+[03:23] is being watched for right here as you
+[03:25] can see it's called projects we'll hit
+[03:27] fetch test event to make sure that we're
+[03:28] getting the right project back and we
+[03:30] should see the name of it over here
+[03:33] right there project brief project wheel
+[03:35] okay so let's hit test workflow and
+[03:37] watch this stuff happen so it's going to
+[03:38] download the file right now and then
+[03:39] it's going to figure out okay this is a
+[03:40] Google doc from Google doc we turned it
+[03:43] into um a text file we did that right
+[03:45] here we extracted the text put it into
+[03:47] super base so let's walk through what
+[03:49] just happened um okay so first thing
+[03:52] we're do we're doing is just setting our
+[03:54] file ID and our file type so it's easier
+[03:56] to reference um for later so file ID is
+[03:59] the actual ID of the um Google doc so we
+[04:03] see this one is it ends in wol and we
+[04:07] come into here and we can see that right
+[04:09] here or actually you guys can't see it
+[04:10] it's in the URL but this file ends in WL
+[04:14] so that's just the file of the Google
+[04:15] Doc that we're looking for um and then
+[04:17] we're setting the file type which as you
+[04:18] can see was basically a Google doc so
+[04:21] from there we're feeding in the file ID
+[04:23] right here so that the Google download
+[04:26] or Google Drive download node can
+[04:28] actually download the correct file it's
+[04:29] going to be dynamic obviously and here's
+[04:32] one thing that we're doing that's kind
+[04:32] of important so within here we're
+[04:35] setting the options of you know
+[04:37] configuring this node and we're
+[04:38] basically saying okay if anything comes
+[04:39] back here that's a Google doc turn it
+[04:41] into a text file if it's a drawing turn
+[04:43] it into a JPEG slides turn it into
+[04:45] Microsoft PowerPoint and then sheets for
+[04:47] CSV and so now instead of getting back
+[04:49] that Google doc we're getting a text
+[04:51] file so we can view it right here and
+[04:53] it's just the plain text and it's being
+[04:54] stored as binary so from there we feed
+[04:57] it into the switch node which obviously
+[04:58] we have different options
+[05:00] um we're basically setting the routing
+[05:02] rules so if the file ID is this it's
+[05:04] going to go that and that way for PDF um
+[05:06] and then all these other options of
+[05:07] course um and if you want to take a look
+[05:09] for this I know I'm going to go kind of
+[05:11] fast through these examples but the
+[05:12] workflow will be available for download
+[05:14] in the free school Community um link for
+[05:16] that will be down in the description um
+[05:18] so you'll be able to just grab that plug
+[05:20] and play and then you will be able
+[05:23] to then you'll be able to just look at
+[05:25] what's going on within each node so
+[05:27] anyways from there it goes down this
+[05:29] path because it's a text file we can see
+[05:31] that when we're doing a text file all
+[05:33] we're going to do is extract from text
+[05:34] PDF extract from PDF and then Excel
+[05:36] we're doing some aggregation summarizing
+[05:38] and then for word docs and sort of
+[05:40] Windows docs we are um going to convert
+[05:43] them so from there we are uploading that
+[05:46] into our Vector database the only thing
+[05:48] really that's fancy going on here is
+[05:50] that we are um setting the metadata so
+[05:55] as you can see we have all this kind of
+[05:57] stuff coming through so the first one is
+[05:59] the file ID of course this is important
+[06:01] so that later we can feed the file ID
+[06:03] into superbase so we can delete the doc
+[06:06] and then upload something else in its
+[06:07] place um we have the version like I said
+[06:10] this later will change we have the
+[06:12] Creator created at last modified we have
+[06:15] the folder path hardcoded in there and
+[06:17] then um file name and file extension so
+[06:19] that's what's going on within the um
+[06:23] metadata so as you can see this output
+[06:25] two items so we should have two vectors
+[06:27] in our super base if we go into check
+[06:30] here we can see there we go they just
+[06:32] popped up so we have project brief
+[06:33] project wheel we'll click into here and
+[06:36] we can see some metadata so what we're
+[06:38] looking at is um the Creator obviously
+[06:40] the file ID we see the version and then
+[06:43] oops and then other stuff that we
+[06:45] obviously configured in there right so
+[06:47] that's all that's going on in the
+[06:48] metadata and now what we're going to do
+[06:50] is since we have that information we are
+[06:53] going to first of all chat with our
+[06:55] agent to make sure that it's getting it
+[06:56] right so in Project wheel let's just ask
+[06:58] for some key features of this project
+[07:03] so what are some key features of project
+[07:07] wheel while this is loading off I'll
+[07:09] just say um we're going to be going even
+[07:11] deeper with this sort of rag system I'm
+[07:13] doing a deep dive right now in my paid
+[07:15] Community about about Vector databases
+[07:17] and rag so but anyways here's some
+[07:18] features of project wheel data
+[07:20] integration automated syncing
+[07:21] customizable dashboards and data
+[07:23] cleaning and as you can see it got that
+[07:26] all right so that's perfect um one more
+[07:29] thing I'll I'll show is that we have our
+[07:30] chat history this is the postgress that
+[07:31] we're using if we go down here to um
+[07:35] this most recent entry we have some key
+[07:37] features so this is what the AI
+[07:39] responded with let me actually just make
+[07:40] this a little bit bigger so here's the
+[07:41] key features the AI just responded with
+[07:43] and then here's what we just asked which
+[07:45] was what are some key features of
+[07:47] project wheel so that's sort of how all
+[07:49] this memory is being stored in postgress
+[07:50] rather than if you're using a Windows
+[07:51] chat buffer memory all that all this
+[07:54] kind of stuff is going to be stored in
+[07:56] naden so that's kind of how the
+[07:58] postgress and super base work in
+[08:01] conjunction okay so from there let's
+[08:03] test out this workflow and let me make
+[08:06] this a little bigger so it fully
+[08:07] captures everything okay perfect that
+[08:10] was going to bother me if not okay so
+[08:14] let's deactivate that node and turn this
+[08:16] one on and now all we have to do is come
+[08:19] into project wheel we will change
+[08:21] something real quick so let's just
+[08:23] change um let's just change the name
+[08:25] keep it real simple
+[08:27] project um
+[08:30] butter I don't know why butter is the
+[08:31] first thing that just came to mind
+[08:32] that's probably not good anyways Project
+[08:35] Butter um we'll go back into the folder
+[08:38] and make sure that it gets modified okay
+[08:40] so 312 um that means that we just
+[08:43] modified it and it has seen this change
+[08:45] so we'll come into the um file updated
+[08:49] node we'll hit fetch test
+[08:51] event and you know hopefully this one
+[08:55] actually registers that that was an
+[08:57] updated file so we'll test this workl
+[08:59] flow we'll see everything happen um so
+[09:02] right now these record IDs were okay so
+[09:04] it just got deleted as you can see it
+[09:06] got deleted in here we're setting the
+[09:08] version so the previous version on this
+[09:10] side as you can see was V1 and now
+[09:12] coming out is V2 um downloads the file
+[09:15] it's still a Google doc does the same
+[09:17] thing with text and then we're uploading
+[09:19] the metadata over here which as you can
+[09:21] see right here the version now is V2 so
+[09:24] let's hop
+[09:25] into subbase is this going to
+[09:27] automatically refresh or do I have to
+[09:28] refresh okay I'm going to refresh we
+[09:31] will see we have only two so it didn't
+[09:33] duplicate them it didn't just delete
+[09:35] them it deleted them and then put in the
+[09:37] new information which as you can see
+[09:38] right here Project Butter perfect and
+[09:41] then in here we should see V2 so we have
+[09:44] the
+[09:44] version um also what's cool to see is
+[09:46] that we see that it was originally
+[09:48] created at this time um I'm having
+[09:51] trouble understanding what's going on
+[09:53] here
+[09:54] 2202 and then 2212 so as you can see
+[09:58] it's changing it know that it originally
+[10:00] was created at that time and now we've
+[10:01] modified it at this time it's still
+[10:03] keeping everything else pretty much
+[10:04] consistent but that's how that works
+[10:07] so um if I was to come
+[10:10] into this guy and now we ask about
+[10:14] Project
+[10:15] Butter what are some no I'll just say
+[10:20] what's our budget for project butter and
+[10:24] hopefully that works because um I
+[10:26] changed the name of Project Butter but
+[10:28] also within this
+[10:29] project wheel okay so that's what I was
+[10:32] worried about so we only changed it here
+[10:35] but other places it's it's known as
+[10:36] project wheel and up here it's known as
+[10:38] project wheel so maybe it wasn't the
+[10:41] best example I probably should have
+[10:42] changed some actual information that
+[10:44] came through here but that's not really
+[10:46] the point of the video as you can see it
+[10:48] got updated here so
+[10:51] um yeah it worked as it should I just
+[10:54] didn't really think through the what I
+[10:55] wanted to change because right here it's
+[10:56] still known as project wheel so I guess
+[10:59] we'll just do one more thing real quick
+[11:01] so previously we're saying that this
+[11:03] kickoff meeting is December 1st um let's
+[11:06] change this to
+[11:07] December 15th okay so our kickoff
+[11:10] meeting is now December 15th going to
+[11:13] our Drive okay this just got updated it
+[11:15] knows that we modified it let's go back
+[11:17] into our agent and run this again so we
+[11:20] will see now it we'll go to version
+[11:21] three so we'll hit fetch test event I
+[11:24] don't really need to do this I could
+[11:25] have just triggered the workflow we'll
+[11:26] test the
+[11:27] workflow we'll watch it delete um the
+[11:30] reason I'm limiting I'll show you guys
+[11:32] in a sec also um once we just make sure
+[11:34] that this is working so we should have
+[11:37] IDs 56 and 57 in here
+[11:41] now oh I guess it already did it too
+[11:43] quick for me okay yeah it did it too
+[11:44] quick for me so V3 as you can see and
+[11:47] now we can come back into our agent and
+[11:49] ask about
+[11:50] the um timeline of project
+[11:57] wheel okay what is the timeline for Pro
+[11:59] wheel it should understand that and we
+[12:01] should be getting back um December 15th
+[12:04] is the kickoff like we did so December
+[12:06] 15th December 18th and January 12th okay
+[12:08] so now that we see how that's working
+[12:10] and we see that um you know we're
+[12:11] getting the version changed and the
+[12:13] modification date changed let us look at
+[12:16] what's going on okay this is the
+[12:17] execution of the V3 um project wheel
+[12:20] that we just did so we're downloading
+[12:22] the file um we're grabbing the file ID
+[12:24] that we set here of course so we set the
+[12:26] file ID the file type and then within
+[12:28] sub base we had to do sort of a little
+[12:30] filter to make sure that we're deleting
+[12:33] the correct item so as you can see the
+[12:36] operation is delete we're deleting a row
+[12:38] within our table called documents and
+[12:39] then we're selecting a string and this
+[12:41] is kind of the filter we're doing so
+[12:42] it's metadata um and then the dash with
+[12:45] two greater than signs kind of just
+[12:47] signifying okay within the metadata what
+[12:49] are we looking for which is a file ID so
+[12:52] back in here this is our metadata right
+[12:54] and then within the metadata we have we
+[12:55] have right here file ID and then we have
+[12:57] the file ID
+[12:59] so we're just defining file ID equals
+[13:02] like Dot and then within two um asteris
+[13:06] we're doing the actual file ID of course
+[13:08] and so then once we do that what we get
+[13:10] back is two items because there were two
+[13:13] vectors right so in this case it was
+[13:16] only two vectors if it was a longer
+[13:17] document and maybe depends on the way we
+[13:19] were splitting it and you know chunking
+[13:20] it obviously but it's likely going to be
+[13:23] more than just one vector that's
+[13:24] associated with a single file so in that
+[13:26] case it would return like maybe 15 items
+[13:29] and if you did that then it's going to
+[13:31] send like 15 items through the rest of
+[13:32] this logic so that's why we just limited
+[13:34] it to one so no matter what it's going
+[13:35] to grab the first one which always is
+[13:37] going to have the previous version the
+[13:40] previous file ID all that kind of stuff
+[13:42] so we're fine with that from there we
+[13:44] want to set the version and so my first
+[13:46] thought was okay let's do a code node
+[13:48] just so every time it's going to iterate
+[13:50] through it's going to increase the
+[13:51] version by one and when I tried that as
+[13:54] you can see on this left hand side
+[13:56] version is a string so you can tell
+[13:59] obviously right here there's an A so it
+[14:00] means it's a string which is just a word
+[14:03] um but if you look up here like lines is
+[14:06] 40 and one and there's a little hashtag
+[14:08] meaning that this is a number so just a
+[14:10] different variable type variable type so
+[14:12] when I tried to do it with a code node
+[14:14] it wasn't updating the version
+[14:16] accurately
+[14:17] because you can't do math on a word
+[14:20] right so I realized okay well maybe I
+[14:22] could try to in the code node convert
+[14:24] this
+[14:25] to a number variable type and then it
+[14:28] could do it but I was like okay well we
+[14:29] might as well just grab a 40 mini or you
+[14:30] could probably even use like um even
+[14:33] even
+[14:34] a cheaper model 40 mini is pretty cheap
+[14:36] but then I just basically said your goal
+[14:38] is to take the incoming version number
+[14:39] and add one to it because it's going to
+[14:41] be able to understand what's coming
+[14:42] through so the example if you get V1
+[14:44] you're going to get V2 if you get V4
+[14:46] you're going to give out V4 or V5 and I
+[14:48] said always output it in a field called
+[14:50] version just so when we're referencing
+[14:52] it later for the metadata it's
+[14:54] consistent um and then I just gave it
+[14:56] the incoming version number down here so
+[14:58] I just drag that in there
+[14:59] and that's all I did within this node so
+[15:02] once we have the version um and we still
+[15:05] have the original file ID right so we're
+[15:07] getting this kind of stuff but then we
+[15:09] can reference the file ID from back here
+[15:12] sorry it keeps jumping around when we're
+[15:13] in the execute or yeah execution um then
+[15:16] we just do the same exact thing of
+[15:17] downloading the file we're going through
+[15:20] the route of course and then we're
+[15:21] inserting it into superbase and then
+[15:23] within this superbase um or sorry not
+[15:26] superbase within the the document
+[15:28] default
+[15:29] within the data default loader um we're
+[15:32] setting the metadata and everything's
+[15:34] the same the only thing we changed
+[15:35] obviously is that the the version we
+[15:37] wanted to reference um whatever we got
+[15:39] from that open AI node that's called set
+[15:41] version we're just grabbing the message
+[15:43] content called version and so then
+[15:45] here's what's getting put into our um
+[15:49] super base as you can see the version
+[15:50] has been updated to V3 and then that's
+[15:52] basically
+[15:53] it okay sweet so
+[15:56] now real quick let's just activate this
+[15:59] one and turn this one back on and we'll
+[16:01] just show like a PDF running through so
+[16:03] I'm going to go to our Google doc which
+[16:05] was Project
+[16:07] wheel going to download this guy as a
+[16:11] PDF and then we're just going to drag
+[16:13] this into our
+[16:15] projects so we got that in here we are
+[16:18] now going
+[16:19] to just test the workflow and we should
+[16:22] see that it's being downloaded obviously
+[16:24] it's a PDF and as you can see now it
+[16:25] went to the router of a PDF we extracted
+[16:28] the text from this binary and we got the
+[16:30] same exact information back and now that
+[16:32] should also be in super base as you can
+[16:34] see it just pop through and this is
+[16:35] Project Butter and this was a um a
+[16:38] version one because it was a new thing
+[16:39] that we created right so as you can see
+[16:41] it's also the file extension PDF whereas
+[16:43] the first time we did Project Butter it
+[16:45] was an application Google doc
+[16:48] so yeah awesome that's how that works um
+[16:51] I didn't want this one to go too long I
+[16:52] kind of just wanted to give over give a
+[16:54] brief overview of what's going on here
+[16:56] um now expanding off of this right so so
+[16:59] like I said in my paid Community I'll
+[17:00] probably be building off of this and
+[17:02] talking about um making things a little
+[17:03] more production ready and one thing that
+[17:06] I'm starting to play around with is how
+[17:09] would you let's say we came in here and
+[17:11] we deleted this right we deleted this
+[17:13] file we no longer want this project
+[17:16] nothing's going to happen it's going to
+[17:17] stay within our super base because we
+[17:18] haven't set up any logic to handle
+[17:20] deleting stuff and right now it's no big
+[17:22] deal right because we know these two
+[17:24] were the PDFs from this path and we can
+[17:26] just delete them but when you get to the
+[17:29] point where you have multiple documents
+[17:31] and a document has 10 or 15 vectors
+[17:34] rather than just two you can't be doing
+[17:36] that so um basically the logic that
+[17:39] we're going to be going through is we're
+[17:41] going to be running one one flow that's
+[17:43] going to grab all of the file IDs right
+[17:45] it's going to grab all the file IDs that
+[17:46] are in your super base and then we're
+[17:48] going to have another one that's
+[17:49] grabbing all of the file file IDs that
+[17:51] are within this drive and then you're
+[17:53] basically going to merge those together
+[17:54] and check which ones don't have matches
+[17:57] and then any of them that don't have
+[17:58] have that can't join we will feed into a
+[18:02] delete superbas node and we'll feed
+[18:05] those file IDs into there and this would
+[18:07] be some sort of scheduled trigger it
+[18:09] could run once a day it could run every
+[18:11] few hours just to check it's basically
+[18:13] just comparing right um and yeah so that
+[18:15] would be a really cool way to pretty
+[18:18] much really make this thing automated
+[18:19] but for now that's all I've got um like
+[18:22] I said if you guys appreciated this
+[18:23] video please give it a like it really
+[18:24] helps me out the link to download it
+[18:26] will be in the free school Community
+[18:27] down below and um that's going to be it
+[18:30] for today so really appreciate you guys
+[18:31] making it the end of this video um I'll
+[18:34] see you guys in the next one thanks

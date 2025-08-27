@@ -1,0 +1,875 @@
+Video Title: Untitled_Video
+Video ID: 2vj2BF_dWeY
+URL: https://www.youtube.com/watch?v=2vj2BF_dWeY
+View Count: 0
+
+[00:00] building AI agents and hooking up
+[00:01] different tools is fun and all but the
+[00:02] quality and consistency of the
+[00:04] performance of your agents directly ties
+[00:05] back to the quality of the system prompt
+[00:07] that you put in there if you guys don't
+[00:09] know me my name is Nate I've been
+[00:10] building agents for a while now and I
+[00:11] also run a school Community that's all
+[00:13] about building AI agents with NN we've
+[00:15] got different Deep dive Topics in there
+[00:16] like building AI agents Vector databases
+[00:19] apis and HTTP requests and also doing
+[00:21] step-by-step builds of all the videos
+[00:23] shown on my channel and if it's
+[00:24] something you're interested in check out
+[00:25] the link in the description anyways
+[00:27] today what we're going to be talking
+[00:28] about is what actually goes into
+[00:29] creating an effective prompt so that
+[00:31] your agents perform as you want them to
+[00:33] I'm going to be going over the most
+[00:34] important thing that I've learned while
+[00:35] building out agents and prompting them
+[00:37] that I don't think a lot of people are
+[00:38] doing so let's not waste any time and
+[00:39] get straight into this one all right so
+[00:41] I've got a document here if you want to
+[00:43] download this one to follow along or
+[00:44] just have it for later you can do so by
+[00:45] joining my fre School Community the link
+[00:47] for that's down in the description
+[00:48] you'll just click on YouTube resources
+[00:50] and find the post associated with this
+[00:51] video and you'll be able to download the
+[00:52] PDF right there anyways what we're
+[00:55] looking at today is how we can Master
+[00:56] reactive prompting for AI agents in
+[00:58] naden and the objective of this document
+[01:00] here is to understand what prompting is
+[01:02] why it matters develop a structured
+[01:04] approach to reactive prompting when
+[01:05] building out AI agents and then learn
+[01:07] about the essential prompt components so
+[01:09] let's get straight into it and start off
+[01:11] with just a brief introduction What is
+[01:13] prompting make sure you stick around for
+[01:15] this one because once we get through
+[01:16] this doc we're going to hop into NN and
+[01:17] do some live prompting examples So
+[01:19] within our agents we're giving them a
+[01:21] system prompt and this is basically just
+[01:22] coding them on how to act but don't be
+[01:25] scared of the word code because we're
+[01:26] just using natural language instead of
+[01:27] something like python or JavaScript a
+[01:30] good system prompt is going to ensure
+[01:31] that your agent is behaving in a very
+[01:33] clear very specific and a very
+[01:34] repeatable way so instead of us
+[01:36] programming some sort of python agent
+[01:38] what we're doing is we're just typing in
+[01:40] you're an email agent your job is to
+[01:42] assist the user by using your tools to
+[01:43] take the correct action exactly as if we
+[01:45] were instructing an intern and why does
+[01:48] prompting matter I'm sure by now you
+[01:49] guys already have a good reason in your
+[01:51] head of why prompting matters and it's
+[01:52] pretty intuitive but let's think about
+[01:54] it like this as well agents are meant to
+[01:56] be running autonomously and they don't
+[01:58] allow that back and forth interaction
+[02:00] like Chachi BT now yes there can be some
+[02:02] human in the loop within your sort of
+[02:04] agentic workflows but ideally you put in
+[02:06] an input it triggers the automation
+[02:09] triggers the agent to do something and
+[02:10] then we're getting an output unlike chat
+[02:12] gbt where you ask it to help you write
+[02:13] an email and you can say hey make that
+[02:14] shorter or you can say make it more
+[02:16] professional we don't have that um
+[02:18] luxury here we just need to trust that
+[02:20] it's going to work consistently and high
+[02:22] quality so our goal as prompters is to
+[02:25] get the prompt right the first time so
+[02:26] that the agent functions correctly every
+[02:28] single time it's triggered so the key
+[02:30] role here is to keep the prompts clear
+[02:31] simple and actionable you don't want to
+[02:33] leave any room for
+[02:34] misinterpretation um and also less is
+[02:36] more sometimes I'll see people just
+[02:38] throw in a novel and that's just
+[02:39] obviously going to be more expensive for
+[02:41] you and also just more room to confuse
+[02:43] the agent so less is more so now let's
+[02:45] get into the biggest lesson that I've
+[02:46] learned while prompting AI agents which
+[02:49] is prompting needs to be done reactively
+[02:52] I see way too many people doing this
+[02:53] proactively throwing in a huge system
+[02:55] message and then just testing things out
+[02:57] this is just not the way to go so let's
+[02:59] dive into into what that actually means
+[03:00] to be prompting reactively first of all
+[03:03] what is proactive prompting this is just
+[03:05] writing a long detailed prompt up front
+[03:07] after you have all your tools configured
+[03:08] and all of the sort of you know standard
+[03:10] operating procedures configured and then
+[03:12] you start testing it out the problem
+[03:14] here is that you don't know all the
+[03:16] possible edge cases and errors in
+[03:18] advance and debugging is going to be a
+[03:20] lot more difficult because if something
+[03:21] breaks you don't know which part of the
+[03:23] prompt is causing the issue you may try
+[03:25] to fix something in there and then the
+[03:26] issue originally you were having is
+[03:27] fixed but now you cause a new issue and
+[03:29] it's just going to be really messy as
+[03:31] you continue to add more and more and
+[03:32] you end up just confusing both yourself
+[03:34] and the agent now reactive prompting on
+[03:36] the other hand is just starting with
+[03:37] absolutely nothing and adding a tool
+[03:39] testing it out and then slowly adding
+[03:41] sentence by sentence and as you've seen
+[03:43] in some of my demos we're able to get
+[03:44] like six tools hooked up have no prompt
+[03:47] in there and the agent's still working
+[03:48] pretty well at that point we're able to
+[03:49] start adding more lines to make the
+[03:51] system more
+[03:52] robust but the benefits here of reactive
+[03:54] prompting are pretty clear the first one
+[03:57] is easier debugging you know exactly
+[03:59] what bro the agent whether that's I
+[04:01] added this sentence and then the
+[04:02] automation broke all I have to do is
+[04:03] take out that sentence or I added this
+[04:05] tool and I didn't prompt the tool yet so
+[04:07] that's what cause the automation to
+[04:08] break so I'm just going to add a
+[04:09] sentence in right here about the tool
+[04:11] this is also going to lead to more
+[04:12] efficient testing because you can see
+[04:14] exactly what happens before you hard
+[04:16] prompt in fixes and essentially you know
+[04:18] I'll talk about hard prompting more
+[04:19] later but essentially what it is is um
+[04:22] you're basically seeing an error and
+[04:24] then you're hard prompting in the error
+[04:26] within the system prompt and saying hey
+[04:28] like you just did this that was wrong
+[04:30] don't do that again and we can only do
+[04:31] that reactively because we don't know
+[04:33] how the agent's going to react before we
+[04:34] test it out finally we have the benefit
+[04:36] that it prevents over complicated
+[04:38] prompts that are hard to modify later if
+[04:40] you have a whole novel in there and
+[04:42] you're getting errors you're not going
+[04:43] to know where to start you're going to
+[04:44] be overwhelmed so taking it step by step
+[04:46] starting with nothing and adding on
+[04:48] things slowly is the way to go and so if
+[04:50] it still isn't clicking yet let's look
+[04:52] at a real world example let's say you're
+[04:53] teaching a kid to ride a bike if you
+[04:55] took a proactive approach you'd be
+[04:57] trying to correct the child's behavior
+[05:00] before you know what he or she is going
+[05:01] to do so if you're telling the kid to
+[05:04] keep your back straight lean forward you
+[05:05] know don't tilt a certain way that's
+[05:07] going to be confusing because now the
+[05:09] kid is trying to adjust to all these
+[05:10] things you've said and it doesn't even
+[05:12] know what it was going to do what he or
+[05:14] she was going to do in the in the
+[05:15] beginning but if you're taking a
+[05:17] reactive approach and obviously maybe
+[05:19] this wasn't the best example CU you
+[05:20] don't want your kid to fall but you let
+[05:22] them ride you see what they're doing you
+[05:24] know if they're leaning too much to the
+[05:26] left you're going to say okay well maybe
+[05:27] you need to lean a little more to the
+[05:29] right to center yourself up um and only
+[05:31] correct what they actually need to have
+[05:33] corrected this is going to be more
+[05:34] effective fewer unnecessary instructions
+[05:37] and just more simple and less
+[05:38] overwhelming so the moral of story here
+[05:40] is to start small observe errors and fix
+[05:42] one problem at a time so let's take a
+[05:44] look at some examples of reactive
+[05:46] prompting that I've done in my ultimate
+[05:47] assistant workflow as you can see right
+[05:49] here I'm sure you guys have seen that
+[05:50] video by now if you haven't I'll link it
+[05:52] right up here but I did a ton of
+[05:53] reactive prompting in here because I
+[05:55] have one main agent calling four
+[05:56] different agents and then within those
+[05:58] sub agents they all have different tools
+[06:00] that they need to call so this was very
+[06:01] very reactive when I was prompting this
+[06:04] workflow or this system of Agents I
+[06:06] started with no persistent prompt at all
+[06:08] I just connected a tool and I tested it
+[06:10] out to see what would happened so an
+[06:12] example would be I hooked up an email
+[06:13] agent but I didn't give it in any
+[06:14] instructions and I running the AI to see
+[06:16] if it will call the tool automatically a
+[06:18] lot of times it will and then it only
+[06:19] comes to when you add another different
+[06:21] agent that you need to prompt in hey
+[06:23] these are the two agents you have here's
+[06:24] when to use each one so anyways adding
+[06:26] prompts based on errors here I have my
+[06:28] system prompts you you guys want to
+[06:29] pause it and read through you can take a
+[06:31] look but you can see it's very very
+[06:33] simple I've got one example I've got
+[06:34] basically one brief Rule and then I just
+[06:36] have all the tools that has and when to
+[06:38] use them and it's very very concise and
+[06:41] not overwhelming and so what I want you
+[06:43] guys to pay attention to real quick is
+[06:44] in the overview right here I said you
+[06:46] know you're the ultimate personal
+[06:47] assistant your job is to send the user's
+[06:49] query to the correct tool that's all I
+[06:50] had at first and then I was getting this
+[06:52] error where I was saying hey write an
+[06:54] email to Bob and what was happening is
+[06:57] it wasn't sending that query to the
+[06:59] email tool which is supposed to do it
+[07:01] itself was trying to write an email even
+[07:03] though it has no tool to write an email
+[07:04] so then I reactively came in here and
+[07:06] said you should never be writing emails
+[07:08] or creating event summaries you just
+[07:10] need to call the correct tool and that's
+[07:12] not something I could have proactively
+[07:13] put in there because I didn't really
+[07:14] expect the agent to be doing that so I
+[07:16] saw the error and then I basically
+[07:17] hardcoded in what it should not be doing
+[07:19] and what it should be doing so another
+[07:21] cool example of hardcoding stuff in is
+[07:23] using examples you know we all
+[07:25] understand that examples are going to
+[07:26] help the agent understand what it needs
+[07:28] to do based on certain inputs and how to
+[07:29] use different tools and so right here
+[07:31] you can see I added this example but
+[07:33] we'll also look at it down here because
+[07:34] I basically copied it in what happened
+[07:36] was the AI failed in a very specific
+[07:38] scenario so I added a concrete example
+[07:40] where I gave it an input I showed the
+[07:42] actions it should take and then I gave
+[07:43] it the output so in this case what
+[07:45] happened was I asked it to write an
+[07:47] email to Bob and it tried to send an
+[07:48] email or Tred it tried to hit the send
+[07:50] email agent but it didn't actually have
+[07:52] Bob's email address so the email didn't
+[07:53] get sent so what I did here was I put in
+[07:55] the input which was send an email to Bob
+[07:57] asking him what time he wants to leave I
+[07:59] then showed the two actions it needs to
+[08:00] take the first one was use the contact
+[08:02] agent to get Bob's email send this email
+[08:04] address to the email agent tool and then
+[08:06] the second action is use the email agent
+[08:08] to send the email and then finally the
+[08:10] output that we want the personal
+[08:11] assistant to say back to the human is
+[08:13] the email has been sent to Bob anything
+[08:14] else I can help you with the idea here
+[08:16] is you don't need to put examples in
+[08:17] there that are pretty intuitive and that
+[08:19] the agent's going to get right already
+[08:20] you only want to put in examples where
+[08:22] you're noticing common themes of the
+[08:24] agents failing to do this every time I
+[08:26] may as well hardcode in this example
+[08:28] input and output and Tool calls so step
+[08:31] four is to debug one error at a time
+[08:33] always change one thing and one thing
+[08:35] only at a time so you know exactly what
+[08:37] you change that broke the automation too
+[08:39] too often I'll see people just get rid
+[08:41] of an entire section and then start
+[08:43] running things and now it's like okay
+[08:44] well we're back at square one because we
+[08:46] don't know exactly what happened so you
+[08:47] want to get to the point where you're
+[08:48] adding one sentence you're hitting run
+[08:50] and it's either fixing it or it's not
+[08:52] fixing it and then you know exactly what
+[08:53] to do you know exactly what broke or
+[08:55] fixed your Automation and so one thing
+[08:57] honestly I want to admit here is I
+[08:59] created that system prompt generator on
+[09:00] my fre School Community um and really
+[09:03] the idea there was just to help you with
+[09:04] the formatting because I don't really
+[09:06] use that thing anymore because the fact
+[09:07] that doing that is very proactive in the
+[09:09] sense that we're dropping in a sort of a
+[09:12] query into chat GPT the custom GPT I
+[09:14] built it's giving us a system prompt and
+[09:16] then we're putting that whole thing in
+[09:17] the agent and then just running it and
+[09:18] testing it and in that case you don't
+[09:20] know exactly what you should change to
+[09:21] fix all issues so just wanted to throw
+[09:24] that out there I don't really use that
+[09:25] system prompt generator anymore I now
+[09:28] always like handcraft my promp
+[09:30] anyways from there what you want to do
+[09:31] is scale up slowly so once you confirm
+[09:33] that the agent is consistently working
+[09:35] with its first tool and its first rule
+[09:36] and its prompt then you can slowly add
+[09:38] more tools and more prompt rules so
+[09:41] here's an example you'll add a tool
+[09:43] you'll add a sentence in the prompt
+[09:44] about the tool test out a few scenarios
+[09:47] if it's working well you can then add
+[09:48] another tool and keep testing out and
+[09:50] slowly adding pieces but if it's not
+[09:52] then obviously you'll just hard prompt
+[09:53] in the changes of what it's doing wrong
+[09:55] and how to fix that from there you'll
+[09:56] just test out a few more scenarios um
+[09:58] and then you can just kind of rinse and
+[10:00] repeat until you have all the
+[10:01] functionality that you're looking for
+[10:03] all right now let's look at the core
+[10:04] components of an effective prompt each
+[10:06] agent you design should follow a
+[10:07] structured prompt to ensure Clarity
+[10:09] consistency and efficiency now there's a
+[10:12] ton of different types of prompting you
+[10:13] can do based on the role of agent
+[10:16] ultimately they're going to fall under
+[10:17] one of these three buckets which is
+[10:18] toolbase prompting conversational
+[10:20] prompting or like content creation type
+[10:22] prompting and then categorization SL
+[10:24] evaluation prompting and the reason I
+[10:26] wanted to highlight that is because
+[10:27] obviously if we're creating like a
+[10:28] Content creation a agent we're not going
+[10:30] to say what tools it has if it has no
+[10:31] tools but um yeah just wanted to throw
+[10:33] that out there and another thing to keep
+[10:34] in mind is I really like using markdown
+[10:37] formatting for my prompts as you can see
+[10:38] these examples we've got like different
+[10:40] headers with pound signs and we're able
+[10:42] to specify like different sections we
+[10:43] can use bulleted lists we can use
+[10:44] numbered list I've seen some people talk
+[10:46] about using XML for prompting I'm not a
+[10:49] huge fan of it because um as far as
+[10:51] human readability I think markdown just
+[10:52] makes a lot more sense so that's what I
+[10:54] do anyways now let's talk about the main
+[10:56] sections that I include in my prompts
+[10:58] the first one is always a background so
+[11:00] whether this is a role or a purpose or a
+[11:03] context I typically call it something
+[11:04] like an overview but anyways just giving
+[11:06] it some sort of background that defines
+[11:08] who the agent is what its overall goal
+[11:10] is and this really sets the foundation
+[11:12] of you know sort of identifying their
+[11:14] Persona their behavior and if you don't
+[11:16] have the section the agent is kind of
+[11:18] going to lack Direction and it's going
+[11:19] to generate really generic or unfocused
+[11:22] outputs so set its role and this could
+[11:25] be really simple you can kind of follow
+[11:26] this template of you are a blank agent
+[11:28] designed to do blank your goal is blank
+[11:30] so you are a travel planning AI
+[11:32] assistant that helps users plan their
+[11:33] vacations your goal is to provide
+[11:35] detailed personalized travel itery based
+[11:37] on the user's input then we have tools
+[11:40] this is obviously super super important
+[11:41] when we're doing sort of
+[11:42] non-deterministic agent workflows where
+[11:45] they're going to have a bunch of
+[11:45] different tools and they have to use
+[11:47] their brain their chat model to
+[11:48] understand which tool does what and when
+[11:50] to use each one so this section tells
+[11:52] the agent what tools it has access to
+[11:54] and when to use them it ensures the AI
+[11:55] selects the right tool for the right
+[11:57] task and a well structured tool section
+[11:59] prevents confusion and obviously makes
+[12:01] the AI more efficient so here's an
+[12:02] example of what it could look like we
+[12:04] have like the markdown header of tools
+[12:06] and then we have like a numbered list
+[12:07] we're also showing that the tools are in
+[12:09] bold this doesn't have to be the way you
+[12:10] do it but sometimes I like to show them
+[12:12] in bold um and it's you can see it's
+[12:14] really simple it's it's not too much
+[12:16] it's not overwhelming it's not too um
+[12:18] you know it's just very clear Google
+[12:20] search use this tool when the user asks
+[12:21] for real- time information email sender
+[12:24] use this tool when the user wants to
+[12:25] send a message super simple and what
+[12:27] else you can do is you can Define when
+[12:28] to use each tool so right here we say we
+[12:31] have a contact database use this tool to
+[12:32] get contact information you must use
+[12:34] this before using the email generator
+[12:36] tool because otherwise it won't know who
+[12:38] to send the email to so you can actually
+[12:40] Define these little rules keep it very
+[12:42] clear within the actual tool layer of
+[12:45] the prompt and then we have instructions
+[12:47] I usually call them rules as you can see
+[12:49] um you could maybe even call it like a
+[12:50] standard operating procedure but what
+[12:51] this does it outlines specific rules for
+[12:54] the agent to follow it dictates the
+[12:55] order of operations at a high level just
+[12:58] keep in mind you don't want to say do
+[12:59] this in this order every time because
+[13:01] then it's like why are you even using an
+[13:02] agent the whole point of an agent is
+[13:04] that it's you know it's taking an input
+[13:06] and something happens in this black boox
+[13:07] where it's calling different tools it
+[13:09] may call this one twice it may call this
+[13:10] one three times it may call them none at
+[13:12] all um the idea is that it's variable
+[13:14] it's not deterministic so if you're
+[13:16] saying do it and this every time then
+[13:19] you should just be using a sequential
+[13:20] workflow it shouldn't even be an agent
+[13:22] but obviously the rule section helps
+[13:24] prevent misunderstanding so here's like
+[13:25] a high Lev instruction right you're
+[13:27] greeting the user politely if the user
+[13:29] provides incomplete information you ask
+[13:31] follow-up questions use the available
+[13:32] tools only when necessary structure your
+[13:34] response in clear concise sentences so
+[13:36] this isn't saying like you do this in
+[13:38] this order every time it's just saying
+[13:39] when this happens do this if this
+[13:40] happens do that so here's an example for
+[13:43] AI task manager when a task is added you
+[13:45] confirm with the user if a deadline is
+[13:47] missing ask the user to specify one if a
+[13:49] task priority is high send a
+[13:50] notification store all tasks in the task
+[13:52] management system so it's very clear too
+[13:55] um we don't need all these extra filler
+[13:56] words because remember the AI can
+[13:58] understand what you're saying as long as
+[14:00] it has like the actual context words
+[14:02] that have meaning you don't need all
+[14:03] these little fillers um you don't need
+[14:05] these long sentences so moving on to
+[14:07] examples which You Know sample inputs
+[14:09] and outputs and also actions within
+[14:11] those between the inputs and outputs but
+[14:14] this helps the understand Expectations
+[14:15] by showing real examples and these are
+[14:17] the things that I love to hard code in
+[14:19] there hard prompt in there because like
+[14:21] I said there's no point in showing an
+[14:23] example if the AI was already going to
+[14:25] get that input and output right every
+[14:26] time you just want to see what it's
+[14:27] messing up on and then put put an
+[14:29] example in and show it how to fix itself
+[14:31] so more clear guidance and it's going to
+[14:33] give you more accurate and consistent
+[14:34] outputs here's an example where we get
+[14:36] the input that says can you generate a
+[14:37] trip plan for Paris for 5 days the
+[14:40] action you're going to take is first
+[14:41] call the trip Planner tool to get X Y
+[14:43] and Z then you're going to take another
+[14:45] action which is calling the email tool
+[14:46] to send the itinerary and then finally
+[14:48] the output should look something like
+[14:50] this here's a 5day Paris itinerary day
+[14:52] one day two day three day four day five
+[14:55] and then I typically end my prompts with
+[14:57] like a final notes or important reminder
+[14:58] say section which just has like some
+[15:00] miscellaneous but important reminders it
+[15:02] could be current date and time it could
+[15:03] be rate limits it could be um something
+[15:06] as simple as like don't put any emojis
+[15:08] in the output um and sometimes why I do
+[15:11] this is because something can get lost
+[15:14] within your prompt and sometimes like I
+[15:16] I've thrown the today's date up top but
+[15:18] then it only actually realizes it when
+[15:19] it's in the bottom so playing around
+[15:21] with the actual like location of your
+[15:23] things can be sometimes help it out um
+[15:25] and so having a final notes section at
+[15:27] the bottom not with too many notes but
+[15:28] just some quick things to remember like
+[15:30] always format responses is markdown
+[15:32] here's today's date if unsure about an
+[15:34] answer say I don't have that information
+[15:36] so just little miscellaneous things like
+[15:38] that now I wanted to quickly talk about
+[15:39] some honorable mentions because like I
+[15:41] said earlier The Prompt sections and
+[15:43] components varies based on the actual
+[15:46] type of agent you're building so in the
+[15:48] case of like a content creator agent
+[15:50] that has no tools um you wouldn't give
+[15:52] it a tool section but you may want to
+[15:53] give it an output section so here's an
+[15:55] output section that I had recently done
+[15:56] for my voice travel agent um which if
+[15:59] you want to see that video I'll drop a
+[16:00] link right here but what I did was I
+[16:02] just basically included rules for the
+[16:04] output because the output was very
+[16:05] specific with HTML format and it had to
+[16:07] be very structured and I wanted
+[16:08] horizontal lines so I created a whole
+[16:11] section dedicated towards output format
+[16:12] as you can see and because I Ed three
+[16:15] pound signs for these subsections the
+[16:17] agent was able to understand that all
+[16:19] this rolled up into the format of the
+[16:21] output section right here so anyways I
+[16:23] said the email should be structured as
+[16:25] HTML that will be sent through email use
+[16:27] headers to separate each section add a
+[16:29] horizontal line to each section um I
+[16:31] said what it what should be in the
+[16:32] subject I said what should be in the
+[16:33] introduction section I said how you
+[16:35] should list these departure dates return
+[16:37] dates flights for the flight section um
+[16:39] here's something where I basically gave
+[16:40] it like the HTML image tag and I showed
+[16:43] how to put the image in there I showed
+[16:45] to make I said like make a inline image
+[16:47] rather than um an attachment I said to
+[16:50] have each resort with a clickable link I
+[16:52] also was able to adjust the actual width
+[16:54] percentage of the image by specifying
+[16:56] that here in the prompt um so yeah this
+[16:59] was just getting really detailed about
+[17:01] the way we want the actual format to be
+[17:02] structured you can see here we have
+[17:03] activities that I actually misspelled in
+[17:05] my agent but it didn't matter um and
+[17:07] then finally just a sign off and then
+[17:09] just some final additional honorable
+[17:11] mentions something like memory and
+[17:13] context management um some reasoning
+[17:15] some error handling but typically I
+[17:17] think that these can be just kind of one
+[17:19] or two sentences that can usually go in
+[17:21] like the rules or instructions section
+[17:23] but it depends on the use case like I
+[17:25] said so if it needs to be pretty robust
+[17:26] then creating an individual section at
+[17:28] the bottom called memory or error
+[17:30] handling could be worth it it just
+[17:32] depends on like I said the actual use
+[17:35] case and the goal of the agent Okay cool
+[17:37] so now that we've got through that
+[17:38] document let's hop into Ed end and we'll
+[17:39] just do some really quick examples of
+[17:41] some reactive live prompting okay so I'm
+[17:44] going to hit tab I'm going to type in AI
+[17:45] agent we're going to grab one and we're
+[17:47] going to be communicating with it
+[17:48] through this connected chat trigger node
+[17:50] now I'm going to add a chat model real
+[17:51] quick just so we can get set up up and
+[17:53] running we have our 40 mini we're good
+[17:54] to go and just a reminder there is zero
+[17:57] system prompt in here all it is is is
+[17:58] that you are a helpful assistant so
+[18:01] what's the first thing to do is we want
+[18:02] to add a tool test it out so I'm going
+[18:04] to add a um Google Calendar tool I'm
+[18:07] just going to obviously select my
+[18:08] calendar to pull from I'm going to you
+[18:11] know fill in those parameters using the
+[18:12] model by clicking that button and I'm
+[18:14] just going to say this one's called
+[18:15] create event so we have create event and
+[18:18] so now we're going to do our test and
+[18:19] see if the tool is working properly I'm
+[18:21] going to say create an event for tonight
+[18:25] at 700 p.m. so send this off we should
+[18:27] see the agents ble to understand to use
+[18:30] this create event tool because it's
+[18:31] using an automatic description but now
+[18:33] we see an issue it created the start
+[18:35] time for October 12th 2023 and the end
+[18:38] time for also October 12th 2023 so this
+[18:41] is our first instance of reactive
+[18:42] prompting it's calling the tool
+[18:43] correctly so we don't really need to
+[18:45] prompt in like the actual tool name yet
+[18:47] um it's probably best practice just to
+[18:49] just to do so but first i'm just going
+[18:51] to give an overview and say you are a
+[18:54] calendar actually no I'm just going to
+[18:56] say you are a helpful assistant because
+[18:59] that's all it is right now and we don't
+[19:00] know what else we're adding into this
+[19:01] guy but now we'll just say tools is
+[19:05] create event just so it's aware use this
+[19:07] to create an event and then we want to
+[19:11] say final notes um here is the current
+[19:16] date and time because that's where it
+[19:19] messed up is because it didn't know the
+[19:20] current date and time even though it was
+[19:21] able to call the correct tool so now
+[19:24] we'll just send this same thing off
+[19:25] again and that should have fixed it we
+[19:27] reactively fixed the a err and um we're
+[19:30] just making sure that it is working as
+[19:32] it should now okay there we go it just
+[19:34] hit the tool and it says the event has
+[19:35] been created for tonight at 700 p.m. if
+[19:37] I click into my calendar you can see
+[19:39] right there we have the event that was
+[19:40] just created so cool now that's working
+[19:42] what we're going to do now is add
+[19:43] another tool so we'll drag this one over
+[19:45] here and let's say we want to do a send
+[19:47] email tool we're going to send a message
+[19:49] we're going to change the name to send
+[19:51] email and just so you guys are aware
+[19:52] like how it's able to know right here
+[19:54] tool description we're setting
+[19:56] automatically if we set manually we
+[19:58] would just say you know use this tool to
+[20:00] send an email but we can just keep it
+[20:01] simple leave it as set automatic I'm
+[20:03] going to turn on to subject and message
+[20:06] as defined by the model and that's going
+[20:09] to be it so now we just want to test
+[20:10] this thing again before we add any
+[20:11] prompts we'll say send an email to Bob
+[20:15] example.com
+[20:17] asking what's up we'll send this off
+[20:19] hopefully it's hitting the right tool so
+[20:21] we should see there we go it hit the
+[20:22] send email tool and the email got sent
+[20:24] we can come in here and check everything
+[20:25] was sent correctly although what we
+[20:27] noticed is it's signing off as best
+[20:29] placeholder your name and we don't want
+[20:31] to do that so let's come in here and
+[20:33] let's add a tool section for this tool
+[20:36] and we'll tell it how to how to act so
+[20:38] send email that's another tool it has
+[20:40] and we're going to say use this to send
+[20:42] an
+[20:43] email then we're going to say sign off
+[20:45] emails as Frank okay so that's
+[20:49] reactively fixing an error we saw I'm
+[20:51] just now going to send off that same
+[20:52] query we already know that it knows how
+[20:54] to call the tool so it's going to do
+[20:55] that once again there we go we see the
+[20:57] email was sent and now we have a a sign
+[20:58] off as Frank so that's two problems
+[21:00] we've seen and then we've added one
+[21:02] super short line into the system prompt
+[21:04] and fixed those problems now let's do
+[21:06] something else let's say in Gmail we
+[21:08] want to be able to label an email and in
+[21:12] order to label an email as you can see
+[21:15] add label to a message we need a message
+[21:17] ID and we need a label name or an ID for
+[21:20] that label and this is we could choose
+[21:22] from a list but more realistically we
+[21:23] want the label ID to be pulled in
+[21:25] dynamically so if we need to get these
+[21:27] two things what we have to do is first
+[21:29] get emails and also get labels so first
+[21:31] I'm going to do get many I'm going to
+[21:33] say this is using you know we're we're
+[21:35] calling this tool get get emails and
+[21:37] then we don't want to return all we want
+[21:40] to do a limit and we also want to choose
+[21:42] from a sender so we'll have this also be
+[21:44] dynamically chosen so cool we don't have
+[21:48] a system prompt in here about this tool
+[21:49] but we're just going to say get my last
+[21:53] email from Nate herkelman so we'll send
+[21:56] that off it should be hitting the get
+[21:57] emails tool filling in Nate herkelman as
+[21:59] the sender and now we can see that we
+[22:01] just got this email with the subject
+[22:02] hello we have the message ID right here
+[22:05] so that's perfect and now what we need
+[22:07] to do is we need to create a tool to get
+[22:08] the label ID so I'm going to come in
+[22:10] here and I'm going to say um get many
+[22:13] and we're going to go to label we're
+[22:15] going to do um actually we'll just
+[22:18] return all that works there's not too
+[22:20] many labels in there um and we have to
+[22:21] name this tool of course so we're going
+[22:22] to call this get labels so once again
+[22:26] there's no Tools in or no prompt in here
+[22:28] about these two tools at all and we're
+[22:30] going to say get my
+[22:32] email labels we'll see if it hits the
+[22:35] right tool there we go it did and it is
+[22:38] going to basically just tell us you know
+[22:40] here they are so here are our different
+[22:41] labels um and here are the ones that we
+[22:44] created so promotion customer support
+[22:46] high priority finance and billing cool
+[22:49] so now we can try to actually label an
+[22:51] email so that email that we just got
+[22:53] from um from Nate herkelman that said
+[22:56] hello let's try to label that one so I'm
+[22:58] going to add another Gmail tool and this
+[23:01] one's going to be add a label to a
+[23:02] message and we need the message ID and
+[23:04] the label ID so I'm just going to fill
+[23:06] these in with the model parameter and
+[23:09] I'm going to call this tool add label so
+[23:13] there's no prompting
+[23:14] for these three tools right here but
+[23:16] we're going to try it out anyway and see
+[23:18] what happens so add a promotion label to
+[23:22] my last email
+[23:24] from Nate
+[23:26] herkelman send that off see what happens
+[23:29] it's getting emails it tried to add a
+[23:31] label before so now we're kind of we got
+[23:33] in that weird loop as you could see it
+[23:35] tried to add a label before it got
+[23:37] labeled so it didn't know what to do
+[23:38] right um we'll click into here we'll see
+[23:41] that I don't really exactly know what
+[23:43] happened category promotions looking in
+[23:45] my inbox anything sent from Nate
+[23:46] herkelman we have the email right here
+[23:48] but it wasn't accurately labeled so
+[23:50] let's go back into our agent and prompt
+[23:52] this thing a little bit better to
+[23:53] understand how to use these tools so I'm
+[23:55] going to basically go into the tool
+[23:57] section here and I'm going to tell it
+[23:58] about some more tools that it has so get
+[24:01] emails right this one was it was already
+[24:03] working properly and we're just saying
+[24:05] use this to get emails now we have to
+[24:08] add get labels we're just saying use
+[24:11] this to get
+[24:14] labels um and we know that we want it to
+[24:17] use this before actually trying to add a
+[24:18] label but we're not going to add that
+[24:20] yet we're going to see if it can work
+[24:21] with a more minimalistic prompt and then
+[24:24] finally I'm going to say add labels and
+[24:25] this one is use this tool to to add a
+[24:29] label to an email okay so now that we
+[24:32] just have very basic tool descriptions
+[24:34] in here we don't actually say like when
+[24:36] to use it or how so I'm going to try
+[24:38] this exact same thing again add a
+[24:39] promotion label to my last email from
+[24:42] Nate herkelman once again it tried to
+[24:43] use add label before and it tried to
+[24:45] just call it twice as you can see so not
+[24:48] working so back in email I just
+[24:50] refreshed and you can see the email is
+[24:51] still not labeled correctly so let's do
+[24:54] some more reactive prompting what we're
+[24:55] going to do now is just say in order to
+[24:57] add labels so in the description of the
+[24:59] AD Label tool I'm going to say you must
+[25:02] first use get
+[25:05] emails to get the message ID and
+[25:10] actually I want to make sure that it
+[25:11] knows that this is a tool so what I'm
+[25:12] going to do is I'm going to put it in in
+[25:13] a quote and I'm going to make it the
+[25:15] exact same capitalization as we defined
+[25:17] over here so you must first use G emails
+[25:19] to get the message
+[25:21] ID of the email to
+[25:23] label then you must use git labels
+[25:29] to get the label ID of the email to
+[25:33] label okay so we added in this one line
+[25:36] so if it's still not working we know
+[25:37] that this line wasn't enough I'm going
+[25:39] to hit save and I'm going to try the
+[25:40] exact same thing again add a promotion
+[25:42] label to my last email so it's getting
+[25:44] now it's getting labels and now it still
+[25:46] had an error with adding labels so we'll
+[25:47] take a look in here um it said that it
+[25:49] did it successfully but it obviously
+[25:51] didn't it filled in label 127 blah blah
+[25:55] blah so I think the message ID is
+[25:57] correct but the lab ID is not so what
+[25:59] I'm going to try now is reactively
+[26:01] prompting in here I'm going to say the
+[26:03] label ID of the email to label we'll try
+[26:08] that we'll see if that fixes it it may
+[26:10] not we'll have to keep going so now
+[26:12] we'll see it's going to at least it
+[26:13] fixed the order right so it's getting
+[26:14] emails and getting labels first and now
+[26:16] look at that we successfully got a
+[26:18] labeled email as you can see we have our
+[26:21] um maybe we didn't we'll have to go into
+[26:23] Gmail and actually check okay never mind
+[26:25] we did as you can see we got the
+[26:27] promotion email for this one from Nate
+[26:29] herkelman that says hello and um yeah
+[26:32] that's just going to be a really cool
+[26:33] simple example of how we sort of take on
+[26:37] the process of running into errors
+[26:38] adding lines and being able to know
+[26:40] exactly what caused what so I know the
+[26:42] video was kind of simple and I went
+[26:43] through it pretty fast but I think that
+[26:45] it's going to be a good lesson to look
+[26:46] back on as far as the mindset you have
+[26:48] in approaching reactively prompting and
+[26:50] adding different tools and testing
+[26:51] things because at the end of the day
+[26:53] building agents is a super super test
+[26:55] heavy iterative you know refining
+[26:57] process process of build test change
+[27:00] build test change all that kind of stuff
+[27:02] so as always really appreciate you guys
+[27:04] making it to the end of this video if
+[27:05] you learn something new or if you
+[27:07] enjoyed it please leave a like it
+[27:08] definitely helps me out a ton and I will
+[27:10] see you guys in the next one thanks so
+[27:11] much everyone

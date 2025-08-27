@@ -1,0 +1,27 @@
+Video Title: This AI Agent automates my customer support emails. #n8n #aiagent #artificialintelligence
+Video ID: 4G1BxUxtwNI
+URL: https://www.youtube.com/watch?v=4G1BxUxtwNI
+View Count: 43,730
+
+[00:00] this is how I built an AI agent workflow
+[00:01] to automate my emails let's do a quick
+[00:03] demo see this thing in action we'll hit
+[00:05] test workflow we will see that the Gmail
+[00:07] trigger pulls in an email we're now
+[00:08] checking if it's customer support it is
+[00:10] so it's hitting the agent the agent's
+[00:11] looking in our Vector database for
+[00:12] information on the policies um it's
+[00:15] creating an email right now it just hit
+[00:16] it the Gmail tool it made a draft and as
+[00:18] you can see we just got a message back
+[00:20] in telegram so we got a little summary
+[00:21] about what just happened and then if we
+[00:23] go into our email we can see that we got
+[00:25] this email and then we also have a draft
+[00:27] which was you know replying to this
+[00:28] email and it has information about what
+[00:31] the customer asked about if you want to
+[00:32] see how to build this out for yourself
+[00:33] go to my channel and watch the
+[00:34] step-by-step tutorial see you guys there

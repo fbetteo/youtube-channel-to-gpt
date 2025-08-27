@@ -1,0 +1,494 @@
+Video Title: Instantly Trigger n8n Workflows from ChatGPT  #aiagent #n8n #artificialintelligence
+Video ID: xWhX61651H8
+URL: https://www.youtube.com/watch?v=xWhX61651H8
+View Count: 26,528
+
+[00:00] This new feature in NAD instantly makes
+[00:01] your rag agent so much smarter and it
+[00:03] takes almost no time to set up. In this
+[00:06] video, I'm going to be going over what a
+[00:07] reranker is, how it makes our retrieval
+[00:09] more accurate, and how you can easily
+[00:11] set one up. I'll also be touching on how
+[00:12] to use metadata when you're vectorizing
+[00:14] documents and also retrieving documents
+[00:16] so that by the end of this video, your
+[00:17] RAG agents are instantly going to be 10
+[00:19] times smarter. Okay, so let's get
+[00:21] started. I'm going to real quick hop
+[00:22] into an Excalibraw and actually explain
+[00:24] what's going on behind the scenes when
+[00:25] we do rag so that we all understand how
+[00:27] the reranker is going to work. So the
+[00:29] first step with rag obviously is we want
+[00:30] to get our text document into a vector
+[00:33] database. And how that works is the
+[00:34] document is split up into smaller
+[00:36] manageable chunks. The chunks are then
+[00:38] fed into an embeddings model and the
+[00:39] embeddings model turns them into a
+[00:41] numerical representation of the meaning
+[00:43] of what's in this chunk and then they
+[00:45] get placed somewhere in that
+[00:46] multi-dimensional space which is our
+[00:48] vector database. From there we go to
+[00:50] search through it. So let's say this
+[00:51] text document right here was the rules
+[00:53] of golf. If we now go to ask, what do I
+[00:55] do if my ball goes out of bounds? This
+[00:58] question is getting embedded the same
+[01:00] way these chunks did up here with the
+[01:01] exact same embeddings model. And then it
+[01:03] also gets placed in that
+[01:05] multi-dimensional vector database. So
+[01:07] then our question gets vectorzed and
+[01:08] it's placed right here. And then it
+[01:10] basically is going to grab the nearest
+[01:11] other vectors because that's how it
+[01:13] knows they're similar in meaning and
+[01:15] it's going to pull them back. So it
+[01:16] pulls back these three vectors in this
+[01:18] case and then these vectors get turned
+[01:20] back into their textbased chunks and
+[01:22] those chunks get fed into our rag agent
+[01:24] which it's able to use to answer our
+[01:26] question. And by the way, I would never
+[01:28] hit my ball out of bounds. Anyways, what
+[01:30] happens when we use a re-ranker is
+[01:31] pretty cool because this allows us to
+[01:33] basically pull back way more than just
+[01:35] the three nearest neighbors. We can pull
+[01:37] back 10, 20 or 30 vectors because all of
+[01:40] these are going to get fed into the
+[01:41] reranker and then it will basically look
+[01:43] at which ones are actually the most
+[01:44] relevant. It will assign a relevant
+[01:46] score and then it will grab just the top
+[01:48] three most relevant answers and then
+[01:51] those top three get fed into the agent
+[01:52] and it will answer for us. So, I know
+[01:54] that was quick, but hopefully at least
+[01:55] it makes sense. And now let's hop back
+[01:57] into nitn and take a look at how we set
+[01:58] this up. So as a prerequisite, I'm going
+[02:00] to assume that you've already set up a
+[02:01] flow like this and you've connected to
+[02:03] superbase. If you haven't, go ahead and
+[02:04] check out this video right here where I
+[02:06] explain how to connect and how to set
+[02:07] that up and then come back to this
+[02:09] video. So I'm going to click into the
+[02:10] superbase vector store tool real quick
+[02:12] and we're going to look at two main
+[02:13] things. The first thing is that I gave
+[02:14] it a limit of 20 and by default that's
+[02:17] four. So, we're basically telling the
+[02:18] agent, you can go ahead and find 20 most
+[02:21] relevant chunks rather than just four
+[02:23] because we know they're going to get
+[02:24] reranked and we're still only going to
+[02:26] get the top three. And right here is the
+[02:27] option to actually rerank those results.
+[02:29] So, if I turn this off, what happens is
+[02:31] it loses our connection right here to
+[02:33] our cohhere ranker. But if I go ahead
+[02:35] and turn that on, it's going to give us
+[02:37] that connection back and we can go ahead
+[02:39] and add a re-ranker. Right now, they
+[02:41] only have cohhere, but that's why we
+[02:42] were able to connect it right there. And
+[02:44] to set up Coher, all you have to do is
+[02:45] go to cohhere.com. I'll leave a link for
+[02:47] that in the description. You'll make an
+[02:49] account and then you just need to go get
+[02:50] a simple API key. It's really easy and
+[02:52] that's all you have to plug in right
+[02:54] here. And what you can see is there's
+[02:55] also three different models. We're going
+[02:56] to stick with V3.5. You could go to
+[02:58] Coher's docs to figure out the
+[03:00] difference of each model, but like I
+[03:01] said, for today, for simplicity, we're
+[03:03] just going to stick with rerank v3.5.
+[03:05] Anyways, let's test out this agent and
+[03:06] see the reranker in action. Real quick,
+[03:08] I just wanted to show you guys what is
+[03:10] in my superbase. It actually is the
+[03:12] rules of golf. So, you can see we've got
+[03:13] like 28 different rules. This isn't like
+[03:15] a full full sheet of the rules, but just
+[03:17] a PDF I found. And so here's what it
+[03:19] looks like. It's 22 pages and we used
+[03:20] this flow down here to actually
+[03:22] vectorize it with metadata. And I'll
+[03:24] touch on that whole metadata thing in a
+[03:26] bit. And if you guys want to access this
+[03:27] exact template to play around with, as
+[03:29] well as that PDF that I used, you can
+[03:30] get that in my free school community.
+[03:32] The link for that will be down in the
+[03:33] description. All right. So I'm going to
+[03:34] ask this agent, how does the order of
+[03:35] play work? We're going to see it talk to
+[03:37] Superbase Vector Store and then it's
+[03:39] going to talk to reranker. And now the
+[03:41] agent's taking all that information and
+[03:42] it's about to give us an answer. So here
+[03:44] we have the order of play in golf
+[03:46] depends on the type of play. If it's
+[03:47] match play, you start a hole. The
+[03:49] committee or players decide who goes
+[03:50] first. We have information about during
+[03:52] a hole, the player farthest from the
+[03:53] hole plays. Then we have what you do if
+[03:55] it's stroke play or also if you need to
+[03:57] do a provisional ball or another ball
+[03:59] from the T- box. So what I'm interested
+[04:01] in here is the actual agent logs to see
+[04:03] how this worked. So I'm going to click
+[04:04] into the Agent. I'm going to move this
+[04:06] thing over to the side and open up the
+[04:07] logs and we'll see what it did. So
+[04:09] basically what happens is it goes to the
+[04:11] superbase vector store because it knows
+[04:12] that it needs to find information on
+[04:14] golf order of play. So it sends over the
+[04:16] query order of play. This gets vectorzed
+[04:19] and then it's searching for the nearest
+[04:21] vectors that are near this vector. So
+[04:23] this gets sent off to subbase. It gets
+[04:25] embedded. So this is exactly what we
+[04:27] see. This is the numerical
+[04:28] representation of this query and then it
+[04:30] gets sent to the re-ranker model. So
+[04:32] here is the input to the reanker model.
+[04:34] If I was to scroll through here, we're
+[04:35] going to see that there's 20 different
+[04:37] chunks that are sent to the re-ranker
+[04:39] model. And now, if I close the input and
+[04:41] we open up the output, we can see that
+[04:42] it chooses the three most relevant ones.
+[04:45] So now we're only looking at three. And
+[04:47] what you'll notice about each one is
+[04:48] that they have a relevant score. So
+[04:50] right here, this first chunk has a
+[04:51] relevant score of825.
+[04:53] The second one has a relevant score of
+[04:55] 41 and the third one has a relevant
+[04:57] score of.17. So maybe this question
+[04:59] wasn't a great example because the
+[05:00] scores are pretty low, but it would have
+[05:02] been way worse of an answer if we didn't
+[05:04] have this reanker. And then I did
+[05:06] another example. Tell me about searching
+[05:07] for my ball. Once again, unrealistic. My
+[05:09] ball is going to be in the fairway. But
+[05:10] what we can see is we get some answers
+[05:12] back. And if I go into the agent logs,
+[05:14] we can see that if we go to the reranker
+[05:16] and we go to the output, it gave us the
+[05:18] top three chunks about searching for
+[05:20] your ball. This one has a relevant score
+[05:22] of86. This one has a relevant score of
+[05:24] 74. And this one has a relevant score of
+[05:26] 73. So if you think about only keeping
+[05:28] the most highquality chunks, you could
+[05:30] even set up some sort of filter in a
+[05:32] different workflow where after it does
+[05:34] the ranking, you're only going to keep
+[05:36] results where the relevant score is over
+[05:38] like.7. So just another way to think
+[05:40] about how can I make my agents retrieval
+[05:42] as accurate as possible because one
+[05:44] thing to think about is that the agent
+[05:45] is basically going to be forced to pull
+[05:47] stuff back even if it's not that
+[05:48] relevant. So if you ask it some random
+[05:50] question and it searches the vector
+[05:51] database, it's still going to pull back
+[05:53] the four nearest chunks even if they're
+[05:55] not very similar at all. And the problem
+[05:57] with chunkbased retrieval is that we're
+[05:59] not able to look at the contents as a
+[06:01] whole. So if we said to the agent like
+[06:03] you know can you summarize rules 1
+[06:04] through 10, it wouldn't be able to give
+[06:06] a holistic summary of rules 1 through 10
+[06:08] because it would be querying for each of
+[06:10] those chunks. So if it sent one query to
+[06:12] the vector database like rules 1 through
+[06:13] 10, we would get back three and it
+[06:15] wouldn't be like a holistic summary. But
+[06:17] maybe if it did 10 different queries,
+[06:19] rule one, rule two, rule three, rule
+[06:22] four, then maybe that's a little better.
+[06:23] But in order to do a search like that,
+[06:25] you definitely want to set up metadata
+[06:27] and you want to have a different type of
+[06:28] system to be able to search with
+[06:30] metadata. So let me explain why that is.
+[06:32] If we go over to our superbase documents
+[06:34] table, which is our actual vector
+[06:36] database, what we can see is that we
+[06:37] have all of these different chunks of
+[06:39] data. But what you'll notice is that not
+[06:41] every single rule fits into one chunk.
+[06:43] So right here, rule one, that's one
+[06:44] chunk. That's fine. Right here we have
+[06:46] rule two, that's one chunk. That's fine.
+[06:49] But here we have rule three. And it
+[06:50] looks like rule three is actually split
+[06:52] across three different chunks. And if we
+[06:54] don't have metadata, there's almost no
+[06:56] way to tell that this chunk based on the
+[06:58] contents is part of rule three. So in
+[07:01] this column over here, you can see it's
+[07:02] called metadata. And the only thing that
+[07:04] I added to all of these chunks was a
+[07:06] rule number field. So now with every
+[07:08] single chunk that gets pulled back, we
+[07:09] can see which rule it belongs to. So
+[07:11] like I said, here's the only chunk for
+[07:13] rule one. The metadata here says rule
+[07:15] number one. But here is the third chunk
+[07:16] for rule three, which in the actual
+[07:18] content of it, there's no mention of
+[07:20] rule three. But if we click into the
+[07:21] metadata for this chunk, we can see
+[07:23] right here we have rule number three.
+[07:24] And obviously, this isn't the only way
+[07:26] to do it, but definitely be thinking
+[07:27] about how you can add metadata tags to
+[07:29] the data you're going to put into your
+[07:31] vector database. So maybe you have a
+[07:32] bunch of different projects that you
+[07:34] want to put in there, but you want to
+[07:35] have the project name or the client's
+[07:36] name assigned as metadata to each of the
+[07:39] different chunks. Or maybe you have a
+[07:40] vector database full of all of your
+[07:41] meeting transcripts. What you'd probably
+[07:43] want to do is add a metadata field which
+[07:46] was the date of the meeting. That way
+[07:47] you could actually go ahead and make a
+[07:49] query to your agent like can you pull
+[07:50] all my meeting transcript data from June
+[07:53] 20th because without that metadata the
+[07:55] agent would basically be searching
+[07:56] through the vector database for mentions
+[07:58] in the transcript of like hey today is
+[08:00] June 20th and that's the only way to be
+[08:02] able to actually pull that back. So I
+[08:03] hope that all makes sense. As you can
+[08:04] see even if we continue to scroll down
+[08:06] here's a random chunk that has no
+[08:08] mention of the rule number. And if we
+[08:09] click into the metadata it says rule
+[08:11] number 26. And the way that we're able
+[08:13] to add metadata is in the flow when
+[08:15] we're vectorizing our documents. We do
+[08:16] that right here in the default data
+[08:18] loader. We have an option down here to
+[08:20] add metadata. And you can add as many
+[08:22] different properties as you want. So you
+[08:23] could also add like an ID number. You
+[08:25] could also add like a date, all this
+[08:26] kind of stuff. That's how we're adding
+[08:28] metadata. And I'm sure you guys are
+[08:29] wondering, how did I actually extract
+[08:31] the page numbers out of that PDF? So I
+[08:33] just pulled in the execution of when I
+[08:35] actually vectorized this data. So what
+[08:37] happened was I downloaded the file which
+[08:39] was our PDF about rules of golf. I
+[08:41] extracted the text from it. And as you
+[08:43] can see, when I extract the text, the
+[08:45] entire body of the PDF was lumped into
+[08:47] one field. I thought about feeding it
+[08:49] into AI to extract the page numbers, but
+[08:51] I probably would have hit a context
+[08:52] window, so I didn't want to do that. So,
+[08:54] what I did was I added a code node and I
+[08:56] literally went to JSON and I just copied
+[08:58] basically the entire text field right
+[09:00] here. And then I pulled up Claude and I
+[09:02] pasted in that JSON and I said, "Help me
+[09:04] write a code node for NIDN. It's going
+[09:06] to receive the JSON below as an input.
+[09:08] And I want it to split out each rule as
+[09:10] its own item. It should split out after
+[09:12] each time the text says rule X. And it
+[09:14] was literally a oneshot prompt. That's
+[09:16] all I said. And I got this code. So I
+[09:18] pasted that code in here. I ran it. And
+[09:20] now we have 43 items where it gives us,
+[09:22] hey, here's the rule number. Here's the
+[09:23] rule title. And here's the full text of
+[09:25] that rule. And so as you can see, that's
+[09:26] how we got all of this data back here
+[09:28] with a rule number associated with each
+[09:30] one. And so that's pretty cool. I was
+[09:31] able to do that with zero AI. And then
+[09:33] all I had to do was in my default data
+[09:35] loader, I added a field called rule
+[09:38] number and I dragged in the rule number
+[09:40] right there. And then I told it the
+[09:42] actual data that we are vectorizing is
+[09:44] just going to be the full text from this
+[09:46] code node. So I dragged in this field
+[09:47] right there. So we have our metadata in
+[09:49] our vector database, but how do we
+[09:51] actually search and filter through it?
+[09:52] Let me show you guys a quick example of
+[09:54] that. So right here we have rule 27,
+[09:56] which is about ball lost or out of
+[09:57] bounds. What I'm going to do is chat
+[09:59] with the agent right here and say, tell
+[10:01] me about rule 27. I'll fire that off.
+[10:03] And what's going to happen is once
+[10:04] again, it's going to pull back 20
+[10:05] chunks. It's going to rerank them. And
+[10:07] it's actually searching a few times.
+[10:09] It's going to keep searching until it
+[10:10] feels confident about rule 27. And so it
+[10:12] comes back with our answer about rule
+[10:13] 27. You can go ahead and fact check this
+[10:15] if you want, but what I'm more
+[10:16] interested in right now is understanding
+[10:18] why did it search through the vector
+[10:19] database three times for such a simple
+[10:21] query. Well, let's click into the agent
+[10:23] and let's go to the logs to understand
+[10:24] what happened. First time it tried, it
+[10:26] shot off the query rule 27. And so we're
+[10:29] looking for instances in Superbase where
+[10:30] a chunk means rule 27. Let's click into
+[10:33] the reranker to see what it chose. First
+[10:35] one you can see was rule 28 which is
+[10:37] already wrong. The relevant score was2.
+[10:39] The second chunk that it pulled was a
+[10:40] rule 26. That was the only content and
+[10:42] a.14 relevant score. And the third one
+[10:45] was also rule 26 with a.11 relevant
+[10:47] score. So it did horrible at finding us
+[10:49] rule 27. And I assume the same things
+[10:51] happened in the next search which was
+[10:53] rule 27 once again. And then finally the
+[10:55] last query it changed it to rule 27
+[10:57] golf. Not sure how that really changes
+[10:59] much, but apparently it does because now
+[11:00] if we go to the reanker, we can see it
+[11:02] got rule 27. It has a relevant score
+[11:04] of8. Another rule 27 with a 73 relevant
+[11:07] score. And I think this one looks like
+[11:09] it's also potentially about rule 27. U
+[11:12] maybe not. It has a pretty low relevant
+[11:13] score. So the agent was intelligent
+[11:15] enough to keep going until it felt
+[11:17] confident about its answer. But that's
+[11:19] not really the way we want to do it. And
+[11:20] because we have metadata set up, we
+[11:22] should be able to only isolate chunks
+[11:24] that literally say rule number 27. So
+[11:26] the way that we would go about that is
+[11:28] in the Subabase vector store tool, we
+[11:30] have an option at the bottom to add a
+[11:32] metadata filter. And this is where we'd
+[11:34] be able to add a filter field. We'd have
+[11:36] to add the name and the actual value
+[11:37] we're filtering for. And so this is
+[11:39] obviously subject to change. So what we
+[11:41] want to do is have the rule number in
+[11:43] here. And then we want to have AI decide
+[11:44] based on the human's query what to
+[11:46] filter. So that's why I'm going to show
+[11:48] you guys this example over here where
+[11:49] we're going to have one agent basically
+[11:51] decide on the metadata filter and then
+[11:54] the second agent will do its normal
+[11:55] vector search. And the reason why I'm
+[11:57] doing it like this is just because if we
+[11:58] have this agent also decide the metadata
+[12:00] filter, it just bugs out and this node
+[12:02] breaks. So right now this is the way to
+[12:04] do it. So anyways, if I go ahead and
+[12:06] send off the same query to this
+[12:07] different agent now, this one is going
+[12:09] to send off the metadata filter of rule
+[12:11] 27. This agent's going to search through
+[12:13] the vector database and we're going to
+[12:14] get back our answer on the first try. So
+[12:16] there we go. We now have information
+[12:18] about rule 27. And this looks a lot
+[12:20] better than that other agent. And if we
+[12:22] click into the Superbase vector store
+[12:23] node, we can see that the three
+[12:25] different chunks it actually pulled
+[12:26] back, they're all coming from rule 27.
+[12:29] And they all have this metadata field of
+[12:30] rule 27. So rule number 27, rule number
+[12:33] 27, rule number 27. And you can see the
+[12:35] way the metadata filter came through was
+[12:37] we were searching for only chunks where
+[12:39] the rule number right here equals 27.
+[12:42] And that's how we guarantee we're
+[12:44] looking for the right chunks. So, like I
+[12:45] said, it doesn't just have to be rule
+[12:46] numbers. It could be a date. It could be
+[12:48] a project name. It could be a client
+[12:50] name. It could be a different department
+[12:52] name. Whatever you want it to be. And in
+[12:54] an ideal world, you have a metadata
+[12:55] agent that's aware of all the different
+[12:57] filters you have in your metadata. So,
+[12:59] not only can it dynamically fill in the
+[13:01] actual value you're filtering for, but
+[13:03] it can be intelligent enough to
+[13:05] understand the query and understand,
+[13:06] okay, for the best results, I'm going to
+[13:08] choose the date filter and fill in the
+[13:10] date. I'm also going to filter for rule
+[13:12] number where we just add another one.
+[13:14] And I'm also going to fill in the rule
+[13:15] number down here. So that would
+[13:17] definitely be pretty cool. The best way
+[13:18] to start to get familiar with it is just
+[13:19] to play around with it. So I'll have all
+[13:21] of these agents and this exact workflow
+[13:23] in the free school community. So if you
+[13:25] want to download the JSON here, you can
+[13:27] also download this PDF and you can just
+[13:28] play around and experiment the same way
+[13:30] that I just did here in front of you
+[13:32] guys. Anyways, I don't want this video
+[13:33] to go too long. I think it's going to be
+[13:34] a lot more valuable for you all to get
+[13:36] that hands-on experience when you
+[13:38] download this template and just play
+[13:39] around and see how the reranker works,
+[13:41] see how your agent makes queries and see
+[13:43] how the metadata filter works. And if
+[13:44] you're looking for a more hands-on
+[13:45] experience when you're experimenting
+[13:47] with Rag and building stuff with NN,
+[13:48] then definitely check out my plus
+[13:50] community. The link for that will be
+[13:51] down in the description. We've got a
+[13:52] great community of members who are
+[13:53] always sharing their builds, sharing
+[13:54] their challenges, and supporting each
+[13:56] other. And we also have two full courses
+[13:57] in here. One called Aid and Zero, which
+[13:59] is the foundations for AI automation.
+[14:01] And then we have 10 hours to 10 seconds
+[14:03] where you learn how to identify, design,
+[14:05] and build time-saving automations. So,
+[14:07] I'd love to see you guys in the
+[14:08] community. But that's going to do it for
+[14:10] today. I hope you enjoyed the video. I
+[14:11] hope you learned something new. If you
+[14:13] did, please give it a like. It
+[14:14] definitely helps me out a ton. And as
+[14:15] always, I appreciate you guys making it
+[14:17] to the end of the video. I'll see you on
+[14:19] the next one. Thanks guys.

@@ -1,0 +1,679 @@
+Video Title: Multi-Agent Systems Have NEVER Been EASIER to Build (n8n, no code)
+Video ID: 0iUNOmeU7O4
+URL: https://www.youtube.com/watch?v=0iUNOmeU7O4
+View Count: 55,136
+
+[00:00] So, a multi- aent system is one where we
+[00:02] have multiple autonomous AI agents
+[00:04] working together in order to get the job
+[00:06] done and they're able to talk to each
+[00:07] other and they're able to use the tools
+[00:08] that they have access to. What we're
+[00:10] going to be talking about today is a
+[00:11] type of multi- aent system called the
+[00:13] orchestrator architecture. And basically
+[00:15] what that means is that we have one
+[00:16] agent up here. I call it the parent
+[00:18] agent and then I call these child
+[00:19] agents. But we have an orchestrator
+[00:21] agent that's able to call on different
+[00:23] sub aents. And the best way to think
+[00:25] about it is this agent's only goal is to
+[00:28] understand the intent of the user.
+[00:29] Whether that's through Telegram or
+[00:31] through email, whatever it is,
+[00:32] understanding that intent and then
+[00:34] understanding, okay, I have access to
+[00:36] these four agents and here is what each
+[00:38] one is good at. Which one or which ones
+[00:40] do I need to call in order to actually
+[00:42] achieve the end goal? So, in this case,
+[00:44] if I'm saying to the agent, can you
+[00:46] please write me a quick blog post about
+[00:49] dogs and send that to Dexter Morgan, and
+[00:52] can you also create a dinner event for
+[00:54] tonight at 6 p.m. with Michael Scott?
+[00:56] And thank you. Cool. So, this is a
+[00:59] pretty loaded task, right? And can you
+[01:00] imagine if this one agent had access to
+[01:03] all of these like 15 or however many
+[01:06] tools and it had to do all of that
+[01:07] itself, it would be pretty overwhelmed
+[01:09] and it wouldn't be able to do it very
+[01:11] accurately. So, what you can see here is
+[01:13] it is able to just understand, okay, I
+[01:15] have these four agents. They each have a
+[01:16] different role. Which ones do I need to
+[01:18] call? And you can see what it's doing is
+[01:19] it called the contact agent to get the
+[01:21] contact information. Right now, it's
+[01:23] calling the content creator agent. And
+[01:24] now that that's finished up, it's
+[01:25] probably going to call the calendar
+[01:26] agent to make that event. And then it's
+[01:28] going to call the email agent in order
+[01:29] to actually send that blog that we had
+[01:31] the content creator agent make. And then
+[01:34] you can see it also called this little
+[01:35] tool down here called Think. If you want
+[01:36] to see a full video where I broke down
+[01:38] what that does, you can watch it right
+[01:39] up here. But we just got a response back
+[01:41] from the orchestrator agent. So, let's
+[01:43] see what it said. All right, so it said,
+[01:44] "The blog post about dogs has been sent
+[01:46] to Dexter Morgan. A dinner event for
+[01:47] tonight at 6 PM with Michael Scott has
+[01:49] been created. And if you need anything
+[01:50] else, let me know." And just to verify
+[01:52] that that actually went through, you can
+[01:53] see we have a new event for dinner at 6
+[01:55] p.m. with Michael Scott. And then in our
+[01:56] email in our sent, we can see that we
+[01:58] have a full blog post sent to Dexter
+[02:01] Morgan. And you can see that we also
+[02:02] have a link right here that we can click
+[02:03] into, which means that the content
+[02:05] creator agent was able to do some
+[02:06] research, find this URL, create the blog
+[02:08] post, and send that back to the
+[02:10] orchestrator agent. And then the
+[02:11] orchestrator agent remembered, okay, so
+[02:12] I need to send a blog post to Dexter
+[02:14] Morgan. I've got his email from the
+[02:16] contact agent. I have the blog post from
+[02:18] the content creator agent. Now all I
+[02:19] have to do is pass it over to the email
+[02:20] agent to take care of the rest. So yes,
+[02:23] it's important to think about the tools
+[02:24] because if this main agent had access to
+[02:26] all those tools, it would be pretty
+[02:27] overwhelming. But also think about the
+[02:28] prompts. So, in this ultimate assistant
+[02:31] prompt, it's pretty short, right? All I
+[02:33] had to say was, "You're the ultimate
+[02:34] assistant. Your job is to send the
+[02:35] user's query to the correct tool. You
+[02:37] should never be writing emails or ever
+[02:39] creating summaries or doing anything.
+[02:41] You just need to delegate the task." And
+[02:43] then what we did is we said, "Okay, you
+[02:44] have these six tools. Here's what
+[02:45] they're called. Here's when you use
+[02:47] them." And it's just super super clear
+[02:48] and concise. There's almost no room for
+[02:50] ambiguity. We gave it a few rules, an
+[02:52] example output, and basically that's it.
+[02:54] And now it's able to interpret any query
+[02:56] we might have, even if it's a loaded
+[02:57] query. As you can see, in this case, it
+[02:59] had to call all four agents, but it
+[03:01] still got it right. And then when it
+[03:02] sends over something to like the email
+[03:04] agent, for example, we're able to give
+[03:06] this specific agent a very, very
+[03:07] specific system prompt because we only
+[03:10] have to tell it about you only have
+[03:11] access to these email tools. And this is
+[03:14] just going back to the whole thing about
+[03:15] specialization. It's not confusing. It
+[03:17] knows exactly what it needs to do. Same
+[03:19] thing with these other agents. You know,
+[03:20] the calendar agent, of course, has its
+[03:21] own prompt with its own set of calendar
+[03:23] tools. The contact agent has its own
+[03:25] prompt with its own set of contact
+[03:27] tools. And then of course we have the
+[03:28] content creator agent which has to know
+[03:30] how to not only do research using its
+[03:32] tavly tool but it also has to format the
+[03:35] blog post with you know proper HTML. As
+[03:38] you can see here there was like a title
+[03:39] there were headings there were you know
+[03:41] inline links all that kind of stuff. And
+[03:43] so because we have all of this
+[03:44] specialized can you imagine if we had
+[03:46] all of that system prompt thrown into
+[03:48] this one agent and gave it access to all
+[03:49] the tools just wouldn't be good. And if
+[03:52] you're still not convinced, think about
+[03:53] the fact that for each of these
+[03:55] different tasks, because we know what
+[03:56] each agent is doing, we're able to give
+[03:58] it a very specific chat model because,
+[04:00] you know, like for something like
+[04:01] content creation, I like to use cloud
+[04:03] 3.7. But I wouldn't want to use
+[04:05] something as expensive as cloud 3.7 just
+[04:07] to get contacts or to add contacts to my
+[04:09] contact database. So that's why I went
+[04:11] with Flash here. And then for these
+[04:12] ones, I'm using 4.1 mini. So you're able
+[04:14] to have a lot more control over exactly
+[04:16] how you want your agents to run. And so
+[04:18] I pretty much think I hit on a lot of
+[04:19] that but you know benefits of multi-
+[04:21] aent system more reusable components. So
+[04:23] now that we have built out you know an
+[04:25] email agent whenever I'm building
+[04:27] another agent ever and I realize okay
+[04:29] maybe it would be nice for this agent to
+[04:30] have a couple email functions. Boom. I
+[04:32] just give it access to the email agent
+[04:34] because we've already built it and this
+[04:35] email agent can be called on by as many
+[04:37] different workflows as we want. And when
+[04:39] we're talking about reusable components
+[04:41] that doesn't have to just mean these
+[04:43] agents are reusable. It could also be
+[04:44] workflows that are reusable. So, for
+[04:46] example, if I go to this AI marketing
+[04:48] team video, if you haven't watched it,
+[04:49] I'll leave a link right up here. These
+[04:51] tools down here, none of these are
+[04:53] agents. They're all just workflows. So,
+[04:55] for example, if I click into the video
+[04:56] workflow, you can see that it's sending
+[04:58] data over to this workflow. And even
+[05:00] though it's not an agent, it still is
+[05:02] going to do everything it needs to do
+[05:03] and then send data back to that main
+[05:05] agent. Similarly, with this create image
+[05:07] tool, if I was to click into it real
+[05:09] quick, you can see that this is not an
+[05:11] agent, but what it's going to do is it's
+[05:12] going to take information from that
+[05:13] orchestrator agent and do a very
+[05:15] specific function. That way, this main
+[05:17] agent up here, all it has to do is
+[05:19] understand, I have these different
+[05:20] tools, which one do I need to use. So,
+[05:22] reusable components and also we're going
+[05:24] to have model flexibility, different
+[05:25] models for different agents. We're going
+[05:27] to have easier debugging and maintenance
+[05:28] because like I said with the whole
+[05:30] prompting thing, if you tried to give
+[05:32] that main agent access to 25 tools and
+[05:35] in the prompt you have to say here's
+[05:36] when you use all 25 tools and it wasn't
+[05:38] working, you wouldn't know where to
+[05:39] start. You would feel really overwhelmed
+[05:41] as to like how do I even fix this
+[05:42] prompt. So by splitting things up into
+[05:45] small small tasks and specialized areas,
+[05:47] it's going to make it so much easier.
+[05:49] Exactly like I just covered point number
+[05:50] four, clear prompt logic and better
+[05:52] testability. And finally, it's a
+[05:54] foundation for multi-turn agents or
+[05:55] agent memory. Just because we're sending
+[05:57] data from main agent to sub agent
+[05:59] doesn't mean we're losing that context
+[06:01] of like we're talking to Nate right now
+[06:03] or we're talking to Dave right now. We
+[06:04] can still have that memory pass between
+[06:06] workflows. So things get really really
+[06:08] powerful and it's just pretty cool.
+[06:11] Okay, so we've seen a demo. I think you
+[06:12] guys understand the benefits here. Just
+[06:14] one thing I wanted to throw out before
+[06:15] we get into like a live build of a
+[06:17] multi- aent system is just because this
+[06:21] is cool and there's benefits doesn't
+[06:22] mean it's always the right thing to do.
+[06:24] So, if you're forcing a multi-agent
+[06:26] orchestrator framework into a process
+[06:28] that could be a simple single agent or a
+[06:30] simple AI workflow, all you're going to
+[06:32] be doing is you're going to be
+[06:33] increasing the latency. You're going to
+[06:34] be increasing the cost because you're
+[06:36] making more API calls and you're
+[06:38] probably going to be increasing the
+[06:39] amount of error just because kind of the
+[06:42] golden rule is you want to eliminate as
+[06:44] much data transfer between workflows as
+[06:46] you can because that's where you can run
+[06:48] into like some issues. But, of course,
+[06:50] there are times when you do need
+[06:51] dedicated agents for certain functions.
+[06:53] So, let's get into a new workflow and
+[06:55] build a really simple example of an
+[06:57] orchestrator agent that's able to call
+[06:59] on a sub agent. All right. So, what
+[07:01] we're going to be doing here is we're
+[07:02] going to build an orchestrator agent.
+[07:04] So, I'm going to hit tab. I'm going to
+[07:06] type in AI agent and we're going to pull
+[07:07] this guy in. And we're just going to be
+[07:08] talking to this guy using that little
+[07:10] chat window down here for now. So, first
+[07:12] thing we need to do as always is connect
+[07:14] a brain. I'm going to go ahead and grab
+[07:15] an open router. And we're just going to
+[07:17] throw in a 4.1 mini. And I'll just
+[07:19] change this name real quick so we can
+[07:21] see what we're using. And from here,
+[07:23] we're basically just going to connect to
+[07:24] a subworkflow. And then we'll go build
+[07:26] out that actual subworkflow agent. So
+[07:28] the way we do it is we click on this
+[07:30] plus under tool. And what we want to do
+[07:32] is call nen workflow tool because you
+[07:34] can see it says uses another noden
+[07:36] workflow as a tool. Allows packaging any
+[07:38] nen node as a tool. So it's super cool.
+[07:41] That's how we can send data to these
+[07:42] like custom things that we built out. As
+[07:44] you saw earlier when I showed that
+[07:45] little example of the marketing team
+[07:46] agent, that's how we can do it. So I'm
+[07:49] going to click on this. And basically
+[07:51] when you click on this there's a few
+[07:52] things to configure. The first one is a
+[07:54] description of when do you use this
+[07:55] tool. You'll kind of tell the agent that
+[07:58] here and you'll also be able to tell a
+[07:59] little bit in a system prompt but you
+[08:00] have to tell it when to use this tool.
+[08:02] And then the next thing is actually
+[08:03] linking the tool. So you can see we can
+[08:05] choose from a list of our different
+[08:07] workflows in n. You can see I have a ton
+[08:09] of different workflows here. But all you
+[08:11] have to do is you have to choose the one
+[08:12] that you want this orchestrator agent to
+[08:14] send data to. And one thing I want to
+[08:16] call attention to here is this text box
+[08:18] which says the tool will call the
+[08:19] workflow you define below and it will
+[08:21] look in the last node for the response.
+[08:23] The workflow needs to start with an
+[08:25] execute workflow trigger. So what does
+[08:27] this mean? Let's just go build another
+[08:29] workflow and we will see exactly what it
+[08:31] means. So I'm going to open up a new
+[08:32] workflow which is going to be our sub
+[08:33] agent. So, I'm going to hit tab to open
+[08:34] up the nodes. And it's obviously
+[08:36] prompting us to choose a trigger. And
+[08:38] we're going to choose this one down here
+[08:39] that says when executed by another
+[08:40] workflow, runs the flow when called by
+[08:42] the execute workflow node from a
+[08:44] different tool. So, basically, the only
+[08:46] thing that can access this node and send
+[08:48] data to this node is one of these bad
+[08:50] boys right here. So, these two things
+[08:52] are basically just connected and data is
+[08:54] going to be sending between them. And
+[08:56] what's interesting about this node is
+[08:57] you can have a couple ways that you
+[08:58] accept data. So, by default, I usually
+[09:00] just put it on accept all data. And this
+[09:02] will put things into a field right here
+[09:04] called query. But if you wanted to, you
+[09:06] could also have it send over specific
+[09:08] fields. So, if you wanted to only get
+[09:10] like, you know, a phone number and you
+[09:11] wanted to get a name and you wanted to
+[09:13] get an email and you wanted those all to
+[09:15] already be in three separate fields,
+[09:17] that's how you could do that. And a
+[09:19] practical example of that would be in my
+[09:20] marketing team right here in the create
+[09:22] image. You can see that I'm sending over
+[09:24] an image title, an image prompt, and a
+[09:26] chat ID. And that's another good example
+[09:28] of being able to send, you know, like
+[09:30] memory over because I have a chat ID
+[09:33] coming from here, which is memory to the
+[09:35] agent right here. But then I can also
+[09:36] send that chat ID to the next workflow
+[09:38] if we need memory to be accessed down
+[09:40] here as well. So in this case, just to
+[09:42] start off, we're not going to be sending
+[09:43] over specified fields. We're just going
+[09:44] to do accept all data and let us connect
+[09:48] an AI agent to this guy. So I'm going to
+[09:50] type in AI agent. We'll pull this in.
+[09:51] The first thing we need to do is we need
+[09:53] to change this because we're not going
+[09:55] to be talking through the connected chat
+[09:57] trigger node as we know because we have
+[09:59] this trigger right here. So what we're
+[10:01] going to do is save this workflow. So
+[10:02] now it should actually register an NAN
+[10:04] that we have this workflow. I'm going to
+[10:05] go back in here and we're just going to
+[10:07] connect it. So we know that it's called
+[10:08] subwork sub agent. So grab that right
+[10:10] there. And now you can see it says the
+[10:13] subworkflow is set up to receive all
+[10:15] input data. Without specific inputs, the
+[10:17] agent will not be able to pass data to
+[10:18] this tool. you can define the specific
+[10:20] inputs in the trigger. So that's exactly
+[10:22] what I just showed you guys with
+[10:23] changing that right there. So what I
+[10:25] want to do is show how data gets here so
+[10:27] we can actually map it so the agent can
+[10:29] read it. So what we need to do before we
+[10:31] can actually test it out is we need to
+[10:32] make sure that this orchestrator agent
+[10:34] understands what this tool will do and
+[10:36] when to use it. So let's just say that
+[10:37] this one's going to be an email agent.
+[10:39] First thing I'm going to do is just
+[10:40] intuitively name this thing email agent.
+[10:43] I'm then going to type in the
+[10:44] description call this tool to take any
+[10:47] email actions. So now it should
+[10:50] basically, you know, signal to this guy
+[10:52] whenever I see any sort of query come in
+[10:55] that has to do with email. I'm just
+[10:56] going to pass that query right off to
+[10:57] this tool. So as you can see, I'm not
+[11:00] even going to add a system message to
+[11:01] this AI agent yet. We're just going to
+[11:02] see if we can understand. And I'm going
+[11:04] to come in here and say, please send an
+[11:06] email to Nate asking him how he's doing.
+[11:11] So, we fire that off and hopefully it's
+[11:12] going to call this tool and then we'll
+[11:13] be able to go in there and see the query
+[11:15] that we got. The reason that this
+[11:17] errored is because we haven't mapped
+[11:19] anything. So, what I'm going to do is
+[11:20] click on the tool. I'm going to click on
+[11:21] view subexecution. So, we can pop open
+[11:23] like the exact error that just happened.
+[11:25] And we can see exactly what happened is
+[11:27] that this came through in a field called
+[11:30] query, but the main agent is not looking
+[11:32] for a field called query. It's looking
+[11:34] for a field called chat input. So, I'm
+[11:36] just going to click on debug and editor
+[11:37] so we can actually pull this in. Now all
+[11:39] I have to do is come in here, change
+[11:40] this to define below, and then just drag
+[11:42] in the actual query. And now we know
+[11:44] that this sub agent is always going to
+[11:46] receive the orchestrator agents message.
+[11:49] But what you'll notice here is that the
+[11:50] orchestrator agent sent over a message
+[11:52] that says, "Hi Nate, just wanted to
+[11:54] check in and see how you're doing. Hope
+[11:55] all is well." So there's a mistake here
+[11:58] because this main agent ended up
+[11:59] basically like creating an email and
+[12:01] sending it over. All we wanted to do is
+[12:03] basically just pass the message along.
+[12:05] So, what I would do here is come into
+[12:07] the system prompt and I'm just going to
+[12:09] say
+[12:11] overview. You are an orchestrator agent.
+[12:14] Your only job is to delegate the task to
+[12:17] the correct tool. No need to write
+[12:20] emails or create
+[12:22] summaries. There we go. So, just with a
+[12:24] very simple line, that's all we're going
+[12:26] to do. And before we shoot that off, I'm
+[12:28] just going to go back into the
+[12:29] subworkflow. And we have to give this
+[12:30] thing an actual brain so that it can
+[12:32] process messages. We're just going to go
+[12:34] with a 4.1 mini once again. Save that.
+[12:36] So, it actually reflects on this main
+[12:38] agent. And now, let's try to send off
+[12:40] this exact same query. And we'll see
+[12:41] what it does this time. So, it's calling
+[12:44] the email agent tool. It shouldn't error
+[12:46] because we we we fixed it. But, as you
+[12:49] can see now, it just called that tool
+[12:51] twice. So, we have to understand why did
+[12:52] it just call the sub agent twice. First
+[12:55] thing I'm going to do is click into the
+[12:56] main agent and I'm going to click on
+[12:57] logs. And we can see exactly what it
+[12:59] did. So when it called the email agent
+[13:01] once again it sent over a subject which
+[13:03] is checking in and an actual email body.
+[13:05] So we have to fix the prompting there,
+[13:07] right? But then the output which is
+[13:09] basically what that sub workflow sent
+[13:10] back said here's a slightly polished
+[13:12] version of your message for a warm and
+[13:13] clear tone blah blah blah. And then for
+[13:15] some reason it went and called that
+[13:16] email agent again. So now it says please
+[13:19] send the following email and it sends it
+[13:20] over again. And then the sub agent says
+[13:23] I can't send emails directly but here's
+[13:25] the email you can send. So, they're both
+[13:27] in this weird loop of thinking they are
+[13:29] creating them an email, but not actually
+[13:30] being able to send them. So, let's take
+[13:32] a look and see how we can fix that. All
+[13:33] right, so back in the sub workflow, what
+[13:35] we want to do now is actually let this
+[13:37] agent have the ability to send emails.
+[13:39] Otherwise, they're just going to keep
+[13:40] doing that endless loop. So, I'm going
+[13:41] to add a tool and type in Gmail. We're
+[13:44] going to change this to a send message
+[13:45] operation. I'm just going to rename this
+[13:48] send email. And we're just going to have
+[13:51] the two be defined by the model. We're
+[13:53] going to have the subject be defined by
+[13:54] the model. and we're going to have the
+[13:56] message be defined by the model. And all
+[13:58] this means is that ideally, you know,
+[13:59] this query is going to say, hey, send an
+[14:01] email to nateample.com asking what's up.
+[14:05] The agent would then interpret that and
+[14:07] it would fill out, okay, who is it going
+[14:08] to? What's the subject and what's the
+[14:10] message? It would basically just create
+[14:11] it all itself using AI. And the last
+[14:13] thing I'm going to do is just turn off
+[14:14] the end attribution right there. And now
+[14:17] let's give it another shot. And keep in
+[14:18] mind, there's no system prompt in this
+[14:20] actual agent. And I actually want to
+[14:22] show you guys a cool tip. So, when
+[14:24] you're building these multi- aent
+[14:25] systems and you're doing things like
+[14:27] sending data between flows, if you don't
+[14:29] want to always go back to the main agent
+[14:31] to test out like how this one's working,
+[14:34] what you can do is come into here and we
+[14:35] can just edit this query and just like
+[14:37] set some mock data as if the main agent
+[14:39] was sending over some stuff. So, I'm
+[14:41] going to say like we're pretending the
+[14:43] orchestrator agent sent over to the sub
+[14:44] workflow. Sends an email to
+[14:49] nateample.com asking what's up. And
+[14:52] we'll just get rid of that R. And then
+[14:54] now you can see that's the query. That's
+[14:55] exactly what this agent's going to be
+[14:57] looking at right here. And if we hit
+[14:59] play above this AI agent, we'll see that
+[15:01] hopefully it's going to call that send
+[15:02] email tool and we'll see what it did.
+[15:04] So, it just finished up. We'll click
+[15:06] into the tool to see what it did. And as
+[15:08] you can see, it sent it to native
+[15:09] example. It made the subject checking in
+[15:11] and then the message was, "Hey Nate,
+[15:12] just wanted to check in and see what's
+[15:13] up. Best your name." So my thought
+[15:16] process right now is like, let's get
+[15:18] everything working the way we want it
+[15:19] with this agent before we go back to
+[15:20] that orchestrator agent and fix the
+[15:22] prompting there. So one thing I don't
+[15:23] like is that it's signing off with best
+[15:25] your name. So we have a few options
+[15:27] here. We could do that in the system
+[15:28] prompt, but same thing with like um
+[15:31] specialization. If this tool is
+[15:33] specialized in sending emails, we might
+[15:35] as well instruct it how to send emails
+[15:36] in this tool. So, for the message, I'm
+[15:38] going to add a description, and I'm
+[15:40] going to say always sign off emails
+[15:43] as Bob. And that really should do it.
+[15:47] So, because we have this mock data right
+[15:48] here, I don't have to go and, you know,
+[15:50] send another message. I can just test it
+[15:52] out again and see what it's going to do.
+[15:54] So, it's going to call the send email
+[15:55] tool. It's going to make that message.
+[15:57] And now, we will go ahead and look and
+[15:58] see if it signed off in a better way.
+[16:00] Right here, we can see now it's signing
+[16:02] off best, Bob. So, let's just say right
+[16:04] now we're happy with the way that our
+[16:06] sub agent's working. We can go ahead and
+[16:08] come back into the main agent and test
+[16:10] it out again. All right. So, I'm just
+[16:11] going to shoot off that same message
+[16:12] again that says, "Send an email to Nate
+[16:14] asking him how he's doing." And this
+[16:16] will be interesting. We'll see what it
+[16:17] sends over. It was one run and it says,
+[16:19] "Could you please provide Nate's email
+[16:20] address so I can send the message?" So,
+[16:22] what happened here was the subexecution
+[16:25] realized we don't have Nate's email
+[16:26] address. And that's why it basically
+[16:28] responded back to this main agent and
+[16:30] said, "I need that if I need to send the
+[16:31] message." So if I click on subexecution,
+[16:33] we will see exactly what it did and why
+[16:35] it did that and it probably didn't even
+[16:37] call that send email tool. Yeah. So it
+[16:39] actually failed and it failed because it
+[16:41] tried to fill out the two as Nate and it
+[16:43] realized that's not like a valid email
+[16:46] address. So then because this sub agent
+[16:48] responds with could you please provide
+[16:49] Nate's email address so I can send the
+[16:51] message. That's exactly what the main
+[16:53] agent saw right here in the response
+[16:55] from this agent tool. So that's how
+[16:56] they're able to talk to each other, go
+[16:58] back and forth, and then you can see
+[16:59] that the orchestrator agent prompted us
+[17:00] to actually provide Nate's email
+[17:02] address. So now we're going to try,
+[17:03] please send an email to nateample.com
+[17:05] asking him how the project is coming
+[17:07] along. We'll shoot that off and
+[17:09] everything should go through this time.
+[17:10] And it should basically say, oh, which
+[17:12] project are you referring to? This will
+[17:14] help me provide you with the most
+[17:15] accurate and relevant update. So once
+[17:17] again, the sub agent is like, okay, I
+[17:19] don't have enough information to send
+[17:20] off that message, so I'm going to
+[17:23] respond back to that orchestrator agent.
+[17:24] And just because we actually need one to
+[17:26] get through, let me shoot off one more
+[17:27] example. Okay, hopefully this one's
+[17:29] specific enough. We have an email
+[17:30] address. We have a specified name of a
+[17:32] project. And we should see that
+[17:34] hopefully it's going to send this email
+[17:35] this time. Okay, there we go. The email
+[17:37] asking Nate how Project Pan is coming
+[17:39] along. It's been sent. Anything else you
+[17:41] need? So, at this point, it would be
+[17:42] okay. Which other agents could I add to
+[17:44] the system to make it a bit easier on
+[17:46] myself? The first thing naturally to do
+[17:48] would be I need to add some sort of
+[17:50] contact agent or maybe I realize that I
+[17:52] don't need a full agent for that. Maybe
+[17:54] that needs to just be one tool. So
+[17:56] basically what I would do then is I'd
+[17:57] add a tool right here. I would grab an
+[17:59] air table because that's where my
+[18:00] contact information lives. And all I
+[18:02] want to do is go to contacts and choose
+[18:05] contacts. And now I just need to change
+[18:07] this to search. So now this tool's only
+[18:10] job is to return all of the contacts in
+[18:12] my contact database. I'm just going to
+[18:14] come in here and call this contacts. And
+[18:16] now keep in mind once again there's
+[18:18] still nothing in the system prompt about
+[18:20] here are the tools you have and here's
+[18:21] what you do. I just want to show you
+[18:22] guys how intelligent these models can be
+[18:24] before you even prompt them. And then
+[18:26] once you get in there and say, "Okay,
+[18:27] now you have access to these seven
+[18:29] agents. Here's what each of them are
+[18:30] good at." It gets even cooler. So, let's
+[18:33] try one more thing and see if it can use
+[18:35] the combination of contact database and
+[18:37] email agent. Okay, so I'm going to fire
+[18:39] this off. Send an email to Dexter Morgan
+[18:40] asking him if he wants to get lunch. You
+[18:42] can see that right away it used the
+[18:43] contacts database, pulled back Dexter
+[18:45] Morgan's email address, and now we can
+[18:47] see that it sent that email address over
+[18:49] to the email agent and now we have all
+[18:51] of these different data transfers
+[18:52] talking to each other and hopefully it
+[18:54] sent the email. All right, so here's
+[18:55] that email. Hi Dexter, would you like to
+[18:57] get lunch sometime soon? Best Bob. The
+[18:58] formatting is a little off. We can fix
+[19:00] that within the the tool for the email
+[19:02] agent. But let's see if we sent that to
+[19:03] the right email, which is
+[19:05] dextermiami.com. If we go into our
+[19:06] contacts database, we can see right here
+[19:08] we have dextermorggan
+[19:10] dextermiami.com. And like I showed you
+[19:12] guys earlier, what you want to do is get
+[19:13] pretty good at reading these agent logs.
+[19:15] So you can see how your agents are
+[19:16] thinking and what data they're sending
+[19:18] between workflows. And if we go to the
+[19:19] logs here, we can see first of all, it
+[19:21] used its GPT4.1 mini model brain to
+[19:24] understand what to do. It understood,
+[19:26] okay, I need to go to the contacts
+[19:27] table. So I got my contact information.
+[19:30] Then I need to call the email agent. And
+[19:32] what I sent over to the email agent was
+[19:34] send an email to
+[19:35] dextermiami.com asking him if he wants
+[19:37] to get lunch. And that was perfect. All
+[19:40] right, so that's going to do it for this
+[19:41] one. Hopefully this opened your eyes to
+[19:42] the possibilities of these multi- aent
+[19:44] systems in N&N and also hopefully it
+[19:46] taught you some stuff because I know all
+[19:48] of this stuff is like really buzzwordy
+[19:49] sometimes with all these agents agents
+[19:51] agents. But there are use cases where it
+[19:53] really is the best path. But it's all
+[19:55] about like understanding what is the end
+[19:56] goal and how do I want to evolve this
+[19:58] workflow and then deciding like what's
+[20:00] the best architecture or system to use.
+[20:03] So if you enjoyed the video or learned
+[20:04] something new, please give it a like.
+[20:05] Definitely helps me out a ton. And as
+[20:07] always, I appreciate you guys making it
+[20:08] to the end of the video. I'll see you
+[20:10] guys in the next one. Thanks, everyone.

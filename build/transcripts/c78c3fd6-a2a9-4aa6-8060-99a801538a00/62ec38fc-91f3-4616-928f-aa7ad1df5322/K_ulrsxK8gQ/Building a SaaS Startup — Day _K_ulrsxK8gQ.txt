@@ -1,0 +1,3327 @@
+Video Title: Building a SaaS Startup — Day 2
+Video ID: K_ulrsxK8gQ
+URL: https://www.youtube.com/watch?v=K_ulrsxK8gQ
+
+[00:00] if that is if this is live hello
+[00:02] everyone um I'm testing a new mic a new
+[00:05] setup every day uh so please let me know
+[00:07] in the chat if things are working or if
+[00:10] something is wrong if you can hear me
+[00:13] well let's see okay I think that's okay
+[00:16] that's the stream I think we're live on
+[00:19] YouTube to upload a little
+[00:26] thumbnail if you're joining from Twitter
+[00:29] uh I will a link to the YouTube channel
+[00:31] yesterday for some reason Twitter did
+[00:33] not give us a good bandwidth so the
+[00:36] quality sucked a little bit go live on
+[00:39] Twitter
+[00:40] too see how that goes Channel yesterday
+[00:43] for some reason okay at least the sound
+[00:46] is okay this
+[00:48] time for the
+[00:55] YouTube better
+[00:58] quality check
+[01:04] YouTube all
+[01:07] right congrats hey yo
+[01:10] Ken okay I think we're live this is
+[01:13] working oh 20 okay 28 people hello hello
+[01:16] everyone um we get Ken we get see I see
+[01:20] all the messages okay they're
+[01:23] here uh yes I am Live on YouTube the
+[01:26] link is below the broadcast on Twitter
+[01:29] uh the quality is normally better so
+[01:31] check it out and not on Twitch yet I
+[01:34] think I need to uh step up uh I'm not a
+[01:37] streamer so I'm I'm learning as I
+[01:42] go I think everything is is is
+[01:47] working all right here we go um well
+[01:50] hello everyone good morning it's uh
+[01:53] 11:00 a.m. here in
+[01:55] Bali and uh if you are coming from
+[01:57] YouTube and you have no clue who I am my
+[02:00] name is Mark I live here in Bali I build
+[02:03] little internet
+[02:06] businesses I have about 20 uh micro
+[02:10] micro websites uh live now most of them
+[02:13] are not making money some of them are
+[02:14] making money and are paying the bills uh
+[02:17] I've been building uh those startups or
+[02:19] those websites in public on Twitter so I
+[02:21] share um everything I learn everything I
+[02:24] do everything I also earn uh there and
+[02:28] I'm trying to um do the same for YouTube
+[02:31] so having those live stream where I
+[02:33] share what I do in a day and uh and see
+[02:36] how that
+[02:37] goes um those are all the little
+[02:40] websites that I've made uh the reason
+[02:43] why I'm doing this live stream now is
+[02:45] because um among the six uh businesses
+[02:48] that are making money um all of them are
+[02:50] using stripe by the way and the two most
+[02:53] common uh questions that I have on
+[02:56] customer support is can I get an invoice
+[02:59] uh usually this happens when people do
+[03:01] their accountability by the end of the
+[03:02] month and they uh didn't download the
+[03:05] invoice they get when they made the
+[03:06] payments and they forget it and then
+[03:08] they would uh ask me by email uh so I
+[03:11] would have to go to stripe I would have
+[03:12] to find the right stripe account among
+[03:14] my six uh stripe accounts uh find the
+[03:16] customer download the invoice send it
+[03:18] back to the customer which is uh a bit
+[03:20] annoying and it's uh especially boring
+[03:22] so uh I'm trying to automate that part
+[03:25] by having one
+[03:27] link you one having one link uh
+[03:30] like this where customer can input the
+[03:32] email retrieve the invoices edit those
+[03:35] invoices and download them there's
+[03:37] another part that's important um some
+[03:40] people when they check out they don't
+[03:42] know you will generate an invoice
+[03:43] automatically with stripe checkout so
+[03:45] they would NE they would not necessarily
+[03:47] input their business details there and
+[03:50] then they will later email me that says
+[03:52] oh I forget to um I don't I my company
+[03:54] details or whatever so I would have to
+[03:56] go back to that striped um invoice I
+[03:58] would have to download it screenshot it
+[04:00] use Photoshop to change the customer
+[04:03] details and then um take a um make the
+[04:06] edits and send it back to the customer
+[04:08] um again this is quite boring um not
+[04:11] everybody has this problem but as a
+[04:13] stripe account owner I found this very
+[04:15] annoying and so this is it we're going
+[04:18] to be building uh Zenvo I already bought
+[04:21] the domain name and this is what we're
+[04:23] going to be working on today um as a
+[04:26] final part I am um working so so I do
+[04:30] everything from the coding to the
+[04:32] marketing to the brainstorming to
+[04:34] sometimes the psychiatrist or whatever
+[04:35] oh I have friends for that but um
+[04:38] nothing is perfect uh there might be
+[04:41] some bugs um it's not the best um
+[04:44] marketing I'm not the best at writing
+[04:45] headlines I'm just trying to do a little
+[04:47] bit of everything and ship those
+[04:49] startups um so I'm not very ambitious I
+[04:53] have no intention to build a unicorn my
+[04:55] goal is to keep building those apps
+[04:57] having fun building them launching them
+[04:59] and then um either moving on or adding
+[05:01] features if if you know users are
+[05:03] interested in um that's pretty much it
+[05:05] so no much ambition just uh sharing my
+[05:07] code and we are going to get this live
+[05:10] stream up and running until the product
+[05:12] is done uh so that includes um finishing
+[05:15] the
+[05:16] product that include making a ling page
+[05:19] doing the copywriting The Branding the
+[05:21] colors um pretty much getting everything
+[05:23] ready before the product hunt
+[05:26] launch
+[05:27] um as a final yeah okay uh we yesterday
+[05:32] we went stream it was a bit chaotic some
+[05:34] people try to sneak into my garden and
+[05:36] steal my trees so we're back today
+[05:38] hopefully this is going to be more uh
+[05:41] peaceful and calm um what we what what
+[05:44] we did yesterday we have uh set up a
+[05:46] user dashboard so this is a private
+[05:48] dashboard where I'm connected I'm
+[05:51] authenticated I can uh as a user I can
+[05:54] add stripe accounts here so I add um I
+[05:58] get restricted API Keys um if you don't
+[06:00] know what are those there's pretty sick
+[06:03] uh these are stripe API keys but with
+[06:05] restricted permissions and so users of
+[06:09] my app could say oh I give you access to
+[06:11] this specific uh object but not that one
+[06:14] and then they can create a key an API
+[06:16] key and that would let me do some uh
+[06:19] operation on their behalf on their STP
+[06:21] account without giving me the full
+[06:23] permission this is much safer than
+[06:26] sharing API keys and this is what we're
+[06:29] going to be using because when people
+[06:30] get a link from oh yeah of course you're
+[06:33] not seeing my stream I'm still not a
+[06:35] streamer
+[06:38] so here we go okay now you can see this
+[06:41] the yeah I guess you can see this the
+[06:43] screen
+[06:44] okay okay so I was talking for uh I was
+[06:48] talking about what we've built yesterday
+[06:50] so uh it was a short stream uh we have
+[06:53] this private dashboard people are logged
+[06:55] in uh they log in with email they can
+[06:57] add their strip accounts they just pass
+[06:59] their restricted stripe API key here and
+[07:02] that will create um a special link for
+[07:05] them
+[07:08] here that's it yep um they will have a
+[07:12] special link here that they can share
+[07:13] with the customers when the customer
+[07:15] inputs their emails um is going to query
+[07:18] all the stripe uh accounts the user has
+[07:21] and search for customers under that
+[07:24] email and then it's going to display all
+[07:26] the invoices the
+[07:27] customer had under their email uh with a
+[07:31] link to download the
+[07:34] invoice Yep this is finally working uh
+[07:37] this is the stripe hosted invoice
+[07:40] link and um the second part we want to
+[07:43] do is to let people update those
+[07:46] invoices uh the details so now I'm going
+[07:48] to focus on the part where I I I will
+[07:53] have some kind of like invoice editor
+[07:55] I'm going to get all the invoice details
+[07:57] and let the people change some details
+[07:59] of them like for instance their uh home
+[08:02] their home address their business
+[08:03] details or any of that and then it will
+[08:05] be able to redownload the invoice and
+[08:07] have an updated
+[08:08] invoice
+[08:10] um yeah I think that's pretty much it
+[08:13] uh let me think yes so this is day two
+[08:16] of the Stream So This is the really
+[08:17] beginning uh this looks really ugly as
+[08:20] you can see there is no it's not
+[08:21] responsive it's not beautiful there is
+[08:23] no themes um this is just the
+[08:26] raw data I'm going to finish the product
+[08:28] first
+[08:29] and then we're going to do a little bit
+[08:31] of branding change the phones do the
+[08:32] copy do the landing page and all that
+[08:37] things to make sure that everything is
+[08:39] working
+[08:42] here okay
+[08:48] nice
+[08:50] question yeah um if so if you guys are
+[08:53] on Twitter um check out the YouTube link
+[08:55] below I think uh the quality is much
+[08:58] better there I have no idea why Twitter
+[09:00] is not that good but yesterday it was
+[09:03] recurring thing so check out the YouTube
+[09:11] instead all right I'm just double-
+[09:14] checking on my phone that uh because
+[09:17] that happened that I was streaming for
+[09:18] like one hour and I realized that I was
+[09:20] not streaming the right screen so I'm
+[09:22] just checking making
+[09:24] sure
+[09:27] okay this is this is uh meia I think so
+[09:31] we're good okay um right if there's
+[09:35] anything let me know in the chat the
+[09:36] sound the quality uh I cannot do much
+[09:38] for Twitter I think it's uh it has to do
+[09:41] with their
+[09:42] API check check the YouTube link below
+[09:45] it should be much
+[09:47] better nice
+[09:56] okay okay
+[10:01] go so
+[10:06] um let's get back at it so yeserday so
+[10:10] we have this we we have uh stripe
+[10:12] account that are connected to the user
+[10:15] dashboard um and we
+[10:18] want we want we want people when they
+[10:21] input their emails we want them to be
+[10:22] able to edit those invoices so this is a
+[10:25] data straight from
+[10:27] stripe um I'm I'm going to have to
+[10:29] recreate some kind of like invoice
+[10:33] editor I think I will have to
+[10:38] actually I will have to recreate this
+[10:41] page with HTML like a display to the
+[10:44] user have this place here where people
+[10:47] can it will be a text area or input or
+[10:49] whatever where people
+[10:51] can what is going on oh okay it opens my
+[10:54] mail okay um these place here will be
+[10:58] editable
+[10:59] so that people can change their names um
+[11:02] everything and this will not change this
+[11:05] will not change as well this will also
+[11:08] not change so yeah basically recreate
+[11:11] this page have this part here as a
+[11:15] editable
+[11:16] form and then I think I'm going to use a
+[11:19] canva HTML canva and turn that canva
+[11:23] into a screenshot I think this is let's
+[11:28] see what we get HTML 2
+[11:37] PDF there has to be an MPN
+[11:41] package
+[11:49] node
+[11:55] see yeah that's going to be tricky I
+[11:58] think I think I might have to go with an
+[12:08] image you guys have any any clue on how
+[12:13] I will be able to I should be able to
+[12:15] turn let's say whatever this HTML thing
+[12:18] into a
+[12:19] PDF um if there's a nice way to do it
+[12:22] otherwise I think I just going to make a
+[12:24] screenshot like a PNG screenshot oh
+[12:27] maybe this
+[12:56] right he's not so good I don't know if
+[12:58] you can do something about yeah the man
+[13:00] the quality I have no idea
+[13:02] it's I think
+[13:08] Twitter yeah the quality on Twitter is
+[13:10] not really good um yeah guys go I think
+[13:15] go there's a YouTube link below go on
+[13:18] YouTube I think it's for some reason
+[13:21] it's just so much
+[13:27] better
+[13:33] yeah it's so much better on
+[13:37] YouTube let's tag Elon Musk and ask what
+[13:41] the what the heck is going on with uh
+[13:44] Twitter live
+[13:47] streams it's probably the Mad scientists
+[13:49] here that make the live stream bandwidth
+[13:51] go
+[13:54] wrong okay um right let's recreate
+[13:57] stripe invoices now
+[14:01] so I think
+[14:05] um okay this is it we're going to make
+[14:08] this a
+[14:16] small
+[14:19] neutral my server is still running it
+[14:26] is okay none of the invoice and here so
+[14:30] I think we will need to have a mo some
+[14:32] kind of
+[14:40] model let's see if I want to edit the
+[14:43] invoice I pop up a model have some input
+[14:46] forms in
+[14:56] it
+[14:57] okay
+[15:12] right let's try let's try this so we
+[15:14] have these button we're going to have
+[15:15] another which is edit oh yeah we're
+[15:18] going to be using some
+[15:22] icons um this for download oh maybe mini
+[15:27] ones
+[15:31] oh they have Micro
+[15:33] now
+[15:38] sick okay why not and then
+[15:57] edit
+[16:05] okay we have those
+[16:08] buttons and I think this
+[16:12] will uh here we're going to say edit
+[16:24] invo so yeah we'll need to have a model
+[16:27] somewhere
+[16:43] invoice to
+[16:46] edit right and when we going to put the
+[16:49] invoice number into this this is going
+[16:52] to show a
+[16:54] model
+[16:57] yeah
+[17:16] yes oh well I think I'll need I'll get
+[17:21] uh finished my stripe if I keep calling
+[17:23] their API just to test I'll have to
+[17:27] download the data and
+[17:31] where is
+[17:33] it yeah console like
+[17:57] this give me that
+[18:01] copy and we are going to put this in
+[18:04] here so we don't have to carry the
+[18:07] stripe API every single
+[18:11] time is it going to work yes it's
+[18:13] working I
+[18:14] think okay it is working so we have a
+[18:17] couple
+[18:21] of doesn't
+[18:24] matter okay we have a couple of invoices
+[18:27] pre
+[18:35] finded
+[18:42] okay we have going to have to create a
+[18:44] model
+[18:50] somewhere so I'm going to be reusing
+[18:52] some of the code
+[18:54] a from that
+[18:57] component
+[19:09] oops and here we're going to do
+[19:11] something like if uh
+[19:16] okay invoice to edit yep and here we
+[19:23] go when we close the model we want to do
+[19:26] set invoice to edits to
+[19:31] no same here set invoice
+[19:35] toedit so uh well actually we don't need
+[19:38] that so
+[19:40] perfect we need to do show
+[19:44] when give me something
+[19:47] copilot that invoice
+[19:51] no
+[19:55] work uh maybe
+[19:59] this
+[20:06] oh
+[20:12] um appear appear show how do I show
+[20:17] it I'm going to do something
+[20:24] dirty it true or
+[20:27] false
+[20:28] for some reason I don't remember how
+[20:31] to do that nope still oh okay yeah yeah
+[20:35] invoice to
+[20:36] edit yep
+[20:39] okay and
+[20:45] here and boom okay and we have the model
+[20:51] now
+[20:55] okay
+[20:57] um
+[21:07] I think this is
+[21:09] a 16 by9
+[21:12] invoice see how many pixels are
+[21:20] there
+[21:22] 566
+[21:25] 34 34 56
+[21:32] six oh this is
+[21:43] not we're going to find the ratio of
+[21:45] stripe invoices so I recreate the same
+[21:48] ones okay
+[21:51] interesting oh I think it's
+[21:54] A4
+[21:56] a A4
+[22:03] [Music]
+[22:19] okay
+[22:21] can try let me try to do a little
+[22:26] something let me try to do a little
+[22:30] something here so I can because I don't
+[22:31] see you guys chatting when I co when I
+[22:33] code so
+[22:36] maybe maybe I can share
+[22:41] that just one one second I'm trying to
+[22:43] share this with see if I can see that on
+[22:46] my
+[22:56] phone
+[22:59] let
+[23:12] restream see something on my phone but I
+[23:15] don't see any
+[23:16] messages um have you ever been to Canada
+[23:19] no I haven't been to Canada I spend most
+[23:21] of my time in Asia in
+[23:24] Europe is it b h cable beats yeah it
+[23:27] this is 100% um a a clone of sh I mean
+[23:31] not clone but like a using ship fast uh
+[23:34] boiler plate that I build things on top
+[23:37] of it
+[23:39] you
+[23:42] see all right I'm uh can anyone send a
+[23:46] message on the chat just to see if this
+[23:48] uh little thing here will update so I
+[23:50] can see what's going on in the chats
+[23:53] from my phone so I can see the messages
+[23:55] when
+[23:56] coding
+[24:03] this chat Mark oh that's thank you thank
+[24:05] you
+[24:07] buddy yep okay I can see the messages
+[24:09] it's extremely tiny but I can see that
+[24:13] hello
+[24:16] world message okay there we
+[24:19] go
+[24:23] something see work test this all right
+[24:25] this is working okay okay okay so at
+[24:28] least I
+[24:29] see I have to really zoom on this is
+[24:33] very
+[24:34] tiny but at least and see something
+[24:38] right let's get back to it so
+[24:41] um in this model here we are going to
+[24:44] display the invoice data we get from
+[24:46] stripe recreate this PDF that's right
+[24:56] here
+[25:10] okay wow this is oh maybe I maybe we can
+[25:14] do something fun here maybe I can ask
+[25:17] [Music]
+[25:18] chpt well I'm I'm I I suck with it maybe
+[25:21] you guys know I'd like to get the code
+[25:23] the HTML code of the I mean the react or
+[25:26] the jsx code of this invoice so I don't
+[25:30] have to code everything by
+[25:33] hand does anyone have any idea how we
+[25:37] could give this PDF or this PNG to an AI
+[25:42] and the AI will give me back the
+[25:56] code
+[26:09] okay oh wow BF
+[26:12] HTML HTML
+[26:19] online oh
+[26:26] sick
+[26:32] let's see how good is that
+[26:37] thing action for
+[26:40] today okay this bit of
+[26:46] work my God if this is working oh God
+[26:50] okay this is not
+[26:53] bad let's
+[26:56] see
+[27:05] yeah yeah this could
+[27:07] work this could
+[27:10] work I see a happy man right now yeah I
+[27:13] yeah I thought I would have to recreate
+[27:15] the
+[27:16] entire the entire uh invoice that would
+[27:20] be really helpful I think I need to I
+[27:22] haven't upgraded to uh GPT plus I think
+[27:25] I need to
+[27:28] you guys know we fight well should I do
+[27:35] that can I just maybe
+[27:40] use oh okay wow man Legend I see yeah
+[27:44] I'm see I think I'm I'm a boomer somehow
+[27:46] I'm too old I don't think of those smart
+[27:50] what
+[27:56] idea so maybe I can
+[28:01] uh can do something like this
+[28:05] copy and
+[28:10] transform screenshot to code okay right
+[28:13] okay I'm going to this is uh this is
+[28:15] going to be fun I'm going to try both
+[28:16] I'm going to give the HMA to GPT and ask
+[28:19] it to transform it to react
+[28:24] gs6
+[28:26] pleas
+[28:46] oh boy here we
+[28:56] go
+[29:10] feel like I have an employee working for
+[29:13] me this is so
+[29:26] nice
+[29:31] you know there would be that much among
+[29:33] you okay almost
+[29:40] finished here we
+[29:44] go exactly I just discovered fire I
+[29:47] don't even have chpt membership
+[29:56] yet
+[29:58] this is my content so probably going to
+[30:00] sit
+[30:01] here what do we get sick okay at least
+[30:04] we get the
+[30:07] HTML is a bit
+[30:10] off M
+[30:16] model invoice all right I think now I'm
+[30:19] going to finish
+[30:20] with your Halloween
+[30:26] CSS
+[30:38] okay I will need to console log what do
+[30:40] I get from the
+[30:47] invoice
+[30:52] z
+[30:56] um
+[31:05] just discount nope discount
+[31:13] discount
+[31:26] sure bunch of things going on
+[31:52] here
+[31:56] okay
+[32:04] yeah okay I think yeah um I'm going to
+[32:07] do some
+[32:09] uh tail thing
+[32:12] now we have this
+[32:17] cutting
+[32:20] okay
+[32:21] uh okay we want to have those two things
+[32:25] we going to have a div
+[32:31] let's define
+[32:41] between
+[32:44] invo and we're going to have so this is
+[32:47] going to be say invoice and here we're
+[32:50] going to
+[32:51] have I think it's called
+[32:54] invoice. account name probably
+[33:01] we don't have the invoice oh okay yeah
+[33:02] invoice select
+[33:12] it selected what was it how did you call
+[33:15] it invoice details invoice to edit okay
+[33:18] do account
+[33:22] name what do we
+[33:25] have okay this is
+[33:29] it oh I think well actually I think I
+[33:32] don't need to prefill this I can just
+[33:35] give this
+[33:38] thing
+[33:39] [Music]
+[33:41] to
+[33:45] here
+[33:46] uh wait we going to give this here okay
+[33:49] so we have something prefilled
+[33:55] okay
+[33:59] this is oh this
+[34:02] is um
+[34:04] this uh I think this this is going to be
+[34:07] a separate startup um if there is
+[34:10] anything new like any new component that
+[34:12] I create for these maybe like let's say
+[34:15] some cool components for the lending
+[34:17] page uh I would add those components to
+[34:19] ship fast but this very specific thing
+[34:23] about uh creating special links for
+[34:25] people to download their invoices they
+[34:27] will be a separate
+[34:32] startup Voice new Voice number
+[34:39] okay
+[34:46] issue I think this is will be invoice to
+[34:50] edit
+[34:52] that
+[34:55] probably what is it yeah looks like
+[34:58] it looks too beautiful to be true oh
+[35:00] that was
+[35:02] it date of
+[35:06] issue where is that thing
+[35:12] rated do add effective
+[35:17] ads here there are so many
+[35:23] variables Web book delivered ads
+[35:33] here's how many sales you had for the
+[35:35] ship b um it's on it's on the website
+[35:38] just go uh there's a link in the
+[35:40] description just go there and the
+[35:43] counter refreshes every hours so you
+[35:45] will see exactly how many
+[35:49] customers just
+[35:51] transition made
+[35:53] at date of issue so I think that's the
+[35:56] creative
+[36:01] date created
+[36:25] okay
+[36:35] okay we're going to what is this S2
+[36:39] things sping
+[36:40] top
+[36:43] 17 what did you do
+[36:47] CH what is that thing this is pretty
+[36:51] bad why have pting left and all
+[36:55] that all right maybe maybe actually we
+[36:58] didn't we shouldn't have give this to
+[37:13] CH view
+[37:19] date date
+[37:25] you
+[37:30] is
+[37:39] it du date there we
+[37:44] go damn this is going to be
+[37:51] long okay now we have information about
+[37:53] the
+[37:54] business so let's see we have a section
+[37:58] here you're going to do something like
+[38:00] this maybe space
+[38:04] y
+[38:06] four give it a little space um we have
+[38:10] this thing then we have
+[38:13] this
+[38:17] here
+[38:20] okay then we have uh information okay
+[38:23] there will be two sections here one will
+[38:25] be editable so first the business
+[38:30] information we have so we have two
+[38:35] sections I think this will be a greed
+[38:38] greed calls
+[38:40] two the first one will be business
+[38:46] data so we're going to reuse the
+[38:49] accounts
+[38:50] name and then the phone number and the
+[38:53] email if it
+[38:55] exists
+[38:58] phone
+[39:01] number
+[39:04] nope uh
+[39:18] country oh maybe well actually I gave
+[39:21] co-pilots so show
+[39:24] the account number maybe it
+[39:28] knows country no not phone
+[39:36] number
+[39:41] no where's my phone number
+[39:47] 747 [ __ ] where is
+[39:51] it oh maybe that's not part maybe that's
+[39:55] not on the invoice okay that information
+[39:57] here it's probably not on the
+[40:15] invoice okay I know okay so we need to
+[40:18] fetch some Data Business Like stripe
+[40:21] account
+[40:23] data which means in the API call instead
+[40:26] of just returning the invoices we should
+[40:29] also
+[40:30] return some of the data from the strip
+[40:32] account I know it's it sounds tricky now
+[40:35] but it w make sense so strip account SP
+[40:38] user ID for each strip
+[40:40] account invoice push we are going
+[40:45] to for each rep
+[40:55] account
+[41:07] for
+[41:09] each
+[41:25] noise
+[41:32] okay so for this and we're going to
+[41:38] say try account and here I'm going to
+[41:43] give it account. extra so this is coming
+[41:47] straight from when the people added
+[41:51] their business the St
+[41:54] businesses which fch the colors the
+[41:57] support
+[42:01] email
+[42:24] okay okay deci stop Revenue sharing for
+[42:27] IND page is
+[42:28] n yeah um I
+[42:31] didn't um my Indie page is not working
+[42:33] right now because I'm transiting from my
+[42:36] previous strip account that are
+[42:38] registered in France where I pay uh
+[42:42] 24% taxes on Revenue I think this is
+[42:47] yeah Revenue income yeah 24% taxes on
+[42:50] revenue and um I'm transiting to a new
+[42:53] country so I had to set up stop all all
+[42:56] my STP accounts in France uh cuz I
+[42:58] closed my business there and I'm doing
+[43:00] the transition now which is uh
+[43:02] timeconsuming boring but I still have to
+[43:05] do it and so I will reconnect my Indie
+[43:07] page as soon as this uh this is done
+[43:10] because now I have basically two strip
+[43:12] accounts for each of the startups that
+[43:14] you can see on my Indie
+[43:17] page support
+[43:20] email
+[43:23] see rep account extra
+[43:34] maybe go back to
+[43:55] it
+[44:03] [ __ ] I don't know I don't know where I
+[44:05] am supposed to
+[44:07] be oh wa
+[44:09] here CL this and we are going to console
+[44:22] log see we got
+[44:25] something
+[44:27] normally I should get some more
+[44:29] information about the business
+[44:31] now strap accounts okay and we have at
+[44:34] least we have the primary color so it's
+[44:36] because it's a test mode account there's
+[44:39] no there's not there are not many
+[44:42] information for now but in live mode I
+[44:46] should have the support the business
+[44:48] support email and all those information
+[44:50] that we will
+[44:52] need going back to this
+[45:01] here account name TR account
+[45:08] dot it's called I think call
+[45:13] it support extra support
+[45:16] [Music]
+[45:22] email oh and then also one thing
+[45:27] there should
+[45:29] be where is
+[45:50] it think and then we need to add the
+[45:54] style of the Border
+[45:57] I think it
+[46:01] is
+[46:06] primary okay so we replicate the that
+[46:09] little thing from
+[46:11] stripe so it looks legit
+[46:16] okay
+[46:24] voice
+[46:52] support maybe we need to get also the
+[46:54] support number
+[46:56] try
+[46:59] account
+[47:06] API this type company we don't care
+[47:12] email what's the name of it business
+[47:15] Prof um okay business profile this is
+[47:18] what we
+[47:24] want and we
+[47:26] oh wow you can't get the annual
+[47:29] revenue okay you didn't know that once
+[47:33] the estimated
+[47:36] Revenue only accepted for press
+[47:39] okay support email support phone there
+[47:41] we
+[47:49] go SHP account and here we're going to
+[47:51] add a new field for that called
+[48:00] support restart
+[48:03] server that should be populated when we
+[48:06] go
+[48:08] live events page support email and here
+[48:13] [Music]
+[48:14] support now it's going to be
+[48:16] empty going back at this
+[48:20] invoice this is the information we have
+[48:22] about the
+[48:24] business um now we need to have this
+[48:27] build
+[48:42] to and here I think we're going to have
+[48:45] a big text area or something I'll have
+[48:47] to see later how we do this but this is
+[48:50] pretty much where people will input
+[48:53] their customer email and everything so
+[48:55] so for now we're going to leave it empty
+[48:57] I'm just going to leave a
+[49:01] placeholder customer
+[49:03] [Music]
+[49:24] email
+[49:34] refresh all right yeah this is what this
+[49:37] is this is going to be the editable form
+[49:40] might be couple maybe we don't want
+[49:42] people to edit their email maybe just
+[49:44] their
+[49:46] address we we see that later so probably
+[49:50] something
+[49:54] like
+[50:00] address
+[50:03] maybe multiple
+[50:07] things City
+[50:10] Country let's just type
+[50:18] one there's
+[50:23] nothing I might have
+[50:26] messed
+[50:34] up okay the city is
+[50:37] new just the country for
+[50:43] now
+[50:45] okay next part
+[50:50] um is it why this one is due I think was
+[50:54] it paid
+[50:56] right I'm going to have to fetch some
+[50:58] data
+[51:02] here what is this
+[51:12] status made
+[51:18] okay maybe maybe we can update that
+[51:21] because that's kind of strange that it
+[51:23] says due and not paid and he has a link
+[51:28] to pay online amount due it doesn't say
+[51:31] paid
+[51:37] anywhere maybe I just a new with
+[51:39] invoices I'm missing out something so
+[51:43] here we want to have a little badge uh
+[51:47] near the amount that
+[51:51] says
+[51:53] invoice do
+[51:59] status stus and we are going to give
+[52:02] this a badge
+[52:07] badge see how that
+[52:10] goes okay this is
+[52:20] it yeah okay so back to the invoice here
+[52:30] um now we need to display
+[52:35] that this is a big
+[52:37] line
+[52:42] with where does that
+[52:46] goes invoice paid okay download receip
+[52:50] download
+[52:54] invoice
+[52:57] I have no clue what's the difference
+[52:59] between those
+[53:05] two STP
+[53:11] shows okay there is a payment
+[53:14] method it's roughly the same
+[53:18] okay okay so we need due date we're
+[53:23] going to replicate so the here there
+[53:25] will be
+[53:37] line
+[53:41] yes is it
+[53:43] working
+[53:45] sweet due date okay this is good invoice
+[53:50] du
+[53:52] date perfect um and now we're going to
+[53:56] recreate this little table
+[53:59] here think I'll be using
+[54:03] so okay I think there could be multiple
+[54:06] items
+[54:10] here sub
+[54:13] total
+[54:22] total uh where could that be is it
+[54:26] line
+[54:37] thing no give it to
+[54:54] me
+[54:56] L me
+[55:10] this are your thoughts in Mark are your
+[55:12] thoughts in English or in French man
+[55:14] this is weird
+[55:16] it's I sometime because I lived abroad
+[55:19] for a while now and most of my friends
+[55:21] are American my wife is Korean so
+[55:24] English is the language I speak most of
+[55:26] the time even though I'm not good at it
+[55:28] but it became somehow like one unified
+[55:31] language like French and English would
+[55:34] become just one thing and is so weird
+[55:37] and sometimes I would start thinking in
+[55:39] my head in English and and I would
+[55:40] transition to friends this is really
+[55:43] this is really
+[55:54] strange
+[56:07] okay now we have it
+[56:13] data okay this is it we are going to
+[56:15] display all the lines the
+[56:19] data and need to show name quantity unit
+[56:24] price an
+[56:26] amount so description is here quantity
+[56:31] should
+[56:34] be quty
+[56:38] here
+[56:45] okay back to Daisy
+[56:51] UI
+[56:53] e
+[56:55] and Yep this is what we
+[57:00] want we don't want to overflow though CU
+[57:04] we're getting to screenshot that
+[57:06] thing
+[57:23] so
+[57:37] think we can remove all
+[57:53] that
+[58:09] here go back description quantity unit
+[58:13] price
+[58:23] amount
+[58:26] unit unit
+[58:28] [Music]
+[58:29] price
+[58:32] amount
+[58:34] okay this should be
+[58:37] good
+[58:41] and
+[58:44] here for
+[58:53] each
+[58:57] oh oh
+[59:00] boy oh my God I love copot when it does
+[59:02] this kind of things
+[59:05] holy this is exactly what I
+[59:11] wanted very sweet
+[59:15] um do we
+[59:17] have uh the description okay the
+[59:19] quantity
+[59:21] okay the price unit amount
+[59:25] I think this is it
+[59:29] yeah this is so
+[59:33] nice Okay
+[59:36] um and
+[59:38] then we have this
+[59:44] thing sub
+[59:47] total
+[59:49] discounts total amount do
+[59:53] okay we have the table
+[59:57] here where
+[60:05] table
+[60:10] so think as they do it it looks like
+[60:14] it's a a
+[60:20] GRE
+[60:22] yeah is a greed read calls
+[60:27] to the first one is empty and the second
+[60:31] one I think it has a
+[60:34] divide
+[60:38] Y
+[60:40] and sub
+[60:42] total discounts total
+[60:53] am
+[61:04] this uh live stream should be called I
+[61:06] let copilot right make my new
+[61:14] startup give me some
+[61:23] magic
+[61:29] no might not
+[61:36] work probably
+[61:41] not is okay you're giving me the
+[61:44] download invoice button no no no don't
+[61:46] go too far this is for another
+[61:53] day
+[61:55] okay what do we have so
+[61:57] yeah
+[62:00] these sub total
+[62:03] total oh yeah okay so these there should
+[62:17] be we get something better here sub
+[62:19] total discount no
+[62:22] total do
+[62:25] not bad not
+[62:32] bad
+[62:38] okay
+[62:39] nope yeah we want to replace all those
+[62:42] with this one
+[62:53] two
+[62:56] this should go
+[62:58] here okay that looks like a little bit
+[63:01] more as a stripe thing I think it didn't
+[63:05] understand the
+[63:07] discount um let's see what we got here
+[63:14] discounts give me
+[63:23] data
+[63:29] okay okay we have the discount here
+[63:32] which is an
+[63:35] object so we need to
+[63:41] show probably there need to be a minus
+[63:44] sign
+[63:45] somewhere
+[63:50] yeah and we
+[63:53] need
+[63:59] discount
+[64:01] coupons
+[64:04] in
+[64:10] discount discount
+[64:12] C amount
+[64:18] of uh okay
+[64:21] although if there are no discount
+[64:24] so I think invoice toit the discount
+[64:27] that if there are no discount I think we
+[64:32] should not show
+[64:37] that just in case that would look like
+[64:42] this
+[64:45] okay okay good we are almost
+[64:49] done okay they show the currency here
+[64:52] let's let's do it
+[65:05] let
+[65:10] uppercase
+[65:13] okay yeah if there are
+[65:17] any extra information to add in the
+[65:20] footer I think it's somewhere here yeah
+[65:22] footer here we want to display it it's
+[65:26] going to be
+[65:29] total
+[65:34] tter oh I think we need to make sure if
+[65:38] there is a
+[65:50] footer that will be for another day
+[66:06] okay I think there could be other stuff
+[66:08] there they could be headers or
+[66:10] something
+[66:17] forgot
+[66:23] robino
+[66:26] okay I think it's no not a big deal
+[66:53] here
+[67:20] okay and then finally the little the
+[67:23] real food
+[67:25] not the user generated
+[67:28] one border border
+[67:38] up or is it going to be
+[67:52] um
+[67:55] give me some
+[67:56] magic you're almost
+[68:00] there here we go boy is it is that
+[68:04] it almost let see we want to make this
+[68:09] upper
+[68:19] case all right I think this is
+[68:22] itate okay
+[68:26] all right I think the invoice structure
+[68:29] is
+[68:31] done now we probably need
+[68:35] to yeah we need the
+[68:37] styling so we are going to go back
+[68:47] there to
+[68:52] export
+[68:58] going to be a light
+[69:03] theme invoices um big
+[69:08] big this is going to be text
+[69:12] Exel no where is
+[69:16] it text
+[69:19] XEL on
+[69:22] Bold
+[69:26] and here I
+[69:29] think it should
+[69:31] be plus six
+[69:35] gray 700
+[69:42] maybe and also the background here is
+[69:45] actually
+[69:52] White
+[69:55] here we can see think I'm going to have
+[69:57] to change this later but yeah this is
+[70:00] pretty much it so invoice she Fest
+[70:05] okay think we'll need a pading
+[70:10] of
+[70:14] eight order top eight that's
+[70:19] good a y I think we're going to be six
+[70:25] better um then the text here I think
+[70:28] it's
+[70:31] medium looks like medium
+[70:43] text
+[70:52] actually
+[70:56] we can do a little more no no okay no
+[71:10] one oh okay I see what you did here
+[71:14] those are two separate
+[71:21] columns yeah
+[71:28] so we have class greed GRE calls
+[71:52] to
+[71:56] [Music]
+[72:04] isue yep and
+[72:07] finally
+[72:12] you in
+[72:19] here
+[72:22] okay this should be maybe we'll have a
+[72:25] little bit of
+[72:27] a um B maybe we want some g y 2
+[72:35] one just a
+[72:46] little yeah
+[72:50] okay
+[72:52] then
+[72:54] last
+[72:56] pH think this look
+[73:04] like okay B so my B I
+[73:22] think
+[73:35] and B two should be
+[73:40] also
+[73:44] okay description un need amount this is
+[73:49] okay sh as welll okay okay okay
+[73:53] then we have the subtotal amount
+[74:01] due
+[74:08] so this here should be leading relaxed I
+[74:14] guess
+[74:22] right
+[74:48] we put this should we should should we
+[74:52] maybe
+[74:54] how does it look on a bigger
+[75:00] screen yeah I think we should make this
+[75:02] phon a little bit smaller like just like
+[75:11] strip
+[75:20] okay the
+[75:22] total
+[75:52] here
+[76:00] we do that prob we should
+[76:14] do what do I
+[76:20] done oh
+[76:22] no
+[76:31] here
+[76:35] okay next area should
+[76:38] be now we're going to say
+[76:47] um this is going to be
+[76:52] editable
+[76:57] here and
+[77:00] then yeah the
+[77:03] footer is I think it exist we need to
+[77:06] give it some extra margin at the
+[77:10] top
+[77:12] six and
+[77:17] finally this should
+[77:22] go they should go at the very bottom of
+[77:26] oh we'll need to change the entire lay
+[77:27] layout of the page I guess to give it
+[77:31] a whatever 1.2 ratio aspect
+[77:47] ratio here I think it's a text
+[77:50] XS text great
+[78:00] this probably what it is
+[78:11] yep I
+[78:13] think next
+[78:21] grade
+[78:25] right I think we have an invoice
+[78:28] here
+[78:30] we
+[78:32] replicated a stripe
+[78:35] invoice need to for to finish the layout
+[78:38] but this
+[78:39] is this is a stripe
+[78:44] invoice
+[78:47] um
+[78:48] [Music]
+[78:51] see what was the first programming
+[78:54] language that you
+[78:56] learned man uh it's a
+[78:59] long Dreadful story but I learn I unique
+[79:04] I think they still exist yeah they still
+[79:06] exist but they changed their framework I
+[79:09] learned
+[79:10] this as my first language and I didn't
+[79:13] know how the web work how Javas script
+[79:17] Works how web pages or HTML or react
+[79:21] works and I jumps straight into ionic
+[79:24] and I had no clue what I was doing I was
+[79:27] just Gathering components and trying to
+[79:30] make an app with it it was a disaster I
+[79:32] spent a year on something that nobody
+[79:34] ever saw nobody ever used and the app
+[79:36] was not even working by the end and then
+[79:39] I made another mistake by learning react
+[79:42] native as my second language without
+[79:44] knowing JavaScript and I spent another
+[79:47] six month on something that was another
+[79:49] total disaster and finally I realized
+[79:52] that you started first to understand the
+[79:54] foundation how HTML and web pages work
+[79:58] and then JavaScript and then you had um
+[80:01] component library on top of AIDS and
+[80:03] framework and so I restarted learning
+[80:06] from scratch after probably two
+[80:08] years and and here we are today but yeah
+[80:11] it was it was a pretty much of a
+[80:15] disaster hello good morning from Ubud
+[80:21] neighbors Do you have a job as a
+[80:23] developer uh I don't have a job as a de
+[80:26] I had for six month a job as as a
+[80:29] software engineer developer I I worked
+[80:31] actually for with the Lopez maybe some
+[80:36] of you know him this uh gentleman here I
+[80:41] spent six months working for him I
+[80:42] didn't know I would actually work for
+[80:44] him uh I applied for a software engineer
+[80:47] job when I was not at the best time in
+[80:49] my life I wanted to do something
+[80:51] different I had failed entrepreneurship
+[80:52] for for like 3 or 4 years before I was
+[80:55] like a I got to change I got to do
+[80:56] something new I applied for that company
+[80:59] and at the end they the HR asked me if I
+[81:02] wanted to pass on a message to Ty Lopez
+[81:05] and I was puzzled because I knew him
+[81:07] from his YouTube video the Lamborghini
+[81:09] video that I had no clue I was applying
+[81:12] for his company and then I ended up
+[81:15] getting the job uh working for him for
+[81:17] like five or six month and I got fired
+[81:20] uh later on and then I jump straight
+[81:24] back into an um solo
+[81:30] prorip old are you I am I turned 30 last
+[81:37] year that's scammer yeah he has bad not
+[81:41] really good
+[81:43] reputation I also didn't have a good
+[81:45] impression of
+[81:47] him and he's not the kind of person I
+[81:50] want to have you know in my house uh
+[81:53] every day but he
+[81:58] much is is very smart you can tell he's
+[82:00] a really smart dude he knows what he's
+[82:03] doing he's not just pure luck or
+[82:05] Randomness he knows exactly what he's
+[82:07] doing and
+[82:10] he's I don't know I had mixed feelings
+[82:13] before and I liked him more after
+[82:14] working for him if that makes any sense
+[82:17] but still not the kind of person I want
+[82:18] to be friend
+[82:21] with
+[82:24] I think he's still around I don't know
+[82:26] if he's how big is he has pretty big
+[82:29] YouTube
+[82:31] channel people
+[82:34] change that's pretty fun hello ex
+[82:41] employer all right so we have a strap
+[82:43] invoice here I need to clear the
+[82:45] formatting um but we need to get rid of
+[82:48] the padding
+[82:50] around we probably we need to get rid of
+[82:58] this yep we probably don't want to Mo
+[83:02] this
+[83:06] rounded and I think we need a literally
+[83:09] zero petting
+[83:21] yeah all wait we need to make this
+[83:23] button sit at the
+[83:26] top
+[83:28] so this here should be fixed top four
+[83:34] right
+[83:42] four we don't need any
+[83:46] title uh we going to make this think
+[83:49] we're going to make it a button button
+[83:51] neutral
+[83:53] people know there is a way to K to close
+[83:57] that make a
+[84:00] button do a look on
+[84:04] desktop it's ugly
+[84:07] yep it fixed but it's looks like it's
+[84:12] what is the difference absolute and
+[84:13] fixed why is not that thing on the top
+[84:19] right I'll fix it I need first to fix
+[84:23] the layout
+[84:26] um we need so max width I think we need
+[84:30] an aspect ratio
+[84:35] somewhere yep
+[84:38] okay
+[84:46] um how are we going to do that so max
+[84:49] with 3 XL these look like
+[84:53] like uh it enough SP no maybe we give it
+[84:57] 4 XL 5 XL
+[84:59] maybe all
+[85:05] right well actually do we care about the
+[85:08] format of the invoice no we don't really
+[85:09] care about
+[85:13] that we just
+[85:18] want yeah we don't care about the format
+[85:20] of the invoice yeah doesn't matter as
+[85:21] long as oh maybe they need no we don't
+[85:24] care no as long as it's clean it's okay
+[85:28] so we probably won't
+[85:31] to have some spacing here oh yeah
+[85:51] nothing4
+[85:53] just want to add a little divider
+[85:55] somewhere so maybe it's a bit too
+[86:12] much so maybe we don't need to go also
+[86:14] that's Max
+[86:16] width make it a little bit
+[86:21] shorter
+[86:30] okay
+[86:33] uh maybe we want to give it full
+[86:41] height oh
+[86:44] yeah because we are in a flex
+[86:47] container I think
+[86:51] mean
+[86:53] damn I forgot you guys remember how to I
+[86:57] am in a flex
+[86:58] container let me try to show my screen a
+[87:00] bit
+[87:03] better it's not showing up
+[87:07] anymore oh yeah okay I know it's because
+[87:09] I have this thing
+[87:13] here I would like so this is a flex
+[87:16] container and I want this thing here the
+[87:20] only elements inside of it to be full
+[87:22] height so that the top here goes there
+[87:26] and the bottom here goes there anyone is
+[87:30] a clue how to do
+[87:34] that oops
+[87:46] sorry
+[87:49] knowledge the Ty
+[87:51] Lopez
+[87:54] oh maybe it's because I have item
+[87:55] stretch let me
+[88:03] see relative with
+[88:10] [Music]
+[88:21] full
+[88:28] the
+[88:30] flex oh yeah okay it's because of this I
+[88:33] think probably item
+[88:37] stretch is it nope still
+[88:50] not it's it's a
+[88:53] roll I have this thing here and I want
+[88:55] to make it
+[89:01] X and here I am on the live stream
+[89:03] trying
+[89:05] to debu some flex
+[89:10] stuff one codes no man I have no Discord
+[89:13] Community um uh there I mean I do have a
+[89:16] little Discord Community for ship fast
+[89:19] members but that's it that's pretty much
+[89:21] it
+[89:44] he what am I trying to do uh good
+[89:46] question I'm trying to make this thing
+[89:49] here this div I'm trying to give it a
+[89:53] full height where is it yeah it's here
+[89:56] it's also here okay this is the one I'm
+[89:58] trying to give it a full
+[90:03] height knowing that it's inside this
+[90:06] Flex
+[90:09] container I'm just trying to make sure
+[90:11] the bottom touches the bottom of the
+[90:13] screen if that make
+[90:20] sense
+[90:50] it's
+[90:52] hello Amed thanks man I appreciate
+[91:10] it yep I could yeah I could position it
+[91:13] absolutely
+[91:19] uh just don't I I don't know I I just
+[91:21] just wish I could keep the code like
+[91:23] this and I know it's a little thing
+[91:24] about the
+[91:28] flex just a tiny thing I think it's
+[91:41] stretch made a
+[91:50] tweet
+[92:01] one regular videos actually this is I'm
+[92:04] actually I'm still using a green screen
+[92:06] for this
+[92:07] one as you can
+[92:10] see uh on the planet
+[92:16] Marth yeah no this is yeah this is uncut
+[92:19] it
+[92:20] no
+[92:22] no reflection no script just pure uh
+[92:25] coding and I'm not really good at
+[92:27] thinking and cutting at the same time so
+[92:28] I'm pretty slow at the
+[92:33] moment
+[92:35] [ __ ] try something
+[92:48] else invoice
+[92:50] number
+[93:35] going to be
+[93:50] shooting
+[94:24] [Music]
+[94:28] you nice 5 a Maro time man I want to go
+[94:31] Maro so
+[94:33] bad guys have the best waves in Europe I
+[94:37] think and probably the delicious
+[94:46] food hello Philip congrats for your uh
+[94:51] your latest backlink product M so so
+[94:54] good to see
+[95:19] that square
+[95:40] maybe just drink something
+[95:46] out overflow visible and we want to show
+[95:50] the Overflow here
+[96:00] um right I think I'm lost so I'm going
+[96:02] to use the
+[96:03] typical CSS uh
+[96:09] fix
+[96:14] okay you want to do something else then
+[96:20] 0
+[96:23] we want to do
+[96:25] this
+[96:28] uh
+[96:32] probably
+[96:37] um
+[96:46] think this is not the correct X ratio
+[96:49] isn't it
+[96:56] ratio how big is that oh actually know
+[97:00] that was
+[97:02] correct
+[97:20] wait
+[97:24] I'm a bit puzzled
+[97:50] here
+[97:58] what have I done what have you done
+[98:20] Mike
+[98:51] could this
+[98:57] be oh yeah Fed Up the
+[99:20] ratio
+[99:44] she
+[99:50] couldn't
+[100:08] all right that should be
+[100:19] enough
+[100:37] and yes okay probably we need
+[100:40] to do something like
+[100:49] this get six
+[100:54] okay and this thing at the
+[101:01] bottom where is
+[101:03] it Mr footer yeah this you should be
+[101:06] margin Top
+[101:08] Auto so you really sit at the bottom
+[101:11] nope oh yeah I need to make you hide
+[101:19] full
+[101:25] background
+[101:37] gray you should be full
+[101:49] height
+[101:53] okay
+[101:55] um this thing here should be display
+[102:19] somewhere okay here we
+[102:29] go okay we have a tribe
+[102:33] invoice
+[102:37] op is it crawlable yeah it is crawlable
+[102:40] but there's something really strange
+[102:48] here uh oh yeah had four
+[102:52] oh
+[102:53] yeah yeah the formatting here
+[103:08] um think this should be
+[103:15] hidden it should be hidden
+[103:19] too and probably
+[103:28] overflow yes
+[103:31] okay so we can scroll the invoice until
+[103:33] the
+[103:40] bottom or maybe
+[103:42] [Music]
+[103:48] overflow oh yeah okay this this is the
+[103:51] proper way of doing it
+[103:53] nice okay see if that works okay still
+[103:57] working so this is a copy of a strip
+[103:59] invoice now we need to fix the form
+[104:01] users should input their details
+[104:05] here um yeah also I think this is a bit
+[104:08] off I need to fix
+[104:10] that it should look like
+[104:16] this so
+[104:18] read next yeah it should be a flex okay
+[104:22] yeah I messed
+[104:28] up F Gap
+[104:33] four one
+[104:37] two um the first and the
+[104:43] second invoice
+[104:46] number
+[104:48] date you
+[104:57] is it going to work okay this is
+[104:59] better we even going to give
+[105:02] six
+[105:09] okay and that looks like a stripe
+[105:19] invoice
+[105:25] okay uh I think it's time for me to get
+[105:27] a little
+[105:28] te little
+[105:31] refreshing
+[105:36] see make the parent yeah I make that
+[105:39] books Child leave height
+[105:40] yeah thank you Kumar uh I wish I had
+[105:43] read your message a little bit earlier
+[105:45] took a little bit of a of
+[105:48] time when we'll start n
+[105:52] startup maybe when I will stop uh
+[105:54] mastering
+[105:57] procrastination right I'll be U I'll get
+[105:59] myself a little tea and I'll be back in
+[106:01] two
+[106:19] minutes
+[111:05] it's fun think welcome back
+[111:10] everyone little T's
+[111:16] ready so we can finish the product
+[111:21] so um where were we so here we are okay
+[111:24] we need to move that close button and we
+[111:26] need to add a download button that's
+[111:27] going to make a screenshot of
+[111:30] that
+[111:41] H
+[111:44] this links blah blah blah these buttons
+[111:47] should be somewhere else
+[111:51] it should not be
+[112:00] here this is
+[112:03] TR maybe it's because of that is it
+[112:12] no yeah just put this at the wrong place
+[112:15] let's
+[112:18] see
+[112:23] well okay I don't get that they should
+[112:25] be fixed
+[112:31] no with currency
+[112:34] time fix this um why are you here little
+[112:42] button you're supposed to be fixed so
+[112:45] why are you not just at the top
+[112:48] right
+[113:13] okay maybe I'll just move you
+[113:18] there okay
+[113:21] oh you're going to be sitting there
+[113:23] instead
+[113:24] okay have no clue why this is
+[113:28] it oh and then this
+[113:31] thing this should
+[113:35] be
+[113:37] Z
+[113:46] 50
+[113:48] okay
+[113:53] currency Cod is recard what is that
+[113:54] little bug we have here
+[114:03] oh ceny code is required number
+[114:07] format
+[114:16] 69 see
+[114:18] code
+[114:25] um tting
+[114:27] that oh
+[114:31] [ __ ] by default we're going to give it
+[114:33] the USD
+[114:36] currency it looks like it don't mind
+[114:38] anymore I have a nasty error though
+[114:42] default value oh yeah because of the
+[114:43] text area okay but this will be an easy
+[114:45] fix
+[114:48] after
+[114:50] okay so we have we can close that we
+[114:53] have our invoices we can edit them um I
+[114:56] think we want to be able to okay we need
+[114:58] to make the download
+[115:00] button uh what was I using for logo
+[115:06] Fest
+[115:09] right first logo
+[115:13] first it tools logo fast
+[115:17] yep we are using
+[115:23] let me check the
+[115:30] packagea um oh HTML to image I
+[115:38] think yeah let's try that
+[115:48] thing um
+[115:57] probably need you ref yep input ref what
+[116:02] is
+[116:02] that oh yeah input ref okay and here we
+[116:05] going to have a invoice
+[116:09] ref
+[116:10] okay and on the section that's I think
+[116:13] to
+[116:18] download here we will give it the ref of
+[116:21] invoice
+[116:24] ref so in those
+[116:28] buttons we have a second button here um
+[116:32] the name of it hero
+[116:35] icons we going to search a download
+[116:39] button go it
+[116:47] here uh this is not a square button it's
+[116:50] going to be just a regular
+[117:01] one four and I think this should be a
+[117:04] primary
+[117:10] button the best UI ever for now this
+[117:15] will do the work um so here we say
+[117:18] download in
+[117:23] invoice maybe we're going to say
+[117:25] screenshot invoice because these were
+[117:27] not going to search the stripe
+[117:31] API screenshot
+[117:34] invoice we already have I
+[117:39] think uh yeah we know which invoice is
+[117:43] open here we're going to do screenshot
+[117:46] invoice and I think we need to
+[117:54] import I'm going to reuse the codes from
+[117:56] logo Fest
+[117:58] editor where did I store that thing
+[118:04] logo a little fast to
+[118:11] PNG Buton
+[118:17] export PNG here we
+[118:37] go um invoice
+[118:39] ref H
+[118:42] Mage export options we're going to have
+[118:45] to PCH this thing
+[118:47] invoice. PNG
+[118:51] G
+[119:00] up options where are
+[119:10] they export options you are here okay
+[119:18] yep
+[119:27] transparent keep F
+[119:30] yep and we finish
+[119:35] this where did I mess up
+[119:39] here
+[119:48] then
+[119:54] oh here
+[119:55] okay
+[119:57] HTML
+[120:12] to see what we get
+[120:18] um
+[120:20] yeah it's probably not the right don't
+[120:48] f
+[120:56] uh yes
+[120:58] okay we inverted the
+[121:02] buttons
+[121:06] up we going to get more chins
+[121:18] here
+[121:33] something happen
+[121:39] or invoice to
+[121:48] edits
+[122:09] still a little bit of work that needs to
+[122:11] be done here oh
+[122:13] [ __ ] holy moly
+[122:17] um
+[122:34] for some reason oh I
+[122:35] think it's a react thing it doesn't
+[122:47] know
+[122:51] I need to use call back
+[123:17] somewhere
+[123:29] okay oh yep the way on the loaning yep
+[123:33] yep
+[123:37] sorry sorry
+[123:47] sorry
+[124:01] here invoice RI invoice to
+[124:05] edit let's see what we
+[124:17] get
+[124:21] Yep this is not
+[124:31] beautiful explain explain explain yeah
+[124:34] it is react
+[124:41] uh TR
+[124:43] something
+[124:47] and
+[124:49] 159
+[124:54] 49 okay this is
+[124:57] it let's
+[125:03] see okay no I think I'm missing out
+[125:06] something
+[125:15] here oh okay
+[125:19] oh yeah it's a react
+[125:23] um it's taking a
+[125:27] screenshot
+[125:29] of
+[125:47] before
+[126:46] fragment
+[126:47] show be see
+[127:17] me
+[127:27] oopsy doopsy what have I
+[127:47] done
+[128:00] okay there is no inv to it that
+[128:05] is why are you closing the
+[128:11] model
+[128:13] oh would it
+[128:17] be it's
+[128:25] weird let's just try
+[128:35] this okay okay it was not in the M
+[128:40] okay um at least we got something
+[128:44] working at least we get the invoice yeah
+[128:46] that's pretty clean
+[128:52] um I need to understand
+[128:55] why with full this is
+[129:00] fixed this is literally fixed so this
+[129:03] should be sitting on top of
+[129:13] everything they should they should be at
+[129:15] the top
+[129:16] right we will just Center
+[129:24] it think I'm missing out something
+[129:31] here no time scrip no Arc browser I'm a
+[129:36] old schooled person I'm 30 years old I'm
+[129:38] I'm already
+[129:39] old uh in time what time is it it's in
+[129:43] belly Time 1 p.m.
+[129:45] 20 time for a little
+[129:48] little
+[129:52] lunch
+[129:55] 2.1 y Nigeria is waking
+[130:00] up but we can download the invoice
+[130:02] that's pretty
+[130:04] cool keep pH maybe we can
+[130:07] [Music]
+[130:11] keep let me change something
+[130:17] here
+[130:18] that make any difference oh no wow
+[130:20] that's even better we have the phones
+[130:22] now oh sick
+[130:25] okay what else what options do we have
+[130:29] skip quity okay yeah this is good
+[130:35] enough
+[130:37] um what else do we
+[130:43] want although I might have a little
+[130:45] troubles if customers don't know the
+[130:47] invoice on
+[130:50] this oh he's not going to screenshot yes
+[130:53] of
+[131:05] course maybe it's
+[131:10] because that Tricky Tricky
+[131:17] Tricky
+[131:19] yeah he going to make a screenshot of
+[131:20] exactly what I see
+[131:21] here which is not perfect
+[131:47] um
+[132:06] I need to fix those buttons first why
+[132:10] why they don't want to
+[132:14] sit with food like s this
+[132:26] pixman if I try something like a less
+[132:29] related
+[132:35] absolute I guess this would be absolutes
+[132:38] then
+[132:47] um
+[133:35] why image and not PDF um I haven't found
+[133:37] a HTML to PDF Library if you do I would
+[133:41] love to
+[133:46] trade
+[134:01] you think you headlights brother before
+[134:04] you control di
+[134:08] mission that would be
+[134:14] nice that'll be nice
+[134:16] um
+[134:23] that'll be nice but that would take a
+[134:24] lot of time I
+[134:29] think yeah and headless Brothers on
+[134:31] nextjs are pretty tricky to
+[134:44] handle all right need to understand what
+[134:47] is going on here
+[135:01] here logo Fest
+[135:06] maybe where is the code that I used to
+[135:10] have
+[135:16] um
+[135:22] I'm just going to leave it as it
+[135:25] is all right I'm going to leave it here
+[135:46] okay
+[136:31] all right K yeah if you have a better
+[136:33] solution I would love to give it a try
+[136:36] and team W react PDF HTML okay
+[136:39] man react PDF HTML
+[136:45] react let's see what we get here
+[136:53] [Music]
+[136:59] HML I can give it a try
+[137:12] um rect
+[137:15] compies oh okay
+[137:26] do you think it's going to work uh with
+[137:29] elwin CSS
+[137:32] though because it looks like I need to
+[137:35] inject those
+[137:46] Style
+[137:48] document
+[138:07] Fe oh okay maybe I would have to re
+[138:10] render those components uh Rea server
+[138:16] elements
+[138:33] sh yeah okay yeah I think
+[138:36] it's it's going to spend a lot of time
+[138:39] on this
+[138:46] um
+[138:58] the the entire internet should be using
+[139:00] laptop devices only so that will fix
+[139:07] it
+[139:08] right okay uh if anyone is joining right
+[139:11] now uh the download invoice feature
+[139:14] works but not on mobile
+[139:19] because just crop like the cropping is
+[139:22] wrong yeah I just make the text a little
+[139:24] bit
+[139:25] smaller they keep the same aspect
+[139:36] ratio see what we get
+[139:46] here
+[139:53] that could
+[139:55] work we don't see the
+[139:58] screen hey
+[140:00] yo we meet
+[140:13] here Rea okay rect p
+[140:23] you don't see the
+[140:24] screen you guys want see my
+[140:35] screen we just gone the entire Bali
+[140:38] fiber connection is uh is
+[140:46] over
+[140:56] right thank you to
+[141:02] correct I think I'm going to stick with
+[141:05] yeah okay I'm going to take it very
+[141:07] simple I'm going to make sure this is
+[141:09] responsive on mobile
+[141:12] so so we
+[141:16] can have the invoice without going too
+[141:19] crazy
+[141:22] um people think
+[141:27] oops the name of it table EXs May SM
+[141:35] maybe
+[141:38] table is that it
+[141:46] no
+[141:51] step
+[142:00] somewhere where is my T here you
+[142:15] goil maybe the table as doesn't exist
+[142:20] um let's see what Daisy UI
+[142:29] says it does exist where did I go wrong
+[142:35] then oh maybe it was already a table
+[142:38] small
+[142:40] table let's see oh yeah I think that
+[142:42] worked oh yeah okay that
+[142:45] works well pi 12 pixels okay this is
+[142:51] working we probably need to have this
+[143:05] separat yeah let's make it responsive
+[143:07] and I think we can give this a go so the
+[143:11] text
+[143:12] area
+[143:16] here this should
+[143:19] be
+[143:22] okay and there should be probably G up
+[143:26] six yeah should have a little Gap
+[143:32] here x XL xlg
+[143:39] MD is the other place I think it was
+[143:41] somewhere at the
+[143:44] top
+[143:46] um
+[143:52] invo
+[143:54] it than
+[144:06] you better
+[144:15] attack yes yes yes
+[144:25] yes the table um think we also want this
+[144:30] on mobile to probably be a little bit
+[144:32] bigger in case it's a higher price it
+[144:35] might mess up the
+[144:37] grid
+[144:41] so think we might want to do
+[144:45] this
+[144:49] yeah
+[144:50] probably yeah okay
+[145:01] definitely okay oh
+[145:05] yeah so normally on mobile I download it
+[145:10] this is not the exact format from stripe
+[145:13] but yeah this is
+[145:15] working the
+[145:24] invoice all right I think this is
+[145:29] good no can't access the sh G the shif
+[145:32] has G Breo um there's a to get it it's
+[145:36] it's a paid product so you will have to
+[145:38] go on the
+[145:39] link someone's coming in my house
+[145:42] sorry you would have to go on the link
+[145:45] somewhere in this chat and uh purchase
+[145:48] the the boiler plates and then you can
+[145:49] access the repo if you did access the
+[145:51] repo if you did purchase but didn't get
+[145:54] access let me know your
+[146:04] email how long we've been on uh it's a
+[146:07] short one yesterday I did 3 hours and
+[146:10] probably today is going to be a bit
+[146:15] longer hopefully we can launch this
+[146:17] thing here this
+[146:19] week should be done by the end of the
+[146:21] week might not be perfect but should be
+[146:26] working okay the text area now B two
+[146:30] this I think will not be
+[146:45] changeable
+[146:51] what do we want to change in those bills
+[146:53] we want to
+[146:59] change should we let the user change
+[147:02] every information just
+[147:04] prefill with the customer name customer
+[147:08] country and
+[147:10] customer email and then just let them
+[147:14] yeah I think yeah we're going to let
+[147:15] them
+[147:18] okay yeah we're going to let them change
+[147:20] everything they want so we will need
+[147:23] some customer info what
+[147:27] was how would I STI
+[147:32] this think I did this for Indie page
+[147:44] uh what do we have here
+[147:48] T
+[147:51] placeholder herec
+[147:58] F right
+[148:01] let's customer
+[148:14] uh so every time we're going to change
+[148:17] the invoice the customer is currently uh
+[148:19] seeing we will have to reset those
+[148:22] information and
+[148:24] prefill customer
+[148:29] details we'll need a use effect
+[148:33] somewhere like a cleanup
+[148:36] function
+[148:39] customer
+[148:43] details think we're going to see this
+[148:50] um and we're going to say
+[148:54] that when the invoice to
+[148:57] edit
+[148:58] uh reset
+[149:10] customer
+[149:12] okay if we
+[149:15] CL here
+[149:18] oh
+[149:24] wait oh yeah
+[149:28] okay if we don't have any invoice to
+[149:31] edits then we're going to set it to
+[149:34] nothing
+[149:35] else we're going to set set customer
+[149:42] details and here we're going to
+[149:44] prefill okay yeah there we go
+[149:47] customer name customer email okay I'm
+[149:49] going to try with with this first and
+[149:52] see I get something working and so here
+[149:55] in the text
+[149:56] [Music]
+[149:59] area or should we have this in maybe we
+[150:02] should just
+[150:04] change well actually
+[150:07] maybe no okay no it's going to be a m
+[150:09] yeah I'm going to have to change this
+[150:11] thing
+[150:14] um let's see what we get for IND
+[150:17] page for getet how to set this up in
+[150:20] react T
+[150:29] area get a text area like
+[150:33] this
+[150:35] text the value okay nothing special
+[150:45] here
+[150:52] custom
+[150:55] details okay let's see so Okay we
+[150:59] prefill okay we prefill with
+[151:03] that probably we want to do some text
+[151:15] area
+[151:26] width I think we're going to make it
+[151:27] [Music]
+[151:30] full yeah there we go margin top we want
+[151:34] to do
+[151:39] to we probably want to delete the email
+[151:42] as well build to and yeah this is
+[151:46] editable form
+[151:51] so
+[152:03] leading CSS takes car
+[152:15] change
+[152:45] ser
+[152:50] oh yeah
+[152:57] okay
+[153:00] relaxed build to
+[153:03] okay so normally now if I download this
+[153:06] invoice I will get whatever this is I
+[153:09] type in here I will need
+[153:11] to I think I'll need a bit of CSS
+[153:15] there
+[153:23] yes
+[153:30] okay
+[153:36] yeah
+[153:37] [Music]
+[153:39] 12 is
+[153:45] three
+[154:25] okay we probably can't do that
+[154:43] later okay more guess it's time for a
+[154:47] little lunch break
+[154:53] um thank you thank you
+[155:01] buddy the [ __ ] are you micro start get
+[155:03] your hair wouldn't let me manage a
+[155:07] hamster let me manage a
+[155:10] hamster this camera right now doesn't
+[155:13] even own a
+[155:15] com
+[155:16] no that's I that's actually true I don't
+[155:18] even own a
+[155:19] comp all right it's going to be a lunch
+[155:22] time for me I'm going to leave the
+[155:24] stream on I'll be back in an hour
+[155:27] probably less and I'm going to be
+[155:29] streaming for I don't know probably
+[155:32] until 5:00 p.m. my time so for two more
+[155:34] hours after
+[155:35] that um I'll leave the screen on and
+[155:38] I'll be back
+[155:44] cheers
+[210:04] all
+[210:09] right uh
+[210:12] are we back on I think we're back on
+[210:15] hello everyone if there's still someone
+[210:17] in the Stream been off for an hour went
+[210:20] for a little um lunch
+[210:26] break still streaming on YouTube okay
+[210:29] okay we'll still there at least okay
+[210:32] this good
+[210:34] um well okay
+[210:36] so
+[210:38] um this is uh this is
+[210:41] the the second part of the stream for
+[210:43] today uh I'll be streaming for probably
+[210:46] two more maybe three more hours
+[210:48] something like
+[210:49] that if you have no idea who I am I am
+[210:52] markl uh I uh I create mini startups in
+[210:57] public on Twitter um have a few online
+[211:01] internets many businesses running and I
+[211:04] often get customers asking for
+[211:07] invoices uh and then I have to find
+[211:10] their um profile into stripe I have to
+[211:13] uh get the the information get the
+[211:15] invoice downloaded it send it to send
+[211:17] the invoice to them and sometimes I
+[211:19] would also get uh questions about like
+[211:21] how do I edit my invoice forget to add
+[211:23] my business details to it and so I'm
+[211:26] trying to make a very tiny app to fixes
+[211:29] to fix this um this is called Zenvo this
+[211:32] is the day two of building it the IDE is
+[211:35] that for stripe business account owners
+[211:38] um you would connect all your stripe
+[211:39] accounts with restricted API key Keys
+[211:41] you would get a unique link that you
+[211:43] could send to your customers customers
+[211:44] would input their email so that they can
+[211:46] retrieve the invoice edit the invoice
+[211:48] and download the
+[211:49] invoices pretty much it it's a very
+[211:51] simple app we started building
+[211:53] yesterday um where we are now we are
+[211:57] here we have
+[212:00] uh we have created a dashboard for
+[212:03] people to be able
+[212:05] to um add the extrap accounts this is
+[212:07] ugly uh I'm uh I'm just doing something
+[212:11] for now and then I will add The Branding
+[212:13] um people can add their strap accounts
+[212:16] um add their secret restricted API keys
+[212:18] they would get a unique link that it
+[212:21] will share with the customers and then
+[212:22] the customers could input their invoices
+[212:24] just like
+[212:25] this um the customer will be able to see
+[212:28] all the invoices they've made for any of
+[212:30] the businesses owned by the person and
+[212:34] they will be able to edit those invoices
+[212:36] so this is a stripe invoice and here
+[212:39] there is a form so customers can say
+[212:41] like hey you know my name is not ASFD
+[212:44] but it's actually marloo and then it can
+[212:46] download the invoice normally we should
+[212:48] have something that's working okay here
+[212:51] we go and then we have invoices like
+[212:53] this
+[212:54] one and that's pretty much it um I'm
+[212:58] building solo so I have no
+[213:00] um no
+[213:02] employees so nothing is is perfect I'm
+[213:06] not a good marketer I'm not a good
+[213:08] programmer but I do a little bit of
+[213:09] everything and by the end of this uh
+[213:12] series of videos in this stream we
+[213:14] should be able to have a little startup
+[213:15] that's ready to be launched on product
+[213:17] tent um also I am not a streamer it this
+[213:22] is the third time I stream my
+[213:25] programming it's very hard for me to
+[213:27] think when I uh when I I uh code so I
+[213:33] might suck at it sometimes I might say
+[213:35] things that that don't make any sense um
+[213:38] so sorry about that uh that's the best I
+[213:41] can
+[213:42] do all right uh we're
+[213:47] connected okay generation James okay the
+[213:51] chat is back
+[213:53] nice what are you using for the PDF
+[213:55] generation man I'm
+[213:57] I'm so if customers don't edit the
+[214:00] invoice I'm using the stripe link this
+[214:03] one is going to C it's just going to use
+[214:05] the link posted invoice link by stripe
+[214:09] and if they added invoice
+[214:11] then I just made a copy HTML copy of
+[214:13] destroy template invoice templates and
+[214:16] when they click download it takes a
+[214:17] screenshot of this and download it in
+[214:21] the uh person's file
+[214:28] storage yo
+[214:31] Melvin it's a end of your
+[214:35] uh something like four to six hours of
+[214:37] productivity time where uh you you
+[214:40] joined the world after your launch time
+[214:43] here with us this is it um
+[214:48] okay okay we'll need to fix this uh by
+[214:51] default I think it prefills yeah the
+[214:53] customer name the customer email we need
+[214:55] to organize this so that it looks like
+[214:58] that uh we need to fix the margins as
+[215:02] well CU we're going to take a screenshot
+[215:04] of this thing so we need to make sure
+[215:07] the margins are
+[215:08] right uh we are back here margin should
+[215:11] be minus two I
+[215:14] think it's probably not enough oh yeah I
+[215:17] think it should be minus three
+[215:21] actually yeah okay we're aligned with
+[215:27] that okay we'll need to prefill with
+[215:29] some
+[215:30] information so this should be around
+[215:34] okay
+[215:37] here this is working if I search an
+[215:40] invoice
+[215:41] okay it's putting this on the line this
+[215:43] is good what else do we want to show
+[215:46] name what El stripe shows
+[215:50] actually
+[215:53] customer see customers or maybe invoices
+[215:56] that will be
+[215:57] simpler let's Download a pdf
+[216:03] invoice right so what we have here we
+[216:05] have the name of the person the country
+[216:07] address whatever and the email of the
+[216:09] person
+[216:11] so back to the code we're going to
+[216:14] prefill with customer email customer
+[216:15] name that makes sense then here we need
+[216:18] to prefill with the customer address
+[216:22] which which which which which which I'll
+[216:24] find
+[216:24] [Music]
+[216:28] somewhere really
+[216:31] nope customer address there we
+[216:36] go or should we display that um well
+[216:39] maybe I'll go back
+[216:41] to
+[216:52] devices see with a real world example of
+[216:58] that okay so
+[217:07] customer customer address
+[217:14] [Music]
+[217:17] um I would make sense uh probably line
+[217:22] one postal
+[217:24] code
+[217:27] State
+[217:29] invoice see if we get some more examples
+[217:31] real examples of
+[217:36] that yeah this not
+[217:39] helping
+[218:06] um okay that is good okay right this is
+[218:09] what we look
+[218:18] for oh there's a text thing we didn't
+[218:22] pay attention
+[218:26] to okay all right we'll see this
+[218:29] later invoice number invoice blah blah
+[218:35] blah here we have something so we have
+[218:37] first the line address the name
+[218:45] same
+[218:47] line 6B what is 6B
+[219:03] exactly line
+[219:07] one C probably line to and
+[219:27] Country
+[219:34] City
+[219:35] oh City
+[219:39] address
+[219:41] oh wait maybe I'm going to ask chpt is
+[219:43] going to probably much better than me
+[219:45] for
+[219:49] that going to say something
+[219:54] like
+[220:01] customer and email like
+[220:05] this then oh no I cannot copy
+[220:09] p
+[220:14] give me some magic
+[220:17] chpt yeah not so
+[220:22] good let's see maybe
+[220:28] this
+[220:30] nope think I want the city
+[220:38] here oh wait maybe the state should be
+[220:58] before what do we get here
+[221:00] so I think it's an empty invoice though
+[221:03] so it will probably look like nothing
+[221:06] here I'll have to fix that
+[221:11] uh in one city and state are
+[221:39] is
+[221:55] feel
+[222:08] no
+[222:16] I have to go through all
+[222:21] that oh it still creat a space
+[222:31] here okay I think I'll I'll will use
+[222:34] JavaScript for
+[222:38] that
+[222:48] have
+[223:08] okay
+[223:30] CT State also coding
+[223:38] country
+[223:42] we going to filter everything
+[223:48] that's and we're going to
+[223:53] map oh yeah we can
+[223:57] join see how that
+[224:01] works okay Yep this is
+[224:03] good we need to convert the country code
+[224:07] to uh
+[224:10] country codee
+[224:13] converter
+[224:16] japt actually maybe I don't need to do
+[224:19] that so I can ask my
+[224:21] co-pilot format here maybe you can say
+[224:24] like a entry code
+[224:28] to to like to country
+[224:35] name ah
+[224:38] [ __ ]
+[224:59] [Music]
+[225:08] us there we
+[225:16] go get it we want to
+[225:19] [Music]
+[225:32] convert Indonesia yes okay this is
+[225:34] working um let's say it doesn't exist
+[225:39] making sure I'm not let adding yep
+[225:40] invalid
+[225:50] arguments here
+[225:59] if
+[226:08] this
+[226:24] we need to
+[226:26] no return
+[226:33] no okay is
+[226:36] working so line one line two
+[226:40] city
+[226:50] state line one line two City uh is it
+[226:54] the
+[226:56] city
+[226:58] maybe uh it's very L too
+[227:02] okay oh yeah number seven vat
+[227:08] data
+[227:10] additional
+[227:11] field um customer address customer email
+[227:15] customer
+[227:16] name okay customer Tex exam
+[227:22] ideas
+[227:27] pay increase
+[227:32] in yeah we want to add the customer vat
+[227:38] somewhere uh
+[227:42] Tri invoice
+[227:46] API going to go to the
+[227:57] customer where is it is somewhere here
+[228:00] okay it's here
+[228:03] customer sex
+[228:08] ideas
+[228:11] is it what we really
+[228:14] want recipient V8
+[228:19] IDE sending a voice to another busr this
+[228:22] field if it's
+[228:27] in maybe
+[228:35] not customer taex IDs Euro
+[228:38] V8
+[228:42] it is it is it is
+[229:08] it
+[229:15] x t t t
+[229:16] [Music]
+[229:19] 11 invoice Line itex This is always
+[229:23] required it's sufficient to display perc
+[229:27] not required to display the cash amount
+[229:30] you're not require
+[229:35] okay
+[229:37] um where is the text part
+[229:42] see the mod of Texas
+[229:46] voice oh I think it's in the line
+[229:49] thing where where did we uh I think it's
+[229:56] per a trip to the
+[230:08] moon
+[230:13] voice line
+[230:15] item
+[230:20] yeah SC
+[230:23] issuer lines
+[230:29] okay some more here
+[230:36] yes to dat
+[230:56] see USD she has plate discount ID live
+[231:01] mode
+[231:08] perod
+[232:19] amount excluding tax that's
+[232:28] interesting
+[232:32] data and the that's repr the amounts for
+[232:37] this is
+[232:39] excluding old
+[233:07] ACC
+[233:27] we can move on with
+[233:35] this
+[233:37] isue it's
+[233:51] okay we might have just to check the
+[233:55] recipient's V8 number where could we get
+[234:07] that
+[234:13] tax
+[234:15] ideas European
+[234:23] bet the customer
+[234:27] tax will contain the same taex ID as
+[234:37] customer value of the text ID
+[234:41] okay okay I think we need to display
+[234:43] that customer
+[234:46] idel array object
+[234:52] with and
+[234:54] value we show GB
+[234:58] vat which I guess is
+[235:02] this GB
+[235:07] okay okay
+[235:10] so
+[235:14] here f it it has to be under
+[235:19] okay okay we're going to display it
+[235:22] here if invoice
+[235:26] to F
+[235:30] again customer text
+[235:37] ideas
+[235:45] that's
+[235:47] length
+[235:50] length here to
+[235:52] [Music]
+[235:53] zero we're going to
+[235:57] say DG no no no this is not this this is
+[236:01] supposed to
+[236:05] be here say return
+[236:12] well actually we don't need yeah we
+[236:14] should have only one so X
+[236:17] ID
+[236:30] zero here it should
+[236:36] be okay is it so if we have the value
+[236:42] for the text ID we're going to
+[236:48] display the value and just
+[236:53] before we're going to say it's type
+[236:58] type and for that it's always the same
+[237:07] shapeit
+[237:14] yeah there's always a underscore except
+[237:17] here so we're going to
+[237:37] split
+[237:43] if
+[238:07] uh
+[238:10] some help
+[238:15] jgpt
+[238:34] no
+[238:37] split want
+[238:43] good okay my chpt is
+[238:47] dead there you go case
+[238:54] words okay
+[238:57] this I hope you're
+[239:01] right
+[239:04] um I'm going to try to make sure that
+[239:07] this is working
+[239:10] so I fake that invoice and I add
+[239:13] somewhere a customer text ID and I said
+[239:21] type yeah
+[239:29] okay okay yeah this is
+[239:32] working
+[239:35] nice although I might want to change
+[239:39] everything
+[239:53] capitalize
+[240:07] no
+[240:28] right okay
+[240:30] working V and here we have a invoice
+[240:35] that looks like a strip
+[240:37] invoice
+[240:44] okay it's
+[240:53] good
+[240:55] yep can update anything that is
+[241:07] good
+[241:12] okay I need to make sure the size of the
+[241:14] text
+[241:16] matches I think it does not on
+[241:31] size T area area T
+[241:37] area
+[241:54] have an invite
+[241:55] here
+[241:57] [Music]
+[242:07] um
+[242:14] my invoice I
+[242:17] think uh I think we need to get rid of
+[242:19] the borders and stuff when there is a
+[242:21] screenshot yeah because we don't want to
+[242:22] show that um I need to turn on some kind
+[242:26] of
+[242:30] Boolean
+[242:36] see is
+[242:40] is loading is
+[242:44] screenshotting
+[242:50] loing
+[242:54] [Music]
+[243:07] it
+[243:27] and
+[243:32] finally okay and we will the input
+[243:37] border
+[243:43] here we'll have to
+[243:46] do
+[243:52] um
+[244:07] is
+[244:17] is it working of course it's not
+[244:31] working and Dam it okay I am in the
+[244:36] wrong I was in the wrong field input
+[244:46] bordered X area okay yeah this is where
+[244:50] we
+[245:06] are
+[245:32] it's
+[245:36] gone
+[245:57] off okay maybe I need margins maybe
+[246:05] four yep okay that was it
+[246:10] to increase
+[246:25] that
+[246:30] okay
+[246:36] uh
+[247:30] I'm testing something real
+[247:33] quick we have okay UI so it looks like a
+[247:37] proper
+[247:50] invoice no it does
+[247:52] not oh yeah that's the wrong one
+[248:06] okay
+[248:15] still
+[248:15] [Music]
+[248:36] nodes
+[249:15] with this
+[249:19] okay remove
+[249:22] that we can edit now we need to get we
+[249:25] need to handle the case
+[249:30] where
+[249:33] um yeah if the person screenshots when
+[249:36] it's like this
+[249:39] this will not look like a good
+[249:41] screenshot yep so we need to sure the
+[249:46] height of the text
+[249:49] area
+[249:51] is the same as the content do that make
+[249:54] any
+[249:57] sense we need to create a ref
+[250:02] Co
+[250:05] um call it uh this details
+[250:17] ref with
+[250:24] screenshots it's a tricky one we need
+[250:27] to when we
+[250:31] screenshot we need to get the ref
+[250:35] okay here
+[250:38] get
+[250:38] true
+[250:42] set the height of the Tex area to craw
+[250:50] height see if I'm think of something
+[250:54] here okay yeah this is
+[251:03] working scroll
+[251:06] bar
+[251:20] try mess up anything here it's my
+[251:25] favorite thing
+[251:34] so something
+[251:41] what did I
+[251:47] do what have I
+[251:57] done
+[252:01] left oh
+[252:06] okay
+[252:51] the height to the light of
+[252:55] it
+[253:06] content
+[253:26] not bad we add this
+[253:29] extra
+[253:31] okay still have the scroll bar
+[253:35] um I the scroll
+[253:47] bar
+[253:52] sweet
+[253:54] okay next
+[254:06] area
+[254:08] carrot
+[254:24] color
+[254:27] yeah
+[254:29] see
+[254:36] nope
+[254:53] resize
+[255:06] handle
+[255:14] it's
+[255:36] good
+[255:48] back um
+[255:50] see if we get this working on
+[256:05] Safar
+[256:10] okay that will do
+[256:15] it okay let's try now if I go to
+[256:19] different pages so here I am this
+[256:24] is my invoice Mar clue and I
+[256:28] putr download
+[256:31] it it's my new invoice
+[256:34] okay and this one
+[257:00] we want to
+[257:01] lose lose the focus on Mi area
+[257:15] righty that looks like a stripe
+[257:17] invoice I think we're
+[257:22] good
+[257:24] um when it's large we can make a little
+[257:27] bit bigger
+[257:31] petting
+[257:34] yeah oh no
+[257:42] okay yeah that looks
+[257:47] better
+[257:49] I'm
+[257:54] get all right
+[258:01] sick
+[258:05] invoices
+[258:10] M Ling boy what is
+[258:15] that loing boy what did you use for the
+[258:19] authentification um I use ship fman so
+[258:22] it's next
+[258:24] oath yeah next
+[258:26] oath call why someone STS you're brave
+[258:29] man the this is fun because it's
+[258:31] actually really hard I'm uh it's my
+[258:35] third time streaming and and I I have I
+[258:39] I'm so much slow slower now that I I
+[258:42] know that you guys are
+[258:44] watching so yeah I'm huge respect for
+[258:47] the streamers out there because it's
+[258:48] really hard and also trying to keep the
+[258:50] stream engaging so it's not you know
+[258:52] boring and it's just just not just a
+[258:54] random guy coding this is really
+[259:01] hard
+[259:03] yo what is that M loing boy did you make
+[259:07] that new Twitter account or
+[259:12] is I need to investigate that
+[259:15] thing this could be could it be
+[259:22] Stefan oh sick
+[259:31] nice all right so this is
+[259:35] functional I think
+[259:39] this is really ugly I think we now that
+[259:42] we have all the
+[259:48] pieces of information yeah there's
+[259:52] nothing people can add accounts remove
+[259:55] those Add
+[260:01] accounts get a special
+[260:03] link give the special link to customers
+[260:06] customers input
+[260:08] email get all the
+[260:15] invoices and edit all those
+[260:35] invoices
+[261:35] um
+[261:59] I think this is
+[262:05] good
+[262:35] think
+[262:54] I mean yeah technically you could do
+[262:57] that which means first you would have to
+[262:59] get the unique link of the business and
+[263:03] the second part uh if you already have
+[263:06] 20,000 emails from the business you
+[263:08] probably have way more information like
+[263:10] there's no way you hack a 20,000
+[263:15] emails we cannot hear you okay are you
+[263:18] sure actually this my mic shows
+[263:35] return
+[263:37] let me
+[263:39] checks actually I
+[263:41] hear it could be on your side I think
+[263:43] because I can hear myself on my phone so
+[263:45] yeah no um I mean there there's
+[263:48] definitely a security concern but at
+[263:50] some point if you have those 20,000
+[263:53] emails uh this is I don't know you
+[263:56] you've already done you've already
+[263:58] hacked the business so much I don't
+[263:59] think uh
+[264:01] having the addresses is something that
+[264:03] would be tricky to
+[264:05] get
+[264:11] yeah but that's a good that's a good
+[264:12] point I
+[264:13] might I might double check the what
+[264:17] information do we send back I think we
+[264:19] we don't actually send any information
+[264:22] that's sensitive here the invoices are
+[264:26] it's meant to be public it's meant to be
+[264:27] shared with your accountants
+[264:32] and let me see I don't think there is
+[264:34] anything that's uh
+[264:52] yeah all right um yeah I think it's time
+[264:56] to style the app a little
+[264:59] bit so we don't have just this this
+[265:03] thing here um I think I will be reusing
+[265:07] the fonts from bu
+[265:09] disput it's pretty neat fonts and
+[265:17] also it's a beautiful
+[265:22] fult
+[265:33] see
+[265:35] enter
+[265:37] [Music]
+[265:39] garito yeah there we go yeah that's a
+[265:42] beautiful
+[265:43] font like
+[265:49] it let's explore if there is any and I
+[265:52] think that's my favorite thing while
+[265:55] doing a new project is it's finding the
+[265:57] right font it's it makes such a big
+[265:59] difference with such a little
+[266:03] work um make sure sure we have at
+[266:07] least at least
+[266:09] five there's anything trendy right
+[266:15] now it's always the same o well
+[266:25] nope oh yeah we want to make sure we use
+[266:29] sensory
+[266:35] phones
+[266:40] hey is quite
+[266:42] nice you guys have any font in mind you
+[266:45] want to give it a
+[266:55] try easy to do
+[266:59] that that's a beautiful one
+[267:04] too
+[267:10] bullish try
+[267:19] this little
+[267:21] bit why not why not I think I still
+[267:24] prefer the previous one this one look
+[267:26] more like
+[267:32] stripe
+[267:34] see
+[267:39] this one or
+[267:45] garito oh damn I love these phont I
+[267:47] think I'm going to go for that one yeah
+[267:49] it's a very beautiful
+[268:04] font
+[268:15] y zmg I am also in Bali I not in chungu
+[268:19] though I am inasan in the South part of
+[268:23] uh the
+[268:34] island
+[268:41] think we're going to change the theme
+[268:42] color I think I'm yeah I think by
+[268:45] disputes theme was
+[268:48] nice compared
+[268:51] to the
+[268:53] defaults
+[268:56] uh yeah I think I'm just going to change
+[269:04] that no
+[269:08] yeah okay it's not your
+[269:34] fast
+[270:07] [Music]
+[270:13] yeah I think I'm going to reuse those
+[270:16] colors that's a
+[270:31] nice should we should we try green just
+[270:35] for
+[270:37] fun of the name of the
+[270:41] startup think that would I don't think
+[270:43] that would look good but who
+[270:51] knows it's way too
+[271:04] much
+[271:06] it be
+[271:34] green
+[272:02] bour
+[272:04] menu yep the font is called
+[272:09] gabarito which
+[272:14] color little
+[272:27] more
+[272:34] oops
+[272:39] we go with
+[272:49] that of like the
+[272:54] green see
+[273:04] if
+[273:20] first one looks like was it called get
+[273:22] ready to use refactoring
+[273:25] UI yeah man this is a really good good
+[273:29] idea
+[273:34] yet
+[273:49] kind of like the green though because
+[273:50] the name of the app is Zen
+[273:53] voice this Zen
+[273:56] thing to make a
+[273:59] logo Zen what do we have for Zen
+[274:04] relax
+[274:07] piece
+[274:17] no
+[274:26] here it could be this
+[274:34] one
+[274:50] oh maybe just something like
+[274:53] this
+[275:04] where
+[275:08] we do
+[275:10] that background color
+[275:15] X not
+[275:18] sure yeah I think the green is not
+[275:20] really good it's
+[275:22] too too
+[275:26] bright oh well let's see what do we have
+[275:32] menu legendary designer back
+[275:39] what do we have
+[276:01] here that could be the black I guess we
+[276:05] would have something like this on top of
+[276:07] it or maybe
+[276:11] not what do you
+[276:17] think oh sorry bro I didn't see your
+[276:19] color RGB
+[276:28] 2184 need to convert
+[276:34] that 20 184
+[276:38] 166
+[276:46] [Music]
+[276:47] 1846
+[276:49] okay it's a mix in
+[276:55] between get this one here
+[277:01] too [ __ ] which one was it second one I
+[277:04] think yeah second one
+[277:06] we have this one too I think I like this
+[277:10] one but it's probably a too sad for the
+[277:13] app like too too dark too
+[277:17] cold
+[277:26] ah T Choice T
+[277:34] choice
+[277:47] yeah both are
+[277:50] nice I think this one has a better fit
+[277:53] with the white it I think it has more
+[278:03] contrast
+[278:24] the dark blue can beate that is very
+[278:27] true oh that is very true okay well
+[278:31] happy to give it a
+[278:32] try here we go I think I think that was
+[278:35] the one right is it was it no no I think
+[278:38] that wasn't the
+[278:39] one back to the
+[278:43] chat yeah
+[279:01] okay well I think this is
+[279:03] good do you think the uh the white yeah
+[279:08] I think the white has enough contrast
+[279:12] with darken this instead yeah I think
+[279:15] there is enough
+[279:33] contrast
+[279:43] I said was still 5
+[279:48] okay green okay I think we I think we
+[279:51] can go with that um I I don't think
+[279:53] there will be much secondary color
+[279:55] anyway but I like this one it's a nice
+[279:59] greenish
+[280:00] color it sounds good for an app called
+[280:03] zen zen voice
+[280:06] peaceful let make a little logo for
+[280:08] [Music]
+[280:15] it is working here
+[280:19] okay Zen voice can we explore for
+[280:33] icons
+[280:38] maybe that could be
+[280:41] the I think I'm going to go with that
+[280:43] one or
+[280:55] maybe that look
+[281:03] good I think we're going to round the
+[281:05] corners a little
+[281:14] bit button five R how
+[281:25] much eight pixels yeah okay that's not
+[281:28] going to
+[281:29] help
+[281:33] probably
+[281:51] rotate oh yeah
+[281:57] no
+[282:01] fight that
+[282:03] works
+[282:21] why
+[282:24] not
+[282:26] bit
+[282:30] Shadow no I think we don't need Shadow
+[282:32] for now cuz we're going to with that
+[282:43] something we have
+[282:51] here it's not a unicorn startup logo but
+[282:55] I think that that
+[283:01] works it's a nice logo simple
+[283:15] going drop that
+[283:19] um call Zen voice
+[283:25] public
+[283:33] ion
+[283:50] okay it's a cute
+[283:59] dep to later
+[284:03] this
+[284:06] [Music]
+[284:09] I think this neutral color is a bit too
+[284:11] much as
+[284:11] [Music]
+[284:13] well what is it St
+[284:16] yeah base content I
+[284:29] think neutral and neutral
+[284:33] contents
+[284:44] neutral
+[285:03] neutral
+[285:24] yeah yeah that could
+[285:27] work maybe we make it a little bit
+[285:32] uh slightly dark dark
+[285:47] here too
+[285:55] much I think I kind of like it
+[286:02] simple think I'm
+[286:04] unconsciously copying what stripe is
+[286:08] doing where is it see there buttons oh
+[286:12] no actually their buttons are
+[286:15] more they're white
+[286:18] okay
+[286:33] oh
+[286:43] oh wait actually we can do that
+[287:03] um
+[287:16] I think we can do the entire app with
+[287:19] those show you a
+[287:21] bigger screen of
+[287:31] this
+[287:33] here
+[287:35] yeah I think that'll do
+[287:47] it bring the strip data with email you
+[287:50] and I been oh man it's been a while uh
+[287:52] yes I
+[287:53] did um actually I query so I query all
+[287:59] customers first that have the email
+[288:01] that's provided here
+[288:04] and then from those customers I query
+[288:06] all invoices under the SHP account that
+[288:09] have the customer IDs that we just got
+[288:12] from the email and from that I'll get a
+[288:14] list of invoices
+[288:16] here and then now U we can edit the
+[288:21] invoice download it and here we go
+[288:25] customers have their own invoice where
+[288:27] they can add any information they want
+[288:29] here by typing this is
+[288:33] Interactive
+[288:34] this is
+[288:46] it of course I remember you
+[288:50] buddy you've been joining most of the
+[288:53] streams I've been doing for about a
+[288:55] year Super Active in the community and
+[288:57] all that so yeah I'm very grateful for
+[288:59] that not too gray said menu
+[289:02] okay
+[289:08] mix between those two
+[289:22] then is be
+[289:26] working I'm really tweaking tiny details
+[289:32] here
+[289:46] that should be
+[289:51] good
+[289:56] okay okay I guess it's time for a little
+[289:59] bit of refactoring all that we
+[290:02] have
+[290:04] oh I think I made a little error here I
+[290:12] shoulding slightly
+[290:15] bigger then I can down
+[290:25] again yeah I think this is
+[290:32] it
+[290:35] we don't want the padding yeah okay we
+[290:38] have the logo yeah we now have the
+[290:40] little logo it's fun because it's then I
+[290:42] don't need to make a five
+[290:45] econ for some reason how
+[290:56] come it's fun it's
+[291:00] why I could
+[291:02] oh that be is this thing
+[291:05] here the next we'll
+[291:08] add if I have an icon on PNG is going to
+[291:12] overwrite the five cone I
+[291:14] think this is all right this is cool no
+[291:19] need to make any Fon
+[291:26] anymore all right it's time to style a
+[291:30] bit um so this is the data we're going
+[291:34] to get uh page
+[291:39] contents invoice to edit there will be
+[291:42] nothing in
+[291:49] here
+[291:50] okay so we're going to have this little
+[291:59] page I
+[292:01] think yeah we're going to we're going to
+[292:03] be
+[292:04] very going to do things really simp
+[292:06] simple here
+[292:09] but uh in the
+[292:14] least okay I need some
+[292:32] bad yep okay okay we
+[292:36] got
+[292:44] um
+[292:45] status for
+[292:50] status prob of
+[292:53] there this draft open
+[292:59] paid open paid void
+[293:02] okay going to say that
+[293:23] if
+[293:24] normal
+[293:26] and invo
+[293:29] Status equal
+[293:32] paid
+[293:34] and badge
+[293:36] success or nothing and I messed up
+[293:41] somewhere yep
+[293:46] here uh yeah this is supposed to be a
+[293:48] bad
+[293:57] right okay those are not the most
+[294:00] some the stripe handle that
+[294:07] yeah CU they don't have all the
+[294:32] colors
+[295:48] we have those invoices
+[295:52] um I get banned from from the stripe API
+[295:55] for quering so many
+[295:57] times
+[295:59] uh invoice number created ad download
+[296:02] edits I think I'm just going to make
+[296:05] this just a
+[296:07] random I'm just going to Center that I
+[296:09] think should that should be
+[296:11] enough
+[296:18] uh so we are
+[296:20] [Music]
+[296:22] have Max with
+[296:26] excess
+[296:28] think Max
+[296:31] with 5 XL mxo
+[296:37] photo I think this big
+[296:51] enough oh no no no forget it's supposed
+[296:55] to
+[296:58] be yeah this is here me height screen
+[297:02] okay
+[297:03] you
+[297:05] want
+[297:07] okay here you have all the invoices that
+[297:10] you might may have made we're going to
+[297:13] Center the buttons on the
+[297:32] right
+[297:44] [Music]
+[297:54] two we on this at the
+[297:59] okay
+[298:02] case
+[298:30] X six that was good
+[299:01] okay f
+[299:03] love the content you make
+[299:05] mark thank you buddy I appreciate it
+[299:09] just reading the chat on my phone is
+[299:11] a super tiny the best way I found to
+[299:15] read the
+[299:16] chat
+[299:20] best to just amazing to work yep yeah
+[299:24] tail wi is a game changer so much
+[299:31] easier um
+[299:48] think here we will need uh some kind of
+[299:56] scroll make sure that doesn't
+[300:01] overlap
+[300:04] f um this Fleck stable is not displayed
+[300:15] properly maybe shrink zero I have no
+[300:17] idea what I'm
+[300:25] doing oh
+[300:31] [ __ ]
+[300:46] all right we can add
+[301:01] this
+[301:24] I I think being too picky here I think
+[301:28] there should be
+[301:31] enough
+[301:37] all
+[301:48] right
+[301:50] model opacity of
+[302:01] 70
+[302:31] what
+[302:34] all
+[302:40] right resize the window a little
+[302:42] bit see what we
+[302:49] got so scrolling nicely okay okay I
+[302:53] think we're done with the link for the
+[302:54] customer from the customer side might
+[302:58] not want to Index this page
+[303:00] though think
+[303:09] um we
+[303:13] know is exactly my
+[303:17] question
+[303:21] okay robots
+[303:31] index
+[303:56] exports I don't remember how I do my own
+[304:00] code terrible terrible there we
+[304:05] go um oh yeah export okay tile
+[304:31] um
+[305:00] robots index
+[305:10] dat next
+[305:24] yes yep index false follow true no cash
+[305:30] true everything in there
+[305:40] here what do I have here going
+[305:46] on can't
+[305:47] resolve yep probably this should
+[305:51] work
+[306:01] yep
+[306:04] and here we want to do a no index making
+[306:07] sure robust no index
+[306:11] follow
+[306:13] okay I want to Index this content okay
+[306:16] so the customer side is done I
+[306:22] guess here my page get your
+[306:26] invoice here and I have all my invoices
+[306:31] okay
+[306:33] oh I need to do a try with
+[306:48] this oh
+[307:01] yeah
+[307:26] oh
+[307:31] no
+[308:01] okay
+[308:25] so it is time to go to the
+[308:29] dashboard um so here this is the
+[308:33] dash the dashboard of people who
+[308:38] register and that's how they going to
+[308:40] create their strap accounts their link
+[308:43] where they will be all their strap
+[308:45] accounts connected so that people can
+[308:47] search their email so we need to have
+[308:50] this little thing somewhere like login
+[308:52] log out we need to have this as well the
+[308:55] link to Cy past
+[308:57] it and those cards here to add and
+[309:01] remove trap
+[309:03] accounts
+[309:05] um not going to bother too much I think
+[309:07] I'm going to
+[309:09] copy what I did for B
+[309:23] disput this okay yeah I think I'm going
+[309:25] to redo something similar
+[309:28] there the little dashboard all the Trap
+[309:31] accounts will be displayed here there's
+[309:33] nothing much to do on them just adding
+[309:35] more accounts
+[309:39] so every we going to copy that all right
+[309:42] I need a little te in order to keep
+[309:46] moving
+[309:48] on I'll be back in a few minutes
+[310:01] cheers
+[316:57] get
+[317:00] gold
+[317:02] welcome
+[317:05] back there we go so yeah 4:30 I think
+[317:09] I'll be streaming for another hour or
+[317:14] so yep I think we should be done with
+[317:16] the user dashboard and then we can move
+[317:19] on
+[317:20] to um deploy lab um adding a pay wall
+[317:25] and designing the landing page and the
+[317:29] copywriting um if you are tuning in
+[317:31] right now we are making a stripe invoice
+[317:35] generator editor so that customers can
+[317:37] download and edit and download their
+[317:39] invoices simply without uh stripe
+[317:42] business owners like me like myself
+[317:44] having to go to a stripe accounts search
+[317:48] for the customer's invoice download it
+[317:50] send it to the
+[317:51] customer um trying to make this a little
+[317:54] bit simpler because that's the pretty
+[317:55] much most of my customer Supports is uh
+[317:59] is for this kind of things so I'm trying
+[318:00] to autom
+[318:09] it wa it's scen time here we
+[318:16] go okay
+[318:21] um voice is
+[318:26] here think here we'll need
+[318:30] uh
+[318:47] copy everything that I've done for this
+[318:51] startup and reuse it because it should
+[318:55] be very
+[318:57] similar oops type anymore
+[319:07] page
+[319:30] right
+[319:38] I'm going to explain what I'm doing in a
+[319:40] second I'm just where for now I'm uh
+[319:42] just copy pasting some
+[320:00] code
+[320:08] God damn
+[320:25] it D it's coming back is those guys my
+[320:28] neighbors I don't know what they're
+[320:28] doing but they're pulling the trees from
+[320:30] my garden
+[320:34] D it can't I
+[320:38] focus what are you doing
+[320:40] brother okay I have to come
+[321:00] back
+[321:30] okay
+[322:29] yep
+[322:47] so I have the link this is what
+[322:59] account
+[323:56] um okay all
+[323:59] right has
+[324:02] uh is
+[324:09] it all right so we have the user
+[324:11] accounts I think at the top here we will
+[324:13] have a buy
+[324:23] button button account can be a bit
+[324:27] smaller
+[324:29] case
+[324:40] okay we have small
+[324:54] smaller l in log out [ __ ] probably yeah
+[324:59] that will be available after after the
+[325:01] first
+[325:01] purchase here there will be a way for
+[325:04] people to purchase this
+[325:07] thing have no idea how we're going to
+[325:09] handle the pricing but we'll see that
+[325:12] later
+[325:20] um we also have
+[325:27] this
+[325:29] yeah
+[325:34] here link and here we also have a
+[325:38] link you pass my
+[325:53] linkit the
+[325:59] key I think I'm going to remove that
+[326:02] part and make it
+[326:07] simpler here I'm going to say something
+[326:15] like button
+[326:24] stels and had a little description
+[326:29] underneath
+[326:36] will be able to
+[326:40] search
+[326:45] invoices
+[326:49] oh I forgot
+[326:54] something I did forgot
+[326:59] something
+[327:05] we want to display the
+[327:08] business here somewhere we want to tell
+[327:11] the customer Which business it is so I
+[327:13] think on the
+[327:16] page AG
+[327:17] [Music]
+[327:20] content on the amount
+[327:23] section here we will
+[327:28] need business
+[327:32] and we'll add a new
+[327:47] role I
+[327:50] think that will be name
+[327:54] um.
+[327:56] stripe
+[327:59] account forget how it's called yep not
+[328:29] name
+[328:31] it's strip
+[328:33] account
+[328:36] not
+[328:41] accounts see it again memory color oh
+[328:44] yeah that was Tri
+[328:49] counts oh I think it's because it
+[328:51] doesn't have a name because I'm in test
+[328:54] mode
+[328:55] yeah so normally we should see the name
+[328:59] um
+[329:04] yeah well there should be a name here
+[329:07] because in my
+[329:10] model it is here name
+[329:14] so rep
+[329:29] account
+[329:32] yeah
+[329:37] okay here that will
+[329:41] be that will be the name of the
+[329:58] business okay
+[330:12] going back to the
+[330:13] dashboard on the
+[330:22] page add a strip account so button strip
+[330:29] count next pleas
+[330:35] content
+[330:38] um
+[330:41] search customers are able to search for
+[330:48] invoices and
+[330:59] download
+[331:13] there these
+[331:29] accounts
+[331:33] so
+[331:42] first right so we wanton
+[331:47] model we want to take this thing here
+[331:59] it's
+[332:10] uh generates a restricted AP
+[332:29] key
+[332:51] restricted API
+[332:53] [Music]
+[332:58] key
+[333:02] do not change any res
+[333:15] [Music]
+[333:18] permission change resource information
+[333:21] and click create key at the bottom right
+[333:23] of the
+[333:25] page right
+[333:28] page
+[333:32] copy the P the
+[333:58] keyow
+[334:11] so generate a restri thep
+[334:17] key
+[334:23] key
+[334:25] input and we
+[334:28] go
+[334:33] and pass the new
+[334:38] AP All right so that should be a bit
+[334:43] simpler add a new strap account your
+[334:45] customer will be able to search and edit
+[334:47] download invoices under these accounts
+[334:49] generate a new restrict IP key here not
+[334:52] change any permission c key at the
+[334:55] bottom right of the page op pass this
+[334:58] key below
+[335:09] think this a bit
+[335:18] clear is my Wi-Fi still okay are we
+[335:22] still connected
+[335:24] yep how long do you usually work for 99
+[335:27] hours and sleep
+[335:28] one
+[335:31] do you usually work for um I work for I
+[335:34] don't know it really depends I work
+[335:37] almost every
+[335:38] day um I sometimes work 10 hours and I
+[335:41] sometimes work 4 hours it really varies
+[335:45] I think I started this morning around
+[335:47] 10:00 and I probably log off around 700
+[335:50] p.m.
+[335:54] today and the framework the language
+[335:56] it's um the classic nextjs react tail wi
+[336:00] CSS
+[336:17] stripe Okay
+[336:28] so
+[338:23] he I think this is what we
+[338:28] want
+[339:58] B
+[341:58] B
+[342:06] okay here
+[342:13] get get
+[342:28] a
+[342:43] rep play with
+[342:58] y
+[343:01] the
+[343:28] button
+[344:27] here
+[344:31] oh
+[344:36] yeah a
+[344:57] button
+[345:17] we
+[345:27] toast
+[345:57] l
+[346:07] we have the thing
+[346:27] here
+[347:19] here we
+[347:27] go
+[348:15] any Bo
+[348:27] think
+[348:40] custom
+[348:42] Reeves re from
+[348:57] the
+[349:27] here
+[351:30] word
+[351:32] um I'm finishing up these uh where is it
+[351:37] let do
+[351:38] again yeah I'm finishing up the
+[351:40] dashboard from the user side um going to
+[351:43] to remove that they're going to be a
+[351:45] simple one two three
+[351:47] step uh here is how they get people get
+[351:50] the link and here is how you add or
+[351:51] remove accounts to
+[351:54] it yeah it looks doesn't look good for
+[351:57] now
+[352:27] on
+[352:57] yeah
+[353:27] this
+[354:57] okay
+[355:27] yep
+[355:56] d
+[356:26] for
+[357:15] here we can close some windows Yep make
+[357:17] some
+[357:26] space there work
+[357:52] this thing that is not being
+[357:54] shown
+[357:56] uh
+[358:24] where are you
+[358:26] Mr
+[358:28] you
+[358:38] are oh you're here
+[358:41] okay why are you not being
+[358:56] shown
+[359:24] oh
+[359:26] think
+[359:56] o
+[360:04] serial killer
+[360:06] reborn
+[360:10] hello um you still around Gill he been
+[360:14] it's the second day I'm working on this
+[360:16] project I hope to be done by the end of
+[360:18] the week and launching on product hun
+[360:20] maybe next
+[360:26] Monday
+[360:44] uh why are you stuck here
+[360:56] mister
+[361:26] [ __ ]
+[362:26] he
+[363:17] I guess I'm tired damn it why this is
+[363:20] displayed
+[363:26] under
+[363:55] if anyone has a clue of what's going on
+[364:25] here okay that doesn't make
+[364:32] sense you are
+[364:35] AIT who are you and why did you do that
+[364:38] to
+[364:42] me TR
+[364:56] this
+[365:11] this is work okay it's working
+[365:13] there why isn't working
+[365:16] underneath it because it's in the in a
+[365:20] leas
+[365:21] maybe
+[365:23] NOP oh maybe that's the
+[365:31] because yeah that's probably because the
+[365:34] display of the
+[365:36] grid we remove this it can
+[365:39] work
+[365:45] no let's give it another
+[365:49] try so if remove this and
+[365:55] that still not working
+[365:58] we transform this into a
+[366:00] div this is not
+[366:06] working if we remove
+[366:09] that this is not
+[366:16] working think if
+[366:19] I I put it here is it
+[366:22] working oh
+[366:26] okay
+[366:40] okay there is something with this
+[366:44] list it doesn't like to be
+[366:48] in this thing
+[366:52] loog CL
+[366:55] n
+[366:59] if remove the steps and step vertical
+[367:02] let's
+[367:04] see okay it's
+[367:14] working okay so this is that thing
+[367:17] display inline grade oh maybe that's the
+[367:20] thing
+[367:21] overflow he hey here we
+[367:25] go overflow
+[367:36] SLA not
+[367:40] oh
+[367:51] yeah
+[367:54] okay here we are
+[367:57] one two
+[368:00] and me
+[368:25] that
+[368:32] top account see how that flow
+[368:41] go
+[368:49] okay a restricted API key for a new
+[368:53] account um I think I might have already
+[368:57] this one so I'm using another
+[369:00] one my
+[369:05] disputes okay Zen
+[369:07] voice permissions are already
+[369:19] set real money won't be charged as a
+[369:21] nice add onto the stripe T mode
+[369:25] thing
+[369:27] invoice
+[369:29] okay we go back do
+[369:33] this okay and now it's adding a new
+[369:36] account
+[369:39] here fix
+[369:55] the
+[370:02] I think we need have some kind of flex
+[370:04] Flex wrap or just not no WP just
+[370:10] Flex yeah we want to display them like
+[370:13] as a
+[370:19] column um probably we to have a fixed
+[370:24] width Maybe
+[370:29] [Music]
+[370:35] 64 at
+[370:39] eight yeah that should be enough and we
+[370:42] want this one to
+[370:45] be margin left
+[370:49] Auto got to have all the straffic
+[370:51] accounts here oh yep I still need to
+[370:53] work on
+[370:55] that
+[371:13] touching the wrong
+[371:24] one still not
+[371:27] uh we also might want to give
+[371:37] it is that actually
+[371:40] 64 how many pixels is
+[371:55] that and
+[372:07] where did I put
+[372:25] 64
+[372:28] we want it's
+[372:33] full okay
+[372:37] better it's full
+[372:55] WID
+[373:15] getting
+[373:17] tired think my brain is a bit fried not
+[373:25] thinking
+[373:47] a good
+[373:55] track
+[373:56] all right I think I'm tired wow nothing
+[373:59] is working um it's probably going to get
+[374:02] these
+[374:05] tomorrow you can squeeze six more
+[374:10] minutes your son is jutting in and out
+[374:13] yeah yeah yeah I think it's it's uh
+[374:15] probably because I'm I'm tired
+[374:19] in my my voice is uh also getting
+[374:25] tired
+[374:58] here we go trying
+[375:24] everything where is this being
+[375:55] plate
+[376:23] all right uh wifey is calling so I guess
+[376:27] it's time for husband to be uh time for
+[376:31] husband to to be um good
+[376:35] husband
+[376:37] um oh Dan is that Dan uh man the way you
+[376:41] talk I'm pretty sure that's Dan mindre
+[376:43] from Twitter and not the terrible Dan
+[376:45] that is's trying to bully all
+[376:49] developers all right um I'm going to log
+[376:52] off for today um thank you everyone for
+[376:54] joining uh we are uh almost done with
+[376:57] the user dashboard uh the product is
+[377:00] almost fully done as well the big part
+[377:02] will be the pricing page the pressing
+[377:04] thing and also the landing page
+[377:06] copyrighting and all that uh so we're
+[377:09] going to leave this for tomorrow and the
+[377:11] next couple days hopefully will be done
+[377:13] by the end of the week um thank you
+[377:15] everyone for joining in feel free to
+[377:17] drop anything in the chat if uh I don't
+[377:19] know you have questions if you have
+[377:21] requests for the stream I'm going to
+[377:23] show up around tomorrow roughly a
+[377:25] similar time so um I will catch you up
+[377:29] tomorrow cheers

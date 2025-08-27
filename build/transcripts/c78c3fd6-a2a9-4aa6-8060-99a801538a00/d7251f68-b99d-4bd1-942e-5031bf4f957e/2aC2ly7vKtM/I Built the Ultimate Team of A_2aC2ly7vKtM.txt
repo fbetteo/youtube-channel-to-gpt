@@ -1,0 +1,40 @@
+Video Title: I Built the Ultimate Team of Agents in n8n  #artificialintelligence #n8n #agentgpt  #techtok #coding
+Video ID: 2aC2ly7vKtM
+URL: https://www.youtube.com/watch?v=2aC2ly7vKtM
+View Count: 599,475
+
+[00:00] I just built the ultimate personal
+[00:01] assistant in nadn using absolutely no
+[00:03] code as you can see the ultimate
+[00:04] assistant has access to these four
+[00:06] agents that we built out within nadn the
+[00:08] first one is an email agent it looks
+[00:09] like this next agent is a calendar agent
+[00:11] it looks like this then we have a
+[00:12] content creator agent that can search
+[00:13] the web and then it creates blog posts
+[00:15] for us you please set up a team sync
+[00:16] tonight for 6 p.m. with Nate herkelman
+[00:19] and then send him an email to confirm if
+[00:20] that time works okay so right now
+[00:22] telegram just sent over that audio file
+[00:24] it's getting transcribed now the
+[00:25] ultimate assistant has to decide what to
+[00:26] do so first of all hit the contact agent
+[00:28] to get Nate Herman's email address now
+[00:31] it's hitting calendar and email agent
+[00:32] simultaneously to create that event as
+[00:34] you can see it just popped up right here
+[00:36] and send that email so we just got our
+[00:38] response back from telegram the team
+[00:39] sync with Nate herkelman has been
+[00:40] scheduled for tonight at 6 p.m. you can
+[00:42] manage the event here then hopping into
+[00:44] our sent emails we can see hey Nate I
+[00:45] hope this message finds you well could
+[00:47] you confirm if 6 p.m. works for our
+[00:48] upcoming team sync let me know if you
+[00:50] want to find out how you can build this
+[00:51] for yourself or even download the
+[00:53] workflow for free then go check out the
+[00:54] video on my channel

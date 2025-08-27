@@ -1,0 +1,41 @@
+Video Title: Setup Local n8n Tunnel (explained simply)  #aiagent #n8n #artificialintelligence
+Video ID: QQ-V10sM3gI
+URL: https://www.youtube.com/watch?v=QQ-V10sM3gI
+View Count: 22,772
+
+[00:00] Here's how to set up a Cloudflare tunnel
+[00:01] so that your local NAND is publicly
+[00:03] accessible. So right now we have our
+[00:05] Docker container where we did the
+[00:06] self-hosted AI starter kit with Nadn,
+[00:08] Postgress, Quadrant, and Olama. And all
+[00:10] of these apps and services are able to
+[00:12] talk to each other because they're all
+[00:13] in the same containerized environment
+[00:15] right here. And so what happens is if we
+[00:17] try to access something like Gmail from
+[00:19] this container, we're going to get
+[00:21] blocked right here by this firewall. And
+[00:22] vice versa, if Gmail tries to talk to
+[00:24] us, our NN instance, it's not going to
+[00:26] be able to go through. Same thing with
+[00:28] something like Telegram. So what we have
+[00:29] to do is we have to drag in cloudflare
+[00:31] here to basically create a tunnel and
+[00:33] this is going to be some sort of you
+[00:34] know actual public address. So right now
+[00:36] we access our nodn instance through
+[00:38] localhost 5678 which means only our
+[00:41] local device right here where we
+[00:42] installed everything can use it. But
+[00:44] through Cloudflare, what we do is we set
+[00:46] up some sort of public domain, which is
+[00:47] going to be HTTPS. And then what happens
+[00:50] is something like Telegram can send data
+[00:51] to Cloudflare. And then our tunnel from
+[00:53] Cloudflare is basically just going to be
+[00:54] able to eat right through this wall and
+[00:56] go talk to our Naden instance. If you
+[00:58] want to watch the full video, click on
+[00:59] that link right here. And I'll see you
+[01:00] guys over there.

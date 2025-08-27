@@ -1,0 +1,48 @@
+Video Title: Only 1% of n8n Builders Do This! (Parallelization)  #aiagent  #n8n  #artificialintelligence
+Video ID: UcKXj__sydI
+URL: https://www.youtube.com/watch?v=UcKXj__sydI
+View Count: 22,630
+
+[00:00] Here's how to run parallel executions in
+[00:01] NAN. So, I don't want to waste any time.
+[00:03] I'm just going to run a quick visual
+[00:04] demo so that you guys can see how slow
+[00:06] this is when you run something
+[00:08] sequentially rather than in parallel.
+[00:10] This AI agent is going to process each
+[00:11] tool and each research one at a time.
+[00:14] So, right now, it's working on the first
+[00:15] tool. And we can tell because if I move
+[00:17] this stuff down, you can see it's only
+[00:19] done one item. Now, it's going to do the
+[00:20] second one. Now, it's going to do the
+[00:22] third one, and so on. But, if we would
+[00:23] have had this agent running in parallel,
+[00:25] this would have finished up like 20
+[00:26] seconds ago already. So, in a recent
+[00:28] update of NAND, they added this cool
+[00:29] feature where you can basically select
+[00:31] nodes, rightclick, and then say, I want
+[00:34] to convert these seven nodes to a sub
+[00:36] workflow. And what happens is when I
+[00:37] click on this button, it's basically
+[00:38] going to tell me to name my workflow.
+[00:40] I'm just going to keep it as my sub
+[00:41] workflow for now. And when I hit
+[00:42] confirm, it turns all of that into a
+[00:44] subworkflow. And it's already linked up
+[00:46] right here and being called by this guy.
+[00:49] So, we'll go ahead and execute the
+[00:51] workflow. It's going to grab our tools.
+[00:52] It's going to pass them into the sub
+[00:53] workflow right there. I'll click into
+[00:55] the sub workflow and click on
+[00:56] executions. And you can see right here,
+[00:58] we now have all four of them running
+[01:00] completely in parallel. And they're all
+[01:02] going to finish up a lot quicker than if
+[01:03] the AI agent was doing an analysis on
+[01:05] each of them individually. If you want
+[01:07] to watch that full breakdown, click on
+[01:08] that play button right here. And I'll
+[01:09] see you guys over there.

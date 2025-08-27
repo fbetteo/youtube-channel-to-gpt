@@ -1,0 +1,19 @@
+Video Title: Are you doing these things to optimize your Vector Database?  #artificialintelligence #n8n
+Video ID: oLhIGGYCCaw
+URL: https://www.youtube.com/watch?v=oLhIGGYCCaw
+View Count: 10,823
+
+[00:00] Vector databases it's so important that
+[00:02] you're putting your information into
+[00:03] them optimally so your agent is actually
+[00:04] getting the answers correct I just made
+[00:06] a video where I show different ways that
+[00:07] you can load your information embed your
+[00:09] information add metadata filter metadata
+[00:11] split up your information that way you
+[00:13] know that your vector database is
+[00:15] optimized to save you time and money if
+[00:17] that sounds interesting to you go to my
+[00:18] channel to watch the video and check out
+[00:19] some other videos about nadn and AI
+[00:21] agents I'll see you there

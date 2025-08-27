@@ -1,0 +1,475 @@
+Video Title: Introduction to R: Fusheng Yang [2022 UConn Sports Analytics Symposium]
+Video ID: LWaCc2Q4EJc
+URL: https://www.youtube.com/watch?v=LWaCc2Q4EJc
+View Count: 96
+
+[00:08] Intro to our workshop um, so, uh, we have our input in person in person.
+[00:16] And also there are some attendees attendees.
+[00:20] Um, workshop, uh, online.
+[00:24] So, let's get start.
+[00:28] Let me check this.
+[00:35] Okay, it's recording.
+[00:49] Okay, this workshop is part of a, you can support an analytics symposium 20.
+[00:57] 22, uh, and this is our aim, this workshop aims to give a quick tour of art. So, um, for any information you need, like.
+[01:11] The, um, um, for example, like the.
+[01:16] Get her page, and also the link to the guitar page, you can find all on this, uh, on the event website. So if you go to the main webpage of the.
+[01:30] Um, symposium and you go to a workshop.
+[01:37] And you find the intro to introduction to our workshop, and you can find the ski link. And if you click this.
+[01:46] It will guide you to this page so in this page, you can find the article we're going to use and also the quiz we're gonna do.
+[01:58] For, uh, this workshop, and also you can find the slides we use.
+[02:05] Through this release link so it's basically this HTML file.
+[02:17] Okay, then let's, um, briefly introduce myself.
+[02:24] My name is I am a 4th year P. H. D student in statistics at Yukon and I study, uh, N, time series analysis and extreme value analysis. Currently.
+[02:37] I am a, uh, research assistant at the.
+[02:43] Um, uh, computational climate change lab and I work on projects about heatwaves.
+[02:51] Um, so my future goal is to contribute contribute to the border field of environment of statistics.
+[03:01] It's, um, environmental statistic recently it's a really hot topic. Um, so, for this workshop, um, you will need a laptop with our and our studio installed.
+[03:13] So, um, you can find the, uh, links of dialing.
+[03:19] Uh, our and our studio here, and for this workshop, you don't need any experience with our.
+[03:28] So, let me stop.
+[03:31] They do from now.
+[03:38] Okay, so we're going to talk about our basics,
+[03:48] our data structure read and write data and our.
+[03:53] Data management, and we will have a brief overview of 2 packages deploy R and D pod 2. so is for data manipulation.
+[04:04] And part 2 is 4 visual data visualization.
+[04:11] So, our, what is our, um, our is a free and open source language and environment for statistical computing and graphics. So our is basically, um, like a computer computation language and, um.
+[04:26] We have many ways to use our, um, 1 of them is our studio.
+[04:32] So, our studio is an ID for our, um, for convenience. We will just use our studio.
+[04:41] For our workshop, and, um, for this, you need to install our studio desktop.
+[04:49] On your laptop.
+[04:55] And let's take a look at the, our studio interface so we have cold editor.
+[05:01] And on the top left corner and.
+[05:05] Environmental and history on the right corner uh, right top, right?
+[05:10] Art, and now we have Council.
+[05:13] And also, for our files help packages, we can find on the right 1.
+[05:27] So, um, for our, we can use it as a car calculator so we can do some very basic calculation.
+[05:35] Such as addition subtraction multiplication division.
+[05:42] And expand it exponentially so many of them and there are also building functions, such as Square, root, natural log and something like, um,
+[05:57] um.
+[05:59] Um, and many others, and you can use the, the link here and there are many other.
+[06:08] Building functions as well as, um, basic calculation.
+[06:13] So, let's take a look so.
+[06:17] To do, um.
+[06:20] Submission we can just typing 3. for example, we want to do 3+8. Then we just typing 3+8.
+[06:28] And then click wrong here.
+[06:32] And then for the result, we can find it here.
+[06:36] And the counsel then.
+[06:43] This is to to eat to.
+[06:47] Is to cube, so to kid, you also hit a click wrong and you get the solution.
+[06:56] And then birth, this is square root of 15.
+[07:02] So, again, this is a building function and we just click wrong.
+[07:07] And we have the solution here, then we have some help function.
+[07:20] Um, for you to.
+[07:23] Um, um, to find out some.
+[07:28] Um, uses of some function. So, for example, um, if you want to find, um, what the function mean is.
+[07:39] Then you can use to there are 2 methods 1 is to type in help parenthesis and inside you put the function me or use.
+[07:49] A question mark and, I mean.
+[07:54] Then we can have it here and we run the code. You can see.
+[08:01] Uh, the definition of me, you can see on the.
+[08:05] Bottom right box.
+[08:09] And then the same thing to use question mark.
+[08:12] Just click wrong and we can get those same thing.
+[08:24] And we have assignment operators.
+[08:27] So the operator or so to use this arrow method, the operator always point to the, um, to the value you want to assign. So we want to assign X.
+[08:40] It has to be 5 so we use the arrow point to X and we want to assign Y, equals to Hello world and this point, uh,
+[08:52] this point to why and then we can also use equal. So we said they equals 2022. thousand and twenty two
+[09:00] And we can try that here so.
+[09:04] We assign X equals 25, and if we just typing X again, we can see X is 5 here. Mm. Hmm.
+[09:15] And then we assign why to be Hello world.
+[09:20] And run the code and run why.
+[09:26] We have a Hello world here.
+[09:29] And we assign Z equals.
+[09:34] And we run the code and we run the.
+[09:38] We have the value of the here.
+[09:48] Yes, um, the arrow is more, uh, for.
+[10:00] Um, like, for the is more, uh, um, mostly used.
+[10:09] In some local environment, and the aerosol can be used for more global environment.
+[10:24] So, we have data types here, so, in our there are 6 basic data types we have logical so true. Or false or numerical any real numbers with a result decimals and integer.
+[10:38] It's a real values without decimal points.
+[10:41] And complex values, and also characters either, um, single character or string.
+[10:49] And also, Rowe route for route, we will not talk in this.
+[10:54] Workshop, so let's take a look for logical. We have.
+[11:00] Um, this, uh, we assigned.
+[11:03] Boolean 1. 2. true. So.
+[11:08] We can see this the value of this.
+[11:12] Variable is true and then we use the class function to check the, um.
+[11:20] The data type of this value.
+[11:24] So when we run this, we can see.
+[11:28] It tells us the class of this variable is logical.
+[11:32] And then similarly, if we have a force.
+[11:37] It's also logical and then for numeric.
+[11:42] We have, let's say we assign.
+[11:45] 63.5 to wait then.
+[11:49] We round the code and wait, we checked the.
+[11:55] A class of weight, it's, it tells us it's an.
+[11:59] Numeric, um.
+[12:02] Type and then again, height.
+[12:08] This is without decimal, but the class is also numeric.
+[12:14] And then for integer.
+[12:17] For, uh, for, uh, a numeric value, you want to make it to be a integer you need to put an L at the end of the.
+[12:27] Number, so if we assign.
+[12:30] 1 is we want 81 we want at 186 to be an integer in R. we need to put out after it. So.
+[12:39] Um, we have class.
+[12:43] To be so for complex is with any, um.
+[12:51] Um, I confidence in the number, so we have complex value. We assign it to be 3+2. I.
+[13:01] And we have this, and then the class.
+[13:07] It's complex and then we have character.
+[13:14] So, for character, we have, uh, a single character.
+[13:19] And and we also have string.
+[13:22] So, for this, we check.
+[13:28] This a is a character.
+[13:32] And then for the fruit we assigned.
+[13:35] As Apple and.
+[13:38] This is also character so for character, we can use either.
+[13:43] Um, single, um, Mark, or does this toggle.
+[13:48] Mike.
+[13:53] Any questions on, they don't have type. Okay then let's go to data structure. So R has many data structures.
+[14:07] The most essential ones are vectors list data frame, Matrix and array. So the vector is a collection of elements.
+[14:17] So, um, elements in a vector must be for identity.
+[14:22] Data types, so so, um.
+[14:27] Rector is always 1 that dimension.
+[14:32] And our list is, uh.
+[14:35] Generic objects consists of an ordinal collection of objects so a list can have, um.
+[14:44] Uh, can have, uh, unequal dimensions or different data types.
+[14:52] So, um, we will, uh, show you, I will show you some, um, example for this.
+[14:58] And for a data frame, a data frame is, um.
+[15:03] Generic data objects of our, which are used to store the tabular data.
+[15:09] So, um, it's, uh, it's a 2 dimensional.
+[15:13] Um, format and.
+[15:19] Some usually a data frame must have a.
+[15:23] Um, column name must have column names and.
+[15:28] Each column must have the identical number of items.
+[15:33] And for Matrix, it's, um, rectangular arrangement of numbers in rows and columns.
+[15:43] And matrix mistresses are 2 dimensional.
+[15:46] And they have to be, uh, with the same data type.
+[15:52] And array is used to store the data in more than 2 dimensions. So array are, and the end dimensional data structures. So here's the table. We can check.
+[16:06] The 4 homogeneous, um, means this data structure can only contain 1, uh, 1, single type of data and for heater genius.
+[16:18] It can contain different types of data.
+[16:21] So, let's see. So, for vector, remember, it's a homogeneous structured. So it can only contain single type of a single type of data.
+[16:32] So, we create vector X.
+[16:36] Sorry, and then.
+[16:42] We have X here, it's, um.
+[16:45] A vector of numbers, and we want to check the 2nd elements so we use X.
+[16:53] Um, bracket and 2, that's the 2nd element. So, from this vector, we know the 2nd vector is 3.5.
+[17:05] So, let's check that. Yes, this is.
+[17:11] 3.5, and then.
+[17:14] We want to add an element to the end of this.
+[17:19] Original acts, so we add 22.3 to the end of X.
+[17:28] And then we can see here these part, these 2, these 5 numbers are the original.
+[17:35] Um, they, uh, um, elements in this factor and 2322.3 is the added 1.
+[17:43] And now we check type of X.
+[17:47] And there are double double means, um, there are just numbers.
+[17:51] Just any real numbers and then, let's see, we want to assign why as, uh, uh, logic, uh, vector.
+[18:07] So, we have why.
+[18:12] Here, and now we check the type of them. They are logical.
+[18:20] Yes, um.
+[18:26] Yeah, uh, this is, um, to check what what the type.
+[18:32] For this vector is like, what the data, what the elements inside the factories.
+[18:42] Now, uh, for the class is only used for just some single.
+[18:47] And then list, um.
+[18:58] We can make a list with, um, different types of data.
+[19:03] So we have, let's say, for the 1st thing we want to include in that list is.
+[19:10] Ah, employee ID, and we have 1234 and also employee names.
+[19:16] And also a number of employees.
+[19:19] And we, we have those 3.
+[19:23] List and they are with different.
+[19:27] Length and now we make it to a.
+[19:30] List yeah, let's check the list.
+[19:35] So, the 1st thing we have.
+[19:39] Is the employee ID the 2nd thing we have are the names.
+[19:44] Uh, the 3rd thing we have is the number of employees.
+[19:49] And we check it. This is a list.
+[19:54] So this whole thing is a list and then it's a little bit different from what we.
+[20:03] Uh, from a vector, so to get a.
+[20:06] An element from the vector from the list, we need to use double bracket. The double bracket.
+[20:13] So, is this the 2nd element of the list, which is the.
+[20:18] Names and, uh, the 2nd, element of the 2nd, element of the list.
+[20:26] Is here and data frame? Um.
+[20:34] We have, uh, we also make some vectors 1st.
+[20:43] So these 1st, 3 rows, we make vectors.
+[20:47] And then we use data that frame.
+[20:52] To make it make make them to a single data frame.
+[20:57] And now check the data frame, we have the column names. The 1st column is name 2nd column is English and 3rd columns age and then we have the values of those.
+[21:11] Columns and say we want to get, uh, the elements on the 1st row and the 3rd column, which is 1st row. Anther column, which is 22. let's check that.
+[21:24] Yes, that's funny too. So you will you use.
+[21:28] Um, brackets 1, um.
+[21:32] Come on 3, and then we want to get values for the variable age.
+[21:38] We use this double bracket.
+[21:43] And we have the values, and we can also use this dollar sign.
+[21:51] In between the, um.
+[21:54] Data frame and, uh, the variable name.
+[21:59] So way around this, we can also get the same results.
+[22:06] And for a matrix, um, so, let's say we want to make a matrix using number.
+[22:15] 1, through 9, and we want to make, um, uh, 3.
+[22:20] Rows and so, 3 by 3 matrix.
+[22:24] Um, and by default matrices.
+[22:28] In our, our in column wise order so if we want to make them by row.
+[22:36] We need to set by row equals to. True. So, let's run this.
+[22:43] And let's check a so it's.
+[22:46] By row row wise order then we have 1, 2, 3.
+[22:52] I wrote if we doesn't chat who doesn't set and let the by row equals to.
+[22:58] Um, force, which is the default.
+[23:02] Let's check fee and we have.
+[23:08] 123 in a column, uh, order in a column 1.
+[23:15] And we can also check the dimension of a.
+[23:18] So, as we expect it to be a 3 by 3, so check it and it's 3 by 3.
+[23:31] And we also have a rate, so remember for array it can be.
+[23:37] Multi dimensional, so let's say we have from 1 through 8, and we want to make it to, um.
+[23:49] 2 rectangular mattresses each with 2 rows and 2 columns.
+[23:54] And let's wrap round this code and a, so now we have.
+[24:04] So, we have 2 rectangular mattresses, so here is 1 and then Here's 2 and each of them are 2 by 2.
+[24:14] So, uh, for here.
+[24:18] The the dimension it was to see 222. so the 1st, 2 is used.
+[24:25] For the number of rows and the 2nd, 2 is 4.
+[24:30] Call a number of columns, and the 3rd 2 is used to for a number of matrices.
+[24:37] So, let's try again with.
+[24:41] Um, numbers from 1 through 12.
+[24:45] So, we can use this, uh, 1 through 1 through 12 to represent. So we don't need to type in 12345 and all the way to 12 and then dimension we said, 2232.
+[24:56] so that's 2 rectangular matrices each with 2 rows and 3 columns. Let's check that. rows and three columns let's check that
+[25:08] So, you can check there are 2 matrices.
+[25:13] And each with each are 2 by 3.
+[25:22] Any questions okay then now I have some.
+[25:31] Quiz is for you so for the 1st, 1.
+[25:36] We have a, um, vector.
+[25:42] Do you know, uh, um, you need to figure out some way to find please the Netherlands of this vector and unique values of X.
+[25:50] And so the values of X and frequency distribution of X.
+[25:59] I will give you a 1 minute. You can just search online and I think there are many.
+[26:19] Okay.
+[27:18] Okay.
+[27:31] Okay, let's check the solution.
+[27:36] So, for Chris, 1, the 1st thing we want to find is the length so we just use the lens function.
+[27:44] Yeah, let's run this code so here is our, uh, vector.
+[27:50] And then we use the lens function.
+[27:54] We can find there are 6 ill elements inside the.
+[27:58] Uh, inside this vector, and then for the unique values of acts, we use the unique function.
+[28:08] And then we can see, originally there are.
+[28:16] Sorry, so originally there are 6 numbers here, but we have 2 sevens so the unique numbers are just 796555and2.
+[28:28] And we want to sort the factor in a standing order.
+[28:33] So, we just click and this is sorted and ascending order.
+[28:38] And we want to find a distribution, so we use stay table.
+[28:43] And now we can see, we have 1 of 21 of 6, and 2 of 71 of 9 and 1, not 55.
+[28:58] Then for, and this is a question about the rate.
+[29:03] So, what's the difference of those 3?
+[29:07] A race, anyone can answer.
+[29:30] Okay, yes. Uh, huh.
+[29:43] Oops, sorry there's the typo, sir. Uh, this should be.
+[29:56] 51555.
+[29:59] 11, yeah, yeah, that's correct.
+[30:05] Okay, I got I got it cracked here so.
+[30:11] We have a 5 numbers 1 through 5.
+[30:15] And then, so, uh, for 105, we have.
+[30:21] Um, 5, mattresses off 5 matrices with 1, uh, 1 by 1.
+[30:31] Matrix each and then for the 2nd, 1.
+[30:35] It's, it's, um.
+[30:40] Uh, 1 Matrix, 1 matrix with 1 that is 1 by 5.
+[30:49] And then the 3rd, 1 is.
+[30:54] 1 matrix that is 5 by 1.
+[31:02] Um, okay, let's take a look at the 3rd 1.
+[31:11] So this is just some calculation for.
+[31:16] And you can find, uh, those, uh, there are some building functions you can find online.
+[31:39] To save some time I just show you the answer.
+[31:43] So, we have, um.
+[31:46] Matrix a, we have, um.
+[31:52] 1234 and 5, uh, other than by row.
+[31:56] Sorry, and, um.
+[32:02] Let's see so we have, uh.
+[32:09] Matrix a, we set by row equals to true. Then we can order.
+[32:16] The elements by rope and for B.
+[32:20] We use the default setting then.
+[32:24] It's, it's all the elements are all the ordered by column.
+[32:29] And now we check dimensions, use the time function.
+[32:36] And then we can see, uh, the, the dimension of.
+[32:40] Matrix a S2 by 2 and the dimension for.
+[32:46] Hey, is also 2 by 2.
+[32:49] And we need to find a determinant, and we can use the, um.
+[32:55] Billing function did and then.
+[33:00] We can find the solution and for.
+[33:05] Um, some of a, and B, we can just use directly use plus sign.
+[33:12] Here, and then for 8, the matrix 8 times B.
+[33:20] It's a little bit different from just multiply 2 numbers. We need to use.
+[33:26] Um, these, uh, percentage side.
+[33:30] And then with a multi multiplication sign in between.
+[33:37] And we need to find inverse of a, an inverse of B we use the building function of soft.
+[33:55] Okay, let's continue. So.
+[33:58] Then the next topic is a function.
+[34:02] So, for a function, we.
+[34:05] Have the, the we use.
+[34:10] The function keyword to a set of functions.
+[34:15] So, uh, in this premises, we can set up argument 1 argument 2. so some arguments you want to input.
+[34:23] And for the function body, you can write your function and, uh, have some output.
+[34:32] So, uh, we have these components inside of function. We have function name so this is something.
+[34:40] Um, oops points to like this 1.
+[34:48] And then we have arguments so the argument is something you want to.
+[34:54] Place inside the function, and we have function body, which is a collection of of statements that defines what the function does.
+[35:04] And the return value is, um, the value you want to.
+[35:11] Um, output, so let's take a look at some function.
+[35:19] So, let's say, um.
+[35:22] So, let's say we want to set a function to print.
+[35:29] Hello world, so for this function, we don't have any.
+[35:33] Um, argument inside practices, we just rounded around.
+[35:39] Coat and when we run my function with parentheses.
+[35:46] It's just print out hello? World.
+[35:52] And then here, the next 1.
+[35:56] We said this function with 2 arguments. So 1st name and last name.
+[36:02] And then we use paste to pull 2nd name and last thing together.
+[36:10] So this is our, um, function body.
+[36:13] And then we just run the.
+[36:17] Code.
+[36:27] And then if we run my function, and we input 2 arguments here.
+[36:33] So, this, um, Peter.
+[36:36] Match the argument the 1st argument 1st name and Griffin match the 2nd argument, which is the last name. So if we roll it.
+[36:48] We can have the output output.
+[36:54] As a whole string, so the 3rd function, we, we want to have.
+[37:00] Is to set the.
+[37:03] Um, set the, uh, set some default default argument and this, we said the country to Norway.
+[37:14] And then we also paste I am from and.
+[37:20] The, the, the argument.
+[37:23] Oops, so if.
+[37:27] We run this code with nothing.
+[37:31] Inside the parentheses, then we, we will get the default value.
+[37:36] Which is I am from Norway, but if we change the argument inside, parentheses, it will replace the default arguments.
+[37:47] And then it becomes, I am from USA.
+[37:58] And then we have some more, uh, 1 more so.
+[38:02] Say we want to build a function with argument acts and we return 5 times acts.
+[38:12] So, let's run the function function.
+[38:16] And if we put 5 inside, parentheses.
+[38:20] Then the expected value, we will get us 5 times 5 then that's 25. let's check. Yes that's correct.
+[38:32] Any questions on us.
+[38:39] Okay, um, Here's another question for you.
+[38:45] Right. To write a function that takes X and Y, as input and returns the value Y2 X.
+[39:19] Okay, let's take a look at the solution so for this.
+[39:23] We take X and Y, as input.
+[39:26] And then we just to, uh, return.
+[39:30] Why 2 X and.
+[39:36] For example, we want to, uh, want to make 47th power then we have.
+[39:42] Yes, so that's 4 to 5 and we also have for loop and wire loop.
+[39:55] So the difference between for loop and while loop is for Loop will always iterate through the entire sequences sequence and the wire loop will.
+[40:09] Stop this stop the SIG iteration uh, when some condition is satisfied.
+[40:19] So, for example, so for for for loop.
+[40:27] For it's, we'll iterate every single number.
+[40:31] So, if we have 4.
+[40:34] I in 1 through 5, so it will look through.
+[40:39] From 1 to 5 and then.
+[40:42] It will print 1 through 5.
+[40:46] And for a while, um.
+[40:50] The 1st value, we said it goes to 1 then if.
+[40:55] As long as I less than equal to 5, it will put print eye and we want to look through the next number. Then we said I equal to +1.
+[41:09] And it also looked through 11 through 5 because when we have, I equals 2 6.
+[41:16] It's greater than it's.
+[41:21] When we have, I equity sakes, it's greater than 5. so it stopped the loop.
+[41:36] Then we also have conditions, so, if condition if else, if else else, so if, uh, if condition.
+[41:46] Um, so I would just, um.
+[41:53] Let me check check, I will just, uh, skip this and then, uh, if for more details you can check. And next I would like to introduce you to some, like, um.
+[42:09] Um, some sports data from some, our packages.
+[42:22] So, um, if we want to use some support some data from packages.
+[42:30] Uh, we need to install the package and also use library to load the package.
+[42:36] And then, so, for example, we want to use the lemon, um, data, um.
+[42:42] You load the lemon package when it 1st install it and then use library to load it.
+[42:52] Um, so, um, then we want to.
+[42:57] Use the baton data from the lemon package.
+[43:04] Then we will do data.
+[43:07] Put the name of the package here.
+[43:12] And then package equals to the package we want to use.
+[43:16] So, let's try that. So, 1st, let's install and load our packages.
+[43:26] So, we install the lemon package.
+[43:33] And then we have the library.
+[43:38] We load the package, then we want to use the data batting then we just load it from the package.
+[43:47] And then we can check the data.
+[44:01] So, here's the some overview of the data.
+[44:11] And then we can do data manipulation, use space, art. Um, so for string, so, string batting, we can check variables.
+[44:22] So.
+[44:26] We can check different variables and are there types.
+[44:35] And then, for names, we can just get the names of the of the variables.
+[44:42] And for head batting, when it, this place, the 1st, few rows of the dataset.
+[44:50] So, it displays the 1st, 6 rows and then.
+[44:56] Ah, for betting, uh, for this, at this place, the 1st, 4 columns so this has come up from 1, 2, 4.
+[45:05] And then.
+[45:10] For the next 1, it displays the 1st, 4 rows.
+[45:19] So previously is 1st, 4 columns and the, next 1 is for the 1st, 4 rows.
+[45:26] And and for this 1, it only displays the player ID.
+[45:34] And the same thing for this, and then, um, this, this, this place, the 1st,
+[45:46] 410 elements of the of the variable player ID and ear ID. id
+[45:54] So you can see here, there are 10 elements that are displayed for those 2 variables.
+[46:02] And then for the last 1, we can also create some new variable.
+[46:08] Um, by using the dollar sign and the new variable name, and this is the function for, um.
+[46:16] The calculation for the 1st, for for the new variable.
+[46:21] Yeah, let's run it and let's check that.
+[46:28] So, you can save for now, the very last column is the new variable we created.
+[46:36] And then so next.
+[46:40] We use the so the are is, uh, um, data manipulation package um.
+[46:50] That is easy to use again. We need to install it and load it.
+[46:55] And, um, so there are many options you can you can use for.
+[47:02] So here is a link for.
+[47:07] A deeper I change it and then.
+[47:15] So, for example, let's load, uh, install, deploy.
+[47:22] And load it, and here is another.
+[47:28] Another data set, we want to use.
+[47:34] To do data manipulation so this is, this is the data set called salaries.
+[47:44] And then let's check the data and account is here ID team ID.
+[47:50] Ah, look ID, player ID and their salary.
+[47:57] So let's say we want to remove remove.
+[48:01] I info information from the data set.
+[48:05] Then we can use this, uh, sign, um, this, this is only this can only be used.
+[48:12] Um, when you load that package deploy are.
+[48:17] And it's wrong the code.
+[48:21] And then check the check the data again. So to compare, you can see this column is removed.
+[48:29] When we select those 4th columns, we want.
+[48:41] And for betting, we want to join betting of for this, we want to create a new data data frame where that, uh.
+[48:52] Joint batting and salaries, so, and we want to join them by player ID, your ID and team ID.
+[49:01] So we have, you will use left drawing.
+[49:08] And we check our new dataset. So now you can see we have our original.
+[49:16] Betting data set and we also have.
+[49:20] Our center salary and not very last column.
+[49:29] And then we want to arrange the baton data set with.
+[49:36] Play our ID and your ID so we, we.
+[49:43] Rearrange the other in ascending order.
+[49:48] So, we can check if we arrange them in player ID and ID, it starts from.
+[49:55] Um, it, uh, they arranged the data in a sending orders so it starts from.
+[50:02] A, and then in some, um.
+[50:09] Ascending order so.
+[50:22] Then we also have visualization, we can do visualization using base R and also use the package part. 2.
+[50:33] So, let's say we want to, um.
+[50:36] Make scatter plot, um, off.
+[50:41] Um, Davos versus home runs.
+[50:44] Then we 1st, uh, say we just want to make.
+[50:50] Um, the plot for 25.
+[50:54] For the year of 25, then we 1st use to make a new data.
+[51:00] New data file, data, new data set.
+[51:03] And we run the code.
+[51:07] And for now, the status had only contains.
+[51:10] The data for 25, and then we just use the plot function and here's the X variable. Here's the why variable?
+[51:20] And, uh, this changes, the ax label and white label and for the main, it adds the title. title
+[51:28] And if we run the data.
+[51:35] We can find the plot.
+[51:39] In the right bottom corner.
+[51:47] And we can also use GG plot too. So, did you plot? 2 is just.
+[51:52] 1 of the packages that's that's used to make, uh, make visualizations.
+[51:59] And here is also, uh, some.
+[52:04] S*** s***, you can check.
+[52:07] There are many plot can be made by 2 plot 2.
+[52:12] And let's say if we want to make the same thing, which is homerun versus doubles.
+[52:17] And we 1st, install and load the package.
+[52:25] And then around the code, so this time you put state your, the data file, you want to use here.
+[52:34] And then use a function to add, uh, add X variable and why variable.
+[52:42] And then we have, uh, and we use plus sign.
+[52:47] To choose the plot, uh, the plot type. So Joan point means we want to make scatter plot.
+[52:54] And now we have this, um.
+[52:57] Not here, so we can see they looks different, but they plot the same information.
+[53:08] And then we can also add labels.
+[53:11] Since for now, this part has no, uh, title, and we want to change the.
+[53:16] Um, X and Y, labels so we use.
+[53:22] Plus sign again and plus Labs and.
+[53:27] To add the labels. So now.
+[53:34] We can compare with the previous 1.
+[53:37] So this has no labels and for this 1.
+[53:42] We have a title and we change the, uh, X Y, label names.
+[53:52] So, for the last 1, let's say we want to.
+[53:56] Um, group, uh, group, uh.
+[54:01] Scatter plot by name a ledge ID. There are 2. um.
+[54:08] Uh, i2, so.
+[54:13] We just add caller caller option inside the.
+[54:18] Then we can't get this plot.
+[54:30] Okay, any questions. Okay so for, um.
+[54:40] Inside the there are some useful reference you can use to learn more about art.
+[54:47] And, uh, thank you for attending, um, this workshop.
+[54:53] Um, also there are some parts I skipped in this, um, slides you can also take a look.

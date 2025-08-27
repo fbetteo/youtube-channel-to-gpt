@@ -1,0 +1,1795 @@
+Video Title: Keynote Presentation 1: Thompson Bliss [2020 UConn Sports Analytics Symposium]
+Video ID: XAlaDVwP5lY
+URL: https://www.youtube.com/watch?v=XAlaDVwP5lY
+View Count: 28
+
+[00:00] awesome uh thank you mike
+[00:02] uh
+[00:04] can i get permission to share my screen
+[00:06] i do not have the permission right now
+[00:08] but uh before while we wait i'll get a
+[00:10] little i'll talk a little about myself
+[00:11] mike obviously sort of highlighted what
+[00:13] are oh great now i can do it uh
+[00:17] mike highlighted what our group is about
+[00:19] um
+[00:25] i'm so sorry
+[00:26] i might sort of highlight about what our
+[00:27] group is about um
+[00:29] but yeah i'm a data scientist at the nfl
+[00:31] league office i've been working there
+[00:32] since february uh today i'm going to be
+[00:34] talking about
+[00:35] using betting line data to estimate the
+[00:37] magnitude of travel rest and home
+[00:40] advantages in nfl
+[00:43] today
+[00:44] um my twitter is at beta with bliss if
+[00:47] you if you want to tweet a question or
+[00:50] something about the talk or just send me
+[00:52] a funny meme uh feel free to do so i
+[00:54] appreciate it all
+[00:56] um
+[00:56] yeah first i'd like to say i'm thankful
+[00:58] for being here i'm really excited to be
+[01:01] here i'd like to thank um everybody on
+[01:03] the panel everybody who organized i want
+[01:05] to thank mike uh what because he helped
+[01:07] me a lot with this presentation as well
+[01:09] as getting me involved
+[01:10] uh so
+[01:11] with that i'll i'll just jump right into
+[01:13] it
+[01:15] the goal of um the research that i'm
+[01:17] presenting today we were attempting to
+[01:19] figure out what is the magnitude of home
+[01:21] field advantage what is the magnitude of
+[01:23] travel advantage what's the magnitude of
+[01:24] rest advantage how does that affect
+[01:27] actual outcomes of games how how does
+[01:30] playing on a monday night compared to
+[01:32] another team playing on a sunday night
+[01:33] does that actually how does that affect
+[01:34] the outcome how does plane at home
+[01:35] affect the outcome
+[01:37] um
+[01:38] all of this is incredibly important to
+[01:40] us um as we put together a schedule we
+[01:43] have a scheduling group and
+[01:45] um it's a very difficult process and
+[01:48] although
+[01:49] we we like to have we're ultimately an
+[01:52] entertainment industry we also want to
+[01:54] make sure we're fair to the teams
+[01:56] if we wanted to optimize for
+[01:57] entertainment we just have cowboys and
+[02:00] kansas city chiefs playing every monday
+[02:01] thursday and sunday but we do have to
+[02:04] have some
+[02:05] evenness of the schedule it'd be unfair
+[02:07] if they if if playing on these days is
+[02:10] um a disadvantage and that these teams
+[02:12] are constantly
+[02:14] being given this disadvantage so we have
+[02:15] to make sure that
+[02:17] rest advantages are distributed equally
+[02:19] travel home advantages teams have to
+[02:21] play in london sometimes you have to
+[02:22] make sure that's all even um this also
+[02:25] all this also applies to the postseason
+[02:27] format
+[02:28] as i'm sure many of you know in in 2020
+[02:32] we have a different postseason format
+[02:33] than we normally do we now have seven
+[02:36] teams in the playoffs
+[02:38] and
+[02:40] one less team has a buy before two teams
+[02:42] would have a buy per conference
+[02:44] now only one team has a viper conference
+[02:46] and and that's significant and we have
+[02:48] to think about okay now there's less a
+[02:51] team doesn't have a pretty big rest
+[02:52] advantage you have a full week off
+[02:54] that's pretty big a team doesn't have
+[02:55] that what what does that
+[02:57] do
+[02:58] to um to the postseason
+[03:00] and finally this all can tie into rules
+[03:02] proposals
+[03:03] there's a lot of rule proposals that we
+[03:05] as the data team in the league office we
+[03:08] look at
+[03:09] and some of them tie into or if you're
+[03:11] the home team you get x you're the
+[03:13] visiting team you get x we got to make
+[03:15] sure that we we know what advantages
+[03:18] already exist uh when we're applying
+[03:20] these rules
+[03:22] so uh the process that that we kind of
+[03:25] go through uh i use sports betting data
+[03:28] um and i'm gonna explain why sports
+[03:29] spending data is is significant in what
+[03:32] we use in an aesthetic and a give
+[03:34] sampling model and what we attempt to do
+[03:36] is we try to parse these magnitudes
+[03:39] out of the out of the betting lines try
+[03:40] to parse them out of the betting line
+[03:42] probabilities
+[03:43] um
+[03:44] to to figure out what exactly they are
+[03:46] um
+[03:47] so we we know that
+[03:49] a betting line will be based on how good
+[03:51] the teams are um and then these several
+[03:53] other advantages we have to figure out
+[03:55] okay what part of the betting line goes
+[03:57] to
+[03:58] how good these teams are what part of
+[04:00] the betting line goes to this advantage
+[04:01] what part of the betting line goes to
+[04:02] this advantage um and and one other
+[04:05] thing i would like to say a lot of this
+[04:06] work is uh built on um
+[04:09] a paper randomness and sport uh by
+[04:12] matthews bomber and mike lopez
+[04:15] so i would highly recommend you check
+[04:16] that out especially if you're interested
+[04:18] in what i talked about today um so so
+[04:20] yeah so i'll
+[04:22] i'll first explain why are we using
+[04:24] betting line data because
+[04:26] it's it might seem a little bit random
+[04:28] like why why betting line data well the
+[04:30] reason we like betting line data is it's
+[04:33] incredibly accurate
+[04:34] so
+[04:35] uh what we have here is we have the the
+[04:37] y-axis
+[04:39] is the observed probability the observed
+[04:41] wind probability the x-axis is the
+[04:43] betting line implied probability
+[04:45] um each dot represents a cluster of
+[04:47] games so we take a cluster of games
+[04:50] where the
+[04:51] betting line probability
+[04:53] for example
+[04:54] is around like 50
+[04:57] or maybe 45 percent
+[04:59] we take this cluster
+[05:00] and we compare
+[05:02] that probability
+[05:04] to the actual when percentage of games
+[05:07] that are sort of within that cluster
+[05:10] and we see
+[05:11] how does that match up so anything on
+[05:13] the line means it's a perfect um it's a
+[05:16] perfect measurement
+[05:18] and as you can see outside of
+[05:20] maybe some a few dots on the ends
+[05:22] a lot of these dots are right uh on the
+[05:25] line that tells us that these betting
+[05:27] lines are are pretty accurate um they're
+[05:30] telling us
+[05:31] that when they say it's about a 20
+[05:33] chance of winning it typically means
+[05:35] it's 20 of the teams actually win um and
+[05:38] yeah and i guess another thing i'd like
+[05:39] to note here is the the bigger the dot
+[05:42] uh the more the bigger the cluster of
+[05:43] games so although we have a few dots um
+[05:46] on the on the two ends that
+[05:48] um are off the line
+[05:50] they're smaller i think that the dot um
+[05:53] closest to zero percent i think is
+[05:54] literally six games and they just none
+[05:56] of them happen to be victories and this
+[05:59] one uh the one
+[06:00] in the upper right hand corner might be
+[06:02] 30 games so
+[06:04] we really feel good about this bedding
+[06:06] line data and we really feel good if
+[06:08] we're gonna we're extracting we're
+[06:09] trying to estimate information from it
+[06:11] we feel like this is a very good source
+[06:13] to estimate information
+[06:16] all right so back to um what we're
+[06:19] really interested in here we want to
+[06:21] figure out
+[06:22] how do these betting markets perceive
+[06:24] home advantage rest advantage and travel
+[06:27] advantage um
+[06:29] we want to see are
+[06:30] do the betting markets perceive them the
+[06:32] same they do now that they did 10 years
+[06:34] ago
+[06:35] is it totally
+[06:37] new is it totally um does it change per
+[06:40] week for example maybe a buy in week
+[06:42] three doesn't matter as much to buy in
+[06:44] week 13
+[06:46] maybe if you travel later in the season
+[06:48] maybe that also might have an effect
+[06:50] we're interested but it is this
+[06:52] like when when our when are buys most
+[06:54] significant when
+[06:56] it are they most significant at
+[06:57] different times that there's a lot of
+[06:59] different things to think about and
+[07:01] finally we're going to look at and say
+[07:03] oh are some teams benefiting or not
+[07:06] benefiting from these advantages is is
+[07:08] it significant
+[07:10] what's going on there
+[07:12] so um
+[07:14] i'm going to go through these uh i i
+[07:16] don't have any slides on home advantage
+[07:18] i i think that is pretty
+[07:21] um
+[07:22] intuitive
+[07:23] the home advantage simply is defined as
+[07:25] if you're playing at home you have home
+[07:27] advantage um if if for example the
+[07:30] jaguars like to play in london a lot the
+[07:32] jaguars playing in london they do not
+[07:33] have home advantage that's a neutral
+[07:34] site bill's playing toronto that's
+[07:36] neutral site but if you are playing on
+[07:37] your own home field that's home
+[07:39] advantage um and that's
+[07:41] that's our definition so
+[07:42] i'm not going to get too deep into that
+[07:44] but i will get into travel and rest
+[07:46] advantage it although we know that
+[07:49] travel and rest advantages exist or we
+[07:51] think they might exist how would you
+[07:53] actually define a team with a travel
+[07:55] advantage um
+[07:57] so we thought about different ways to
+[07:59] think about that is it an issue of time
+[08:02] zones
+[08:02] maybe if teams are playing on different
+[08:05] time zones um
+[08:07] like like you're you're not one team is
+[08:08] used to playing at one o'clock one team
+[08:10] feels like they're playing at 12 o'clock
+[08:12] is that a an advantage um we found it
+[08:15] was insignificant compared to
+[08:18] other variables um another thing
+[08:20] that it's talked about a lot is what if
+[08:22] a pacific
+[08:23] time team like a west coast team like
+[08:27] raiders 49ers rams chargers they have to
+[08:29] go to the east coast and they're playing
+[08:31] at that 1pm sunday window is that a dis
+[08:34] a big disadvantage are they
+[08:36] um unable to
+[08:39] they feel like they're playing at 10 a.m
+[08:40] and the team they're playing feels like
+[08:41] playing at 1pm is that a big advantage
+[08:43] and again um it was insignificant when
+[08:46] when we looked at some other variables
+[08:49] we also thought oh maybe the reverse
+[08:50] maybe if you're an east coast team and
+[08:52] you're going to the west coast you're
+[08:53] playing at night maybe maybe that's a
+[08:55] big disadvantage
+[08:56] um
+[08:57] again it wasn't that big
+[09:00] part of the issue with this in
+[09:02] particular was there was a very small
+[09:03] sample size most of our teams are on the
+[09:05] east coast
+[09:06] so
+[09:07] it's not as likely and there's only like
+[09:10] three there's only three prime time
+[09:12] windows a week typically so you're not
+[09:15] and west coast teams tend to play other
+[09:16] west coast teams because of the way the
+[09:17] divisions are structured so it doesn't
+[09:19] happen as often but uh that was
+[09:23] insignificant the one thing that really
+[09:25] stood out is significant is travel
+[09:26] distance just pure miles
+[09:29] how far you went from one side of the
+[09:31] country to another
+[09:36] so
+[09:38] right here we have a chart uh we're talk
+[09:40] we're thinking about the distance
+[09:41] defined by travel miles x-axis and
+[09:44] y-axis are the same that's the real
+[09:46] distance in miles um each dot represents
+[09:49] a number of games at that given travel
+[09:51] distance bigger the dot more games
+[09:54] so
+[09:55] i highlight four uh games here um i
+[09:58] chose to choose the new york giants we
+[10:00] are at yukon uh that's i guess the
+[10:03] closest team against the jets are tai
+[10:06] and i imagine a lot of our west coast
+[10:08] friends might still be asleep because
+[10:10] it's early so i decided to choose new
+[10:11] york giants just everyone knows that uh
+[10:14] so i highlighted four games here so that
+[10:16] giants playing new york
+[10:18] the giants playing philadelphia the
+[10:19] giants playing la and the giants playing
+[10:21] san francisco
+[10:23] my uh my intuitive thought was okay
+[10:26] if the giants are playing the jets
+[10:28] they're literally not leaving they're
+[10:30] staying in their own home bed they're
+[10:31] they're playing at their own stadium
+[10:33] just maybe they're playing in a visitor
+[10:34] locker maybe they're not
+[10:36] that the difference between that and
+[10:38] actually having to take a hour drive
+[10:40] hour and a half drive to philadelphia
+[10:41] that's pretty huge in my opinion like
+[10:43] you're you're going from
+[10:45] nothing to something
+[10:47] uh but when you think about la ver san
+[10:49] francisco i would think that's probably
+[10:51] about the same
+[10:52] i grew up in california and i live in
+[10:54] new york now i didn't even know that
+[10:57] san francisco was a further further away
+[10:59] than la i thought la was further so i
+[11:01] didn't even know that there was a
+[11:02] difference
+[11:03] uh i
+[11:05] to me i think they're both pretty long
+[11:06] flights i don't know if it really
+[11:07] matters
+[11:09] so i i created this slide sort of just
+[11:11] highlight what i'm talking about i mean
+[11:13] the difference between philadelphia and
+[11:14] new york is 85 miles whereas san
+[11:17] francisco and l.a
+[11:18] from new york it's 99 miles
+[11:21] um
+[11:22] so right if we just use straight travel
+[11:25] distance like that we're suggesting that
+[11:27] the difference between new york and
+[11:28] philadelphia
+[11:30] um compared to new york and new york
+[11:32] that is a smaller difference than new
+[11:34] york going to one of two cities in
+[11:36] california which are a five hour flight
+[11:38] away
+[11:39] we knew that didn't really make sense so
+[11:41] what we what we did was we thought okay
+[11:44] we're going to allow our model i mean in
+[11:46] the modeling stage i'm going to touch on
+[11:48] this a little bit more um we're going to
+[11:51] allow our model to
+[11:52] transform the distance to
+[11:56] make it so
+[11:57] at the tail end it really doesn't matter
+[12:00] whether you're another 100 miles away
+[12:02] but at the very start it's a huge
+[12:04] difference each mile really counts
+[12:07] um
+[12:08] sort of the thought we wanted and for
+[12:10] those who love calculus i don't know how
+[12:11] many are out there maybe there are a
+[12:13] decent amount at a sports analytics
+[12:14] conference but for those who love
+[12:16] calculus we wanted to have a negative
+[12:17] derivative we wanted
+[12:19] it to the the curve to slow down to to
+[12:22] to flatten out as uh miles increased
+[12:26] uh so
+[12:28] that we let the model sort of find what
+[12:30] was best we tried um a few functions we
+[12:32] tried exponential we
+[12:34] panch we tried some trigonometric
+[12:36] functions the thing that really worked
+[12:39] the best we found was an nth root
+[12:41] function i'm going to let the model
+[12:43] determine n
+[12:44] um and the
+[12:46] uh the answer is about one-fifth but but
+[12:49] anyway the value here and you can you
+[12:51] can see in the graph i mean new york
+[12:53] versus new york
+[12:54] is um right down there and then a big
+[12:57] jump to philadelphia
+[12:59] and then la and san francisco um right
+[13:01] next to each other
+[13:03] it's it works out a lot better um one
+[13:06] now the the advantage is a lot bigger
+[13:08] between philadelphia
+[13:10] um the travel ban for philadelphia
+[13:12] compared to the new york jets a lot
+[13:14] bigger than the 49ers compared to the
+[13:16] rams which again i'm still surprised
+[13:18] that there was that that the 49ers are
+[13:20] actually san francisco's further away
+[13:21] from la
+[13:23] so we went ahead and made that fix and
+[13:25] um that's how we define travel distance
+[13:27] in our data um obviously we have the
+[13:29] schedule so we know where teams are
+[13:32] playing and we
+[13:34] this is observed data this is data that
+[13:36] we are aware of
+[13:38] um so now that we have a way to sort of
+[13:41] quantify our observed travel data now we
+[13:44] have to think about rest
+[13:48] so uh right here we have a histogram
+[13:50] the left-hand side of the histogram will
+[13:53] have
+[13:54] uh situations where the away team has
+[13:56] more days of rest in the home team the
+[13:58] right side will be situations in which
+[14:01] the home team has more days of rest than
+[14:04] the away team and right at zero it's
+[14:06] even rest um and
+[14:08] these uh differences can occur because
+[14:11] of a monday night football game or
+[14:13] thursday night football game or
+[14:15] a bye week something like that has
+[14:17] happened where they're not playing on
+[14:18] the same day but then they meet on the
+[14:20] same day
+[14:21] so um two-thirds of games we're going to
+[14:24] call even rest they they have the exact
+[14:26] same number of days of rest
+[14:29] it doesn't make a difference whether
+[14:31] they they both have the same the same
+[14:33] sort of rest advantage
+[14:35] no no team had more rest than another
+[14:38] we're gonna define
+[14:39] one to four days as short rest this is
+[14:42] you had
+[14:44] this is typically a monday night a
+[14:45] thursday night maybe even a saturday
+[14:47] game
+[14:48] um
+[14:49] something happened and one team has four
+[14:52] days one team has two i mean it's
+[14:54] typically one or three i think which
+[14:56] correspond to thursday and monday night
+[14:58] football
+[15:00] um and
+[15:01] that that that's what we define as a
+[15:03] short rest advantage
+[15:04] finally we have the buy advantage and
+[15:06] that's a team had an entire week off and
+[15:09] you're meeting i mean one team played 14
+[15:10] days ago one team played seven days ago
+[15:12] or this could be 13 or 15 depending on
+[15:15] how um
+[15:17] the prime time windows line up but
+[15:20] that's what we call buy advantage uh
+[15:22] and
+[15:23] obviously this is again something we
+[15:25] haven't we have a schedule we know what
+[15:27] dates teams played so this is observed
+[15:28] we know what advantages
+[15:31] teams had and now we just have to
+[15:32] measure the significance
+[15:34] one last note about this slide that i'm
+[15:36] going to mention
+[15:38] when two teams are coming off buys but
+[15:40] one team maybe played on a monday so one
+[15:43] team played like 13 days ago one team
+[15:45] played 14 days ago we just put that in
+[15:46] the even rest category simply because
+[15:50] i don't think that
+[15:52] after a certain point if you have 13
+[15:54] days versus 14 days that one day
+[15:56] probably doesn't matter a lot of the
+[15:57] players will have a few days off during
+[15:59] that week anyway so
+[16:01] that is just an even list
+[16:03] all right so now that we've defined what
+[16:06] our observed data how we're quantifying
+[16:08] our observed data now we've got to get
+[16:10] into some math
+[16:11] so and yeah this is a lot of math i
+[16:13] thank everybody for waking up early on a
+[16:15] saturday and choosing to look at this
+[16:17] much math um
+[16:18] but i'll try to get through it and we'll
+[16:21] get um and hopefully you'll understand
+[16:23] um so the first what i have here is is
+[16:26] an equation a bunch of definitions uh
+[16:28] i'm gonna
+[16:29] do something i'm gonna highlight what is
+[16:31] observed and what is estimated what we
+[16:34] we already know from the schedule and
+[16:36] what we're trying to figure out
+[16:39] so the red is estimated the redis are
+[16:41] our quantities we're going to learn from
+[16:44] our model the black is stuff that we
+[16:46] already know because we have the
+[16:46] schedule or or the vetting line data for
+[16:49] our dependent variable
+[16:51] um and uh so i'm going to go through and
+[16:53] explain each of these set of terms one
+[16:56] by one i don't want to get too into the
+[16:57] weeds of this i feel
+[16:59] the the results will probably be a
+[17:01] little bit interesting but i also want
+[17:02] to make sure everybody understands how
+[17:05] we got
+[17:08] so the first term i'm going to highlight
+[17:09] here this is our dependent variable this
+[17:11] is on the left hand side of the equation
+[17:12] this is our y this is our
+[17:16] the variable that um were were
+[17:19] using to sort of drive the model
+[17:22] so what we have here is the betting line
+[17:25] implied probability that team i will be
+[17:28] team j during season s and week k
+[17:31] so for example
+[17:33] um
+[17:33] the the let's say the raiders played the
+[17:35] chiefs week five last year um it would
+[17:38] be the
+[17:40] for that probability would be the
+[17:41] probability in season equals 2019
+[17:45] week equals five that team i the chiefs
+[17:48] will be team j the raiders
+[17:50] we we
+[17:52] notice that it's not um per season
+[17:55] each week we have a different betting
+[17:57] line probability and that's uh true
+[18:00] throughout and that's an important
+[18:01] distinction that we're paying attention
+[18:03] to
+[18:04] um
+[18:05] that's because for a lot of reasons um i
+[18:08] mean everybody
+[18:10] there are teams that start out hot and
+[18:12] maybe have some injuries and don't
+[18:13] finish as well and there are teams that
+[18:15] sort of get a second win late in the
+[18:17] season
+[18:18] um
+[18:19] yeah so we we we got to make sure that
+[18:21] we're taking into account that teams
+[18:23] change week to week uh maybe there's a
+[18:25] quarterback change maybe
+[18:27] injuries is a big one too maybe there's
+[18:28] a coach gets fired there's a lot of
+[18:30] things that could happen week to week so
+[18:32] we got to make sure that we have
+[18:34] um a different probability each week
+[18:36] the next two terms um these are the i'm
+[18:38] going to highlight the other theta for
+[18:40] you for those of you who like greek
+[18:42] symbols the theta terms
+[18:44] uh that is the team strength
+[18:47] of of um team i and team j during season
+[18:50] s and week k and again
+[18:52] team strengths change all the time
+[18:55] for example our model fell when patrick
+[18:58] mahomes was injured last year the team's
+[19:00] strength was lower than when he was
+[19:02] healthy i mean and that's probably true
+[19:04] with a lot of teams quarterbacks but
+[19:06] that's
+[19:06] the most extreme example i can think of
+[19:09] um so we have the team strength of team
+[19:12] i during season s and week k um so
+[19:15] it could be the chiefs 2019 week five
+[19:18] and then the team strength of team
+[19:20] j during season s and weekend the
+[19:22] raiders 2019 week five um and we're
+[19:26] we're subtracting them we're figuring
+[19:27] out what is the difference between the
+[19:28] two team strengths they could be equal
+[19:31] one could be better than the other
+[19:32] um this will sort of um account for the
+[19:36] team strength part of the model again as
+[19:38] i sort of said from the beginning we're
+[19:39] not necessarily interested in this this
+[19:41] is just something we know
+[19:42] betting lines take into account and we
+[19:45] have to
+[19:46] make sure that we're we're taking them
+[19:47] into account in order to parse out the
+[19:49] information we actually are interested
+[19:51] in
+[19:52] okay
+[19:54] so the next term we have here is our
+[19:56] home advantage term
+[19:58] we have both an intercept
+[20:00] which is
+[20:01] alpha alpha h
+[20:04] and a trend term which is beta h
+[20:07] um
+[20:08] alpha will be constant and beta will be
+[20:11] a trend actually let me start by
+[20:13] explaining this last term a little bit
+[20:15] this is also this is probably the most
+[20:17] important part this is the home
+[20:18] advantage this is observed so
+[20:21] this valve this will be equal to one
+[20:24] if the team is actually playing at home
+[20:26] and zero if it's a neutral site
+[20:28] so this alpha term that we're going to
+[20:30] be estimating
+[20:31] um
+[20:32] will provide a value for a constant home
+[20:37] advantage that's been true 2006 to 2019
+[20:40] that's that's our data set um that'll be
+[20:42] true the entire time this beta term uh
+[20:45] because we found that home advantage
+[20:46] actually is changing each season will
+[20:48] will account for how it's how it's
+[20:50] changing per season so if s is equal to
+[20:53] 2006 this will be zero if s is equal to
+[20:55] 2019 it'll it'll be pushed all the way
+[20:58] to
+[20:59] um it'll be adjusted based on the fact
+[21:00] that it's 2019.
+[21:02] um
+[21:03] this
+[21:04] that that that's what we were able to
+[21:06] find from um for home advantage
+[21:10] the next is travel and again this alpha
+[21:13] term is really what we're interested in
+[21:14] alpha t
+[21:16] that is multiplied by
+[21:18] as i described in the previous slide are
+[21:20] the observed travel uh distance
+[21:23] uh
+[21:24] the travel distance will be the distance
+[21:27] from from the visiting t from team j to
+[21:30] the to the game site minus
+[21:33] team i to the game site so let's say if
+[21:35] team i is playing at home like actual
+[21:37] home um that'll be zero so it'll be just
+[21:41] the miles team j is trapping let's say
+[21:43] if they're media in london that number
+[21:45] could even be negative if um team i
+[21:48] might be designated as the home team
+[21:51] but team i uh well that could be
+[21:53] negative if team i actually like hey
+[21:56] remember the raiders hosted the dolphins
+[21:58] hosted the dolphins in london that was
+[22:00] technically a home team for the raiders
+[22:02] that doesn't actually mean that the
+[22:03] raiders had
+[22:05] home advantage and then nor do they have
+[22:07] travel advantage and then this exponent
+[22:09] here that's how we got the one-fifth
+[22:12] that is an estimate of what the
+[22:14] transformation should be
+[22:16] um again we're not necessarily
+[22:18] interested in that but we know we need
+[22:19] to have it um to to figure it out that
+[22:22] that gamma right there in the exponent
+[22:24] that's just something we need to know
+[22:26] and finally uh i'm almost done with the
+[22:29] math i promise
+[22:30] we have
+[22:31] our rest terms so
+[22:34] this rest term alpha
+[22:36] short rest
+[22:37] that's what we're interested in this is
+[22:39] the observed short rest so
+[22:41] if
+[22:42] if team i has short rest
+[22:45] advantage it'll be equal to one if it's
+[22:47] even rest it'll be equal to zero so this
+[22:49] entire term will just disappear
+[22:51] if
+[22:52] tmi has a as a short rest disadvantage
+[22:56] then this will be negative one so this
+[22:58] will work in team j's fate
+[23:00] um alpha this term works the exact same
+[23:04] way except for with buy rest
+[23:06] so that um
+[23:08] these terms just account for the for the
+[23:10] rest as i described
+[23:12] i i hope that you were you guys were
+[23:14] able to follow that uh
+[23:16] i um could answer i could get more deep
+[23:18] into the math if people wish um during
+[23:21] the question session but this is all i
+[23:23] have for math so for those of you who
+[23:25] fell asleep please wake back up and
+[23:27] we'll start to get to the results
+[23:30] so
+[23:31] although we aren't interested
+[23:33] necessarily in team strength one way we
+[23:36] can validate our model make sure this
+[23:38] model makes sense is see
+[23:40] what teams
+[23:43] see what teams are
+[23:46] what teams are doing what teams are the
+[23:49] best in terms of team strength
+[23:52] the
+[23:54] the like throughout our data set so the
+[23:57] best team for a given season week from
+[24:00] 2006 to 2019
+[24:02] are the new england patriots in 2007
+[24:04] they were the
+[24:06] 16-0 team
+[24:08] um during the regular season so it's no
+[24:10] surprise that their scene has the best
+[24:12] team from 2006 to 2019 the entirety of
+[24:14] our data set the worst team um was the
+[24:17] dolphins last year and as some of you
+[24:20] guys might remember the dolphins started
+[24:22] out 0-8 or 0-9 um they were they lost a
+[24:26] bunch of games by
+[24:28] double digits i remember the first game
+[24:30] i think they lost 49 to 10 to the
+[24:31] baltimore ravens they just got
+[24:33] absolutely
+[24:34] um
+[24:35] killed
+[24:36] uh to i don't know a better way to say
+[24:38] it but um another team also that was
+[24:41] sort of in the mix for being the worst
+[24:42] team were the um
+[24:44] the uh jacksonville jaguars of 2013
+[24:48] during week eight which again maybe
+[24:49] isn't a team that's memorable but they
+[24:51] lost every game by
+[24:53] an average of 21 points going into week
+[24:55] 8. um and yeah and that's another thing
+[24:57] that i want to sort of note about the
+[24:59] dolphins too they started out very
+[25:02] poorly they actually finished the season
+[25:03] with five wins they weren't an awful a
+[25:05] historically bad team but based on how
+[25:07] they played at the beginning of the
+[25:08] season um
+[25:10] this was able to pick up okay this was a
+[25:12] bad team
+[25:13] from the from the get-go
+[25:18] now what i'm going to do is i'm going to
+[25:20] plot
+[25:22] each of the team strengths by week and
+[25:24] this is the 2019 season i know we're in
+[25:26] the 2020 season so maybe we don't
+[25:29] remember all the the story lines and how
+[25:32] teams went um it was all about a year
+[25:34] ago uh when when when during the season
+[25:37] but i'm just going to sort of recap this
+[25:39] is just these are
+[25:41] plots of um the four afc east teams
+[25:45] as a lot of us remember the patriots
+[25:47] started out really well
+[25:49] but then sort of towards the end of the
+[25:50] season they tailed off
+[25:52] the dolphins as i was just sort of
+[25:54] saying in the previous slide they
+[25:55] started off very poorly
+[25:57] but they
+[25:58] ended the season
+[26:00] not on a bad note um
+[26:02] the jets they also had a sort of a dip
+[26:05] in the middle of the season then they
+[26:06] ended the season seven and nine so the
+[26:08] model is able to pick up on team
+[26:10] improvement
+[26:12] the team doesn't have to be constant
+[26:14] throughout
+[26:16] these are all the divisions um 2019
+[26:21] by week
+[26:23] and again maybe we don't remember the
+[26:25] story lines but i'll just highlight a
+[26:27] few things that were interesting
+[26:29] um as i noted the the chiefs um started
+[26:32] out really strong patrick mahomes gets
+[26:34] injured and then they have a few dots
+[26:36] where their their team strength sort of
+[26:38] dips
+[26:39] um yeah maybe maybe to make this i
+[26:42] should have made it more clear in the
+[26:42] last slide the the y-axis here are a
+[26:45] point spread added sort of point
+[26:47] differential expected point differential
+[26:49] against an average team so the higher
+[26:51] you are the better the lower you are the
+[26:52] worse and
+[26:54] the x axis is weak uh but as the chief
+[26:57] started out as a very strong team in
+[26:58] terms of their team strength uh they
+[27:02] patrick mahomes unfortunately gets
+[27:03] injured um they go down he comes back
+[27:06] and then they're a top team again
+[27:08] another uh team i'd like to highlight
+[27:09] are the detroit lions in the this
+[27:12] gray and dark blue in the nfc north they
+[27:15] were a pretty good team
+[27:17] then
+[27:18] uh staffer gets injured i think they
+[27:21] were four and four or five and four
+[27:23] something like that then they go
+[27:25] completely downhill um simply because
+[27:28] they lost their quarterback
+[27:30] uh and another division i like to
+[27:32] highlight is the nfc east
+[27:34] we see two teams philadelphia and dallas
+[27:38] at the top two teams new york and
+[27:40] washington in the bottom
+[27:42] uh sort of what we'd expect and i guess
+[27:43] one more the nfc west we have three
+[27:45] teams that are are very good the
+[27:47] cardinals weren't as good last year
+[27:50] so
+[27:51] uh it's interesting we can we can talk
+[27:53] about a bunch of these divisions and it
+[27:55] you can you can sort of see how teams
+[27:57] change throughout the season
+[27:59] and certain things might have affected
+[28:01] their their perceived team strength from
+[28:04] from the betting market
+[28:07] all right now let's talk about the
+[28:08] results that we as the league were
+[28:09] actually interested in
+[28:12] what are what what does the model
+[28:13] actually think about in terms of rest in
+[28:16] terms of home advantage in terms of
+[28:19] travel binge so
+[28:21] short rest is worth about 0.36 points
+[28:23] that's that's the estimate of the gibbs
+[28:24] sample lean model
+[28:28] fire rest about point six seven uh those
+[28:30] both seem pretty reasonable to me so
+[28:33] they're both about half a point where
+[28:35] but by rest is a little bit more
+[28:37] um
+[28:38] and and again point spread can kind of
+[28:40] be thought of as just expected margin of
+[28:41] victory um so just these sort of help by
+[28:45] about half a point they sort of help in
+[28:47] a maybe a toss-up game that's that's
+[28:49] sort of what this is this is implying
+[28:51] um home advantage is about
+[28:53] 2.15 points
+[28:56] um the
+[28:58] the
+[29:01] people probably are a little bit
+[29:02] confused by that because typically you
+[29:04] think of home advantage in the nfl it's
+[29:06] two and a half to three points
+[29:08] however if we add in the travel
+[29:10] advantage and most of the case there
+[29:12] most of the time they're separated out
+[29:13] on average an nfl team travels about 500
+[29:15] miles so if you add about 0.69 that's
+[29:18] the average travel
+[29:20] you get right in the 2.7 2.8 range which
+[29:23] is typically what uh most of us would
+[29:26] expect for home advantage
+[29:29] um but but this is really interesting in
+[29:31] the sense that
+[29:32] uh it like you when
+[29:35] base home advantage with no
+[29:38] like new york planet new york we think
+[29:39] it we estimated more closer to two
+[29:42] points than um
+[29:45] and maybe three points um as as uh may
+[29:48] be the case when you're actually
+[29:50] traveling um outside of your stadium
+[29:58] so these are one advantage to give
+[30:00] sampling models the sampling model so we
+[30:02] get various estimates we can get a
+[30:04] distribution of what our
+[30:07] answers are
+[30:09] the we we can look at the magnitudes
+[30:11] here uh as we sort of saw in the
+[30:13] previous slide
+[30:15] short rest and by rest are certainly
+[30:17] less than the the other magnitudes that
+[30:19] we're seeing here
+[30:21] one thing that i think is interesting is
+[30:23] we notice that the distribution the
+[30:25] estimate for
+[30:26] home advantage with zero miles is really
+[30:28] flat
+[30:29] that is partially because there aren't
+[30:31] that many games with zero miles it's
+[30:33] only new york at new york we'll start to
+[30:36] get some now that la and la the two la
+[30:38] teams share a stadium but for the most
+[30:40] part that's the only time we really see
+[30:42] those type of games
+[30:45] and the home advantage
+[30:47] with 500 miles that's the skinniest
+[30:49] simply because that's where we see the
+[30:50] most amount of
+[30:53] games about about 500 miles and 2000
+[30:55] miles a little bit is in between the two
+[30:58] because we see that more often than zero
+[31:00] miles but it's still not necessarily a
+[31:02] common occurrence
+[31:09] so we we now want to think okay we are
+[31:13] these changing
+[31:14] over time
+[31:16] um
+[31:17] and as i sort of highlight in the
+[31:18] modeling stage uh we we found that
+[31:21] shortened by rest actually aren't
+[31:23] changing that much over time we we
+[31:25] thought maybe by season they we didn't
+[31:27] think we didn't have a reason to think
+[31:28] by season they would change
+[31:30] but by weeks we thought maybe a week for
+[31:33] buy is way more important than a week 15
+[31:34] buy
+[31:36] from what we were able to estimate from
+[31:38] the the betting markets we haven't
+[31:40] really found that to be the case
+[31:42] there are different um part of it is we
+[31:46] have a smaller sample size that i mean
+[31:48] there's only a team only gets one by
+[31:50] per season maybe they're playing another
+[31:52] team with a buy but
+[31:54] typically
+[31:55] we might only see about 30 or so buy
+[31:57] rests per season
+[31:59] which isn't that many um so maybe with
+[32:02] more data we'll start to pick something
+[32:03] up but we haven't found
+[32:05] something that would suggest that
+[32:06] there's a difference by week i mean we
+[32:08] have enough data to pick up it in
+[32:10] general just the issue is if we're
+[32:11] dividing it by week then we're really
+[32:14] limiting our our space maybe to like
+[32:17] 10 or so not that many per per season
+[32:20] not that many in the total data set uh
+[32:23] so that's why we have that's part of the
+[32:24] reason maybe we didn't find anything but
+[32:26] so far we haven't seen it
+[32:30] um the
+[32:32] the the home advantage we found actually
+[32:36] has been dropping um each season by
+[32:38] about .07 points uh the 0.215 that we
+[32:42] showed here that's the average actually
+[32:43] across all seasons
+[32:45] um in 2006 it was about half a point
+[32:48] more in 2019 it's about half a point
+[32:50] less so from 2006 to 2019 it's almost
+[32:54] dropped a full point which is which is
+[32:56] crazy it's a lot
+[32:58] um and uh i'm going to get into maybe
+[33:00] some reasons why in the next slide
+[33:03] but i'll just also note that travel
+[33:05] advantage we haven't really found has
+[33:06] changed so it's not that teams are
+[33:08] getting better particularly at travel
+[33:10] it's something else relating to home
+[33:12] advantage
+[33:13] that uh or at least that's what we're
+[33:16] the betting markets are perceiving it
+[33:17] the estimate suggests that it's
+[33:19] something else related home advantage
+[33:21] outside of travel
+[33:25] so i just wanted to highlight what um
+[33:28] how home advantage is changing right
+[33:30] here we have that we have travel to the
+[33:32] average which is around 500
+[33:34] miles
+[33:35] um
+[33:36] and as you can see in in 2006 it's about
+[33:38] 3.5 um and this is if we use each season
+[33:42] as a the individual home advantage
+[33:44] season this line is a best fit uh
+[33:47] linear trend line to it
+[33:49] in 2006 it's about 3.5 from 2019 it was
+[33:54] it was under 2.5
+[33:56] and it's a very clear linear trend i
+[33:58] don't think there's really a doubt about
+[34:00] it when we look at it this way home
+[34:02] advantage is decreasing
+[34:04] and um we thought about a lot of things
+[34:07] we thought maybe it had to do with teams
+[34:08] are traveling better but we didn't see
+[34:10] it in travel advantage uh maybe teams
+[34:13] are um getting better
+[34:16] breaks on the road
+[34:18] um
+[34:19] maybe crowd noise we weren't entirely
+[34:21] sure uh but we investigated sort of some
+[34:25] key statistics that we can measure um in
+[34:28] general about the team
+[34:30] uh and we looked at whether or not they
+[34:33] have been changing for home and visiting
+[34:36] teams and or they're staying the same
+[34:39] so i mean this is about to show probably
+[34:41] the most key statistic in determining
+[34:43] the outcome of anabolic game point score
+[34:46] uh if you score more points than your
+[34:48] opponent you typically win you always
+[34:51] win actually i misspoke there you always
+[34:53] win so the
+[34:55] we we we looked at points scored by
+[34:57] season and we look at 2006
+[35:00] and we compared to 2019 this gap is
+[35:02] shrinking um both teams are maybe
+[35:04] scoring a little bit more points
+[35:06] but the
+[35:08] the the visiting team the home team is
+[35:10] kind of flattening out the whole
+[35:11] visiting team is catching up
+[35:13] so
+[35:14] um
+[35:16] yeah maybe to speak more to the graph
+[35:18] and maybe jump right into it each dot
+[35:20] here
+[35:21] represents um a season and a week
+[35:25] and each and the y-axis is is points per
+[35:28] game so for example in 2006 week two the
+[35:31] home team on average scored
+[35:34] around 26 points per game and these
+[35:37] these trend lines they're sort of best
+[35:38] fit lines they're average lines they're
+[35:40] smooth airlines um just trying to pick
+[35:43] up
+[35:44] on average what does it kind of look
+[35:46] like
+[35:46] and
+[35:47] um this this line that's sort of the
+[35:49] average visitor score when we go across
+[35:52] season and weeks it's meeting up with
+[35:54] this line that's the average home score
+[35:57] going across season in weeks
+[35:59] and it it's about the same by the end
+[36:03] um and it's interesting
+[36:05] uh so
+[36:07] that that's that's kind of a pretty
+[36:10] easy way to think about it um another
+[36:12] thing we thought about is penalties or
+[36:14] maybe penalties changing
+[36:16] and there are some penalties um
+[36:19] such as offensive holding and this graph
+[36:21] works exactly the same each dot is um
+[36:26] each dot represents a season and week
+[36:28] um and the average for that season and
+[36:30] week in terms of fouls committed per
+[36:31] game
+[36:32] um and the what x axis is season week y
+[36:35] axis is the fouls so
+[36:38] we thought maybe penalties and some some
+[36:40] sort of in-play penalties such as
+[36:42] offensive holding defensive holding
+[36:44] these are pretty common penalties
+[36:46] these lines look pretty much the same
+[36:48] the difference between them seem the
+[36:49] same there isn't really a change like oh
+[36:51] now
+[36:52] visiting teams aren't committing
+[36:54] offensive holding or something like that
+[36:55] that's not really the case
+[36:57] during these in-game penalties or
+[36:59] in-play penalties but the pre-snap
+[37:02] penalties we're definitely seeing
+[37:03] visiting teams
+[37:05] performing better doing doing better or
+[37:08] maybe even just getting the home team to
+[37:10] to commit them more often so
+[37:13] when we look at neutral zone infraction
+[37:14] we see this big gap between neutrals on
+[37:17] infraction of the home team and the
+[37:18] visiting team visiting teams are
+[37:19] committed a lot more often but by 2019
+[37:22] by the end of our data set it's about
+[37:24] the same and same with delay of game and
+[37:26] these are both these are penalties that
+[37:28] maybe have to do with
+[37:31] cadence and maybe have to do with um
+[37:35] different
+[37:37] uh
+[37:38] like the quarterbacks trying to get
+[37:41] uh the defenders to jump or
+[37:43] uh crowd noise or something like that
+[37:45] the the the
+[37:46] visiting teams are catching up to the
+[37:48] home teams in terms of that which is
+[37:50] really interesting
+[37:53] um
+[37:54] so
+[37:55] that's kind of what we we
+[37:56] are attributing to now i mean there's
+[37:59] probably a bunch of explanations um on
+[38:01] why home advantage is shrinking um
+[38:05] but uh
+[38:06] these are the two ones that i really
+[38:08] wanted to highlight uh that um
+[38:11] they're clear and they make a whole lot
+[38:13] of sense
+[38:15] all right so
+[38:17] this is my summary
+[38:19] um
+[38:20] home advantage is nearly down at full
+[38:22] point since 2006 which is pretty
+[38:24] incredible
+[38:25] um
+[38:26] fine short rest are worth about point
+[38:28] six seven point three six points so
+[38:29] they're not nothing so if a team wants
+[38:32] to complain
+[38:33] that maybe they're um that they
+[38:36] had they had to play prime time windows
+[38:39] um
+[38:40] we we can have that discussion simply
+[38:42] because now we know okay this is how
+[38:44] much they're worth this is maybe how it
+[38:46] had like the effect in general might
+[38:48] have had on on your team across
+[38:51] schedules
+[38:52] uh you can actually sort of discuss that
+[38:54] with numbers rather than
+[38:56] sort of arguing oh this is this is
+[38:59] really important this is not really
+[39:00] important we actually know a numeric way
+[39:02] to measure how important it's been
+[39:05] and finally
+[39:06] uh travel distance
+[39:08] is um a lot more significant than time
+[39:11] zone
+[39:12] um so so that's kind of what we found uh
+[39:15] the the next steps that we're definitely
+[39:17] gonna be looking at i'm guessing i might
+[39:19] get some questions about this maybe not
+[39:20] but next steps um is we'll we obviously
+[39:24] we know we're in a pretty unique season
+[39:25] uh we're gonna have the opportunity to
+[39:27] measure the value of fans how much do um
+[39:30] crowds
+[39:31] affect outcome of games
+[39:33] unfortunately i i actually i tried i
+[39:36] wanted to have something interesting for
+[39:37] it for this presentation unfortunately
+[39:39] it's really difficult as a lot of you
+[39:42] statisticians and data scientists will
+[39:43] know to make a inclusive point
+[39:47] using only
+[39:50] 63 games i guess they're 64 considering
+[39:53] the thursday night game but only using
+[39:54] 64 games 64
+[39:57] data points
+[39:58] um where we might have unusual um crowd
+[40:02] conditions so right now we don't really
+[40:05] have a strong or a good answer on why
+[40:07] that might be the case but hopefully um
+[40:09] in the 2020 offseason or maybe
+[40:11] mid-season once we just have a few more
+[40:14] games under our belt
+[40:16] we can go ahead and make a
+[40:18] conclusion
+[40:20] and and find something interesting in
+[40:21] regards to that so with that i want to
+[40:24] say thank you thank thanks for for
+[40:26] listening and i'm more than happy to
+[40:28] answer any questions
+[40:48] okay so there are no questions or am i
+[40:50] supposed to read them somewhere
+[40:54] um
+[40:55] greg will be your chair let me
+[40:58] uh
+[41:00] well there is some question in the q and
+[41:02] a window would you like to address them
+[41:05] sure
+[41:06] let's see if i can pull that up
+[41:09] i can't see it oh this is annoying i
+[41:11] can't see it unless i
+[41:13] uh
+[41:16] i think i can't see it unless i stop
+[41:18] sharing my screen okay uh let me um greg
+[41:22] will greg will relay the question to you
+[41:25] that sounds good
+[41:27] great okay okay here
+[41:29] i was muted i got i got uh
+[41:32] internet our internet decided to stop
+[41:34] working halfway through the talk
+[41:36] um
+[41:37] so i got kicked out and i am back now um
+[41:40] my name is greg matthews um i i just
+[41:43] want to introduce myself really quickly
+[41:45] um i'm a uh i'm actually a uconn alum i
+[41:48] did my phd there
+[41:49] um i actually had uh
+[41:52] dr yan was my professor for mathematical
+[41:54] statistics uh both for first and second
+[41:57] semester um and now i'm an associate
+[41:59] professor of statistics at loyola
+[42:01] university of chicago
+[42:02] uh and i live in the best city in
+[42:04] america chicago um
+[42:07] so uh let's let's start with some
+[42:08] questions can i'm gonna go first because
+[42:10] i'm the i get to i have that power so um
+[42:14] tom i was
+[42:15] in those in those plots you showed about
+[42:16] penalties it looks like there's a big
+[42:18] increase in around 2012 or 2013.
+[42:22] um
+[42:23] look if you look at delay of gay or um
+[42:25] defensive holding and neutral zone
+[42:26] infraction it looks like there's there's
+[42:29] this increase is happening sort of at
+[42:30] the same time around 2012 2013. was
+[42:33] there some league-wide um
+[42:36] was there some rules changes that
+[42:38] happened or was there some mandate from
+[42:39] the league to call these penalties more
+[42:41] uh around that time can you talk about
+[42:43] that a little
+[42:44] so so it's a combination yes up so to
+[42:46] answer your question yes but it's a
+[42:48] combination of a few things
+[42:49] one um neutral zone infractions in
+[42:52] particular we we're calling more neutral
+[42:54] zone infractions in the league uh
+[42:56] partially for quarterback safety i don't
+[42:58] know if you guys maybe remember in 2010
+[43:01] you can picture aaron rodgers
+[43:03] drawing players offside and then
+[43:05] throwing it deep that's not as often
+[43:08] anymore they're blown dead typically
+[43:10] unless
+[43:11] um so so defenders won't get a free shot
+[43:13] at the quarterback um defensive holding
+[43:16] i think there's just been more of a
+[43:18] sort of focus on making sure those are
+[43:20] called correctly so that's part of the
+[43:22] reason why but another big reason is
+[43:24] we're seeing a lot more plays per game
+[43:25] the the the league has become used to be
+[43:27] more of a running league now it's more
+[43:29] of a passing league which is good in my
+[43:31] opinion but the with more passing
+[43:34] there's gonna be more incomplete passes
+[43:35] more time stoppages and then also more
+[43:37] scoring um so there's gonna be more
+[43:39] plays per game and teams are also
+[43:41] snapping at um with more time on the
+[43:43] play clock they're not just trying to
+[43:45] play possession football so with more
+[43:46] plays you're gonna get more penalties
+[43:49] because there's just more opportunities
+[43:50] to commit
+[43:52] okay um
+[43:55] here's a question from i'm trying to i'm
+[43:57] trying to do this in order um
+[43:59] they're coming up in a strange order
+[44:01] here let's see if we can go back to find
+[44:03] the earliest one all right here's here's
+[44:04] a question from zach binkley uh hi how
+[44:08] are you considering nutritional science
+[44:10] into this individual nutrition plays a
+[44:11] role in recovery along with travel is
+[44:13] that something you're considering at all
+[44:16] hi um so
+[44:18] that is not something we're considering
+[44:20] uh one thing about that is
+[44:23] i guess the way we might consider that
+[44:26] is we i don't we don't have measurements
+[44:28] of how good or how teams are doing
+[44:30] nutritional science
+[44:32] we could possibly maybe have a a team
+[44:34] specific rest advantage maybe some teams
+[44:37] because they are good at nutritional
+[44:39] science um they they have some sort of
+[44:42] bonus rest advantage or some less
+[44:44] recipient maybe they're not good at
+[44:45] nutritional science
+[44:46] the issue with that is that just creates
+[44:48] very small sample sizes and it's it's
+[44:50] impossible to know like does this team
+[44:53] have the same nutritional sciences
+[44:54] scientists from five years ago are they
+[44:56] changing i mean
+[44:58] we actually maybe at the league we have
+[44:59] that written down somewhere but it would
+[45:02] really
+[45:03] shrink the sample sizes most teams will
+[45:05] only have
+[45:07] four
+[45:07] five max
+[45:09] sort of rest advantages or disadvantages
+[45:11] per season
+[45:12] um it really wouldn't make sense for us
+[45:15] to even i mean using just rest across
+[45:17] all seasons i think we we have enough
+[45:19] but to have to drink it specific to team
+[45:21] i don't think that would really work and
+[45:23] yeah we don't have a measurement of
+[45:25] teams uh strength and nutritional
+[45:27] science and maybe if we did we could
+[45:29] incorporate it
+[45:30] thank you all right this is a question
+[45:32] uh from trevor anderson your first view
+[45:34] is mr bliss which means you're old now
+[45:36] um
+[45:37] do you think that postponing of games
+[45:39] due to covet tests for example the the
+[45:41] bills game on tuesday now can affect the
+[45:43] players and do you think that playing an
+[45:45] abnormal uh playing on an abnormal game
+[45:47] day will affect the players at all
+[45:50] yeah those are great questions um so i
+[45:53] mean i i i don't know i won't i'm not
+[45:54] sure about conditions specific to covet
+[45:56] we haven't really analyzed this season
+[45:59] but in terms of the fact just
+[46:01] a team plane on a tuesday absolutely i
+[46:04] mean we found
+[46:05] that rest advantages do matter and i
+[46:08] believe the the bills are playing on
+[46:09] tuesday and they're playing the chiefs
+[46:10] on on saturday or sunday the following
+[46:12] week that is a big
+[46:16] uh that's a disadvantage to the bills
+[46:18] um
+[46:19] and who are the bill the bills are
+[46:21] playing the titans the titans haven't
+[46:22] played in a few weeks they have
+[46:24] basically have a better buy advantage
+[46:26] that also is a disadvantage to this so
+[46:28] absolutely um playing on those abnormal
+[46:31] times will affect in terms of rest
+[46:33] advantage we don't have that much data
+[46:36] in terms of like this tuesday night
+[46:38] football matter
+[46:39] just because i think there's only been
+[46:41] one tuesday night game since within our
+[46:43] data center one in 2010 like eagles
+[46:45] vikings but that because they're so
+[46:47] uncommon i can't really speak to tuesday
+[46:49] night in specific
+[46:50] specific
+[46:51] but
+[46:53] i do think that there are going to be
+[46:55] some rest advantage and disadvantages
+[46:56] felt by the bills chiefs and titans
+[47:00] thank you um this is from this is
+[47:02] another question from alex alexander
+[47:04] harriman um and they are this is an
+[47:06] undergraduate at clemson university and
+[47:08] uh i hear they have a they have a
+[47:10] football team down there um
+[47:12] he's wondering uh i was wondering how
+[47:14] you decided on the style of model you
+[47:16] chose for your study
+[47:18] yeah i actually have a slide in the
+[47:21] appendix about that so
+[47:23] um this is i didn't want to get too into
+[47:25] it during the presentation it's a bit
+[47:26] mathy but
+[47:28] um we wanted to use the gibbs sampling
+[47:30] model for for three key reasons
+[47:32] uh one it allows for week to week season
+[47:35] to season interaction of team strength
+[47:37] so
+[47:38] those data scientists out there i mean
+[47:41] even think about linear regression
+[47:42] you're supposed to have independence of
+[47:44] each sort of row each row is not
+[47:46] supposed to affect each other however in
+[47:48] our case we know that
+[47:50] the
+[47:51] 2019 week one chiefs
+[47:53] have an interaction with the 2019 week
+[47:55] two chiefs which have an interaction
+[47:56] with the 2019 week three chiefs and also
+[47:58] the 2018 chiefs in general of
+[48:00] interaction with the 2019 chiefs they're
+[48:02] not you're not putting on a totally
+[48:03] different football team with new coaches
+[48:05] and new players each week there
+[48:07] there's interaction although they're not
+[48:08] exactly the same so that that's one
+[48:10] reason
+[48:11] um another reason is we have
+[48:13] a bunch of probability distributions for
+[48:15] each variable they have different
+[48:17] probability distributions um i can get
+[48:19] deeper into that if people want but
+[48:22] we have their their joint conditional
+[48:24] probability distributions
+[48:26] um i don't i could i don't want to do a
+[48:29] full lecture on that and maybe not even
+[48:30] the most equipped person to do that but
+[48:33] because of that that's another advantage
+[48:35] um and in the general process of this is
+[48:37] where
+[48:38] it's like coordinate ascent coordinate
+[48:40] this descent expectation maximization if
+[48:43] you happen to know any of those
+[48:44] we're sort of allowing one bit we're
+[48:46] sampling from one variable then learning
+[48:48] from it and sampling from another and
+[48:49] then learning form and they're the
+[48:51] variables are sort of working together
+[48:52] and adjusting together and um for that
+[48:55] reason it worked out really well better
+[48:57] than like a simple linear model or even
+[49:00] a tree based model
+[49:02] thank you um this is a really
+[49:04] interesting question this is from uh
+[49:05] celine eunal um
+[49:08] and they say i i'm wondering about the
+[49:10] transformation of the difference in days
+[49:12] of rest into a categorical variable in
+[49:14] soccer there is this idea that too much
+[49:16] rest is a problem as no training can
+[49:18] truly replace competitive games so i
+[49:21] think the question here is about how
+[49:23] um
+[49:24] i believe the way you've included
+[49:26] um the way you've included your rest
+[49:29] variable and you're not you're not
+[49:31] um you're not
+[49:32] i don't think you'll allow for the rest
+[49:35] to ever get worse
+[49:36] in terms it'll always be like the more
+[49:38] rest you get the better off you are um
+[49:40] and if you
+[49:41] convert it to a categorical variable you
+[49:43] would be allowing for maybe a point
+[49:45] where after that it's too much rest
+[49:47] um do you want to talk about that a
+[49:49] little bit yeah yeah yeah so i mean so
+[49:51] so maybe the rest is treated as a
+[49:54] categorical variable
+[49:56] i mean and and then part of it was we
+[49:59] i i didn't instruct i didn't tell the
+[50:01] model okay this has to be positive this
+[50:03] has to be negative i let the model
+[50:05] figure it out and the model found that
+[50:06] it was positive
+[50:08] i i absolutely would agree if you have
+[50:10] too much rest that probably is a
+[50:11] disadvantage and i'm sure that exists in
+[50:13] football however during the regular
+[50:15] season there isn't a situation where
+[50:17] it's more than seven or eight days
+[50:19] um so because of that we feel that
+[50:22] um it like it probably wouldn't be an
+[50:26] issue
+[50:27] based on our measurements we are in our
+[50:29] estimates we found that
+[50:31] it that's not the case um i i agree that
+[50:33] in principle that probably is the case
+[50:35] at a certain point but uh we don't
+[50:37] really have data where that would
+[50:38] suggest that
+[50:42] okay oh there was there was follow-ups
+[50:44] that i didn't well let me ask this other
+[50:46] question uh this is from mike templeton
+[50:48] um how did your data take into account
+[50:50] when teams that stayed out in in west
+[50:52] coast if they played two weeks
+[50:55] it played the rams and the chargers back
+[50:57] to back and they stayed out on the west
+[50:59] coast so it might look like there's
+[51:00] travel but there there wasn't actually
+[51:02] you account for that
+[51:03] that's a really good point no we did not
+[51:05] account for that um
+[51:07] we would ideally we would like to it
+[51:10] just would be
+[51:11] it was we don't have that data
+[51:14] present um maybe we should but it we
+[51:17] couldn't figure out um yeah we just we
+[51:20] it would have been too much it would
+[51:21] have just been a bunch of googling and
+[51:23] figuring out what actual team schedules
+[51:25] are and it just didn't really seem to
+[51:28] be worth the time
+[51:29] of doing that
+[51:31] it's not particularly
+[51:32] common you'd have to play two visiting
+[51:35] teams sort of back to back
+[51:37] uh
+[51:39] that are nearby each other
+[51:42] that's a good question though
+[51:44] okay
+[51:45] um
+[51:47] i think i butchered celine's question
+[51:48] i'm gonna try to ask this again because
+[51:50] i didn't read the
+[51:51] uh the rest of this um
+[51:55] so the the like the follow-up was uh do
+[51:58] you think information is lost by
+[51:59] transforming the rest days first into a
+[52:01] difference then into a categorical
+[52:02] variable so maybe rest days being 3
+[52:05] versus 6 is different than 12 versus 15
+[52:08] or it might even be that rest days being
+[52:10] six
+[52:16] yes versus
+[52:18] i think that's a different question than
+[52:19] i was originally asking does that make
+[52:21] sense though yeah yeah that does make
+[52:23] sense that's a that that's a really good
+[52:24] question so we did try it linearly
+[52:27] difference of rest stays linearly uh but
+[52:30] that is a good point i mean maybe
+[52:33] maybe that maybe it's almost like each
+[52:35] of like
+[52:36] it's not like a linear maybe difference
+[52:38] isn't the best way to think about it um
+[52:40] that's definitely something we can
+[52:42] explore so i really like that idea uh
+[52:44] but we did try difference linearly
+[52:47] um
+[52:48] the difficulty though and unfortunately
+[52:51] is in terms of doing like three versus
+[52:53] six might be different than
+[52:55] like four versus seven
+[52:57] uh different difficulties the sample
+[52:59] size is a little bit
+[53:01] smaller the sample size is not that big
+[53:04] to begin with
+[53:05] um and that again would sort of be an
+[53:06] issue or would be shrinking the sample
+[53:07] size but i would agree in general that
+[53:09] that could have
+[53:11] an effect uh different and i think
+[53:14] that's a really good point
+[53:17] thank you tom here's there's
+[53:19] we got a i think about eight eight
+[53:20] minutes left for questions seven minutes
+[53:21] left for questions tom and i'm just
+[53:22] gonna keep i'm just gonna keep asking
+[53:24] them
+[53:26] yeah this is a question a question from
+[53:28] chris schwarm um i'm not sure if you
+[53:30] keep data on crowd volume but do you see
+[53:32] larger amounts of delay of gain slash
+[53:34] neutral zone infractions in favor of the
+[53:36] home team and stadiums that are like uh
+[53:38] considered to be louder
+[53:40] um
+[53:42] i would have met i think not so so we've
+[53:45] done that analysis before
+[53:47] i i believe the answer is yes uh don't
+[53:50] quote me on that uh i'd necessarily do
+[53:52] this analysis do that analysis for this
+[53:54] um but i i definitely think that would
+[53:58] be the case i can i can double check
+[54:00] that uh but yeah i i mean
+[54:02] there definitely is an interaction
+[54:04] between crowd noise and um delay of game
+[54:08] uh i didn't measure it for this however
+[54:10] um
+[54:11] yeah
+[54:13] thank you uh this is a question from
+[54:14] jeremiah alago i'm a little curious
+[54:17] about the effect of weather on these
+[54:18] games have you conducted uh have you
+[54:20] had do you have data on the difference
+[54:22] of indoor or outdoor stadiums or how
+[54:24] severe weather conditions might benefit
+[54:26] a team that is more used to them so like
+[54:28] if if you're a dome team and you go and
+[54:29] travel and you go play at lambo in
+[54:31] january
+[54:32] um
+[54:34] have you considered that kind of effect
+[54:35] at all
+[54:36] yes yes we have uh we we tried using
+[54:39] adding weather um as an effect we didn't
+[54:42] find we didn't do it too deeply uh we we
+[54:45] just tried adding it um
+[54:48] i think i think what maybe we had like
+[54:49] condition or temperature it wasn't that
+[54:52] deep of an analysis
+[54:54] part of it was we're not actually that
+[54:56] interested in whether or not the weather
+[54:59] we don't care about the magnitude of
+[55:00] weather i mean the what like
+[55:02] as a league we can control rest travel
+[55:04] home we can control those sort of
+[55:06] advantages
+[55:07] i have no control whether it's going to
+[55:09] be snowy in lambeau in january uh that
+[55:13] that is not something i can do
+[55:15] so in a way it's not even of our
+[55:16] interest but we did sort of briefly look
+[55:19] into it just in case there was a really
+[55:21] strong signal and it's something we're
+[55:23] not accounting for but uh as i recall we
+[55:26] didn't find it strong enough to to keep
+[55:29] it
+[55:31] um this is uh thank you tom this is a i
+[55:34] think this is a really interesting
+[55:35] question um and this shows kind of this
+[55:38] is one of the benefits of living in the
+[55:39] world we're living in right now um this
+[55:41] is a question from amir who is a
+[55:43] master's student in data science from
+[55:45] israel
+[55:46] um
+[55:47] uh so we're like we're all over the
+[55:48] world right now time it's great um
+[55:51] uh it seems you used bayesian inference
+[55:53] so my question is whether you whether
+[55:54] you have tried modeling rest and
+[55:56] distance uh advantage for offense and
+[55:58] defense separately
+[56:00] so
+[56:01] he
+[56:01] they're asking about whether
+[56:03] um
+[56:04] the the the rest could have different
+[56:06] effects on offense and defense it could
+[56:08] be different effects for different units
+[56:11] um and then they also say uh perhaps
+[56:13] using perhaps using the actual score
+[56:15] line
+[56:16] um instead of instead of the uh the
+[56:19] spread
+[56:20] yeah so um
+[56:22] yeah that that last part of the question
+[56:24] was sort of where i was going to go to
+[56:25] just start yeah so we since we want
+[56:28] probability
+[56:29] um and we actually use the money line uh
+[56:31] to get it because that's a little bit
+[56:32] more exact of a probability than a
+[56:34] spread uh but we're only using the
+[56:36] probability we don't actually
+[56:38] did
+[56:39] but we're not going to
+[56:41] score it about home team expected points
+[56:44] allowed by the
+[56:45] vice versa i definitely think that
+[56:47] there's a there's a chance that that
+[56:49] could be the the case
+[56:59] yeah so definitely the um
+[57:03] we i i could definitely see that being
+[57:05] the case and we'd probably have to maybe
+[57:06] we would use a combination of the spread
+[57:08] and the over under
+[57:09] maybe we just used the points scored um
+[57:12] that that that definitely um could have
+[57:14] been affected but that's not something
+[57:15] we've looked into
+[57:18] all right we're having a little bit of a
+[57:19] there's a little bit of a meltdown
+[57:20] happening down the hall right now see
+[57:22] some children um but so here's another
+[57:25] question we have about uh three minutes
+[57:27] left this is from nate rowan uh he says
+[57:30] thank you for the presentation i agree
+[57:31] with that tom um what is the approximate
+[57:34] value of a single point in terms of
+[57:36] implied wind probability
+[57:38] um a single point i think it's around um
+[57:42] maybe it's about one percent let me try
+[57:44] to think
+[57:45] um
+[57:46] i know rest what rest actually it's
+[57:49] probably more than that because i know
+[57:50] remember rest
+[57:51] advantage i think is about one percent
+[57:53] and
+[57:54] um by advantage is about two percent so
+[57:56] maybe point like what one point would be
+[57:59] about three percent i think although
+[58:01] it's not a linear relationship
+[58:03] um
+[58:05] yeah i i i i did have this in terms of
+[58:09] uh percentages at one point but i uh
+[58:11] felt points was better but maybe i could
+[58:13] keep both um for the future
+[58:16] and then home advantage is about seven
+[58:18] or eight percent um so it's probably
+[58:20] about point three three points is about
+[58:22] a percent but again it's not a linear
+[58:24] relationship so it won't work out
+[58:25] perfectly that way
+[58:27] right yeah because you're on you're on
+[58:28] the log out the you're on the log on
+[58:30] scale right yes right so it won't be
+[58:33] you can't just say that
+[58:35] yeah yeah okay
+[58:36] yes
+[58:37] it's linear in the log odds all right
+[58:39] yes when you're on the log scale that's
+[58:41] true that's it uh this is from chrissy
+[58:43] chrissy sybil or cybel uh do you think
+[58:46] the effect of bye weeks will be
+[58:48] different this season since some teams
+[58:50] are having their bye weeks moved for
+[58:51] example i saw the steelers kind of lost
+[58:53] the day of their bye week because they
+[58:54] were still practicing before they knew
+[58:56] it was moved that's an interesting
+[58:58] question that's a really interesting
+[58:59] question um i mean we're well we'll look
+[59:02] into that after the season again we
+[59:04] don't have enough data on that quite yet
+[59:06] but that's definitely something that
+[59:08] we'll we'll look into after the season
+[59:12] okay
+[59:13] that is an interesting question because
+[59:14] you're like you're mentally prepared to
+[59:15] have a bye week this week and then all
+[59:16] of a sudden it's your whole schedule the
+[59:18] whole season has changed no yes
+[59:20] sometimes actually just take the week
+[59:22] off or a lot of the days of the week
+[59:23] after in the bye week and they were
+[59:24] going into practice expecting
+[59:26] so yeah yeah that's that's interesting
+[59:28] um
+[59:29] uh
+[59:30] [Music]
+[59:31] says uh very interesting research any
+[59:34] plan to apply your research in nfl and
+[59:36] future nfl scheduling for even more
+[59:38] balancing
+[59:39] uh between home and away teams for even
+[59:41] more competitive games
+[59:43] yeah i mean so
+[59:45] our group doesn't do the schedule but
+[59:47] our group works with the scheduling team
+[59:49] uh closely and we we give this
+[59:51] information to them and that um and they
+[59:54] do a great job but uh they have it's a
+[59:57] it's a thankless job of making the nfl
+[59:59] schedule because there's networks teams
+[60:02] uh
+[60:04] leagues uh like stadiums all sort of
+[60:07] wanting one thing and
+[60:09] something else wanting another thing but
+[60:11] absolutely we share this information
+[60:13] with them and um they
+[60:15] they do with it what they what they want
+[60:18] thank you uh well then alexander
+[60:20] harriman said we do have a football team
+[60:21] it's been pretty good lately yeah
+[60:22] everyone gets it clemson comes and wins
+[60:24] football games great congratulations
+[60:27] for you okay um
+[60:29] uh this is from billy fryer uh hi my
+[60:32] name is billy fryer i'm an undergraduate
+[60:34] at uh
+[60:36] how did you factor in games on holidays
+[60:37] such as thanksgiving and christmas or
+[60:39] were these treated like normal thursday
+[60:41] games you were treated like normal
+[60:43] thursday games and again i hate to keep
+[60:46] using the same answer
+[60:47] there's only 256 games a season and not
+[60:49] every season we even have um
+[60:53] christmas games
+[60:55] i mean we do have three thanksgiving
+[60:56] games every season maybe i can do
+[60:58] something with that but also another
+[61:00] difficulty with that is the same two two
+[61:02] of the same teams play every year and
+[61:03] they typically play a division rival so
+[61:05] it's a recycling of teams that really
+[61:07] play in those thanksgiving windows
+[61:08] that's one problem with it but yeah we
+[61:11] don't really have a big enough sample
+[61:12] size and again we're not
+[61:14] i mean maybe that would be of interest
+[61:16] maybe if there's a disadvantage i'm
+[61:17] playing on a holiday uh that is
+[61:20] something we'd have to take into account
+[61:21] but
+[61:23] um yeah for now we just treat it as
+[61:24] normal thursday games
+[61:29] i think you're muted greg
+[61:31] oh yes i i am muted because there's
+[61:33] still a uh meltdown happening but you
+[61:36] know when you have four year olds
+[61:37] there's meltdowns every 15 minutes
+[61:39] um i've gone one minute over june's
+[61:42] furious with me he's gonna be so angry
+[61:44] um
+[61:45] we've we're one minute behind on the
+[61:46] schedule so um
+[61:48] i'm gonna stop the questions there um
+[61:51] and i'm going to say thank you tom that
+[61:53] was a great talk uh thank you for
+[61:55] listening yeah and i'm gonna um
+[61:58] i'm gonna pass it back

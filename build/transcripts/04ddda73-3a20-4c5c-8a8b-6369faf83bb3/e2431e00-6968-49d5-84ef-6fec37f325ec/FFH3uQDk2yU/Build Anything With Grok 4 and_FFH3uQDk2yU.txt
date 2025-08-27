@@ -1,0 +1,363 @@
+Video Title: Build Anything With Grok 4 and n8n AI Agents
+Video ID: FFH3uQDk2yU
+URL: https://www.youtube.com/watch?v=FFH3uQDk2yU
+View Count: 64,706
+
+[00:00] Today we're going to be talking about
+[00:01] the world's new best AI model, Gro 4.
+[00:03] We're going to be breaking down what it
+[00:04] is, why it's a big deal. We're going to
+[00:06] look at the benchmarks and compare it to
+[00:07] other models. And then finally, I'm
+[00:08] going to show you guys how to actually
+[00:10] connect it to Nitn to power your AI
+[00:11] agents in your AI automations to make
+[00:13] them even smarter. Also, I got a new
+[00:15] mouse. It's like an ergonomic shape so
+[00:17] it doesn't hurt my wrist. So, pretty
+[00:18] pumped about that. Anyways, don't want
+[00:20] to waste any time. Let's hop straight
+[00:21] into this one. So, on July 9th of 2025,
+[00:23] XAI dropped Gro 4 and today I'm going to
+[00:25] be showing you guys how we can connect
+[00:26] that to our NIDN automations. But before
+[00:29] we hop into Nitn, let's real quick talk
+[00:30] about what is Grock 4 and why this is
+[00:32] such a big deal. So this is the latest
+[00:34] artificial intelligence model from XAI,
+[00:36] which was the company founded by Elon
+[00:37] Musk. It's designed to be smarter,
+[00:39] faster, and more capable than previous
+[00:40] AI models, aiming to outperform
+[00:42] competitors like OpenAI's GBT4 and
+[00:45] Google's Gemini, and Anthropics Cloud,
+[00:47] other close source models like that.
+[00:48] It's a big deal because of these three
+[00:50] main reasons. The first one being size.
+[00:52] Gro 4 has 1.7 trillion parameters, and
+[00:55] you can kind of think of these as brain
+[00:56] cells of the AI. And this makes it one
+[00:58] of the largest and most complex AI
+[01:00] models ever built. We've got GPT4 which
+[01:02] is about 1.8 trillion. And then Gemini
+[01:04] Ultra is around a trillion and Cloud 4
+[01:06] is only around 500 billion. I say only
+[01:08] as if that's small. That's still
+[01:10] massive. And just to put that into
+[01:11] context, if you've watched my video
+[01:12] about how to install a local AI model to
+[01:15] run in Naden, what we did in that one
+[01:17] was like a 1.5 billion parameter
+[01:18] deepseeek. I played around with like 14
+[01:20] billion or 32 billion for very basic
+[01:22] tool calling, but you wouldn't really be
+[01:24] able to run something like 500 billion
+[01:26] parameters on at least my PC that I have
+[01:29] right down here. Anyways, it's insanely
+[01:31] smart. Now, take this with a grain of
+[01:32] salt because this was said by Elon, but
+[01:34] it's described as being better than PhD
+[01:36] level in every subject. And then right
+[01:38] here, we have another quote from Elon.
+[01:39] Grock 4 is smarter than almost all
+[01:41] graduate students in all disciplines
+[01:43] simultaneously. So, we're not going to
+[01:44] dive into the politics of XAI and Elon.
+[01:46] I'm just stating the facts for you guys.
+[01:48] And then we have speed. The model can
+[01:49] handle many tasks at once, making it
+[01:51] useful for both everyday users and large
+[01:53] organizations. And of course, we're
+[01:54] going to hop into NDN and put that to a
+[01:56] quick test with an AI agent. But now,
+[01:58] let's look at some actual benchmarks of
+[01:59] this model because we want to compare it
+[02:01] to other leading closed source models.
+[02:03] So the first one we'll look at is how it
+[02:04] performed on the HLE, which is
+[02:06] humanity's last exam, which is a super
+[02:08] tough test designed with questions of
+[02:09] math, science, and humanities designed
+[02:11] to be hard even for experts. Gro 4
+[02:14] without any tools scored a 25% and with
+[02:16] tools in multi- aent mode scored 44.4%.
+[02:19] And not that I really know what those
+[02:21] percentages really mean, but what we do
+[02:23] know is that it scored higher than
+[02:24] previous top AI models like OpenAI and
+[02:26] Google. And looking at some other
+[02:27] benchmarks over here, anything in orange
+[02:29] is a Gro 4 model. And you can see it's
+[02:31] pretty much outperforming all of these
+[02:33] other ones. We have Gro 4 with no tools.
+[02:35] We have Gro 4 and then we have Gro 4
+[02:37] heavy. And I'll just call out two which
+[02:39] will be first of all the GPQA which is
+[02:41] the graduate level physics and astronomy
+[02:43] questions. It's a test with tough
+[02:45] science questions and Grock 4 scored 87
+[02:47] to 88% which is higher than Google
+[02:49] Gemini's 86% and much higher than
+[02:52] anthropics cloud for opus 79%. And then
+[02:55] we have the AIME which is the American
+[02:57] Invitational Mathematics Examination. A
+[02:59] challenging math test for top high
+[03:00] school students and Grock 4 scored 95
+[03:03] out of 100 better than most humans and
+[03:05] other AI models. And that's really cool
+[03:07] because traditionally we've kind of
+[03:08] known that AI models aren't great at
+[03:10] math, but Gro 4 is excellent at solving
+[03:12] complex math problems step by step. And
+[03:14] it's cool because all AI models are
+[03:15] slowly getting better and better at
+[03:16] math. And then another really cool one
+[03:18] we have is the SWE bench or the software
+[03:21] engineering questions. This is
+[03:23] evaluating real world coding and
+[03:24] software development tasks, which is
+[03:26] something that AI is used for very
+[03:27] heavily right now in the real world. Gro
+[03:29] 4 scored 72 to 75% which is slightly
+[03:32] better than other top AI models. as you
+[03:34] can see down here with this summary
+[03:35] table. But what does all of this mean
+[03:37] and why are people calling this the new
+[03:39] best AI model in the world? Well, it's
+[03:41] going to be used across many industries,
+[03:43] of course, business, healthcare,
+[03:45] education, programming, customer
+[03:47] service, and tons more. And it's a big
+[03:49] deal because Grock 4 is really, really
+[03:51] smart. It can work in teams, that
+[03:53] understands more, and it's going to be
+[03:55] really easy to use. Now, of course,
+[03:56] there are other AI models that
+[03:58] outperform Grock in certain metrics. Um,
+[04:00] we have like context window. Gro 4 only
+[04:02] has 256,000 tokens while other ones have
+[04:05] up to a million or 2 million. It's
+[04:06] definitely not the cheapest model. So
+[04:07] you can get some cheaper ones from
+[04:08] OpenAI and Google, stuff like that. And
+[04:11] there are definitely models that are
+[04:12] actually faster at processing
+[04:13] information. So overall in every single
+[04:15] metric, it's not the best, but it's a
+[04:17] really really strong model. And of
+[04:19] course, why do we want to use this in a
+[04:21] noode workflow builder like NIN? because
+[04:23] we can plug in this AI model into our
+[04:26] existing AI automations to see if it
+[04:28] could make them smarter, better at
+[04:29] analyzing, maybe even do some functions
+[04:31] that we wouldn't have trusted other A
+[04:33] models to do, like analyzing financial
+[04:34] data or something like that. So, tons of
+[04:36] use cases. Excited to see what you guys
+[04:38] come up with using Groc 4. But let's hop
+[04:40] into NN so I can show you guys how to
+[04:42] actually use it, especially if you want
+[04:43] to use it for tool calling. Okay, so
+[04:46] probably the most straightforward way to
+[04:47] use it would be in end you have an AI
+[04:49] agent. You add a chat model and you just
+[04:51] scroll down to grab an XAI Grock chat
+[04:53] model. You would then just need to go to
+[04:55] your admin console in Grock. You could
+[04:57] come here, make an account, add some
+[04:59] billing information, go to API keys
+[05:00] right here and then all you'd have to do
+[05:02] is create a new one and then copy that
+[05:03] API key and add that right here as a new
+[05:06] credential. Then when you open up the
+[05:08] model list, you can see right here we're
+[05:09] able to choose Gro 4 0709 which was July
+[05:13] 9th when it was launched. And then we
+[05:14] can go ahead and talk to Grock. Just
+[05:16] say, "Hello, Grock." And we can see that
+[05:18] it's going to use its chat brain right
+[05:19] here. And it's using Grock 4 in order to
+[05:22] respond to us. Hello, I'm Grock, built
+[05:24] by XAI. What's on your mind today? So,
+[05:26] let's say I wanted to add a quick tool
+[05:27] to do some research. And we add a
+[05:28] perplexity tool. All I'm going to do
+[05:30] real quick in here is change this to
+[05:32] sonar. I'm going to make the model
+[05:33] choose the actual message to send over.
+[05:35] And if you want to watch a deeper dive
+[05:36] on a video about perplexity, I'll tag
+[05:38] that right up here. But this should
+[05:39] already be configured really easily. And
+[05:41] hopefully, I don't even have to prompt
+[05:42] the agent to use it. So, let's give it a
+[05:44] try. So, I'm going to tell it to do some
+[05:45] research on Groc 4. And what we're going
+[05:46] to see happen is that it's thinking
+[05:48] about what to do right now. And it's
+[05:49] going to try to hit that tool. There you
+[05:51] go. You can see that it was successfully
+[05:52] able to call our perplexity tool. And
+[05:54] now it's thinking about how to respond
+[05:55] to us. And it just finished up. You can
+[05:57] see that it actually took about 2
+[05:58] minutes. So, hopefully we have some
+[05:59] pretty in-depth research here, which it
+[06:01] looks like we do. We have a background
+[06:03] and development, key features, release
+[06:05] status and availability, comparisons,
+[06:07] challenges, and criticisms. And we also
+[06:08] have three sources here that we could
+[06:09] click on to. And then we have another
+[06:11] source right there. And keep in mind
+[06:12] there is no system prompt that happened
+[06:13] in the agent. Let's look at another
+[06:15] example where we're going to use Gro 4
+[06:16] with our ultimate assistant to do
+[06:18] research using both Tavi and Perplexity
+[06:21] in order to once again look up Groc 4
+[06:22] and send it as an email to Dexter
+[06:24] Morgan. So there's a lot of moving
+[06:26] pieces here and a lot of things that
+[06:27] have to happen. And the issue that we
+[06:28] run into here is that we get this failed
+[06:30] to parse tool arguments from chat model
+[06:32] error message. And if I throw that into
+[06:34] Jaggbt because I don't exactly know what
+[06:36] this means, it basically tells us that
+[06:37] the AI model which is grock for returned
+[06:39] a response to call the tool that wasn't
+[06:42] valid JSON and then the NADN which is
+[06:44] kind of built on top of lang chain
+[06:45] couldn't parse it and send it into our
+[06:47] tool. And the issue I think is because
+[06:49] of the Tavly HTTP request because we
+[06:51] just saw gro use perplexity where if I
+[06:53] click into here you can see that we're
+[06:54] sending over a JSON body. So maybe the
+[06:57] model is having trouble with that. So
+[06:58] what I thought to do was come into the
+[07:00] chat model right here and then basically
+[07:02] add a response format and then send this
+[07:04] over as JSON which should guarantee that
+[07:06] the message the model generates is valid
+[07:08] JSON. So I throw that in there and then
+[07:09] it says we have to include JSON in the
+[07:11] prompt. So I come into the system prompt
+[07:13] of the ultimate assistant and then in
+[07:14] the tools section I say hey send JSON
+[07:17] over to the tools. And now if I want to
+[07:18] try to send this exact query once again
+[07:21] we'll see what happens. And what happens
+[07:22] this time is we don't get an error but
+[07:24] it still wasn't able to use those tools.
+[07:25] So, what I'm going to do here is instead
+[07:27] of using Grock, I'm just going to use
+[07:28] Open Router to connect to Grock 4 as
+[07:30] well. And I like to do this either way
+[07:32] because now I have one spot for my
+[07:34] billing information and only one spot to
+[07:36] manage as far as like topping up credits
+[07:38] and checking out my analytics. And so,
+[07:39] all you'd have to do here is go to open
+[07:41] router.ai. You would sign up. You would
+[07:43] go to models and you can see right here
+[07:44] that we have Grock 4 as a model. This is
+[07:47] also where you can understand its
+[07:48] context window, its input, output token,
+[07:50] price, and other stuff like that. And
+[07:52] then all I have to do is come into here,
+[07:53] go to my keys, create a new one, and
+[07:55] then plug that key into my end open
+[07:58] router credential. And now that we have
+[08:00] open router hooked up to Grock 4, I'm
+[08:01] going to send off this message that says
+[08:03] do research using perplexity and tavly
+[08:05] on the new Gro 4 AI model, then send the
+[08:07] results as an email to Dexter Morgan. So
+[08:10] there's lots of things that have to
+[08:11] happen. It has to do research here.
+[08:12] Here, it has to get Dexter Morgan's
+[08:14] contact info and send the final copy to
+[08:17] him. So we'll see how it performs. Okay,
+[08:20] there you go. Now it's calling those
+[08:21] tools, Tavi, Replexity, contact agent,
+[08:23] and then it's going to go ahead and send
+[08:24] that email. Now you can see it's calling
+[08:26] that email agent. All right, so this
+[08:28] just finished up and I'm going to hop
+[08:29] over to my email and go to the sent
+[08:30] folder and you can see this is the email
+[08:32] we just got that was sent to
+[08:33] dextermiami.com.
+[08:35] We have a ton of research right here
+[08:36] from Perplexity and you can see that
+[08:38] there are five sources down here. And
+[08:40] then we also have a short summary from
+[08:41] Tavi with three sources. It even says
+[08:44] that the Tavi results seem to focus more
+[08:45] on recent updates to existing Grock
+[08:47] versions rather than Grock 4. So, this
+[08:50] information kind of conflicts with
+[08:51] perplexities, which is why it was great
+[08:53] that we did two sources. But something I
+[08:55] want to call out here is that this run
+[08:57] took five minutes and it actually took
+[08:59] like three minutes before it even
+[09:00] decided to call any tools to start with.
+[09:02] And this is really interesting because
+[09:03] if I go to my executions and I scroll
+[09:05] down, we can see this one right here
+[09:07] that took a minute and 40 seconds. I
+[09:09] actually sent the exact same query just
+[09:11] to test this out where I asked it to do
+[09:12] research for using perplexity and tavly
+[09:14] on Grock 4 and then send it as an email
+[09:16] to Dexter Morgan. So, same query, but
+[09:18] the one that I just showed you guys live
+[09:19] took almost three times as long. So,
+[09:21] what this is telling me is that, you
+[09:23] know, Gro 4 is new. Everyone is kind of
+[09:25] just spamming the servers. And so,
+[09:26] depending on the time of day and
+[09:27] depending on how many requests Grock 4
+[09:29] is getting at the moment, it may vary
+[09:32] your speed. And also, if we come here
+[09:34] and look at the cost, you can see that
+[09:35] this run that we just did, it costed us
+[09:38] about 12 cents. And that's because we're
+[09:40] passing a lot of tokens over because
+[09:42] we're doing research with Perplexity and
+[09:44] Tavi. So all of that information is
+[09:45] being sent back to the Grock model to be
+[09:47] processed. It's definitely not the
+[09:49] cheapest model and you can see that it's
+[09:50] not insanely quick, but I really like
+[09:52] the way that it reasoned and the way
+[09:53] that it basically structured its
+[09:55] outputs. And you could easily process
+[09:57] these things differently with a
+[09:58] different model and then send that
+[09:59] summary to Grock to be processed
+[10:01] further. And that's a way you could cut
+[10:03] down your costs and save some tokens. If
+[10:05] you're looking to take your learning
+[10:05] with Noden deeper, learn about some
+[10:07] context engineering strategies like
+[10:08] this, saving tokens like that, then
+[10:11] definitely check out my paid community.
+[10:12] The link for that is down in the
+[10:13] description. It's a great place to
+[10:15] surround yourself with like-minded
+[10:16] individuals using NINDN every day. And
+[10:18] of course, we have a classroom section
+[10:19] where you can learn the foundations and
+[10:20] also how to identify, design, and build
+[10:23] time-saving automations. So, if you
+[10:24] enjoyed the video or you learned
+[10:25] something new, please give it a like.
+[10:26] Definitely helps me out a ton. And as
+[10:28] always, I appreciate you guys making it
+[10:29] to the end of the video. I'll see you on
+[10:31] the next one. Thanks everyone.

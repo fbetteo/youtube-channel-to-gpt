@@ -1,0 +1,907 @@
+Video Title: I Built a YT Strategist AI Agent That Makes Me $6k/mo (free template n8n)
+Video ID: Ch-AWxvX2Jc
+URL: https://www.youtube.com/watch?v=Ch-AWxvX2Jc
+View Count: 37,624
+
+[00:00] Today I'm going to be showing you guys
+[00:01] this AI system that I built that I
+[00:02] actually use every single day. It
+[00:04] essentially acts as my YouTube
+[00:05] strategist and it's been helping me grow
+[00:07] my channel and consistently bring in
+[00:08] over $6,000 a month from YouTube. As
+[00:11] always, I'm giving you all the resources
+[00:12] that you need to set the system up
+[00:14] completely for free. So, by the end of
+[00:15] this video, you'll have this exact
+[00:16] system running for you as a YouTube
+[00:18] strategist. So, let's go ahead and do a
+[00:19] live demo. I'm going to run the system.
+[00:21] We'll take a look at the results and
+[00:22] then we'll break down every single node
+[00:23] so that you guys can see how I built
+[00:25] this thing. So, we basically have five
+[00:26] different phases here. So, let's start
+[00:28] with phase one, which is niche outliers.
+[00:30] The idea here is that you pop up this
+[00:31] form submission, and you're prompted to
+[00:33] enter in three YouTube channels that are
+[00:34] in your niche. So, right here, you can
+[00:36] see I put in Nick Surve, RoboNuggets,
+[00:38] and Simon Scrapes. Keep killing it,
+[00:39] guys. I'm going to hit submit, and then
+[00:41] we're going to watch this first phase
+[00:42] kick off. And right now, what it's going
+[00:44] to do is it's going to take all three of
+[00:45] those channels. It's going to go look at
+[00:47] their outliers, so their best performing
+[00:49] videos over the past 6 months. It's
+[00:50] going to grab those top 10 and then
+[00:52] analyze their titles and their
+[00:54] thumbnails. And then we're going to get
+[00:55] all of that data for us in a Google
+[00:57] sheet. So, as you can see right now,
+[00:58] it's working on scraping videos from
+[00:59] Nick's channel. And then it's going to
+[01:00] loop through and do RoboNuggets, then
+[01:02] Simon. So, I'll check back in with you
+[01:03] guys when this first phase is complete.
+[01:05] All right, we're on that third batch
+[01:07] right now of the loop. And you can see
+[01:08] it's analyzing these 10 titles. Then
+[01:10] it's going to go down and analyze the
+[01:11] thumbnails and then we'll have our
+[01:13] finished results. All right, there we
+[01:14] go. Just finished up and we're writing
+[01:16] back to Google Sheets. So, I'm going to
+[01:17] hop over to that tab and we'll take a
+[01:18] look. Okay, here we are on the first tab
+[01:20] of this Google sheet, which is the niche
+[01:22] outliers. So, as you can see, the first
+[01:23] channel we looked at was Nick Surv. And
+[01:25] we can see that we have his 10 best
+[01:27] performing videos from the past 6
+[01:28] months. And the data that we get about
+[01:30] each of these videos is the title, the
+[01:32] URL, the thumbnail, the views, the
+[01:34] likes, and then here's where our AI
+[01:35] analysis comes into play. So, one of the
+[01:37] most important things about YouTube is
+[01:38] the title and the thumbnail, which is
+[01:40] the packaging. So, what we have that
+[01:42] first AI agent do is look at the title
+[01:43] and pull out the power words that were
+[01:45] used in the title. Once we break down
+[01:47] the build, I'll show you guys how I
+[01:48] prompted it. But basically, you can see
+[01:49] it's pulling out certain words that are
+[01:50] grabbing attention or making some sort
+[01:52] of promise. Like right here, we have
+[01:54] full course 6 hours, build and sell AI
+[01:56] automations. We have start and sell AI
+[01:58] service 10 hours, boring AI automations
+[02:01] 1.5K each, 2025, stuff like that. So,
+[02:04] the idea of this first sheet is that you
+[02:05] can go ahead and look at other channels
+[02:07] in your niche that are doing well. You
+[02:08] can look at their best performing videos
+[02:10] and you can see different things in
+[02:11] their titles, different patterns that
+[02:13] are probably leading to their videos
+[02:14] performing well. And then you can start
+[02:15] to think, how can I make titles with my
+[02:17] niche and my content that work into
+[02:19] these patterns? So then of course, here
+[02:20] are all of RoboNuggets top performing
+[02:22] videos from the past six months. And
+[02:23] then the same thing down here with
+[02:25] Simon. And then we move on to the second
+[02:26] part of packaging, which is thumbnail
+[02:28] analysis. For example, this first one,
+[02:30] it grabs attention and encourages clicks
+[02:32] because the bold text says full a
+[02:34] automation course. It's large, it's high
+[02:36] contrast, and it immediately shows the
+[02:37] viewers the value that they'll get out
+[02:38] of the video. And then we can go ahead
+[02:40] and click into this link right here, and
+[02:41] it will pull up the actual thumbnail
+[02:43] that was used for the video. But the
+[02:44] idea here is once again analyze the
+[02:46] packaging that's working well for your
+[02:48] niche and then see how you can customize
+[02:50] it to fit into your videos. All right,
+[02:52] so that's phase one of this workflow,
+[02:54] which was basically a form submission.
+[02:55] So you set that off whenever you want.
+[02:57] Now, the rest of these phases are
+[02:58] automations that go off on a schedule
+[03:00] trigger. So first, let's go look at
+[03:01] phase two, which is one automation in
+[03:03] itself. And this one runs every single
+[03:05] week on Sunday. So I'm going to go ahead
+[03:07] and execute this workflow down here. And
+[03:08] this is basically looking at my broad
+[03:10] niche. So my targeted niche is pretty
+[03:12] clearly NN, but my broader niche is
+[03:14] maybe a automation or artificial
+[03:16] intelligence. So that's what I put right
+[03:18] here in the set node is artificial
+[03:20] intelligence. So now we have another
+[03:22] ampify actor running scraping YouTube.
+[03:24] It basically searched for the word
+[03:26] artificial intelligence and it's going
+[03:27] to do the same thing. Analyze the titles
+[03:29] and analyze the thumbnails. And then
+[03:31] it's going to put that into a Google
+[03:32] sheet for us to take a look at. So
+[03:33] that's finishing up right now. Let me
+[03:35] click back into the Google sheet. We'll
+[03:36] go to the second tab which is broad
+[03:38] niche daily. And here you can see we
+[03:39] just got our broad niche insights. So on
+[03:42] this tab, we're getting basically the
+[03:43] same columns, but these are five videos
+[03:45] that are in our broader niche and it's
+[03:47] going to run every single week. And the
+[03:48] idea here is that you don't want to get
+[03:50] caught in the bubble of your niche and
+[03:51] only looking and analyzing other people
+[03:53] in your niche because packaging that
+[03:55] works on YouTube, even if it's really
+[03:56] general, can be basically narrowed down
+[03:58] to your niche and applied to your
+[04:00] videos. So here we can see some power
+[04:02] words like AI in the future workforce
+[04:04] impact jobs artificial intelligence lose
+[04:06] it Sam Alman AGI GBT5 stuff like that
+[04:09] and it may not seem super impactful when
+[04:11] we just look at five but as this builds
+[04:13] up you're going to continue to get a
+[04:15] pattern bank of outliers and analyze why
+[04:17] did these videos perform so well why are
+[04:19] they outliers and then of course we get
+[04:20] the analysis over here so this one is
+[04:22] two people deep in conversation and if I
+[04:24] click into it we can see that it is Sam
+[04:26] Alman and someone else deep in
+[04:27] conversation and so even though this may
+[04:29] not really work for my specific speific
+[04:30] niche with like an N-N workflow and me
+[04:32] sitting down, it can still just kind of
+[04:34] help you put yourself in the shoes of a
+[04:36] consumer. Okay, so now we'll move on to
+[04:37] phase 3, four, and five, which are all
+[04:39] linked up together in one workflow. All
+[04:41] three of these phases will run every
+[04:43] single day at 6:00 a.m. So, let me just
+[04:44] go ahead and kick it off. So, what
+[04:46] happens here is now we're looking more
+[04:47] targeted in our niche for insights. So,
+[04:50] right here, I set my niche as NAN. It's
+[04:52] going to go ahead once again, scrape
+[04:53] those YouTube videos from the past week
+[04:55] that are performing really well in our
+[04:56] niche, analyze the titles, and analyze
+[04:58] the thumbnails. And then we get that
+[05:00] data back and then we move into phase
+[05:02] four and five which are a little bit
+[05:03] more tailored towards us specifically.
+[05:05] So the first thing that it's going to do
+[05:06] is it's going to actually scrape our own
+[05:08] comments. So right here I set my channel
+[05:10] URL. You can see I put in
+[05:11] youtube.com/nateherk.
+[05:13] And what we have here is another appy
+[05:15] actor that is grabbing our five most
+[05:17] recent uploads. And now that it has
+[05:19] those videos, it's passing in those URLs
+[05:21] to a different actor that's going to go
+[05:22] grab the comments from each of those
+[05:24] YouTube videos. So the idea here is
+[05:26] every single day, this comment analyzer
+[05:28] agent is going to look at all the most
+[05:29] recent comments on our channel. It's
+[05:31] going to analyze them and it's going to
+[05:32] pull out patterns and it's going to put
+[05:33] them into three different buckets. So
+[05:35] things that we're doing good, things
+[05:36] that we're doing bad, and things that
+[05:38] the audience wants more of. So once it's
+[05:40] done analyzing that, it's going to write
+[05:41] it to Sheets and we move on to phase
+[05:42] five, which is ideation. So ideation
+[05:45] basically takes the output from this
+[05:47] phase over here and this phase right
+[05:49] here and it basically is going to give
+[05:50] us some more ideas about how we can
+[05:52] package future videos. So, it looks at
+[05:54] high performing videos in our niche. It
+[05:55] looks at comments of what our audience
+[05:57] is looking for. And then it helps us out
+[05:58] with packaging for three new ideas every
+[06:00] single day. So, let's go over to the
+[06:02] Google sheet and go to the third tab,
+[06:03] which is our niche daily insights. So,
+[06:05] these are the five best performing
+[06:07] videos right now if you went and
+[06:08] searched nen in the past week. And once
+[06:10] again, we're getting the same type of
+[06:11] data as far as title, URL, thumbnail,
+[06:13] views, likes, power words, and thumbnail
+[06:15] analysis. Okay. From there, phase four
+[06:17] is we actually analyze comments. So we
+[06:19] can see that every day we're going to
+[06:20] get one new row and we're going to have
+[06:22] good, bad, and things we need to do. So
+[06:24] one good example is viewers consistently
+[06:26] praise the clear, well explained and
+[06:28] useful tutorial content, especially
+[06:29] around setting up and using end locally
+[06:31] with AI agents. Some negative comments
+[06:33] that I'm getting are users are facing
+[06:35] issues with errors with git commands,
+[06:37] certificate verification failures, JSON
+[06:39] parsing errors, WhatsApp triggers
+[06:40] locally, things like that. And then
+[06:42] finally, some things that the viewers
+[06:44] are looking to see like tutorials on
+[06:46] Reddis, Graphfana, Langchain, Postits,
+[06:49] how to host Nent setup 247 on something
+[06:51] like AWS, EC2, Google Cloud, VPS. And
+[06:54] I'm not saying you have to make a video
+[06:56] to address every single one of these
+[06:57] points. But if you see things popping up
+[06:59] more than just one day, maybe you should
+[07:00] make a video on it. Or if you're unable
+[07:02] to make a video on it, maybe you should
+[07:03] try to learn that topic. All right.
+[07:05] Anyways, the final phase is now the
+[07:06] ideation where every day we're going to
+[07:08] get one new row of three new packaged
+[07:10] videos. So once again, this agent takes
+[07:12] into account things that are performing
+[07:14] well in our niche lately, what the
+[07:16] audience is looking for lately, and then
+[07:17] packages it all together, and it also
+[07:19] looks at the power words and other
+[07:20] thumbnail elements that are doing well.
+[07:22] So we have how to run your edit in
+[07:24] automations 24/7 on AWS EC2, which is
+[07:27] one of the things that the audience just
+[07:28] said that they wanted. And then we have
+[07:29] some inspiration for a thumbnail. We've
+[07:31] got budgeting AI workflows, cut costs,
+[07:33] and avoid V3 API overcharges and end.
+[07:36] And then once again, another inspiration
+[07:38] for a thumbnail. And then finally, we
+[07:39] have secure your end tunnel enro versus
+[07:42] cloudflare with two FA setup and
+[07:44] troubleshooting with another thumbnail
+[07:46] concept right there. So that's how this
+[07:47] whole system works. We have one element
+[07:49] that we can trigger whenever we want. We
+[07:50] have a weekly insight and then we have a
+[07:52] daily insight. Okay, so I'm going to
+[07:53] break down each of these phases and
+[07:55] what's going on within these different
+[07:56] nodes and explain why I built it this
+[07:58] way. But keep in mind, you're able to
+[08:00] customize this template for the way that
+[08:01] you would go about your YouTube
+[08:02] strategy. But real quick, I just wanted
+[08:04] to talk about my thought process when I
+[08:05] went to build the system. So, whenever
+[08:07] I'm going to build an automation that's
+[08:08] going to replace manual work, I try to
+[08:10] think about what do I actually do
+[08:12] manually? And it's really important to
+[08:13] be able to process map and wireframe out
+[08:15] the solution that you're looking to
+[08:16] build. And even though you may not get
+[08:18] it exactly right on your first
+[08:19] wireframe, it helps you really imagine
+[08:21] what you're going to do. So, for
+[08:22] example, I knew that every once in a
+[08:24] while I would go look at other channels
+[08:26] in my niche. I would see what was
+[08:27] performing well for them and then I
+[08:29] would try to put my own spin on it. and
+[08:30] I knew I could build an automation for
+[08:31] it, but I just wanted to come into
+[08:33] Excalibur and basically just kind of
+[08:34] wireframe out this whole system of what
+[08:37] I was doing on a weekly basis. So, I'm
+[08:39] not going to dive too much into this
+[08:40] actual wireframe. I don't want to bore
+[08:42] you guys. But, if you do want to nerd
+[08:44] out on process mapping and wireframing
+[08:46] so you can build more effective systems,
+[08:47] then definitely check out my plus
+[08:49] community. The link for that will be
+[08:50] down in the description. I've got a full
+[08:51] course in here where I basically teach
+[08:53] how to pick the process, map the steps,
+[08:55] and wireframe it before you actually get
+[08:57] into any of the building stuff with
+[08:58] nitn. So, if you're interested,
+[08:59] definitely check out that course.
+[09:01] Anyways, let's break down what's going
+[09:02] on here in phase one. In the form
+[09:03] submission, I put in three channels,
+[09:05] which were Nick, RobNuggets, and Simon.
+[09:07] From there, I knew that I had them all
+[09:08] as one item, but I wanted to loop
+[09:10] through and process each one
+[09:11] individually. So, I knew I had to do a
+[09:13] little bit of data manipulation here in
+[09:15] order to get them into three separate
+[09:16] items. My solution for this was using a
+[09:18] set node to set them as an array. So, on
+[09:20] the left, I have three different
+[09:21] channels and three separate fields. And
+[09:23] I basically put them into one field
+[09:24] called channels. And now I'm able to
+[09:26] take that array and split it out into
+[09:28] three separate items that can now be
+[09:31] looped through and processed
+[09:32] individually. So that's the start of the
+[09:33] loop. And now we move into the process
+[09:35] of scraping YouTube videos and analyzing
+[09:37] stuff. So first thing I wanted to call
+[09:38] out is all of the HTTP requests that you
+[09:40] see in the system are using Appify. So
+[09:43] Appify is basically just an app store to
+[09:44] use different scrapers and we're using
+[09:46] for the majority of the time this one
+[09:48] called YouTube Scraper. But don't worry
+[09:49] about the setup. I have everything
+[09:50] already set up for you. All you need to
+[09:52] do is grab an API key from Appify and
+[09:54] you'll be good to go. And all you have
+[09:55] to do is throw in your Ampify API token,
+[09:57] which is going to be really easy. You
+[09:58] just go to Appify, you go down here to
+[10:00] your settings, click on API and
+[10:02] integrations, and then you'll copy this
+[10:04] API token right here. And don't forget,
+[10:06] you can use code 38 Nate Herk for 30%
+[10:07] off Ampify. And then you just paste your
+[10:09] API token right there. So, we have the
+[10:12] Appify actor that we want to hit. I put
+[10:14] in my API key. And now we have the JSON
+[10:16] body, which is where the magic really
+[10:17] happens. So, I'm not going to read off
+[10:18] all of these different parameters and
+[10:20] what they're doing, but in simple
+[10:21] English, what's going on here is it's
+[10:22] going to look at this channel right
+[10:23] here. So, in this case, it's looking at
+[10:25] Simon Scrapes, and it's going to look
+[10:26] through Simon's most popular videos, and
+[10:28] just grab 30 of them back, the 30 most
+[10:30] popular. So, once we have those 30
+[10:32] videos where we have the title, the URL,
+[10:35] the thumbnail, the view count, all the
+[10:37] stuff that we want about the video, now
+[10:39] we just need to manipulate a little bit
+[10:40] because what I want to do is I want to
+[10:41] get the 10 best performing videos in the
+[10:44] past 6 months. So, the way I do that is
+[10:46] first of all, I use a sort where I'm
+[10:48] basically just sorting these 30 videos
+[10:49] by view count and I'm descending. So now
+[10:52] we basically have the number one
+[10:53] performing video here and every time we
+[10:55] scroll down the view count is going to
+[10:58] lower. So now that our videos are in the
+[11:00] right order, I wanted to set up a
+[11:02] filter. So this filter is looking at the
+[11:04] date that the video was uploaded and
+[11:05] it's saying that the date has to be
+[11:07] after today's date minus 6 months. So
+[11:10] the video was uploaded within the last 6
+[11:11] months. And in this case, we have 27 of
+[11:13] them were, three of them weren't. So
+[11:15] what I do is I move into a limit where
+[11:17] I'm saying, okay, I only want to keep
+[11:19] the top 10 items. So, this is just
+[11:21] making sure that we're keeping the 10
+[11:22] most popular videos in the past six
+[11:24] months. And it's kind of annoying
+[11:25] because in this Appify actor when you're
+[11:27] configuring it, you have the option to
+[11:29] choose a date range, which I originally
+[11:31] came in here and said 6 months, and then
+[11:34] I wanted to sort by popular, but it
+[11:36] wasn't actually pulling the most popular
+[11:37] videos. And then I came in here and I
+[11:39] realized that if I filter here based on
+[11:41] time, that it's going to automatically
+[11:43] set the sorting parameter to newest. So,
+[11:45] I wish I could just set up all the
+[11:46] filters and all the sorting in here, but
+[11:47] it doesn't exactly work. But this method
+[11:49] does guarantee that we get what we want.
+[11:52] Okay. Anyways, now that we have the 10
+[11:53] videos we're looking for, it does three
+[11:55] things. The first thing it does is it
+[11:57] just sets the fields only the ones we
+[11:59] want. So, channel title, URL, thumbnail,
+[12:02] views, and likes. The second path
+[12:04] actually does the title analysis. So,
+[12:06] let me click into here real quick. So,
+[12:07] the first thing we do is we have to give
+[12:08] it a user message, which is the title of
+[12:11] the video. So, right here you can see
+[12:12] video title equals JSON.title. And
+[12:15] remember that this is going to be
+[12:16] looking at 10 videos. Here's the first
+[12:18] one. Here's the second one. Here's the
+[12:19] third. And we could click all the way
+[12:20] through and look at all 10. And that's
+[12:22] exactly why you see on the output, we
+[12:24] get 10 different items, which is the
+[12:26] power words from each of those 10
+[12:27] titles. And then, of course, we have the
+[12:28] system message, which is where the magic
+[12:30] really happens. I'm not going to read
+[12:31] this whole thing, but at a high level, I
+[12:33] said you are an expert YouTube
+[12:35] strategist and title analyzer. Your task
+[12:37] is to analyze YouTube video titles and
+[12:39] identify the key power words or phrases
+[12:41] that make the title compelling and
+[12:43] clickable. And remember, you'll get
+[12:44] access to this entire system prompt when
+[12:46] you download the free template. But
+[12:48] besides that, I basically just said
+[12:49] extract one to three power words. They
+[12:51] should basically have like a big promise
+[12:52] or it should sound easy or it should be
+[12:54] relatable. So that's how the agent knows
+[12:56] what to do. That's how it looks at 10
+[12:58] titles. And then we get our power words.
+[13:00] And then the final branch right here is
+[13:02] the thumbnail analysis. So right now I'm
+[13:04] just using OpenAI's analyze image node.
+[13:06] You could try out Google Vision or
+[13:08] something else if you want to, but right
+[13:09] now I'm using OpenAI. I gave it a really
+[13:11] quick system prompt which said, "You're
+[13:13] an expert in YouTube thumbnail strategy.
+[13:15] Your task is to analyze a thumbnail
+[13:16] image and identify why it grabs
+[13:18] attention and encourages clicks. Focus
+[13:20] on what the viewer sees or feels, the
+[13:22] implicit promise or curiosity the image
+[13:24] creates. Be concise and keep your answer
+[13:26] simple. All this kind of stuff. And you
+[13:27] may have noticed in the demo that some
+[13:29] of these titles in here were actually
+[13:30] kind of getting cut off like
+[13:31] mid-sentence. That's just because for
+[13:33] the sake of the demo, I changed the
+[13:35] length of description to 50 tokens. So
+[13:37] if we change that back, we'd get the
+[13:38] full analysis, but I wanted to keep the
+[13:40] Google sheet looking clean for the demo
+[13:42] and didn't realize it would just cut off
+[13:43] the words. But anyways, as you guys
+[13:45] could tell, it was clearly looking at
+[13:46] the image and it was able to analyze it.
+[13:49] And it's super handy because what
+[13:51] happens is when we use this Appify
+[13:52] scraper to look at a video, it gives us
+[13:55] the actual URL of the thumbnail. So, we
+[13:56] can just drag that right in here and
+[13:58] then OpenAI analyzes it. All right,
+[14:00] sweet. And then we just basically merge
+[14:02] together those three outputs so we get
+[14:04] everything that we want in one clean
+[14:05] line. And then we can just write it back
+[14:07] to Google sheet. We write it back to
+[14:09] that first tab. And we just had to drag
+[14:10] in what we wanted, which was the
+[14:12] channel, the title, the URL, the
+[14:15] thumbnail. It was just a simple drag and
+[14:16] drop from here. And then obviously the
+[14:18] power words came from our title
+[14:19] analyzer. And our thumbnail analysis
+[14:22] came from our analyze thumbnail node
+[14:23] where I just dragged in the actual
+[14:25] analysis. Okay, cool. So that's phase
+[14:27] one. And that is how we end up with this
+[14:29] output over here where we have three
+[14:31] different channels. We have their 10
+[14:33] best performing videos from the past 6
+[14:34] months. And now we have a pattern bank
+[14:36] to analyze and to get inspiration from.
+[14:38] All right. All right. So then that
+[14:39] brings us down here to phase two, which
+[14:41] is the weekly broad niche insights. This
+[14:43] trigger right here is a schedule
+[14:45] trigger, and it's going to go off every
+[14:46] Sunday at 5:00 a.m. After this goes off,
+[14:48] it's going to grab our broad niche. So I
+[14:51] put mine as artificial intelligence, you
+[14:53] can set that to whatever your broad
+[14:54] niche is. If your targeted niche is
+[14:56] fitness, maybe you put this as health or
+[14:58] well-being, something like that. And
+[14:59] then we're going to feed this broad
+[15:00] niche into another Apify actor, which is
+[15:03] the same YouTube scraper one. You'll put
+[15:05] your token in there once again. And then
+[15:07] we feed it down here into the body
+[15:09] request. So once again, not going to
+[15:11] read all of this, but in simple English,
+[15:12] what's happening here is Appify is going
+[15:15] to search YouTube for artificial
+[15:16] intelligence. It's going to sort it
+[15:18] based on views. It's going to sort it
+[15:20] based on only videos in the last week,
+[15:21] and then it's just going to grab those
+[15:23] top five. But once again, we get stuff
+[15:25] like title, URL, thumbnail, views,
+[15:27] likes, all this kind of stuff. And I'm
+[15:29] not even going to click into the title
+[15:30] or thumbnail analyzer because it does
+[15:32] the exact same thing as these two up
+[15:34] here. So, just to save you guys some
+[15:35] time, I basically copy and pasted those
+[15:37] nodes down here. And then we write it
+[15:38] back to the Google sheet on the second
+[15:40] tab where we throw in the date, the
+[15:42] channel, the title, and then all this
+[15:43] other information just like you guys saw
+[15:45] on that first one. And then we have our
+[15:47] five new insights on our broad niche for
+[15:49] today, June 23rd. All right. And now
+[15:51] phase three, four, and five, which is
+[15:52] one automation all strung together. And
+[15:55] this is where it gets really tailored
+[15:56] towards you and your niche. So, this
+[15:59] schedule trigger is actually going to go
+[16:00] off every single day, and it's going to
+[16:01] go off at 6:00 a.m. Once it goes off,
+[16:03] it's going to grab your niche. So, I
+[16:05] just put Nitn. It's pretty clearly my
+[16:07] niche here. And then we're going to once
+[16:08] again do another one of those YouTube
+[16:09] scrapers on Appify. That's the exact
+[16:11] same one. You'll put in your API key
+[16:13] here as well. And then all we're doing
+[16:15] here is pretty much the exact same
+[16:16] search as the node right above us right
+[16:19] now, except for we're searching now for
+[16:20] NADN rather than artificial
+[16:22] intelligence. So, hope it's not too
+[16:24] repetitive, but we analyze those titles,
+[16:25] we analyze those thumbnails. Once again,
+[16:27] packaging is so important. We write it
+[16:29] to that third tab in the Google sheet.
+[16:31] And now we move on to the actual fun
+[16:33] stuff, which is phase four and phase
+[16:35] five, comments analysis, and ideation.
+[16:38] So before you run this template, you'll
+[16:39] want to come into this node as well. And
+[16:40] you'll want to set this as your URL for
+[16:43] your YouTube channel, because we're
+[16:44] going to take this YouTube channel URL
+[16:46] and we're going to feed it into this
+[16:48] next node, which is the Apify actor.
+[16:50] You'll throw in your API key. And now
+[16:52] let's look at what's going on in this
+[16:53] body request. So, this is going to go to
+[16:55] my YouTube channel right here, and it's
+[16:57] just going to grab the five newest
+[16:58] videos that I've uploaded. And when we
+[17:00] do that, the most important thing that
+[17:02] we get back here is the actual URL of
+[17:04] the video. So, if I open this in a new
+[17:05] tab, it would open up my YouTube video
+[17:07] right there. So, because we have five
+[17:09] YouTube videos and five YouTube video
+[17:11] URLs, we can feed this into a different
+[17:13] Appify actor. And this one is a YouTube
+[17:16] comments actor. So, you'll throw in your
+[17:17] exact same API key, though. All the
+[17:19] Appify ones will take the same API key.
+[17:21] And now let's take a look at what we're
+[17:22] doing in the body request, which is
+[17:24] really simple. It's basically just going
+[17:25] to go to this YouTube video right here.
+[17:28] It's going to grab 30 comments, and it's
+[17:30] sorting by one, which means newest
+[17:33] videos. And if you're curious how I got
+[17:34] that one, I basically came to the actor
+[17:36] itself. I set up, okay, here's the video
+[17:38] I want to scrape. Here's how many
+[17:40] comments I want. And then I can sort by
+[17:41] either top comments or newest. And if I
+[17:44] sort by newest, and I go to JSON, all I
+[17:46] have to do is copy this request into
+[17:48] NAN. And one means sorting by newest.
+[17:50] So, that's what's going on here. It's
+[17:52] getting the 30 newest comments from all
+[17:54] five of these YouTube videos right here,
+[17:56] as you can see. And so, what we get is
+[17:58] 139 comments, probably just because one
+[18:00] of the newer ones doesn't yet have 30 or
+[18:02] more comments. So, we have 139 comments,
+[18:05] and we want the AI agent to look at all
+[18:07] 139 in one go. So, the solve for that is
+[18:10] we use an aggregate node. We aggregate
+[18:12] the field called comment. So, this one
+[18:14] right here. And what we get is one item
+[18:15] that has all 139 comments in it right
+[18:18] there. So because we have everything in
+[18:20] one spot, we can feed that directly into
+[18:22] the comments analyzer agent. So first
+[18:24] thing to call out is we have a user
+[18:26] message where I'm giving it the
+[18:27] comments. So I basically just dragged in
+[18:29] this array of comments and then I use
+[18:31] this join function just to split every
+[18:34] comment. So it puts two new lines in
+[18:35] between each one. So it's very clear to
+[18:37] the agent, you know, this is one
+[18:39] comment, this is one comment, this is
+[18:41] one comment. And then the system message
+[18:42] is basically saying that you are a
+[18:44] YouTube audience insight analyst. You're
+[18:47] going to be given a collection of real
+[18:48] YouTube comments from the past two
+[18:50] weeks. And I should probably change that
+[18:51] because that's actually not true. But
+[18:52] anyways, its task is to identify
+[18:54] patterns in the comments for three
+[18:57] categories. Things you're doing well,
+[18:58] things the audience doesn't like, and
+[19:00] things the audience is looking for. And
+[19:02] then it's able to actually output them
+[19:03] into three different parts. Doing well,
+[19:05] audience dislikes, and audience
+[19:07] requests. Because we use a require
+[19:09] specific output format. And if I click
+[19:10] into my output parser right here, you
+[19:12] can see that it's basically telling the
+[19:13] AI agent to output these three different
+[19:16] fields. And that's exactly what we get
+[19:18] on this right hand side. And then all we
+[19:20] have to do is write that to the fourth
+[19:21] tab of the Google sheet, which is called
+[19:23] comment analysis. We throw in the date.
+[19:26] And then we're just throwing in the
+[19:27] output for the doing well branch, the
+[19:30] audience dislikes branch, and the
+[19:32] audience requests. And as you can see,
+[19:34] I'm once again using that dot join
+[19:36] function just to split everything up to
+[19:37] make it more readable in our Google
+[19:39] sheet. It just makes it more readable
+[19:41] for us when we go to our Google sheet
+[19:43] and we actually want to look at what the
+[19:45] agent found. All right. And finally, we
+[19:47] move on to probably the best part, which
+[19:49] is the ideation because it basically is
+[19:51] going to take into account what this
+[19:52] agent found, what this agent found, and
+[19:55] then help us come up with some new
+[19:56] ideas. So, the first thing I'm doing is
+[19:58] I'm pulling in the data that was found
+[20:00] over here in phase three. Yes, I could
+[20:01] have just used it as a variable since it
+[20:03] was all in the same flow, but I thought
+[20:05] it would be easier just to pull it in
+[20:06] from Google Sheets. So, that's exactly
+[20:07] what I'm doing in this tab right here.
+[20:09] I'm getting all the rows from the niche
+[20:10] daily sheet, and I'm doing one filter,
+[20:12] which is saying I only want to get rows
+[20:14] where the date equals today's date. And
+[20:17] that's how we can ensure we're only
+[20:18] getting in the five that were just found
+[20:19] today. Now, we're ready to basically do
+[20:21] the same thing where we want the agent
+[20:23] to look at all five in one try. So, we
+[20:25] aggregate everything. And then, you'll
+[20:27] have to come in here and set your own
+[20:29] channel description. So, I literally
+[20:30] went to chatbt and said, "Hey, based on
+[20:32] what you know about me, write me a quick
+[20:34] description of my YouTube channel." And
+[20:36] so, it gave me this. Nate her creates
+[20:38] practical beginner friendly videos that
+[20:39] teach people how to build AI automations
+[20:41] using any. So, now we have all that we
+[20:43] need to give to our creative agent in
+[20:45] order to help us come up with some new
+[20:46] video ideas. So, if I click into this
+[20:48] agent, we can see first of all the user
+[20:50] message that I give it. I'm giving it
+[20:52] all of the titles from today, all of the
+[20:54] power words from today, all of the
+[20:56] different thumbnail analysises, however
+[20:59] you say that plural, and then what the
+[21:01] audience is looking for from our
+[21:02] comments. So on the right hand side, you
+[21:04] can see it has titles, power words,
+[21:05] thumbnails, and what the audience wants
+[21:07] more of. So it looks through the user
+[21:09] message and it looks through its system
+[21:10] prompt to give us the packaging for
+[21:12] three new videos. But real quick, let's
+[21:13] take a quick look at the system message.
+[21:16] So I said, you are a top tier YouTube
+[21:18] strategist and content ideation expert.
+[21:20] You help YouTube creators generate high
+[21:22] performing video ideas based on proven
+[21:24] title patterns, power words, and
+[21:26] thumbnail styles in their niche. So, I
+[21:28] told it what I was going to give it. I
+[21:29] told it what its goal is. And then, of
+[21:31] course, down here, I have to give it the
+[21:33] description of the channel that it's
+[21:34] working for. So, that's where we drag in
+[21:36] this little variable here, which
+[21:38] basically says, okay, here's the channel
+[21:40] that you need to help create videos for.
+[21:41] Then, I gave it some final guidelines
+[21:43] down here. Of course, you'll be able to
+[21:45] access this whole thing for free when
+[21:46] you download the template, so I'm not
+[21:47] going to spend too much time there. And
+[21:48] then like I said, we get three different
+[21:50] videos with title and thumbnail pairs.
+[21:52] So then the last step here really is
+[21:53] just to write that back into our Google
+[21:55] sheet. We are writing that to the last
+[21:57] sheet called ideation and we're dragging
+[21:58] in the variables from our creative agent
+[22:01] right into the Google sheet. And then
+[22:02] just as a quick bonus, I'm sending
+[22:04] myself a Slack notification. So I can
+[22:06] wake up. I can see this notification in
+[22:07] my Slack and I can actually just click
+[22:09] on this link that I put in here, which
+[22:10] is just the Google sheet. And this is
+[22:12] what it looks like. Your niche and
+[22:13] channel audit for 2025 June 23rd is
+[22:15] complete. View the results here. So, I
+[22:17] click on that link and it takes us to
+[22:19] the spreadsheet with our niche insights.
+[22:21] So, that's basically the entire flow.
+[22:23] There's lots of ways that I can imagine
+[22:24] building on top of this and extending
+[22:26] the functionality to make it even more
+[22:27] useful. One idea that I think would be
+[22:29] pretty cool would be an agent that helps
+[22:31] you with your positioning. So, maybe
+[22:32] it's able to look through that database
+[22:34] of patterns and power words and stuff
+[22:36] like that and you can be able to talk to
+[22:38] it on a conversational level and also
+[22:39] say, "Hey, I made a video about, you
+[22:41] know, I used image generation to create
+[22:44] LinkedIn posts for me. Can you help me
+[22:45] package it?" and it would look through
+[22:46] different stuff in the niche and
+[22:48] different proven patterns and it would
+[22:50] help you package it. So that's one
+[22:51] thing. Another thing I think would be
+[22:52] cool would be like in the ideation
+[22:54] phase, maybe we have an agent that's
+[22:56] doing research about our broader niche
+[22:58] or even our targeted niche and kind of
+[23:00] looking at things that have happened
+[23:01] within the past couple days and maybe it
+[23:03] can help you with your content calendar
+[23:04] of different topics to make some videos
+[23:06] on. But anyways, the most important
+[23:07] thing here is just to download this
+[23:09] template, start playing around with it
+[23:10] and see how you want to customize it to
+[23:12] fit your YouTube strategy. So, if you
+[23:14] want to download this template for free,
+[23:15] all you got to do is go to my free
+[23:17] school community. The link for that will
+[23:18] be in the description and in the pinned
+[23:19] comment. Once you get here, it'll look
+[23:21] like this. You will want to click on
+[23:23] YouTube resources and find the post
+[23:25] associated with this video. If you can't
+[23:27] find it here, all you have to do is copy
+[23:29] and paste the title of the video into
+[23:30] the search bar and it will pop right up.
+[23:32] But let's say this is the post. Right
+[23:34] here, you'll see a JSON file which you
+[23:35] can download and import straight into
+[23:37] your NDN. And then also if you want that
+[23:39] Google sheet template with all these
+[23:40] tabs and columns already set up. All you
+[23:42] have to do is in this post you will see
+[23:44] a Google sheet template link right here
+[23:46] and you can make a copy of that and then
+[23:48] hook everything up. When you download
+[23:50] that template there will be a full setup
+[23:51] guide right here with all of the links
+[23:53] and the discount codes and telling you
+[23:55] everything that you need to do in order
+[23:57] to get the system up and running for
+[23:58] yourself. Like I said the most important
+[24:00] thing is being able to understand how do
+[24:01] I do this process manually and then how
+[24:03] can I automate it based on that. And in
+[24:05] order to do that, I really encourage
+[24:07] process mapping and wireframing, which
+[24:08] once again you can learn about in my
+[24:10] plus group. We've got a great community
+[24:11] of members who are building with NN
+[24:13] every day. So they're always sharing
+[24:14] their challenges and their resources and
+[24:16] their wins. And of course, we've got a
+[24:17] full classroom section with two courses,
+[24:19] agent zero, which is the foundations for
+[24:21] beginners of AI automation. And then 10
+[24:23] hours to 10 seconds where we learn how
+[24:25] to identify, design, and build
+[24:27] time-saving automations with NED. We've
+[24:29] also got stuff like step-by-step builds
+[24:30] and live call recordings. So definitely
+[24:32] check out the community if you're
+[24:33] interested in this kind of stuff. Hey
+[24:35] guys, while editing this, I realize that
+[24:37] you would all kill me if I didn't go
+[24:38] over pricing because I'm able to analyze
+[24:40] my comments and see that. But anyways,
+[24:42] let's real quick do a pricing breakdown.
+[24:43] And it's really, really not bad at all.
+[24:45] The main cost here that you're going to
+[24:47] have is these five different actors. And
+[24:50] the first four are using the YouTube
+[24:52] scraper, which is this one. And it is $5
+[24:54] for a,000 videos. And here we're getting
+[24:56] 90 videos. We're getting five five. So,
+[25:00] it's really going to take you a while to
+[25:01] hit that $5 mark. And then this final
+[25:03] one right here where we're getting
+[25:04] comments, this one is $1.30 for a,000
+[25:07] comments. And at most every day in this
+[25:09] node, we're pulling in 150 comments. So,
+[25:11] once again, it'll take you multiple days
+[25:13] to hit that $1.30 mark. So, actor price
+[25:16] is not that bad, especially if you use
+[25:18] code 38 herk to get 30% off API. And
+[25:20] then your only other costs are the open
+[25:22] router cost and the OpenAI cost to
+[25:24] analyze the images. And both of these
+[25:26] are not too bad at all. It's a very
+[25:28] minimal amount of credits. You obviously
+[25:30] have to keep your billing information in
+[25:31] there so you can have credits. But like
+[25:33] for example, if we look at all the GPT
+[25:35] 4.1 mini models that I'm using, if I go
+[25:37] to my activity and open router, you can
+[25:38] see that it's super super minimal. Each
+[25:40] call is costing not even anywhere close
+[25:42] to 1 cent. So it'll take a long time for
+[25:45] you to even hit a dollar with this
+[25:46] system. And also, while I'm editing, I
+[25:48] thought of one more thing that I could
+[25:49] do to enhance this workflow, which would
+[25:51] be looking at the transcripts of these
+[25:52] wellperforming videos and analyzing the
+[25:54] hooks and then having the creative agent
+[25:56] help us generate some hooks as well. and
+[25:58] we can build a pattern bank of hooks
+[26:00] that work well. Anyways, that's going to
+[26:01] do it for this one. Hope you guys
+[26:03] enjoyed the video. Hope you learned
+[26:04] something new. If you did, please give
+[26:05] it a like. It definitely helps me out a
+[26:07] ton. And as always, I appreciate you
+[26:08] guys making it to the end of the video.
+[26:10] I'll see youall on the next one. Thanks
+[26:12] so much.

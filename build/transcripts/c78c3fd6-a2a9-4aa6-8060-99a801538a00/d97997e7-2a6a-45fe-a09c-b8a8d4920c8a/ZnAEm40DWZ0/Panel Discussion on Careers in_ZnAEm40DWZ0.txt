@@ -1,0 +1,1646 @@
+Video Title: Panel Discussion on Careers in Sports Analytics [2021 UConn Sports Analytics Symposium]
+Video ID: ZnAEm40DWZ0
+URL: https://www.youtube.com/watch?v=ZnAEm40DWZ0
+View Count: 285
+
+[00:00] my name is alison lucan
+[00:02] i have long been a data driven
+[00:04] storyteller in media
+[00:06] and i recently joined the seattle kraken
+[00:08] as a contributor at their website and
+[00:10] their tv analyst for game broadcast and
+[00:13] i'm thrilled to be welcoming three other
+[00:16] women in the sports analytics industry
+[00:19] um we're going to talk about careers in
+[00:21] sport analytics and i've shared this
+[00:24] with some of you i just want to
+[00:25] encourage each of you please i don't
+[00:26] need this to be i ask a question you
+[00:28] answer we want to have as much of a
+[00:30] dialogue interrupt me ask each other
+[00:32] questions let's see what we can learn
+[00:33] from one another
+[00:34] let me introduce our panelists i'm going
+[00:36] to do a brief introduction and then
+[00:38] we'll let each of these fine people tell
+[00:39] you their path to where they are today
+[00:42] um first we have jessica hensley and
+[00:45] jessica is a data analyst with the
+[00:47] united states olympic and para olympic
+[00:50] committee committee excuse me she's been
+[00:52] there for two years
+[00:53] um and she has been in tokyo recently
+[00:56] she graduated from emory and henry
+[00:58] college with a degree in mathematics and
+[01:01] also has interned at espn and in the
+[01:03] meantime also got a master's degree in
+[01:05] statistical data science from florida
+[01:08] state university welcome jessica
+[01:10] we also have kelsey roberts kelsey is a
+[01:13] database and basketball analyst for the
+[01:15] new york knicks
+[01:17] she's also worked with the pacers in
+[01:18] indiana the miami heat and she has a
+[01:21] bachelor's in international business
+[01:23] from xavier university and a masters in
+[01:26] statistics from the university of
+[01:27] arkansas
+[01:28] and last but certainly not least is
+[01:30] sarah ziegler the sports editor at 538
+[01:34] she's also the host of the hot takedown
+[01:36] podcast which is a fun great listen
+[01:38] she's a native of south dakota and an
+[01:40] alumna of iowa iowa state university
+[01:43] welcome kelsey sarah and jessica um
+[01:47] again i'm here just to keep the
+[01:48] conversation going we'll go around the
+[01:50] group to start because i'd really like
+[01:52] our
+[01:53] attendees to hear from each of you the
+[01:56] path that you took to getting where you
+[01:58] are today we can talk about where
+[01:59] someone graduates from we can talk about
+[02:00] a job title but three of us have
+[02:03] analysts in our title and it probably
+[02:04] means something different to everyone so
+[02:06] jessica maybe you can start and talk us
+[02:08] through maybe when that first interest
+[02:10] in analytics or data started for you and
+[02:12] and your path to where you are today
+[02:15] yeah so
+[02:17] i grew up in a small town in florida
+[02:18] honestly where
+[02:20] you didn't really there wasn't many
+[02:22] career options um that were known to you
+[02:25] as a high school student i went to
+[02:27] college thinking i would be a math
+[02:28] teacher and a swim coach um because
+[02:31] honestly as a female who loved math like
+[02:33] that's what you did in my town um i got
+[02:36] to college and my honors director
+[02:39] actually was like i think that you
+[02:40] should really look at statistics and
+[02:42] maybe try an internship and see see
+[02:44] where that takes you um i think that you
+[02:47] would like something outside of teaching
+[02:49] not that that's not a great career but i
+[02:51] think that you would actually really
+[02:52] enjoy
+[02:53] being doing some data analytics so
+[02:56] i first interned at a statistical
+[02:58] consulting firm called elder research
+[03:00] and that i self-taught myself are there
+[03:03] and really just
+[03:05] loved everything i loved that you could
+[03:07] actually use math and statistics and
+[03:10] apply it to the real world um so the big
+[03:12] project i worked on there was it was in
+[03:14] baltimore and the baltimore riots were
+[03:16] happening that summer and twitter
+[03:17] actually knew about the riots before the
+[03:19] police did
+[03:20] so our client wanted to create a anomaly
+[03:24] detection system through twitter
+[03:27] using tweets to identify anytime
+[03:29] sentiment kind of turned angry or bad
+[03:32] and create a
+[03:34] alert to send them to tweets
+[03:36] um twitter was also booming at that time
+[03:38] and so that was
+[03:40] the project and i just loved being able
+[03:41] to apply
+[03:43] what i could do to the real world so
+[03:45] from there on one of the projects they
+[03:47] actually gave me was nfl uh super bowl
+[03:50] data and
+[03:52] i was i was caught there like that's all
+[03:54] i wanted from then on i went to sloan
+[03:56] the next year and my eyes were just open
+[03:59] to the whole world of possibilities
+[04:00] within sports analytics
+[04:02] so that's when i looked for internships
+[04:04] i applied to probably thousands of
+[04:06] internships for the next summer
+[04:08] got one as a business analyst with the
+[04:11] hornets and
+[04:12] got to work on ticket pricing scheduling
+[04:15] um nba schedule recommendations lots of
+[04:17] really cool things that had actual
+[04:20] implications which
+[04:22] is what i just fell in love with um then
+[04:24] went to espn was a stats and information
+[04:27] group intern there
+[04:29] loved that world too but really thought
+[04:31] i wanted to go more into the sport
+[04:32] performance world either basketball ops
+[04:34] analytics because
+[04:36] timing of graduation for me was when nba
+[04:39] analytics was really taking off
+[04:41] but decided to go to florida state just
+[04:43] because my undergrad was only a math
+[04:46] major um they did not have statistics at
+[04:48] my undergrad it was a very small school
+[04:50] they did not have computer science like
+[04:52] even like a class so i was completely
+[04:55] self-taught
+[04:56] and decided i should get some more
+[04:58] formal training uh i went and did a
+[05:00] statistical data science program to get
+[05:02] a little bit more formal training in
+[05:03] statistics and data science
+[05:05] and a opportunity came up on teamwork
+[05:07] that was a data analyst for the u.s
+[05:09] olympic and paralympic committee and
+[05:12] the idea of it immediately i was caught
+[05:14] i was like this is what i want to do
+[05:16] this is the perfect place for me i was a
+[05:18] swimmer all throughout college
+[05:20] i can do swimming i can do track i can
+[05:21] do bobsled skill i can do all these
+[05:23] other cool sports that don't really have
+[05:26] analytics yet um
+[05:28] super involved with them
+[05:29] so i didn't actually get the first job
+[05:32] because they needed someone like five
+[05:34] months before i graduated but i kept in
+[05:36] touch with them and
+[05:38] a job opening happened to come in
+[05:39] december and i graduated at the end of
+[05:41] december and moved on across the
+[05:45] across the country a couple weeks later
+[05:48] amazing amazing
+[05:50] well speaking of a sport nba where data
+[05:53] is booming kelsey share your story with
+[05:55] us and how you got to where you are
+[05:56] today
+[05:57] yes so i have to say i think mine's a
+[06:00] little different because when i was in
+[06:02] high school i took um ap statistics and
+[06:05] computer science and i hated it i was
+[06:08] like i never want to do anything with
+[06:10] this i'm not good at it i i like as soon
+[06:13] as i left high school i was like i'm not
+[06:15] doing anything related to math i'm
+[06:17] staying away from it i'm so bad at this
+[06:19] so in college i studied international
+[06:21] business thinking i wanted to do like
+[06:23] marketing or you know i had no idea what
+[06:26] i wanted to do i was 18 like does anyone
+[06:27] at 18 really know what they want to do
+[06:29] right so um got a degree in
+[06:31] international business and worked in
+[06:33] that field so i worked for the company
+[06:34] that makes like jergens lotion
+[06:36] curable lotion biore skin care consumer
+[06:39] packaged goods essentially and um when i
+[06:42] got that job some of my friends
+[06:44] were still in college i graduated a year
+[06:46] early and were in stats class and uh i
+[06:49] was tutoring them in it because i did
+[06:51] well and i did well in ap stats i just
+[06:53] hated it and uh and in college so when i
+[06:56] started tutoring them in stats i kind of
+[06:59] like i liked it then
+[07:01] i was teaching people stats and i
+[07:03] thought still i was like i'm never going
+[07:05] to do anything with this like i'm just
+[07:06] going to help them not fail the class
+[07:09] and then one of my co-workers and i
+[07:11] decided to take there's a group called
+[07:13] girl develop it
+[07:15] that kind of teaches different coding
+[07:16] classes so when i was in my first job
+[07:18] out of college i took a class with her
+[07:20] during the week after work for fun like
+[07:22] building websites and that's when i
+[07:24] loved coding in high school i took c
+[07:27] plus and i was like i never want to
+[07:28] touch this ever again this is miserable
+[07:31] um
+[07:32] and then so i kind of found out like my
+[07:34] passions for it when i wasn't in a
+[07:35] school environment and i could do it for
+[07:37] fun
+[07:38] um and so then i moved to arkansas to
+[07:40] work on the walmart account for my
+[07:42] company and it was when i was there that
+[07:43] i thought maybe i want to get a degree
+[07:45] in stats like i've been helping my
+[07:47] friends with stats class and i kind of
+[07:49] missed
+[07:50] um
+[07:51] like in a lot of times in work someone
+[07:53] would say something like oh then you
+[07:55] know the sales are significantly higher
+[07:57] than this and i would say is it though
+[07:59] like
+[07:59] statistically
+[08:01] i would have like this like anytime
+[08:03] someone would say that like wins and no
+[08:05] it wasn't anything math related um so
+[08:07] that kind of encouraged me to go back
+[08:09] and from there um i was just kind of
+[08:11] looking online for internships in that
+[08:13] field and came across um ironically
+[08:16] hornets and pacers and i applied to both
+[08:18] one in business analytics and one in
+[08:20] basketball analytics ended up getting
+[08:22] both offers and then deciding to go to
+[08:24] the pacers because i had already done
+[08:26] business analytics and was ready to see
+[08:28] what the basketball ops world would be
+[08:29] like i'd always loved basketball i never
+[08:31] thought i would ever work in it because
+[08:33] i didn't like math uh in high school but
+[08:36] after i got that internship that's when
+[08:38] i really fell in love with it and from
+[08:39] there um i kind of from there it led
+[08:42] into my heat internship and i will say
+[08:45] too i never want the networking route i
+[08:47] just applied online to everything
+[08:49] applied online to the pacers got it
+[08:50] miami heat applied online and didn't
+[08:53] know anybody got that same with the new
+[08:54] york knicks after i finished grad school
+[08:57] there i think i found it on linkedin um
+[08:59] because someone had just left and i
+[09:00] applied like really not knowing anybody
+[09:02] there or knowing anything about that
+[09:04] team or who worked there and uh
+[09:06] interviewed and uh so i'm going into my
+[09:08] second season with the knicks now
+[09:11] that's amazing the internet is not right
+[09:13] now
+[09:14] don't put mine
+[09:17] the internet is good for something i
+[09:18] love
+[09:19] these different paths sarah i'm so
+[09:21] excited to hear you share your story
+[09:23] because you're looking at sport and
+[09:25] analytics through a different lens so
+[09:27] tell us your story
+[09:28] yeah my um my path is uh to this job has
+[09:32] been a very very strange one and very
+[09:34] different um uh from jessica and kelsey
+[09:37] although uh i did um i started out in
+[09:40] college as an engineering major and
+[09:41] switched to journalism like i don't know
+[09:44] half a semester in i was like right away
+[09:46] i was like oh no i don't i don't want to
+[09:48] do this um but but it's funny that i
+[09:51] come back to that kind of um
+[09:53] mindset now now in a statistical
+[09:56] environment so so i was a journalist i i
+[09:58] wanted to be a journalist um
+[10:00] and i was an editor uh really almost
+[10:03] almost from the word jump i had a couple
+[10:06] of uh reporting internships and realized
+[10:08] i didn't i thought it was very important
+[10:10] but not something i wanted to do so i
+[10:12] was a copy editor coming out of college
+[10:13] and and worked for a newspaper for many
+[10:16] many many years and really
+[10:19] for
+[10:20] you know i went to college at a time
+[10:22] before the sports analytics
+[10:25] um craze really like really back in back
+[10:27] in back in the 90s um there wasn't this
+[10:30] kind of focus on analytics it was like
+[10:32] bill james and like that was it you know
+[10:34] um so they're really you know i loved
+[10:35] sports but i didn't really know that
+[10:37] there was that path there wasn't that
+[10:39] path quite yet
+[10:40] so so i was a journalist forever um and
+[10:44] and i got into
+[10:46] uh
+[10:47] sports analytics because
+[10:50] um so i was i was like in my in my early
+[10:53] 20s i was in a strange city i was um in
+[10:57] a fantasy baseball league with a lot of
+[10:59] guys that i didn't know very well who
+[11:03] didn't uh think that i
+[11:05] didn't take me very seriously as a
+[11:06] fantasy baseball player um let's just
+[11:08] say and that uh fueled me and i wanted
+[11:12] to beat them all very badly and that's
+[11:15] when i found baseball prospectus and i
+[11:17] started reading nate silver back in like
+[11:19] 2003 when he was just doing baseball
+[11:21] blogging um i find that hilarious now as
+[11:24] my career has turned out but that's how
+[11:26] i started really getting into
+[11:28] understanding um on you know baseball
+[11:31] statistics and then another advanced
+[11:32] stats so so i um i i was an editor for
+[11:36] many years in
+[11:38] omaha nebraska um as newspapers have
+[11:41] done what they have done
+[11:43] my husband and i decided you know what
+[11:44] we don't have to live um in nebraska
+[11:47] anymore our jobs at the newspaper may
+[11:49] not exist in another couple of years
+[11:51] let's leave so we decided to move to new
+[11:53] york and see what happened and um i
+[11:56] managed to uh i applied at after a few
+[11:59] months in a different job i applied it
+[12:01] for a job at 538 and got that and i
+[12:03] started at 538 as a general editor
+[12:05] um we're a very small shop i really
+[12:08] loved sports and um was you know
+[12:10] interested in in reading about sports so
+[12:12] i got pushed into the sports um realm i
+[12:15] became the assistant sports editor and
+[12:16] then two years ago now um the then
+[12:19] sports editor left and and i was
+[12:21] promoted to the sports editor job so
+[12:23] it's a really different kind of a path
+[12:25] into
+[12:26] caring a lot now about sports analytics
+[12:29] that's awesome that's and you know it's
+[12:31] it's funny i was going to ask this
+[12:32] question but kelsey your story
+[12:34] really brought this home to me
+[12:37] i'd like to ask the group and kelsey
+[12:38] will have you go first you know i think
+[12:40] a lot of times when people start
+[12:42] thinking about oh i love math i love
+[12:44] sports i love this specific sport and i
+[12:47] want to work in it right and sometimes
+[12:49] we do want to work in the sport and
+[12:51] sometimes we don't so that's the first
+[12:53] part of this question um because kelsey
+[12:55] you came back into basketball but then
+[12:57] also given that you were doing more
+[12:59] marketing focused data work at first
+[13:02] i'd love to hear from you and kelsey
+[13:03] again you're first just thoughts on you
+[13:06] know there's there's statistical
+[13:07] understanding and education and skill we
+[13:10] need
+[13:10] and then there's domain expertise right
+[13:12] the sport in which we are working
+[13:15] share what you have learned and what
+[13:17] your opinion is on when you're looking
+[13:19] for career in sport analytics how do you
+[13:21] balance that can you come strong in one
+[13:23] build up the other should you be
+[13:24] building both just your thoughts kelsey
+[13:26] on that and also again maybe going to a
+[13:28] sport you love or don't love
+[13:30] yeah i would say first and foremost is
+[13:33] being in this job like
+[13:36] technically there because if you don't
+[13:37] have the coding ability i think you'd
+[13:40] honestly drown um like when you when you
+[13:42] first start you're kind of like thrown
+[13:44] into it at least for the work that i i'm
+[13:46] doing i think in general they want you
+[13:48] to have the the hard skill set to do the
+[13:50] job uh and i think before you get into
+[13:53] the nba like for me it was my first
+[13:55] internship with the pacers like you
+[13:57] think you watch a lot of basketball and
+[13:59] you think you know a lot about
+[14:00] basketball and then you go into a
+[14:02] meeting and you're like wow i know
+[14:03] nothing like it's like this reality slap
+[14:06] of you know people are saying things and
+[14:08] you're like what are they talking about
+[14:09] and i think that comes easier than
+[14:11] coding then you know if you can do the
+[14:13] technical work and you can figure out
+[14:15] the models and you have that background
+[14:17] i think it's easier to i mean at the
+[14:19] pacers the first month i already learned
+[14:21] so much from my boss who was just
+[14:23] brilliant
+[14:24] and could explain you know like to the
+[14:26] front office really well like what we
+[14:28] were working on but i think being around
+[14:29] them it's easier to pick up like these
+[14:31] little things about basketball that they
+[14:33] watch especially sitting next to them at
+[14:34] the game you kind of like see things
+[14:36] that they see and have been picking up
+[14:38] for so long whereas i feel like if you
+[14:40] don't have the technical skills in
+[14:41] almost every
+[14:42] position i applied to there was a
+[14:44] technical assessment or they give you a
+[14:45] coding project they give you um a stats
+[14:48] project some type of coding that you
+[14:50] have to show that you know what you're
+[14:51] doing so i think if you're going to
+[14:53] focus on anything
+[14:55] obviously you have to know a little
+[14:56] about basketball because it would be
+[14:57] embarrassing if they like asked you
+[14:58] about something you had no idea what
+[14:59] you're talking about but i think more
+[15:01] than anything it's easier to pick up the
+[15:02] sport than it is um technical ability
+[15:06] and jessica how about you because you're
+[15:08] working across some sports you there was
+[15:10] a sport you had an affinity for what is
+[15:12] your opinion again on that technical
+[15:14] versus domain expertise and also how do
+[15:16] you build up one or both if you
+[15:18] depending on what your opinion is
+[15:20] yeah no i agree completely with kelsey i
+[15:22] think you have to have the hard skills
+[15:24] know what you're doing statistically
+[15:26] coding wise everything like that
+[15:28] very solid and then you have to have a
+[15:30] baseline understanding of the sport you
+[15:32] want to go into and as you
+[15:34] definitely prepare for interviews and
+[15:36] stuff you can definitely do your
+[15:38] research on that side of things pretty
+[15:39] quickly right you can research the team
+[15:42] who they've been drafting and like all
+[15:44] the background on the team to make sure
+[15:45] you don't you know
+[15:47] mess up saying something in an interview
+[15:48] or they ask you about a player and you
+[15:50] didn't hear about them or anything like
+[15:52] that you can research that beforehand a
+[15:54] lot easier than you could like kelsey
+[15:56] said do an entire assessment
+[15:58] and have no idea what you were doing um
+[16:01] wouldn't go as well for me i work across
+[16:04] every sport um so we have 61 different
+[16:07] national governing bodies um and i rely
+[16:10] on people within the sport to help with
+[16:13] that knowledge i am not there's no way i
+[16:15] could know the intricacies of every
+[16:17] sport there is so what i do a lot of
+[16:19] times is i do kind of a baseline
+[16:21] analysis very
+[16:23] baseline not too in depth or anything
+[16:25] then i take that to a national governing
+[16:28] body and work with them in conjunction
+[16:30] with the experts in the sport and
+[16:33] completely go in saying i don't know
+[16:35] your sport like you do help me
+[16:37] understand it help me understand what
+[16:39] you need what you want to learn how i
+[16:41] can help you and then i bring the
+[16:43] statistical help to them but i'm not
+[16:47] ever trying to act like i understand
+[16:48] their sport or an expert in it that's
+[16:51] their job
+[16:52] um and so similar like if you're working
+[16:55] with one sport you probably have to gain
+[16:56] a pretty good understanding of it but in
+[16:58] my world i can pick up on they can help
+[17:01] me understand that piece i need to know
+[17:03] the statistics and the coding to help
+[17:05] them
+[17:06] achieve what they're hoping to achieve
+[17:09] sarah i'm so excited to hear your
+[17:10] thoughts on this because you and i have
+[17:12] to come at this in a different way
+[17:14] you're looking across sports as well
+[17:16] and if you're reporting on a sport i i
+[17:19] feel like and correct me if i'm speaking
+[17:21] here but you know we often have that if
+[17:23] you don't know the sport well enough
+[17:24] it's dismissed as the nerds don't know
+[17:26] what they're saying
+[17:27] and we also have to balance if we're not
+[17:29] in a team
+[17:31] it can we can't have passion for a team
+[17:33] right we might be able to have a passion
+[17:34] for a sport so what's your experience
+[17:36] and your opinion on balancing domain
+[17:38] knowledge and technical skill
+[17:41] yeah i think
+[17:42] the the key
+[17:44] i mean technical skill obviously super
+[17:46] super important but if you don't have
+[17:48] that
+[17:49] understanding of a sport a pretty
+[17:52] you know more than just a rudimentary
+[17:54] understanding of sport you don't know
+[17:55] which questions to ask and and and which
+[17:58] things to try to solve um and so that
+[18:01] that can be
+[18:02] a little tricky i think i think that um
+[18:05] that
+[18:06] you know it's true that that is easier
+[18:07] to learn than like if you don't know if
+[18:10] you don't know r you're not going to be
+[18:11] able to do so like you're gonna you need
+[18:14] to start there obviously but when you're
+[18:15] getting into a sport especially if you
+[18:17] don't have
+[18:19] um you know a support staff that is
+[18:21] really entrenched in a sport if you're
+[18:22] kind of working on your own or if you're
+[18:25] a writer and you're trying to cover you
+[18:26] really are going to have to know that
+[18:28] sport well to know which things to
+[18:29] answer otherwise you're going to answer
+[18:30] the same questions other people have or
+[18:33] or you know pick up on something that is
+[18:35] not important at all to the to the sport
+[18:38] you know so that it is really hard and
+[18:40] as we're working across a lot of sports
+[18:42] it's it's you know you can tell when
+[18:44] someone doesn't quite know what you know
+[18:46] is sort of parachuting into a sport we
+[18:48] really struggled we were very cognizant
+[18:50] of that with our olympics coverage that
+[18:52] we wanted to get people who are experts
+[18:54] in each sport and not try to pretend
+[18:56] that like
+[18:57] i know everything about biathlon like no
+[19:00] i do not i know nothing about it you
+[19:02] know so really focusing on people who
+[19:04] are experts there and we can help them
+[19:06] with the statistical um you know the
+[19:09] statistical work but someone who really
+[19:11] truly understands the sport is just
+[19:12] going to be such an expert on that from
+[19:14] a from a writing and reporting
+[19:16] standpoint
+[19:18] it's so interesting and i i hope people
+[19:19] are hearing what i what we're all saying
+[19:21] too is that depending on the area where
+[19:23] you're going to apply analytic and sport
+[19:26] there's different levels right where you
+[19:28] need that that domain expertise but also
+[19:30] that technical skill
+[19:32] some of you mentioned some of this and
+[19:33] so i want to drill down
+[19:35] further on we know what we're talking
+[19:37] about we know what we're analyzing and
+[19:38] sarah i'm going to go right back to you
+[19:40] the importance of effective
+[19:42] communication of the work you're doing
+[19:44] and
+[19:45] whether you're in an organization or
+[19:48] formerly a communicator as a journalist
+[19:51] what lessons have you learned what
+[19:52] advice do you have again for our
+[19:54] attendees today the importance of
+[19:56] communication and techniques or
+[19:58] important points to think about when
+[20:00] you're trying to communicate statistical
+[20:02] work in the sport field or statistical
+[20:04] information in general sarah
+[20:06] yeah you know this is the thing that um
+[20:08] when i when i talk to people who want to
+[20:11] want to work for a team don't want to be
+[20:12] a journalist want to work you know want
+[20:14] to be in sports analytics which i assume
+[20:16] is most people here today the thing that
+[20:18] i say every time is take a
+[20:20] communications class in college because
+[20:23] like nothing
+[20:24] you could find
+[20:26] you know you could solve
+[20:28] nfl defense which if you do please give
+[20:30] me a call i'd be very interested
+[20:33] but if you can't explain it then it's
+[20:35] not gonna do you any good you know that
+[20:37] uh it's it's so important to be able to
+[20:39] to talk to your front office about what
+[20:41] why you're asking them to do a coach to
+[20:44] take a different approach you know
+[20:46] that's that's one of the hardest things
+[20:48] right in our world is trying to get
+[20:49] people who are old school and and you
+[20:51] know know it when they see it or
+[20:53] whatever we're like no no
+[20:55] um but getting to being able to to
+[20:58] communicate that i think is so important
+[20:59] so so right for the school paper take a
+[21:02] communications class learn how to
+[21:04] communicate your ideas that will help
+[21:06] you
+[21:07] you know in many areas of your life but
+[21:08] it will really i think make your your um
+[21:11] your your statistical findings more
+[21:14] effective and really be able to get your
+[21:15] point across when you can communicate
+[21:17] that i think that's super important
+[21:20] kelsey the minute you shared the story
+[21:21] of where someone would share something
+[21:22] and you said are you sure about that
+[21:24] you know you you were even challenging
+[21:26] the communication that you were
+[21:27] receiving right so what have you learned
+[21:29] about taking data taking statistical
+[21:31] analyses and just communication in
+[21:33] general and then maybe there's something
+[21:35] specific to sport as well
+[21:38] yeah for me because i'm working with
+[21:40] scouts a lot and you know people who are
+[21:43] in charge of scouts like
+[21:45] they
+[21:47] they don't really care about the math
+[21:49] they just want to know the answer so i
+[21:51] think for me it's it's really just like
+[21:53] dumbing it down and when i build a model
+[21:56] uh if i know like the the college for
+[21:59] the draft model for example like the
+[22:01] college scouting group like uh it's
+[22:04] better to build one that might be
+[22:06] slightly less accurate like from a
+[22:08] statistical standpoint that you can
+[22:10] explain better because they say like you
+[22:12] know why is this guy projected higher
+[22:14] than this guy you can say oh because of
+[22:16] these three variables like it weights
+[22:18] them this way and they're pretty like in
+[22:20] tune with that at this point they've
+[22:22] been working in it for so long that they
+[22:24] know that the math nerds coming in will
+[22:26] have like some variable that they want
+[22:28] to share um but i think for me
+[22:30] because i'm working especially on the
+[22:32] pro scouting side a lot of these guys
+[22:33] were basketball players at some point
+[22:35] and they know a lot about like the sport
+[22:38] and how they're watching people and what
+[22:39] skills they think they have so i always
+[22:41] try to say like oh from an analytics
+[22:43] perspective we see this guy is really
+[22:44] good at this and sometimes they disagree
+[22:46] sometimes they agree but i think for me
+[22:49] like i try to stay away from
+[22:51] the
+[22:52] you know like math terminology because
+[22:53] you just lose them and then they don't
+[22:55] they're just
+[22:56] they just glaze over and and it's like
+[22:58] you lose that camaraderie and like the
+[23:01] talks that you can have so for me it's
+[23:03] like if they ask being able to like
+[23:05] easily explain something but i try to
+[23:08] keep it
+[23:09] pretty high level with the with the
+[23:11] stats talk usually
+[23:14] jessica i'm fascinated to hear what you
+[23:15] have to say because you already told us
+[23:18] that you have to go to people and say i
+[23:19] don't know this sport that well so what
+[23:22] are lessons you've learned when maybe
+[23:24] you are crossing more topics
+[23:26] how do we effectively communicate the
+[23:28] work that our data can help support or
+[23:30] inform
+[23:32] i feel like i heard this a lot in school
+[23:34] but i see it every day is knowing your
+[23:36] audience
+[23:37] um specifically for me i could go to uh
+[23:40] say usa swimming they actually have like
+[23:42] three analysts in their in-house i can
+[23:45] speak analytics to them i can go to them
+[23:48] with cool models i can go to them with
+[23:50] tons of data and they know what i'm
+[23:52] saying they're interested they follow
+[23:54] whereas if i'm going to say a usa team
+[23:57] handball who is like three staff total
+[24:00] right they don't have a data person they
+[24:02] are just trying to make everything
+[24:04] happen
+[24:05] i'm not going to go to them with a whole
+[24:06] model on how they should run things or
+[24:08] who they should recruit who they should
+[24:10] talent transfer that's not how i'm going
+[24:12] to approach them we're going to go to
+[24:14] them with more very simple data
+[24:16] visualizations that they can just see
+[24:18] the data in a picture nice little way
+[24:21] that they can understand it and then
+[24:23] they can look at it and be like oh yeah
+[24:24] that dip is because blah blah blah and
+[24:26] then they give me without as they're
+[24:29] interpreting it they give me that
+[24:31] knowledge that i was lacking that i
+[24:33] didn't know what caused that dip because
+[24:35] i didn't follow their sport super
+[24:37] closely um so it's really about knowing
+[24:39] your audience and knowing
+[24:41] what you can bring them and what they
+[24:43] can digest some ngbs i go to national
+[24:46] governing bodies so like a usa track and
+[24:47] field etc sorry um i can go to them and
+[24:52] give them analytics some i know that
+[24:55] they just really want a tool they can
+[24:56] use so it's more about building like an
+[24:58] r shiny app where they can accomplish
+[25:01] something and so it's knowing what who
+[25:03] your audience is what they need and what
+[25:05] they're gonna actually react to and
+[25:07] catch on to
+[25:08] some
+[25:09] might not even be at that step yet where
+[25:11] you're just gonna start bringing them
+[25:12] little bits of things as you go so that
+[25:14] they can start to trust in it some are
+[25:17] fully trusting you can bring a model to
+[25:19] so it's really just knowing your
+[25:20] audience and knowing how to approach
+[25:22] them and then what to bring them
+[25:25] that that's huge i was going to ask this
+[25:27] and you already read my mind is that you
+[25:29] know
+[25:30] i always think about two like
+[25:31] visualizations as a huge key tool and
+[25:34] then also as you said i know a lot of
+[25:36] people who work with scouts go to an app
+[25:38] or an interface where it's about
+[25:40] presenting data in a more clean way
+[25:42] i'll open this to the group really quick
+[25:44] are there any other tools or or
+[25:46] different methods of communication that
+[25:48] you guys are using
+[25:49] i don't know what it might be if it's an
+[25:51] interactive it's if it's something else
+[25:52] that we haven't already talked about
+[25:53] maybe there isn't i just thought i'd ask
+[25:58] we're thinking um whenever i send
+[26:00] something that has a lot of like stats
+[26:02] abbreviations too i typically send like
+[26:05] a glossary
+[26:06] um with like an explanation an example
+[26:09] so that if they have a question like i'm
+[26:11] obviously happy to answer it but it's
+[26:12] also like providing that
+[26:14] uh those key takeaways and something
+[26:17] that they might like it's obviously i'm
+[26:19] used to it because i use it all the time
+[26:21] but knowing that they're looking at like
+[26:23] you know per like what's that like
+[26:25] having like all of that kind of written
+[26:28] out for them so that they can reference
+[26:29] it and um it's almost like training them
+[26:32] to learn the stats at the same time but
+[26:35] um in a non-aggressive way
+[26:38] we're hiding vegetables in their pasta
+[26:40] is what we're doing
+[26:42] so the next thing i was curious about
+[26:44] and again i you know i think about
+[26:45] people wanting to get into this field
+[26:48] kelsey i'm going to go right back to you
+[26:49] because of your story and how you came
+[26:51] to your current position
+[26:53] i think when we follow sport from the
+[26:55] outside and we see
+[26:57] sports data that is available publicly
+[26:59] or how data is applied to sport publicly
+[27:02] sometimes the perception is actually
+[27:04] very different
+[27:05] when you're on the inside
+[27:07] and i'm certainly not asking you to give
+[27:08] away any team secrets but what can you
+[27:11] share about the realities of
+[27:12] understanding
+[27:14] what the public thinks sports analytics
+[27:16] are even the data we think is real or
+[27:18] not real from a sport perspective and
+[27:20] maybe how that might feel
+[27:22] look or be applied differently
+[27:24] if you're working for an organization
+[27:28] yeah i mean i think
+[27:30] the perception of our jobs in general
+[27:32] like being when i say i'm a basketball
+[27:34] analyst people think one like i'm a tv
+[27:37] person that's like and this player had
+[27:40] like that's not what i do but um they
+[27:42] also asked me like oh are you sitting on
+[27:45] the you know court tracking like how
+[27:47] many points
+[27:48] this player had or and like that's
+[27:50] totally not what it is either but i
+[27:52] think people look at box scores and they
+[27:53] think that i'm like
+[27:55] doing the box force for some reason um
+[27:58] but i think
+[27:59] uh internally like we just have more
+[28:01] access to different data that's not
+[28:04] publicly available like player tracking
+[28:05] data is a big one that um
+[28:08] like i think at this point all 30 nba
+[28:10] teams have it but i think it's just a
+[28:12] lot more granular than people think
+[28:15] usually so i would say that i mean a lot
+[28:17] of it like if you go on to nba stats
+[28:20] like there's a lot of stuff that i
+[28:21] reference on there too just high level
+[28:24] and
+[28:25] but i think the player tracking data is
+[28:26] really where
+[28:27] probably the bigger difference comes in
+[28:29] because we can really get granular with
+[28:31] plays and pick and rolls and like really
+[28:33] specific actions that um they track
+[28:36] really well with player tracking data so
+[28:38] i think it's like we just have access
+[28:40] to more data i think that isn't
+[28:43] necessarily publicly available that we
+[28:45] use a lot um inside the organization
+[28:49] sarah how do you see the difference
+[28:50] between what the public thinks
+[28:52] sports analytics may or may not be and
+[28:55] what what you've seen inside a variety
+[28:57] of sports over the years
+[29:00] yeah it's funny we we sort of think our
+[29:02] readers are pretty um
+[29:05] you know well-informed uh
+[29:08] sports fans and know a lot about
+[29:11] the data but the data that um yeah that
+[29:13] that we can we try to be really
+[29:15] transparent about what we show um but
+[29:17] there are some things that are just not
+[29:18] not publicly available and there are
+[29:20] some things we we do get access to which
+[29:23] is great but we you know we'd love to be
+[29:24] able to show the whole list of stuff but
+[29:26] like that's not that's not that's not
+[29:28] how it works that's not what the
+[29:29] agreement says um so i feel like from
+[29:31] from our perspective
+[29:33] people tend to know what they're what
+[29:35] you know we don't have to do a lot of
+[29:36] explaining of you know what you know we
+[29:38] don't have to explain on base percentage
+[29:40] or stuff like that now we may have to
+[29:42] explain like weighted on base percentage
+[29:44] or some of the you know
+[29:45] slightly more advanced things but that's
+[29:47] a that's an interesting conversation too
+[29:49] always to like figure out what how much
+[29:52] information is like
+[29:53] you know we don't want to be
+[29:54] condescending we don't want to like
+[29:56] over explain something but then we also
+[29:58] want to be welcoming to people who don't
+[30:00] understand the sport and and get people
+[30:02] to understand sports analytics better um
+[30:05] so that's always a weird kind of line to
+[30:08] walk to where who is our audience and
+[30:10] and what do they know and what what can
+[30:12] we tell them what can we assume that
+[30:14] they know already
+[30:15] um it is i will say one thing there i
+[30:18] have heard from an nba team that looks
+[30:20] at our um
+[30:21] or sorry an nba agent whose player looks
+[30:25] at our raptor dashboard and has used
+[30:27] that to try to negotiate a contract and
+[30:30] i'm like that is amazing i love that
+[30:34] that's that feels like a big win you
+[30:36] know
+[30:36] so it is funny that there are teams
+[30:38] using it and looking at it or like
+[30:40] looking at it and like maybe side eyeing
+[30:41] it but like it
+[30:43] to know that it's part of the
+[30:44] conversation is is pretty cool i think
+[30:47] jessica what's your perspective on on
+[30:49] and particularly with you i mean some
+[30:50] sports people may not even realize
+[30:52] analytics are being applied
+[30:54] yeah i feel like in my world it was
+[30:58] the under the realization that the
+[31:01] we don't have the data for a ton of
+[31:03] things so
+[31:04] coming from like working in the nba
+[31:06] espn like you had all the data it was
+[31:08] already clean most of the time like that
+[31:11] was not what you were doing
+[31:13] in my world it is there's so much web
+[31:15] scraping data scraping we're trying to
+[31:17] find bobsled skeleton results from china
+[31:20] and japan and trying to pull those to
+[31:22] compare with ours and like
+[31:23] it's so much of the data scraping and
+[31:26] cleaning world uh you would think coming
+[31:28] to the us olympic and paralympic
+[31:30] committee that you would have this great
+[31:31] database and all of this data
+[31:33] it's not the case at all just because
+[31:36] the sports aren't like nba teams right
+[31:38] you don't have these 30 teams and you
+[31:39] have these x amount of players that
+[31:41] you're tracking the whole time we are
+[31:43] still trying to even define who we're
+[31:45] tracking right so trying to figure out
+[31:47] what juniors we should be tracking
+[31:49] because we don't really track them until
+[31:50] they get onto that international scene
+[31:52] and then we only have data on the
+[31:54] american athletes and so trying to
+[31:55] compare that to around the world
+[31:57] athletes we just don't have any data on
+[31:59] them we pretty much just have results
+[32:01] data for most of the rest of the world
+[32:04] um
+[32:05] sometimes we don't even have that great
+[32:07] for some sports right for swimming for a
+[32:09] track and field you can pretty you can
+[32:11] get results data pretty well but for
+[32:12] some of the lesser known sports and from
+[32:15] the paralympic side getting the data and
+[32:18] gathering the data is a huge task and
+[32:20] not an easy one um so i think people
+[32:22] think it's just you know doing all the
+[32:24] analysis and making these cool
+[32:25] dashboards and visualizations but from
+[32:28] my world it's a lot of trying to find
+[32:30] accurate reliable data scraping it
+[32:33] cleaning it figuring out how we can
+[32:34] compare it with all of the other data
+[32:36] and combine it across the player
+[32:38] tracking data across our financial data
+[32:41] all the different aspects
+[32:42] to try and pull it all into one place is
+[32:44] a huge portion of my
+[32:46] daily life
+[32:48] and let's pull back the curtain on that
+[32:50] a little bit because many analysts i
+[32:52] speak to particularly as data does get
+[32:54] more and more advanced in sport uh
+[32:56] tracking data is like the holy grail for
+[32:58] us in the nhl we're hopeful we get that
+[32:59] fully soon someday but
+[33:02] the realities are at least
+[33:04] some people i've talked to this is not
+[33:06] building happy models and doing amazing
+[33:08] things and coming up with revelations
+[33:10] every day there's there's some real
+[33:12] grunt work involved in jessica you just
+[33:14] outlined some of it kelsey what
+[33:16] share the ugly truth the realities of
+[33:19] being in this world that you're in
+[33:22] yeah it's definitely not all like
+[33:24] intense modeling and finding these like
+[33:27] new
+[33:28] ways to do things a lot of it's like you
+[33:30] get a call from somebody and it's like
+[33:33] something pretty
+[33:34] unintelligent sometimes like it just
+[33:38] takes a while uh like some of the asks
+[33:40] you get
+[33:41] aren't aren't like oh let me think
+[33:43] statistically how i would do this a lot
+[33:45] of it's like i really want a page that
+[33:47] has
+[33:48] these players ranked this way and you're
+[33:51] like all right and then it's just kind
+[33:53] of like a
+[33:55] pretty like easy task sometimes um i
+[33:58] think there are longer term projects
+[34:00] that obviously require a lot more stats
+[34:02] stuff like any of the modeling draft
+[34:04] modeling
+[34:05] like there's so much that goes into
+[34:08] in general like a lot of the models for
+[34:10] you know projecting players and um but a
+[34:12] lot but a lot of the time too like
+[34:14] during the year there's just a lot of
+[34:16] like
+[34:16] random questions that come up um that
+[34:20] aren't necessarily like
+[34:22] super involved it's just oh here's what
+[34:26] you asked for and sometimes it takes
+[34:28] like an hour to put together sometimes
+[34:29] more sometimes less but yeah a lot of it
+[34:32] and i think no matter how much data you
+[34:35] have too like there are still days where
+[34:37] i'm web scraping things because well one
+[34:39] that's like my favorite thing to do it's
+[34:41] like my hobby um just in general like
+[34:44] i'm obsessed with love scraping like i
+[34:46] just find stuff online i'm like maybe
+[34:48] i'll pull it into a database for myself
+[34:50] like i'm obsessed like that was one of
+[34:52] my hobbies in grad school too like i
+[34:54] would just find things and webscrape
+[34:55] them so i never get away from that
+[34:58] because i think there's always things
+[35:00] that they don't have an api or like
+[35:02] whether it's legal or not um
+[35:05] so they might blacklist me i'm not sure
+[35:08] um but i think there's a lot of that too
+[35:10] like a specific way that you want it and
+[35:12] you're like oh this site has it let me
+[35:13] just scrape the columns and
+[35:15] plop it in there so yeah it's not always
+[35:17] like the most intelligent math thing
+[35:20] i've ever done sometimes it's just
+[35:21] getting it done you know
+[35:23] and sarah i don't know if you've seen
+[35:25] this but you know i've seen some
+[35:27] organizations sometimes the just the
+[35:28] data management itself is so
+[35:32] big
+[35:33] that if that is your passion
+[35:35] there might be a role just to do that
+[35:36] maybe you aren't doing
+[35:39] the hardcore analysis and that's amazing
+[35:41] it's so valuable are there other
+[35:43] interesting roles that maybe you've seen
+[35:45] because you've looked across all these
+[35:46] sports where
+[35:48] the perception of what this work can be
+[35:50] is is maybe different than what maybe
+[35:51] some of our attendees think
+[35:54] absolutely we're actually 538 is
+[35:56] currently hiring for a for a data a data
+[35:58] editor someone who's just really going
+[36:01] to
+[36:01] um manage our
+[36:04] particularly our polls database um
+[36:05] because obviously we do we do politics
+[36:07] too i don't know if you guys know that
+[36:09] um
+[36:10] but yeah and um another job that we have
+[36:12] at 538 that i think is super cool is um
+[36:15] is a quantitative editor and it's
+[36:17] someone who just
+[36:19] like edits people's data so okay you've
+[36:22] run you've run some code and r and our
+[36:24] quant editor is going to to go through
+[36:26] it line by line and check it and i love
+[36:28] that
+[36:29] yeah i think it's so it's like
+[36:31] super i think it's really helpful some
+[36:33] people are a little annoyed that they
+[36:35] you know that their their work is being
+[36:36] checked or whatever but most people are
+[36:38] like oh my god that's amazing to have
+[36:40] that kind of support to make sure that
+[36:42] that you're you know what you're what
+[36:44] you're trying to say is correct and is
+[36:46] it was gathered the right way and was
+[36:48] analyzed the right way which i think is
+[36:50] awesome but i think i think more
+[36:51] newspapers should have it but i think
+[36:52] just more more places should have that
+[36:55] kind of that kind of support staff or
+[36:57] that kind of so that's a very a very
+[36:59] cool kind of thing too that's out there
+[37:00] as well
+[37:02] yeah to that end jessica with you know
+[37:04] we talk about cleaning scraping building
+[37:06] an app doing whatever it is maybe it's a
+[37:08] search maybe it's a query it's rerunning
+[37:10] a report
+[37:11] are there
+[37:12] roles or skills that maybe you wish you
+[37:16] had or had had when you came in or is
+[37:18] there if and again a budget was no
+[37:20] question right of course
+[37:22] are there other staff roles that you
+[37:24] think could be really valuable when
+[37:26] people are thinking about this is a
+[37:27] career in sport analytics that i might
+[37:28] pursue
+[37:30] yeah i wish i had more understanding of
+[37:32] like the back end so kind of more of the
+[37:35] it world and the back end of the
+[37:37] databases just so that i
+[37:39] we have that's another really cool and
+[37:41] interesting job to me is we have our it
+[37:43] database architects and they're the ones
+[37:45] that we're working constantly with to be
+[37:47] like hey i built a new web scraper i
+[37:50] need it to
+[37:51] run every monday at 4am and
+[37:54] input into this database so i can access
+[37:56] it for these reports etc but i wish i
+[37:58] definitely
+[38:00] had a better understanding of what they
+[38:01] do and how they do it so that i could
+[38:03] talk to them about it more intelligently
+[38:06] sometimes i'm like they're speaking a
+[38:07] whole different world than me right now
+[38:09] and i don't know what they're quite
+[38:10] saying but we're just going to keep
+[38:12] going and hopefully we get to the right
+[38:13] place
+[38:14] um so i do wish that i had more of i
+[38:17] knew sql and had kind of a base
+[38:19] understanding but just the actual like
+[38:21] architect and how one's built in the
+[38:23] whole like we have a stage environment
+[38:25] dev environment your stage environment
+[38:27] your production environment just kind of
+[38:28] understanding that whole world at a
+[38:30] baseline when i came in i feel like i've
+[38:33] gathered it as i went along but there
+[38:36] was a lot of stumbles along the way so i
+[38:38] wish that i had a better understanding
+[38:40] of that and i think that's also
+[38:42] a job that's needed at least in our
+[38:44] world a lot more of um rit dev guys are
+[38:47] constantly backloaded because
+[38:49] it's not just my team coming to them
+[38:51] with 800 different requests daily but
+[38:53] every team in the org is and
+[38:56] that's just we need more of them and
+[38:58] because it needs to be done right right
+[39:00] if you don't
+[39:01] set up your database right if they don't
+[39:03] all talk to each other in our world we
+[39:05] have hundreds of different databases and
+[39:08] a whole system to make them talk to each
+[39:09] other but if one thing isn't done right
+[39:11] and somebody goes rogue and doesn't set
+[39:13] it up then all of a sudden everything
+[39:15] breaks and that database is completely
+[39:17] siloed
+[39:18] and then they want reports that connect
+[39:20] it and you're like well
+[39:22] you didn't quite set up the database
+[39:23] right it doesn't talk to everything else
+[39:25] so and when you have
+[39:27] not just like 40 or even hundreds of
+[39:30] athletes you have billions of athletes
+[39:31] in the database trying to connect you
+[39:33] can't connect on name because
+[39:35] i mean for the tokyo we had two people
+[39:37] in the delegation of like 1500 people
+[39:39] with the exact same name you can't do it
+[39:42] on name and email address because half
+[39:43] the time it's mistyped by the person
+[39:45] putting it in and just different things
+[39:47] like that so trying to connect if it's
+[39:48] not done properly is
+[39:50] a tough time so that's one skill set i
+[39:52] wish and one
+[39:53] job that i think is going to like more
+[39:55] and more people hiring for in the future
+[39:58] because
+[39:59] we want more and more data
+[40:00] uh but we need the people to help on the
+[40:02] back end
+[40:03] facebook might agree just throwing that
+[40:05] out there just kidding kelsey how about
+[40:07] you skills or roles that you think are
+[40:10] are needed you wish you had or that
+[40:12] you'd like to see evolve in the in the
+[40:13] sport analytics space
+[40:16] yeah i mean i was lucky in the sense
+[40:19] that i came in with data engineering
+[40:20] experience but i think to her point like
+[40:23] it is a pretty big thing and when i was
+[40:24] hired initially it was my job was like a
+[40:27] 50 50 split of data engineering and um
+[40:30] statistics so
+[40:32] i think that
+[40:33] is really going to be really important
+[40:35] and i i also would say
+[40:37] um software engineering for anybody on
+[40:39] this call who is interested in that
+[40:42] um that is becoming huge right now like
+[40:45] i know like almost every team is right
+[40:46] now is hiring some type of developer
+[40:48] like full stack or some type of software
+[40:50] engineer because i think the push to
+[40:52] have everything on like sustainable
+[40:54] websites is becoming a big thing and i'm
+[40:57] not like i know are shiny like for you
+[41:00] know simple apps but i'm not a like
+[41:02] developer by any means and i think that
+[41:04] that's something that is going to be
+[41:06] such a big push going forward so i'd say
+[41:09] like if you're interested in any of that
+[41:12] like
+[41:13] everybody's hiring a developer like
+[41:15] almost every team recently has been
+[41:16] hiring uh oh in the nba and then it'll
+[41:18] be in general as high always hiring
+[41:21] developers but um i think that's going
+[41:23] to be such an important skill so it's
+[41:24] like the front end website development
+[41:27] using the stuff that the analytic
+[41:29] analytics people are building like
+[41:30] models and reports and put being able to
+[41:32] put those online as kind of like a
+[41:34] self-service um portal i think that's
+[41:37] going to be huge moving forward i wish i
+[41:38] knew more front-end stuff so i could
+[41:40] kind of like help people i only know
+[41:42] what i know at this point um and it's
+[41:44] too much to know data engineering stats
+[41:46] and all the front ends like you gotta
+[41:48] draw the line in his hand somewhere but
+[41:50] i would say like that is such a huge
+[41:52] opportunity and and now that hein says
+[41:54] 2020 i'm like maybe i should have
+[41:56] done more web development stuff because
+[41:58] they're also making the money so
+[42:00] good
+[42:04] and sarah that leads right to the
+[42:06] question i wanted to ask you as well i
+[42:08] think when people think about working in
+[42:10] sport analytics the exciting stuff the
+[42:12] pop is the new discovery or the new
+[42:15] model and that certainly is invigorating
+[42:17] and tremendous work and important work
+[42:20] but are there trends that maybe you are
+[42:22] seeing whether it be in one sport and
+[42:24] that's inspiring other sports or trends
+[42:26] across sport
+[42:28] in terms of analytics are there you know
+[42:30] we just heard about you know developers
+[42:32] are becoming a thing web-based
+[42:34] presentation is becoming a thing is
+[42:36] there a different way people are looking
+[42:38] at data are there different types of
+[42:40] questions is is tracking data unlocking
+[42:43] some doors what kind of things are you
+[42:44] seeing outside of the go research this
+[42:46] question and find the answer that may or
+[42:48] may not be happening in sport analytics
+[42:49] right now
+[42:51] yeah there's some there's some really
+[42:53] exciting things happening in
+[42:55] in a lot of sports where we haven't
+[42:57] always had great data you know soccer is
+[43:00] this like
+[43:01] there's so much um so much we don't know
+[43:03] about soccer because they're so
+[43:05] the things that are measured are so
+[43:07] specific and so off ball stuff
+[43:10] player tracking is just like it's the
+[43:12] it's the it's the coolest thing it's
+[43:15] gonna be amazing what what happens what
+[43:17] keeps happening in in all these sports
+[43:20] but there's some really really exciting
+[43:22] different there's a lot of there's
+[43:23] there's space for people to work in
+[43:26] these because we don't have because we
+[43:28] haven't traditionally had the data you
+[43:30] know baseball is a is a sport where it
+[43:32] feels like
+[43:34] there's not a lot new to
+[43:37] to learn because people have been
+[43:39] digging so deeply for so long like you
+[43:41] know i made a joke about nfl defense
+[43:43] before but like we don't know anything
+[43:45] about nfl defense like we know so little
+[43:47] and and that's that that is frustrating
+[43:50] as someone who wants to like dig into it
+[43:52] it's also really exciting to see what
+[43:54] people are gonna see
+[43:56] as we get you know as the next gen stat
+[43:58] stuff becomes more available and that
+[43:59] kind of thing so i think those those
+[44:01] sports where we haven't done as much are
+[44:04] really exciting i'm i'm really excited
+[44:06] for olympic sport to dig more into
+[44:08] olympic sports because again it's it's
+[44:10] untapped like you're not going to find
+[44:12] people who are going to find new
+[44:14] new things about baseball you are going
+[44:16] to find people who are going to find new
+[44:17] ways to look at and to optimize
+[44:20] performance and and you know metal
+[44:21] counts which is what we care about the
+[44:23] olympics right um for all these other
+[44:25] sports i think that is exciting i mean
+[44:28] we saw that a little bit
+[44:29] with gymnastics this summer like there
+[44:32] maybe wasn't the kind of team
+[44:34] optimization that that there was
+[44:36] criticism of the team optimization and i
+[44:38] think thinking about that more
+[44:40] analytically is gonna help build a
+[44:42] better team particularly when we don't
+[44:44] like have simone biles to build the team
+[44:46] around we're gonna have to be gonna have
+[44:48] to be smarter um and so i i'm really
+[44:50] excited about the gymnastics stuff too i
+[44:52] think or the olympics in general i think
+[44:53] that's gonna be this great like world of
+[44:56] of new discoveries that just because we
+[44:58] haven't
+[45:01] doped into that so far you know
+[45:03] well jessica that tease you up my friend
+[45:05] any trends or new innovation that you
+[45:07] see coming across sports from an
+[45:09] analytic perspective
+[45:12] i mean
+[45:13] exactly what sarah was just saying like
+[45:15] so much is untapped in our entire world
+[45:18] uh you've got
+[45:20] the handful of sports that have started
+[45:22] to use and have databases and have
+[45:25] started to use analytics
+[45:27] and the majority of them don't even have
+[45:29] a database yet right so trying to work
+[45:31] with them to set up the basics set up
+[45:33] databases like i feel like more and more
+[45:36] people are understanding that they need
+[45:37] data that they can utilize it it could
+[45:39] really help them but they're like i
+[45:41] where do i start how do i don't even
+[45:43] know what i'm doing
+[45:44] so starting with those
+[45:46] teams and everything of this is how
+[45:48] you're going to set up a database like
+[45:50] what are you wanting to track what do
+[45:51] you think is important in your sport
+[45:53] how can we start tracking that how can
+[45:55] we get it into this database then we can
+[45:56] help you analyze it and things like that
+[45:58] but just even i'm gonna be honest for
+[46:01] most olympic sports it we're still at
+[46:02] stage one like we are still getting them
+[46:05] to ask the right questions figure out
+[46:07] what data they need and want and think
+[46:09] would be important and then getting them
+[46:11] to collect it that's the level we're at
+[46:13] with the majority of the sports but i
+[46:15] think that's an exciting time because
+[46:17] there's just so much to do and so much
+[46:20] unknown and so many findings that can be
+[46:22] had and even in the sports like i said i
+[46:24] was a swimmer the sports that's a sport
+[46:26] that has pretty good data pretty good
+[46:28] analytics they have a staff
+[46:30] you talk about tokyo and optimizing um
+[46:33] gymnastics
+[46:35] that mixed medley relay really needed
+[46:37] some data behind it um that was a missed
+[46:40] metal that very much i was at that i was
+[46:43] at the pool for that event and there
+[46:45] were whisperings of what the relay was
+[46:47] um on deck and i was like wait that's
+[46:49] the relay and they were like yeah and i
+[46:51] was like okay that's not winnable like
+[46:54] we lose by five seconds easy like but
+[46:56] that specific setup when you look at the
+[46:58] data it's not winnable females versus
+[47:01] males and breaststroke and fly is just a
+[47:02] bigger difference and when i saw we went
+[47:05] male female female male
+[47:07] i was just like nope
+[47:08] we're done like it's not caleb caleb is
+[47:11] caleb dressle but he cannot overcome
+[47:13] a 9 10 second gap like that's just not
+[47:16] humanly possible so even in the sports
+[47:19] where they do have some analytics going
+[47:21] there's still so much more that can be
+[47:22] done to help them so i don't know i'm
+[47:25] just so excited about all the
+[47:26] possibilities and just getting it
+[47:27] started for them for a ton of sports
+[47:30] especially as teams start to buy in
+[47:33] we've started to really gain the trust
+[47:34] of most ngbs and sports and i think that
+[47:37] was really step one and now we're on
+[47:38] step two of how can we help let's start
+[47:41] let's start this whole process
+[47:44] awesome we have just a few minutes left
+[47:46] so i want to i have one quick fire
+[47:48] question for everyone that came from one
+[47:49] of our attendees and then we'll wrap
+[47:51] with one question to everyone kelsey
+[47:53] we'll start with you to answer this
+[47:54] question
+[47:55] what coding languages and other data
+[47:58] programs do you typically use in a
+[48:00] standard day
+[48:03] yes i for me the
+[48:05] the big three are are python and sequel
+[48:08] i'm in those almost every day um and i
+[48:10] would say depending on what the team you
+[48:12] join
+[48:13] and depending on what their team was
+[48:15] built in like some teams are really
+[48:17] python focused and some teams are really
+[48:19] are focused
+[48:20] but i think it's always helpful to know
+[48:22] both in that case like i think python's
+[48:24] way better the part of my job that is uh
+[48:27] data engineering python's the way to go
+[48:29] and i also enjoy web scraping in python
+[48:32] more than r i hit enjoy
+[48:35] but i think those three things are for
+[48:37] the data science well the three i use
+[48:39] the most
+[48:41] jessica how about you
+[48:43] yep completely second what kelsey said
+[48:45] depending on your organization r versus
+[48:47] python or both
+[48:49] i use r usopc is very r focused but
+[48:52] there are definitely instances where i'm
+[48:54] like we should definitely be doing this
+[48:55] in python
+[48:57] web scraping things like that where
+[48:58] python just does better at it but we've
+[49:01] set everything up to really only handle
+[49:03] our codes as far as the back end stuff
+[49:05] so we make do with selenium and r and
+[49:07] things like that
+[49:09] and then the other big one for us is
+[49:10] tableau so data visualization in tableau
+[49:13] or power bi for some organizations but
+[49:16] we're tableau
+[49:17] only
+[49:19] sarah what are you seeing on a
+[49:20] day-to-day basis as they must know
+[49:22] technologies and must use
+[49:25] we we do most of our work as an r um
+[49:29] honestly what for me personally i'm i'm
+[49:31] checking things more in it you know in
+[49:33] excel or google sheets um but we do
+[49:36] mostly in our there's a little python um
+[49:39] nate works in stata
+[49:40] don't tell anyone um
+[49:43] no one heard no one heard yeah that's
+[49:45] like that old oldest oldest of old
+[49:47] schools but yeah i mean r is is
+[49:49] definitely what we're what we're mostly
+[49:50] using
+[49:51] well that's because ours the best okay
+[49:53] not that i'm biased anyway
+[49:55] well we'll wrap with this you all have
+[49:57] just been so informative and so
+[49:59] inspiring to think about the work that's
+[50:01] being done we would be remiss it's
+[50:03] cliche but it's true
+[50:05] for our attendees if someone is
+[50:07] listening or watching and wants to find
+[50:10] a way to break into analytical work in
+[50:14] sport
+[50:15] what advice would you have for them and
+[50:17] sarah i'll go right back to you what
+[50:18] would you share with an aspiring
+[50:21] data analyst of some kind of any role in
+[50:23] sport today
+[50:25] well i'll repeat my advice to to to to
+[50:28] learn some communications don't don't
+[50:30] just don't slap that off really really
+[50:32] do that a great way to get yourself you
+[50:35] know one one thing that people will say
+[50:37] is we'll publish something publish some
+[50:39] you know some some finding some work
+[50:41] that you've done a great way to do that
+[50:42] is to write about it and write about it
+[50:44] for your school newspaper then you have
+[50:46] something to point to a a you know a url
+[50:49] to send people um that will help you no
+[50:52] matter what but yeah i would say just
+[50:54] you know apply to things as
+[50:56] apply to many internships go out there
+[50:59] and put yourself out there and
+[51:01] there are lots of opportunities right
+[51:02] now uh so it's a good time to to get out
+[51:05] there and really and really find
+[51:06] something that you're passionate about
+[51:09] kelsey i'm excited to hear your advice
+[51:11] particularly because you highlighted
+[51:12] that you didn't go the networking route
+[51:14] you just straight out started applying
+[51:16] what would you say to someone who came
+[51:17] to you and said i want to break into
+[51:18] this field
+[51:20] yeah i would say if you're if the job is
+[51:22] coding heavy putting stuff on your
+[51:24] github that you can link to your resume
+[51:25] when you apply um so people can see your
+[51:28] technical skills and then i would just
+[51:29] go on teamwork online and just go ham
+[51:32] like apply to everything that you think
+[51:33] would be good because you never know
+[51:35] who's who someone's going to resonate
+[51:38] with your resume
+[51:39] and then i have sort of a weird like
+[51:42] uh interviewing tip too that might
+[51:45] people not might advise uh on as well
+[51:47] but i think there's like this pressure
+[51:49] to be like really buttoned up and say
+[51:52] all the right things and be like really
+[51:55] formal but i would say like
+[51:57] in my experience a lot of the times
+[51:59] where i've gotten
+[52:00] an internship or a job is when they feel
+[52:02] like they can really connect you as a
+[52:03] person
+[52:04] so
+[52:05] i'm bad because i like to crack jokes
+[52:07] all the time and that's just like who i
+[52:09] am but i think if they know that that's
+[52:11] really who you are and that's what
+[52:13] they're getting and they like you as a
+[52:14] person it helps a lot too like obviously
+[52:16] you have to have the technical skills
+[52:18] and be able to do the job but i think
+[52:20] when you really connect with people on
+[52:22] like
+[52:23] a personal level to some degree when
+[52:25] you're interviewing it does help at
+[52:26] least in my experience like they know
+[52:28] what they're getting from your
+[52:29] personality and if they would like to
+[52:31] work with you i think is a big thing too
+[52:34] i love that
+[52:35] jessica your advice to the burgeoning
+[52:38] sport analytical professional
+[52:41] find your passion and don't give up on
+[52:43] it so like
+[52:44] like the others have said like keep
+[52:45] applying i mean teamwork online and
+[52:48] going ham was exactly kind of my thought
+[52:49] i
+[52:50] every single morning would wake up and
+[52:52] just apply to every single new one that
+[52:54] came up and that's what i did for
+[52:57] months right in college because all it
+[52:59] takes is that first one you get the
+[53:01] first one and i promise your foot is in
+[53:04] the door like i know that's cliche but
+[53:06] it really does help because then you
+[53:07] know people in that world
+[53:09] similar uh to kelsey i did not do great
+[53:12] at networking that was not ever my forte
+[53:14] it was i'm gonna do good work and i'm
+[53:16] gonna let that speak for me um and so as
+[53:19] soon as i got the first one with the
+[53:20] hornets then
+[53:22] zepp and his whole team knew other
+[53:24] people in the organizations around nba
+[53:27] and even other sports that could really
+[53:28] help me when i needed it but just don't
+[53:31] give up and don't get
+[53:33] dis like um
+[53:34] not disappointed i forget what the word
+[53:36] i'm trying to go for is but
+[53:38] don't get
+[53:40] upset if you're not even getting emails
+[53:42] back i'd say i applied to thousands
+[53:45] probably got
+[53:46] 10 to 15 interviews out of those
+[53:49] thousands right and most of them you
+[53:51] will never even hear from
+[53:52] so don't don't get just yeah just keep
+[53:56] working at it don't give up
+[53:59] no that's great before we wrap is there
+[54:01] anything that i haven't asked that is
+[54:03] front of mind or so important that you
+[54:05] would like to share with our audience
+[54:06] any of you feel free to speak up if you
+[54:08] have any final points
+[54:12] you don't have to
+[54:16] this is obviously an exciting you know
+[54:18] this is an exciting time and and um if
+[54:20] you're passionate about sports there's a
+[54:22] place for you in in the world of sports
+[54:24] you can you can get there um it might be
+[54:27] the process might seem hard or it's just
+[54:30] discouraging or whatever but you can get
+[54:31] there you know you can
+[54:34] i think there's a
+[54:36] conception of like i only want to work
+[54:38] in basketball or or i only want to work
+[54:40] in
+[54:41] football but if you can get your foot in
+[54:42] the door to a different sport to start
+[54:45] off like with an internship is how i
+[54:47] started and i was lucky enough to do nba
+[54:50] but i would say like be open and like
+[54:52] i've known people who started in
+[54:54] baseball and then moved to basketball
+[54:56] and vice versa like i think
+[54:59] if you have like some sports focused job
+[55:02] or internship even if it's a different
+[55:03] sport it'll still help you so i would
+[55:05] say be open with that as well
+[55:08] and don't be afraid to like do smaller
+[55:10] ones so don't be afraid to go do a small
+[55:13] um g league team or anything like that
+[55:15] or even i worked at my college in sports
+[55:18] and you know what i started off as
+[55:20] literally being the person that did the
+[55:22] box scores at the table while basketball
+[55:24] games went on because that was the way i
+[55:26] could get my foot in the door and so
+[55:28] don't be afraid take any opportunity you
+[55:30] can get to get that experience even if
+[55:32] it might not be the exact type position
+[55:34] that you're hoping to go into it all it
+[55:36] all matters
+[55:39] well jessica kelsey sarah i know i speak
+[55:42] on behalf of everyone who's been able to
+[55:44] take in your incredible knowledge and
+[55:46] wisdom today we appreciate your time so
+[55:48] much we are so impressed by you and i
+[55:51] personally am inspired to see the work
+[55:53] that each of you are doing in these
+[55:54] different fields and forging your own
+[55:55] path
+[55:56] on behalf of all of us thank you so so
+[55:59] much for joining us thank you for being
+[56:01] part of our panel and i'm sure we'll be
+[56:02] seeing more great work from each of you
+[56:05] soon thank you so so much

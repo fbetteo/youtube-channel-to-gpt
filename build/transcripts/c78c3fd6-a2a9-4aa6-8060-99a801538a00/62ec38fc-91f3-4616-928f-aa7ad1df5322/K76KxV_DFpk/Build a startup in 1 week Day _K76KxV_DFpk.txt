@@ -1,0 +1,3438 @@
+Video Title: Build a startup in 1 week | Day 5
+Video ID: K76KxV_DFpk
+URL: https://www.youtube.com/watch?v=K76KxV_DFpk
+
+[01:39] yo
+[01:49] here we go all the life here we go
+[01:58] um
+[02:23] perfect
+[02:38] my leg is there
+[02:41] looks cute
+[02:47] I'm sorry okay
+[03:02] I need to pop out the chats
+[03:22] [Music]
+[03:29] okay
+[03:35] hello Twitter friends
+[03:37] hello YouTube Friends
+[03:39] happy Sunday
+[03:42] yep we're live all good happy Sunday
+[03:46] happy Saturday probably for the rest of
+[03:49] the world hello
+[03:52] where we are so yesterday
+[03:55] um we submitted the app for the first
+[03:57] time ever on the App Store and on the
+[04:01] Google Play Store
+[04:03] it's Saturday so obviously we are going
+[04:05] to be in review for both I guess
+[04:09] I'll just double check
+[04:18] whenever you want Apple
+[04:24] this is a joke okay waiting for review
+[04:26] okay
+[04:28] yeah the app has been submitted we're in
+[04:30] day five so we have three more days to
+[04:31] launch uh we have a day that's going to
+[04:34] be about marketing and making the video
+[04:38] for product tents
+[04:40] which is going to be the last thing and
+[04:43] so we have a day or two to finish the
+[04:44] app because now it's um there are a few
+[04:47] things that could be improved
+[04:48] uh trying to take notes in here so this
+[04:51] is done the monetization
+[04:55] um let's drag me through
+[04:58] and this is done too actually we're
+[05:00] actually we can close all that so maybe
+[05:02] on today's goals
+[05:07] uh yeah Google login is a bit boring but
+[05:10] it has to be done because it's a it's an
+[05:12] app for pretty much everyone and I feel
+[05:14] like social logins are important
+[05:17] um I don't know probably we won't do
+[05:19] this
+[05:20] uh this is important
+[05:22] and also the landing page we have uh we
+[05:25] have a landing page that doesn't exist
+[05:28] right now if you go to the hero feeds it
+[05:30] looks like this
+[05:32] um and you can use the app here
+[05:35] the americanism key but basically yeah
+[05:37] that's the app it's uh somehow working
+[05:39] you can complete uh you have
+[05:41] leaderboards
+[05:44] you have a payment system I think
+[05:49] yeah the payment is here it goes on
+[05:52] stripe if you're on the web and if you
+[05:54] are on mobile you can have payment with
+[05:57] the native store payments
+[06:03] um what else
+[06:06] to login
+[06:08] maybe you're gonna put
+[06:09] this first
+[06:15] no message when level up landing page
+[06:19] amazing
+[06:25] stuff like potatoes and stuff
+[06:31] great I don't know how much we can
+[06:33] complete but let's go on I mean Korea
+[06:36] wow my wife is Korean are you are you
+[06:39] Korean yourself
+[06:43] exactly to see what happened hey
+[06:46] part two yeah but uh if you got the
+[06:48] summary part two was just uh submitting
+[06:50] the app on the stores
+[06:52] we're live on uh on oh we're we're we
+[06:55] submitted the app on IOS and Android and
+[06:57] we're waiting for the review and while
+[06:59] we're waiting for the review I'm gonna
+[07:00] add a few stuff to the app
+[07:03] yeah my wife is Korean
+[07:05] yeah yeah look
+[07:08] what's up yo Yan
+[07:12] that's my wife
+[07:15] are you Korean
+[07:30] language
+[07:38] foreign
+[08:01] [Music]
+[08:18] it's a good it's a good weekend
+[08:20] um
+[08:22] yeah we can I think we can go on so
+[08:26] we're gonna start the dev and
+[08:30] as a quick recap
+[08:36] uh localhost
+[08:39] so lending page has to be worked on so
+[08:42] if I sign up in here I have the base six
+[08:45] whatever
+[08:50] um so the app is pretty
+[08:52] blank for now um you can add your avatar
+[08:56] I'm going to snowboard
+[08:58] I'm going to say that we're going to do
+[09:00] it five times a week
+[09:03] and I think so users will do that and I
+[09:07] think here we somehow need to have a
+[09:13] If I complete my workout for today
+[09:17] a lot of things happen I level up 2 and
+[09:20] I gain 20 XP
+[09:24] but maybe if it's the first time you
+[09:26] sign up you do this you don't really
+[09:28] understand what's going on and then
+[09:30] there's nothing else you can actually do
+[09:31] in the app so maybe I'll make the level
+[09:33] up process a bit
+[09:35] uh
+[09:37] difference or
+[09:42] let me think
+[09:49] yeah because it's pretty blunt
+[10:00] all right I think we need that
+[10:01] [Music]
+[10:02] um
+[10:06] delete or edit
+[10:08] workout Avatar
+[10:11] because now you can create one and you
+[10:13] cannot delete it or you can edit it so
+[10:15] if you make a mistake then the app will
+[10:17] tell you oh you want more avatars you
+[10:18] have to pay which is not really friendly
+[10:20] delete workout
+[10:23] oh maybe yeah if it did like your goal
+[10:26] and stuff
+[10:34] what else
+[10:45] complete
+[10:52] it's gonna be on mobile so the design
+[10:54] doesn't really matter
+[10:56] but
+[10:58] I know if you guys are watching this um
+[11:04] I'm trying to you know make it a bit
+[11:06] more friendly for people who sign up for
+[11:07] the first time
+[11:09] um
+[11:10] here it's all green because it's I own
+[11:12] this character
+[11:14] but later on only yours will be green
+[11:17] and the others will be black so you you
+[11:19] see how you rank versus others
+[11:22] uh
+[11:27] and I feel like we could add a little
+[11:29] something that makes
+[11:31] this simpler
+[11:57] oh sweet tomato first
+[12:00] okay Korean thank you drew
+[12:03] first one today oh wow
+[12:06] hey yeah that's awesome man that's so
+[12:08] good I think yeah the first one is the
+[12:10] most important what are you what are you
+[12:11] working on
+[12:13] the front end I need to learn about can
+[12:15] uh side I'm using next JS API
+[12:20] this thing somewhere
+[12:24] yep this just a folder here I can add
+[12:28] routes API routes and the execute
+[12:30] serverless
+[12:35] okay go let's check it out
+[12:39] I mean it's still good like uh even
+[12:41] though if it's just Evolution it's still
+[12:43] I think the first online dollars are the
+[12:45] one that leaks and you realize ah okay I
+[12:48] can do something on the Internet
+[12:58] ah thank you
+[13:06] let me just
+[13:10] oh down too
+[13:23] it's it's [ __ ] awesome
+[13:37] man plug my new uh add your Twitter if
+[13:41] people love your design they might want
+[13:42] to follow this journey it's so nice man
+[13:46] yeah man all right so good
+[13:49] genius
+[13:57] yeah oh man that's so cool I love that
+[14:00] level four
+[14:04] that's important Avatar
+[14:08] played it ah nice
+[14:13] your hero
+[14:16] man you're a genius I love it
+[14:18] I really love it okay uh so
+[14:22] there are a few things I won't be able
+[14:24] to do so the color stuff I'll keep my
+[14:25] colors just because uh you know it's
+[14:28] like we have a schedule to launch in
+[14:30] seven days I'm going to change
+[14:32] everything else pretty much
+[14:36] um
+[14:37] um let's see
+[14:42] yeah so cool
+[14:45] um
+[14:45] I love this part of having different
+[14:47] colors based on the workouts uh
+[14:53] no no man I mean it's just so cool I
+[14:55] think it's really good I'm actually
+[14:56] looking to make the app a little bit
+[14:57] easier
+[14:59] so your design is just it it's here at
+[15:02] the perfect time I love it
+[15:05] um
+[15:08] I think the card makes a lot of sense
+[15:10] the color makes a lot of sense
+[15:15] okay wait maybe I can open it up
+[15:17] somewhere with my own figma
+[15:24] if I log in
+[15:38] okay there we go
+[15:44] here we are
+[15:47] maybe I'll steal some of your colors
+[15:49] here that are quite nice
+[15:56] look for pastel colors
+[16:03] for this one we have it already
+[16:06] pink blue purple
+[16:11] I'll try this
+[16:14] when I'm when I'm looking at my design
+[16:16] now I feel like it's pretty balloons
+[16:23] okay you make it to rounds okay why not
+[16:27] I know it's not actually round it's like
+[16:28] really
+[16:31] uh
+[16:36] oh this is dope
+[16:40] actually
+[16:41] I don't know if I should be doing this
+[16:43] right now
+[16:49] um wait I need to think because uh I
+[16:52] feel like if I start to touch a few
+[16:54] things I might have to redesign
+[16:55] everything so even just the things like
+[16:57] the radius
+[16:59] that you're using and everything
+[17:01] um might have to be careful with that
+[17:03] because the goal is to launch in seven
+[17:05] days
+[17:08] just clear with the radius okay
+[17:11] this is queer coal okay
+[17:16] yeah not really it's not that it's
+[17:19] painful to cut it but it's just
+[17:21] um you know I've already done the
+[17:22] designs for the stores and everything
+[17:25] um and I just want to keep moving on
+[17:28] um and ship as fast as I can while
+[17:30] keeping the app simple to use I think
+[17:32] your design here is just so good I'm
+[17:34] gonna do the same
+[17:37] um but things like colors and radius and
+[17:39] things yeah for the 1.5 yeah
+[17:43] I think no but I think there are some
+[17:45] valuable things here um
+[17:47] that's about creating avataric creatures
+[17:50] Parts Avatar so maybe we can I don't
+[17:52] know maybe we can try
+[17:54] BG
+[18:05] you want to see if I get something in
+[18:07] there yeah um
+[18:09] where is it create
+[18:14] and click
+[18:19] or dot BG
+[18:25] how do you make the Emoji shine
+[18:31] and these are just images right
+[18:37] all right let's see a few some of them
+[18:44] oh I think it's because my background is
+[18:46] too it's too dark here
+[18:48] oh I see what you did okay
+[18:56] oh okay
+[19:00] I don't think this is gonna work with
+[19:01] very own days
+[19:04] I don't know actually it works no it
+[19:06] doesn't really work
+[19:19] yep I'm gonna have to keep going with
+[19:20] the one I have otherwise I will change
+[19:22] everything
+[19:25] just actually sign up
+[19:29] get an avatar of you just after the sign
+[19:33] up no need to redirected this word uh
+[19:36] okay maybe we can even do it before the
+[19:40] before the onboarding
+[19:43] like before the user signed up when you
+[19:45] sign up you have already your avatar
+[19:48] what do you think about that
+[19:51] okay
+[19:57] okay that's smart so okay it's time to
+[20:00] check those designs so
+[20:03] um okay I let her name goal
+[20:06] four five six seven eight
+[20:10] yeah exactly yeah exactly yeah
+[20:13] and people like when they give you your
+[20:14] email at least they know why they give
+[20:16] you their email that's smart
+[20:22] maybe the goal
+[20:26] um instead of having a select we can
+[20:27] have a div
+[20:29] class next yeah two
+[20:34] we can do an array
+[20:39] of uh
+[20:42] here we can have a span
+[20:45] e0
+[20:50] do you think it's clear that the goal is
+[20:53] how many times a week you're gonna do
+[20:55] this maybe go
+[21:04] up to okay
+[21:08] what do you guys think um I'm trying to
+[21:10] copy this part the gold stuff
+[21:13] I'm just wondering if people will
+[21:14] understand that one x equal once a week
+[21:17] and 7x equal seven times a week
+[21:21] in the meantime I'll try to start
+[21:23] cutting something
+[22:26] extra days workouts a week
+[22:29] workouts per week
+[22:31] goals times a week
+[22:34] okay yeah maybe we can do workouts per
+[22:36] week
+[22:46] I don't know just Spice in
+[22:58] how do I spread Flex
+[23:04] oh yeah Flex one here here
+[23:51] okay
+[23:53] okay
+[23:56] yep okay
+[24:00] and eggs and eggs
+[24:02] um
+[24:03] gold
+[24:06] let's submit survival
+[24:15] um
+[24:27] and uh ring
+[24:30] you ring
+[24:33] memory
+[24:36] or nothing
+[24:48] oh actually I could have just used
+[24:49] something
+[25:25] okay
+[25:29] hey not bad
+[25:32] uh
+[25:57] I know oh [ __ ]
+[26:09] I'm gonna do the same way as here
+[26:11] or maybe button with no animation
+[26:17] okay
+[26:20] let's go okay
+[26:28] okay and go per week
+[26:31] completion up to XP a week okay
+[26:35] all right I think it's a bit better
+[26:37] let's see what you have on the pigma
+[26:41] okay
+[26:54] oh [ __ ]
+[27:12] up to okay
+[27:14] cool per week
+[27:19] four five one
+[27:25] um
+[27:45] if I create with once a week
+[27:51] uh yep it's still there and if I create
+[27:55] with four times a week
+[28:02] I have them all
+[28:04] okay I own
+[28:10] okay that looks better
+[28:13] yo video it's going well man submitted
+[28:15] yesterday on the stores app store Google
+[28:17] Store uh it's live on the way with the
+[28:19] payment link and now it's a matter of
+[28:21] redesigning some core features of the
+[28:23] app to make things a bit simpler
+[28:30] just send this super amazing design so
+[28:33] I'm taking some inspiration to uh
+[28:36] um you know copy and and try to see in
+[28:39] the app what screens I can make better
+[28:42] so good looking
+[28:45] right so you have here good morning you
+[28:48] are a hero all right I like that so
+[28:51] great
+[28:52] index
+[28:54] in here at the top
+[28:58] render render uh board maybe even before
+[29:03] that
+[29:04] is for link
+[29:08] no
+[29:20] reward okay hero
+[29:27] uh bro your design is just so good I
+[29:29] want to remake the whole app
+[29:32] text
+[29:35] same size as this right
+[29:42] xlg I think
+[29:47] Oh no just text normal
+[29:50] maybe it takes LG phones
+[29:55] let me bold
+[29:57] your hero
+[30:00] then here we're gonna have a
+[30:03] something that checked the user
+[30:07] um
+[30:12] the men here menu
+[30:15] bro send your
+[30:19] send your tweeterman or whatever if you
+[30:21] have a dribble or your a link to your
+[30:24] work or something
+[30:28] oh yeah
+[30:33] um
+[30:34] your hero and then we're gonna take uh
+[30:38] what was I looking for
+[30:52] uh
+[30:59] new dates
+[31:01] that's good hours
+[31:17] yep it's correct
+[31:25] here we are going to
+[31:28] maybe just time
+[31:34] um
+[31:34] Superior to
+[31:37] 12.
+[31:38] 32 11 and good afternoon
+[31:45] and then you
+[31:57] or time Superior to 18 so from 7 pm and
+[32:04] I'm gonna say good evening
+[32:08] or we're going to say good morning and
+[32:12] it should show me good morning
+[32:14] okay
+[32:27] good morning your hero I know what I'm
+[32:30] gonna do and this is definitely not
+[32:32] needed but I'm gonna do time Superior 2
+[32:35] 12 and
+[32:37] zero
+[32:39] or
+[32:41] Legend
+[32:46] okay
+[32:49] I thought I could click on this
+[32:57] okay and we have the Cog stuff
+[33:01] so leave maybe
+[33:07] a div here
+[33:16] um
+[33:18] Flex
+[33:21] 55
+[33:25] between
+[33:27] and we are going to add the adjuster
+[33:31] button
+[33:32] actually a link
+[33:37] here hero where are you
+[33:43] setting button button Square
+[33:47] and ghosts
+[33:48] and no it has to be the code icon
+[33:52] we're going to use heroicones settings
+[33:56] and this one
+[34:16] okay you're a legend
+[34:27] oh that's super cool man I like that I
+[34:28] love that
+[34:33] maybe uh because it's a header maybe
+[34:36] we're gonna do
+[34:38] [Music]
+[34:38] um
+[34:40] a little extra virgin Y2
+[34:46] and we're going to give it some breathe
+[34:51] a legend
+[34:55] oh I think therapy do the margin stuff
+[35:02] good morning your Legend
+[35:07] okay
+[35:10] now this workout Avatar
+[35:21] level four
+[35:24] okay I love the button at the bottom
+[35:30] um render
+[35:32] Sports
+[35:36] and here
+[35:38] we have
+[35:40] this then we have this then we have the
+[35:43] leaderboard so you're putting the little
+[35:44] board higher
+[35:51] you don't want to reload bro
+[35:54] what did I do
+[35:57] without loading
+[35:59] you're supposed to show me the little
+[36:00] board higher now
+[36:05] render sport this is what I've done
+[36:11] okay now it's working
+[36:14] nobody what was going on
+[36:16] leaderboard
+[36:20] okay with four
+[36:22] um
+[36:27] okay
+[36:29] complete maybe just your right I think
+[36:32] just complete is enough
+[36:36] complete
+[36:39] I'll wait we are going to put this uh
+[36:46] I'm gonna use
+[36:49] as colors that I have already uh
+[36:55] maybe the primary it's too much Henry
+[36:59] accent
+[37:01] neutral
+[37:10] I think here complete and once it's
+[37:12] completed when yeah once I've clicked on
+[37:15] it it becomes completed I think
+[37:23] do you think for the card
+[37:25] um in your design you have uh different
+[37:27] colors
+[37:28] um I don't have the the same colors as
+[37:30] you so maybe
+[37:32] you think I can have some kind of like a
+[37:34] divider or a border
+[37:37] or something
+[37:39] because I have access to some colors
+[37:42] from Daisy UI
+[37:46] um I use this one for the backgrounds I
+[37:49] use this one for the card backgrounds
+[37:52] I don't know which one I could use to
+[37:54] make it shine a little bit
+[37:57] okay
+[38:00] so
+[38:03] oops
+[38:06] just as a test divider
+[38:09] all right this is how a divider would
+[38:11] look like
+[38:14] it adds a lot of space
+[38:18] we could just put on a border
+[38:29] complete
+[38:38] maybe the button needs to be just a
+[38:40] proper button a small one
+[39:17] oh okay
+[39:22] maybe I can do and try this
+[39:26] um
+[39:29] button exit
+[39:33] I don't know if that's too much
+[39:38] I think it's the same color as this
+[39:40] thing here
+[39:42] here either is the same
+[39:48] I'm checking if you you know what you
+[39:50] think but as a designer
+[39:52] person think
+[40:04] okay
+[40:05] okay man cool
+[40:07] League level two I think I need to
+[40:09] rework a little bit that part as you did
+[40:11] well in your figma
+[40:15] okay
+[40:17] when I look at your design I'm like [ __ ]
+[40:20] what am I doing with my
+[40:22] uh League level two okay
+[40:26] that's working
+[40:30] oh okay
+[40:37] that's the same phone size
+[40:44] um
+[40:47] we have a where are we here
+[40:51] that's my avatar
+[40:53] these two so here you have a div
+[40:57] is class
+[41:00] Alex
+[41:01] if I between
+[41:05] and you have the level
+[41:14] and this thing here
+[41:28] please
+[41:34] um and then I have the streak which is
+[41:37] this thing
+[42:00] two
+[42:01] three equal one
+[42:04] you are here
+[42:06] text SM
+[42:08] we just split both
+[42:11] small
+[42:13] text-based contents
+[42:17] okay
+[42:19] uh
+[42:34] we can try something fancy here
+[42:37] BG base
+[42:41] whatever I think we want
+[42:44] it
+[42:55] um
+[43:18] if you're still here menu do you have
+[43:19] any idea how would I
+[43:21] um
+[43:22] create this kind of color
+[43:25] underneath the trick the streak or this
+[43:29] like which color could I use for that to
+[43:31] highlight just a little bit
+[43:36] here a good background 100.
+[43:42] thanks please that's it
+[43:46] the same note
+[43:49] almost
+[43:50] um background neutral I think it's gonna
+[43:52] be too much
+[43:54] next neutral content
+[44:01] yeah it's a bit too much
+[44:03] laughs
+[44:14] what can I do here
+[44:22] what colors do I have
+[44:24] for your black opacity light
+[44:34] um
+[44:37] foreign
+[44:40] that case I just used this one
+[44:45] because it's a color it's actually the
+[44:47] same background color as the one I use
+[44:49] or
+[44:50] or oh wait I have an ID it's a poor
+[44:53] really poor designer ID but I'm gonna
+[44:54] give it a try
+[44:58] what do you think
+[45:16] it kind of try to get the orange color
+[45:19] it works
+[45:21] I think X to that
+[45:23] oh putting X
+[45:26] okay
+[45:28] so cutting we'll keep the putting y
+[45:33] one and the padding X to 1.5 Maybe
+[45:37] Legend
+[45:42] you let me know
+[45:44] I'm uh I'm working on autopilot based on
+[45:47] what you say
+[45:49] so we have Spiderman and we have the xB
+[45:56] uh
+[45:58] [Music]
+[46:06] no it's probably not the right div here
+[46:10] the progress bar I'm gonna have to
+[46:12] change a little bit
+[46:16] oh dang I almost feel like
+[46:18] I put too much colors I should have
+[46:20] never have the green
+[46:22] damn it
+[46:23] because actually I think the old app
+[46:25] could be
+[46:28] could be red no it's like it feels like
+[46:30] it's um I know it feels built like this
+[46:33] color relates much more to work out than
+[46:36] than the green one
+[46:42] I don't want to change the App Store
+[46:43] screenshots
+[46:48] um
+[46:50] what do we have
+[46:51] the name oh yeah the name
+[46:56] oh okay is that name
+[47:00] here we have saved
+[47:03] is my name
+[47:05] last
+[47:06] so many Bolt
+[47:09] metal lifter
+[47:13] okay maybe we're just gonna reduce
+[47:17] face where is the space
+[47:28] maybe I just don't use any of this
+[47:31] and I do
+[47:33] origin button two
+[47:39] is a very much a color palette yeah yeah
+[47:41] that's it
+[47:42] many of these ain't GPT
+[47:50] ah the rear companies all right
+[47:53] I'm gonna add this right now
+[48:01] I think this gets to be my favorite
+[48:03] property app ever
+[48:05] if that's no I think that's not the one
+[48:06] I'm using
+[48:08] um okay
+[48:16] here we go
+[48:33] in habit Garden yeah exactly the same
+[48:36] one from Habits garden and actually what
+[48:38] I'm gonna do is I'm gonna check habits
+[48:40] Garden The Habit card
+[48:43] I'm gonna copy the codes or do something
+[48:45] very similar
+[48:47] I'm pretty onwards in my habits
+[48:51] I'm fatigue
+[48:52] hey okay we're gonna do this
+[48:58] um
+[49:11] you don't want to complete Army okay
+[49:15] and here on complete
+[49:19] new data and then we're gonna show some
+[49:21] companies
+[49:23] visible for Rich motion origin
+[49:27] uh maybe we could just kind of try the
+[49:29] company before we make the API call
+[49:32] uh what is going on module let's phone
+[49:35] you didn't install canva company
+[49:39] oh I mean the wrong app God damn it
+[49:42] uh see the the hero of herofits
+[49:47] and reinstall canva competition
+[49:53] npme converts
+[49:58] and just
+[49:59] quick detail uh CD dot CD kids
+[50:05] and then fpm
+[50:10] I'm gonna remove it
+[50:12] up
+[50:13] so here we're back ready Bingo we have
+[50:18] some companies
+[50:20] so cute
+[50:22] oh my God it's so pleasurable
+[50:27] um
+[50:28] I could just make at the bottom of the
+[50:30] screen where are the confetti
+[50:37] and velocity origin spread and Max
+[50:40] [Music]
+[50:40] um
+[50:44] origin what is the documentation for
+[50:46] origin
+[50:48] number default is 0.5
+[50:50] position a bit zero of the beginning on
+[50:52] the left with zero from the beginning of
+[50:55] the less Edge okay so maybe one
+[51:00] a pitch
+[51:01] one and one or something like zero eight
+[51:04] and zero eight
+[51:15] are we good with that
+[51:19] looks nice maybe we make some more
+[51:20] companies
+[51:22] maybe angle we're gonna make it ready
+[51:27] whatever that was good
+[51:30] to count spread
+[51:33] maybe 80 let's spread
+[51:36] 60.
+[51:40] all right it's a bit different filling
+[51:46] all good guys
+[51:51] oh bottom center okay so more like a
+[51:53] I'll do okay and why not
+[51:58] okay it was now
+[52:00] we can try this if you want zero five
+[52:02] one
+[52:03] I probably hear zero nine oh no
+[52:14] and
+[52:16] angle would be
+[52:18] I don't know exactly how they do that
+[52:23] is it better from the bottom of the
+[52:24] screen
+[52:34] very cute it makes sense because it's a
+[52:36] center
+[52:43] but we get manual uh confirmation we can
+[52:47] move ahead
+[52:49] okay we've got the confettis
+[52:51] um back to the name so we're gonna do
+[52:53] Comfort tea when we get the API call
+[52:57] here
+[53:02] and we are going back to the bar
+[53:06] cheers
+[53:07] here progress level up yeah this way is
+[53:10] where we are
+[53:15] let's do it sunny ah
+[53:18] better to be of Empire
+[53:20] a complete oh [ __ ]
+[53:25] Kelly Slater level four XP maybe the
+[53:29] name I think here is a bit too big
+[53:33] what you do right
+[53:36] yeah you do it smaller than the rest
+[53:40] and then uh this is where the
+[53:43] perfectionism thing is going to kick in
+[53:46] I have a feeling that this actually
+[53:48] should be accent
+[53:53] content
+[53:56] oh maybe it's just here
+[53:59] can I have a feeling that uh
+[54:02] the whole color of the app is going to
+[54:04] change
+[54:05] uh background accent 10.
+[54:10] is this
+[54:12] Yeah it's red on the bottom here right
+[54:16] oh yeah it is
+[54:21] foreign
+[54:23] looks like it applies some kind of
+[54:25] colors that I didn't choose it's kind of
+[54:27] Gray
+[54:28] I think it's okay
+[54:46] that's the one I applied by okay
+[54:50] uh
+[54:53] background color
+[54:55] that's the one I add block size
+[54:59] order book sizing color oh
+[55:04] oh
+[55:06] it adds a color here
+[55:11] H background bass content
+[55:26] does it apply
+[55:29] how is that color coming from
+[55:43] roots
+[55:47] let me show me again color it's coming
+[55:49] from
+[55:53] okay Roots color
+[55:57] all right it doesn't matter
+[55:59] um
+[56:00] should be doing this
+[56:10] okay I think we are good
+[56:12] um maybe
+[56:15] you guys think it's a bit better not
+[56:17] better maybe the league the render
+[56:19] leaderboard
+[56:20] stuff should not be primary but
+[56:24] maybe I'm just gonna replace okay I'm
+[56:27] gonna I'm gonna take everything that is
+[56:29] gonna be primary is going to be replaced
+[56:32] by
+[56:35] accent color and bingo we are yeah okay
+[56:39] that makes a bit more sense now
+[56:41] so I'm not supposed to have two colors
+[56:43] here but it's because I created two
+[56:46] avatars only my name will be in this
+[56:49] color but the other people will be in
+[56:51] Black
+[56:53] I can't like they'll all be like this
+[57:01] all right
+[57:08] um it's not really readable
+[57:17] x x and consonant
+[57:19] [Music]
+[57:20] um
+[57:21] maybe what we need to do
+[57:30] maybe what we need to do here is to
+[57:32] change the color based on the level
+[57:34] X accent contents and here if I do
+[57:38] something like
+[57:48] uh s dot x a or maybe just the value
+[57:58] related to the next level that
+[58:00] experience required
+[58:06] if this
+[58:09] is superior to 0.2
+[58:13] we do a
+[58:18] text connection content
+[58:21] for Texas content
+[58:23] if this is superior to 0.2 we're going
+[58:26] to do
+[58:32] that's the opposite
+[58:40] but here I show the XB here
+[58:44] and then here it becomes
+[58:46] and I just need to find
+[58:49] a sweet spot uh
+[58:54] 0.2 I would like fake oh yeah
+[58:58] maybe I'll do something like uh
+[59:02] 20.
+[59:09] wait wait what am I doing
+[59:13] Max
+[59:16] just stick level one
+[59:20] oh yeah because it was over stuff okay
+[59:25] so if I have a F5
+[59:30] and here I have five
+[59:37] oh no no so the one and here I have five
+[59:42] okay
+[59:43] if I have
+[59:46] um two
+[59:50] okay that's where the issue happens if I
+[59:52] have 2.1
+[59:57] so maybe I need 2.5
+[60:00] should be the limit
+[60:19] so this should still should it still
+[60:21] should be
+[60:26] it should still be the text accent
+[60:29] content
+[60:32] so if I go 2.1
+[60:37] wait what am I doing I'm a stupid word
+[60:42] anyway it's never gonna work
+[60:46] asking help from uh from YouTube
+[60:51] developer name should be closer
+[60:54] okay and then the text in the coach
+[61:07] that is darker than your accent
+[61:10] okay
+[61:14] I think it's a way better when you limit
+[61:16] the use of accent color
+[61:18] around twenty percent yeah yeah
+[61:21] oh so you guys do you guys think it's
+[61:23] getting too much to
+[61:25] colorful come out
+[61:50] yeah just do this
+[61:53] okay yeah I think I'm going to leave it
+[61:54] gray
+[62:11] okay I'm Gonna Leave it gray I think it
+[62:12] makes more sense
+[62:14] and uh
+[62:19] oh it's not perfect I think I'm gonna
+[62:21] we're gonna go that way
+[62:23] I'm gonna go that way
+[62:25] it's not gonna be perfect at some part
+[62:27] the XP will be a little weird color
+[62:31] whoa it's gonna work out
+[62:38] okay yeah
+[62:40] um the screen tip level and name should
+[62:42] be closer
+[62:43] than the text and the coach
+[62:48] and it takes any good
+[62:49] team
+[62:51] any sense information level and names
+[62:54] for this and this
+[62:56] should be closer than text
+[62:59] and the gosh so closer than Spiderman
+[63:02] and
+[63:04] the progress bar is it do I understand
+[63:06] well
+[63:20] so I should you should I think I should
+[63:23] lower the The Experience bar here maybe
+[63:26] by four
+[63:30] something like this
+[63:57] so cute
+[64:03] you can try to get the two text closure
+[64:05] just show how good it looks
+[64:07] um I think I can try but I might just
+[64:10] have issues because
+[64:12] I need to do some weird
+[64:14] faster than
+[64:16] um
+[64:17] this is my texts and I'm gonna have to
+[64:20] do something like margin button 0.5 and
+[64:23] make this negative
+[64:26] maybe we can go up to one
+[64:30] how is that
+[64:47] okay leave it that's fine don't do
+[64:50] negative Mark it's really bad yeah it's
+[64:52] a it's a hacky stuff actually do you
+[64:54] think it looks bad I think it looks good
+[64:56] now
+[64:57] pretty it seems pretty simple
+[66:00] oh
+[66:03] okay okay
+[66:06] I need help me help you I
+[66:10] okay
+[66:30] all right um
+[66:35] we can remove this now we have to change
+[66:37] the color of every details
+[66:40] every primary action in the app I love
+[66:43] it
+[66:46] margin but um equal one maybe which is
+[66:48] two leading
+[66:51] or
+[66:57] oh no that's another one
+[66:59] oh yeah that's the one
+[67:13] maybe we go this way
+[67:16] seems cool
+[67:22] okay so the basic stuff good morning
+[67:24] your Legends
+[67:26] you're seeing that buzz Lookouts uh we
+[67:29] don't really care I had a sport Avatar
+[67:31] and then on my create
+[67:33] we're going to change primary stuff
+[67:39] or accents
+[67:46] okay
+[67:47] same for sign up and sign in
+[67:54] primary is going to be completely
+[67:55] different there's only one actually
+[68:00] and for
+[68:02] the login
+[68:05] just one
+[68:07] okay
+[68:11] all right we good
+[68:24] all right my new you're the king
+[68:26] the design looks much better now thank
+[68:27] you bed
+[68:34] hero
+[68:35] oh maybe the sign of okay right
+[68:37] it's in it's Saturday it's Sunday so we
+[68:39] can do some procrastination things
+[68:42] I think these look [ __ ] awesome
+[68:45] in the center it's actually looking
+[68:46] better
+[68:49] welcome back
+[68:50] Center
+[68:54] and here random Emoji uh
+[68:59] how does this stuff look like
+[69:01] I just have an image in the center so
+[69:03] maybe I wrap it
+[69:07] um in a div
+[69:19] background
+[69:21] phase I'll be right
+[69:26] um
+[69:27] founded
+[69:32] in here we are going to do something
+[69:35] even more dirty
+[69:54] yeah we're going to keep the rounded
+[69:56] stuff like this
+[69:57] all right I think it looks better
+[70:00] a bit more inviting
+[70:04] yeah I think it is so we're gonna copy
+[70:06] that thing
+[70:08] and put it for this
+[70:27] color gray is pretty strong I think you
+[70:29] may have a bit lighter
+[70:33] oh yeah that's true
+[70:35] I don't know how I can change the color
+[70:37] in this UI that way
+[70:39] um
+[70:43] I want to change this
+[70:48] something
+[70:50] oh no maybe just in colors somewhere at
+[70:52] the bottom I can change
+[70:55] how to use
+[70:56] nope
+[70:58] uh config
+[71:05] customize component probably not
+[71:11] oh okay the theme
+[71:13] then probably
+[71:17] it might tell wheat uh
+[71:21] telling Daisy okay I need to take all
+[71:24] this
+[71:27] and here
+[71:31] or
+[71:33] wow
+[71:34] there we go
+[71:37] changing everything
+[71:39] uh 200
+[71:46] it's actually not bad
+[71:49] uh dragon base
+[71:53] we remove it
+[71:56] oh wow what's going on
+[72:00] which team do I use I use
+[72:04] um
+[72:06] forgot I use Emerald
+[72:12] right
+[72:14] Emerald
+[72:24] also we change oh [ __ ]
+[72:28] yeah it was not bad actually yeah I
+[72:30] think that's what they use here it looks
+[72:32] pretty cool
+[72:35] uh but though bro I just I don't want to
+[72:38] change everything
+[72:43] and maybe you know what maybe I'm
+[72:44] bothering with details maybe I'll just
+[72:47] gonna go like this
+[72:48] so the documents background base
+[72:52] um what is the face cover
+[73:11] is this one
+[73:14] and maybe I'll put
+[73:17] uh
+[73:19] I'm gonna try a few stuff
+[73:27] all right that's a bit less grayish do
+[73:30] you think
+[73:34] I'm just gonna finish the line assign
+[73:36] the page um anub grow your workout grow
+[73:39] your sport Avatar
+[74:25] I told me
+[74:27] thanks buddy
+[74:34] welcome back
+[74:36] okay good morning your Legend
+[74:41] um
+[75:02] all right that seems better
+[75:05] what else do we need we have company we
+[75:09] have the colors that is a bit less
+[75:11] violent
+[75:16] yeah
+[75:19] it's a bit less Gray
+[75:22] we can still add a sport Avatar
+[75:35] support Avatar
+[75:38] go per week I watch our name
+[75:44] all right sounds good
+[75:46] we have some primary colors somewhere
+[75:48] hidden
+[75:51] 404 doesn't matter sign up
+[75:54] uh
+[75:56] we'll see this is going to disappear
+[75:58] anyway
+[76:00] create Avatar
+[76:04] premium
+[76:06] oh yeah exit I go in the premium page
+[76:13] for premium for 90 dollars okay
+[76:37] it's tempting
+[76:45] okay I have to
+[76:50] it's Sunday it's okay
+[76:58] um
+[77:26] all right
+[77:28] and
+[77:33] oh I know maybe
+[77:42] I just app
+[77:55] your upgrade oh yeah come on there we go
+[77:58] I read your mind
+[78:07] okay I think this is good
+[78:09] um all right I need to do
+[78:12] I need to show
+[78:14] when you when you level up I'll need to
+[78:16] show to the user because it's not clear
+[78:18] you level up you can see the character
+[78:21] is getting bigger but
+[78:25] he needs a little extra so I'm gonna
+[78:27] replace uh what did I do here
+[78:32] we're gonna say uh
+[78:36] new color
+[78:41] of your gosh the empty background could
+[78:43] match the background
+[78:45] Shrek tag so you understand that
+[78:46] completing a strike will impact the
+[78:48] coach
+[78:49] the strike
+[78:54] oh this uh here
+[78:58] this part you say that it should be the
+[79:00] same color as this thing in this trick
+[79:06] I tried just a little bit earlier
+[79:09] um
+[79:11] it just it feels a little bit too much
+[79:15] um background Bass
+[79:17] like
+[79:18] a bigger accents it just feels like um
+[79:30] actually the color is not the same
+[79:33] I don't know why
+[79:35] because I think there is some kind of a
+[79:37] by default
+[79:40] the color is
+[79:43] I think there is this stuff being
+[79:45] applied
+[79:47] is it
+[79:49] nope
+[79:51] why does it look like there is a gray
+[79:54] stuff on on it
+[80:01] border it's not the Border
+[80:04] in case I'm gonna check no
+[80:12] I don't know if it's just me man but I
+[80:13] feel like this background on the
+[80:15] progress bar
+[80:16] is not the same as the one at the top he
+[80:19] feels like it's a mix of the accent
+[80:21] color orange one and
+[80:24] some other
+[80:25] grayish stuff
+[80:30] this is the one I applied this is the
+[80:32] one it wants
+[80:33] if there's any filter or something on it
+[80:44] I don't know
+[80:57] I think I'm gonna
+[80:59] yeah otherwise I will have to dig into
+[81:01] CSS stuff in a probably I won't I want
+[81:05] to make the that
+[81:07] oops oops I want to make just the user
+[81:09] experience a bit better with using
+[81:12] um something else probably
+[81:15] see I lost the chats what's going on
+[81:18] uh
+[81:20] Twitter
+[81:29] can I pop out the chat from here
+[81:33] yep
+[81:42] correct okay
+[81:44] okay
+[81:46] um
+[81:51] oh well we have a lot of stuff to do I
+[81:53] forget that landing page delete edit
+[81:56] Google and stuff workout Avatar so
+[81:58] message will never level up
+[82:00] all right we're gonna go on the message
+[82:01] now
+[82:05] oh [ __ ]
+[82:07] oh my God I have to do the figma work
+[82:10] for it
+[82:13] uh where is it
+[82:16] entitled uh
+[82:20] I need to change
+[82:24] where would I put this color otherwise
+[82:26] uh
+[82:32] I think I only added that color on the
+[82:34] screenshot on the
+[82:36] stores
+[82:38] so that should be fine
+[82:42] oh my new if you're still here do you
+[82:45] think you can save my life and
+[82:47] um I have to edit all those screenshots
+[82:51] um
+[82:52] and I I just I don't think I'm not gonna
+[82:55] change this color it's not the purpose
+[82:57] but changing the background of those
+[82:59] stuff
+[83:01] I used a document color and I don't know
+[83:03] how I could edit the document color so
+[83:05] every screenshot updates
+[83:07] without having to do one by one
+[83:10] and if you're not here I'm just gonna
+[83:12] have to
+[83:13] do it manually
+[83:16] [Music]
+[83:29] uh bro
+[83:32] all right so came in
+[83:41] excess
+[83:50] is it
+[83:53] I try to send it on the chat
+[83:56] if uh if it doesn't work
+[84:01] if it doesn't work let me know I'll send
+[84:03] it to you on Twitter
+[84:05] I'm going to have a quick bathroom break
+[84:08] into a team in the music editor oh
+[84:11] yeah to add editors first man okay
+[84:15] into a project look to a project
+[84:21] that can be edited oh
+[84:25] repeat
+[84:33] moving below edits
+[84:36] oh then I see
+[84:38] oh and we can move on and have a chat
+[84:40] and oh yeah remember that feature so
+[84:42] nice
+[84:49] all right bro I'm I'm I really need to
+[84:52] go for a quick bathroom break I'll be
+[84:53] back in a minute
+[86:12] the hero feed the King Library so how
+[86:13] does my female work
+[86:15] I have different teams
+[86:20] in projects what are those
+[86:28] people your feet okay no that's part of
+[86:30] the hero feed okay
+[86:32] and then those are my interrupt
+[86:35] okay
+[86:41] Richie
+[86:45] okay
+[87:08] all right
+[87:10] yeah is it excessive
+[87:13] it did click on the share button oh okay
+[87:19] first maybe uh here somewhere I just
+[87:22] repeated access to it and click on the
+[87:24] ship
+[87:25] maybe if I just go in my emails get the
+[87:28] message
+[87:30] don't open here here
+[87:36] in the fight oh okay wait
+[87:39] on you
+[87:46] is it working
+[87:50] oh yeah you're here
+[87:52] nice
+[87:54] the king design is here even you have uh
+[87:56] on figma I chose like purple
+[87:58] the same color you use for the previous
+[88:00] design you made
+[88:05] it okay
+[88:09] so cool bro
+[88:21] and now the level of color
+[88:23] um
+[88:32] so when you are here I add a record
+[88:35] I send you comfort you
+[88:45] press the data
+[89:22] I get the sports
+[89:24] the date
+[89:37] new data
+[89:46] it again
+[89:52] okay so here I need to check
+[89:55] compare
+[89:58] test and earned level
+[90:01] and before we mutate the data so what is
+[90:05] the data the data is
+[90:07] data.user
+[90:18] .sports.defined
+[90:23] um
+[90:24] or dot ID
+[90:27] equal
+[90:29] that's support ID so that's the support
+[90:36] would equal that
+[90:39] um and then we do something like
+[90:45] instance
+[90:47] updated support equal
+[90:53] new data that's user.sported Maps
+[90:59] equal press
+[91:02] sport dots
+[91:07] XP
+[91:09] oh just rest a sport okay update sport
+[91:22] and I want to compare support XP and
+[91:26] update Sports
+[91:30] that XP
+[91:32] and
+[91:38] using the game line
+[91:54] maybe sport currents
+[92:00] or it's updated
+[92:06] uh constant level
+[92:09] all right
+[92:11] equal
+[92:14] get current level I have this function
+[92:16] yep delegate current level
+[92:18] board all right
+[92:21] dots XP
+[92:25] and here we do level
+[92:28] updated
+[92:36] equal get current level or
+[92:39] sport updated
+[92:42] and here we are going to
+[92:46] do do things
+[92:48] um
+[92:49] remove that
+[92:50] I'm gonna toast
+[92:55] something like this a div
+[92:58] and here we're gonna do
+[93:01] this what we had before
+[93:04] data is producer that's fine
+[93:07] and then use the support that we have
+[93:09] data user support find okay
+[93:14] uh sport turns which doesn't really
+[93:17] matter gain rest that XP to gain
+[93:21] and if
+[93:23] level updated
+[93:26] is superior to sports
+[93:29] to level currents
+[93:32] and
+[93:33] we're going to add
+[93:35] a div
+[93:38] last name font
+[93:41] heavy bold
+[93:43] and the little cute star
+[93:50] and we're gonna do
+[93:56] for the current name
+[93:59] level level
+[94:04] is now
+[94:06] is now level
+[94:09] I'll just leveled up oh
+[94:14] love build up
+[94:17] okay okay
+[94:24] this is gonna be a trial
+[94:29] I have no idea if this is gonna work
+[94:34] and just to show you
+[94:36] um grass Ferry level 2 okay if I
+[94:39] complete I'm gonna earn enough expect to
+[94:41] go level four
+[94:43] three
+[94:44] one two three
+[94:49] s dots
+[94:52] s is not defined
+[94:55] data.user.sports
+[94:58] fine s is not defined
+[95:03] so that's this one you're not defined
+[95:11] let that record
+[95:13] s you're not defined uh
+[95:17] was it doing before
+[95:22] data user Sports to find s dot Sid
+[95:30] a user reports okay what am I missing
+[95:32] here
+[95:39] data the user the supported find
+[95:42] oh this of course
+[95:46] this is the 90. okay let's try it again
+[95:49] Kelly Slater is supposed to level up as
+[95:52] well
+[95:54] yes
+[95:56] uh Kelly said here leveled up
+[96:05] the level up
+[96:14] okay so we're gonna remove that
+[96:17] and uh maybe we do if it's new level
+[96:26] or if it's not a new level
+[96:34] so
+[96:45] why two uh so if you leveled up
+[96:51] you are going to
+[96:55] if you don't level up you just have your
+[96:58] name Gainer and if you leveled up
+[97:00] you're gonna see
+[97:02] your character name
+[97:04] I know
+[97:07] your character name leveled up
+[97:10] in gained
+[97:16] again
+[97:18] XP
+[97:20] Congress
+[97:24] all right try it again
+[97:26] I'm going to level up
+[97:28] elicitor level up and Gain
+[97:30] congrats
+[97:36] maybe just character name gain
+[97:45] gained an XP and leveled up
+[97:49] all right
+[97:56] again Kelly Slater you are going to
+[98:00] level up as well
+[98:01] again and leveled up congrats
+[98:06] maybe let's try with something that will
+[98:08] not level up
+[98:11] you're gonna level up you're gonna Live
+[98:13] It Up
+[98:14] all those will level up [ __ ] I'll have
+[98:16] to create a new one
+[98:18] maybe I just do something like this
+[98:25] in here
+[98:27] if you don't live it up I'm gonna say
+[98:29] Okay steam game okay
+[98:31] perfect
+[98:32] yo I'm back menu
+[98:34] [Music]
+[98:37] you're still here it's quite late in
+[98:38] France isn't it
+[98:41] it's your cute Avatar
+[98:44] oh [ __ ] bro sorry
+[98:49] I'm not either a click on this [ __ ]
+[98:51] click on the share and add menu
+[98:56] oh that's why what do you oh yeah [ __ ] I
+[98:59] could have done this earlier can edit
+[99:03] are you on holiday or do you work there
+[99:21] we're gonna leave there okay
+[99:25] is it is design what you do for work
+[99:32] you're way too fast bro
+[99:37] oh you added gradients here are the men
+[99:42] [ __ ] that looks dope I almost want to
+[99:45] recreate the screenshots
+[99:55] thank you buddy I really appreciate you
+[99:56] sending um all those great great very
+[100:00] nice
+[100:06] I'm ahead of a product and designed to
+[100:08] start a nice
+[100:11] oh okay yeah that makes more sense now
+[100:13] that's why you have a knife
+[100:21] I think bro you're doing really well
+[100:24] I appreciate so much you do you took the
+[100:26] time for this really really thankful man
+[100:37] oh there was something happening
+[100:38] yesterday
+[100:42] all right I'm gonna put on your work
+[100:44] directly in the app
+[100:48] um
+[101:03] [Music]
+[101:21] and you aspire to build your own startup
+[101:25] is that what part what's way you're part
+[101:27] of the building public community
+[102:00] you need to change
+[102:16] I have to do this
+[102:22] oh [ __ ] I didn't pay attention to that
+[102:24] too
+[102:30] I'll Ctrl C for I can forget
+[102:33] Color Picker
+[102:36] oh [ __ ] I could have just
+[102:38] mark
+[102:53] maybe just
+[102:55] is this
+[103:13] I just dropped the exact same thing mark
+[103:20] more seriously
+[103:27] why
+[103:33] seriously Mark
+[104:06] some point they'll be a new thing every
+[104:08] day and always watch what what people
+[104:10] are building nice
+[104:15] nice nice especially with them up
+[104:41] ding ding ding
+[104:43] thank you
+[104:47] okay
+[104:49] and for the App Store
+[104:54] make sure you always have to change the
+[104:55] screenshots inside oh yeah for the
+[104:57] background I
+[104:59] I'm at a point where
+[105:01] um I don't want to spend too much time
+[105:03] and going through the simulator and risk
+[105:06] screenshot like cropping and everything
+[105:07] again
+[105:09] I have a feeling that uh I'm just gonna
+[105:11] skip that part
+[105:18] that's weird you talk to me yes what do
+[105:20] you mean your name is Mark
+[105:22] yeah
+[105:24] it's a menu menu Mark I'm wondering how
+[105:28] come the what's the connection
+[105:41] oh maybe I'll do this later
+[105:44] then I'm gonna okay I'm gonna do this
+[105:46] later
+[105:48] all right so we have
+[105:50] um let's say use a new a new Mark Duty
+[105:56] signs this is done show message this is
+[106:00] done delete edit
+[106:02] all right so I won't yeah I think people
+[106:04] should be able to delete
+[106:06] everyone calls me menu since I'm a kid
+[106:11] but your but your real name on your ID
+[106:12] card is Mark
+[106:27] oh okay that makes sense yeah
+[106:31] yeah okay that makes sense
+[106:34] manual Mark is much easier for people I
+[106:36] guess especially in the US market
+[106:37] Manuela
+[106:39] good luck seeing that
+[106:43] good to see another Mark in the in the
+[106:46] journey
+[106:47] okay moving on to the editing
+[106:54] oh maybe I can steal your mind
+[107:00] so
+[107:03] let me show you what we have what we
+[107:05] have here I think people should be able
+[107:07] to edit the name of their avatars and
+[107:10] eventually to delete it so I'm gonna
+[107:12] have to create an edit delete page
+[107:15] I'm wondering how would I link this card
+[107:19] to the edit page how do people know they
+[107:22] can tap somewhere to edit the characters
+[107:26] if you're up for a challenge
+[107:32] in the meantime I'm gonna create the
+[107:34] page
+[107:37] um
+[107:40] I'll need I think I'll need an API route
+[107:43] as well
+[107:46] app
+[107:47] um
+[107:49] Maybe
+[107:50] sport
+[107:52] here edit
+[107:56] and then
+[108:07] oh maybe no
+[108:11] no yeah we need uh
+[108:14] ID
+[108:19] I'll check on my FEMA so you can follow
+[108:21] okay man
+[108:24] yep awesome
+[108:27] well we're it's it's a this product is
+[108:30] like it's not building in public it's
+[108:33] even like a crowdsourced building in
+[108:36] public or something
+[108:43] yeah the king
+[108:44] um I'm setting up the page on my side so
+[108:47] I can connect it right away
+[108:52] import to this router
+[108:59] equal we use
+[109:06] import use effects
+[109:09] uh
+[109:13] lose effects
+[109:21] are there that is ready
+[109:26] is ready
+[109:30] yeah okay thank you react edit
+[109:36] um
+[109:37] what's the name of
+[109:39] Sigma react next she is
+[109:51] already query
+[110:01] ID
+[110:11] Sports
+[110:12] dot blah blah
+[110:22] what is the name of it
+[110:25] app sportid.js
+[110:27] default export is not export
+[110:30] ah
+[110:34] export default okay bro
+[110:40] evil edit
+[110:52] the PID
+[110:55] well maybe we don't even need to use
+[110:57] effect
+[110:58] okay
+[111:35] here you know that it is here inside of
+[111:37] a function that is not a function
+[111:39] company instead
+[111:42] okay bro you're kind of better
+[112:00] I'll go ahead and do
+[112:03] um the API route first sports
+[112:07] and record create
+[112:11] uh
+[112:13] maybe index
+[112:25] the roads are dirty as [ __ ]
+[112:31] uh course database true both true
+[112:39] oh no maybe I'm going to cut it edit
+[112:41] okay
+[112:46] Handler
+[112:50] Plus
+[112:53] everybody that support ID return
+[112:57] you want to edit
+[113:01] it's looking wait user
+[113:12] all right I'm doing something stupid
+[113:14] here I need two rounds I need an edit
+[113:18] and a get
+[113:24] word
+[113:33] ID
+[113:39] I'm doing it dirty way
+[113:45] anyway it doesn't matter
+[113:51] import
+[114:09] um
+[114:13] request a user that Sports
+[114:16] studying concludes
+[114:18] and the requested body that's sport ID
+[114:24] if you don't have it
+[114:25] or not authorized to get it
+[114:32] edition.404 you
+[114:36] don't
+[114:37] it's sport
+[114:40] bro
+[114:45] and then we're just gonna do
+[114:50] Port equal
+[114:53] towards the weight
+[114:56] for the find one
+[115:01] by ID I think but
+[115:06] I I die yeah we have it and we're gonna
+[115:09] do the sport
+[115:11] I did request buddy the support ID
+[115:15] and we're gonna return you to sports
+[115:21] so here in my
+[115:26] edit
+[115:27] I can query API sport slash
+[115:34] forward slash just board and we're gonna
+[115:37] do a git
+[115:40] and we're going to log
+[115:43] console log
+[115:44] data
+[115:49] oh
+[115:53] no I need I need a power
+[116:06] um
+[116:40] here we don't need the requested buddy
+[116:44] request uh it's
+[116:47] request dot dot
+[116:49] very
+[116:51] requested query okay request dot very
+[116:54] that's
+[116:57] ID
+[117:02] yeah we're gonna check requested buddy
+[117:11] and Buddy becomes query
+[117:18] and here we are going to do Sports slash
+[117:23] um ID
+[117:35] import
+[117:43] console.log data uh
+[117:50] do this
+[118:00] I need to finish this after
+[118:04] the idea of trimming lasers as if as a
+[118:06] fun followers and retweet and then you
+[118:08] must be run as a solopreneur have you
+[118:10] ever considered building with a team hey
+[118:11] yo Robert good morning
+[118:13] um
+[118:14] I I've done some apps with people before
+[118:17] and it just doesn't really work really
+[118:19] well I don't think people like to work
+[118:22] with me for some reason
+[118:24] um and I just like also the idea of
+[118:25] being independent uh something I really
+[118:28] fight for
+[118:29] so mostly not but uh that's something is
+[118:32] happening today like with those live
+[118:34] stream I can feel like some people from
+[118:35] Twitter are coming in and
+[118:38] um sharing some of their work sometimes
+[118:40] people will help fixing bugs and we're
+[118:42] having a fun with Manu he's a designer
+[118:45] in New York and he sent me those amazing
+[118:48] design early this morning
+[118:51] um and the app looked like this at the
+[118:52] beginning and it turned it into
+[118:54] something like this which is much better
+[118:57] uh so it's funny it's a kind of like a
+[118:59] crowdsource stuff not really a team but
+[119:01] uh
+[119:03] here we go that's so fun
+[119:10] bro so
+[119:14] mutate
+[119:26] are you doing
+[119:39] if you're going to get URL you are not
+[119:42] calling anything are you
+[119:45] it's
+[119:48] are you somehow calling something
+[119:53] I miss me something
+[120:17] uh maybe if we try to create
+[120:21] uh API support ID you're not hitting the
+[120:25] API for some reason
+[120:27] maybe try and get it
+[120:46] what am I doing wrong here
+[120:50] a little data
+[120:52] you're supposed oh yeah I don't push
+[120:55] this here doesn't work
+[120:59] I'm still not calling anything
+[121:19] I mean you're not doing the call already
+[121:22] explain me what's going on export
+[121:24] default function app
+[121:30] oh maybe because you already have it
+[121:38] then you're still supposed to call
+[121:39] something
+[121:59] okay no APA call is being made
+[122:05] use API client kids
+[122:11] or not ID
+[122:14] I am just supposed to make
+[122:43] oh you really don't want to do it though
+[122:55] what am I doing wrong here
+[123:08] use
+[123:10] usually you are
+[123:13] doing it here
+[123:21] what am I doing wrong
+[123:29] come on bro
+[123:54] I ain't no strange here
+[123:59] why it doesn't appear in my network oh
+[124:01] maybe because I don't return anything
+[124:04] wait
+[124:07] you're trying to call it
+[124:16] would it be because you're
+[124:31] you're supposed to show me something no
+[125:14] I said how long have you been studying
+[125:16] software development uh I think
+[125:18] maybe six or seven years
+[125:21] um but not really not professionally at
+[125:24] all just cutting stuff so I make a lot
+[125:26] of mistakes and I'm not very uh
+[125:29] uh well structured when I do it
+[125:33] and this is my first time on the Stream
+[125:35] I'm not good about oh okay
+[125:39] I'm subtracted by trade yeah same for me
+[125:41] man
+[125:42] um
+[125:43] I have supposed to make a simple API
+[125:45] call here
+[125:47] with this function
+[125:49] and nothing is being made
+[125:52] which is really strange because uh in
+[125:55] here in the other routes I have the same
+[125:57] function here
+[125:59] and uh if I go back the coal is being
+[126:02] made to the user endpoints
+[126:06] I just don't know why it's not working
+[126:10] when I when I am on this page for some
+[126:12] reason
+[126:18] could it be sport maybe we try something
+[126:21] else
+[126:21] um blah.js
+[126:24] if we copy this everybody here and then
+[126:28] we go to blah
+[126:34] yeah the API call is still not be made
+[126:36] okay
+[126:38] or
+[126:43] just go
+[126:45] there
+[126:48] again copy and past
+[126:53] e and if I go to
+[127:02] he doesn't make the call as well
+[127:08] okay all right I think I need a coffee
+[127:12] I'm being nuts operational at all right
+[127:16] now
+[127:36] okay it's a coffee time
+[127:39] all right I'll be back in a minute I'll
+[127:40] just make a coffee
+[133:13] all right I'm back
+[133:15] get some gasoline
+[133:18] and it's 30 to 4. rain outside so we can
+[133:22] open
+[133:24] deductions to my original female okay
+[133:27] request okay
+[133:30] um well I'm with you man I'm checking
+[133:33] oh wow
+[133:37] what do we have
+[133:55] [Music]
+[134:07] okay I'll let you I'll let you finish
+[134:10] and uh it looks good man
+[134:14] it was super good
+[134:31] uh going back to that thing ah of course
+[134:34] I know what God damn it this is exactly
+[134:36] why coding can be [ __ ]
+[134:39] I know exactly why it's not working I
+[134:42] need to import my API clients
+[134:49] and now it's gonna work of course
+[134:52] I don't have a function how come
+[134:55] thirsty mark
+[134:57] seriously
+[135:01] sometimes it's just little details like
+[135:03] this you go you go to the toilets you
+[135:05] make coffee and you come back and boom
+[135:06] here you have
+[135:15] okay uh
+[135:44] use
+[136:19] oh yeah maybe I'm just gonna do this I'm
+[136:21] gonna do
+[136:23] if ID
+[136:29] have a function if
+[136:35] hey Google
+[136:36] play The Blaze
+[137:10] here
+[138:33] in my API you don't have the sport bro
+[138:37] I just need a back button somewhere
+[138:45] import
+[138:47] Ant back
+[139:07] okay
+[139:08] um so we're making the call it's fine on
+[139:10] the API side we return
+[139:14] um
+[139:23] a
+[139:26] h
+[139:29] okay menu I'm on it
+[139:32] checking it so we have
+[139:33] okay
+[139:36] I did support Avatar oh yeah okay
+[139:40] edit
+[139:44] okay you have the edit button here
+[139:49] and on this one you would have an icon
+[139:51] oh maybe I'd like
+[139:54] I like both
+[139:57] um let's see how that goes with my
+[139:59] current broken design
+[140:02] I'm probably going to try both the hero
+[140:04] icons
+[140:06] um edit
+[140:10] probably this
+[140:12] and we are going to go to the Index app
+[140:17] and emoji
+[140:24] so basically would be somewhere around
+[140:29] with this relative
+[140:33] let me do a span
+[140:37] that we're gonna say about a class name
+[140:40] button
+[140:41] button ghosts
+[140:49] absolute
+[140:53] absolute
+[140:55] button zero
+[140:58] right zero
+[141:03] and we're gonna do button maybe Xs
+[141:07] oh no maybe I just need to change this
+[141:11] five
+[141:23] how do you do this
+[141:25] okay
+[141:45] I don't know maybe the edit is a bit
+[141:48] simpler
+[141:50] um
+[142:05] and how about
+[142:09] I don't think this is gonna work
+[142:19] I'm not next to the name
+[142:21] we do something like
+[142:27] in the very like class text SM
+[142:31] oh it's normal
+[142:39] please
+[142:54] or I try this
+[143:04] here's how do Twitter do that
+[143:09] edit profile okay
+[143:35] and it's sunny again
+[143:42] I mean I like this part here the top
+[143:46] right it was cute
+[143:51] oh you're okay you're working on it nice
+[144:00] all right you know what I I have some
+[144:02] work to be done to make this available
+[144:04] later I'll let you uh
+[144:06] how did you play around with this and
+[144:08] I'm gonna be on the page
+[144:10] I'm gonna make sure it works
+[144:13] um
+[144:17] and maybe just for now to help I'm going
+[144:20] to
+[144:26] wait
+[144:29] um
+[144:32] here we're going to have a link
+[144:40] and we're gonna say it
+[144:45] app dot sport Dot
+[144:48] that ID
+[144:57] normally when I click it on my page
+[145:02] um
+[145:08] I start stealing some of your design
+[145:10] edit support evidence
+[145:12] I think this will
+[145:23] I don't know if people can edit their
+[145:25] avatars I don't think so
+[145:27] don't mix wait you pick another tar
+[145:30] now I see I think people will just be
+[145:33] able to edit their name and goals
+[145:38] and delete their avatars if they want
+[145:47] create
+[145:49] page
+[145:51] the title was create
+[145:55] maybe you could just teal all that code
+[146:05] of
+[146:07] I'm gonna put this in here
+[146:13] and of course you're not going to be
+[146:15] happy
+[146:16] Kindle edits
+[146:21] name and goal
+[146:23] and errors
+[146:42] and what do we have we have the function
+[146:43] as well to create
+[146:46] is loading uh
+[146:49] he's loading we just want to import it
+[146:51] as these beta
+[146:54] pudding
+[146:59] error
+[147:01] data
+[147:03] [Music]
+[147:06] and we're gonna call my routes
+[147:09] or dot edit
+[147:14] maybe we just called it yeah we're going
+[147:16] to call the Post function okay here API
+[147:18] posts
+[147:20] boards
+[147:22] um
+[147:23] ID
+[147:31] and we're gonna press it the name and
+[147:33] the goal
+[147:35] is loading push app error okay here
+[147:41] data
+[147:46] and this here
+[147:49] is loading he's loading the data
+[147:56] setup is data loading
+[148:00] okay
+[148:02] name new state is not defined of course
+[148:08] uh yeah we don't need the least
+[148:13] and I'll create it
+[148:18] uh here handle create
+[148:21] I'm gonna rename handle edit
+[148:26] we also need
+[148:28] the name
+[148:32] reference is loading
+[148:36] oh yeah I did an important that
+[148:44] and same here
+[148:50] so we have the Avatar we have that thing
+[148:55] what we're gonna do is when we get the
+[148:58] data
+[149:06] data
+[149:08] are going to do sits a name
+[149:13] and oh you're here we need sport as well
+[149:18] chords
+[149:20] it's Sports
+[149:22] and for that we do sit
+[149:27] That's Sports
+[149:29] data does
+[149:30] Sports
+[149:32] that's four dots I think
+[149:39] support the sport dot Emoji ID
+[149:51] support.name I think is how we call it
+[149:55] yep and here for sets all and uh
+[150:17] [Music]
+[150:19] data dots
+[150:22] board I think
+[150:28] is the data we have
+[150:30] oh I think it's data that's res is it
+[150:36] it's for it
+[150:38] uh we are calling this API route
+[150:46] building this API rounds
+[150:51] uh console
+[150:55] of the sports
+[151:01] we send you back a sport
+[151:05] records
+[151:11] um
+[151:16] what's going on
+[151:34] you're calling it but you're never
+[151:36] returning it oh return
+[151:39] okay then that works
+[151:46] you see return this board that's fine
+[151:50] getting back to it
+[151:51] um
+[151:53] once you have the data you feel the data
+[151:55] in the form
+[151:58] okay I can edit
+[152:04] or yeah I don't need to change that
+[152:09] and so when I edit I'm going to do a
+[152:11] post sport ID and maybe patch
+[152:16] or the name
+[152:20] um
+[152:22] oh I need to show you the sport you have
+[152:33] edit
+[152:36] work Avatar
+[152:40] and in the form we have Dave
+[152:46] um we have as your
+[152:50] or Dot
+[152:53] export
+[152:55] it is and we need the Emoji so we're
+[152:57] going to go to the list of sports
+[153:01] get Sports
+[153:06] it's a sport
+[153:10] here
+[153:11] [Music]
+[153:13] it's board That's Sports
+[153:16] and then that demog
+[153:21] class text or Excel
+[153:28] Maybe 5xl
+[153:34] fitter
+[153:36] gold per week
+[153:38] and here we're gonna have edits up there
+[153:43] or maybe just save
+[153:45] change
+[153:47] save changes
+[153:57] you cannot push yep
+[154:00] and to finish I should
+[154:04] go
+[154:06] um
+[154:10] and I should have l
+[154:12] request that method equal uh
+[154:23] uh please again
+[154:26] how to do exactly the same thing
+[154:35] and then I'm gonna get this port from
+[154:38] the database and its ports dots name
+[154:42] equal requests
+[154:44] because that body
+[154:47] dot name
+[154:50] or dots go
+[154:53] equal this and I think there's nothing
+[154:55] else we can change the Avatar will stay
+[154:57] the same
+[154:59] and we're going to do the weight
+[155:01] or dot save
+[155:03] red
+[155:09] okay
+[155:10] all right let's give it a try it's a bit
+[155:12] bold
+[155:17] but done
+[155:18] API support
+[155:22] uh okay else oh yeah else if
+[155:30] all right
+[155:31] it works
+[155:34] I click it if I
+[155:38] nope gets the wrong name once a week and
+[155:42] Federer
+[155:45] so this is updated in here
+[155:49] but for some reason you use it pulls the
+[155:51] wrong data oh because he doesn't
+[155:54] revalidate the sports because you've
+[155:55] already done it
+[155:57] everybody didn't Focus
+[156:00] I released it yeah maybe yes
+[156:05] a
+[156:09] here
+[156:11] okay that works now seven times a week
+[156:19] fine this is working
+[156:22] okay
+[156:23] I'm back and back and back done I made
+[156:25] it simpler version on the bottom with
+[156:27] 3DS menu I can see what you think
+[156:33] okay
+[156:36] I think I'm gonna give this a little
+[156:38] commit
+[156:45] uh we have new routes we have this stuff
+[156:48] to level up and stuff
+[156:52] and stuff
+[156:55] all right
+[156:56] I mean that's geared maybe easier
+[156:58] version to implement
+[157:00] oh okay
+[157:05] okay
+[157:06] actually that's pretty simpler yeah
+[157:11] first comp
+[157:13] and away
+[157:23] you're a hero
+[157:26] I want to steal this
+[157:28] you might steal this
+[157:37] okay bro it's nice
+[157:40] I'm going to
+[157:42] I'm going to check hero icons and and
+[157:45] and see which one thank you man you're
+[157:47] you're really really so kind
+[157:50] that's
+[157:53] uh three
+[157:56] points
+[157:58] Ellipsis horizontal
+[158:07] maybe the cook icon makes more sense
+[158:10] yeah maybe the code icon will make more
+[158:12] sense because people are more used to
+[158:14] this I've had this he shouldn't have his
+[158:16] garden so many times where people don't
+[158:17] understand that these three dots
+[158:21] means you can edit I'll go with it
+[158:28] Index app
+[158:36] level
+[158:40] is that name
+[158:54] wait I get to change this
+[158:56] um so here we go we are here
+[159:00] and we need a button
+[159:03] with the Cog
+[159:06] actually it's not really a button it's
+[159:08] more like a link
+[159:21] Sports for the tiny okay
+[159:24] it's too big we're gonna make it
+[159:26] or
+[159:29] and we're gonna scroll this as a button
+[159:35] but then but then Square
+[159:39] but then ghosts
+[159:41] but then
+[159:43] smxs let's see
+[159:47] um and we're going to do margin left
+[159:49] Auto
+[159:51] and we're gonna do justify
+[159:55] starts
+[159:58] cap
+[159:59] you
+[160:12] my feeds back
+[160:16] it's working bro
+[160:19] I'm gonna edit also the user at the top
+[160:23] uh outline bingo
+[160:27] where is it
+[160:32] settings
+[160:38] this kind no it doesn't work I need to
+[160:40] sorted one
+[160:47] okay it works we have a little button
+[160:50] here we have the level
+[160:52] I need to change the fire Emoji size
+[160:55] same size maybe four or five
+[161:00] five yeah I think I need to make it four
+[161:02] to fit
+[161:03] this here
+[161:06] uh
+[161:11] where are we
+[161:14] expected I think that's the one
+[161:17] it's gonna still look good yeah not bad
+[161:20] it's a bit small 2.5 and let's be greedy
+[161:23] no
+[161:24] we keep it five
+[161:28] kind of looks a little weird
+[161:37] maybe that's where also I need to make
+[161:39] the leading
+[161:41] where is the leading stuff
+[161:51] yeah I think you needed a little bit of
+[161:53] space
+[162:02] two it's two
+[162:05] other French person needs a favorite
+[162:08] gift
+[162:12] she's already 13. I bought it up as soon
+[162:16] as I went to be
+[162:17] wrong
+[162:20] thanks okay thank you so much
+[162:30] I think I'll make a quick break I need
+[162:32] to enjoy this uh we'll be right back I
+[162:35] have um
+[162:36] I've been streaming since this morning
+[162:38] there is a guy called Manu he's French
+[162:40] yeah
+[162:45] so this is the app before
+[162:49] this is the app before it's the design I
+[162:51] made and then uh you just tune up on the
+[162:54] stream it's like hey man I'm a designer
+[162:56] and I just spent a few hours to check
+[162:58] this on oh okay
+[163:00] okay
+[163:01] he made it for you so he took yeah it
+[163:04] was crazy like it took this this is my
+[163:06] design any and he applied his designer
+[163:10] knowledge and he made this which should
+[163:12] get 10 times better than mine oh yeah it
+[163:14] looks super proof it is actually on the
+[163:17] chat here and and we're even like
+[163:19] crowdsourcing the app so I'm adding more
+[163:21] features as we talk and he's like okay
+[163:23] and he builds the design for the feature
+[163:26] and I coded
+[163:28] certainly oh wow it's crazy
+[163:32] he's gonna have an angel yet
+[163:36] that's so funny now when I did the life
+[163:39] I I didn't expect anything is I was like
+[163:42] nobody's gonna choose
+[163:45] and it's just like so funny there's a
+[163:47] people are really kind and
+[163:49] I feel like the hero story and like it
+[163:51] started with something it's all the
+[163:54] support
+[163:55] helps you and you grow live at home
+[164:00] he said I'm starting to blush
+[164:03] hahaha
+[164:04] you're sending you like a love and
+[164:06] competition oh you're so kind
+[164:10] cool yeah and then after I look at my
+[164:13] oven I'm like kids
+[164:18] and it's just so funny yeah that's
+[164:19] beautiful work
+[164:22] oh
+[164:24] it's an angel oh yeah
+[164:28] no I re I read it a little bit the app
+[164:31] it's not it's not like him but it's
+[164:33] still much better than he was
+[164:36] I tried on new colors and stuff I needed
+[164:39] I did a few a few more things
+[164:42] I just say
+[164:44] hey bro
+[164:45] ready
+[164:49] yeah
+[164:50] and are you you're gonna have lunch I am
+[164:55] starving okay
+[164:58] I'm gonna have a question
+[165:00] I'll take shower real quick
+[165:07] will be also for you yay
+[165:12] from from designing to uh food
+[165:16] I support you with love and food and
+[165:19] massage
+[165:38] that makes independent Vlog starting
+[165:40] loading
+[165:47] I'm gonna delete your avatar I'm gonna
+[165:49] add the button here
+[165:55] and then the delete will have a
+[166:00] functions that says unclick handle
+[166:04] delete
+[166:08] which is going to be
+[166:11] nice somewhere here
+[166:14] and they'll delete
+[166:17] um what is it to
+[166:20] settings
+[166:22] window or confirm
+[166:26] yeah okay if confirm all your double
+[166:28] build here sure
+[166:31] we're gonna do this stuff
+[166:37] and then we're gonna set is loading
+[166:43] that loading settings okay all your
+[166:47] avatar and your avatar
+[166:50] and progress will be deleted
+[166:55] forever are you sure
+[166:57] and delete
+[167:00] words for the ID we don't need that
+[167:05] we'll send us a link false I push
+[167:09] okay and on the API side
+[167:13] Port ID
+[167:18] this code tells Eve request that method
+[167:23] equal delete
+[167:31] um
+[167:35] sport fine
+[167:37] sport doesn't remove now we're set to
+[167:39] remove
+[167:41] what do they use for the accounts log
+[167:43] out setting user
+[167:47] await delete user
+[168:03] um user library delete user is
+[168:08] await
+[168:13] to wait
+[168:15] Port the delete one and then we need to
+[168:19] pass
+[168:20] the requests
+[168:22] Dot query.id
+[168:26] let's give it a try I want to delete
+[168:29] Kelly Slater here
+[168:31] oh I also need to delete it from my list
+[168:36] I need to delete it from at least
+[168:39] um
+[168:41] like it's yeah a way to
+[168:43] request.user.sports.populate
+[168:49] boards
+[168:52] request.user.sports
+[168:55] well actually no I don't even need to
+[168:57] populate because I just need to delete
+[168:58] the ID request.user.sports
+[169:01] let's filter
+[169:04] I'm gonna do
+[169:07] every sport
+[169:12] every sport that is different
+[169:16] from requested query. idea
+[169:25] request a
+[169:27] user.org I think the filter function
+[169:30] the filter function filter ask it
+[169:33] returns a new Ira or
+[169:36] shallow copy version
+[169:41] okay so request the
+[169:44] user.sports equal recursor user spot
+[169:46] filter
+[169:47] each sport that is not
+[169:51] in the query okay and then wait
+[169:57] user dot save
+[170:03] let me delete this board and then we
+[170:05] delete it from the user stuff and we
+[170:08] save the user
+[170:10] which means that
+[170:12] if I delete this support from the user
+[170:17] or delivery sure yep
+[170:19] something went wrong
+[170:23] show me what happened
+[170:26] user isn't defined request a user
+[170:30] request a query requisite user oh yeah
+[170:34] request a user
+[170:36] oh so maybe now I don't have this port
+[170:38] anymore because it's been deleted
+[170:41] yeah of course it doesn't exist
+[170:52] hey it doesn't matter
+[170:56] uh we are going back to the app
+[171:00] so that my user which is this guide
+[171:22] okay you don't even know who the user is
+[171:24] oh okay this is the live database for
+[171:26] habits Garden of course it's not gonna
+[171:29] work
+[171:32] okay that's my user
+[171:34] um Sports this is all the sports that I
+[171:36] have
+[171:39] 31 Sports
+[171:43] if I go back and I want to delete this
+[171:46] one I'm going to keep this one I'm going
+[171:47] to delete
+[171:48] this one
+[171:51] let's see if there are any issues
+[171:55] so I don't have the tennis anymore this
+[171:57] is great and then I'm gonna reload and
+[171:59] I'm supposed to have 30 Sports
+[172:01] still have 31 probably because the
+[172:03] filter function is not working
+[172:05] is it filtered
+[172:07] here we're going to do something like
+[172:09] this uh return
+[172:15] console I think it's because I'm
+[172:17] comparing comparing
+[172:18] object ID of these from mongoose
+[172:31] yeah that's the thing uh in mongoose
+[172:37] how to turn object ID
+[172:42] to string just I think two string
+[172:48] yeah
+[172:50] getting too far
+[172:52] so we do
+[172:54] s dot two string
+[172:57] and normally here
+[173:00] when I delete this pleats workouts
+[173:06] and I check the database I should have
+[173:07] normally 30 Sports and not 31.
+[173:12] okay it looks like it's working
+[173:15] then it takes again Tony Hawk
+[173:18] um
+[173:19] I delete I want to delete Tony Hawk
+[173:24] so Tony Oak is now deleted I'm going to
+[173:26] refresh check yeah there's no more Tony
+[173:28] Hawk and I should have 30 Sports
+[173:33] oh yeah 29 okay
+[173:35] okay we have a delete function that's
+[173:37] working
+[173:40] um
+[173:43] working I don't need
+[173:46] or is it
+[173:47] API API delete
+[173:52] um we're just gonna make this look just
+[173:54] a little bit better
+[173:58] okay I delete my sports
+[174:01] fine
+[174:02] here we have the link to get there
+[174:06] and here we have the way to delete I
+[174:10] edit my avatar with my lifters
+[174:13] five times a week
+[174:15] where are you metal lifters
+[174:17] not this one not this one not this one
+[174:20] not this one or is it okay
+[174:22] five times a week 20 x paper competition
+[174:25] okay
+[174:28] and the last thing
+[174:29] your completion
+[174:40] let me bold
+[174:42] and we're good and we have companies
+[174:44] everywhere bingo
+[174:49] Professor again three
+[174:54] most
+[174:58] and leveled up okay
+[175:00] Elite users
+[175:05] alrightos
+[175:07] commitment
+[175:10] and it's here are you sure you're just
+[175:12] uh you're just a designer
+[175:17] if you have croissants one of scissors
+[175:20] um and yeah I feel you too uh but
+[175:22] anyways it's so hard to be a French
+[175:23] person abroad
+[175:26] the the typical French bakeries have
+[175:29] those two
+[175:31] and this is like uh this is worth more
+[175:34] than my computer
+[175:37] oh sweet man sweet
+[175:41] have you heard of celix it makes you
+[175:42] don't have the template the rules things
+[175:44] in your class name do you understand
+[175:46] it's overpowered just learn it today
+[175:47] nice man
+[175:49] no I haven't heard of celix before clsx
+[175:54] started to look very clean
+[175:57] and um yeah yeah uh no Chef today Chef
+[176:00] is coming Monday to Friday and Sunday we
+[176:03] like to be open we sometimes cook we
+[176:06] sometimes uh order some foods and today
+[176:09] I'm having a late croissant breakfast
+[176:11] with a coffee
+[176:14] so um we're gonna have a quick break on
+[176:16] that thing
+[176:17] I will leave you with design I mean I
+[176:20] think I'm going to stay here and eat
+[176:21] here this is the designs from my new
+[176:27] oh yeah I'm gonna I have to wait no I
+[176:29] have to sell this before
+[176:32] yeah I have to steal this before I eat
+[176:34] my croissant
+[176:37] you're you or
+[176:41] good morning
+[176:46] Oh I thought that would could be just
+[176:50] a p
+[176:52] could be as SVG
+[177:03] uh SVG class name you'll accent
+[177:13] all right this is your app anyway it's
+[177:15] yours now
+[177:25] [ __ ] that looks good
+[177:27] here are a legend
+[177:34] at least later
+[177:37] I'm just finishing the code icon stuff
+[177:42] before
+[177:44] early Slater level six level six
+[177:48] we're good
+[177:52] watching about a four
+[177:54] in gap two fine
+[178:00] what do you guys think in terms of
+[178:02] design
+[178:17] I mean
+[178:22] here Jordan
+[178:29] oh no I did
+[178:34] word ID
+[178:41] sport Avatar you go save or delete
+[178:52] beautiful
+[178:53] ah you guys are too cool all right I
+[178:56] think this is all thank you to to menu
+[178:59] honestly like
+[179:00] look at this this is the previous app I
+[179:03] made
+[179:04] and this is the updated version
+[179:08] [Music]
+[179:09] um
+[179:14] you'll get to go
+[179:24] and on the left side you have my simple
+[179:27] version in on the right side you have
+[179:29] the designers version
+[179:32] dude
+[179:33] this is for you when you hear the legend
+[179:40] so much better man so much better
+[179:47] all right you know I'm gonna eat my
+[179:48] delicious croissant because I'm starving
+[179:51] and I'm gonna leave those two designs
+[179:53] here
+[179:55] so we can see before designer after
+[179:57] designer
+[180:08] it's a good point menu um what I did is
+[180:12] so what you can change your avatar names
+[180:15] but some people are a bit lazy to type
+[180:18] so I suggest them a name
+[180:20] I just don't know if I should uh
+[180:24] tell them to change the name or
+[180:26] something for now it's not unique so as
+[180:28] you said people can be yoga to go and
+[180:30] there can be many yoga to go
+[180:32] uh I just thought you know the my I
+[180:35] don't know if they want to type the name
+[180:36] or maybe I can change the placeholder
+[180:39] instead of the name
+[180:41] when the type is gonna suggest oh
+[180:44] you're the king
+[180:47] 38. Sports uh sets the name
+[180:53] maybe we don't do this and maybe just
+[180:56] instinct
+[181:00] name and here we're going to have placed
+[181:02] placeholder
+[181:04] name sets placeholder name
+[181:09] uh
+[181:11] and
+[181:15] here we are just going to
+[181:18] set the placeholder name
+[181:22] then when you create your avatar
+[181:27] uh yeah of course I need to display the
+[181:29] placeholder
+[181:33] placeholder equal
+[181:36] take hold their name
+[181:38] rocket raspberry so maybe that's better
+[181:41] so it leaves people more creativity and
+[181:44] and they cannot submit anyway
+[181:48] don't duplicate props are loaded oh okay
+[181:54] here G Michael Phelps all right maybe
+[181:57] that's better
+[182:01] that makes more sense here
+[182:06] okay that makes more sense yeah if I
+[182:08] create one in a test
+[182:12] yeah of course I don't have an account
+[182:17] okay
+[182:18] um just also the S the level
+[182:24] that was here
+[182:26] it's there
+[182:29] render Sports
+[182:33] gets bored Emoji ID
+[182:37] then we have the record length in here
+[182:40] item Center
+[182:43] okay
+[182:46] okay it takes the same size it takes SM
+[182:53] okay
+[182:57] ready to pre-design
+[183:00] thank you Manu thank you so much for
+[183:01] everything you've done it's just so good
+[183:03] bro
+[183:06] enjoy your night what time is it yeah
+[183:09] somewhere like 11 pm in your time so
+[183:11] enjoy bro
+[183:12] fun
+[183:35] maybe I'm going to keep it this way
+[183:42] yeah details
+[183:46] okay
+[183:49] and I'm gonna have a little break I'm
+[183:50] Gonna Leave the screen open
+[183:55] so we can see the before and after and
+[183:57] we'll be back
+[184:01] ah this bugged me still
+[184:03] a little one Forestry
+[184:05] okay I'll see you
+[196:35] hello
+[196:51] hey Google
+[196:53] please
+[196:56] like having a little music in the Stream
+[197:00] yeah I'm DJ mark
+[197:09] welcome back
+[197:18] okay
+[197:20] is my new delete edit goal that's done
+[197:23] landing page but educational stuff
+[197:25] Google login
+[197:27] at Avatar oh yeah okay we have to do
+[197:30] this
+[197:33] how are we gonna do that
+[197:47] um
+[197:50] commit
+[198:19] hey I can put it tired but I don't know
+[198:21] if that sounds will be good
+[198:24] can you can you actually hear the music
+[198:29] what 50 visitors on the app
+[198:32] welcome
+[198:36] okay
+[198:37] okay interesting
+[198:44] okay
+[198:47] oh
+[198:51] you tell me if that makes any difference
+[198:52] I try to put a bit higher maybe when I
+[198:54] speak you hear it
+[199:01] it's good for the mood
+[199:03] swordlisting
+[199:18] okay so
+[199:20] um
+[199:25] I logout I want to be able to log back
+[199:27] in
+[199:29] but if I want to sign up
+[199:41] I think people should sign up with their
+[199:44] Sports
+[199:46] basically the
+[199:51] um
+[200:18] maybe I want to make this optional
+[200:24] which means if you're here on the sign
+[200:26] up page there will be a pop-up for you
+[200:31] or you can pick up your avatar
+[202:09] you have a pop-up
+[202:16] where basically you have
+[202:18] reads
+[202:21] inside that pop-up you would have
+[202:23] basically
+[202:25] all that
+[202:26] or
+[202:34] should we do this
+[203:00] and if your model
+[203:06] returned
+[203:09] and
+[204:04] I think he's going to hide the model
+[204:43] any friends
+[204:45] opacity
+[205:04] foreign
+[205:35] [Music]
+[205:36] and
+[205:47] close it
+[205:52] okay then we can try this
+[205:54] um
+[205:55] the form
+[205:58] I can try maybe H1
+[206:00] 8
+[206:02] or workouts
+[206:05] I'm just going to copy
+[206:08] uh
+[206:11] great support
+[206:13] and those
+[206:19] create a sport Avatar
+[206:27] get a sport that
+[206:32] then we'll have the form
+[206:38] um
+[206:39] the submission would be handled create
+[206:42] which
+[206:43] and they'll create is just
+[206:46] going to do nothing
+[206:52] but
+[206:54] show model default
+[206:59] and then yeah and then people have okay
+[207:08] and then here I'll need
+[207:11] name play folder is loading we don't
+[207:14] care and gold
+[207:21] it's a bit bold but we're gonna try at
+[207:24] least
+[207:30] here
+[208:45] create the sport Avatar
+[208:56] oh okay
+[208:58] of that
+[209:01] oh
+[209:16] it's way too good
+[212:34] nice so we can
+[212:36] my defaults show this create a sport
+[212:39] Avatar great Avatar
+[212:45] name
+[212:48] okay then I close it and here in the
+[212:51] random emoji
+[212:53] here I have if
+[212:57] I have a sport
+[213:03] and a name
+[213:05] and a goal
+[213:11] I'm going to shoot the random Emoji or
+[213:13] nope then I'm going to show
+[213:16] spin
+[213:17] with this port
+[213:22] or I'm going to show the random Emoji
+[213:24] for X5 XL
+[213:27] 8 Class X5 XL and the sport is
+[213:33] 490
+[213:36] hit
+[213:38] sport
+[213:52] it's Sports sport
+[213:55] emoji
+[213:59] which means that here if I pick up my
+[214:02] support Avatar there's nothing gonna
+[214:04] happen but if I do this blah blah blah
+[214:09] interesting oh yeah you're submitting my
+[214:12] stuff
+[214:14] and don't sign up
+[214:20] what's actually happening here
+[214:23] you've been submitting my stuff
+[214:26] this
+[214:38] you refresh the page so
+[214:41] when I click
+[214:45] on submit
+[214:49] um I have submit button it's gonna do
+[214:51] handle create
+[214:53] oh and here Dot
+[214:56] here dot prevent default
+[215:06] still no
+[215:21] one coat
+[215:22] oh I need to preserve the logs
+[215:27] their logs he looks like something is
+[215:29] happening I don't see it
+[215:34] is not defined
+[215:52] okay so I grew up my work at myself
+[215:54] Avatar
+[216:00] I pick yoga
+[216:02] mark
+[216:05] seven days a week
+[216:08] do I have my soccer mark
+[216:13] and here if I have this
+[216:17] throw your spark Avatar
+[216:28] sign up now to
+[216:33] I'm gonna do something like
+[216:35] um name and goal
+[216:39] and
+[216:43] or
+[216:44] end
+[216:48] this guy
+[216:49] or
+[216:54] sign up now to sign up to grow
+[217:05] name
+[217:07] plus oops
+[217:11] takes these contents
+[217:15] semi bold
+[217:18] and I'm about to grow
+[217:22] we level up
+[217:25] to level up
+[217:28] until level of Mark
+[218:12] I arrive on the app I create a sport
+[218:14] Avatar type name blah blah blah blah and
+[218:18] I want to do five times a week
+[218:31] sign up maybe just sign up to level up
+[218:57] grow a sport Avatar
+[219:18] [Music]
+[219:32] and here we're gonna say
+[219:48] grow your sparked Avatar
+[220:02] sign up to level up
+[220:16] things are tonight's a goal
+[220:19] three Yanks per week
+[220:22] or Max B
+[220:42] asically from Max experience
+[220:48] in my avatar I'm gonna get a Roger
+[220:55] and up to little brother
+[220:58] cute
+[221:04] I could say it's one time per week for
+[221:06] Max XP
+[221:11] and if I really okay of course we're
+[221:13] gonna sign up now
+[221:15] okay I don't have to but I can
+[221:19] um and then
+[221:23] as a parameter on the API we are going
+[221:25] to send
+[221:29] Sports
+[221:36] and then if it has a name if it has
+[221:39] a goal and if it has a sport
+[221:43] we are going to send
+[221:47] a sport
+[221:49] aim goal or
+[221:56] and on my back end
+[222:00] sign up
+[222:35] to Eve request.body that's
+[222:39] port
+[222:42] we're going to do constant Sports we
+[222:43] cure the sport we haven't created a user
+[222:52] so we first need to create the user
+[222:56] we generate the also notification tokens
+[222:59] then
+[223:06] then if there is a sport
+[223:09] we are going to create this board with
+[223:11] user.id
+[223:18] image ID or equal oh no actually
+[223:20] requested video sports
+[223:25] bore dot sport
+[223:28] Dot
+[223:30] where's everybody that's
+[223:32] sports.name
+[223:34] requisite
+[223:36] buddy.sport.gov sports sports okay
+[223:39] and then recoup user.sports.push
+[223:44] and also of course a little await
+[223:50] user.save
+[223:52] optionally
+[223:55] save create reports now it's before
+[224:02] signing up
+[224:04] let's give it a try
+[224:08] I'm here
+[224:28] G
+[224:33] and up to level up RG
+[224:36] it says one per week for Max XP now if I
+[224:38] sign up
+[224:41] something went wrong
+[224:45] yes
+[224:48] that makes a lot of sense
+[224:54] here we go
+[224:55] all right again
+[224:56] um with another email
+[224:59] okay here we go good afternoon you're in
+[225:01] Legend
+[225:03] your Legend
+[225:05] um
+[225:12] your hero
+[225:15] and I already have my Air Jordan level
+[225:18] one and I want to love it a lot more
+[225:31] all right
+[225:45] I cannot because I don't have a premium
+[225:48] account but if I go back to my database
+[225:55] I'm gonna give you a premium access
+[226:11] at the right user isn't it
+[226:15] I am true
+[226:17] oh that's not who you claim to be
+[226:24] is it
+[226:26] no he's premium
+[227:02] oh I forgot the feature
+[227:06] prank
+[227:08] atar if
+[227:11] it will show
+[227:18] okay
+[227:20] um a few try so sign up
+[229:15] hero
+[230:35] develop an app to level up through
+[230:47] in the same three times a week per week
+[231:02] all right sweet
+[231:10] um and we're gonna call it sign up
+[231:13] creates before
+[232:19] yes currents
+[232:30] one
+[233:05] if you
+[233:09] I do not if you don't exercise
+[233:53] you don't exercise at least
+[233:55] once a week
+[233:57] Avatar
+[234:00] will lose XP
+[234:30] like this
+[234:33] here
+[234:38] close
+[236:06] hey Dominique thank you man
+[236:21] a little message
+[236:24] it's coming the thing
+[237:02] I think we're good
+[237:05] we're gonna turn no show landing page
+[237:10] yeah I'll do this after
+[237:56] [Music]
+[237:59] landing page Google login oh [ __ ] it's
+[238:03] annoying
+[238:05] uh maybe deep link
+[238:43] um so
+[238:45] email
+[238:47] be fair
+[238:50] what else do we have to do
+[238:53] shrink
+[238:55] and then
+[238:58] next
+[239:00] I'm kidding
+[239:04] products
+[239:27] foreign
+[242:24] page Google login
+[242:30] that's all
+[242:32] day five six seven
+[242:39] landing page tomorrow
+[242:45] okay all right guys I'm gonna have um
+[242:56] maybe I can duplicate
+[243:11] uh video capture display capture
+[244:43] yeah guys I'm gonna have a quick lunch
+[244:46] break
+[244:47] so I'm gonna put my screen here and I'll
+[244:51] be back in an hour or so see you around
+[331:04] yo welcome back Twitter
+[331:11] okay we are back with a live
+[331:16] uh We've committed this we are doing
+[331:18] some simple stuff
+[331:25] fine so what we do next uh basic HTML
+[331:28] stuff and title in a minute like hello
+[331:30] frog
+[331:32] get a stiff okay so we're gonna just
+[331:34] copy past what I do for other apps
+[331:37] probably the layout
+[331:40] if not I might be on the page
+[331:45] okay yeah we need those stuff
+[331:49] better and we are going to go to the
+[331:51] late
+[331:52] the layout
+[331:56] um even maybe the document can we do
+[331:58] that
+[332:00] we can do that okay
+[332:04] um
+[332:10] hero
+[332:16] name correct
+[332:20] get away
+[332:22] you repeat that that's fine
+[332:26] name here
+[332:36] load up your workout Avatar
+[332:41] it's working
+[332:45] um
+[332:51] how do we describe oh get away little
+[332:58] a little bug
+[333:00] leave me alone I want to work
+[333:06] the title
+[333:08] um
+[333:10] social media the
+[333:13] the hero he repeats
+[333:17] hero it
+[333:20] roll your workout Avatar
+[333:31] um
+[333:32] description we can do something like
+[333:34] exercise create
+[333:37] or accounts
+[333:38] avatars
+[333:40] and label them up
+[333:45] to create workouts avatars and live up
+[333:47] when you if you're when you reach your
+[333:49] goals when you reach your goals
+[333:56] get
+[334:01] to climb
+[334:04] the leaderboards
+[334:07] it fits I climb the little borders
+[334:11] while having to climb the
+[334:17] available
+[334:19] on web
+[334:21] IOS and Android
+[334:34] when you reach your Fitness goal maybe
+[334:36] when you reach your Fitness
+[334:43] okay the description here is going to be
+[334:46] the same
+[334:49] okay
+[334:54] let's throw your workout Avatar
+[334:57] avatars
+[335:04] um what else maybe we need the
+[335:07] index page will need something like this
+[335:09] here
+[335:14] you figure you're working on avatars and
+[335:17] then I think
+[335:19] we're going to import this
+[335:22] are some details but uh
+[335:25] I'll do it maybe for SEO later
+[335:32] maybe in the settings we don't care
+[335:36] oh four we don't care layout we don't
+[335:39] care the login page
+[335:41] here
+[335:51] if it's login
+[335:59] normally here looking here it is finding
+[336:03] I'm not doing any mistake here if it's
+[336:06] login okay
+[336:09] anyway what's going on with this
+[336:39] gonna sign up
+[337:14] you're not supposed to do that oh maybe
+[337:18] I know
+[337:23] because of this
+[337:26] I have done a little mistake but it's
+[337:28] okay
+[337:35] a bit stupid
+[337:39] enough
+[337:48] and uh
+[337:51] we're just gonna add it as well on the
+[337:53] dashboard
+[337:55] just for the record
+[338:09] leaderboard and record
+[338:15] s
+[338:21] uh I've been
+[338:36] a hero feeds uh
+[338:43] dashboard
+[338:51] Arrow feet dashboard here we go
+[339:10] okay so we have some HTML stuff
+[339:22] I think that's enough
+[339:25] um
+[339:25] details
+[339:29] okay
+[339:32] drink Avatar if no show oh yeah that's
+[339:35] the interesting part
+[339:43] um
+[339:56] with uh
+[339:59] do I create a function and then I tell
+[340:04] to execute it
+[340:06] next
+[340:08] week
+[340:21] and schedule
+[340:26] foreign
+[340:51] require
+[340:55] D all plans
+[340:58] what is the pricing for that thing to be
+[341:00] sure we don't look crazy
+[341:05] by appraising somewhere
+[341:10] job invoke the serverless resolution
+[341:11] this means that the usage increasing
+[341:13] limits will apply
+[341:15] a project during the better phase
+[341:19] control curve crunch up
+[341:22] and drop irrigation okay
+[341:56] okay
+[342:08] API Crown Pages API
+[342:12] technology is
+[342:15] training
+[343:59] meet
+[344:01] our
+[344:04] day
+[344:06] month
+[344:23] freeze
+[345:28] every Monday
+[345:33] I'm gonna try to publish this
+[345:37] maybe we're just gonna do something
+[345:42] on
+[347:41] oh I forgot
+[347:45] robots txt
+[347:52] on one page
+[348:34] it doesn't look like it's working
+[350:55] is because I need the Json file
+[352:02] 404 okay
+[352:23] route exists
+[352:26] foreign
+[354:01] Europa Club
+[354:32] oh
+[354:35] it's this stuff okay
+[355:48] foreign
+[355:52] what sport are you doing
+[356:21] oh
+[356:24] and I can choose to run it whenever I
+[356:26] want
+[356:27] oh that's so nice
+[356:39] [ __ ] nice
+[357:02] all right one second turning off my
+[357:05] screen because I need to set up some
+[357:07] config bars
+[357:14] all right I'll do it later
+[357:20] um
+[357:23] API
+[357:25] we're gonna pull
+[358:04] at the moment
+[358:12] um
+[358:14] and just one second
+[359:39] evidence
+[359:45] um
+[359:47] boards
+[359:52] oh
+[359:54] I find it
+[359:56] here we're gonna find all the sports
+[359:57] where it's not
+[360:02] the X
+[360:05] B XP
+[360:13] here
+[360:14] is greater than zero
+[360:27] zero
+[360:32] and also
+[360:35] that have not been updated recently
+[360:37] deleted
+[360:52] moment at the BTC
+[361:01] [Music]
+[361:01] um
+[361:06] let's just subtract
+[361:09] seven
+[361:12] days
+[361:15] lower than okay
+[361:22] let me go back seven
+[361:24] days before
+[361:27] if you haven't updated your words you're
+[361:30] gonna get
+[361:33] okay yeah
+[361:39] that's great
+[361:42] Loop
+[361:43] over
+[361:46] all right of
+[361:48] I think
+[361:50] wait motion
+[362:19] is all settled
+[362:21] and we're gonna do Sports
+[362:40] we're going to do
+[362:52] return an essing function that says you
+[362:54] have to await
+[362:57] uh
+[363:01] I'm showing this one
+[363:03] um
+[363:12] equal
+[363:21] minus 50 CPR is fits Superior to zero
+[363:27] then we just return this
+[363:35] or
+[363:43] words
+[363:45] or depth
+[363:46] or the XP
+[363:54] the weight is dot save
+[363:59] I don't know if that's gonna work
+[364:19] uh
+[364:22] subtract
+[364:24] XP
+[364:28] equal one let's do that
+[364:56] and we're gonna also do this
+[365:15] oh
+[365:18] SVG
+[365:32] API dot crown
+[365:35] okay
+[365:39] I want to check
+[365:41] c6200
+[365:44] 65 199 nice it works
+[365:48] so here I can remove XP from players
+[365:54] every time I run the Crone job
+[365:58] um
+[366:00] maybe I tried this updated more than one
+[366:03] minute
+[366:12] before
+[366:20] foreign
+[366:23] oh yeah because I just updated it yeah
+[366:40] oh yeah because I'm gonna update the
+[366:42] field
+[366:51] actually I can run that
+[366:54] reversal stuff every day
+[366:59] at midnight
+[367:17] next
+[367:20] yeah I can run the job every day
+[367:22] actually
+[367:31] and if you haven't updated your stuff
+[367:38] within the last
+[367:42] seven days
+[367:57] you're just gonna keep losing XP
+[368:36] I'm gonna remove a bunch of XP just to
+[368:39] try
+[368:40] and here are reload
+[369:09] mm-hmm
+[369:23] so you lost all your xpro
+[369:27] and you haven't lose your expert that's
+[369:30] weird
+[370:26] all right that's working
+[370:31] every day
+[370:32] everybody that has more than zero XP
+[373:15] all right once again I need to turn off
+[373:17] for credentials
+[373:32] foreign
+[373:59] API Chrome
+[374:06] it's not this
+[374:12] foreign
+[378:04] I'm very
+[379:37] foreign
+[383:07] oh my twerking
+[383:17] oh
+[383:21] okay
+[383:26] all right so that's working
+[384:24] for none for the energy
+[384:26] okay
+[387:08] and Google quantities coping email a
+[387:11] great enough Linux is true
+[387:36] Google the client
+[389:22] here we go Google look
+[389:32] I know
+[390:28] create
+[392:59] you had weak no uh I'm gonna do it
+[393:01] tomorrow
+[393:03] I'm doing this for now
+[393:07] and tomorrow I'll do this part
+[393:10] but I think the app is pretty much
+[393:12] that's the landing page but I think the
+[393:15] app the overall app is pretty much done
+[393:19] yeah have a look if you want to send you
+[393:20] the link
+[393:40] your personal info and cleaning your
+[393:42] primary
+[398:14] sixth week
+[398:18] no joke
+[399:06] reclinating
+[400:43] like give me a second I need to get some
+[400:45] credentials from the Play Store
+[401:44] okay
+[402:31] and the last one iOS
+[413:21] okay
+[434:13] foreign
+[434:21] life
+[434:33] no
+[444:08] oh
+[444:09] hey bro hey video
+[444:13] remember when I was I was uh trapped
+[444:15] into some weird code stuff
+[444:19] I think
+[444:21] um I don't know I don't have a real
+[444:23] reason honestly it's okay you cannot
+[444:25] hear me
+[444:27] I mean
+[444:32] I think I know wait
+[444:37] okay okay
+[444:40] this sound what's the setup there
+[444:44] okay I um no I I don't
+[444:49] I rarely code for more than three hours
+[444:53] usually you would see on the live I
+[444:54] would do a break every hour or two hours
+[444:58] and then I think because I have a really
+[445:00] short goal of having the app ready
+[445:02] within seven days I'm like I have tons
+[445:04] of stuff I want to do
+[445:06] and I'm like oh I gotta do these do
+[445:08] these do that and uh I don't have much
+[445:11] trouble staying on my computer but if I
+[445:13] start to have issues like bugs and I
+[445:15] cannot fix them then I start to go on
+[445:17] Instagram and
+[445:19] and do stuff that I don't really want to
+[445:21] do
+[445:25] sleep also
+[445:27] I mean it's something important for for
+[445:29] me I can really function well when I'm I
+[445:32] have my eight hours of sleep I don't set
+[445:34] up alarm and I sleep as much as I need
+[445:36] and um even just reading stuff
+[445:39] if I if I'm a bit tired I cannot read
+[445:42] for instance I can just I'm just gonna
+[445:43] fall asleep
+[445:44] yeah probably exercise healthy food and
+[445:46] sleep okay
+[445:51] I'm almost done I'm finishing a few
+[445:53] steps so Google login is available
+[445:57] then I'm gonna go skate
+[446:00] in the sign up
+[446:04] cannot take that call
+[446:25] Apple will not be upset if I log in with
+[446:28] Google right
+[446:36] wait is Apple going to tell me no way
+[446:39] you cannot have Google
+[446:45] I hope they don't do that
+[446:54] okay you don't think so okay yeah me too
+[446:56] that would be weird knowing that 80 of
+[446:58] the planet has a Gmail address
+[447:03] I think as long as there is an email one
+[447:07] I think it should be fine
+[447:16] thanks
+[448:08] it with that
+[448:14] are you calling from Federico I guess
+[448:16] Europe I would say you have to make a
+[448:19] guess
+[448:59] foreign
+[450:18] oh okay if I don't have the user
+[450:22] so here in the sign up
+[450:24] um
+[451:56] read it
+[451:59] save it
+[452:04] all right so we get this
+[452:11] if there is no user
+[452:17] we created
+[452:22] if there is already a user we don't care
+[452:27] user email no
+[452:32] is our user and then we send it back and
+[452:34] so be careful okay
+[452:36] okay let's test this
+[452:38] um
+[452:40] normally I should get logged in right
+[452:42] away because it will already exists
+[452:45] the hero yay
+[452:51] I look out
+[452:53] I want to just log in
+[453:03] okay
+[453:06] if I delete my account
+[453:10] foreign
+[453:56] [Music]
+[454:34] [Music]
+[454:35] um
+[454:37] oh yeah
+[454:44] 500 seconds
+[454:54] the opacity stuff
+[455:28] okay so now I'm gonna sign up with
+[455:30] Google
+[455:31] here we go again
+[455:34] something went wrong
+[455:43] nope oh I know what I've done
+[455:49] the user find one see there is no user
+[455:53] a do user equal
+[455:56] now that should work
+[456:04] something went wrong no I don't think so
+[456:06] bro
+[456:10] so yeah let's login again
+[456:16] delete
+[456:23] okay
+[456:29] okay working
+[456:33] log out sign up
+[456:36] okay welcome back that's the thing
+[456:39] with
+[456:41] people and here it should say login
+[456:49] end up with Google create Avatar
+[456:53] oh you're supporting Avatar sign up with
+[456:55] Google and log in with Google okay
+[456:59] all right
+[457:01] Uruguay oh
+[457:04] yeah I know you're women's
+[457:06] wow I didn't know what time is it for
+[457:08] you it's a way past the bedtime though
+[457:12] okay you're done
+[457:16] now good night man we talked about sleep
+[457:19] maybe that's why uh here you fall asleep
+[457:21] when you could man
+[457:23] laughs
+[457:26] hello Don Pablo
+[457:44] you
+[457:45] a bad person
+[457:52] all right I think this is good
+[457:54] um Google all
+[457:59] I'm gonna commit and uh I think I'm
+[458:03] gonna run a build and test on my phone
+[458:07] get the [ __ ] out
+[458:25] show email if there
+[458:32] maybe in the sign up sign up
+[458:36] page maybe we will do
+[458:48] issues
+[458:49] email this email list
+[459:02] equal uh negative two
+[459:13] oh yeah
+[459:21] email to
+[459:35] gonna come and subject
+[459:38] or
+[459:40] [Music]
+[459:43] Inc URL
+[459:46] a limit encode
+[460:00] right
+[460:06] what are you watching
+[460:10] foreign
+[461:11] [Music]
+[461:27] email us
+[461:31] our kids
+[461:41] issues with herofit okay
+[461:55] I don't know why this is taking so long
+[461:57] but
+[462:16] making issues email address and then
+[462:18] maybe in the settings
+[462:21] they're going to do
+[462:28] they're signed in as blah blah blah
+[464:51] foreign
+[466:44] oh I have 16 000 photographers well
+[472:49] um
+[474:02] [ __ ] you yeah I remember
+[474:07] foreign
+[476:52] uh
+[477:38] if a cube
+[481:17] it
+[482:34] um
+[484:17] I need to fix this tomorrow
+[489:00] fields
+[489:55] hey look on red
+[489:58] I'm gonna give you a big thank you for
+[490:00] that
+[490:13] game
+[490:17] I think that'll be all for today guys
+[490:33] yeah I need this part okay real quick
+[490:53] [Music]
+[490:57] reverse client ID as URLs key mean
+[491:00] Infinite Playlist
+[491:47] reverse client ID
+[491:49] and iOS xcode
+[491:58] feel that settings
+[492:00] you don't see my signing out yet you see
+[492:03] it
+[492:06] yes no
+[492:09] wait I'm using create a Google Cloud
+[492:11] okay and get client ID in errors
+[492:15] oh okay that's the thing that's missing
+[492:17] oh yes
+[492:20] um credentials
+[492:21] us
+[492:24] yes I need this thing okay
+[492:38] that didn't failure reverse client ID as
+[492:40] errors came in inputed playlist
+[492:51] edit
+[492:55] where are you little buddy
+[493:27] do I edit Tubidy
+[493:35] hello it's me
+[493:46] that isn't fair reversed client ID as
+[493:50] URLs key
+[493:55] oh I think that's not the right one okay
+[494:23] it's what I'm supposed to do
+[494:27] reverse
+[494:33] there's no such thing
+[494:37] right I'm lost it's good help me
+[494:42] the last application get a great time I
+[494:44] think that's what I want
+[494:56] I think
+[495:31] three
+[495:33] in Armenia have it here okay
+[495:36] and then I need to add
+[495:40] an array of CF bundle type
+[495:45] okay I have just in the body what I'm
+[495:47] doing
+[495:52] where is this one nope
+[496:01] okay I think I get
+[496:07] key array key array keystring keystring
+[496:11] okay
+[496:17] what is the true for
+[496:20] key see if
+[496:27] there's no such thing right
+[496:33] and true
+[496:36] I'm gonna copy that
+[496:50] the ID what is going on
+[496:53] Key C event or editor reverse client ID
+[496:56] so here I put
+[496:58] a new one
+[497:02] and here I'm gonna do the same I guess
+[497:09] oh no I have two I can add
+[497:16] reverse client ID
+[498:02] how do I eventually get that
+[498:35] I have absolutely no idea what's going
+[498:37] on
+[498:40] here RL type reverse client ID
+[498:47] okay we're going to pretend this isn't
+[498:49] what's needed
+[498:51] no idea
+[498:53] well at least it's not buggy
+[498:58] okay
+[499:00] okay oh please looks like it's working
+[499:03] nice
+[499:06] done for today
+[499:09] let me get a little commit for that
+[499:13] um
+[499:15] injury incapacitor
+[499:29] well okay I missed that for Android
+[499:33] foreign
+[499:38] value series from string that HTML
+[499:41] okay
+[499:43] bro import the package
+[499:53] um
+[499:59] server client idea
+[500:23] same server client ID
+[500:26] in here
+[500:29] wait
+[500:31] what have you done
+[500:35] [Music]
+[500:39] literacy
+[500:50] okay if yours
+[500:55] import code connectivity
+[501:25] productivity public
+[501:33] all right on create bundle super
+[501:39] um if you want I'm in Android stuff
+[502:08] oh how do I tell prettier not to do that
+[502:11] thank you
+[502:15] I don't worry that way
+[502:18] resource resource
+[502:24] oh I think I know what I've done the
+[502:26] wrong
+[502:28] okay
+[502:33] okay
+[502:35] that is my fault
+[502:42] I know
+[502:44] anybody
+[502:48] resource
+[502:51] resources
+[502:55] string
+[503:01] there you see Ellie come on
+[503:48] oh
+[503:51] hey
+[503:53] stop
+[504:24] he kissed your feet
+[504:46] okay
+[505:08] number to disable
+[505:11] property here on the five
+[505:43] oh no I'm just telling you that
+[505:48] oh yes
+[506:20] hey seriously
+[506:22] leave me alone
+[507:20] right I give up
+[507:24] [ __ ] it
+[507:38] okay
+[507:40] can actually sign up with Google that's
+[507:50] all right I'll just give up her today
+[507:53] so we are here
+[507:56] uh
+[507:57] we submitted this stuff
+[508:00] we're waiting for the review for this
+[508:02] and for this
+[508:04] another Google login
+[508:08] all right this is what next for the next
+[508:09] two days
+[508:11] uh the launch
+[508:16] this and this tomorrow and then probably
+[508:18] this after tomorrow
+[508:20] so message oh yeah
+[508:25] you and Drake my man from Korea
+[508:32] are you kidding me Miss
+[508:38] oh [ __ ]
+[508:41] what bro you're no joke did you actually
+[508:42] sleep did you get some sleep or
+[508:45] something
+[508:58] dang all right let's say oh my God man
+[509:01] the figma is I've I'm Blown Away
+[509:08] lineup
+[509:12] maybe instead of that big completed you
+[509:14] would have the
+[509:16] Index app
+[509:21] and here
+[509:24] what you're doing is
+[509:30] um as completed
+[509:34] the end uh just a span maybe or
+[509:38] something
+[509:40] or the completed button
+[509:49] three phones so my old thing Center
+[509:55] oh yeah
+[509:59] completed
+[510:04] um
+[510:06] well actually we don't need that wording
+[510:21] completed completed completed
+[510:25] don't even need
+[510:30] [ __ ] stupid
+[510:34] and
+[510:39] had the border border
+[510:42] of
+[510:43] you
+[510:46] order Dash
+[510:49] boarded
+[510:52] what else do we have collab spacing
+[511:07] we're gonna go with the Border dashed
+[511:10] order dashed
+[511:13] completed quite nice I think I should um
+[511:16] as you did
+[511:19] I'm so sorry man if you're still here
+[511:22] I'm uh I was stuck with some stuff I
+[511:24] didn't see your message if you're still
+[511:26] here do you think it's worth going all
+[511:29] across the card
+[511:31] like expanding and touching the edges
+[511:39] um if it is then what I'm gonna do is
+[511:42] margin White
+[511:46] it's two or four
+[511:48] margin X
+[511:52] 4
+[512:04] [Music]
+[512:11] actually Four twenty four
+[512:34] end of the leaderboard what you did is
+[512:37] this
+[512:40] space wise two
+[512:43] this one then should be one
+[512:48] uh
+[512:57] okay I'm gonna do a surf again
+[513:01] your league before
+[513:12] surf
+[513:21] oh yeah I gotta be
+[513:25] gonna give this guy a
+[513:29] H I'll do that later it's not that
+[513:31] important okay
+[513:34] absolutely dope
+[513:43] you know what I mean today I'm gonna
+[513:45] steal your design
+[513:48] I'm gonna copy this as an SVG
+[513:53] and border
+[513:55] maybe I can instead I can do
+[514:01] something like this uh
+[514:05] Dash array
+[515:50] you're an absolute Legend
+[516:25] oh dude this is
+[516:27] look at what is it
+[516:32] remember Manu we talked this morning
+[516:35] it's already designed
+[516:43] You're So Pro today yeah oh my God okay
+[516:47] it's an absolute Legend
+[516:49] just like this yeah that looks so
+[516:51] professional
+[516:56] [ __ ]
+[517:01] it's almost a game
+[517:03] I mean 100
+[517:06] I think I might use
+[517:07] some of them tomorrow I will set up a
+[517:09] reminder
+[517:16] okay check
+[517:22] yeah
+[517:25] oh
+[517:36] all right
+[517:53] all right all right everyone thank you
+[517:55] so much for tuning in
+[517:57] um I'm going to close the computer and
+[517:59] try to enjoy the rest of my Sunday I'll
+[518:01] be back tomorrow for the probably the
+[518:03] last day of coding I need to fix some
+[518:06] bugs
+[518:07] um get a few more things on the pipeline
+[518:10] uh an issue with the layouts on Android
+[518:13] and iOS and then a few stuff that my new
+[518:17] sent for design thank you so much man
+[518:18] you're really awesome
+[518:20] and then we're going to build the
+[518:21] landing page something very simple which
+[518:23] is something that shows uh what is
+[518:26] uh this part because right now you go to
+[518:28] the aerofit and you have this blank page
+[518:33] um then I think after tomorrow if we're
+[518:36] done with this we are going to move on
+[518:38] with the launch I'm going to shoot a
+[518:39] product demo video hopefully I'm gonna
+[518:41] make a fun one I'm gonna shoot it with
+[518:43] The Rock
+[518:45] um if I can
+[518:46] and and then we've got the launch the
+[518:49] app and in the meantime I hope that the
+[518:51] app that has been submitted on both the
+[518:53] Android and the iOS store will be
+[518:55] accepted somehow
+[518:57] and um and hopefully we'll we'll be able
+[519:00] to launch the app on time
+[519:03] all right thank you so much for tuning
+[519:04] in everyone and enjoy your Sunday and
+[519:07] I'll see you around
+[519:09] bye

@@ -1,0 +1,328 @@
+Video Title: The {collegebaseball} package
+Video ID: DRGksETak5o
+URL: https://www.youtube.com/watch?v=DRGksETak5o
+View Count: 468
+
+[00:00] and so I created a
+[00:04] package that allows you to get college
+[00:08] baseball and the easiest way to do it is
+[00:11] running Dev tools installcore
+[00:15] GitHub and then my name Robert D
+[00:19] fry baseball or not baseball R um
+[00:23] college baseball
+[00:30] and I'll just say Force equals true so I
+[00:32] can show you what that would look
+[00:37] like so we're just I'm
+[00:43] redownloading the
+[00:45] data or installing the
+[00:49] package for you so it should run
+[00:51] shouldn't take too long if at all there
+[00:53] you
+[00:56] go and then
+[01:01] what we can do with
+[01:03] this is then call our library college
+[01:08] baseball what we can do is get stats
+[01:11] from there so but first the team ID is
+[01:15] actually
+[01:17] changed so all you have to do is look up
+[01:19] a school
+[01:21] ID so we'll say like
+[01:25] Tennessee and then my argument compared
+[01:29] to baseball R is it asks for a year
+[01:31] because it changes every
+[01:33] year so you see the team ID but then I
+[01:37] have a column called the previous team
+[01:38] ID just in case if they ever go back to
+[01:41] that the code can arrange for
+[01:44] that
+[01:46] so gets all the same information so the
+[01:49] SE season ID is the same division
+[01:51] conference conference ID is same team
+[01:53] name and then you have the team ID and
+[01:56] then you have the previous team ID again
+[01:58] and that's in the old code that gets the
+[02:01] previous te ID because it has changed
+[02:05] quite a bit
+[02:08] so let
+[02:11] me see if I can pull up this NCA stats
+[02:16] page and bring it on to
+[02:21] here
+[02:23] so when you go to Tennessee's page
+[02:32] no
+[02:35] baseball go
+[02:37] 2024 and now the ID essentially becomes
+[02:42] this instead of what it was in the past
+[02:45] which was you know
+[02:48] 694 that doesn't mean it's going away
+[02:51] because it does apply
+[03:01] in other situations and I'm trying to
+[03:03] think of one where it does apply but so
+[03:06] the ID has just became a little bit
+[03:08] different
+[03:10] now
+[03:17] um
+[03:19] so U let's go to Team history so see
+[03:25] when I click on
+[03:27] this the old URL or I guess the old team
+[03:31] ID appears but in the data set it's
+[03:34] still available either way so that way
+[03:37] if you know that those new IDs don't
+[03:39] work you can still use this team
+[03:43] ID so when we go back into
+[03:47] R we can
+[03:49] do I say 10 for
+[03:52] short NCAA
+[03:55] stats and the team
+[03:57] ID now that we know Tennessee is is 754
+[04:00] 226 we'll add that in there year
+[04:05] 2024 we'll leave our type to equal
+[04:09] batting now we run that takes a little
+[04:12] bit
+[04:14] longer but still pulls the
+[04:17] data and now we have height we have bat
+[04:22] throw for not every
+[04:24] team um I'm sure the bigger schools will
+[04:27] have a bat throw but now I have a team I
+[04:29] ID a conference ID a player
+[04:32] ID and again it sucks because it changes
+[04:35] year by year so like Christian Moore in
+[04:40] 2023 his player ID will look different
+[04:43] than compared to
+[04:45] 2024 and I can show you
+[04:48] that
+[04:52] so let's say Tenny dplr
+[04:57] filter um
+[05:01] player name equals Christian
+[05:06] Moore then we'll just say
+[05:09] dplr
+[05:13] pull player
+[05:16] a make sure that's the right column play
+[05:25] yep so let me add and dly our the L
+[05:32] liaries and it'll give you messages so
+[05:34] on and so
+[05:36] forth but it's not an
+[05:40] error so then I run this and you can see
+[05:44] his player ID in
+[05:47] 2024 is 8281 1448 for Christian Moore
+[05:52] but when you
+[05:52] [Music]
+[05:54] run Tennessee's data for 2023 so you
+[05:57] have your team ID is 548
+[06:03] 305 so see it changes every year now and
+[06:07] we have to adjust for that
+[06:10] so 5
+[06:14] 48305 and the previous year is
+[06:18] 2023 run
+[06:22] it give it a second or two to
+[06:26] run now we pull the same data but then
+[06:29] when we look at Christian Moore so his
+[06:31] 2024 team ID was again 8281
+[06:36] 1448 but now his ID is 7831
+[06:45] 1204 so that's something you have to be
+[06:48] wary of and I'm thinking of
+[06:50] ways I have code
+[06:54] somewhere it's possible that I can
+[06:57] probably either I might either e create
+[07:00] my own player ID system or really dig
+[07:03] through
+[07:05] the uh NCA stats archives and find
+[07:08] player IDs that actually
+[07:14] match but that this is how you would get
+[07:18] stats again download the college
+[07:20] baseball
+[07:24] package by running this code with taking
+[07:28] out the comment so dead tools
+[07:30] installcore
+[07:32] GitHub my
+[07:34] name college
+[07:37] baseball and it gets you like you know
+[07:39] some neat
+[07:42] information so that's kind of like the
+[07:45] basic stats you can get but you can get
+[07:47] like available Savant games for college
+[07:51] baseball
+[07:52] so I'll just call this HH call whatever
+[07:55] you
+[07:56] want and so what this pulls from is from
+[08:01] 2017 until this past
+[08:06] season some games will have statas data
+[08:09] available and so you can pull that
+[08:11] statas
+[08:14] data but however some games may
+[08:17] not want to double check because some
+[08:21] like I'm pretty sure the Salt River
+[08:23] feels that Talking Stick don't Brazzle
+[08:26] feel that GCU ballpark will not
+[08:31] slone Park I don't believe has it
+[08:38] either so I will make sure to double
+[08:41] check that and
+[08:44] re-upload for you guys but this allows
+[08:47] you to create or get like statcast data
+[08:50] so then you can say like oh what's uh
+[08:54] what's a game from 2024
+[08:56] that might have some interest I trying
+[08:59] to think of the chase Burns
+[09:04] game that had data it might have been
+[09:07] Wake Forest Florida
+[09:09] State or it might have been it might
+[09:11] have been W Wake Forest North Carolina
+[09:14] actually so I get that game
+[09:17] PK and I can say like wake you know UNC
+[09:22] we'll call
+[09:24] it we'll use the college baseball
+[09:27] package and we'll say stat cast beat PBP
+[09:30] College then we'll run this six-digit
+[09:32] code get the game
+[09:35] PK give your a second two to
+[09:45] run and then you
+[09:47] have stack ass data for that
+[09:51] game so you get sha spray you get Chase
+[09:54] Burns's data from Wake Forest and again
+[09:57] this is only for a limited amount of
+[09:59] games it's not for every single
+[10:01] team um some places will have stack ass
+[10:05] data so like one advantage that we
+[10:11] have is like okay you have the Las Vegas
+[10:14] ballpark so like all the tripa a fields
+[10:16] that teams may play at there's likely to
+[10:18] be stat Gast dat now because every tripa
+[10:20] a field has stat
+[10:23] Gast so like one example is Las Vegas
+[10:27] ballpark um Smith
+[10:30] ballpark which is also the home ballpark
+[10:33] of Utah so really we have mostly Utah
+[10:36] data because that's their home field but
+[10:39] then if you go to other places like
+[10:40] Durham Bulls Athletic Park Triple A for
+[10:43] Durham they'll have stack ass data um
+[10:46] your
+[10:48] typical um Global Life Field stack ass
+[10:52] data trius field again tripa a field
+[10:55] stack ass data uh bay care ballpark does
+[10:59] have stack cast though it's not a AAA
+[11:01] field it's I want to say it's either a
+[11:04] high a or a rookie league field but it
+[11:06] does have stat cast data when you play
+[11:08] there and the American Athletic
+[11:10] Conference Conference tournament was
+[11:12] there so we got stat cast data for
+[11:17] those um what are some other place like
+[11:20] PNC West Virginia and Pittsburgh they
+[11:22] played there so there there was Data
+[11:25] there um Dodger Stadium though
+[11:32] I think they took it
+[11:36] down let's check so we'll check one of
+[11:38] these
+[11:39] games because realistically even though
+[11:42] it may be played at a an MLB
+[11:46] stadium oh looks like the data is still
+[11:49] there cool
+[12:01] so it gives you all the sack say but it
+[12:06] gives you like different columns to what
+[12:08] you may be used to with stat gas data
+[12:11] because again like if you go through the
+[12:13] columns on baseball
+[12:16] Sant um exit you know exit velocity is
+[12:20] listed as like launch speed whereas this
+[12:22] has two columns so it's rounded hit
+[12:25] speed and then just hit speed with a
+[12:27] decimal and then we have a player
+[12:31] name we have hit distance xba um hit
+[12:35] angle Barrel hit coordinate X hit
+[12:38] coordinate X in feet and then hit
+[12:41] coordinate Y and then hit coordinate Y
+[12:43] in
+[12:44] feet and then here's an interesting one
+[12:47] too with the data that's in
+[12:50] there if it's played at an MLB Ballpark
+[12:53] it'll tell
+[12:55] you how many ballparks would have had
+[12:58] that as a home run
+[13:00] now you see the column bat
+[13:03] speed there's some bat speed there some
+[13:06] bat speed but not a whole lot a lot of
+[13:09] missing data with bat speed just be wary
+[13:12] of it don't expect a lot of data with
+[13:14] bad speed but there is bat speed for
+[13:17] college level games at a very limited
+[13:23] level and then it tells you if there's a
+[13:25] runner on first runner on second runner
+[13:27] on third which I think is useful
+[13:32] um very various other things so game
+[13:36] total pitches you know what player how
+[13:39] many total pitches he
+[13:41] has um from each pitch type as well as
+[13:46] you know this pitch number ball and play
+[13:48] out and then there's this neat little
+[13:51] column called is
+[13:54] sword and so we can calculate that you
+[13:57] know using fals or true with is sword so
+[14:01] that that's something really interesting
+[14:03] to see something that is in here that
+[14:05] isn't in your baseball Savant statcast
+[14:10] data set is your induced vertical break
+[14:14] so the induced break
+[14:16] Z so the stack ass data set from MLB and
+[14:20] tripa a so the minor links as well it
+[14:22] has this but it doesn't have it
+[14:27] for that
+[14:29] particular um viewing
+[14:32] ship and then you have your just your
+[14:35] Brak X Brak Z and then your
+[14:40] movement as
+[14:43] well but then it's saying like with
+[14:46] gravity and then with gravity nice which
+[14:48] is essentially just rounding it then it
+[14:51] shows you like the direction it shows
+[14:56] you pfx with gravity and then
+[15:00] pfx with no absolute value so it's not
+[15:03] rounded so it's not saying like oh this
+[15:05] player got 16 inches of movement this
+[15:07] player got negatives because it's based
+[15:09] upon again catcher's view so it's going
+[15:13] in the negative direction or no yeah it
+[15:16] catcher
+[15:18] view it's going in the negative
+[15:20] Direction and it even shows you like the
+[15:24] type of direction that it's going in as
+[15:26] well
+[15:31] um so that's that's neat gets your
+[15:34] acceleration so your x0 y0 z0 x a y a z
+[15:39] you know vx0 V y0
+[15:42] vz0 your PX and your
+[15:45] pz it's got your spin rate it's got the
+[15:48] zone that it's in plate time you know
+[15:50] your your normal things it's just might
+[15:53] be slightly different in terms of column
+[15:55] names extension the bottom of the strike
+[15:58] zone the top Strike Zone you know start
+[16:00] Speed end speed balls and
+[16:03] Strikes um is Strike swinging pitch call
+[16:07] result code
+[16:08] description pitch name pitch type call
+[16:12] name call and then if you want to do
+[16:16] like
+[16:22] a previous thing though I think all the
+[16:25] the data matches up so I don't think it
+[16:29] it really matters but it's got strikes
+[16:30] balls pre- strikes pre- balls again feel
+[16:33] free to play with it however you
+[16:35] want then you have events you know the
+[16:39] short
+[16:40] description result team Fielding ID
+[16:43] batting ID team Fielding team batting
+[16:45] pitcher name what hand they throw
+[16:49] with batter name what hand they're
+[16:52] standing with
+[16:55] batter outs um captivating index with
+[16:58] which I'm not exactly sure what that
+[17:01] column means at bat number
+[17:07] inning so it allows you to get all that
+[17:09] play ID as
+[17:12] well so this would be useful at the
+[17:15] major league level in terms of it'd be
+[17:19] useful to
+[17:22] get
+[17:24] the like video of it right because MLB
+[17:28] has that video side of it so this is
+[17:31] kind of neat if you think about it

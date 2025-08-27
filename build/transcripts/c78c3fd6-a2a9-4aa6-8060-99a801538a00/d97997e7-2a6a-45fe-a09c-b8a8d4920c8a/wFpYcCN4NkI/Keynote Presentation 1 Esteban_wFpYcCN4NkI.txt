@@ -1,0 +1,1415 @@
+Video Title: Keynote Presentation 1: Esteban Navarro Garaiz [UCSAS 2024]
+Video ID: wFpYcCN4NkI
+URL: https://www.youtube.com/watch?v=wFpYcCN4NkI
+View Count: 186
+
+[00:01] good morning everyone uh welcome to the
+[00:05] fifth Yukan Sports analytics Symposium
+[00:08] on behalf of uh my co-organizers Greg
+[00:11] Matthews and Brian McDonald's and the
+[00:14] department of Statistics at Yukon uh
+[00:17] welcome to the beautiful Campus of the
+[00:19] repeated NCAA basketball champion um my
+[00:23] name is Jun Yen I'm the one of the
+[00:26] organizers of this
+[00:28] conference uh since 2019 we have been
+[00:32] doing this conference and many of you
+[00:34] may know that the unique The Shining
+[00:37] feature of this conference is our focus
+[00:39] on students and you've been to
+[00:42] conference that charges registrations
+[00:45] close to
+[00:46] $1,000 and how much do we charge and
+[00:49] have you seen any uh conference Sports
+[00:51] analytic conference that are less
+[00:54] expensive than us uh if so that's
+[00:56] probably us the two years ago right
+[01:00] um
+[01:02] well uh without further Ado Let's uh get
+[01:04] started we have uh uh several people who
+[01:07] will give opening remarks first
+[01:11] Professor ofer Harel the dean of college
+[01:14] of liberal arts and sciences and
+[01:26] Yan thank you Jun um
+[01:30] I'm not used to do it with papers I'm
+[01:32] new to that rooll I used to be the one
+[01:35] who is sitting over there in the back
+[01:37] and doing that research
+[01:39] so thank you June good morning everyone
+[01:42] I'm happy to be here today to kick off
+[01:45] this uh great Yukon Sports analytics
+[01:48] Symposium with all of you
+[01:50] today um it's an exciting time to dive
+[01:53] into the intersection of sport and data
+[01:56] here at
+[01:57] Yukon um we of course very proud of both
+[02:02] the men's basketball team who brought
+[02:05] home the national champions two years in
+[02:07] a row and the women basketball team who
+[02:10] this year made it to the final
+[02:13] four um with half of the roster so um
+[02:20] although I say it once and I'll uh I
+[02:23] would let it go I don't think there was
+[02:25] a foul over
+[02:27] there um
+[02:30] but it's moments like these uh they
+[02:34] remind us why we love sports through
+[02:36] both the Thrills and heart
+[02:40] breaks when this Symposium started
+[02:43] 2019 the organizers wanted to make
+[02:46] Sports analytics more accessible for
+[02:49] students they wanted to break down those
+[02:52] barriers that often keep students from
+[02:54] getting into this field whether it's
+[02:57] technical jargon the cost or or just
+[03:00] finding a seat in the
+[03:03] room since then the conference has
+[03:05] become a game
+[03:07] Cher we've been able to Showcase Sports
+[03:10] analytics in ways that's easy to
+[03:12] understand we've given students the
+[03:14] tools they need to Crunch the numbers
+[03:17] and we fostered some great
+[03:18] collaborations between Academia and the
+[03:21] sports
+[03:22] industry sport analytics is about
+[03:25] finding those insights that can
+[03:27] literally change the game where it's
+[03:30] help whether it's helping coaches to
+[03:32] make smarter decisions predicting
+[03:35] players performance or even rizing the F
+[03:39] experiences the possibilities are
+[03:42] endless these kinds of applications of
+[03:45] data to Human Experience are
+[03:48] cornerstones to the College of Liberal
+[03:49] Arts and Sciences we want people to
+[03:52] learn a c disciplines to apply ideas
+[03:55] from one field to another and broaden
+[03:57] the many perspective that that are
+[04:00] brought into
+[04:02] research to all the students here today
+[04:05] I want to say your passion and curiosity
+[04:09] are what's going to take this field to
+[04:11] the next level make sure to ask
+[04:13] questions and talk to some new people
+[04:16] today to our faculty and Industry
+[04:19] Partners I want to give big thank you
+[04:22] without your support and expertise none
+[04:24] of this would be
+[04:26] possible so let's get going this great
+[04:29] symposium and thank you for having
+[04:32] me thank
+[04:36] you uh next we will have Andrea hoodi
+[04:39] director of sports performance women's
+[04:41] basketball
+[04:47] Yukon good morning um thank you for
+[04:50] having me um my situation is a little
+[04:53] bit different than I think most of yours
+[04:55] I've been in the uh practical applied
+[04:57] field for 30 years and I work for Coach
+[05:01] ariemma who has been coaching for 40
+[05:03] years very successfully 11 national
+[05:06] championships without
+[05:09] data right so I come in three years ago
+[05:12] and I'm like hey coach we have all this
+[05:14] technology we have X Y and Z can we
+[05:17] start crunching the numbers I put
+[05:19] together a group of students in the back
+[05:21] that we crunch all these numbers of the
+[05:23] data that we're collecting which I'll
+[05:25] show you later um but just on another
+[05:29] note be careful right because my quote
+[05:32] that I got was well hoody my eye doesn't
+[05:36] match your
+[05:37] data it doesn't it does not match your
+[05:40] data but my data is very important and
+[05:43] as I as he mentioned earlier we made it
+[05:45] to a final four with six players and the
+[05:49] data that we collected had an impact on
+[05:52] how far we went because I don't think we
+[05:54] could have made it that far without the
+[05:56] data that we've collected so data is
+[05:58] super important and I do encourage you
+[06:00] guys to ask questions get involved uh be
+[06:04] students of the game um the Practical
+[06:07] part of what we do is really important
+[06:10] and the data is really important so
+[06:12] those are almost two different things
+[06:14] but um I would tell you that the data
+[06:16] saved us this year so welcome and thank
+[06:19] you for having
+[06:24] me next uh is Elliot Schatz uh he's the
+[06:29] direct uh uh performance Innovation lead
+[06:32] at US Olympic and Paralympics
+[06:39] committee good morning everyone I'm
+[06:41] gonna refer to my notes to make sure I
+[06:43] Express gratitude for all the people who
+[06:46] deserve it um basically the theme of
+[06:48] what I'm going to say this morning is
+[06:50] just gratitude and thank you um so first
+[06:53] I want to say thank you to June um for
+[06:55] organizing the Symposium and inviting me
+[06:56] to be a part of it uh as well as Brian
+[06:59] McDonald uh professor at Yale and Greg
+[07:02] Matthews professor at loyal in Chicago
+[07:05] so they gave me the opportunity to join
+[07:08] them in organizing the data challenge
+[07:09] for this Symposium so I'm the one that
+[07:11] proposed it and I'm really excited about
+[07:15] the amazing work that so many of you did
+[07:17] we had 30 student teams submit projects
+[07:20] which was unbelievable like exceeded my
+[07:23] wildest dreams and the quality of the
+[07:26] work was just amazing so thank you to
+[07:27] all the students who worked on it thank
+[07:29] you to the professors who encouraged
+[07:31] them and supported and coached them we
+[07:34] we at the usopc we are not funded by the
+[07:37] government so we're a relatively small
+[07:40] But Mighty organization with a big brand
+[07:43] so we really rely on talented people
+[07:45] like you across the country to support
+[07:48] our efforts and support Team USA so
+[07:50] thanks to everyone who worked on it
+[07:52] amazing job if you want to hear more
+[07:54] about the usopc and how to get involved
+[07:56] with Team USA come talk to me uh come
+[07:59] talk to me about anything for that
+[08:00] matter your career your interests what
+[08:03] it's like to transition from a
+[08:04] non-sports career to a sports career
+[08:07] like anything at all like I was you once
+[08:09] upon a time and I still remember now I'm
+[08:12] old um but I'm really happy to talk to
+[08:15] anybody so please approach me and tell
+[08:18] me your story and anything I can do to
+[08:20] help I'm happy to do it connect with me
+[08:22] on LinkedIn anything at all I'm here um
+[08:26] let's just say oh I love the student
+[08:28] focus of this symposium you know the the
+[08:30] quality of the work is amazing but the
+[08:32] fact that students are really encouraged
+[08:35] to attend and submit work and present
+[08:37] posters it's just outstanding I love
+[08:39] that aspect of this and the uh the three
+[08:42] finalists in The undergraduate High
+[08:44] School category and the graduate student
+[08:46] category for the data challenge are
+[08:47] presenting posters today along with 25
+[08:51] other students or teams so please be
+[08:54] sure to check those out uh the work is
+[08:57] amazing um the other person I need to
+[08:59] Express gratitude to is zaang min so
+[09:02] zaang please raise your hand so zaang
+[09:04] made the data challenge possible by
+[09:07] creating the data set so I basically
+[09:09] sent him a whole bunch of PDFs which is
+[09:12] really typical in international sports
+[09:14] and zfun scraped them all uh with a ton
+[09:18] of effort and created the data set that
+[09:21] you used for the project so zaun thank
+[09:23] you so much for your great work and I'll
+[09:26] stop there but thank you so much for
+[09:27] having me
+[09:33] um Brian McDonald's is one of the
+[09:36] co-organizers of the conference and he
+[09:38] started with uh uh back in 2019 when he
+[09:42] was at ESPN and he's a important figure
+[09:44] of this uh conference he's been shairing
+[09:46] the poster sessions and the data
+[09:49] challenge sessions and he's done tons of
+[09:51] work uh now at Yale Brian and uh Brian
+[09:55] has educated so many uh students in
+[09:58] statistic and data science the poster
+[10:00] sessions today we will see we will see
+[10:02] many uh entries many participants uh
+[10:05] poster presenters from Yale
+[10:09] right thank you June good to be here
+[10:12] again um for is it the fifth I don't
+[10:16] know how many we've done because we
+[10:17] skipped a year also and switch the
+[10:18] timing but and maybe maybe the fifth
+[10:21] Yukon Sports analytics Symposium um yeah
+[10:26] great to be here today uh very excited
+[10:28] for all of the presentations and as
+[10:30] Elliot was talking about all the posters
+[10:32] that we have uh at lunchtime from 12: to
+[10:35] 2 please check all those out uh lots of
+[10:38] good work there um I just wanted to take
+[10:41] a moment to introduce um this initiative
+[10:44] that several um people are working on
+[10:47] it's called score uh which stands for
+[10:49] sports content for outreach uh research
+[10:52] and education and um it's basically uh
+[10:56] the focus is sort of um building a
+[11:00] sustainable national network that uh
+[11:02] creates um content that can be used in
+[11:05] classrooms and workshops and so on that
+[11:09] basically the the aim is to use Sports
+[11:11] to get students interested in data
+[11:13] Science Education who might not
+[11:14] otherwise get interest in data science
+[11:17] education so if you have any interest in
+[11:20] uh I mean I this is like the shortest
+[11:22] intro I've ever done of this initiative
+[11:24] or maybe anyone has ever done if you
+[11:26] want more information oh can we move
+[11:28] that
+[11:29] there um uh a website scor network.org
+[11:35] um there's this email address if you're
+[11:37] interested in being involved scor
+[11:39] Network org Gmail and then there's the
+[11:42] uh X Twitter and Linkedin uh handles
+[11:45] also scor network.org um if also if you
+[11:48] want to hear a little bit more about it
+[11:50] you can come talk to me you can also
+[11:52] come talk with Michael Shuckers the
+[11:53] handsome young gentleman over here um
+[11:57] who will be filming videos of some of
+[11:59] our speakers today uh at various times
+[12:01] during the day just sort of uh asking
+[12:04] them question little mini interviews to
+[12:06] help motivate some of the modules that
+[12:08] we'll create um through this the score
+[12:11] Network so there will be um sort of
+[12:13] written content but then a lot of these
+[12:16] modules will have uh video introductions
+[12:18] to them so he's uh working on that a
+[12:20] little bit
+[12:21] today and yeah that is it thank you and
+[12:27] uh uh welcome to the conference and
+[12:31] enjoy
+[12:34] it thank you Brian this concludes our
+[12:37] welcoming remarks uh Greg your
+[12:48] show coming in hot uh good morning
+[12:51] everyone um so I'm gonna introduce the
+[12:53] first speaker but before I do I'd like
+[12:55] to reiterate what what Elliot said about
+[12:58] uh if you're a student come talk to us
+[13:00] um I feel like I've been to conferences
+[13:02] before in like with other fields and I
+[13:03] remember being a student and I walked up
+[13:05] to someone and I would be like hey I
+[13:06] really like your work and they were like
+[13:08] ah I got to go to lunch or whatever and
+[13:09] they kind of ignored me and I'll never
+[13:11] forget who they were I won't say who
+[13:12] they were but I remember who they were
+[13:13] and I'll always remember it but it's not
+[13:15] like that in sports like every
+[13:16] conference I've ever been to everyone
+[13:18] wants to talk to you it's super friendly
+[13:20] it's kind of not like other sort of
+[13:22] subfields of Statistics but like
+[13:23] literally everyone here will talk to you
+[13:25] and don't don't be shy just go ask
+[13:27] questions all right so meet everyone one
+[13:29] that's kind of the point of this thing
+[13:30] is to meet people um at this conference
+[13:32] all right uh I'm now going to introduce
+[13:34] the first Speaker am I doing okay okay
+[13:37] good
+[13:39] um June taught me math stat he's one of
+[13:41] the greatest professors I've ever had
+[13:43] you're were pretty good toer all
+[13:45] right all right uh I'll introduce the
+[13:47] first Speaker uh Esteban Navaro gayes is
+[13:49] a technical product manager for the
+[13:51] baseball team at zeis analytics a role
+[13:53] in which he collaborates closely with a
+[13:55] team of 20 data scientists and Engineers
+[13:57] overseeing the development and
+[13:58] implementation of the team's road map
+[14:00] supporting client integration and
+[14:02] mentoring junior team members before
+[14:04] joining zealous analytics Esteban spent
+[14:06] two years as a quanitative analyst with
+[14:07] the Los Angeles Dodgers winning the
+[14:09] World Series in 2020 we can clap for
+[14:11] that yeah I'd say
+[14:13] so he graduated with a master's degree
+[14:16] in data science from New York University
+[14:18] uh where he is a deep mind fellow in a
+[14:19] full bright Garcia Robel scholarship
+[14:21] recipient let's uh let's welcome Este on
+[14:23] uh to the stage
+[14:32] good morning all how are we doing I know
+[14:34] it's early you can do better than that
+[14:35] come on hard to hard to follow gret with
+[14:39] that energy but I'll I'll give it a shot
+[14:41] um I'm very happy to be here I'd like to
+[14:44] take a second to ask for another round
+[14:46] of applause for the organizing committee
+[14:48] I think um
+[14:51] yeah you know the mission of making a
+[14:54] student driven and student focused
+[14:57] conference is not lust on me
+[14:59] um I grew up in Mexico and I didn't
+[15:01] really have a lot of access to these
+[15:03] opportunities so it might surprise some
+[15:05] people in the audience that the for the
+[15:07] first sports conference I was able to
+[15:09] attend was last year um in person and um
+[15:13] it was sort of um you know hard to find
+[15:16] content and um opportunities to network
+[15:20] with industry folks like Greg was saying
+[15:22] and so I uh I strongly encourage you to
+[15:25] take advantage of those today uh
+[15:27] unfortunately I'll be leaving right
+[15:29] after this because I have to go back to
+[15:31] Mexico City for a wedding but uh here's
+[15:33] uh my website and my Twitter you should
+[15:36] uh please contact me after the
+[15:37] conference my email is in there as well
+[15:39] I'd love to talk to you about uh
+[15:41] anything Sports analytics related um the
+[15:43] other thing that will be on my website
+[15:44] will be the slides that I'll be sharing
+[15:46] today so hopefully you can uh focus on
+[15:48] the content more than the note taking um
+[15:52] and with that we'll get started um I'll
+[15:54] skip over a little bit of me because
+[15:55] Greg already did this uh but so of um I
+[16:00] studied math in Mexico City and was
+[16:02] lucky enough to get a couple of
+[16:03] scholarships to come over to the US and
+[16:04] do a data science masters at NYU before
+[16:08] um joining the Dodgers where uh I was
+[16:11] very very lucky to win a World Series in
+[16:13] the couple of years that I was there uh
+[16:15] which I do not take for granted you know
+[16:17] there's people that spent 30 years in
+[16:19] the industry and don't get to do that
+[16:21] and it was very very fun uh and after
+[16:23] that I joined the team at sales
+[16:25] analytics and I'll tell you about that
+[16:27] in in just a second um so the cool part
+[16:30] about winning a World Series is you get
+[16:32] a World Series ring which is now sort of
+[16:34] like a token I get to take everywhere
+[16:37] and sort of bring out of storage
+[16:39] whenever I'm having a bad day and I need
+[16:40] some motivation um so another another
+[16:44] cool aspect of sports analytics and a
+[16:46] potential motivation to join the
+[16:48] industry um I want to spend a couple of
+[16:51] minutes talking to you about cellos
+[16:53] analytics um so cellos is this company
+[16:57] of amazing people that
+[16:59] uh used to work in Academia or in sports
+[17:02] teams and um have started sort of
+[17:05] supporting teams around the globe uh we
+[17:08] work with teams in all of these leagues
+[17:12] uh in particular I work with MLB but we
+[17:13] work with teams in the NFL the NBA
+[17:17] soccer in Europe um hockey Cricket Golf
+[17:20] and recently Esports um so we'd be very
+[17:24] excited if you would consider sort of us
+[17:26] as a good landing spot for your future
+[17:28] sport analytics career and I'll tell you
+[17:30] a little bit about sales baseball so we
+[17:32] work with up to one team per division in
+[17:35] MLB so if you've heard from us you've
+[17:36] probably heard that uh but we also do a
+[17:39] lot more stuff we're starting to expand
+[17:41] internationally to work with teams
+[17:42] outside of MLB and uh my focus recently
+[17:46] has been on college baseball and sort of
+[17:48] getting that space going so um if you
+[17:51] work in with a college team and trying
+[17:53] to Crunch winds out of data I'd love to
+[17:55] talk to you uh we're starting a data
+[17:58] engineering as a service product which
+[18:01] um sort of helps you not have to worry
+[18:04] about all the cleaning and stuff and
+[18:05] just focus on the model building I think
+[18:07] that's going to be very useful and
+[18:09] lastly like if you're not a team but
+[18:10] you're interested in evaluating players
+[18:13] we'd love to talk to you uh we have
+[18:14] products for you okay those concludes
+[18:17] the advertising uh so uh I want to leave
+[18:22] everyone in the room today with a little
+[18:23] more idea of how baseball analytics got
+[18:26] started sort of where we are now now and
+[18:29] what open problems we have that may be
+[18:31] of interest to attack in the future um
+[18:35] in a way baseball analytics is sort of
+[18:36] like a sports analytics history as well
+[18:40] because it's probably the most mature
+[18:42] sport certainly the one with the most
+[18:44] work and most people in the industry
+[18:45] involved um so we defined baseball
+[18:48] analytics as datadriven tools to improve
+[18:51] decision making and gain a Competitive
+[18:53] Edge um I think the last part of that
+[18:55] sentence was sort of not really known at
+[18:59] the beginning of sports analytics but
+[19:00] has certainly been proven with u the
+[19:02] success of teams that have adapted this
+[19:05] and you could really generalize this to
+[19:07] a sports analytics 101 if not a baseball
+[19:09] analytics 101 um so some of these tools
+[19:12] are used in roster construction so this
+[19:16] is probably the most mature area right
+[19:19] like
+[19:20] um I'm trying to compare between players
+[19:24] to think about whether it makes sense to
+[19:27] acquire a player or to ass sign them to
+[19:29] a long-term contract extension um I want
+[19:32] to be able to optimize the resources I
+[19:34] have to make my roster better and I want
+[19:36] to think about if I have this player in
+[19:38] the minor leagues like should I bring
+[19:39] them up to ml now can they help my team
+[19:43] as
+[19:44] is um we also do a lot of work in
+[19:46] in-game strategy um I put two examples
+[19:49] here but there's many more in particular
+[19:52] like how do we want to approach this
+[19:54] game from a pitching perspective and
+[19:55] Bullpen usage is one that is very much
+[19:58] the dat driven and fully adopted in the
+[20:00] leak and the other is where should my
+[20:03] Defenders go for this particular batter
+[20:05] piture match up which is really
+[20:06] interesting sort of problem of how does
+[20:09] the spray of battered balls change for
+[20:12] this um batter and their Tendencies and
+[20:15] for this pitcher and their pitch
+[20:20] selection um Player Development is a
+[20:24] area that is sort of quickly developing
+[20:26] but still a little behind the other two
+[20:28] so
+[20:29] um with
+[20:32] the um growth in availability of
+[20:34] kinematic data we are going to sort of
+[20:37] start to open a whole new frontier here
+[20:39] and I'll talk to you about that in a
+[20:40] little second uh but in general I think
+[20:43] in baseball and particular Improvement
+[20:45] plans that are data driven are sort of
+[20:48] very much an industry standard now
+[20:50] whereas they weren't 10 years ago right
+[20:52] so what is it in your game that you can
+[20:55] improve to make you a better player and
+[20:58] what sort of kpi should you be tracking
+[21:00] as you're uh going through those
+[21:02] Improvement
+[21:03] plans and lastly a huge question that um
+[21:06] GMS and president of baseball operations
+[21:08] deal with all the time is like how good
+[21:10] is my team right now should I spend
+[21:13] future resources trying to make this
+[21:15] team better now and go for a
+[21:16] championship or should I be forgoing
+[21:19] contending right now to try to build a
+[21:21] better team for the
+[21:22] future um so we do this in I'd like to
+[21:26] divide it in a three-step process um it
+[21:29] doesn't quite fit here there's there's
+[21:32] sort of like a little fourth step in
+[21:33] here but I I I'll tell you in a second
+[21:35] why I chose three so uh the first is um
+[21:39] sort of like in other areas of
+[21:40] Statistics we want to be descriptive so
+[21:43] we're trying to assign probabilities to
+[21:47] past events in the best way that we can
+[21:49] and sort of find patterns in those best
+[21:52] events and we want statistics that are
+[21:54] able to sort of summarize what happened
+[21:57] in the past and I think the most
+[21:59] relevant question for people in the room
+[22:01] in this regard is like what should we
+[22:03] meing um when you're thinking about um
+[22:07] breaking into sports analytics you
+[22:08] realize like a lot of the early research
+[22:10] in baseball is like okay the game is
+[22:13] happening like where should we spend our
+[22:16] attention like what kind of data
+[22:18] pipelines do we want to
+[22:19] build uh so as you're moving to
+[22:21] newssports that's sort of the first
+[22:23] question and where you always want to
+[22:25] start once you can describe things you
+[22:28] want to predict them now so we go from
+[22:31] assigning probabilities to past events
+[22:32] to future events and trying to predict
+[22:34] them and uh it's sort of like a two-step
+[22:37] process here the first is called
+[22:39] typically value attribution so the idea
+[22:41] is I take these probabilities I see what
+[22:43] actually happened and I try to explain
+[22:46] the residuals like what part of this was
+[22:48] just an actual residual and what part of
+[22:50] this was a skill from the player that's
+[22:52] sort of like involved in the action
+[22:55] right either um we can actually
+[22:57] attribute this to the P to the player or
+[22:59] we have to go back to our descriptive
+[23:01] model and improve it to make the
+[23:02] probabilities more
+[23:03] precise um and then we take those value
+[23:07] attributions where we say hey this
+[23:08] player was better than expectation in
+[23:10] this situation and then we try to
+[23:12] project into the future and that
+[23:13] includes a whole sort of platora of
+[23:16] interesting problems in particular aging
+[23:18] curbs is one that's like you know still
+[23:20] very much an open problem like I have
+[23:23] this player they have this skills
+[23:25] they're this age how do I expect them to
+[23:28] look in three to five years which is a
+[23:30] very very relevant question for the
+[23:33] industry and then um I've sort of given
+[23:36] this an entire new category uh this is
+[23:38] my product hat speaking but really A lot
+[23:41] of the like meet of the problem is in
+[23:43] the predictive step but I really care
+[23:45] about the prescriptive step which is um
+[23:48] now you have this data like how do you
+[23:50] build a decision making under
+[23:55] uncertainty sort of culture that takes
+[23:58] all of these projections and tells you
+[24:00] like how should I build a team where
+[24:02] should I spend my attention uh so the
+[24:04] idea from perspective analytics is it
+[24:06] creates actionable insights by
+[24:09] recontextualizing models so a lot of
+[24:10] player evaluation is sort of Team
+[24:13] agnostic and at the prescriptive State
+[24:15] you want to sort of take that back and
+[24:18] um bring it back to your own team
+[24:20] context right like if you already have
+[24:22] three point guards adding another point
+[24:24] guard is probably not going to be as
+[24:26] beneficial as other teams and so um this
+[24:30] is sort of like an Overlook step that I
+[24:32] love working in um so a baseball example
+[24:36] would be on the descriptive State like I
+[24:39] have a pitch trajectory it crosses the
+[24:41] plate in this location like what's the
+[24:43] probability that that is a strike um
+[24:46] after that there's this thing called
+[24:47] catcher framing where the catcher
+[24:49] receives it in such a way that they make
+[24:51] it seem like the pitch cross the pitch
+[24:53] Zone closer to the center and they try
+[24:55] to fool the Umpire so we go from this
+[24:58] probability to actually seeing the
+[24:59] result of the pitch and seeing can we
+[25:01] assign value to the scater in saying
+[25:03] that they're good pitch framers and then
+[25:06] we take this pitch framing skill right
+[25:08] he's like a plus 10 or whatever and then
+[25:11] we try to project how will this look
+[25:13] next year five years from now 10 years
+[25:14] from now and should we like acquire this
+[25:17] player or pay them more money or trade
+[25:19] them for a different player that's sort
+[25:21] of like the five minute version of um
+[25:25] what we do in baseball analytics and the
+[25:28] sort of problems that I'm interested in
+[25:30] and we'll dive a little bit more uh but
+[25:32] first I want to dial you a little bit
+[25:34] back to how we got
+[25:37] here and I won't go all the way back
+[25:40] we'll go back to the 1970s with Bill
+[25:42] James so Bill James is this like
+[25:47] um decisive figure in baseball analytics
+[25:50] and that he starts publishing in 1977
+[25:52] this sort of like magazine called the
+[25:55] baseball abstract where he's starting to
+[25:57] look at a lot problems in a new way and
+[26:00] in the first five years he sort of like
+[26:02] defines all of these Concepts that are
+[26:04] still very very relevant today and that
+[26:06] are still in our language and problems
+[26:08] of Interest like aging curves TR already
+[26:11] told you about uh runs created which
+[26:13] we'll talk about in a second uh sort of
+[26:15] like which Defender is uh which defense
+[26:20] position is harder to play like how does
+[26:23] the stadium affect what people do so all
+[26:26] of these things that like we're still
+[26:28] much trying to study and improved are
+[26:30] kind of defined by Bill James in these
+[26:32] first five years of the baseball
+[26:33] abstract um another thing that James
+[26:36] sort of starts to think about is we have
+[26:39] the major leagues and the minor leagues
+[26:40] like how do we take minor league
+[26:42] performance and translate that to the
+[26:44] major leagues which is very much still
+[26:46] an open question and then lastly um he
+[26:50] takes all these runs created and thinks
+[26:53] how how does that like translate to wins
+[26:55] for team which is sort of like what we
+[26:58] use in the public sphere to evaluate
+[27:00] baseball players right
+[27:03] now um after uh James or or around the
+[27:07] same time comes Pete Palmer uh he
+[27:10] contributes sort of like the first um
+[27:14] iteration of what we now called ops
+[27:16] which is this idea of like let's get
+[27:18] away from batting average think about
+[27:20] you know what kind of damage are
+[27:35] technical problems one
+[27:37] second looks like someone has their mic
+[27:40] on
+[27:42] okay um and in 1984 Palmer publishes
+[27:45] this book called the hidden game of
+[27:47] baseball
+[27:49] um and uh he presents this concept
+[27:52] called linear weights which I want to
+[27:54] talk to you about um and he also sort of
+[27:57] builds like a PR for war um okay so
+[28:01] here's an expected runs Matrix this is
+[28:03] about as numbery as it will get so bear
+[28:05] with me for the next 3 to four minutes
+[28:08] so the idea is um the baseball space can
+[28:11] be discretized in 24 different spaces so
+[28:14] we have eight configurations for the
+[28:16] bases we either have no Runners a runner
+[28:19] on first a runner on second and so on
+[28:21] and we have uh one of three possible out
+[28:25] combinations either no outs one out or
+[28:27] two outs once you reach three outs the
+[28:29] inning is over and the next batting team
+[28:31] comes to batt and so uh the numbers
+[28:34] you're seeing here are what is the
+[28:36] number of runs that this team is
+[28:38] expected to score from this base state
+[28:40] in the reminder of the inning so this is
+[28:43] like a very simple statistic it's simply
+[28:45] averaging out situations where I
+[28:48] observed this base out State and I count
+[28:51] how many runs are scored to the end of
+[28:52] the inning and then I average that out
+[28:55] uh linear weights are still um very much
+[28:58] used to this day and are sort of built
+[28:59] in this like very very simple idea so
+[29:02] that's the kind of thing I mean where
+[29:03] like what kind of thing should we
+[29:05] measure is like a really really relevant
+[29:07] question early on in sports
+[29:09] analytics so okay so I take this
+[29:12] expected run Matrix and now I'm trying
+[29:14] to determine like I know how valuable a
+[29:16] base out state is and now I want to
+[29:19] determine like how valuable is an action
+[29:21] in the field so uh I'll use a single as
+[29:24] an example so a single is when the
+[29:27] batter reaches first base safely um so
+[29:30] here's one situation where there's no
+[29:32] Runners on out the battery hits a single
+[29:33] and reaches first base like can I assign
+[29:36] a run value to that and the answer is
+[29:39] yes it's this so how do we get there I I
+[29:44] I'm going to bring back the um run
+[29:46] expectation Matrix and you'll see that
+[29:48] like we have three possible scenarios in
+[29:51] which this occurred either with zero
+[29:52] outs one out or two outs and we know how
+[29:55] valuable each of these transitions is
+[29:57] because we can simply substract the
+[29:59] start state to the end state so we're in
+[30:01] full Marian space here and if I simply
+[30:05] do a weighted average by how often this
+[30:07] happens in each out situation I'm now
+[30:10] back to being able to determine like how
+[30:12] valuable is going from no Runners to a
+[30:15] runner on first uh this is a luxury that
+[30:18] baseball is afforded and other sports
+[30:21] are very much not so uh the fact that
+[30:25] you can just like take this game State
+[30:27] Advent into the next game State and say
+[30:29] how valuable is this transition is very
+[30:32] much an open question in basketball in
+[30:35] soccer like the methods to get there are
+[30:37] way more complicated and all real
+[30:39] advances to this problem have been made
+[30:41] in the last you know 20 to 10 years
+[30:44] where we start with discretizing the
+[30:46] space and try to bring it back to a
+[30:47] continuous more interesting space um so
+[30:50] if anyone is interested sort of in other
+[30:52] sports EPB is where you want to start
+[30:54] for that uh the expected possession
+[30:56] value okay so now I'm able to quantify
+[30:59] the Run value of the situation I do that
+[31:01] for all possible combinations of a
+[31:03] single so sometimes they happen with a
+[31:05] runner on first uh sometimes they happen
+[31:07] with a runner on first that then goes to
+[31:09] Third Base sometimes they happen with a
+[31:11] runner on second that then scores and
+[31:14] then uh I keep going with all situations
+[31:17] I count like how many times does this
+[31:20] happen in a season and then I assign
+[31:22] weights to this problem so it just
+[31:24] becomes a weighted average and now I'm
+[31:26] able to say like the Run value of a
+[31:28] single is this number and so linear
+[31:32] weights concerns Itself by giving run
+[31:35] values to actions in the field and we do
+[31:38] this base out State neutral right
+[31:40] because the batter doesn't really have
+[31:42] control on what's going on in the basis
+[31:44] before he starts to perform that's
+[31:46] another sort of like luxury for baseball
+[31:49] is all of these actions are separate one
+[31:51] from another and in that way we're able
+[31:54] to um sort of like assign value to a
+[31:57] single actor whereas if this happened in
+[31:59] soccer you would need to assign some
+[32:01] kind of spacing value to a player moving
+[32:03] and generating a passing Lane for
+[32:07] example okay thank you for bearing with
+[32:09] me that's about as number as we'll get
+[32:11] um I want to talk to you about Keith
+[32:13] wner so Keith was a uh central figure in
+[32:17] baseball analytics he sort of created
+[32:20] something called Vol over replacement
+[32:22] player which is again another precursor
+[32:24] of War which is how we measure player
+[32:26] value in the public sphere he then joins
+[32:29] baseball prospectus as the director of
+[32:31] research and development and he
+[32:33] publishes this article in 2000 that will
+[32:35] discuss a little today uh called
+[32:38] baseball's hilpert
+[32:41] problems so if you're familiar hilpert
+[32:43] goes uh in um 1900 in front of um a con
+[32:49] uh a conference of mathematicians that
+[32:51] sort of presents what he thinks the most
+[32:54] relevant open problems are for
+[32:56] mathematics for the next century and
+[32:58] it's probably like the most famous
+[33:00] mathematical speech that exists because
+[33:01] those problems are still very relevant
+[33:04] and some of them are still open um and
+[33:06] so I kind of want to go through some of
+[33:09] Keith woolner's open problems in 2000 to
+[33:12] tell you like where are we as an
+[33:14] industry what have we solved and what
+[33:15] kind of interesting problems will come I
+[33:18] won't say in The Next Century but in the
+[33:19] next decade or so
+[33:22] um so um e has these sort of criteria to
+[33:27] include these problems in his um Hilbert
+[33:30] list uh I want to list them very quickly
+[33:33] uh to be relevant right Sports analytics
+[33:35] has to inform a decision and um this is
+[33:39] very relevant for folks in the room
+[33:40] because I think the biggest difference
+[33:42] between public and private research in
+[33:45] sports is at a team you're not really
+[33:48] concerned with anything that can't
+[33:50] improve decision making and so the
+[33:53] easiest way to match the private sphere
+[33:56] in research is to think like what kind
+[33:59] of decision making does a coach or a
+[34:02] Player Development um analyst or like a
+[34:06] GM have to make and think of possible
+[34:09] like research opportunities in that area
+[34:12] um so as you're starting to get um going
+[34:14] with research and sports analytics this
+[34:16] is something I would strongly encourage
+[34:17] you to
+[34:19] do um it most consider the context of
+[34:22] the game right we don't play baseball in
+[34:24] a vacuum we play baseball in the major
+[34:27] leagues and within this sort of like
+[34:29] company and money-making structure um a
+[34:33] good problem is a good problem
+[34:34] irregardless of whether you have
+[34:36] resources to answer that problem right
+[34:38] now so that's something we'll talk about
+[34:39] in a second but Keith sort of like
+[34:42] builds these questions thinking like
+[34:44] gosh there's I'd really like to answer
+[34:46] this but I don't have the data for it
+[34:47] right now um and very similarly like
+[34:51] reasoning is valid whether we can
+[34:53] measure or quantify something or not uh
+[34:56] right like a good hypothesis to test out
+[34:58] in the future is very much a worthwhile
+[35:03] Endeavor okay so Keith builts these 23
+[35:06] problems that he thinks are like
+[35:08] Paramount for baseball analytics in the
+[35:10] next uh few decades the first one is
+[35:13] separating defense into pitching and
+[35:14] fielding and it's funny because the quot
+[35:17] he presents is like gosh these two are
+[35:19] so together that it seems like
+[35:20] impossible to separate them uh and as
+[35:23] we'll see in a second we're sort of like
+[35:26] at the point where we've to separate
+[35:28] these two things um and another one is
+[35:32] he really wants to take sort of minor
+[35:35] leak pitchers and think like how will
+[35:37] this player perform in the major leagues
+[35:39] and pitching is really intertwined with
+[35:42] the difficulty of bouting phase so any
+[35:44] sort of like batter related statistic
+[35:46] that you take has this problem of like
+[35:48] once you change the difficulty of um
+[35:52] competition phase like how will that
+[35:54] translate so these two are very much
+[35:56] intertwined and they're solved by this
+[35:59] new technology that comes along in 2006
+[36:01] called pitch effects so pitch effects is
+[36:04] the two camera system that takes 20
+[36:07] images as the pitch is traveling from
+[36:09] the mount to the plate uh it determines
+[36:12] like the 3D location of the pitch in
+[36:14] those 20 images and then it fits the
+[36:16] best trajectory it can to those points
+[36:19] to give a speed break and location for
+[36:23] this particular Peach uh and then
+[36:25] simultaneously manually there's someone
+[36:28] in the booth sort of like uh writing
+[36:31] down like what was the result of this
+[36:32] pitch and the result of this at that and
+[36:35] getting this data was revolutionary for
+[36:37] pitching and Fielding analysis so
+[36:41] um the sort of like the most relevant
+[36:44] portion of this is we start developing
+[36:46] defense independent pitching
+[36:50] statistics the very first one is
+[36:52] developed by Boris McCracken in 2001 um
+[36:56] and it's sort of like before this
+[36:58] technology comes along right and so uh
+[37:00] Boris is interested in the same problem
+[37:02] and what he realizes is there's a lot of
+[37:05] Statistics that only concern the pitcher
+[37:07] and not the defense because the ball
+[37:09] isn't really in play so strikeouts walks
+[37:12] home runs hit by pitches are something
+[37:15] that the pitcher controls but that don't
+[37:17] involve the defense and so he creates
+[37:19] this statistic that like is now fully
+[37:22] under the pitcher controlled uh this is
+[37:24] sort of like a precursor for FIP which
+[37:27] is is still very much used today to talk
+[37:29] about pictures everywhere in the
+[37:31] industry uh and other Baran that are
+[37:33] still around
+[37:35] so you can take that idea and bring it
+[37:38] one step forward uh and the best sort of
+[37:40] like public research on this is called
+[37:42] Stuff Plus and the idea of Stuff Plus is
+[37:46] based on a pitch movement alone like how
+[37:50] good is this pitch um so we take the
+[37:54] pitch's velocity the pitch type the
+[37:57] horizontal and the vertical break and
+[38:00] with this um kind of like nearest
+[38:03] neighbors like technique uh of course
+[38:06] everyone solves it a little differently
+[38:07] and I won't tell you how we solve that
+[38:09] at cellus but with this sort of like
+[38:11] nearest neighbors Technique we can say
+[38:13] like gosh this pitch that breaks a lot
+[38:16] is really good because it generates a
+[38:18] lot of swing and miss and now we're at a
+[38:21] state where uh we've taken this defense
+[38:23] independent pitching and put it in like
+[38:25] a whole different sphere right we're
+[38:27] able to do it for every single outcome
+[38:30] independent of the defense and sort of
+[38:33] like the location of the pitch so now we
+[38:34] know like how good is this pitcher
+[38:37] repertoire alog together um stuff is
+[38:40] sort of like a game changer because
+[38:43] pitch trajectories are sort of also
+[38:45] independent of the quality of batting
+[38:48] that you're facing Mo for the most part
+[38:50] and in that way we're able to much more
+[38:53] accurately just take a picture from the
+[38:55] minor leaks and project them to to um
+[38:58] how good they're going to be in the
+[38:59] major
+[39:02] leagues uh another sort of question that
+[39:05] Keith poses is about the league
+[39:08] environment so uh just think about like
+[39:12] how can small Market teams compete when
+[39:14] Big Market teams have like eight times
+[39:17] the budget and aren't really able to
+[39:19] keep their players um and as you know
+[39:23] the answer is sort of like Brewing ask
+[39:25] key disposing this question right Money
+[39:27] Ball comes out in 2003 and it's about
+[39:30] the 2001 and 2002 a and so uh we're
+[39:35] really like as an industry already
+[39:37] working on this as this question is
+[39:40] being posed and uh since then there
+[39:42] haven't been any like back-to-back
+[39:44] champions in MLB uh in that period the
+[39:46] Red Sox have won the most championships
+[39:48] with four so under sort of like 20% of
+[39:51] the championship so there really is like
+[39:53] a perennial mixture of contending teams
+[39:57] and small Market teams are able to be in
+[39:59] the playoffs and compete every single
+[40:01] year um sort of like the race are the
+[40:03] best example of this of taking like a
+[40:05] lot of data driven decision making to um
+[40:09] a full extreme and seeing like God how
+[40:12] can we compete with like a bottom five
+[40:13] payroll all the time and they found an
+[40:16] answer and they able to do it so um this
+[40:19] league environment is also something
+[40:20] that um we've made a lot of advancements
+[40:24] in um W Le really have an idea of like
+[40:28] you know how good are patchers like how
+[40:31] do they help like is it preventing
+[40:33] Runners is it on game calling is it on
+[40:36] like keeping an eye on a pitcher's
+[40:39] fatigue uh and once we're able to get
+[40:42] pitch tracking we now are able to build
+[40:45] sort of like foundational models for
+[40:48] strike probability for um throwing out a
+[40:52] runner given um like the speed of the
+[40:55] pitch its location and
+[40:57] uh how good this Runner is and like will
+[41:00] this pitch go backwards and let the
+[41:03] runners advance and now we know that the
+[41:04] most important of those three things is
+[41:06] framing by like a very significant
+[41:09] margin and so we're able to produce sort
+[41:12] of like these value attributions On The
+[41:14] Run scale for catchers on Framing and um
+[41:18] funnily enough like when you go back uh
+[41:20] there's this like very famous example in
+[41:22] the community of Ryan dumit who was sort
+[41:25] of like a good catch for uh the major
+[41:28] leagues he plays for he played for like
+[41:30] a decade and when we started including
+[41:33] framing in our evaluation we realized
+[41:35] like you know what dumit wasn't that
+[41:37] good a player like his whole career was
+[41:39] reevaluated and realiz we realized that
+[41:41] like he was below replacement for seven
+[41:44] of his 10 major league seasons and
+[41:46] really wouldn't play with that skill set
+[41:49] in MLB
+[41:51] today
+[41:54] um wner postes two interesting questions
+[41:57] in market value like how valuable is
+[42:00] positional flexibility right like if I
+[42:02] have someone that can play all infield
+[42:04] positions or all three Corner Outfield
+[42:06] positions like how valuable is that um
+[42:10] and uh duck fearing and a collaborator
+[42:12] looked at this and sort of said you know
+[42:14] flexibility can gain you up to two wins
+[42:17] in a season uh that paper is um some one
+[42:21] I would recommend and um wner is also
+[42:25] not sure like how can we create a
+[42:26] framework to evaluate trades and we've
+[42:29] sort of like answered this in in
+[42:31] different ways between public and
+[42:33] industry but there's this website called
+[42:35] uh baseball trade values that sort of
+[42:37] does that it's it takes projections it
+[42:39] takes how controllable this player's
+[42:42] contract is and their cost it assigns
+[42:44] them a monetary value it's also able to
+[42:47] assign monetary value to something like
+[42:49] draft picks and then it tells you like
+[42:52] how much money is changing in this trade
+[42:54] and who's sort of like getting the best
+[42:56] of it
+[42:59] so uh hopefully i' I've made the case
+[43:02] that we've come a long way in 20 years
+[43:04] uh and I kind of want to move on to like
+[43:08] what do I think are some really
+[43:10] interesting questions in the next few
+[43:12] years for the industry before we open it
+[43:14] up to questions in the room um this is a
+[43:17] very fancy title but it should really
+[43:19] say like here are my hot takes on the
+[43:21] future of baseball so bear with me as we
+[43:24] start to walk through this one um and
+[43:27] this is really driven by another change
+[43:30] in technology right so MLB started
+[43:32] partnering with Hawkeye Technologies
+[43:34] starting in the 2020 season so in
+[43:37] compared to the two camera system we had
+[43:39] in 2006 we now have a 12 camera system
+[43:42] in every single Major League Stadium and
+[43:45] a lot of minor league stadiums and um we
+[43:48] have just so much more data so in 2020
+[43:52] uh these cameras were capturing a
+[43:55] skeletal model
+[43:57] of um every single player in the field
+[44:01] that tells us like where are their
+[44:03] elbows where's their left hip as their
+[44:05] wrist is starting to pronate at 100
+[44:08] frames a second uh we're now up to 300
+[44:12] frames per second and 29 points per each
+[44:15] of these players so the availability of
+[44:17] data we have is sort of growing like
+[44:20] crazy um here's some graphs that I um
+[44:23] borrowed from Nick Juan so in the Box
+[44:26] Car era we should have had 10 megabytes
+[44:28] per season Once you get to play byplay
+[44:30] and you start adding results of that you
+[44:32] get to 500 megabytes per season once you
+[44:36] start adding tracking data you very
+[44:37] quickly get to 4 and a half terabytes
+[44:40] per season and then um sorry yeah to to
+[44:45] five terabytes per season and once you
+[44:47] start adding player tracking you get to
+[44:49] 30 30 terabytes of of data per season
+[44:53] and this was sort of like at the
+[44:54] beginning in 2020 but uh you'll notice
+[44:56] there's a missing statistic here it's
+[44:59] probably closer to 100 to 200 terabytes
+[45:04] of data at this point with the new
+[45:05] skeletal model and all the tracking data
+[45:07] we have so just being able to um go into
+[45:12] this data will give us so many more
+[45:14] problems to work on um so here's sort of
+[45:18] like how that looks on the MLB side
+[45:19] they're able to have these skeletal
+[45:21] poses for everyone in the field at at
+[45:23] all moments and animate them uh we also
+[45:26] now are able to track the bat which is
+[45:29] really really exciting uh and that's
+[45:32] sort of problem number one for me is
+[45:36] like what is a good swing like we just
+[45:39] kind of don't know
+[45:43] um changing pitch quality competition
+[45:47] from the minor to the major leagues
+[45:48] makes hitting translations a lot more
+[45:51] difficult right so if you're facing 94
+[45:54] miles an hour in the minor leaks and you
+[45:55] come up and you're facing 90 9 mil hour
+[45:58] your muscle memory is just completely
+[46:00] thrown off and
+[46:03] so because hitting is reactive instead
+[46:06] of pitching which is simply about um
+[46:09] sort of like throwing the trajectory
+[46:11] without worrying too much about who's in
+[46:13] the plate um it's much more harder to
+[46:17] say like how good is this hitter if we
+[46:20] haven't seen him in the major leagues
+[46:22] and
+[46:24] um the other thing that happens at the
+[46:26] major league level level
+[46:28] is if you have a hole in your game um
+[46:32] teams now have sort of like Advanced
+[46:35] scouting teams that are looking at the
+[46:37] next opponent and seeing that hole in
+[46:39] your game and that is going to get
+[46:40] exploited really really fast so I can
+[46:43] remember a particular baseball Prospect
+[46:45] who could not hit a high fastball he was
+[46:47] a highly touted Prospect and um when he
+[46:50] reached the major leaks like teams just
+[46:52] started throwing High fast balls to him
+[46:54] and he could never adjust and is sort of
+[46:56] like
+[46:57] out of the league now um there's this
+[47:01] other like really interesting thing
+[47:03] about baseball
+[47:05] like we have so many different types of
+[47:08] athletes and body types and it's not
+[47:11] like football where you have offensive
+[47:13] linemen and wide receivers but each of
+[47:15] those have a different function like all
+[47:17] batters are sort of trying to solve the
+[47:18] same problem in in different ways but
+[47:20] the same problem right so the mechanics
+[47:22] of someone that's 68 versus someone
+[47:24] that's 56 are very different and the way
+[47:27] that they're able to generate strength
+[47:29] or value are very different so like how
+[47:33] can we abstract this player's context
+[47:36] and think about what is a good swing is
+[47:40] very very much an open question and
+[47:42] something I'm really interested in um
+[47:44] another difference between batters there
+[47:46] some of them guess right it's a 20 count
+[47:50] uh this person has shown me this ler
+[47:52] twice they haven't been able to locate
+[47:53] it so I think there's a fast ball cing
+[47:56] I'm going to sit fast fastball I'm going
+[47:57] to swing at this pitch sort of like
+[47:58] irregardless of what's happening and try
+[48:00] to guess other hitters just try to pick
+[48:03] up the trajectory and react and so like
+[48:06] how good are these two approaches we
+[48:09] don't really know because we can't
+[48:11] really measure those but with
+[48:13] backtracking data and timing data I
+[48:16] think we'll be able to more um cleanly
+[48:19] separate like who's guessing and who's
+[48:21] reacting and how good are these
+[48:23] strategies in this game context
+[48:29] um physical movement Varan is not
+[48:31] something that we've been able to look
+[48:33] at or
+[48:35] quantify uh so like you know how
+[48:38] repeatable is your physical motion and
+[48:40] your swing and how much are you changing
+[48:43] from a dayto day or a week to week
+[48:45] perspective is that leading to injury uh
+[48:48] is that sort of like exploitable and in
+[48:51] particular like I think this might have
+[48:54] a relationship to clutch hitting so the
+[48:56] Sports analytics take on clutch hitting
+[48:58] is like we just don't have enough sample
+[49:00] size to determine whether this exists
+[49:02] but of course when you talk to coaches
+[49:03] like of course it exists right and I
+[49:06] think there's something to it here I
+[49:08] think there's something about people
+[49:10] that have longer swings that are able to
+[49:13] get exploited when the moment gets too
+[49:15] quick and their heart is like really
+[49:17] really going because they can't really
+[49:18] rely on muscle memory all that
+[49:21] much um hopefully I'm I'm starting to
+[49:24] get you excited about the kinds of
+[49:25] things that we're um building so number
+[49:28] two is reimagining pitcher roles so if
+[49:31] you know something about baseball
+[49:32] there's sort of like a starter who
+[49:35] pitches at the beginning of the game and
+[49:36] tries to take this um as long as
+[49:39] possible and then there's relievers that
+[49:40] usually pitch for one inning and come in
+[49:43] particular situations uh this was a
+[49:45] question that wner was interested in in
+[49:47] 2000 and we've sort of like changed a
+[49:49] lot uh we now have things called openers
+[49:52] that's sort of like a reliever going
+[49:53] ahead of the starter against the one to
+[49:57] four hitters who are sort of like the
+[49:59] best hitters in the lineup to try to
+[50:01] extend the time for which the starter is
+[50:03] able to play um this might seem like the
+[50:06] most obvious thing in the world but
+[50:07] starters pitch way more than relievers
+[50:10] and in that way they're able to
+[50:11] accumulate so much more value uh it's
+[50:14] not quite the whole difference in
+[50:16] playing time because relievers come in
+[50:18] in higher leverage situations and in
+[50:21] that way uh are very valuable but sort
+[50:24] of like my rule of thumb is like the med
+[50:26] in fifth starter is about as valuable as
+[50:29] the best third is reliever in the league
+[50:33] and so if you have a good pitcher who's
+[50:35] sort of like third or fourth in Your
+[50:38] Bullpen I think you should convert them
+[50:40] to a starter and um there was sort of uh
+[50:44] this question in the industry of like
+[50:45] can we make a pitcher that throws one
+[50:47] inning per game Throw six Innings
+[50:50] without giving them sort of like an
+[50:52] offseason training and in the last few
+[50:54] years we've seen at least these six
+[50:56] examples of people that have
+[50:57] transitioned from one to the other
+[50:58] successfully and are now able to start
+[51:01] um I kind of want to like take this one
+[51:05] one step further so in 93 Tony larusa
+[51:07] tried to do this thing where he took his
+[51:10] pitching divided it into three groups
+[51:12] and wanted everyone to throw um every
+[51:15] third day for three Innings I kind of
+[51:17] want to get to a world where we're not
+[51:20] thinking about starters and relievers
+[51:21] we're just thinking about pitchers and
+[51:23] how to maximize their value so I think
+[51:25] this is very much an open question and
+[51:26] one I'm very interested in um I'm going
+[51:28] to try to hurry because I'm running out
+[51:30] of time so number three is uh I think
+[51:32] the stuff problem is really solved but
+[51:35] then the residual between like what we
+[51:37] see and stuff is really hard to explain
+[51:41] at the moment um so we think some of
+[51:45] this is due to where the pitch crosses
+[51:47] the plate and how good the pitcher is at
+[51:49] commanding that note that I've put these
+[51:52] two together they're hard to separate
+[51:54] because we don't really know where the
+[51:56] pitch will the picture was intending to
+[51:58] throw we can have a proxy with where the
+[52:00] catcher stood but not quite the intended
+[52:02] location so like where's the pitcher
+[52:05] trying to throw it and where do they put
+[52:06] it that's one part of it uh their pitch
+[52:09] selection and sequencing certainly place
+[52:11] a part here and like how many pitch
+[52:14] types they have is very relevant because
+[52:16] the batter is trying to guess like
+[52:18] what's coming and if he's guessing
+[52:20] between two pitches and four pitches
+[52:22] it's a lot harder to guess and they have
+[52:24] to react more um so there's this like um
+[52:28] predictability versus best pitch sort of
+[52:32] um Continuum my take is people don't
+[52:35] throw their best pitch enough but we
+[52:37] don't know right we we kind of we know
+[52:40] that like you shouldn't throw your best
+[52:41] pitch 100% of the time because then
+[52:43] people will guess but we don't know
+[52:44] where the ideal is um and then there's
+[52:47] this like deception piece where some
+[52:49] pitchers are able to hide the ball with
+[52:51] their body and uh Beyond results we can
+[52:55] like um don't really quantify deception
+[52:57] very well right
+[52:59] now um two more to go so um how do we
+[53:03] use data and Coach players is very much
+[53:05] an open question baseball has made more
+[53:07] progress than other sports in this area
+[53:09] there are this tradeoffs between like
+[53:11] taking risks to improve as an athlete
+[53:13] and added injury risk that I think are
+[53:16] uh given incentives very clear for
+[53:18] players that are in The Fringe of a
+[53:19] roster right if I can't improve I won't
+[53:21] make a team therefore I'll take the
+[53:24] added injury risk but for established
+[53:26] major leaders and for Stars this is sort
+[53:28] of like less clear like should you take
+[53:31] this extra injury risk to become better
+[53:33] or should you take your career like
+[53:36] projected career trajectory as is um
+[53:39] when to make a coaching intervention is
+[53:41] one question I'm really interested in
+[53:43] right like once you're in the major
+[53:44] leagues you're already sort of like um
+[53:47] an elite athlete like should a coach
+[53:49] really intervene or should they just let
+[53:51] you be because there's a risk that
+[53:52] they'll make you worse uh I don't think
+[53:54] we have a great answer for that uh
+[53:56] short-term improvements versus long-term
+[53:58] Health very much an open question um how
+[54:01] prone are you to injury and how is that
+[54:03] related to your workload uh we don't
+[54:06] know there's some like rule of thumbs uh
+[54:08] for when to use pictures and when to use
+[54:11] batters and when to give them time up
+[54:12] but um we we just don't really know
+[54:17] um and um lastly the one I'm very very
+[54:21] interested is like you have analytics
+[54:24] tools now how do you do datadriven
+[54:27] decision-making like how do you build a
+[54:29] data culture and uh I think it relates
+[54:31] to bringing back context to your
+[54:34] decision making um more
+[54:38] flexibly moving economic assumptions in
+[54:41] your models to reflect your reality
+[54:43] right now and um be able to better
+[54:46] capture the impact to your particular
+[54:49] roster um and um I want to thank you all
+[54:52] this morning for coming I know it's
+[54:54] early and on a Saturday uh so again
+[54:56] here's my website and my Twitter where
+[54:58] you can reach me I'll put the slides up
+[55:00] there and um I'll I'll open up the floor
+[55:03] for any
+[55:11] questions um
+[55:23] yep um so if I understand the question
+[55:25] correctly the question is uh is my job
+[55:28] more related to building
+[55:36] formulas um okay so building the formula
+[55:39] versus understanding the formula uh
+[55:41] Sports is very particular in that
+[55:45] there's going to be one person
+[55:46] ultimately making these decisions and
+[55:49] that person really wants to understand
+[55:50] like where does this projection come
+[55:52] from um so in the early stage in the
+[55:55] predictive stage where we're just
+[55:57] building models that predict the
+[55:58] probability of something like um like a
+[56:01] cult strike probability that is going to
+[56:03] be much more formula performance driven
+[56:07] right so you'll use a lot more black
+[56:09] boxy machine learning techniques that
+[56:11] are simply trying to say this is the
+[56:14] most accurate model I can build but at
+[56:16] the last stage of that at the
+[56:18] prescriptive stage you're trying to
+[56:20] build really interpretable models that
+[56:23] someone with a non-technical background
+[56:25] can look at and say
+[56:26] okay I understand where this projection
+[56:28] is coming from this player is good at
+[56:30] decision making and power hitting but
+[56:32] not really contact um so the answer is
+[56:35] both it depends sort of like where in
+[56:38] the Spectrum you
+[56:40] are
+[56:52] yes yeah so the question is um with
+[56:55] things like The Yips what was the other
+[56:59] one and slumps so uh slumps are sort of
+[57:02] like performance Varan where a batter or
+[57:05] a pitcher just has like a rough patch
+[57:08] like how are you able to determine that
+[57:10] with data um on the current state what
+[57:13] you try to do is you try to see if
+[57:15] there's a difference between expected
+[57:17] results and actual results right is this
+[57:20] just simply bad luck or has something
+[57:23] underlying for this player changed in a
+[57:25] way that now needs a coaching
+[57:27] intervention um for pitchers we actually
+[57:31] have like much better understanding of
+[57:33] their kinematic chain and reports built
+[57:35] out that say like no look this person is
+[57:38] now bringing their toe down you know
+[57:41] five frames before than last week we
+[57:43] should try to get their movement in
+[57:45] control for batters we do not and so uh
+[57:48] I think there's still very much an open
+[57:49] question on that end of like is this
+[57:52] lump driven by someone changing their
+[57:54] swing or is it just purely like about
+[57:56] look this week um but I think we'll have
+[57:58] a lot more tools to answer these
+[58:00] questions in the next fiveish
+[58:03] years um one more because I'm I can see
+[58:05] the organizers and there goes yes
+[58:24] Elliot yeah so the question is is um if
+[58:27] you need interpretable models how do you
+[58:29] use machine learning or AI in this
+[58:31] scenario um early in the pipeline right
+[58:34] like the decision maker is not going to
+[58:36] be looking at is your blocking
+[58:39] probability correct so in that way you
+[58:41] want to use them as building blocks to
+[58:44] get to a point where you're then able to
+[58:46] build the interpretable model better um
+[58:49] having said that there's a lot of like
+[58:51] interesting machine learning techniques
+[58:52] that are actually interpretable or that
+[58:55] we have tools to inter interpret so
+[58:56] something like Chaple graphs are used in
+[58:58] the industry a lot um any sort of like
+[59:02] basian actor attribution is very useful
+[59:05] and that we're able to see like with and
+[59:07] without this actor how do the
+[59:09] predictions change and in that way
+[59:10] understand this particular actor better
+[59:12] so there are ways of doing it but it's
+[59:14] still sort of like an active area of
+[59:16] research um I'm sorry I have to run
+[59:19] again if you have any more questions I
+[59:21] know there were more in the room please
+[59:23] send me an email my email is in that
+[59:24] website and I'll also post a like there
+[59:26] uh and it was lovely talking to you all
+[59:28] this morning thank you for the
+[59:29] invitation

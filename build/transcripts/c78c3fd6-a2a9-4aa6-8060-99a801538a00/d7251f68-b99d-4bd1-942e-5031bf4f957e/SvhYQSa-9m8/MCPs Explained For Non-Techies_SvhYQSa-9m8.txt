@@ -1,0 +1,84 @@
+Video Title: MCPs Explained For Non-Techies  #n8n #artificialintelligence #mcp #modelcontextprotocol  #coding
+Video ID: SvhYQSa-9m8
+URL: https://www.youtube.com/watch?v=SvhYQSa-9m8
+View Count: 153,822
+
+[00:00] okay this is mCP explained for regular
+[00:02] people okay so model context protocol
+[00:04] we're going to break it down as simple
+[00:06] as possible how it makes AI agents more
+[00:08] intelligent okay so we're going to start
+[00:10] with the basics here let's just pretend
+[00:11] we're going back to chat gbt what we
+[00:13] have is an input on the left we're able
+[00:15] to ask it a question you know help me
+[00:17] write this email tell me a joke whatever
+[00:18] it is we feed in an input the llm thinks
+[00:21] about it and provides some sort of
+[00:23] answer to us as an output the next
+[00:25] Evolution was when we started to give
+[00:26] llms tools and that's when we got AI
+[00:30] agents and so before we start talking
+[00:31] about mCP servers and how that enhances
+[00:34] our agents abilities we need to talk
+[00:36] about how these tools work and sort of
+[00:38] the limitations of them what it's going
+[00:39] to do is each tool has a very specific
+[00:42] function and so the reason that these
+[00:43] tools aren't super flexible is because
+[00:45] within each of these configurations we
+[00:48] basically have to hardcode in what is
+[00:50] the operation I'm doing here and what's
+[00:52] the resource and then we can feed in
+[00:54] some Dynamic things like different
+[00:55] message IDs or label IDs over here you
+[00:58] know the operation is git the resources
+[01:00] message so that won't change and then
+[01:01] over here the operation is that we're
+[01:03] sending a message so now we start to
+[01:06] interact with something called an mCP
+[01:08] server and it's basically just going to
+[01:09] be a layer between your agent and
+[01:12] between the tools that you want to hit
+[01:13] which would be right here and so when
+[01:15] the agent sends a request to the
+[01:16] specific mCP server in this case let's
+[01:18] pretend it's notion it's going to get
+[01:20] more information back than hey what
+[01:22] tools do I have and what's the
+[01:23] functionality here it's also going to
+[01:25] get information about like what are the
+[01:26] resources there what are the schemas
+[01:28] there what are the prompts there and it
+[01:30] uses all of that to understand how to
+[01:32] actually take the action that we asked
+[01:34] back here in the whole input that
+[01:36] triggered the workflow by going through
+[01:38] the mCP server it's basically going to
+[01:40] be a universal translator that takes the
+[01:42] information from the llm and it enriches
+[01:44] that with all the information that we
+[01:46] need in order to hit the right tool with
+[01:48] the right schema fill in the right
+[01:50] parameters access the right resources
+[01:52] all that kind of stuff so coming down
+[01:54] here let's pretend that we have this
+[01:56] beautiful air table agent that we built
+[01:58] out in naden but this could be a lot
+[02:01] more lean of a system if we were able to
+[02:03] access air table's mCP server as you see
+[02:06] what we're doing right here because this
+[02:07] is able to list all the tools that we
+[02:09] have available in air table but what the
+[02:11] actual agent would look at in order to
+[02:13] use the tool is a list of the tools
+[02:15] where it would be here's the name here's
+[02:17] the description of when you use this
+[02:18] tool and then here's the schema of what
+[02:21] you need to send over to this tool and
+[02:22] basically what it's going to do is going
+[02:24] to choose which tool it needs based on
+[02:25] the information it was fed previously if
+[02:27] you want to watch the full breakdown the
+[02:28] link for the video is in the descript
+[02:29] description see you guys over there

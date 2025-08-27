@@ -1,0 +1,502 @@
+Video Title: Introduction to Python: Surya Eada [2021 UConn Sports Analytics Symposium]
+Video ID: RRU0K_JBedc
+URL: https://www.youtube.com/watch?v=RRU0K_JBedc
+View Count: 58
+
+[00:01] Uh, there we go. Hello everyone welcome to the 2021 confidence and for this workshop, which is introduction to Python.
+[00:11] Um, for now, I I've been hope I, I, I'm anticipating that you all have been having a good time with the confidence.
+[00:19] Uh, so here we will probably just have a quick, uh, introduction to Python.
+[00:25] And I hope that you'll also like this part of the conference.
+[00:29] So, about me, I'm a 30 a PhD student, uh, from department of statistics, at Yukon. Uh, and I'm usually interested in stochastic processes.
+[00:39] And, uh, my research is in that particular field.
+[00:44] Uh, I aspire to be in research and Academy.
+[00:47] And, uh, have hobbies such as playing sports or painting traveling these, these are things that I pretty much, uh, like a lot.
+[00:55] Of course, the research itself.
+[00:59] So, uh, the prerequisites for this particular workshop is just that you need to have a laptop with anaconda installed.
+[01:07] I hope you all do have that, uh, do any of you.
+[01:12] Not have anaconda installed in case if it is not in, uh, downloaded and installed, uh, you can download it from this particular location. And in case you are thinking, where do I get these slides from?
+[01:26] Uh, these, uh, these are, uh, these are the GitHub location, which I'll share with you on the, uh.
+[01:35] Huh.
+[01:39] So, let me quickly get to the chat. So that is anaconda for Windows.
+[01:51] Hey, Eva, that is for Mac.
+[01:59] And you can also get the slides, uh, and.
+[02:05] Everything else from the GitHub repository, uh, which I have also shared.
+[02:10] On check. Okay so.
+[02:13] So, the prerequisites are basically a laptop with an install and I'm hoping that everyone do have that at this point in time.
+[02:20] Uh, and in case, if you are taking some time to do that, uh, please keep, uh, just.
+[02:26] Uh, download it on the side and we can go ahead. So, what is the anaconda? So, it's a, uh, it, it comes along with, uh, Python 3.8, uh, by the way, which is not the latest 1, the latest 1 I think, uh, is.
+[02:39] Either 3.9 or 3.10 at this point in time uh, it also comes with, uh, some, uh, uh, PIP and Conda, which are package managers, which allow you to kind of have different versions of the back, uh, different modules and all of that.
+[02:54] And, uh, some of the important modules such as those that are commonly used often, uh, so anaconda down, I mean, installs along with those things.
+[03:06] So, you can also separately, uh, download Python and install Python on your computer, except that, uh, for the 1st time when you need to use these, uh, modules.
+[03:16] You will have to be installing them as well onto your computer.
+[03:19] Uh, using, uh, but, uh, if you are taking, which is, uh, a bulk your version.
+[03:26] Of a, it consists of all these, uh, basic modules.
+[03:30] So, the advantage is with, uh, uh, 1 of the predominant advantage is basically being able to create environments.
+[03:41] So, environments are, uh, are different, uh.
+[03:46] Environments are where we have particular versions of, uh, uh, a particular module for example, let's say number has gone through multiple versions. And maybe there is a function, uh, in older version that you are very much interested in.
+[04:00] And you've used predominantly.
+[04:02] And maybe it's gotten deprecated at this point in time, which means that it has been changed, or removed or things like that.
+[04:09] So, in order to not affect your own research, you would, you may want to have an older version of numb by in a particular environment where you've used it.
+[04:17] So, therefore, enrollments allows you to have these.
+[04:21] Different versions of, uh, modules, um, in separate environments that you create.
+[04:27] So that even functions that are deprecated also can be utilized.
+[04:31] So having said that, uh, Anaconda also, uh, gives you a Jupiter notebook, which is a very useful tool in data science. Uh, it is, it is similar to our mark down. If anyone has used our Markdown.
+[04:44] It kind of has, uh, both marked down syntax where you can write text and follow it up with code, which can also be run.
+[04:51] So, uh, so, Jupiter notebook gives you that, uh, elegance of writing a report along with the code and the results, right? Next to it.
+[05:01] Having said that I know that this is a workshop and therefore, if you have any questions at any point in time, please feel free to chat and write it down in the chat and we'll stop where we are. And probably talk about that.
+[05:14] So.
+[05:18] I mean, uh, furthermore, I, uh, 1 of the other advantages of having anaconda is that anaconda will give you these different learning materials. It, it gives you for Python. It also gives you tutorial for most of these important modules that you'll be using. Very much.
+[05:32] If you are getting into Python, which is, for example, panders of, or things like that. So you can go to the learning section on the left and you'll see that. There are a lot of.
+[05:41] The references there as well where you can learn from, like, 2 tables where you can learn from on the.
+[05:47] So, having said that, uh, let's quickly get to the motivation of why we are doing this. Uh, of course I mean, that should be a good reason why we are learning a new language.
+[05:57] So 1 of the reasons is data is growing a lot.
+[06:00] And therefore, uh, a lot of application of data science, uh, it need not mean that we need a new language. But, uh, overall Python is 1 of those languages that can be applied to data science.
+[06:11] Uh, apart from that Python is also very easy to read and write. It is some, some of the syntax in Python is almost like, uh, English, uh, reading a line in English like, for example, you can say, uh, string starts with dot starts with.
+[06:25] It's a method for a string.
+[06:26] Uh, it kind of gives you a very easy to read and write sort of manner language.
+[06:32] So, and a lot of deep learning models have been implemented here and therefore there is a lot of demand for Python, uh, also in a lot of fields right now, uh, in the industry there is a lot of, uh, interest for pipeline.
+[06:45] And, uh, last, but not the least we need to survive in the job market for us to survive in the job market. It's always, uh, important to be ahead on whatever is going on. So, Python seems to be the new thing, and therefore we should be on top of it.
+[07:00] So quickly, uh, glimpse of, uh, how the data is being created, like, every 1 minute of a day, you can see how many tweets are being created, like, 565 K tweets and, uh.
+[07:12] So this is a small, uh, this is a survey by so, this is a visualization by Domo.
+[07:17] You can see that how much data is being created in a minute of a day. So.
+[07:23] So that just shows you the 1 of the data.
+[07:27] And you can see that, uh, there are a language rankings. So, and within these rankings that are being given by typically, you can see that Python is right now at the top.
+[07:37] As the most, uh, I mean.
+[07:40] As the best trained, uh, computer language.
+[07:43] And also you can see amongst amongst a smaller sample.
+[07:50] Uh, sample survey, which is only on a survey of 3000 people that has been connected by anaconda. You can see that Python has been mentioned as being used quite often.
+[08:04] Uh, and that probably is because it's becoming an increasingly popular language.
+[08:09] So, a little more into Maybe so tighten itself, uh, we should give a history, uh, importance. So, Python has been released in 91 by bank. Awesome.
+[08:23] And it has been since then it has been useful in.
+[08:28] So, many, uh, uh, different things like web development of software development.
+[08:33] And, uh, nowadays predominantly, we do see it in data science.
+[08:38] So, it has a very easy syntax and the most recent major version is Python 3.10. although there is a Python 3 version and Python 2 version in case if you are getting confused and the Python 2 versions are often seen in, in MacBooks.
+[08:54] That are already there and those are the ones that have used for development of, uh, development, a few things on Mac.
+[09:01] Uh, but if you see outside a predominantly Python, 3 is used because they get.
+[09:07] Uh, mostly updated often and also that.
+[09:10] Um, they, I mean, a lot of modules that written in Python 3, so therefore it makes sense for you to probably use 5 and 3.
+[09:18] So, and we can use by then.
+[09:21] A, a few different ways, for example, just a quick, uh, heads up. If I, if you have a terminal, uh, uh, uh, something similar to a terminal, like a command line.
+[09:30] You can just say, uh, I mean, you can type in Python and you can see that, uh, there is a version of Python that has opened up on the command line itself where you can do calculations like 2.32 plus 3 and 5.
+[09:42] And so on, but, uh, there are also, uh, uh, IDs.
+[09:47] Such as similar to ask studio like, uh, Python, uh, and then there is this Jupiter notebook, which is very predominantly used.
+[09:55] Okay, so the aim of the workshop, so the aim of the workshop, uh, we, we'd like to just get into, uh, some basics of Python, for example, we'll just, uh, look through what variable is what indentation.
+[10:08] Uh, needs to be there for Python uh, or does there need to be in any invitation in the 1st place?
+[10:15] Uh, and a few data types that are there in Python and loops and all of those things that are.
+[10:21] Primarily, uh, I mean, is required for any computer language.
+[10:26] So, we'll just get through those things and amongst modules, we'll probably touch up on number and pandas, at least as the hope. And we'll end up with a quiz.
+[10:36] So, now let's get started, uh, we'll be working on Jupiter notebook.
+[10:39] Uh, so if you go, I hope that you all have.
+[10:45] So, if you have, you can use.
+[10:49] Switch it on if you open up.
+[10:59] You should be able to see that Jupiter notebook is all is, uh, an available option. There. You can launch Jupiter notebook.
+[11:09] On the other hand, I also hope that you have gone to, uh, the GitHub repository.
+[11:14] If you do go to the GitHub repository, and if you.
+[11:18] Clone this or download this you will see that. There is a practice.
+[11:23] Dot, it's called, uh, interactive Python notebook.
+[11:29] So those are usually opened using Jupiter notebook.
+[11:33] So, you can download it. 1st.
+[11:37] And once you downloaded it, uh, from within anaconda, launch your Jupiter notebook.
+[11:42] And try to get to wherever.
+[11:47] Let me clear these out, so try to get to wherever the practice notebook, uh, is.
+[11:54] So, for example, in my case, I do have it and.
+[12:00] Uc into a fighting and there's this practice it's.
+[12:07] Pretty much an open notebook empty notebook at this point in time.
+[12:10] But as we go through the quiz problem, we'll probably, uh, uh, be working here.
+[12:16] As well, as if you want to try out any code, you can try out in the empty, uh, code sections that you have here.
+[12:22] So, uh, until now, are there any questions.
+[12:34] Okay, so let's get back to the slides. So, I think, uh, in the 1st, few lines in the, uh, the practice note book, I've kind of had a few, uh, um, useful comments for Jupiter because you're trying to use a Jupiter notebook.
+[12:47] And a lot of people use mostly, uh, keyboard shortcuts on there.
+[12:51] And, uh, you should try to understand what those keyboard shortcuts do.
+[12:56] So, for example, if I am to, if I'm going to the new chunk like this.
+[13:01] And if I click on top of it, or press, enter on top of it, you see that the, it's all covered in green.
+[13:07] So, Greene basically implies that it is in what is called.
+[13:12] Edit, uh, sorry, uh, edit mode, whereas if I press escape on top of it.
+[13:17] It turns to blue if I, uh, do an escape on top of it, it turns to blue, which means now it is on a command mode. So on command modes.
+[13:26] You can tell the notebook itself to create new chunks. For example, if I want a newer chunks.
+[13:32] Below it, I can say, I can just type B, and it creates a new chunk below it.
+[13:37] Whereas if I want a chunk about it, I can type in a, and it creates a chunk about which 1 you are, you highlighted.
+[13:45] Okay, and on top of it, if.
+[13:48] Uh, whenever it is written in something that basically means it's a code chunk.
+[13:53] So there is a difference between code chunk and markdown chunk.
+[13:57] Like, for example, Markdown chunk allows you to hide these things over here.
+[14:00] Whereas a coach, and allows you to write code and run the code and Python.
+[14:04] Okay, so when you have, uh, when you want to modify this code junk, because you know that this is a code junk.
+[14:11] Into a markdown chunk, you can use, you can type, em, while you are in the command mode.
+[14:17] Okay, so command mode allows you to make changes to the code chunks that you have.
+[14:21] So, if I type M, you can see that the in something has, uh, has been removed.
+[14:26] That basically implies that now it's no longer a coach and it's a markdown chunk.
+[14:32] So, in case, if you see, uh, typing double hashtag here, you can see that it is much different from how it is in a code chunk.
+[14:40] Right in a code junk hashtag usually, uh, acts as a comment.
+[14:46] Whereas in a mark down junk hashtag access are heading. So single hashtag means it's the primary hitting. So, if I say, for example.
+[14:55] Um, uh, just hitting 1.
+[15:01] And, uh, if I do a.
+[15:05] Command enter, you can see that it converts to a heading over here.
+[15:11] And you can also write down text to here. For example, I can say.
+[15:15] Hi, we are learning.
+[15:20] Mark down syntax.
+[15:25] And you can also say, uh, use, for example, uh, you can also use.
+[15:29] Um, bullets say, uh, okay, the 1st point.
+[15:35] Is to know how.
+[15:38] To change.
+[15:42] Chunk to mark down.
+[15:49] So, you can see how it changes into Markdown. Uh, so, uh, into.
+[15:54] The headings and all of this. So these are all marked down syntax.
+[15:58] Whereas anything that's written in a coaching that has an in something.
+[16:04] Is a Python syntax, for example, you can start writing a new.
+[16:09] Commands such as.
+[16:12] Hello? Hello? Hello world.
+[16:17] And if I play a command enter, command, enters a shortcut for, uh, basically.
+[16:24] Running this, and you can see that it runs as the 1st, uh, coaching that has been run. Now you get a number inside in.
+[16:34] Within the brackets, and it says that the result is Hello world.
+[16:38] Okay or not the reason, but, uh, it says that.
+[16:42] It just brings out Halloween, so.
+[16:45] These are a few things that you can know about. Jupiter notebook.
+[16:49] And you should know how to move between command mode and edit mode.
+[16:54] And how you should be able to, uh.
+[16:57] I mean, how you should be able to create new chunks of convert chunks. So, for example, if I wanted to, uh, convert, uh.
+[17:06] Uh, I mean, a mark down chunk into a core junk on the other hand.
+[17:13] Although I do not want to, uh, in this case, let's say if I want it, if I've written some code, but this has been a markdown chunk.
+[17:20] I can use Y, on the command mode.
+[17:23] And that should again convert this into a code chunk.
+[17:26] Although since I don't want, I'll be converting it back to mark down chunk.
+[17:30] And here it is now among okay.
+[17:34] So, having said that these are a few things about a Jupiter notebook.
+[17:37] And, uh, if you wanted to know more about Jupiter notebook, shortcuts, because you do not want to remember all these things. I mean, you just need to get used to them.
+[17:45] And then it'll become easier, but, uh, an easier way to find that is.
+[17:49] Whenever you are in blue, which is command mode, if you try to type in, which.
+[17:54] Uh, while you're here, maybe if you're trying it out right now, you can do it.
+[17:59] If you try to type in, uh, that allows you to look at.
+[18:03] All the shortcuts that you have under different modes, so under command mode, which is enabled by escape.
+[18:10] You have these shortcuts, uh, under edit mode. You have these shortcuts so.
+[18:16] Uh, even try.
+[18:19] Looking through a few of them. Okay. So having said that, let me, uh, quickly delete them. And a shortcut to delete is going to command mode and double D.
+[18:30] And that should be read those things. Okay. So having said that.
+[18:35] Let's now move on to the next part. Uh, so you can, uh, there, there are a few core chunks, uh, that I have on my slides.
+[18:47] And maybe as we go along, uh, you can try out a few of them.
+[18:51] Uh, and that that should, uh, be more like.
+[18:55] Helpful to let, you know how you can use Python.
+[18:59] In there, so make sure that whatever core chunks we are running, those should be in.
+[19:04] Uh, I mean, 4 chunks, which are not marked down, so therefore you should definitely, uh, make sure that they have an in.
+[19:14] And brackets over there so let's see, how do we find out if Python installation is there?
+[19:19] So, uh, so, in order to check for a pipe and installation, if there is a Python installation.
+[19:25] Uh, you can use this particular command that says.
+[19:30] Uh, that starts with an exclamation and by the way, the reason why we use an exclamation is because.
+[19:36] Exclamation is equally valid to using, uh, any command.
+[19:41] On the command line, so, uh, on bash. So it's basically trying to run Python.
+[19:48] And version on bash, instead of on Python. Okay.
+[19:52] So, although this is a code channel, which is.
+[19:55] Uh, item, code chunk.
+[19:58] If you try to use an exclamation in front of it, it becomes a bash port chunk rather than.
+[20:04] A bash line, rather than a pipe in line.
+[20:07] So you can say exclamation Python version.
+[20:12] And that should tell you that this, uh, the 1 that we are using currently is Python 3.8.8.
+[20:17] Which is what you get in and a corner. So now again, it's in blue, which is in command mode, so I can create a new chunk right next to right below it using a B.
+[20:28] And I've done that and, uh, let's.
+[20:38] Okay, so now let's move on to syntax.
+[20:41] So, by then often uses new line to inform end of command of function. So if you move on to a new line, it means that the previous line.
+[20:50] Uh, function has ended a previous line command has ended.
+[20:53] Except if the new line, if the next line had some implementation. Okay.
+[20:58] So this is not like other programs where for functions and everything you create semi columns or brackets.
+[21:05] Uh, for example, if you're someone who used, you will see that function for function. The scope is defined based on, uh, the curly braces.
+[21:13] Whereas, for Python, that's not the case. So, and also, I think most often, because along with our code, we often write a comments. It's important to know how we write our comments.
+[21:24] Either you can have, uh, you can use double hash single hashtag.
+[21:29] A hashtag basically makes anything into a a comment.
+[21:33] But an easier shortcut to be used in Jupiter notebook is command plus, uh, forward slash.
+[21:40] So, for example, if I have written, okay, this is a comment.
+[21:47] And you can see that this is, I mean, you cannot do that on Python usually, but you want this as a comment. So I can just.
+[21:54] And we didn't do it into a comment by using command plus forward slash.
+[21:58] The 1 that is next to, um, greater than sign on my keyboard. I, I definitely.
+[22:03] I think others will have different keywords.
+[22:07] So, uh, apart from that.
+[22:11] So, you can see an example, uh, a quick demo if I, if I wouldn't print. Hello and then.
+[22:19] Print workshop is going good. These are 2 different lines of code and Python constraints. The 1st line.
+[22:24] And as soon as you move on to the 2nd line without any indentation, it thinks of it as basically the end of the previous line.
+[22:33] So, and then let's move on to invitation as we all know. I mean, by the end users, uh, invitation for, uh, the loops of functions and things like that.
+[22:44] Uh, uh, so it's basically the amount of spaces that are required.
+[22:49] At the beginning of the code, just to inform that, uh, something is still continuing, right?
+[22:54] The code that you are writing is still not complete.
+[22:57] So you have to use whitespace and often, uh, it should be at least 1 space.
+[23:04] Although on on Jupiter notebook.
+[23:08] If I'm trying to write a loop or something like that. So, for example, if I say if X greater than 10 and, uh.
+[23:16] Soon after that, if I'm going to the next line often, it already does invitation automatically by 2 space by.
+[23:25] Actually, 4 spaces, uh, but.
+[23:28] Otherwise even just 1 space should be sufficient.
+[23:33] So, and also if you are using, uh, if it's the same block of code, you would like to use the same number of space.
+[23:39] And so you can see an example here. I, I've used just 1 space.
+[23:47] Uh, I have a code such as equal to 0, and then.
+[23:51] I have, uh, and if conditional.
+[23:54] To print something, and if an else for printing something.
+[23:58] And, uh, using just 1 space.
+[24:02] Allows them to think that well, this is, uh, the, if it still.
+[24:08] Continuing okay, without using any places or anything like that.
+[24:12] Okay, so if if you are.
+[24:16] Then you can give it a try trying to run this check in.
+[24:21] If there is any problem, and if you are getting any problem, definitely let me know. So that.
+[24:26] Um, we can collect any problems that you face.
+[24:30] Okay, so, and 1 of the most important things is obviously how to find help in Python.
+[24:42] Uh, uh, so there are some a few ways on which you can find help.
+[24:48] So the 1st thing is, if you don't even know what the function, uh, what function you need to use.
+[24:54] Obviously you need to, uh, Google through fine tutorials, but if you know the function, but don't know what it's usage is, or what its parameters are, you can often use.
+[25:03] Help of that function, but if it is part of a different module.
+[25:08] Uh, you should use the module dot function inside help.
+[25:12] For you to get information about that function.
+[25:15] Okay, so and also, the other thing is that there are various methods.
+[25:23] Uh, uh, in by a Python for every type of, uh.
+[25:27] Data, and if you want to know what methods are there, you can always try typing in off type.
+[25:35] The those kind of give you all the attributes of that type. So therefore.
+[25:39] Uh, these methods are some sort of small functions that you can apply.
+[25:43] For example, and append is a method that is applicable to a list.
+[25:48] So, if I created a list, and if I wanted to know.
+[25:51] Uh, if there is an easy way to add something I can always type in, and it will tell me that there is an append method. There is a sort method and so on. And I may use 1 of those. If required.
+[26:08] So here is a quick, uh, quick.
+[26:12] Example, so if I have my class, uh, being list, it's just, uh.
+[26:20] Uh, so, uh, and I would like to check all those methods.
+[26:24] So, here, I'm trying to create a create.
+[26:29] A list of all the methods that are in the directory of my, uh, of my class.
+[26:34] So, by doing of my class, I usually get all the methods, uh, and in which some of them will start with an underscore underscore, which are something that I'm not very much interested in.
+[26:45] So, if I want only those methods that are that I'm interested in, for example, not.
+[26:50] Um, and, I mean, just like append all these things.
+[26:56] I could probably try to create a list of all the methods.
+[26:59] Uh, biting if method starts with underscore 1 underscore is false.
+[27:04] You, uh, then it'll give me only those.
+[27:08] Methods in my of my class that don't start with underscore underscore, which happens to be happened clear copy and so on for a list.
+[27:17] Okay, so this is.
+[27:20] 1 way to find out all the methods for the list. So this can be applied not just for a list. If you have an object that is a string, and you want to know what all methods can be applied to a string.
+[27:30] For example, this starts with is an, uh, is a method that is applicable to a string because my method itself is a string.
+[27:39] I I know that I can apply method that starts with. Okay.
+[27:42] So these are the things that you can try and find out.
+[27:47] Okay, so now a quick quiz on, uh, help with variables.
+[27:53] So, I, I would like you to try to use the above manner of using the.
+[27:58] To find all the methods that are applicable to class list, which we have already seen by the way.
+[28:03] And apply those that are appropriate for the following task.
+[28:06] So, 1st create a variable X, which is 3, uh, which has a list of 310 and 7. 0.
+[28:13] And using the methods for a list, try to concatenate forward to the list, which means I append for to the list.
+[28:21] And then tried to sort it in descending order.
+[28:24] Once you add a concatenated forward to the list I just sorted in descending order.
+[28:29] And then remove the item at Index to.
+[28:33] And clear the entire list, so take maybe, uh, 2 minutes or so 5 minutes and try doing this.
+[28:46] And if you are not so sure about a particular method, for example, a pop or remove, uh, things like that, uh, which 1 applies to, uh, removing an item index to, for example.
+[28:57] You can just say, help of the variable name of the type name dot method and that should basically help you.
+[29:03] Uh, find out about different methods.
+[29:07] For example, if I do help of X dot pop, it tells me about the pop method.
+[29:13] If I do help of extra to remove, it tells me about the remove method.
+[29:19] You can see which 1 applies here. Hello?
+[29:33] Just in case, if you do not have it.
+[29:36] Okay.
+[30:08] Is anyone able to get an answer?
+[30:16] So, uh, maybe, uh, an answer wouldn't make much sense, because I've just asked you to append forward to the list and you may have done it already. So, uh, but can someone tell me what, uh, function did you use to remove the item at Index to.
+[30:29] Do you have to use papa? I remove any.
+[30:40] Any guesses or any answers. Okay.
+[30:47] So, let's quickly check it out so if I want to initiate a list, uh, by the way a list is created by Square brackets, I can create a list. X is equal to 310 7.
+[30:56] Uh, and I just printed out all the methods that are, uh, not starting with underscore, underscore.
+[31:03] And that is the quote from above, and you know that for the list, you have happened clear.
+[31:08] Copy count extend these are the different methods that are applicable to a list.
+[31:12] So, an append seems pretty obvious to kind of concatenate a new number to it.
+[31:17] So, if I do X dot app, and for it kind of happens for at the end of the list.
+[31:21] And then if I want to sort it in ascending order.
+[31:24] Uh, I know that I can use X dot sort. Uh, there must be a.
+[31:29] An extra Tammy to, to kind of make sure it is descending as well.
+[31:34] But I thought I can use once I do, do.
+[31:37] I see that they're all sorted itself is sorted.
+[31:41] You can see that you don't need to equate it to why or things like that get started.
+[31:47] And then if I wanted in reverse order, I can just say reverse and therefore it becomes descending order.
+[31:54] And application of pop and remove pop usually uses the index.
+[32:00] And therefore, it removes whatever, uh, value is in a particular index. So, in order to do that, you need to understand how indexes work.
+[32:08] Uh, so, uh, in Python, by the way indexing starts at 0.
+[32:14] So, for example, in a list that, uh, in a list, like this.
+[32:18] Uh, the 0 element is 3, the 1st element is 10. the 2nd element is 7.
+[32:24] Okay, so if I want to remove.
+[32:27] An element at Index 2, it basically means.
+[32:31] It's the 3rd element, and I can easily remove that by using X dot pop of 2 that uses index. Uh, the 2nd element will get removed.
+[32:40] Whereas, if I want to use.
+[32:44] Uh, remove of.
+[32:48] Uh, then I should be giving in the value that I want to remove from the list, rather than.
+[32:54] The element, and if I have multiple occurrences of a particular value, it will only remove the 1st documents of that value. For example, if I have.
+[33:03] 10 73353, and so on, it will only remove 1 value of 3, but not all the trees.
+[33:11] And by doing extra clear, I can clear the entire, uh, list. I can create an empty list at the end of it.
+[33:18] And I like, I told you, you can use help of pop, uh, help of extra remove to get more information about how you, uh, I mean, how about those particular methods that are applicable to that list.
+[33:33] Okay, so let's move on to data types. Uh, so we have a few data types. I can probably, uh, rush through, uh, a bit of this.
+[33:41] You may have already seen that there will be a string. There will be integer flow complex numbers.
+[33:46] Amongst and among sequence, like, types, which are basically, which contains multiple items, but also in an order of sequence.
+[33:55] Uh, then, uh, there are lists couple and range.
+[33:58] And amongst mapping, like, uh, items, you have a dictionary.
+[34:03] Which is often written as D***, and amongst sets you have set and for 1Billion you have, uh, which is basically a true or false right? Logical.
+[34:12] So these are all the different data types that are already existing in Python and the default by them without any modules itself. Okay.
+[34:20] So, apart from this, there might be more data types as in when you create a module and even you can create your own data type. If you wanted to.
+[34:29] So, uh, how do you find out a type of a particular, I mean, data you can click type of something and that tells you what data type it belongs to.
+[34:41] And probably, that is going to be extremely important when you have a huge dataset.
+[34:45] And you want to know each column, whether they contain a, or whether the contain something else.
+[34:52] You can easily use type of to find out what what it contains.
+[34:57] Uh, so quick illustrations of data types.
+[35:02] Uh, so for string as we've seen string saves, everything has an area of bites.
+[35:09] So, therefore, although it is, it seems like, uh.
+[35:13] It just characters it actually.
+[35:16] Saves it more like, uh, an area so.
+[35:20] If you have, let's say, uh, Apple, you can actually access the, uh, access each.
+[35:26] Letter in that string. So if I, uh.
+[35:29] Use square blankets on.
+[35:32] A particular variable that is a string. Uh, I can access, let's say the 2nd, element of the 1st element or the 3rd element in that particular string.
+[35:40] So that becomes predominantly very, very important, uh, especially when you're trying to, uh, search through an entire string to find, let's say, numbers or things like that.
+[35:50] Uh, you can easily, uh, search through and.
+[35:53] Access those elements, because you can access them be like an error.
+[35:59] So, if you want to create a multi line string, you can use 3 quotes. That's very, uh, something that may not be as important. And if you use a plus, it usually concatenate 2 strings.
+[36:12] For example, if I have a string X is equal to this.
+[36:15] Let's quickly do this if I have X equal do this.
+[36:20] And why is equal to Apple? Uh, maybe with a space.
+[36:25] And then if I do.
+[36:28] Why it should give me this Apple.
+[36:34] Right. And also like the way I just informed you, uh, 1st, strings.
+[36:40] If I do X of 2, it should give me I, because, as I told you, this is the 0 location for Python and then the 1st location and the then the 2nd location, right?
+[36:51] So, at in next 2, I have, I can access that by using this.
+[36:56] Okay, and for, uh, strings there are various, I mean, actually too many, uh.
+[37:04] Methods and most of those methods can be extremely helpful. You can find out if the string is actually made of alphabets if they, if it has digits.
+[37:12] Or if it starts with a particular thing, or if it ends with a particular thing.
+[37:16] And you can also, uh, strip, uh, any blank spaces at the start and the end.
+[37:21] And you can even capitalize the strings and so on so for strings, it can give you a lot of information.
+[37:28] So, I just.
+[37:31] Created a string and, uh.
+[37:34] Have used the f string method to kind of.
+[37:38] Uh, give us a result of what type it belongs to by the way. Why do I have a print f.
+[37:45] And then quotes f, these are called f strings.
+[37:49] If I have an f, and then quotes, so what they allow us to do is.
+[37:53] They allow us to use this curly braces to include variables.
+[37:58] Within the strings, so I can then fine. I can then format.
+[38:03] X to be whatever that ABCD is that gets replaced in here.
+[38:08] So, I get ease of type.
+[38:11] Type of X is a function that is applicable on X. so I want that to be run. And then the result to be obtained here.
+[38:19] So, I can get that is class of string is that here?
+[38:23] So, I can use these f strings, which are f, followed by, uh.
+[38:28] Ports to kind of use a format.
+[38:31] Both, uh, strings along with outputs, uh.
+[38:35] Other variables, so, like, like, I told you, multiline string can, uh, be applicable, uh, using, uh, 3 courts.
+[38:44] On either side, and for accessing and slicing, you can access string.
+[38:51] Either, uh, uh, 1 number, uh, 1, letter of a string.
+[38:55] Or multiple letters of history, by the way I used this just yesterday, uh, to kind of get some results from an entire line.
+[39:02] So, it can be helpful and, by the way is to 4.
+[39:07] 1 is to 10, basically means index is 1 all the way to index 9.
+[39:12] So, uh, is to kind of, uh, work slightly differently here.
+[39:17] 10 does not mean you will get the element in index 10 you will get until element in indexed in which.
+[39:23] We'll cut off at 9, so you'll get the element that is an index none, but not the 10th.
+[39:29] Uh, so apart from that, uh, you can also use East to 4, which means, uh, from the start til the index 4th element.
+[39:38] Uh, which again does not include the 4th, the 4th index element, it will only go till the 3rd index element.
+[39:45] And you can also go with 4 ways too, but in this case, if the starting element is, uh, there, that is always included. So, 4th, element in this case is included.
+[39:53] Okay, and you can also use negative negative.
+[39:58] Um, in this is to kind of get the last characters.
+[40:03] Okay, so I think, um, we have many other things like.
+[40:10] Fluid and complex numbers, and also bullion numbers, which are, which are true or false.
+[40:15] Uh, and then we get to a data types containing multiple objects, like lists, topple range or set and dictionary.
+[40:22] Predominantly, as you can see lists can contain all types of elements in it. You can have numbers, you can have another list. You can have the strings and all of that.
+[40:31] Topple also allows us to do the same thing, except that topple.
+[40:35] Is what is called immutable and will get to what utility is in just a few a few minutes.
+[40:41] Uh, but capital is what is called immutable.
+[40:44] And, uh, apart from that, we have set.
+[40:48] Set cannot have, uh, any anything repetitive, which means it can only have anything once.
+[40:57] Set can be created by using, uh.
+[41:01] Immutable elements only, which means it can have a set of, you can have a set of topples, but you cannot have a set of lists.
+[41:09] Uh, so that is also something that you can keep in mind.
+[41:18] Uh, there's a lot more information that you can probably read through, uh, whenever you get time and it's kind of, uh.
+[41:25] A lot of information there, so for tableau also, all these data types also have methods again.
+[41:31] So, if you have a couple, I can count all those values in the couple.
+[41:35] But, like, I told you, toggle is immutable, which means it cannot easily be changed. That's basically what.
+[41:40] It tries to address, uh, it cannot be easily changed, which means I cannot change the values in a particular location in that.
+[41:48] So, oftentimes it's, uh, easy to use multiple types, but sometimes you may have to use immutable types such as.
+[41:57] In a state, you cannot have multiple types, for example.
+[42:01] Uh, and then range is an element that can that basically are a set of images, a sequence of vintages you can give range of start, stop and step and that can create.
+[42:13] Set up a list of individuals, and you can see that. Uh, but for range, you will see that. It only represents it like this range of 15. it doesn't give you the, uh, give it to you in a list manner.
+[42:27] And by the way, just to remind you guys.
+[42:32] A tablet is created using, uh, like, open brackets, whereas.
+[42:37] A list is created by close brackets and, uh.
+[42:41] Moving on, we move on to set, which is created using.
+[42:46] Curly braces, uh, it is usually.
+[42:49] Understood to be like a set it cannot have repetitive elements. It can be, for example, the set of all those people who attended this workshop.
+[42:57] And, uh, who attended in a different workshop so.
+[43:01] You cannot have any, any, uh, name any ID that can be repeated. Right? So sets will always contain elements that are, uh, unique.
+[43:11] You can include an additional element with the same value.
+[43:17] What said does is it usually, it replaces 1 of them it just removes the other.
+[43:22] So, for dictionary dictionaries, kind of like a key and value mapping. So it's written more like a set.
+[43:31] Uh, but then it has a key and is to value.
+[43:35] So, again, these keys have to be.
+[43:39] Immutable so, therefore they can only be, for example, uh, either numbers or, uh, more primitive things like strings.
+[43:48] Or IDs, or things like that, or they can also be apples to apples such as.
+[43:54] You know, I mean, um, 2015.
+[43:57] Atlanta, 2015, uh, John, uh, some other, like, you know, New York, things like that. So you can have a couple as a key as well.
+[44:05] However, you cannot have a list as a key, for example.
+[44:08] So those are the things that you can see that happens to our dictionary. So you can access all the dictionary keys by using keys. And, uh.
+[44:19] You can access all the values by using data values. So, like, and immutability, as I was telling you primitive types like India flow and all of these are immutable, which means if you are trying to.
+[44:31] Uh, modify it then they are now.
+[44:35] Uh, I mean, they the, the address of that particular element changes entirely.
+[44:40] Whereas multiple elements, there are a few which is like, uh, the list is, for example, a beautiful element. A set is a beautiful element. These.
+[44:49] Allow changes to happen, right at the same endless.
+[44:55] So, how do I know what happened to the address, uh, ID is and is a function you can use ID of a particular thing.
+[45:03] In order to find if the address changed or not.
+[45:07] And also you can use the function is not, it's not a function. It's a keyword is.
+[45:12] To find out if, uh, if the address is the same or not. So instead of double equal to.
+[45:18] So, for example, if I do print of idea of explained the idea why it gives me the address exact list.
+[45:23] Uh, whereas X is red.
+[45:27] They usually, um, tell me if they both actually are from the same it was or not.
+[45:35] Uh, we also have multiple operators, uh, which you may all be aware of the addition subtraction and all of those things.
+[45:43] But they work differently for lists, for example, if you have 2 lists and if you do an addition operation, it doesn't do a point by edition rather it actually concatenated those 2, uh, lists.
+[45:54] So, you should try to understand what operators do for different type of objects.
+[45:59] You can cast a data from 1 type to the other as long as there are reasonable.
+[46:05] A list, and the topic can always be to 1 another by just using list of.
+[46:11] And giving an input of, uh, uh, you can create a list that has the same elements as a couple.
+[46:18] Okay, so, for conditionals, let's move on to conditionals. If I want to write a conditional I'd usually do something like this. I'd write if.
+[46:26] And then you can have an, and, uh, or an off, for example, in conditional as well.
+[46:31] But then, at the end, you need to have a, uh, uh, you need to have a, uh, column.
+[46:35] And afterwards, you need to have invitation in the next line to kind of write, uh, whatever, uh, should happen within the conditional.
+[46:43] And you can also have if is like.
+[46:47] And then, um, so.
+[46:52] Moving on to a while loop, then we have, uh, things that you may be aware of. If you had, uh, if you had some computer knowledge.
+[47:04] Is how you create a while loop of a loop.
+[47:07] So you have, um.
+[47:10] While works as long as a particular condition is, uh, met.
+[47:15] There as a 4 loop, actually accesses, uh, iterates over some values in a particular.
+[47:21] Uh, in some, some values in a particular.
+[47:25] List or things like that. So, for basically goes for.
+[47:29] Um, it goes on as long as temp is each value in X.
+[47:36] So, then we create functions, uh, uh, a way to create functions in, uh, Python is by using the, uh, Def.
+[47:45] Uh, so you can create a function using the f.
+[47:48] And like this, for example.
+[47:52] Again, you need to do invitation as you do with as well.
+[47:56] And person time it by the way is, uh, a shortcut to find is a.
+[48:01] For filing manner to find out if, uh, I mean, how how long it takes.
+[48:06] It does multiple ones like 111000runsforexampleinthis case to tell you how long, uh, it takes on average and how long uh, how much standard deviation do you have to run this particular function on by then?
+[48:21] That helps you to find which 1 is faster. Uh, Lambda is sort of like a function, but, uh, a much 1 liner function more so.
+[48:32] You can have a 1 line of function dependent on only 1 parameter. And that can be.
+[48:39] Uh, so after this.
+[48:43] I think I've gotten short on time. There are these few modules that are very, very important number, which is very famous for areas. It creates matrices or like, a 1 dimensional area or 2 dimensional areas, or things like that. You can create using.
+[48:57] Uh, different, uh, functions dot 13. it's a, once and it creates a sequence of numbers, like 1 to 10 or things like that.
+[49:06] And I creates a, and I didn't see matrix.
+[49:09] And NP also is famous because it has all the.
+[49:13] Um, uh, a lot of functions that can be applicable directly on a victimized manner.
+[49:19] On these areas, so you can do exponential on the entire 2 dimensional.
+[49:24] Or things like that without having to, uh, create a different function for it.
+[49:30] So, it has a ton of functions as well.
+[49:33] Uh, and it's all famous for the sub module that random is.
+[49:37] Which allows you to kind of create, uh, random images or random variables from different uh, uh.
+[49:47] So, after numb pie has been shown, uh, there is, which is most close towards, uh, what we have in our, like D player and things like that. We can create data frames in here and those data frames. We can filter those data frames. We can, uh.
+[50:02] Do, um, a multitude of things that we'd like to do, for example, select a few variables filter it and all of those things can be done on time this.
+[50:11] So, if you want to usually, uh, use.
+[50:15] If you already have it installed, then you would like to still use import pandas and you want to use an alias as PD or something like that.
+[50:23] And that PD should go along with every.
+[50:26] A function that you are using in banners, so you, you should write series to kind of create a series.
+[50:32] Or you would write data for him uh, our PT dot read underscore, uh, in order to.
+[50:40] Use it, so, and then we have a batting data set I think I'm sure I'm over time.
+[50:46] So we have a batting data set and, uh, you can try to, uh, work on this quiz and probably, if you get to your results.
+[50:55] At the end of it, uh, all of the results are kind of written here.
+[50:59] But I'd like to, uh, I'd like to see if you, uh, if you have a different take and if you want to.
+[51:04] Try it out differently. Uh, there are various functions in pandas that you can try out.
+[51:10] And see how you can, uh, just view the head, or describe the dataset.
+[51:16] Or merge data sets, uh, uh, and also.
+[51:23] And also drive different variables and then you can also use, for example, to kind of create line plots and things like that.
+[51:31] Uh, having said that, uh, these are not the only only modules there are many more modules, for example, for machine learning algorithms. Matt plot live plot 9 and are probably some of the data visualization.
+[51:45] Uh, uh, modules request does things.
+[51:50] And tens of flow allows you to, uh, do dense neural networks.
+[51:55] And you have image processing modules so there are so many models that have already created.
+[52:01] And can be extremely helpful for most of your projects that you plan on doing.
+[52:05] In Python, so and I think that's my time.
+[52:09] I hope you all had a great time, thanks for the patients and enthusiasm and sorry that we did not get to the.
+[52:16] Uh, actual workshop bit of it basically working on the batting project I hope you'll all work on it.
+[52:23] And if you have questions, definitely ask me about them.
+[52:26] Um, and I'll be available at thanks.

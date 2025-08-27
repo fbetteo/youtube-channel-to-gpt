@@ -1,0 +1,1824 @@
+Video Title: Keynote Presentation 3: Sarah Bailey [2021 UConn Sports Analytics Symposium]
+Video ID: gugK3NLC59c
+URL: https://www.youtube.com/watch?v=gugK3NLC59c
+View Count: 80
+
+[00:00] sarah is currently manager of analytics
+[00:02] and data for the los angeles rams she
+[00:04] studied at both jacksonville university
+[00:06] and the university of pacific where she
+[00:07] pursued a mathematics degree and began
+[00:09] to explore ways to combine her love of
+[00:11] sports and math including publishing a
+[00:13] paper entitled a comparison of academic
+[00:16] and athletic performance in the ncaa
+[00:18] after holding an internship with the
+[00:20] then san diego chargers
+[00:21] bayley obtained a master's degree from
+[00:23] simon fraser university during her time
+[00:26] there she participated in the nba
+[00:27] hackathon and was part of the winning
+[00:29] team in the hockey grass data sprint
+[00:31] hackathon
+[00:32] and worked with advisor tim schwartz on
+[00:34] baseball research for her master's
+[00:35] project
+[00:37] after graduating uh bailey joined the
+[00:39] rams initially as a sports performance
+[00:40] analyst where she worked with athletic
+[00:42] trainers and strength staff to analyze
+[00:44] workload and optimize performance
+[00:47] her role has evolved to include working
+[00:49] with all data and departments on the
+[00:50] football side including but not limited
+[00:52] to analyzing data from the personnel and
+[00:54] medical staff and assisting scouting
+[00:56] departments to identify key traits and
+[00:58] players project players into the nfl and
+[01:01] evaluate scouting systems to see what
+[01:02] measured variables are most important on
+[01:04] the performance side her work looks at
+[01:06] various measurements to try to optimize
+[01:07] players game day performance and
+[01:09] minimize the probability the probability
+[01:11] of preventable injury
+[01:13] please join me in welcoming sarah
+[01:18] thank you uh for that intro and great
+[01:20] job i just caught the
+[01:22] last uh 20 minutes of that panel and i
+[01:25] think it's absolutely incredible that
+[01:27] it's all women for one he could have
+[01:29] asked me a few years ago and i would
+[01:31] have been the only woman on the panel so
+[01:33] um
+[01:34] that's amazing
+[01:36] as the person
+[01:38] introduced me so kindly i'm sarah i am
+[01:40] the manager of football analytics for
+[01:42] the los angeles rams and uh today i
+[01:44] really want to talk about sports science
+[01:46] and that's kind of how i got started
+[01:48] with the rams and where my work
+[01:50] initiated and
+[01:52] really what what actually just have been
+[01:54] released by seth walder is a declaration
+[01:56] that 18 out of the 22 teams surveyed did
+[01:59] sports science which is a high
+[02:00] proportion but it surprised me more that
+[02:02] there were four teams that took this
+[02:04] survey that were not the point where
+[02:05] they needed an analyst necessarily to
+[02:08] use their data i do think it's really
+[02:10] important side of sport and it's a
+[02:12] different way to get in where you have
+[02:14] the ability to affect multiple areas
+[02:17] just by working with your athletic
+[02:19] trainers and your sports science team so
+[02:21] it's a very overview brought up we're
+[02:23] gonna plot it's gonna be a lot of me
+[02:25] talking and uh just talking about the
+[02:28] sport and how where how we work together
+[02:30] the communication just different things
+[02:32] along those lines so
+[02:33] really hope you guys enjoy please ask
+[02:35] ask questions and i'll get to them at
+[02:37] the end
+[02:38] um
+[02:39] really what i want to talk about is just
+[02:41] some of the objectives of sports science
+[02:43] how do we use it what kind of importance
+[02:45] are we going to get different data
+[02:47] sources i'm going to spend a lot of time
+[02:48] on the different data that we collect
+[02:50] and how they interact and different
+[02:52] difficulties and challenges that may
+[02:53] arise within those sources and then of
+[02:56] course applications how do we apply in
+[02:58] all facets of the team to make us a
+[03:00] better organization better players
+[03:02] better athletes mentally physically
+[03:04] and then just looking at some in the
+[03:06] future that i see just where it's
+[03:08] involved how it's going to go uh
+[03:10] different situations like that
+[03:12] so we're going to get right into
+[03:13] objectives sports science i'm like it's
+[03:15] very
+[03:16] not different from analytics in general
+[03:18] with sport you really just want to
+[03:20] provide a unique perspective
+[03:22] uh your trainers your strength coaches
+[03:24] they can watch players lift they can
+[03:26] look at them on the field and say hey we
+[03:28] think this guy is explosive we think
+[03:30] that he is um accelerating fast but what
+[03:33] data and sports science can do is really
+[03:35] quantify that and assign some
+[03:37] numerical value and say he might look
+[03:39] explosive at the beginning but he's
+[03:41] actually he's actually not and his power
+[03:44] comes from the middle of the route or
+[03:46] his power comes from the end of the
+[03:47] route the top of the road whatever it
+[03:49] may do and you can actually assign a
+[03:51] numerical value of stack players against
+[03:53] each other and really compare alphas to
+[03:55] apples when you get down to it you can
+[03:58] also see how significant the change is
+[04:00] maybe it's nothing maybe it's miniscule
+[04:02] maybe it's actually quite a significant
+[04:05] difference between player to player um
+[04:07] going with that it's kind of a
+[04:09] self-evaluation how well are we
+[04:11] evaluating players from our own eyes
+[04:13] when we see them when our trainers look
+[04:15] at them when our coaches look at them
+[04:17] are they getting it right are they
+[04:19] seeing what the data is telling us and
+[04:22] how can we really just look and kind of
+[04:24] validate what they're showing but also
+[04:26] maybe invalidate some aspects of it
+[04:28] and then again looking at kind of
+[04:30] intervention effectiveness when you see
+[04:32] a from an athletic training perspective
+[04:34] and from the strength coach perspective
+[04:36] if you're seeing an imbalance where
+[04:38] you're seeing a weakness it's through
+[04:39] your nature to fix that you want to
+[04:42] adapt and do exercises and stretches to
+[04:45] make a player better so how can we use
+[04:47] data to show that those changes are
+[04:49] working and to show that what we're
+[04:51] doing is effectively making a player
+[04:53] stronger or faster or better in its area
+[04:55] of weakness another thing is a noise
+[04:57] reducer from an analytics perspective we
+[05:00] have so much data and i'm going to get
+[05:01] into it and you're going to hear me talk
+[05:03] about it and
+[05:05] you'd be surprised at the amount of
+[05:06] information that we have coming in on
+[05:08] these players and a lot of it is noise
+[05:11] we have a lot of
+[05:13] data that may be messy and may not be
+[05:16] important it may not be important to the
+[05:18] specific question that we're asking but
+[05:19] could be relevant to something else so
+[05:22] from an analytics perspective you can
+[05:24] look and you can say okay well these are
+[05:26] flagging certain areas of weakness these
+[05:28] aren't um how do we
+[05:30] look at those outliers how do we remove
+[05:32] outliers that are legitimate outliers
+[05:34] and how do we remove ones that are
+[05:36] actually just maybe the player was tired
+[05:37] that day or maybe they their form was
+[05:40] off or something along those lines
+[05:42] and then of course like anything we want
+[05:44] to evolve and we want to improve we want
+[05:46] to refine our process become more
+[05:48] efficient do the small things good so
+[05:51] that we can focus on some of those
+[05:52] bigger problems from an analyst
+[05:54] perspective that we can like really dive
+[05:57] deep and get some of these models built
+[05:59] or different methods that we can analyze
+[06:01] the data and just really become more
+[06:03] efficient as a team so that what we're
+[06:05] presenting to
+[06:07] our trainers to our coaches is the best
+[06:09] and it's the cleanest data that we can
+[06:11] get and it's the most informative in a
+[06:13] very simple manner
+[06:15] uh so first i want to talk about the
+[06:17] data sources now there's obviously the
+[06:19] obvious ones like gps but what's
+[06:21] interesting about gps is that you have
+[06:23] your xy data for both games and practice
+[06:27] the ngs data that a lot of people will
+[06:28] hear about particularly the stuff in the
+[06:30] big data bowl we have that in practice
+[06:32] as well what's unique about practice
+[06:34] with the xy level data is that it's not
+[06:37] clean at all it is terrible so you may
+[06:40] have
+[06:41] four different um periods going on on
+[06:43] the same field where you have the
+[06:44] defensive line and they're doing pad
+[06:47] drills and on the other side you have
+[06:48] receivers catching ball and on the other
+[06:50] side you have db's doing uh back pedal
+[06:53] drills so it's really hard to define a
+[06:56] start and stop and define
+[06:58] where that soft start occurs for each
+[07:00] player and each position um the second
+[07:02] thing with gps is you do have the
+[07:04] wrapped up summary so at the end of the
+[07:06] period at the end of the day you have
+[07:08] different
+[07:09] variables like your speed your
+[07:11] acceleration your distance everything
+[07:13] travels it's been fairly smooth and
+[07:16] clean to a point where you know you can
+[07:18] use that as a high level to analyze the
+[07:20] player the second thing that we do have
+[07:23] is we have four stacks um we use force x
+[07:26] as the technology that you use but what
+[07:27] it is it's a force plate that players
+[07:29] will jump on
+[07:30] measures different force powers times
+[07:34] velocities through different movements
+[07:36] you can do counter movement jumps which
+[07:38] is where you just like a squat jump and
+[07:40] you're moving using your hands you can
+[07:42] have your hands on your hips you can
+[07:43] have loaded and unloaded you can do
+[07:46] squat jumps you can do drop jumps you
+[07:48] can do anything that you can think of on
+[07:50] the plate you can measure these
+[07:52] different forces that are coming in
+[07:55] um
+[07:56] with a personal wellness survey that's
+[07:58] just a player checking how is the guy
+[07:59] doing how are you feeling um you ask
+[08:02] anything from distress
+[08:04] hydration sleep perceived exertion
+[08:07] soreness where were you sore how sore
+[08:09] were you and it's all relative to the
+[08:12] players so you have to keep that in mind
+[08:13] from a data analyst is that my level of
+[08:16] sore my three is not your three and
+[08:19] um joey's three is not
+[08:22] john's three uh so we really have to be
+[08:24] careful that that when you're looking at
+[08:26] those kind of things that it's
+[08:28] interpretable to someone someone may put
+[08:29] a one and they always put zeros and
+[08:31] that's like a hey
+[08:33] something's up here because he he
+[08:35] indicated he was sore
+[08:36] um the fourth we have lifting output and
+[08:39] this one was something that i was
+[08:40] actually really unfamiliar with when i
+[08:41] first started and it's pretty cool we
+[08:43] use uh kaiser and geminware and there
+[08:45] are two different softwares that similar
+[08:47] to the four stacks they measure
+[08:50] different power displacement rsi and for
+[08:53] the gym aware it's attached to the bars
+[08:55] and they're little strings little wires
+[08:57] attached so when you lift the bar up
+[08:59] you're calculating your velocity you're
+[09:01] collecting your depth you're looking at
+[09:03] different exercises within that so that
+[09:05] can be a bench press that can be a squat
+[09:08] that can
+[09:09] be a different bar you can really
+[09:10] connect to any any type of equipment as
+[09:13] long as it's connected right and um
+[09:16] equalized right uh
+[09:18] then the last thing we have is enough
+[09:20] last for philosophical injury database
+[09:22] that we have this is
+[09:24] very much what you think it is when a
+[09:25] player gets injured recording when where
+[09:29] how was it on a drill was it just random
+[09:31] was it in a game what type of injury was
+[09:33] it was it soft tissue was it a
+[09:35] concussion base is it a break um just
+[09:38] different details that the trainer finds
+[09:40] relevant that we take in we digest and
+[09:43] we store um
+[09:44] and then we have our weigh-ins that
+[09:46] occurs whenever the nutritionist wants
+[09:49] so you want a weekly weigh-in you want a
+[09:51] post-practice way and you want to see
+[09:53] how much water was lost and then every
+[09:55] once in a while they'll do body pumps
+[09:57] let's look at what's inside so you might
+[09:59] be 250 now and you were to 75 at the
+[10:02] start of the season what was lost was it
+[10:04] water weight was it fat how's your
+[10:05] muscle mass distributed through your
+[10:07] body what kind of bone density are we
+[10:09] looking at just various information that
+[10:12] you might not see just from a regular
+[10:14] scale way
+[10:16] and finally we do have some performance
+[10:18] uh college data and this is obviously
+[10:20] very limited because we don't work with
+[10:22] the colleges but
+[10:24] what we do have is different medical
+[10:26] grades when our uh when our where our
+[10:28] trainers are going rocks going and they
+[10:30] grade a guy based on his injury history
+[10:32] and then uh give him a projected grade
+[10:35] like hey he's only had one injury he's
+[10:37] great or he's to have ten and we don't
+[10:40] want him um looking at different
+[10:42] strength grades as well our strength and
+[10:44] conditioning coaches will go in and look
+[10:46] at his body type is he able to put on
+[10:48] muscle based on how he looks is he going
+[10:51] to struggle is his field not meant for
+[10:53] more weight should he lose weight and
+[10:55] he'll be good just various things like
+[10:57] that and then also have the odd speed
+[11:00] data that you might get
+[11:02] um
+[11:02] so how i want to talk about i want to
+[11:04] continue to talk about data and talk
+[11:06] about the networks within data i really
+[11:08] think sports science is a cool thing
+[11:10] because i i like to view it as a two
+[11:12] networks you have your data network any
+[11:13] other people network the people that you
+[11:15] interact with and then they also
+[11:17] interact together so for me it's a fun
+[11:20] little challenge to see
+[11:21] how these sources can communicate and
+[11:24] how we can use them to
+[11:26] validate invalidate each other and work
+[11:28] together so that we're all on the same
+[11:30] page essentially whether it's with data
+[11:32] whether it's a network so i want to
+[11:34] first talk about the data networks
+[11:36] we have all this information now so how
+[11:39] do we use it the biggest thing with data
+[11:41] is we want to try and get a complete
+[11:42] picture of our athlete so we really want
+[11:45] to make sure that what we're using is
+[11:48] the best representative of how an
+[11:49] athlete might feel on that day what they
+[11:52] what their workload look like for the
+[11:53] week for the day for the month whatever
+[11:55] the time frame is that we're doing and
+[11:57] the first thing we need to do is we need
+[11:59] to clean the data and it really just
+[12:00] depends on the level that you're looking
+[12:02] at so for example with those fourth
+[12:04] place
+[12:05] certain job data can be really sensitive
+[12:08] um players are able to manipulate it
+[12:11] based on like just a slight distribution
+[12:13] in their weight you have to be very
+[12:14] careful when they're jumping to have a
+[12:16] trainer they're watching their form to
+[12:18] ensure
+[12:19] now data can also be used to play that
+[12:21] we can say hey
+[12:22] something's up with this guy's data so
+[12:25] let's go back let's look at his job that
+[12:27] we filmed and let's see how it looked
+[12:29] did it look okay did he step on the
+[12:31] scale long and his mass wasn't equal you
+[12:34] step on you have to wait each other to
+[12:36] calculate force to calculate power so
+[12:38] when you step on was there something
+[12:41] going on where his weight was uh was
+[12:43] undistributed he actually was 75 percent
+[12:45] on his left leg and he didn't stay still
+[12:47] essentially
+[12:48] um
+[12:49] it's it's pretty uh interesting when you
+[12:51] do clean the data you can start getting
+[12:53] into these automatic processes where we
+[12:55] can flag players immediately and say hey
+[12:58] something's wrong don't know whether
+[13:00] it's a data issue or whether it's a
+[13:02] visible form issue but let's look at
+[13:04] this and really it's something that has
+[13:06] to be player specific because what's a
+[13:08] slight deviation for me again that's
+[13:11] going to be different for our players
+[13:12] it's going to be different within
+[13:13] positions and
+[13:15] this can be a little bit challenging as
+[13:17] you get into some of the newer guys and
+[13:19] players that maybe don't necessarily
+[13:21] jump as often that you don't have a lot
+[13:24] of data so you do have a lot of noise in
+[13:26] that information but really it's just
+[13:29] being adaptable learning how to deal
+[13:31] with it and figuring out what can you do
+[13:33] with the information that you're given
+[13:35] um
+[13:36] we also have so you want to merge and
+[13:38] combine your data what does that mean we
+[13:40] have on a field data and you have off
+[13:42] field data on field obviously being gps
+[13:45] and off field being kind of those jumps
+[13:47] those wellnesses and the four-step sort
+[13:50] of situation so how do we combine those
+[13:53] to merge them to a single data source um
+[13:56] one of the biggest things that is very
+[13:58] hard is looking at like
+[14:00] what is the single data source and what
+[14:02] is our date day bringing how do we how
+[14:04] do we combine so we're looking at um the
+[14:07] right time frame when we're seeing a
+[14:09] player on a certain day or in a certain
+[14:11] week
+[14:12] we also have different technologies that
+[14:14] we use during different times of the
+[14:16] year so for example if we're using if
+[14:18] we're down in irvine and we're at
+[14:19] training camp we're not bringing our
+[14:21] 30-foot poles to irvine we're not
+[14:23] bringing those to
+[14:25] london we do across the sea or when we
+[14:27] stay in baltimore for a week
+[14:29] so we're using polar which is a gps the
+[14:32] zebra is rfid polar's gps slide
+[14:35] deviation shouldn't be too big but you
+[14:37] do have to consider the different
+[14:39] variables that they're measuring
+[14:41] acceleration might be defined
+[14:42] differently high speed yards can be
+[14:44] defined differently with those so as an
+[14:46] analyst and working with your data
+[14:48] architect it's really important that you
+[14:50] define what those what those variables
+[14:53] mean so that when you are merging to
+[14:54] that single database that when you see
+[14:56] high speed yards it doesn't matter
+[14:58] whether it's polar or zebra we know that
+[15:01] it's um it's going to be the same
+[15:03] definition
+[15:04] uh the second thing is with the smartest
+[15:06] science spartans are typically used in
+[15:08] the combine so how can we collect
+[15:10] information from that that we're given
+[15:12] and use it within our own team so we
+[15:14] have all these jumps on our players it
+[15:16] would be a shame to not be able to
+[15:18] compare some of that idea that we're
+[15:20] given to our own force play it's not a
+[15:23] different technology of course but to be
+[15:25] able to minimize some of those
+[15:27] differences and figure out what's
+[15:28] similar and actually stack some of these
+[15:30] guys up is really important um
+[15:34] one of the things that i did when i
+[15:35] first came in here is change the whole
+[15:37] testing framework um so i come in and
+[15:40] they're jumping guys on mondays and
+[15:41] wednesdays and they're the same position
+[15:44] or one guy will jump on a monday one
+[15:45] weekend wednesday the next week and for
+[15:48] me uh coming from you know an area where
+[15:51] you're exposed to very clean date in
+[15:53] school um
+[15:55] everyone knows that the data sets are
+[15:57] given are fairly perfect so when you're
+[16:00] going into the real export world and
+[16:03] real data where it's extremely messy
+[16:06] you have to uh you have to be careful
+[16:09] and you have to make sure that you can
+[16:11] control as much as you can control
+[16:13] because
+[16:14] it's chaos and it really is never going
+[16:17] to be perfect for that beautiful model
+[16:19] that you want to run and trust me i want
+[16:21] it to be but it's just not ever going to
+[16:23] get there so one of the first things i
+[16:25] did was let's just ensure that we're
+[16:27] controlling all that we can so what do
+[16:29] we want to get out of these jumps first
+[16:31] of all i'm just going to start with that
+[16:32] example do we want to know how well
+[16:34] they're recovering from the game do we
+[16:36] want to know if they're recovered after
+[16:39] tuesday when they've had their off day
+[16:41] those are two different questions if you
+[16:42] want to know how well they've recovered
+[16:44] let's jump them on a monday if we want
+[16:46] to know if they're in a fresh state by
+[16:48] wednesday then let's jump on wednesday
+[16:50] whatever it is that's a question that we
+[16:52] have to ask and work together but let's
+[16:55] keep it consistent so that we know that
+[16:57] hey it doesn't matter what question
+[17:00] we're asking but we were consistent in
+[17:02] the way when we got it um the second
+[17:04] time it's just
+[17:05] like looking at a range kind of what i
+[17:08] alluded to if you're trying to define
+[17:10] different workloads different
+[17:12] measurements for a player what is your
+[17:14] range you may have you want to look at a
+[17:16] guy on thursday and he filled out his
+[17:18] personal wellness wednesday he jumped on
+[17:21] monday so how far back do you need to go
+[17:24] to look at his workload for thursday do
+[17:26] we consider that wellness on wednesday
+[17:29] do we consider the jumps for monday or
+[17:31] do we just strictly look at gps daily
+[17:34] what if we want the full picture in that
+[17:35] day we want the full week then how much
+[17:38] do we wait wednesday's practice how much
+[17:40] do we wait monday's walk through
+[17:41] different questions like that that
+[17:43] really there's not necessarily a right
+[17:45] answer
+[17:46] it again goes through with working with
+[17:49] your trainers and figuring out how we
+[17:50] best put this data in the most usable
+[17:53] way that you can have
+[17:56] the other thing is just you just want to
+[17:59] be consistent but then also be aware be
+[18:02] aware that life changes um when you're
+[18:04] looking at
+[18:05] different practices or different games
+[18:08] of the week for example we just came off
+[18:09] of a short week thursday so now we're
+[18:12] looking at building that athlete profile
+[18:15] and flagging these guys a wednesday no
+[18:17] longer wednesday practice sorry
+[18:20] again
+[18:22] wednesday is no longer a wednesday
+[18:23] practice because we play on thursday so
+[18:25] if you're trying to flag the guy and if
+[18:27] i is the data science haven't adjusted
+[18:29] my um my thresholds to make sure that
+[18:32] we're not flagging guys then that's on
+[18:34] me that's a problem that it's going to
+[18:36] send out all these emails saying like
+[18:38] hey why are we practicing today why are
+[18:40] we so low on a wednesday and it's like
+[18:42] well sarah come on we have a thursday
+[18:44] game you have to pay attention um so for
+[18:46] me that's one of those things that you
+[18:47] do have to consider the nuances and make
+[18:49] sure that you're communicating with
+[18:51] everyone so that you understand when
+[18:53] those things change if a coach switches
+[18:55] the practice that can happen you need to
+[18:57] be in the loop so that you can adjust
+[18:59] everything and be on the fly and be
+[19:02] adaptable
+[19:03] uh
+[19:04] ultimately
+[19:05] what we want to do is just fill in some
+[19:07] missing pieces right so if we're having
+[19:10] um missing piece from zebras we don't
+[19:12] necessarily know power we know
+[19:14] acceleration maybe we can get how
+[19:16] powerful they are
+[19:18] from four stacks maybe we can get it
+[19:20] from gym aware from their different um
+[19:22] outlifting output for the day uh how do
+[19:25] each piece fit together how can we
+[19:28] validate different types of technologies
+[19:30] for example if we see that a player is
+[19:32] slow on the field and we see that they
+[19:35] were lifting quite slow velocity as well
+[19:38] at the same weight then maybe that's an
+[19:40] indicator that they they're moving slow
+[19:42] that day and can we see that now again
+[19:44] like maybe some sources show it better
+[19:46] maybe their lifting is showing that
+[19:48] they're moving slow but their zebras is
+[19:50] going at a constant speed or they're
+[19:52] improving so as an analyst we come in
+[19:55] and we say well what what what's a
+[19:57] better picture of it like what is the
+[19:59] better indicator an indicator for what
+[20:01] what do we want to optimize
+[20:03] um
+[20:04] we're looking at the different
+[20:05] deficiencies like
+[20:07] is one more reliable is one better um
+[20:09] really just digging into the data in
+[20:11] there again there's so much data so that
+[20:13] when it comes to the thing we only get
+[20:15] to show them the little pieces we may
+[20:17] have looked at the whole picture but we
+[20:18] show them the relevant ones to the
+[20:21] questions that we're trying to ask
+[20:23] uh so the second network that i want to
+[20:25] talk about although i've talked your ear
+[20:27] off about data is the people network and
+[20:29] this is probably one of the coolest
+[20:31] things with sports science and i think
+[20:33] one of the things that people don't
+[20:34] necessarily appreciate or maybe they
+[20:36] don't know is when you're working with
+[20:38] the athletic trainers when you're
+[20:40] working with the strength coaches you
+[20:41] are working with every single person in
+[20:44] the organization i don't think that
+[20:46] there's a role as an analyst where you
+[20:49] get that where you have that opportunity
+[20:52] to have a good relationship to have
+[20:54] talking relationships to present your
+[20:57] work to literally every group on the
+[20:59] football side
+[21:00] um you have
+[21:02] really uh
+[21:04] athletic trainers which is obviously
+[21:05] your primary work but then you also talk
+[21:08] to your strength and your conditioning
+[21:09] coaches and then they work together your
+[21:11] nutritionist and your player engagement
+[21:14] director who all work together so these
+[21:16] three people make up the performance
+[21:18] team and you're part of the performance
+[21:20] team um
+[21:24] did it just go black
+[21:26] there we go sorry
+[21:28] uh
+[21:29] okay that's sorry yes so you're those
+[21:31] three people that go um through a
+[21:32] performance team
+[21:34] and your performance team works together
+[21:36] as well
+[21:36] none of the sports science department
+[21:39] will ever be effective it will not kick
+[21:41] off if you don't have good relationships
+[21:43] if you don't communicate if you've ever
+[21:45] heard me speak about anything or how to
+[21:47] break in i always stress communication
+[21:50] and it was from sports science but i
+[21:52] learned this because not only do i have
+[21:54] to be able to seek injuries with our
+[21:56] athletic trainers i have to be able to
+[21:57] speak lifting output with our strength
+[21:59] and conditioning coaches nutrition and
+[22:01] mental health with our player
+[22:03] engagements and nutrition i also have to
+[22:06] convert that into languages for coaches
+[22:08] but maybe i don't directly say it to the
+[22:10] coaches but this is what like hey
+[22:12] we're being pulled because of
+[22:14] that we're going to pull joe because of
+[22:16] this and that's like
+[22:17] you have to be able to speak the
+[22:19] language so you can say it in a
+[22:20] different way and then go to personnel
+[22:22] and also say that let's rank these guys
+[22:25] these are our best
+[22:27] players on the team ones our best travel
+[22:29] because whatever the question may be you
+[22:31] really do have to learn to communicate
+[22:32] with all of these groups and you get a
+[22:35] chance to be exposed to all their
+[22:37] vocabulary really the biggest thing that
+[22:39] you want to see is what are they asking
+[22:41] that's the hardest part with the people
+[22:43] network is kind of detangling what
+[22:45] someone is asking they can come with you
+[22:47] to data and say hey sir i really want to
+[22:49] figure this out and you have to kind of
+[22:51] get to the root cause of what they want
+[22:53] what what is the purpose of their
+[22:55] question what do they want to use it for
+[22:57] is it something that they can control is
+[22:58] it just a monitoring thing um
+[23:01] what sort of
+[23:02] way can we take the data did they pull
+[23:05] the right data maybe it's the wrong data
+[23:06] i can think of an example last week
+[23:08] where you know one of our athletic
+[23:10] trainers came to me with like four very
+[23:12] specific variables and said hey we want
+[23:14] to use these and establish some
+[23:16] positional threshold and i said okay
+[23:19] let's let's take a look and so i look at
+[23:21] these uh pieces of information and one
+[23:24] of them
+[23:25] is extremely variable it is i'm talking
+[23:27] it was measured in military because i'm
+[23:29] talking it was two and a half seconds to
+[23:31] 200 milliseconds for one guy in one
+[23:34] position over
+[23:36] nine weeks and i was like maybe this
+[23:39] isn't the best variable so i go
+[23:41] figure out what do you want from this
+[23:43] what are you trying to show what do you
+[23:44] want to build a positional profile for
+[23:47] and how can we look at other data and
+[23:49] maybe pick a more consistent one a more
+[23:52] well-distributed uh kind of variable and
+[23:55] go back to them not only questions but
+[23:58] also some solutions because if you're
+[24:00] only coming with questions and no
+[24:01] solutions you're probably just going to
+[24:03] get more noise coming back at you um
+[24:07] then so it just takes a lot of
+[24:09] interpretation but it is fun like for
+[24:12] especially for data scientists like
+[24:14] you're already solving the data issue
+[24:15] and then you're going to solve a people
+[24:17] issue so you really get to hit these two
+[24:18] different groups that um that challenge
+[24:21] you in ways that maybe you're not
+[24:22] exposed to and for me i like that i like
+[24:25] being challenged in different situations
+[24:27] so i think it's a lot of fun um all
+[24:30] right so i'm gonna break down what we do
+[24:32] within these networks the first is
+[24:34] obviously athletic trainers so finally
+[24:36] the root of the talk is how do we work
+[24:39] with them what do we do um
+[24:41] we work directly with you know our vp of
+[24:44] sports science our director of athletic
+[24:46] training our managers of athletic
+[24:48] training and then of course our trainers
+[24:50] um you get to work with every single one
+[24:51] of them
+[24:52] major you can really
+[24:54] look down to four different goals that
+[24:56] we're trying to accomplish the first is
+[24:59] to minimize the risk well how do we
+[25:01] define risk that's a big if in football
+[25:03] football is a naturally aggressive score
+[25:06] you cannot prevent concussions you
+[25:07] cannot prevent a player from getting hit
+[25:09] they're gonna get hit you get hit hard
+[25:11] enough and you snap your bone that's the
+[25:14] game that's how it works so how do we
+[25:16] kind of minimize some of the risk
+[25:19] involved with those soft tissues
+[25:21] how do we look at things that aren't
+[25:23] necessarily
+[25:25] preventable but you can optimize a
+[25:27] player so that the probability of that
+[25:30] injury occurring is minimized um they're
+[25:33] hard to predict i mean the first thing
+[25:35] that comes with it it comes with these
+[25:36] challenges is sample test you only have
+[25:38] your team yes you have to leave data
+[25:40] within a game of what a player's fur but
+[25:43] i can guarantee that a player um for a
+[25:46] soft tissue injury if they're hurt in
+[25:47] the game that that didn't occur because
+[25:49] of the workload from the game i can
+[25:51] almost guarantee that that's that's
+[25:52] something that occurred during the week
+[25:54] or during the month where they've
+[25:56] they've hit some threshold where it
+[25:58] doesn't happen so you're minimized to
+[26:00] your own own team minimize to a certain
+[26:02] type of injury and then
+[26:04] you know what
+[26:05] what do we have that on that players in
+[26:08] a new player um we were very lucky with
+[26:10] the ram sonic on wood we have low soft
+[26:13] tissue injuries so we don't have a big
+[26:16] injury database for those predictable uh
+[26:19] i don't like to use that word but
+[26:21] predictable injuries that some teams may
+[26:23] which is great it's a great problem to
+[26:25] have so you kind of have to work with
+[26:27] all these small sample solutions that
+[26:30] aren't necessarily ideal and it's a very
+[26:33] wide range of things that you're going
+[26:34] to look at of confidence intervals that
+[26:37] you're going to establish um you also
+[26:39] have to look at how do you minimize risk
+[26:41] with things that you can control uh not
+[26:44] a lot that you can control from a from a
+[26:46] practice from a game standpoint you know
+[26:48] if coach says you're running advanced
+[26:50] you're running this but how we control
+[26:53] what they're doing for rehab how do we
+[26:54] take the time that we have with these
+[26:56] athletes and make sure that they're
+[26:59] able to implement change from a training
+[27:01] perspective and then from a data
+[27:03] perspective how do we measure that
+[27:05] change and how do we measure those
+[27:07] things that we do have our hands on
+[27:09] um the second is to monitor workload
+[27:13] and workload is more about identifying
+[27:15] outliers um you can have
+[27:17] you know what i was talking about before
+[27:19] with all the data sources you have the
+[27:21] amount that they're running you have
+[27:23] acceleration speed you have different
+[27:26] strength outputs but how do we mod how
+[27:28] do we monitor that workload and kind of
+[27:31] be able to get very quick information
+[27:34] when needed so for example if we would
+[27:36] practice wednesday we want to make sure
+[27:38] there are certain guys that are close to
+[27:40] their weekly workload that we know
+[27:42] before practice so that our trainers are
+[27:44] on the field and they're saying hey
+[27:47] like hey coach this guy's limited
+[27:49] because he's he's feeling it this week
+[27:51] and we need to go we need to cut him
+[27:52] back or this is a veteran's day off
+[27:55] because he's at his workload and how do
+[27:57] we
+[27:58] communicate that and show them in a very
+[28:00] simple manner why that's important now
+[28:03] for us again like with the injuries we
+[28:04] improve the concept which is huge um but
+[28:07] it is still something that you do have
+[28:09] to work on and it's not necessarily
+[28:11] you're not necessarily the good guy when
+[28:12] you say hey aaron donald is nearing his
+[28:15] threshold what's happening like maybe we
+[28:18] need to consider
+[28:20] limiting him today not not the greatest
+[28:22] not the favorite person of that day but
+[28:24] uh
+[28:25] like it's a it's a very it's very fun to
+[28:28] to figure out and establish those
+[28:30] workloads and what's interesting about
+[28:32] it is
+[28:32] football is so cool this is what i love
+[28:34] about it from any data perspective is
+[28:37] that each position is unique you can
+[28:39] look at each position also the separate
+[28:41] sport and what they need from my
+[28:43] workload perfect like from a workload so
+[28:45] if you're a d-line and you want more
+[28:47] power base you don't need to experience
+[28:49] yourself as much in terms of distance
+[28:51] and speed
+[28:52] now if you're a wide out you can even
+[28:54] have two positions there you go spot
+[28:56] receiver are you on the edges what kind
+[28:58] of boundaries do we establish for each
+[29:00] of those positions and even as a player
+[29:03] some players can handle work more than
+[29:05] other players can so it really becomes a
+[29:07] unique problem from a data analyst and
+[29:09] from an athletic trainer and how do you
+[29:11] define these workloads and how do you
+[29:13] get specific so that each individual
+[29:15] player is getting their own um image
+[29:18] they're getting their own kind of script
+[29:20] and their own portfolio as to who they
+[29:23] are and they're an individual and we're
+[29:25] treating them as such so that they can
+[29:26] feel like hey this is actually taking me
+[29:29] into consideration
+[29:30] um
+[29:31] goes with monitoring workload is those
+[29:33] personal wellness surveys you would be
+[29:35] surprised at the amount of good feedback
+[29:37] that we get back when we actually use
+[29:38] them and if they flag something when the
+[29:41] athletic trainers go and they can talk
+[29:43] to them like hey how are you feeling not
+[29:45] even bringing up the wellness but to get
+[29:48] compliance and to show that we're
+[29:50] actually looking at this data and it's
+[29:51] important it's really a key kind of
+[29:53] undervalued different perspective
+[29:57] um third thing is optimizing player
+[29:59] availability so you've looked at you
+[30:00] minimize the risk you've monitored the
+[30:03] workload now how do you make them the
+[30:04] best that they can be how to how do we
+[30:07] make sure that on game day we're
+[30:09] performing to the best of their love
+[30:11] their knowledge how do we get their
+[30:13] speed their acceleration all into
+[30:15] account is there an imbalance in their
+[30:17] in their
+[30:18] in their workload as a one player only
+[30:21] cutting left in
+[30:23] practice and so his left side is feeling
+[30:25] sore maybe we need to either do more to
+[30:28] rehab that during the week and and or
+[30:31] maybe we need to lift um on the right
+[30:33] side differently and that's what the
+[30:35] data can tell you you might see it from
+[30:37] a field i kind of have an intuition but
+[30:39] if i'm telling you right now like hey
+[30:42] cop only broke left
+[30:44] this practice like he's gonna he he
+[30:46] might be sore on there and that's kind
+[30:47] of something that's like oh shoot and
+[30:49] it's not necessarily okay we're going to
+[30:51] cut him we're not going to tell him to
+[30:52] or we're going to stop him we're not
+[30:54] going to tell him to do that anymore
+[30:56] it's just like let's take preventative
+[30:57] measures from an athletic training
+[30:58] perspective where we know that your
+[31:00] body's been strained on that side
+[31:02] because of the data because of the
+[31:03] information that we've given them that
+[31:05] we can now be proactive and sort of take
+[31:08] that and say like what's the worst you
+[31:10] want to massage cool let's do that let's
+[31:13] let's loosen you up um
+[31:15] getting those alert when something is up
+[31:17] is really key establishing email alerts
+[31:19] right after practice right when you
+[31:21] finish your survey giving players
+[31:23] instant feedback when they finish their
+[31:25] survey if something is off and you can
+[31:27] see an alert like hey are you hydrated
+[31:29] today because you lifted it too for
+[31:31] hydration go to the water station kind
+[31:33] of giving them that that instant
+[31:35] feedback so that they know like oh shoot
+[31:38] maybe i am thirsty i did just put that
+[31:40] so let's go get you some electrolytes
+[31:42] let's let's have those kind of proactive
+[31:44] things to again prevent it before it
+[31:46] happens we don't we don't want to react
+[31:49] when an injury occurs we want to do the
+[31:51] best that we can to make sure that we're
+[31:53] minimizing that um
+[31:56] and then you can also look at like where
+[31:57] are they getting fatigued a certain time
+[31:59] during practice a certain time during uh
+[32:03] during the game where a player loses his
+[32:05] ability to change direction as
+[32:07] efficiently when a player loses speed
+[32:09] where pay releases acceleration is that
+[32:11] important for that game is for that
+[32:13] position how can we kind of break it
+[32:15] down on the sports science side and
+[32:17] presented two coaches or two personal
+[32:20] groups where you're saying hey this is
+[32:22] what we found out
+[32:24] um
+[32:26] i think that's the mailman
+[32:29] the third thing is just to return an
+[32:31] investment you're spending time you're
+[32:33] sending energy and you're spending money
+[32:34] on these players and we want to optimize
+[32:36] their success because we want to not
+[32:38] only return our investment but return
+[32:40] their investment they're putting just
+[32:42] less time energy and effort into making
+[32:44] sure that their bodies and their play is
+[32:46] optimized and we want to put them from
+[32:49] an analytics perspective from athletic
+[32:51] trainers from a performance we want to
+[32:52] put them in the best position to succeed
+[32:54] we want to make sure we highlight their
+[32:56] strengths and we improve their
+[32:57] weaknesses um
+[32:59] so i think that that's something that
+[33:01] you don't necessarily think about your
+[33:03] treat these are athletes but these are
+[33:04] people so let's make sure that we value
+[33:07] what's important to them and make them
+[33:08] the healthiest and even from a data
+[33:10] perspective when you don't necessarily
+[33:11] interact with the players like that like
+[33:13] that's your goal and you have to keep
+[33:15] that in the back of your mind
+[33:17] um second thing was this was strength
+[33:18] and conditioning coaches it's very
+[33:20] similar to athletic trainers except
+[33:21] maybe the goal is a little bit different
+[33:23] a lot of the times it really just
+[33:25] depends on the time of year for a
+[33:27] trainer you might want to just look at
+[33:29] tracking progress
+[33:31] during
+[33:32] some of the in-season stuff if you're an
+[33:34] in-season it's very hard to adapt and
+[33:37] change exercises because you are on a
+[33:40] very strict schedule and you don't want
+[33:41] to introduce a foreign exercise that may
+[33:45] strain the body that may hurt a player
+[33:48] uh in a way that we don't need them to
+[33:49] before games now when you're an ota is
+[33:52] in the middle of may and players come in
+[33:54] and they you know they might have big
+[33:56] force or velocity weaknesses maybe they
+[33:58] don't maybe they're great you can
+[33:59] actually be proactive and sort of
+[34:01] implement some exercises that challenge
+[34:04] their body that that are promote that
+[34:06] are used to get growth and we can see
+[34:08] like hey let's let's see how well um
+[34:10] that's that's working
+[34:12] and how well we're progressing um it's
+[34:14] really fun in the off season to have
+[34:16] that flexibility because you can maybe
+[34:18] uh do a little bit more experiments with
+[34:20] players within their weaknesses within
+[34:22] their strengths to sort of see what's
+[34:25] becoming more effective and how we
+[34:27] bucket players into what they need um
+[34:30] when you identify weaknesses you're not
+[34:31] only identifying weaknesses from a
+[34:33] lifting standpoint you're identifying
+[34:35] sideways and says if you're going and
+[34:37] you're lifting and really you can maybe
+[34:39] not see that you're compensating but
+[34:41] maybe from your data you're seeing that
+[34:43] you're lifting really heavily on your
+[34:45] left side so you're getting through the
+[34:47] movement and it looks good from an
+[34:48] overall perspective but the data's
+[34:50] telling you that you're only using your
+[34:52] left side so maybe that right side is
+[34:54] weak unless let's look at that and let's
+[34:56] see reasons why it could be weak and how
+[34:58] can the strength coaches do that and
+[35:00] that's obviously all of them but it's
+[35:02] really good as an analyst to kind of
+[35:04] communicate all that and see hey this is
+[35:06] what this is what's important
+[35:09] um
+[35:10] really again as i kind of said in season
+[35:13] you want to maintain so you want to make
+[35:15] sure by the time a player
+[35:16] goes into into their season that they're
+[35:19] maintaining their strength and that
+[35:21] they're not getting worse uh at anything
+[35:23] and so from a data perspective you
+[35:26] really have to keep eyes on that and
+[35:27] make sure like hey we saw a one percent
+[35:30] decrease this week maybe that's not
+[35:31] significant but we've been seeing it
+[35:33] steadily for like four weeks so now
+[35:35] we're at a net four percent decrease we
+[35:38] maybe want to if we're in the first
+[35:39] quarter of the season now like that's
+[35:41] not a good sign we want to get eyes on
+[35:42] the sky what's happening
+[35:44] why are we seeing that
+[35:46] um the second thing is how do we
+[35:49] and so how do we identify this this
+[35:51] weakness will you know we can
+[35:53] we can get that data and we can see the
+[35:55] left and right deficiencies and we can
+[35:57] see overall power and force but then
+[36:00] it's a lot of kind of
+[36:02] uh causal
+[36:03] data because we can't really do tests if
+[36:06] a player is weak and we intervene we
+[36:09] can't say we can't say these two players
+[36:11] are the same weakness and we're going to
+[36:13] treat one with nothing and we're going
+[36:15] to treat the other by actually being
+[36:17] proactive and doing that you can't do
+[36:18] that in sports so you really do have to
+[36:21] kind of take the data as it comes do a
+[36:23] lot of different um
+[36:25] methods to look at it and not really
+[36:27] treating it as an experimenting and
+[36:29] treating it as a non-traditional kind of
+[36:31] analyst
+[36:33] analytics um second thing is a lot of
+[36:35] unsupervised learning you're not
+[36:37] necessarily trying to optimize anything
+[36:38] there's not there's not a dependent
+[36:40] variable there's not um something that
+[36:42] you're trying to
+[36:44] uh predict what you're really trying to
+[36:46] do is sort of identify those different
+[36:48] clusters those like hey these are four
+[36:51] skies these are our velocity guys these
+[36:53] guys don't fit in anywhere and do we
+[36:55] want them to be more
+[36:57] um
+[36:58] more fuzzy classroom where it's like
+[36:59] they're kind of in between is that is
+[37:01] that our goal is that the end where we
+[37:04] see both a mix of force and velocity
+[37:06] base again
+[37:08] from the question and it depends on the
+[37:10] player and the position
+[37:13] um the third thing with the last in the
+[37:16] performance team is the nutrition and
+[37:18] player engagement um
+[37:20] one thing that's really kind of fun with
+[37:22] the nutritionist is just looking at the
+[37:23] player weights um seeing
+[37:26] when a player is heavier are they moving
+[37:28] more efficiently are they moving less
+[37:30] efficiently are they more powerful what
+[37:32] can they do with that extra weight
+[37:34] conversely when a player is lighter how
+[37:36] much force are they losing how what are
+[37:38] we
+[37:39] what are we what's the trade-off between
+[37:41] the force loss and the velocity at
+[37:43] various weights um it's also
+[37:45] communicating with your
+[37:47] nutritionist as to what the workload was
+[37:49] again that goes from a data thing was
+[37:51] just
+[37:51] keeping everything super concise and
+[37:54] informative so you can send an email at
+[37:56] the end of practice so you can send the
+[37:58] instant text whatever it is that your
+[38:00] source the communication where it's like
+[38:02] this is what the players did this day
+[38:04] and they can determine as a nutritionist
+[38:06] how much they need to refuel their body
+[38:08] um what did they sweat
+[38:10] what calories do they need to burn
+[38:12] different things like that that maybe um
+[38:15] you know that really show a player that
+[38:17] the nutritionist is the scene that we're
+[38:19] listing that everyone's kind of watching
+[38:20] them and it just refuels and helps an
+[38:23] athlete stay healthy and the second is
+[38:25] the stress and mental flag it again goes
+[38:27] with that personal wellness the player
+[38:29] indicates that they're stressed and
+[38:31] maybe it's maybe it's an on-field thing
+[38:33] we know that they're not getting as many
+[38:35] reps as they like but maybe something's
+[38:37] happening off the field and
+[38:38] communicating that and sending those
+[38:40] alerts very discreetly to our player
+[38:42] engagement coordinator so he just come
+[38:43] and have a conversation how are you
+[38:45] feeling what's up what's happening it's
+[38:47] really it's really a cool perspective
+[38:50] because you are like
+[38:52] all communicating about these players
+[38:55] and you're all on the same page you all
+[38:56] know what's going on and it's just
+[38:58] having those people that are trusted
+[39:01] that can go target them in their area of
+[39:03] specialty and it all stems from that
+[39:05] data being sent out so they say export
+[39:08] science and i get excited about it it's
+[39:10] because like you were you were the brain
+[39:12] of some of this organization and it
+[39:15] takes all of these pieces working
+[39:17] together and being really
+[39:20] not open to the data i mean being
+[39:22] efficient and consistent with how
+[39:24] they're measuring and trusting you as
+[39:25] your analysts that like hey they got
+[39:28] that data side because we we want to
+[39:30] show that these players um again we're
+[39:33] all community we're all one voice is our
+[39:35] goal it's kind of cliche there's a lot
+[39:37] of questions statements but it's true
+[39:39] and that it's just effective
+[39:40] communication to keep these guys healthy
+[39:43] and second to last is coaches this is
+[39:45] where the buy-in happens this is where
+[39:48] that voice and that communication in
+[39:50] those three departments three um kind of
+[39:52] stuff group then yourself within the
+[39:54] performance staff needs to work because
+[39:56] we need to be able to communicate with
+[39:58] coaches that like that this guy is
+[40:00] feeling stressed or this guy is reaching
+[40:03] his threshold and so
+[40:05] the coaches have to respect the work
+[40:07] that's being done within the group to
+[40:10] actually say like okay that's fine we'll
+[40:12] limit them to the snap count or we will
+[40:15] watch out for kind of certain like
+[40:17] distances that have traveled or we
+[40:20] will let a veteran stay off um so from
+[40:23] us it really is important that we're all
+[40:25] on the same page so that we can
+[40:27] communicate that clearly sometimes
+[40:29] coaches will even ask me and i don't
+[40:31] necessarily talk to them directly but
+[40:33] they'll ask hey what's going on with
+[40:34] this guy or like what's what's this
+[40:37] what's his threshold and i have to know
+[40:38] that and they have the trainers
+[40:40] happening that the nutritionist have to
+[40:41] know that player engagement has to know
+[40:43] that so that if coaches ask if players
+[40:45] ask like why was i why was i pulled
+[40:47] today you can all communicate the same
+[40:49] answer and then a good consistent and
+[40:52] very concise like no worries man just a
+[40:55] good day off you're doing great kind of
+[40:57] thing just so that there's no community
+[40:59] there's no complication there's no
+[41:01] confusion people understand what's
+[41:03] happening and we come across as a
+[41:05] cohesive group that we strive to be
+[41:09] um
+[41:10] the last is just kind of very very broad
+[41:12] but with personnel
+[41:14] um personnel is an interesting one
+[41:16] because it really only occurs kind of in
+[41:18] like two points of the season maybe
+[41:20] sometime mid-season but really that
+[41:22] draft and the
+[41:24] training camp is where as a performance
+[41:27] analyst and as a performance team we do
+[41:29] communicate with the personnel
+[41:30] department more often um one of the
+[41:32] things during draft is just looking at
+[41:34] some variable stability this can be some
+[41:36] of the speed variables that we're giving
+[41:38] this is the injury grades that would
+[41:40] have the injury counts that we have how
+[41:42] consistent um are they from from college
+[41:45] to pro is one predictive of injuries in
+[41:48] colleges are you able to
+[41:51] kind of look and see which is consistent
+[41:53] in speed which is consistent in
+[41:56] different production statistics uh which
+[41:59] has the potential for improvement and
+[42:00] where are some red flags for his legs
+[42:02] meaning hey this guy's got ten injuries
+[42:05] in college like this is much more likely
+[42:08] to have a reoccurrence his career length
+[42:10] is not going to be very long um just
+[42:12] sort of different things like that that
+[42:14] you can interpret from a performance
+[42:16] standpoint where you're looking at like
+[42:18] how well they're performing on the field
+[42:19] how that they are how healthy they are
+[42:22] another thing is within when you rank
+[42:23] players
+[42:24] with a data analyst ranking players is
+[42:27] fun because you get to
+[42:29] look at the variables that are important
+[42:30] all the work that you've done through
+[42:31] the year where you're saying like hey
+[42:33] this is an irrelevant variable to on
+[42:36] field strength this is a relevant
+[42:38] variable to power this is a relevant
+[42:40] variable to this ability to accelerate
+[42:42] is force so from a from a personnel
+[42:45] perspective you get to take that
+[42:47] information and now you get to rank
+[42:48] players so that you can compare trial
+[42:51] guys you can compare free agents you can
+[42:53] impair a training camp and you can
+[42:55] compare them to our current players
+[42:56] compare them within each other and kind
+[42:58] of give them a comparable player like
+[43:01] this guy comes in and we say he has the
+[43:04] force of
+[43:06] aaron donald he's lucky my goodness he
+[43:08] has the speed of uh
+[43:10] desean jackson and he has the
+[43:13] acceleration of cooper cup so this is
+[43:15] your star athlete he's the perfect
+[43:16] athlete he doesn't exist but if you say
+[43:18] that and give them that information then
+[43:21] they can say like yes we want this guy
+[43:23] we clearly want this guy um and it's a
+[43:25] really cool way to kind of provide that
+[43:27] performance perspective that maybe
+[43:29] scouts don't get to see because it is
+[43:31] one of those free agents we haven't seen
+[43:32] them play in a while or you don't run
+[43:34] them on the field different different
+[43:36] variables that can coexist within that
+[43:38] space and then finally you have the
+[43:40] medical evaluation which
+[43:42] kind of tries to project your estimated
+[43:44] career length again this one's hard
+[43:46] because you don't actually get to have a
+[43:48] lot of the players that you grade in
+[43:51] college a lot of them go to different
+[43:52] teams a lot of them don't make the
+[43:54] league so how do we um define when their
+[43:57] career length is over was it due to
+[43:59] injury was it due to for lack of
+[44:01] performance just different things that
+[44:03] you can kind of take the nuances in but
+[44:05] you get an approximate estimate of like
+[44:08] these types of grades go with this type
+[44:11] of greater length this goes with that
+[44:13] and if you have this type of injury
+[44:14] we're probably going to ask you right
+[44:16] away or reoccurring injuries how does
+[44:18] that work um
+[44:20] really benefits easy but it's a lot of
+[44:23] it's good challenges to have where you
+[44:25] get to be challenged from the data
+[44:26] perspective and the communication
+[44:29] um so finally
+[44:31] what is the
+[44:32] future
+[44:33] of sports science
+[44:35] this is where you lay down all the
+[44:36] cliche quotes that we talk about every
+[44:38] single day at work keep the main thing
+[44:40] the main thing we want to improve
+[44:42] players we want to keep them healthy we
+[44:45] want to optimize their performance and
+[44:47] we want to really just make sure that
+[44:49] we're doing the best to put the best
+[44:51] product in the field so the athletes are
+[44:53] feeling the best that they can and
+[44:55] everyone is performing to the highest
+[44:57] standard yourself included you want to
+[44:59] perform to the highest um adapt and
+[45:01] evolve as i said things come up practice
+[45:04] schedule changes themes changes coaches
+[45:07] change when your codes change you have
+[45:09] to restart your data you might have a
+[45:10] different totally different practice
+[45:12] philosophy and your strength coach
+[45:13] exchanges you gotta restart collection
+[45:15] because you might do different exercises
+[45:17] you might have a different way that you
+[45:19] want to emphasize the force you want to
+[45:21] emphasize acceleration and velocity um
+[45:24] and then just dominate the role from
+[45:26] that is something that we see in the
+[45:27] scouting department it's something we
+[45:29] say in the coaching department it's
+[45:30] mainly in the performance department
+[45:32] where
+[45:33] you have a role as an analyst to provide
+[45:36] information and to provide it in a great
+[45:38] digestible format so dominate that own
+[45:40] it be the best that you can be at it get
+[45:42] the small wins and really just be better
+[45:45] of all your methods get the data and
+[45:47] have everything come in
+[45:50] so that's it thank you questions
+[45:57] thank you very much sarah that was
+[45:59] excellent um it was really exciting my
+[46:01] background i forgot to myself but um i'm
+[46:03] an assistant professor here and we do a
+[46:05] lot of human performance research so i
+[46:07] really enjoyed every bit of it and can
+[46:09] relate um so we're going to start with
+[46:11] some of the questions from the audience
+[46:13] um how much is mental health being
+[46:15] looked at in sports science and in what
+[46:17] ways
+[46:18] yeah so um mental health from sports
+[46:21] science is really hard thing to track
+[46:22] right because um it's very personal it's
+[46:25] something that you know you don't
+[46:27] necessarily discuss is open so how do we
+[46:30] track it
+[46:31] um we just crack different data points
+[46:33] to track their stress and we track um
+[46:36] it's more so getting them the resources
+[46:38] i guess from a mental health perspective
+[46:39] so we're not necessarily tracking the
+[46:41] improvement of their mental health
+[46:42] because that's personal and that's
+[46:44] relative and that's that's a touchy
+[46:46] thing we don't we don't want to mess
+[46:47] with that we just want to make sure that
+[46:49] if a guy is stressed and he's indicating
+[46:51] it and he's showing it that we're giving
+[46:52] him the right resources so that he can
+[46:55] he can get help if he needs it
+[46:58] great um and yes please continue to put
+[47:01] these questions in the q a so another
+[47:03] question you know you talked a lot about
+[47:05] having player
+[47:07] access and testing so how you know when
+[47:09] you guys are doing this testing
+[47:10] how long is testing i know that you know
+[47:12] they're going to practice all day and
+[47:13] doing these things what is kind of that
+[47:14] time frame how often can you test and
+[47:16] and really player compliance i know i
+[47:18] work with individuals in my research and
+[47:20] compliance is a huge issue so please
+[47:22] explain yeah so i think um the biggest
+[47:24] compliance was honestly the personal
+[47:26] wellness surveys um covet actually
+[47:28] sucked that back too because we used to
+[47:30] have ipads set out in the gym right
+[47:32] before their strength and conditioning
+[47:34] where it was right in their face like
+[47:35] hey don't start lifting before you fill
+[47:37] this out but then with kova you have to
+[47:39] separate groups so we pushed it to a
+[47:42] phone app um and saw a little bit of a
+[47:44] drag in in compliance right off the bat
+[47:47] but i haven't been seeing a steady
+[47:48] incline just as we kind of um
+[47:51] put a little bit of annoyance measures
+[47:53] out there in terms of text messages
+[47:55] reminders um little thing hello we're
+[47:58] here that sort of thing um so those sort
+[48:01] of those those help um with the testing
+[48:04] with the force type that's actually one
+[48:05] of the things that we also ran into is
+[48:07] that we wanted to make it because of
+[48:09] their schedule that it's so jam-packed
+[48:11] we wanted to make it part of their
+[48:13] lifting routine this isn't an option you
+[48:15] start your lifting by doing those jumps
+[48:17] because and you just know that's how it
+[48:19] goes it's not it's not if you're gonna
+[48:21] do it um it's just slim it's that start
+[48:23] of the job let's go part of your warm up
+[48:25] here you are
+[48:27] okay and is it really just
+[48:29] it takes maybe like a minute for each
+[48:31] layer
+[48:32] oh wow okay um
+[48:34] joel a says is the analytics department
+[48:36] utilized by the coaches for helping
+[48:38] design game plans including in-game
+[48:40] decisions or is most of the analytics
+[48:42] department only engaged for optimizing
+[48:43] player performance
+[48:45] um so
+[48:47] this is just one part of it we uh
+[48:49] analytics department sports science is
+[48:51] one area of it but we also do i do a lot
+[48:54] of work and personnel it's probably
+[48:55] where most of my time is right now
+[48:57] um from a coaching perspective uh we do
+[49:00] help with some scouting reports we do
+[49:02] help with projects here and there it's
+[49:03] not necessarily an emphasis but um it is
+[49:06] something that we uh you know help with
+[49:08] the advance where you know we'll give
+[49:10] them the data perspective of an upcoming
+[49:12] opponent and break them down from our
+[49:15] information that we're given um how much
+[49:17] does it use
+[49:19] i don't know i don't stress about it i
+[49:20] think uh as an analyst you know that
+[49:23] your
+[49:24] job is to provide another piece of
+[49:26] information and you're not in it for the
+[49:28] glory you're not in it for the attention
+[49:30] here just like here's another piece do
+[49:32] with it as you will
+[49:34] sure as some people come to me with
+[49:35] information and i said here's another
+[49:37] data source do it as you will
+[49:43] yeah and kind of following with that you
+[49:45] know so you talk about you know you're
+[49:46] developing all these models and i didn't
+[49:48] notice a lot of the metrics and some of
+[49:49] them i was happy they look familiar to
+[49:51] me um but i was wondering you know how
+[49:53] much is this you guys kind of focus on
+[49:56] using established metrics and how much
+[49:58] you focus on developing new metrics that
+[50:00] you think can kind of better delineate
+[50:01] between healthy and pathological
+[50:02] movement yeah that's actually really
+[50:04] interesting so um
+[50:06] we do use a lot of established metrics
+[50:08] but we find with football again as i
+[50:11] spoke about like each position and
+[50:13] players so unique that you oftentimes
+[50:15] have to consider like even just
+[50:17] considering body weight can drastically
+[50:19] change the way that you're looking at a
+[50:21] metric um a lot of them don't consider
+[50:23] that because you may be in a more in a
+[50:25] sport that's more consistent against
+[50:27] players or
+[50:28] people that are more consistent
+[50:30] so
+[50:31] for us we do we use some of the
+[50:34] established metrics and then we've also
+[50:35] established our own metrics and we're
+[50:37] constantly evolving in the background
+[50:39] and talk about um you know these are the
+[50:41] ones that our face are forefronting and
+[50:43] our face aren't that everyone is seeing
+[50:46] and in the back we're exploring as a
+[50:48] data analyst you think you've already
+[50:50] established all the thresholds it's out
+[50:52] there you use it so you're in the back
+[50:53] and you're kind of working and looking
+[50:56] at different combinations different
+[50:58] variations that um that maybe answer a
+[51:01] question that we've been talking about
+[51:03] again like acceleration it's such an
+[51:05] easy question but it's not because
+[51:07] acceleration occurs at different points
+[51:09] it's like opportunity based a lot of the
+[51:11] times like it's something that that is
+[51:13] so simple but can be made very
+[51:16] complicated
+[51:18] 100
+[51:20] um
+[51:21] so one of the questions from nicholas
+[51:23] waltz i believe um if you worked at a
+[51:25] small budget facility um or team and you
+[51:28] had one key sports science metric what
+[51:30] would it be and why
+[51:32] that's a good question
+[51:34] um small budget
+[51:38] so i'm thinking gps would be maybe the
+[51:41] lowest um i would go with high speed
+[51:43] yards um proportion over their total
+[51:46] distance i think that gives you a good
+[51:48] interpretation of not only how far
+[51:50] they're running but like what exertion
+[51:52] of that is like full speed um it can
+[51:54] also conversely give you how much
+[51:56] garbage yours would be running um
+[51:58] as i used to be a runner and it was like
+[52:00] one of those things where you're just
+[52:02] like don't put in the garbage mileage
+[52:04] because that's just useful wear on your
+[52:06] like useless wear on your body
+[52:11] no great as a non-runner i appreciate
+[52:13] that um
+[52:15] so
+[52:16] regarding one of the things we were
+[52:18] thinking of was just there's been a lot
+[52:19] of acl injuries this year in the nfl do
+[52:22] you guys have some thoughts on
+[52:24] why and are you seeing anything in the
+[52:25] numbers that would suggest why
+[52:28] um i mean so we've been pretty lucky
+[52:30] right with um with racl again knock on
+[52:33] wood um those to me are just it's either
+[52:37] lack of preparedness or um
+[52:40] it's
+[52:41] it i think that's it i don't know uh how
+[52:44] last season really really treated people
+[52:47] because it was a short season um you
+[52:49] didn't have training camp a full
+[52:50] training camp you didn't have pre-season
+[52:53] game for some of these rookies like we
+[52:54] don't know we don't necessarily use that
+[52:55] on our beds but for some of the rookies
+[52:58] gives you real exposure into live
+[52:59] in-game speed so i think that the
+[53:02] accumulation of that instant workflow
+[53:04] where you weren't necessarily prep has
+[53:07] really set a kind of a behind the
+[53:09] starting block sort of um mentality for
+[53:12] the athletes going forward and it's
+[53:14] really plain catch up so how can we have
+[53:16] played ketchup during the offseason how
+[53:17] can we play catch up during training
+[53:19] camp where we can get these guys to a
+[53:22] game week kind of level of intensity
+[53:27] um additionally like you've had
+[53:29] the opportunity to work in different
+[53:30] areas and departments how do you think
+[53:32] that's really helped mold into where you
+[53:34] are now
+[53:35] i think it's been um it's been
+[53:37] instrumental in my involvement like
+[53:39] really to be able to communicate with
+[53:41] all these different sources like i
+[53:43] learned things that i wouldn't have even
+[53:45] thought about um i've been able to
+[53:48] articulate certain stuff that i can't i
+[53:51] couldn't before and i wouldn't even like
+[53:53] i wouldn't know um it's learning it's
+[53:56] also it's learning how to talk but it's
+[53:57] also learning how to keep quiet and
+[53:59] you're in a room with all these amazing
+[54:01] intelligent people and it's just keeping
+[54:03] my mouth shut i'm listening and already
+[54:05] know it's like i'm i'm a big on learning
+[54:08] and getting better so if i'm in a room
+[54:09] with these amazing talented intelligent
+[54:12] people i'm hearing and i'm trying to get
+[54:14] as much as i can so that i can either
+[54:17] ask questions at the end if needed or go
+[54:19] to someone independently okay i heard
+[54:21] you say this or just like write it down
+[54:23] look up things on my own time kind of
+[54:25] taking as much information as possible
+[54:27] and it's also just like being present
+[54:29] and getting your
+[54:30] your face around the building i'm four
+[54:33] years and now we do have an influx of
+[54:35] coaching changes we have everything
+[54:37] changing so like for you to um be
+[54:40] present on all these different fields
+[54:41] you can gain a little bit of respect you
+[54:43] can um
+[54:45] gain kind of a reputation in a good way
+[54:47] as like hey she knows this or she knows
+[54:49] that um and kind of be present so that
+[54:52] people understand that like you can
+[54:54] count me for different sources of
+[54:56] information and i will do the best to
+[54:58] kind of articulate that to you
+[55:01] great great advice in general i think
+[55:03] for any kind of field um so you know one
+[55:06] of the things you touched on when we
+[55:07] first started was this you know and
+[55:09] acknowledging the the panel before us
+[55:10] and how many women were on the panel um
+[55:12] have you noticed the growth of females
+[55:14] in the industry what kind of
+[55:16] opportunities you see going forward and
+[55:18] do you think being female gives you a
+[55:20] unique perfect uh perspective
+[55:22] um i think
+[55:24] i think i've noticed a big growth i'll
+[55:26] start with the first part in women in
+[55:27] sports in general and women in football
+[55:30] um women in analytics especially too i
+[55:33] mean when i started i think there were
+[55:34] two or three of us and now they're seven
+[55:36] or eight which it's four years and it's
+[55:38] not enough but if you consider the size
+[55:40] of the department it's um it's quite
+[55:42] significant i think um one of the ways
+[55:45] that maybe we're lacking is women in
+[55:46] major roles um and bigger roles and more
+[55:49] important roles um to where we actually
+[55:51] have power to
+[55:53] hire more women to promote more women to
+[55:56] um just sort of be in that position of
+[55:58] authority where you're not just kind of
+[56:00] the bad voice you're actually uh after
+[56:03] level you're managing you're doing what
+[56:05] you need to do um i think being a woman
+[56:07] in sport can be difficult um
+[56:10] it's not for the thin skinned
+[56:13] but i don't think that's necessarily
+[56:15] independent of just being a woman i
+[56:17] think that's for anyone male female
+[56:19] whatever you identify with
+[56:21] you gotta be tough like this is sport
+[56:23] you're here to win games when things go
+[56:25] wrong
+[56:26] you have to be able to take it and um so
+[56:29] i really think that like
+[56:30] as a woman
+[56:32] that's important but as a person that's
+[56:34] more important um i don't
+[56:36] i don't think it presents challenges i
+[56:38] don't think it should percent challenge
+[56:40] i mean it presents challenges in terms
+[56:41] of entry in terms of respect whatever
+[56:44] but in terms of like doing your actual
+[56:46] job and what you were hired for and how
+[56:48] you can do it no you're you i don't care
+[56:51] you are good at your job you're here for
+[56:52] a reason and you deserve to be here so
+[56:55] that's fine
+[56:57] i like it
+[56:58] so we have another couple more questions
+[57:00] coming through so what technical skills
+[57:02] do you frequently use in your job
+[57:04] yeah so uh i use all the basics are sql
+[57:08] tableau python if i have to um but uh
+[57:13] really just
+[57:14] those are kind of the technical ones
+[57:16] that i have um
+[57:18] learning to work with different data
+[57:20] formats i think is something that's
+[57:21] maybe not just talked about you know we
+[57:23] work a lot with like csv using but learn
+[57:26] about json violence learn about uh the
+[57:29] importing different types of data that
+[57:31] you have um
+[57:32] like how you can use it in our how
+[57:34] because now most of the files that you
+[57:36] deal with are very nested data frames
+[57:39] that are massive so if you can learn how
+[57:41] to kind of manipulate those different
+[57:42] sources i think that that's more
+[57:44] important i think the technology that
+[57:46] you use isn't as important to do that as
+[57:48] long as you can do it
+[57:51] right well thank you kevin for that
+[57:53] question and then zach has a question um
+[57:55] did you find any less or more cultural
+[57:57] war pushback starting in sports science
+[57:59] rather than coaching slash game strategy
+[58:03] um
+[58:04] cultural pushback is that
+[58:06] cultural uh yeah so i don't know if it
+[58:08] was kind of this idea of because you may
+[58:10] be started in sports science um rather
+[58:12] than in coaching and game strategy do
+[58:14] you see like there's any difference of
+[58:16] where you're coming in from
+[58:17] um
+[58:19] i was lucky when i came into sports
+[58:22] science and that that department had
+[58:24] really established a good foundation and
+[58:26] they were at a point where
+[58:28] their data had reached kind of the
+[58:30] limits as to what they could do with it
+[58:32] and they needed someone with a more
+[58:34] analytical math background to sort of
+[58:37] take it to the next level and evolve and
+[58:39] adjust like that when i switched into
+[58:41] personnel it was very um
+[58:44] natural because it was from questions
+[58:45] that i was asked and it was questions
+[58:48] that you know um that they wanted
+[58:50] answered so it it felt smooth but it's
+[58:53] still uh in terms of pushback it still
+[58:56] was you know you get some certain um
+[58:58] direct questions that uh don't
+[59:00] necessarily show respect of the game i
+[59:03] guess um so you have to
+[59:05] you do have to prove your knowledge i
+[59:06] don't think that's in like i don't think
+[59:08] the best would be coming from sports
+[59:10] science i think that's people coming in
+[59:11] general um that you will want to show
+[59:14] what you can do um coaching
+[59:16] i just kind of um pushed myself on that
+[59:19] one if we're being honest just started
+[59:21] sending out emails um sending little
+[59:24] keys of information to some of the
+[59:26] coaches that maybe i had better
+[59:28] relationships with that we would like
+[59:30] chat about about the games and in the
+[59:32] office and i'd be like oh yeah i know i
+[59:33] got something for you um even just the
+[59:35] other day i was talking to coach like
+[59:37] wait do you do this i'm like yeah i
+[59:39] can't we'll send it to you right away
+[59:41] and it's just like little things like
+[59:42] that where um you take those little wins
+[59:45] and give them information because at
+[59:47] some point it's going to help so
+[59:50] yeah
+[59:51] i think we're just about time but i
+[59:52] wanted to kind of leave off with this
+[59:53] one question do you have any advice for
+[59:56] you know anybody trying to get into this
+[59:57] field we have a number of students on
+[59:58] here so what kind of advice would you
+[60:00] give them
+[60:01] yeah i think um i get this question a
+[60:02] lot i think most people do
+[60:04] it's not an easy field to get into so
+[60:07] first thing is just ask yourself like do
+[60:08] you really love sport and do you love
+[60:10] numbers because i think it's often time
+[60:12] to glamorize when the truth is it's like
+[60:15] it is a fun job don't get me wrong you
+[60:17] get family i love this job but
+[60:19] you're working long hours oftentimes you
+[60:21] start a poor wage
+[60:23] it's easy to get into when you're in
+[60:26] it's fun and it is so worth it and i
+[60:28] encourage everyone to do their best um
+[60:30] you know it's like what everyone was
+[60:32] saying do the work put in research like
+[60:34] put yourself out there present things
+[60:37] get things published whether it's
+[60:38] through your school talk to your
+[60:40] professors about maybe doing a project
+[60:42] with them that's how i started um with
+[60:44] getting work kind of in the public
+[60:45] spheres i just i realized that i didn't
+[60:47] have anything published and i was like i
+[60:49] need i need some exposure or something
+[60:52] on my resume that says that i can do
+[60:54] verified academic work um so i spoke to
+[60:56] a professor and someone that i had a
+[60:59] good communication with and she helped
+[61:00] me and she was amazing and we got
+[61:02] together and we talked about things that
+[61:04] we both like and how we can
+[61:06] kind of
+[61:06] merge those two ideas i think it's
+[61:08] really just mastering your skill set um
+[61:12] you can get into sports analytics and
+[61:14] you can find your door and it's like
+[61:16] everyone said don't um don't necessarily
+[61:19] be so pigeonholed on a sport or a
+[61:21] section of sport or some like area that
+[61:24] you must do because if you want to get
+[61:26] there you will but it is really
+[61:28] important to get your foot in the door
+[61:30] and get some experience if you're good
+[61:32] with numbers then you're going with data
+[61:34] that skills often transferable to other
+[61:36] sports so really mastering that
+[61:38] technique being good at the math behind
+[61:40] it being good at the questions being
+[61:42] asking good at communicating
+[61:43] interpreting what people want from you
+[61:46] cleaning working with making different
+[61:47] data sources
+[61:49] being a full evolved person where you
+[61:51] can
+[61:52] where you can be in multiple facets is
+[61:55] going to help you so much and just like
+[61:57] everyone said just apply like when i
+[61:59] applied for this job i said no way no
+[62:01] way am i going to get that i'm not
+[62:03] qualified at all um five multiple drugs
+[62:06] that i was not qualified for some that i
+[62:08] was probably overqualified for didn't
+[62:10] hear back from again probably 90 of them
+[62:14] um don't be discouraged don't like
+[62:17] everyone was saying this before don't
+[62:18] take it personal um just keep working if
+[62:22] it doesn't work this round put something
+[62:24] new out there try something again try a
+[62:26] data competition big data bolts coming
+[62:28] out enter it do it um
+[62:31] try different try different things that
+[62:33] challenge you because um you're not
+[62:35] going to really know unless you try
+[62:38] wonderful wonderful advice um thank you
+[62:41] sarah so much for a wonderful
+[62:42] presentation um thank you again to the
+[62:44] organizers of this conference dr yan for
+[62:47] amazing conference and
+[62:48] thank you all for listening

@@ -1,0 +1,93 @@
+Video Title: This AI System 100% Automated Viral Shorts  #n8n #aiagent #artificialintelligence
+Video ID: gyC9rU1iamY
+URL: https://www.youtube.com/watch?v=gyC9rU1iamY
+View Count: 22,920
+
+[00:00] I just 100% automated viral shorts.
+[00:02] Okay, so you can already see there's
+[00:04] kind of like five main blocks, which is
+[00:06] first of all, we're going to be creating
+[00:07] the scenes. Then we're going to be
+[00:08] creating those close-up images. Then
+[00:10] we're going to be creating the winner
+[00:11] images. From there, we're going to pull
+[00:13] all of the pictures back in, render the
+[00:14] final video together, and then we're
+[00:15] sending it off to Instagram, Tik Tok,
+[00:17] and YouTube to be published. Okay, so
+[00:19] for this run, as you can see, based on
+[00:21] our Google sheet, this is going to be
+[00:22] ape versus big cats. And it's going to
+[00:25] pull in because we have this marked as
+[00:26] to-do. So I'm going to go back into the
+[00:28] workflow. I'm going to hit test workflow
+[00:29] and we're basically just going to watch
+[00:30] this thing start. So after this we move
+[00:32] on to the next step which is the scene
+[00:34] creator agent. And you can see what we
+[00:35] give this agent as the user message is
+[00:37] two things. The first thing is the main
+[00:39] character and then the second thing is
+[00:40] the type of opponent. So basically this
+[00:42] agent's job is to take the main
+[00:43] character and the opponents. And as you
+[00:45] can see on the right hand side it spits
+[00:47] out eight different scenes which are the
+[00:48] eight different opponents that the main
+[00:50] character is going to be fighting in
+[00:52] this YouTube short. Anyways, what we do
+[00:54] is we feed those eight items into this
+[00:56] image prompt generator where we're going
+[00:58] to be giving this agent the main animal
+[01:00] and the opponent. So now you can see we
+[01:02] have 16 items and these are all 16 of
+[01:04] our images. And if I was to click into
+[01:06] the URL that it returns for um item one,
+[01:09] we can see that this is an intimidating
+[01:11] looking ape that is roaring at us. All
+[01:13] right, so now that we have all of our
+[01:14] close-up images done, we can move on to
+[01:16] the next section of the workflow, which
+[01:18] is creating the winner images. So what
+[01:20] we're doing here is once again we're
+[01:21] prompting an AI agent and we're going to
+[01:23] give it two different animals. So up
+[01:24] here we have animal one, animal two and
+[01:26] as you can see on this right hand side
+[01:28] what we get back are eight different
+[01:29] image prompts and each of these image
+[01:30] prompts are going to contain, you know,
+[01:32] like which of these animals actually won
+[01:34] the fight. But after we send over these
+[01:36] eight different scenes, it's going to do
+[01:37] the exact same thing where it tells us,
+[01:39] okay, we got your request, we're
+[01:40] processing it. Please wait a little bit.
+[01:42] So we go ahead and wait 90 seconds. We
+[01:44] check back in and then we grab all of
+[01:46] the completed images. So, let's scroll
+[01:48] down to a random one down here and we
+[01:49] will see who won this fight. Okay, so it
+[01:51] looks like this one was a tiger that
+[01:53] clearly beat up this ape. Okay, cool.
+[01:56] So, we have all 24 elements. You can see
+[01:58] the final video is already done, but the
+[01:59] next section of the workflow is to
+[02:01] render it all together. So, what we're
+[02:03] doing here is we're hitting an API
+[02:04] called create a mate. And if I click
+[02:06] into create a mate, you can see here are
+[02:07] all of my renders and this is our
+[02:09] completed video. And then we're going to
+[02:10] go ahead and do the same thing where we
+[02:12] check back in on the video. And you can
+[02:14] see we get it right here as a binary
+[02:16] file. So, let's take a quick little
+[02:17] sneak peek.
+[02:18] [Music]
+[02:30] [Applause]
+[02:31] [Music]
+[02:35] If you want to watch the full video and
+[02:36] get all the resources you need for free,
+[02:38] then click right here and I'll see you
+[02:39] guys over

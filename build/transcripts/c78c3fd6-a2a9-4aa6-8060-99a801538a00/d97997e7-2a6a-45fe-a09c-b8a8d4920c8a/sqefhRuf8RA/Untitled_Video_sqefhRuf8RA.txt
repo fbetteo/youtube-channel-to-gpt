@@ -1,0 +1,495 @@
+Video Title: Untitled_Video
+Video ID: sqefhRuf8RA
+URL: https://www.youtube.com/watch?v=sqefhRuf8RA
+View Count: 0
+
+[00:01] All right, so my presentation is our introduction Python.
+[00:06] And my name's Theresa.
+[00:11] All right, so you yes, so I'm trying to.
+[00:16] So, I'm a 2nd, here from your side, you call also side and I'm also the secretary, the icon.
+[00:24] My current interests are deep learning, whereas the software development.
+[00:28] So, why would you use Python? It?
+[00:34] Finalized language where the way diverse applications from software development to research.
+[00:39] Right. So theoretically you could actually.
+[00:42] As you can, you can actually analyze all the data then do stuff on top of the data.
+[00:49] Then build an application on top of that, right? It was in Python. You have to, you don't have to go to no language or another tool.
+[00:57] Right, because libraries are there the whole thing about Python.
+[01:00] That's why it's commonly coverage replace. It's done. It's basically the ecosystem library that has.
+[01:08] And that's the, the main advantage. It's a hard if you want to go from, let's say, a data science time.
+[01:14] Right. It's hard to go create a new new language that a.
+[01:19] That's actually a whole lot cost and that's why there's only 2. and this 1 was when you saw.
+[01:25] Earlier the bar and the other ones I thought.
+[01:31] As language, it's very easy on samples.
+[01:35] There's been an emphasis on visibility and that's it with more English like syntax. It's.
+[01:41] Obviously, it routines some aspects, but.
+[01:45] It's more natural language per se yeah.
+[01:50] And also it's also really easy Rachel Python package.
+[01:55] That you can have other people on board and I'll.
+[01:58] Has functionality that exists before or better than.
+[02:04] So this for this.
+[02:08] Workshop is basically advice would addresses for the laptop.
+[02:12] We're going to be using a CO op for practice.
+[02:20] Yeah, um, so do we actually will have probably have time.
+[02:24] Is not my agenda so move up there.
+[02:28] Okay, so basically, what we're recovering is.
+[02:34] I want syntax, data types. It Python.
+[02:37] I need to change your exercise. Nothing that's.
+[02:41] And those types of sites and conditions, move the buttons.
+[02:49] So, basically python's attacks, so.
+[02:54] Common common something you just prefixed with um.
+[03:00] Uh, previous with a hash.
+[03:03] And to actually a new line indicates, I'm sorry, a new command you technically you can use some rules like other programming, but it's usually not used.
+[03:13] Unless we're like very nation senses.
+[03:18] And let's start with data types, so.
+[03:22] Yeah, integers flows complex. Who's actually did not know before actually doing this presentation.
+[03:28] This is very interesting. So, the conference is obviously complex numbers. So.
+[03:33] 1, for conference component of.
+[03:37] Accomplished component like complex notation.
+[03:41] And bouvines and the table Python blue is, like, often tripped me up as low. Right?
+[03:49] Is the capital T the the lower case?
+[03:54] Right because if you're used to other programming languages.
+[03:57] And especially with, like, Steve style program languages.
+[04:01] Right. There's always a lowercase.
+[04:04] But here in Python that you see.
+[04:09] And there's some more data types that we obviously be working with a lot of strengths and Python actually has really good string.
+[04:20] Both on, so, Australia is basically a rate a list of characters in unit code.
+[04:29] And actually if I get index.
+[04:33] I'll talk a bit and multiline streams are basically strings that preserve formatting.
+[04:39] So, if you want to have things print out a space in a way, preserve the spacing.
+[04:44] You can actually help do multiple and strings and all those formatting.
+[04:48] And it was a nice strength is preserved and key yeah. As key fundraise, which is basically.
+[04:56] Yeah, all right. Andres, like plus content strings.
+[05:02] And and searches for membership so if you're trying to.
+[05:06] See, if a sub characters, like, appears within a strain, you can use them.
+[05:11] To actually find that and how they use methods are.
+[05:17] Place and.
+[05:21] Upper lower shrimp strip. Basically what it does is sometimes, you know, it does get input.
+[05:27] Well, let's say an extra space and that often.
+[05:30] And some problems are actually like, some instances as actually very annoying.
+[05:35] So, you can just see a strip to remove, like, the spaces at the very end.
+[05:39] As a room spaces, and at the end.
+[05:42] Of the capitalized is calculated in strange.
+[05:47] And peaceful is just a pain in the case.
+[05:50] Yeah, and count is calling number of instances of certain character peers and and where it starts with.
+[05:59] Those are pretty self explanatory, so.
+[06:02] If it ends a certain strain, fine also does something again, but it'll be probably more.
+[06:08] I probably actually because.
+[06:12] And index index of Hector.
+[06:16] Right. Um.
+[06:20] There's actually a couple of types of strings and Python.
+[06:24] So, actions are really useful. You'll be using them a lot.
+[06:28] So, basically, what you can do is have expressions within the strings that will be validated at 1 time.
+[06:35] So, when you have you go run Python script or program, it'll actually evaluate the expression and convert it into a strain.
+[06:42] Then I'll actually print that out. Okay. Especially when you print it or, like, sort of.
+[06:48] Where I guess, you wish that's really useful and to Bobby, when you're trying to see.
+[06:53] Hey, what's the value of this variable? But I'll talk to about variables in a but.
+[06:58] Our streams are useful as well when you want to make sure that.
+[07:04] String like the content of the stream modify.
+[07:07] And they can modify the the.
+[07:10] Like, you are more sure that they're not easy 1 and then exactly how it is.
+[07:17] And it's really useful when you're actually working with files. So you're trying to.
+[07:21] That's the location of a file he wanted to make sure it's exactly this path.
+[07:27] To the file.
+[07:31] Okay, here's a practice.
+[07:35] All right, so please go to that. It's just basic stream of innovation.
+[07:40] And you have about 4 minutes to do it.
+[07:49] Yeah, and I'll send like 3 minutes after after.
+[07:53] I'll be honest, I haven't done. I haven't actually solutions. I'll wait for you.
+[08:18] Everyone has access to.
+[08:21] The Google Cola. All right.
+[08:27] Huh.
+[08:32] Sure.
+[08:36] I think 4 of us, so.
+[08:39] Okay.
+[08:50] Yeah.
+[08:55] Hello.
+[09:04] Okay.
+[09:11] Okay.
+[09:27] All right.
+[09:33] Okay.
+[09:48] And if anybody wants to volunteer and come up in here and do it, if you feel.
+[09:52] Please feel free to do it.
+[09:56] Excellent.
+[10:05] Okay.
+[10:08] Sure.
+[11:05] Mm, hmm.
+[11:18] Okay.
+[11:27] Hello.
+[11:32] Hello.
+[11:45] Hello.
+[11:59] Right now.
+[12:03] All right, I'll give you the Max on that. Um.
+[12:07] All right, so just let me get to know you guys off. I'll actually what I would do. We'll actually put it in a way that.
+[12:18] So, you actually you wouldn't have to explain it. 1st I'll actually, um.
+[12:25] Replace it 1st, then you can split it. It doesn't matter the operation like, which already do it, but when if.
+[12:32] I haven't touched you lose, we'll get to that, but that will require you to know how to use the portal.
+[12:38] And to go through each element, or.
+[12:42] Plus a tool that so we can do.
+[12:46] I just found this right anyway.
+[12:54] All right place.
+[12:59] Be.
+[13:03] Alright, then you can just change the method because you, the result of replace will be still a strain. So you can do any string operation on top of that.
+[13:15] So you can do a split and that should.
+[13:23] Yeah, there's a result.
+[13:27] The, the, the period like, is that, like, you take the results and get that and then kind of like indicating a function. So basically.
+[13:36] You have to input, right? Okay.
+[13:40] There is that fit the string in applied function on top of the screen.
+[13:44] We'll get the bottom and offset as the impact on an object.
+[13:49] Right. So you'll find something to the object. Okay, that was so you don't like split and then put that thing in.
+[13:57] Yeah, right but, um.
+[14:02] So, I, I've done, I'm familiar with our, so my 1st thought was I need to name that something. Okay and then, like, call it straight up and then I would love to quit and then improve. Yeah, you said you said.
+[14:18] Right, yeah, I'd love to variables that. I presume that they've done that. Well.
+[14:23] But they asked that. Okay so, but you can, but this is, it allows you to kind of dot 1 of the things.
+[14:35] Why don't we split the price again? Um, the split would actually just make here, like, slightly harder.
+[14:42] You can do it cause I haven't talked to. Basically you have to W, we basically would get a list.
+[14:49] So, it's not like forever already. Yeah.
+[14:52] You can make it into a factor, like, with a matrix.
+[14:56] Because unless you basically store anything.
+[14:59] And then there's libraries that she.
+[15:05] That won't cover, right? Yeah.
+[15:09] All right, and here's this as I was talking about.
+[15:13] So, they can contain any type of element and email function side them, and you can mix and match.
+[15:22] And they honestly, you guys don't care a lot of the things that I don't care about it.
+[15:27] Input type and Python reports error when you try and do something, that's not supported by the input type.
+[15:34] It doesn't actually check that. Hey, this is the type. This is this type and you're trying to apply this type on top of it.
+[15:42] Let me check as a function, or wherever you fireflies.
+[15:46] Valid you want to check the input, so.
+[15:51] So their index in order as a sequence.
+[15:56] So, we can actually, for each element, you can get in there.
+[16:01] And I knew both.
+[16:04] And indexes, like, sorry, 0, like, most programming languages.
+[16:09] And indexing is actually like.
+[16:13] Actually, very good. My opinion is right. It's basically because of, uh, it's, uh, slicing.
+[16:19] So, what does is return on new list.
+[16:23] Let's say, pull in 2, basically returns the last 2 elements you can specify the range of the indexes.
+[16:32] Where the condition is not basically the range.
+[16:37] I didn't explain that. Well, my bad.
+[16:41] And to call, and basically.
+[16:45] After the 1st, after 012. so basically.
+[16:50] Including including true is though, but for.
+[16:56] Cohen 2 would be, uh, not including last.
+[17:02] So going to be bought by volunteers, you can just say.
+[17:08] Here's this is, uh, like, here's this device and.
+[17:13] Here's the elements that you want to put it at best place for that for those 2 values.
+[17:20] And some methods, uh, score by lists are lamp and let that you don't.
+[17:27] Unless is Python is slightly different, so it's actually a regular method. It will.
+[17:32] And what happens is it'll call a special method Python.
+[17:36] It's called electrical hotline and will do that to get length of any.
+[17:43] The night you can a office that you create that has.
+[17:47] A length, let's say, uh, a list, for example, is 1, then.
+[17:52] But a vector, as long as I feel like 1 page on factors.
+[17:58] And insert is basically as the index to.
+[18:04] 3rd from the start, the pot into the stream Python.
+[18:10] And a pan is basically adding it to the end of the list.
+[18:15] And I think is very, very good move. I'll move those.
+[18:23] Remove I think the instance of the Ray 1, too.
+[18:30] And pop removes the pop is basically removes the element at that index.
+[18:35] And extra sauce basically, is, let's not source is the source list.
+[18:42] And you think what Python is.
+[18:46] What I'll do is if you send a variable equal to a non variable.
+[18:50] Like lists right it won't copy it. It'll point to the same exact thing.
+[18:54] Yeah, actually to explicit copy if you want to.
+[18:58] Work on a different thing that originally in the South seeing elements.
+[19:03] But you don't want to modify the original.
+[19:09] And and then we'll, it's done.
+[19:12] By the 2nd time to work.
+[19:16] Oh, my God, there are people that are lists.
+[19:24] And they created with practices.
+[19:27] But elements inside them cannot be changed or add it. It's called vulnerability.
+[19:31] And they are basically constant. You can't do anything to them.
+[19:36] Except for it, if you want to change, you basically go create a.
+[19:39] Whole new tool or object in the asset.
+[19:43] And accessing, uh, similar to list, so you can index them very easily.
+[19:49] And get the counts and stuff like that.
+[19:53] Sets are actually a really nice feature pipeline, like, in my opinion, because.
+[20:00] They're not the actually very fast as you actually goes.
+[20:05] I like the run time they are like.
+[20:08] The process in Mexico.
+[20:12] Index the board best way to store things, but the thing is, you can't include duplicate elements so it's also nice to if you want to.
+[20:21] Lock it down as a nuance to actually.
+[20:24] Remove them, you can just put them into a set and they'll take care of it because we can't add duplicates. So.
+[20:30] I'll just ignore that. Basically, it's not able to be index though, so.
+[20:35] The only way to actually, uh, pass the elements actually to go over it.
+[20:41] I did this.
+[20:46] Dictionary I, most people call it a day.
+[20:49] It's basically a key value pair map, data site.
+[20:53] So, we're basically he's used to access value.
+[20:58] The keys of the dictionary amenable and do, and cannot be changed if they can be changed.
+[21:05] And you please watch replaced original value so.
+[21:09] If you try to insert something with the same sign, a variable.
+[21:14] And given a key, right? So, basically, you.
+[21:22] Uh, here is equal to, let's say next year, so on 23 fields override on 22 that's already there.
+[21:29] And then somebody from here to capital Y, yeah. It'll be a different thing. Okay.
+[21:39] You're still using a string, so the string would the string itself would be different.
+[21:43] Yes, yeah.
+[21:49] But if you want me to slow down, please, no.
+[21:52] All right, there's obviously this is not, uh, exhaustive list. There's so many, and you can actually go create your own.
+[22:03] So, if you ever actually need to inspect the type, I think there's a nice built in function called.
+[22:08] I will show you the type of the object we are trying to.
+[22:15] And time is actually very simple and, like, most of the program, which is where you just.
+[22:24] Is that, uh.
+[22:27] I wear all the same. Uh, let's say 2 eagles actually goes to.
+[22:33] Valuable as you pay the variable has LV equal to 2.
+[22:39] And then we'll print it out pretty straightforward.
+[22:44] And here's the on the process.
+[22:47] It's the same 1 just before.
+[22:52] Hello.
+[23:01] Okay.
+[23:09] Hello.
+[23:13] Okay.
+[23:22] Hello.
+[23:25] Okay.
+[23:38] Hello.
+[23:50] Okay.
+[23:56] Yeah, this 1 I see.
+[24:01] A little bit later. Yeah.
+[24:08] See.
+[24:21] Hello.
+[24:28] Wow.
+[24:33] Huh.
+[24:37] Yeah.
+[24:41] Hello.
+[24:47] Oh.
+[24:51] Yeah.
+[24:57] Okay.
+[25:05] Hello.
+[25:15] Don't have to worry about game solutions are some parts I've completed my mind.
+[25:24] So.
+[25:46] No worries I had a completely my fault.
+[25:51] So, yeah.
+[25:54] Basically, what I'm trying to do here.
+[25:58] I should figure this out.
+[26:03] Hello.
+[26:06] Wow.
+[26:14] More more explicit.
+[26:19] Bye.
+[26:42] Okay.
+[27:04] Okay.
+[27:19] Hello.
+[27:27] Is everyone ready? Okay.
+[27:30] So, I'm in touch for this is completely my bad. That's fine.
+[27:36] Oh, no so basically.
+[27:40] So, basically, I'm trying to iterate over the list of numbers and every time.
+[27:46] I try to when I get for.
+[27:52] The basically those person as the value you get at that.
+[27:56] Index so loop over.
+[27:59] And then I use as a variable to get.
+[28:03] And index basically.
+[28:06] So, yeah, okay.
+[28:11] So, I was basically being used to catch an index.
+[28:17] And that's used to set the value there.
+[28:21] Don't extend that or.
+[28:25] Yeah, it seems like, you know, there is that.
+[28:33] Are you moving over 020534orare you working over like, the in depth?
+[28:39] So, basically, in intercom you use that.
+[28:43] You get the index 1 variable that.
+[28:47] And that is the value.
+[28:50] So, now, this is being used here is the list of.
+[28:55] Yeah, and it's the that you use it again yet.
+[29:00] Right another guy who is it will populate the aspects of that.
+[29:06] Right. So 1st, that that's what.
+[29:12] What I really value right?
+[29:17] And the enterprise, so I'm trying to message.
+[29:21] Then they'll be.
+[29:25] Hey, now I'm doing that. I'm going to.
+[29:29] Yeah, all right. I.
+[29:37] Hello.
+[29:42] So here's some algorithm.
+[29:46] Pipeline so here, basic forms, so add subtract multiply, uh, division modules explanations. I feel like that was built in.
+[29:56] Double double start and floor division.
+[30:03] Assignment operas are also very simple. So, equals is.
+[30:09] If I showed you earlier and equals, basically.
+[30:14] On the other side, like, here's the variable on the.
+[30:19] Left hand side, right? You can here's the value.
+[30:23] You would add 1st, add that value so variables then assign it.
+[30:29] And this is like, this is actually more if you've heard of C and C style languages.
+[30:35] That's actually.
+[30:40] All right then subtract as equals, but subtract and equals basically doing the same thing.
+[30:45] 5/and stuff like that and support for any, any operators.
+[30:50] Update.
+[30:55] Then comparison operators are actually very simple, not.
+[31:01] And so value quality is a W, so basically, and what's going on the hood is basically it's called 1st.
+[31:10] Object you're trying to compare to it's calling in a quality method that's within it.
+[31:15] Hey, let's see this variable. This is.
+[31:20] Uh, this item and there's the same this other thing and there is the same.
+[31:24] The thing that you try to compare against, right? If it's not equal to just.
+[31:31] They'll do the verse of that greater than last time.
+[31:36] An equal if you got it.
+[31:39] Thing that I like, what Python is that you can actually make the, make these yourself.
+[31:44] You can define, like, hey, Here's how I want to compare. It's less than a greater than.
+[31:50] Or create an equal to you can actually go ahead and define that yourself.
+[31:55] For the things that you want to create logical operators are end or not an end. And I mentioned that early is basically.
+[32:05] I see it back again is this is.
+[32:09] Inside a list or a tool, or I think that can be indexed.
+[32:13] And it's basically.
+[32:16] This 1 condition, here's the other conditions. Let's check.
+[32:20] Both are true or both our faults.
+[32:23] And both are true, but return. True.
+[32:26] If there was 1 of the ones.
+[32:30] Turn false, and I think rather than 1 being false.
+[32:35] It's still a check box or is basically.
+[32:39] A 1 side is true of sides. Fault of the return. True value.
+[32:45] That's true.
+[32:48] And now is basically.
+[32:52] Let's say this object is not inside something.
+[32:57] You try and mitigate that.
+[33:04] So, we can do now, are we going to do the conditionals.
+[33:09] conditionals should be based on logical input.
+[33:13] Logical offers such as W goals. There's an equals and stuff like that.
+[33:17] I think it can be written in 1 line. 1 line at 7 has only 1 sequence.
+[33:24] So, basically, here's the only 1 thing you want to do when you.
+[33:28] When you already know it's true. Here's the, the only thing that you want.
+[33:32] And a statement cannot be the Python due to the syntax statement cannot be empty.
+[33:39] You can't just have an a statement without anything to do.
+[33:45] Right. You can still not do anything new. He's in the keyword pass.
+[33:51] So, it's just like, if it goes if this is true, let's just pass over and the best part doing all the things that are, like, let's start checking over all the things.
+[34:03] If a condition or resolve into 1 races.
+[34:06] Right. So you can use like Alison.
+[34:10] To the 1st. Okay, the 1st, 1 is not to the 1st step is not true now.
+[34:17] Hey, let's use see if this is.
+[34:21] Is this is true or not? That's not a traditional and you could change that.
+[34:26] And they do that. Okay.
+[34:35] At the end verify.
+[34:40] Yeah, so basically, 1st, lines of selling agency, their respective value.
+[34:47] And the 2nd line is now he's going on to statement.
+[34:51] So, if it is rather than be.
+[34:55] And is going to see those obviously it's not very often. So go to.
+[35:01] If it doesn't B, and B is less than see.
+[35:05] Turned out, see his 1st, right. Which is actually going to print out. Otherwise it'll say.
+[35:13] These largest because then you have this version.
+[35:22] And.
+[35:25] So, okay, so basically you try and see if.
+[35:29] And take a bit is you just do that all on 1 line because Python wants you to do that.
+[35:35] Excellent.
+[35:41] So, now we get on the loop while loop is a.
+[35:46] My side a little bit earlier than ours. It runs as long as the condition is. True.
+[35:52] And it'd be a bit careful to not run into infinite loop.
+[35:55] And you'll be like, why is my program still running?
+[36:00] All right, what am I doing wrong here?
+[36:04] And probably, because of the intake loop condition that you have, we probably have to fix.
+[36:08] I like your condition for 1.
+[36:12] And break and continue, allows you to regularly to continue based on conditions.
+[36:16] So, basically, if if if we, if you have if you reach condition within and you want to stop.
+[36:26] Well, that's not the original condition that's been satisfied.
+[36:30] All right, and under certain conditions, they'll be satisfied.
+[36:33] He just, he would break, I'll break the loop right there.
+[36:39] Otherwise you can just continue to skip over.
+[36:42] Ah.
+[36:46] So, here's basically, I have a simple example here. I basically have a reasonable number.
+[36:53] Right, and I'm trying to tell how many digits are in there.
+[36:57] And I'm just double checking into the numbers less than 0.
+[37:00] If it is, I'll just break, but this is after obviously 9.0.
+[37:05] Yeah, I use the module offer to end module Simon operator.
+[37:12] Say, if I can still do the modules and I will not include 0.
+[37:17] And then every time I can do that.
+[37:21] I will what happens here is I can just increment account to see how he did his calendar.
+[37:26] There's nothing value check discounts.
+[37:36] Hello? Hello?
+[37:39] Is in Python and after iterating.
+[37:43] Over a list or options.
+[37:47] So most of the time in Python, you're actually support further, refine the list to Eric over.
+[37:54] Right. You're not actually not iterating over it.
+[37:58] Indexes per se to do value to iterate over indexes.
+[38:04] All right, you can just use the range to get a list.
+[38:08] Oh, numbers say, but so, let's say, 12345.
+[38:13] Then you can use that as a message to do that.
+[38:17] So, the 1st code, for example.
+[38:24] What we're doing is try to found the count.
+[38:29] Account of usual, so that's.
+[38:32] So, if that is.
+[38:35] The current index, the value of that current index is usual just incorrect account.
+[38:42] And tell the kinda afterwards, and we, we reset the account and.
+[38:47] Yeah, and here's another way to basically do that for each.
+[38:54] For each variable in that, right? You can you can do in a statement to check with equal and count for sequels 1. so you don't actually need to use indexes all the time.
+[39:06] That's the 1 with them.
+[39:14] And her functions.
+[39:18] A function is actually define using pure death and followed by a function name.
+[39:23] And 5 of the.
+[39:28] Function sheet is print returns value. Actually if you don't define.
+[39:34] Anything to return, they'll still return something called on.
+[39:38] So, it has nothing to give you back.
+[39:44] All right, I appreciate it like.
+[39:48] But in any case, the function should actually contain something otherwise you should use pass like, if statements.
+[39:55] To not do anything. This is because the pipeline fantastic basically.
+[40:01] Use the invitation and.
+[40:04] Instead of, uh, let's say, parentheses, uh, brackets.
+[40:08] We are not based upon, like, space, so.
+[40:12] They are the spaces for syntactical reasons.
+[40:16] Often when these functions are values and store them.
+[40:24] So, basically we use the term statement to.
+[40:28] I see return value to your function then we can do.
+[40:33] You want to calculations on top of that on a resulting value.
+[40:38] Atlanta is August functions are basically.
+[40:41] You can do to the final function in line that just multiplies against cost value. Yeah.
+[40:47] I don't know if she will put the syntax in there.
+[40:54] And us, we can talk about scope. So basically what that means is.
+[41:02] Here are you defining a variable inside of function.
+[41:06] And but you can actually it's local scope because you can't pass it outside of the function.
+[41:13] You have to declare it by.
+[41:18] Declare it as a global using global key word, which most people don't do, because it's not a required. You just actually just create outside of the function and access it that way.
+[41:30] And it can be accessed by.
+[41:34] Other functions if it's function inside a functional, it's actually cool feature and right.
+[41:39] Uh, many functions that stays within insider function.
+[41:45] Uh, we're in color numbers. Same on this before.
+[41:49] And, okay, this is a good 1.
+[41:55] Yeah.
+[41:59] Okay.
+[42:03] Hello.
+[42:08] Hello.
+[42:15] Hello.
+[42:21] Okay.
+[42:35] Huh.
+[42:38] Sure.
+[42:47] Yeah, I know that is not right, right?
+[42:55] Okay.
+[43:02] Hello.
+[43:05] So, we basically.
+[43:12] Right.
+[43:20] Hello.
+[43:23] Yes.
+[43:28] Hello.
+[43:34] Oh.
+[43:38] Okay.
+[43:54] Yeah, there's some work for other.
+[44:00] So, um.
+[44:04] They're trying to.
+[44:07] Do we have to solve for that? 1 as well?
+[44:11] To.
+[44:17] Yeah.
+[44:24] Okay.
+[44:42] Hello.
+[44:51] 3rd version is basically calling the function.
+[44:56] Until you reach a base case where we don't use the base base.
+[45:02] Which is it condition here? Right? You actually go into something like this move it back home. We'll actually complain about it.
+[45:12] A maximum memory, and that's how, you know, that's your action item.
+[45:18] So, it's sort of like blueprint, but also that.
+[45:30] Yeah, field research anything just ask.
+[45:37] Hello.
+[46:09] Hmm.
+[46:20] Okay.
+[46:23] Hello.
+[46:36] Okay.
+[46:45] Hello.
+[46:53] Hello.
+[46:59] Hello.
+[47:05] Didn't do any ways to help some help with.
+[47:15] I thought I did, it reminds me what their message.
+[47:22] Okay, yeah, so.
+[47:29] Okay.
+[47:32] Bye bye.
+[47:37] Okay.
+[47:40] Yeah, yeah.
+[47:43] Yeah, I love that.
+[47:52] Now, so she's there.
+[47:56] If there's not a lot better. Yeah. Yeah.
+[48:00] Hello.
+[48:04] But.
+[48:07] Hello.
+[48:10] Okay.
+[48:15] Hello.
+[48:19] Hello.
+[48:23] Hello.
+[48:28] Hello.
+[48:31] Hello.
+[48:43] Wow.
+[48:48] Unfortunately asked you amount of time, so.

@@ -1,0 +1,715 @@
+Video Title: I Built an AI Agent that Builds Teams of Agents in n8n (free template)
+Video ID: Ik8OHT3w4pE
+URL: https://www.youtube.com/watch?v=Ik8OHT3w4pE
+View Count: 72,698
+
+[00:00] All right, so here we have our NEN
+[00:01] developer AI agent and I'm just going to
+[00:02] open up a chat, send off this message
+[00:04] which says, "Build me an AI agent that
+[00:06] will receive a message in Slack,
+[00:07] interpret the message, and decide if it
+[00:09] needs to use its calendar or its Gmail
+[00:10] tool, then log the results in Google
+[00:12] Sheets, and send us a message back in
+[00:14] Slack." So, I'll check in with you guys
+[00:15] when that's finished up. All right, so
+[00:17] it looks like that just finished up. And
+[00:18] right here, we have view your finished
+[00:20] workflow. So, let me click on this link.
+[00:21] I mean, this is crazy. We've got a Slack
+[00:23] trigger set up that feeds into an AI
+[00:25] agent that has a chat model, memory,
+[00:27] Gmail tool, calendar tool, and a
+[00:29] structured output parser. Then we have
+[00:31] our Google Sheets logger, and finally a
+[00:33] message back in Slack. You can also see
+[00:35] that we have tons of sticky notes. So,
+[00:37] we're able to get set up and we
+[00:38] understand what exactly needs to be
+[00:39] configured. So, as you can see, the
+[00:41] workflow tells us how to get started. We
+[00:42] need to configure all the credentials,
+[00:43] which is everything that's red. We need
+[00:45] to set up the Google sheet with proper
+[00:46] headers. We need to add the Slackbot to
+[00:48] our channel, and then just start
+[00:50] testing. It also tells us what to do
+[00:51] with the Slack trigger, what to do with
+[00:53] the AI agent, what to do with these
+[00:54] tools down here, what to do with the
+[00:56] Google Sheets for logging, and then the
+[00:58] Slack response. But I mean, this is
+[00:59] wild. If we click into the AI agent, we
+[01:01] can see that it has the proper user
+[01:03] message already mapped, and it also has
+[01:04] a system prompt. So, let's open this up
+[01:06] real quick. It's not too in-depth, but
+[01:07] it says, "You're a helpful AI assistant
+[01:09] that helps with calendar and email
+[01:10] tasks." It lists the two tools, which
+[01:12] are calendar and Gmail, and always
+[01:14] provide a clear explanation of what
+[01:16] action you took and what the result was.
+[01:18] If you guys remember, there was a
+[01:19] structured output parser already
+[01:20] attached. And if we click into here, we
+[01:22] can see that the agent's going to output
+[01:24] the action that was performed, which
+[01:25] tool was used, a summary of the result,
+[01:28] and the message to send back to the user
+[01:30] in Slack. So, real quick, let me go
+[01:31] through the setup guide, configure
+[01:32] everything, and run it to show you guys
+[01:34] how this worked. All right, so I just
+[01:36] created that sheet. I mapped everything
+[01:37] up and put in my credentials. So, we're
+[01:38] going to have the agent start to listen
+[01:40] for us. Now, I'm going to open up Slack
+[01:41] and send off this message, which is
+[01:43] asking it to send an email and create a
+[01:45] calendar event. So, we'll shoot that
+[01:46] off. We'll see the AI agent's going to
+[01:47] get the message. It's going to use its
+[01:49] tools. It's going to structure that
+[01:51] output and update our Google sheet so we
+[01:53] can have like full logging of what
+[01:55] happened. And then we're going to get a
+[01:56] message back in Slack. All right. So,
+[01:58] there it goes. Let's just quickly check
+[01:59] what we got in Slack. We can see I've
+[02:01] sent an email to Nate asking how his day
+[02:02] is going. I created a calendar event for
+[02:05] lunch on June 17th, 2025 at 12 p.m. You
+[02:07] can view the event here. And in my
+[02:09] calendar right here, you can see that we
+[02:10] have our lunch scheduled at noon. And
+[02:12] right here in our email, we can see we
+[02:13] have a message that says, "How's your
+[02:14] day going? Hi, Nate. Hope you're having
+[02:16] a great day. Just wanted to check in and
+[02:17] see how things are going for you. So the
+[02:18] agent did its job. It called the right
+[02:20] tools. All right. So now let's go take a
+[02:21] look at our actual log that we just
+[02:22] configured. So here's the demo logger.
+[02:24] Obviously this first one was because I
+[02:26] had to map the variables. So I had to do
+[02:27] a test. But you can see we have a
+[02:29] timestamp, the Slack user, the Slack
+[02:31] channel, the Slack original message,
+[02:33] which is exactly what we put into that
+[02:35] Slack channel. We have action taken,
+[02:37] which was sent email and created event.
+[02:39] Tools used were Gmail and calendar. And
+[02:41] then an actual result summary. An email
+[02:43] was successfully sent to Nate Herk and a
+[02:45] calendar event was created. So, I hope
+[02:47] you guys are impressed with this output
+[02:48] as I am. And when I actually show you
+[02:50] what's going on under the hood and you
+[02:52] see how easy this was to set up, I think
+[02:53] you're going to be extremely impressed.
+[02:55] So, let's hop into it. All right, so now
+[02:57] that we've seen a demo, let's break it
+[02:58] down a little bit. This is the actual
+[03:00] full picture of what's going on where
+[03:02] we're talking with this main nen
+[03:03] developer agent. It calls on this
+[03:05] developer tool and this tool is actually
+[03:07] just this workflow right here. So, what
+[03:09] I'm going to do is I'm going to open up
+[03:10] this subexecution right here. So we can
+[03:12] look at the actual data that passed
+[03:14] through and how this workflow built us
+[03:17] that agent workflow that we saw in the
+[03:19] demo. All right. So here's the live data
+[03:20] that's coming through. The main agent
+[03:22] sent this message to the NAN builder
+[03:24] agent which says build an AI agent with
+[03:27] the following workflow. You're going to
+[03:28] receive a message from Slack. You're
+[03:30] going to interpret the message to decide
+[03:31] if it should use the calendar or Gmail
+[03:32] tool. Use the chosen tool. Blah blah
+[03:34] blah. Exactly what we wanted it to tell
+[03:36] it. It kind of gives a step-by-step
+[03:37] guide. Now, from there, I'm basically
+[03:39] just feeding in one Google doc to the AI
+[03:41] agent as context, and it just has some
+[03:43] information about how Nitn JSON
+[03:46] structure works. Now, this is where I'm
+[03:47] insanely impressed because I've seen a
+[03:49] lot of YouTube videos where people are
+[03:50] using Claude Opus 4 and they're setting
+[03:52] up a cloud project. They're giving
+[03:53] Claude a ton of different readme files
+[03:55] and ended documentation and the outputs
+[03:58] are coming out pretty good. But, this is
+[03:59] so cool to me because I'm hardly giving
+[04:01] it anything. I'm giving it one Google
+[04:02] Doc, which we have the source of truth
+[04:04] right up here. So you can change this
+[04:06] Google doc and the workflow will change
+[04:07] on the back end. Literally all I'm
+[04:09] giving it is one example where I have an
+[04:11] AI agent node with tools, memory, and an
+[04:14] output parser. So this is the actual
+[04:15] JSON of this workflow, which is a super
+[04:17] simple AI agent workflow. And then I
+[04:19] gave it the JSON of a sticky note. And
+[04:21] that is literally the only like n JSON
+[04:24] specific things that I'm giving this AI
+[04:25] agent. And it's just insanely impressive
+[04:27] that it's able to produce outputs like
+[04:29] this. So anyways, it pulls in the doc.
+[04:31] We're extracting the text from it and
+[04:32] then we're feeding that into part of the
+[04:34] system prompt for this Nad AI agent. So
+[04:36] let's dive into what's going on here.
+[04:38] First of all, the user request, which is
+[04:40] just coming in from that main agent,
+[04:41] which is basically, you know, build an
+[04:43] AI agent that does this. Here are the
+[04:44] five steps, blah blah blah. So this
+[04:46] makes it really clear for this NAN
+[04:48] builder agent to just build the JSON.
+[04:50] Now, let's go over the system prompt,
+[04:51] which is obviously where the magic
+[04:52] happens. I'm not going to read every
+[04:54] single line of this thing. You guys will
+[04:55] be able to download this workflow for
+[04:57] free. I'll cover that a bit later in the
+[04:59] video, but we'll go over some highle
+[05:01] goals here. So, I started off by telling
+[05:02] it that it's an expert AI automation
+[05:04] developer specializing in building
+[05:05] workflows for NADN. Its job is to
+[05:07] translate a human's natural language
+[05:09] request into a fully functional NIN
+[05:11] workflow JSON. It should be
+[05:12] comprehensive, functional, and
+[05:14] importable. And it should have 100%
+[05:16] valid JSON structure, node types, and
+[05:18] connection methods. So, if you guys
+[05:19] didn't know, the way nen nodes and
+[05:21] workflows work is they're all being
+[05:23] represented as JSON. And that's why you
+[05:25] can download one of my templates or a
+[05:26] template from someone else online and
+[05:28] just import that JSON file into NN and
+[05:30] you'll have all the stuff already
+[05:31] connected. So because large language
+[05:33] models are so good at writing and
+[05:34] reading JSON, this is very possible. So
+[05:37] anyways, I gave it some outlines about
+[05:39] how to output stuff like the final JSON
+[05:41] should be like this. You should be
+[05:43] outputting a pure JSON object that
+[05:44] begins with one curly brace and ends
+[05:46] with another one. And it has to be ready
+[05:48] to be used as the body of a post request
+[05:50] because we're going to basically be
+[05:51] hitting Naden's API to just create that
+[05:53] workflow for us. But anyways, we had to
+[05:55] tell a little bit more about the way
+[05:56] that JSON should be for Naden to accept
+[05:58] it. Like it needs to have a nodes array.
+[06:00] It needs to have a connections object.
+[06:02] It needs to start with a trigger node.
+[06:03] All this kind of stuff. I told it to
+[06:05] have sticky notes that explain what's
+[06:06] going on and how to set up things and
+[06:08] credentials, stuff like that. And also
+[06:10] just for fun, I told it to vary the
+[06:11] colors throughout the workflow. So
+[06:13] anyways, just a few more things. But
+[06:14] then down here is one of the most
+[06:15] important requirements which is telling
+[06:17] it how to submit through the API. So
+[06:20] once we get into the next step of this
+[06:21] workflow, you guys will see it's
+[06:22] basically giving a JSON body that we're
+[06:24] going to submit for end to just create
+[06:26] that workflow. But this is important. So
+[06:28] it has to have a name of the workflow.
+[06:29] It has to have different nodes. It has
+[06:30] to have connections, settings, static
+[06:32] data, all this kind of stuff. And I just
+[06:34] went ahead and gave it an example
+[06:35] settings object to use. A lot of times
+[06:37] the errors in testing were coming
+[06:38] because the settings object wasn't
+[06:40] correct. So, I basically just hardcoded
+[06:42] that in here and it's been a lot more
+[06:43] consistent since then. Now, finally,
+[06:45] this is where we're feeding in the
+[06:46] actual documentation from that Google
+[06:48] doc. And if I scroll down on the right
+[06:49] hand side, you can see it's not that
+[06:50] much. It's just kind of like one large
+[06:52] JSON file of an AI agent with tools and
+[06:55] connections and then also a sticky note.
+[06:57] And then what you can see is on the
+[06:58] right hand side, it's going to output us
+[07:00] the actual workflow. So, here is the
+[07:01] entire workflow. The name of the
+[07:03] workflow, Slack AI assistant with
+[07:04] calendar and Gmail tools, which as you
+[07:06] can see in the demo, that's exactly what
+[07:07] it called it up here. But why this works
+[07:09] so well is because we're using cloud
+[07:11] opus 4 and we've enabled thinking. So
+[07:13] you can see up here before it even
+[07:15] creates a JSON it thinks about it and
+[07:17] this basically outputs what the agent
+[07:18] had thought about which says you know
+[07:20] the workflow would be Slack trigger AI
+[07:21] agent with tools Google sheet slack
+[07:23] response let me build this step by step.
+[07:25] So anyways the way that we do that is we
+[07:27] had to use anthropics chat model rather
+[07:29] than open router to enable thinking. So
+[07:31] in here you can see I enabled thinking.
+[07:33] I have a maximum number of tokens to
+[07:34] output as the actual result. And then I
+[07:37] gave it a thinking budget just so it
+[07:38] doesn't think forever. So that's how we
+[07:40] configured the Opus 4 chat model here.
+[07:42] I'll talk about pricing and stuff near
+[07:43] the end of the video. But as you can see
+[07:45] it gives us that JSON and then we're
+[07:47] ready to go and use the NADN node to
+[07:49] create a workflow. So I created a
+[07:51] workflow as you can see. In order to get
+[07:53] your NAD credential all you need to do
+[07:55] is you know you'll create a new one.
+[07:56] You'll need to get an API key and a base
+[07:58] URL. So to get your API key, you'll go
+[08:00] to your settings. You'll come down here,
+[08:02] you'll click on settings, and then once
+[08:03] that loads up, you can see right here
+[08:05] you have ended an API. And that's where
+[08:07] you'll basically just create your API
+[08:08] key. And after you put your API key in
+[08:10] there, you need to put in your base URL.
+[08:12] So whatever is up here, you know, mine
+[08:13] is like nate herk.app.cloud. After the
+[08:16] cloud, you'll just have to put /api/v1.
+[08:18] And then you're pretty much set up. So
+[08:20] now this node is able to create a
+[08:22] workflow in my nitn instance based on
+[08:25] this JSON that we give it. And as you
+[08:26] can see, we're giving it the output from
+[08:28] that Naden builder agent. And this is
+[08:30] exactly what it looks like. So it has
+[08:32] our the name of the workflow. It has the
+[08:33] different nodes that we want in the
+[08:34] workflow. Here's where it gave the AI
+[08:36] agent a system message already. So it's
+[08:38] super cool that the AI agent's able to
+[08:40] give us this and it just basically
+[08:42] creates that workflow for us. And then
+[08:44] the last thing I'm doing is I manually
+[08:45] put in my URL of my cloud account. And
+[08:49] then I just threw in the actual ID
+[08:50] because after the NA node makes that
+[08:52] workflow, it's going to give us an ID of
+[08:54] the workflow, but not like a URL. So all
+[08:56] I had to do was manually put in the
+[08:58] first part of the URL and then just
+[08:59] throw the ID in there. So now every time
+[09:01] we open up this link, it'll take us to
+[09:03] that workflow. Cool. And then basically
+[09:05] the job is done. This node gives the
+[09:08] link back to our main agent and then our
+[09:10] main agent gives us that link right here
+[09:11] in the chat window. And that's how we're
+[09:13] able to click on it and go into the
+[09:14] workflow. So, real quick, I also just
+[09:16] wanted to show you guys when I was
+[09:17] testing all this kind of stuff, I just
+[09:19] had my chat trigger hooked up to the
+[09:20] actual workflow itself rather than going
+[09:22] through that agent, sending data to this
+[09:24] agent. But I know this all looks super
+[09:26] cool, but I wanted to just bring
+[09:27] everyone back down to earth real quick
+[09:28] and say it's not perfect. And if you
+[09:30] think about the data that I had fed into
+[09:31] this agent, it's not that much. It
+[09:33] doesn't have awareness of all the
+[09:34] different nodes in Naden. But I will
+[09:36] show you some of the other workflows
+[09:37] that it's generated for me. I tested a
+[09:39] ton of different prompts, right? I had
+[09:40] chatbt write me a ton of different
+[09:41] prompts for different workflows. I
+[09:43] pretty much tested every single one of
+[09:44] these. Then I asked for more multi-step
+[09:46] ones. I tested all these. Then I asked
+[09:48] for some with some more heavy
+[09:49] conditional logic and routing and
+[09:50] switching. You know, if I'm in my end
+[09:52] and I go to AI generated tag. You can
+[09:54] see I've got all these different
+[09:55] workflows. But here's a really cool
+[09:57] example. We've got routing, we've got
+[09:58] switching. We have a second workflow
+[09:59] over here with a reminder system. Of
+[10:01] course, all of these are going to have
+[10:02] sticky notes so you can see how to set
+[10:03] them up. We have a support email
+[10:04] sentiment analysis workflow. Of course,
+[10:06] these agents have system prompts and
+[10:08] user messages. Like this one's got, you
+[10:09] know, a full user message with different
+[10:11] variables already in there. So there's a
+[10:12] sentiment analysis one, we have a lead
+[10:14] qualification workflow, we have a lead
+[10:16] routing workflow, we have a weekly AI
+[10:18] content automation, but like I said,
+[10:20] you're going to get stuff like this
+[10:21] every once in a while where it kind of
+[10:22] knows what to do, but it doesn't
+[10:24] actually know the name of a node to
+[10:25] reference there. But that's why the
+[10:26] sticky notes are so important because
+[10:28] you have a highle idea of a workflow,
+[10:30] throw it in there, it'll give you the
+[10:31] baseline and it will give you some ideas
+[10:32] of where to start and you're definitely
+[10:34] going to have to make some tweaks here
+[10:35] and there. And just a final example to
+[10:37] show you guys was a bit more of a simple
+[10:38] one, but like a morning planner where
+[10:40] it's going to grab the events, get the
+[10:41] weather, and then create you a morning
+[10:42] briefing. So, it is really cool to see
+[10:45] that it can get us this far and it's
+[10:47] only going to get better and better. All
+[10:48] right, so now that you guys have seen
+[10:49] that little walkthrough and you
+[10:50] understand how simple this system really
+[10:52] is, let's do another example. And I want
+[10:54] to do an example of more of a workflow
+[10:56] rather than agent because I think that
+[10:58] LLMs are going to be better at
+[10:59] constructing useful out-of-the-box
+[11:01] workflows rather than agents. All right.
+[11:03] So, this time I have a little bit more
+[11:04] of a loaded prompt. I'm asking it to
+[11:06] build us a workflow that will be
+[11:08] triggered on a new email. It will check
+[11:10] our database in HubSpot to see if the
+[11:11] email sender exists in our contacts. If
+[11:13] they do, we'll go ahead and do research
+[11:15] on them in Perplexity and then write
+[11:16] them a personalized email. If they
+[11:18] don't, we will basically go ahead and
+[11:20] add them to our HubSpot and shoot them
+[11:22] an email to get them onboarded to
+[11:23] welcome them. So, that's a little bit
+[11:25] more of a complicated workflow. As you
+[11:26] can see, it's right now talking to our
+[11:28] developer tool, which is this workflow
+[11:30] down here. and I'll check in with you
+[11:32] guys when that's done. All right, so it
+[11:34] looks like that just finished up. Let's
+[11:35] open up this link. I mean, look at that.
+[11:37] Like, that's pretty solid. It's
+[11:38] definitely going to be a great template
+[11:39] just to get you up and running with a PC
+[11:41] where you can start to, you know,
+[11:42] customize a little bit. But let's take a
+[11:44] look at what it did here. So, first of
+[11:45] all, we have our email trigger. So, it
+[11:46] says the workflow starts when a new
+[11:48] email is received. So, please configure
+[11:49] credentials here. Then, we're going to
+[11:50] search HubSpot. You can see the
+[11:51] operation is to search contacts. So,
+[11:53] we're looking to see if that contact
+[11:54] exists in HubSpot. It's doing a quick
+[11:56] check here. So, let's see what this
+[11:57] logic says. JSON.total greater than
+[12:00] zero. So definitely could work. We'd
+[12:01] have to test it out and see. You know,
+[12:03] the mindset is this is going to give you
+[12:04] a great sort of skeleton template to
+[12:06] start with. Test it out a few times and
+[12:08] then make your tweaks. But anyways, if
+[12:09] the contact exists, yes, we'll go to the
+[12:12] email writer agent. If no, we'll go down
+[12:14] here. We will create a new contact and
+[12:16] then send them a welcome message. But of
+[12:17] course, if it does exist, we'll go here
+[12:19] to the AI email writer. We've got our
+[12:21] output parser. We have our perplexity
+[12:23] research. We have our OpenAI chat model.
+[12:25] And let's take a look at the system
+[12:26] prompt. Oh, wow. I mean, look at this.
+[12:27] The user messages, write a personalized
+[12:29] email to blank based on this, which is
+[12:32] the original email subject, the original
+[12:33] email content. Um, research findings
+[12:36] from perplexity. Make the email
+[12:37] professional, relevant, and show that we
+[12:39] understand their business and
+[12:40] background. And then the system message
+[12:41] is a little shorter. It says, "You're a
+[12:42] professional email writer who creates
+[12:44] personalized, engaging responses. Use
+[12:46] the research information to make
+[12:47] meaningful connections and provide value
+[12:49] in your response." Let me also take a
+[12:51] real quick look at the Plexity tool. So,
+[12:54] let's see what it did. It already has
+[12:56] the actual endpoint put in. It already
+[12:58] has a post method. It basically, you
+[13:00] know, we'd have to configure our
+[13:01] credential. But I mean, look at that.
+[13:04] The post request is already pretty much
+[13:05] set up. We would just have to put in a
+[13:07] variable to make sure that it's actually
+[13:08] dynamic. I mean, that's just insane.
+[13:10] Like that is super cool to look at. I
+[13:11] can't believe that it was able to do
+[13:12] that. One thing I'll throw out there is
+[13:14] there is now currently a perplexity
+[13:16] tool. So that will be better than using
+[13:18] this HTTP request. But I mean for
+[13:20] talking to Claude Opus 4 with no
+[13:22] knowledge of perplexity tool that's
+[13:24] insane. And then of course it also is
+[13:26] parsing that agent's response. So we're
+[13:28] going to get not only the subject of the
+[13:30] email but also the body in two different
+[13:32] fields so that we can very easily drag
+[13:34] and drop into that send Gmail node which
+[13:37] as you can see everything in here is
+[13:38] already mapped already. So like that's
+[13:41] insane. All right. All right. So, I'm
+[13:42] just firing off one more example, which
+[13:43] is a workflow that's going to pull in
+[13:45] rows from Google Sheets five at a time,
+[13:47] loop through all of them, and do
+[13:48] research and send a message. So, we'll
+[13:50] take a look at this in a sec. But while
+[13:52] that's spinning, I just wanted to talk
+[13:53] about my actual mindset when I was
+[13:55] building this thing. So, the first thing
+[13:57] to keep in mind is that Nen is always
+[13:58] updating and releasing new versions. And
+[14:00] so, the static data that I'm feeding in
+[14:02] right now, I'm just able to reference in
+[14:04] this Google doc. And you know, like
+[14:05] right now, if I looked at the AI agent
+[14:07] node, which is right here, you can see
+[14:09] that the version of this node is 2. And
+[14:10] soon that will be 2.1, 2.2, 2.3. So if
+[14:14] you're using this approach, you're going
+[14:16] to have to make sure you're keeping this
+[14:17] sheet updated. Now, the reason why I
+[14:19] basically tried to get rid of as much
+[14:20] context as possible because I started
+[14:22] off feeding it a ton of data, and it was
+[14:24] working, but it was getting really
+[14:26] expensive using Claude Opus 4 with
+[14:27] thinking and sending it that much data
+[14:29] to process every time. Now, I had
+[14:30] thought about taking the vector database
+[14:32] approach, and I tested out a little bit,
+[14:33] and I just didn't love what I was
+[14:35] getting back. So, I tried to just
+[14:36] restart from scratch. And just so you
+[14:37] guys know, like in this process, I had
+[14:39] this sheet where I was testing multiple
+[14:40] versions. I was documenting the prompt,
+[14:42] the inputs, the feedback. I was looking
+[14:45] at my knowledge base. I was doing
+[14:46] different knowledgebased versions. I had
+[14:48] a ton of tokens going through. And now
+[14:49] the current system that we're on, I have
+[14:51] V3, which which is knowledgebased
+[14:53] version 4, which is much more condensed,
+[14:55] and the tokens have decreased
+[14:57] drastically. So anyways, didn't want to
+[14:58] deep deep dive into that, but just to
+[15:00] show you guys, I tried different stuff,
+[15:01] and I tried different versions, and I
+[15:03] logged everything. So, that's really
+[15:04] important to use when you're building
+[15:05] different types of workflows. But let's
+[15:07] take a look at this actual result. I
+[15:09] mean, look at that. There is our daily
+[15:11] Google Sheet outreach system where it's
+[15:13] going to every day pull in five rows at
+[15:15] a time. Obviously, we're going to have
+[15:16] to create the sheet and set it up here,
+[15:17] but that's really it. It tells you
+[15:19] exactly what to do. Then, it's going to
+[15:20] loop through all of those items, send it
+[15:22] to the AI agent, which is going to use
+[15:24] its OpenAI chat model, its message
+[15:26] parser, and web research. Let's see what
+[15:28] tool it decided to use in here. Um, it
+[15:30] decided to use Tavi this time, so that's
+[15:31] pretty cool. And then if we click into
+[15:33] the AI agent, of course, we can see we
+[15:34] have a user message which is already
+[15:35] there. We have our system message which
+[15:37] is already there and it's specific
+[15:39] output format is basically going to
+[15:41] output an outreach message and a
+[15:43] research summary. So I mean this is just
+[15:45] really really cool that it's able to get
+[15:47] us this far. So as always I'm going to
+[15:48] give you guys all the resources that you
+[15:50] need to duplicate this exact system for
+[15:52] completely free. So all you have to do
+[15:53] is join my free school community. The
+[15:55] link for that's down in the description.
+[15:56] When you get in that free school
+[15:57] community it will look like this. You
+[15:58] just need to search for the title of
+[16:00] this video or click on YouTube resources
+[16:02] to find that post. And once you find the
+[16:04] post, let's say it's this one, you'll
+[16:05] see the JSON file right here that you
+[16:07] can download and import into NADN. And
+[16:09] of course, I'll also share with you guys
+[16:10] this Google doc so that you can
+[16:11] basically replicate exactly what I did
+[16:13] where you're pulling in the Google doc
+[16:15] and feeding that content into the AI
+[16:17] agent. There'll also be a full setup
+[16:19] guide right here as a sticky note. So,
+[16:21] you can download the workflow and it
+[16:22] will basically have all the links and it
+[16:24] will tell you what to do to get this
+[16:26] system working for you. And if you're
+[16:27] looking to take your end skills a little
+[16:28] bit further, then definitely check out
+[16:29] my paid community. The link for that's
+[16:31] also down in the description. It's a
+[16:32] great community of people who are as
+[16:33] obsessed with niten as you probably are.
+[16:35] We've got two full courses in here as
+[16:37] well. Agent zero, which is like the
+[16:38] foundations for learning a automation
+[16:40] and then 10 hours to 10 seconds where
+[16:41] you learn to identify, design, and build
+[16:44] time-saving automations. Of course,
+[16:45] we've got a library of step-by-step
+[16:47] builds, nad templates, and we have five
+[16:49] live calls per week. So, feel free to
+[16:51] hop in here. I'd love to see you guys in
+[16:52] the live calls. All right, so now let's
+[16:53] quickly talk about pricing. So, I'm
+[16:55] going to pull up my Anthropic console
+[16:56] and we're going to refresh these logs
+[16:58] here. And like I said, I tried to get
+[16:59] the tokens down as much as possible. If
+[17:01] you took a vector approach where you
+[17:03] were just pulling in bits and pieces
+[17:04] based on the request, you could probably
+[17:06] get the tokens down even more. But right
+[17:07] now, we're sitting around 2500 input
+[17:10] tokens and 3,000 to 4,000 output tokens
+[17:12] depending on the workflow. So, just keep
+[17:14] in mind as you give your AI agent more
+[17:16] access to node structure, different
+[17:18] nodes it has access to and stuff like
+[17:20] that, it will only get better, but it's
+[17:21] also going to be more expensive and
+[17:23] probably a little slower. So when I
+[17:24] first started working on this, my first
+[17:26] thought was, okay, I'm going to go to
+[17:27] the noden github repo. I'm going to go
+[17:28] to packages. I'm going to go to nodes
+[17:30] base. I'm going to go to nodes. And now
+[17:33] I have all the nodes in noden and in
+[17:35] each one, I also have access to the JSON
+[17:37] structure of how that node works and the
+[17:39] different parameters. So I was going to
+[17:40] build this automation to scrape through
+[17:42] all of this stuff and ingest it into a
+[17:43] vector DB and then just let the agent go
+[17:45] to town. But like I said, I tried it out
+[17:46] a little bit and I just kind of like
+[17:48] this approach better. So, if we're
+[17:49] looking at the pricing of Claude Opus 4,
+[17:51] we've got 15 bucks for a million input
+[17:53] tokens, 75 bucks for a million output
+[17:55] tokens, which my rough math estimated
+[17:57] that each run is going to be about 34
+[17:59] cents based on these input and output
+[18:01] tokens. So yeah, maybe you are better
+[18:02] off spinning up a cloud project,
+[18:04] ingesting all of the documentation you
+[18:06] can about Naden in there and just using
+[18:08] that on like a subscription, but I
+[18:10] thought it would be really cool
+[18:11] experiment to just kind of play around
+[18:12] with our noden AI agent and see if we're
+[18:15] able to do this stuff, which clearly we
+[18:17] are. And I think that it's just super
+[18:18] cool. And then one other thing I wanted
+[18:19] to note is if I were you and I was
+[18:22] actually going to use this, I'd probably
+[18:23] just hook the chat message trigger up to
+[18:25] this agent right away. I don't really
+[18:27] think you need this end developer agent
+[18:29] that's passing the data between. The
+[18:31] only reason I really did that was to get
+[18:32] the link in a nice clean format because
+[18:34] it would be in the chat message like
+[18:36] this rather than we'd get it as like a
+[18:38] JSON object if we were chatting with
+[18:39] just this workflow. And so for the demo
+[18:41] purposes, I just wanted to make it look
+[18:43] prettier. So I did that like that. But
+[18:45] anyways, if you want to download this
+[18:46] workflow and play around with this for
+[18:47] yourself, you can get it for free by
+[18:49] joining my free school community. The
+[18:50] link for that's down in the description.
+[18:52] And final final thing I wanted to touch
+[18:53] on in this video is the future of AI
+[18:55] automation and NLP natural language to
+[18:58] AI workflow builders or AI agent
+[19:00] builders. I think it's cool and I think
+[19:02] that we're getting closer and it's going
+[19:04] to be super cool when you can just like
+[19:05] spit in a query and you're going to get
+[19:07] a fully functional workflow with your
+[19:08] credentials and everything like that,
+[19:10] but I don't want it to provide everyone
+[19:12] with a false sense of security that you
+[19:13] understand automation because truly the
+[19:16] most important part that goes into it is
+[19:17] the creative problem solving and the
+[19:19] thought process behind why you're
+[19:21] setting up these automations, how to
+[19:23] implement them, how to deploy them, and
+[19:25] how to basically scale them up. How can
+[19:27] you identify edge cases and build
+[19:28] guardrails to protect against those edge
+[19:30] cases and how do you troubleshoot stuff
+[19:32] when things go wrong? So, yes, it's
+[19:34] going to be a great way to get you there
+[19:35] 80% of the way, tweak it a little bit.
+[19:37] It may help you think of some stuff that
+[19:38] you wouldn't have thought of before, but
+[19:40] ultimately, you still want to learn
+[19:42] what's going on within each node and how
+[19:43] you can customize it to fit your needs
+[19:45] or your business's needs. So, anyways,
+[19:47] that's going to do it for this one. Hope
+[19:48] you guys enjoyed that one. If you did,
+[19:50] please leave a like. It helps me out a
+[19:52] ton and I really appreciate you guys
+[19:53] making it to the end of the video. As
+[19:54] always, see you guys in the next one.
+[19:56] Thanks so much.

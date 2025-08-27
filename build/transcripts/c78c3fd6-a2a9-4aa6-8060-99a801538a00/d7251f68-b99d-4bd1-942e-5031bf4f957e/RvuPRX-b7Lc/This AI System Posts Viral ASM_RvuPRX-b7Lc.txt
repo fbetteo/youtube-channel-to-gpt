@@ -1,0 +1,587 @@
+Video Title: This AI System Posts Viral ASMR Shorts Hourly (free template)
+Video ID: RvuPRX-b7Lc
+URL: https://www.youtube.com/watch?v=RvuPRX-b7Lc
+View Count: 45,034
+
+[00:00] Okay, so these types of shorts have been
+[00:01] going viral all over social media, and
+[00:03] they are completely generated with AI.
+[00:05] They're really satisfying. It's like a
+[00:06] knife cutting through a glass fruit or
+[00:08] some sort of object that you probably
+[00:09] couldn't cut if it was glass, but it
+[00:10] goes right through and it sounds great.
+[00:12] Now, in order for those videos to be
+[00:13] high quality, it really depends on the
+[00:15] prompts that you feed these textto video
+[00:17] generators. And so today, not only am I
+[00:18] going to give you the prompts that I've
+[00:19] used to get thousands of views on this
+[00:21] type of short form content, but I'm also
+[00:23] going to give you this exact system so
+[00:25] that you can plug it in and set it and
+[00:26] forget it, and the workflow will just
+[00:28] pump out shorts on autopilot. Not only
+[00:30] is it just going to pump them out, but
+[00:31] it's also going to post them to your
+[00:32] socials. So, right here, I've got it set
+[00:34] up for YouTube, Tik Tok, and Instagram.
+[00:36] So, we're going to hop into a live demo.
+[00:37] I'm going to run the system in front of
+[00:38] you guys. We'll see the output. We'll
+[00:40] see it posted on our social medias, and
+[00:41] then I'm going to break down how this
+[00:42] works and show you guys how to set it up
+[00:44] for yourselves. All right. So, I'm just
+[00:45] going to go ahead and hit execute
+[00:46] workflow. And this is basically going to
+[00:48] pull in a database of past fruits or
+[00:50] objects that we've used. The idea agent
+[00:52] is choosing an object and a caption. And
+[00:55] now the prompt agent is creating that
+[00:57] highquality texttovideo prompt. We fed
+[01:00] that into Google V3. And now we just got
+[01:02] to wait. I have this set to 5 minutes.
+[01:04] So, I'll check back in once this step is
+[01:05] done. All right. So, the video just
+[01:07] finished up. Now, we're moving on to a
+[01:08] third part where it's going to update
+[01:10] our sheet and then post to socials. So
+[01:12] right now it's getting uploaded to
+[01:13] Botato, posting to YouTube, posting to
+[01:15] Tik Tok, and posted to Instagram. So
+[01:16] let's go take a look at the final video.
+[01:18] So you can see in Botato we just got
+[01:20] this new glass kiwi which was posted to
+[01:22] Instagram, Tik Tok, and YouTube. So
+[01:23] let's click into Instagram and take a
+[01:24] look.
+[01:29] All right, there you go. So that's what
+[01:31] one output looks like. Let's flip back
+[01:32] over the workflow and let's kind of go
+[01:34] over how I built this thing. So the cool
+[01:36] thing about this workflow is you can
+[01:37] literally set the trigger to go off
+[01:39] however many times you want it to per
+[01:40] day. and then just set it and forget it
+[01:42] and it will just continuously post stuff
+[01:44] for you. So, at a high level, what
+[01:45] happens is we pull in the past seven
+[01:47] objects that we've used in the videos.
+[01:49] The idea agent will look at the past
+[01:50] seven and give us another idea that
+[01:52] hasn't been used yet. We'll create the
+[01:54] video for that new fruit and then we'll
+[01:56] post them to socials. And we also
+[01:58] basically delete that first row and
+[02:00] append another one. So, the idea agent's
+[02:02] always going to be looking at a sheet of
+[02:03] the seven most recent posts that we've
+[02:05] made. And that's how we're going to keep
+[02:06] the content fresh even if we let it run
+[02:09] seven times a day. And real quick,
+[02:10] something I wanted to throw out there is
+[02:11] that as I was testing, my prompts have
+[02:13] only gotten better and better. And here
+[02:15] was one of the first outputs I tested. I
+[02:17] threw it up on YouTube and Instagram,
+[02:19] and it ended up getting like 35,000
+[02:21] views in one day. And I would say that
+[02:23] the outputs that I'm currently getting
+[02:24] are far better than this one right here.
+[02:26] But this is the one that did pretty well
+[02:27] in that first day. And here's another
+[02:29] one that did really well on Instagram
+[02:30] that was a way older version of the
+[02:31] prompt, and they're only getting better
+[02:32] from here. So, like I said, the outputs
+[02:34] we're currently getting with this prompt
+[02:36] and this system, I think, are far better
+[02:37] and will probably do better on social
+[02:39] media. But anyways, let's start to break
+[02:41] down how this workflow works. All right,
+[02:42] so starting with part one, which is the
+[02:44] idea generation, we start here with a
+[02:46] scheduled trigger so that if you come up
+[02:47] here and make this workflow active, you
+[02:49] could set this thing to go off three
+[02:51] times a day, five times a day, 10 times
+[02:52] a day, however much you want. Once that
+[02:54] goes off, it basically will go check
+[02:56] this Google sheet that we've set up,
+[02:58] which is called V3 ASMR. And it
+[03:00] basically just pulls in all seven rows.
+[03:03] So, as you can see on the right hand
+[03:04] side, we see glass apple, glass grapes,
+[03:06] glass mango, pineapple, banana, dragon
+[03:07] fruit, blueberry. So, then what we do is
+[03:09] we take these seven objects and we
+[03:11] aggregate them into one item. So, we
+[03:13] have all of them right here. And then we
+[03:15] just use a set field to turn that into a
+[03:17] list. So, now we have a list where we
+[03:18] set the objects. You won't have to touch
+[03:20] this. and it's always going to output a
+[03:21] list of those seven most recent videos.
+[03:24] So, we take this list of past fruits or
+[03:26] past objects and we're just going to
+[03:28] feed that into the idea agent. So, as
+[03:30] you can see, right now we have objects
+[03:31] and then we have this list of those
+[03:33] fruits. And so, this agent's only job is
+[03:36] to basically output a new object and a
+[03:38] caption that will be posted with the
+[03:40] videos. So, if I click into this system
+[03:42] message real quick, we can see the agent
+[03:44] is supposed to be selecting unique
+[03:46] fruits for ASMR style glass cutting
+[03:48] videos. You will receive a list of seven
+[03:50] fruits that have already been used. Your
+[03:52] job is to generate one new fruit that is
+[03:53] not on that list. And it should look
+[03:55] visually compelling if it were made of
+[03:57] glass and cut with a knife in a close-up
+[03:58] ASMR video. So, it's really simple.
+[04:00] Nothing crazy going on here. I will say
+[04:02] we are using a structured output parser
+[04:04] to make sure it outputs two different
+[04:05] things. One is just the object and then
+[04:07] one is the actual caption. And so, we
+[04:09] kind of define that here. But what you
+[04:10] have to do is have a structured output
+[04:12] parser. you turn on this option and then
+[04:14] I have got my structured output parser
+[04:15] right here which basically tells the AI
+[04:17] agent, okay, you need to output these
+[04:19] two things, an object and a caption.
+[04:21] Okay, so that's part one. We have a new
+[04:23] fresh fruit for the video and now we're
+[04:26] going to feed in that fruit to the
+[04:27] prompt agent. So let's click into this
+[04:28] guy. So as you can see here in the
+[04:30] prompt agent, the first thing to call
+[04:31] out is the user message. We're giving it
+[04:33] the output of the previous agent which
+[04:35] just gave us the object. So right here
+[04:37] it says glass kiwi. And now the agent
+[04:39] sees that we're going to do a glass kiwi
+[04:40] and it looks at its system message to
+[04:42] understand what to do with that glass
+[04:43] kiwi. So I'm not going to read this
+[04:44] whole prompt. This is obviously where
+[04:46] all the magic happens. But keep in mind
+[04:48] you guys will get access to this prompt
+[04:50] for free. All you have to do is download
+[04:51] the free template in my free school.
+[04:53] I'll touch on how that works later in
+[04:54] the video. So anyways, the key here with
+[04:56] texttovideo prompt generation is we want
+[04:58] to give it a format to follow and we
+[05:00] wanted to be very specific about certain
+[05:02] things. So, first of all, we said you're
+[05:03] an AI agent that specializes in
+[05:05] generating texttovideo prompts for ASMR
+[05:07] style videos using Google V3. These
+[05:10] videos must be in a 9x6 aspect ratio.
+[05:12] You will receive the name of an object
+[05:14] like a glass apple, a glass mushroom,
+[05:15] whatever it is, and your job is to
+[05:16] create a hyperrealistic sensory richch
+[05:19] video prompt of that object being cut in
+[05:21] a close-up ASMR scene. So, we gave it
+[05:23] some core requirements. Feel free to
+[05:24] read through those, just telling it
+[05:26] like, you know, make it cinematic, cut
+[05:27] through, make sure it doesn't shatter,
+[05:29] all that kind of stuff. We also gave it
+[05:30] some more prompts requirements down
+[05:32] here, which is like describe the scene,
+[05:33] describe the object in detail, describe
+[05:35] how you cut, describe the sound, all
+[05:37] this kind of stuff. And then finally, we
+[05:38] told it basically how to format it. So,
+[05:40] we want a subject, a setting, an action,
+[05:42] a style, sound, camera motion,
+[05:44] composition, ambiance, and aspect ratio.
+[05:46] So, it's always going to output these
+[05:48] different nine things and just kind of
+[05:50] fill in the template. So on the right
+[05:52] hand side you can see we have our
+[05:53] subject, our setting, our action, our
+[05:54] style, our sound, all this kind of stuff
+[05:56] because we basically defined how it
+[05:58] should output and we gave it a template.
+[06:00] So now the goal is we take this video
+[06:02] prompt and we're going to feed it into
+[06:04] Google V3 and we feed it into Google V3
+[06:07] using a foul API. So real quick, I'm
+[06:10] just going to switch over to FAL. Here
+[06:12] is what it looks like. Here you can see
+[06:13] the request we just did with the glass
+[06:14] kiwi and we're looking at the model
+[06:16] Google V3. So basically FAL lets you
+[06:19] connect to a ton of different models. So
+[06:20] if I real quick come up here to explore,
+[06:22] we can see that offered through foul
+[06:24] through file's API. We can use V3 cling
+[06:27] 2.1 master. We can also use different
+[06:29] like image to JSON models or image to
+[06:31] video models. There's all these
+[06:33] different ones that we can use. And so
+[06:34] that's how we're accessing Google V3
+[06:36] over API. And so what you can do is you
+[06:38] can come in here and use the playground
+[06:40] to just test out some prompts and get to
+[06:41] a place that you like and then go into
+[06:43] NN with it to automate it. But now that
+[06:45] we have our prompt, we basically just
+[06:47] have to look at the API documentation to
+[06:49] understand how to send over requests to
+[06:51] foul. So basically what I did is I came
+[06:53] in here and I switched this to HTTP
+[06:55] rather than Java. And then all I really
+[06:57] wanted to do was I had to get my API key
+[06:59] of course. So you guys will have to go
+[07:00] get your API key. And then all I had to
+[07:02] do really was come down here to input
+[07:04] schema and just understand what I need
+[07:06] to send over to FAL to get the video
+[07:08] back in the way I want it. And really
+[07:09] all that was going to be was a prompt.
+[07:11] So a text to video prompt and the aspect
+[07:14] ratio because I want all of this to be
+[07:16] short form 9 by6 vertical content. So
+[07:19] like I said the HTTP request is already
+[07:21] set up so you guys don't have to worry
+[07:22] about that. What you will have to do is
+[07:24] come into foul. You want to go over here
+[07:26] to your account and you want to go to
+[07:27] your API keys and then you're basically
+[07:29] going to add a new API key. You'll copy
+[07:31] that value and then when you get into NN
+[07:33] all you have to do is open up this node
+[07:35] and create a new header off for foul. So
+[07:38] what you're going to do is you're going
+[07:39] to under authentication click on
+[07:40] generic. Then you're going to go to
+[07:42] generic and click on header off. And
+[07:44] then in header off you'll click on
+[07:46] create new credential. In the name
+[07:47] you're going to type authorization. And
+[07:48] then for the value you're going to do
+[07:50] capital K key space. And then you'll
+[07:53] paste in your API key right there. And
+[07:55] then what I would do is just you know
+[07:56] rename it up here. Call this foul so you
+[07:58] have it saved for later. And then you
+[07:59] just hit save. And you should be
+[08:01] authenticated to use foul. Anyways, now
+[08:04] that we have that set up, like I said,
+[08:05] we're just basically sending over the
+[08:07] prompt, the aspect ratio, and then I
+[08:08] also just included generate audio true.
+[08:11] If you left this out of it, it would
+[08:13] automatically just do it by default. But
+[08:15] I just wanted to show you guys, it's
+[08:16] really cool that using V3, it can create
+[08:18] audio and video together. So, we don't
+[08:21] have to like do that separately and
+[08:22] render it all together. So, anyways, I
+[08:24] basically just dragged in the output
+[08:25] from the prompt agent right in here. I
+[08:27] have a little bit of a replace function
+[08:29] going on down here. So, we get rid of
+[08:31] new lines and any um double quotes
+[08:33] because that would break the JSON body.
+[08:35] So, that's why I have these functions in
+[08:36] here. And then when this gets run, it
+[08:38] basically responds to us and says,
+[08:40] "Okay, we're working on that video." We
+[08:42] have, you know, here's the ID, here's
+[08:43] the URL of your request and all this
+[08:45] kind of stuff. And so now what we have
+[08:47] to do is wait for 5 minutes and then
+[08:49] we're going to check in to see if it's
+[08:50] done. So, real quick though, if I flip
+[08:52] back over to foul and we go to our
+[08:54] requests with V3, you can see this
+[08:57] example only took 186 seconds, which is
+[08:59] a little over 3 minutes. And the reason
+[09:01] why in here I come and set this to 5
+[09:03] minutes is because it really depends on
+[09:05] the amount of traffic that V3 is
+[09:07] receiving at the point in time. So,
+[09:09] right now it's morning, so not many
+[09:10] people are using it. It's going through
+[09:12] quicker, but I was using it in the
+[09:13] afternoon the other day and it was
+[09:14] taking 7, 8, 9 minutes. So what we do is
+[09:17] we set this for 5 minutes, but we also
+[09:19] include this polling check so that if
+[09:21] this node errors out, it's not going to
+[09:23] matter. It will basically come here,
+[09:25] wait for 10 more seconds, and then check
+[09:26] in. And it will continuously check over
+[09:28] and over until the video is actually
+[09:30] done. So we have that guardrail baked
+[09:32] in. And obviously, you can adjust the
+[09:34] time that these nodes are waiting. But
+[09:35] that's just what I have it set for. And
+[09:37] so the way that this works is, like I
+[09:38] said, once we put in that request to
+[09:40] generate a video, it gives us back an ID
+[09:42] of that request. And then in this node,
+[09:45] what we're doing is we're checking in on
+[09:46] that ID. So here you can see we're
+[09:48] basically accessing foul. We're looking
+[09:50] at our V3 requests and then we're
+[09:52] filling in our request ID. And basically
+[09:54] this node will come back and it will
+[09:56] either error if the request isn't done.
+[09:58] And that's why we can send it down the
+[09:59] error branch or if it is done it'll give
+[10:01] us the URL of that video. And the way
+[10:03] I'm able to get these two branches is I
+[10:05] go to settings and then I choose on
+[10:07] error to continue using error output
+[10:09] rather than the default option which is
+[10:11] just to stop the workflow. Okay. So now
+[10:13] that we have that video, I'm basically
+[10:15] just setting it right here as the URL.
+[10:17] So we have the URL in a clean spot. And
+[10:19] now we need to move on to part three
+[10:21] because we have the idea generated, we
+[10:23] have the video generated, and now we
+[10:24] just need to post to socials. Okay, so
+[10:26] like I said, the first thing we're doing
+[10:28] is we are going to delete that first row
+[10:30] from the Google sheet so that it's
+[10:31] always only pulling in seven. So this
+[10:33] was really simple. All I had to do was
+[10:34] link up my Google sheet, say that we're
+[10:36] going to delete rows. We're going to
+[10:37] start at row number two because, as you
+[10:39] can see, the first row would actually
+[10:40] just be the headers. So, it's always
+[10:42] just going to delete row two and then
+[10:44] it's going to append a new one below it.
+[10:46] So, we're always going to keep that
+[10:47] seven in rotation. We're just deleting
+[10:49] one. And then, like I said, we're
+[10:50] appending the next one. So, all I have
+[10:52] to do is add in the object and the URL.
+[10:54] And we get the object from the idea
+[10:56] agent. So, I basically just went to ID
+[10:58] agent and I dragged in the object here.
+[11:00] And then the URL we can just grab from
+[11:02] the previous node where we set it and I
+[11:04] just dragged that in right there. And
+[11:05] that is how we got our glass kiwi
+[11:07] updated right here as the last row on
+[11:09] the sheet. And here's our video file if
+[11:11] we wanted to go download that video.
+[11:12] Okay, so spreadsheets's updated. Now we
+[11:14] just have the last step, which is
+[11:15] actually posting. And we're using a
+[11:17] platform called Blot in order to auto
+[11:19] post to these different socials. And
+[11:21] what's really cool about Blot is not
+[11:22] only are we doing YouTube, Instagram,
+[11:24] and Tik Tok. But we could also post
+[11:26] automatically to X, LinkedIn, Facebook,
+[11:29] Threads, Pinterest, Blue Sky. There's
+[11:30] nine total socials on here that you can
+[11:32] post to. So once you get to Bot, make
+[11:34] sure to use code Nate30 so you can get
+[11:36] 30% off for 6 months. But once you're
+[11:38] here, all you have to do is log into the
+[11:39] socials you want to use and then you
+[11:41] have to come down here and get your API
+[11:42] key. So you'll copy your API key and
+[11:44] very similar to the way we set up for
+[11:46] foul, you'll come into this node right
+[11:47] here and you will create a new
+[11:49] credential type which will be a header
+[11:51] off and it will be generic. And then
+[11:53] you'll create a header off and in here
+[11:54] all you have to do is make it blot-appi-
+[11:58] key and then paste in your API key. And
+[12:00] now that we are set up talking to
+[12:01] Botato, all you have to do is we're
+[12:03] passing over one variable called URL.
+[12:05] And we just dragged in the URL from the
+[12:07] previous node and now Blot has it. So
+[12:10] the reason we have to do that is because
+[12:11] right now foul basically owns this video
+[12:13] URL. And in order for Blot to post it on
+[12:15] our different socials, they have to turn
+[12:17] it into a Blot URL. So it's the exact
+[12:19] same video. It just now exists on Blot
+[12:22] servers. So this is the URL that we're
+[12:23] going to use to post on our different
+[12:25] socials. So as you can see now, we have
+[12:27] YouTube, Instagram, and Tik Tok. And one
+[12:29] thing I wanted to point out is these
+[12:30] aren't actually like linked to each
+[12:32] other in succession. These are three
+[12:34] separate ones. I just kind of like put
+[12:35] them here for organization sake. But
+[12:37] anyways, first we're going to do
+[12:38] YouTube. So in here we have our potato
+[12:40] credential connected already. The only
+[12:42] thing that you guys will have to change
+[12:43] is you'll have to come in here, open up
+[12:45] this request, and you just need to
+[12:46] change your account ID. Everything else
+[12:48] is already going to be set up. So in
+[12:50] order to get your account ID, you'll go
+[12:51] into Botato. The first one we're doing
+[12:53] right now is YouTube. So you just click
+[12:55] login with YouTube. It'd be the simple
+[12:56] OOTH signin screen. And once your
+[12:58] account is connected right here, you
+[12:59] just click on copy account ID. You go
+[13:02] back into the workflow and then you just
+[13:03] paste in your account ID right there.
+[13:05] And it will be the exact same process
+[13:06] for Tik Tok and Instagram. But anyways,
+[13:08] as you can see, there's different things
+[13:10] we're passing over. Like right now, I'm
+[13:11] just sending these as unlisted to
+[13:12] YouTube. We have the title, we have the
+[13:14] text, which are actually the same thing.
+[13:16] And then we have the potato URL right
+[13:18] here. And so that's how it's able to
+[13:20] post. We're doing the exact same thing
+[13:22] with the Instagram and Tik Tok. Let me
+[13:24] just open up these real quick. You have
+[13:25] your potato credential. The only thing
+[13:27] you need to do is put in your Instagram
+[13:29] account ID and everything else gets
+[13:31] passed over fine. And then it's the
+[13:32] exact same thing with Tik Tok. Of
+[13:34] course, we have our Botato account
+[13:35] connected right here. And then in the
+[13:37] JSON body, you just need to connect your
+[13:38] account once again by going here,
+[13:41] logging in with Tik Tok, and then you'd
+[13:43] copy your account ID right there. So,
+[13:45] like I said, each of them have different
+[13:46] settings. All you have to tweak is the
+[13:47] account ID, but you can play around with
+[13:49] these settings if you want to change the
+[13:50] way that it is posting. But that's
+[13:52] basically it. That brings us to the end
+[13:54] of the flow. This could go off however
+[13:56] many times you want it to per day and
+[13:58] post wherever you want. And just in case
+[14:00] you want to keep track and make sure
+[14:01] they're actually posting, if you go to
+[14:03] Blotato and you go over here to your
+[14:05] published posts, you can see that you're
+[14:06] able to see if those were actually
+[14:08] posted and how long ago they were
+[14:09] posted. So you've got, you know,
+[14:10] Instagram, Tik Tok, and YouTube. And you
+[14:12] can click on these links in order to go
+[14:14] straight to where it's actually been
+[14:15] posted. Now, I wanted to touch on some
+[14:17] pricing stuff real quick because your
+[14:18] biggest expense is going to be the video
+[14:20] generation. Google V3 is a super
+[14:22] advanced model and it's not cheap by any
+[14:24] means. So if we come into here, you can
+[14:26] see for every second of the video you
+[14:28] generate, you'll be charged 50 cents if
+[14:31] audio is off. So in our case, we're
+[14:32] using audio for ASMR and that would be
+[14:35] 75 cents per second. And because we are
+[14:37] generating 8second videos, it's going to
+[14:39] be $6 per video. So it's not cheap by
+[14:42] any means, but I don't want you to get
+[14:44] the idea that this workflow is supposed
+[14:45] to be like a get-richqu scheme. It could
+[14:48] definitely help you grow a channel on
+[14:49] autopilot. Especially right now, while
+[14:51] this opportunity is pretty new because
+[14:54] with the short form content, when you
+[14:55] want one to go viral, you really just
+[14:57] need one to catch the algorithm. And the
+[14:59] more you put out, the better chance you
+[15:01] have of actually catching the algorithm.
+[15:02] So using an end automation like this,
+[15:05] you're just going to have a higher
+[15:06] chance because you're able to do way
+[15:07] more volume than other people would be
+[15:09] doing manually. So that's really the
+[15:10] idea of the system and also to show you
+[15:12] guys how you can find different trends
+[15:14] that are working and you can try to
+[15:15] piece together how you can automate
+[15:16] them. And you can see what we did here
+[15:18] was we got creative in order to make
+[15:20] sure that this is basically rotating and
+[15:21] it's staying very fresh as far as the
+[15:23] different fruits that we're using. So
+[15:25] just wanted to throw that out there real
+[15:26] quick. Now let me quickly touch on how
+[15:28] do you actually get this system for free
+[15:30] and you can also get the Google sheet if
+[15:32] you want just to keep track of the
+[15:33] different fruits that you're posting. So
+[15:35] this template will be available for free
+[15:37] in my free school community. The link
+[15:38] for that will be down in the
+[15:39] description. There will also be a setup
+[15:41] guide right here when you download the
+[15:42] workflow so you can see what is left to
+[15:44] connect still, what API keys do I need
+[15:46] to get, all this kind of stuff. But what
+[15:48] you're going to do is go to my free
+[15:49] school community. You want to click on
+[15:51] YouTube resources right here or go to
+[15:53] the top and search for the title of this
+[15:54] video. And then let's say this is the
+[15:57] video right here. All you're going to do
+[15:58] is you're going to find this JSON file
+[16:00] right here and download that. And then
+[16:02] once you have that file, all you have to
+[16:03] do is open up a new Nin workflow. Come
+[16:05] up here and click on import from file.
+[16:07] And then you'll have the system right
+[16:08] here in front of you. And now this is a
+[16:10] super super simple Google sheet. It's
+[16:12] literally just an object column and a
+[16:13] URL column. But if you want to download
+[16:15] this template as well and plug it into
+[16:17] the Google sheet nodes, all you'll have
+[16:18] to do is in the free school community,
+[16:20] there will be um basically a link right
+[16:22] here that will take you to the Google
+[16:23] sheet and then you'll make a copy and
+[16:25] you'll be set up. And if you're
+[16:26] interested in joining the number one
+[16:27] community for no code AI automations,
+[16:29] then definitely check out AI Automation
+[16:31] Society Plus. The link for that will be
+[16:33] down in the description. We've got a
+[16:34] great community of members who are
+[16:35] always sharing problems they're running
+[16:36] into, helping each other out, sharing
+[16:38] wins. We've got a full course in here
+[16:40] with Agent Zero, which is the
+[16:41] foundations of AI. We've got 10 hours to
+[16:43] 10 seconds where you learn how to
+[16:44] identify, design, and build time-saving
+[16:46] automations. And then we've also got a
+[16:48] step-by-step course where it's a bunch
+[16:50] of different step-by-step builds that
+[16:51] I've shown on YouTube, but I sort of
+[16:52] break them down and do them live in
+[16:54] front of you. So, anyways, that is going
+[16:55] to do it for this one. I hope you guys
+[16:57] enjoyed the video. Hope you learned
+[16:58] something new or found it entertaining.
+[17:00] If you did, please give it a like. It
+[17:01] definitely helps me out a ton. And I
+[17:03] will see you guys all in the next one.

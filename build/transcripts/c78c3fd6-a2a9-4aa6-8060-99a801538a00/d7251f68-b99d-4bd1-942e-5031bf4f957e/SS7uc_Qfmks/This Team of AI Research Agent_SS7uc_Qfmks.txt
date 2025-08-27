@@ -1,0 +1,42 @@
+Video Title: This Team of AI Research Agents Automated My Newsletters! #n8n #artificialintelligence #aiagent
+Video ID: SS7uc_Qfmks
+URL: https://www.youtube.com/watch?v=SS7uc_Qfmks
+View Count: 57,746
+
+[00:00] today I'm going to be walking through a
+[00:01] super cool multi-agent framework that
+[00:03] does all aspects of creating a
+[00:04] newsletter for you topic I'm going to go
+[00:06] with health and fitness tone let's just
+[00:08] go with professional again and for
+[00:10] target audience we're going to make this
+[00:11] one targeted towards young adults so
+[00:13] we're going to send this off so the
+[00:14] first thing it's doing is hitting the
+[00:15] newsletter expert um and then it hands
+[00:17] off that table of contents to the
+[00:18] project planner and so what's going on
+[00:20] here is we basically have six different
+[00:21] agents doing research so right now
+[00:23] they're doing research they're hitting
+[00:24] Tav to pull back articles get the URLs
+[00:27] and the editor's job is to pretty much
+[00:29] put it all together in a new newsletter
+[00:30] structure going to make sure that we
+[00:32] have our inline citations that are
+[00:34] clickable that's going to add a sources
+[00:35] section at the bottom okay here we go so
+[00:37] we got the Future Fitness Trends
+[00:39] nutrition and health insights for young
+[00:40] adults oh Amazon's offering up to 40%
+[00:43] off on treadmills and walking pads you
+[00:44] can click on that if you want more
+[00:45] information and then you know we've got
+[00:47] another one down here with this Italian
+[00:49] evening ritual has major health benefits
+[00:51] here's why you should try it so as you
+[00:52] can see we've got our links that we're
+[00:53] able to click into which is super cool
+[00:54] got our bold head headers right away so
+[00:56] we can sort of scan and see what
+[00:57] articles we actually want to read

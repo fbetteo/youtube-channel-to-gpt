@@ -1,0 +1,2081 @@
+Video Title: Athlete Welfare Orgnized by Korey Stringer Institute [UCSAS 2024]
+Video ID: XC_dYhrz1ak
+URL: https://www.youtube.com/watch?v=XC_dYhrz1ak
+View Count: 18
+
+[00:01] okay so so saying was that basically the
+[00:06] in in our simulation studies the more
+[00:07] highly correlated bordering lead the um
+[00:10] the more you are to win right this is
+[00:12] this is a very this is an indication
+[00:15] that um this is unfair right it there's
+[00:18] there's a scale that by waiting this
+[00:20] sort of two3 you're giving them you're
+[00:23] giving the Bing the Bing lead climbers a
+[00:25] uh a bigger Advantage right um oh boy
+[00:32] okay and so then we also looked at like
+[00:35] um for is the probability of
+[00:39] course and for what's the probability of
+[00:41] winning a medal if you won any of the
+[00:43] events right so if you win any event
+[00:45] what's the probability that you qualify
+[00:46] and what's the probability that you uh
+[00:48] win a medal in in the finals um and this
+[00:51] is this is all based on those
+[00:52] assumptions uh about uh correlation
+[00:56] what's the in this simulation Kong any
+[00:58] idea for this for these results don't
+[01:01] remember I don't remember either but
+[01:02] there was some correlation and these
+[01:03] were the finals so basically if you win
+[01:05] if you if you win an event you have a
+[01:06] very high likelihood of of moving on to
+[01:09] um you can see that the rank B eight if
+[01:12] you if you win any of the events you're
+[01:14] probably going to qualify um and you're
+[01:16] but you're less likely to win a medal uh
+[01:18] if you win an event you have to really
+[01:19] do more than just win one event um these
+[01:23] are the these are the placement scores
+[01:25] we wanted to know like what if if our
+[01:26] assumtions were correct about uniform
+[01:28] stuff what was the
+[01:30] um what was a score would would sort of
+[01:33] get you to the next we found that a
+[01:35] score of 453 would usually get you into
+[01:37] the top eight and then in the finals
+[01:39] scores of things like 9 19 and 33 would
+[01:41] would were around the averages for gold
+[01:43] silver and bronze just to give you some
+[01:44] sort of idea about the scale of what
+[01:46] these scores need to be to to um to
+[01:49] qualify or to move on okay I this is
+[01:54] more this is more interesting stuff than
+[01:56] that that simulation study um this is a
+[01:58] correlation analysis that we did we
+[02:00] really wanted to know about what the
+[02:02] correlation between bouldering and Lead
+[02:04] um we assumed it was we assumed it was
+[02:06] true because of this but let me let me
+[02:07] show you actually what this looks like
+[02:10] so coration between the overall Rank and
+[02:12] the ranks of the individual disciplines
+[02:14] uh here's a case study that we're going
+[02:16] to use we're going to use Tokyo 2020
+[02:17] women's qualification so what we're
+[02:19] looking at is what is the correlation
+[02:21] between your overall Rank and the rank
+[02:23] within an individual discipline if the
+[02:25] rank of the individual discipline is
+[02:26] very highly correlated with your overall
+[02:28] rank that means that that's relatively
+[02:29] more importance to your overall rank
+[02:31] right and so you can see here is that
+[02:35] for for bouldering and Lead we get a
+[02:37] kendle uh for for bouldering and Lead we
+[02:39] got a kendle's t about 04 with very
+[02:42] significant P values and for Speed uh
+[02:45] it's basically not significant what this
+[02:47] is saying is that if you are doing well
+[02:49] and Bing in lead individually you more
+[02:52] likely to do overall right so speed is
+[02:55] sort of like this it's like this thrown
+[02:57] in and it's really um it's hard to do
+[03:00] overall if you're good if you're only
+[03:01] good at speed right so it is kind of
+[03:04] screwing the people who are uh speed
+[03:06] Specialists which is a complaint that we
+[03:08] heard um uh we can we can to visualize
+[03:13] the underlying correlations that exist
+[03:14] among climbing disb performances we use
+[03:16] speed race time you have to use
+[03:19] something called tops in bouldering in
+[03:21] bouldering there's different there's
+[03:23] different like Puzzles and you can score
+[03:25] you can score Tes and then there's these
+[03:27] intermediate scores and we used uh that
+[03:30] as a measure for how good you did in the
+[03:32] event and for lead it's the number of
+[03:33] holds so we have that looks like this
+[03:35] where you have uh for Speed you have
+[03:38] theps and then you have the lead holds
+[03:39] and these are all scored differently and
+[03:41] so we were looking at uh correlations
+[03:43] between these if you do a principal
+[03:45] component analysis on these it's so this
+[03:48] is a we place to do principal components
+[03:50] because it's usually a high dimensional
+[03:51] technique we're looking at three
+[03:52] different dimensions but what you get is
+[03:55] on this bot you see that leads and buing
+[03:58] areally correlated and they're very very
+[04:01] independent of speed and this is exactly
+[04:03] why the speed climbers were like
+[04:04] complaining and they were it was a valid
+[04:06] complaint right this skill is so
+[04:08] different than these skills right and
+[04:11] they've weed this twice as heavily as
+[04:13] they did uh for Speed all right the
+[04:17] competion form is St against speed
+[04:20] climbers this is what I think is the
+[04:22] most interesting is the Leal analysis so
+[04:26] my question
+[04:28] was I'll just EXP we go to the next
+[04:30] slide and explain
+[04:31] it what happen to the overall rankings
+[04:34] if one disqualified so in particular
+[04:36] we're looking at one of the Medalist was
+[04:38] qualified so there's this concept called
+[04:41] uh the independence of relevant
+[04:43] Alternatives and what this basically
+[04:44] says is that um ranking in a competition
+[04:49] should not depend on the inclusion or
+[04:51] exclusion of someone else right and so
+[04:53] if you have a good scoring system it
+[04:54] shouldn't matter whether someone else
+[04:56] competed or didn't compete your
+[04:57] performance should be the same
+[04:59] regardless of what other people are
+[05:01] doing um so we want to check and see if
+[05:03] there was violations of uh the
+[05:06] independence irrelevant Alternatives the
+[05:08] Assumption um and so what we did is we
+[05:10] we basically said let's remove an
+[05:12] individual give leave all the
+[05:14] individuals with the same score and see
+[05:16] would the rankings change should the
+[05:18] rankings change no for the same
+[05:20] performance if some just was removed or
+[05:22] disqualified right you you then change
+[05:24] the ranks because that person was
+[05:25] removed but the overall ranking should
+[05:27] not change if have a good scoring system
+[05:32] well there's evidence of violation in in
+[05:34] the real data so let's look at this I
+[05:36] think this picture is my favorite
+[05:38] picture and I think this is crazy that
+[05:39] this happened at the Olympics so what
+[05:43] what we're saying here is the this is
+[05:45] this is um the actual final ranks of the
+[05:48] the women in 2020 these were the scores
+[05:51] and these were the ranks so then wanted
+[05:53] to do was let's say let's take an
+[05:55] individual climber out of it so in this
+[05:57] one if we removed the person who
+[05:58] finished first What would how the ranks
+[06:00] change you basically just everyone
+[06:01] shifts down nothing
+[06:03] changes the ones that with the boxes
+[06:05] there is a rank that changes so in this
+[06:08] case what we're saying is if the person
+[06:10] who finished second was removed from the
+[06:12] competition and these four and these and
+[06:14] theing five people had the exact same
+[06:17] performances the exact same performances
+[06:20] based on the changing of the ranks in
+[06:21] individual events positions four would
+[06:23] have flipped not big a deal were changed
+[06:27] right but look at this one right here
+[06:29] this is the top six if the person who
+[06:31] was fifth simply was disqualified and
+[06:34] they reranked everyone with the same
+[06:36] exact performance the person who
+[06:38] finished finished fourth would have gone
+[06:40] up to a silver medal with the exact same
+[06:43] performance simply removing someone
+[06:46] would have Tak this person from for to a
+[06:47] silver medal and this person would have
+[06:49] dropped on a and this person would not
+[06:50] have won a medal this is insane right
+[06:53] it's it's not it's your your score is
+[06:56] being like a major life accomplishement
+[06:58] is being affected by this ranking system
+[07:00] by this scoring system based on ranks
+[07:02] right and just simply moving someone it
+[07:04] shouldn't change your your it's the
+[07:07] exact same performance so it shouldn't
+[07:09] change where you're ranked in the final
+[07:11] standings and yet it was changing the
+[07:12] performance and this isn't theoretical
+[07:14] right this isn't like um theorical
+[07:17] violations of this is a real example of
+[07:19] if you simply remove this person so
+[07:21] imagine you go from the 20 qualif the
+[07:24] top eight people qualify and then
+[07:27] someone gets hurt now there's only seven
+[07:29] people left
+[07:30] that's a good real situation that could
+[07:31] happen this is this is sort of the
+[07:32] situation we're working with the leave
+[07:33] one would be like someone got we remove
+[07:35] them how does the ranks change with the
+[07:37] exact same performance that's crazy
+[07:39] that's happened to the Olympics anyway I
+[07:41] think that's really interesting um
+[07:45] takeways so the idea of climbing gives
+[07:48] speed climbers a huge disadvantage
+[07:50] the was was VI which is an issue of rank
+[07:53] prodct scoring a solution to this might
+[07:55] be 1 for Speed and one for bouldering
+[07:58] and Lead which I believe
+[08:00] is what's happening corre this is what's
+[08:02] in
+[08:03] 2024 it's on the next bll point it is
+[08:06] confirmed Paris 2024 there'll be two
+[08:07] sets of lead B combin speed
+[08:11] only you
+[08:13] know and here are the two people I
+[08:15] worked with this is he's right there and
+[08:18] there's Hannah she's a PhD student at
+[08:20] Colorado State and this is how this
+[08:23] started um I think this is informative
+[08:26] because so this Lally tweeted at or
+[08:28] maybe it's to DM but I
+[08:30] said it's a
+[08:34] tweet a week any interest and that's my
+[08:38] old before was banned by
+[08:42] Elon and so it started with this tweet
+[08:44] and then we eventually wrote a paper and
+[08:46] um we submitted it to the the Carnegie
+[08:48] melon Sports and LS competition but this
+[08:51] is this is how papers like this start
+[08:52] just you see something think about write
+[08:54] it down and then see where it goes and
+[08:56] you know not every tweet that write
+[08:58] becomes a paper but
+[09:00] do and it's you just these ideas and see
+[09:02] where they go and then WR a series of
+[09:05] blog posts and then Kang has added this
+[09:07] to the last slide oh this is from access
+[09:10] 2021 and then here's the links for
+[09:13] contacting Quang or myself and then he
+[09:15] absolutely put this in
+[09:19] here you
+[09:24] yourself
+[09:25] okay that's it how much time I done
+[09:29] do you
+[09:31] want you keeping the time or
+[09:34] something
+[09:36] oh like five more minutes did sure
+[09:39] that's never happened before QA or not
+[09:46] QA okay good that time
+[09:49] back uh I'm not gonna call on you you
+[09:51] can talk to me in the
+[09:53] office what happened when you try
+[09:55] comparing the product R versus the rank
+[09:58] like
+[10:04] people did we do some rank I don't know
+[10:07] we looked at it very early on and found
+[10:09] that it wasn't this interesting yeah it
+[10:12] so this is this is several years ago if
+[10:14] I remember correctly we looked at it it
+[10:16] wasn't it wasn't it I believe it will
+[10:19] still violate the IIA but nearly as
+[10:22] drastic oh I mean like um let's say that
+[10:25] hypothetically you were to pretend thatt
+[10:27] use a some system would you like would
+[10:30] the um results of the Olympics be
+[10:33] changed if you switched from AIC to a St
+[10:35] rank yeah so I I think the answer is yes
+[10:38] but I think it's nearly as drastic right
+[10:41] like um there it's it's well known
+[10:44] there's there's a whole bunch of
+[10:45] literature in sports economics about the
+[10:47] violations OFA in like cross country but
+[10:50] it's harder to find real examples of
+[10:51] them I think it's I think with sport
+[10:54] cling it's going to be or with the it's
+[10:56] very easy to find examples where this
+[10:57] goes wrong because it's
+[11:00] the scoring system is so extreme if you
+[11:01] finish
+[11:02] first when you multip one it stays the
+[11:05] same right and so it's it's a much more
+[11:08] extreme there's an extreme prize for
+[11:10] finishing first whereas in uh a
+[11:13] finishing first isn't isn't nearly as
+[11:15] valuable as finishing first in in a a
+[11:19] Sun versus a rank so that's what I
+[11:22] that's what I think if I remember from
+[11:23] four years
+[11:26] ago yeah have a few comments that's okay
+[11:29] sure yeah yeah you gonna tear me down
+[11:31] now no Build You Up okay um so I just
+[11:34] looked at the results of sport climbing
+[11:36] from Tokyo and all three men's medalists
+[11:40] won one of the three segments so making
+[11:43] your point like each one of them earned
+[11:44] a
+[11:45] one it was was it was the was the Bronze
+[11:49] Metalist the speed climber 's
+[11:53] see we looked events and it was it was
+[11:56] we it was really hard to so Junior
+[11:58] events there was qualifying events and
+[12:00] we it was really hard to win uh as a
+[12:03] speed climber at these events we were w
+[12:05] we were seeing it um and so we were
+[12:07] surprised that the speed climber
+[12:09] actually did place in the men's side in
+[12:10] the women's side none of these none of
+[12:11] those
+[12:13] three for whatever reason and um okay I
+[12:18] can talk to you more later sure I gotta
+[12:21] I gotta go she's yeah intimidating me
+[12:23] off
+[12:27] the one more round
+[12:50] sorry yeah yeah
+[12:56] y oh okay
+[13:07] okay testing can everybody hear
+[13:10] me is the mic seem to be working okay
+[13:15] cool a little closer all right let's
+[13:26] see it was better after you lowered it
+[13:29] okay how's that is that better yeah
+[13:32] let's people testing one two three can
+[13:34] people online hear
+[13:38] me
+[13:40] [Laughter]
+[13:42] something okay okay
+[13:47] great there's any issues once I get I
+[13:50] mean I I can use my teacher voice that
+[13:51] would
+[13:53] help
+[13:55] okay um all right thank you very much
+[13:58] for being here crowding this room this
+[14:00] is really great to see this many people
+[14:01] interested in Olympic sports um my um
+[14:05] this paper this this uh work has
+[14:08] actually been published in the American
+[14:10] statistician and that QR code there will
+[14:12] take you to the paper in which most of
+[14:14] what you see here or a section of what
+[14:16] you see here is written up this is track
+[14:20] and field of course is the original
+[14:21] Olympic sport um however um I am doing
+[14:25] it at the high school level so um this
+[14:29] does have implications for potential
+[14:31] college recruitment which might have
+[14:33] implications for Olympics in the future
+[14:36] so track and field is extremely popular
+[14:38] um there are greater than one million
+[14:40] High School track and field athletes and
+[14:42] that is a 2019 number it's probably
+[14:45] larger now I'm sure it went down a
+[14:47] little bit with covid and came back up
+[14:48] again um trackfield was one of the top
+[14:51] it was one of the top three most watched
+[14:54] Olympic sports in Rio and the second
+[14:56] most watched sport in the Tokyo Olympics
+[14:59] can anyone guess what the other two are
+[15:02] of the top three that are watched on
+[15:04] television
+[15:06] Spectators gymnastics is one swimming
+[15:09] swimming yes okay I I should have
+[15:11] brought fabulous prizes for you but I'm
+[15:13] sorry you just get to know that you got
+[15:14] it right okay um so and there were over
+[15:18] 20 million viewers in these Sports so
+[15:20] this is a really important Sport and um
+[15:23] it's it deserves some attention as far
+[15:25] as some data analytics going with it um
+[15:28] so my inspiration for this is the girl
+[15:30] on the left in this photo this is a 200
+[15:33] meter dash in a track meet um she does
+[15:35] actually wind up winning she pulls ahead
+[15:37] at the very end makes it all very
+[15:38] exciting um but athletic scholarships
+[15:41] are perceived as a path to college
+[15:43] education and that's why I wanted to
+[15:45] look at high school scores and seeing
+[15:48] how they might lead to college
+[15:50] scholarships and later or what about an
+[15:54] High School athlete can help a college
+[15:56] coach in their recruiting but there's a
+[15:59] lot of aspects to this and I don't
+[16:00] intend to say that I have answered the
+[16:04] question so if you go to any high school
+[16:07] track meet this is how this started so
+[16:09] like Greg started with a tweet mine
+[16:11] started with conversations at a track
+[16:12] meet typically if somebody says
+[16:15] something like this after you watch a
+[16:16] few races girls don't get any faster
+[16:18] after their sophomore year especially
+[16:19] for distance events so this begs the
+[16:22] question on whether or not boys actually
+[16:23] improve their times after their
+[16:25] sophomore year and so this is where the
+[16:26] notion of the sophomore Peak comes from
+[16:29] sophomore being 10th grade in what we're
+[16:32] talking about here um now I have this
+[16:34] picture here because this is the Tokyo
+[16:36] Olympics Allison Felix in the foreground
+[16:38] is about 32 years old and this photo
+[16:41] Sydney mlin in the background is about
+[16:43] 22 years old okay so there's a 10-year
+[16:46] difference in these athletes but they
+[16:47] are performing at the same level I
+[16:49] suppose one could argue that Allison
+[16:52] Felix might be past her Peak at this
+[16:54] point but I would think that her medals
+[16:56] at the Tokyo Olympics might beg to
+[16:58] differ with that so um I know that
+[17:01] individual performance in athletes is
+[17:03] very um well it's individual so um so we
+[17:07] wanted to look at that and also look on
+[17:09] the impact on recruitment for college I
+[17:11] Believe by the way Alison Felix still
+[17:14] holds the 200 meter High School record
+[17:18] um at least that was true about four
+[17:20] years ago in in 200 meter
+[17:23] dash so recruiting rules um college
+[17:26] recruiting can occur on June 15th after
+[17:29] the completion of the sophomore year and
+[17:32] my question was is the focus on athletes
+[17:34] who have already peaked so if there is a
+[17:36] sophmore Peak then we need to know that
+[17:39] and if they're pick if the athletes who
+[17:41] are recruited have already peaked what
+[17:43] are the implications of that for the
+[17:45] college sports and the relationship is
+[17:48] um there's also this relationship
+[17:49] between growth rate and Improvement
+[17:51] which is understood but not necessarily
+[17:53] implemented by coaches so um that people
+[17:58] grow it at different rates we know that
+[18:01] right so um and also people get better
+[18:04] at their sport at different rates so you
+[18:07] might have someone who doesn't Peak say
+[18:09] until their senior year who is
+[18:11] completely overlooked by somebody who uh
+[18:14] by college coaches because they are
+[18:16] thinking about the younger players and
+[18:18] potenti younger
+[18:21] athletes so the literature focus on this
+[18:23] though has been in Peak Performance in
+[18:25] college there's a lot of literature on
+[18:27] that the to the literature though is on
+[18:30] Peak Performance for elite athletes in
+[18:32] general so not just for your person
+[18:34] who's going to participate in high
+[18:35] school potentially and not go forward
+[18:37] but also for Peak perform but but um so
+[18:40] these are people in the Olympics or
+[18:42] other world class athletes and of course
+[18:45] we find in most of those studies they
+[18:47] pretty much all agree that between the
+[18:50] ages of about 25 and 30 is where people
+[18:54] peak in their Sport and um there is a
+[18:58] little bit of Wiggle room there and it
+[18:59] also depends on the sports so more
+[19:01] explosive Sports people tend to Peak
+[19:03] younger um the sports that require a
+[19:06] little more skill and technique those
+[19:08] people tend to Peak a little bit later
+[19:11] in in their sport but again there's not
+[19:13] much been done for sports um the
+[19:16] evidence for Peak Performance in
+[19:18] adolescence is based on adolescent
+[19:20] athletes Elite adolescent athletes so it
+[19:22] doesn't really apply again to in general
+[19:25] a high school athlete or an adolescent
+[19:27] athlete and that's the reference for
+[19:29] that um paper down there I didn't have
+[19:31] anything to do with that paper I just
+[19:33] that was a very interesting paper that
+[19:34] was part of this um particular
+[19:37] Journey so I do want to mention here
+[19:39] that there obviously is an effect of
+[19:41] puberty on athletic performance
+[19:43] individuals mature at different rates
+[19:45] obviously you have a a a boy for example
+[19:47] who at 14 when he's starting High School
+[19:50] is you know 5 foot Zer and 100 pounds
+[19:54] and then by the time he's a senior he's
+[19:56] 6'1 170 that's a very different I mean
+[19:59] that's that's of course obviously going
+[20:01] to be a change in the way that that
+[20:03] person might perform at a particular
+[20:05] Sport and uh typically with women it's
+[20:08] seen as a um seen as a detriment um to
+[20:13] their sport performance they get hips
+[20:16] they don't run as fast their body mass
+[20:18] changes it's really hard for them to
+[20:21] continue um in their sport at the same
+[20:24] level at least that's where the myth of
+[20:26] the sophomore Peak I think comes from I
+[20:28] do want to mention the female triad here
+[20:30] because I do think it's important and I
+[20:32] don't want to gloss it over but my data
+[20:34] does not have does not have any
+[20:36] information on the female triad the
+[20:38] female triad is this notion of low
+[20:40] energy and U menstrual disturbance and
+[20:43] also low bone and mineral density that
+[20:45] tends to affect a large proportion
+[20:47] according to this little graphic about
+[20:49] 78% of female athletes so again it's an
+[20:52] important issue but my data do not
+[20:54] address that
+[20:57] issue so my three questions are do boys
+[21:00] and girls Peak and speed at different
+[21:01] grades during High School um and is
+[21:04] there any difference in those Peaks due
+[21:05] to gender or interaction interaction
+[21:07] between gender and their distance and in
+[21:10] this particular paper I looked at 200
+[21:11] meter 400 meter 800 meter and 1600 meter
+[21:15] events and the one of the most common
+[21:18] trajectories of finishing times for tra
+[21:20] athletes across their High School
+[21:21] careers this last question came later as
+[21:24] I identified or started looking more
+[21:26] closely at the data
+[21:29] we had a ton of data for this if you
+[21:31] didn't know track and field has a lot of
+[21:34] websites where you can get data these
+[21:36] are two a mil split and Tech and it's a
+[21:40] mil split Texas in particular but it's
+[21:41] mil split USA and there's a mil split
+[21:43] Arizona and a milit Florida there's a
+[21:46] bunch of different um mil splits and
+[21:48] they have a lot of information um
+[21:50] athletic.net in particular actually has
+[21:52] the numbers on their website so they
+[21:54] have over 85,000 coaches participating
+[21:57] in this around 8 million entries per
+[21:59] year and over 13,000 events so it is a
+[22:03] ton of data waiting to
+[22:06] be utilized for this and it goes from
+[22:09] middle school all the way up to college
+[22:12] in some instances it also uh is across
+[22:15] the US and um across events there's a
+[22:19] cross country as well as track and field
+[22:21] it tracks the running events the
+[22:23] throwing events the jumping events so
+[22:24] it's it's all there and there's also
+[22:27] ters which is for college
+[22:29] as well I didn't utilize tiers in this
+[22:30] particular study so we had to scrape
+[22:33] these data so this is a snapshot of
+[22:35] athletic.net in particular that's the
+[22:37] one we wound up scraping um you can see
+[22:39] that it's divided into regions this is
+[22:41] Texas um region one to four there
+[22:44] actually eight regions in Texas there's
+[22:47] men's top athletes at the top women's
+[22:49] performance list all those things you
+[22:51] can get from there you can go drill down
+[22:53] into a specific High School in a
+[22:55] specific season and then you can find
+[22:57] all of the athletes that are in that
+[22:59] High School in that given season you can
+[23:02] also look at the um particular race
+[23:05] you're interested in or the event you're
+[23:07] interested in men's 100 meters Varsity
+[23:09] women's 100 meters Varsity for example
+[23:11] drill on into that and get um rankings
+[23:14] and other scores you can get scores per
+[23:17] meet and all kinds of stuff from this so
+[23:19] there's a lot of information here now
+[23:22] scraping these data took the majority of
+[23:25] the time obviously and the cleaning of
+[23:27] it as well this was before for chat GPT
+[23:29] could clean your data for you so we did
+[23:32] all this um using my hand and a lot of
+[23:35] regex expressions and rvest and a few
+[23:39] CSE words thrown around mostly at the
+[23:41] computer but anyway it was um it was
+[23:45] that part was was difficult and we do
+[23:47] have the data and I have the data that I
+[23:49] used if you go to the website for the
+[23:51] paper there's a link there to a GitHub
+[23:53] site that has all of the data that I use
+[23:55] for this in cleaned form by the way so
+[23:59] um this is what we came up with what we
+[24:01] wound up with for this paper we looked
+[24:03] at athletes that completed four years in
+[24:06] the same event and this is from 5A and
+[24:09] 6A Texas high schools 5A and 6A schools
+[24:11] in Texas are the largest high schools
+[24:13] they have over 1500 students per class
+[24:17] um and there are these are the numbers
+[24:20] of the records I won't bother reading
+[24:22] them for you you can read them
+[24:23] yourselves we do have very few records
+[24:26] for the 800 meter and again we had the
+[24:28] stipulation that an athlete had to
+[24:30] compete in all four years in that race
+[24:32] and that's a very tough event so um
+[24:35] that's probably why we have so few
+[24:38] records in that one um and oh well I I
+[24:43] just almost stole my own Thunder but let
+[24:44] me let me go back to this um so we want
+[24:48] to take these records and examine the
+[24:50] sophomore Peak the idea being that if we
+[24:54] examine change from year to year and
+[24:57] look at the percentage of say personal
+[25:00] records that an athlete that happen in
+[25:03] each of these events from year to year
+[25:05] then we should see the largest
+[25:07] percentage of personal records in the
+[25:09] sophomore year if the sophomore Peak is
+[25:13] correct if it's
+[25:15] true Dro please we don't see that okay
+[25:20] what we see is so for every event and
+[25:23] both genders we see that the percentage
+[25:25] of personal records increases
+[25:28] as the years go on and this tracks more
+[25:31] with what we know about the data from
+[25:33] Elite athletes and college athletes than
+[25:37] uh previously because this is the um
+[25:39] this kind of goes with that notion that
+[25:42] people are still improving as they're
+[25:44] staying with it and these athletes again
+[25:47] are the oldest of them is probably 19
+[25:50] years old so they have a long way to go
+[25:52] hopefully to improve their craft a
+[25:54] little bit more
+[25:58] we also looked at means plus 95%
+[26:01] confidence intervals for the percent
+[26:02] change between grades and overall so in
+[26:05] this particular graphic I have the
+[26:07] overall is on the far right and you can
+[26:09] see that the the vertical axis here are
+[26:12] percent changes at zero Zero's up here
+[26:15] at the top so a negative change
+[26:17] indicates an increase in speed or a
+[26:19] decrease in time however you want to
+[26:21] look at it an improvement if you want to
+[26:23] talk about it that way and we have from
+[26:26] 9th to 10th 10th to 11th so the 10th to
+[26:28] 11th would be the relevant one and you
+[26:30] can see that athletes are still
+[26:32] decreasing their speeds although perhaps
+[26:35] not as quickly um and by the 11th and
+[26:39] 12th there's a very little change in
+[26:41] speed and O but overall you see there's
+[26:43] obviously a big difference in their
+[26:45] Improvement for both uh boys and girls
+[26:48] in this the girls are in pink and the
+[26:50] boys are in blue here on this
+[26:53] one but this is for the group as a whole
+[26:57] so this isn't
+[26:58] average looking at every difference in
+[27:01] grade as its own um value as its own um
+[27:07] independently of the other grades I
+[27:09] really wanted to look at what about
+[27:11] trajectories so this doesn't connect
+[27:14] individual athletes over time it just
+[27:16] looks at them independently so I wanted
+[27:18] to connect them over time and here I'm
+[27:20] just going to look at the 1600 meter run
+[27:23] as an example of what we did we did this
+[27:25] for all four events that we looked at
+[27:27] but this is the 16 100 meter run and um
+[27:30] the vertical axes here are inverted so
+[27:33] that uh better times are at the top and
+[27:37] um there a boys on the right and girls
+[27:40] on the left and you can see much much
+[27:43] more variant for the girls um if you
+[27:46] look at that solid red line in the
+[27:48] middle that is the linear regression
+[27:50] line that is done for all of these so
+[27:52] you can kind of see what the average
+[27:54] looks like note that that slope is
+[27:55] mostly increasing or is increasing so
+[27:58] that means an improvement overall in the
+[28:00] high school trajectories um now the you
+[28:03] see the the very light kind of grayish
+[28:06] brownish shading in the back that's all
+[28:08] of the athletes in the 1600 meter the
+[28:11] darker brown lines are just 10 random
+[28:13] that I picked out to show what typical
+[28:16] trajectories might look at like look
+[28:18] might look like and you can see that
+[28:20] there is a lot of improvement but
+[28:21] there's some that don't as well what you
+[28:24] don't see is a distinct Peak at the
+[28:27] sophomore year and then a plateau you
+[28:29] might see kind of a more of a gradual
+[28:31] shaping but for a lot of these athletes
+[28:34] they are still getting better as they
+[28:37] get out of their High School
+[28:40] careers so looking at that all of those
+[28:43] plots we've got we've got different
+[28:45] slopes and different intercepts so I
+[28:47] thought I'd do a mixed model analysis to
+[28:49] see um if we could glean anything more
+[28:53] from this to actually look at the effect
+[28:55] of grade on them that's a fixed effect
+[28:58] the grade squared which will quantify
+[29:00] the peak so of course my time is in
+[29:02] seconds we did this for each event and
+[29:04] for both genders a separately so
+[29:07] separate mix effect models and actually
+[29:09] I have to say that this was an an idea
+[29:11] from the reviewers that we did this so
+[29:14] and and it turned out to be a really
+[29:15] good thing actually so this is the model
+[29:18] setup and then for the random intercept
+[29:20] model I'm just going to look at 200
+[29:22] meter and 1600 meter here and the
+[29:25] coefficient as you note on the year for
+[29:27] all of the is negative so we have girls
+[29:30] and boys again analyzed separately um
+[29:32] for both the 1600 meter and the uh 200
+[29:35] meter we don't really see an Evidence of
+[29:38] the peak that the year has a much larger
+[29:40] T statistic than the year squared is
+[29:42] more important and I actually did at one
+[29:45] point take out the year squared and the
+[29:47] um the remal statistic for this was
+[29:50] actually a was a little bit larger
+[29:52] without year squared but it was um not
+[29:56] that much difference so you could take
+[29:58] out that and still have roughly the same
+[30:00] model so if you want to do parsimony you
+[30:02] could say year squar is not really
+[30:04] necessary for this um and but what's
+[30:07] really remarkable about this is if you
+[30:10] look at the interclass correlation
+[30:12] coefficients they are enormous they're
+[30:14] close to one what does that say that
+[30:17] means the individual variability is
+[30:19] really taking over in this model you and
+[30:22] so in some sense the notion of trying to
+[30:25] say that there's one Paradigm the
+[30:27] sophomore Peak that fits all high school
+[30:30] athletes is moot um because it's really
+[30:34] more about individual
+[30:38] variability um so we back to our 1600
+[30:42] meter runs again so we wanted to ask
+[30:45] fine we can't say anything about the
+[30:47] sophomore Peak we can't really say
+[30:48] anything about peak in general so what
+[30:50] about clusters of athletes who perform
+[30:52] similarly that's what we want to look at
+[30:55] but we want to Cluster them over their
+[30:57] trajectory so this is time series
+[30:59] clustering and we're going to use the
+[31:00] KLR package it's basically clustering
+[31:03] with using K means for longitudinal data
+[31:05] that's where K means longitudinal that's
+[31:07] where that comes from it does not assume
+[31:10] um a functional form of trajectories so
+[31:13] um for example it doesn't assume a
+[31:15] linear form so it's a non-parametric
+[31:17] clustering and we chose our clusters via
+[31:21] a cross validation for each event and
+[31:23] each gender separately so I'm going to
+[31:25] show you the results for the 200 meter
+[31:27] boy boys and girls and the 1600 meter
+[31:29] boys and girls so 200 meter is up here
+[31:32] at the top and 1600 meter at the bottom
+[31:35] boys on the left in red girls on the
+[31:37] right in purple and these clusters so
+[31:40] these lines each line represents a
+[31:42] cluster of individuals within the um
+[31:45] particular trajectories in their high
+[31:47] school so now these these times on the
+[31:49] vertical axis they're not inverted so
+[31:51] performance at the bottom is better in
+[31:54] this case um and you can see though what
+[31:57] we do see is that athletes that stay
+[31:59] that tend to start fast tend to stay
+[32:01] fast um in the they're at least in the
+[32:03] fastest group um they're not a whole lot
+[32:06] of switching groups so as a college
+[32:08] coach you might look at somebody who's
+[32:10] like a boy in the uh 400 meter I'm sorry
+[32:13] this is not 200 meter that's 400 meter
+[32:15] on the top and you a 200 meter time of
+[32:19] 60 seconds would be really bad
+[32:22] um this is 400 meter so you see someone
+[32:25] in this bottom line here that they have
+[32:29] um 52 seconds as their start time and
+[32:32] then they're down below 50 seconds by
+[32:33] the time they're a senior that's a
+[32:35] really good athlete of course as a coach
+[32:37] you want to try to catch that person as
+[32:39] early as possible so how do you figure
+[32:41] out how do you predict that athletes is
+[32:44] going to stay there or wind up in this
+[32:47] group which has roughly the same
+[32:48] intercept but a little bit different
+[32:51] slope so that's another question to be
+[32:54] answered later
+[32:56] on so limitations takeaways this is
+[32:59] always the thing that we need to think
+[33:01] about um I don't really see evidence of
+[33:04] a sophomore Peak maybe a junior Peak but
+[33:06] and honestly these people are these
+[33:09] athletes in general high school athletes
+[33:10] seem to be improving over time which
+[33:12] meshes more with the literature that we
+[33:14] know about performance and human
+[33:17] performance in general for running and
+[33:19] throwing events um so this might be an
+[33:22] opportunity to use some of these data to
+[33:24] hold off and maximize scholarships I'm
+[33:26] not saying that I I don't have an app or
+[33:29] a shiny app or anything like that that a
+[33:31] CO college coach could use yet to look
+[33:33] at this um but maybe that's something
+[33:35] for the future um some limitations we
+[33:38] only used Texas and we only have gender
+[33:41] well we have high school and region of
+[33:44] the state as other variables but we
+[33:47] don't have any other demographic
+[33:48] variables for example their height or
+[33:50] their weight or anything like that that
+[33:52] we might be able to use to improve the
+[33:54] model I suppose that we would get it but
+[33:56] it would be at a lot of human effort to
+[33:58] try to get that information and I
+[34:00] mentioned here that Texas is the number
+[34:02] two recruiting state for college track
+[34:04] and field so it's the second most number
+[34:06] of athletes from Texas that wind up in
+[34:09] running in college at least in D1 anyone
+[34:12] guess what number one is so audience
+[34:14] participation time
+[34:16] again no
+[34:19] Georgia yeah Georgia's number one okay
+[34:23] again sorry no fabulous prize for you
+[34:25] but you just get to know that you won um
+[34:27] so so um the other ones Florida is
+[34:30] number three um and I believe this is
+[34:32] going to surprise you Iowa and
+[34:36] Pennsylvania okay so at least that's
+[34:38] according to mil split a couple years
+[34:39] ago maybe it's a little bit different
+[34:41] now anyway um so for the future jumps
+[34:46] and throws same girl here doing a triple
+[34:48] jump so I'm very interested in the jumps
+[34:51] and the throws as well and also doing
+[34:54] this what I told you earlier about this
+[34:56] idea of where we have
+[34:58] backward analysis using record linkage
+[35:00] so let's take the top college
+[35:05] performers in that make champ that get
+[35:08] championship rings or their they win
+[35:11] their conferences and backtrack them
+[35:13] through their High School career to see
+[35:15] where they were and that's what we're
+[35:17] working on right now hopefully we'll
+[35:20] have something for you by JSM so um I'm
+[35:23] going to leave it there but I do want to
+[35:26] um mention a couple couple of things at
+[35:28] SMU we have um some Physicians open and
+[35:33] so I would love for you to join us at
+[35:35] SMU statistics and data science come
+[35:37] talk to me we have an open rank position
+[35:40] a full Professor uh chair position indow
+[35:44] chair position open and a lecture
+[35:46] position also and this is our solar
+[35:48] eclipse on Monday um taken from the
+[35:51] Dallas Hall lawn right in front of SMU
+[35:53] and that is peruna our fearsome mascot
+[35:55] wearing his eclipse glasses and staying
+[35:58] safe okay anyway thank you very
+[36:07] much you want to answer some
+[36:11] questions no time for
+[36:21] questions um he is going to speak on
+[36:24] using analytics to drivee
+[36:34] absolutely Emily's Canadian but we're
+[36:36] we're
+[36:42] friends at least some
+[36:53] yeah I'll just start talking while J
+[36:55] sets up um
+[36:57] oh yeah
+[36:59] Mike
+[37:02] thanks just clip this and hold
+[37:17] it James can you hear me okay
+[37:21] great
+[37:23] um and the other is there any way we can
+[37:25] get more chairs in the room and we have
+[37:27] yeah yeah let's let's do that now while
+[37:30] we set
+[37:33] up and I'll just start talking a little
+[37:35] bit to entertain everyone
+[37:38] um thanks hi Lou nice to see you um
+[38:00] but
+[38:04] out like there's no
+[38:08] so so there's no they already know they
+[38:12] good they
+[38:15] should that
+[38:17] right well I mean those are means right
+[38:20] so I didn't really have individual
+[38:22] trajectories of athletes over that so
+[38:23] it's it's possible that there might be
+[38:25] someone who's in that smaller group that
+[38:27] I mean things can happen but um yeah
+[38:31] that I mean that that is possible I
+[38:35] think I would want to do this set of
+[38:36] analysis on more States and more data
+[38:39] before I actually could make that
+[38:41] recommendation but it does seem true
+[38:43] that somebody who starts out running 400
+[38:46] meters at 70 seconds is not going to be
+[38:49] D1 qualifier by the time they're sa so
+[38:52] that's something you can
+[38:57] are we in business do folks have
+[39:00] seats think we're
+[39:02] good we're good okay all right
+[39:07] great I think everyone's seated oh yeah
+[39:10] the guys have seats all right thanks
+[39:13] Monty all right um who's the schedule
+[39:17] enforcer who's timing me yeah okay and
+[39:21] what do I have 20 to talk and five for
+[39:23] Q&A is that the idea yeah okay so can
+[39:26] you time me for
+[39:28] 22 minutes all right so all right so
+[39:31] time me for 18 okay okay thank
+[39:35] you um all right so I work at the US
+[39:39] Olympic and Par Olympic Committee that
+[39:41] is the the US organization that's
+[39:43] responsible for fielding teams for the
+[39:45] Olympics par Olympics um PanAm games and
+[39:49] parapan games and we work with all of
+[39:51] our national governing bodies across the
+[39:53] country to field those teams so pick
+[39:55] your favorite Olympic or par Olympic
+[39:57] sports like the national governing
+[39:58] bodies are like USA swimming USA
+[40:01] Gymnastics USA fencing Etc okay um I
+[40:06] work on a team called performance
+[40:07] Innovation uh We've Come Together in the
+[40:09] last few years so it's basically nerds
+[40:12] are us it's um we are working in data
+[40:16] analytics and Technology to support
+[40:18] athlete Health wellness and performance
+[40:20] that's our objective we have you can see
+[40:23] a fancy purpose there lots of words you
+[40:25] can read those later um strategically um
+[40:29] you know we're trying to give
+[40:30] competitive advantage to our Team USA
+[40:32] athletes so our goal as an organization
+[40:34] is to make sure that we are the best
+[40:37] performance Innovation organization
+[40:38] sorry Canada um when we host the Summer
+[40:42] Olympics and Par Olympics in LA in
+[40:45] 2028 um the three main pillars of our
+[40:48] organization are the development of a
+[40:52] platform called athlete 360 which is an
+[40:55] athlete management system or am so if
+[40:57] you ever hear AMS as a buzzword just
+[41:00] think One-Stop shopping for all data
+[41:02] that relates to an athlete and it's sort
+[41:04] of a holy grail for for all
+[41:06] organizations there are some commercial
+[41:08] companies offering Solutions it's one
+[41:11] it's the situation is kind of like it's
+[41:14] for everyone which means it's sort of
+[41:15] for no one because it's not customized
+[41:17] for anybody but customization goes on
+[41:20] and then but it's a big effort to create
+[41:22] an AMS so we're working with an AMS
+[41:25] partner to develop our system and then
+[41:27] with customization for us and a lot of
+[41:29] other organizations are doing the same
+[41:31] thing um the other next pillar is
+[41:33] international competitive analytics so
+[41:36] thinking about what esan talked about
+[41:37] this morning that's all about
+[41:39] understanding how good are we compared
+[41:41] to other countries so we have models for
+[41:44] every Olympic event um and we basically
+[41:48] look at the teams or the competitors in
+[41:49] those events and what are their
+[41:51] expectancies or likelihoods to win
+[41:53] medals at the Olympics and we update
+[41:55] those based on International competitive
+[41:59] results and I'll talk about an aspect of
+[42:01] competitive analytics that I'm involved
+[42:03] with in my work here the final pillar is
+[42:05] technology and Innovation so we operate
+[42:07] a fund National governing bodies can
+[42:10] apply for we also support them in
+[42:12] executing those projects but it's
+[42:13] basically extra funding to to do
+[42:15] projects that relate to supporting
+[42:18] athletes you know technique Health
+[42:20] Wellness performance
+[42:22] Etc uh some of the challenges uh and
+[42:25] opportunities that we have in our
+[42:28] Olympic and Paro Olympic movement in the
+[42:30] US um is first one is resources so we
+[42:34] are not like some countries that have a
+[42:36] state sponsored Sports system money is
+[42:39] tight and most ngbs are decentralized so
+[42:42] we do not receive funding from the US
+[42:44] government our funding comes from
+[42:46] generous donors and from our television
+[42:49] contract with NBC
+[42:51] primarily so money is always at a
+[42:53] premium we also have a smaller
+[42:56] organization than you might have imagine
+[42:58] um our national governing bodies have
+[43:00] variable budgets and staff sizes so some
+[43:02] of them like USA swimming or um USA
+[43:07] Track and Field large organizations a
+[43:10] lot of members relatively well funded
+[43:13] and their staffs will include people
+[43:15] working in the analytics and Technology
+[43:18] spaces other ngbs are more like high
+[43:22] school or small College Programs where
+[43:25] there's a handful of people doing
+[43:26] everything
+[43:28] probably no one with any data analytics
+[43:29] or technology capacity or capability so
+[43:33] it's a real gamut of different you know
+[43:36] capabilities and capacities that we that
+[43:38] we support um there are many sports and
+[43:41] events so in the Paris Olympics we have
+[43:44] 329 metal events in 45 Sports so imagine
+[43:49] like a whole bunch of World
+[43:50] Championships going on all at the same
+[43:52] time and then the par Olympics will have
+[43:55] even more medal events uh in 23 Sports
+[43:58] uh in Paralympics um they often change
+[44:01] classifications so they classify
+[44:03] athletes based on their limitations or
+[44:07] capabilities in movement and those
+[44:10] classifications are often changing so it
+[44:12] makes data collection and analytics
+[44:14] really challenging in that space and
+[44:16] that's something that we're trying to
+[44:17] overcome uh getting into Data now so
+[44:20] like we heard eston talk about Hawkeye
+[44:22] today um some of the other ones that the
+[44:25] different major sports leagues have are
+[44:26] like Z sport radar Etc second Spectrum
+[44:30] we don't have any of that we don't have
+[44:33] highres cameras or 19 high-rise cameras
+[44:36] around our Arenas um we don't have easy
+[44:40] means to do like ball tracking or
+[44:43] realtime player tracking data so it's a
+[44:45] space that we're trying to develop but
+[44:47] it's a much harder effort for us we
+[44:49] don't have what the major league major
+[44:51] leagues have um another challenge is
+[44:54] relatively few data points because many
+[44:57] athletes in many sports don't compete
+[44:58] all that
+[45:00] often um we our data supplier is Grace
+[45:03] note which used to be known as
+[45:05] infast um they give us data I me to
+[45:08] their credit on all Olympic sports but
+[45:11] the nature of the data we have is what I
+[45:12] would call like metadata it's basically
+[45:15] athlete and team names what country they
+[45:18] represent birth dates competition type
+[45:21] the sport event who won who lost what
+[45:23] was the rank what was the result if it's
+[45:25] measurable that kind of stuff
+[45:27] um competition results are often
+[45:29] presented in a PDF format like I talked
+[45:31] about with zun's great work um so we
+[45:34] have to a lot of scraping and then
+[45:36] finally video tagging which is really
+[45:39] the the means that you would take to
+[45:41] really understand like what goes into a
+[45:43] performance is timec consuming expensive
+[45:46] and subject to imperfect reliability so
+[45:49] we're very interested in automated video
+[45:51] tagging Solutions um that is
+[45:53] surprisingly a much more difficult
+[45:55] problem than I originally thought um and
+[45:57] I think a lot of people underestimate
+[46:00] how difficult that is to get it right
+[46:02] that doesn't mean we're not
+[46:04] trying um so the type of competitive
+[46:07] analytics that we do or at least some
+[46:08] examples here at the usopc and the data
+[46:11] sources um one main type of analytics we
+[46:13] do is Elo ratings who knows where ELO
+[46:16] comes
+[46:18] from T good job um so ELO comes from
+[46:22] chess so it's basically a way of looking
+[46:25] at head-to-head matchups and basic doing
+[46:27] a point exchange so if someone beats
+[46:30] somebody else they take ranking points
+[46:32] from them and it's a way of
+[46:33] understanding the relative strengths of
+[46:35] different athletes in event we've taken
+[46:37] that for head-to-head and adapted it for
+[46:40] multi competitor events in order to
+[46:43] understand an athlete or a team strength
+[46:45] relative to other International
+[46:47] competitors our initial data source is
+[46:49] that Grace note that I talked about and
+[46:52] we basically use that to calculate ELO
+[46:54] ratings over time and then use that to
+[46:57] calculate you know with a closed form
+[46:59] expression how that translates to metal
+[47:02] expectancy we also do some Monte Carlo
+[47:04] simulation around that to figure it out
+[47:06] so that's Row three we use MMI Carlo
+[47:09] simulations around those ELO ratings to
+[47:11] again estimate our metal
+[47:13] expectancies another way we use those
+[47:15] ELO ratings is for what we call
+[47:16] Performance funnels so Monty I'm really
+[47:19] interested in talk to you more because
+[47:21] that basically relates to looking at how
+[47:23] athletes progress over time and you know
+[47:26] what their Peak age are and it's a
+[47:28] really important tool for funding like
+[47:31] understanding you know what someone when
+[47:32] someone's Peak is likely to be I think
+[47:35] we have a tendency to reward athletes
+[47:36] for past performance and I think we see
+[47:39] that in Major League Sports as well and
+[47:42] I think it'd be interesting to flip that
+[47:43] on its ear and find a way to look at
+[47:46] athletes as they progress because once
+[47:48] an athlete has won a gold medal they're
+[47:50] going to get you know they're going to
+[47:52] get sponsorships they're going to get
+[47:53] resources they're going to have a lot of
+[47:55] funding it's The Athlete on the way up
+[47:58] who is unfunded or underfunded who we I
+[48:01] think we should be supporting in order
+[48:02] to help them maximize their potential so
+[48:05] Monty really want to talk to you more
+[48:06] about that because that's fascinating
+[48:08] work um another aspect of M Carlo
+[48:11] simulations and what I'm going to talk
+[48:12] about today is instead of using ELO
+[48:15] ratings to predict metal expectancies
+[48:17] I've developed an approach to using
+[48:19] competition results in order to
+[48:22] basically run a bunch of my carless
+[48:24] simulations and look at potential
+[48:26] outcomes as well as what needs to be
+[48:28] true for an athlete or a team to win in
+[48:30] a given event and I'll illustrate that
+[48:33] with an example from gymnastics today um
+[48:35] if you're interested in seeing more I
+[48:37] gave a similar presentation at the Sloan
+[48:39] conference this year focused primarily
+[48:41] on figure skating results so if you want
+[48:44] to see that Shameless plug go to YouTube
+[48:46] and you can find me um and then finally
+[48:49] simple is Gap analysis part of
+[48:51] understanding how we compare is just
+[48:53] looking at different aspects of a
+[48:55] performance and understand how our
+[48:57] athletes compare to International
+[48:59] competitors in each of those categories
+[49:02] and that comes from utilizing data
+[49:04] available in detailed results protocols
+[49:07] so an example in figure skating might be
+[49:09] comparing athletes on the points they're
+[49:12] attaining from jump difficulty the
+[49:14] points they're attaining from execution
+[49:16] of quality on the spins points they're
+[49:19] attaining from artistic marks all that
+[49:21] kind of stuff you know wherever the data
+[49:22] is available we're using it to to help
+[49:24] our athletes understand where they have
+[49:26] opportunity ities to to
+[49:29] gain uh so the case study I'm going to
+[49:31] show is from I mentioned gymnastics um
+[49:34] I've been working a lot with the men's
+[49:35] team in the last year and a half so our
+[49:37] women have been doing great knocking out
+[49:39] of the park they've won the team gold
+[49:41] medal and a number of recent Olympics
+[49:43] and World Championships um starting to
+[49:45] work with them now and that opportunity
+[49:47] was created by some of the work that
+[49:49] we've had a chance to do with the men uh
+[49:51] so the situation with the men at the
+[49:53] 2023 World Championships was coming into
+[49:57] that our men had not won a team medal at
+[49:59] an Olympics or a world since
+[50:02] 2014 um we did not so we did not win a
+[50:05] medal at the 2022 World Championships
+[50:08] that meant we lost an early opportunity
+[50:10] to qualify our team um our big rival for
+[50:13] that bronze medal was Great Britain and
+[50:16] out of the six apparatus that the men
+[50:18] compete on we only won one of those in
+[50:21] the team event and we tied one um we
+[50:25] lost both of the highest Leverage events
+[50:27] and I'll talk about how I determine High
+[50:29] leverage um and then in terms of
+[50:32] difficulty we had more difficulty so
+[50:34] gymnastic score very simple is basically
+[50:36] difficulty Points Plus execution points
+[50:39] difficulty is in theory uncapped but a
+[50:41] really good difficulty score in a
+[50:43] gymnastics routine is six points and
+[50:47] execution is a maximum of 10 and the
+[50:50] judges basically take deductions based
+[50:52] on anything that's not perfect you won't
+[50:54] see a 10 or at least right now you won't
+[50:56] see a tend an execution anymore because
+[50:59] the level of detail that the judges are
+[51:01] scrutinizing with is extraordinary right
+[51:03] now so a nine on execution is amazing
+[51:07] and in a lot of apparatuses like eight
+[51:09] and a half is also really good so in any
+[51:12] case um difficulty we actually had a
+[51:15] little bit more than half a point more
+[51:17] than Great Britain in that competition
+[51:19] we had more than eight points higher in
+[51:21] difficulty than Italy which is a ton um
+[51:24] and we were slightly behind China and a
+[51:27] little over two points behind Japan um
+[51:30] and that difficulty that was a that was
+[51:31] a lot of progress over where we had been
+[51:33] in Tokyo and going into that uh so there
+[51:36] was big focus in US gymnastics on
+[51:38] developing difficulty the problem was in
+[51:42] 2022 um execution um the way you can
+[51:46] often tell the result of a team
+[51:48] competition in gymnastics is how many
+[51:51] major and minor disasters the team had
+[51:53] and I characterize a major disaster as
+[51:56] an execution score less than six and a
+[51:58] half and um a minor disaster as an
+[52:02] execution score between six and a half
+[52:04] and seven and a half and you can see in
+[52:06] 2022 we had two of each Great Britain
+[52:10] only had one major disaster and one
+[52:12] minor and we finished a point and a half
+[52:15] behind Great Britain and then the
+[52:19] rubbing salt in the wound was losing to
+[52:21] Italy as well despite Having Eight more
+[52:23] points in difficulty and Italy
+[52:27] was incredibly clean in the competition
+[52:29] they went for Less difficulty but only
+[52:31] had one major disaster in every other
+[52:34] routine out of the 18 that count against
+[52:37] the
+[52:38] score they um they had an execution
+[52:41] score of over eight which is amazing so
+[52:44] we were asked several questions in 2023
+[52:47] what were our chances of beating Great
+[52:49] Britain how close was the competition
+[52:51] likely to be was our strategy of
+[52:54] focusing on difficulty and then
+[52:55] improving EX ution working um what were
+[52:58] the highest leverage events and then is
+[53:01] live tracking of metal chances possible
+[53:03] during a competition because in
+[53:05] gymnastics it can be challenging because
+[53:06] some events typically have higher scores
+[53:08] than others and if different teams are
+[53:11] on different apparatus at a given time
+[53:13] it can be hard to know how a team is
+[53:15] really doing so I came up with a way to
+[53:18] track that during a competition in the
+[53:21] way that you track win probability in
+[53:23] like NFL as a game is going on so what I
+[53:27] did was I looked at um the athletes that
+[53:29] were going to be competing for Great
+[53:31] Britain and USA it's five athletes the
+[53:33] Team final is what they call three up
+[53:35] three count so three compete all scores
+[53:37] count the Team final score is just
+[53:40] additive it's the sum of all um the
+[53:42] scores that are achieved and then our
+[53:45] chances according to my calculations go
+[53:48] and I use data from the 2022 and 2023
+[53:52] season and I used 10,000 L caros
+[53:54] simulations to predict the win
+[53:57] probability for each athlete I
+[53:59] calculated their mean and standard
+[54:01] deviation of score I assumed a normal
+[54:03] distribution that's not perfect but I've
+[54:06] done some exploration of different
+[54:08] distributions and I haven't found
+[54:09] anything that reliably works better so I
+[54:12] stayed simple um and so we are three up
+[54:16] three count and then going into the
+[54:18] competition I had us at 58% likelihood
+[54:21] to beat Great
+[54:23] Britain um I also looked at so this is
+[54:25] looking at the the total scores you know
+[54:28] how close was the competition likely to
+[54:30] be and I found that our mean going in
+[54:32] was higher but we had higher standard
+[54:34] deviation so higher
+[54:37] variability and then how close was the
+[54:39] competition likely to be you know I
+[54:41] could predict you know to give the team
+[54:43] a sense how close is it likely to be I
+[54:45] said 61% likely that it was going to be
+[54:48] less than three points which is
+[54:49] relatively
+[54:52] narrow um I I also looked at like so
+[54:55] this is how I did determine the high
+[54:56] leverage events I looked at in my sim my
+[55:00] 10,000 simulations what happened in the
+[55:02] scenarios where we won and what happened
+[55:04] in the scenarios where we lost and
+[55:06] looking at what breaking it down by each
+[55:08] of the six events so it's um PB is
+[55:11] parallel bars HB is high bar FX floor
+[55:15] exercise Vault still Rings pom horse so
+[55:18] the high leverage events were the most
+[55:21] high leverage were floor exercise and
+[55:23] vaults um but the other ones were
+[55:25] relative ly
+[55:28] close actual results our team won the
+[55:31] bronze medal uh three of the five guys
+[55:33] were first timers at Worlds so that was
+[55:36] remarkable um we also won Fred M um Fred
+[55:39] Richard won bronze in the individual
+[55:41] allaround which hadn't happened in a
+[55:43] long time and Coy young won two medals
+[55:46] in the individual events which was
+[55:48] amazing um so then looking at our team
+[55:51] Finals results um you know looking in
+[55:55] terms of major minor disasters our guys
+[55:58] executed really well we only had one
+[56:00] minor disaster um which was a lot better
+[56:02] than Great Britain and Italy did and
+[56:04] that's how we won the competition um our
+[56:07] total score was up almost seven points
+[56:10] and all of that came from execution so
+[56:12] that was confirmation that our strategy
+[56:14] of difficulty and then cleaning it up
+[56:17] was working that was really promising um
+[56:21] and yeah we won Let's see we won the
+[56:24] three most likely events that we would
+[56:25] win and then we were close on the other
+[56:27] one so that's how we beat Great Britain
+[56:30] by almost three
+[56:32] points um this is the win probability
+[56:35] graph so I talked about like just like
+[56:36] in the NFL what I did was I adjust you
+[56:39] know I basically took my model as each
+[56:42] result was determined I put that into
+[56:44] the model um as a determined result and
+[56:48] then recalculated the win probability so
+[56:50] you can see how that tracks over time
+[56:53] even with us and Great Britain on
+[56:55] different events at different different
+[56:56] times so this gives us a chance of where
+[56:58] we are and how different performances
+[57:01] affect that win
+[57:03] probability so it's all how an athlete
+[57:05] performs relative to what's
+[57:08] expected um several applications I think
+[57:11] to other sports are possible you know
+[57:13] pretty much any um any individual event
+[57:17] whether there's a score or a result a
+[57:20] distance a height Etc I think this can
+[57:22] be applied it can also be used for
+[57:24] relays where you're looking at the the
+[57:26] sum of a bunch of variable inputs to
+[57:29] determine a possible
+[57:32] outcome and that's that thank you for
+[57:35] tting
+[57:38] me how long do I have for questions
+[57:40] three seconds oh great Okay who wants to
+[57:43] ask a three second question Quang you
+[57:45] have five minutes that was 18 minutes oh
+[57:47] perfect thank
+[57:52] you analysis at comption level just
+[57:57] between C in other words do you have a
+[57:59] good track data within like those races
+[58:01] ex swimming and like running
+[58:05] Etc we just track based on the result in
+[58:08] the competition so we're an athlete
+[58:10] placed relative to all the other
+[58:12] athletes so basically if I beat you I
+[58:15] get points from you if you beat me you
+[58:16] get points from me if you're the
+[58:18] underdog and you beat someone who's the
+[58:20] favorite you get more points than if
+[58:22] you're the
+[58:24] favorite and we just adjust based on
+[58:26] every International competition for
+[58:28] which we pull results
+[58:31] in was there analysis Nicky of I imagine
+[58:35] there's like an optim difficulty to
+[58:37] execution like level and you mentioning
+[58:39] that more difficult
+[58:44] basally correct
+[58:48] imagine is that decision that you
+[58:53] guys yeah we've done a little bit what
+[58:56] Nick asked about was basically the
+[58:58] weighing difficulty versus execution and
+[59:00] what's the right balance and that's
+[59:01] actually one of the key things in my
+[59:03] work um so I judge figure skating and so
+[59:06] I work with a lot of the judge Sports
+[59:09] all the way all these judge all these
+[59:10] sports are judged or scored it's
+[59:13] basically a risk reward balance so it's
+[59:16] something we're working on Nick we're
+[59:17] not there yet but it's definitely
+[59:18] something we think about is how well can
+[59:21] an athlete execute the amount of
+[59:23] difficulty you know to achieve the
+[59:25] highest maximum final score but what we
+[59:28] found in Tokyo was we were so behind on
+[59:30] difficulty that there was no hope of
+[59:32] catching up and that's why the Mandate
+[59:35] came to like do more difficult skills
+[59:37] and then we'll get better at them and
+[59:39] also Russia followed that formula in
+[59:41] Tokyo and that helped them win so we we
+[59:44] we took that Playbook and applied it
+[59:47] yeah money so there's also this play
+[59:50] between difficulty in exe
+[59:54] div so thing we're looking at as well
+[59:57] we're not there yet but it's sort of a
+[59:59] similar story I mean the the points are
+[60:01] calculated somewhat differently and
+[60:03] Diving the dip G of difficulty is
+[60:05] multiplied by the execution score as
+[60:07] opposed to added so that changes things
+[60:09] a little bit as Greg helped us
+[60:11] understand um but it's something I mean
+[60:14] we're looking at it in all of our judge
+[60:15] sports like artistic swimming just
+[60:18] implemented a system very much like
+[60:20] these other sports last year they moved
+[60:22] from holistic marking to a point system
+[60:26] and just based on the way it was
+[60:27] initially set up we found that you
+[60:30] basically had to max out on difficulty
+[60:32] to be competitive so our coaches bravely
+[60:34] did that and that basically took us from
+[60:37] not qualifying for the last Olympics and
+[60:39] not qualifying for the last several into
+[60:42] a metal Contender for this coming
+[60:44] Olympics um but artistic swimming and
+[60:46] I'm actually part of a consultancy group
+[60:48] that's looking at it is actually looking
+[60:50] at adjusting the different point values
+[60:53] in order to restore some of the Artistry
+[60:55] to itic
+[60:58] swimming yeah what's your first name oh
+[61:00] Rosie
+[61:09] hi that's a great question I don't know
+[61:12] the answer like all this ELO stuff was
+[61:14] developed by a colleague of mine named
+[61:16] Dan Webb working together with Professor
+[61:18] Mark lickman at Harvard and some of his
+[61:20] students so I don't know if they tried a
+[61:23] true skill rating or not or I know
+[61:25] they've tried gcko because of Mark
+[61:27] lickman and some of that work has come
+[61:30] into our method of doing like multi-c
+[61:33] competitor events you know which is an
+[61:35] adaptation of the head-to-head but I
+[61:37] don't know if we tried true skill yeah
+[61:40] it's a good question I'll look into
+[61:43] that Sean yeah um I was curious when
+[61:46] you're talking about the high leverage
+[61:48] events do you also take into account
+[61:50] like we kind of just looked at the
+[61:52] example of Great Britain head-to-head
+[61:53] but yeah you know in the Olympics
+[61:55] obviously lot more countries a bronze
+[61:58] position do we take those other
+[62:00] countries into account or would it be
+[62:02] difficult to do so I mean it's possible
+[62:04] I was trying to make the problem as
+[62:06] simple as possible because based on all
+[62:08] previous data like it was very clear
+[62:10] that we weren't going to be beating
+[62:11] Japan or China on any day and the teams
+[62:15] below us were very like very unlikely to
+[62:18] beat us so I focus on the Great Britain
+[62:20] head-to-head but you know I mean going
+[62:23] into into the games now in Paris you
+[62:26] know I'll look at who I think is close
+[62:27] and that's what I'll Focus my analysis
+[62:29] on but we're also developing a tool that
+[62:31] will enable us to do this a lot more
+[62:34] automatically than the horribly
+[62:36] embarrassing manual way that I'm doing
+[62:38] it
+[62:39] now yeah good question Sean do you think
+[62:43] there was a was there a difference or
+[62:45] like different strategy employed for
+[62:48] optimizing for a team and that
+[62:50] head-to-head match up versus optimizing
+[62:52] for like highest total team score was
+[62:54] there a difference um in like the way
+[62:57] that you form the team yeah it's a good
+[62:59] question I mean in gymnastics you
+[63:02] know it's an additive score so again
+[63:04] it's it's three routines on each
+[63:05] apparatus so it's 18 scores that count
+[63:08] um it doesn't matter where you get your
+[63:10] points like every point is equal whether
+[63:12] you regardless of which apparatus or
+[63:15] whether it comes from difficulty or
+[63:16] execution so the team is selected based
+[63:19] on who can produce the highest score
+[63:21] like we're we're not selecting the team
+[63:22] based on a consideration of other
+[63:24] countries but when we are you know
+[63:26] coaching our athletes developing our
+[63:28] athletes we're certainly looking at
+[63:29] what's going on out there and seeing
+[63:32] what it takes for us to be competitive
+[63:33] but once it gets to the point we're at
+[63:35] US championships or Olympic trials it's
+[63:38] only about our athletes and what can
+[63:39] maximize our
+[63:42] score Augustus like events and all
+[63:46] around scores like are you trying to
+[63:48] maximize for a medals achieved in events
+[63:51] and like does that do underleveraged
+[63:53] events tend to be like
+[63:57] yeah it's a great question so Augustus
+[63:58] asked basically that was the essence of
+[64:00] the data challenge
+[64:02] so so the the data challenge is all
+[64:05] about like so gymnastics has in the
+[64:07] men's there are eight different metal
+[64:09] events the women have six right it's
+[64:11] team individual allaround and then all
+[64:13] the individual events we've historically
+[64:17] I'll say overemphasized the team medal
+[64:19] and optimized for that and I've said to
+[64:22] anyone who will listen like that's one
+[64:24] medal and and especially in a case like
+[64:27] Tokyo where we were never going to beat
+[64:29] China Japan or Russia in the Team final
+[64:32] we should have selected a bunch of guys
+[64:33] who could make the individual event
+[64:35] finals um now that we've won the team
+[64:38] medal at the last World Championships I
+[64:41] think the team medal has resurfaced as a
+[64:43] very important possibility for us but
+[64:46] that was a big question that I wanted
+[64:48] the folks during the data challenge to
+[64:50] answer for us was how do we maximize for
+[64:52] total medals as opposed to for just the
+[64:54] team
+[64:56] yeah so go to the poster session today
+[64:58] great work was
+[65:00] done I'm done I'm done yes I'm done
+[65:05] thank you
+[65:09] everybody as I said earlier come talk to
+[65:22] me and he's going to talk about
+[65:24] optimizing
+[65:31] yeah here you
+[65:39] go yes okay thank
+[65:47] you does this work for the mic okay cool
+[65:52] awesome and then just put yeah click
+[65:55] anywhere okay awesome thank you
+[65:57] appreciate it okay cool awesome thank
+[66:00] you for the intro um hi everyone my name
+[66:02] is Lulu uh so for context this is a
+[66:05] swimming project that I did senior year
+[66:07] of undergrad I already graduated but um
+[66:09] senior year of undergrad with in
+[66:10] collaboration with Professor Brian
+[66:12] McDonald and Dr Elliot Schwarz um for
+[66:14] content for background I grew up
+[66:16] swimming was very bad at it
+[66:18] unfortunately but so this project was
+[66:20] really exciting to me because it's a
+[66:21] combination of not having to swim but
+[66:24] being involved in the swim world
+[66:26] uh so super excited to be here today
+[66:27] thank you for
+[66:29] coming so starting with the back some
+[66:31] background on the leftand side um as you
+[66:34] may know the US has some of the world's
+[66:35] best individual swimmers Michael Phelps
+[66:37] Caleb drussell many many gold medals
+[66:39] unfortunately in the 2021 Tokyo Summer
+[66:42] Olympics um we Team USA actually plays
+[66:45] fifth in the 4X 100 mixed medley relay
+[66:48] the mixed medley relay is a newer swim
+[66:50] event so not a lot of data out there um
+[66:52] for this event but essentially involves
+[66:54] two men two women
+[66:56] um back breast fly free 100 meters of
+[66:58] each stroke um and the interesting part
+[67:00] of this race is you get to pick which
+[67:02] combination you want to swim so there's
+[67:04] lots of possibilities um different
+[67:05] countries do different things we placed
+[67:07] fifth um everyone thought we were going
+[67:08] to do really well so this was very sad
+[67:11] news and that is kind of the um
+[67:14] motivation for my project what is then
+[67:16] the optimal lineup strategy for the 4X
+[67:19] 100 mixed medley relay um specifically
+[67:21] who are the two men and two women who
+[67:23] should swim it and which order
+[67:29] so to answer this question um two main
+[67:31] data sets that we looked at here the
+[67:33] first one Olympic swimming data provided
+[67:35] by Elliot thank you um so this was my
+[67:38] definitely my main data set uh it spans
+[67:41] 3,000 swimmers nearly 3,000 swimmers
+[67:43] across the 8 100 meter individual leg so
+[67:46] this is not really data just individual
+[67:48] swims um four men's for women's back
+[67:50] breast fly free we looked at the data
+[67:53] specifically for swimmers who swam in
+[67:56] 2021 or later the rationale here is if
+[67:59] you're a competitive swimmer and you're
+[68:00] very good you're going to the Olympics
+[68:02] if you didn't swim in the 2021 Olympics
+[68:04] or in 2021 at all you're probably not
+[68:07] unfortunately going to compete in the
+[68:08] 2024 Olympics so just basically
+[68:10] subsetting it to the swimmers who are
+[68:12] most relevant um and then also if you
+[68:14] only had one swim time throughout the
+[68:16] six years you're also probably not going
+[68:18] to go to the 2024 Olympics um and as
+[68:20] predicted the swimmers who only had one
+[68:22] time did have slower times compared to
+[68:24] the rest of the group so basically this
+[68:26] is just taking the swimmers that are
+[68:27] most likely actually going to the 2024
+[68:29] Olympics the second data set here very
+[68:32] very small but um essentially we scraped
+[68:35] some The Limited mixed medly relay data
+[68:37] that we did have from um the various
+[68:39] most recent World Champs um that did
+[68:42] actually do the mixed medley so very
+[68:44] very small data set definitely this was
+[68:45] the main thing one more thing to note um
+[68:48] it says 2022 but actually did this
+[68:50] project in first half of 2022 so most of
+[68:53] the data is up until 2021
+[68:59] so now I just wanted to go through some
+[69:00] of the preliminary trends that we found
+[69:03] in the data um so starting on the
+[69:05] leftand side here this is a graph
+[69:07] looking at summer age and then average
+[69:09] summer time in this case we're looking
+[69:11] at Women's 100 free but the same Trends
+[69:13] apply to all of the events that we see
+[69:15] here so this is basically showing as you
+[69:18] know assumed there is an age curve in
+[69:20] swimming like many other sports where um
+[69:23] swimmers tend to get faster up until a
+[69:24] certain age and then they either get
+[69:26] slower or likely retire um so that's
+[69:28] just confirming that there is that
+[69:30] happening here as well on the right hand
+[69:33] side we have um the session description
+[69:35] so whether it was a prelim a semi or a
+[69:38] final the swim was one of those and then
+[69:40] once again the average swim time what
+[69:42] this is saying is finals um swimmers in
+[69:45] final sessions tend to swim faster than
+[69:48] prelims which makes sense they try
+[69:49] harder it's the finals the semi- one is
+[69:51] a little bit surprising um I would not
+[69:53] read too much into this we had very
+[69:55] little data for the semi-finals so this
+[69:57] is likely just like a faster subset of
+[70:00] the data but definitely way more data
+[70:02] for prelim and finals um and the trend
+[70:04] makes sense for these
+[70:09] two so moving on here on the left hand
+[70:12] side we have the meat type um we
+[70:14] categorize meat type as either an
+[70:16] Olympic trial an Olympic game A world
+[70:18] championship or anything else um so in
+[70:21] this case what this is showing us is
+[70:23] swimmers tend to swim faster and Olympic
+[70:25] Games and World Championships rather
+[70:27] than trials or literally any other meet
+[70:29] um which makes sense the Olympic trials
+[70:31] and World Champs are iconic very Global
+[70:33] swim events um so it makes sense that
+[70:35] they would swim faster there on the
+[70:37] right hand side this is using the very
+[70:39] limited relay data that we had it
+[70:41] essentially just looks at the swims that
+[70:43] were part of the mixed medley relay
+[70:45] versus an individual swim and this trend
+[70:48] might be surprising because it shows
+[70:49] that a relay swim is you know decently
+[70:51] faster than a individual leg this was
+[70:54] only like maybe 20 days points so not
+[70:56] again not probably super representative
+[70:59] it is true though that some swimmers and
+[71:00] relays can swim faster it is a really
+[71:02] Dynamic um so it's it's probably the
+[71:05] difference though is probably not this
+[71:07] egregious in real
+[71:11] swims cool so the last graph here is
+[71:14] looking at the swim meet year over time
+[71:16] and then the average swim time this one
+[71:18] I found interesting because at least on
+[71:20] the news I tend to see articles of um
+[71:23] new swimmers like breaking records very
+[71:25] frequently um in the individual swims
+[71:28] what this is saying is while there may
+[71:29] be these like unicorns um overall as a
+[71:33] whole um these swimmers tend to remain
+[71:36] pretty steady over time year over year
+[71:38] with the exception of when covid hit so
+[71:41] in 2020 um beginning you know coish um
+[71:44] so I think that cohort are the people
+[71:46] who were already really good swimmers so
+[71:49] they probably had more access to pools
+[71:50] so you do see the average time
+[71:52] decreasing a little bit um and there
+[71:54] aren't as many swims in 2020 either and
+[71:56] then in 2021 when there's more recovery
+[71:59] we see the swimmers may be readjusting
+[72:01] to postco swims so it goes up a little
+[72:03] bit and then 2022 we didn't have much
+[72:05] data so we not count that too much but
+[72:07] essentially the story here is actually
+[72:09] stays pretty steady over time the
+[72:11] average
+[72:14] times so the next few slides here are
+[72:17] walking through how we essentially took
+[72:19] all that data all those Trends to answer
+[72:21] the question posed at the beginning what
+[72:23] is the optimal relay line strategy so
+[72:26] the first thing we did here is build a
+[72:28] model so we fit a linear regression
+[72:30] model for each event and gender
+[72:32] combination so eight models total eight
+[72:34] events um and as for the model itself
+[72:38] these are some of the details so as seen
+[72:40] from the slides the outcome variable
+[72:42] that we really want to predict here is a
+[72:43] swim time for a swimmer and then these
+[72:46] are the various um predictor variables
+[72:48] that we did have I won't go over them
+[72:49] since we just went over them and in the
+[72:51] slides but the only additional one is
+[72:54] the unique swimmer ID so we can account
+[72:55] for swimmer to swimmer differences since
+[72:57] some swimmers are just faster overall
+[72:59] than others so this was a model we used
+[73:03] um and then going back to the
+[73:04] methodology here um so once we have a
+[73:06] mod for every event in every J every J
+[73:09] combo um then we predicted swim times
+[73:11] for each swimmer under specific
+[73:14] conditions that we designated and these
+[73:16] conditions are either 2021 or 2024
+[73:18] Olympics it had to be a final race um a
+[73:22] relay and then the swimmer's age so
+[73:25] built the model and then fed the model
+[73:27] all these conditions to get the
+[73:28] predicted swim times the second box line
+[73:32] here is basically us using the model to
+[73:34] then simulate individual swims so we
+[73:37] constructed normal distributions for
+[73:39] each swimmer and event using the models
+[73:41] um mean and standard deviation of the
+[73:43] predicted times and then we simulated
+[73:46] each event using this um so basically
+[73:49] it's like each swimmer swam their race a
+[73:51] thousand times and so because we have
+[73:53] these a thousand simulations
+[73:55] we can then rank them over their
+[73:57] thousand simulations by taking the
+[73:58] average so then for each event we have
+[74:01] basically one to however many Summers
+[74:03] there are they ranking
+[74:08] overall so this is an example um of I
+[74:11] think this is women's
+[74:13] 1003 uh so we have each swimmer and
+[74:17] there are many more swimmers and this is
+[74:18] just the top 20ish maybe and then the
+[74:21] average time overall is basically their
+[74:22] average of the a thousand simulated
+[74:24] swims
+[74:26] and then last column the
+[74:29] rape so basically that allows us to find
+[74:32] the fastest swimmers in every single
+[74:34] event then next two boxes here really
+[74:37] have to do with the relays so now that
+[74:40] we have the fastest swimmers we took the
+[74:41] top five from each country for each of
+[74:43] the eight events and then constructed
+[74:45] all possible relay combinations that we
+[74:48] could using the top five swimmers the
+[74:49] only two real criteria we have here are
+[74:52] the swimmers can't repeat as the rules
+[74:54] of the mix medly relay and then it has
+[74:56] to be two men and two women but other
+[74:58] than that all combinations are on the
+[75:00] table using the top five stores the top
+[75:02] five is just because my laptop couldn't
+[75:03] handle more than that so had to restrict
+[75:06] it um and then finally um we can now
+[75:10] calculate the relay sets by looking at
+[75:12] the individual legs so the average relay
+[75:14] time then is just the sum of the
+[75:16] individual leg averages and then the
+[75:18] variance since they're independent
+[75:20] swimmers are just the sum of the
+[75:22] individual leg variances as well so then
+[75:25] using the relay average and relay
+[75:27] variance we can then rank the relay
+[75:29] combinations based on their summed
+[75:35] average so then the last step here is
+[75:37] just really looking at now relay
+[75:39] simulations we've built all relay
+[75:40] combinations we have the predicted
+[75:42] averages now we can simulate them so we
+[75:45] took the fastest relay combination from
+[75:47] every country based on the averages and
+[75:49] then all possible us combinations
+[75:51] because we care the most about the US in
+[75:52] this case um and then simul each relay
+[75:55] combination a thousand times based on
+[75:57] the stats we just
+[75:59] calculated so after we do that you can
+[76:01] then calculate each relay combinations
+[76:03] probability of winning first to 16th
+[76:06] Place based on the number of times that
+[76:08] each combination plac that rank the
+[76:11] around the 10 thousand simulations um so
+[76:14] I know that's a lot I think the most the
+[76:16] more interesting part is the actual
+[76:18] results so we built the um results of
+[76:21] these simulations in kind of a four
+[76:23] parter in an application
+[76:25] the first section here um so this is the
+[76:28] actual mixed medley relay in the 2021
+[76:31] Tokyo Olympics so the L most column has
+[76:33] a country and then the next series are
+[76:36] kind of like the swimmers so back
+[76:38] swimmer the name and then the actual
+[76:40] Back Time is what they actually swam at
+[76:41] the Olympics the simulated Back Time is
+[76:44] what our model predicted um after the
+[76:47] simulations and then yeah and then it
+[76:49] goes breast fly free so the actual total
+[76:54] relay time is the actual results of
+[76:56] these eight countries and then the
+[76:59] simulated average to relay time is our
+[77:01] simulated times the actual rank is what
+[77:04] they actually place so you see the US in
+[77:06] fifth place and then we'll start with
+[77:08] the last column here the simulated rank
+[77:10] overall this is basically because we had
+[77:13] all the combinations um and we ranked
+[77:15] them this is essentially how that
+[77:17] specific combination placed in
+[77:19] comparison to all the simulated
+[77:21] combinations so the higher the number
+[77:23] like the worse they did in our pred
+[77:25] the lower the lower the number the
+[77:27] better they did in our predictions um so
+[77:29] you can see our model isn't perfect like
+[77:31] for example Great Britain placed first
+[77:33] and we originally thought them to be um
+[77:36] do worse than that China um we thought
+[77:39] China would win but in general you see
+[77:41] that the teams that placed worse tend to
+[77:44] have higher numbers and the teams that
+[77:46] placed better tend to have lower numbers
+[77:48] so directionally um it is validating it
+[77:51] what's most interesting here is the
+[77:52] simulated rank within country column
+[77:55] what this is saying is um comparing how
+[77:58] each combination did in comparison to
+[78:01] that country's combinations so most of
+[78:03] the numbers are really low here
+[78:04] indicating that most countries use their
+[78:06] top even one to like top five
+[78:09] combinations what stands out is the US
+[78:11] according to our um predictions used
+[78:13] their 61st fastest combination so a lot
+[78:17] of people like China and can't see Italy
+[78:20] used their top combination um and they
+[78:23] did well and the U uh the did not
+[78:26] Australia um people also thought
+[78:28] Australia would Place pretty well and we
+[78:30] see that they use their 13th fastest
+[78:32] combination according to our culations
+[78:34] sorry oh oh God it faster okay 13
+[78:38] fastest combination so I think this just
+[78:40] shows that we did not use our most
+[78:42] optimal combination
+[78:45] here cool so this second slide looks at
+[78:49] the top 10 fastest relay combinations
+[78:52] per country so if we didn't use our best
+[78:54] combination what would be our best
+[78:56] combination this um you can in a little
+[78:58] clicker at the top here basically you
+[78:59] can select any country that you're
+[79:01] interested in and it'll spit out the top
+[79:03] 10 fastest combinations um in this case
+[79:06] I won't read out the names but number
+[79:07] one there would be our um top
+[79:09] combination I will copy up that this
+[79:11] whole project in general relies heavily
+[79:14] on historical data um so since we only
+[79:16] have historical data up until really
+[79:17] 2021 if I were to redo this project
+[79:19] using you know 2022 2023 data I
+[79:22] definitely think a lot of these names
+[79:23] would change so I won't stand by these
+[79:26] names but I'll stand by the general
+[79:28] methodology um so these would basically
+[79:30] be our top 10 what's interesting here is
+[79:33] this is the top 10 within our country
+[79:35] and then these are the ranks overall
+[79:37] essentially this is saying because these
+[79:39] two columns are the same um it's saying
+[79:40] that like if we had used any of our top
+[79:43] 10 fastest US combinations we basically
+[79:45] would have won overall um but we used
+[79:48] our 61 so we did not
+[79:52] win and then this slide looks at
+[79:55] basically a race of the most elite or
+[79:57] the fastest so takes every country's
+[79:59] fastest relay combination and then races
+[80:01] them we only have like the top eight
+[80:03] maybe 10 here uh but if we had raced our
+[80:06] fastest combination every other country
+[80:08] had raced their fastest combination we
+[80:10] still would have likely
+[80:16] won and then finally um this is probably
+[80:19] the most interesting tool so I think
+[80:21] it's really great to have the predicted
+[80:23] fastest relay combination for every
+[80:25] country but unfortunately sometimes
+[80:27] you're just not able to race those
+[80:28] specific swimmers due to health reasons
+[80:30] maybe there's a scheduling reason um so
+[80:32] what this tool does is you can
+[80:34] essentially select a swimmer um this is
+[80:37] for the US only but you can select a
+[80:38] swimmer from each stroke so back bre fly
+[80:40] free and then simulate how well that
+[80:43] combination would have done against all
+[80:45] other Count's fastest combination so in
+[80:48] this case I think I picked a random
+[80:49] combination we would not have done as
+[80:51] well I think we would have placed
+[80:52] seventh in this case um compared to to
+[80:54] every other country's fastest
+[80:55] combination this is probably the most
+[80:57] helpful tool um because just having the
+[80:59] fastest combination can only do so much
+[81:02] this is a more like flexible um and
+[81:04] versatile tool so this is the thing I
+[81:06] think biggest takeaway from this but
+[81:08] again it really relies on historical
+[81:10] data um and we don't have the most
+[81:11] recent historical
+[81:13] data yeah
+[81:16] okay okay cool okay I'm done um yeah but
+[81:20] thank you yeah that's that's it um I
+[81:22] want to thank Elliot and again for
+[81:25] helping me this project um yeah take any
+[81:31] questions so maybe I'm missing something
+[81:33] but I didn't really get why doing it
+[81:36] like M so you're fitting a normal
+[81:37] distribution using the like the aage yes
+[81:40] so the simulated data also like will
+[81:43] preserve the other magnitude on like
+[81:46] alongside of those BR yeah why would we
+[81:48] really need uh the Monte simulation
+[81:51] instead we could do a constraint
+[81:52] optimization linear optimization problem
+[81:54] or like
+[81:55] the aage and choose the best like sub
+[81:58] that like minimize the time yeah you're
+[82:00] saying why do we even need to like
+[82:01] simulate and and just use like the
+[82:03] linear regression yeah that's a good
+[82:05] point I
+[82:06] think so essentially here like swimming
+[82:09] seems to have like a little bit more
+[82:11] well okay I'll start with this if you
+[82:13] just use the linear regression model um
+[82:15] the results aren't as accurate because
+[82:17] in general especially with relays
+[82:18] there's a lot more variance potentially
+[82:21] it's individual swimmers and depending
+[82:23] on reaction times I think there's a lot
+[82:24] more change in the potential outcomes so
+[82:26] the simulations was designed to
+[82:28] hopefully capture more of that
+[82:29] variability and change rather than just
+[82:31] relying on one answer from a model um
+[82:34] it's a good question but yes so once we
+[82:36] found that we simulated more the results
+[82:39] that we were trying to predict came
+[82:40] closer to the actual 2021 Tokyo Olympic
+[82:43] Results rather than relying on just the
+[82:48] model I think I was thinking the same
+[82:51] thing about like you want this
+[82:53] variability would you recommend you have
+[82:55] a team that is pretty good on average
+[82:58] but has really low variability yeah or
+[83:00] would you rather have a really fast team
+[83:01] that has really high variability where
+[83:03] it's like you could win and fastest yeah
+[83:06] or you could just be the worst right
+[83:07] right that's a good question I think
+[83:08] that's why we tried to incorporate the
+[83:10] probabilities more we actually went up
+[83:12] all the way to 16th Place um so I guess
+[83:15] in combinations where you see the
+[83:16] probability of ranking first because it
+[83:18] takes into account the variance in
+[83:20] calculating that if that's really high
+[83:22] then maybe you have more confidence in
+[83:23] that combination if if the probably
+[83:26] ranking first and second or third are
+[83:28] very close to each other then maybe it's
+[83:29] not as confident of a call
+[83:34] um noticed on your slide you had the USA
+[83:37] teams that the freestyle swimmer was the
+[83:41] same
+[83:43] yes
+[83:45] yeah yes yeah I know um actually I think
+[83:49] it's interesting because the US did um
+[83:52] the the US actually did really well in a
+[83:54] some recent mixed medle relay so we've
+[83:56] clearly redeemed ourselves um the
+[83:58] swimmers that they I think I did check
+[83:59] the swimmers they used uh they were
+[84:02] younger swimmers and they did place they
+[84:04] were some of the fastest swimmers they
+[84:05] weren't included in here because at the
+[84:07] time their swim times weren't as fast um
+[84:09] but I agree like I think it clearly
+[84:11] shows that she's she's very
+[84:15] talented yes you have any
+[84:18] recommendations for like if you were a
+[84:19] worse country I mean I
+[84:22] get T USA so you probably would
+[84:25] like if you were a worst country and you
+[84:26] like the only way they could metal would
+[84:28] be like some combination of swimmers
+[84:30] that's like has a really high
+[84:31] variability and they need like basically
+[84:32] a miracle to happen yeah
+[84:35] like what would your like
+[84:37] recommendation s I'm American so yeah no
+[84:40] know I mean I think if you're I think if
+[84:43] you're already
+[84:44] swimming I think if you're already
+[84:45] swimming poorly you don't have like that
+[84:47] much to lose so you might as well try
+[84:49] the predicted fastest combination even
+[84:51] if it doesn't let you wi because I guess
+[84:53] if you're approach is playing the safer
+[84:56] swimmers that have lower variants but
+[84:57] score worse it's not working so far so
+[85:00] you might as well try something more
+[85:02] wild um but luckily we're the US so
+[85:06] don't have that
+[85:07] problem thank you

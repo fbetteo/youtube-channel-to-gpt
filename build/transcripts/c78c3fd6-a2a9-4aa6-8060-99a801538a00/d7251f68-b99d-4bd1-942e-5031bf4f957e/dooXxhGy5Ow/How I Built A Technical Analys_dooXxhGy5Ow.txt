@@ -1,0 +1,538 @@
+Video Title: How I Built A Technical Analyst AI Agent in n8n With No Code
+Video ID: dooXxhGy5Ow
+URL: https://www.youtube.com/watch?v=dooXxhGy5Ow
+View Count: 118,670
+
+[00:00] okay we have our AI agent right here
+[00:01] ready to go waiting for an event in
+[00:02] telegram so we're going to send off this
+[00:04] text that asks it to analyze Apple it's
+[00:06] going to send that stock ticker to this
+[00:08] tool that we created in nadn called get
+[00:10] chart this tool basically takes the
+[00:12] ticker it gets us a chart with technical
+[00:14] indicators on it and then it creates a
+[00:16] brief analysis and then it sends that
+[00:17] back to the agent to use anthropic 3.5
+[00:20] to actually make that analysis a little
+[00:21] more in-depth and so right now it's
+[00:23] creating that we saw that that we
+[00:24] already got the chart back in our
+[00:26] telegram right here and then the
+[00:27] analysis is also going to be sent to us
+[00:29] in telegram right here we just got that
+[00:31] back as you can see it's pretty in depth
+[00:33] it basically breaks down Candlestick
+[00:35] analysis current Trend the chart shows a
+[00:37] downward Trend highlighted by recent
+[00:39] consecutive red candlesticks goes into a
+[00:41] little more detail about the patterns
+[00:43] doesn't appear to be any strong reverse
+[00:44] reversal Candlestick patterns like a
+[00:46] hammer or dogee currently visible then
+[00:49] it breaks down the macd talks about the
+[00:50] signal line talks about the histogram
+[00:52] then it goes into volume and finally
+[00:54] support and resistance levels key
+[00:56] support is seen around the 220 area
+[00:57] where previous price consolidations have
+[00:59] occurred and then the recent High
+[01:01] Resistance near 260 is a significant
+[01:03] resistance level as you can see up here
+[01:06] um so that's super cool and then finally
+[01:07] it gives us some key takeaways and
+[01:08] interpretation um we've got a bearish
+[01:10] trend apple is currently in a short-term
+[01:12] bearish Trend the consecutive red
+[01:14] candlesticks and lack of reversal
+[01:16] pattern suggests that this downward
+[01:17] momentum might continue in the near term
+[01:19] we've got macd confirmation the macd
+[01:21] indicator confirms the bearish sentiment
+[01:23] we've got volume key price levels no
+[01:25] immediate reversal signals price action
+[01:29] and then finally it goes into it's
+[01:30] important to note that this analysis
+[01:31] provides a snapshot of current market
+[01:33] conditions but shouldn't be considered
+[01:34] as Financial advice um this isn't really
+[01:36] a financial adviser it's more of just
+[01:38] giving a brief um financial analysis as
+[01:41] well as a technical analysis on whatever
+[01:44] stock you enter in there so I know I
+[01:45] went over that feedback or sorry the
+[01:47] analysis really really quick um we got
+[01:49] the picture back we got our analysis but
+[01:51] this was kind of just a quick demo
+[01:52] before we really break into how you can
+[01:54] build this out in your own and it in
+[01:57] before we get into the breakdown of this
+[01:58] build I wanted to say that you're able
+[01:59] to download this workflow for free if
+[02:01] you'd like to all you have to do is join
+[02:02] my free school Community the link is
+[02:04] down in the description once you get in
+[02:05] there you'll go to YouTube resources
+[02:07] you'll click on the post associated with
+[02:09] this video and then you'll see you'll be
+[02:10] able to download the workflow right here
+[02:12] um back in NN you'll you'll click on
+[02:14] these three dots and click import from
+[02:15] file and then this will pop up on your
+[02:17] screen and you'll have it ready to go if
+[02:19] you're looking to take your skills with
+[02:20] nadn a little farther and you'd like a
+[02:21] more Hands-On approach feel free to
+[02:23] check out my paid Community the link for
+[02:24] that also down in the description as you
+[02:26] can see we've got a great community of
+[02:27] other people who are also dedicated
+[02:28] towards learning more about nen we've
+[02:30] got a great classroom section as well as
+[02:32] a calendar with five live calls per week
+[02:34] so I'd love to see you guys in these
+[02:35] calls and finally if you're looking for
+[02:37] AI consulting services or you want me
+[02:38] and my team to help you guys deliver a
+[02:40] certain project then please book in a
+[02:42] call using my website the link for that
+[02:44] also down in the description but anyways
+[02:46] let's get into the breakdown of this
+[02:47] build okay so as far as the actual agent
+[02:49] itself super super simple build we've
+[02:51] only got one tool which is the one that
+[02:52] we created called get chart where we'll
+[02:54] break that down after we talk about this
+[02:56] initial agent but what's going on in
+[02:58] here is we're communicating it with this
+[03:00] agent through telegram so if I click
+[03:01] into this trigger you can see that it's
+[03:02] going to be on message received and all
+[03:04] you need to get out of here is the
+[03:05] telegram chat ID because when you're
+[03:07] able to um link that ID to your window
+[03:10] buffer memory you can see we we use that
+[03:12] right here as well as um when we're
+[03:14] actually sending information back both
+[03:16] here and in the other workflow when
+[03:17] we're sending that photo back into our
+[03:19] telegram you need to reference that chat
+[03:21] ID so that the um node knows what you
+[03:24] know where to send this actual
+[03:25] information so that's all we're doing as
+[03:27] far as communication we're using um
+[03:29] anthropic 3.5 um claw for this case
+[03:33] because I think that it does a lot
+[03:34] better job um actually creating like
+[03:36] detailed analysis content creation the
+[03:38] way that it formats and word stuff I
+[03:40] think that it's a lot better so that's
+[03:42] why we're using it here and then finally
+[03:43] we just have the tool called get chart
+[03:46] and as far as the actual prompting goes
+[03:48] within git chart we told it to call this
+[03:49] tool to get an analysis of a requested
+[03:51] stock the URL that is output from this
+[03:53] tool must be returned in a markdown
+[03:54] format and this is just because if you
+[03:56] want to um if you want to chat with this
+[03:59] thing in any nend you need that markdown
+[04:01] format for it to actually come through
+[04:02] as an image rather than just the URL of
+[04:04] the file that we're looking at but in
+[04:06] this case we're just doing telegram so
+[04:08] we can put the URL in but just keep in
+[04:10] mind based on how you want the photo to
+[04:11] be sent from NN to something else based
+[04:14] on that Medium you're going to have to
+[04:16] play around with the way the URL comes
+[04:17] through so then as far as prompting
+[04:19] within the agent to actually get it to
+[04:20] use get chart um very high level um we
+[04:23] pretty much told it what its role was
+[04:25] understanding Financial topics and it
+[04:27] has the ability to get technical
+[04:29] analysis using the git chart function we
+[04:31] gave it some context some instructions
+[04:33] the tool it only has one tool called git
+[04:35] chart um and as you can see I gave it a
+[04:38] few examples and some standard operating
+[04:40] procedures but it's pretty simple in in
+[04:43] this case because it's um you know
+[04:45] pretty much only using that one tool but
+[04:47] if you want to take a deeper look at
+[04:48] that prompt then feel free to download
+[04:51] this template like I said it's in my
+[04:52] free school Community but now let's look
+[04:54] at that get and analyze chart workflow
+[04:55] like I said this is where the magic
+[04:56] really happens um one one quick tip I
+[04:59] wanted to point out out is let's say
+[05:00] You're Building A workflow that's going
+[05:01] to be called by an agent what you can do
+[05:03] is you don't have to call it every time
+[05:05] to test it you could actually pin your
+[05:06] data in here so for the example we sent
+[05:09] through apple and so I could come in
+[05:10] here and I could just set the query to
+[05:12] be apple that way if I wanted to test
+[05:14] this workflow I could just hit test
+[05:15] workflow and not have to go into the
+[05:17] actual agent and chat with it so that
+[05:19] might just save you some time down the
+[05:20] road but let's go into the execution we
+[05:22] just ran and then we will break it down
+[05:25] in more detail but let's go over just a
+[05:26] high level approach of what's going on
+[05:28] in this workflow real quick so we come
+[05:30] in through here and we get the query of
+[05:32] apple and I know this is the data that
+[05:33] was pinned but this is live data coming
+[05:35] through um and so this is just because
+[05:37] we prompted the agent to say when you're
+[05:39] sending information to um the git chart
+[05:42] tool you're only going to be sending
+[05:44] over the ticker and so it's able to
+[05:45] understand what that means rather than
+[05:47] sending over a whole query that says can
+[05:49] you analyze Apple it just sent over
+[05:50] Apple from there we wanted to set the
+[05:53] actual ticker um this was just more to
+[05:55] keep things visually appealing and um
+[05:57] organized in my mind as far as like like
+[06:00] visually seeing what each step is doing
+[06:01] but all we're doing is we're taking the
+[06:02] Json query that's coming in and just
+[06:04] setting it to a an output field called
+[06:06] ticker so from there we are doing two
+[06:09] HTTP requests the first one is going to
+[06:12] be a post request to um an API called
+[06:16] chart image and it's going to be free
+[06:18] I'll show you guys how to set it up but
+[06:21] um we're going to be sending off that
+[06:22] post request based on the type of chart
+[06:23] we want and sort of like the the ticker
+[06:26] that's being put in so if we click into
+[06:28] here we can see um you know we've got a
+[06:30] post request we've got this endpoint
+[06:32] we've had to set up our credentials and
+[06:33] the content type of course and then we
+[06:35] actually send over the the body
+[06:36] parameters of this Json um within our
+[06:39] post request you can see we've got stuff
+[06:41] like the theme um the interval the
+[06:43] actual symbol and so this is the only
+[06:45] thing that's changing every time we're
+[06:46] sending this request is the symbol you
+[06:48] can see that we're putting in the
+[06:49] exchange which is NASDAQ colon Json
+[06:52] ticker and so in this case the Json
+[06:53] ticker was Apple um and so that's just
+[06:56] going to change every time but then
+[06:57] everything else is going to stay
+[06:58] consistent as you can see and once again
+[07:01] I'll show you guys how you can set this
+[07:02] up without having to know pretty much
+[07:03] anything about like Json or coding
+[07:06] anything like that it's going to be
+[07:07] really simple finally we're just getting
+[07:09] this response as Json because we want
+[07:11] this URL this is what we're looking for
+[07:13] here if we kept this response to be a
+[07:15] file format it it's going to come back
+[07:18] as binary and once again I'll show you
+[07:19] guys all this but if it comes back as
+[07:21] binary then we can't actually reference
+[07:22] this URL um so we want to get first of
+[07:25] all the URL in Json and then we can take
+[07:28] that Json
+[07:30] into this next HTTP which is going to be
+[07:32] a git we're downloading the URL and then
+[07:34] you can see we're getting the chart back
+[07:35] right here and then now that we have it
+[07:37] in binary as you can see up here in this
+[07:38] top right we're able to feed the binary
+[07:40] into this open AI analyze and image node
+[07:43] pretty much I told it its role um
+[07:45] financial analyst specializing in
+[07:47] technical analysis of stock charts your
+[07:49] rle is to analyze Financial charts
+[07:51] provided to you offering comprehensive
+[07:52] insights and Technical aspects
+[07:54] Candlestick patterns macd volume
+[07:56] sentiment um I go into a little more
+[07:58] detail here
+[08:00] once again I mean I use gbt 40 to help
+[08:01] me write this prompt but all it's going
+[08:03] to do is look at the image generate um
+[08:05] kind of a brief technical analysis that
+[08:07] it's going to send over um and then when
+[08:10] the agent actually gets it the agent
+[08:12] makes a better one using anthropic but
+[08:14] then in here all we're doing is we're
+[08:15] grabbing that URL once again sending it
+[08:17] to our telegram with that chat ID that I
+[08:19] mentioned earlier and then finally the
+[08:21] response um so this is the actual
+[08:23] response that we get from this tool and
+[08:25] as you can see this is a bit shorter
+[08:26] than the analysis we got here in
+[08:28] telegram which was um as you can see a
+[08:30] lot more long a lot more
+[08:32] in-depth and so this is what the agent
+[08:34] gets and it takes this to make a a more
+[08:36] in-depth analysis but at a high level
+[08:38] that's what's going on here so now let's
+[08:40] talk about how do we actually set up
+[08:41] these post requests or sorry the one
+[08:43] post request and the one get request
+[08:45] because really that's the most difficult
+[08:46] part of this workflow and still even
+[08:48] that is not too difficult so you're
+[08:50] going to go to um chart
+[08:53] image.com and this is what it will look
+[08:55] like um like I said you can get a free
+[08:56] API key and then you're going to click
+[08:58] on API documentation ation so from here
+[09:01] it's going to look maybe a little
+[09:02] confusing and overwhelming but we're
+[09:04] going to break it down it's really not
+[09:05] too difficult what we're going to do is
+[09:07] click on base API endpoint and so from
+[09:09] here we understand that this is the
+[09:11] endpoint we need to access and then we
+[09:12] can change the parameters off the end
+[09:13] based on the type of chart all that kind
+[09:15] of stuff but just remember it's going to
+[09:17] be https
+[09:19] colon api. chart image.com hopefully it
+[09:23] helped that I read that out loud rather
+[09:24] than just letting you guys read it but
+[09:26] anyways um so you can see there's
+[09:27] different ways we need to authenticate
+[09:29] we need to see in this request that we
+[09:31] have access to get to this service to
+[09:33] create a chart for us so there's
+[09:34] authorization Bearer or there's going to
+[09:36] be X API key um and so the way that I'm
+[09:39] going to show you guys how we can do
+[09:40] this it's going to be a lot easier than
+[09:41] trying to read through these docs and
+[09:43] understand what you need to set up where
+[09:44] because that could be very confusing so
+[09:46] we're going to click on trading view
+[09:47] snapshot V2 and in here we can see it's
+[09:49] similar things this is going to be the
+[09:51] end point after that base URL that we
+[09:53] need to access um and this this is just
+[09:55] showing if you want to kind of do it
+[09:56] manually different parameters you can
+[09:57] put in your header or your body but on
+[10:00] the right let's just look at this cuz
+[10:01] it's more a little more natural um we've
+[10:03] got different types of charts that we
+[10:04] can do so um as you can see these these
+[10:06] candlesticks here's the macd the example
+[10:08] that I just did in um the demo but let's
+[10:11] say we wanted to do this chart all we
+[10:14] would do is we'd have to see the request
+[10:15] example so we could copy this right here
+[10:17] because it's a curl and then we can go
+[10:20] back into this workflow let's say we're
+[10:22] creating an HTTP request import curl
+[10:25] paste the curl command in there and then
+[10:27] we just want to get rid of this top line
+[10:28] that it's just an extra comment but then
+[10:30] we can import it and you'll see it
+[10:31] change to post it created this URL um
+[10:34] endpoint automatically it set up our
+[10:36] headers so all we'd have to do here is
+[10:37] enter in our API key and then it already
+[10:39] sets up the Json um body and everything
+[10:42] like that so let me import my API key
+[10:44] real quick okay so there's my API key
+[10:46] we'll hit test step and then we should
+[10:47] get a binary file back because that's
+[10:49] just by default how this one was set up
+[10:51] so as you can see we got this file and
+[10:52] we get this Bitcoin chart in here
+[10:55] because um we Ed the curl so it's just
+[10:56] kind of the default request so now let's
+[10:58] say we want to change things up um I'm
+[11:00] going to go and do the the example of
+[11:02] the one that I did um in the actual demo
+[11:04] of this video so we're going to copy
+[11:05] this one which relates to this chart
+[11:08] we're going to go back into here and
+[11:09] import curl once again paste that in
+[11:11] there get rid of this Top Line and then
+[11:13] import it and so as you can see every um
+[11:15] a few things have changed um once again
+[11:17] we need to put in the API key so let me
+[11:19] put that in there and then now we have
+[11:22] this is the place where we can see the
+[11:23] actual
+[11:24] parameters um I don't know why this
+[11:26] isn't loading up but now we can see the
+[11:28] actual parameters of what's going on in
+[11:30] this request and this is where we want
+[11:31] to change the actual ticker that's going
+[11:33] to dynamically come in right now it's
+[11:35] set for Microsoft we've got other
+[11:37] parameters of course so we're going to
+[11:38] leave it as is for now and now you can
+[11:40] see that we have if we were to test this
+[11:42] it would come back once again as binary
+[11:44] so let me show you we'll hit test step
+[11:46] it's going to come back as binary and we
+[11:48] don't want this because we need to
+[11:49] access that URL so this isn't good what
+[11:52] we want to do is change this to Json but
+[11:55] one thing that we're going to have to
+[11:56] set up in the headers is that the
+[11:57] content type is Json because I think by
+[11:59] default the content type is sort of an
+[12:01] image a binary image so if we hit test
+[12:03] step we would see that this may come
+[12:05] back with an
+[12:07] error okay so response body is not valid
+[12:09] Json change respon format response
+[12:12] format to text so I think you would
+[12:13] think that it's talking about this but
+[12:15] what I believe is that we need to set up
+[12:17] the the header to actually say that hey
+[12:19] this is going to come through as um
+[12:21] application Json so we're going to grab
+[12:23] another header right here which is
+[12:26] content-type paste that in there and
+[12:28] then we're going to grab application
+[12:29] Json rather than coming through as an
+[12:31] image like a PNG or a JPEG so we're
+[12:34] going to paste that in there and then
+[12:35] hit test step once
+[12:36] again now I really I hope this should
+[12:39] work okay maybe we need to change it to
+[12:41] text let's try
+[12:43] that oops um no see if we do this I
+[12:47] think it's going to come back as
+[12:49] um binary still perhaps let's
+[12:53] see okay yeah so we didn't get we got
+[12:55] this this gibberish back okay so I
+[12:57] figured out what it was um what we need
+[12:58] to do is we need to save the chart to
+[13:00] storage because then we're able to
+[13:02] actually access that URL so at the end
+[13:04] of our endpoint we just want to add Dash
+[13:07] storage um right up here or not Dash
+[13:10] storage SL storage and then we'll change
+[13:12] this back to Json because that's the way
+[13:13] we want it to come back now that we've
+[13:15] set up application Json we should be
+[13:17] able to get this um URL back there we go
+[13:20] so this is the URL we're looking for and
+[13:22] now from here what we would do is add
+[13:23] another HTTP request it's going to be a
+[13:25] get and all we have to do is drag in the
+[13:27] URL right here and that's all we have to
+[13:29] configure now it's going to get this URL
+[13:31] and it will be able to um bring us this
+[13:33] binary image that we can now View and
+[13:35] then from there we would just feed that
+[13:37] into the open aai um analyze image node
+[13:40] so in here we would just have to make
+[13:42] sure that we're saying it's going to be
+[13:44] a binary file because that's the way
+[13:46] that it's leaving this node right if we
+[13:48] clicked on table or you know Json or
+[13:51] schema we're not going to see the file
+[13:52] we're just seeing URL but in binary we
+[13:54] can actually access and view this binary
+[13:56] image so that's what we would do in here
+[13:59] um it's called Data so make sure you
+[14:01] name it data analyzing image I chose 40
+[14:04] just because we're analyzing an image so
+[14:06] I I wanted to go with the the most
+[14:08] powerful model and then I just turned
+[14:09] off simplify and I set the detail to
+[14:12] Auto um and then from there it's pretty
+[14:14] simple it's just going to read in the
+[14:15] file look at it scan it make an analysis
+[14:18] and then push it off and if you want to
+[14:21] look at this prompt of course um it's
+[14:22] going to be put in the workflow you can
+[14:24] download for free and then all we have
+[14:26] to do is send the chart which we're
+[14:28] accessing the
+[14:29] um the URL that we got from the git
+[14:32] chart URL node so this node that
+[14:34] downloads the original file um URL or
+[14:37] sorry that gets us that file URL we're
+[14:39] just putting that back in here and then
+[14:41] finally we are sending the response over
+[14:43] to the agent so we're calling a field
+[14:48] response we're setting it to the name
+[14:49] response and then we're sending in the
+[14:51] actual output from the technical
+[14:53] analysis openai node so whatever this
+[14:56] node outputs is what's going to be sent
+[14:58] to the agent so if we go to um back to
+[15:01] an execution we'll look at the most
+[15:03] recent one or no we'll look at this one
+[15:05] because these were little tests but we
+[15:07] can see that
+[15:09] um in here we have different things come
+[15:12] through but what we want is choices.
+[15:14] content and this is the actual analysis
+[15:16] that it came up with so in the response
+[15:18] we're referencing item. json. choices.
+[15:21] message. content and you can see this is
+[15:23] the response we get and this should
+[15:25] align with um the response that we got
+[15:28] from the actual the tool in the agent
+[15:31] section so the agent sees that response
+[15:33] and then it uses its brain to um you
+[15:36] know format the response even better so
+[15:38] we click into the agent we can click on
+[15:40] logs and we'll see exactly what happens
+[15:42] so first it updates the window buffer
+[15:43] memory then it uses its model to read
+[15:46] through the prompt understand what it
+[15:47] needs to do as you can see um kind of a
+[15:50] long prompt and then it says certainly
+[15:51] I'll analyze the latest chart for Apple
+[15:53] Inc and then it takes the ticker of
+[15:54] Apple for you let me generate that chart
+[15:56] and provide you with a comprehensive
+[15:58] analysis and the input for the next node
+[16:00] which is git chart is going to be just
+[16:02] Apple just the ticker so you can see the
+[16:03] query that was sent over to this tool
+[16:06] was just apple and then it got the
+[16:08] response from um the end of the the
+[16:11] workflow which was this which we had
+[16:12] just looked at and then it sends that
+[16:15] response back to the anthropic chat
+[16:17] model reads through its system prompt
+[16:18] again and here is where it created the
+[16:21] the larger um more in-depth analysis
+[16:24] right here so this is what we ended up
+[16:25] getting in our
+[16:26] telegram because we referenced the
+[16:28] actual message in telegram to be json.
+[16:31] output which is the output from the AI
+[16:33] agent as you can see if we go to schema
+[16:35] we got the output right here from the
+[16:37] agent and that's what we dragged in
+[16:38] right here okay so I know I went through
+[16:40] that one pretty fast but like I said
+[16:41] you're able to download the workflow for
+[16:43] free so hopefully you can get in there
+[16:44] and play around with it and see um you
+[16:46] know how everything is working if you
+[16:48] enjoy this one and it helps you out in
+[16:49] some way you learned something new
+[16:50] please give it a like definitely helps
+[16:52] me out a lot and I always really
+[16:53] appreciate it but thanks for making it
+[16:54] to the end of this video I will see you
+[16:56] guys in the next one

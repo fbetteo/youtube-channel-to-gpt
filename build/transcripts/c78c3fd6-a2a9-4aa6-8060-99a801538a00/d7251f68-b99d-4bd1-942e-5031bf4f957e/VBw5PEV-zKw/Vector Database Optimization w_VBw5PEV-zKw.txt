@@ -1,0 +1,572 @@
+Video Title: Vector Database Optimization with n8n: Metadata, Text Splitting, & Embeddings
+Video ID: VBw5PEV-zKw
+URL: https://www.youtube.com/watch?v=VBw5PEV-zKw
+View Count: 43,872
+
+[00:00] when building out AI agents the number
+[00:01] one most important foundational aspect
+[00:03] is having a good knowledge base and if
+[00:05] your knowledge base is a vector database
+[00:06] you really need to understand how you
+[00:08] can get your information into that
+[00:09] knowledge base optimally so your agents
+[00:11] are able to search through it and give
+[00:12] you accurate answers through rag or
+[00:14] other functions in this video we'll be
+[00:16] using nadn and pine cone to go over
+[00:18] essential Concepts like metadata
+[00:20] embeddings and text splitting if you
+[00:22] guys find this one helpful please
+[00:23] consider giving it a like it really
+[00:24] helps me out but let's not waste any
+[00:26] time and get straight into the video
+[00:27] tons of examples to go through as you
+[00:29] can see we've got all these workflow set
+[00:30] up and each one is going to do something
+[00:31] different so hopefully they'll all make
+[00:33] sense by the end but first things first
+[00:35] if you haven't set up pine cone you're
+[00:36] going to want to do that so you'll hop
+[00:38] into pine cone um Pine cone. you'll
+[00:41] create an index you will um set up your
+[00:44] embedding so just really easy to set up
+[00:46] I would just go with serverless and I
+[00:47] would go with embedding three small and
+[00:49] then you'll just grab an API key and
+[00:51] hook up to Pine Cone you'll be good to
+[00:52] go it's super easy super cheap and fast
+[00:54] to set up then we just need a document
+[00:56] to test with so in this case we're using
+[00:58] this one it's really short really simple
+[01:00] because I want to be able to really
+[01:01] explain what's going on um with our
+[01:03] splitting and our embedding and all that
+[01:05] kind of stuff um so we've got document
+[01:07] ID 1 2 3 4 and then just some fake words
+[01:10] so anyways now that we have that set up
+[01:12] we're good to go so like I said
+[01:15] basically the principles are you're
+[01:16] going to download some sort of file and
+[01:18] end at end so we're downloading that
+[01:19] file right here and then you're going to
+[01:21] put it into pine cone and when you're
+[01:22] putting it into pine cone you need to
+[01:23] make sure your embedding is correct so
+[01:25] right here we have text embedding three
+[01:26] small because in Pine Cone we set up our
+[01:28] embedding as text embedding three small
+[01:30] you have to make sure that matches I'll
+[01:31] show an example of what happens if it
+[01:33] doesn't match and then from there you're
+[01:35] going to make sure you're loading in
+[01:36] your data you can load it in using Json
+[01:38] or binary again we'll show examples of
+[01:40] all this and then finally you need to
+[01:42] split up that text or split it up
+[01:44] whatever it is you need to split it up
+[01:45] somehow um and right here we're showing
+[01:47] recursive character text splitting um as
+[01:49] you can
+[01:50] see there are different options and
+[01:52] we'll go over uh scenario where we use
+[01:55] each one but that's pretty much what's
+[01:57] going to be going on in every example
+[01:58] download and Ed load split okay so now
+[02:02] we got that out the way let's just run
+[02:04] this first workflow so there's nothing
+[02:05] in our pine cone right now we're
+[02:07] downloading the the file right here as
+[02:08] you can see it's coming back as um PDF
+[02:12] we can view it we can see that it's the
+[02:13] correct PDF we're taking this node
+[02:15] extract from file to get text out of the
+[02:18] PDF so now we have this is the actual
+[02:20] information we're looking for and also
+[02:21] what comes along with this is
+[02:22] information we don't want like these
+[02:24] number things the info about the
+[02:26] document the version if you go to Json
+[02:28] you can see that's what's coming through
+[02:30] and so if you were to just put this in a
+[02:32] pine cone like
+[02:33] this um pine cone node right here is
+[02:37] going to be grabbing all of this
+[02:38] information so if we switch to table we
+[02:40] can see that it output eight items so it
+[02:42] put into pine cone eight vectors and
+[02:44] here's the content of each Vector we
+[02:46] don't really want this stuff all we want
+[02:47] is this Vector with this information
+[02:49] because at this point if we were to you
+[02:51] know query this um database using rag it
+[02:54] would be also having to search through
+[02:56] this random content that we don't need
+[02:57] so we just want this one and so we'll
+[02:59] talk about about how to get just that
+[03:00] one but anyways the the data loader here
+[03:04] it is grabbing Json so it's grabbing
+[03:06] everything in this Json that is being
+[03:08] fed into it and then finally we're just
+[03:10] splitting it recursively so there were
+[03:12] eight different runs here um as you can
+[03:14] see and it was splitting based on what
+[03:15] made sense which that's sort of what the
+[03:17] recursive one does so we've got that out
+[03:20] the way and that was just doing all
+[03:22] content we haven't put any metadata in
+[03:24] and now we'll move on to the next one
+[03:25] although real quick let me just go into
+[03:28] pine cone and we'll see what it looks
+[03:29] like so
+[03:30] we'll just give our index a refresh we
+[03:32] should see those eight um vectors being
+[03:36] put in here
+[03:39] now there we go so we got our eight
+[03:40] records coming through and as you can
+[03:42] see the actual text is what is actually
+[03:44] the content of the vector so if we find
+[03:46] the right one um was it the seventh one
+[03:50] was the eighth one okay so this is the
+[03:51] actual information that we really would
+[03:52] want to be searching through um if we
+[03:54] were doing rag so that's not how we want
+[03:55] to do it let me clear out this index and
+[03:58] then we'll look at the next example hey
+[04:00] everyone just wanted to mention that the
+[04:01] workflow that you see in this video with
+[04:02] all these examples will be available for
+[04:04] download in my free school Community
+[04:05] Link for that will be down in the
+[04:06] description you go to YouTube resources
+[04:08] you would click on um the file right
+[04:10] here download that and then within nadn
+[04:12] you can go up to the top right and just
+[04:13] import it from file straight into your
+[04:15] nend instance and then if you guys are
+[04:17] looking to go a little bit further check
+[04:18] out my paid Community I'm doing a deep
+[04:20] dive on Vector databases as you can see
+[04:22] obviously pine cone is kind of the first
+[04:24] one up and then we'll look at super base
+[04:25] quadrant um PG vector vector databases
+[04:28] are so so important when you're building
+[04:29] building out AI automations and AI
+[04:31] agents so it's it's one of the things
+[04:32] that I'm trying to become an expert in
+[04:34] so we've also got weekly calls been
+[04:35] doing about five a week we've got a
+[04:37] great Community we're doing monthly
+[04:38] competition stuff like that and you
+[04:39] definitely want to get in here because
+[04:41] the price is going to increase at 75
+[04:43] members so let's get back to the video
+[04:44] okay pine cone is clear let's run this
+[04:46] example now as you can see we're not
+[04:47] extracting text and we're loading this
+[04:50] as binary so this comes back once again
+[04:52] it's binary it's a PDF it's being loaded
+[04:54] into pine cone and if you notice there's
+[04:56] only one item coming back and because we
+[04:58] split this into binary it's only
+[05:00] grabbing the actual content we want as
+[05:02] you can see it took away all the spaces
+[05:04] so this is the first paragraph of the
+[05:06] document um it took away all the spaces
+[05:08] but it only gave us one vector and we
+[05:10] did recursive once again and we made the
+[05:11] embedding the same thing all we changed
+[05:13] here is that we loaded binary straight
+[05:15] in rather than extracting text and then
+[05:17] we made our loader binary so go into
+[05:19] pine cone give this a refresh real quick
+[05:22] and we will see that we just got one
+[05:24] back and then within this one we are
+[05:26] seeing um the actual text but we also if
+[05:29] you notice got more metadata like PDF
+[05:31] information the title the pages the
+[05:33] version so we still are getting that
+[05:35] back but it's not making eight different
+[05:36] vectors and it's not going to slow down
+[05:38] our search so let me get rid of this
+[05:40] Vector now we will test out one more
+[05:44] example over here which is the wrong
+[05:47] embedding um and if you guys you know if
+[05:51] you want to take a guess at what's going
+[05:52] to happen nothing's going to happen it's
+[05:54] you know it's trying to load it or it
+[05:55] loaded it it's trying to embed it now
+[05:57] and it's just not going to be able to
+[05:58] embed it because because um we put this
+[06:01] one in as three large I
+[06:03] believe okay it's not showing but I put
+[06:05] this one in as three large there we go
+[06:07] um and obviously our pine cone Vector
+[06:09] store is three small so what's happening
+[06:11] is our pine cone index is looking at
+[06:13] dimensions of likely 1536 which is is
+[06:17] the numerical representations of um the
+[06:19] information that we're putting in and
+[06:21] embedding three large is probably going
+[06:23] 2036 or something bigger than 1536 or
+[06:26] more um and so it's trying to fill out
+[06:29] the information from this binary and
+[06:31] it's trying to turn that into numerical
+[06:32] representation so that later it can be
+[06:34] able to go pull things that are relevant
+[06:36] or similar and because the dimensions
+[06:39] aren't matching up it's just trying to
+[06:41] embed it and it's never going to be able
+[06:42] to so as you can see this has just been
+[06:43] spinning I'm probably just going to stop
+[06:45] this because I don't want to sit here
+[06:46] and wait forever for it to inevitably
+[06:48] error but that's why it's important to
+[06:51] make sure that you know you're embedding
+[06:52] of your um Vector index and that you're
+[06:56] always aligning it so we're going to
+[06:58] stop this one
+[07:01] okay now we're moving on to an example
+[07:02] where we are getting putting all the
+[07:04] content in so similar to this first one
+[07:06] where all the content was going through
+[07:07] after we extracted it from text now
+[07:10] we're doing that but we're also loading
+[07:11] in metadata and so metadata later you
+[07:14] can use that to you know filter across
+[07:16] different vectors to be able to grab
+[07:18] them to reference them later so in here
+[07:20] when we load it you can see we added a
+[07:22] option which is the metadata we added a
+[07:25] field document ID and then for the
+[07:27] actual value we just extracted the
+[07:29] document ID we referenced the original
+[07:31] node we're pulling the file and that's
+[07:33] how we got the document ID so once again
+[07:34] this one made eight vectors as you can
+[07:36] see but at the end of each Vector we got
+[07:39] our metadata right here which is
+[07:40] document ID and then we have that
+[07:42] information there so we'll hop into pine
+[07:44] cone give that a refresh as well and we
+[07:47] will see that within each of our eight
+[07:50] um vectors and I think let's see where's
+[07:51] the one with the actual text that we
+[07:54] like it's always different but anyways
+[07:57] if you see here now we have the metadata
+[07:58] document ID with our document ID as well
+[08:01] as the actual text coming back so um let
+[08:04] me just delete all this information and
+[08:05] then we'll run another example okay next
+[08:07] example here let's just hook this one up
+[08:09] what we're doing now is we're only
+[08:10] getting the text we want so similar to
+[08:12] the one with the binary but now we're
+[08:14] extracting it from Json so this one is
+[08:16] still going to be loading it as Json
+[08:18] we're still doing our um metadata which
+[08:21] is just the ID um and obviously this is
+[08:23] just an example you can add more
+[08:24] metadata it'll be probably more um
+[08:27] advanced than than this one but anyways
+[08:29] this is the vector it just made one and
+[08:31] it got us our information we
+[08:33] want we'll refresh pine cone and if
+[08:35] you're sitting in Pine Cone when you run
+[08:37] it it'll refresh automatically but if
+[08:38] you're you wer weren't open on the tab
+[08:40] then you're going to have to refresh it
+[08:42] so maybe I'll show that in a future one
+[08:43] but anyways now we just got our one
+[08:44] vector we just got the text we want back
+[08:46] and we have our document ID right there
+[08:48] as well in the metadata so that is good
+[08:50] to go let's move on to the next example
+[08:55] which is token splitting so in this one
+[08:59] as you can see the previous ones we were
+[09:00] using recursive character text splitting
+[09:03] which basically is going
+[09:04] to um what's the word I'm looking for
+[09:06] it's going to intelligently break up the
+[09:09] information so in this case the vector
+[09:12] wasn't that long so it was able to just
+[09:13] keep it all as one but let's say you
+[09:15] have a huge document right it's going to
+[09:16] split things up in a way that makes
+[09:17] sense so that you can um you know keep
+[09:20] the context of your sentences keep the
+[09:21] context of your documents your policies
+[09:23] whatever it is that's what the recursive
+[09:25] one is and that's one it's just pretty
+[09:26] easy to set up so that's the one I use a
+[09:28] lot but there are cases where you need
+[09:30] to split up things differently so in
+[09:31] this case we're using a token splitter
+[09:34] we made the chunk size just as five so
+[09:36] each kind of word or Punctuation is
+[09:39] going to be considered a token um this
+[09:41] run is going to be splitting things up
+[09:43] in token chunks of five and we'll just
+[09:46] see what it looks like so I'm going to
+[09:47] run this and then I'm just going to go
+[09:49] into pine cone so we will probably be
+[09:50] able to just see this come through live
+[09:52] once it has you know split everything up
+[09:55] otherwise we might just have to refresh
+[09:57] it again um okay so I think obviously
+[09:59] that just popped up so something is
+[10:01] happening
+[10:03] um query use six let's see what happened
+[10:06] in here so we got 10 items back okay I'm
+[10:09] just going to refresh it so anyways 10
+[10:11] items back we can see that we got all 10
+[10:14] and I'm just going to go into Ed end to
+[10:15] actually look at this stuff because it
+[10:16] just looks a little better in here so we
+[10:18] got these 10 vectors right so document
+[10:21] ID colon 1 2 3 so that was 1 two 3 4
+[10:26] five or sorry 1 2 3 4 5 anyways it's
+[10:28] taking five chunks because cuz I think
+[10:29] it's also um considering these numbers
+[10:31] as individual chunks but as you can see
+[10:33] each one has five and if you were to
+[10:35] overlap um it would just take like you
+[10:38] know if it was overlap of one right here
+[10:40] we would see this is the and then the
+[10:41] next Vector would start with the and
+[10:43] then if this one ended with document the
+[10:45] next one would start with document so
+[10:46] it's going to overlap again we'll show
+[10:48] an example of that but that's how the
+[10:49] token splitting works and um yeah if you
+[10:52] have a specific use case where you need
+[10:53] to split up that stuff then you would do
+[10:55] token splitting so let me just get rid
+[10:57] of these vectors and then we'll go into
+[10:59] the next
+[10:59] example okay this time we're doing the
+[11:01] character text splitter so the final
+[11:04] option recursive text splitting and then
+[11:06] or sorry token splitting and then you've
+[11:08] got character text splitting so similar
+[11:10] all of these ones you'll set up a chunk
+[11:12] size and chunk overlap so that's going
+[11:13] to remain consistent but in this case
+[11:15] what we're doing here is we're adding a
+[11:17] separator if that's something you want
+[11:18] to do so um we'll give give us a run and
+[11:22] obviously within this example data
+[11:24] that's coming back we have
+[11:26] um okay that was a horrible way to look
+[11:28] at it we'll just go in here so we have
+[11:30] sentences and each sentence obviously is
+[11:31] going to end in a a period so if you
+[11:34] wanted to make sure that you weren't
+[11:35] losing context of data you had policies
+[11:37] that are going to be all separated by
+[11:39] pipes or colons or slashes then you
+[11:41] could split by that character in this
+[11:43] case we're just using a period on the
+[11:45] left you can see we've got a period
+[11:46] after document we've got a period after
+[11:48] um topic so what it's going to do is
+[11:50] it's not going to split at every single
+[11:52] one it's going to just make sure when it
+[11:54] hits that chunk size of 50 that if it
+[11:56] was to push that boundary it was it's
+[11:58] going to stop at at a period so all of
+[12:00] this makes sense they're all chunking in
+[12:02] the right area because we don't want to
+[12:04] lose context but it made three vectors
+[12:06] as you can see and they're all complete
+[12:09] sentences it's not just going to run off
+[12:10] in the middle of a sentence it's not
+[12:11] going to cut off in the middle of
+[12:13] anything and you know similar to the
+[12:15] idea of recursively text splitting where
+[12:16] you're getting this information back in
+[12:18] the way that you know makes sense that's
+[12:21] pretty much going on here and as you can
+[12:22] see we we're still doing our metadata
+[12:24] here which was just document ID so we've
+[12:25] got these three vectors that came back
+[12:28] correctly because
+[12:29] we split them with a period so that's
+[12:32] how that one works let's move on down
+[12:35] now we're doing a chunk overlap so um in
+[12:38] this case with a chunk overlap we are
+[12:41] using our character text splitting and
+[12:43] we're doing a chunk size of 60 but we're
+[12:44] saying here that we want every chunk to
+[12:46] overlap by 20 um characters or tokens so
+[12:51] we'll give this one a run it's going to
+[12:53] be doing the same thing grabbing that
+[12:55] content um putting it in we actually got
+[12:57] six vectors this time and if we look at
+[12:59] them we can see um what came through so
+[13:03] this Vector this is the first paragraph
+[13:05] of the document it talks about and then
+[13:07] the vector 2 starts with it talks about
+[13:09] and then it ends with um the second
+[13:11] paragraph contains information it and
+[13:14] then this one goes information it and so
+[13:16] you can see it kind of iterates over it
+[13:17] doesn't actually do it for every single
+[13:18] one it doesn't overlap every single one
+[13:21] um but I mean honestly off the top of my
+[13:23] head I can't think of a use case where
+[13:24] you'd want that maybe just for extra
+[13:26] insurance that no information gets lost
+[13:28] if you had a huge chunk size and also
+[13:31] that would probably be you know more
+[13:32] expensive the more vectors and the more
+[13:33] chunking you're doing but um you it
+[13:37] would be just another extra level of
+[13:39] insurance that you're not losing any
+[13:41] words you're not losing context of
+[13:42] certain um sentences and so here are
+[13:45] those six vectors in Pine Cone um and
+[13:48] now one thing I wanted to really briefly
+[13:49] talk about was is the concept of like
+[13:51] updating this kind of stuff if you saw
+[13:53] my video about is like rag done right or
+[13:57] um you know rag got even better and
+[13:58] you're able to in super base is what we
+[14:01] were using there you could go in and
+[14:02] delete a document and then you could
+[14:04] reup upload it basically so if you
+[14:06] changed an information it would go find
+[14:08] that metadata ID that you created for
+[14:11] that um you know document it would
+[14:13] delete it and then it would refresh in a
+[14:15] new one and so Pine con is a little
+[14:17] different here as you can see we have
+[14:18] our metadata right but then we actually
+[14:20] have IDs for each Vector so let's say we
+[14:22] grab this first ID right here which
+[14:24] starts in 6
+[14:26] A9 and then we were to come into let me
+[14:29] grab this trigger we're going to come
+[14:31] into right here where we're using a
+[14:32] different file so um this is just an
+[14:34] updated file as you can see um this is
+[14:38] probably not the best way for me to show
+[14:39] you guys but in here we are just
+[14:43] basically changing things so the
+[14:44] document ID we added a six at the end I
+[14:46] put updated in all caps in front of um
+[14:48] different paragraphs just to see how
+[14:50] this is working and so typically you
+[14:52] would expect that you could filter based
+[14:53] on metadata in order to like change the
+[14:55] vectors but this one has um in Pine con
+[14:59] do it by ID so if I pasted in that ID
+[15:01] that we were just looking at it's a
+[15:03] little different because we had one
+[15:05] document right and that one document we
+[15:07] put that into pine cone and it made six
+[15:10] vectors so when we run into the issue of
+[15:12] we want to update that document we would
+[15:14] have to grab six different IDs
+[15:15] dynamically um we would have to figure
+[15:17] out how to do that so it's a little bit
+[15:18] different than superbase and um you know
+[15:20] another reason that I'm making that sort
+[15:22] of more of a deep dive course in my paid
+[15:24] Community if you want to check that out
+[15:25] Link in the description we're really
+[15:26] going to dive into all aspects of vector
+[15:28] dat dat bases pine cone super base
+[15:30] quadrant um PG Vector all that kind of
+[15:32] stuff is the goal you know over the next
+[15:34] few few weeks and months here but if we
+[15:36] test that out I was you know having some
+[15:38] issues with this
+[15:40] so okay so we tested out we got one item
+[15:43] and we got the um Vector with the
+[15:46] correct information that we wanted um
+[15:49] but you can see like we we just embedded
+[15:51] it and we didn't actually have to attach
+[15:53] like a splitter so the what's it called
+[15:56] the ID that we were looking at was 6 A9
+[15:59] and if we come back into pine cone and
+[16:00] refresh
+[16:01] this we just need to look for 6 A9 which
+[16:05] is now at the bottom and as you can see
+[16:09] the text we got back was just document
+[16:11] ID 1 2 3 4 so still looking into how to
+[16:14] do this kind of stuff um spe
+[16:16] specifically for pine cone for the time
+[16:17] being um so I'm coming back into this
+[16:20] original run where we this is the you
+[16:22] know part of the one that we did for
+[16:25] that Vector that we just updated so
+[16:26] we'll run this one again we'll see what
+[16:28] comes through um and this put out six
+[16:30] items once again um not really a shocker
+[16:33] cuz that's what did the first time but
+[16:35] we will run this and we can check on our
+[16:39] information back here so um here's 6 A9
+[16:43] still didn't change okay so now when we
+[16:45] refresh pine cone we have 10 items
+[16:46] coming back now um if we were to look
+[16:49] for 6 A9 it shouldn't have oh I just I
+[16:53] must have passed
+[16:54] it 6 A9 okay so I actually don't see it
+[16:57] anywhere and maybe that's it comes into
+[16:59] play that it updated but you know if we
+[17:01] look
+[17:02] around you can see that it was splitting
+[17:04] up it was doing the um the
+[17:07] overlap
+[17:09] and so nowhere to be found is the
+[17:13] updated in all caps that we want it
+[17:14] actually like went back and redid some
+[17:16] of the other stuff so trying to figure
+[17:18] out that information um so yeah I mean
+[17:20] if any of you guys have have played
+[17:21] around with that and understand it um
+[17:23] specifically with updating stuff like
+[17:25] that in NN maybe it's because o
+[17:28] interesting so
+[17:29] it created a different namespace because
+[17:33] um as you can see you know typically in
+[17:36] here you you set up a namespace but
+[17:37] there's no other options in here so
+[17:39] still trying to figure all that stuff
+[17:41] out but like I said if you guys have any
+[17:43] insight um you know shoot me a message
+[17:46] I'd love to to chat about it because you
+[17:47] know I think Pine con's a really really
+[17:49] great great tool for like really really
+[17:51] large scale um vector databasing and you
+[17:54] know the way you can split it up into
+[17:56] different different name spaces stuff
+[17:57] like that so I'm definitely trying to
+[17:58] trying to figure it out but anyways um
+[18:00] that's all I got for this one guys I
+[18:02] hope that this was um you know
+[18:04] insightful these are definitely Concepts
+[18:06] that are important to understand as far
+[18:07] as just the way you're putting stuff in
+[18:08] how you can use the metadata to later um
+[18:11] you know look through more information
+[18:13] when you add a pine cone node right here
+[18:17] and you wanted to go to like get rank
+[18:18] documents you can filter here um based
+[18:21] on metadata so then in this place we
+[18:23] could put like you know document ID
+[18:24] equals 1 2 3 4 5 and then when you're
+[18:26] prompting it for what you're looking for
+[18:28] it's going to make sure it's only
+[18:29] pulling stuff back from you know that
+[18:30] specific metadata so it's obviously
+[18:32] important and something that's important
+[18:34] to know because I realized after I was
+[18:36] looking into this stuff that some of my
+[18:38] first couple videos I probably was
+[18:39] putting in way too much information and
+[18:41] it was just kind of a waste and probably
+[18:43] was slowing down the agent so that's
+[18:45] what I've got for today um I appreciate
+[18:47] you guys making it to the end and I will
+[18:49] see you in the next one thanks guys

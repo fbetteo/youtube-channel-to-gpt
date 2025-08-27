@@ -1,0 +1,53 @@
+Video Title: 5 Error Handling Techniques for Production n8n Workflows
+Video ID: Zy4cVtHJNvc
+URL: https://www.youtube.com/watch?v=Zy4cVtHJNvc
+View Count: 22,266
+
+[00:00] Here are five error handling techniques
+[00:01] that you need to know if you want to
+[00:03] build AI automations. So what an error
+[00:05] workflow is is it's a separate workflow
+[00:07] that starts with an error trigger. And
+[00:09] the error trigger can link up to any of
+[00:11] your active workflows. And the idea is
+[00:13] that whenever an active workflow errors,
+[00:15] it will just notify this workflow and
+[00:17] then you can set up the logic of what do
+[00:19] I want to happen with an error. Number
+[00:21] two is the ability to have our workflows
+[00:23] retry on failure. What this means is
+[00:25] that whenever our node faces an error,
+[00:28] it's just going to try again. And you
+[00:30] can control like wait this much time and
+[00:32] then try again, try again five times and
+[00:34] then just move on, whatever you want.
+[00:36] And the way you do that is within any
+[00:38] node, so like an AI agent node, you're
+[00:40] going to go up to your settings and you
+[00:42] can see right here, you can turn on the
+[00:43] switch that says retry on fail. So I'll
+[00:45] turn that on and you can see it now
+[00:47] opens up these two other things that say
+[00:49] max tries, how many times you want it to
+[00:51] retry, and then how long do you want it
+[00:52] to wait between tries. So you have a
+[00:54] couple levers here to pull. But let's
+[00:56] move on to number three, which is having
+[00:58] a fallback LLM. So if I check this on,
+[01:01] it basically allows us to connect a
+[01:02] different model in case the main one
+[01:04] fails. So let's say open router is our
+[01:06] favorite and we're using GPT 4.1 Mini.
+[01:08] Open router's down or open AI is down.
+[01:11] What we can do is we can connect another
+[01:12] model over here and we can just go with
+[01:14] Google Gemini. And now we have this
+[01:16] model in place. So now if I save this
+[01:18] workflow and I say hi, it's going to try
+[01:21] that first model. It fails. And then
+[01:23] what happens is it just goes to the
+[01:24] fallback model. And now we make sure
+[01:26] that we're still at least getting some
+[01:28] sort of answer. If you want to watch the
+[01:29] full breakdown, click on that play
+[01:30] button right here.

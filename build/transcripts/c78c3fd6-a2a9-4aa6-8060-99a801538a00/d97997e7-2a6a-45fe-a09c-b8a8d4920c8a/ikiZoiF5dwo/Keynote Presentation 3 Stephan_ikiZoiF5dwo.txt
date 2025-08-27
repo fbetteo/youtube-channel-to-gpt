@@ -1,0 +1,1161 @@
+Video Title: Keynote Presentation 3: Stephanie Kovalchik [2020 UConn Sports Analytics Symposium]
+Video ID: ikiZoiF5dwo
+URL: https://www.youtube.com/watch?v=ikiZoiF5dwo
+View Count: 112
+
+[00:04] hi everyone
+[00:06] before i get started i want to say what
+[00:08] a pleasure it is to be participating in
+[00:10] the yukon sports analytics symposium
+[00:13] i know jun yan and his fellow organizers
+[00:16] have made a tremendous effort to create
+[00:18] a sports analytics event that's
+[00:20] accessible to interested students
+[00:22] and i want to thank them and all of the
+[00:24] staff who've made this event possible
+[00:28] for those of you that i haven't had an
+[00:30] opportunity to meet i wanted to say a
+[00:32] little about my work
+[00:34] i'm currently a senior data scientist at
+[00:36] zealous analytics where we're building
+[00:38] the world's best sports intelligence
+[00:40] platforms
+[00:42] in my time working as a data scientist
+[00:44] in sport and particularly my work at
+[00:46] zellis
+[00:47] i found that latent variables or the
+[00:50] quantification of things not readily
+[00:52] observed is a recurring theme
+[00:55] so today i wanted to talk to you about a
+[00:57] class of models that are great tools for
+[01:00] a range of latent variable problems
+[01:02] these are mixture models
+[01:05] although my work at zealous
+[01:08] i'm lucky to get to work on multiple
+[01:10] sports tennis is the sport i know best
+[01:12] and all of the examples of my talk will
+[01:14] come from tennis
+[01:16] but if this talk does what i intend
+[01:18] you'll see that all the models i
+[01:20] describe have direct relevance to
+[01:22] problems in all of sport
+[01:26] so to dive in and make that last point
+[01:28] more concrete i wanted to first consider
+[01:31] three different topics that are of major
+[01:33] interest to performance assessment in
+[01:35] tennis
+[01:36] quality of shot
+[01:38] game style and player industry
+[01:41] these are important areas for analysis
+[01:43] and tennis
+[01:44] but they're topics that wouldn't seem to
+[01:46] have that much else in common
+[01:49] but if we think about developing a model
+[01:52] to get at any of these things
+[01:54] we would quickly find that they are all
+[01:57] very common in one basic property and
+[02:00] that's that the central thing we want to
+[02:02] model isn't something we can readily
+[02:05] observe
+[02:06] there's no single physical measurement
+[02:08] of a shot that captures its quality
+[02:10] just as there is no single outcome that
+[02:13] tells us all we need to understand about
+[02:15] a player's style
+[02:17] and although we might be able to observe
+[02:18] some specific injuries our window into
+[02:21] the ups downs of a player's fitness is
+[02:24] very limited
+[02:26] so for all of the topics the concept of
+[02:28] primary interest is something that's
+[02:29] fundamentally intangible if we want to
+[02:32] try to quantify these unobservables we
+[02:34] need a strategy to infer them from what
+[02:37] can be observed
+[02:39] so in this talk i want to show you that
+[02:41] mixture models are a powerful set of
+[02:42] tools for a variety of latent variable
+[02:45] problems and i'm going to do that by
+[02:47] walking through three different latent
+[02:48] variable problems in tennis
+[02:53] now why am i pushing mixture models so
+[02:55] hard
+[02:56] well as i've already stressed they are a
+[02:58] general strategy for introducing
+[03:00] unobservable quantities into a model
+[03:03] and do it in an intuitive way
+[03:06] intuitive because the unobserved
+[03:09] can the observables can be thought of as
+[03:12] unknown subgroup categories
+[03:15] and that's something easier for us to
+[03:16] get our heads around than say a hidden
+[03:19] layer in a neural net which is also a
+[03:21] latent thing but far more abstract
+[03:25] the analogy of mixture components to
+[03:28] unobserved subgroups directly relates to
+[03:30] another take on mixture models and
+[03:32] that's as an approach for unobserved
+[03:34] clustering
+[03:36] there are a lot of clustering methods
+[03:38] out there but a strength of
+[03:39] mixture-based clustering is that they
+[03:41] are probabilistic and those of clusters
+[03:44] will be driven by likelihood principles
+[03:47] the last major reason to like mixers
+[03:51] that i'll mention
+[03:52] here is that they can help to model
+[03:54] variables with non-standard
+[03:55] distributions
+[03:58] so if you face a problem that falls into
+[04:00] any of these three categories mixture
+[04:02] models would be a good candidate to
+[04:04] consider
+[04:07] now if you think a mixture model is only
+[04:08] suitable for problems with clear
+[04:09] structure
+[04:10] like when you see a distribution with
+[04:12] multiple modes i wanted to show that
+[04:15] mixtures have much greater applicability
+[04:17] than those cases would digest
+[04:19] we can see this with this very simple
+[04:21] single variable
+[04:22] normal mixture
+[04:24] each example that you see in this
+[04:26] animation
+[04:27] is a case of a three-component mixture
+[04:30] where each observation comes from one of
+[04:32] the three normal distributions having
+[04:34] their own mean and variance
+[04:36] when we look at the combined
+[04:38] distribution the result of the three
+[04:40] mixtures we see in some cases
+[04:44] clear three groups represented and
+[04:46] different modes for each
+[04:48] but we can also see examples where the
+[04:50] impact of the mixture is only in
+[04:51] creating an asymmetrical shape or
+[04:54] or something that looks normal but maybe
+[04:56] has heavier tails for example
+[04:58] so they're all non-standard but not
+[05:00] necessarily
+[05:02] multimodal
+[05:03] and this should just give you an idea of
+[05:06] more general ways in which mixtures can
+[05:09] occur
+[05:11] okay so now that i've hyped up the
+[05:13] mixture model let's actually get into
+[05:14] technical details
+[05:16] the model structure i'm going to
+[05:18] describe is what i think of as a beijing
+[05:20] recipe for a mixture model
+[05:22] one because it's fully bayesian and two
+[05:24] because i've done it in a general way by
+[05:26] not specifying the exact distribution of
+[05:27] the likelihood so this will allow it to
+[05:29] apply in many types of observations
+[05:33] i'm going to be using bayesian inference
+[05:34] throughout the talk
+[05:36] but i do want to stress that mixture
+[05:37] models can be fit with frequentist based
+[05:39] approaches such as em
+[05:41] however in addition to the standard
+[05:43] strengths of bayesian inference when it
+[05:46] comes to mixture models i found that
+[05:47] software that's based on em for example
+[05:51] can be highly specialized which can
+[05:53] limit its
+[05:54] um its range of use for the problems
+[05:57] that we might want to apply it to
+[05:59] the kinds of problems that will come
+[06:01] across as sports statisticians
+[06:04] so this is my reason for emphasizing
+[06:06] bayesian-based approaches
+[06:09] okay so the bayesian recipe here is for
+[06:12] a finite mixture model
+[06:13] the finite here refers to the fact that
+[06:16] we have k
+[06:17] mixture components and we assume that
+[06:19] those are known
+[06:20] this assumption can be relaxed and we
+[06:22] can actually make the component k
+[06:26] part of our model inference strategy
+[06:28] but for this talk i'm just going to take
+[06:30] this
+[06:31] more basic approach just to get us um
+[06:34] some groundwork
+[06:36] okay the outcome of the model
+[06:38] in this notation is
+[06:40] denoted by the variable y which has some
+[06:42] dimension d so it could be
+[06:45] area
+[06:47] since it's usually easier to think about
+[06:49] our data let's start from the bottom of
+[06:51] our recipe where the likelihood is
+[06:53] specified
+[06:54] the key thing with the mixture model is
+[06:56] that we think of the likelihood as
+[06:58] conditional on the unobserved component
+[07:00] k one of the mixture components
+[07:03] we assume that every y comes from the
+[07:05] same family distribution whichever
+[07:07] component it is but that the parameters
+[07:10] defining that distribution are specific
+[07:13] to that mixture component
+[07:15] now note again that i've not specified
+[07:18] what that distribution actually is this
+[07:20] could be multivariate normal or it could
+[07:23] be a d length set of probabilities
+[07:25] defining a multinomial distribution
+[07:28] all of these are possibilities
+[07:31] whichever case is the one that's
+[07:33] appropriate for your specific problem
+[07:35] that will determine
+[07:37] what the form of the likelihood will
+[07:38] take as well as what reasonable choices
+[07:41] of hyper parameter
+[07:42] distributions you'll have
+[07:45] for any of these cases the mixture
+[07:47] combines will be generated by a simplex
+[07:50] parameter that i've denoted here as
+[07:52] lambda
+[07:53] and a natural choice
+[07:54] of prior for those
+[07:56] lambda probabilities is the dirichlet
+[08:00] distribution
+[08:02] so this is our general recipe
+[08:04] let's make it a bit more concrete by
+[08:06] considering a specific application
+[08:09] i mentioned previously that one of the
+[08:11] areas of a lot of interest in tennis is
+[08:13] defining player's style
+[08:15] style boils down to player shot
+[08:17] preferences and the specific shot types
+[08:20] that they use the most
+[08:23] the serve is the most important shot in
+[08:25] tennis there is particular interest in
+[08:27] understanding players serving styles
+[08:31] now the more we can measure about the
+[08:33] characteristics of any shot the better
+[08:36] we're able to distinguish among
+[08:37] different types of styles that players
+[08:39] use
+[08:41] tracking data provides the most detailed
+[08:43] information that we currently have
+[08:45] available to us about shots
+[08:47] and it is regularly captured at
+[08:49] professional matches through
+[08:51] the use of the hawkeye player challenge
+[08:53] system
+[08:55] sadly most hawkeye data is not publicly
+[08:57] available
+[08:58] but starting in 2017 due to partnership
+[09:01] between emphasis and atp media
+[09:04] some hawkeye data is actually on the web
+[09:06] and can be scraped through the atp's
+[09:09] second screen
+[09:10] of feature
+[09:12] this includes aggregated information
+[09:14] about a number of shock characteristics
+[09:15] including speeds and shot placement for
+[09:18] example
+[09:20] and the speed information is what i'm
+[09:21] going to focus on in this example of
+[09:24] player surf style
+[09:26] so in this slide we can see the
+[09:28] distribution of the average first serve
+[09:31] and second serve speeds for
+[09:33] atp matches played from 2018 through
+[09:36] 2020.
+[09:38] all of the speed measurements are going
+[09:40] to be in kph
+[09:41] and looking at these plots we see that
+[09:43] the average for first serve is around
+[09:45] 190 while the average per second is
+[09:48] around
+[09:48] 160. we see in the first distribution
+[09:51] that there's some
+[09:52] left
+[09:53] tail
+[09:55] for some cases of matches with lower
+[09:58] than typical
+[09:59] first serve speeds
+[10:01] we also see from the scatter plot that
+[10:04] there is a strong relationship between a
+[10:06] player's first serve average and their
+[10:08] second serve average in terms of speed
+[10:11] also the optical shape suggests that
+[10:13] we could try to model this with a single
+[10:16] bivariate normal
+[10:18] but there are a few reasons to suspect
+[10:20] that a mixture could do better
+[10:23] the reason being that
+[10:25] there are a number of causes we can
+[10:27] imagine that would result in
+[10:28] heterogeneity heterogeneous groups in
+[10:30] terms of surfing speed from one match to
+[10:32] another
+[10:33] for example some players may have
+[10:35] biomechanics perhaps to do their height
+[10:38] for example that would allow them to hit
+[10:40] some serves
+[10:42] more often than others
+[10:44] also due to player preferences or
+[10:47] strategy
+[10:48] um these would also be things that could
+[10:50] influence how they serve in any
+[10:52] particular match as well as their
+[10:54] overall fitness level their ability to
+[10:55] execute the serves that they would like
+[10:57] to
+[10:58] so any of these could be a reason to
+[11:00] explore a mixture model for this serving
+[11:02] data
+[11:05] okay so let's go back to our recipe and
+[11:06] now actually apply it to the specific
+[11:09] case
+[11:10] so with our serve data we have a
+[11:12] two-dimensional outcome one for first
+[11:14] serve speed and the other for second
+[11:16] serve speed
+[11:18] beginning with our likelihood our
+[11:20] exploratory plot suggested that a
+[11:21] bivariate normal would be a reasonable
+[11:23] choice for our observations
+[11:27] okay so that means that we're going to
+[11:29] have
+[11:30] um a normal with a location and scale
+[11:33] associated with each mixture component
+[11:35] here i'm using the cholesky
+[11:37] decomposition to define the covariance
+[11:40] variance of the normal outcomes
+[11:44] and this just provides a more
+[11:45] numerically efficient strategy for
+[11:47] modeling that covariance structure
+[11:50] with this likelihood our hyper
+[11:51] parameters are going to be
+[11:53] the means and sigma parameters which
+[11:56] i've selected here
+[11:58] non-informative priors for
+[12:01] that just leaves our mixture
+[12:03] hyperparameters which don't have to
+[12:05] change from our general recipe we'll
+[12:06] just be using the dirichlet distribution
+[12:10] to define those
+[12:11] lambda mixture components
+[12:15] in the next slide i'm showing how one
+[12:18] could actually implement this model
+[12:20] using the stan language
+[12:22] and this is the language that i'll be
+[12:23] using throughout today's
+[12:26] examples
+[12:28] the main strategy here is in how we
+[12:30] define the model block this is where
+[12:33] all of the um sampling for our target
+[12:36] posterior would occur
+[12:39] the first few lines specify the mixture
+[12:41] component parameters and then we have
+[12:43] our hyperparameters of our likelihood
+[12:45] where i'm constructing the lkj cholesky
+[12:48] covariance
+[12:49] from a triangular correlation matrix and
+[12:52] then using a vector scaling factors
+[12:55] the final step is our likelihood which
+[12:57] is on the log scale
+[12:59] for each k mixing component and
+[13:01] observation t
+[13:03] which in our surf case refers to a
+[13:05] single match and server
+[13:07] we take the sum of the multivariate
+[13:09] normal log likelihood giving the mixture
+[13:12] parameters and the mixture probability
+[13:14] associated with them
+[13:16] so each observation will have a value in
+[13:18] the likelihood for each k component
+[13:20] mixture in this way we can think of this
+[13:23] term as a weighted average where our
+[13:25] weights are driven by the mixing
+[13:27] component probabilities
+[13:29] the target that you see here is a
+[13:31] special operator and stand that collects
+[13:33] all values and adds them to the full log
+[13:36] posterior which includes our
+[13:37] hyperparameter and likelihood components
+[13:43] okay so one of the things when working
+[13:44] with the finite mixture model is that we
+[13:46] have to decide what value of k we're
+[13:48] going to use
+[13:49] so we need this extra model selection
+[13:52] layer
+[13:53] and one metric that's really useful for
+[13:55] model selection
+[13:56] in general
+[13:58] and one that we can apply in the case of
+[14:00] choosing the mixture component k
+[14:02] is using the expected log predictive
+[14:04] density
+[14:05] associated with the any model
+[14:08] the elpd is a measurement of how well
+[14:11] our model would be expected to do in
+[14:13] terms of predictive performance when
+[14:16] presented with new data
+[14:18] what's great with stand models is that
+[14:20] there's actually a really efficient way
+[14:21] to estimate the elpd using approximately
+[14:24] one out cross validation which is
+[14:26] implemented through the loo package
+[14:30] and what's really nice is that we don't
+[14:32] have to actually split our data and
+[14:34] and run predictions for our
+[14:36] test set explicitly
+[14:38] all we have to do is to specify an
+[14:40] observation level log likelihood in our
+[14:43] generated quantities block of withstand
+[14:45] model
+[14:46] and the loop package will actually give
+[14:48] an approximate elpd based on the
+[14:50] likelihood
+[14:53] so the plot that you see here is an
+[14:55] example of the results based on the
+[14:57] serve data example
+[14:59] for components one through six
+[15:02] and what we can see is that our elpd
+[15:04] improves gradually but then begins to
+[15:07] level off after component number three
+[15:09] so this would be a clear indication that
+[15:11] a choice of three for this problem would
+[15:14] be an adequate one in terms of
+[15:16] predictive performance
+[15:19] in the bivariate case it's really nice
+[15:23] to just use exploratory plots to
+[15:26] visualize what exactly our components
+[15:28] are doing
+[15:30] so in these plots that you see here
+[15:33] i've generated
+[15:34] outcomes from each of the conditional
+[15:37] normals conditional on their component
+[15:40] hyperparameters
+[15:43] so let's have a look at what each of
+[15:44] these components suggest
+[15:46] in our first case component one
+[15:49] we see
+[15:50] there's a very tight range of the
+[15:52] distribution
+[15:54] with the mean of for the first serve
+[15:55] speed and the second surf speeds being
+[15:58] pretty close to the empirical averages
+[15:59] that we saw from the
+[16:01] observed exploratory plots of our data
+[16:04] and we also see a very strong
+[16:06] correlation between the first and second
+[16:08] serve speeds
+[16:10] so from this i think we could conclude
+[16:11] that component one appears to represent
+[16:13] the source of an average atp player's
+[16:16] match performance
+[16:18] the third component on the far right
+[16:22] is interesting in that we see there's a
+[16:23] higher overall average on the first
+[16:25] serve
+[16:26] where the average is close to 200 kph
+[16:28] and about 20 kph higher than what we see
+[16:31] for component one
+[16:34] also the stretched ellipse tells us that
+[16:35] there's a weaker relationship with the
+[16:38] second surf speeds for this group
+[16:41] so
+[16:42] this group seems to be characteristic of
+[16:45] really big servers who can hit some of
+[16:47] the
+[16:47] fastest speeds that we see on tor
+[16:51] and where the power of the second serve
+[16:53] is much more variable among this group
+[16:56] so that leaves this middle component
+[16:58] component two
+[17:00] which is most distinguishing for how
+[17:02] variable it is where we see the some of
+[17:04] the slowest possible speeds as well as
+[17:06] some of the fastest speeds
+[17:08] so this component really represents
+[17:09] something of like outlier serve
+[17:11] performance in either direction of the
+[17:13] speed spectrum
+[17:18] um allison's looking over the results
+[17:19] for this model i thought that there was
+[17:21] one thing that maybe tennis fans um
+[17:23] attending this talk might be interested
+[17:25] in and that's how
+[17:27] in terms of our mixture distribution by
+[17:29] player
+[17:30] the big three compare
+[17:32] with some of the other players on tour
+[17:34] particularly a few of the next-gen
+[17:36] players some of the younger players um
+[17:39] that have been most successful so far
+[17:42] in their careers so the big three refers
+[17:44] to federer djokovic nadal who you see in
+[17:46] the top row of this plot and what i'm
+[17:49] showing here is how often
+[17:52] an observed match serves speed
+[17:53] performance fall into
+[17:56] any one of the three mixtures
+[17:58] and what's interesting with them is that
+[18:00] they are consistently falling in the
+[18:02] component one our kind of average speed
+[18:05] component mix
+[18:07] uh whereas with our next gen players we
+[18:10] see about 10 to 25 of the time their
+[18:13] performances are assigned to the third
+[18:15] component that would be the most um
+[18:19] consistent component with those match
+[18:21] performances
+[18:23] so what could be going on again remember
+[18:25] that that third component refers to the
+[18:27] very high first speed group of serves
+[18:31] um does that suggest then that maybe
+[18:33] youth has some advantage for serve power
+[18:37] well i don't think it's youth but what
+[18:39] happens is that actually these next-gen
+[18:42] players all happen to be about an inch
+[18:45] or more taller than the big three
+[18:48] so i see what i think what we're seeing
+[18:50] here is some effect of height and the
+[18:51] kind of serves that are cheap achievable
+[18:53] based on
+[18:55] the height of players
+[18:59] okay
+[18:59] so now that we work through
+[19:02] one example of a finite mixture model
+[19:04] let's have a look at one way that we can
+[19:06] build on that basic structure
+[19:08] and the simple but powerful extension is
+[19:12] to allow each unit of observation to
+[19:14] have its own set of component weights in
+[19:16] contrast to the population mixing
+[19:18] components that we saw
+[19:20] with the first finite mixture approach
+[19:24] in this case each observation gets its
+[19:26] own
+[19:27] weights its own lambda vector which i've
+[19:29] denoted here with the index i
+[19:34] and
+[19:34] when we do this our likelihood can be
+[19:37] thought of now as a sort of a weighted
+[19:39] sum that's specific to
+[19:41] that observation's own set of mixing
+[19:44] probabilities
+[19:46] because each observation is now allowed
+[19:48] to have a different mix membership of
+[19:50] the component densities
+[19:53] it's known as a mixed membership model
+[19:55] and the lda is actually one special but
+[19:58] popular approach to mixed membership
+[20:01] modeling
+[20:05] we could have considered using a mixed
+[20:06] membership model for the serve data but
+[20:09] i want to look at another example with a
+[20:10] different type of observation outcome
+[20:13] so the question in the next um
+[20:15] application that i'm going to consider
+[20:17] are a player's return patterns where
+[20:20] here the return refers to
+[20:22] a player shot in response to
+[20:25] their opponent's serve
+[20:28] what's nice about this example is that
+[20:30] it gives me a chance to point out one of
+[20:32] the richest public data sets in tennis
+[20:34] and that's data compiled by the match
+[20:36] charting project or mcp created by jeff
+[20:39] sachman
+[20:41] the mcp is a volunteer effort to code
+[20:43] shot level stats for historical tennis
+[20:45] matches and it's the closest thing
+[20:47] tennis has to a retro sheet
+[20:50] each charted match includes information
+[20:52] about every shot that was hit from the
+[20:54] serve to the last shot of the rally
+[20:57] and over 8 000 matches have been coded
+[20:59] and are available to view from the
+[21:00] tennis abstract site
+[21:04] what can we use the mcp to say about
+[21:07] server turn behavior
+[21:09] first we can account for the context of
+[21:11] the shop by considering the serve number
+[21:13] court side
+[21:15] that the serve went to as well as where
+[21:17] the serve landed
+[21:20] for the characteristics of the return
+[21:21] itself the mcp includes categories for
+[21:24] the depth of the return as well as the
+[21:26] type of
+[21:27] return shot that was used whether it was
+[21:29] a forehand or backhand and whether it
+[21:32] was hit with topspin or slice
+[21:35] all together these categories represent
+[21:37] 144 different return situations
+[21:42] with these categories in place i've
+[21:43] collected mcp matches from 2015 to the
+[21:46] present for all
+[21:48] players that are currently in the top 10
+[21:50] of the men's rankings
+[21:52] each observation represents a player and
+[21:55] single match
+[21:56] with counts for the number of times a
+[21:59] server turn was in each of the 144 types
+[22:03] so this is a multinomial type of outcome
+[22:06] variable
+[22:10] in applying the mixed membership model
+[22:12] to our return data i did one additional
+[22:15] extension
+[22:17] and that was to include win outcomes as
+[22:19] well which are denoted here as the wi
+[22:23] outcome variables
+[22:25] these represent the number of times a
+[22:27] return in a particular cell cell d among
+[22:30] our 144 categories
+[22:32] actually won the point for the returner
+[22:36] so this is a joint mixed membership
+[22:38] model because we have both shot
+[22:40] frequencies and
+[22:42] win outcomes
+[22:44] as
+[22:45] conditional on our mixing components a
+[22:48] where we're going to allow each mixture
+[22:50] component to have its own set of
+[22:52] multinomial probabilities for shot
+[22:54] frequency
+[22:55] as well as a set of binomial success
+[22:57] probabilities for winning points
+[23:00] for that given return type
+[23:04] because this is a mixed membership model
+[23:06] every match is going to have its own set
+[23:08] of mixture weights for the k component
+[23:11] mixtures
+[23:13] so let's see what the implementation of
+[23:15] this mixed membership model would look
+[23:17] like
+[23:20] the primary point of interest is our
+[23:22] likelihood contributions
+[23:24] here we sum over the k components as in
+[23:27] our earlier finite mixture model
+[23:29] but now we have both the multinomial
+[23:32] contributions for the return type counts
+[23:34] and the binomial contributions for the
+[23:36] win outcomes for each return type
+[23:39] also the main difference from our
+[23:42] previous example is that we have an
+[23:44] index and an extra index now in our
+[23:47] lambda mixture weights where each
+[23:49] observation is getting its own mixing
+[23:52] probabilities
+[23:53] but otherwise you'll see that our setup
+[23:56] is very similar to what we had
+[23:57] previously
+[24:00] now
+[24:01] i'm going to apply the same
+[24:04] strategy for selecting the mixtures in
+[24:06] this model using the elpd
+[24:08] and when i did that i found
+[24:10] that
+[24:11] using a ko4
+[24:13] provided the best performance
+[24:16] in terms of predictive performance
+[24:18] this was the point at which that
+[24:20] performance began to level off
+[24:23] okay so our outcome um are more complex
+[24:26] in this application with 144 dimensional
+[24:29] outcome factor so i'm only going to show
+[24:31] a selected set of the results from this
+[24:34] model
+[24:35] in the plot that you see here i'm
+[24:38] looking at the relative frequency of
+[24:40] each return type
+[24:42] for serves to the ad court
+[24:47] in each column we're considering a
+[24:49] different type of serve situation
+[24:52] and then in each row we have return
+[24:54] depth and along the x-axis the
+[24:57] type of return shot that was used
+[25:00] so in any given
+[25:02] column panel
+[25:04] we could take all of the rows
+[25:07] associated with a given mixture
+[25:10] and
+[25:12] sum them across all of the rows in that
+[25:14] column and that will total a hundred
+[25:18] okay looking over the differences in the
+[25:19] return patterns here we'll find that
+[25:22] there's one component
+[25:23] that is a left-handed player component
+[25:27] where that player is going to play four
+[25:29] hands first starts out wide and
+[25:31] backhands reserved down the t
+[25:34] it's the reverse for right-handers and
+[25:36] there are two components components four
+[25:38] and two
+[25:39] that identify different types of
+[25:41] right-handed return patterns
+[25:44] and looking over
+[25:45] the general behavior between those two
+[25:48] and how they differ we would find that
+[25:50] one of those components is a case of a
+[25:52] player that plays with more backhand
+[25:54] slice than the other
+[25:58] and the first component is an
+[25:59] interesting one because it looks fairly
+[26:00] uniform in terms of the shot frequencies
+[26:03] which might make us wonder exactly what
+[26:05] purpose that component is serving
+[26:08] um we can get some idea of that if we
+[26:10] look at the corresponding
+[26:12] um success probabilities associated with
+[26:14] these return types which is shown in
+[26:17] this image here
+[26:19] and these represent how likely we would
+[26:21] expect the return
+[26:23] player in that given shot situation to
+[26:26] actually go on to win the point and
+[26:28] looking at the component one you see a
+[26:30] number of cases where it has very
+[26:32] different success rates
+[26:34] um for the same shot type compared with
+[26:36] the other components so i think what
+[26:38] could be happening in our joint model is
+[26:40] that that extra component is actually
+[26:42] capturing some kind of additional
+[26:44] dispersion
+[26:46] in wind success
+[26:48] across the shot types
+[26:49] so that's an interesting result from the
+[26:52] joint mixture model
+[26:55] now how do the current top 10 differ in
+[26:58] their return patterns based on our model
+[27:01] well one obvious one is that we have
+[27:04] nadal the only left-handed player in
+[27:06] this group as clearly distinct and the
+[27:08] only one that's heavily weighed on the
+[27:10] third component of the of the model
+[27:14] among the right-handed players
+[27:16] the majority of them look very similar
+[27:18] there are two players
+[27:20] roger federer and dominic team that
+[27:22] differentiate themselves and show
+[27:24] more of a use of component four
+[27:27] and that is the component that has a
+[27:30] heavier use of the backhand slice on the
+[27:32] server turn so that's an interesting
+[27:34] thing that our model would suggest
+[27:35] differentiates those players from the
+[27:38] other top right handers
+[27:42] okay
+[27:43] so the last model that i want to discuss
+[27:45] is a popular choice for sequential data
+[27:49] this would be data where we have a time
+[27:51] index
+[27:52] so this could be for example looking at
+[27:55] match outcomes from the start of the
+[27:57] season to the end of the season
+[27:59] or something more granular like the
+[28:01] sequence of shots within a point
+[28:03] the hidden markov model gives us a
+[28:05] strategy for estimating latent
+[28:07] quantities
+[28:08] that influence this sequential process
+[28:11] the meaning deal with an hmm is that we
+[28:13] consider the unit of analysis at any
+[28:15] time t as being in one some set of
+[28:18] discrete latent states here denoted as s
+[28:21] that latent state determines the
+[28:23] generative model
+[28:24] that defines our observed outcome at
+[28:27] that given time
+[28:30] in this setup we need an additional
+[28:33] layer to the model to define the
+[28:34] transition process from one latent state
+[28:36] to the next
+[28:38] in the hmm each move
+[28:41] to a new latent state depends only on
+[28:44] the current latent state and its set of
+[28:46] transition probabilities
+[28:48] in other words the latent state
+[28:49] transitions are defined by a first order
+[28:51] markov chain
+[28:54] in terms of our bayesian recipe
+[28:57] let's see how our setup would would
+[28:58] differ in the case of an hmm
+[29:01] so the main thing you should notice is
+[29:02] that now our observations and our
+[29:04] parameters are going to have an index t
+[29:08] to indicate the time sequence
+[29:10] of our outcomes
+[29:13] at each time point we have the same
+[29:14] conditional distribution condition on
+[29:16] the mixture component k
+[29:18] which is now representing the hidden
+[29:20] state at time t
+[29:23] after initialization the hidden states
+[29:24] are generated by the transition matrix a
+[29:27] where each row is a set of transition
+[29:29] probabilities
+[29:31] that correspond to a simplex
+[29:34] and if we think about it
+[29:35] at any given time point
+[29:37] that single row of transition properties
+[29:39] is just like our lambdas from the
+[29:41] previous finite mixture model examples
+[29:46] so
+[29:47] this tells us that we can think of hmms
+[29:49] really as time-dependent mixture models
+[29:53] we're at any time t we're really back to
+[29:54] the finite mixture model that we started
+[29:56] with
+[29:57] and i think this is a really great
+[29:59] connection and shows
+[30:01] how large a class mixture models really
+[30:04] represents
+[30:07] okay so let's think of an example where
+[30:08] we might use an hmm in sport
+[30:12] one application i've been thinking a lot
+[30:13] about over the past year is the use of
+[30:15] latent models for understanding rest
+[30:17] management and injury
+[30:20] sign injury is really hard in sport just
+[30:23] because data for injury is nearly always
+[30:25] incomplete or of questionable quality
+[30:28] and that's certainly the case for tennis
+[30:31] but what we do know with great accuracy
+[30:34] is when players are competing and when
+[30:36] they aren't
+[30:37] the plus that you see here are actually
+[30:39] sequences of the competition schedules
+[30:42] for the current top 30 best male players
+[30:45] in tennis
+[30:47] where each green square corresponds to a
+[30:50] competition week where that player was
+[30:51] in competition in 2019
+[30:56] the question i want to put to you is
+[30:57] whether we can use this kind of data to
+[30:59] understand something about the frequency
+[31:00] and duration of injuries in elite tennis
+[31:05] so if we look at most of these
+[31:08] competition schedules we see that
+[31:10] players are playing regularly
+[31:12] throughout the 46 weeks of the regular
+[31:14] season
+[31:16] and rarely do we see instances where a
+[31:18] player is out of competition for three
+[31:21] consecutive weeks or more
+[31:24] several of the sequences at the top
+[31:25] however deviate from that pattern
+[31:28] and if we do some digging on the web
+[31:30] we'd actually find that those players
+[31:32] did have injury-related breaks
+[31:34] in 2019
+[31:38] okay so this suggests that we can make
+[31:41] use of this information and maybe
+[31:42] understand something about the frequency
+[31:45] and durations of injury
+[31:48] a simple starting point
+[31:50] is
+[31:52] to think of players being in just two
+[31:55] latent states at any given time
+[31:57] um during the season either the player
+[32:00] is healthy or injured so these would be
+[32:03] our latent states
+[32:05] now there is some art to specify in
+[32:07] latency models but one guiding principle
+[32:11] is that
+[32:12] any latent state should have a
+[32:14] distinguishable emission distribution or
+[32:17] the the conditional distribution for our
+[32:19] observations
+[32:23] if every latency gave us very similar
+[32:25] observed sequences there wouldn't be
+[32:26] much point to distinguishing among them
+[32:28] would there
+[32:31] further having these distinct
+[32:33] characteristics for the emission
+[32:35] distribution is going to really be
+[32:37] essential in order for us to have any
+[32:40] chance to identify the different latent
+[32:41] states
+[32:43] so let's see how exactly this might work
+[32:46] in the competition scheduling problem
+[32:49] now that we have our two latent states
+[32:51] what would the emissions look like in
+[32:52] each of them and how would they differ
+[32:54] between each other
+[32:58] in our case emissions are really just
+[33:00] whether or not a player is competing so
+[33:02] we have just a two-state outcome which
+[33:05] we can describe with the bernoulli
+[33:07] probability
+[33:08] those are the theta parameters that you
+[33:10] see here
+[33:12] the question is whether we put some
+[33:13] expectations around that probability for
+[33:15] each latent state
+[33:18] based on the schedules that we saw
+[33:20] before i think a reasonable assumption
+[33:23] is to expect players to be competing
+[33:25] more than their resting when they are
+[33:26] healthy
+[33:28] these players need to make a living
+[33:29] after all right
+[33:32] so we could represent that expectation
+[33:33] by constraining our theta 0 parameter to
+[33:36] be greater than 50
+[33:39] when injured on the other hand
+[33:41] a sensible player should be resting more
+[33:43] than competing implying a theta 1 of
+[33:45] less than 50
+[33:49] so in our model
+[33:50] notation we have two latent states and a
+[33:53] bernoulli outcome for each competition
+[33:55] week
+[33:57] we need two success parameters to define
+[34:00] our likelihood one for the probability
+[34:02] of competing when healthy
+[34:04] denoted here as state one
+[34:06] and one when injured as state two
+[34:10] one of the great things about scan is
+[34:11] that we really have a lot of flexibility
+[34:14] in imposing constraints on variables
+[34:17] um one that i like when we have bounded
+[34:19] variables is to use a bounded logit and
+[34:22] that's what i've suggested here so to
+[34:24] differentiate our two states i'm going
+[34:26] to put a constraint on the theta one
+[34:28] parameter to be between 0.5 and 0.1 i
+[34:32] can do that by first drawing the
+[34:33] standard normal the tilde theta one
+[34:37] um and then using this bounded um
+[34:39] inverse logit transformation
+[34:42] for theta two it's the same process but
+[34:45] i'll use a different bound so that it
+[34:46] will be forced to be between 0 and 0.5
+[34:50] and this is going to be our main
+[34:51] strategy for identifying those two
+[34:53] latent states
+[34:55] finally we use the dirichlet prior for
+[34:57] each row of our transition matrix just
+[34:59] as we did with the simple
+[35:02] lambda mixing probabilities in our
+[35:05] finite mixture examples
+[35:10] with the release of stand 2.24.1
+[35:15] we have a number of high level functions
+[35:17] to help us fitting hmms which is really
+[35:20] great
+[35:21] the main function needed for the model
+[35:23] statement is hmm marginal which
+[35:26] calculates the marginalized log
+[35:28] likelihood contributions of our
+[35:29] frequency
+[35:31] marginalizing over the unknown latent
+[35:32] state sequence
+[35:34] to use this function all we need to do
+[35:36] is to calculate the conditional log
+[35:37] likelihood of our observation at each
+[35:39] time t and for each latent state so if
+[35:42] we have t time points and k total latent
+[35:45] states we would have a k by t matrix of
+[35:48] log scale rational probabilities
+[35:51] we would then supply our transition
+[35:52] matrix a and initial set of
+[35:56] initial state probabilities and this is
+[35:58] all that we would need
+[36:00] in order to
+[36:01] fit the
+[36:03] target posterior for our hmm
+[36:06] in addition to helping
+[36:08] calculate the log posterior stan also
+[36:10] gives us a convenient function for
+[36:11] sampling from the latent states
+[36:14] and this
+[36:14] takes exactly the same inputs
+[36:17] the main difference being that this
+[36:19] sampling would go into our generated
+[36:21] quantities block rather than the
+[36:22] modeling block because it's not actually
+[36:24] involved with any of the model fitting
+[36:27] and it would return a sequence of
+[36:30] integer values corresponding to
+[36:33] the
+[36:34] latent state's posterior most probable
+[36:36] latent states for that point in the
+[36:38] sequence
+[36:41] okay so let's
+[36:42] see how our hmm would actually look in
+[36:45] the scan model
+[36:46] first we start with the model block
+[36:49] at the top we define the n matrices each
+[36:52] having s latent states and t
+[36:54] observations
+[36:55] each end here corresponds to a single
+[36:58] player season
+[37:00] we calculate the log likelihood for each
+[37:02] state which is simply the bernoulli log
+[37:04] likelihood for the competition
+[37:05] scheduling problem each data being
+[37:07] specific to the s latent state
+[37:11] finally we set the priors for the latent
+[37:13] transition matrix and the initial states
+[37:17] then loop through our observations
+[37:19] adding the value of the hmm marginal to
+[37:22] the target posterior in each case
+[37:26] for sampling from the latent states of
+[37:28] our model posterior the is very much the
+[37:31] same but again as mentioned before it's
+[37:33] now within our generated quantities
+[37:35] block and this will be a way that we can
+[37:37] easily inspect the latent state
+[37:39] distribution resulting from our fitted
+[37:41] model
+[37:44] i ran
+[37:45] the model that you saw
+[37:47] here
+[37:47] for seasons
+[37:49] through 2019 for the top 30 players that
+[37:52] we saw in our earlier plots
+[37:55] because of our emission probability
+[37:57] constraints the labeling of the latent
+[37:59] states is very easy
+[38:01] in this case we find that the healthy
+[38:02] state is very sticky with players who
+[38:05] are healthy in one week expected to
+[38:07] remain healthy with 98 probability
+[38:11] injury is also sticky however and once a
+[38:13] player becomes injured it's expected
+[38:15] that the injury will persist for more
+[38:17] than a single week
+[38:18] we can actually carry out the transition
+[38:20] matrix steps to their limit to determine
+[38:23] the steady state frequencies of the
+[38:24] latent states
+[38:26] and that shown on the right would
+[38:28] suggest that in any given competition
+[38:29] week we would anticipate that about 10
+[38:32] percent of players would be injured
+[38:37] and how likely are players to compete
+[38:39] when they're healthy
+[38:41] the posterior distribution of our theta
+[38:43] parameters suggests that it's between 60
+[38:45] and 70 percent
+[38:46] which is consistent with our observed
+[38:48] schedules
+[38:50] when injured as expected this
+[38:52] probability is close to zero but not
+[38:55] zero
+[38:56] but it is still a very unlikely event
+[38:59] with the density being
+[39:02] all to the left of 10
+[39:07] so one of the potential applications of
+[39:09] our competition scheduling model is look
+[39:11] at
+[39:12] the period of probable injury
+[39:15] or other causes of unexpected absences
+[39:18] based on historical competition
+[39:21] schedules the plot you see here is the
+[39:23] latent state sequence for our rated
+[39:25] model for
+[39:26] nadal for seasons 2015 through 2019. all
+[39:30] the areas of purple are areas where
+[39:33] we would expect nadal
+[39:36] competition schedule to be more
+[39:37] consistent with an injured state than a
+[39:39] healthy state
+[39:41] and we see that there are periods in
+[39:43] 2016 and 2018 with long
+[39:46] time period
+[39:48] that
+[39:49] would suggest he had been injured
+[39:52] for a player like nadal
+[39:54] whose every move tennis media and
+[39:56] millions of fans are following closely
+[39:58] this would come as no surprise we could
+[40:00] easily
+[40:01] find information that would tell us that
+[40:04] nadal had in fact been injured during
+[40:05] those periods
+[40:07] but a programmatic way to identify
+[40:09] periods of possible injury could be
+[40:12] really useful for the hundreds of other
+[40:13] professional tennis players who don't
+[40:15] get the kind of week to week attention
+[40:17] that the three do
+[40:20] here for example is the schedules
+[40:23] and the latent state sequences for mateo
+[40:25] baratini one of the rising stars of the
+[40:28] next generation
+[40:29] in the sport
+[40:32] here we see that our hmm results would
+[40:34] suggest
+[40:35] nearly all of the 2016 season was spent
+[40:38] in an injured state
+[40:40] yet for baratini if i look at his
+[40:41] english wiki page or coverage in the
+[40:44] english media i wouldn't really find any
+[40:47] information to substantiate that that
+[40:50] period
+[40:51] so even though this is a very popular
+[40:53] player
+[40:54] we still
+[40:55] wouldn't necessarily be able to confirm
+[40:58] all periods of injury from what
+[40:59] information is publicly available and
+[41:02] this would be one basis for
+[41:04] using an hmm like
+[41:06] we've described in this example
+[41:10] okay
+[41:11] to wrap things up i do hope that the
+[41:13] survey of models and example
+[41:14] applications have shown that mixture
+[41:16] models are a powerful class of models
+[41:18] with many possible uses in sport
+[41:21] the finite mixture mixed membership and
+[41:23] hmm will cover a lot of interesting
+[41:25] problems and i hope i've shown how
+[41:27] flexible languages like stan can allow
+[41:30] us to build and extend on these
+[41:33] i promoted stan a lot in this talk
+[41:36] but i do want to emphasize that we can
+[41:38] use other strategies for inference with
+[41:40] mixture models
+[41:41] and there are two particular cases where
+[41:43] an alternative to scan would be
+[41:45] necessary
+[41:47] the first is when there is a need to put
+[41:49] a prior on the latent state itself and
+[41:51] not just the mixture of probabilities
+[41:53] for the states essentially when you
+[41:54] don't want to marginalize out the latent
+[41:56] states
+[41:57] stan does not support sampling of
+[41:59] discrete parameters so you would need
+[42:01] another option in this case
+[42:04] the other thing and one that might come
+[42:05] up most
+[42:07] for those of us working with sports data
+[42:10] is scale
+[42:11] for really big problems where our data
+[42:13] sets are massive stan sampler may be too
+[42:16] slow for practical usefulness
+[42:19] now stand does support parallelization
+[42:21] as well as provides other methods of
+[42:24] inference such as stochastic
+[42:25] optimization or variational inference
+[42:28] that can help speed things up but for
+[42:30] really big problems um it might be
+[42:32] necessary to consider more highly
+[42:34] efficient languages like tensorflow
+[42:36] probability for example
+[42:39] still i think the set of tools i've
+[42:41] shown in this talk are powerful ones
+[42:43] that help you find a use for it in some
+[42:45] of your own sports research
+[42:47] and if you have any interest in more
+[42:49] details about what i presented today
+[42:51] please feel free to drop me an email at
+[42:53] my zealous address i'm happy to talk
+[42:56] about mixture models as well as tennis
+[42:58] stats at any time
+[43:00] so thank you for your attention

@@ -1,0 +1,65 @@
+Video Title: This AI Agent Picks Its Own Brain (10x Cheaper)  #n8n #artificialintelligence #aiagent
+Video ID: XPB0OxPJ5g0
+URL: https://www.youtube.com/watch?v=XPB0OxPJ5g0
+View Count: 28,960
+
+[00:00] If you've ever wondered which AI model
+[00:01] to use for your agents and you're tired
+[00:03] of wasting credits or overpaying for
+[00:05] basic tasks, then this video is for you
+[00:07] because today I'm going to be showing
+[00:08] you a system where the AI agent picks
+[00:09] its brain dynamically based on the task.
+[00:12] This is not only going to save you
+[00:13] money, but it's going to boost
+[00:14] performance and we're also getting full
+[00:16] visibility into the models that it's
+[00:18] choosing based on the input and we'll
+[00:20] see the output. As you can see, we're
+[00:21] talking to this agent in Slack. So, what
+[00:23] I'm going to do is say, "Hey, tell me a
+[00:24] joke." You can see my failed attempts
+[00:26] over there and it's going to get this
+[00:27] message. As you can see, it's picking a
+[00:29] model and then it's going to answer us
+[00:31] in Slack as well as log the output. So,
+[00:33] we can see we just got the response, why
+[00:34] don't scientists trust atoms because
+[00:36] they make up everything. And if I go to
+[00:38] our model log, we can see we just got
+[00:39] the input, we got the output, and then
+[00:41] we got the model which was chosen, which
+[00:43] in this case was Google Gemini's 2.0
+[00:45] flash. All right, let's try something
+[00:46] else. I'm going to ask it to create a
+[00:48] calendar event at 1 p.m. today for
+[00:50] lunch. Once this workflow fires off,
+[00:52] it's going to choose the model. As you
+[00:53] can see, it's sending that over to the
+[00:55] dynamic agent to create that calendar
+[00:57] event. It's going to log that output and
+[00:58] then send us a message in Slack. We
+[01:00] click into the calendar real quick.
+[01:02] There is our launch event at 1. And if
+[01:03] we go to our log, we can see that this
+[01:05] time it used OpenAI's GBT 4.1 Mini. All
+[01:08] right, we'll just do one more and then
+[01:10] we'll break it down. So, I'm going to
+[01:11] ask it to do some research on AI voice
+[01:13] agents and create a blog post. Here we
+[01:15] go. It chose a model. It's going to hit
+[01:16] Tavi to do some web research. It's going
+[01:19] to create us a blog post, log the
+[01:21] output, and send it to us in Slack. So,
+[01:23] I'll check in when that's done. All
+[01:24] right, so it just finished up, and as
+[01:26] you can see, it called the Tavly tool
+[01:28] four times. So, it did some in-depth
+[01:29] research. It logged the output, and we
+[01:31] just got our blog back in Slack, as you
+[01:33] can see. And if you're wondering what
+[01:34] model it used for this task, let's go
+[01:36] look at our log. We can see that it
+[01:37] ended up using Claude 3.7 Sonnet. If you
+[01:40] want to watch the full breakdown, click
+[01:42] on this button right here.

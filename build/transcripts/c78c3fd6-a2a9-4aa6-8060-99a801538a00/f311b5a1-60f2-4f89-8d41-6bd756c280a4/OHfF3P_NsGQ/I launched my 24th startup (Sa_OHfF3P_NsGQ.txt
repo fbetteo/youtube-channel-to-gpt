@@ -1,0 +1,345 @@
+Video Title: I launched my 24th startup (SaaS)
+Video ID: OHfF3P_NsGQ
+URL: https://www.youtube.com/watch?v=OHfF3P_NsGQ
+View Count: 64,886
+
+[00:00] all right we are 20 hours after the
+[00:03] launch day and my software already got
+[00:05] 1.6 th000 users registered I was also
+[00:08] selected to be the product of the day
+[00:09] and I got this little badge right here
+[00:13] and the crazy part is that two weeks ago
+[00:16] the idea didn't even exist so in this
+[00:18] video I'm going to show you how I got a
+[00:20] bunch of startups ID I'm also going to
+[00:22] show you the product and the text tack
+[00:24] that I use and some methods I use to
+[00:26] build a product in around 7 days and
+[00:28] some software Engineers will not like
+[00:30] this part of the video and finally I'm
+[00:31] going to cover the launch day and how I
+[00:33] managed to get around 7,000 visitors on
+[00:36] my lening page let's go how do you find
+[00:39] startups ideas this is one of the most
+[00:41] common question that I get asked on my
+[00:43] channel and the answer is a little bit
+[00:44] counterintuitive when I started the
+[00:46] Journey about 6 years ago I was
+[00:48] brainstorming startup ideas for hours
+[00:50] like sometimes even days thinking I will
+[00:52] come up with something magical and I
+[00:54] implemented those IDs and none of them
+[00:56] actually worked but about a year ago I
+[00:58] started to stop thinking about ideas and
+[01:00] instead I started to build stuff
+[01:02] whatever it is and then I would stumble
+[01:04] up across problems all the time like DNS
+[01:08] issues or like knowledge uh issues or
+[01:10] like I don't know where to launch my
+[01:11] startups I don't know how to do this I
+[01:13] don't know how to do that and then now
+[01:14] my lease is filled with startups ideas
+[01:17] for instance for the software I just
+[01:18] launched here is how I got the idea I
+[01:20] have built 24 products and seven of them
+[01:22] are making money and I want to build
+[01:23] better products for people so I as them
+[01:26] what they want to use and for that I use
+[01:27] a feedback management tool called Kenny
+[01:30] it's a little feedback board where
+[01:31] people can suggest features and upot
+[01:33] them so I know which one to prioritize
+[01:35] the problem with Kenny is that first
+[01:37] it's made for a big company so it's very
+[01:39] cluttered there's a bunch of features
+[01:41] and is very complicated for soloers like
+[01:43] me and the second problem with Kenny is
+[01:45] that if you have more than one product
+[01:46] it cost at least $99 per month which is
+[01:49] an insane amount of money for a feedback
+[01:51] tool and just like this I had this idea
+[01:53] of building an alternative to Kenny that
+[01:55] is much simpler for smaller markets the
+[01:57] niche of solopreneurs so instead of
+[01:59] looking for ideas I buil solutions to
+[02:02] problems I experience and chances are
+[02:04] I'm not unique so many other people
+[02:06] might have the exact same problem as me
+[02:08] and they might be in need of my product
+[02:10] and when I launch it I saw that many
+[02:11] other solopreneurs experience the exact
+[02:13] same frustration with other feedback
+[02:15] management tools and that's how I know I
+[02:18] have a product that uh will be used by
+[02:20] users so unless you have been working
+[02:22] for a company for 10 years and you know
+[02:24] that there's some uh pains in their
+[02:26] workflow like they're slow for this or
+[02:28] they struggle to hire people then you
+[02:30] might be able to have a good startups
+[02:32] idea born from that but if you're uh a
+[02:35] guy just like me and you spend most of
+[02:36] your time home and you just want to
+[02:38] build apps chances are you don't really
+[02:39] have a problem that can be solved with a
+[02:41] digital product so the way to find good
+[02:44] startups IDs is to actually to build
+[02:46] something anything rebuild a habit
+[02:48] tracker that you use make a not taking
+[02:49] app a grocery app for you and your
+[02:51] family build anything along the way
+[02:53] you're going to stumble across problems
+[02:55] whether it's not knowing how to
+[02:57] implement this feature or struggling
+[02:59] with DNS Rec course or maybe it's even a
+[03:01] marketing issue and you don't know where
+[03:02] to launch your startups and these
+[03:03] problems will give you tons of startups
+[03:05] ideas so the way to find good ideas is
+[03:07] to think less and build more all right
+[03:10] now let me show you the text tack I use
+[03:12] and how I build a product in 7 days and
+[03:14] let's start with a quick demo of the
+[03:15] software okay so this is the demo of
+[03:17] inso the little feedback management tool
+[03:20] I created this is the landing page I
+[03:21] like to make interactive demo on the
+[03:23] left so the cards are clickable and this
+[03:26] is the landing page here for the feature
+[03:28] part I like to have some interactivity
+[03:30] so it makes people want to discover more
+[03:32] so if you hover with your mouse you'll
+[03:34] see all the little thing moving here and
+[03:36] there and that's pretty much it for the
+[03:37] landing page uh once you are signed up
+[03:39] as an admin you will see all the
+[03:41] feedback boards right here so this is
+[03:43] the one that I use for inso as an admin
+[03:46] I can change a few stuff here so I can
+[03:48] change the themes to match my brand I
+[03:50] can also uh manage the feedback that are
+[03:52] being given by users uh this one was
+[03:54] canceled because I fixed it I can change
+[03:56] say that I'm working on this one or I
+[03:57] Shi that feature and then there is a
+[04:00] public uh dashboard link where on the
+[04:02] right side we have all the features
+[04:04] suggested by users once they're logged
+[04:05] in they can uh click to upot them they
+[04:08] can also suggest any features they want
+[04:10] right here and they can have a
+[04:12] conversation on each uh feedback given
+[04:15] if they uh want to add more things there
+[04:18] so here is the text tack I use to build
+[04:20] this software and this is the exact same
+[04:22] text tack I use for all my 23 websites
+[04:25] when I don't change my text tack I don't
+[04:26] procrastinate and I can focus on
+[04:28] shipping features and product it's a
+[04:30] nextjs repo so the front end and as well
+[04:32] as the back end I have the little API
+[04:34] routes by nextjs everything is handled
+[04:36] with next I also use tawin CSS instead
+[04:39] of CSS as well as Daisy UI for the
+[04:41] components so things like uh the buttons
+[04:44] the inputs and the forms my database is
+[04:46] mongodb I hear you coming super base
+[04:48] developers I don't know why mongodb gets
+[04:50] so much hate I absolutely love it I
+[04:52] click a button deploy a cluster I have
+[04:54] it little string I add it to my code and
+[04:56] boom it's working and the cluster is
+[04:58] hosted on mongodb Atlas to authenticate
+[05:00] users whether it's uh admin users uh who
+[05:03] log to their actual dashboard or it's
+[05:05] just users who want to provide feedback
+[05:07] I'm using NEX oath it's a very simple
+[05:09] library that has a bunch of social
+[05:11] authentification providers so uh Google
+[05:14] Facebook and GitHub for instance and I
+[05:17] also always add a login by email so like
+[05:20] a magic links and for that I use mail
+[05:22] gun to send those emails there are tons
+[05:24] of developers who don't really like mail
+[05:26] gun I really love it it's super simple
+[05:28] to get started and they have pay as you
+[05:30] go service so for $1 you'll get 1,000
+[05:33] emails which I think is really fair it
+[05:35] took me around 7 days to build the
+[05:37] product and this is not very common
+[05:38] especially for software Engineers is
+[05:40] because I make lots of trade-off first I
+[05:42] remove a bunch of features that are not
+[05:44] uh essential so there is no way for
+[05:46] people to delete their account to
+[05:48] retrieve their password or stuff like
+[05:49] that and my second trick is that I don't
+[05:51] use a bunch of software engineer tools
+[05:53] so there is no typescript I ship
+[05:55] straight to production I don't use G
+[05:57] branches I don't test my code I I make
+[05:59] all these trade-offs so I can ship
+[06:01] faster I come from a developer
+[06:02] background so I used to do stuff very
+[06:04] slowly very securely I spent years
+[06:06] building apps that made zero to
+[06:08] sometimes a couple hundred bucks but
+[06:10] nothing crazy but after years getting
+[06:11] almost no results I changed my entire
+[06:13] mindset and I focus more on shipping
+[06:16] fast and having a better copyrighting on
+[06:17] my landing page and surprisingly at the
+[06:19] same time my Revenue went from not being
+[06:22] able to pay the bills to about 50 to
+[06:24] 150k per month at the moment because
+[06:26] entrepreneurship is about making small
+[06:28] bets and you can see the pattern applies
+[06:30] to most successful solo prur out there
+[06:32] they start to ship one tiny feature of a
+[06:35] product and sometimes nothing happens
+[06:37] sometimes it takes off and go viral and
+[06:39] then at this moment they double down on
+[06:41] it and they grow a big company my advice
+[06:43] is this try to show the smallest version
+[06:45] of your product to the world as fast as
+[06:47] you can that's how you gather genuine
+[06:49] feedback and know if it's worth or not
+[06:51] your time and now that we're talking
+[06:53] about one of the most exciting part it's
+[06:55] time for a little coffee I usually
+[06:56] launch on every platform so product hunt
+[06:59] RIT hiker news and Twitter at the same
+[07:01] time and the goal is to create some kind
+[07:03] of momentum and get as much traffic as I
+[07:05] can in about one day but I made a little
+[07:08] mistake I normally schedule all my post
+[07:10] on Twitter to make sure they go right on
+[07:12] time when the product hunt launch starts
+[07:14] and one of my good friend was in budy
+[07:16] for just a week so I really wanted to
+[07:17] see him you might know him already it's
+[07:19] tibo maker one of the most prolific
+[07:21] Indie hicker out there he's built a
+[07:23] Twitter tool that he grew to
+[07:25] $600,000 in monthly recurring revenue
+[07:28] and he sold it for $9 figures he's an
+[07:30] absolutely Legend as he was here for
+[07:32] just a week we were having a lunch at
+[07:33] the same time as I was launching and
+[07:35] during the lunch with tibo one of my
+[07:37] close friend Nik called me and said the
+[07:39] product hunt link on Twitter is wrong
+[07:41] and I didn't know if my computer had
+[07:43] nothing with me besides my phone so my
+[07:44] friend chibo gave me his computer and
+[07:46] together during the launch we fixed the
+[07:48] launch all right enough of this here's
+[07:49] the launch strategies all right first
+[07:51] Twitter is the most important part of my
+[07:53] strategy because this is where most of
+[07:55] my potential users are and they're also
+[07:57] very active on product ton so can help
+[08:00] leverage the launch on that platform as
+[08:02] well I usually try to make one funnyish
+[08:05] video you'll tell me if it's fun or not
+[08:07] um where I say that I'm launching the
+[08:09] startups and I give the product hunt
+[08:11] link so people can see the products
+[08:14] through product hunt and hopefully they
+[08:15] will leave an up vote when they see the
+[08:17] product the reason I'm making these
+[08:18] funny launch videos is because first
+[08:20] they do well on X at the
+[08:23] moment videos X doing well it's kind of
+[08:26] weird the second part is because I love
+[08:28] making those videos I'm having a good
+[08:30] time and I hope people can see that and
+[08:32] so my tweet is more likely to perform
+[08:34] well now that I have close to 100,000
+[08:36] followers on Twitter it's tempting to
+[08:38] think that it's easy for me to launch
+[08:41] and it's not easy it's just easyer I
+[08:43] started to make those fun launch videos
+[08:45] when I had a couple hundred followers on
+[08:47] Twitter and back then my tweet would get
+[08:49] as many views and many likes as my
+[08:51] tweets right now even though I had
+[08:53] barely any audience there so even though
+[08:54] you don't have a big audience on Twitter
+[08:56] right now you can still make a nice
+[08:58] interesting tweet for for people to
+[09:00] discover your product those fun launch
+[09:01] videos were my style and I absolutely
+[09:03] love it but you can also be just show
+[09:05] behind the scene make a video show your
+[09:06] computer screen explain why you build
+[09:08] the products if you're a person who make
+[09:10] and launch app your life is so cool that
+[09:12] there are many things you can share on
+[09:14] Twitter you just have to find the right
+[09:15] format and find your own signature so as
+[09:18] I said before most of the launch
+[09:19] strategy relies on product hunt I
+[09:21] already made a video on my channel last
+[09:23] week to show you exactly how you can get
+[09:25] traffic and how you can optimize your
+[09:27] product hunt launch you can refer to
+[09:29] that and finally I launched on hiker
+[09:31] news and on Reddit those are two
+[09:33] platform that if you get lucky the post
+[09:35] can go viral and can give you a bunch of
+[09:37] traffic uh unfortunately this time I was
+[09:39] not one of the lucky ones but definitely
+[09:41] worth considering all right now let's
+[09:43] talk about numbers the product has been
+[09:45] on the internet for about 2 days now and
+[09:48] there are 7,000 people who visited the
+[09:50] site from product hun Twitter Reddit and
+[09:52] hiker news 1.5 th000 people sign up for
+[09:55] the product which is really big and I
+[09:57] also got some really positive feedback
+[09:58] especially from Peter levels one of the
+[10:00] most prolific Indie maker out there who
+[10:02] said the product is amazing and he loves
+[10:04] the Simplicity of it yay that makes me
+[10:06] so proud I also got the badge the
+[10:10] product hunt of the Day badge from
+[10:11] product hunt which is a good nice social
+[10:14] proof for my website and this is just
+[10:15] the beginning I hope that some Media or
+[10:17] newsleter will probably check the
+[10:19] content of product hunt and I might get
+[10:21] more traffic later financially wise I
+[10:23] spent $0 and I also made 0 as you've
+[10:26] seen there is no pricing on the product
+[10:28] is 100% % free for now I'm going to
+[10:30] leave it as it is for free and what I'm
+[10:33] doing in the reason there is no pricing
+[10:35] uh which is very unusual if you've been
+[10:37] following me I always uh say that we
+[10:38] should add a pay Woll on websites first
+[10:40] this is a bit special because I'm not
+[10:43] disrupting anything I'm just taking an
+[10:45] existing product and I'm making a
+[10:46] simpler version of it and I think it's
+[10:49] not fair for now to start charging for a
+[10:52] simplicity so what I'm trying to do is
+[10:55] I'm putting the product in as many hands
+[10:57] as I can for free and I see how sticky
+[11:01] it is um I'm looking for power users I'm
+[11:03] looking for people who will use the
+[11:05] product for month and either love it or
+[11:08] tell me that it's solving one of their
+[11:10] pain and then from that I will be able
+[11:12] to know if it's worth opening a paid
+[11:14] plan on the product and building more uh
+[11:17] features for those users so for now I'm
+[11:19] collecting feedback and waiting to see
+[11:21] for an opportunity all right that's it
+[11:22] for this video if you want to see the
+[11:23] other 23 products I made I'll share a
+[11:26] link to that video somewhere around here
+[11:27] and if you like this video consider
+[11:29] subscribing to the channel that really
+[11:30] means a lot all right until the next one
+[11:32] I hope you just ship it

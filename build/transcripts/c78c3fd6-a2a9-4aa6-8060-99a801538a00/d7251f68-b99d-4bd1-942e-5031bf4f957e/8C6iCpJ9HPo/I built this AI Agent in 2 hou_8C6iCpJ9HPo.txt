@@ -1,0 +1,378 @@
+Video Title: I built this AI Agent in 2 hours (and got paid $1200)
+Video ID: 8C6iCpJ9HPo
+URL: https://www.youtube.com/watch?v=8C6iCpJ9HPo
+View Count: 93,196
+
+[00:00] So, I built this agent in 2 hours, and
+[00:01] someone actually paid me $1,200 for it.
+[00:03] And it wasn't anything too complex or
+[00:05] advanced. In fact, I actually built this
+[00:07] back when I had just first started
+[00:08] messing around with an end. And
+[00:10] honestly, if I was to rebuild this
+[00:11] system today, it would probably take me
+[00:13] 30 minutes max. What's crazy about that
+[00:15] is I'm pretty sure all of you guys could
+[00:16] build something just like this. So, in
+[00:18] this video, I'm going to walk through
+[00:19] what the agent does, why someone paid me
+[00:21] for it, what this means for anyone
+[00:22] trying to get started, and how I'd sell
+[00:24] my first AI agent if I was starting from
+[00:26] zero today. So, what was the AI agent
+[00:28] that I ended up selling? Well, it's
+[00:29] funny because it's actually not an AI
+[00:31] agent at all. It's more of an AI
+[00:32] workflow, AI system. At this point, AI
+[00:34] agent was kind of a buzzword and
+[00:36] everyone was calling everything agents,
+[00:37] myself included. But more realistically,
+[00:39] this was an AI workflow that I sold. So,
+[00:41] what did this workflow do? Every single
+[00:43] day, it would go off three times in the
+[00:44] morning, and it would go through an idea
+[00:46] generator AI, which was prompted to
+[00:47] think of topics that would appeal to
+[00:49] this client's target audience. The end
+[00:50] goal was that everything was speaking
+[00:52] through his company's branding and his
+[00:54] tone of voice to ultimately help nurture
+[00:56] and convert the target avatar that his
+[00:58] LinkedIn profile is trying to speak to.
+[01:00] And you can see here it's a very, very
+[01:01] simple system. You guys may even think
+[01:03] it's funny how simple this thing looks
+[01:04] right now. But at the time, there were
+[01:05] some pretty advanced things going on
+[01:07] here with like data aggregation,
+[01:08] splitting out different items, stuff
+[01:10] like that. Making an HTTP request, and
+[01:12] then creating content, which was a
+[01:14] really hot topic and still is when it
+[01:16] came to AI powered systems. And at this
+[01:18] point in my life, you know, I was still
+[01:19] working full-time and I was just
+[01:21] building a lot of stuff with Naden for
+[01:22] fun and really just trying to learn what
+[01:24] was possible. And that's how I got good
+[01:26] at automating so quick because I was
+[01:28] just talking to chatbt trying to figure
+[01:29] out some cool use cases to build and
+[01:31] then I would go ahead and try to build
+[01:33] it as best as I could just for myself
+[01:34] and to make a YouTube video about it
+[01:36] where I build it live, explain what I'm
+[01:38] doing because for me explaining
+[01:40] something really helps it stick in my
+[01:41] brain. So, you guys see that workflow?
+[01:43] You know, it's nothing too complex if
+[01:44] you've been building with editin for a
+[01:45] while. But how did I actually get
+[01:47] someone to pay me for it? Well, like I
+[01:49] said, I was just posting random things
+[01:50] on YouTube, little tutorials, stuff like
+[01:52] that. And at this point, it was
+[01:53] primarily for learning. I had no call to
+[01:55] actions in my YouTube videos, but in all
+[01:57] of them, I just had my email right there
+[01:59] in the description. And at this point,
+[02:00] my videos were getting like 200 views a
+[02:02] week. But what I knew were people that
+[02:03] were super interested, like genuinely
+[02:05] interested in what I was building. And
+[02:06] after a while of this, people started
+[02:08] reaching out. And this client ended up
+[02:10] reaching out because he just wanted to
+[02:11] hop on a call and wanted to talk about
+[02:13] what was possible. It almost seemed like
+[02:14] he was just reaching out to make a
+[02:15] friend because I was not an expert. I
+[02:18] wasn't positioning myself online as an
+[02:20] expert or someone that would sell a
+[02:21] service. We ended up just kind of
+[02:22] hopping on a phone call and talking and
+[02:24] he ended up asking if I wanted to
+[02:25] collaborate with him. At this point, I
+[02:27] was really excited at the opportunity
+[02:28] just to be meeting people that are
+[02:30] interested in what I'm interested in,
+[02:31] but more so at the opportunity to build
+[02:32] something for free for someone and just
+[02:34] get some experience working with people
+[02:36] and not taking on something that was a
+[02:37] whole lot of pressure. but he seemed so
+[02:39] excited about it and we were talking a
+[02:40] lot about the value that this system
+[02:41] would add to him. So I decided I might
+[02:43] as well throw out a price tag and just
+[02:44] see that you know what his reaction is
+[02:46] and he pretty much agreed almost
+[02:47] immediately. I guess the takeaway here
+[02:48] is putting yourself out there and making
+[02:50] content on whatever platform it is is
+[02:52] extremely powerful especially if the
+[02:54] goal is not to get tons and tons of
+[02:55] views and go viral. But the goal is to
+[02:57] connect with people who are genuinely
+[02:59] interested in exactly what you are
+[03:00] genuinely interested in. even if you're
+[03:02] not positioning yourself as an expert
+[03:04] because that raw genuiness builds trust,
+[03:06] that authenticity, and that's what you
+[03:08] need to get people to actually want to
+[03:09] work with you. Of course, I wasn't the
+[03:10] only one building at the time and
+[03:12] posting about edit workflows. So, why
+[03:14] did this business owner pay me $1,200
+[03:16] for a 2-hour job? So, it took me 2
+[03:18] hours, which is 600 bucks an hour, which
+[03:19] is an insane rate. But the client wasn't
+[03:21] paying for the workflow or wasn't paying
+[03:23] for me on an hourly basis. He was paying
+[03:26] for the outcome. I get so many questions
+[03:27] about pricing, and really it's about the
+[03:29] value ad. in order to accurately and
+[03:31] fairly price something in a way where
+[03:33] it's a good deal for you and also a
+[03:34] no-brainer for the client is to
+[03:36] understand exactly the value that you're
+[03:37] adding to this specific client. And in
+[03:39] order to understand that value, you need
+[03:41] to figure out how do they do this
+[03:42] process manually? How much time does it
+[03:43] currently take them or their employees?
+[03:45] How does that client value an hour of
+[03:47] his or her time or an hour of his or her
+[03:49] employees time? And then there's also
+[03:50] tons of other intangible benefits of AI
+[03:53] automation as well. Of course, at the
+[03:55] time, I was insanely happy about making
+[03:56] a quick $1,200, but if I really started
+[03:59] to think about it, the value of this
+[04:00] system in my mind was way more than
+[04:02] $1,200. The way that the client was
+[04:04] manually doing this process was spending
+[04:05] hours each week creating and posting
+[04:07] this content, which wasn't something he
+[04:09] was genuinely passionate about, but it
+[04:11] was more so something he knew he needed
+[04:13] to do to grow the business. And rather
+[04:15] than paying a VA or some employee to do
+[04:17] this, which would be an ongoing expense
+[04:19] at the time, he was able to get this
+[04:21] onetime build with a onetime fee. And
+[04:23] now all he has to do is pay for his API
+[04:24] credits which are pretty minimal. So
+[04:26] this is over a 10x return for the
+[04:28] business owner. And I think the main
+[04:30] thing to understand here is that if you
+[04:31] know how to solve a real problem, even
+[04:33] with off-the-shelf AI tools, people will
+[04:35] pay. At this point, I've really
+[04:36] positioned myself in the NAND market. So
+[04:38] people come to me now and are looking
+[04:40] for NAND solutions because that's what
+[04:41] they're familiar with. But ultimately,
+[04:43] people don't care how you fix it. They
+[04:45] just care about what you did to fix it
+[04:47] and if it actually provides value to
+[04:49] them as a business owner. Now, the
+[04:51] reason I'm telling you guys about this
+[04:52] is I know a lot of you are building but
+[04:54] find it hard to believe someone will pay
+[04:56] you good money for your agents. Well,
+[04:58] this is proof that a lot of people will.
+[05:00] What this means for you is that you
+[05:01] don't need to be a coder, a genius, an
+[05:04] expert. You just need to be accessible
+[05:06] to anyone who likes building agents and
+[05:08] has a business that they want to grow
+[05:09] without increasing headcount. Like in
+[05:11] the example I just showed, the business
+[05:13] owner reached out to me just to have a
+[05:14] casual conversation and then because I
+[05:16] was so passionate about it, he just
+[05:18] wanted to work on something with me.
+[05:20] Now, I'm aware that it's a completely
+[05:21] different space today than what it was
+[05:23] 8, nine months ago, but you'd be shocked
+[05:25] just how early we still are to this
+[05:26] whole AI automation wave. There are
+[05:28] people who are still just now starting
+[05:30] to even use chatbt and understand the
+[05:32] value of it. And if you can understand
+[05:33] pain points and start stitching together
+[05:36] different tools, you're going to become
+[05:37] in extremely high demand. There are so
+[05:39] many high leverage automations that you
+[05:41] can build for small business owners who
+[05:43] don't even know that this technology
+[05:44] exists. stuff like building some
+[05:46] automations for personalized outreach,
+[05:47] automations for customer support,
+[05:49] automations for personal productivity.
+[05:51] The list goes on and on. If you're in
+[05:52] this space now, you've probably been
+[05:54] aware of the whole website chatbot thing
+[05:55] for a while. And it may seem like old
+[05:57] news to you, but almost every day I'll
+[05:59] be talking to people who are just
+[06:00] mind-blown by the fact that you can have
+[06:01] a little widget on a website and no
+[06:03] longer have to manually answer FAQs or
+[06:05] customer support related issues. And if
+[06:07] you can help people save time, save
+[06:09] money, save their focus so that they can
+[06:11] use that time, money, focus to grow
+[06:12] their business, you will get paid. Now,
+[06:14] I know it might sound like it's super
+[06:16] easy because I've already built up a
+[06:18] channel, but here's exactly what I'd do
+[06:19] if I had to start over from scratch. I
+[06:21] would start sharing my journey, whether
+[06:23] that's on Medium, LinkedIn, school
+[06:25] communities, whatever it is, to start
+[06:26] talking about what I'm learning, and
+[06:28] people will find it interesting. Then,
+[06:29] I'd get really good at not just building
+[06:31] automations, but being able to identify
+[06:33] people's problems. Like I've said
+[06:35] before, you want to make yourself a
+[06:36] doctor, not a pharmacist. Someone who
+[06:38] can not only fix the problem, but
+[06:40] someone who can help you identify what's
+[06:42] wrong. A lot of people that I've talked
+[06:43] to in this space know that they need to
+[06:45] start using AI and they know that they
+[06:47] need automations, but they don't know
+[06:48] exactly where in their business to look
+[06:50] to start implementing it. And that's
+[06:52] where you can come in and help them out.
+[06:53] Next, I would understand the different
+[06:55] tools that I have available to use in
+[06:57] order to solve those problems.
+[06:58] Obviously, I use any of them for most
+[07:00] things, but I think you'd be shocked at
+[07:01] how easy it would be to leverage other
+[07:03] tools that are out there and prove your
+[07:04] expertise in the space. I think just the
+[07:06] other week I told someone about
+[07:07] Perplexity and how I use it to help me
+[07:09] research and find a bunch of good
+[07:10] sources. And they were absolutely mind-b
+[07:12] blown that they could pay a $20 a month
+[07:14] subscription and basically get a
+[07:16] software that would replace an intern
+[07:18] that would be doing research all day.
+[07:19] But of course, the more custom you want
+[07:20] to get and especially when you want to
+[07:22] build backend automations at scale.
+[07:23] Learning something like Nen is a great
+[07:25] great place to start. But I know for a
+[07:27] fact that there are people out there
+[07:28] right now making money just going into
+[07:31] businesses and teaching them how to use
+[07:33] chatbt. The next thing to think about is
+[07:35] get to a prototype fast. You don't need
+[07:37] to go from discovery call with client
+[07:39] immediately to a perfect productionready
+[07:41] system. In fact, the quicker you get to
+[07:42] a prototype that fails, you're actually
+[07:44] on your way to getting a system that
+[07:45] you'd be ready to sell much quicker.
+[07:47] Most builders overthink this and get
+[07:48] super caught up in that aspect. But
+[07:50] typically, when I am working with a
+[07:52] client, I tell them straight up at the
+[07:53] beginning, hey, I'm really going to need
+[07:55] to lean on your subject matter expertise
+[07:57] here because ultimately I'm building
+[07:58] this system for you. So, I'm going to
+[08:00] need a lot of your input to make sure
+[08:01] that it fits your needs and that you're
+[08:02] happy with it. Not only does that make
+[08:04] sense from the business owner's
+[08:05] perspective, but they're really going to
+[08:06] appreciate that you are thinking through
+[08:08] that with them and that's how they can
+[08:10] tell that you're really on their team.
+[08:11] And when you're building high-quality
+[08:12] automations, predictability and patterns
+[08:14] are going to be your best friend. And
+[08:16] you don't know what you don't know. So
+[08:18] when things start to break, which they
+[08:19] will and which they should, what you can
+[08:21] do is you can start to collect those
+[08:23] edge cases and identify patterns and
+[08:25] then you can build in certain guard
+[08:26] rails to protect against those patterns.
+[08:28] So, that's really the best way to make
+[08:30] your system actually robust is to put it
+[08:32] out there, test it a ton, let it receive
+[08:34] some live inputs, and basically just
+[08:36] make sure you're watching it and
+[08:37] tracking it. You need to see when it
+[08:39] breaks, why it broke so that you can
+[08:40] actually fix it. And at this point, you
+[08:42] should feel very confident doing things
+[08:43] and selling some of your solutions for
+[08:45] money. But, you need to be able to put
+[08:46] an accurate price tag on it in a way
+[08:48] that the client feels justified handing
+[08:50] you over that check. And like I kind of
+[08:52] alluded to earlier, this all comes down
+[08:53] to proving the ROI, the return on
+[08:56] investment. Business owners typically
+[08:57] don't think in terms of how many nodes
+[08:59] are on your workflow or how many API
+[09:01] calls you're making. They're going to be
+[09:02] thinking in terms of if I pay this
+[09:04] person x amount of money, how much time
+[09:05] are they going to save me? How much
+[09:06] money in the long run am I going to make
+[09:08] or save because of this person? Will the
+[09:10] results be more consistent or higher
+[09:12] quality than what I'm currently doing
+[09:14] manually? So, every system that you are
+[09:16] pitching to build should very clearly
+[09:18] show improvement in at least two of
+[09:19] those three categories. Ultimately, you
+[09:21] want all three to be improvements, which
+[09:23] makes it a no-brainer. And just like I
+[09:24] talked about earlier with valuebased
+[09:26] pricing, let's say you get to the
+[09:28] conclusion that this system is going to
+[09:29] save the business owner $15,000 a month.
+[09:31] It's going to get them back personally
+[09:32] over 20 hours a month that they can use
+[09:34] to focus on higher leverage tasks. It
+[09:36] then becomes almost a no-brainer to say,
+[09:37] "Hey, upfront cost of $3,000 a month and
+[09:40] then $1,000 a month ongoing." Just to
+[09:42] throw out an example. But that is
+[09:43] basically an offer that would make the
+[09:45] business owner feel dumb for saying no.
+[09:46] And that's how you show ROI. So, I don't
+[09:48] want this video to go too long and I
+[09:50] hope you guys have gotten a lot out of
+[09:51] it. I've thrown all of this together in
+[09:52] a doc for you guys, so you can save this
+[09:54] as a resource. And if you want to access
+[09:55] that for free, all you have to do is
+[09:57] join my free school community and you'll
+[09:58] find it in there. And if you guys want
+[10:00] to see more in-depth content on selling
+[10:01] AI services without having to start up a
+[10:03] full agency or a full AI company or
+[10:05] anything like that, let me know. I'd
+[10:07] love to bring some more of this type of
+[10:08] content to you all because I'm aware
+[10:09] that we're all kind of looking to
+[10:11] monetize our skills, but not all of us
+[10:13] are looking to start up an entire
+[10:14] business. So, if you enjoyed the video
+[10:16] or you learned something new, please
+[10:17] give it a like. It definitely helps me
+[10:18] out a ton. And as always, I appreciate
+[10:20] you guys making it to the end of the
+[10:21] video. I'll see you on the next one.

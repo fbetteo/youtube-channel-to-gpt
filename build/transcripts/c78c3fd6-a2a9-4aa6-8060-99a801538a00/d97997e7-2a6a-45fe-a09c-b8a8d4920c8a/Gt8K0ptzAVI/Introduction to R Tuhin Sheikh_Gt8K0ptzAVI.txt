@@ -1,0 +1,1279 @@
+Video Title: Introduction to R: Tuhin Sheikh [2021 UConn Sports Analytics Symposium]
+Video ID: Gt8K0ptzAVI
+URL: https://www.youtube.com/watch?v=Gt8K0ptzAVI
+View Count: 72
+
+[00:02] all right
+[00:03] hello everyone um thank you for joining
+[00:06] this uh this workshop uh
+[00:08] and uh i would like to thank you for
+[00:11] attending this uh nice conference and
+[00:13] also attending this uh this workshop
+[00:17] so today i'm here with you uh tohin so
+[00:20] let me share my screen and then and then
+[00:22] start
+[00:23] um
+[00:26] if any of you could just just text
+[00:30] text me that
+[00:31] whether you can see my screen that would
+[00:34] be great um i hope all of you can see my
+[00:36] screen and somebody can phone
+[00:43] yeah that's great thank you thank you so
+[00:45] much thank you
+[00:47] so again thank you so much for for
+[00:49] joining this uh this workshop uh today
+[00:51] i'm going to um uh instruct you uh
+[00:55] through this introduction to our
+[00:56] workshop and as you all know that this
+[00:59] is um this is a part of the uconn sports
+[01:02] uh analytics symposium 2021 um
+[01:06] and thank you for being part of it uh so
+[01:10] for
+[01:11] so let me go through step by step so if
+[01:13] you go through the
+[01:15] symposium website and if you click on
+[01:17] the workshops you will see that there
+[01:19] are a bunch of six workshops we have
+[01:22] designed for you the first one is
+[01:25] is the one that you are attending right
+[01:27] now so uh if you click
+[01:30] i hope that you already read out all the
+[01:32] details um and to access the materials
+[01:36] so if you click on the github link
+[01:38] so this link will take you here so where
+[01:42] i created uh a dedicated repository just
+[01:45] only for for this this conference
+[01:48] and then uh on the right side if you see
+[01:51] that there's a link where i created a
+[01:54] hyperlink to access those uh slides
+[01:57] and also there are there are a few other
+[01:59] files here like the r codes uc sas 2021
+[02:05] so if you click on that file so you will
+[02:08] access all the source codes that you
+[02:11] might need if you want to go with me
+[02:14] so
+[02:15] i would suggest that click this link
+[02:18] to access directly to this slice
+[02:22] so um i can make it full screen but i
+[02:26] might go back and forth in the in the r
+[02:28] studio
+[02:29] so let's keep it there if it's okay with
+[02:32] you
+[02:32] um so for
+[02:36] for today we're going to
+[02:38] um
+[02:39] start uh from the very basic things
+[02:42] so um as i already told you that this is
+[02:45] a part of you called sports energy
+[02:47] symposium and all the details of the
+[02:50] workshop that i that i already showed
+[02:51] you demonstrated uh uh through those
+[02:54] links um are also available in in the in
+[02:57] the slides as well and as i also uh send
+[03:00] you an email yesterday uh regarding some
+[03:03] uh prerequisites that if you can
+[03:05] download our and our studio uh that
+[03:08] would be great and if you want to go
+[03:10] through the slides with me this is also
+[03:13] fine you can you can try later on
+[03:15] and i will i'll show you some hands-on
+[03:17] examples uh in this workshop
+[03:20] so a little bit about myself
+[03:23] uh my name is uh duheen sheikh i'm a
+[03:26] fifth year phd student at
+[03:29] uconn uh in statistics uh so probably
+[03:33] i'm working on quite a few research
+[03:35] problems uh starting from competing risk
+[03:38] uh long-term data analysis
+[03:40] deep learning and interim data
+[03:43] microbiome data a little bit and in the
+[03:45] future i really want to be a professor
+[03:48] um instead or biostat
+[03:51] so that i can continue doing research
+[03:53] and teaching at the same time
+[03:55] so i also do have my website link so if
+[03:58] you are interested you can go through
+[04:00] and learn a little bit more about myself
+[04:04] so um
+[04:05] for the workshop um actually i don't
+[04:08] expect that you have a lot of experience
+[04:10] with art in fact little to no
+[04:13] experiences is completely okay um and
+[04:16] the the only thing that that i would
+[04:18] request so if you have that enthusiastic
+[04:21] attitude that i i really want to learn
+[04:23] something new today um that that would
+[04:25] be enough for for today's support shop
+[04:28] and also this is uh
+[04:30] just 50 minutes workshop
+[04:32] so
+[04:33] i i planned a lot of things honestly but
+[04:35] i'm not sure whether i could be able to
+[04:38] finish all of the materials but still
+[04:41] the materials will will definitely help
+[04:42] you to to go through later on and also
+[04:45] you can go through the videos um so it's
+[04:47] it's already been recorded um so you can
+[04:49] access the video um uh uh maybe at the
+[04:52] end at the end of the
+[04:54] conference so um
+[04:57] roughly the aim of this workshop is to
+[05:00] you know introduce you with um with the
+[05:02] syntax structure
+[05:04] data manipulation basic functions
+[05:08] some libraries resources
+[05:10] and rs studio which i will i will talk
+[05:13] in a minute and i will also try to give
+[05:15] you a real data application so you you
+[05:17] actually know what you are learning and
+[05:19] how you can apply those things
+[05:22] in in real life uh data example
+[05:25] so this is the
+[05:26] broad outline of of today's
+[05:29] workshop
+[05:30] um and uh
+[05:32] i'm going to talk about our basics file
+[05:34] system data structure
+[05:36] read and write data data management and
+[05:39] brief overview of of one package
+[05:43] and uh
+[05:44] of course the time is really limited for
+[05:47] for this workshop but if you have any
+[05:49] question you can type in the in the chat
+[05:52] box and i i will try to answer um and
+[05:55] and if if not then we can contact later
+[05:58] on uh you can send me an email i will
+[06:00] show you all my all my contact details
+[06:03] so that you can contact with me in
+[06:04] future so um first of all as i said i
+[06:08] don't expect that you have a lot of
+[06:10] experience with our in fact no
+[06:12] experience with that so a little bit
+[06:14] about r what is an r so r is a free
+[06:18] software it is uh it's really popular
+[06:21] nowadays for statistical computing and
+[06:24] and graphical um
+[06:26] analysis display visualization and um
+[06:30] it's it ranges from uh different uh
+[06:34] works like import export data
+[06:36] manipulation visualization doing
+[06:39] analysis and report and i also didn't
+[06:42] list all of the things you can also do
+[06:44] web development applications uh through
+[06:47] r as well and
+[06:49] to know a little bit history behind our
+[06:51] if you just go to their um
+[06:53] their official website our project so
+[06:57] this is a hyperlink so all the
+[06:59] all the links in in the slide if you see
+[07:02] those are blue that means the hyperlinks
+[07:04] are already given if you just click it
+[07:06] will take you take you to to those uh
+[07:09] original website
+[07:11] and uh r is named after this to you know
+[07:14] um scientists so their name starts with
+[07:18] r so that's why the software has been
+[07:20] named after r
+[07:21] so
+[07:22] uh so again this is the first question
+[07:25] that usually people ask me or
+[07:28] if if you are a new learner you might
+[07:30] ask yourself so if there are
+[07:33] there are a lot of
+[07:34] softwares or programming languages in
+[07:37] the market so why should you uh learn r
+[07:40] so there are a couple of reasons um
+[07:44] these reasons are are just written by me
+[07:46] so that there could be many more reasons
+[07:48] which other researchers or programmers
+[07:50] might might think about themselves so
+[07:52] you might see my cat in my behind sorry
+[07:54] about that
+[07:56] she she wants my attention all the time
+[07:58] um so uh r is a free and open source
+[08:02] and uh it it has a very user-friendly um
+[08:06] ide which i will talk in two minutes i
+[08:09] suppose
+[08:10] and it can be used with other languages
+[08:13] so this is a very good point about r so
+[08:16] if you
+[08:17] like to do work in other languages like
+[08:19] python c plus plus or even fortran you
+[08:23] can you know integrate multiple
+[08:25] languages together uh it has a very nice
+[08:28] visualization library uh that is
+[08:31] compatible with with most of the famous
+[08:34] operating systems like windows
+[08:37] apple
+[08:37] uh linux
+[08:40] and uh it has a very large user
+[08:43] community which is really very important
+[08:45] so once you start digging into um
+[08:49] the any any programming language you
+[08:51] will see that you will uh you'll start
+[08:53] at some point uh
+[08:55] you might need some experts advice and
+[08:58] you may not find
+[09:00] some people immediately but if you ask
+[09:02] the internet there is a huge user
+[09:05] friendly community which can help you
+[09:08] and
+[09:10] so what is ide
+[09:12] idea is an integrated development
+[09:15] environment for our programming which is
+[09:18] usually called our studio and
+[09:21] if you like i've heard about any
+[09:24] programming language so it it it
+[09:25] requires some
+[09:27] some um
+[09:28] technical uh technical pathway so that
+[09:32] your program can go through compile and
+[09:34] give you your result
+[09:36] uh so id often help us to you know to
+[09:40] submit our work to produce our reports
+[09:43] uh to visualize uh our graphs very
+[09:47] simply uh rather than just just going
+[09:49] through the original you know only the r
+[09:52] software so rs studio is is much more
+[09:54] easier to deal with than r um so
+[09:58] since uh i believe there is no question
+[10:00] yet okay
+[10:02] so let's move on
+[10:04] so i assume that
+[10:06] you are pretty new to r and r studio so
+[10:09] once you click
+[10:11] r studio you will find that r studio has
+[10:14] four
+[10:15] quadrants like for
+[10:17] blocks so the first block is called the
+[10:20] code editor so
+[10:22] you will write your code here
+[10:25] and once you write your code
+[10:27] you need to run your code
+[10:31] at this console we call it console
+[10:34] and on the right two boxes or blocks you
+[10:36] can see
+[10:38] there are a couple of things like our
+[10:39] environment um
+[10:41] history and connection
+[10:44] they have different uh functions um like
+[10:47] environment will will tell you like
+[10:49] where you are history will tell you what
+[10:51] are the programs you have already run
+[10:55] so if you want to go back to previous
+[10:57] code you can go through the history and
+[11:00] plots like
+[11:01] this lower blocks it will
+[11:04] keep you or help you to track your file
+[11:06] system your plots if you have just
+[11:09] generated some plots you you are not
+[11:11] finding it anywhere but if you click
+[11:12] plots you'll see what are the plots
+[11:14] you've created uh the packages what you
+[11:17] have loaded help uh will will help you
+[11:20] to
+[11:21] to to go through some some manuals if
+[11:24] needed um so i can
+[11:26] let me show you let me show you
+[11:29] the actual our distributor so this is
+[11:31] the rstudio so the file that i i
+[11:34] provided you through the github
+[11:35] repository
+[11:36] if you click and open uh you will see
+[11:39] that i i gave you all the source codes
+[11:42] that will be needed for us to go through
+[11:44] all the examples um so this is our
+[11:47] studio so now you can see in real um so
+[11:51] let's go back
+[11:55] so now
+[11:57] let's dig into i don't know so so far we
+[12:00] just talked about like for the last 10
+[12:02] minutes so i think i'm going to stick
+[12:03] with the time pretty well okay
+[12:05] so um we just learned what is our what
+[12:08] is the rs studio and why you know what
+[12:11] are their uses so now we are going to
+[12:14] see the actual uh application through
+[12:18] through rstudio so the first thing that
+[12:21] i want to show you when r can be used as
+[12:23] a calculator so whatever we we do in a
+[12:26] calculator you can do the same thing in
+[12:29] in r
+[12:30] so like five plus seven you so let's
+[12:33] let's do it
+[12:34] um
+[12:36] let's do it in r so if you
+[12:39] go down to the pencil
+[12:41] and write five plus seven
+[12:44] and
+[12:45] make it a little bit bigger
+[12:48] and then hit enter
+[12:50] so i hope you can see it shows full so
+[12:54] it's that easy
+[12:55] and this editor is actually really
+[12:58] useful in a sense uh because once you
+[13:01] run your code in the console it will be
+[13:03] populated with with all your code and
+[13:05] outputs but the editor will keep you
+[13:07] tracked like if you if you want to edit
+[13:09] something if you want to change
+[13:11] something if you want to use it
+[13:13] repeatedly so editor really helps so
+[13:16] from the editor if you write something
+[13:18] here
+[13:19] and you want to run it
+[13:20] so you can run it multiple ways one of
+[13:22] the ways is to keep the cursor over
+[13:25] there
+[13:26] or and then you can see there is a run
+[13:29] button here so if you click run so it
+[13:31] will run
+[13:33] or there are other options which i don't
+[13:36] want to stress a lot because you can
+[13:38] customize it but usually like if you if
+[13:40] you type
+[13:41] press control plus enter this will also
+[13:45] help you to to run the code
+[13:47] and on the right side as you can see
+[13:49] there there's some um something i wrote
+[13:52] using the pound sign
+[13:53] so this pound actually used for comments
+[13:57] so if you want to help yourself or want
+[13:59] to keep some something
+[14:01] so that others can
+[14:03] can read your code later on so you can
+[14:06] type something which r will will not
+[14:08] compile so i will consider that these
+[14:10] are only for comments these are not
+[14:13] actual power functions so
+[14:16] so again so exponential if you want to
+[14:18] do exponential five
+[14:21] just type exp uh because this is a high
+[14:23] level language so those functions are
+[14:26] very similar to the way we write in our
+[14:28] textbook or in the research papers or in
+[14:31] the manuals so like if you write block
+[14:34] two
+[14:37] so you can do it
+[14:39] let's go back to the slide then
+[14:42] the next thing is one of the important
+[14:44] parts is is asking for help because you
+[14:47] will
+[14:49] you'll
+[14:50] be at some point where you you really
+[14:52] don't know how to how to deal with
+[14:53] something and how to use some functions
+[14:55] so okay you know what is what might be
+[14:58] uh what function might be used to mean
+[15:01] um
+[15:02] like i'm telling you the mean is used to
+[15:04] calculate the mean of some some values
+[15:07] or or some uh some data but how to use
+[15:10] so if you don't know
+[15:12] write question mark first
+[15:15] and then type m-e-a-n
+[15:18] so
+[15:19] and if you hit enter
+[15:21] you will see as i show you that on the
+[15:23] right this block there's a help button
+[15:27] it will start
+[15:30] it will provide you the documentation
+[15:32] page of the meme
+[15:34] so
+[15:34] it has all the
+[15:36] examples of the arguments how to use it
+[15:40] and also it provides some examples as
+[15:42] well how to how to use it
+[15:44] and there is another um nice thing about
+[15:47] r
+[15:48] that once you know that mean
+[15:52] if you close uh the parenthesis first
+[15:55] parenthesis uh start and end
+[15:58] and then if you click tab
+[16:00] tab button in your in your keyboard
+[16:03] it will allow you to go through all the
+[16:05] arguments it has
+[16:07] inside that function so
+[16:09] we'll talk about that in a minute
+[16:12] so let's go back to the slide
+[16:15] the next thing we'll talk about um is
+[16:18] called the assigning operators
+[16:21] so something you want to preserve um
+[16:24] in r how you want to do that how how you
+[16:27] can store some either it can be
+[16:29] character it can be values it can be
+[16:31] numbers how you can do that so there are
+[16:34] several ways but one of the easiest ways
+[16:37] that that we usually do
+[16:39] is
+[16:42] is writing
+[16:46] is writing some
+[16:48] some
+[16:49] some value some um
+[16:52] operator like x or y
+[16:54] then less than and hyphen sign is used
+[16:57] so if you if you want to assign
+[16:59] something to x so it can be like oh
+[17:03] world
+[17:06] and then if you hit enter
+[17:09] and then
+[17:10] if you want to check
+[17:11] press x and then hit enter so it will
+[17:14] show you that inside x you have one
+[17:17] component which is hello world which is
+[17:19] a character so you can do different
+[17:21] things like
+[17:22] x can be five so if you if you just plug
+[17:25] in x
+[17:26] and then write x so you can see x equal
+[17:29] to five
+[17:30] um and
+[17:33] there are some other ways which i don't
+[17:34] want to spend time now so it's in the
+[17:36] slide you can you can see these um
+[17:40] these are for you uh or for you to go
+[17:42] with later on then
+[17:45] um so far i just only showed you
+[17:48] one number or one character so you can
+[17:51] do actually more than one uh it can be
+[17:54] uh in in mathematics we call it a vector
+[17:57] so vector means a list of numbers or
+[17:59] list of elements
+[18:01] within some some some operator that you
+[18:05] are assigning so for example if instead
+[18:08] of five you want to combine more than
+[18:11] five or more than one component so
+[18:14] as you understand intuitively is called
+[18:17] combine so c is another function in r so
+[18:20] which is stands for combining so c
+[18:24] and separate the other numbers
+[18:27] by comma so it will
+[18:30] uh create a vector of elements um
+[18:34] separated by comma
+[18:36] and
+[18:37] as in the slide you can see that this uh
+[18:40] uh
+[18:42] these brackets uh
+[18:44] square brackets this is square brackets
+[18:46] are used to go to certain element or the
+[18:50] location or indexing or subsetting of of
+[18:54] a vector uh say for example if you type
+[18:58] x 1 so it will give you the first
+[19:01] element of your vector so if you type x
+[19:04] 3 it will give you the third element of
+[19:07] of the vector
+[19:08] if you type
+[19:10] one
+[19:12] through t this colon is often used to
+[19:15] like uh if it is uniform one through one
+[19:17] through uh two then the first two
+[19:21] if you want to see the one and third
+[19:24] element so again you can create a
+[19:27] combined
+[19:28] function
+[19:30] and a vector of location like one and
+[19:32] three and then hit one three so it will
+[19:34] show two and eight
+[19:35] so there are a couple of ways i kept
+[19:37] some examples here so that you can you
+[19:40] can try it out uh later on well there is
+[19:43] no question okay
+[19:45] all right so
+[19:47] and uh of course as i told you that this
+[19:50] is a 50 minutes workshop i might not
+[19:53] have time to show you all of the things
+[19:55] uh but i listed those things in the in
+[19:58] the slide so that you can practice and
+[20:00] try
+[20:01] later on
+[20:03] for example i can i can i can show you
+[20:06] uh one of the examples here like we have
+[20:08] length we have names we have replication
+[20:12] so the replication function is really
+[20:15] interesting so sometimes it is needed
+[20:17] that you replicate the same thing more
+[20:20] than once
+[20:21] uh more than twice or you might want to
+[20:23] replicate uh or repeat um certain enable
+[20:27] element multiple times another so this
+[20:30] ref function is really interesting
+[20:33] so the first example as you can see
+[20:35] inside the ref function there is a
+[20:37] vector like one two three
+[20:40] and then one argument is called uh times
+[20:43] so times means how many times you want
+[20:45] to replicate this whole vector so if you
+[20:48] type two
+[20:49] so it will create one two three
+[20:52] again one two three
+[20:53] the second
+[20:54] example is is also interesting it says
+[20:57] the argument is not times anymore it is
+[21:00] each so each means so it will go to each
+[21:03] element of of the vector
+[21:06] and repeat it twice so if you see on the
+[21:09] right side as i already told you that
+[21:11] found can be used as a comment which
+[21:14] will not um
+[21:16] create any problem when you run any code
+[21:19] so you can see one one
+[21:21] two two
+[21:22] three three
+[21:23] uh so there are there are a couple of
+[21:25] other examples you can you can try um
+[21:29] like
+[21:30] i can show you one the length okay
+[21:34] so now we already have created a
+[21:37] vector
+[21:38] called x
+[21:41] and in x we have 2 5 8. so it is very
+[21:44] simple because we have only three
+[21:46] element sometimes it might have many
+[21:48] many elements so you you don't want to
+[21:50] count so there is a function called
+[21:52] length
+[21:54] so if you type question mark and the
+[21:57] length you will see in the description
+[22:00] and in the argument
+[22:01] that in the length
+[22:03] if you type length
+[22:04] and then in the parenthesis
+[22:06] uh if you type
+[22:08] uh the the vector that you created
+[22:11] if you then hit enter it will tell you
+[22:14] it's true or the dimension or the length
+[22:17] of the vector is three
+[22:18] so i would suggest that there are many
+[22:21] other uh functions interesting functions
+[22:24] here so you can go through and use a
+[22:26] question mark and try on your own
+[22:30] so there are other couple of functions
+[22:32] which are used for uh ordering
+[22:34] subsetting
+[22:35] um again you can you can go through
+[22:38] this this function so one of the
+[22:40] functions i can i can show you
+[22:42] uh so let's write
+[22:46] intentionally
+[22:47] create
+[22:49] a different
+[22:51] vector
+[22:52] so where we have like 2 2 5 8.
+[22:55] now if you use the unique function
+[22:58] and then
+[23:00] select x in parenthesis hit enter you'll
+[23:02] see 2 5 8 so it will only give you
+[23:05] the unique numbers so this is uh
+[23:07] sometimes really really helpful or
+[23:10] useful because um there could be some
+[23:13] places you want to have uh your like for
+[23:15] example the attendees are
+[23:17] are attending in our conference so if i
+[23:20] have the data from different section i
+[23:23] might have repeated
+[23:24] names right but i want to have the
+[23:26] unique names but then i can use this
+[23:29] this unique function
+[23:32] so this is
+[23:33] this is a tiny uh example uh or quiz i
+[23:37] would say uh but i already did this this
+[23:40] whole example for you uh i showed you
+[23:43] the length i showed you the
+[23:45] the
+[23:45] the unique function i i can also show
+[23:48] you
+[23:49] the sort function so there is a function
+[23:52] called sort
+[23:54] so sort helps to order so if if the
+[23:57] numbers are not in in order um then then
+[24:00] you can
+[24:02] you can use sort and
+[24:06] write the vector it will sort those
+[24:08] those elements for you
+[24:10] there are other
+[24:11] elements like is
+[24:14] decreasing or increasing so if you want
+[24:17] descending order so you can select the
+[24:19] decreasing equal to true and then it
+[24:21] will give you 85 to 2. so in this way
+[24:23] you can you can play with this
+[24:27] um
+[24:28] so i also provide you all the all the
+[24:30] solutions in the slide so this is this
+[24:32] is something just just fun fact we can
+[24:35] we can we can play and we can learn
+[24:38] together um
+[24:40] let's see
+[24:41] okay
+[24:43] so
+[24:48] all right so there is no question
+[24:51] okay so a little bit about data
+[24:54] structure now uh so because in when you
+[24:57] learn or when you decided to to learn
+[25:00] our programming
+[25:01] you definitely may want to want to deal
+[25:03] with data set
+[25:04] and of course the data sets um could be
+[25:07] of different types like it can be
+[25:09] numeric it can be characteristics
+[25:12] variable string or text it can be
+[25:14] logical like yes no true false uh it can
+[25:18] be unidimensional just the way i showed
+[25:20] you the vectors it can be
+[25:22] two-dimensional like you you might have
+[25:25] some rows you might have some columns it
+[25:27] might be more than two-dimensional it
+[25:30] can be an array so these are the things
+[25:32] some basic stuffs i know but
+[25:35] it's really good to learn or good to
+[25:37] know um
+[25:39] so
+[25:40] this is a tiny bit of things
+[25:43] i already talked about vector so vector
+[25:45] is a list of uh elements
+[25:48] of the same type
+[25:51] and
+[25:53] i also showed you like we can use the
+[25:56] square brackets to go through the
+[25:58] subsetting and and and also to the
+[26:00] location
+[26:02] there's another another
+[26:05] function in our which is called list
+[26:07] so the nice thing about list is that um
+[26:10] for the vector
+[26:12] like this combine function this needs to
+[26:14] be
+[26:15] at the same time like you cannot combine
+[26:19] numbers with with characters
+[26:21] but list is interesting in a sense that
+[26:23] it doesn't need to be of the same length
+[26:27] it doesn't need to be of the same type
+[26:29] so if you want to keep different things
+[26:31] together in a in a list sometimes it is
+[26:34] it is useful uh you will know later on
+[26:38] if you start using different packages
+[26:40] you will see
+[26:41] some of the outputs are characters some
+[26:43] of the outputs are are numbers then then
+[26:46] list is is really really interesting
+[26:49] like um
+[26:50] i can show you one example from
+[26:53] from here
+[26:54] um
+[26:55] like like this
+[26:57] this function
+[26:59] list
+[27:00] so if i type list
+[27:02] then listing different things together
+[27:05] so list
+[27:06] uh a vector
+[27:08] of length two a vector of length three
+[27:10] so different things so now if you
+[27:13] type x and hit enter you will see
+[27:15] it is coming differently it is showing
+[27:17] me the outputs a little bit different
+[27:19] way so
+[27:20] the indexing is
+[27:22] quite different so now instead of one um
+[27:26] square bracket we have to use two square
+[27:28] bracket to to go to
+[27:30] the first list and if i want to go to
+[27:32] the second list
+[27:33] two
+[27:34] so
+[27:35] it is useful you you may know whenever
+[27:38] you start
+[27:39] using different
+[27:40] packages and other stuff so i also kept
+[27:43] something called array
+[27:46] and matrix sometimes you might want to
+[27:48] um work with
+[27:51] matrix in in in r um and if you
+[27:57] are not familiar with matrix the matrix
+[27:59] is something when you have something in
+[28:01] the rows
+[28:02] something in the columns so this matrix
+[28:05] function really helps you to create the
+[28:07] matrix
+[28:08] and this array is is a more
+[28:11] more uh generalization of the matrix
+[28:15] where you can go beyond two dimension
+[28:17] like you might have um
+[28:20] rows columns within some index rows
+[28:23] columns within another index so it's
+[28:25] it's all about indexing like um i can
+[28:28] create um indexing from like the country
+[28:32] from the states
+[28:34] and then from the university from
+[28:37] program i can create different different
+[28:39] kind of indexes and which might be
+[28:42] useful um in in my data analysis or some
+[28:46] other other other works if i if i want
+[28:49] to do
+[28:49] um
+[28:51] and the indexing for for the matrix or
+[28:55] the dimensions are really
+[28:57] a simple in in terms of r because uh you
+[29:01] will just keep uh using so let me show
+[29:04] you one of the examples so so you have
+[29:07] some idea what i'm talking about
+[29:10] so i created a matrix
+[29:12] to the very simple matrix using the
+[29:14] matrix function
+[29:16] which has 1 through 6 1 2 3 4 5 6
+[29:21] and n row is the number of row defining
+[29:24] how my matrix should be then if you
+[29:27] click x it will show you in row that is
+[29:30] two row and since i have six elements so
+[29:34] it automatically creates uh six
+[29:36] uh three columns so so that i have in
+[29:39] total six elements
+[29:41] so now if you want to get into one of
+[29:43] the specific
+[29:45] element of of this matrix so you can
+[29:48] type like one comma three so it will go
+[29:50] to
+[29:52] first row third column
+[29:54] so this is just i wanted to show you the
+[29:56] indexing of of matrix or also in the in
+[30:00] the array the same way
+[30:02] so there is a tiny quiz
+[30:04] for you um i i would suggest that um uh
+[30:08] that if you if you are going through the
+[30:10] slide and also going through the video
+[30:12] you can try this this this quizzes later
+[30:15] on and i also provided you all the
+[30:17] solutions
+[30:19] from from the quiz so we have around 30
+[30:22] minutes so i think i'm pretty much
+[30:25] good with the time so far
+[30:26] so i want to talk about a little bit
+[30:29] of functions and looping
+[30:32] so function is something that you
+[30:34] already saw that i used mean function i
+[30:36] used length function i used munich
+[30:39] functions so when you start working in
+[30:41] the real world you will you'll start
+[30:44] thinking that okay so what are the what
+[30:46] is the function that i want
+[30:48] does not exist in i so i have to i have
+[30:51] to create
+[30:52] my own function
+[30:54] so the structure of creating functioning
+[30:56] are is is not that difficult this is
+[30:59] very straightforward so use you write
+[31:01] your function name
+[31:03] then there is a
+[31:05] function called function
+[31:07] so you need to write function and then
+[31:09] specify your arguments in some operation
+[31:12] with that output that's it
+[31:15] so i created a very tiny example of
+[31:18] finding absolute value
+[31:20] of x x is something like
+[31:24] is a variable you change so if x is
+[31:27] greater than zero
+[31:29] there is another function that i'm using
+[31:31] which is called return
+[31:32] is the output like what you want to see
+[31:35] at the end
+[31:36] and
+[31:37] if not
+[31:39] then it will just multiply with minus
+[31:42] one that's that's what we do right so if
+[31:44] if we have something minus 5 we want to
+[31:47] go on to c5
+[31:48] so
+[31:49] what i wrote
+[31:51] i wrote this function very good
+[31:53] so if you
+[31:54] want to use some function you re you
+[31:57] wrote
+[31:58] so first thing you need to do
+[32:00] within this uh curly braces you need to
+[32:03] write all the all the argument of all
+[32:05] the operation using the argument
+[32:08] and then you have to run this function
+[32:10] first
+[32:11] so if you go and hit run
+[32:15] so now
+[32:16] in your compiler in your console you'll
+[32:19] find this function so like if i type
+[32:21] find
+[32:23] underscore
+[32:24] abs
+[32:25] so it will allow me to use this function
+[32:27] which i created
+[32:29] and then if i type minus 5 so it will
+[32:31] give me
+[32:33] if i give um
+[32:34] 5 it will give me 5. so it's working
+[32:38] um so again this is a very tiny example
+[32:41] so that you can you can try and use the
+[32:44] same logic same strategy and
+[32:48] try on other problems so this is the
+[32:50] quiz i i
+[32:52] i wrote for you so again i'm not going
+[32:54] to
+[32:55] wait so when when you're going to finish
+[32:58] because of the time constraint we have
+[33:00] just only 15 minutes so i want to
+[33:02] i want to provide you the answers also
+[33:05] but i would request you that when this
+[33:08] workshop is done or when the conference
+[33:10] is done you you can take advantage of
+[33:13] the slide and the video and then do this
+[33:15] these problems on your own
+[33:18] so the next piece is looping and
+[33:22] conditioning
+[33:23] so looping and conditioning is is really
+[33:26] important as the as the word goes
+[33:29] looping means
+[33:30] you you want to do something repeatedly
+[33:33] you want to move something repeatedly
+[33:36] conditioning is something you want to
+[33:38] give condition you want to filter out
+[33:40] something um for instance like if i if
+[33:42] i'm interested um uh
+[33:45] how many uh undergraduate attendees we
+[33:49] have in in our uh conference how many
+[33:53] graduate attendees how many professors
+[33:55] and how many professionals from the
+[33:57] industry then i'm i'm just giving some
+[34:00] filters i'm giving some condition
+[34:02] so
+[34:03] for r there are a couple of ways to do
+[34:05] the looping and conditioning so looping
+[34:08] you can do it using the four we call it
+[34:11] for loop
+[34:12] or while
+[34:13] so for loop is something that
+[34:18] it starts with something and end at
+[34:20] something
+[34:22] while is uh
+[34:24] it will
+[34:25] you will initialize the looping and it
+[34:27] will end
+[34:28] when you
+[34:30] specify some condition so let me explain
+[34:33] a little bit
+[34:35] uh like the syntax structure in r is
+[34:38] that
+[34:39] it starts with four and the parenthesis
+[34:42] and i is the index so it needs not to be
+[34:45] i all the time it can be anything you
+[34:47] can write it j
+[34:49] k anything
+[34:50] and this in it means what are the
+[34:53] boundaries of of this indexing
+[34:55] so the first thing it is starts with one
+[34:59] and go to five with founding one two
+[35:02] three four five
+[35:04] and then for
+[35:06] showing you i wrote a different um
+[35:11] variable like index
+[35:13] and then assign these values
+[35:15] into
+[35:16] the index so that you can actually see
+[35:19] that how this looping is working so i
+[35:21] can show you one example that i created
+[35:24] for you
+[35:25] like
+[35:26] um if you hit run
+[35:29] so you will see that each time it is
+[35:31] getting into the loop
+[35:33] from starting from one to five so i just
+[35:35] printed all those outputs for you so
+[35:37] that you can actually see how it is
+[35:39] working
+[35:41] and this print is another function since
+[35:43] i already told you that if you don't
+[35:45] know
+[35:45] just write question mark p r i m t and
+[35:49] hit enter so it will show you how to how
+[35:51] to use this print function
+[35:53] while function is very similar
+[35:55] so it will it would be new to initialize
+[35:58] first for example i is equal to 1 so i
+[36:01] run i is equal to 1 then it will do some
+[36:04] operation until some some uh condition
+[36:08] is satisfied so i said okay so stop
+[36:11] while
+[36:13] i is equal to 5
+[36:15] so
+[36:16] if i run it
+[36:18] you'll see start with 1
+[36:21] and goes through this looping until i
+[36:24] equal to 5. so each time it is adding
+[36:27] one with the ends so
+[36:30] sometimes these are these are really uh
+[36:32] important or uh inseparable part of a of
+[36:36] a program
+[36:37] so there are some other ways uh for
+[36:41] conditioning like uh the language we we
+[36:44] know uh equal less than greater than i
+[36:47] might not know so like less than or
+[36:49] equal you have to write less
+[36:52] than equal sign
+[36:53] to to do the job
+[36:57] and uh
+[37:00] okay so
+[37:02] let's just keep here
+[37:05] and then we have if condition if
+[37:07] conditioned as its sound so if some
+[37:10] condition works
+[37:11] do some job
+[37:13] else do another job
+[37:15] so um
+[37:17] i just have a tiny example for you
+[37:20] like
+[37:21] for loop and within the same loop i just
+[37:24] added one another condition if i
+[37:27] is not equal to so this exclamatory sign
+[37:29] and then equal means not equal to 2
+[37:32] only then print it so
+[37:35] so let me show you one
+[37:37] example that i created
+[37:39] so if i run it so you can see it is
+[37:42] showing me one three four five and is
+[37:45] skipping the two
+[37:48] so i again have one quiz for you
+[37:53] when you are reviewing the slides uh try
+[37:56] on your own these are very
+[37:58] self-explanatory i wrote all the
+[38:00] comments
+[38:00] uh on the right side of each output so
+[38:03] if you if you do it then then it would
+[38:06] be great
+[38:08] so then this is the last piece so so far
+[38:10] okay so i have around 10
+[38:12] to 11 minutes um as i promised in the
+[38:15] beginning that i'm going to show you
+[38:18] one real data data
+[38:21] application also um also of course this
+[38:24] is very tough uh in a 50 minutes but i i
+[38:27] designed it so that i can finish it
+[38:29] so for this example i'm going to use one
+[38:34] package called layman
+[38:37] and within that layman we are going to
+[38:39] use one dataset so here you are going to
+[38:42] learn something that
+[38:44] r has a lot of packages uh and how to
+[38:47] install a package so
+[38:49] let me show you how to do that
+[38:53] to install a package
+[38:55] in the console you need to write install
+[38:59] and also you can see that ide is helping
+[39:01] me to select this function if you can
+[39:04] find that installed packages at this
+[39:06] point instead of writing you can click
+[39:09] the tab or hit
+[39:11] button
+[39:12] and then in the inverted comma if you
+[39:15] write layman
+[39:17] and hit enter
+[39:19] if you need to have the internet
+[39:20] connection for that so it might type it
+[39:23] might take some time
+[39:25] to to install the package um
+[39:29] and as you can see it's it's going to
+[39:31] some steps um
+[39:33] to download the package
+[39:36] and
+[39:37] as the function
+[39:38] says that install so it is installing in
+[39:42] your computer
+[39:44] it is not loaded yet
+[39:46] into this console
+[39:47] so
+[39:48] the second piece we need to do
+[39:50] is to library this layman
+[39:54] package
+[39:55] and then it is ready for use in in your
+[39:58] console okay
+[40:00] so
+[40:01] now the next piece in in many of the
+[40:03] packages
+[40:05] there are some
+[40:07] uh data sets available
+[40:10] and if you want to see okay what are the
+[40:12] data sets we have in a package
+[40:14] then you can type
+[40:17] data
+[40:19] and then
+[40:20] package
+[40:23] equals to layman
+[40:25] then it will show you what are the data
+[40:27] sets you have in this package so there
+[40:30] are a couple of couple of data sets uh
+[40:32] the the author of the package already
+[40:35] loaded for you so that you can do some
+[40:37] tiny example
+[40:38] and here
+[40:40] from the list of data set if you decided
+[40:42] that i want to i want to use some some
+[40:44] data like betting
+[40:46] then you can
+[40:48] type
+[40:50] data which data in the inverted comma
+[40:53] bedding
+[40:56] and then
+[40:57] from which package layman and then hit
+[41:00] enter so it will load the data set into
+[41:04] your console for usage okay
+[41:07] so what i did i did a few steps like i
+[41:11] wrote
+[41:12] data set and then the second step i did
+[41:16] okay so i want to use the betting
+[41:18] batting data from this limit package
+[41:21] so
+[41:22] uh it is already loaded okay
+[41:24] so now if you want to see um like um
+[41:28] okay so these are something that you can
+[41:31] go through later on um how you can
+[41:34] read data
+[41:35] and load data or save data from
+[41:37] different sources so read dot table
+[41:41] write dot table read dot csv so these
+[41:43] are the some useful function you can go
+[41:45] through later on
+[41:48] so as i showed that data batting package
+[41:52] can be used and then this is an
+[41:55] interesting function called sdr the
+[41:57] structure of video so if you try
+[41:59] structure
+[42:00] betting so it will help you okay so what
+[42:03] are the variables i have in this in this
+[42:05] in this data set so like if you type
+[42:08] str
+[42:10] and then betting so it will show you
+[42:12] okay so what are the variables you have
+[42:14] what are the types of variables you have
+[42:17] then uh head is interesting like head
+[42:20] means the head like the upper half so
+[42:23] head means only few rows so since it it
+[42:26] has a lot of rows um
+[42:29] in the data set
+[42:30] actually you can also see how to how to
+[42:32] see the dimension so if you type
+[42:34] dimension and then betty
+[42:37] it will show you uh you can see more
+[42:40] than one zero eight thousand um data set
+[42:43] we have in this in this in this data
+[42:45] that's really big but if you type head
+[42:48] so head will help you okay so give me
+[42:50] only only six or seven rows uh six rows
+[42:53] i can i just want to see only a chunk of
+[42:56] the data not not the whole data
+[42:59] then the indexing is really interesting
+[43:02] so if you want to if you want to subset
+[43:04] the data set like i want to see only few
+[43:07] columns
+[43:08] like the first four columns and all the
+[43:11] all the rows
+[43:12] then
+[43:14] you can use comma blank in the first
+[43:16] place
+[43:17] and the index of the column uh which
+[43:20] column you want to see
+[43:21] so like if you type
+[43:24] batting
+[43:27] one through four so it will show you the
+[43:29] four columns the first four columns
+[43:32] and if you want to see
+[43:34] what are the column names so if you
+[43:36] types
+[43:37] names batting
+[43:39] so it will give you all the names of the
+[43:42] variables
+[43:43] now
+[43:44] if you want to get into a particular
+[43:45] variable particular column name what you
+[43:48] can do type bedding
+[43:50] and then use the dollar sign so this
+[43:53] dollar sign is helped to bridge between
+[43:56] the data and the particular column name
+[43:58] so if you type player id
+[44:00] so it will show you all the player ids
+[44:02] in this data set
+[44:05] then um
+[44:08] you can
+[44:09] you can play with this indexing a lot
+[44:12] honestly so
+[44:13] like if you want to see
+[44:15] only the first two rows
+[44:18] four columns you can do that
+[44:20] if you want to type a particular column
+[44:23] like player id and yara do you want to
+[44:24] see and the first four or ten column ten
+[44:28] rows you can also do that
+[44:31] if you want to create a new variable so
+[44:34] again the way you access an old variable
+[44:38] the same way you can create a new
+[44:39] variable like uh betting cs underscore
+[44:44] s0 if this is the variable i want to
+[44:46] create
+[44:47] which is simply a summation of the
+[44:49] existing two variables
+[44:51] then
+[44:52] with this with function width function
+[44:54] helps r to know that i want to work with
+[44:57] this betting
+[44:58] so that when you write cs and so it
+[45:01] actually knows that which
+[45:03] these variables are coming from this
+[45:04] betting data set
+[45:06] so if i show you
+[45:10] from here
+[45:14] so this will then if you type names
+[45:18] batting
+[45:19] now you can see cs underscore s0 is
+[45:22] another new variable
+[45:23] actually you can do this same thing in a
+[45:26] little bit different way
+[45:28] like instead of using with function
+[45:30] if you use cs
+[45:34] and then
+[45:36] plus
+[45:37] padding
+[45:41] so this is the same thing
+[45:43] as using the width function so we
+[45:45] function actually helps us to
+[45:47] okay so we only have few minutes left
+[45:50] um
+[45:51] again these are some some tiny little
+[45:54] quizzes i create for you just to um
+[45:58] just to deal with uh some some tiny
+[46:01] example
+[46:02] um
+[46:03] like if you want to go to a specific
+[46:05] location of the year id uh as i showed
+[46:08] equal means double equal in r uh greater
+[46:12] equal means greater than equal in r so
+[46:15] you have to use that syntax structure
+[46:18] this end the same meaning as end so if
+[46:20] you want to have multiple condition you
+[46:23] want to want to subset the data you can
+[46:25] actually do that
+[46:28] um and there's an apply function
+[46:32] which can be used for different purposes
+[46:34] if you want to have some summaries of
+[46:37] all the columns of some function like if
+[46:40] you want to see the mean of different
+[46:42] columns uh then apply helps you to do
+[46:45] that
+[46:46] apply
+[46:47] then data set
+[46:48] two means column one means row
+[46:51] and then the function name
+[46:53] uh so you can just play with the apply
+[46:55] function um a little bit um
+[46:58] if you want and then the last piece i
+[47:01] just want to introduce that that would
+[47:02] be enough for for our workshop and other
+[47:05] things are available in the slide so
+[47:07] this is called the deployer package
+[47:10] so the deployer package is is really
+[47:12] interesting it gives you a lot of
+[47:16] access to to how to advance level uh
+[47:19] coding structure uh like like this uh
+[47:23] pipeline so if you are familiar with
+[47:26] pipeline that's good if not then you can
+[47:29] learn
+[47:29] so this pipe helps you to to reduce a
+[47:33] lot of
+[47:34] syntax
+[47:35] and then
+[47:37] sending this salary data and then use
+[47:40] some function which are building in the
+[47:42] deployer package so the way we did we
+[47:45] selected the combine
+[47:46] code that select the
+[47:49] player id or year id
+[47:52] with the inverted comma so select
+[47:54] actually helps us to to reduce some cool
+[47:58] code uh
+[47:59] you know
+[48:00] uh
+[48:01] clean code
+[48:02] and then do the same job but in a more
+[48:05] smart fashion um
+[48:08] we have another function called left
+[48:10] join so if you have multiple data set
+[48:13] with the same kind of
+[48:15] id structure then with some common
+[48:19] variables you can merge data set using
+[48:22] the left join right join or join so you
+[48:25] can explore a little bit from from there
+[48:28] there is another function called arrange
+[48:31] arrange helps you to
+[48:33] arrange the data set by different uh
+[48:37] different set of variables like for
+[48:39] example for the attendees i if i want to
+[48:41] arrange
+[48:42] first from the country second from the
+[48:45] state third from the university fourth
+[48:48] from their profession so i can do that
+[48:50] for using the arranged function
+[48:54] and um
+[48:55] we're almost done so it's almost 50. so
+[48:57] i want to wrap up um
+[49:00] so
+[49:01] the resources or the references i used
+[49:03] for for this workshop
+[49:06] honestly most of the things from my
+[49:08] experience uh i didn't use
+[49:10] it from a lot of resources but the
+[49:13] resources from where i learned so these
+[49:15] are the resources like um the first one
+[49:17] is these these are uh accessible to all
+[49:20] of you from from the web
+[49:22] um so the the our programming for data
+[49:25] science infor
+[49:26] advanced are so all these sources are
+[49:29] really really nice
+[49:33] okay
+[49:35] so
+[49:36] with that
+[49:37] i would like to
+[49:39] uh thank you
+[49:40] all of you for joining this workshop and
+[49:43] i hope that you enjoyed or you learned
+[49:46] or at least i made the door open for you
+[49:49] for for the new um
+[49:51] resources uh and please feel free to
+[49:54] contact me if you have any any other
+[49:56] questions or any other queries uh
+[49:59] regarding this workshop or it can be
+[50:01] beyond um only this workshop material if
+[50:04] you want to talk with me about other
+[50:06] aspects of our uh if you want to start
+[50:09] if you want to start learning uh please
+[50:12] feel free to
+[50:14] so with that
+[50:17] i would like to
+[50:19] stop here
+[50:21] and
+[50:24] i would like to have some comment if you
+[50:27] have any
+[50:28] anything i i'll be ready to answer
+[50:32] and uh
+[50:34] yeah so
+[50:35] uh
+[50:36] if you have any questions so this is a
+[50:38] very good time to ask uh
+[50:41] you can type your question in the chat
+[50:43] box um unfortunately for the
+[50:46] we
+[50:50] can't unmute
+[50:51] all of you
+[50:53] um
+[50:55] yeah
+[50:58] yeah thank you so much thank you brian
+[51:02] so i will wait for a few minutes and
+[51:04] then so let's stop the recording since
+[51:07] our main part of the
+[51:09] lecture is done
+[51:10] and i will wait for your comments
+[51:13] stop by talking
+[51:16] stop

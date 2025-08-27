@@ -1,0 +1,1534 @@
+Video Title: Building a SaaS Startup — Day 5
+Video ID: AqWAB_I4nx8
+URL: https://www.youtube.com/watch?v=AqWAB_I4nx8
+
+[00:00] is it and boom we are live welcome back
+[00:02] everyone this is day five of building a
+[00:05] little software startup on YouTube
+[00:08] twitch and Twitter um in day 1 to three
+[00:11] we built a product that is now working
+[00:14] and yesterday we had a special guest
+[00:15] niiko from Twitter who helped uh me WR
+[00:18] write the landing page copy uh we've
+[00:21] done that so today was supposed to be
+[00:22] the landing page um making part uh I
+[00:25] just realized that there is something
+[00:26] missing in the product so I'm going to
+[00:27] go back at it and uh and finish it but
+[00:30] before we move on into coding and
+[00:31] explaining what the product does um let
+[00:34] me just introduce myself if you have no
+[00:36] clue who I am uh my name is Mark I live
+[00:39] here in Bali I have um been bu been
+[00:43] building a little startup in public on
+[00:45] Twitter for two years now and I want to
+[00:49] replicate the same thing but here uh
+[00:51] live with you know video so you can see
+[00:53] behind the sces um I have no uh big
+[00:57] Ambitions I don't want any uh VC money
+[00:59] or I don't want to create a unicorn I
+[01:01] just want to build small internet
+[01:03] businesses like those ones that I built
+[01:05] here which are now making $55,000 a
+[01:07] month in Revenue at 90% profit and zero
+[01:10] employee and one of the mo the most
+[01:12] common requests that I get from uh
+[01:14] customer support is can I get an invoice
+[01:16] and can I update my invoice uh invoices
+[01:19] especially for Europeans are important
+[01:21] they need to add their business details
+[01:22] and things like that to it and so I'm
+[01:24] building Zenvo so this is a live version
+[01:27] of the product that we build in the f in
+[01:30] the first days of the stream uh this is
+[01:32] actually working uh there's just a few
+[01:34] things missing so how does it work it's
+[01:36] pretty simple uh you connect you get
+[01:38] your uh when you create an account
+[01:40] you'll get a link that's connected to
+[01:42] all your stripe accounts and then when a
+[01:44] customer requests for either an invoice
+[01:47] uh generation or an invoice update you
+[01:49] send them this link here and then they
+[01:52] can retrieve uh with their email they
+[01:54] can retrieve all the invoices that
+[01:55] they've made with your business or if
+[01:57] you have multiple stripe accounts they
+[01:58] will be able to retrieve multiple
+[01:59] invoices they can download them or they
+[02:02] can edit them um for instance here for
+[02:04] European sometimes it's important to add
+[02:06] their VH details and then they can
+[02:08] download the invoice and they're good to
+[02:09] go so this is uh live this is actually
+[02:12] working uh there's just a few things
+[02:14] that are missing in the product and
+[02:16] we're going to go over that today um if
+[02:18] you
+[02:19] are in the in in here now if you can
+[02:22] hear me uh please let me know say say hi
+[02:24] say where you're coming from uh tell me
+[02:25] if the sound is good tell me if the
+[02:27] video quality is good just so that I
+[02:28] have a little feedback on here
+[02:30] and I'm going to check a few
+[02:34] things right so at least we're live on
+[02:36] YouTube that's for
+[02:38] sure making sure making sure I'm not
+[02:41] talking in the void which happens
+[02:42] sometimes I just realize I forget to
+[02:44] press on the
+[02:47] stream okay that should be good for
+[02:49] YouTube I'm also if you're coming from
+[02:50] Twitter I'm going to share a link to the
+[02:52] YouTube uh uh stream the quality is so
+[02:56] much better there you should be able to
+[02:57] see my code my stream um so let me show
+[03:00] you the link real
+[03:02] quick we have this
+[03:05] and we have
+[03:09] that and I should be able to get okay I
+[03:11] got those messages here on the chats so
+[03:13] we are good hello everyone have you
+[03:16] watch Putin interview that's a good
+[03:18] question to start the this
+[03:21] stream hey from France hey bu I'm coming
+[03:25] from the Netherland in bag right now
+[03:27] while having a morning coffee wow that
+[03:29] is a very European thing to do man I
+[03:31] envy you so much I can't complain I have
+[03:34] a little good T
+[03:37] here feature of x.com yeah but the yeah
+[03:41] the look yeah the quality of the stream
+[03:43] on on X is not is not really good uh go
+[03:46] tag Elon mus tell him to change this
+[03:47] thing I Tred I tag him every single time
+[03:50] I do live uh I think we're far from the
+[03:53] YouTube quality so far can I play my
+[03:56] start yeah man go go ahead the chat is
+[03:58] for that like anything is uh I think
+[04:01] we're little very tiny Community here uh
+[04:04] I don't I don't believe there are many
+[04:05] people watching uh so go ahead chat
+[04:07] about your startups chat about
+[04:10] anything all right so we have this up
+[04:14] and running we have this up and
+[04:17] running all right it's time to get back
+[04:19] at it so the little product here so this
+[04:23] is
+[04:23] my environments yeah you should be able
+[04:26] to see my screen
+[04:28] normally
+[04:30] all
+[04:31] right this is my local hor okay all
+[04:34] right so we we've made a little uh
+[04:37] mistake in the first three days we are
+[04:40] fetching in the API all the invoices
+[04:43] that were made from uh customers who
+[04:47] have an invoice so which means the
+[04:49] business owner has turned on the stri
+[04:51] business owner has turned on the Boolean
+[04:53] that says generate an invoice for
+[04:55] customers which cost I think
+[04:57] 0.4% we also need to generate in
+[04:59] invoices for customers who or people who
+[05:02] had didn't have this option turn on and
+[05:05] so this is what I'm going to be doing
+[05:06] today Nico my friend um send me a little
+[05:09] piece of code that he he's tried I'm
+[05:10] going to see if that works so this code
+[05:14] here will fetch
+[05:16] invoices for the customers under the
+[05:19] email that's provided
+[05:21] here um some of them will not have
+[05:24] invoices so we have to find the checkout
+[05:26] I think first part we have to find the
+[05:28] checkout that has been completed
+[05:30] under the customer email name this is it
+[05:33] and then we need to find payments
+[05:37] intents that have succeeded under that
+[05:41] checkout session oh let's get into
+[05:52] coding ni never sent me the code yeah
+[05:54] Nico is a terrible person that's why
+[05:57] he's flying away in Bangkok right now is
+[05:59] escaping belly because uh you know like
+[06:03] he's not welcome here keeps the code for
+[06:05] [Music]
+[06:06] himself right so normally we get a
+[06:08] little helper strip
+[06:12] here we're going to create some things
+[06:14] that will be called we need to retrieve
+[06:17] the checkouts we
+[06:26] yeah
+[06:28] or
+[06:33] this is going to be CH GPT making all my
+[06:37] code so yes statu complete customer
+[06:41] email right this is exactly the code
+[06:43] we've
+[06:45] here um we're going to get the sessions
+[06:52] back say retrieve
+[06:57] checkouts save that
+[07:01] okay n still doesn't
+[07:04] want export yeah it's exported
+[07:07] okay I received that here and we should
+[07:11] get all the sessions under this
+[07:14] email give it the access token await
+[07:17] maybe yep and we give the access token
+[07:20] and email we don't have the access token
+[07:23] we should have
+[07:27] it oh yeah okay okay because I'm calling
+[07:30] this I
+[07:32] think okay so yeah because people can
+[07:35] have multiple strip
+[07:37] accounts I need to perform this query
+[07:39] for each STP account
+[07:44] so okay we have a promise. all inside of
+[07:47] a promise.all things are getting serious
+[07:57] here need to move that somewhere
+[08:06] up Yep this will go somewhere
+[08:13] there so we have two types wait I need
+[08:15] to clarify this we have two types
+[08:18] of way to retrieve invoices
+[08:21] either we retrieve the actual invoices
+[08:24] for the customer like like proper
+[08:27] invoices that have been generated by
+[08:29] stripe which means the option was turned
+[08:31] on
+[08:33] or if the account didn't turn on this
+[08:35] option we have this piece of code
+[08:39] here
+[08:45] so I think I need to comment my code
+[08:48] otherwise it's going to be a
+[08:51] mess so the
+[08:58] customer
+[09:47] it's a two-part
+[09:49] thing so we have this big array of
+[09:51] invoices
+[09:55] here we
+[09:58] want
+[10:28] wow
+[10:40] oh yeah we want to populate um I think
+[10:44] we can do that
+[10:46] later yeah we're going to do the final
+[10:48] step where we populate
+[10:50] with stripe count
+[10:56] data to finish with that
+[11:19] so we got customer
+[11:23] invoices so it's a promise for each
+[11:27] customers we Reeve the invoices okay can
+[11:32] remove that which I guess we will need
+[11:35] to push the
+[11:39] invoices yeah
+[11:53] filter Oh no you're going to say
+[11:56] push only paid
+[11:59] invoices
+[12:01] to the invoices
+[12:09] are so we can remove
+[12:18] that we don't need to do
+[12:21] that we push all the invoices so that
+[12:24] should be the same code and here we have
+[12:26] to
+[12:27] await uh
+[12:30] wait so we
+[12:36] have check out
+[12:39] sessions sessions data that's
+[12:44] fine
+[12:53] wait
+[12:57] okay
+[13:12] we're going to do something
+[13:14] export
+[13:27] Reef
+[13:47] here
+[13:51] um we here we going to
+[13:57] say all payment
+[14:03] intent for the paid
+[14:07] wait if the payment statute is
+[14:09] paid yeah it's a bit tricky but I think
+[14:12] that should
+[14:15] work we get all the petition for each
+[14:18] petition we retrieve the payment
+[14:21] intent and if it's
+[14:24] succeeded I don't think there will be an
+[14:26] invoice here
+[14:27] though there shouldn't be an
+[14:32] invoice that's where we will have to do
+[14:34] some
+[14:37] magic I think we're going to console
+[14:39] [Music]
+[14:41] log pment intent and and we going to
+[14:44] have to create manually that invoice
+[14:46] that's the generation invoice generation
+[14:47] part that we don't have yet I'm going to
+[14:50] test if this thing is running probably
+[14:53] won't I still get to give it a try
+[14:56] um where did I must have no I didn't
+[14:59] mess up anywhere
+[15:02] okay three we need to
+[15:08] populate
+[15:13] each invoice with the stripe account
+[15:22] data add the stripe account
+[15:27] ID
+[15:32] this
+[15:32] [Music]
+[15:34] should
+[15:43] work at the end we Loop over inching
+[15:46] noices and we add this thing okay let's
+[15:48] yes this is never going to work but we
+[15:51] have to try
+[15:57] it see what bugs we going to get
+[16:06] yep
+[16:09] 403
+[16:10] yep check out session read okay that's
+[16:13] the restricted API key part we have to
+[16:17] solve so we need to get this checkout
+[16:19] session and I bet we'll need the
+[16:22] payments um
+[16:24] so where is that part
+[16:27] uh
+[16:31] try here we'll need to add this
+[16:35] permission so yeah if you're tuning in
+[16:37] right now and you're working with stripe
+[16:39] for some reason um there is something
+[16:42] new that's not very well documented in
+[16:44] stripe but called the restricted API
+[16:46] Keys which are API keys that gives you
+[16:49] limited access to a STP account this is
+[16:51] what I use for bu dispute and for Indie
+[16:52] page so you avoid having security issues
+[16:56] like you only get limited permission for
+[16:58] for specific resources like you only
+[17:00] want to read stripe um you know
+[17:03] customers or you want to write stripe
+[17:05] customers you want to add web books or
+[17:07] not it gives you specific resource
+[17:09] permissions and this is pretty sick so
+[17:11] in this case I need to add this checkout
+[17:14] session read permission to read the
+[17:17] checkout and if you populate the URL
+[17:20] here uh it's a long one but if you add
+[17:22] those permission to the URL you can
+[17:24] create a link that automatically adds
+[17:27] the right API permissions you want to
+[17:30] give to so now I added the checkout
+[17:32] session and it should be added somewhere
+[17:36] all checkout resources uh yeah checkout
+[17:40] sessions here now I have if I create a
+[17:42] key I'm going to have a read
+[17:45] permission so let's create a key let's
+[17:47] see how that works this is probably not
+[17:48] going to work because we also need
+[17:49] payment
+[17:51] intent I'm going to copy past the key
+[17:53] and add a new stripe account and it's
+[17:55] not going to work because I already had
+[17:58] this account so I have to delete which
+[18:00] one is it this one this one
+[18:04] yeah add the key again yep that was this
+[18:12] one this is a this is the Live account I
+[18:19] think wait one second before I leak all
+[18:23] my stripe API
+[18:26] Keys let's check real quick I did a mess
+[18:30] up
+[18:41] somewhere oh okay I think I know
+[18:45] why okay
+[18:47] apparently okay they would okay okay
+[18:51] okay let back at it
+[18:55] um yeah I had to delete all the SHP
+[18:57] accounts and re add this one so now we
+[18:59] have these accounts these test accounts
+[19:03] and we are going to see if we can
+[19:06] search actually no it was a really not
+[19:10] smart idea to
+[19:13] create Tron for this let me go
+[19:18] back going to check uh to recreate an
+[19:21] API key for Zenvo test
+[19:27] accounts let's see how that goes so we
+[19:30] have the key it should be
+[19:32] here yeah the
+[19:35] key restri key here we passed it and we
+[19:39] add the account right there oh little
+[19:42] error
+[19:45] here oh yeah okay okay it's because we
+[19:47] cannot create the logo because it's a
+[19:50] test account for now but this would
+[19:51] never happen on production so this is
+[19:54] fine um going back to
+[19:57] it
+[19:59] we still have a permission can the
+[20:00] property reading fine
+[20:04] okay where are
+[20:10] we find the successful payment intent so
+[20:13] we
+[20:14] have let's see what we get
+[20:17] here oh maybe because we have no
+[20:19] sessions maybe that would
+[20:22] be there be why that could be the reason
+[20:27] why
+[20:29] let's
+[20:33] see Miss object object
+[20:36] object retrieve check
+[20:44] out what do we get
+[20:48] here what a
+[20:57] return
+[21:00] cons log
+[21:18] again isuse the data session
+[21:25] R I have no idea what I'm looking
+[21:36] at okay we do have
+[21:47] something it's an
+[21:52] array okay so we're supposed to get an
+[21:54] ARR oh okay I think it oh it's because
+[21:56] I'm probably looping over few account
+[22:26] okay
+[22:30] Dan Dan 6
+[22:39] boy doesn't stripe handle the invoice
+[22:42] generation and automatically email a
+[22:44] copy to the user's email it emails a
+[22:47] receipt for successful payments but it
+[22:49] does not email the invoice and mostly
+[22:52] European people need invoices which
+[22:54] means a paper that says that has is
+[22:58] written in big invoice at the top left
+[23:01] and I think there are a few more
+[23:02] information on it and on top of that
+[23:05] sometimes there is no when you check out
+[23:08] on stripe you don't input your invoice
+[23:11] your business details like your tax ID
+[23:13] for instance and so you get an invoice
+[23:15] without it and for again probably mostly
+[23:17] Europeans if you don't have this um your
+[23:20] accountant might not be very happy and
+[23:22] so most of my uh online businesses when
+[23:27] I get support is about invoice like can
+[23:29] I get the invoice can I edit the invoice
+[23:32] and usually they want to edit to add
+[23:33] their business details or because they
+[23:35] made a typo in their name or their
+[23:37] business
+[23:41] names
+[23:52] he damn I'm lost uh
+[23:56] promise
+[24:00] each strip
+[24:01] [Music]
+[24:07] counts we retrieve the session and we l
+[24:10] that little thing
+[24:17] here don't even know what I'm reading
+[24:21] now what is
+[24:26] that
+[24:30] [ __ ] is
+[24:39] that think I might have [ __ ] up
+[24:56] somewhere
+[25:07] oh
+[25:26] boy
+[25:38] I'm I'm going to get rid of the promise
+[25:39] at
+[25:41] all think this is a little bit [ __ ]
+[25:43] up my mind CU
+[25:47] I
+[25:52] yep custom for each message only use a
+[25:56] for anding L for
+[26:18] Loop we got something
+[26:21] here okay I'm going to get rid of that
+[26:26] thing
+[26:32] up wrong
+[26:44] ones have no clue what I'm
+[26:50] doing okay this is
+[26:54] better we retrieve the
+[27:00] we get the token account we retrieve the
+[27:02] customer same here for each
+[27:18] customers
+[27:25] S no no no
+[27:28] no no no no
+[27:30] or thank
+[27:33] you ret invoice access toen customer ID
+[27:36] this is it and we push that
+[27:43] thing invoice in
+[27:46] okay so that is how we get the invoice
+[27:50] under the email
+[27:51] okay going
+[27:53] to check out making sure that this is
+[27:56] working
+[28:01] from Bordeaux
+[28:07] yo shouldn't you end the customer email
+[28:10] to verify their own email they click the
+[28:13] link in the email to receive the invoice
+[28:15] what St from pulling other people's
+[28:17] invoice um the way it's built for
+[28:22] now there is no way for I mean you can
+[28:26] actually search for other people emails
+[28:28] that implies that you have the unique uh
+[28:31] link that's been given to the business
+[28:33] and you also know the customers emails
+[28:35] of that business which is a pretty heavy
+[28:38] thing already later on if that's a
+[28:42] concerned like if there if I get some
+[28:43] user concerns about that I probably want
+[28:45] to uh I make some like kind of unique
+[28:48] links only for specific people I see but
+[28:51] for
+[28:51] now I'll stick with uh that that thing
+[28:56] here
+[28:59] okay we get the invoices okay so this
+[29:01] piece of code is still
+[29:06] working count an extra and normally
+[29:10] here we still got the business name
+[29:14] okay now I need to find okay so let's
+[29:17] get back to
+[29:22] this we retrieve all the checkout
+[29:24] sessions and we are going to conso log
+[29:26] those sessions to see what is going
+[29:37] on wait actually I'm going to
+[29:40] be um ban from stripe if I keep pulling
+[29:44] the API just this way so I'm going to
+[29:47] remove that piece of code and just do
+[29:49] one by
+[29:56] one
+[29:58] what do we get
+[30:01] here you know what I'm going to be a
+[30:03] good developer and I'm going to read the
+[30:05] stripe documentation for good uh stri
+[30:09] API check out list instead of going uh
+[30:14] like that so we have the strap checkout
+[30:18] list with status complete and we put the
+[30:21] customer
+[30:22] email and we are supposed to get back an
+[30:25] object with data which
+[30:28] normally return
+[30:36] sessions theeta right yeah we're
+[30:40] supposed to get these
+[30:43] back if it matches the customer so just
+[30:46] to be sure customer
+[30:47] details customer details. email sure yep
+[30:52] and Status complete complete yeah we
+[30:55] only want to return the complete on okay
+[30:59] so here we get back an array
+[31:07] normally why do we get back three arrays
+[31:10] that's the
+[31:13] question CU we have only oh no we do
+[31:16] have two
+[31:24] accounts it's e equal Z
+[31:30] also going to
+[31:35] do plus I'm going console
+[31:44] log extra I think how did I save that
+[31:49] models extra. name I think it
+[31:54] is it's probably going to be no I think
+[31:56] it's going to be
+[31:57] be yeah it's not going to it's not yeah
+[31:59] it's not going to be populated because
+[32:01] it's a test mode I'm going to log the
+[32:03] cons the account ID
+[32:06] though. account ID let's give it a
+[32:11] try okay we have zero first account and
+[32:15] we get an
+[32:26] array
+[32:27] here we get those sessions
+[32:32] back so those
+[32:34] are we get those are those objects
+[32:38] normally which are supposed to have a
+[32:42] payment intent
+[32:44] somewhere inted here what does the
+[32:47] documentation says about it I guess
+[32:50] should go here how do we call it again
+[32:54] we call
+[32:56] them liit intense here Expendable oh
+[33:01] that could be interesting to expand so
+[33:04] we don't bother quering two times IDE of
+[33:06] the payment
+[33:10] intent
+[33:14] okay the ID of the payment in for
+[33:17] session and we can expend
+[33:20] it how do we expand again oh yeah
+[33:23] retrieve and we pass this parameter okay
+[33:28] that could be a
+[33:31] good thing so retrieve blah blah
+[33:34] [Music]
+[33:36] blah TR check out
+[33:41] charger is it going to work if we list
+[33:44] the
+[33:45] more many
+[33:52] object all API request and applies to
+[33:56] the reponse
+[33:58] place to the rep request
+[34:09] only all right let's
+[34:11] see if we pass this thing uh and we say
+[34:15] expend payment
+[34:17] Intent no you don't want to save
+[34:22] [Music]
+[34:25] me here we go
+[34:28] see what we get from
+[34:29] that might have to console
+[34:33] log I think the first
+[34:38] one I didn't
+[34:42] see
+[34:45] NOP unone arguments okay I think I
+[34:48] didn't call this session the right
+[34:55] way
+[35:10] you give me some details here stripe
+[35:11] another arguments object object did you
+[35:13] mean to pass an option object Yep this
+[35:15] is what I'm trying to
+[35:17] do let's see what it
+[35:25] says
+[35:27] least for method where all arguments are
+[35:31] optional you should simply pass them all
+[35:34] in
+[35:39] the
+[35:40] okay so you're saying that I should be
+[35:43] doing this
+[35:47] or you don't read correctly let's
+[35:55] see that this is a different
+[36:02] error oh you want to try expanding data
+[36:06] that intent
+[36:08] instead
+[36:14] okay it's a tricky
+[36:17] one TR it again okay we have
+[36:22] something we have been able
+[36:24] to so we are look the first session
+[36:27] right now how does it
+[36:30] look okay we are looking for
+[36:34] each give me one second I think there is
+[36:36] a little someone delivering a little
+[36:39] packet to my
+[36:55] door
+[37:24] that was indeed a good check delivery
+[37:27] we're
+[37:30] back so we get de s um is the
+[37:35] payment intent okay it is expended which
+[37:38] is
+[37:41] [Music]
+[37:51] good for
+[37:55] each
+[38:06] each for each for
+[38:08] each
+[38:11] um all right this is the part where we
+[38:14] have to get the right data where is
+[38:22] it UI
+[38:25] hosted
+[38:50] let St
+[38:55] this
+[38:57] okay this is it um here we are going to
+[39:00] go
+[39:01] [Music]
+[39:07] over
+[39:13] each for each
+[39:25] session
+[39:30] that's where
+[39:36] payments intent
+[39:39] is
+[39:43] succeeded
+[39:48] is create an invoice
+[39:53] object with the following
+[39:56] [Music]
+[39:59] parameters properties okay I can remove
+[40:03] all
+[40:08] that and here we want to
+[40:14] add what what are we going to do so we
+[40:16] need an invoice I
+[40:18] guess number so this will not exist
+[40:23] but we will find something else
+[40:29] can we get the receip maybe we can get
+[40:30] the
+[40:31] receipt CU that I think yeah that should
+[40:34] be provided on every checkout but I
+[40:36] don't know if there
+[40:37] is a re no there is no
+[40:41] receip right we're going to have to find
+[40:43] a workout work around workout already
+[40:46] [Music]
+[40:48] done
+[40:53] um what do we have here
+[41:06] for
+[41:07] each for each
+[41:11] out we want need to populate all that so
+[41:14] we will need invoice
+[41:17] ID
+[41:19] um see let's go back to the invoice API
+[41:23] inst
+[41:24] strip which is
+[41:28] is it is not a core resource and where
+[41:32] this invoice there we
+[41:36] go me the invoice object if you you
+[41:41] mind are
+[41:47] you oh yeah there so ID nope
+[41:55] um
+[41:57] well actually I'm going to go to the
+[41:58] invoice page and see what information we
+[42:13] need way too many tabs
+[42:22] open we
+[42:24] need strip name okay the
+[42:29] currency we get the currency somewhere
+[42:31] okay maybe the co-pilot will do it for
+[42:33] US
+[42:36] currency is we need the amount paid as
+[42:39] well yes the status will be paid for
+[42:43] sure the invoice number we can still put
+[42:47] it
+[42:51] status
+[42:55] created
+[43:00] created the
+[43:03] time
+[43:05] of the
+[43:12] payments is that it no I think we need
+[43:15] to have an
+[43:16] [Music]
+[43:18] entire uh there's probably something I
+[43:20] don't see here where is it the products
+[43:23] page invo sters yeah okay cuz I'm not
+[43:26] seeing the right thing here
+[43:29] y created due date
+[43:33] um do we have those information in the
+[43:45] checkout I don't believe there would be
+[43:47] any kind of due
+[43:55] date
+[44:02] status Ural St
+[44:14] URL need currency conversion custom text
+[44:17] what
+[44:18] else and
+[44:21] invoice idea of the invoice creit if it
+[44:24] exists yeah if it exists that's the
+[44:25] problem
+[44:42] in
+[44:46] um going to try with very minimum data
+[44:49] first and see if I get
+[44:51] something that's at least that's working
+[44:55] uh the due date I think we're going to
+[44:56] say
+[45:02] that
+[45:04] oops okay I cannot type on my keyboard
+[45:08] anymore some of the
+[45:10] payments what else do we have account
+[45:16] name that we should get it from the
+[45:22] business think it's STP account model
+[45:26] extra and name
+[45:32] yep so here just in case we don't have
+[45:35] it I'm going to say strip account name
+[45:38] um okay that's
+[45:40] working customer details yeah we're
+[45:44] going to fill that
+[45:51] in so we can do that for later think
+[45:55] what's important is we have the business
+[45:57] owner name we need the customer
+[46:06] information yeah
+[46:10] so where is it this part here will be
+[46:14] important customer name what do we have
+[46:17] here on the
+[46:24] checkout recation custom customer
+[46:27] creation customer details this is
+[46:30] it okay there we go
+[46:36] um oh we also need to make sure
+[46:41] that the
+[46:43] type
+[46:45] is
+[46:47] liement intent
+[46:50] yep actually no I'm going to say
+[46:52] checkout it's going to be shorter
+[46:54] sweeter
+[46:56] to
+[46:57] date here we want
+[47:00] customer we format that
+[47:04] here invoice to
+[47:06] edit customer
+[47:16] name which we should get
+[47:18] here customer address and customer
+[47:24] email
+[47:31] cute going to give it this a try and see
+[47:33] where it
+[47:42] goes you don't need to retrieve those
+[47:45] because I already have them so if
+[47:48] payment
+[47:49] intent status that
+[47:52] succeeded we already have the payment
+[47:54] intent
+[48:05] I think we are
+[48:08] getting intent what's the name of
+[48:24] it it is here payment
+[48:30] intent
+[48:33] this we get this from the
+[48:36] session and we
+[48:39] should provide them here right I hope I
+[48:42] have no idea if this is going to
+[48:44] work going to try to see if we get a
+[48:47] little something working and if it does
+[48:48] then I will just keep iterating until I
+[48:50] have all the data needed for the
+[48:54] invoice so let's get back to it search
+[48:58] for that What er oh no okay this is not
+[49:03] terrible oh well this is even it
+[49:05] populates a little bit oh wow that's
+[49:11] cool I think yeah just
+[49:14] from let me think oh no actually I don't
+[49:17] even search for so those are all
+[49:20] checkout session
+[49:22] that
+[49:24] that were successful I guess yeah
+[49:27] payment int succeeded y
+[49:31] yeah oh this is
+[49:33] sick maybe we can double check that
+[49:43] uh some on stripe no okay I guess I'm
+[49:46] going to have to use the sidebar
+[49:54] um
+[49:56] when were they made 2024 so this is
+[49:59] probably
+[50:06] 2024 2024 is it the correct date it
+[50:11] looks like
+[50:15] it yeah of course there's something
+[50:17] missing
+[50:24] here
+[50:27] maybe I can do something here I can
+[50:29] probably in this
+[50:33] page here in the
+[50:40] business here I think if it doesn't have
+[50:43] the name I'll give it
+[50:46] the
+[50:54] think
+[50:59] ins back all the invoices I think oh
+[51:01] yeah I need to edit that inv those trap
+[51:12] accounts here we
+[51:16] go in
+[51:22] here is it working oh no it's not the
+[51:25] IDE no no this is not what I wanted it's
+[51:27] the TR how did I call
+[51:30] that naming is the hardest thing in Pro
+[51:32] in programming this
+[51:35] say count ID
+[51:41] okay let's get it back to it okay so we
+[51:44] have few okay this is under these
+[51:48] accounts
+[51:53] which okay so those are all all made I
+[51:56] delete this one so we remove
+[52:01] confusion okay oh yeah that makes sense
+[52:03] okay those are yeah it's clear Mark wake
+[52:06] up this is right here this is the exact
+[52:08] same data that you have
+[52:10] here boy
+[52:13] okay uh probably want to organize those
+[52:16] invoices by created time I
+[52:19] guess invoices
+[52:22] um s the invoices man Copilot I love
+[52:27] you so I'm going to refresh it should be
+[52:30] 1999 494949 okay and now how does it say
+[52:35] okay it's a bit messed up get back to
+[52:39] it
+[52:41] 1919 and one is missing why would this
+[52:45] be
+[52:48] missing intent oh because it's a
+[52:50] different email okay so the system is
+[52:54] working
+[52:58] right I'll do this one so stripe doesn't
+[53:01] kill
+[53:06] me okay
+[53:11] uh okay so I'm going to do here uh the
+[53:14] download button I think I'm going to
+[53:16] hide
+[53:19] it I'm going to say something like
+[53:24] um download invoice invoice. invoice
+[53:37] PDF I hit this
+[53:42] button oh wait actually I know the code
+[53:44] invoice um if invoice oops invo PDF
+[53:50] and weide buttons download
+[53:54] buttons
+[53:59] if oh yeah because
+[54:08] um and then
+[54:10] here we're going to say something
+[54:13] like not going to be edit is going to
+[54:17] be invoice PDF
+[54:21] and
+[54:23] edit or
+[54:31] else we going to have
+[54:35] a
+[54:37] view we are going to tell tell hero icon
+[54:40] and we're going to say little I
+[54:43] here this
+[54:46] I which one should we go this one I Min
+[54:54] one
+[54:56] that's a massive icon the micro
+[55:04] one okay okay this is still broken and
+[55:07] this is perfectly
+[55:13] normal there we go
+[55:17] View and then now we need to make sure
+[55:21] we have all the data to
+[55:24] provide
+[55:34] do we have here so let check out
+[55:36] currency USD yeah we will probably
+[55:42] need we will I think yeah we'll need to
+[55:45] know where what the customer purchased
+[55:48] so there should be somewhere in a
+[55:51] checkout session where we have the
+[55:52] product
+[55:54] data
+[55:55] hey Mark hey yo Robin o is is not
+[56:00] allowing anything of the total or dates
+[56:02] of anything yeah the editing part for
+[56:04] the invoices is just for customer name
+[56:07] name um email and they can add some
+[56:11] information about them like V8 numbers
+[56:13] for
+[56:17] [Music]
+[56:23] instance
+[56:40] hello boy I'm supposed to have a dinner
+[56:42] tonight I think I'm going
+[56:45] to be washed by the
+[56:52] rain the lines that make have the
+[56:55] invoice I think this is it lines object
+[57:00] data and this is it this is all we
+[57:04] need um okay and what is the difference
+[57:07] with no actually no no stupid Mark no oh
+[57:11] damn it would have been too
+[57:13] easy
+[57:15] uh oh actually this line items this is
+[57:18] exactly the
+[57:19] same oh if that's the case that it's
+[57:21] going to be so much simpler ID object
+[57:23] amount discount no ID object amount we
+[57:27] get something similar here okay so I
+[57:29] need to expand line
+[57:31] items so I know what is the customer
+[57:33] actually
+[57:35] purchasing going back to the API and
+[57:40] here in
+[57:42] the stripe Library we need to extend as
+[57:45] well the nine
+[57:47] [Music]
+[57:51] items is that working okay now give it a
+[57:54] try
+[57:59] so I think let me
+[58:05] see the
+[58:07] [Music]
+[58:09] data I'm going to have to give it
+[58:23] lines
+[58:26] session lines item okay let's see what
+[58:28] we get
+[58:32] here
+[58:38] yo API key issue
+[58:41] NOP I cannot expend that these property
+[58:45] cannot be expended you may try to expend
+[58:47] it yes again the same mistake I did of
+[58:51] course boy data doline items
+[58:55] and now I might get a
+[58:57] 403 no I didn't I didn't okay we have
+[59:00] the permissions
+[59:03] nice
+[59:04] L self served invoices Bingo this is
+[59:11] it let's see might be too ambitious yes
+[59:14] of
+[59:16] course soon soon soon
+[59:21] um actually he should be there no
+[59:32] LS
+[59:34] oh okay okay okay I just need I don't
+[59:36] need to add data
+[59:39] here I'm going try
+[59:47] it reading
+[59:53] zero yeah
+[60:01] we hey Google wake me up at 5:30
+[60:12] p.m. what is there
+[60:15] where
+[60:21] 41 Dam Google is TR is thinking that I'm
+[60:24] talking to
+[60:27] custom Tex ID there we
+[60:31] go know rep property of reading zero
+[60:53] oh
+[60:58] maybe I just do
+[61:08] this
+[61:12] okay
+[61:14] yal that is one step okay it's not done
+[61:19] but it's a step forward we have the bill
+[61:23] address right we need to get this
+[61:25] information self services oh boy
+[61:28] yes okay it's I think it's just a matter
+[61:31] of finding the amount I probably don't
+[61:33] return the amounts somewhere I could
+[61:36] that
+[61:36] [Music]
+[61:43] be how does he get
+[61:46] that how do you know customer
+[61:52] address oh
+[62:02] customer name
+[62:05] customer I
+[62:12] do email session
+[62:22] created okay no that makes sense okay
+[62:24] that is working okay okay okay I'm
+[62:27] surprised that the co-pilot being so
+[62:29] good that I I don't I wouldn't even
+[62:31] expect it to work I guess I cannot
+[62:34] complain in that
+[62:36] case um we need the amount the amount
+[62:39] amount amount I think it's called oh
+[62:42] amount
+[62:46] paid payment amount received this is
+[62:50] actually here
+[62:50] [Music]
+[62:52] no or maybe it's because the amount okay
+[62:54] we need to find the amount that's been
+[62:56] received from the payment intent
+[63:01] so intent yep we're going to check that
+[63:05] real
+[63:06] quick maybe we get it from the checkout
+[63:09] no I don't think
+[63:10] so well
+[63:15] maybe there doesn't seem to be an amount
+[63:18] oh amount
+[63:20] total total of all item after
+[63:22] discounting and tax are applied but I
+[63:24] think we need yeah we still need to get
+[63:26] the payments
+[63:27] intent
+[63:29] thing because it might be more details
+[63:32] and we need to only get the amount that
+[63:33] has been
+[63:37] paid which is called amount amount
+[63:41] internet to be
+[63:42] collected
+[63:44] okay I was expecting more
+[63:50] things oh yeah okay amount
+[63:53] received
+[63:55] amount received apparently here is
+[63:57] null or maybe I did a mistake no it's
+[64:00] not
+[64:01] null okay I made another mistake
+[64:03] somewhere this is actually
+[64:06] good why you're not
+[64:08] showing amount
+[64:11] here let's get back to it
+[64:20] do two amounts of
+[64:23] course
+[64:24] amount off NOP that's not the one amount
+[64:27] due amount
+[64:29] paid oh in our case this is the same
+[64:32] amount cuz if the payment is succeeded
+[64:35] the amount
+[64:39] due Maybe not maybe actually not so
+[64:42] let's
+[64:46] see amount
+[64:48] details there we
+[64:52] go should the am you can tip in strip
+[64:56] payments I didn't know that amount
+[64:59] capturable amount that can be captured
+[65:01] no amount received that's probably
+[65:04] it
+[65:06] created oh maybe we get the amount paid
+[65:09] okay I think we get the amount paid from
+[65:11] the
+[65:12] payments yeah this is for sure and we
+[65:15] also need amount
+[65:23] due
+[65:26] the total amount for the payments please
+[65:29] give me some magic
+[65:34] trt that's it
+[65:39] no amount internet okay okay so this is
+[65:42] probably the amount that's due
+[65:46] here let's refresh see where we
+[65:51] go May no
+[65:55] what do we get
+[66:03] here amount due amounts
+[66:07] paid uh yep there should be a little
+[66:10] something
+[66:16] here invoice. amount
+[66:22] paid do
+[66:27] invoice to
+[66:29] edit
+[66:30] currency the
+[66:32] currency is right but the amount is not
+[66:36] although we get amount due
+[66:39] here maybe let's try another invoice see
+[66:42] what we
+[66:43] get okay this is working for this one
+[66:45] but not for the first one oh maybe I
+[66:48] didn't refresh properly do it
+[66:51] looks oh boy okay this is working
+[66:54] working now uh not everywhere
+[66:59] though oh cuz okay that's probably the
+[67:02] different
+[67:02] [Music]
+[67:06] amount let's
+[67:10] see not a
+[67:13] number let's see what we got for the sub
+[67:17] total oh there's a sub total oh okay
+[67:19] okay okay
+[67:21] okay okay why wouldn't
+[67:24] the sub
+[67:38] total oh
+[67:41] yeah so happy I have G co-pilot for that
+[67:44] it literally go through the stripe
+[67:46] documentation and it
+[67:48] knows why some things and why they're
+[67:52] not
+[67:55] I love
+[67:56] it um okay we didn't have any discount
+[67:59] for this one so we'll probably have to
+[68:02] find yeah inv to discounts
+[68:10] here
+[68:12] this
+[68:16] discount total amount of the discounts
+[68:19] yep
+[68:21] an an object
+[68:30] property and we also have the total
+[68:35] which should be here yeah
+[68:46] total let's see what cellet will do for
+[68:50] this session amount sub
+[68:52] total really
+[68:55] I down it that'll be
+[68:57] so oh [ __ ] oh yes so
+[69:02] good
+[69:04] okay I just Sav myself a little bit of a
+[69:07] headache here and samey has the discount
+[69:09] so it's actually all the
+[69:11] same I don't know why they charge this
+[69:14] much for invoices I don't get it might
+[69:17] be missing something out
+[69:20] here is this discount part
+[69:26] it's probably after discount discount
+[69:31] discount how do I know the discount
+[69:36] is where is it on the invoice
+[69:39] part it
+[69:41] is probably below below
+[69:47] below discounts
+[69:52] okay
+[69:55] how do we get the discount for a
+[69:58] checkout there should be something
+[69:59] somewhere I need to find
+[70:08] it after discount be
+[70:10] applied come on Mr check out you might
+[70:15] be the can't the discount can be missing
+[70:18] like
+[70:21] this go no no
+[70:29] or maybe it
+[70:34] is maybe it's on the line items for each
+[70:40] items data and somewhere discounts there
+[70:46] we
+[70:48] go amount and
+[70:51] discount we have here
+[70:54] discount that
+[70:59] coupon what is that coupon
+[71:17] thing
+[71:19] okay hash describing we won't get this
+[71:22] information unfortunately
+[71:29] hash describing the coupon
+[71:46] okay brain is fried hello boys love the
+[71:49] font and the design did you make it
+[71:52] thank you Carlos uh yes yes I did make
+[71:55] it although I get heavily inspired by um
+[71:58] everything I see on the internet I'm
+[72:00] actually reusing one of my other
+[72:03] websites design called by dispute the
+[72:07] font is
+[72:09] gabarito and I use Daisy UI as a library
+[72:12] for UI
+[72:14] components and I just swap the the color
+[72:18] from blue to green feels like more uh
+[72:22] Zen because the name of the app is Zen
+[72:27] voice do you speak French send the twi
+[72:38] uh first
+[72:40] Twitter uh the twitch link um if you
+[72:43] guys want the twitch link just in
+[72:51] case no clue
+[72:54] I know there is something broadcasting
+[72:56] on my twitch
+[73:00] sorry um I am not a twitch person so I
+[73:03] don't even know how to share link
+[73:04] probably here yet here there you
+[73:08] go uh I will add the link on Twitter uh
+[73:12] again if you guys are coming from
+[73:13] Twitter you might want to use either the
+[73:15] twitch or the YouTube link because
+[73:18] Twitter is very bad for broadcasting
+[73:21] videos or if you're a
+[73:26] twitch
+[73:33] Ty there we
+[73:36] go is it yep it was supp it
+[73:40] okay
+[73:42] um so going back to that
+[73:50] thing hello Mark hello Zafar
+[74:13] so we need to figure out the discount
+[74:14] thing which is not very clear for now we
+[74:18] have the customer data that is good we
+[74:20] need to have a due date yeah I'm going
+[74:22] to do the due date cuz I think this is
+[74:23] quite
+[74:24] important do
+[74:29] date you are dated
+[74:40] you voice TW it created you are not
+[74:43] showing the created part
+[74:48] no do
+[74:51] date why are you not showing anything
+[74:53] thing
+[75:01] here oh okay it's because one part is
+[75:04] missing okay those are actually correct
+[75:08] we need the invoice
+[75:11] number because the invoice doesn't exist
+[75:14] maybe we can make it up or we give it
+[75:17] probably yeah probably going to give
+[75:19] it invoice
+[75:21] number format
+[75:28] this
+[75:37] your how does Tri format their
+[75:41] invoices
+[75:44] um Tri invoice
+[75:51] format here we here we got an invoice
+[75:56] here it looks like a number that is
+[75:59] being increased and here what is that
+[76:12] thing how could I get
+[76:15] the the invoice does not or no I create
+[76:19] an
+[76:22] invoice actually create an invoice
+[76:31] and actually maybe that could be
+[76:35] it maybe we need to create that
+[76:40] invoice oh yeah
+[76:42] but oh okay we shouldn't create the
+[76:44] invoice because because because because
+[76:46] it's never going to be in the right
+[76:49] format yeah cuz I think you need to
+[76:52] charge
+[76:53] in the collection method charge b or
+[76:56] send invoice yeah you okay you cannot
+[76:58] create invoices after you've paid okay
+[77:00] yeah yeah that is not a smart move
+[77:04] here advance customer description
+[77:13] metadata
+[77:17] voice can you eventually give me a
+[77:19] little detail about the voice tribe
+[77:30] the name of the invoice number I think
+[77:33] it's should be
+[77:40] called right anyway doesn't matter I
+[77:42] think we need to format the
+[77:47] invoice it should be it should be a
+[77:49] format based on an information that that
+[77:53] will never
+[77:55] change
+[78:00] so
+[78:12] um right we can try this we have
+[78:15] something to show first and then we'll
+[78:17] see how to make it
+[78:20] uh refresh that
+[78:26] oh maybe it's not called number how did
+[78:28] it call that invoice
+[78:32] number it is it is
+[78:36] number what did I do
+[78:38] here oh yeah it's
+[78:45] here it another
+[78:51] TR
+[78:55] okay we have the checkout
+[78:59] session
+[79:00] way so that we have a beautiful
+[79:03] formating for that
+[79:10] um I'll be back in a
+[79:21] minute
+[80:17] hey welcome back to the
+[80:21] Stream um so we need to create a format
+[80:25] for the invoice That's
+[80:39] Unique I'll actually
+[80:50] create just have to make sure it is
+[80:52] unique so
+[81:02] so a
+[81:05] unique for the
+[81:13] invoice let's see what we get from geub
+[81:17] copilot come on give me something
+[81:21] man
+[81:27] should
+[81:31] be unique an
+[81:34] integer of eight
+[81:39] characters yeah trying stuff here it
+[81:43] might break everything
+[81:47] nope it
+[81:50] must I'm using capital letter so uh it
+[81:54] is actually
+[81:56] working that's is it if you want a fix
+[81:59] for your GitHub copilot just use capital
+[82:03] letters it is
+[82:13] Magic maybe it must
+[82:15] be maybe we can take the last eight
+[82:20] characters the last eight
+[82:24] characters of the sis 80 and there we go
+[82:27] that should be
+[82:50] good all right that looks good invoice
+[82:53] number uh maybe we capitalize
+[82:58] them it's an
+[83:18] ID push
+[83:21] that
+[83:25] okay um should check out a real strip
+[83:30] invoice to make sure that we are somehow
+[83:33] consistent with the
+[83:36] thing is it a stripe invoice nope it is
+[83:40] not this is
+[83:42] one all right this looks like could be
+[83:50] legit okay let work it it's working um
+[83:55] what else do we have we have the coupon
+[83:57] coupon
+[83:59] things take same
+[84:04] characters um you
+[84:07] Bill okay the line item is not right and
+[84:11] the coupon probably will not be right
+[84:14] otherwise the rest look really
+[84:16] neat for line items
+[84:19] um this is that thing here and we
+[84:26] have dot map the data so description
+[84:29] quantity okay we might want to add a
+[84:31] text
+[84:35] somewhere here
+[84:41] is I'm trying something absolutely
+[84:43] random no it's not going to work of
+[84:45] course invoice currency
+[84:48] okay line about unit amount amount and
+[84:52] amount
+[84:54] so is that yeah
+[85:00] amounts I think in the case
+[85:05] of unit
+[85:10] price this is not the discount it
+[85:15] is quantity the the quantity of prob why
+[85:19] do
+[85:20] you unit amount and quantity come on you
+[85:23] could have
+[85:25] used line price. unique amount and here
+[85:28] it's called quantity
+[85:38] oh where wait where am I missing up no
+[85:41] this is the line oh line amount
+[85:44] okay
+[85:50] okay okay so in in that case it should
+[85:53] be amounts
+[86:03] total unit price amount okay so I [ __ ]
+[86:06] up somewhere price unit
+[86:08] [Music]
+[86:12] amount oh because there was a discount
+[86:14] oh yeah
+[86:16] yeah oh okay yeah I'm I'm missing
+[86:21] okay
+[86:23] Ser
+[86:26] invoices oh yeah because I think the
+[86:28] price
+[86:29] it's let's check normally it's 49 and
+[86:32] it's discounted at
+[86:34] 19
+[86:35] yeah okay so I should have the discount
+[86:43] somewhere
+[86:48] okay how do you
+[86:51] sure
+[86:53] does it work how how is is it supposed
+[86:55] to be displayed on the invoice maybe I
+[86:56] can check in the customers part for some
+[87:00] payments that have were already made
+[87:02] Let's
+[87:04] see we can see this one and see if we
+[87:07] get an invoice for Mr
+[87:12] Mark invoice
+[87:15] here are you up there
+[87:21] somewhere
+[87:23] I did not oh yeah yeah okay I'm using
+[87:26] yeah I'm checking this one should be
+[87:35] it it's made only one invoice
+[87:40] though let me try to make an invoice
+[87:43] manually
+[87:48] [Music]
+[87:49] then you're supposed to know the price
+[87:51] now
+[87:56] what are you
+[88:20] doing why there is no there are no
+[88:22] invoices for
+[88:33] this is it because I
+[88:43] made let's go back to the customers
+[88:45] let's see this
+[88:47] one this little boy here doesn't have
+[88:49] any
+[88:50] invoice and are here as a guest doesn't
+[88:55] have any invoice of
+[89:08] course still
+[89:15] not I'll try to make
+[89:18] a re checkout I'll try to make a payment
+[89:22] with a discount so I'm going to
+[89:26] remove from the strip checkout session
+[89:29] where is
+[89:33] it okay I want to create that invoice
+[89:35] and I am going to make a
+[89:41] payment yeah actually I'm going to do
+[89:44] that in incognit mode so I don't have my
+[89:47] email and I create a new
+[89:50] customer
+[89:56] test a
+[90:12] discount okay let's go back to
+[90:15] it we have this new guy here that made a
+[90:19] payment with an invoice that has a
+[90:22] discount
+[90:23] somewhere so let's see how the invoice
+[90:26] looks
+[90:31] like it's not the
+[90:33] invoice this is the
+[90:38] one okay so the discount is applied
+[90:45] after okay it doesn't show any discount
+[90:47] anywhere okay that makes sense so here
+[90:50] in my invoice page
+[90:52] I should show here
+[90:57] uh
+[90:58] amount in
+[91:01] amount it is the amount before the
+[91:04] discount
+[91:06] so in the session object uh yeah session
+[91:11] amount
+[91:13] total
+[91:15] no
+[91:16] oops line amount discount total discount
+[91:20] applied
+[91:22] total before discount or tanks being
+[91:25] applied total after discount and tax oh
+[91:29] see before any discount okay that's the
+[91:32] yeah that's the amount which should be
+[91:35] the exact amount that's here
+[91:38] and there's the line
+[91:42] thing lines and here we want to see the
+[91:47] amount amount in
+[91:49] sense so yeah I'm showing the I'm
+[91:51] showing the amount before discounts and
+[91:55] taxes and so we have the exact same
+[91:57] thing here and it would change only it's
+[91:59] only if the quantity changes that we the
+[92:01] amount will
+[92:01] change so I guess if the customer
+[92:05] purchased two times this it should show
+[92:07] double here then we have the discount we
+[92:10] have the
+[92:11] subtotal and then we should have a line
+[92:13] that says
+[92:14] discount so to calculate the discounts
+[92:17] because we're not
+[92:20] using an
+[92:22] invoice thing we are going to have to
+[92:31] use okay for the here this is the part
+[92:34] we have to do discounts and we have to
+[92:36] create coupon. amount
+[92:43] off okay we have to calculate for each
+[92:46] Lin's item what is we have to create
+[92:49] something discount coupon amount of okay
+[92:56] see test to be like
+[92:59] coupon
+[93:01] amount off oh boy this is no no there's
+[93:05] no way this is
+[93:09] working that'll be a
+[93:12] dream let's refresh and see what we
+[93:17] get get all the invoices okay this is
+[93:20] correct
+[93:24] yeah boy this is actually
+[93:32] working
+[93:41] holy wait actually what am I doing here
+[93:44] what are you doing
+[93:47] Mark I'm losing my
+[93:50] math let's give me one more
+[93:56] try yeah boy
+[93:59] okay
+[94:02] beautiful there it is we are able to
+[94:04] generate
+[94:05] stripe invoices after the payment is
+[94:09] being
+[94:10] made it is
+[94:17] beautiful let's give it one more try so
+[94:19] I go to this page
+[94:23] I am a strike business owner and I did
+[94:26] not activate the payment with the postp
+[94:29] purchase
+[94:30] invoices which cost
+[94:33] 0.4% my
+[94:36] customer let's say let's take a fresh
+[94:39] new customer this guy this customer just
+[94:41] made a payments oh no no no we need okay
+[94:44] we need to make a proper test
+[94:46] so I want to get the product not going
+[94:49] to generate the invoice automatically
+[94:51] because it costs
+[94:53] money this customer this way
+[94:58] okay
+[95:00] bingo I pay the
+[95:06] product in my stripe dashboard I can see
+[95:08] that this customer has been created and
+[95:11] there is no invoice that's been
+[95:13] generated
+[95:15] stop there's no invoice that's been
+[95:17] generated for this customer so I did not
+[95:19] pay the extra 0.4% to stripe
+[95:22] but if I go here if I type the customer
+[95:25] invoice I am supposed to get something
+[95:29] and this is it invoice here I view the
+[95:35] invoice I see that I have the time is
+[95:38] been purchased I have the customer data
+[95:40] that are being here displayed
+[95:42] here the unit price the amount per units
+[95:46] the discount that was applied and the
+[95:48] amount that was due and we have a
+[95:50] beautiful invoice that is actually
+[95:53] working this is nice I think it's a nice
+[95:56] way to end the stream let's see if we uh
+[96:00] this is not
+[96:01] broken yeah this is per of me I should
+[96:05] stop congratulating myself
+[96:08] but oh boy
+[96:10] okay well I'm going to commit that
+[96:15] thing I didn't [ __ ] up anywhere yet this
+[96:19] okay yeah this make sense this we don't
+[96:22] really oh no no no I know where I should
+[96:26] have find the code
+[96:28] here this we can
+[96:34] remove in here this
+[96:37] part we should still and after we'll
+[96:39] okay we'll need to
+[96:44] filter here we need to filter
+[96:50] um
+[96:54] ID I think
+[96:56] remove
+[97:02] duplicate okay I'm going to keep the um
+[97:04] I'm I'm not going to do that right now
+[97:07] going to commit that
+[97:19] thing okay
+[97:24] and I'm going to go back to the API
+[97:27] round was get
+[97:29] invoice and we're going to pass this I
+[97:32] have a little message here so tomorrow I
+[97:35] can check this out and check if the code
+[97:38] is actually
+[97:40] working just out of curiosity I'm going
+[97:42] to do a test live see how many things
+[97:43] I'm going to
+[97:47] break he hey looks like it's actually
+[97:50] working
+[97:51] boy I think it's
+[97:53] working okay we'll need to test this
+[97:56] tomorrow all right I think that's a wrap
+[97:58] for today uh let's see where we
+[98:02] are okay this is it um so I think I need
+[98:07] to make a couple of edits to test some
+[98:09] use cases for the product making sure
+[98:11] that it works in all cases um but it
+[98:14] looks like it's actually
+[98:17] working um I'm not going to be live
+[98:20] streaming this weekend I'm trying to
+[98:21] make some videos on YouTube where I
+[98:23] share what I've learned on my channel
+[98:26] and so if you guys are curious you can
+[98:27] check them out I will be posting one
+[98:29] video per week and I've already started
+[98:31] for the last three weeks and uh and
+[98:34] hopefully you guys like it if you have
+[98:36] any suggestions for the videos and all
+[98:37] that I would love to hear what you uh
+[98:39] want to watch um this is pretty much the
+[98:42] end so the next part for this stream I
+[98:44] think I'll do one more live about
+[98:45] finishing the product publishing a few
+[98:47] stuff testing and breaking stuff and
+[98:49] then I'll will be building the landing
+[98:50] page so we have the copy already that is
+[98:53] uh what that was made yesterday we need
+[98:55] to update a little bit the copy and
+[98:56] create all the landing page components
+[98:58] sections and all that um we have a user
+[99:01] login we have a pig wall so we have
+[99:03] pretty much everything that's ready um
+[99:05] and then the next step I don't know if
+[99:07] that's worth sharing live but you know I
+[99:10] could share the product hunt launch uh
+[99:12] launching on hiker news launching on on
+[99:14] reddits um that could actually be fun if
+[99:16] you guys want to tune in uh eventually
+[99:19] we could do something like that
+[99:21] um I I have to run have a little dinner
+[99:23] tonight with friends I'm not going to be
+[99:25] able to take on many
+[99:27] questions um and but I'll be happy to do
+[99:30] that next time um and with that being
+[99:34] said I wish you all a very happy and
+[99:36] good weekend and I'll see you in the
+[99:39] next stream
+[99:41] cheers

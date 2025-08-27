@@ -1,0 +1,2284 @@
+Video Title: Untitled_Video
+Video ID: jv1yvTw0ti0
+URL: https://www.youtube.com/watch?v=jv1yvTw0ti0
+View Count: 0
+
+[00:00] uh they've all been finalists at the the
+[00:02] big data ball did did you win is any did
+[00:06] you win so they're only finalists so
+[00:08] it's not that big a deal uh so sorry we
+[00:11] couldn't get we couldn't get the
+[00:12] finalist they all turned us down so
+[00:13] we're stuck with these guys uh that's
+[00:16] that's too mean isn't it I'm sorry are
+[00:17] you are you coming to attack me over
+[00:19] here I didn't win either no thank well
+[00:21] thanks for robing all right uh I'm also
+[00:23] a finalist also not a champion all right
+[00:26] uh so the first Speaker we have today is
+[00:28] a finalist from two years ago and that
+[00:30] that two years ago it was a a talk about
+[00:33] uh it was about lineman play um and this
+[00:36] is uh how do you say batchelder this is
+[00:39] Nick batchelder he is from I'm gonna say
+[00:42] duke because it says Duke on his thing
+[00:43] and we should also give Nick a round of
+[00:45] applause because you recently finished
+[00:47] slightly ahead of me in the kaggle NCA
+[00:50] March Madness pool top 81 money he
+[00:53] finished 12th I finished 15th so once
+[00:56] again we're still just kind of
+[00:58] losers what an intro Nick all right yeah
+[01:02] and we are we were definitely not first
+[01:03] so we were also last so that's the
+[01:06] world's greatest intro that anyone's
+[01:07] ever given anyone uh so let's welcome
+[01:10] Nick bachelder to talk about end of play
+[01:12] spatial density estimation in American
+[01:13] football where are you right now though
+[01:15] atke no he still a Duke yeah for two
+[01:17] more weeks I'm a Duke um 2ish minutes 23
+[01:22] is minutes okay I'm gonna set my
+[01:25] timer okay sounds good I I like to look
+[01:27] at it I don't know why do I have to talk
+[01:29] into this is that like is that
+[01:32] mandatory
+[01:36] okay okay okay sounds good I'm setting
+[01:39] my time give me one second all right um
+[01:43] like Greg said uh I'm a master student
+[01:45] at Duke University in biostats for about
+[01:48] two more weeks so I'm G to say that as
+[01:49] many times as I can um but I was a
+[01:52] finalist two years ago in the big
+[01:53] datable and then this year I was an
+[01:55] honorable mention um for mostly this
+[01:58] work this is kind of a part of my
+[01:59] project this year because it it turned
+[02:01] out to be what I spent most of my time
+[02:03] on um and that's um end ofpl spatial
+[02:06] density estimation obviously in American
+[02:08] football um I think all of these will
+[02:10] have to do with American football unless
+[02:11] I unless I'm missing something um and
+[02:14] also a deep learning approach to
+[02:16] estimating uh spatial player influence
+[02:26] um all right how do I AR
+[02:34] down they don't teach gr school I
+[02:38] know hey which one did you press press
+[02:41] down okay sounds good um we'll see if I
+[02:44] get that next time okay so we'll get
+[02:46] started um so what is end of play
+[02:48] prediction and why is it so important um
+[02:50] right off the bat NextGen and Amazon and
+[02:52] the NFL use end of play prediction for
+[02:54] all types of things right um the most
+[02:57] obvious ones being expected rushing
+[02:59] yards rushing yards OV expected first
+[03:01] down probabilities touchdown
+[03:02] probabilities all things that U most
+[03:04] people have heard of before essentially
+[03:06] how how many yards are you preventing as
+[03:09] a a Defender how many yards are you
+[03:11] gaining as a rusher these types of
+[03:12] things so um this is obviously an
+[03:15] important part of a lot of the metrics
+[03:16] that are created for nextg and that sort
+[03:18] of thing right um and there's kind of
+[03:21] four levels of complexity that I like to
+[03:23] think of um when it comes to end of play
+[03:25] estimation and I'm gonna kind of go
+[03:27] through those so we can kind of get to
+[03:28] where I did most of my work um so level
+[03:31] one is just making a point estimate for
+[03:33] end of playay yardage um so all this
+[03:35] really is is you're taking a set of
+[03:37] features those being movement features
+[03:39] um of the defense the offense the ball
+[03:42] carrier these might be velocities they
+[03:44] might be images they might be spatial
+[03:46] there's tons of things that these
+[03:47] features could be but really all you're
+[03:49] doing is you're feeding them into some
+[03:50] sort of model with some assumptions
+[03:52] these being maybe an XG boost model or a
+[03:54] regression model or a neurl net
+[03:55] depending on your linearity assumptions
+[03:57] and your variance assumptions but at the
+[04:00] end of the day all you're really getting
+[04:01] is a sample mean in some sort of
+[04:03] situation so you're saying I expect at
+[04:06] the end of this play um we're going to
+[04:08] end up at the 33 yard line and basically
+[04:10] where is the tackle where is the
+[04:12] touchdown where is the out of bounds
+[04:13] going to happen right um and you're
+[04:16] getting a point estimate and what I need
+[04:18] to emphasize here is this is a mean
+[04:20] right um and we that'll be important as
+[04:22] we go on and I'll also say that I would
+[04:23] say that this is about 90% of end of
+[04:25] play models that I see right because um
+[04:28] this is all you really need to create
+[04:29] most most of those metrics that I talked
+[04:30] about before um but I'm going to say
+[04:33] that I don't think that this should be
+[04:34] 90% of use cases I'm going to say that
+[04:37] level two should be 90% of use cases and
+[04:39] this is just adding one more component
+[04:40] you're still getting a sample mean Point
+[04:42] estimate with the same type of models um
+[04:45] but now you're doing some sort of
+[04:46] confidence estimation for your sampling
+[04:48] error right so you're doing some sort of
+[04:50] bootstrapping or standard error
+[04:51] estimation if your model's linear um
+[04:54] you're making some assumptions and
+[04:55] you're saying now I can say my sample
+[04:57] mean in this situation with this set of
+[04:59] features
+[05:00] um is it's going to be the play's going
+[05:02] to end at the 33 yard line with some
+[05:04] confidence right and this 95% confidence
+[05:07] interval if I say uh the sample means
+[05:09] between 31 and 34 yards I'm not saying
+[05:12] that the play is going to end with 95%
+[05:14] confidence between 31 yards and 34 yard
+[05:17] the yard lines right I'm saying that the
+[05:19] mean is somewhere in there and that's
+[05:21] also something that I want to emphasize
+[05:22] as I go on because that's going to be
+[05:24] important um and that brings me to level
+[05:27] three and now we're at multivariant
+[05:29] Point for end play location so now we're
+[05:31] doing the same thing we're still
+[05:32] estimating confidence we're still
+[05:34] estimating error but now we have some
+[05:36] sort of multivariate model um and what
+[05:38] that means multivariate not
+[05:40] multivariable is we're taking well it's
+[05:42] probably multivariable too but we're we
+[05:44] have two dependent variables we have the
+[05:46] downfield yard lines and we also have um
+[05:49] the lateral yard lines meaning X and Y
+[05:51] right um and most you use cases you
+[05:54] don't need to do this right because
+[05:56] usually for most of those metrics that
+[05:57] we talked about um you're you're mostly
+[06:00] caring about downfield yardage right but
+[06:02] we're going to kind of find a use case
+[06:03] where this is going to be cool and and
+[06:04] pretty important um so now you have
+[06:06] confidence estimates for X confidence
+[06:09] estimates for y but we're still working
+[06:10] with sample means right so this is the
+[06:12] sample mean of where the play is going
+[06:14] to end end up on the play and that
+[06:16] brings us to level four which is what
+[06:17] I'm going to talk about and that's um
+[06:20] multivariate still it's still endep
+[06:22] playay location but now we're talking
+[06:23] about outcome distributions we're not
+[06:25] talking about sample means we're not
+[06:27] predicting a mean well we we are
+[06:29] predicting mean but we're predicting a
+[06:30] mean and we're pred predicting more
+[06:32] right we're predicting the actual
+[06:34] downfield outcomes um so this is now a
+[06:37] distribution you can think think in the
+[06:39] basian setting like a like a posterior
+[06:42] predictive distribution right um and
+[06:44] you're saying you can now make
+[06:45] statements like I'm 95% confident that
+[06:48] the play is going to end between X and Y
+[06:50] yard line right we still get expected
+[06:53] end of plays but now we can make
+[06:54] statements about exactly the probability
+[06:57] that if I take an area on the field
+[06:58] what's the probability the play ends
+[07:00] between this area right um and we're
+[07:02] still going to do confidence estimation
+[07:04] because I already emphasized that I
+[07:05] think it's really important um in all of
+[07:07] sports analytics but in this case
+[07:09] especially when we're working with um
+[07:11] limited data um but how are we going to
+[07:14] model this and that's what I'm going to
+[07:15] talk a little bit more
+[07:16] about um so I want to mention some past
+[07:19] work so in the in the 2020 Big Data Bowl
+[07:21] the it was actually um a metric based
+[07:24] Big Data bow where they had a
+[07:25] leaderboard and that sort of thing um
+[07:28] based on your um it was some sort of
+[07:31] loss metric it was continuous rank
+[07:32] probability score and they had people
+[07:34] predict essentially end of play for
+[07:37] rushers on Rush Plays and credit to
+[07:40] nextg Stats Philip singer and Demitri
+[07:42] Gord they came up with this
+[07:43] convolutional architecture where they
+[07:45] took some input features and they made
+[07:48] um a cool set of movement features and
+[07:51] they fed them through a series of
+[07:52] convolutional networks and what they
+[07:54] essentially got out was a distribution
+[07:55] like I'm talking about um it was
+[07:57] discreet meaning it was kind of a multi
+[07:59] variant distribution um where you have
+[08:02] basically a probability that um you the
+[08:06] end of play is at the negative 20 yard
+[08:08] line so on and so forth all the way up
+[08:10] to 50 right so it's very high
+[08:12] dimensional but they ended up winning
+[08:13] the competition and there's some pros
+[08:15] and cons to what they did right um the
+[08:17] pros some of the pros being um it's a
+[08:19] distributional estimate so we're to that
+[08:21] level four level um there are no
+[08:23] distributional assumptions in terms of
+[08:26] what type of distribution is this it's a
+[08:27] neural net that's essentially just out
+[08:29] logits in a nonlinear way um and
+[08:32] generally it has a great accuracy in
+[08:33] terms of the the score that they used in
+[08:35] the competition um but I'm going to
+[08:37] point out a couple cons um not that this
+[08:39] is a bad model at all it's probably
+[08:40] better than I could do in terms of
+[08:41] predictive accuracy right um but um it's
+[08:44] downfield only um it doesn't have
+[08:47] confidence estimation and the last one
+[08:49] I'm going to talk a little bit more
+[08:50] about um and that's the fact that it may
+[08:52] struggle with multimodality and what do
+[08:54] I mean by that so the way that I see the
+[08:57] football tackle is by definition
+[09:00] multimodal and what that means is every
+[09:04] especially on Breakaway plays each
+[09:07] tackle attempt is successful or if it's
+[09:09] not right and if it's successful then
+[09:11] the tackle is going to occur for the
+[09:12] mean of that tackle with some variance
+[09:15] dependent on yards after contact right
+[09:17] and if it's failed then another tackle
+[09:19] is going to be successful down the field
+[09:20] or score score a touchdown right and
+[09:23] it's going to have some other mean and
+[09:25] some other variance dependent on a
+[09:26] different yards after contact so that's
+[09:28] kind of shown this in this image right
+[09:30] here you see the ball carrier has a
+[09:32] chance to be tackled in that first
+[09:33] distribution let's say it's 60% chance
+[09:35] with some variance around that mean but
+[09:37] if he breaks that tackle and continues
+[09:39] down the field then it's going to be
+[09:41] some other distribution and so on and so
+[09:43] forth right um and it's not really just
+[09:45] going to be a continuous decline like we
+[09:48] see here right this looks pretty normal
+[09:51] there's a peak and then it's a
+[09:52] continuous decline but that's not really
+[09:54] the way intuitively the tackle process
+[09:56] works right um even though
+[09:59] obviously it's it's a fantastic model
+[10:01] for accuracy um so let's summarize the
+[10:04] general goal here we want to estimate a
+[10:06] multimodal distribution of end of playay
+[10:08] outcomes based on current player
+[10:09] movement and position and there's a
+[10:11] couple hurdles we have to jump over in
+[10:14] terms of our data science process for us
+[10:15] to do that we obviously have to estimate
+[10:17] distributions as multimodal we have to
+[10:19] generate input features that capture
+[10:21] signal and spatial signal um and
+[10:24] modeling must take in features um we
+[10:26] have to have a model that take in the
+[10:27] features that we design obviously
+[10:29] and we still need to account for that
+[10:31] sampling error that I emphasized earlier
+[10:33] so how are we going to do that um
+[10:34] conceptual Solutions and modeling um so
+[10:37] that brings us to our first solution
+[10:39] which is um a solution for the
+[10:41] multimodal data and that's the mixture
+[10:42] distribution and if you haven't seen
+[10:44] this before uh the formula can look
+[10:46] scary but it's really not so I've kind
+[10:48] of broken it down here so the function
+[10:50] on the right side is just the density of
+[10:51] end of play right and all we're saying
+[10:55] is that our density is going to be a
+[10:56] mixture of K normal distributions and
+[10:59] will we cross validate K right um with
+[11:02] each distribution having some weight um
+[11:05] PI right or P it should be PK um meaning
+[11:10] what's the probability that this
+[11:11] particular tackle attempt is successful
+[11:13] and we're going to assume our distribu
+[11:15] each of our distributions is normal for
+[11:16] Simplicity and then for each normal
+[11:18] distribution we're we're we're going to
+[11:21] um basically estimate a point estimate
+[11:23] for the mean in The X Direction the y
+[11:25] direction and then perspective variances
+[11:28] for the X Direction and Y Direction two
+[11:30] um so we're going to get a coari matrix
+[11:31] we're going to assume the co-variances
+[11:33] are zero also for Simplicity because we
+[11:35] have limited data and it's going to turn
+[11:36] out to look something like that right
+[11:38] that we're basically just estimating
+[11:40] these means these variances and the
+[11:42] probabilities of these distributions
+[11:43] which are also shown
+[11:45] there um so in order to do that we need
+[11:48] to just uh generate some sort of spatial
+[11:50] input right just like um the winners of
+[11:52] the 2020 Big Data B did so I made these
+[11:55] things I like to call movement Maps so
+[11:57] they basically just represent their
+[11:58] matrices of offensive position defensive
+[12:01] position um just different velocities
+[12:03] different accelerations and it basically
+[12:06] turns into what I like to call an eight
+[12:08] channel image so there's eight channels
+[12:10] here representing these these different
+[12:11] things and we can feed this into some
+[12:13] sort of model or we want to feed this
+[12:15] into some sort of model to capture the
+[12:16] variance that I'm talking about and
+[12:18] predict these parameters of that mixture
+[12:20] distribution we talked about so how are
+[12:21] we going to do
+[12:23] that okay gets a little complicated here
+[12:25] but I'm going to break it down um so in
+[12:27] order to do that there's something
+[12:28] called deep convolutional mixture
+[12:30] density networks and their ways of
+[12:32] estimating mixture distributions um in a
+[12:34] nonlinear way from some input in this
+[12:38] case image input right so we're going to
+[12:40] take our movement feature maps and we're
+[12:41] going to run it through an autoencoder
+[12:43] and if you've never heard that word
+[12:44] before the way I like to think about it
+[12:47] is we're basically taking a bunch of
+[12:48] information and we're reducing the
+[12:50] dimensionality to keep um to keep
+[12:53] basically signal there uh you can kind
+[12:56] of think of it as a very nonlinear
+[12:59] um like principal component analysis
+[13:01] right um so that's the the purple
+[13:03] segment there and we basically get this
+[13:05] Vector that's an auto encoded version of
+[13:07] our
+[13:09] movement and we take that vector and we
+[13:11] run it through three different neural
+[13:12] Nets and that sounds crazy but it's not
+[13:14] as crazy as it sounds um to get three
+[13:16] different things and these are just the
+[13:18] parameters that we already talked about
+[13:20] and we can talk about them in a way
+[13:21] that's not super mathy and really simple
+[13:23] right so we're estimating our our means
+[13:25] our M uh which just means where the
+[13:28] distributional center for each possible
+[13:30] tackle attempt and we're going to do
+[13:31] that for each of the K distributions um
+[13:34] and then we're going to do the same
+[13:35] thing for coari matrices what's the
+[13:37] standard deviation for each possible
+[13:39] tackle attempt I.E yards after contact
+[13:42] and then finally what's the probability
+[13:44] of each tackle attempt being successful
+[13:45] that's just the mixture um in our
+[13:48] basically the p in our um in our mixture
+[13:51] distribution and this perfectly fits
+[13:53] into all the parameters of that mixture
+[13:54] distribution right um and what we get in
+[13:58] return oh well one more step sorry um
+[14:00] there's one more hurdle right which is
+[14:01] we still need to um estimate uncertainty
+[14:05] and the way we do that is the same way
+[14:07] we would for any other um Point estimate
+[14:10] like our level one or level two model
+[14:12] right we're just going to we're just
+[14:13] going to um Ensemble model or use
+[14:15] bootstrapping and we're going to fit
+[14:17] maybe 10 of these models right and we're
+[14:20] GNA um basically samp resample our data
+[14:22] for each of the models um so we have
+[14:25] let's say 12,000 plays with 30 uh frames
+[14:27] per play we just sample one frame per
+[14:29] play and feed all of those models into
+[14:33] um basically different reinitialized
+[14:35] versions of What I Call tackle net which
+[14:37] is that that model on the last slide and
+[14:40] what we get in return is 10 different
+[14:42] estimates right of end of play
+[14:44] distribution so that's what that um kind
+[14:46] of the red heat map is there um just
+[14:49] bootstrapped versions of a density
+[14:50] estimation and what we get into return
+[14:52] is on the right which is basically a
+[14:56] distribution with confidence which is
+[14:58] the shadow
+[14:59] o over the course of the entire field in
+[15:01] the X and Y direction of basically the
+[15:03] density of where the end of play is
+[15:05] going to occur and we can kind of
+[15:07] visualize this for an example here so
+[15:09] here's saquan making a breakaway tackle
+[15:12] right this is a great example of why
+[15:15] multimodality is really important here
+[15:17] when he breaks that first tackle there's
+[15:19] no chance he's going to get tackled for
+[15:21] that entire mid segment Until the End
+[15:23] right and you can see um you can see
+[15:25] that in the plot here there's a chance
+[15:26] at the very beginning he gets tackled
+[15:28] right there but if he doesn't it already
+[15:29] knows that he's almost going for a
+[15:31] touchdown at the very least right and
+[15:33] that's something that you you're not
+[15:34] going to capture without that mixture
+[15:36] distribution um that's not always the
+[15:38] case so I have another example here um
+[15:41] here's a case where it's not super
+[15:43] multimodal right and that's why those
+[15:45] mixture distri the mixture parameter so
+[15:47] important sometimes your mixture
+[15:49] parameter for one of your distributions
+[15:51] is almost one meaning that you don't
+[15:53] have a mixture and that's still a
+[15:55] possibility here right like we're not
+[15:56] saying that it has to be multimodal
+[15:58] we're saying that we're giving our model
+[16:00] a chance to estimate multimodality right
+[16:03] um so this is another example where
+[16:05] maybe multimodality isn't necessary and
+[16:07] those other models might perform just as
+[16:10] well um so what's the applications why
+[16:13] are we estimating lateral field why do
+[16:15] we need to do this is there any real use
+[16:17] case for this right um and there is and
+[16:20] the point is to make metrics and I feel
+[16:22] like that's why we build models for most
+[16:23] things so um I made a metric it's called
+[16:25] percent field influence and the way I
+[16:27] did it is I took a spatial basically you
+[16:29] take a density estimation with a player
+[16:32] um so that the one on the left is
+[16:33] basically a basic density and then I did
+[16:37] the same thing but I removed the
+[16:38] defensive player and then I subtract the
+[16:41] matrices of probabilities um to get what
+[16:43] I like to call a contribution map and
+[16:46] all that is is where is a particular
+[16:48] player by removal affecting um where the
+[16:51] end of play is going to occur so the red
+[16:54] section is where that player is
+[16:55] increasing the probability of end of
+[16:57] play and the blue section is where he's
+[16:59] decreasing the end of play so in this
+[17:01] case the play is going toward the
+[17:03] direction of like away from you so he's
+[17:06] basically preventing yardage you can see
+[17:07] the blue section is in the end zone
+[17:10] basically so he's he's probably going to
+[17:12] have a high expected yardage saved um so
+[17:15] and then percent field influence is just
+[17:18] the percentage of field area that um a
+[17:20] defender's inclusion in density
+[17:21] estimation influences so that doesn't
+[17:23] mean it's positive influence it could be
+[17:25] negative influence as well um and the
+[17:27] point is that it's supposed to capture
+[17:28] something different than expected yard
+[17:30] saved expected yard saved is where is is
+[17:33] is your influence good or bad this is is
+[17:35] your influence strong right um and to
+[17:38] make that point um and kind of
+[17:41] annotation
+[17:42] request um I'm going to decline The
+[17:44] annotation request um but what's the
+[17:48] relevance to this to tackling we said
+[17:50] the Big Data B was tackling um the point
+[17:53] is that expected yard saved and uh
+[17:55] percent field influence capture
+[17:57] different variability right so if you
+[17:59] put both of these metrics in a model
+[18:02] that predict whether a player is going
+[18:04] to be involved in a tackle they're both
+[18:06] independently significant and we can say
+[18:08] the odds of tackle involvement increase
+[18:09] by
+[18:10] 243 for each expected yard prevented
+[18:13] which is a metric we've had for a long
+[18:14] time right but in addition to that the
+[18:16] odds of tackle involvement increase by
+[18:18] 6% for each percentage of field
+[18:20] influenced and 1% of the field is about
+[18:22] 60 square yards so you can basically say
+[18:25] that for every 60 square yards um if you
+[18:28] assume linearity then your odds are
+[18:30] going to increase linearity of the log
+[18:32] Gods um your odds are going to increase
+[18:34] by 6% of achieve or being involved in a
+[18:37] tackle right so independent variability
+[18:39] for expected yard saved and um percent
+[18:42] field influence um and I have just two
+[18:44] more examples where you can kind of
+[18:46] visualize this if the key will
+[18:51] work
+[18:53] maybe cool okay so here's just two
+[18:55] examples um so on the left is just the
+[18:58] basic distributional prediction of the
+[19:00] end of play this play is going toward
+[19:01] the end zone ball carriers in red you
+[19:04] can see the mixture density that's
+[19:06] estimated for this particular frame and
+[19:08] then I put two Defenders here that are
+[19:10] closest to the ball and along with their
+[19:13] expected yard saved and their percent
+[19:15] field influence you see that the
+[19:16] defender on the left Edmonds they're
+[19:18] both preventing um preventing the
+[19:21] chances of a touchdown so they have both
+[19:22] have positive expected yards saved by
+[19:24] removal um but you can see Edmonds is
+[19:27] massively decreasing the probability of
+[19:29] a touchdown and you can see that
+[19:30] visually in terms of the X and the y
+[19:32] direction from that blue area that he's
+[19:34] massively decreasing In The End Zone um
+[19:36] Jones is is not doing quite as much um
+[19:39] but you can kind of see how both
+[19:41] expected yard saved and percent field
+[19:44] influence are Vis visibly kind of
+[19:47] different and also capture different
+[19:49] types of variability right um I have
+[19:52] this one more example it's it's pretty
+[19:54] similar to the last one um I just kind
+[19:56] of included it to have more more content
+[19:58] and to like kind of show off what what
+[20:01] is kind of the point of every bit of
+[20:03] math that I just talked about um but I'm
+[20:06] going to leave this up while I take
+[20:07] questions so that um everybody can look
+[20:09] at it um but thank you guys so much for
+[20:12] listening um I'm Nick and I forgot to
+[20:15] put contact information on here so if
+[20:17] you want my contact information then
+[20:19] just ask so yeah thank you guys does
+[20:22] this work I'll walk around with the
+[20:24] microphone for questions I'm not giving
+[20:27] you the mic does anyone else have a
+[20:29] question does anyone have a
+[20:32] question okay um I have a question about
+[20:35] the uh the bootstrap so you just
+[20:40] randomly sample like a frame at the
+[20:44] frame level basically right like do you
+[20:47] have any concerns about that like with
+[20:50] something like sampling at the play
+[20:51] level or even the drive level be more
+[20:55] reasonable cuz feel like with just
+[20:57] sampling frames sampling well the reason
+[21:00] why I sampled frames is because in my
+[21:03] mind each frame in a play is um
+[21:07] dependent right so for my neural net I
+[21:09] want independent observations um and if
+[21:12] I'm sampling multiple frames from the
+[21:14] same play then I'm going to have a lot
+[21:16] of dependence in my observations which
+[21:18] is somewhat of a assumption killer um
+[21:22] but yes you probably could U make
+[21:24] bootstrapping potentially better by
+[21:26] having more plays and having the
+[21:27] autonomy to um be able to do that um
+[21:30] again I also want to emphasize going
+[21:32] along with that question that
+[21:33] uncertainty for a lot of these
+[21:35] predictions is massive and the reason
+[21:37] why is this is a big model right and I'm
+[21:38] using big data B data which is again
+[21:40] 12,000 plays um in this particular case
+[21:44] um so this is a big model and the idea
+[21:47] is that you could run this with a lot
+[21:48] more data and it would be your your
+[21:51] estimation would be a lot more precise
+[21:53] your um confidence intervals would be a
+[21:56] lot smaller um but that's kind of the
+[21:58] point of why we estimate confidence
+[22:00] right I could just throw this up on the
+[22:01] board and be like here's my density um
+[22:04] but really in a lot of cases and you can
+[22:05] see it right here the density is super
+[22:07] variable and because we're working with
+[22:09] a limited sample size even though 12,000
+[22:11] sounds massive it's really not not that
+[22:13] big right does anyone else have any
+[22:15] other
+[22:17] questions I'm gonna ask I'm gonna ask
+[22:18] one
+[22:20] then no questions
+[22:23] I um you showed the multivariant normal
+[22:26] distribution with zero on the coari MH
+[22:29] did you um is that an assumption you
+[22:32] made or it's definitely an assumption so
+[22:34] you never you never checked to see I'm I
+[22:36] I wonder I was wondering if you could
+[22:38] talk about like what would the
+[22:41] Practical implications be of including a
+[22:44] covariant structure here and do you
+[22:46] think yeah so I tried what it would look
+[22:48] like or did did you try it at all and
+[22:50] just too much computation I tried it so
+[22:52] I decided at the end it wasn't it wasn't
+[22:54] necessarily worth it um because it's a
+[22:56] lot more parameters you're thinking
+[22:58] let's say I select if I allow K to be up
+[23:01] to 10 so which is really high I don't
+[23:03] think I let it be that high let's say
+[23:04] even five right if I include two more
+[23:07] parameters per mixture that's another 10
+[23:10] parameters I have to estimate right yeah
+[23:12] um and this is a massive model with a
+[23:14] obviously a ton of parameters here so
+[23:17] it's not just 10 more parameters it's a
+[23:20] bunch more layers with a bunch more
+[23:21] information right um ideally if you had
+[23:23] more data you would do that but to
+[23:25] answer your what would that look like
+[23:28] know if it would actually add that much
+[23:29] to the model yeah right I don't know so
+[23:31] I I did do it and basically what it does
+[23:34] is instead of having you can instead of
+[23:36] having just vertically if I drew on
+[23:38] these distributions a vertical line and
+[23:40] then a horizontal line they would be
+[23:42] perfectly like this right but it it
+[23:44] would basically allow me to take these
+[23:46] distributions and shift them on a
+[23:47] diagonal right is is how that would look
+[23:50] which I think is more realistic like I
+[23:52] can imagine there being a correlation
+[23:54] between like you get further down the
+[23:56] field you're probably going to be
+[23:57] further to the to the on average it'll
+[23:59] be further towards the lines because
+[24:00] you're going to go away from stuff but
+[24:01] I'm not sure it makes I'm not sure it
+[24:03] would add enough to yeah make it all
+[24:05] that in our limited data situation I
+[24:07] would say I I'm hesitant to do it if I
+[24:09] had more I would but the other thing is
+[24:11] like there's plenty of assumptions here
+[24:13] that you can be play you can play with
+[24:14] right like um and if I had more data I
+[24:17] would for example I don't necessarily
+[24:19] think that the mixture should be normal
+[24:21] it's just kind of a it's kind of a
+[24:23] simple uh way to kind of implement it
+[24:25] for the first time but really if the
+[24:27] tackle mean here then there's probably
+[24:30] more of a of a like a like a flashlight
+[24:33] type distribution from that sample mean
+[24:36] right it's probably skewed so there's a
+[24:37] lot of assumptions here for sure that if
+[24:40] I had more data I would love to try new
+[24:42] things with um but I will say that um I
+[24:45] don't have that luxury right um so we'll
+[24:48] talk to Mike Lopez we'll see what yeah
+[24:50] I'll I'll send him an angry email and
+[24:51] see how that goes um we'll tweet at him
+[24:54] yeah okay sounds good but but yeah
+[24:59] we're go we're going to Mike Lopez's
+[25:01] house where does he live con he lives in
+[25:02] Connecticut that's pitchforks or yeah
+[25:05] yeah with some pitchforks I have another
+[25:07] question if no one else has any I'm just
+[25:08] going to keep asking questions
+[25:18] until I can hear
+[25:26] yeah yeah maybe like something laian or
+[25:29] something like that there was actually
+[25:31] in the lineman Big Data Bard there was a
+[25:34] submission where somebody used a
+[25:35] distribution that was was it the Dorito
+[25:38] distribution that they called it I can't
+[25:40] remember but it basically looked like a
+[25:41] Dorito like it was it was like the mean
+[25:44] was here and then it was like some gamma
+[25:47] normal distribution basically the idea
+[25:48] is I mean who cares what the
+[25:50] distribution is the point is that the
+[25:52] first point of contact you shouldn't
+[25:54] have an equal likelihood of going
+[25:55] backwards as you do go forwards right so
+[25:57] that's I mean we can get mathy with it
+[26:00] but at the end of the day that's what
+[26:01] you want so you're looking for a
+[26:02] distribution that does that
+[26:04] probably I just I just have a fin what
+[26:07] um so every for every play You're
+[26:10] estimate you're not estimating a single
+[26:11] K you're estimating a k for every
+[26:12] different play uh or is there so there's
+[26:15] a set K that you cross validate right
+[26:17] well what is the value of K that you end
+[26:19] up with so I cross I cross validated it
+[26:21] to be so I initially cross validated it
+[26:24] to be pretty high but um I limited it to
+[26:26] a Max of five mhm because obviously the
+[26:30] more mixtures the more parameters um but
+[26:33] the the one thing I do want to emphasize
+[26:34] and that was the point of those examples
+[26:36] is that just because you have five
+[26:37] distributions doesn't mean you're using
+[26:39] five distributions it just means for for
+[26:41] any given play you have the chance to
+[26:44] estimate five distributions but for
+[26:46] another play four of them the the
+[26:48] mixture values there the weight
+[26:50] distributions of K could be zero meaning
+[26:52] that those tackles are basically
+[26:55] completely impossible to happen but in
+[26:57] Cross validation you chose a value of K
+[27:00] what was that value that ended up five
+[27:01] it was five okay okay I think it it did
+[27:03] cross valid validate to be uh higher a
+[27:06] couple times but I limited it to five oh
+[27:08] so five is just five is not what the
+[27:10] cross validation told you it was you cut
+[27:12] it off because computationally you
+[27:13] didn't want to fit 10 I think I did
+[27:15] maybe one through 10 and it might have
+[27:17] selected seven and I said five and you
+[27:19] were just like okay okay and there was
+[27:20] like probably not much of a difference
+[27:21] between five and seven because most of
+[27:23] these are going to be exactly I would
+[27:24] imagine most of them are unimodal or
+[27:27] bodal at most yeah it would have been
+[27:29] sacrificing uh okay we got move it would
+[27:31] have been we're getting yed at
+[27:33] sacrificing bias for variance is what
+[27:35] you would have been doing by estimating
+[27:37] more parameters is what I would say but
+[27:39] yep
+[27:44] anyway after I finished all this coding
+[27:47] I didn't consider anything else I I
+[27:48] threw the code in my backpack and called
+[27:50] it a day but maybe next time that's a
+[27:53] it's a good idea though you should you
+[27:54] should look at that all right sorry all
+[27:56] right we're getting yelled at we're
+[27:57] getting yelled it's time to move on
+[27:59] who's I don't know my phone's dead who's
+[28:01] next next Smith's next okay uh Smith our
+[28:05] next speaker is uh Smith bage is that
+[28:07] right um and you are I'm gonna say an
+[28:11] undergraduate at
+[28:15] um Duke NC State is it South is it South
+[28:19] is it down there Wake Forest Northeast
+[28:21] oh not even close um NYU of course
+[28:25] obviously NYU uh this is Joint work your
+[28:28] your partner is in London right now
+[28:31] living he's living the dream living the
+[28:33] high life in London he couldn't be here
+[28:35] so you're stuck in stores instead not
+[28:37] that nothing's nothing wrong with stores
+[28:39] but stores is great you have to live
+[28:41] here you know whatever I was here for
+[28:42] four years um there anything else you
+[28:44] want me to say about you before you all
+[28:46] right Smitha Josh is gonna talk about we
+[28:47] need to get your slides up don't we yeah
+[28:49] I think we
+[28:50] can we can get them
+[28:55] up which one to do this no you're not
+[28:58] tackles is it
+[29:01] f11 control F control
+[29:04] L the presentation thing all right go
+[29:07] SMI is GNA talk about spatial Edge
+[29:09] technique a framework to evaluate Edge
+[29:11] sets please welcome Smith
+[29:19] bage it's fine it's fine it's fine thank
+[29:21] you all right hi guys um thank you for
+[29:24] the uh incredible introduction Gregory
+[29:26] I'm SMI undergrad at NYU and today we're
+[29:29] going to be talking about set it's a
+[29:31] metric to evaluate Edge Setters
+[29:33] curiosity how many of you are familiar
+[29:35] with the concept of edge setting or
+[29:36] setting the edge in football okay so
+[29:39] just about just about half more than
+[29:41] half that's good so we're going to watch
+[29:42] some football and kind of discuss what
+[29:44] this process is like so the first play
+[29:49] here if the GIF will
+[29:51] load which I'm wor it might not okay I'm
+[29:55] going to walk through this just with a
+[29:57] still image so so you can see where the
+[29:59] cursor is at right now this player is
+[30:01] Dar Holmes he's the edge Setter on this
+[30:04] play uh right here's running back Travis
+[30:06] etn He makes his way over to the left
+[30:08] side and so the defensive back in this
+[30:10] in this position his goal is to restrict
+[30:13] access towards the outside part of the
+[30:15] field because you can see just off the
+[30:17] pre- snap distribution in the middle is
+[30:19] where all the linebackers and interior
+[30:21] defensive lineman are on the outside is
+[30:23] accessing space that's open space that
+[30:25] you want to get to so the job of a Dar
+[30:27] homes
+[30:28] um in this scenario is to restrict
+[30:31] access to the outside space you can see
+[30:33] at the top of the screen it did not
+[30:35] happen Travis etn ran for a 40 49 yard
+[30:38] run um and the next example I'm going to
+[30:40] show was the opposite where Aiden
+[30:43] Hutchinson of course I wish we had the J
+[30:44] F but Aiden Hutchinson kind of stormed
+[30:47] through the defensive line uh restricted
+[30:48] Tony PD from going to his end for some
+[30:51] numbers on it uh changed Tony Po's
+[30:53] Direction by 50° and he decreased his
+[30:55] acceleration by 25% so we saw him like
+[30:59] shuffled his feet stopped and then went
+[31:01] to the left side ultimately losing one
+[31:03] yard these two plays were very different
+[31:05] the one thing I'd like to point out is
+[31:07] in neither of these examples Aiden
+[31:09] Hutchinson doesn't appear in the uh in
+[31:11] the description here and darn Holmes is
+[31:14] name doesn't appear here but they were
+[31:15] very pivotable pivotal um players to
+[31:18] this end result and so this highlights a
+[31:22] broader result a broader disconnect
+[31:24] between the film room and the
+[31:25] spreadsheets where basically they told
+[31:27] different stories on the spreadsheets on
+[31:29] the one hand Deshawn Elliot got credit
+[31:31] for a tackle for loss and he can go to
+[31:33] contract negotiations and say he got
+[31:35] this credit for tackle for loss when in
+[31:37] reality Aiden Hutchinson was the one who
+[31:39] impacted the play in the first place and
+[31:41] then in this example darne Holmes kind
+[31:42] of gets out unscathed when he was the
+[31:44] one who made the mistake it was a 49
+[31:46] yard run um but that discredit doesn't
+[31:48] get come back to him now you can watch
+[31:50] film um and if it was loading you could
+[31:52] see like and manually attribute or
+[31:54] distribute credit accordingly but one
+[31:57] this process is very labor intensive it
+[31:59] requires hundreds and hundreds of manual
+[32:00] film watching that may be but may be put
+[32:03] to better use and two it's
+[32:05] non-quantifiable so you can't compare
+[32:08] across different teams and see which
+[32:10] players are better or worse at this
+[32:12] specific um this specific task so our
+[32:15] solution was to quantify off ball
+[32:17] contributions and more specifically we
+[32:19] wanted to see okay how well does a
+[32:21] player set the edge how well do they
+[32:23] restrict the running back from getting
+[32:25] to their intended destination on the
+[32:27] outside third of the
+[32:29] field and so we started thinking about
+[32:32] it as a film evaluator might we asked
+[32:34] two questions the first of which is how
+[32:36] well did the edge Setter actually get
+[32:37] into
+[32:38] position and then how well or did the
+[32:40] runner change direction to the inside
+[32:42] because ultimately that's your goal here
+[32:43] you don't want the running back to get
+[32:45] outside of you you want to force them
+[32:46] back inside to where all that traffic
+[32:48] and congestion ultimately is and so we
+[32:51] thought it we watched film on it we
+[32:52] thought about it logically and then we
+[32:54] kind of moved towards um we moved
+[32:56] towards the math so this is a voro
+[32:59] region and you can basically think of
+[33:00] this as what space does a player
+[33:02] currently control in at a certain frame
+[33:04] and time and so this example was Dar
+[33:08] Holmes who was highlighted in red and so
+[33:10] you could
+[33:11] see I really wish we had the moveing J
+[33:14] really wish we had it um but you can see
+[33:17] as Travis etn turn the corner uh this
+[33:20] voro region kind of grew to the size of
+[33:23] what's on the bottom here and then
+[33:25] shrunk to being very little so basically
+[33:27] we use this as kind of a method of um of
+[33:29] describing how much space does the Ed
+[33:31] Setter currently
+[33:32] control this is a 2d gausin
+[33:35] distribution you can kind of think of it
+[33:37] as like a highlighter for valuing space
+[33:40] so this is a Runners you take their
+[33:42] speed and direction and you project out
+[33:45] where they want to be five frames in the
+[33:47] future half a second in the future so
+[33:49] because you can project where the
+[33:50] running back's intention is to be you
+[33:52] can project okay what space should the
+[33:54] edge shutter control as a
+[33:56] result and and then for us it was as
+[33:59] simple as just overlapping these two
+[34:01] basically saying okay how well did the
+[34:02] edge Setter get into position all you
+[34:04] need to do is see the overlap on display
+[34:06] so you can see for whatever reason the
+[34:07] Aiden Hutchinson score the overlap
+[34:09] percentage does increase um the GIF
+[34:12] underneath it I think it was too big of
+[34:13] a gif it's it's not loading here um but
+[34:16] in a frame by frame scenario you can see
+[34:19] these two start to converge and then
+[34:21] you're left with a percentage and that
+[34:22] percentage is ultimately answers our
+[34:24] question of how well did the edge that
+[34:25] are getting to position so Aiden Hutchin
+[34:27] reaches I think like 15% um on this
+[34:31] plan so with that first question decided
+[34:34] you can move towards a second question
+[34:35] which is did the runner change direction
+[34:37] to the inside this is more the action
+[34:39] phase of our investigation like what
+[34:40] actually happened so you can see how way
+[34:42] you're in position but now what and so
+[34:44] this middle graphic I think displays it
+[34:46] well where this red Vector is where Tony
+[34:49] PD's intended destination was when he
+[34:51] received the handoff once he saw Aiden
+[34:53] Hutchinson then he kind of veered to the
+[34:55] left and then you can calculate angle
+[34:58] change I think it was something it says
+[34:59] 32.4 de something along those lines so
+[35:02] you continually calculate okay what
+[35:04] direction uh or to what extent did the
+[35:06] runner change direction to the inside
+[35:09] and then from there you can standardize
+[35:10] this we just did a 0o to one scale
+[35:11] anything below zero means the running La
+[35:13] is going outside and you don't want that
+[35:15] so we just labeled that a zero and then
+[35:18] 90 degrees is a complete perpendicular
+[35:21] change in Direction and that's as good
+[35:22] as a one in our score um and then you
+[35:24] just normalize it so 45.5
+[35:27] UH 60 would be 66 etc
+[35:31] etc this one's loading cool okay so to
+[35:35] get our final score you take the overlap
+[35:38] percentage that we discussed and now you
+[35:40] can kind of see it in a more frame by
+[35:41] frame scenario you take the standardized
+[35:43] angle you add it up for Simplicity we
+[35:46] just added it up and then you get a
+[35:47] final cumulative set score and I'll let
+[35:50] this run because I think it displays
+[35:51] kind of our step-by-step thinking but
+[35:54] this is an example of looking at this in
+[35:56] the film room thinking about how to
+[35:58] solve it using numbers and then getting
+[36:00] to getting to a number basically because
+[36:02] once you get to this number we just ran
+[36:04] basically this iteration through every
+[36:05] single player that qualified for this
+[36:07] and you get a ranking um of the top
+[36:10] players for this and so this passes a
+[36:13] sniffs test because you can see Josh
+[36:14] sweat is at top he's like a 65 like 250
+[36:18] run stopper and the guys on the left
+[36:20] generally fit that M right Aiden
+[36:22] Hutchinson's there montz sweat's there
+[36:24] these are generally run Stoppers as
+[36:26] opposed to maybe premier pass rushers
+[36:28] they're still good pass rushers but um
+[36:30] it fit the sniff sniff test there and
+[36:33] then on the right side is more binary
+[36:34] this is kind of easy to understand where
+[36:35] it's like Brian Burns 86% of the time
+[36:38] set the edge successfully so this is a
+[36:40] one or a zero and if we go back to the
+[36:42] process of this it's did the Ed Setter
+[36:46] have influence or have overlap and then
+[36:50] did they force the runner to the inside
+[36:52] so you don't calculate the extent to
+[36:53] which they did perhaps so someone like
+[36:55] an Aiden Hutchinson when he forced Tony
+[36:57] significantly towards the inside we get
+[36:59] a better score um but it calculates just
+[37:03] kind of a binary success score and then
+[37:05] this is set GPT that we made before the
+[37:08] combine for fun so you could throw into
+[37:10] it and ask hey I'm game planning for the
+[37:12] Broncos what should I do it says to
+[37:14] Target Bradley chub and if the GIF would
+[37:17] run which it won't and Travis etn got
+[37:20] another like 50 yard run here which you
+[37:21] wouldn't expect Bradley chub is a
+[37:23] decently good Edge Defender um and yeah
+[37:26] this was this was was fun um but that
+[37:29] about concludes what I'm going to be
+[37:31] talking like what I talked about for the
+[37:32] project again I apologize for the gifs I
+[37:35] think it would have been a lot more
+[37:36] intuitive with the gifs but um feel free
+[37:39] to talk to me afterwards or anything
+[37:41] about about the project as well but I
+[37:42] did want to get
+[37:44] into a more personal side of it which is
+[37:47] lessons from the Big Data B and just
+[37:48] kind of general like learnings because
+[37:50] it was a very like transformative
+[37:52] process from start to finish and I think
+[37:53] there's a lot of kind of takeaways and
+[37:55] I'm sure you two can talk about it as
+[37:56] well um
+[38:01] um Ronald
+[38:05] yes yeah I just had a
+[38:10] question hello hello Ronald hello can
+[38:14] you hear me yes I just had a question
+[38:17] yep well through through your research
+[38:19] what do you see as like the big picture
+[38:21] outcome for This research like the the
+[38:24] Practical um application this would this
+[38:26] be something for the just fantasy
+[38:28] players trying to figure out who they
+[38:29] should put on their team or the roster
+[38:31] for the week or it be something that
+[38:33] like a team would use to overlook
+[38:35] highlights when they're preparing for
+[38:36] the next game or would this be something
+[38:37] that opponent would look at to see how
+[38:40] to better defend it's a good question I
+[38:42] think this is probably one of the best
+[38:45] applications you're going to have if if
+[38:46] you're struggling on run defense because
+[38:48] you notice that you know your
+[38:50] quarterback are getting exposed too
+[38:51] often play after play you're going to
+[38:53] want a a more quality Edge Setter you
+[38:55] can find some value within this
+[38:58] um where Chris Wormley for example isn't
+[39:00] going to be super super expensive and he
+[39:02] might improve your run game um or your
+[39:04] run defense more than your your
+[39:06] replaceable uh person so I think it's on
+[39:09] the team side for the most part I think
+[39:10] game planning as well this was obviously
+[39:12] like a tried example using GPT but I
+[39:15] think the concept remains where Bradley
+[39:17] chub was surprisingly like 110th out of
+[39:20] all Edge Setters and and you could see
+[39:22] why when you look at the next week okay
+[39:23] like what was happening he kind of shot
+[39:25] inside in this play so I think for those
+[39:27] two things I think it's definitely team
+[39:29] side I don't think it's consumer side
+[39:30] but it's it's recognizing holes in
+[39:32] opposing teams run defense and then from
+[39:34] there um maybe you want to make some
+[39:36] value ads in in free
+[39:38] agency is that answer your
+[39:43] question I'll take your silence as a yes
+[39:46] yeah okay so I'll move on to the to the
+[39:48] more um personal lessons here and I'll
+[39:51] start with a story I I told you I'm from
+[39:54] the Northeast grew up outside of
+[39:56] Philadelphia go Birds um
+[39:58] and uh about two years ago there's a
+[40:01] conference Wen Sports business
+[40:03] conference um I'm I told you originally
+[40:06] from outside of Philadelphia go to
+[40:08] school at NYU so I figured why not take
+[40:10] the train over um about an hour and a
+[40:12] half train get there at like 9 9:30 and
+[40:16] settle in and then this man Mark lazri
+[40:19] anyone familiar with Mark lazri thr fans
+[40:22] nice so one person I wasn't either but
+[40:25] apparently he was the co-owner of the
+[40:26] Milwaukee box and more more and more I
+[40:27] looked into him um CEO of Avenue Capital
+[40:30] Group which is a head hedge fund that
+[40:32] buys distressed debt and so he was the
+[40:35] kind of keynote speaker here and more
+[40:37] and more I looked into him the more
+[40:38] interested I was it's not every day you
+[40:40] can kind of have a somewhat personal
+[40:42] conversation with a guy whose net worth
+[40:43] is like $2 billion dollar and owns and
+[40:45] runs a basketball team and so the
+[40:49] conversation went well at the end he
+[40:51] asked if there are any questions and
+[40:52] raise my hand um I I thought the
+[40:54] conversation was really insightful so
+[40:56] raise my hand and asked like if he had
+[40:58] any lessons for someone who's kind of
+[41:00] like us like an undergrad still trying
+[41:02] to figure out what to do and kind of how
+[41:04] to approach postgraduate career and he
+[41:07] said there's two types of people in this
+[41:09] world he said there's the number
+[41:11] crunchers and the
+[41:12] storytellers and the number crunchers
+[41:15] think the storytellers are idiots as
+[41:16] maybe some of us do um because they can
+[41:20] tell a story but it's never grounded in
+[41:22] any truth it's kind of untethered from
+[41:24] any sort of reality and then he said the
+[41:26] Storyteller think the number crunchers
+[41:28] are stupid because you can run the best
+[41:30] model in the world but if you can't
+[41:31] explain the results of it then it's as
+[41:33] good as useless and he kept going on on
+[41:37] this on there was a binary distinction
+[41:39] between the number crunchers and and and
+[41:40] the
+[41:41] storytellers and afterwards he started
+[41:44] talking about professions as well like
+[41:46] they either fall into one category or
+[41:47] the other and eventually the chat uh
+[41:49] kind of ended ran out but this concept
+[41:51] kind of stuck in my head that there's
+[41:52] kind of two groups of people uh within
+[41:54] this world and I did like a little bit
+[41:56] of like a mock draft in my head the
+[41:59] lawyers go to the storytellers because
+[42:01] they talk to people around a fact
+[42:03] pattern and kind of make up a story
+[42:04] about what happen there's not often very
+[42:06] many numbers involved I'm sure there is
+[42:09] but you get the point where generally
+[42:11] they side on storytelling hedge funds
+[42:13] have moved towards a number of crunches
+[42:15] right a lot of Quant firms there's
+[42:16] billions and billions of dollars being
+[42:18] traded on a per second uh volume
+[42:20] nowadays when previously maybe that was
+[42:23] more on the Storyteller side next up I
+[42:26] guess we're doing a snake
+[42:27] um we have like software Engineers again
+[42:30] more on The Logical thinking sort of
+[42:31] side and then after that we have venture
+[42:34] capitalist again if you're investing in
+[42:36] a startup you're investing in meta
+[42:38] Airbnb whatever you're investing in a
+[42:40] story hoping that story works out and
+[42:42] you get R and so the more and more I
+[42:44] thought about it the more and more it
+[42:45] made sense where it's like you can be
+[42:47] pushed to one side or or kind of pushed
+[42:49] to the other and then this was me in the
+[42:51] middle I went
+[42:52] undrafted because I was thinking about
+[42:54] where I was in here because I liked I
+[42:56] really loved coding but I liked
+[42:59] storytelling I like to write I like to
+[43:00] kind of Express that and like in high
+[43:03] school that was a common um barometer
+[43:05] that even Lazarus said who was a lawyer
+[43:07] himself he said that if you want to
+[43:09] figure out which one you are in high
+[43:11] school was your favorite subject English
+[43:13] or was it math mine was English but I
+[43:15] really like to code I study data science
+[43:17] so where where do I fall um and
+[43:20] ultimately thinking about getting a
+[43:22] career in sports I thought about it in a
+[43:24] sport setting you have sales corporate
+[43:26] sales sponsorship sales that's more
+[43:27] storytelling right you're in the trench
+[43:29] is dealing day-to-day with people as
+[43:31] opposed to numbers and then finally
+[43:33] analytics obviously the theme of this
+[43:34] conference number crunches like that's
+[43:37] very clearly or so I thought always
+[43:39] always always on on the left hand side
+[43:41] on this pioner distinction and I think
+[43:44] the biggest takeaway from this
+[43:46] competition for me is
+[43:49] that it's more of a spectrum I'm
+[43:51] surprised that worked it's more of a
+[43:53] spectrum it's not a binary distinction
+[43:55] and analytics I think is is in the
+[43:57] middle more than anything else and I
+[43:59] have a little bit of logic I think
+[44:01] backing this up this is the kagle
+[44:04] competition from Google and two Sigma
+[44:05] more on that left hand side with number
+[44:07] crunchers the primary score or the
+[44:10] metric here that they kind of grade you
+[44:12] on is an accuracy score it's log loss
+[44:15] Brier score whatever it is but it's just
+[44:17] a very simple score um top to bottom
+[44:20] leaderboard no story behind it you
+[44:22] submit your code your jupyter notebook
+[44:24] and then kind of that's that big data B
+[44:26] is very different where I think 20% of
+[44:28] it 25% of it was your submission was the
+[44:32] 2,000w essay effectively that you submit
+[44:36] um and I think 10 to 20% was also in
+[44:39] data visz so it's not just about your
+[44:42] Jupiter notebook or what you submit in
+[44:44] Python but it's also how are you
+[44:45] expressing it right what story are you
+[44:47] telling with the
+[44:49] data I think there's three kind of Lang
+[44:53] three translations you have to make
+[44:55] versus if you're submitting in a Google
+[44:57] or two Sigma competition it's all just
+[44:59] your code again you submit your duper in
+[45:01] a notebook you call it a day hope to get
+[45:02] the best accuracy score and then move on
+[45:05] but here you have to translate it to
+[45:06] English because you have to think about
+[45:07] it in that kind of logical way and then
+[45:09] you have to make that one more
+[45:10] translation which I think is pretty hard
+[45:11] is translating it to football and I put
+[45:13] a picture of Bill bich here because I
+[45:15] think he's he is pretty analytical but
+[45:18] like if you look at him you don't think
+[45:19] that at all and so it's like the bill
+[45:21] bich test test if you present this to
+[45:23] bill bich would he understand it does he
+[45:26] care about your normalization of
+[45:27] features or whatever no he just cares
+[45:28] about the output and how well you
+[45:30] communicate
+[45:32] that and I think this is an example of
+[45:36] like we did not want to present this
+[45:40] because who wants to look at that right
+[45:42] and and we can explain that and it and
+[45:44] it makes sense and this crowd I think
+[45:46] understands that more than most but you
+[45:47] want to see the pretty visualization
+[45:49] that should move on the right hand side
+[45:51] um because that's what a coach and and
+[45:53] and player and front office would would
+[45:55] really understand there's of action will
+[45:57] take away and I think I think at least
+[45:59] for me my ego gets attached to the left
+[46:02] because you want to show look this is
+[46:03] the formula I created I feel so good
+[46:04] about it but in reality you want to make
+[46:06] it look pretty um with with different
+[46:09] visualizations and things of that
+[46:11] nature here's another example and this
+[46:13] is a St immage so I can explain this one
+[46:15] a little more going back to the to the
+[46:17] Big Data Bowl as well this is the darney
+[46:19] Holmes I example I brought up in the the
+[46:21] first slide but you can see um this is
+[46:25] the formula we use it's just a shoelace
+[46:26] algorithm it's nothing too crazy but
+[46:28] again kind of looks complicated but in
+[46:30] reality it's just attributing area to a
+[46:33] certain player on the field and then
+[46:34] from there we chose voro regions for the
+[46:37] purpose of that yellow line is kind of a
+[46:40] leverage line you can see if that
+[46:42] Defender is outside leverage or inside
+[46:43] leverage and you don't really need a PhD
+[46:45] in math or anything to understand it it
+[46:47] makes a lot of intuitive sense you see
+[46:49] it where's the angle facing and then
+[46:51] from there you can determine okay what
+[46:52] kind of Leverage does this defensive
+[46:54] back have and in this case you can see
+[46:56] how much space Dar Holmes lost in the
+[47:00] frame 30 he controls all of that outside
+[47:02] space as you can see indicated by the
+[47:04] red um area and then as what we call the
+[47:07] door getting swept open when he loses
+[47:09] his his leverage um it gets overtaken by
+[47:11] the pulling offensive tackle I think it
+[47:13] was cam Robinson then etn got outside
+[47:15] and got got a 50- yard run but again uh
+[47:18] hope this displays the the purpose of
+[47:20] turning that into what's hopefully
+[47:23] actionable and
+[47:24] understandable so this is kind of how we
+[47:26] thought about it where I I played
+[47:28] football I was the guy I was darney
+[47:30] Holmes when I played I was on the
+[47:31] outside um trying to set the edge
+[47:34] because my coach said if you have to
+[47:36] make a tackle then we probably messed up
+[47:37] on the play which didn't feel too great
+[47:40] but um thought about it first in
+[47:42] football language right thought like how
+[47:44] a coach might and there was a really
+[47:46] really good video it got taken down for
+[47:48] some reason I think it was copyright
+[47:49] issues but um there was a really good
+[47:51] video where all like 32 coaches were
+[47:54] talking about this exact thing setting
+[47:56] the edge and they got really really
+[47:57] animated and excited about it and so
+[48:00] that was a good signal to where okay
+[48:01] this matters like we as fans may not
+[48:03] think it matters that much but if
+[48:04] they're getting this excited about it
+[48:06] then it likely does matter so then from
+[48:08] there it's okay we want to think about
+[48:09] setting the edge thought back to to my
+[48:11] playing days and we came up with these
+[48:13] questions are you in position and did
+[48:15] you change the angle because when you
+[48:16] watch the game those are the kind of
+[48:18] thoughts that come in your head and then
+[48:20] afterwards then we finally moved it to
+[48:22] to python or whatever language you use
+[48:25] but then you use the math and numbers to
+[48:26] kind of figure it out and then this
+[48:28] workflow worked well for us and I do
+[48:32] think it's football or baseball whatever
+[48:34] sport you want to think specific where
+[48:37] you have to think about the problem in a
+[48:38] very logical like application sense
+[48:41] first and then you can move back to to
+[48:43] using math using the numbers to kind of
+[48:45] get to a to a sound conclusion um does
+[48:48] anyone know this
+[48:51] play okay yeah just to jog your memory
+[48:53] the article title is did the officials
+[48:55] screw Eagles with questionable hoing
+[48:58] call the answer is yes and I thought
+[49:02] this was a good kind of closing slide
+[49:04] because it demonstrates the Dual nature
+[49:07] of it where the Eagles are seen as a
+[49:09] very analytically sound organization
+[49:12] they got to this point joean Herz is on
+[49:13] a rookie contract whole point being
+[49:15] there you pay him $4 million Patrick
+[49:18] Mahomes is making $50 million but
+[49:20] Patrick Mahomes is not like 12 and a
+[49:22] half times better than Joe and Herz so
+[49:23] you get some value there James Bradberry
+[49:26] good value sign he's on the screen here
+[49:28] um and throughout the season the Eagles
+[49:30] made little little moves and little
+[49:31] changes that contributed to a to a
+[49:33] Powerhouse of a season meanwhile the
+[49:35] Chiefs on the other hand lost their star
+[49:37] receiver come in with Patrick Mahomes on
+[49:39] effectively one ankle at this point um
+[49:42] but yet because of a random and
+[49:45] arbitrary decision like this on a third
+[49:47] and eight the Chiefs ended up winning
+[49:49] the Super Bowl um and and then I was
+[49:52] really sad that night but I I'd like to
+[49:55] emphasize that
+[49:57] throughout all of this like solving of
+[49:58] the game and using these numbers A
+[50:00] Moment Like This or just a very
+[50:01] arbitrary moment where just like a
+[50:03] display of of human error human Humanity
+[50:05] 50/50 you you don't really know right
+[50:07] like this thing is unsolvable and going
+[50:09] back to software engineering or or Quant
+[50:12] trading or all these other kind of
+[50:13] disciplines it's it's very solvable you
+[50:15] get to an answer you move on you're very
+[50:16] happy with it or you get to within a
+[50:18] decent confidence interval and you feel
+[50:20] good about it but here that there is no
+[50:22] model there is no kind of number that
+[50:24] could have been used to predict this
+[50:25] play happening or the Chiefs winning as
+[50:28] a result and so this I think this game
+[50:30] is very very random and I think that's
+[50:32] why like it exists in the middle between
+[50:34] the numbers and the narrative because
+[50:36] there just is an element of Randomness
+[50:38] that we can't control and I think the
+[50:40] one thing we did in this this big
+[50:42] datable kind of um process was lean into
+[50:44] that Randomness and I think that's why
+[50:47] why we did
+[50:48] well yeah that's it all right thank you
+[50:54] guys does anyone have any question
+[51:04] questions hey um I was just curious if
+[51:07] your like set um grades match similarly
+[51:11] to like the run defense grades of like
+[51:12] PFF yeah ESPN has one too run block win
+[51:16] rate it did it did I I we we ran some
+[51:19] like exact analysis to get a number but
+[51:21] qualitatively yeah like the names you
+[51:22] saw at the top of the list another group
+[51:24] did Edge setting as well and they
+[51:25] presented another
+[51:27] very shared names so that that I think
+[51:29] validated our
+[51:31] process anyone
+[51:33] else yeah I have another question yep go
+[51:37] ahead you talked about your takeaways
+[51:39] from the actual conference itself and
+[51:41] what it taught you about the the um the
+[51:45] careers and the um whole idea of sports
+[51:47] analytics as a whole do you do you think
+[51:51] that that that was something that you
+[51:53] wouldn't have um figured out it had you
+[51:56] not gone to that conference and is this
+[51:57] invaluable information to you now that
+[52:00] you as you go forward in your career
+[52:03] yeah it's a good question I think so
+[52:04] yeah I think what you learn by doing and
+[52:07] oftentimes you can like try to
+[52:08] appreciate the randomness or whatnot but
+[52:11] you you really can't um so yeah I think
+[52:14] actually getting in the weeds of a
+[52:16] project kind of helped me understand
+[52:18] that um like it this kind of sits in
+[52:20] between the numbers and the
+[52:23] narrative um my question is just kind of
+[52:26] about like backdooring blocks like how
+[52:28] you showed darn Holmes try and back door
+[52:30] it and fail but like what about players
+[52:32] like I mean anecdotally like JJ Watt
+[52:34] would back door the block and get the
+[52:35] tackle does your metric account for that
+[52:38] it it punishes it if it's not successful
+[52:40] which I think it should again this
+[52:43] example I'll go back um jeez last
+[52:47] slides this example with Bradley chub
+[52:49] exact situation I think that's why he
+[52:50] got penalized by it so much because he
+[52:52] tried to backo it maybe does play he
+[52:54] tried to backo it um and it was
+[52:56] unsuccessful Travis CN got the edge so
+[52:59] it generally is pretty harsh on it but I
+[53:00] think it should because that is going to
+[53:02] be a risk or reward type of play so does
+[53:04] it reward it when they do make those
+[53:06] tackles because then they're very
+[53:07] heavily in the influence area um or they
+[53:10] can force running back inside either or
+[53:11] and and we did a sign um I didn't get to
+[53:13] it if you did make the tackle on a play
+[53:15] where you're supposed to set the edge
+[53:16] you got a score of one as well which is
+[53:19] just as good obviously as forcing the
+[53:20] run in the other direction because you
+[53:22] achieved the outcome thank you
+[53:24] yep anyone else
+[53:28] can I ask a question or do we have a
+[53:30] little bit of time okay
+[53:32] um you go back to you have the there's
+[53:34] the two components of the I probably
+[53:36] asked this a big data ball there's the
+[53:38] two components of your your metric and
+[53:41] are you you're waiting them equally yes
+[53:43] so we are what we thought about doing
+[53:46] was manually flagging plays where a
+[53:49] Defender did successfully set the edge
+[53:50] and then waiting these variables
+[53:52] accordingly uh based on which matters
+[53:54] more which doesn't it's very again and
+[53:56] this is kind of why we created in the
+[53:57] first place a very manual process so it
+[53:59] just became too tedious to flag 50 to
+[54:01] 100 exact examples and then kind of get
+[54:03] comfortable waiting behind this um but
+[54:06] yeah yeah because I I would just think
+[54:08] that there's some I have no idea which
+[54:11] one it would be but I would imagine that
+[54:13] like you're basically saying that 1% of
+[54:15] overlap is the same thing
+[54:18] as 01 of an angle right and I would
+[54:21] imagine that one is more important than
+[54:22] the other I have no idea which right but
+[54:25] I think that'd be a really cool uh like
+[54:27] next step to make it a little bit more
+[54:28] interesting right 100% yeah 100% all
+[54:30] right anyone else have any
+[54:31] questions all right let's thank
+[54:38] Smith I haven't called you up yet it's
+[54:42] my turn
+[54:44] so ready for ready for your
+[54:49] introduction I want I want
+[54:52] to all right I'll stall I'll stall for
+[54:54] you uh our our third speaker in this in
+[54:57] this session is uh future Dr Kang hin um
+[55:02] well maybe not maybe you're going to
+[55:03] fill some stuff Quang was a uh ma
+[55:06] undergraduate student at I don't
+[55:08] remember Quang Wittenberg University he
+[55:10] was a graduate student he did his
+[55:12] Masters at lyol University of
+[55:14] Chicago uh in the Department of
+[55:16] Mathematics and statistics where I am
+[55:18] the greatest day of my life was when he
+[55:20] graduated and left uh and went to do a
+[55:23] PhD at Carnegie melon in uh the
+[55:26] department of statistics and data
+[55:27] science is that what their department is
+[55:29] called now uh I've worked on several
+[55:31] papers with Kang we did some stuff that
+[55:34] uh made the finals at the Carnegie melon
+[55:36] Sports analytics conference um we worked
+[55:40] on some the talk I gave earlier today
+[55:42] was joint work with Quang and um we did
+[55:45] a big data Bowl two years ago where we
+[55:46] made the finals I was not involved in
+[55:49] this one he dropped me from the team
+[55:51] thought he could move on and be better
+[55:52] without me and he made the finals
+[55:54] without me which is that you don't need
+[55:56] me to win anything um I've saw long
+[56:00] enough uh this is Quang win he's going
+[56:02] to talk about uh fractional
+[56:05] tackles let's welcome
+[56:10] Quang all right uh thank you GRE for the
+[56:14] uh kind
+[56:15] introduction um so yeah I today I'm
+[56:18] going to talk about um fractional
+[56:20] tackles um which is uh my submission to
+[56:24] this year's big durable competition
+[56:26] um uh this belongs in the metric track I
+[56:29] should say um so nix's uh submission was
+[56:32] also metric track this year and Smith
+[56:34] was the undergraduates track um yeah and
+[56:38] I'm from K like Greg said um and I'm
+[56:40] second year PhD student in a statistics
+[56:43] and data science
+[56:44] department okay let's get started um
+[56:48] so I'm going to quickly give you an
+[56:51] overview of traditional metrics for
+[56:54] tackling so the most basic um tackling
+[56:59] metrics um out there are tackles solo
+[57:03] tackles or assisted tackles such just
+[57:06] assists um these are binary outcomes
+[57:10] observed at the end of the play so these
+[57:12] are just box score statistics and
+[57:14] surprisingly these are not official
+[57:17] statistics um from the NFL so at each
+[57:20] game the home team sort of
+[57:23] designates um a scorekeeper to um keep
+[57:27] track of these statistics um one thing I
+[57:30] I should say also is that if you combine
+[57:32] these two if you just add tackle synesis
+[57:35] together some people sometimes call
+[57:37] those uh combined uh tackles and then
+[57:41] there exists a few versions of uh
+[57:44] statistics that sort of try to improve
+[57:47] uh these binary outcomes so stats bombs
+[57:49] um when they calculate their combined
+[57:52] statistics uh combined tackles um they
+[57:55] treat uh
+[57:56] an assist as a half as opposed to just a
+[57:59] one um originally PFF um created
+[58:03] something called stops which um um I
+[58:06] think only tracks uh the tackles when
+[58:09] the play does not end in a positive
+[58:12] yardage gained 40 offensive team and PF
+[58:15] also tracked something called Miss
+[58:16] tackles which um the name itself is
+[58:18] pretty
+[58:19] explanatory the common theme of these
+[58:21] meas is that these are only discreet
+[58:24] outcomes um measure at the play level um
+[58:28] thus are and some of them are like for
+[58:31] tackles for example it's pretty um
+[58:33] pretty it's based on sort of subjective
+[58:36] judgment um from the scorekeeper so
+[58:38] there are definitely um lots of
+[58:40] limitations with these
+[58:42] statistics so in order to
+[58:46] um evaluate tackling Within the play um
+[58:50] we decided to think first think more
+[58:52] carefully about the purpose of tackling
+[58:54] in American football so if you go
+[58:57] through the um NFL rule book this is the
+[58:59] screenshot I took uh from the website um
+[59:02] you see that um that is phrase saying
+[59:05] that tackling is an attempt by a
+[59:06] defensive player to hold a runner to
+[59:08] hold his advance or bring him to the
+[59:11] ground okay so to quickly sum summarize
+[59:15] so the purpose of tackling is what that
+[59:18] is to Halt the forward motion of the
+[59:20] ball
+[59:21] carrier and this Forward Motion can be
+[59:24] measured uh
+[59:26] Thea the velocity of the ball carrier
+[59:29] towards the end zone which can be um
+[59:31] directly derived using the player track
+[59:33] since we have information about the
+[59:35] velocity of player and also the angle
+[59:38] they are U
+[59:40] motioning okay so the goal of this
+[59:42] project is to propose a framework to um
+[59:46] meal tackling contribution throughout
+[59:47] the play and we also want to assign
+[59:50] defensive credit um to Defenders for
+[59:53] haling the ball car's uh forward motion
+[59:56] and this would allow us to uh eventually
+[59:58] derive a continuous metric for um
+[60:02] defensive performance that sort of moves
+[60:04] beyond the um traditional um binary
+[60:07] tackle Des
+[60:09] designation okay so um touch on the data
+[60:13] a little bit so again data the data came
+[60:16] from the uh 2024 Big Data bow has the
+[60:20] theme of tackling so we have play
+[60:21] tracking data so data collected at uh a
+[60:24] rate of 10 measurement per seconds um
+[60:27] the NFL put um RFID chips inside of uh
+[60:30] the shoulder pads of each player and
+[60:32] also the football we have data from the
+[60:34] first uh nine weeks of the 2022 NFL
+[60:38] regular season and um throughout this
+[60:40] talk I will be using an example play uh
+[60:43] which is a seven yard run by New York
+[60:45] Giants running back St cor Barkley um
+[60:47] against the Tennessee Titans from week
+[60:49] one of
+[60:51] 20122 so the data would look like this
+[60:54] if you will actually view it um so you
+[60:56] know um we have the time Stam for each
+[60:58] play frame ID X and Y so those are just
+[61:01] 2D locations of uh the players um then
+[61:04] we have speed
+[61:06] acceleration distance travel from the
+[61:08] previous frame we have the orientation
+[61:11] and also the angle motion of the players
+[61:13] and one um sort of crucial feature here
+[61:18] is the event annotations associated with
+[61:21] um each frame um display so we know um
+[61:26] when the ball is snapped when the ball
+[61:27] is handed up to a running back um when
+[61:30] the first Contact is made um and then
+[61:32] when his tackle is made and um for U
+[61:35] this analysis we will focus on um
+[61:37] everything between the ball snap and an
+[61:40] end of play event so here we have tackle
+[61:41] you can also have like touchdown um out
+[61:44] of bound fumble
+[61:47] Etc and here's what the um example play
+[61:51] um looks like so you know we have saquin
+[61:55] barckley when the ball's handed off
+[61:57] there are clearly Defenders that
+[61:59] contributed to slowing down the running
+[62:02] back but was not credited with a tackle
+[62:07] previously by the scorekeeper so there
+[62:09] are multiple Defenders involved here in
+[62:11] this process as you might see so it is
+[62:13] necessary to um measure this type of
+[62:16] contribution um at a continuous level
+[62:19] and so this is the goal of our project
+[62:21] so a framework um for within play
+[62:26] tackling evaluation consists of the
+[62:29] following steps uh the first step is to
+[62:32] identify what we call contact windows so
+[62:35] these are um sort of time intervals
+[62:37] within a play where um the defender has
+[62:41] the chance to um possibly make contact
+[62:44] with the ball carrier and our definition
+[62:46] is that a contact window is a set of
+[62:49] consecutive frames where at least one
+[62:52] Defender is within one and a half yards
+[62:55] the ball carrier
+[62:57] and we chose this um one and a half
+[62:58] yards threshold since it captures a
+[63:02] pretty high proportion um of the
+[63:04] distance between the ball carrier and uh
+[63:06] the closest Defender at the moments of
+[63:08] first Contact and tackles observe ter F
+[63:10] Track area as you can see from uh this
+[63:13] histogram right here um I will say that
+[63:15] this is a very um heris definition um
+[63:19] but I think this is the best we can do
+[63:21] with the player tracking given we only
+[63:22] have the 2D um information of the player
+[63:26] um with better information like CL data
+[63:29] um data generated from computer vision
+[63:31] um you might be able to come up with a
+[63:33] better definition of uh contact window
+[63:37] but the the other nice thing about this
+[63:38] definition is that it can easily be um
+[63:41] implemented in a media broadcast um so
+[63:44] since this is doesn't require any
+[63:45] modeling test here um but again if you
+[63:48] have a better definition you can simply
+[63:51] plug this into our whole framework and
+[63:54] simply replace our definition and
+[63:56] hopefully doing a s better job um so um
+[64:01] let's go back to uh the example play so
+[64:04] um here I'm just plotting it with um um
+[64:08] these this animation so on top we have
+[64:11] the locations of every players so Giants
+[64:15] uh it's in red on offense uh Titans in
+[64:19] blue it's on defense and notice that um
+[64:22] The Defenders are the colored for each
+[64:25] Defender are
+[64:26] can change if they are in the contact
+[64:29] window of the ball carrier so it changed
+[64:31] to Gold here um and so the concept
+[64:34] window that was sort of like so if you
+[64:35] draw like a circle of radius one and a
+[64:37] half yards around the ball carrier then
+[64:40] if the Defenders within that threshold
+[64:42] then uh we say that they're making
+[64:44] contact with the ball carrier and also
+[64:47] in the bottom here we have the velocity
+[64:50] of the ball here towards the end zone
+[64:52] for this play um where again that's y-
+[64:56] axis and on a aais just time um and so
+[64:59] for this play we observe three separate
+[65:02] contact
+[65:03] windows and again you can see that um
+[65:07] multiple Defenders can be involved um um
+[65:11] um in um the contact window and so is
+[65:14] necessary to measure this type of
+[65:15] contribution and sort of assign
+[65:17] appropriate credit um among these
+[65:19] Defenders for sewing down the forward
+[65:21] motion of the ball
+[65:23] carrier well so this brings us to step
+[65:26] two which is after we have defined this
+[65:29] contact window we want to measure the
+[65:32] tackle value of those each of those
+[65:35] windows okay so in particular we want to
+[65:39] look at the change in
+[65:41] velocity relative to where the peak
+[65:43] momentum or the peak velocity of the of
+[65:46] the ball carrier is Within the play so
+[65:48] that triangle right there is for Peak um
+[65:50] so it's it's a triangle you know it's
+[65:52] peaking um okay so that's first look at
+[65:56] the first um contact window okay notice
+[66:00] that the peak ball velocity occurs after
+[66:04] the window okay as the ball cater
+[66:07] continues to um um speed up and gain
+[66:11] more velocity towards the end zone after
+[66:13] this window so do we say that this
+[66:14] window has zero value since the since
+[66:17] the ball carrier continues to um gain
+[66:20] velocity but but for the second window
+[66:23] since the of velocity
+[66:27] occurs prior to this window we can take
+[66:31] the difference uh in velocity towards
+[66:33] the end zone of the ball carrier between
+[66:35] the starting and ending time points of
+[66:38] this um window and then divide that by
+[66:41] the peak M the peak velocity value um um
+[66:47] achieved by the ball carrier within this
+[66:49] play and this fraction of reduction in
+[66:53] velocity relative to the peak veloc
+[66:55] values to give us a notion of the value
+[66:58] for this um whole concept window I
+[67:01] should note that um this is like the the
+[67:03] base equation and we had some
+[67:05] modifications to this um um B given
+[67:09] different sort of trajectories of the U
+[67:11] velocity um of the ball carrier but for
+[67:15] this specific play we um this
+[67:18] calculation can be achieved with this uh
+[67:19] simple equation and we can do the same
+[67:22] thing for um concept window number three
+[67:24] as well but but for um so the same
+[67:27] equation but for um illustration purpose
+[67:29] um I'm going to move on um and use
+[67:31] contact window number two to illustrate
+[67:34] our last step which is um dividing the
+[67:39] value of the whole contact window into
+[67:42] um what we call fractional tackles for
+[67:45] um each Defender involved so again so
+[67:48] here's contact window two and to give
+[67:50] you some context this window spans uh
+[67:53] four different frames display so we have
+[67:56] those four frames spotted down the
+[67:58] bottom
+[68:00] um and this window involves two total
+[68:04] players um as you can see these uh BTS
+[68:08] The these circles in Gold um we have
+[68:10] number 37 in the first three frames and
+[68:14] number 51s are in the the the latter
+[68:17] three frames okay so they they they
+[68:19] overlap in the the the two midle frames
+[68:22] here okay so again step two we have the
+[68:27] the contact window value
+[68:29] already the first step here is to divide
+[68:32] that window value equally across all
+[68:35] frames we in the window okay so each
+[68:37] frame would receive a quarter of the
+[68:39] credit here and then within each frame
+[68:42] we equally divide the the frame level
+[68:46] value across uh the the the players
+[68:50] involved in that frame based on how many
+[68:52] players there are so for the first frame
+[68:53] it's only 37 so that
+[68:56] um so 37 would get all the credit for
+[68:57] this Frame second and third frame uh 37
+[69:01] 51 so they each get half of the credit
+[69:03] for uh the the frame frame level credit
+[69:06] and then for the last frame 51 is the
+[69:08] only only player in the contact window
+[69:10] and so they get um all credit for that
+[69:14] frame okay and then for then we can sort
+[69:17] of aggregate across um the window level
+[69:20] by adding the frame level credit for
+[69:22] each player to get their specific um
+[69:25] window level tackle value and then you
+[69:26] can Agate across across uh the whole
+[69:29] play um uh the game the season
+[69:33] Etc okay so so here's the uh the summary
+[69:36] of our fractural tackles metric um for
+[69:39] the example play of uh the SE brck play
+[69:42] I shown earlier um so previously if you
+[69:45] just look at the box score um statistics
+[69:49] um only three players had um sort of
+[69:53] like these labels so the
+[69:56] one person got a tackle Credit One got
+[69:58] credit with an assist and one got a Miss
+[70:00] tackle but here we are able to credit
+[70:04] four additional Defenders for um sort of
+[70:08] contributing to slowing down the um the
+[70:10] ball carrier so and which effectively
+[70:13] down weights the uh the contribution of
+[70:17] um the the people that previously got um
+[70:20] attack when
+[70:22] assist okay so so far I've presented our
+[70:25] framework and so what I'm going to do
+[70:28] now is to present um a few um sort of
+[70:31] validation tests to what we just
+[70:34] proposed so first we have uh the
+[70:36] leaderboard of
+[70:39] uh of fractional tackles for all players
+[70:42] uh so the The Columns here are the what
+[70:45] what we're going to focus on here are
+[70:47] the the last two columns so first we
+[70:49] have total fractional tackles and then
+[70:51] average fractional tackles so we we just
+[70:53] look at total fractional tackles goals
+[70:56] we see that linebackers are those that
+[71:00] um have sort of the highest amount of to
+[71:03] fractional tackles um so you see names
+[71:06] like ran Smith for luon ETC these are
+[71:10] names that also U Finish pretty high in
+[71:13] the actual tackle reader board in real
+[71:16] life in 2022 but if you just look at the
+[71:19] average fractional tackles we see that
+[71:21] defensive lineman so defensive tackles
+[71:24] uh defensive Etc they they actually have
+[71:28] higher fractional tackles value on
+[71:31] average um than the linebacker so
+[71:34] although the linebackers accumulate
+[71:37] tackles um a metric captures how the
+[71:40] defensive lineman um sort of tend to
+[71:44] record more consistent stops on the ball
+[71:46] carrier and hence this metric sort of
+[71:48] provides a more measurable statistics
+[71:50] for defensive lineman which uh the a
+[71:53] position that um sort of been lack in
+[71:56] sufficient um objective measures
+[72:01] previously next up we have um let me try
+[72:03] to hide this
+[72:06] oops I hide
+[72:11] this oh there we go all right so we have
+[72:14] this scatter plot here so what are these
+[72:18] uh axes and data point so on on the y-
+[72:20] axis we have the total fractional
+[72:22] players for these Defenders um which are
+[72:25] the the the Dots here and on that should
+[72:29] be the y- axis on the x-axis we have the
+[72:31] total tackles and assist over two for
+[72:33] these Defenders as well and again each
+[72:35] these data points are the players
+[72:36] calculated by their position group and
+[72:39] the dash line here is the identity line
+[72:41] which means that if the total fractional
+[72:43] tackles for a player exactly equals the
+[72:46] total tackles and assists data point
+[72:49] corresponding to that player would fall
+[72:51] on the dash
+[72:52] line so what we can see here is that
+[72:55] despite the strong correlation total
+[72:58] fractional tackles are lower than the
+[73:01] total tackles in assist since most of
+[73:03] these data points sort of lie below the
+[73:06] dash line um so this suggests that the
+[73:08] traditional stats of tackles in ass say
+[73:10] sort of overstate contribution of um a
+[73:14] defender in terms of halting the forward
+[73:17] motion of the ball
+[73:20] carrier the the the last thing that we
+[73:24] have here is some stability plot so
+[73:27] question of Interest here is does a
+[73:29] metric measure the same quantity over
+[73:31] time so in other words um this um
+[73:35] previous performance
+[73:37] predictive uh of uh future performance
+[73:40] according to our metric so in the top
+[73:43] row here we have um on the y axis total
+[73:48] fractional tackles for the last five
+[73:51] weeks of the 2020 our data um and then
+[73:55] on the x-axis the first four weeks um
+[73:58] and then the first part is just the
+[73:59] overall correlation among um these
+[74:01] players and then we also separated um
+[74:04] this plot um by position so the lad
+[74:06] three plots are the within position um
+[74:10] correlations um and then for the of
+[74:13] comparisons we also show the um to Total
+[74:16] tackle and assis um um the the exact
+[74:20] same with the exact same plots in the
+[74:22] bottom row and overall the trend here is
+[74:25] that we see that um first of all
+[74:27] fractional tackles is repeatable among
+[74:29] these Defenders as reflected by this
+[74:32] sort of moderately strong correlation of
+[74:35] 69 in the top left um plot we we we also
+[74:40] see that overall and also within
+[74:41] correlation a metric um is more
+[74:44] predictive of future performance
+[74:46] compared to um uh tackles and assists
+[74:49] across the board um we just compare
+[74:51] these correlation values um a metric
+[74:55] um um all um had um higher values and
+[74:59] hence uh it has a higher um prict
+[75:01] performance of
+[75:03] um um then um tackles and
+[75:07] assist okay so uh so want to quickly
+[75:11] wrap up with some discussion so in this
+[75:14] project we have introduced uh fractional
+[75:17] tackles which is a new simple continuous
+[75:19] metric for defensive performance one key
+[75:22] stat that we uh we found s fascinating
+[75:24] is that players that made a tackle um
+[75:27] based on just the the play level data do
+[75:30] not have the highest fractional tackle
+[75:33] in more than 20% of the place in this
+[75:36] sort of N9 we sample um so which is uh
+[75:40] kind of interesting and one limitation
+[75:42] that as I sort of touched on earlier is
+[75:44] we only have the 2D tracking data so we
+[75:47] don't know whether or not the players
+[75:48] are actually making contact with one
+[75:51] another but um if we have access to
+[75:55] better data like post data Compu V
+[75:59] Vision data Etc we might be able to
+[76:03] um um get a better sense of um this
+[76:06] whole making contact and maybe come up
+[76:09] with a better definition of the contact
+[76:12] Windows fut Direction so if you happen
+[76:16] to check out our big derable submission
+[76:20] the title of the submission is momentum
+[76:21] based fractional tackles but notice when
+[76:24] this uh talk the ttle is only fractional
+[76:26] tackle so we dropped the momentum stuff
+[76:29] but so to sort of talk about future
+[76:33] directions here's a a picture of uh two
+[76:36] running backs that play for the Tennesse
+[76:38] Titans back in I think 2018 so on the
+[76:41] left we have Dion Lewis who is only 195
+[76:44] pounds on the right we have Derk Henry
+[76:46] who is
+[76:48] 245 is pounds so what what what I want
+[76:51] to emphasize here is that size does
+[76:53] matter here because you know tackling
+[76:55] someone like Deion Lewis is not the same
+[76:57] as tackling Derek Henry and so momentum
+[77:01] is actually a better measure of forward
+[77:03] progress than just velocity towards the
+[77:05] end zone since the concept momentum is
+[77:08] essentially mass in motion where it's
+[77:10] the product of um the players's weight
+[77:13] times the velocity um but I want to note
+[77:16] that in a framework of uh creating
+[77:19] fractional tackles replacing velocity
+[77:22] with momentum with resul in the same
+[77:24] answer was just you know having one
+[77:27] quantity on top and we're dividing by
+[77:29] that quantity so the mass of the player
+[77:30] would get cancelled so um someone
+[77:33] pointed out to to us at Big dat bowl and
+[77:35] we were like yes that's correct mean we
+[77:38] should think about simple math in the
+[77:40] first place but we do think there's lots
+[77:42] of interesting um applications we can do
+[77:45] with momentum um we have a project going
+[77:47] on right now looking at the change in
+[77:49] momentum um um for the contact window
+[77:52] and sort of trying to um
+[77:55] um look at different factors that impact
+[77:58] that and so on so um stay tuned for that
+[78:02] I guess so I want to quickly uh
+[78:05] acknowledge uh a few people we have a a
+[78:08] full team from CMU uh Larry Jang uh M
+[78:12] Ellingwood and uh Ron Yoko someone on
+[78:14] Twitter gave Ron a nickname I think the
+[78:16] Nick Sabin of football analytics
+[78:18] something like that which U I guess
+[78:20] appropriate because um but I want to
+[78:22] acknowledge them for uh the uh this
+[78:25] whole the whole involvement in this
+[78:28] project guess thanks to Greg for early
+[78:31] conversation at work in uh Chicago when
+[78:34] I was visiting uh before uh I think it
+[78:37] was during Thanksgiving last year and S
+[78:40] of got a few ideas out of that also want
+[78:43] to acknowledge uh the big dat organizers
+[78:46] uh the uh data analytics team from the
+[78:49] NFL so
+[78:50] Mike um Ali Blake Tom Bliss and the rest
+[78:54] of the crew for yet another year of sort
+[78:56] of fantastic um competition great lots
+[79:00] of great submissions this year and I
+[79:02] would encourage everyone to um you know
+[79:05] participate in the Big D Bowl in uh
+[79:07] future competitions it's a great way to
+[79:09] be involved um not just in sports
+[79:11] analytics but to Showcase your data
+[79:14] science skill in general um that would
+[79:16] be a amazing thing to put on your um
+[79:19] portfolio
+[79:21] um um so going to close out with with
+[79:24] some links so we have a paper release on
+[79:27] archive I think I put it up there two
+[79:29] weeks ago three weeks ago maybe um it's
+[79:32] under review um check out our notebook
+[79:34] uh big d bow this year all the code are
+[79:38] proba available on on GitHub um you want
+[79:41] to contact me that's my website uh free
+[79:43] to reach out if you have any questions
+[79:45] and if you interested in sports
+[79:47] analytics which I think most of you are
+[79:49] as soon as you're here check out what
+[79:50] CMU has to offer um we have our conf
+[79:54] annual confence every November um and
+[79:59] lots of other uh fun initiatives so
+[80:02] that's all I have and thank you for your
+[80:10] attention so we got a
+[80:18] question uh I have three question
+[80:20] actually uh so the first one is like um
+[80:23] when you draw the circle C is where
+[80:25] wrong do you need to consider some
+[80:27] directionality when you attribute the
+[80:28] value for example if a defenseman is
+[80:31] behind the person maybe not but like
+[80:34] probably you don't want to for now no
+[80:36] but I guess we could but take that into
+[80:39] account that it's possible so again like
+[80:41] I mentioned earlier uh a definition is
+[80:43] very very simple it's just like distance
+[80:45] based but you can come up with like a
+[80:47] better definition using like you said
+[80:49] Direction angle Etc um okay plug that in
+[80:53] and R phase you know what we have had
+[80:54] and then try to see if the results would
+[80:56] change I doubt it would change that much
+[80:59] but I don't know I haven't done that
+[81:01] sort of s sensitivity analysis okay
+[81:03] because um like you're u in your study
+[81:06] you're trying to count it as the
+[81:08] fraction of the mo like a velocity drop
+[81:10] forward velocity drop right yes towards
+[81:12] the end zone yeah so I'm just that
+[81:15] consider that already consider Direction
+[81:17] so I'm just thinking about like when you
+[81:19] consider how you say the value
+[81:21] distribution should also like for people
+[81:24] who behind you don't distribute any
+[81:25] value to the person because they're
+[81:27] behind they're not stopping the so
+[81:29] that's that's first thing that that's a
+[81:30] good point yeah okay second thing is
+[81:32] about um so if it's a velocity drop
+[81:35] right and then does it mean that people
+[81:38] outside that Circle doesn't contribute
+[81:41] anything for example if there are people
+[81:42] already in in front of but they're
+[81:44] outside of Zone would they still
+[81:46] contribute to the velocity drop no but
+[81:50] for now no for now if if they're outside
+[81:53] we're not assigning any value to them
+[81:55] but um but logically does it like sorry
+[81:58] yeah I mean that that that makes sense
+[81:59] and I mean we could
+[82:02] like try again try different definitions
+[82:05] of um the contact window um but okay I
+[82:09] think would if we get like 3D positional
+[82:13] data like post data that that would be
+[82:15] the ultimate goal of making this more
+[82:19] like appropriate yeah thank you and then
+[82:21] third question is like uh I think you
+[82:23] you study the correlation between the
+[82:25] fractional tackle and then the com
+[82:28] traditional concept of combined tackle
+[82:30] which is tackle plus half of the Cy and
+[82:33] then you saw there are correlation but
+[82:36] um I mean that's that's really good but
+[82:39] then the question would be for for
+[82:41] example if a Coach or a manager they
+[82:44] look at the leaderboard there are two
+[82:45] they're facing two leaderboard one
+[82:47] leaderboard is the fractional tackle
+[82:48] leaderboard another is the sorry the
+[82:52] combined traditional yeah yeah then
+[82:54] which one should trust more I mean
+[82:56] logically fractional tackle May is
+[82:59] better because it's continuous but still
+[83:01] like is there any evidence or support to
+[83:04] say hey you can you should consider this
+[83:06] better more than the other one yeah
+[83:08] because I think a metric is not just a
+[83:11] binary definition we're we're defining
+[83:14] it based on like the actual definition
+[83:16] of tackling right which is
+[83:19] stopping the for motion of the ball car
+[83:23] that's what we use to derive the metric
+[83:25] um so that that that's I guess that's
+[83:28] the pitch to um the coaches out there
+[83:31] and so if if there's a good example of
+[83:33] showing that what TR combined
+[83:36] leaderboard failed to capture but
+[83:38] successfully captured in the fraction
+[83:40] tle I think that would be very helpful
+[83:42] right yeah Pro that is yeah I
+[83:45] um I don't think we looked at any
+[83:49] example I don't know but that's a good
+[83:52] point it's it's a thank should
+[83:54] definitely look into that yeah but thank
+[83:56] you that's a good
+[83:59] point one quick question then my my
+[84:02] actual question Wong did you use Greg's
+[84:05] ideas or did you just do the
+[84:07] opposite um that was not really his idea
+[84:11] was it I don't know I mean s talked and
+[84:13] then I mean our group also has that idea
+[84:15] already but you know where was like Hey
+[84:18] velocity towards whatever and yeah and
+[84:21] then um we we sort of it toward that
+[84:25] specific thing and keyword pivot yeah
+[84:27] yeah so uh my my question on the uh are
+[84:31] there any like um forward momentum plays
+[84:35] where it would be
+[84:36] multimodal um so a player gets their
+[84:39] Peak speed loses speed and then regains
+[84:41] speed and how does how do those come out
+[84:44] so for for for our framework currently
+[84:46] so you're seeing there are two peaks um
+[84:49] what I think the right thing to do is
+[84:51] actually splitting that play into sort
+[84:54] of multiple plays so so that we can say
+[84:56] that this running back has sort of
+[84:58] multiple lives instead of just one life
+[85:00] um just the idea of like Angry runs
+[85:02] where it's just you know running and
+[85:04] just running angrier you have a peak and
+[85:06] then you're peeking even higher but for
+[85:08] now say you have small Peak and then a
+[85:10] bigger Peak which is ignoring totally
+[85:12] what happened previously to the to the
+[85:14] that big peak but that's
+[85:16] certainly um what we didn't do but do
+[85:20] you know how often though there is
+[85:22] multimodal curves like like I don't know
+[85:25] the answer but we have def we definitely
+[85:28] found like bunch of not a bunch of but
+[85:32] several nonzero nonzero yes right who
+[85:35] wants to go just want to pass it
+[85:37] down um so when you were doing the
+[85:40] stability analysis did you consider
+[85:42] doing it like on a perap basis because
+[85:45] like I feel like there's kind of a
+[85:46] confounding variable where if you're
+[85:47] like an insign linebacker for the first
+[85:50] um how many total games was it like the
+[85:52] first eight you compared the first weeks
+[85:54] um and I should mentioned that we only
+[85:55] consider running back Run play so we're
+[85:57] not considering catch plays or
+[85:59] quarterback Sam scrambles but just all
+[86:01] running back right so you compared like
+[86:03] the first eight weeks to the last nine
+[86:04] weeks or something right no first four
+[86:06] versus last five okay yeah first four
+[86:08] versus last five like isn't there
+[86:09] confounding variable of just like if
+[86:11] you're an inside linebacker like you're
+[86:12] going to play more snaps in the first
+[86:14] four weeks and you're going to play more
+[86:15] snaps in like the SEC the weeks you know
+[86:18] five through nine or five through 10 or
+[86:20] whatever five yeah five through nine
+[86:22] anyway um so I think we did look into
+[86:26] first snap I think I looked into that
+[86:29] specifically um just like first
+[86:32] stability like I feel like give you I
+[86:34] get I get where you're coming from yes
+[86:36] that that's probably should also include
+[86:39] that in like the revision of the paper
+[86:41] or something like that but yeah right
+[86:42] and then one more so you said you were
+[86:44] talking about more like momentum studies
+[86:45] you were doing have you looked into like
+[86:47] tush push stuff at all and like how much
+[86:49] like the guy behind him weighs versus
+[86:51] like he's pushing the not that specific
+[86:54] speically um because one other thing
+[86:57] about the big der issue is that the NFL
+[86:59] doesn't want us to do any sort of injury
+[87:01] analysis and then tush push has lots of
+[87:04] like implications to injury so oh okay
+[87:07] um but I don't think the samples for
+[87:10] tush p is that high right that makes
+[87:13] sense yeah I guess we need a couple
+[87:14] years of like Jaylen Herz but
+[87:18] yeah uh so when I was looking at um how
+[87:22] you were comparing the fractional tack
+[87:24] across like different position groups I
+[87:26] noticed that you uh grouped both
+[87:28] cornerbacks and safeties into defensive
+[87:30] backs and usually when you look at like
+[87:32] the stat sheet for traditional tackles
+[87:34] you see first like in terms of like
+[87:36] positional groups there's the
+[87:37] linebackers and then there's the
+[87:38] safeties and safeties normally have a
+[87:40] lot more like tackles and solo tackles
+[87:42] than um quarterbacks I was wondering if
+[87:44] you um a looked at the difference in
+[87:47] fractional tackles between cornerbacks
+[87:49] and safeties and B if that match similar
+[87:51] trends for tackles and solo tackles no
+[87:53] but that's good point I should
+[87:55] definitely do that uh at some point but
+[87:57] yes your point is well taken yeah thank
+[88:06] you yeah I mean about five more minutes
+[88:08] until the next session so just keep
+[88:11] going okay so I noticed I notic in your
+[88:14] fractional like tackle metric you you
+[88:17] don't care really much about the time
+[88:19] window it takes to complete the tackle
+[88:22] um I was wondering if like because for a
+[88:25] certain velocity change if the The
+[88:28] Tackle window takes longer the um
+[88:30] offensive uh person carrying the ball
+[88:33] will advance further over that time
+[88:35] period is there any way of waiting to
+[88:37] fractional tackles that take less time
+[88:39] to complete have you thought about that
+[88:41] that's a good point I think we we
+[88:43] briefly thought about the idea of
+[88:45] weighted fractional tackles but um no
+[88:49] but we didn't do it um again it's
+[88:53] supposedly but I mean all the code are
+[88:55] there so if you want to improve upon
+[88:57] this feel free to you know go hard

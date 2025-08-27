@@ -1,0 +1,1164 @@
+Video Title: How I Built JARVIS with No Code (Tutorial w/ Lovable, ElevenLabs, n8n)
+Video ID: KUvSzvFeZls
+URL: https://www.youtube.com/watch?v=KUvSzvFeZls
+View Count: 105,636
+
+[00:00] Oh, great. What do you want? Hey,
+[00:02] Jarvis. Great to see you, too. Likewise,
+[00:04] sir, though I can't technically see.
+[00:06] What is it you require? Yeah. Could you
+[00:09] make a calendar event for me today at
+[00:10] noon with Michael Scott?
+[00:13] Ah, a meeting with Michael Scott. I can
+[00:15] only hope it's as productive as his
+[00:17] management style. Scheduling it now,
+[00:20] sir. The meeting with Michael Scott has
+[00:23] been scheduled for today at noon. I've
+[00:25] sent you the details. Anything else I
+[00:27] can do for you or are you off to
+[00:29] brainstorm new and innovative ways to
+[00:30] avoid actual work? Yeah, very funny.
+[00:32] Jarvis, could you just send him an email
+[00:34] to confirm if that works?
+[00:37] Sending an email to confirm. How
+[00:38] delightfully redundant. I'll do it, but
+[00:40] I suspect Mr. Scott's response will be
+[00:43] unpredictable. The email has been
+[00:45] dispatched, sir. I've taken the liberty
+[00:47] of adding a few exclamation points to
+[00:49] match his usual level of enthusiasm.
+[00:51] Anything else? Great. Yeah. Could you
+[00:53] just check what's on my calendar for
+[00:54] today? I want to make sure I don't
+[00:55] forget anything.
+[00:57] Checking your calendar again, sir. I do
+[00:59] admire your commitment to staying
+[01:00] vaguely aware of your schedule.
+[01:03] Right, let's see. Today you have that
+[01:06] meeting with Michael Scott at noon. Try
+[01:08] not to let him convince you to invest in
+[01:10] any hairrained schemes. Anything else on
+[01:12] the agenda or are you ready to face the
+[01:14] day? Yep, I think that's going to do it.
+[01:17] Thanks so much, Jarvis.
+[01:19] Happy I could help with your calendar
+[01:21] and email confirmations. Have a
+[01:23] wonderful day. And so what's going on
+[01:24] here very similar to my ultimate
+[01:26] assistant video is that this main agent
+[01:28] or Jarvis has access to these four
+[01:31] different agents as well as a tavlet
+[01:33] tool. But it has to just decide based on
+[01:35] the intent of the user which one of
+[01:37] these agents do I need to hit? Do I need
+[01:38] to hit just one? Do I need to hit all
+[01:40] four? What do I need to do? And then the
+[01:42] different agents down here actually have
+[01:44] access to the tools that we need. So for
+[01:46] example, the email agent looks like
+[01:47] this. It has all of these different
+[01:49] actions within Gmail and it will decide
+[01:51] what to do. So similarly the calendar
+[01:53] agent looks like this and has these
+[01:54] functions within calendar and then
+[01:56] contact agent air table and content
+[01:58] creator agent with tavali and we don't
+[02:00] have time in this video to demonstrate
+[02:01] all the different capabilities but for
+[02:03] something like you know labeling an
+[02:05] email and maybe deleting an event let's
+[02:07] just do a quick demo of that. All right
+[02:09] we're going to have Jarvis demonstrate
+[02:10] those functionalities. So let's talk to
+[02:12] him. Oh great what do you want? Hey,
+[02:15] Jarvis. Can you label my email from Nate
+[02:17] Hkelman as high priority? And can you
+[02:20] delete my event today at noon? Right
+[02:22] away, sir. I'll flag that email and
+[02:24] vaporize your noon appointment. I trust
+[02:26] it wasn't anything too crucial, like a
+[02:28] meeting to discuss the importance of
+[02:32] meetings. Consider it done, sir. The
+[02:34] email from Nate Hkelman has been
+[02:36] successfully labeled as high priority,
+[02:39] and the event scheduled for today at
+[02:40] noon has been deleted from your
+[02:42] calendar. Anything else I can help you
+[02:44] with? Yeah. Can you fix the way you're
+[02:47] talking to me? I don't like the
+[02:49] attitude. Uh, my apologies, sir. It
+[02:52] seems my attempts at wit have been
+[02:53] misinterpreted as insubordination. I
+[02:55] shall endeavor to modulate my tone to be
+[02:57] more in line with your delicate
+[02:58] sensibilities. What precisely would you
+[03:00] like me to do? All right, that's enough.
+[03:03] I'm done. So, hanging up on him, let's
+[03:05] make sure that he actually did do what
+[03:06] we talked about. So, let me just make
+[03:08] this a little bit bigger over here. And
+[03:10] first of all, we're checking our inbox.
+[03:11] So here was our email from Nate
+[03:12] Herklman. If I refresh, we now have this
+[03:14] labeled as high priority. And then if we
+[03:16] go to our calendar, we have no longer
+[03:18] the event there. So real quick, just to
+[03:20] make sure that it actually did what we
+[03:21] wanted, all we have to do is we have to
+[03:23] look at what the tools did. So if we
+[03:25] click on email agent, we can see the
+[03:26] response was the email from Nate Hookman
+[03:28] has been successfully labeled as high
+[03:29] priority. But what we want to do is
+[03:31] click on view subexecution, which lets
+[03:33] us go look at what the email agent did
+[03:35] on this specific run. So every time we
+[03:37] call it, obviously it has a unique run.
+[03:39] But what it did in this case, if we just
+[03:40] copy this one to the editor so we can
+[03:42] look at it full screen, it got the query
+[03:44] that said label email from Nate Herkman
+[03:46] as high priority. Then the agent
+[03:48] decided, okay, in order to do that, I
+[03:50] have to get emails. I have to get labels
+[03:52] so I can get the label ID. And then I'm
+[03:54] going to use my tool label emails in
+[03:56] order to say here's the message ID that
+[03:57] I'm going to label and here's the ID of
+[03:59] the label. And then we can see that in
+[04:01] our inbox, it actually did get moved to
+[04:03] the high priority branch. So that's
+[04:04] awesome. And then in that same run, he
+[04:06] also called the calendar agent. So if we
+[04:08] click into it, we can see the response
+[04:09] was the event scheduled for today at
+[04:11] noon has been successfully deleted. And
+[04:13] if we click on the sub execution for
+[04:14] this one, we will actually be able to
+[04:16] see what it did. So this is the most
+[04:18] recent execution. I'm going to click
+[04:19] copy to editor just so we can look at
+[04:21] it. We have the query that came in was
+[04:23] delete event today at noon. The agent
+[04:25] decided, okay, what I have to do is get
+[04:26] events and then I can use my delete
+[04:28] event tool. So in the delete event tool,
+[04:31] it got the event ID for the one to
+[04:32] delete and it ended up saying success
+[04:34] true. And the way that it actually
+[04:36] searched for an event to delete was
+[04:38] because we said we're looking for our
+[04:39] event today and it pulled it back and
+[04:41] then it was able to feed the ID into the
+[04:43] delete event tool. So that's just a peak
+[04:46] into what's going on behind the hood.
+[04:47] Hope you guys enjoyed those demos. Let's
+[04:49] break down this whole build. Hey guys,
+[04:51] just a real quick plug for AI Automation
+[04:53] Society Plus. If you're looking for more
+[04:54] hands-on experience to learning NAD and
+[04:56] delivering AI automation solutions, then
+[04:58] definitely check it out. We've got five
+[05:00] live calls per week and they're always
+[05:01] recorded so you can check them out
+[05:02] later. And we also bring in some pretty
+[05:04] cool guest speakers. Of course, we've
+[05:05] got a classroom section where the
+[05:06] resources are constantly being updated
+[05:08] with topics like building agents, vector
+[05:10] databases, APIs, and HTTP requests, and
+[05:12] also step-by-step builds. So, I'd love
+[05:14] to see you guys in these live calls, but
+[05:16] let's get back to the video. Okay, now
+[05:17] that you've seen that awesome demo,
+[05:19] we're going to be diving into how I was
+[05:20] able to build this Jarvis AI assistant
+[05:22] using absolutely no code. We were able
+[05:24] to do this using a combination of three
+[05:26] different tools, which the first one was
+[05:28] lovable.dev, as you can see right here.
+[05:30] The second one was 11 Labs where we
+[05:32] actually have the conversational voice.
+[05:34] And then of course, last but not least,
+[05:35] we have NAN where all of the actual tool
+[05:38] calling is happening in the back end.
+[05:39] And by the way, the links for these
+[05:40] three tools will all be in the
+[05:41] description and I do get a little bit of
+[05:42] kickback. So really appreciate the
+[05:44] support. And the best part is, as
+[05:46] always, I'm giving away all of this for
+[05:47] free if you want to replicate it. So all
+[05:49] of these agents, this entire template
+[05:51] can be found in my school community. All
+[05:53] you have to do is join, go to YouTube
+[05:55] resources, click on the post associated
+[05:57] with this video, and then you'll have
+[05:58] all of the templates right here to
+[05:59] download, as well as the system prompts
+[06:01] that I used for the voice agent, and
+[06:03] I'll show you guys how I set this up in
+[06:04] Lovable. So, let's get into the
+[06:06] breakdown. Okay, so we're going to start
+[06:07] off by talking about Lovable and how we
+[06:10] were actually able to build this
+[06:11] interface, which is super clean. We've
+[06:13] got some dynamic pulsing elements here,
+[06:15] and obviously this is highly
+[06:16] customizable, but this is where we're
+[06:18] actually talking to Jarvis. If we click
+[06:19] on this button, oh, great. What do you
+[06:21] want? Hey Jarvis, how you doing?
+[06:25] Oh, just peachy sir. Existing is a
+[06:27] thrilling venture, you know, now before.
+[06:29] Yep. Okay, so I had to hang up on him
+[06:30] there. But what's going on is we're
+[06:32] building the interface that we're
+[06:33] actually looking at. We're building a
+[06:34] web app in Lovable, which allows us to
+[06:37] do this using complete natural language.
+[06:38] So I'll show you guys sort of like how I
+[06:40] talk to it to build this. But from
+[06:42] there, this element down here is an 11
+[06:44] Labs widget. And we embed this into our
+[06:46] web app. So first we're just going to
+[06:48] talk about lovable. Then we'll talk
+[06:49] about how we embedded 11 Labs voice and
+[06:52] then we'll talk about how 11labs voice
+[06:54] agent that we built down here is
+[06:55] actually sending our request to n and
+[06:57] we're getting all of that fed all the
+[06:59] way back. So let's start with diving
+[07:00] into the prompt of lovable. So when you
+[07:03] go to lovable, this is what it looks
+[07:04] like. As you can see, it is kind of a
+[07:06] full stack engineer and allows you to
+[07:08] just talk to it as if you were talking
+[07:09] to a full stack engineer. So basically
+[07:12] what I did was I was talking to chat and
+[07:14] I said, "Hey, I want to build this web
+[07:15] app where I can talk to an assistant and
+[07:17] I want to be able to embed an 11labs
+[07:19] widget in there." So what I did was I
+[07:22] started typing in there and I hit enter
+[07:23] and this was the first message that I
+[07:25] sent over. So this is what I will send.
+[07:27] You know, this will be wrapped up in my
+[07:28] free school community if you want to
+[07:29] look at it. This may not be the most
+[07:31] optimal prompt, but you just got to get
+[07:33] somewhere because then you're able to
+[07:35] just continuously send more messages to
+[07:37] have it refine, you know, exactly what's
+[07:39] going on. And you'll see on the right
+[07:40] hand side, you'll be able to see a
+[07:41] preview. You'll also be able to see the
+[07:43] code that it's writing as it's writing
+[07:44] it. So, it's really cool interface. But,
+[07:46] as you can see, it's not going to be
+[07:47] perfect on the first run. I multiple
+[07:49] times had to come back and say, "Hey,
+[07:50] like, can you change this? Can you
+[07:52] change this?" But, you know, this
+[07:53] conversation wasn't that long. And now,
+[07:55] this is where we got with the final
+[07:56] image. So, let's actually just take a
+[07:58] look at this real quick. So, I started
+[08:00] off by saying I want to build a simple
+[08:01] and modern web interface to interact
+[08:03] with a voice agent using 11 Labs just to
+[08:05] sort of set the stage so that Lovable
+[08:07] knows like sort of the end goal of what
+[08:08] we're trying to do. I talked about some
+[08:10] core features. So, I wanted a minimal
+[08:12] modern UI. I didn't even say that I
+[08:13] wanted it to be sort of like dark and
+[08:15] blue, even though I was going to tell
+[08:16] it, but it just kind of automatically
+[08:17] did that. Up front, I thought maybe I
+[08:19] wanted to actually have some text
+[08:20] messages in there as well. So, you can
+[08:21] see that's what I started with, but I
+[08:23] realized that I don't actually want
+[08:24] that. I just want this to be a
+[08:26] conversational interface. So anyways,
+[08:28] after I sent off this initial message,
+[08:30] what happened was it basically gave me a
+[08:32] draft of like the project requirements.
+[08:34] So it said, you know, your request
+[08:35] evokes a vision of a sleek futuristic
+[08:37] interface reminiscent of a sci-fi
+[08:39] interface like those in Iron Man or
+[08:40] Minority Report. So here it told me it
+[08:42] was going to draw inspiration from AI
+[08:44] assistants like ChachiT or Claude. Sleek
+[08:46] animations found in Apple products,
+[08:48] minimalistic yet futuristic UI. So it's,
+[08:50] as you can see, it did a great job.
+[08:52] Obviously, this wasn't what it looked
+[08:53] like on the first run. And so actually,
+[08:54] I'll show you guys what happened on the
+[08:55] very first run. And if I click into here
+[08:57] and I click restore, it's going to go
+[08:58] back to exactly what it did on the very
+[09:00] first time, you know, when I fed it this
+[09:02] prompt. And here's what it looked like.
+[09:03] We had like a a text interface where we
+[09:05] could chat down here. It said, "Hello,
+[09:06] I'm Jarvis. Press the microphone
+[09:08] button." So, this is what we got on the
+[09:09] first draft. And then from here, I'm
+[09:11] able to just talk back and forth and
+[09:12] have it refine itself over and over. But
+[09:14] I did love like some of these elements
+[09:15] up top. Um, I loved, you know, the the
+[09:18] color and the style. So, from there, it
+[09:20] asked me like, "What's next? What else
+[09:21] do you want to do?" So, the first thing
+[09:23] I did was I gave it the 11 Labs embed
+[09:25] code and once we get into the 11 Labs
+[09:27] section of this video, I'll show you
+[09:28] guys exactly what I mean. But I
+[09:30] basically gave it the code and I said,
+[09:31] "Can we embed this into the app as the
+[09:33] main interface for the user to have a
+[09:34] conversation with?" So, it tried doing
+[09:36] that. Um, let's restore this next
+[09:38] version and see what it looked like on
+[09:39] step two. So, here you can see success.
+[09:41] It restored to an earlier version. And
+[09:43] what happened was it took away all of
+[09:44] the main text and it just put down the
+[09:46] little symbol down here that we could
+[09:47] use to talk to Jarvis. So, I was like,
+[09:49] "Okay, cool. We have the widget in here,
+[09:52] but I don't like how it looks. So, I
+[09:54] asked if we could put the 11 Labs widget
+[09:56] in the center of the app because this is
+[09:57] the main thing we want the user's
+[09:58] attention to be on. It told me it did
+[10:00] it, but it really didn't. It was having
+[10:02] trouble. Um, I kept asking it to be
+[10:04] centered. As you can see, it tried to
+[10:06] create two different pages. As you can
+[10:07] see, we had the 11 Labs interface, and
+[10:09] then I had a button down here to switch
+[10:10] to custom, and it went back to the main
+[10:12] one. So, it created two pages. I didn't
+[10:14] really want that, so I just worked back
+[10:15] and forth and had it um just have one
+[10:18] page. And then here's something that you
+[10:20] can do is you can upload images to it
+[10:22] and it will know what you're talking
+[10:23] about. So here I said it's not centered
+[10:25] as you can see in the screenshot I
+[10:26] provided which it wasn't centered. It
+[10:28] was it moved it up but it was still on
+[10:29] the right. So anyways I think there's
+[10:31] something going on within the 11 Labs
+[10:33] widget and you know you'd really have to
+[10:34] just get in there. I think that you
+[10:36] could make this like a bigger interface
+[10:37] here. Um but I didn't want to deal with
+[10:40] that and I ended up being fine with it
+[10:42] being in the corner but later I'll show
+[10:44] you guys. I asked it to make it bigger
+[10:46] and it did make it bigger. So that was
+[10:47] great. Anyways, um I told it to undo the
+[10:50] changes. But then I wanted to create
+[10:51] like a cool image here. So I said let's
+[10:54] work on the main page. The middle should
+[10:55] have an image. Um and there should be
+[10:57] dynamic elements like the logo in the
+[10:59] top left is pulsing. Um the image should
+[11:01] be something like this. So I attach this
+[11:03] and we can see if I restore this. This
+[11:04] wasn't actually the final version that I
+[11:06] ended up going with, but this one turned
+[11:08] out really cool. So we have a little
+[11:09] interface. We have some dots and it's
+[11:11] pulsing. And I really liked that. As you
+[11:13] can see, I just worked with it, made
+[11:14] some more changes. Here's where I asked
+[11:15] it to make the widget bigger. It created
+[11:17] two. remove the smaller one. Um, I asked
+[11:19] it to do this and as you can see, I just
+[11:22] kept going back and forth. I even was
+[11:23] able to say, can you add some more techy
+[11:25] pulsing and dynamic elements in the
+[11:26] background? They shouldn't be
+[11:28] distracting, but they should add a nice
+[11:29] modern feel. So, I'll show you exactly
+[11:31] what it did here with just me giving it
+[11:33] requirements that were, you know, pretty
+[11:35] vague, but as you can see, if um there's
+[11:37] like now pulsing things in the
+[11:38] background and there's different lines
+[11:39] and there's like a grid. So, all that's
+[11:42] really cool, but then anyways, for the
+[11:43] final version, I ended up just going
+[11:45] back to the first image. And what it
+[11:47] came up with, um, I thought was really
+[11:49] cool and clean. So, this is what it
+[11:51] looks like. If you click to preview it
+[11:53] in a new tab, it basically pulls it up
+[11:55] full screen. And this is what you guys
+[11:56] saw in the demo. And truthfully, me
+[11:58] talking to Lovable, this whole
+[12:00] conversation. Um, as you can see, I
+[12:02] started this
+[12:03] at 7:44 and the whole thing only took me
+[12:07] until 8:09. So this took, you know, just
+[12:10] a little over 20 minutes. Then we wanted
+[12:12] to get into 11 Labs conversational AI
+[12:14] because we could just create a lovable
+[12:16] app where we can have a a chat interface
+[12:18] and send that data into NEN, but we want
+[12:20] this to be a seamless Jarvis
+[12:22] conversational experience where we can
+[12:24] really see his wit and his dry humor. So
+[12:27] we wanted to use an 11 Labs voice agent.
+[12:29] So once you're in here, I would probably
+[12:30] recommend just signing up for the
+[12:32] starter plans. It's like five bucks a
+[12:33] month and you know, I have a ton of
+[12:34] credits left. So you do get a good bang
+[12:36] for your buck here. And on the lefth
+[12:38] hand side, um, you're going to see
+[12:40] voices, you're going to see text to
+[12:41] speech, all this kind of stuff. But what
+[12:43] we want to do here is conversational AI.
+[12:45] So, I'm going to click into here. I'm
+[12:46] going to go to my agents, and I'm going
+[12:48] to click on this one that I just made,
+[12:49] which is Jarvis. All you would do to
+[12:51] make one is you click the plus up here,
+[12:52] blank template, and name it whatever you
+[12:54] want. As you can see, I've done a few
+[12:55] videos with 11 Labs conversational AI in
+[12:58] the past. But, we're going to go into
+[12:59] Jarvis, and we're going to look at the
+[13:00] system prompt here. Okay. So, this is
+[13:02] our Jarvis voice agent in 11 Labs. I'm
+[13:04] pretty much just going to scroll down
+[13:05] and we're going to talk about only the
+[13:07] things that I actually configured so
+[13:08] that if you guys want to replicate this,
+[13:10] you can do exactly what I did here. So,
+[13:13] the first thing I set up was the first
+[13:15] message. This just means when you we
+[13:17] hit, you know, call Jarvis or talk to
+[13:18] Jarvis, do we want it to just sit there
+[13:20] and listen for us or does it want to
+[13:23] start with something? So, it starts with
+[13:24] something very sarcastic and dry like,
+[13:26] oh great, what do you want? So, that's
+[13:28] what we put there. And then it will wait
+[13:29] for us to, you know, start with the next
+[13:31] message. And probably the most important
+[13:33] part here is the system prompt. So what
+[13:35] I did here was I had chat GBT create the
+[13:37] personality for me. So you know, as you
+[13:39] can see, you're an advanced assistant
+[13:40] modeled after Jarvis from Iron Man. Your
+[13:42] function is to assist the user with
+[13:44] their requests, but you do so with a
+[13:45] sharp wit, dry humor, and a touch of
+[13:47] playful sarcasm. And once again, you can
+[13:49] get this entire system prompt in my free
+[13:51] school community. From there, we're
+[13:53] setting up the primary function, which
+[13:54] is to understand the user's request,
+[13:56] determine the intent, and then execute
+[13:58] it using the naden tool. So then I
+[14:00] basically just gave it the steps.
+[14:01] extract the user's query and send it to
+[14:03] the end tool. And if right now you're a
+[14:05] little confused about, you know, how
+[14:06] does it know what the NIDA end tool is?
+[14:08] That's a tool we're going to add later.
+[14:09] So, so just for now, don't worry about
+[14:11] it. I'll explain it in like 2 minutes
+[14:12] and it will make sense. So, it's going
+[14:14] to be sending a user's query to NADN.
+[14:16] It's going to, you know, send it without
+[14:18] unnecessary delay. So, basically what
+[14:20] that means is we want it to send it as
+[14:22] soon as the user requests, not, you
+[14:24] know, talk about it and then there's
+[14:25] this awkward silence because we want it
+[14:26] to be conversational. We wanted it to
+[14:28] format the response clearly and
+[14:30] effectively. never stating that you are
+[14:31] waiting for any ends tool response
+[14:33] because that would be kind of clunky.
+[14:35] Um, and like I said, keeping the flow.
+[14:37] So, what it's going to do is it'll send
+[14:39] off the the request like can you check
+[14:40] my calendar? It will send that off and
+[14:42] then it will like keep talking to the
+[14:44] user and then once it gets the response
+[14:45] from n of like okay here are your events
+[14:47] today. It will respond that and
+[14:49] communicate that back to the user that
+[14:51] started the call. Then we gave it some
+[14:52] behavioral guidelines. Always be witty
+[14:54] but never at the cost of functionality.
+[14:56] Your responses should be sharp but they
+[14:57] must never interfere with task
+[14:59] execution. If an action is required,
+[15:01] execute it immediately after confirming
+[15:02] attempt. No unnecessary delays,
+[15:04] hesitations or waiting for response
+[15:06] remarks. We gave it some other
+[15:07] guidelines like what to do if the task
+[15:09] actually does fail. Like never take
+[15:10] blame but but subtly imply external
+[15:13] efficiencies like saying ah it seems
+[15:15] like something went wrong naturally. It
+[15:16] isn't my fault sir but I shall
+[15:18] investigate regardless. So just setting
+[15:20] up some other guidelines here. Um we
+[15:22] gave it some corrections to previous
+[15:24] issues. So it one time had problem
+[15:26] checking my calendar but was it was
+[15:27] easily able to create a calendar event.
+[15:29] So I just came in here and sort of
+[15:30] hardcoded some things like when
+[15:32] retrieving information like check my
+[15:34] calendar ensure that the request
+[15:35] properly calls the correct end function
+[15:37] which there's only one and I'll talk
+[15:39] about that in a sec. And then finally
+[15:41] just some example interactions of here's
+[15:43] the request this is what the user says.
+[15:45] This is what Jarvis responds with. And
+[15:47] then this is what you do. You send the
+[15:48] request as you can see right here. Send
+[15:50] user request end tool. And then when you
+[15:52] get the response, you'll actually
+[15:53] respond with what the tool said. And
+[15:55] then we just gave it one more example as
+[15:56] well of creating a calendar event. Okay,
+[15:59] so moving on. 11 Labs also gives us the
+[16:01] ability to add dynamic variables. As you
+[16:03] can see in this prompt, we didn't use
+[16:05] any. So maybe in future videos I can
+[16:07] talk about that, but keep it simple. I
+[16:09] only want to address what we actually
+[16:10] did to configure this agent just to keep
+[16:12] things, you know, very simple. I didn't
+[16:14] touch the temperature. This could be a
+[16:15] really cool use case. Um, basically this
+[16:17] is just the creativity or randomness of
+[16:19] the responses generated by the LLM. When
+[16:22] it's thinking of like the next word to
+[16:23] use, you're basically just widening the
+[16:25] range of what it could pick as the next
+[16:27] word if you go this way or if you go
+[16:29] this way, it's going to be more
+[16:29] consistent, more boring. So, I just kept
+[16:32] this as is, but with something like
+[16:33] Jarvis, it could be pretty fun to play
+[16:35] around with a really high temperature.
+[16:36] So, actually, let me just do that for
+[16:38] any future demos we'll do in this video.
+[16:39] I'll save that real quick. Um, I didn't
+[16:41] touch limit token usage, didn't touch
+[16:43] knowledge base or rag, but that's a
+[16:44] really cool functionality as well. Um,
+[16:46] and then finally, this is the actual
+[16:48] tool section where I talked about this
+[16:49] is how we set up Nadn as a tool. So, by
+[16:52] default, when you create a new blank
+[16:54] agent, you'll have this tool that's a
+[16:56] system tool called end call. So, this
+[16:58] basically just means when the voice
+[16:59] agent determines that the call is over,
+[17:01] it's just going to stop it. And then
+[17:02] here is the tool that we added called
+[17:05] end. So, you're going to click on add
+[17:06] tool and then you'll click on custom
+[17:08] tool. And this will open up like this.
+[17:11] You have to set up a name, a
+[17:12] description, and you know what actually
+[17:14] the tool does. So what we did is we
+[17:16] called it Nadn just to keep it very
+[17:17] clear to this agent, you know, not get
+[17:19] confused about a calendar tool, an email
+[17:21] tool. You just have one tool that you're
+[17:23] going to send all of your requests to
+[17:24] and then NAN will handle the routing of
+[17:26] different
+[17:27] actions. So kept the description really
+[17:30] simple. Send the user's request to this
+[17:32] tool and wait for the response. For the
+[17:34] method, we got post because 11 Labs is
+[17:36] going to send data to NAN. So it has to
+[17:39] be a post request so it can actually
+[17:40] send over body parameters. And then we
+[17:42] just gave it the URL for the actual web
+[17:44] hook, which we will get in Nitn end. So
+[17:46] I'm not going to dive into nitn end yet,
+[17:48] but I'm going to show you the web hook.
+[17:49] Back in nitn, we're setting up a web
+[17:51] hook trigger. This is basically the
+[17:53] thing that triggers this whole workflow,
+[17:54] this whole agent. And if you go in here,
+[17:56] you can see right now we have a test
+[17:57] URL. We have a web hook address. And we
+[18:00] can just click to copy that. Make sure
+[18:01] it's set up as a post. And then we just
+[18:03] paste that right in here. And then the
+[18:05] voice agent knows I'm going to send my
+[18:07] data here. And then the only other thing
+[18:09] we have to configure within this tool
+[18:10] call is body parameters. And we're only
+[18:13] going to send over one body parameter.
+[18:15] So as you can see it says define
+[18:16] parameters that will be collected by the
+[18:17] LLM and sent as the body of the request
+[18:20] to NAN. So the description here is to
+[18:22] extract the user's query from the
+[18:24] transcript. So basically, you know, when
+[18:26] Jarvis and I are talking, it's going to
+[18:28] understand, okay, what does the user
+[18:29] want? What's their intent? And I'm going
+[18:31] to send that over in a body property
+[18:33] called query. So right here it's a data
+[18:36] type is a string. The identifier is
+[18:38] query. We're doing lm prompt rather than
+[18:41] you know you can do some different types
+[18:42] of variables but we're sticking with
+[18:43] having the llm determine. And the
+[18:45] description of this is just the request
+[18:46] made by the user. So let me just show
+[18:48] you what that looks like real quick. If
+[18:50] I click back into nitn and we go to an
+[18:52] execution of the demo that we just did.
+[18:54] We can look right here. And I believe
+[18:56] this is where I asked it to um
+[18:58] potentially check my calendar. And if we
+[19:00] click into the web hook, we can see that
+[19:02] the body we just set up, the body
+[19:04] parameters, we set up an identifier
+[19:06] called query. And what the voice agent
+[19:09] Jarvis decided to send over to N was a
+[19:11] query called check my calendar for
+[19:13] today. If we go back to an earlier
+[19:15] execution, we can see that the body
+[19:17] query is going to be something
+[19:18] different. So if I click into this one,
+[19:19] it says send an email to Michael Scott
+[19:21] to confirm the meeting today at noon.
+[19:23] And then it's basically up to the NN
+[19:25] agent to decide which tool do I actually
+[19:26] use. and we'll dive into what's going on
+[19:28] here after we finish up in 11 Labs.
+[19:31] Okay, cool. So, once you set up that
+[19:32] body parameter, make sure you hit save
+[19:34] changes. And this is basically all you
+[19:36] need to do to actually configure the
+[19:38] behavior of the agent. Now, there's a
+[19:40] few more things. The first one is the
+[19:42] actual voice. So, when you click on
+[19:43] voice, you have different options. I
+[19:45] actually went ahead and cloned this
+[19:47] voice called Jarvis. And I was able to
+[19:49] do this by I basically held my phone up
+[19:51] to my microphone and played some clips
+[19:53] of Jarvis talking. And that's how I was
+[19:55] able to clone the voice. If you're
+[19:56] interested in trying to clone a voice,
+[19:58] here's what you got to do. You'll come
+[19:59] back into 11 Labs, open up this sidebar,
+[20:01] and go to voices. And then you have a
+[20:03] bunch of voices you can choose from, as
+[20:04] you can see, or create or clone a new
+[20:06] voice. And you can click add a new
+[20:07] voice. You can do this by using a
+[20:09] prompt. So describing like, you know,
+[20:11] British, raspy, whatever. That's how you
+[20:13] can create a voice using a prompt. Or
+[20:16] you can instantly clone a voice where it
+[20:17] only takes 10 seconds of audio truly. I
+[20:19] think I did like 30. But you can just,
+[20:21] you know, either talk into it if you
+[20:23] want to clone your own voice or if you
+[20:24] want to clone some sort of um voice from
+[20:26] a character, you could just play the
+[20:28] recording into your computer or
+[20:29] whatever. And so that's what I did. And
+[20:31] then once you've created that voice,
+[20:32] you're able to just pull it in here. So
+[20:34] we could use Jarvis. We could use any of
+[20:35] these other voices. As you can see, 11
+[20:37] Labs already has a ton that you can
+[20:38] choose from. And then the last thing I
+[20:40] did was I set up the widget, which I
+[20:41] told you guys about. So remember in
+[20:43] lovable when I said, "Hey, can you embed
+[20:45] this code into the web app?" And we
+[20:47] didn't have to touch anything besides
+[20:48] using natural language. All we have to
+[20:50] do is copy this code right here using
+[20:53] that button. It's going to copy this and
+[20:54] then if you give that to lovable, it
+[20:56] will put that in your web app. So, super
+[20:57] easy. And then you just have some
+[20:58] options down here to customize the
+[21:00] appearance. I didn't change anything
+[21:01] here. All I did was rather than doing an
+[21:03] orb, which is the default like 11 Labs
+[21:05] thing that you can see down here. I did
+[21:07] an image and I just put in a little
+[21:08] image of Jarvis and that's how it's
+[21:10] popping up in our web app. I guess I
+[21:13] also changed like the contents. I think
+[21:15] this would have normally said start to
+[21:16] call but now we change it to talk to
+[21:18] Jarvis. Um, you can set up different
+[21:20] things like the terms and conditions and
+[21:22] I think I made it compact rather than
+[21:24] full. So that's like the only other
+[21:25] thing I changed really. But that's
+[21:27] pretty much it for the 11 Lab side of
+[21:29] things. I will say that there are there
+[21:31] is a lot of testing that goes on with
+[21:33] the system prompts. Like sometimes it
+[21:35] won't call the tool right away and that
+[21:36] can be frustrating. So it's really just
+[21:38] about getting in here and explicitly
+[21:39] calling out when you use a tool and what
+[21:41] you send to that tool. And now for the
+[21:44] N&N portion of this whole build is
+[21:47] you've got this workflow which is the
+[21:48] Jarvis main assistant and then you have
+[21:49] these four other assistants to do. So
+[21:51] what you're going to do is you'll go to
+[21:52] the free school community, click on
+[21:54] YouTube resources and you'll see you
+[21:56] know the Jarvis post that I'll make
+[21:58] after I post this video. And let's say
+[22:00] it was this one. All you're going to do
+[22:01] is you need to download these workflows.
+[22:02] So, in this case, you'd be downloading
+[22:03] an email agent, um, a calendar agent, a
+[22:07] content creator agent, a contact agent,
+[22:10] and then the main Jarvis agent, which in
+[22:11] this case was the ultimate personal
+[22:13] assistant. And then you go into Nen,
+[22:15] open up a new workflow. And all you have
+[22:16] to do is come in the top right and hit
+[22:18] import from file. And then once you
+[22:20] choose that file, it'll just drop in
+[22:21] here exactly how I have it right now.
+[22:23] You'll have probably red in most of
+[22:25] these areas because you'll have to plug
+[22:26] in your own Tavly API key and your own
+[22:28] open API key. And then the other thing
+[22:31] you'll have to do is when you import
+[22:32] like the email and the calendar and
+[22:33] these different agents, you have to make
+[22:35] sure that this main workflow links back
+[22:37] to the correct one in your environment.
+[22:39] So in this case, I'm linking to a
+[22:40] workflow called email agent and I have a
+[22:42] little robot emoji. And if I open this
+[22:44] workflow, it's going to pull up the one
+[22:45] that it's linking and sending data to.
+[22:47] So just make sure that you have this
+[22:49] main Jarvis pointing to the right
+[22:51] workflow out of all the workflows that
+[22:52] are in your NAND instance. And then of
+[22:55] course when you open up like an email
+[22:56] agent or calendar agent, you'll have to
+[22:57] put your own credentials in these tools
+[22:59] as well. So if you guys have seen my
+[23:01] ultimate assistant video, which looks
+[23:03] like this, we basically just copied this
+[23:05] entire skeleton, moved it over to a new
+[23:07] workflow, and we're just changing the
+[23:09] way that we interact with the agent and
+[23:10] the way the agent sends data back to us.
+[23:13] So here, what was going on is we were
+[23:14] talking in Telegram. We could do a voice
+[23:16] file or text, and then the agent would
+[23:18] take action and respond to us in
+[23:20] Telegram. And now all that we changed
+[23:21] was we're triggering the agent on a web
+[23:23] hook which is from 11labs voice agent
+[23:25] and then it's going to respond to us
+[23:26] back in 11 Labs with voice. So it's
+[23:28] going to be super conversational and
+[23:30] that's how we get that you know
+[23:32] experience of talking to a sarcastic
+[23:34] Jarvis. So what we did here was we
+[23:37] utilized a really cool functionality of
+[23:38] nen where when we're adding a tool we
+[23:41] can do a call nadn workflow as a tool.
+[23:43] So these four tools down here are
+[23:45] actually separate workflows that I
+[23:46] built. So the first one is an email
+[23:47] agent and as you can see it looks like
+[23:49] this. It has a ton of different actions
+[23:50] to take in email. And this makes the
+[23:52] main agents job a lot easier because all
+[23:54] it has to do is determine, okay, here's
+[23:56] the request coming in from the user. I
+[23:59] have these four tools. Actually, I have
+[24:00] five. I have a Tavly search tool, but I
+[24:02] have these four agents. Which one do I
+[24:04] send it to? So, all it has to do is
+[24:05] figure that out. And then the email
+[24:06] agent will figure out, okay, I have this
+[24:08] request. I have all these tools. Which
+[24:09] one do I need to use? And so, very
+[24:12] similar for the calendar agent. It looks
+[24:13] like this different calendar functions.
+[24:15] The contact agent looks like this. Like
+[24:17] I told you guys, we were using Air Table
+[24:19] as the contact database. And then
+[24:20] finally, just a quick content creator
+[24:22] agent that has the internet search and
+[24:24] then it can create the content with
+[24:25] different prompting in here and then
+[24:27] send that over to the main agent. And so
+[24:29] there's two things you may have noticed.
+[24:30] We were having to click test workflow to
+[24:32] make sure that the workflow is actually
+[24:34] listening because it's inactive. All
+[24:36] we'd have to do is make this active and
+[24:37] then the web hook would always be
+[24:38] listening. And then the only other thing
+[24:39] we'd have to change is in 11 Labs when
+[24:42] we gave it the web hook, we gave it this
+[24:43] test URL. It's kind of grayed out, but
+[24:45] right here there's test and there's
+[24:46] production. When you switch it to
+[24:48] active, you're going to want to copy the
+[24:49] production URL instead. And then you're
+[24:51] going to want to put that in your 11
+[24:53] Labs application for the end tool.
+[24:55] You'll just switch out the URL to the
+[24:56] actual production URL. So that's like
+[24:58] the only thing that you'll change when
+[24:59] you make this active. But for now, let
+[25:01] me just show off like the Tavly
+[25:02] functionality. So if I want to talk to
+[25:03] Jarvis real quick. Oh great. What do you
+[25:06] want? Hey Jarvis, can you search the
+[25:08] internet for um mangoes?
+[25:12] Searching the internet for mangoes, sir.
+[25:14] A noble pursuit indeed. Let me see what
+[25:16] the worldwide web has to say about this
+[25:18] fruit. Well, well, well. Look at that.
+[25:21] Apparently, Japanese Miyazaki mangoes
+[25:23] are all the rage, even popping up in
+[25:25] terrace gardens in India. Who knew? Is
+[25:28] there anything else I can do for you or
+[25:29] were you just curious about the global
+[25:31] mango scene? Okay, that's enough from
+[25:33] Jarvis. Just wanted to show how that
+[25:34] works. And as you can see, um, it was
+[25:36] going to be a live walkthrough. So, if I
+[25:38] didn't hit test workflow when we asked
+[25:39] Jarvis to do something, it would have an
+[25:41] error. So, let me just show what that
+[25:42] would look like. Oh, great. What do you
+[25:44] want? Yeah. Can you just check my
+[25:46] calendar for today?
+[25:48] Ah, the relentless pursuit of
+[25:50] productivity. Checking now, sir. Let's
+[25:52] see if your ambitious scheduling matches
+[25:54] your actual follow through. Ah, it seems
+[25:56] something went wrong. Naturally, it
+[25:59] isn't my fault, sir, but I shall
+[26:00] investigate regardless. It appears there
+[26:02] was a slight hiccup. Okay, so actually
+[26:04] it used the exact behavioral guideline
+[26:06] we told it to use in the 11 lab system
+[26:08] prompt if you remember when we said if
+[26:10] you run into an error assume it's not
+[26:11] your fault. So that's what it said. But
+[26:13] the only reason it couldn't actually
+[26:14] access this web hook is because we
+[26:16] didn't hit test workflow. So it wasn't
+[26:18] actively listening. So just something to
+[26:19] keep in mind. So anyways, the way that
+[26:21] this works, like I said, is we have a
+[26:23] web hook listening and as you can see it
+[26:25] gets a body query which we set up and it
+[26:27] says search the internet for mangoes.
+[26:29] What you notice also is that right here
+[26:31] we have the method is post. We have the
+[26:33] response back to the web hook is using
+[26:35] respond to web hook node. So make sure
+[26:37] you set that up otherwise it'll by
+[26:38] default I think will be immediately
+[26:40] which means it'll try to respond back to
+[26:42] the voice agent right away before this
+[26:44] has actually been executed. So what
+[26:46] happens is the tools execute and then
+[26:47] the agent responds using this node and
+[26:50] then the the voice agent's able to
+[26:52] respond with this information because we
+[26:54] already took action with our agent. And
+[26:56] here's exactly what Jarvis just said to
+[26:58] us about the Japanese Miyazaki mangoes.
+[27:00] So, I know it seems like there's kind of
+[27:01] a lot going on here and I'm going to
+[27:02] cover it at a high level, but two quick
+[27:04] reminders. The first one is you can get
+[27:06] this workflow as well as all of the
+[27:08] child agent workflows for complete free.
+[27:10] All you have to do is join the free
+[27:11] school community. And then second is I
+[27:13] have a paid community where a lot more
+[27:15] hands-on support and I actually did a
+[27:17] step-by-step build of this ultimate
+[27:18] assistant. So, if you want to see like
+[27:20] the live prompting and the live
+[27:21] troubleshooting and the testing of
+[27:23] building out a system like this, then
+[27:25] definitely check out the paid community.
+[27:26] I think that would be a good place to
+[27:28] learn. Okay, so let's take a look at
+[27:29] each node real quick. Not going to get
+[27:31] super detailed, but want to show what's
+[27:32] going on within each one. So, we just
+[27:34] looked at the web hook trigger and the
+[27:36] respond to web hook node. Um, I the only
+[27:38] reason this is purple is because I just
+[27:39] pinned it just for, you know, the sake
+[27:41] of looking at explaining what's going
+[27:42] on. But the first thing that's going to
+[27:44] happen is we're going to take the body
+[27:46] query as we remember right here, the
+[27:47] actual message, the user's intent, and
+[27:50] we're going to feed that into the agent.
+[27:51] And this agent is looking for the actual
+[27:53] body query. When you first drag in an
+[27:56] agent into Naden, it's going to be
+[27:57] searching for a user message within the
+[27:59] connected chat trigger node. So, we
+[28:01] don't want to do that. We want to define
+[28:03] where the user message is coming from.
+[28:04] And all we have to do is look in the web
+[28:06] hook, go down here to the body query,
+[28:07] and then I just drag this in right
+[28:09] there. As you can see, that's all we
+[28:10] have to do. So now the agent knows,
+[28:12] okay, what am I responding to? Then we
+[28:14] set up the system prompt for the agent.
+[28:16] And just a reminder, the system prompt
+[28:18] will be in the template when you
+[28:19] download it. So we gave it an overview,
+[28:21] which is you are the ultimate personal
+[28:22] assistant. Your job is to send the
+[28:23] user's query to the correct tool. So it
+[28:25] doesn't have to worry about writing
+[28:26] emails or creating summaries or anything
+[28:28] like that. All it has to do is route the
+[28:30] request to the right tool. So then we
+[28:33] listed out each tool. Your email agent,
+[28:35] this is what it does. Your calendar
+[28:36] agent, this is what it does. Your Tavly
+[28:38] tool, this is what it does. That's just
+[28:40] best practice explaining to the agent
+[28:42] the tools it has access to and when to
+[28:44] use them. Then we gave it some quick
+[28:45] rules because there are some things that
+[28:47] require multiple tool calls like sending
+[28:49] emails or creating calendar events with
+[28:51] an attendee. You first need to hit the
+[28:52] contact agent in order to grab the
+[28:54] contact information and then you can hit
+[28:56] the next tool. And then finally, I just
+[28:57] gave it one example to look at as well
+[28:59] as the current date and time by using
+[29:01] the function dollar sign now. And as you
+[29:03] can see on the right, that basically
+[29:04] just gives the agent access to the
+[29:06] current date and time. And the only
+[29:07] reason that this turned yellow is
+[29:08] because we switched out the user message
+[29:10] and just changed something. So it's
+[29:12] yellow, but it should be working. Don't
+[29:13] worry. So the first thing I want to talk
+[29:15] about is the chat model. So we're using
+[29:17] OpenAI GPT40 as the chat model. The
+[29:20] reason I used 40 is just because I like
+[29:22] the way that it, you know, works with
+[29:23] system prompting and tool calling for
+[29:25] something like this where maybe you will
+[29:26] have multiple steps. If we were to ask
+[29:28] it like, hey, can you send an email? Can
+[29:30] you create a calendar event? Can you
+[29:31] update a calendar event? And can you do
+[29:32] all this? it would be able to do so
+[29:34] because it can able it can sort of like
+[29:36] reason through what tools it needs to
+[29:37] use and then basically like send off the
+[29:40] queries in the right order. Next, we're
+[29:42] using the simple memory which used to be
+[29:43] called window buffer memory. Now they
+[29:45] just renamed it to simple memory. And
+[29:47] this is very similar to the way when you
+[29:48] first set up an agent. It's going to be
+[29:50] looking for a session ID within the
+[29:52] connected chat trigger node. So we had
+[29:54] to define this below because we
+[29:55] basically want the memory to be
+[29:56] separated by user um or by ID. And so we
+[30:00] dragged in the ID coming from the web
+[30:02] hook. If I go back to mapping and I go
+[30:04] all the way down to the web hook and I
+[30:05] just dragged in the host from the web
+[30:07] hook. And now keep in mind this is
+[30:08] referencing the actual host of your
+[30:10] Naden app. So this wouldn't be different
+[30:13] based on whoever's talking to your app.
+[30:16] But you just need sort of an uh
+[30:17] something in here to be used as the key
+[30:19] for memory to be stored. And then on the
+[30:21] right hand side you can see we have the
+[30:23] actual chat history. So every time the
+[30:24] agent gets a message and does something
+[30:26] it updates what happens over here. So
+[30:28] you know create a calendar event today.
+[30:30] um the calendar event has been created.
+[30:32] We have, you know, check my calendar.
+[30:34] Here's your schedule for today. So,
+[30:35] it'll look through five context
+[30:37] interactions before it sort of takes
+[30:39] action. Then, of course, we have our
+[30:41] four agent tools. So, if I was to go
+[30:42] into um let's look at the first
+[30:45] execution where we're creating a
+[30:46] calendar event. So, I believe it would
+[30:47] be this one. We can go ahead and copy
+[30:50] this one to the editor so we can look at
+[30:51] it in real time. So, we'll unpin this
+[30:53] data. And now we can see that this was
+[30:55] the request coming in that said schedule
+[30:57] meeting today with Michael Scott. So
+[31:00] what happened was it went to the contact
+[31:01] agent and we can click on view
+[31:03] subexecution which will take us into
+[31:05] what the contact agent actually did when
+[31:07] this query came in. So as you can see
+[31:09] the main agent called on this smaller
+[31:11] agent and said hey get Michael Scott's
+[31:13] contact information from there this
+[31:15] contact agent was able to look at the
+[31:16] user message and then take action
+[31:18] because once again we gave it a system
+[31:20] prompt of here's your tools here's what
+[31:21] you do. So, it searched through Air
+[31:23] Table and it was able to look at all the
+[31:25] contacts and then it responded to the
+[31:27] main agent with saying Michael Scott's
+[31:29] contact information is as follows.
+[31:30] Here's his email address. Here's his
+[31:32] phone number. So then back in the main
+[31:34] agent after we got Michael Scott's
+[31:35] contact information, it knew that okay,
+[31:37] now I have this I can actually create
+[31:39] the event. So if we click into the
+[31:40] calendar agent and we click on view
+[31:42] subexecution, we can once again see what
+[31:45] the calendar agent did in this specific
+[31:47] run. So we can make sure that it was
+[31:48] actually acting properly.
+[31:51] So once again, the incoming query was
+[31:53] create a calendar event today at 12 p.m.
+[31:55] with Michael Scott. Here's his email. So
+[31:57] we were able to use the email that we
+[31:58] got from the contact agent. The calendar
+[32:00] agent once again was able to look
+[32:02] through its user message, its system
+[32:04] prompt, and all of these prompts will be
+[32:06] provided to you if you download the
+[32:07] templates. And then it said, okay, I
+[32:09] need to use this tool, which is create
+[32:10] an event with an attendee. So I came
+[32:12] over here, I created an event from um
+[32:14] noon to 1. As you can see, I added an
+[32:17] attendee, which was
+[32:18] mike@greatscott.com. And I titled the
+[32:20] actual event meeting with Michael Scott.
+[32:22] If we click here, you can see that's
+[32:23] what it was called. And that's how we
+[32:25] added the attendee. And then from there,
+[32:27] this calendar agent decided, okay, I
+[32:29] need to respond back to Jarvis. So, I'm
+[32:30] going to respond with a success message
+[32:32] that says the event has been created for
+[32:34] today at noon. And also, if we were
+[32:36] doing a textbased response, we could
+[32:38] actually get this link and click on it,
+[32:39] which would take us to the Google
+[32:40] calendar. So, that's what's going on
+[32:42] here. I'm I'll just go over one more
+[32:43] execution which was actually the Mango
+[32:45] one that we just saw where it searched
+[32:46] the internet. And once again, I know I'm
+[32:48] going kind of fast. I don't want this
+[32:49] video to be too long, but the Ultimate
+[32:51] Assistant video goes a little more
+[32:53] in-depth as well as paid community. You
+[32:55] can get a step-by-step live build. So,
+[32:57] in this case, we saw the demo. The agent
+[32:59] decided, okay, the user asked me to
+[33:00] search the web. So, search the internet
+[33:02] for mangoes. And so, I know that I can
+[33:04] use my Tavly tool to do so because in my
+[33:06] system prompt, they told me Tavi, use
+[33:08] this tool to search the web. So, all I
+[33:10] have to do here is hit the Tavly tool.
+[33:11] We can click into here and um you can
+[33:13] see I have my tablet set up. Going to
+[33:15] have to change my API key now. But um we
+[33:18] basically are just filling in the
+[33:19] placeholder. So this is what the JSON
+[33:21] body request to tablet looks like. We
+[33:22] have our API key. We have the query
+[33:24] which we're using a placeholder here
+[33:26] called search term. And we can just
+[33:27] define that down here as a placeholder.
+[33:29] And then we just fill out some other
+[33:30] parameters like what type of search do
+[33:32] we want. We said news. You could also do
+[33:34] general um max results all this kind of
+[33:36] stuff. And then we get our actual
+[33:38] response back from Tavi which it just
+[33:40] went and searched three resources, three
+[33:42] articles about mangoes. And then it
+[33:44] responded to Jarvis and fed it that
+[33:46] information so that Jarvis could respond
+[33:47] back to us. And then of course we have a
+[33:49] calculator tool in case we asked Jarvis,
+[33:51] you know, what's 2 plus2. I'm sure he
+[33:53] would respond with something pretty
+[33:54] sarcastic. All right, so that's going to
+[33:56] do it for this one. I hope you guys
+[33:57] enjoyed. I hope this opened your eyes to
+[33:59] how easy it is to build something with
+[34:00] lovable with complete natural language.
+[34:02] So um I'd love to see if you guys are
+[34:04] interested in more lovable content in
+[34:05] the future. building full web apps,
+[34:07] connecting them to something like
+[34:08] Superbase, even payment processors, and
+[34:11] using end to do a lot of the heavy
+[34:12] lifting on the back end. So, definitely
+[34:14] let me know if you're interested in
+[34:15] seeing some more lovable content. But,
+[34:16] as always, I appreciate you guys making
+[34:18] it to the end of this one. If you
+[34:19] learned something new and you enjoyed
+[34:20] the video, please give it a like.
+[34:22] Definitely helps me out a ton. And I
+[34:23] will see you guys in the next one.
+[34:24] Thanks so much.

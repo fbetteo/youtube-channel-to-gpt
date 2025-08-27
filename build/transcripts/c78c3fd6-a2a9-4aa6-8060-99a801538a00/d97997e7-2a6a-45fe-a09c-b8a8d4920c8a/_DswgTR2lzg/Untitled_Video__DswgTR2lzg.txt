@@ -1,0 +1,428 @@
+Video Title: Untitled_Video
+Video ID: _DswgTR2lzg
+URL: https://www.youtube.com/watch?v=_DswgTR2lzg
+View Count: 0
+
+[00:00] Hello good morning. Um, my name is Lauren.
+[00:05] My name is Lauren. Hi, Tegan. I'm a developer at ESPN. Um, I'm really, really excited to introduce. Uh, she's a senior software developer with the Brooklyn.
+[00:21] Sorry.
+[00:30] Okay, great. She works at the intersection of data and design building applications and visualizations to empower basketball decision, making and help win games. Before joining the nets in 2021.
+[00:43] she spent 3 seasons with the Philadelphia, 70 Sixers and research and development. She is also the CO, founder of women in sports data, an initiative to amplify women's voices in sports analytics across the technical spectrum. She holds degrees.
+[00:57] spectrum she holds degrees
+[00:59] Linguistics and near Eastern languages and civilizations from the University of Pennsylvania where she studied symbolic systems, formal syntax, ancient, Mesopotamian languages, and the world's oldest spreadsheets.
+[01:13] Enjoy make sure this is on Thank you so much for the wonderful introduction and thank you to the organizers for
+[01:27] inviting me here this morning. I really want to give Lauren a particular, uh, special shout out. Um, because you were so gracious enough to participate on a panel on this very topic. Um, at the conference that I organized back in August, the inaugural women.
+[01:42] Status symposium in Brooklyn and I want to thank Julianne for sharing this event and making this full day happen. Um, thank you. This is such an incredible program and it's an honor really to be part of it this year.
+[01:56] So, let me give you a little extra of background on me. Um, as long as said, I am a senior.
+[02:03] With the nets progress, and this is my 2nd, full season with the nets after spending, um, many years ruining the lives of the greater Philadelphia region with the 76 years.
+[02:17] I work with a team of other brilliant engineers, data scientists and analysts to provide insights to the organization to empower basketball decision making.
+[02:27] So, yes, I studied formal linguistics and dead languages at the University of Pennsylvania, symbolic systems because cuneiform looks like chicken scratch.
+[02:36] I studied things like, um, complex state machines and the theories underpinning the models of computer and human languages. Um, but, yeah, can you create a form like Maryann and Acadian.
+[02:50] Um, and I would argue that this is honestly the most valuable thing that I could have learned in school because working with dead languages, particularly sue Mary and.
+[02:59] Has influenced a lot about how I think about solving her problems and it also helped me to develop a lot of technical,
+[03:08] practical and creative skills that have been invaluable to my work in basketball.
+[03:14] Um, cuneiform tablets are like the databases and you learn a lot about data, persistence and corruption when your source material, um,
+[03:26] is 4,000 years old and it literally comes out of the ground in front of Iraq. iraq
+[03:31] So, I learned bash and them, not only in my computer science and linguistics classes, but by tagging Sumeria morphemes for the electronic Pennsylvania Sumerian dictionary project,
+[03:41] I learned about applied statistics by working with the many economic texts from the or 3 period.
+[03:47] Which is a span of about 100 years between the 22nd and 21st centuries. It's the most documented historical period up until the industrial revolution. And I learned a lot of really weird, hard math, uh, with a base, 66 adjustable number system.
+[04:01] When I was translating a new Babylonian, astronomical text from the 8th century BC. Um, but I guess possibly the most underrated skill about learning how to read cuneiform. And I guess you can be the judge of this after this.
+[04:16] of this after this
+[04:17] Was, how do you distill a lot of arcane complex knowledge into a format that's accessible to a lay audience?
+[04:25] Um, is retired stuff like an NDA defense.
+[04:30] But today we're going to talk about my other favorite soapbox, which is software engineering in sports analytics, because I am a software engineer, uh, in sports analytics and I just really, really love my job.
+[04:45] Um, doesn't even mean, like, software engineering for sports analytics. It's kind of broad, right?
+[04:52] So, before we get started, let's back up for a 2nd, and do some scenes that I.
+[04:57] Analytics in part is about mitigating biases and yet, when I say sports analytics, what I really mean, basketball analytics, because I work in basketball, I've only ever worked in basketball and because ball is life.
+[05:12] So, in true engineer form, uh, we're already gonna cut down the scope of requirements here for this project.
+[05:20] I'm going to do my best to give context for other sports where I know it or where it's appropriate but a pretty good rule of thumb for today is that when I talk about sports analytics um, unless otherwise specified, I'm probably talking hoops.
+[05:35] Sidebar, as a member of a front office, um, it's actually kind of difficult for me to speak with any real specificity about what I do beyond what's publicly available or in a job description because of how much teams.
+[05:49] It's a competitive advantage and even though this industry is growing, they unfortunately do not pay me enough currently to afford a tampering. Fine.
+[05:58] So, we can be really extra about this sort of thing in the NBA. Um, the Brooklyn nets front office is actually 1 of the few teams that doesn't even list, um, our personnel, um, on our NBA team website. Uh, and I've heard that even some teams.
+[06:12] Um, can be so tight lipped about their technical stack like, who we use react on our front end and a Django back end. Uh, so innovative.
+[06:21] But literally, literally, everything is a competitive advantage, and we can be very condensed and keep it secret, keep it safe. Um, so maybe this is a cop out.
+[06:31] Um, but if this talk was called mildly spicy takes congenitally related to coding for pretty much, only, but yeah. Whatever basketball analytics.
+[06:42] Uh, I would have been disappointed so, um, we're gonna go with software engineering for sports analytics.
+[06:49] Twitter, here's a tweet that I wrote a couple months ago, in part to promote the software engineering panel at women, sports data.
+[06:58] Hey, Lauren, practically half the MBA was looking to hire a software developer or a data engineer last year.
+[07:06] If there's an open position with an analytics group for any sport, I bet you, it's for an engineer.
+[07:12] Okay.
+[07:16] Which brings us to our theme today, hiring for engineers and developers is booming in sports but what exactly do they do for a professional team.
+[07:27] I mean, we're not analysts, we're not scouts. We're not coaches.
+[07:33] You don't want to see my jumper. What are we even doing here?
+[07:38] Students often ask what my day to day looks like working for an NBA team and I have to admit I struggled to answer this in a compelling way because the answer is I code.
+[07:49] I code, uh, but also my front office rule, um, heavily impacts what? That code actually executes.
+[07:57] And that's secret, so there's not really such a thing as a typical day since the workflow, the cadence of the NBA calendar, and I'm usually working on a long term project, and several 1 off requests.
+[08:09] And depending on the time of the year, I'll be working on projects and products related to coaching the front office scouting sports, science, et cetera.
+[08:18] But every team is different, every front office is different. Um, I've been a part of essentially 3, and I think it's really hard to tell what actually goes on inside of any given front office or quote unquote analytics department.
+[08:35] But that's effectively the question that we're going to try and answer today.
+[08:40] What are we even doing? So here's the roadmap.
+[08:43] I'll start with the evolution of data sources in the NBA as a model of how the statistical revolution and sports analytics has affected how the game is playing.
+[08:55] Then I'll highlight some of the technical skills and demand for software engineers and in sports analytics, including cloud services, big data, stream, processing, statistical modeling, data, visualization design.
+[09:08] By looking at a couple candidate profiles from job ad descriptions, I'm going to talk about some of the core responsibilities for building out infrastructure and applications for an audience of data scientists and decision makers on and off the court.
+[09:23] And then we're going to look at a case study of ubiquitous love them,
+[09:26] or has been shot chart and NBA basketball where they succeed and where they fall short and talk about how data visualization and communication are an essential part of an R and D or analytics Department's workflow and output and how
+[09:41] software developers can empower both their analysts and their stakeholders to make winning decisions.
+[09:47] Well, then touch on how the technical demands of the current data landscape has shaped the discourse of sports analytics and give some hot takes on the ideal function of a so called analytics department.
+[10:00] So, this might be a card carrying member of the church of the Denver Broncos.
+[10:05] I know this is where the caveat applies of when I was playing sports. What I really mean is basketball.
+[10:14] I'm really unqualified to speak about the statistical revolutions and other sports given that I do not know how they work.
+[10:21] Uh, but if you want to know more about data and data sources, for instance, in the NFL, or maybe the theme for next year's big data will stay tuned for the schedule coming ahead which is packed with far, wiser data nerds than me.
+[10:34] But I hope we, at least have basketball covered for you.
+[10:38] So to begin, I think it's important that we talk at a very basic level about what.
+[10:44] Data is, and where data comes from, because those are our building blocks for everything that we do on the team side from draft projections to player evaluation to rebound modeling.
+[10:56] And that is with the software developer and various specialized rules is going to have to garden.
+[11:03] In the beginning, there was the box score. Well, for basketball in the beginning, there was nothing but a peach basket, but eventually we created the box form.
+[11:12] What data is made up and we decide what matters what to count and everything on top of that is human intervention and that's a process in an abstraction.
+[11:22] But the analytics is kind of new up until 996, the best data that we have for describing what happens during a basketball game was the box score, which, of course, is still alive.
+[11:33] And well, and if you're looking at a game cast online, for example, you're probably looking at a box score. at a box score
+[11:40] The box score consists of mainly counting stats, so the sort of stuff that you see, like, how many points were scored was that basket for 2? Was it for 3? Was it a free? Throw? How many skills were there?
+[11:54] How many rebounds, and it's generally about 30 rows of data per game for the full roster of each team with over a dozen data columns and because of this, it can be a bit limited.
+[12:07] It captures only a fraction of what happens during a game because it's.
+[12:10] Heavily weighted towards offense, it's outcome driven and it can obscure or underweight. The magnitude of a Player's defensive contribution.
+[12:20] That all started to change in the 996,997 season and the NBA when play by play data became available.
+[12:28] Play by play is sort of like color commentary it's talking about events and players on both teams who are evolved like this player scored 2 points and it was a dunk within assist.
+[12:42] So, we have temporal information. That is retained. We start to get line up data. We can approximate match ups. We also get X, Y, location, data for shots and play by play is about 400 rows of data, per game.
+[12:54] And that also requires some amount of process of parsing. parsing
+[13:00] Then, in the 2013, 2014 season, we get player tracking data, which is now provided by a company called 2nd spectrum, which takes the event data of what happens on the court the X Y,
+[13:09] Z coordinates associated with the ball events and player actions using 2 D cameras installed in every regulation game and with every NBA stadium, and then we're getting 25 frames per 2nd samples.
+[13:23] So extrapolate those data tracking points per player. extrapolate those data tracking points per player
+[13:29] The course of a 48 minute game, and with downstream processing, you come out to around 1Million, tracking points per game.
+[13:38] So let's take an example of the pick enroll, the quintessential basketball action where a teammate puts his body in, for the defender who's guarding the player was the ball. This is the pick or the screen.
+[13:50] So, but the ball Henry can move past the screen and either look to score or pass. And then the screener rolls to the basket and is open.
+[14:00] This isn't captured at all in the box for the play by play me be capture some of the events like the past. If it's an assist.
+[14:08] Uh, but player tracking data, it gives us nearly the full context of the play.
+[14:14] And so, what we're looking at here in this diagram comes from an article that Zach lo wrote for grant land and 2013 about the MBA adoption of the new player tracking camera system, then done by a company called sport.
+[14:25] And specifically he's talking about how the Toronto Raptors and my former director of R and D and Philadelphia. Alex wrecker. philadelphia alex wrecker
+[14:32] Developed applications on top of this data. So, here, they're exploring a concept of what they call ghost players doing. What? Toronto believe a player shouldn't have done on a given plan.
+[14:44] This 1 is from the Knicks Raptors game. The next Player's criminal Anthony who's the blue number? 7, Jersey and tyser Chandler who's Jersey? Number? 6 are running a picken role here on the left elbow and Chandler is going to roll to the hoop.
+[14:59] We can see that mellow is handling the ball on the right side of the floor. Um, it's that really tiny, um.
+[15:07] Circle on his number, um, and so that makes the left side, the weak side. And so toronto's demar to Rosa number 10 is supposed to be helping on the big man. I eat Chandler to prevent him rolling to the paint.
+[15:22] Um, so what we currently have in basketball is 2 D tracking camera data, as I said, we're getting 25 frames per 2nd of the X Y, coordinates of a player. And that includes the coordinates of the ball.
+[15:35] But there's still a lot of data that we'd love to have for additional context. context
+[15:41] Basically, what I'm talking about is pose or skeletal key points, the ability to detect body hand and foot position over a series of frame. And this is probably the future of player tracking data.
+[15:55] You can imagine how valuable this might be for evaluating a contest or close out, uh, or players shooting motion and how this might enhance the end game metrics of for our performance staff, which I'm going to elaborate a little bit later.
+[16:09] So schedule tracking.
+[16:11] Requires new depth cameras so that we can disambiguate overlapping limbs and handle the wild lighting conditions in arena.
+[16:19] Um, my favorite part of the game happens to be when there's fire behind the hoops, but I'm not really into the stroke lights. So, these cameras would solve for that.
+[16:30] There are also a couple of public systems that can use cameras, proposed detection, like, open, pose, um, but that will produce fewer frames of data, but with fully fledged skeleton tracking,
+[16:43] depending on the number of frames and the number of key points detected, we're going to generate say.
+[16:49] 10 full amount of data that traditional location tracking does.
+[16:54] Okay, at this point we've been talking exclusively about data.
+[17:01] Captured in a game environment, and the EMEA players association has this very strict rule about what kind of tracking and measurement that you can do for players in game but in a practice environment in your own training facility,
+[17:14] you have access to a lot more resources in technology, so here's a couple of examples.
+[17:20] A lot of teams, um, in the NBA and and.
+[17:24] Use a program called Noah, which measures shots taken from any point on a core and returns data on things like the arc of a shock, or the depth. Like, how far back it is towards the basket and whether it goes to the left or the right.
+[17:38] Of a basket, and this can be useful for giving feedback to players as they're in their shooting motion.
+[17:44] So they can adjust in real time, but it's also really useful, um, for a department like mine, and you want to model, like, what shooting action.
+[17:54] Creates the best, um, shooter.
+[17:58] So, another data source comes from a company called connects on, which makes wearable sensors at last year's wmba commissioners cup players from the Connecticut sun and Seattle storm wore these tabs in the waist bands of their shorts.
+[18:12] Um, and that measure data on sprints jumps velocity position. Which, in combination with optical tracking from Hawkeye, very similar to the camera tracking that we have in the NBA.
+[18:25] Uh, reportedly generated approximately 15Million data points per game.
+[18:32] And so I wish I had put a picture of Bernie Sanders in the meme, because if anybody is listening out in the ether, I am once again asking for access to this data.
+[18:42] Uh, and maybe for next year's women in sports data Hackathon just saying.
+[18:48] So, now that all the fancy stuff is out of the way last, but not least. You have all of the data generated and managed internally for a team and I'm talking annotated trades or scouting reports.
+[19:01] Um, and this kind of data is massively important for an organization in part, because it's unique to how that organization is set up and what its priorities are and what its goals and values are.
+[19:13] So, like I said, it in the beginning, all data, uh.
+[19:17] Is made up because we're deciding what's important to measure.
+[19:20] And because we have so much of it now, you need some people to manage all of that.
+[19:27] So, we have this soup of data.
+[19:30] Millions and millions of rows of data.
+[19:33] Cue, the computer folk context matters.
+[19:39] A software engineer for a baseball team, versus a basketball team, versus a football team, et cetera is all going to look different given the maturity of analytics in these fields and the size of a given department and the values of individual teams.
+[19:54] So here's a chart from Jacob on Twitter, plotting the number of baseball operations analysts and data engineers against their team's payroll.
+[20:02] Baseball has a reputation of having the most mature of analytics departments, because, you know, money, balls, cybermetrics, you have your movie, and you see that teams like the Tampa Bay raise the Dodgers,
+[20:15] the New York Mets and my Philadelphia Phillies. They all have a fairly large analytic staff of 25 to 30 people. people
+[20:24] I was recently talking to somebody who leads the baseball's technical staff, and he mentioned that he had 4 front end engineers alone.
+[20:32] Um, you can probably guess what team, um, he's not managing. Uh, but this is more than my entire development staff, which is probably on the larger end, um, for the MBA.
+[20:45] And a friend of mine, uh, in basketball that you should probably just divide the stack number access text by 5 to get the distribution of analytics staffers and basketball.
+[20:55] Um, but, yeah, there's still many teams in baseball and basketball who have comparatively small staff.
+[21:03] Again, we're going to have far more more knowledgeable people on the docket today but in hockey, uh, from this chart, from Shana Goldman, for the athletic,
+[21:12] we can see about 20 to 30 people with engineer or developer in their title between a couple of those people who are clustered on the same team and those whose teams have skewed,
+[21:25] their personnel titles is just analyst analyst analyst. That's maybe an average of 1 engineer per team.
+[21:33] Which, to me, implies the analysts or data scientists are actually doing a fair amount of data engineering. Uh, and as we talked about previously, like, that's a lot of data. That's a lot of data to manage.
+[21:47] Um, and just another hockey fun fact, um, when I worked for the Philadelphia, 70 Sixers, our ownership group actually had a portfolio that included the New Jersey devils.
+[21:58] And it was literally in my contract that I could be the conduit to hockey projects.
+[22:03] So, I apologize for any damage that I may have done but, um, I'm a gritty fan.
+[22:11] And I think this, this comment from South Walter from ESPN, uh, was really interesting. Um, he was talking about the status of developers in the NFL from a thread on his, um, survey on analytics staffers for teams. And he says.
+[22:26] The most common gray area is developers I exclude by default, but include if I'm told, they are specifically and primarily part of the football analytics. Um.
+[22:38] Operation and I think of the major men's professional sports correct me if I'm wrong. Um, NFL teams tend to have, um, smaller, uh, analytics groups.
+[22:50] But I so I found this really interesting because I, I've always worked in basketball on it. And, um, I've always considered myself to be part of an analytics department.
+[22:59] Um, and so I asked, uh, if they're not part of the analytics department, then.
+[23:06] What else are they doing? And I think there's this kind of, um.
+[23:10] Misconception that.
+[23:13] Developers because they are not analysts.
+[23:19] Are not doing analytics and I think we're going to see that it's really difficult to disambiguate the practice of making recommendations with building out the infrastructure.
+[23:34] So, I wanna, um, talk a little bit about candidate profiles.
+[23:39] There's, um, clearly a pretty diverse environment, um, a person with the title or responsibilities of software engineer can have in a team environment in professional sports. So, um.
+[23:51] Here, we're going to go through a couple of examples of some profiles of recent rules that have popped up.
+[23:58] Um, this is becoming like, a real growth area, and an industry that rarely opens up staffing capacity and the popularity of the discipline given the increasing complexity of data management, whether that's from tracking or checking data,
+[24:12] or generated in house is clearly providing a value add. So I want to do a little experiment, and I apologize to those who are online. Um, but I want to read out, um.
+[24:25] Basically, these position summaries and, um.
+[24:29] Kind of the technical skills that are involved and I want you to raise your hand if this sounds like you or this sounds like something that you would want to do.
+[24:37] So, this, this candidate.
+[24:41] Is a software engineer who will lead development of the internal tooling used by coaches scouts and the front office.
+[24:50] You're going to act as an engineer as well as product manager to build beautiful and sophisticated applications that help to power basketball decision making. So their hands.
+[25:02] Who wants to do that? I love it because that's literally my job description.
+[25:07] So, this person is a full stock developer they have to write JavaScript because that's how the web works and ideally, they will have a background and TypeScript in Python.
+[25:20] Um, you should have experience building and working with rest APIs. And that can be in node or Django or flask or maybe you're going to get fancy and write a go back end.
+[25:33] And you should also have experience with a plan framework, which, um.
+[25:38] I think most teams, um, that I've talked to, they, they typically say react. Um, but, uh, I like to do a little bit where I try to about spelt. Um.
+[25:49] Which we won't have to get into, but, uh, you can talk to me later about the gospel itself. Uh, and.
+[25:55] You should also be experienced with sequel in relational databases and, um, so, for example, Postgres, um.
+[26:03] And you should have, you should have get hub, you should do, you should understand how to configure a Linux server. You should be able to do data visualization.
+[26:13] It's a pretty good job, but Here's another 1.
+[26:19] This this particular engineer is going to be responsible for collecting and transforming data from various sources as well. And I also like to interject. These are all real.
+[26:29] These are, uh, I have lightly edited, but this is a real job description as well as preparing and distributing data for consumption by teams developers and Alice, they will collaborate with data scientists to maintain,
+[26:43] enhance and extend data infrastructure. They are an experience. The data pipeline builder who excels at automating and.
+[26:49] Optimizing data systems with cloud experience.
+[26:52] Okay, who who who is that?
+[26:59] So some data engineers in the house.
+[27:03] So this is kind of like the archetypical profile of when teams are looking for a data engineer. Like, we want a gardener.
+[27:11] And so this 1, I had to edit because they asked for scripting languages, Java and C sharp, which are not scripting languages. Um, but Python is, uh, and, um, you're going to be building pipelines, um, and you're gonna be, um.
+[27:27] It really is kind of like gardening, like a Zen rock garden, because you're moving things around. Um.
+[27:35] And warehousing, these data, um, in, um, and using things like Google, cloud airflow. Um, and you're gonna have to work with Docker. I'm sorry.
+[27:48] And this job, um, ad, I think is also very interesting. I've admitted it from the slide.
+[27:55] Um, but they're also requesting experience building visualization again with tools, like, or dash or GG.
+[28:04] And they're also requesting, um, experience with web application development, um, especially JavaScript and react and so of the people who raise your hand for both. Uh, can you, can you raise your hand once more?
+[28:18] Well, it's not like a huge number, but we've, we've cut down the ranks. Um.
+[28:28] So, this final profile is a software engineer who will research design and test cloud based quantitative modeling at scale.
+[28:37] Uh, they will collaborate with data scientists, define and manage model production, realization and platform release plans.
+[28:44] So, if you had to guess anyone.
+[28:49] What is this person's title? Like.
+[28:57] You know, Python, it's highlighted maybe.
+[29:01] Yeah, yeah, you're an EML engineer.
+[29:07] But again, this person is also expected to, um.
+[29:11] To to to do front end development in addition to the model training. And if you look at the toolbox.
+[29:21] That the teams are requesting, this is all about add descriptions are essentially a wishlist and you don't need to have every single skill that's listed.
+[29:31] Um, but like, let's think about the reality of the, the landscape of.
+[29:37] Developer staff and engineering staff across specifically men's professional sports. Um.
+[29:43] And if you're on average the 1 person, who's doing engineering a.
+[29:48] It's a pretty big toolbox and there's this idea of overlap of blurring of roles. And so I think that.
+[29:58] There's a chance for you to really grow, um, and.
+[30:04] And there's certainly opportunity, but it is a pretty big job. So this introduces some, some problems.
+[30:12] And to a certain point, to be a software engineer for a professional sports team is probably the furthest away from the course spirit of the sport. Um, but in my opinion, the job is impossible to do.
+[30:25] Well, and to enjoy without developing a certain level of sports, statistical fluency, um.
+[30:33] For perfectly, every other rule in a basketball operations, um, particularly on the front office, and you can get better at your job by watching more basketball.
+[30:43] Um, and so, for a software engineer, watching more, basketball is both a feature and a bug, which is, uh, I want to talk about shot charts for a minute.
+[30:55] What does it take to build a shop chart? However, you may feel about shot charts coaches, love them players love them. People love shot charts.
+[31:05] Have you worked for a basketball team? You definitely have a, you have a short track.
+[31:09] And making charts isn't actually computationally complex. You only need the location data from play by play.
+[31:16] Although the marketing's contacts from tracking data is super helpful and insightful when you're filtering. Um.
+[31:23] And framing the narrative for your answer to a specific question.
+[31:29] And so, 1 of the most well, known disruptions to the NBA game is how the 3 point shot took over and there's a lot of nuance to this conversation because because of tracking data, um, and about the efficiency and how we value shots.
+[31:43] But I just want to point out while we're here that the trend of percentage of 3 point attempts among all field goal attempts to steadily gone up. Um, especially at the point of introduction of player, tracking data in 2013 and yet the rate at.
+[31:58] the rate at
+[31:59] Teams actually make those shots hasn't dramatically changed in the past several years. Typically sits around 36%. Um, so teams aren't necessarily getting better at making threes and the aggregate. They're getting better at attempting them.
+[32:13] attempting them
+[32:15] So try to do a bunch of stuff. Well, like, engage and communicate something dense, simply and a bunch of stuff that.
+[32:23] They don't do at all, or they do poorly and that's what we're going to talk about. And so we're gonna this conversation on shut charge through viz, um, in the following things.
+[32:34] How do you shop charts reflect the influence of analytics in the NBA game how do shot charts apply or obscure?
+[32:41] And how can you develop them and communicate them in a responsible way as a software developer as a member of an analytics department as a member of basketball operations?
+[32:53] So this is a husband shot chart. I feel like you've probably seen something like this.
+[32:59] Uh, to me, it's very emblematic of the basketball analytics movement. Uh, and this is how you read the chart.
+[33:06] Shot frequency is encoded with size so fewer shots from a location are smaller and the more frequent somebody takes them um, the larger they are.
+[33:17] Shot and efficiency is a value of a rate of success that is included with color. So more MS. shots are blue more majors are red and he indicated density that right Red hat in.
+[33:32] The middle of the hoop is generating high efficiency, which is basically evaluation of a field goal that takes into account 2 versus a 3 as well as whether, um.
+[33:42] So this is the product shots taken in league in 2013, and the of taking threes is already fairly healthy. We can see that around 49,000 shots were from 3 accounting for approximately 24.3% of all shots.
+[33:55] There's still a lot of blue, um, big hexagons in the mid range. of blue um big hexagons in the mid range
+[34:05] So, let's fast forward to 2019 where 78,000 shots were from 3,
+[34:10] accounting 435.9% of all shots jump and share of over 10 and we can readily see in the chart that there's just so much more white space at the perimeter dividing the area between 2 points.
+[34:23] And 3, so if a 3 is a step or 2 back from a long tube, then it certainly makes sense to take them. long tube then it certainly makes sense to take them
+[34:34] More valuable, um, shot as a step back.
+[34:36] Well, maybe, um, and this trend is even more dramatic. If you look at a chart, um, on the team level. Um, so, um, in 2013, this team took a lot of bad, mid range shots.
+[34:50] Um, but in 2019, their shot selection was more densely concentrated from 3. and at the rep. from three and at the rep
+[34:57] And I want to be a little cautious here about associating this, strictly with the strong current of 3 point attempts, this shot profiles also influenced by coaching changes and changes in players and strategy.
+[35:10] But we're all playing in the same league and so charts display outcomes. Not processes, but teams are playing different processes to achieve those outcomes. And the process for generating more looks from 3 has meant more spacing of players.
+[35:24] More attacking the rim for defensive collapse and passing out of defenses to try and take away. Both the rim and the 3. I try to force the low return, mid range shot but in general, they tend to get overextended.
+[35:36] So, the ripple effect is that defenses have to abandon how closely they're defending the Rin. So often some efficiency has gone up over this time period. Not only because teams are shooting more threes. But also, because the shot percentage at the rim is also going up.
+[35:52] So, let's take a look at a couple of applications of shot charts.
+[35:56] This 1st example is of a player who completely changed his game in the course of 4 seasons to adapt to this prevailing trend of 3.
+[36:04] The 1st, year here, he took roughly 13 shots from 3, and he didn't make very many of them.
+[36:11] But graduation sticking fewer and fewer shots from mid range and more and more from above the break.
+[36:16] After 4 seasons, he has taken 512 shots from 3 making them at 336.5%.
+[36:24] Um, essentially the average offers aren't created equal for him as this player develops this 3 point shot. He's mostly successful from the corners.
+[36:34] So here in your full at the bottom, right? At the wing on the top, right?
+[36:37] Above the break for the corner, it looks like he takes a pretty high volume of shots, but he isn't making very many of them this player in year 2 and 3 actually already has a pretty decent 3 point percentage, but he is taking a bit more than half of what he does in year 4,
+[36:52] and that translates to a lot fewer points. So if you're a coach and your game planning for this player, you know, that he has hot corners and that he's a willing shooter above the break. And so you might.
+[37:04] That.
+[37:05] Let it fly if he's if he's above the break, like, that's a shot that you can live with and that's something that you can see through this visualization.
+[37:14] Which brings us to this concept of, like, where do shots come from when they're from 3 and if you look at a lot of shot charts, you'll start to notice that, like that player. The corners tend to light up bright red.
+[37:26] So much so that people talk about getting the good corner 3.
+[37:31] And it's 1 of the best shots that you can take, because there were 3 points. And people tend to make them more often. Um, almost 40% of the time.
+[37:39] So, there's 2 things going on here that you might ask.
+[37:43] 1, why don't you just always take a quarter 3 if they're better and 2 uh, what is it about the coin? Is that make them so good? And both of these things are kind of tied together.
+[37:55] So, let's just start with the volume in 2019 of all the 3 pointers taken. The majority of them were taken above the break where the corner line meets the arc about 16,000 more shots and why that happens is probably related.
+[38:09] And in some way to. in some way to
+[38:13] 403 is tend to go in more often.
+[38:15] And so if you look at the simple geometry of the court, you see 1 thing right away.
+[38:20] The corners are closer, interestingly for a free seasons in the mid 90. S, the distance to the basket was changed to be uniformly 20 feet all around um, as the current, um.
+[38:32] From the corners and 3 point a 10 percentage significantly. So, yeah, the corners are closer. And this is actually the premise for the addition of the 3 point line.
+[38:43] Um, the reasoning being that the further away a shot is the harder it should be so it should be rewarded with more points.
+[38:52] But we don't just play basketball, like, it's the, all star game, uh, 3 point contest. Uh, they're going to be a lot of typically large people in between you and the shooter and making that shot.
+[39:06] So, how you get the ball matters quite a bit, and how defenses can cover you. And so these, these shots from the corner in general tend to be assisted.
+[39:16] Meaning you receive, um, um, it's a catching the shoot situation rather than.
+[39:23] Off the dribble where you have to create your shot and you're running with the ball to a space on the floor and then your shooting. So, how defenses can be set, how closely a defender can get to you in order to contest your shop all of that factors in.
+[39:37] So, it, it, it is a question, both of geography and court context.
+[39:44] So the 3 point revolution has been the prevailing trend in the league for well, over a decade now and abandoning the mid range and going for 3 has at league level been, um, typically the most efficient way to win.
+[39:58] And sometimes, I think with 3 being inherently greater than 2 got it, uh, sometimes, I think this argument is spun on its head. Like, it's productive.
+[40:09] Like basketball analytics is only thing to do this, some revolution.
+[40:15] But I don't actually think that this is such a simple proposition, because players have different skill sets and different things that they're good at. And really the best way to win is to maximize those abilities and to put that into the alchemy of making a great team.
+[40:30] So, players individually are averages.
+[40:33] There are many paths to success, and all of these short shorts here are of different players who have above average efficiency and fairly diverse shop profiles on over 600 field goal attempts.
+[40:46] And I'm typically using data from the 2019 season because it's the Pre bubble season. the pre bubble season
+[40:54] So you can see that too, um, on the top, right?
+[40:58] And 1 on the bottom left look like, they still take a prodigious amount of mid range shots and there's still, I think I have just 1 center up here on the top left.
+[41:10] Um, this is kind of the prototypical big man shot chart. Um, but if you remember the 1st story that I told you about the player who completely transformed his game.
+[41:19] He was the center too, so traditionally charts have corresponded to certain player positions or rules. Um, but now the league has more creative use of positions.
+[41:31] And this has turned more based into role based, um, strategy basketball.
+[41:36] And it used to be that, like the role of a shooter and a floor of a floor spacer, like our 1st example, that was usually the smallest guy. And then the role of an offensive rebounder was usually the biggest guy.
+[41:49] And that's typically not a shooting guard. But now, I wouldn't say that you could tell that from a shop chart. The shot charts aren't necessarily descriptive of a Player's position.
+[41:59] So you do need to be careful when making assumptions or inferences from a chart because they are purely descriptive.
+[42:07] So, short charts are still outcome base, not necessarily process based and of course, we would certainly be able to slice the data here and there in certain ways like,
+[42:19] show me only shots that were contested or ones that came off a pick and roll. But, ultimately, there's a lot of the story to these shots that that isn't told and can't be told by this type of visualization.
+[42:34] These 2 short charts look kind of similar. Um, almost like.
+[42:37] Your images, at least, if you're looking past the 3 point line, but they're not telling the story of how the player got those shots. They can't.
+[42:45] These look the same, like the same shots, but they're not.
+[42:50] So can be deceptive we don't know the speed in which he got the.
+[42:55] Or that he got that shot, uh, how he got that shot or the distance between him and his defender. And so I think that we always have to be really careful about when we look at short charts to make sure that we're applying them in a responsible and correct way.
+[43:09] That doesn't mislead.
+[43:12] Okay, so Chuck, what are you hey, what are they good for?
+[43:16] My brief as a developer is pretty wide, and I work on whatever contributes to winning games.
+[43:23] So, that might be entail building applications to facilitate recommendations for the coaching staff, or making products for scouting and player evaluation or designing a salary cap tools for the rest of the front office.
+[43:36] But the thing that I'm most enjoy doing, I think that I'm most interested in is creating work that that communicates data in an accessible and actionable way.
+[43:46] And as a developer, 1 of the things that that I can build is interactive data visualizations. Um.
+[43:53] I really like to synthesize datasets and complex models that our data scientists, uh, produced into something, both a computer and an assistant. Gm can.
+[44:03] And so it's this intersection between working closely with data scientists and analysts on 1 side, and the front office coaches scouts players on the other, the stakeholders.
+[44:14] To use business pilots in a way, it makes a software developer, the ultimate gender neutral blue guy.
+[44:24] Here's my, um, my 1st, uh, pepper level spicy take uh, I think that analytics is a misnomer sports. We should stop calling it miss analytics down with analytics.
+[44:36] I would argue that in modern analytics department is really a research and development consultancy.
+[44:44] We probably go through this cycle every couple of weeks or so, depending on who's in season of some old head saying something mean about numbers.
+[44:52] I always believe that analytics was crap says, Charles back.
+[44:59] What ever done to you?
+[45:02] Well, maybe a lot of things.
+[45:06] There's this popular perception of analytics, being a sort of ask an answer model this is from 1 of my favorite episodes of a show by Bleacher report.
+[45:16] Now ended called zones, which, if you're unfamiliar dramatic sizes, the MBA and the style of game of Thrones, and everybody lives in West rose.
+[45:27] And so this is the analytics episode and Darryl Maury, who is another guy used to work for here when he's at Houston.
+[45:36] Uh, at the rockets, and he's explaining to Carmelo Anthony Offscreen.
+[45:40] About how the model works, we feed her data and she gives us answers.
+[45:47] Oh, oh, so Carmelo asks.
+[45:52] What should be my role on house rockets.
+[45:56] And the model spits out a 1 line recommendation, but he doesn't like.
+[46:01] Hey, crumbles it up into a ball and shoots it into a basketball hoop waistband, which is what Chris Paul has just picked up here.
+[46:08] And the mellow says this model is nothing, but a hater.
+[46:14] This is like, inadvertently a very mellow, heavy presentation. So, take that as you will. But I think that some of the animosity towards analytics is that it can kind of feel like surveillance that it's just telling you what to do.
+[46:29] And I don't think that it's really so much about an infiltration of people who didn't play the game. I think it's because of the products that they use to make decisions about players lives in livelihoods, is this walled garden and.
+[46:42] The, uh, there's this perception that analytics isn't accessible and too often the audience is for other analysts, not for the people that are actually trying to win games.
+[46:55] So, what can analytics do for you? We just talked about managing massive amounts of data. We've just talked about creating visualizations that delight and engage, but also need to be treated with caution with a data fluent translator.
+[47:10] Uh, and my former director of R, and D at the 6 years, used to say, we're like a startup that doesn't have to worry about making money and that's true. The, the money that you, you're not speaking to investors, but.
+[47:24] We don't have to worry about making money because it all comes back to making money.
+[47:29] But the idea of an analytics department is essentially to increase your win chance your win shares.
+[47:35] We value a win at X, number of dollars per game. We value a championship at X, number of dollars. And so the value of proposition has to be fair.
+[47:44] And so to go back to my original definition of analytics, the point is to mitigate bias to supplement the I test and to hopefully work towards making the best possible decisions developing and implementing the best possible strategies.
+[47:58] And that's impossible to do in that, ask an answer model of analytics.
+[48:03] And so it's not only about having a recommendation or even an opinion, it's about creating a suite of support and you have to drive your application development around this philosophy.
+[48:14] Uh, and so, rather than being the analytics guys or the numbers, I think that we should consider ourselves as research and development.
+[48:26] I want to end on unicorns. Maybe you've heard of some developers being described as unicorns the unicorn developer who can do it all the multi hyphen it just help function of software engineers. The designer developer stats model.
+[48:41] Supermodel, uh, and maybe you've noticed the beautiful images at the section titles I hope so, because I'm really proud of them and you'll have to indulge me here for a minute.
+[48:53] I want to talk specifically about the unicorn chemistries, and this is called specifically the unicorn font and there are a series of 7 medieval tapestries, um,
+[49:04] depicting a unicorn hanging in the Met cloisters and upper Manhattan.
+[49:10] Which, uh, you should absolutely go visit if you ever have a chance um, these tapestries are considered to be some of the best and most significant works of art surviving from the late Middle Ages.
+[49:22] Uh, and they depict a group of noblemen on a hunt for the elusive magical uniform. So on this tapestry on the left, they're depicted as attacking the unicorn.
+[49:31] Um, because they're trying to get the unicorn corn, which was considered to be able to heal wounds and purify water, even though they're not real. And then.
+[49:40] The, um.
+[49:42] All right, the resurrected unicorn is sitting in close.
+[49:46] And I particularly like the meta description key, the uniform, uh, is tethered to a tree and constrained by fence but the chain is not secure. And the fence is low enough to leap over.
+[49:59] The unicorn could escape if he wished.
+[50:03] Clearly, however, his confinement is a happy 1. the red stands on his length do not appear to be blood as there are no visible wounds like those in the hunting series. Rather they represent.
+[50:14] Pomegranate juice 1st, from the person chronographs above, which are leading with medieval symbolism.
+[50:21] And it reminds me of this, quote, from Brett brown, the former head coach of the Philadelphia, 70 Sixers.
+[50:28] We are star hunting, or we are star developing. That's how you win a championship.
+[50:34] Think about some difficult organizational decisions some roster decisions we had drafted, we had drafted mckell bridges in the 1st round. Um, our hometown kid from Villanova and the son, even of a sixer's employee.
+[50:46] And we treated him immediately on draft night for the rights desire, Smith, and a future 1st round pick.
+[50:52] Sire, unfortunately is no longer in the league. Mchale is a starter.
+[50:56] But it reminds me of the expectations for technical staff.
+[51:00] Everybody wants a unicorn, we want that on average 1 developer or engineer per team and we want them to do and be everything.
+[51:09] We want them to be a hit. Why isn't so hard to hunt for unicorns?
+[51:16] It's because they don't exist. They're mythical creatures in sports. You work in the passion economy. Part of your compensation is working in sports. You get championship equity, but if you win, you don't.
+[51:29] So, if it makes no difference to, you perhaps find a more lucrative position, singing, closed code in an industry with more regular hours.
+[51:39] And there's a certain amount of sports, specific statistical literacy that is required either preexisting or a willingness to acquire.
+[51:49] And I suspect this sort of domain knowledge is developed in any other normal job. So, if you worked in health care insurance, I don't think that it's reasonable to expect that you should be a health care insurance as an engineer.
+[52:04] But if we considered sports to be a real job, then you should be able to learn the sports part.
+[52:10] On the job, so my question is, is it harder to learn how to code from scratch if you're on a team or is it harder to be a coder who's getting up to speed with a particular sport?
+[52:22] Chicken or the egg and obviously this is it depends. Right? This problem is really team specific.
+[52:30] Basically do you have an environment where you can grow and does that environment favor 1 direction over the other and it's probably easier to bring someone into baseball analytics.
+[52:43] Um, but is just getting comfortable with Python if you already have a database.
+[52:47] And so, I think in a front office engineering is probably the furthest away from that core sports domain knowledge, even though you need to know both to be successful.
+[53:01] Um, so if you're a scout, you get to do your job by doing more, just by watching basketball but if you're an engineer, you're wearing multiple hats.
+[53:09] Like, it's almost like a 2nd job to stay up to date with the, uh, current trends tools techniques in the computer part of your industry. And I think that, um.
+[53:20] The sports industry in general doesn't quite understand how big of an ask that is.
+[53:26] So, I find myself off and telling people who want to break into sports analytics to build projects in public with sports data.
+[53:33] When I say this as someone who's hadn't arguably fine career in sports for several years, and I did not have a sport specific portfolio.
+[53:41] I wish I didn't have to do this, and I wonder if framing a large body of passion project work. I E, something that you do for free as an unspoken requirement for getting a job in sports analytics is suboptimal.
+[53:56] Both for hiring teams and for recruiting talented individuals, which is not to say that it is, it's not helpful advice. It's really good advice.
+[54:04] Um, because teams very rarely hire for these positions and a public profile is absolutely 1 of the ways to get attention from teams.
+[54:12] Um, and and I think a lot of people pick up programming and analytics, because they're passionate about a particular sport and they have questions about that sport and not the other way around.
+[54:22] So this is nothing against putting up sports analytics work online, like a Twitter or your blog. If that's your thing like, you should absolutely do that.
+[54:31] But I think that the type of analytics work that is popular, um, in public on social media.
+[54:38] Is it as in high demand for teams? Um, for a number of reasons, like, publicly available data is inherently less rich.
+[54:46] Then what teams have, and it's very expensive to acquire that data and also it's really boring to read a tweet about Docker files.
+[54:54] I also think that it's important to remember that the people who are filtering out the 1st line of resumes typically don't have a technical background. You're not applying to a technical company you're applying to a sports team.
+[55:06] Um, but if the popular paradigm of what doing sports analytics is very specific and narrow, then you're going to end up with that laundry list of requirements for that full stat data scientist.
+[55:21] Software engineer designer, uh, probably below market rate, um, from our HR, because teams don't understand that they need distinct technical roles. And you've only got budget for 1.
+[55:33] The unicorn. Oh, I've got 1 more slide. It's a dog and it's hard for teams to understand that growth. We can over index on sports, domain, knowledge, or background at the expense of finding. Some really great people.
+[55:46] And I sincerely believe that. This internal bias, disadvantages groups who aren't already well represented in a front office.
+[55:55] So I can't end this talk on such a dire note. So here's a picture of my dog.
+[56:01] His name is Victor, and I think that the takeaway from today should be this, there's a lot of opportunity here to make a big impact and there's some really hard problems coming down the pipeline basketball for 1 is certainly not solved.
+[56:15] And if you enjoy doing computer loops, and it sounds like it's something it would be something fun for you might I suggest that you become a software developer.
+[56:24] So, thank you, and I'd love to hear some questions.
+[56:27] Thank you.
+[56:33] Thank you T, that was awesome.
+[56:36] Um, we're going to take some questions now. Uh, I believe we have microphones to pass if you have.
+[56:42] Just raise your hand.
+[56:47] Oh, I forgot to make my joke a joke.
+[56:50] Ah, I got my dog. Oh, Linux.
+[56:58] Okay, thank you. Bye. Bye. Bye.
+[57:04] For this stop sharing.
+[57:14] I know that there's not nearly enough.
+[57:19] Funding in the world, the women's basketball, but do you know.
+[57:23] Is there like a role or position in.
+[57:27] Like, the WNBA for software development or data analysis.
+[57:32] The minutes, I don't think apparently hiring for data.
+[57:36] Uh, and I could not be more still I don't know why.
+[57:41] It's hot.
+[57:48] Oh, yes, okay. So the Minnesota links are hiring for a data engineer currently. Um, and I think this is really.
+[57:56] Cause they're taking seriously, then the need for building out data infrastructure, um, from in the correct way.
+[58:04] wmba don't subscribe to you.
+[58:09] Um, Hawkeye data sources and, um, the connects on data from the commission. So.
+[58:20] And I think it's going to be something that.
+[58:26] This week. Oh, okay. Yeah. Yeah.
+[58:33] Can you see, maybe if I can stack, so it'd be 2 speakers, but then oh, okay. These are this Becky a 1Million dollars.
+[58:44] There isn't a cap on front office staff.
+[58:46] Uh, and so I, I think that that it will start to happen, um, it, it, it is already happening, um, the mistakes also, um, are supported by data engineering staff, um, headed up by the the lovely Kathy Evans.
+[59:01] My dear friend.
+[59:02] Um, so it yes.
+[59:07] But not enough.
+[59:13] Other stuff from the left of it. Um, you mentioned the bubble at 1 point. I was wondering if there was something about your job or the preparation for games that you had to change based on the fact that it was in the bubble.
+[59:27] And then also, is that was there a specific statistic or trend that was kind of unique to the bubble and very greatly from the other seasons.
+[59:34] Yeah, let me think about the best way to answer this because the bubble.
+[59:41] I'm on the Philadelphia, 70 Sixers. I.
+[59:45] And the way that we prepared for the bubble, like, after getting over, like a severe bout of depression, it was really difficult because.
+[59:57] So, um, and we played such a high cadence of games and so our.
+[60:03] se's for other teams was different, and we also have the film, um, from the season because it was several months later and I think 1 of the really interesting effects of the bubble, uh, was the lack of crowd.
+[60:17] And so, um.
+[60:19] Shooting became, um, much more efficient, uh, and, uh, I can't say the Sam walking people, but the, you know, there are certain examples of players that had, um.
+[60:31] Really like breakout bubbles and the question is like, is that an evolution is that something that's going to happen? Or are we gonna be dropping 50 point pieces, uh, on the regular now? Or is that just something that happens?
+[60:45] Because we're in this magical kingdom? Um.
+[60:51] But, yeah, shooting shooting in a pure invite and that's not necessarily surprising because you do see that in practice as well.
+[61:01] Turn on the map is it on anonymous switch it on.
+[61:07] Undergrad or grad students, we see these jobs going around on Twitter for, like, internships that are those full stack data science analysts positions with.
+[61:16] The full on, like, 20 requirements that no, like single degree is going to have do we just like apply for these like, what's if we have, like, public facing or do we just apply and just know that we don't have yeah, you got to shoot your shot man.
+[61:30] You should do it that's all a wishlist and yes.
+[61:35] Like, you are going to have to to do that, but on the flip side, you do get exposed to, um, literally the entire stack, the entire data stack. And so it's it's difficult but it also is a great, um.
+[61:50] Improving ground of like, what do you find? Interesting in my background academically and before I came to the nets was much more backend focused.
+[62:01] But now I find a lot of joy working at closer to the top of the stack and working in product development and design. And so I think that, uh.
+[62:11] Working at sports should be like a real job. I wish that they are internships, paid more like a, a thing level internship but alas, they do not.
+[62:20] Uh, but it, it has to be an environment where you can actually learn skills and not be expected to be just an underpaid, full time employee. So Yep. Perfect.
+[62:31] I'm sorry, go to time. I think we should move on. We are set up for the next, uh, panel discussion.
+[62:38] But, yeah, thank you. Thank you. Everyone. Bye.

@@ -1,0 +1,1130 @@
+Video Title: How I Automated Faceless Shorts with AI in n8n (free template)
+Video ID: Gc03J27xmBc
+URL: https://www.youtube.com/watch?v=Gc03J27xmBc
+View Count: 188,164
+
+[00:00] today I'm really excited to share this
+[00:01] end workflow that I built with you guys
+[00:03] that's going to help you generate and
+[00:04] publish faceless AI shorts on autopilot
+[00:08] once you have this thing up and running
+[00:09] you can generate as many shorts as you
+[00:10] want per day so you're basically going
+[00:12] to be able to grow a YouTube channel
+[00:14] while you sleep and the best part about
+[00:15] it is I'm giving all of the resources
+[00:17] that you need to get this thing set up
+[00:18] away for free so all you have to do is
+[00:20] join my free school community and all
+[00:22] the resources will be in there so let's
+[00:24] not waste any time hop straight into a
+[00:25] demo and then we'll break down each node
+[00:27] and see what's going on cool so this is
+[00:29] what the workf looks like um and before
+[00:31] we actually hit test workflow let's look
+[00:33] at this Google sheet real quick that has
+[00:34] all of our ideas that triggers the
+[00:36] workflow so I'm going to hop into it
+[00:38] this is what it looks like as you can
+[00:39] see we've already created four different
+[00:41] videos that we'll we'll look at in a sec
+[00:43] and you can see that the video status on
+[00:44] them are created the published status is
+[00:46] processed and the video link is the
+[00:48] final video link is right here as well
+[00:50] and in order for you to plug in this
+[00:51] workflow and hit run you need to have
+[00:52] your sheet set up just like this so
+[00:54] you'll also be able to grab this
+[00:55] template and then everything will be
+[00:57] mapped correctly for you but anyways
+[00:59] when we go back into ended end and we
+[01:00] hit run we're going to be pulling in
+[01:02] this row right here which is going to be
+[01:03] futuristic cyber Punk Rebels and it's
+[01:05] going to be tiger bear rhino pig it's
+[01:08] going to know to grab this row because
+[01:09] we have the video status set to to do
+[01:12] now that we're back in Ed end let's hit
+[01:13] test workflow it should be pulling in
+[01:15] that last row we just looked at and it's
+[01:16] feeding in those four animals and the
+[01:18] style into this image prompt agent the
+[01:21] only reason I'm using an agent here is
+[01:22] because I wanted to be able to plug in
+[01:24] different chat models and test out
+[01:25] different image prompt generation and so
+[01:27] right now we're going with 40 but now
+[01:29] it's clean cleaning up th those prompts
+[01:31] getting rid of any new lines and
+[01:32] punctuation just because we want to make
+[01:34] sure that they're able to feed into our
+[01:36] API call here where we're doing a text
+[01:38] to image API and then we have to wait
+[01:41] about a minute 90 seconds in order for
+[01:43] the images to be generated then we're
+[01:44] going to grab them and then we're going
+[01:46] to feed those images into a image to
+[01:48] video generator and then we're going to
+[01:49] wait for 2 minutes and then we're going
+[01:50] to grab those videos and I'll explain
+[01:52] the rest of the
+[01:53] process okay so those images just
+[01:55] finished up as you can see we pull them
+[01:57] back into Ed end and then we feed them
+[01:58] into this next node that converts the
+[02:00] images to videos not really converts but
+[02:02] makes videos out of them so now we're
+[02:03] going to wait for those to finish up and
+[02:05] while we're waiting I thought it would
+[02:06] be a great opportunity to hop back into
+[02:07] here and take a look at some of these
+[02:09] finished products so this one is Viking
+[02:10] conquer animals
+[02:29] cool so now let's also look at Cowboy
+[02:31] Wild
+[02:33] [Music]
+[02:41] West all right so that's you you get a
+[02:43] feel for it right um if you noticed each
+[02:46] video has a different audio so we have
+[02:48] this sound agent down here kind of
+[02:50] looking at the style and then creating a
+[02:52] sound prompt that we're going to send
+[02:53] over to 11 labs to generate that audio
+[02:55] so I wanted to switch back into the
+[02:56] workflow because I had a feeling that
+[02:57] we're approaching that 2-minute Mark and
+[02:59] I wanted to to just show you guys live
+[03:01] the process of getting videos and then
+[03:02] sending it down and we'll see how the
+[03:04] merge works and everything over
+[03:06] here okay so that just finished up and
+[03:09] now we're downloading the videos back in
+[03:10] Ed end and we're sending it off this way
+[03:12] to create that audio as you can see
+[03:13] right now 11 Labs is what we're using to
+[03:15] create that you know sound effect audio
+[03:18] whatever you want to call it and then
+[03:19] what we're going to do is upload that to
+[03:20] drive we're going to share it within our
+[03:22] Google Drive and then we're going to
+[03:23] merge back and actually do the full
+[03:25] render and upload so it's being uploaded
+[03:28] now it's going to get shared and then
+[03:29] we're going to come over here we're
+[03:30] going to split it out to Parts we're
+[03:31] going to make our request to a service
+[03:33] called creat a mate to actually render
+[03:34] that template and then we're going to
+[03:35] wait for 25 seconds it doesn't usually
+[03:37] take that long but always just want to
+[03:39] make sure and then we'll pass it over
+[03:41] download the video upload the video to
+[03:42] YouTube and the rest is history there we
+[03:45] go just finished up download upload and
+[03:48] then we're going to upload update our
+[03:49] sheet and then we're going to get an
+[03:50] email notification so let's go ahead and
+[03:52] pop over to the Google sheet right here
+[03:54] we can see it just got updated to
+[03:55] created processed and a final video link
+[03:58] so let's click into this
+[04:07] [Applause]
+[04:18] I think that one's my favorite that
+[04:19] one's that one's kind of crazy we didn't
+[04:21] look at the Egyptian warriors so we can
+[04:22] click into this one real quick too
+[04:32] okay so that one had some weird sound
+[04:34] effects but first thing I want to point
+[04:35] out is these first three we used an
+[04:37] image to video generator called cling
+[04:40] and for these second two we're using one
+[04:42] called Runway so you've got a little bit
+[04:43] of flexibility here as you can see right
+[04:45] now we're using Runway but I also
+[04:46] included the API calls down here and you
+[04:48] would basically just plug and play these
+[04:50] three instead of these three and then
+[04:52] you would use this code node right here
+[04:54] if you use cling instead of this current
+[04:56] code node so you've got some flexibility
+[04:57] here you can try out some different
+[04:58] things the only only reason I switched
+[05:00] away from clling is because we were
+[05:02] accessing clling through an API and we
+[05:04] were just running into issues with rate
+[05:05] limiting because their service was
+[05:07] receiving so many requests and cing
+[05:09] takes like 6 minutes to download or
+[05:11] render and Runway is much much quicker
+[05:13] so I went with this one but if you
+[05:15] notice the difference in the video
+[05:16] quality there that's why and here we are
+[05:18] in email you can see that we got a new
+[05:19] short process futuristic cyberpunk and
+[05:22] then I can click on this link right here
+[05:23] it's going to pull up my YouTube
+[05:24] unlisted and we can see all these shorts
+[05:26] that we have um we could also click in
+[05:28] here to validate that it is a short
+[05:32] so that's exactly what we just saw and
+[05:34] we have the caption filled out as well
+[05:35] as the title so let's hop back into the
+[05:37] actual workflow here and break it down
+[05:40] so I know this seems like kind of a
+[05:41] complicated workflow it may look like
+[05:42] there's a ton going on but it's not too
+[05:44] bad um but if you're looking for more
+[05:46] Hands-On step-by-step approach then you
+[05:47] should definitely check out my paid
+[05:49] Community the link for that's down in
+[05:50] the description as you can see I already
+[05:51] uploaded this as a step-by-step tutorial
+[05:54] and then I also did another version of
+[05:55] this template sort of a V1 where I did
+[05:57] straight text to video generation rather
+[05:59] than using using images first and in my
+[06:01] paid Community I also did a step-by-step
+[06:02] of this tutorial as well but like I said
+[06:05] you can still access all this content
+[06:06] for free if you join my free school
+[06:08] Community click on YouTube resources
+[06:09] click on the post associated with this
+[06:11] video and then you'll have the Json file
+[06:13] right here to download and import into
+[06:14] your own nadn all right but let's get
+[06:17] into the actual breakdown of this build
+[06:19] so right now we have two triggers we
+[06:20] have a manual one because I was able to
+[06:22] just hit test workflow or we have a
+[06:24] schedule trigger and you could set this
+[06:25] to go off at you know three times every
+[06:28] day at these three times or whatever you
+[06:29] want we can use a schedule trigger so it
+[06:31] can really grow this channel while we're
+[06:33] sleeping so the first thing that we're
+[06:35] doing of course is we're hitting our
+[06:36] Google sheet with our content ideas and
+[06:38] we're grabbing back one row and so we do
+[06:41] this by saying okay we're going to look
+[06:43] at we're going to filter through the
+[06:44] column video status and the value has to
+[06:47] equal to do so back in our template we
+[06:49] have the column called video status and
+[06:50] if it equals to do then we pull in this
+[06:52] row but right now since none of them
+[06:54] equal to do if we hit run nothing would
+[06:56] come back and we also want to make sure
+[06:58] that we're only returning the first
+[06:59] matching row because ideally you'll have
+[07:02] like 20 or 30 ideas ready to go but you
+[07:05] only want to do one at a time so that's
+[07:06] going to make sure we only pull out one
+[07:08] and then we're going to get the row
+[07:09] information like the title the animals
+[07:11] and then the style all that kind of
+[07:13] stuff from there what we're doing is
+[07:14] we're just going to turn that those four
+[07:16] animals into a list and so we do this by
+[07:19] setting a field called Animals we change
+[07:21] the data type over here from string to
+[07:23] an array and then in here we're
+[07:24] basically just dragging in animal 1
+[07:26] animal 2 animal 3 we're putting that
+[07:29] Within in square brackets and we're
+[07:30] putting quotation marks around each
+[07:32] animal and on the right you can see it
+[07:33] comes through as a tiger a bear a rhino
+[07:35] and a pig and this way no matter what
+[07:37] four animals you have in your sheet
+[07:39] they're always going to be populated
+[07:40] into this array and then the last thing
+[07:42] I did was set the style which is just
+[07:43] dragging in the style from the sheet
+[07:45] over to the middle that way the output
+[07:47] is very clean we have the four animals
+[07:49] that we want image prompts created on as
+[07:51] well as the style for all four then what
+[07:53] we wanted to do is split out the list
+[07:54] that we just created of our animals so
+[07:56] we could have four separate items
+[07:58] because then we can feed in four items
+[07:59] into the agent and the agent will split
+[08:01] out four different prompts so that's the
+[08:03] idea here and all we have to do is say
+[08:05] hey which array do we want to split out
+[08:07] which list are you're trying to split
+[08:08] out and we just Dragged In animals and
+[08:10] now you can see it's always going to be
+[08:11] looking for a field called animals and
+[08:13] then it's going to create basically four
+[08:14] items from that list so now we have our
+[08:16] four animals all separated and they're
+[08:19] ready to go into the image prompt agent
+[08:21] within this agent once again the only
+[08:23] reason I'm using one is to be able to
+[08:24] play around with different chat models
+[08:26] rather than having to do different
+[08:27] requests so that's the only reason I'm
+[08:29] using agent obviously there's no tool
+[08:30] calls going on here but we have our user
+[08:33] message and our system message so the
+[08:35] user message just think of this like an
+[08:37] actual you know your chat bar with chat
+[08:39] gbt something you type something
+[08:41] different every time but the system
+[08:43] prompt is behind the hood you know open
+[08:45] AI has prompted chbt in a certain way so
+[08:49] that's the difference here but the user
+[08:50] message is going to be different for
+[08:51] each run so there's four items coming in
+[08:53] there's four items coming out if we
+[08:55] click into here we can see that we're
+[08:56] giving the agent the animal as well as
+[08:59] the style and on the right we can see
+[09:01] the four different runs so the first
+[09:02] time it's getting a tiger second time
+[09:04] it's getting a bear third time it's
+[09:05] getting a rhino and fourth time it's
+[09:06] getting a pig cool so now if we go into
+[09:09] our system message we can see that we're
+[09:11] basically telling the agent how to act
+[09:13] so we give it an overview which is that
+[09:14] you are a master prompt generator
+[09:16] specialized in crafting detailed
+[09:18] highquality prompts for advanced image
+[09:20] models like flux which is actually the
+[09:21] one that we're going to use your task is
+[09:23] to generate Vivid well structured
+[09:25] prompts that accurately depict an animal
+[09:27] dressed in a specific Style with a
+[09:28] matching background that complements the
+[09:30] theme so we're going to get a really
+[09:32] really solid image prompt here we gave
+[09:34] it some instructions like clearly
+[09:35] describe the animal's appearance specify
+[09:37] the output and accessories that reflect
+[09:39] the given style include details about
+[09:41] the background that reinforce the style
+[09:43] use Rich descriptive language avoid
+[09:45] generic terms and never output quotation
+[09:47] marks or new lines because as I said
+[09:49] earlier that would break our Json body
+[09:51] request then we gave it an example input
+[09:54] and output so we said an animal Fox
+[09:56] style cyberpunk and then a good image
+[09:58] prompt and then finally this is
+[09:59] something very important that I had to
+[10:01] figure out when I was testing all
+[10:03] prompts must be familyfriendly no
+[10:05] sensitive words should be used no
+[10:06] references to weapons even toy guns no
+[10:09] references of showdowns or violent
+[10:11] offense so if you remember we saw an
+[10:13] example of a wild west one of the
+[10:16] prompts was a dog that was holding a gun
+[10:19] and um the video prompt generator didn't
+[10:22] like that or sorry the video generator
+[10:23] didn't like that so that's why I put
+[10:25] that in there a great example of
+[10:26] reactive prompting I wouldn't have done
+[10:28] that beforehand so now we're getting
+[10:30] four items in and we're getting four
+[10:32] high quality prompts back so we have a
+[10:34] majestic tiger an imposing brown bear a
+[10:36] robust Rhino and a muscular pig I love
+[10:38] that so we have our four prompts right
+[10:42] now you can see there's no quotation
+[10:43] marks or new lines but what we have here
+[10:46] is a code check just to make sure that
+[10:47] there's no new lines I actually didn't
+[10:49] work in the quotation mark thing getting
+[10:51] rid of quotation marks here as you can
+[10:52] see I'm only replacing new lines but so
+[10:55] far so good um that would be an easy fix
+[10:57] using something like Claude 3.7
+[10:59] but as you can see we didn't get any new
+[11:01] lines but um if we did we have to clean
+[11:03] those up and when I was playing around
+[11:05] with Gemini flash 2.0 I was getting new
+[11:07] lines so that's why I put that in there
+[11:09] and then finally I'm just setting
+[11:10] prompts in a field called prompts just
+[11:12] so if we want to reference them later we
+[11:14] know exactly where they're coming from
+[11:15] and just to clean things up so right now
+[11:17] with 40 I don't think that these two
+[11:19] steps are necessary but sometimes just
+[11:22] good to have some extra um you know
+[11:24] guard rails in there and I like to set
+[11:26] Fields frequently I also like to save
+[11:29] items frequently so if you're building
+[11:30] this out step by step save your workflow
+[11:32] after every node because you'll learn
+[11:34] the hard way anyways we're ready now to
+[11:37] move into this blue section down here
+[11:39] which is going to be our generating
+[11:40] images and so as I touched on earlier
+[11:43] for some of them I used our cling API
+[11:45] which you can find down here we're
+[11:46] actually hitting cling which is a model
+[11:48] for video generation through a service
+[11:50] called Pi API which I'll show off in a
+[11:52] sec because we use Pi API to hit the Lux
+[11:55] model as well but I have a code note
+[11:57] here that if you do decide to test out
+[11:59] with cling you will put the code node
+[12:01] there instead of this one and same thing
+[12:03] for these three nodes you'll just swap
+[12:05] out these three nodes so if you want to
+[12:06] experiment go ahead but anyways when it
+[12:09] comes to generating images let me click
+[12:10] into this node what we're doing here is
+[12:13] we're accessing an API called Pi API in
+[12:16] order to hit the flux image generation
+[12:18] model so this is pi API leverage our AI
+[12:21] apis for your AI application
+[12:22] developments it's kind of like a router
+[12:24] the same way open router lets you
+[12:25] connect to different chat models this
+[12:27] lets you connect to different image
+[12:28] generation and different models as you
+[12:30] can see right here mid Journey all this
+[12:32] kind of stuff so once you get in here
+[12:33] you'll make an account and you'll be
+[12:34] able to get your API key from down here
+[12:36] in the bottom you'll create your key and
+[12:38] then what we're going to be looking at
+[12:39] is first of all image models so we have
+[12:41] mid Journey or flux and in flux what we
+[12:43] do is if we click on run API we can see
+[12:46] here is the information of how to
+[12:48] actually get this configured okay so
+[12:52] what we see first of all is we have an
+[12:53] endpoint and honestly all the endpoints
+[12:55] for pi API are the same where you
+[12:57] specify the model and the action is
+[12:59] going to be down here so down here you
+[13:01] can see in our body request the model is
+[13:02] going to be required and we'll fill in
+[13:04] that with flux and then for task type
+[13:06] we'll put in text image so anyways we
+[13:08] have our endpoint so that's going to be
+[13:09] a post to this endpoint so copy that in
+[13:12] and we have that figure filled out the
+[13:14] next thing that we see is we have a
+[13:16] required field which is our API key so
+[13:18] this is going to go in the header and
+[13:19] I'm going to show you guys a really cool
+[13:20] trick that you can do when you have
+[13:22] stuff like header parameters or query
+[13:24] parameters that are authentication so
+[13:26] what I did in here is rather than
+[13:28] sending it over as a header right here
+[13:30] where I would type like x- api-key and
+[13:33] then i' put my key right here rather
+[13:35] than doing that I want to make sure that
+[13:37] I can save my credential every single
+[13:38] time so that's why I have this Pi API
+[13:40] header here you're going to go to
+[13:43] authorization generic credential type
+[13:45] you're going to go to header off and
+[13:47] then you you can see I have a ton of
+[13:48] other ones set up but when you create
+[13:49] new credential all you have to do is
+[13:51] type in the x- API key right here and
+[13:53] then put your actual API key right here
+[13:55] and then you can save this and name it
+[13:56] whatever you want so that later if you
+[13:58] ever building another workflow and you
+[14:00] want to you know use Pi API you already
+[14:02] have this Sav so like you know I have
+[14:03] Twitter tavali Runway perplexity 11 labs
+[14:07] and now I have all of these always saved
+[14:09] and then if we go back to the
+[14:10] documentation we have to send over
+[14:11] different body parameters so the first
+[14:13] thing you want to think about is which
+[14:14] ones are required so we need a model we
+[14:15] need a task type and then we need an
+[14:17] input um and that's all that's required
+[14:19] so I basically just copied this example
+[14:21] from over here and I pasted that down
+[14:23] here and then we can configure it so the
+[14:25] only thing I really changed was the
+[14:27] width and the height cuz we want the
+[14:29] aspect ratio to be you know the vertical
+[14:30] 9 by6 for YouTube shorts and then I drug
+[14:34] in the actual prompt so I was just able
+[14:36] to grab this from the previous node
+[14:37] because we had just set our prompts and
+[14:38] they're all cleaned up at this point and
+[14:40] once again this is going to run four
+[14:41] different times so the first run is for
+[14:43] the tiger second run is for the bear
+[14:46] Third Run is for the Rhino and the
+[14:47] fourth run is for the muscular pig cool
+[14:50] so what happens after we send this
+[14:52] request to Pi it basically comes back
+[14:54] with four items so one for each of the
+[14:57] prompts and says okay here here's the
+[14:59] prompt and here's the status of your
+[15:01] picture so right now they're all pending
+[15:03] because they're pending and we know that
+[15:04] if we came into P API we're in the flux
+[15:07] playground and we're looking at our task
+[15:09] history we can see that each run is
+[15:11] taking about 30 seconds and we can also
+[15:13] see that each run is costing about two
+[15:16] cents a little less so it's going to be
+[15:19] what about six total cents for you to
+[15:21] run this every time just for the image
+[15:23] generation we'll get into the other cost
+[15:24] later but about 6 cents here for each
+[15:26] run for your text to image generation
+[15:28] and um we can see these will be like
+[15:31] processing for 30 seconds or so and so
+[15:33] that's why over here what we did was
+[15:35] wait for 90 seconds just to be safe
+[15:37] after we wait for a minute and a half we
+[15:39] will do another request and it's going
+[15:41] to be to the exact same endpoint so you
+[15:43] can just copy the endpoint from the
+[15:44] previous node put it over here and then
+[15:47] instead of a post we're going to be
+[15:48] doing a get and we're referencing the
+[15:50] IDS that are coming from the left hand
+[15:52] side so we're just dragging in task ID
+[15:54] and putting it at the end of the
+[15:56] endpoint as long as we put a slash after
+[15:58] the task and there's no space between
+[16:00] the Slash and the ID and so the reason
+[16:02] this works is because you can see here
+[16:04] every single image has a task ID
+[16:06] associated with so this one was the
+[16:08] tiger and if we open up the image URL we
+[16:11] can see it was the picture of the tiger
+[16:13] this next one is a different task ID and
+[16:15] this one was the brown bear so we can
+[16:17] open this one up as well if I can copy
+[16:19] this correctly and we can see that this
+[16:21] is a different unique image so that's
+[16:22] just how we were able to track what
+[16:24] image is what and also on you know
+[16:26] flux's side they can have every single
+[16:28] task asso with a new image so now that
+[16:31] we have our four Images right here
+[16:32] downloaded pretty much into nen not
+[16:34] really but we have the URL we're able to
+[16:36] feed that URL into this next node which
+[16:39] is hitting Runway to create videos from
+[16:43] a prompt and also an image combined so
+[16:45] I'm going to open up the runway API
+[16:47] documentation right here where at the
+[16:48] API reference and this one is even
+[16:50] easier because we have a curl Command
+[16:51] right here so we'll copy this curl
+[16:53] command we'll come back into nadn and
+[16:55] all we have to do is click on import
+[16:57] curl and then paste it right in here and
+[16:59] then when we hit import it's going to
+[17:00] fill in everything we need except for
+[17:02] like a few blanks like your API key will
+[17:04] have to pop in and then you have to
+[17:06] configure some of this own stuff but
+[17:07] I'll walk through what's going on here
+[17:09] but it'll by default throw an API key
+[17:11] section right here in the headers and we
+[17:13] don't want to do that we want to set up
+[17:14] our header so we can store it and use it
+[17:16] later it's just best practice so that's
+[17:18] how I got my header here once again we
+[17:21] also need to set up the x- runway Das
+[17:24] version which we can see right here it's
+[17:27] required um x- Runway - version and it
+[17:30] needs to always be exactly this value so
+[17:32] we're just going to copy and paste that
+[17:33] right into here and then finally we're
+[17:35] setting up the actual body request so
+[17:38] back in the documentation the first
+[17:39] thing that's required is a prompt image
+[17:41] so all I did is I put in prompt image
+[17:43] and I'm dynamically dragging in the
+[17:45] image from the left to the right so on
+[17:47] the left hand side this is where the
+[17:48] image URLs are so I just drag this in
+[17:50] right
+[17:51] here then we have um to set up our model
+[17:56] so the only model right here is Gen 3A
+[17:58] turbo so we basically just fill that in
+[18:00] right there we have the option to fill
+[18:03] in a ratio down here and there's only
+[18:05] two accepted values so we grabbed this
+[18:07] one because that's basically the
+[18:09] equivalent of a 9x6 aspect ratio we were
+[18:12] also able to configure the duration as
+[18:13] an integer we could only do five or 10
+[18:16] so we filled in five right here and then
+[18:18] finally we have the option to fill in a
+[18:20] prompt text and once again we filled in
+[18:23] the prompt text right here notice with
+[18:25] the prompt text it has to be less than
+[18:26] or equal to 512 characters so maybe
+[18:30] within your um image prompt generator
+[18:32] agent you might want to say make sure
+[18:34] it's not longer than 512 characters if
+[18:36] you're using um Runway if you're using
+[18:39] flux they can be maybe up to like 2500
+[18:41] or something so you have a little more
+[18:42] wiggle room there so that's all we did
+[18:45] we run this and then we're getting back
+[18:46] four IDs so similar concept is what
+[18:48] happened earlier where each of these IDs
+[18:50] is associated with a video but they're
+[18:53] not ready yet so waiting 2 minutes is
+[18:56] good I think a minute-ish is probably
+[18:58] the average but I just want to be safe
+[19:00] and then after we wait we're able to do
+[19:01] the exact same thing as before where
+[19:04] we're just going to be getting rather
+[19:05] than post and we're going to use the
+[19:07] same endpoint except for after tasks
+[19:10] we're going to do slash the ID so we're
+[19:12] able to see that because right here this
+[19:14] is the get task details and then we
+[19:16] basically will just copy this curl we
+[19:18] can paste it in here import the curl and
+[19:20] then we'll fill it out again you still
+[19:21] need to have the header of X Runway
+[19:23] version and you still need to have your
+[19:24] credential and then all you need to put
+[19:26] in is the four different um t task IDs
+[19:29] from the Le hand side and now we can see
+[19:31] we have these different ones and if we
+[19:33] open up this um URL this should be a
+[19:36] video and this one is the Rhino so now
+[19:38] we have the images turned into videos
+[19:40] this one turned out really nice with him
+[19:41] walking so I love that but we have the
+[19:45] videos so now we're kind of branching
+[19:47] off two different ways the first thing
+[19:48] is that we're putting it over here for
+[19:50] later because we we're done with them
+[19:51] for now but don't think about that yet
+[19:54] we are going to be going down this path
+[19:56] now to generate the audio so the first
+[19:58] thing that we're doing is we're going to
+[19:59] limit it to one item and this is really
+[20:02] because as you can see from here we had
+[20:05] four and then there was four items going
+[20:07] down this entire process which was fine
+[20:09] because we wanted four images to be
+[20:10] generated and four videos to be
+[20:12] generated but we don't want four audios
+[20:14] to be generated we're just going to
+[20:15] generate one 20 second long audio and
+[20:18] also just a quick reminder in Runway
+[20:20] when you create your um you know looking
+[20:23] in my Dev portal I put in 10 bucks for
+[20:25] it was 1,000 credits each 5-second video
+[20:28] is going to be
+[20:29] um 25 credits so each video that you do
+[20:32] is going to be about a dollar so a
+[20:34] dollar for each video um it's very
+[20:37] similar for flux it's about a dollar per
+[20:38] video as well and then um we're at what
+[20:42] do we say like 6 cents for the images
+[20:45] and so there'll be some other costs that
+[20:46] we have to think about like generating
+[20:47] audio and you know calling this agent or
+[20:50] whatever also create a mate but right
+[20:52] now we're at about a dollar so anyways
+[20:55] we limit it to one because we don't want
+[20:56] to send four updates to Google Sheets we
+[20:58] we don't want four sounds we don't want
+[21:00] four audios so we limit it to one and
+[21:02] it's okay because we're going to merge
+[21:03] everything back again later so after we
+[21:05] limit it to one which all I did in here
+[21:07] was just literally said keep one first
+[21:09] item then we're going to update the
+[21:10] video status in our sheet so we're
+[21:12] selecting our document we're selecting
+[21:14] our sheet and we're saying what column
+[21:15] do we want to match on and we chose row
+[21:17] number and so in order to get row number
+[21:19] I just drag this all the way down to the
+[21:22] node that started this process which was
+[21:23] our Google sheet and I just dragged in
+[21:25] the row number right here so this is
+[21:27] saying okay whenever the row number
+[21:29] equals six which should only be once
+[21:31] we're going to change the video status
+[21:32] column to created and that's how it was
+[21:34] able to change it from Todo to created
+[21:37] and it would update like
+[21:38] that cool so as you can see that was
+[21:41] successful that's all that happens here
+[21:43] and then we go to a sound agent where
+[21:45] we're feeding in the style so once again
+[21:47] I dragged all the way down to the
+[21:49] original style we could also look later
+[21:51] like right here we set the style so I
+[21:53] grabbed it from the sheet but there's
+[21:54] multiple places you could grab the style
+[21:56] that's the user message because every
+[21:58] run is it's going to have a different
+[21:59] style but in the system message we kept
+[22:01] this one pretty short I said overview
+[22:03] you are a master sound prompt generator
+[22:06] given a style generate a vivid 1 to two
+[22:08] sentence prompt that describes the
+[22:10] Ambiance tone and key sound elements to
+[22:12] create an immersive audio scene use
+[22:14] evocative language to capture the
+[22:16] essence of the style and then we gave it
+[22:18] one quick example with the haunted ghost
+[22:19] hunters Eerie Whispers there was Echoes
+[22:21] floorboards creaking all this kind of
+[22:23] stuff I think that this can definitely
+[22:25] be optimized because some of those
+[22:26] sounds were pretty bizarre but in
+[22:28] general I wanted to just create like a a
+[22:30] sound out of our style with the minimal
+[22:33] things that we were given which was just
+[22:34] a style so in this case our prompt was
+[22:36] neon signs flicker amidst a downpour in
+[22:38] a grimy alley um augmented voices shout
+[22:40] rebellious slogan so that's a little bit
+[22:42] weird I should probably dim it down a
+[22:44] little bit but as you can see this one
+[22:46] outputed a new line at the end so we
+[22:48] used flash 2.0 if you used flash 2.0 up
+[22:50] here you're probably going to get new
+[22:51] lines so that's good that you have that
+[22:53] there but that's exactly what I was
+[22:54] talking about this would break the
+[22:55] request so what I did here is in order
+[22:58] to get rid of that new line I just at
+[23:00] the end I dragged in here I'll actually
+[23:02] just show that real quick so I dragged
+[23:04] in the json. output and the new line
+[23:07] doesn't show up right here in the
+[23:08] expression but you can still see it over
+[23:10] here so what I did was I at the end of
+[23:13] output I typed type I typed inrim end
+[23:16] and then it basically just trims off
+[23:18] that new line and you can see it's gone
+[23:19] over here so now we have a clean audio
+[23:23] prompt ready to feed into 11 Labs so now
+[23:25] we're making a request to 11 Labs once
+[23:28] again we're going to go to 11 labs and
+[23:30] we will first of all what you want to do
+[23:31] is get your API key so you'll go to API
+[23:33] Keys you'll create one um I think you
+[23:35] probably want to be on the $5 starter
+[23:37] plan in order to do this but $5 starter
+[23:40] plan is going to get you a ton of
+[23:41] credits I've been doing a ton of testing
+[23:42] here um and I've never run over but
+[23:45] anyways then you're going to go to your
+[23:46] API documentation we're going to click
+[23:48] up here on API reference we're going to
+[23:50] look at the different endpoints so we
+[23:51] can do text to speech speech to text we
+[23:54] want to do sound effects and we want to
+[23:55] create a sound effect and then once
+[23:57] again we have a curl command so we'll
+[23:58] copy this come into NN import curl paste
+[24:02] that and then when we hit import it's
+[24:03] going to populate these
+[24:06] fields except for once again this is
+[24:08] going to put your API key in the header
+[24:09] so it's going to throw it right here as
+[24:11] an actual header field we don't want to
+[24:13] do that we want to save it our own as a
+[24:15] header off that we can use later then
+[24:18] from there we're just setting up two
+[24:19] things in our Json body which is the
+[24:21] actual text to make a sound effect wi
+[24:23] and then the duration in seconds which
+[24:25] we know is going to be 20 because we're
+[24:26] generating four five second long Clips
+[24:29] so we want a 20 second audio and then
+[24:32] once that comes back it's going to be a
+[24:33] binary file you can hit
+[24:37] view anyways that's going to be the 22nd
+[24:39] file um and then what we have to do with
+[24:41] that file is we have to upload it to the
+[24:43] Google Drive and we have to share it
+[24:45] somewhere to make sure it's publicly
+[24:46] accessible so anyways we're uploading
+[24:48] our binary data which is right here on
+[24:50] the left to a specific folder and right
+[24:52] here we can see input data field name is
+[24:54] data which is this field right here so
+[24:57] that's going to be automatically grabbed
+[24:58] in then we have to set the file name so
+[25:00] what I did was I went to schema I went
+[25:02] all the way back down to the first
+[25:03] Google sheet and I grabbed the title or
+[25:06] actually no I think I grabbed the style
+[25:07] I grabbed the style and then I put at
+[25:09] the end of style MP3 and so that's how
+[25:11] it's going to come through then you can
+[25:13] see I chose the parent folder which is
+[25:14] called audio files so right here is my
+[25:16] audio files in my drive and you can see
+[25:18] we have Cowboy Wild West showdown
+[25:20] futuristic cyberpunk Rebels Viking
+[25:22] conquerors and they all have this little
+[25:24] people thing next to it because it's
+[25:26] publicly accessible and shared if it
+[25:27] wasn't then there'd be no little two
+[25:29] people so anyways what we get back is
+[25:33] the ID of that file um we have like
+[25:35] information
+[25:37] about anyways what we get back is the ID
+[25:39] of the file which is what we need for
+[25:41] this next node to actually share it so
+[25:43] we're doing a share file operation we're
+[25:45] doing the file by ID so we just drag in
+[25:47] the ID from the previous node right here
+[25:50] and then we just have to add a
+[25:50] permission that says reader anyone and
+[25:53] then we allow file Discovery so what
+[25:55] we're looking for is right here when we
+[25:57] have this in the drive we're looking for
+[25:59] this um web content link and so if you
+[26:01] pasted this into your browser before you
+[26:03] shared it it would be an error 403
+[26:06] because you don't have permission but
+[26:08] now that we've shared it and it says
+[26:10] Drive permission anyone anyone reader
+[26:12] now if you copied and pasted that into
+[26:14] your browser you'd be able to access it
+[26:16] okay so we generated images videos and
+[26:18] audio now it's time to actually like how
+[26:20] do we get that all together in one
+[26:22] format so we're going to merge
+[26:24] everything back together what we did
+[26:25] here is we just combined by all possible
+[26:27] combin
+[26:29] because if you combine by matching
+[26:30] Fields that's like saying okay I have
+[26:32] two tables and whenever name equals Nate
+[26:35] I want to match all those rows together
+[26:38] and so that's not what we're doing here
+[26:39] you could also do it by position which
+[26:41] would just say okay four items on the
+[26:42] right four items on the left we're going
+[26:44] to match that together and um that would
+[26:47] only keep one item really and if we're
+[26:49] just doing by all possible combinations
+[26:50] it's just going to throw everything
+[26:51] together honestly this isn't super super
+[26:54] crucial just because we're not we're
+[26:56] kind of splitting it out later anyways
+[26:58] but you might as well just throw it
+[26:59] together like this we just want to get
+[27:01] all the data brought back together in
+[27:02] one space so from there we're splitting
+[27:05] out the parts because what we have over
+[27:07] here is our um video files right here in
+[27:11] a field called output but because these
+[27:12] are four items we would basically be
+[27:15] making four separate runs like we've
+[27:16] been doing in the past with creating
+[27:18] four separate images or four separate
+[27:19] prompts or and that kind of stuff we
+[27:22] don't want to create four separate
+[27:23] videos anymore we want everything
+[27:24] together in one item so we can create
+[27:26] one holistic video
+[27:28] so I had Claude write this code of
+[27:30] course and all it's doing is it's
+[27:31] splitting up these four items into one
+[27:33] and so now we have one item here with
+[27:35] all four video URLs that we need as you
+[27:38] can see this is actual um video URL this
+[27:40] one is probably going to be the pig yep
+[27:43] there we go that's the Cyber Punk Pig
+[27:45] and so now we have everything right
+[27:46] there which is great because we can
+[27:48] easily drag it into this next node which
+[27:50] is making an API call to Creo mate so
+[27:54] here is my Creo mate and here is my
+[27:56] animal video template so what we have
+[27:58] here is a 20 second long video template
+[28:01] an audio track that's all 20 seconds and
+[28:03] then we have text and video that's going
+[28:05] to be dynamic and we have them each you
+[28:07] know four of them total that are in
+[28:09] increments of 5 Seconds so if you want
+[28:11] this template in order to plug it into
+[28:13] your
+[28:13] automation basically you open the source
+[28:15] editor and this code right here will be
+[28:18] able to I'll have it in the classroom so
+[28:21] once again you can get all this for free
+[28:23] um and you can just copy and paste this
+[28:24] code into the template and then you're
+[28:26] able to actually access this template
+[28:28] for your nadn HTTP request so how you do
+[28:32] that is you click on use template you
+[28:34] click on API integration and what you're
+[28:36] going to do is once again copy this curl
+[28:39] command this is great because it's
+[28:40] already going to have your API key in
+[28:42] there when you fill it in so copy this
+[28:44] you'll make a new HTTP request import
+[28:46] curl paste that in there and then when
+[28:48] you hit import um it's going to automate
+[28:51] automatically populate all this stuff
+[28:53] and by the way the reason I haven't been
+[28:55] actually importing the curl is two
+[28:56] reasons I don't want to mess up the flow
+[28:58] and also with the newest update of nadn
+[29:01] it's been buggy so if you're unable to
+[29:03] click the import button then maybe try
+[29:05] to go down one version of NN and that
+[29:07] should fix your problems but anyways it
+[29:10] fills in your method which is post
+[29:12] because we're sending over data and so
+[29:14] here's an example of I didn't save this
+[29:15] authentication I have it just sitting
+[29:17] here in my header parameters so maybe I
+[29:19] should save that up there but this is
+[29:20] what it would look like typically if you
+[29:22] don't save it now when you have this
+[29:24] header authorization schema where it's
+[29:26] authorization you have to make sure
+[29:27] there's a space between Bearer and your
+[29:30] API key if there's not that space it's
+[29:32] going to fail so make sure you have that
+[29:33] space there and then finally our Json
+[29:37] body so what this looks like is we have
+[29:39] our four video sources we have our audio
+[29:41] track source and then our four text
+[29:43] sources and this is why we had to split
+[29:45] everything up because now we can just
+[29:46] drag everything in from the left into
+[29:48] the middle so um here was URL one I
+[29:50] dragged that in there here was URL 2 I
+[29:53] dragged that in there same for three and
+[29:55] four so now we have our four videos for
+[29:57] audio track I went down to the node
+[29:59] where we shared the um where we uploaded
+[30:02] the file to our Google Drive and right
+[30:04] here um the web content link that's the
+[30:06] one we're looking for because we shared
+[30:08] it it's accessible now for Creo mate so
+[30:10] we draged that in right here and then um
+[30:13] for the actual text Fields what we did
+[30:15] was we got this all the way from the
+[30:17] beginning because all I did here you
+[30:19] know super creative of me all I did was
+[30:21] just put in the animal so I animal one
+[30:24] drag that in there animal two drag that
+[30:26] in there three and four and so that's
+[30:28] how we have tiger bear rhino pig we have
+[30:30] all these different files and basically
+[30:32] it knows to use this template and make a
+[30:35] video for us which is cool so the video
+[30:37] obviously takes a little bit to render
+[30:39] so it takes like about 10 seconds from
+[30:41] my experimentation I set it to 25 just
+[30:43] to be safe you can come into your Crea a
+[30:46] mate and click on API log and you can
+[30:47] see all the templates that we've done so
+[30:49] this was the most recent one the
+[30:50] cyberpunk one with the tiger and then
+[30:53] all you have to do once again is we're
+[30:54] just going to be making a get request we
+[30:56] don't need any authorizations so it's
+[30:58] literally just a get request where we
+[30:59] feed in the URL that comes from Creo
+[31:02] mate so if I go back to the render video
+[31:05] we get a response with the URL right
+[31:07] here and this is the final video so all
+[31:09] we're doing is we're dragging in that
+[31:11] URL from the node render video or you
+[31:14] could just do it from the wait node
+[31:16] because it passes everything over and we
+[31:17] dragged in the final video URL right
+[31:19] here and then we're able to view it and
+[31:21] we got the sorry that is awful sound
+[31:25] really should rework that prompt but now
+[31:27] we have that final video right here in
+[31:28] NN as binary data for us to pass through
+[31:31] to the YouTube API so that's the next
+[31:34] step right here we have the upload video
+[31:35] operation to YouTube you will fill out
+[31:37] this credential the same way that you
+[31:38] did with your Google Drive where you
+[31:40] have to get your client ID and your
+[31:41] client secret but if you've already made
+[31:42] that you're good to go and then once
+[31:44] you're good there all you have to do is
+[31:46] basically fill out a few things so the
+[31:48] first one is a title for title I went to
+[31:50] schema I went all the way back down and
+[31:52] I dragged in the title for description
+[31:54] which is a field that you have to add
+[31:56] there's tons of options down here I add
+[31:58] an option for description and that's the
+[31:59] caption and I dragged in the caption and
+[32:01] then you just fill in like you know your
+[32:03] region code your category name or ID
+[32:05] which I did film in animation there's
+[32:07] one down here for shorts and I tried
+[32:09] that and it errored and um because we're
+[32:12] sending over an aspect ratio of 9 X6
+[32:14] YouTube automatically makes it a short
+[32:16] as you saw earlier when I clicked into
+[32:18] my
+[32:19] shorts these are all already here at
+[32:21] shorts but um yeah so you can play
+[32:25] around with the different
+[32:26] categories um we're dragging in once
+[32:28] again the input binary field is data so
+[32:30] we have data right here which is our
+[32:32] video as you remember sorry about that
+[32:35] um and so then the final thing you want
+[32:37] to do is privacy status unlisted I
+[32:41] accidentally made one public from my um
+[32:44] my real Nate herk a automation YouTube
+[32:47] channel so if any of you guys got that
+[32:48] notification or saw a short that was
+[32:50] about um a creepy basement door that's
+[32:53] why that was an accident but anyways
+[32:54] this is successful so it's been uploaded
+[32:56] unlisted and now the last two things
+[32:58] we're doing is just sending a
+[32:59] notification and updating the sheet so
+[33:01] when it comes to updating the sheet we
+[33:03] are grabbing that exact same um document
+[33:05] the same sheet we're matching on row
+[33:07] number once again like we did earlier so
+[33:09] I grabs row number six and then we're
+[33:10] setting the publish status to processed
+[33:12] because in here we can either be
+[33:14] processed or not processed so we set
+[33:16] that to processed and then for the
+[33:18] actual video link we're dragging in the
+[33:20] final video which we got from um this
+[33:23] URL right here so that's all we do and
+[33:26] then as you can see it populates all
+[33:27] these final links over here um and then
+[33:30] from there the last thing is really just
+[33:31] sending ourselves an email notification
+[33:33] just in case you have this running at
+[33:34] like 6:00 a.m. every day and you can
+[33:36] wake up you'll see an email that it was
+[33:37] unlisted then you can go in there and
+[33:39] check and make sure you like it but
+[33:41] anyways I pretty much just filled this
+[33:43] stuff I filled in the email I made it
+[33:45] fixed because I'm always going to be
+[33:46] sending this to me we have um the title
+[33:49] where I put new short process and I
+[33:50] dragged in the title of the short from
+[33:53] the Google sheet change the email type
+[33:55] to text and then I made a quick body
+[33:57] which just says hey Nate a new short has
+[33:59] been created and is awaiting your
+[34:00] approval it is called blank um and then
+[34:03] I dragged in my just URL from my YouTube
+[34:06] Studio where it shows my shorts and that
+[34:08] way I can just click right into it from
+[34:09] the email and then I said cheers so the
+[34:12] last thing we did is we added an option
+[34:13] called append naden attribution and I
+[34:15] turn that off just so at the end of the
+[34:17] email you know if you don't turn it off
+[34:19] there'll be a message right here that
+[34:20] says this message was sent by NN so just
+[34:22] turn that off to clean it up and that is
+[34:24] the end of the process okay so just to
+[34:27] recap now
+[34:28] a couple things so the first one is this
+[34:30] template is a really good starting point
+[34:32] but you have so much stuff that you can
+[34:34] do to expand on top of it for example
+[34:36] you can optimize these prompts you can
+[34:39] then make it send over eight videos and
+[34:41] eight images rather than just four so
+[34:42] you can increase the template length
+[34:44] rather than making it just 20 seconds
+[34:46] obviously you can improve the sound
+[34:48] agent you can make the prompts better
+[34:50] you could also do narration instead of
+[34:52] just sound effects all this kind of
+[34:53] stuff you can play around with cling um
+[34:55] you can play around with different image
+[34:57] models as well
+[34:58] um you can you can customize the
+[35:00] schedule on this so you can obviously
+[35:02] Say Hey I want this to run four times a
+[35:03] day or 10 times a day whatever it is and
+[35:05] then the next piece would be making the
+[35:07] idea generation within the actual Google
+[35:09] sheet making that more automated because
+[35:11] right now I was just talking to chat gbt
+[35:13] and I generated these five stories but
+[35:15] what you could do is set up a very
+[35:16] similar workflow where you have um an
+[35:18] agent that is trained on like what
+[35:20] you're doing and it can access this
+[35:21] database and it will just every day pump
+[35:23] out like five more and then once those
+[35:24] are pumped out this workflow will pretty
+[35:26] much grab them and create those shorts
+[35:29] so just a couple more things to keep in
+[35:30] mind it's going to be roughly a dollar
+[35:33] maybe a little bit over a dollar per run
+[35:35] on this current you know four images and
+[35:38] four videos we're generating um 11 Labs
+[35:40] you'll have probably want to get on the
+[35:42] $5 a month starter plan depending on the
+[35:44] different models you're using in here it
+[35:45] could either be free or it could be a
+[35:47] little more expensive and then with
+[35:48] creat mate right now I'm on the free
+[35:50] version and as you can see I've only use
+[35:51] 36% of my credits and in my AP I log
+[35:55] I've done quite a few requests so
+[35:57] definitely just get in there and play
+[35:58] around with it for now and then you can
+[36:00] look at if you actually do want to
+[36:02] create this you know just a YouTube
+[36:04] channel that runs on autopilot then
+[36:06] you'll probably want to obviously
+[36:06] upgrade that account so I know that
+[36:08] might have been a lot but I would really
+[36:09] recommend for you to go to the school
+[36:10] community and grab this template import
+[36:12] it into your workflow and then you know
+[36:14] have it pulled up but build out this
+[36:16] whole workflow on your own and then you
+[36:17] can customize each step you know as
+[36:20] exactly as you want it and exactly the
+[36:21] type of shorts that you want to create
+[36:23] once again you'll be able to have all
+[36:24] the resources the source code for the
+[36:26] creat a mate template the actual
+[36:27] template right here for your faceless
+[36:30] shorts um that you want to feed through
+[36:32] because once again everything right now
+[36:34] is mapped to my template so you need the
+[36:36] exact same column names and values if
+[36:38] you want this thing to just be able to
+[36:39] import and hit test workflow so just
+[36:42] something to keep in mind but anyways
+[36:44] that's going to be it for this one
+[36:45] really appreciate you guys making it to
+[36:46] the end of this video as always if you
+[36:48] enjoyed it or if you learned something
+[36:49] new please give it a like it definitely
+[36:50] helps me out a ton and I will see you
+[36:52] guys all in the next video thanks

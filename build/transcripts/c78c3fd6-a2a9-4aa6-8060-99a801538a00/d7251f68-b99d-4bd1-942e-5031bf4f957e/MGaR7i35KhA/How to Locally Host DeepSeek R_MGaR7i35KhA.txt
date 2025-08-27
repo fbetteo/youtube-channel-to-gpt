@@ -1,0 +1,314 @@
+Video Title: How to Locally Host DeepSeek R1 for FREE in Under 10 Minutes in n8n
+Video ID: MGaR7i35KhA
+URL: https://www.youtube.com/watch?v=MGaR7i35KhA
+View Count: 60,040
+
+[00:00] today I'm going to show you guys the
+[00:01] quickest and easiest way to get deep
+[00:02] seek set up locally so you can use it
+[00:04] within NN so why do you want to run a
+[00:06] model locally well traditionally the
+[00:07] main reason is because it's going to be
+[00:09] free because you're not using API calls
+[00:10] in order to hit that model deep seek is
+[00:12] super cheap so that's why a lot of
+[00:13] people have been using it but because
+[00:15] it's open source we can also run it
+[00:16] locally for completely free but really
+[00:18] the more important reason is because if
+[00:19] we're hosting it locally we have full
+[00:21] control over the data that we're sending
+[00:23] over as far as data security and privacy
+[00:25] we know that it's not leaving our server
+[00:27] so here's a look at Deep seeks privacy
+[00:28] policy I'll put the link for this in the
+[00:29] deson if you want to take a look at it
+[00:30] for yourself but they basically tell us
+[00:33] that they are collecting information and
+[00:35] if we scroll down to the bottom we can
+[00:36] see that they're storing it in Secure
+[00:38] service located in the People's Republic
+[00:39] of China so if you want to use the
+[00:41] native nadn deep seek node that just
+[00:43] came out and you'll be hitting deep
+[00:45] seeks API just be aware that you
+[00:47] probably don't want to put your really
+[00:47] sensitive information through that model
+[00:49] today I'm going to show you guys how we
+[00:50] can really quickly and easy get a llama
+[00:52] set up so that we can run deep seek
+[00:53] locally on our machine and we can feel
+[00:55] safe about the data that we're sending
+[00:57] through so step one is that we have to
+[00:59] have our na self-hosted and the easiest
+[01:01] way to do this is to go over to the nadn
+[01:03] self-hosted AI starter kit the link for
+[01:05] this again will be down in the
+[01:05] description so the first thing you want
+[01:07] to do is go to doer. and download the
+[01:09] desktop app if you choose to do Docker
+[01:11] we're going to be using the NN
+[01:12] self-hosted AI starter kit so we're
+[01:14] going to do Docker here but you're going
+[01:15] to download the docker desktop for your
+[01:18] system and then you're going to go over
+[01:19] to the GitHub self-hosted AI starter kit
+[01:21] once again all these links will be in
+[01:22] the description and this is going to
+[01:24] pretty much walk you through how to do
+[01:25] it it's really simple you're going to
+[01:26] get quadrant postgress AMA and then your
+[01:28] self-hosted nadm and all you're going to
+[01:30] have to do is copy a few commands into
+[01:32] your terminal and run them so to do this
+[01:34] with Docker if you're an Nvidia GPU user
+[01:36] you'll copy these commands if you're a
+[01:38] Mac User you'll copy these commands it's
+[01:40] really simple you're pretty much just
+[01:41] going to clone a repository change your
+[01:43] directory into that repository and then
+[01:45] set everything up and then it's going to
+[01:46] load everything in and pull everything
+[01:47] in now if you start running into issues
+[01:49] when you're trying to get this set up in
+[01:51] your terminal just take a screenshot of
+[01:53] it paste it into chat gbt explain what
+[01:54] you're trying to do and it will help you
+[01:55] get there for sure especially if you
+[01:57] provide it some of this documentation um
+[01:59] it's it's going to be a huge help
+[02:01] anyways from there when you open up your
+[02:02] Docker desktop you'll see the four
+[02:04] Images which were postgress quadrant
+[02:06] Alama and then your nadn all you need to
+[02:08] do from there is hop into your
+[02:09] containers and we can see what's going
+[02:10] on just keep in mind that when you want
+[02:13] to access your local host of nadn you're
+[02:16] going to have to make sure that this is
+[02:17] this is on that the container is running
+[02:19] otherwise it just won't work anyways now
+[02:21] the fun stuff we've set up our account
+[02:22] we're in our locally hosted nadn and now
+[02:25] all we need to do is create an AI agent
+[02:26] and then if we click on chat model we'll
+[02:28] be able to um look at these locally
+[02:30] hosted AI models first thing I wanted to
+[02:32] point out is with the new update of 1.77
+[02:35] you've got the Deep seek chat model
+[02:37] which is you know the native integration
+[02:38] now where we can create a new credential
+[02:40] connect an API key from um deep seeks
+[02:43] API and once again this is not going to
+[02:44] be the locally hosted one this is the
+[02:46] one where we're actually hitting deep
+[02:47] seeks API and then in this update we
+[02:49] also got an open router chat model which
+[02:51] is going to help us connect to a ton of
+[02:52] different models if we want to
+[02:54] previously we had to go into open ai's
+[02:56] model and change the base URL to get
+[02:58] into open router but now and it ends
+[03:00] pushed out an actual native node for it
+[03:02] so that's super helpful once again this
+[03:04] one is not going to be locally hosted
+[03:05] though but in order to access these two
+[03:07] new native Integrations make sure that
+[03:09] you have your Ed end version updated to
+[03:10] the latest which is 1.77 if you're self
+[03:13] hosted you can go in there and update it
+[03:14] to the latest um or if you're doing the
+[03:16] Cloud make sure you hop into your admin
+[03:18] workspace so you can actually change it
+[03:19] to uh 1.77 hey guys just wanted to say
+[03:23] real quick if you're new to nadn and
+[03:24] you're looking for a community of people
+[03:25] that are also learning nadn and AI
+[03:27] automation go ahead and check out my
+[03:28] free school community link for that will
+[03:30] be down in the description got great
+[03:31] YouTube resources in here every video I
+[03:33] make the template will be put in here
+[03:35] for free we've also got the ultimate
+[03:36] nadn starter kit which will be a great
+[03:38] resource for you like I said if you're
+[03:39] new to naden and you're looking for some
+[03:41] guidance and then if you're looking to
+[03:42] take your skills with naden a little bit
+[03:43] farther and You' like a more Hands-On
+[03:45] approach please feel free to check out
+[03:46] my paid Community the link for that will
+[03:47] also be down in the description we've
+[03:49] got a great community of people that are
+[03:50] very dedicated to learning naden always
+[03:52] sharing resources and different
+[03:53] challenges that they're approaching um
+[03:55] as as well as a great classroom section
+[03:57] with different Deep dive topics then
+[03:58] we've got a calendar section with five
+[04:00] live calls per week three Tech supports
+[04:02] one Q&A and one networking session to
+[04:04] make sure that you're building
+[04:05] connections looking for collaboration
+[04:06] opportunities and also making sure
+[04:07] you're always getting your questions
+[04:08] answered so you can get unstuck in your
+[04:11] workflows if this kind of stuff
+[04:12] interests you please check the
+[04:13] communities out with the links in the
+[04:14] description but anyways let's get back
+[04:16] to the video okay now to access locally
+[04:18] hosted models we're going to add an AMA
+[04:20] chat model and if we click into here
+[04:21] it's going to be set up already because
+[04:23] we ran that self-hosted starter kit if
+[04:25] we look at this credential it already
+[04:26] has our base URL configured um we're
+[04:28] good the connection is tested
+[04:29] successfully and if we were to chat with
+[04:31] this guy and just say
+[04:33] hello this is going to access the local
+[04:36] AMA model that's installed on our
+[04:38] machine right now and we're not using
+[04:40] any API calls so all of this happening
+[04:42] right now is going to be completely free
+[04:43] so as you can see we just got our
+[04:44] response back it took 41 tokens and it
+[04:46] said hello how can I assist you today so
+[04:48] if we click into this model we will be
+[04:50] able to see the different options of
+[04:52] locally hosted models we have which
+[04:53] right now is just llama 3.2 so how do we
+[04:56] actually expand this list and get access
+[04:58] to a ton of different models for free
+[05:00] it's going to be pretty cool we go to
+[05:01] ama.com and you don't even have to
+[05:03] download it all we have to do is click
+[05:05] on models and basically these are all
+[05:06] the ones that we can choose from as you
+[05:08] can see there's a ton um the Quin 2.5 so
+[05:10] we'll definitely play with that one
+[05:11] because that's another one that China
+[05:13] just released that's really really good
+[05:15] but anyways in this video what we're
+[05:16] going to be talking about is deep seek
+[05:17] R1 of course so we're going to click
+[05:18] into deep seek R1 right here and the
+[05:20] first thing you're going to notice is
+[05:21] that you have different options as far
+[05:22] as how many parameters you want the
+[05:24] model to have that you're going to
+[05:26] download So as you can see there's one
+[05:28] that's 67 one billion parameters since
+[05:30] going to be 400 GB you don't want that
+[05:33] one you probably don't want any of these
+[05:35] higher ones um for most machines I would
+[05:37] say you're probably just going to go
+[05:38] with a 7 billion or 1.5 billion
+[05:41] parameters um for the sake of this video
+[05:43] I'm just going to download the 1.5
+[05:44] billion parameter one as you can see
+[05:46] it's only 1 gab so we'll see how this is
+[05:48] going to work what we need to do is copy
+[05:50] the actual name of the model right here
+[05:52] so we'll copy this and then we're going
+[05:54] to open back our Docker desktop app and
+[05:57] we're going to go to The Container
+[05:58] section So within the container section
+[06:00] once again we have our nadn we have our
+[06:02] quadrant AMA and postgress all inside of
+[06:05] the self-hosted starter kit basically
+[06:07] container so we're going to click into
+[06:09] AMA and um this is going to be
+[06:11] intimidating don't mess with the logs
+[06:12] we're going to go to the execution side
+[06:14] which is just called exec and as you can
+[06:16] see I was playing around with this stuff
+[06:17] earlier but all we're going to do here
+[06:19] is this is where we can download the
+[06:21] model and then I'll show you guys how
+[06:22] you can like view the models you have
+[06:24] and delete them if you want but all
+[06:25] we're going to do is type in ama pull
+[06:29] and then we can copy in that deep seek
+[06:32] model that we want as you can see it's
+[06:33] the 1.5 billion parameter one and now
+[06:35] it's going to go through the process of
+[06:36] actually pulling that in and right now
+[06:38] it's installing it locally on your
+[06:40] machine okay as you can see we just got
+[06:41] a success message so you can see that
+[06:43] that finished up we're going to click
+[06:44] back into our ended end and now if we
+[06:47] get out of this node and we should just
+[06:48] be able to Fresh in here now we have
+[06:50] deep seek R1 1.5 billion parameters so
+[06:53] we can go ahead and test this guy out
+[06:54] let's give it um sort of a riddle to
+[06:56] reason through so the riddle we're
+[06:57] giving it is I speak without a mouth and
+[06:59] Here Without Ears I have no body but I
+[07:02] come alive with the wind what am I um so
+[07:04] keep in mind here this model is running
+[07:06] locally on your machine it's going to
+[07:08] take a little bit longer than if you
+[07:09] were to use the API version and also um
+[07:12] it depends on the parameters of the
+[07:14] model that you download but just keep in
+[07:16] mind that it may take a little longer
+[07:17] that actually didn't take too long but
+[07:19] let's see so because it's a reising
+[07:20] model it's going to break down what it
+[07:22] thought through so let me just expand
+[07:23] this up a little bit so it thought okay
+[07:26] I need to figure out what this person is
+[07:27] referring to in their riddle I speak
+[07:29] with without a mouth blah blah blah um
+[07:31] let's break it down so they go through
+[07:32] the steps that they took to actually get
+[07:34] to it and they said here the answer is
+[07:35] fire it can be heard through smoke from
+[07:37] burning objects and has a whisper like
+[07:39] quality additionally wind contributes to
+[07:42] Fires at night especially in powerless
+[07:44] conditions therefore the Riddle's
+[07:45] element points towards fire being the
+[07:47] correct interpretation and honestly what
+[07:48] I did is I asked chat gbt for riddle and
+[07:50] they gave me this riddle and said the
+[07:52] answer was Echo so I don't really know
+[07:53] which model is right but anyways if we
+[07:55] come to the consensus that R1 here was
+[07:57] wrong at least we can see the steps that
+[07:59] it took and maybe give it some points
+[08:01] for um showing your work like in high
+[08:03] school math but now you have an
+[08:05] understanding of how to get a different
+[08:06] model into your AMA environments you can
+[08:08] go ahead and do the exact same thing
+[08:09] with like mistl for example you would
+[08:11] copy this mistl code into your Docker
+[08:13] desktop and you would basically just say
+[08:15] AMA pull mistl but now what happens if
+[08:18] you want to see what models you have
+[08:19] besides looking in NN you can go to AMA
+[08:22] list and you could go ahead and see now
+[08:23] we have deep seek and llama and if we
+[08:26] wanted to get rid of one let's say we
+[08:27] want to get rid of deep seek we can say
+[08:28] oh llama RM for remove and then we would
+[08:31] just type in deep seek D R1 colon
+[08:35] 1.5b and so there we go deleted deep
+[08:38] seek and now if we went back to AMA list
+[08:40] we can see that we only have the Llama
+[08:42] node and if we come back into here we
+[08:44] would see that we now only have um this
+[08:47] ama ama local model in here and we had
+[08:50] just deleted the deeps node so that's
+[08:51] how you can play around with them and if
+[08:52] you want to get rid of them you can do
+[08:54] that super easily without really having
+[08:55] to get into your terminal and run
+[08:57] anything you can pretty much do that all
+[08:59] with within your AMA container in the
+[09:01] docker desktop

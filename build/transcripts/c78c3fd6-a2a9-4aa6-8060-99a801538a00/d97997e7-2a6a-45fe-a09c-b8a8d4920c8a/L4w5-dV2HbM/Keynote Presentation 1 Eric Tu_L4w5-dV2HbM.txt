@@ -1,0 +1,1750 @@
+Video Title: Keynote Presentation 1: Eric Tulsky [2021 UConn Sports Analytics Symposium]
+Video ID: L4w5-dV2HbM
+URL: https://www.youtube.com/watch?v=L4w5-dV2HbM
+View Count: 754
+
+[00:00] eric towsky is in his eighth season
+[00:03] season with the hurricanes
+[00:06] and his uh second
+[00:08] as assistant general manager
+[00:12] as assistant general manager towsky
+[00:14] assists in all hockey related matters
+[00:17] while also overseeing the team's hockey
+[00:20] information department
+[00:21] towski previously served as vice
+[00:24] president of hockey management and
+[00:26] strategy
+[00:28] has been publishing his advanced hockey
+[00:30] statistical and analysis since 2011
+[00:34] when he began writing for
+[00:36] broadstreet hockey.com he also
+[00:39] contributed to nhl numbers.com prior to
+[00:42] launching his own website
+[00:45] through
+[00:46] sb nation
+[00:48] outnumbered
+[00:49] tulsi has been a featured panelist for
+[00:52] mit's annual sports analytics conference
+[00:56] and his hockey analysis work has been
+[00:59] published in the washington post and
+[01:02] the 538.com
+[01:06] uh
+[01:07] a philadelphia
+[01:09] pennsylvania native towski holds a ba in
+[01:12] chemistry and physics from harvard
+[01:14] university
+[01:15] and a phd in chemistry from uc berkeley
+[01:19] they also conducted a two-year postdoc
+[01:22] study at the
+[01:24] naval research lab in washington dc and
+[01:28] worked in nanotechnology for 12 years
+[01:31] tawski's research has helped
+[01:35] enable unique nanotechnology solutions
+[01:38] to problems in dna sequencing
+[01:41] solar
+[01:42] solar
+[01:43] solar energy displays and energy storage
+[01:47] and he holds 19 us patents
+[01:51] eric
+[01:53] i will make you
+[01:54] presenter now so you can share your
+[01:56] screen
+[02:01] thank you thank you uh yeah please
+[02:03] meaning welcoming eric
+[02:07] thanks so actually before i get into my
+[02:09] talk seth said something that resonated
+[02:12] for me and so i want to spend a minute
+[02:14] agreeing with him and echoing it a
+[02:15] little bit more
+[02:16] i'll tell you a story i um
+[02:19] actually taught a course in sports
+[02:21] analytics at santa clara university
+[02:24] and they reached out to me and asked me
+[02:26] to do it
+[02:27] and i said i i don't think you have the
+[02:29] right person right like my training is
+[02:31] in chemistry i'm i don't have a strong
+[02:34] statistical background i've taught
+[02:36] myself a little bit but i shouldn't be
+[02:38] teaching graduate students how to do
+[02:40] this since you need someone more
+[02:42] qualified than me
+[02:44] and they explained to me the reason they
+[02:45] were coming to me was they had started
+[02:48] this data science program and they'd met
+[02:50] with leaders from companies like google
+[02:52] and facebook and whatever other
+[02:54] companies that were heavily involved in
+[02:56] data science and machine learning and
+[02:58] asked them what they wanted to see from
+[02:59] their students that they were looking to
+[03:01] hire
+[03:02] they said there were three things they
+[03:04] were looking for
+[03:05] one was
+[03:06] computer programming skills
+[03:08] one was statistical analysis skills
+[03:11] and what the companies told the
+[03:14] university was
+[03:16] every program turns out people with
+[03:17] those two skills what most programs seem
+[03:20] to overlook is the third thing which is
+[03:22] an understanding of how to use data and
+[03:25] intuition about where to go with it and
+[03:26] how to think about it and they were
+[03:28] asking me to teach a class in that
+[03:31] and i was like perfect that's what i am
+[03:33] good at is thinking through
+[03:36] sort of where your analysis might be
+[03:38] wrong
+[03:39] how to come up with an answer to a
+[03:41] question like who's the best three-point
+[03:42] shooter when you're gonna have a bunch
+[03:44] of murky pieces of information that
+[03:46] don't quite tell the whole story
+[03:48] and
+[03:49] reasoning through that i think is a real
+[03:51] skill and it's something you can
+[03:53] practice and the way i had my students
+[03:56] practice it was
+[03:57] we took papers from blogs or journal
+[04:01] articles
+[04:02] and we talked through
+[04:04] you know if this turns out to be wrong
+[04:06] what's the most likely reason why and
+[04:08] how could we test for that and how could
+[04:10] we think about it and i think that is
+[04:12] something that you can do on your own or
+[04:14] with others and just
+[04:16] train your creativity and your problem
+[04:18] solving to think about how to get a
+[04:20] complete answer
+[04:23] with that being said i will now
+[04:26] give it to the actual point of my talk
+[04:30] so
+[04:33] see my screen now
+[04:38] yes
+[04:39] so uh my talk today is about
+[04:43] as a team employee how we can make use
+[04:45] of work that's in the public domain
+[04:48] and you heard from my introduction i
+[04:50] spent a few years writing in the public
+[04:52] domain i've worked in academia
+[04:54] publishing in academic journals i've
+[04:57] done sports analysis for blogs and so i
+[04:59] kind of have had my foot in each of
+[05:02] these areas and i think that makes me
+[05:04] well positioned to think about how to
+[05:06] get good use from all of them
+[05:09] so i'm going to start by talking through
+[05:11] there are some real advantages to being
+[05:13] in-house and i will highlight those a
+[05:16] little bit
+[05:17] but the point of my talk and i what i
+[05:19] want to get to is talking about what the
+[05:21] strengths are from public domain work
+[05:23] and
+[05:24] why teams should be paying attention to
+[05:26] that as well
+[05:27] and then kind of what the best practices
+[05:29] are and how to make use of everything
+[05:33] so
+[05:33] let's start with the movie we're gonna
+[05:35] watch a football play here first run
+[05:38] through let's just see what happens
+[05:47] all right
+[05:48] so ram scored a touchdown there and as
+[05:51] an analyst the first question you might
+[05:53] ask is how much is that play worth
+[05:55] and
+[05:56] there are a variety of ways of thinking
+[05:57] about that right so one simple answer is
+[06:00] well you got seven points for a
+[06:01] touchdown
+[06:03] but that's not quite right you really
+[06:05] get six points and a chance at a point
+[06:08] after touchdown point after is almost
+[06:10] always good but not quite always so if
+[06:12] you count for those missed ones maybe
+[06:14] it's a little bit under seven
+[06:16] but where analysts start getting
+[06:17] involved is you might say well
+[06:19] okay you got seven points on that play
+[06:21] but you had a chance to score even
+[06:23] before that and if you think about they
+[06:25] were near midfield
+[06:27] you know when you worked through the
+[06:29] likelihood that they were going to score
+[06:30] they're kind of expected points from
+[06:32] that possession that play really only
+[06:35] increased their expected outcome by
+[06:37] about five points
+[06:39] and other analysts might say well points
+[06:41] aren't the goal here the goal is wins so
+[06:43] let's not even talk about expected
+[06:45] points let's talk about wind probability
+[06:47] and that play increased their chance of
+[06:49] winning the game by seven percent
+[06:52] someone else might talk to those last
+[06:53] two and say hold on when you're talking
+[06:54] about expected points or win probability
+[06:57] are you using average teams here are you
+[06:59] factoring in how much better this team
+[07:01] is than their opponent
+[07:03] because i think they were already 94 to
+[07:06] win the game before that play so it
+[07:08] couldn't have increased their chances by
+[07:09] 7 when you think about how good they
+[07:11] were
+[07:12] all these are reasonable questions any
+[07:14] of these frameworks is a reasonable way
+[07:16] to think about it
+[07:18] and you you kind of have to decide which
+[07:19] framework you want to use but once you
+[07:21] do that
+[07:22] you can calculate an answer to this
+[07:24] there is
+[07:25] a right answer to what this play is
+[07:27] worth and
+[07:28] you can come you can work through all of
+[07:30] the things you want to think about in
+[07:32] your framework and come up with that
+[07:33] answer
+[07:34] where things get harder is when you want
+[07:36] to talk about individual players and
+[07:39] if we think this play was worth five
+[07:41] points or seven win percent how much
+[07:44] credit do we give to each player
+[07:47] so i've highlighted here the receiver
+[07:48] who's going to get open
+[07:50] he runs what's called a post route he
+[07:51] runs down the field about 20 yards and
+[07:54] then cuts diagonally across the field
+[07:58] these are the three defenders who end up
+[07:59] trailing him on the play and so i want
+[08:02] you to think about which of them
+[08:04] deserves the blame for this who should
+[08:05] have been going with him
+[08:16] so you've seen it a second time now i
+[08:18] hope you're watching those three
+[08:19] defenders let's back up a little bit
+[08:21] here
+[08:22] to the key point where they kind of lose
+[08:24] him and he breaks into the open
+[08:26] now i take a poll now
+[08:28] so decide for yourself
+[08:30] do you think it was player number one's
+[08:32] fault player number two's fault player
+[08:34] number three is fall
+[08:36] let's raise your hand if you think it
+[08:38] was player number one who should have
+[08:39] been with him
+[08:42] raise your hand if you think it was
+[08:43] number two
+[08:45] raise your hand if you think it was
+[08:47] number three
+[08:49] okay so i can't see any of your hands so
+[08:51] that was kind of a silly exercise
+[08:54] but i'm going to tell you even without
+[08:56] seeing your hands that all of you were
+[08:57] wrong
+[08:58] and the reason you're wrong is you just
+[09:00] don't have enough information to answer
+[09:01] the question
+[09:04] so
+[09:04] what i can tell you is on this kind of
+[09:07] play player number one is responsible
+[09:09] for these short routes he carries the
+[09:11] player down the field
+[09:14] through the early part of the route
+[09:16] and then player two and three are
+[09:17] responsible for the deep parts of the
+[09:19] field their job is to protect against
+[09:21] the deep plays
+[09:23] so player number two is on this side of
+[09:24] the field he has two guys coming into
+[09:26] his area and he he just can't cover both
+[09:29] of them and so his job has to be the one
+[09:31] to the outside because there's no help
+[09:33] there so it's definitely not his fault
+[09:36] but what's unclear
+[09:39] is whether player number one should be
+[09:40] staying with the receiver as he goes
+[09:42] down the field or whether player number
+[09:44] three should be recognizing what
+[09:46] what that offensive player is doing and
+[09:48] getting over to pick him up
+[09:50] and the reason you can't answer is
+[09:52] different coaches would ask the players
+[09:53] to do different things here
+[09:55] some pla some coaches would say player
+[09:58] number one can see that number two is
+[10:00] occupied and he can't release this guy
+[10:02] he knows he needs to stay with him
+[10:05] other coaches would say number one is
+[10:07] going to be behind him because his job
+[10:09] was these short routes so we need number
+[10:11] three to be the one who recognizes that
+[10:13] number two is occupied and get over the
+[10:14] top
+[10:16] and it's just not if you don't know what
+[10:17] the coaches were telling them you can't
+[10:19] assign the blame
+[10:20] and so that's why access is important
+[10:23] that's one of the advantages that people
+[10:25] working for a team have
+[10:26] is you really can't assign blame until
+[10:29] you know what people are being asked to
+[10:31] do you can't assign credit until you
+[10:33] know whether what their job was on the
+[10:35] play either
+[10:37] so when you start
+[10:38] when you start with how impactful was
+[10:40] this play you can do that without access
+[10:43] but when you want to assign the credit
+[10:46] you need to be able to sort through
+[10:48] maybe the coaches deserve credit for
+[10:50] designing routes for the receivers that
+[10:52] created this pressure on the defense
+[10:54] maybe the defensive coaches deserve some
+[10:56] blame for designing a coverage scheme
+[10:59] that had this weakness
+[11:01] maybe the
+[11:02] uh receiver deserves some credit for
+[11:05] executing this route well for being fast
+[11:07] enough or deceptive enough to get into
+[11:09] that weak spot
+[11:11] and then probably at least one of the
+[11:13] players in coverage deserves some blame
+[11:15] for not recognizing what was happening
+[11:17] and making the coverage and that's just
+[11:19] for the part where the receiver gets
+[11:21] open you have all these same questions
+[11:23] when you think about why the quarterback
+[11:25] had so much time and how the blockers
+[11:27] performed and what they were being asked
+[11:29] to do
+[11:31] that's all a hard problem in general but
+[11:33] without the access to know what they
+[11:35] were being asked to it's not a solvable
+[11:37] problem you can only estimate
+[11:39] and so that is going to be a limitation
+[11:41] for people who are working in the public
+[11:43] domain
+[11:45] another limitation they'll often face is
+[11:47] just the quality of the data so i'm
+[11:49] going to shift to hockey now and show
+[11:50] you a play from our team
+[11:52] uh
+[11:53] carolina hurricanes we're in white
+[11:55] playing against the columbus blue
+[11:56] jackets
+[11:57] so the blue jackets send the puck out we
+[12:00] gather it and we bring it back in now
+[12:02] that's not a terribly dangerous
+[12:04] situation we have two offensive players
+[12:06] against two defensive players who are in
+[12:07] pretty good position there's two more
+[12:10] players behind them uh coming down to
+[12:12] close it down so it shouldn't be that
+[12:14] dangerous
+[12:15] until
+[12:16] he gets over there and
+[12:18] wow the in the net that was
+[12:20] amazing everybody's really excited we
+[12:21] got a hug for that one billy's
+[12:24] disappointed the coach cannot figure out
+[12:27] what happened he's looking for
+[12:28] information somebody explained to me
+[12:30] what happened there player wants to know
+[12:32] too how did i make that happen
+[12:35] and so let's turn to the nhl and see
+[12:37] what the nhl data can tell us this is
+[12:39] what an nhl play-by-play looks like
+[12:41] there's a series of events so there's a
+[12:43] face-off that we want in the offensive
+[12:45] zone
+[12:46] the next thing they record is one of our
+[12:48] players missed a shot
+[12:50] one of their players hit somebody and so
+[12:52] on
+[12:54] and what i want to focus on at the
+[12:56] bottom here so this is the goal that you
+[12:58] just watched and the play before it you
+[13:00] can see was 23 seconds earlier so we
+[13:03] have a 23 second gap between when one of
+[13:06] our players hit someone in the offensive
+[13:08] zone and the goal being scored we have
+[13:10] no information about what happened in
+[13:12] those 23 seconds
+[13:14] and to give you an idea of how long 23
+[13:16] seconds is these columns show which
+[13:18] players were on the ice for each team
+[13:21] and you can see that in between aside
+[13:23] from our goalie all five of our players
+[13:25] left the ice
+[13:26] so the nhl provides a blogger with no
+[13:29] information about what any of our five
+[13:31] guys did to make this happen
+[13:33] other than that we scored
+[13:35] so you can record as a team we created a
+[13:38] dangerous chance from four feet away
+[13:40] we converted on it scored a goal but
+[13:43] assigning individual credits players for
+[13:45] how that came about it's going to be
+[13:47] pretty hard without more data
+[13:49] and
+[13:51] when you want to divide it up you need
+[13:53] to have a more rich play-by-play or more
+[13:56] information than what was here
+[13:58] at the season level you might be able to
+[14:00] infer a player's impact by looking at
+[14:04] how often good things happen when
+[14:05] they're on the ice how often bad things
+[14:07] happen
+[14:08] and
+[14:09] maybe you can correct for who he's
+[14:11] playing with who he's playing against
+[14:13] what kind of situations he's in but on
+[14:16] any individual play trying to say what
+[14:18] he did you just don't have the data from
+[14:20] the nhl's playbook
+[14:22] people in the public domain have started
+[14:24] trying to fill in that goal and start
+[14:26] tracking things by hand
+[14:28] to record more of the individual
+[14:29] contributions and make that more rich
+[14:32] play-by-play that tells you things like
+[14:34] who passed the to the player that
+[14:36] got the scoring chance and what kind of
+[14:38] pass was it
+[14:40] and
+[14:41] that helps a lot it gets you one step
+[14:43] closer to being able what you want to do
+[14:46] but
+[14:47] to really do it well there's a level of
+[14:49] detail that you really just can't do it
+[14:52] by hand at scale so you might be able to
+[14:54] go through if there's 20 or 30 scoring
+[14:56] chances in a game you might be able to
+[14:58] record the pass that led to each of
+[15:00] those and some information about that
+[15:02] pass but if we're gonna talk about a
+[15:04] sequence of five or ten passes that led
+[15:06] up to it and what each player did
+[15:08] it's going to be really hard to record
+[15:10] that much information
+[15:12] if you want to start talking about all
+[15:14] of the movements that players made to
+[15:16] make that pass possible which offensive
+[15:18] player
+[15:19] cut somewhere to occupy a defender which
+[15:22] defender lost his manning coverage
+[15:25] that's going to be essentially
+[15:27] impossible to do by hand
+[15:29] if you want to talk about the pastor you
+[15:31] need to not just know what paths he made
+[15:33] but what other passing options he had
+[15:35] available and didn't make so you can
+[15:38] start to grade his vision you can see
+[15:40] where this just there's a level of
+[15:41] information that you're never going to
+[15:43] be able to report
+[15:46] and so that's those are the two things
+[15:48] that i think give an in-house down the
+[15:50] list the most advantage the access to
+[15:53] coaches to understand what players were
+[15:55] being asked to do
+[15:56] and the data to really track in detail
+[15:59] the extent to which they did it
+[16:02] and data here we you know i talked about
+[16:04] playback play
+[16:05] uh you heard
+[16:07] that in field hockey as well as other
+[16:09] sports there's gps trackers to keep
+[16:11] track of where players are at all times
+[16:14] data also includes things like scouting
+[16:16] reports and
+[16:18] basically any information we have
+[16:20] there's a lot of information that we
+[16:21] collect in the house that someone in the
+[16:24] public domain might not have access to
+[16:26] and so there is a real advantage to
+[16:28] being in-house and there are reasons why
+[16:31] people who are working for teams tend to
+[16:33] assume
+[16:34] they have all the information and there
+[16:36] isn't much to add from the public domain
+[16:38] and i think that there's a step that
+[16:40] they're missing there they do have all
+[16:42] of the information and a lot of
+[16:44] advantages but there are still some real
+[16:46] advantages from the public domain and i
+[16:48] think it's important to think those
+[16:50] through and take advantage of them
+[16:52] wherever you can
+[16:53] so i'm gonna pivot now to talking about
+[16:56] what i why i think the public domain has
+[16:58] a lot to offer and how we can go about
+[17:00] making use of that
+[17:02] so one simple advantage is just
+[17:04] technical of horsepower
+[17:06] teams invest a lot in this stuff but
+[17:09] there is a really broad world outside of
+[17:11] teams
+[17:12] so somebody named shayna goldman
+[17:14] compiles a list of everybody who's on
+[17:16] team websites in
+[17:18] what appears to be a data adjacent role
+[17:21] and there are about 100 of them across
+[17:23] the league something like 32 of them
+[17:26] have a degree in a stem field based on
+[17:28] my searches of team bios and linkedin
+[17:31] and whatever else like
+[17:33] included 22 graduate degrees
+[17:35] that's a lot of horsepower if you get
+[17:37] 100 people together with 22 graduate
+[17:39] degrees and 30 stem degrees
+[17:42] there's a lot of ability there and a lot
+[17:44] that you could do when you compare it to
+[17:46] what exists in the broader world it's
+[17:49] it's not really that much
+[17:50] just one university nearby us nc state
+[17:54] in just one department their statistics
+[17:57] department they have 41 faculty members
+[18:00] and 125 graduate students
+[18:02] so just that one department at the one
+[18:04] school
+[18:05] has more horsepower than the entire nhl
+[18:08] does
+[18:09] now
+[18:10] obviously they aren't all working on
+[18:12] hockey yet
+[18:14] but
+[18:15] like we heard in the field hockey
+[18:16] example in the opening remarks
+[18:18] once you start giving those people some
+[18:20] interesting data and putting interesting
+[18:22] problems in front of them
+[18:24] they're not going to be able to help but
+[18:26] get engaged and want to help you solve
+[18:28] some of these problems and
+[18:30] i do think there is an ability to tap
+[18:32] into that that
+[18:35] the teams can take real advantage of
+[18:39] so some examples of work that's being
+[18:41] done in the public domain
+[18:43] i think the academic research literature
+[18:46] is a really good place to find people
+[18:48] using that horsepower to develop some
+[18:50] innovative techniques and apply the
+[18:53] cutting edge
+[18:54] best practice methods to solving
+[18:56] problems
+[18:57] so i have an example here there's an old
+[18:59] rule that uh when somebody on an
+[19:02] organizing committee invites you to give
+[19:03] a talk at a symposium you have to make
+[19:05] sure you
+[19:06] you return the favor by promoting some
+[19:08] of their work so this is a
+[19:11] plot from a publication um
+[19:14] that looked at how often the best team
+[19:16] wins across sports and that's something
+[19:19] where
+[19:20] [Music]
+[19:21] the arithmetic
+[19:23] can be done in an individual sport in a
+[19:25] relatively simple way
+[19:27] uh the innovation that they had in this
+[19:29] paper was coming up with a way to
+[19:31] compare across sports and make it so you
+[19:33] could start answering questions like
+[19:36] how much more random is an nhl playoff
+[19:38] series than an nba playoff series and as
+[19:41] a league we might be interested in that
+[19:43] kind of question and whether we have too
+[19:45] much or too little randomness
+[19:49] another example of technical horsepower
+[19:50] comes from a more hockey specific
+[19:53] example here so i'll give you some
+[19:54] background for people who
+[19:56] are not neck deep in hockey
+[19:59] the nhl is the top league in hockey
+[20:02] but
+[20:03] lots of other leagues
+[20:05] are of interest to us as well there are
+[20:07] prospects and free agents who come out
+[20:09] of leagues all over the world and in the
+[20:11] draft we need to think about all the
+[20:12] leads they're coming from as well
+[20:15] and so
+[20:16] when we want to think about how to
+[20:18] evaluate a player we need to have some
+[20:20] sense of how strong each of those
+[20:21] leagues are
+[20:22] and it's a little bit like the minor
+[20:24] league issue in baseball but it's
+[20:26] i think it's significantly more
+[20:27] challenging here
+[20:29] because you're trying to compare such
+[20:31] desperate leagues from
+[20:33] the nhl
+[20:35] to
+[20:35] a canadian junior hockey league where
+[20:37] everybody's 21 and under
+[20:40] to
+[20:41] the top men's professional league in
+[20:43] russia to the minor league in russia
+[20:46] to the
+[20:47] under 18 league in sweden they're all
+[20:50] these different leagues and comparing
+[20:51] across them is not easy
+[20:53] and something that we knew was important
+[20:55] and for a long time people were doing it
+[20:57] in a kind of simple pairwise fashion
+[20:59] where you take players who are in one
+[21:01] league one year and move to another
+[21:03] league the next year
+[21:04] and look at how their production changed
+[21:07] and take that as an assessment of which
+[21:08] league is stronger
+[21:11] and you can do that in a pairwise
+[21:12] fashion but you run into problems where
+[21:15] the translation from league a to league
+[21:17] b says something
+[21:18] the translation from league b to league
+[21:20] c says something but if you chain those
+[21:22] together you get a different answer from
+[21:24] if you go straight from a to c
+[21:26] and so the innovation in this paper that
+[21:29] i'm citing
+[21:30] was using some more advanced statistical
+[21:33] methods to model globally the
+[21:36] translation factors across all the leaks
+[21:39] and take into account all those
+[21:40] individual interactions to try to really
+[21:43] step rank the leads and make it so we
+[21:45] can start to compare prospects and
+[21:48] potential free agent signings from all
+[21:50] over the world
+[21:52] so there's a lot of technical horsepower
+[21:53] in the public domain
+[21:55] there are a hundred team employees and
+[21:57] that is a lot
+[21:58] but it's not a hundred employees working
+[22:00] in a single group we're we're in 32
+[22:03] individual teams that are by design
+[22:05] isolated and when you start cutting
+[22:08] things up like that those individual
+[22:09] groups are actually not that big and
+[22:12] there's a loss of connectivity there
+[22:14] that i think is really important
+[22:16] people
+[22:17] when you think of an inventor or an
+[22:19] invention
+[22:20] the sort of stereotype is this guy in
+[22:22] the lab by himself locked away no
+[22:25] contact with any humans until he comes
+[22:27] out running excited and screaming about
+[22:29] his fantastic new invention
+[22:32] and that's really not how invention work
+[22:34] invention comes from having
+[22:36] conversations with people who see things
+[22:38] differently from you and letting your
+[22:40] ideas cross pollinate with theirs and
+[22:42] come up with new things
+[22:44] and that's something that obviously the
+[22:46] public domain can do
+[22:47] in a way that a team that's trying to
+[22:49] get a proprietary edge count as easily
+[22:53] so i'll give you another example of a
+[22:55] place where that showed up in hockey so
+[22:59] transitioning to thinking about expected
+[23:01] values comes pretty early in most sports
+[23:05] those of you familiar with baseball
+[23:07] probably have heard of the rune
+[23:08] expectancy matrix those be familiar with
+[23:10] soccer thought about expected goals
+[23:13] there's expected points in american
+[23:15] football each sport has kind of made
+[23:17] this transition and just like all the
+[23:19] other sports early on in hockey people
+[23:21] said oh we need to be able to make an
+[23:23] expected goals model predict how likely
+[23:25] it is that a shot will go in
+[23:28] and stop just counting shots switch to
+[23:31] counting expected goals
+[23:33] they did that early on
+[23:35] and
+[23:36] went to use it to make predictions and
+[23:38] found out that it was actually worse
+[23:41] than just counting shots
+[23:44] and that's strange and it's hard to
+[23:45] believe until you think about what that
+[23:47] data looked like and when you have these
+[23:49] huge gaps in the data and really not
+[23:52] very much information about what
+[23:53] happened
+[23:54] it may be that your expected goals
+[23:56] calculation isn't reliable enough to
+[23:58] make those kind of predictions
+[24:01] and
+[24:02] there was a decade of back and forth in
+[24:04] blogs where people were coming up with
+[24:06] new innovations about how to add a
+[24:09] little bit more information to the shop
+[24:11] how to tease apart
+[24:13] things from the sequence of events in
+[24:15] the play-by-play to tell you a little
+[24:17] bit more than what we had from just the
+[24:19] individual play
+[24:21] and that back and forth over 10 years
+[24:23] eventually got to where there was a
+[24:24] published model
+[24:26] that had a test of predictive power and
+[24:28] showed that it improved predictions over
+[24:31] just using simple shots
+[24:33] and
+[24:34] that discourse that back and forth
+[24:37] would have been a lot harder to do in a
+[24:38] team environment
+[24:40] and
+[24:41] i think that's a really important thing
+[24:43] for
+[24:43] finding flaws in your approach and
+[24:45] coming up with new wrinkles to consider
+[24:50] so
+[24:52] tying things together a little bit here
+[24:54] i
+[24:55] i think those new ideas are
+[24:58] one of the most precious commodities
+[24:59] there is in any research field really
+[25:03] and going through blogs and journals is
+[25:05] a really valuable way to find some of
+[25:07] those ideas and maybe you're just using
+[25:10] their idea as is or maybe it triggers
+[25:12] something for you and you think about
+[25:14] how you can take the data that you have
+[25:16] or the access that you have or some
+[25:18] other problem that you've been thinking
+[25:19] about
+[25:20] and use their idea as a starting point
+[25:22] for approaching this thing
+[25:25] you can also be more active and
+[25:27] get
+[25:28] researchers in the public domain engaged
+[25:30] in working with your fancy data
+[25:33] so i have a couple examples here the one
+[25:34] on the left is from where
+[25:36] one of those enriched play-by-plays that
+[25:39] has information about every pass was
+[25:41] provided to contestants in the data
+[25:43] competition
+[25:45] and this example here solves the problem
+[25:47] that we talked about in the hockey video
+[25:50] of assessing the impact of each pass in
+[25:52] sequence and what all the players did
+[25:55] individually to lead to an opportunity
+[25:57] to score
+[25:59] on the right is from an nfl's data
+[26:01] competition
+[26:03] where
+[26:04] uh
+[26:05] contestants were given information about
+[26:07] the location of players at all time and
+[26:09] solved the problem that we had from our
+[26:10] football play of assessing
+[26:13] uh at what point the player became open
+[26:16] and how likely they were to
+[26:19] complete the pass
+[26:20] and
+[26:21] this didn't actually get into who was
+[26:23] responsible for that but you could see
+[26:25] where a starting point of identifying
+[26:27] when and where they came open and how
+[26:29] open they were
+[26:30] would get you towards that
+[26:32] and so i think this kind of
+[26:34] opportunity to engage people in the
+[26:36] public domain and have them
+[26:39] come up with ideas for you or with you
+[26:41] and work through some of the ways about
+[26:44] how to solve them is something that
+[26:46] teams really can
+[26:47] get a lot of benefit from
+[26:50] i'm going gonna pivot now and talk about
+[26:52] something that
+[26:53] i think
+[26:54] is um
+[26:56] separate from those other things in a
+[26:58] certain way it's it's a
+[27:00] form of benefit just from having an
+[27:03] outside opinion
+[27:04] so they're always going to be challenges
+[27:06] when you're trying to evaluate your own
+[27:08] team
+[27:09] there's
+[27:10] just as a starting point i think leaders
+[27:14] are almost always inherently optimistic
+[27:17] it's part of what makes people good at
+[27:19] selling their vision and getting people
+[27:21] excited to work with them
+[27:23] is
+[27:24] being able to explain why you think this
+[27:26] is right and be excited about it and
+[27:27] have that be a genuine belief that what
+[27:29] you're doing is the right way to do it
+[27:32] that optimism is good for getting people
+[27:34] excited about your problem but it does
+[27:37] have a downside when it comes time to
+[27:40] assess your situation
+[27:42] there are also some psychological biases
+[27:44] so confirmation bias is the tendency to
+[27:48] when you have an opinion um
+[27:52] pay more attention to and give more
+[27:55] weight to evidence that supports your
+[27:57] opinion than the evidence that
+[27:58] contradicts your opinion
+[28:00] and so that's an inherent tendency that
+[28:02] people have and so
+[28:05] if you think a certain player is good
+[28:06] and go out and fire them
+[28:08] and then you start watching them you're
+[28:10] going to have a tendency to recognize
+[28:13] and remember the things he does well and
+[28:15] say i knew it that player's really good
+[28:17] and maybe overlook some of the things
+[28:19] that he struggles with a little bit
+[28:22] and
+[28:22] that will tend to make you even more
+[28:24] optimistic about your players and your
+[28:26] team
+[28:28] the endowment effect is another
+[28:29] psychological bias that can play in so
+[28:32] that's the tendency to value
+[28:35] uh objects or assets that you have
+[28:38] more than you would value an equivalent
+[28:40] object or asset that is not currently in
+[28:43] your possession
+[28:44] so if you have a player and a team comes
+[28:46] to and says they're interested in the
+[28:48] player they'll trade you a third round
+[28:50] draft pick for him
+[28:51] your reaction might be no way this guy
+[28:53] is incredibly valuable he's worth way
+[28:54] more than a third round pick
+[28:56] some other team has a similar player
+[28:58] and asked if you would give up a third
+[29:00] round pick for them
+[29:02] of course not that guy's not worth
+[29:03] anywhere near as much and it's a it's
+[29:06] essentially a form of overvaluing your
+[29:08] own players and again it
+[29:10] all of these psychological biases
+[29:13] lead teams being
+[29:15] a little more optimistic about their
+[29:17] team than they should be in general
+[29:20] but i think there's something even more
+[29:22] insidious underlying
+[29:24] that leads to hyper optimism
+[29:27] even if you have no psychological
+[29:28] effects at all so
+[29:30] let's imagine
+[29:32] i built a robot we programmed the robot
+[29:34] to evaluate players and teams and let it
+[29:37] make all of our decisions
+[29:39] i think that robot's still going to be
+[29:40] too optimistic about whatever team it
+[29:42] builds and i'll take a minute to walk
+[29:44] you through why that would be
+[29:47] so let's imagine
+[29:48] we have this hockey player he's a free
+[29:50] agent and we need to decide what these
+[29:52] were now
+[29:56] you can't really know for sure right
+[29:57] there's there's
+[29:59] we just don't we have not yet solved
+[30:01] taki to the point where we can say
+[30:03] unequivocally what a player's value is
+[30:06] for the sake of this conversation
+[30:08] let's assume we have access to an
+[30:10] ammunition being
+[30:12] and that omniscient being tells you and
+[30:14] me
+[30:15] that this player's worth three million
+[30:16] dollars
+[30:18] but the rest of the teams in the league
+[30:19] don't know that and we're going to sit
+[30:21] back and watch what happens
+[30:23] so they each have their own opinions
+[30:25] they each see the game a little bit
+[30:26] differently maybe their scouts saw the
+[30:28] player at different games
+[30:30] and they each have different opinions
+[30:31] about what the player is worth
+[30:34] it's just at the low end one team
+[30:37] manager thinks the player's worth about
+[30:38] two and a half million at the high end
+[30:40] one team manager thinks he's worth about
+[30:42] four million
+[30:44] so
+[30:44] when we go into this auction in free
+[30:46] agency the person who thinks he's worth
+[30:49] the most will end up being the one who
+[30:51] signs him he will effectively out-bid
+[30:53] the other teams
+[30:55] but when you think about how much he
+[30:56] signs him for he doesn't have to pay
+[30:58] four million for him right that the
+[31:00] agent starts going to teams he is asking
+[31:02] for two million everybody's in the
+[31:04] bidding it gets to two and a half
+[31:05] million and the first person drops out
+[31:07] of the bidding
+[31:09] get up to three million the second
+[31:10] person drops out you get above three and
+[31:12] a half million and the third person
+[31:14] drops out and this guy on the end
+[31:16] maybe has to pay a little bit more than
+[31:18] 3.5 maybe it's 3.51 maybe it's 3.6 but
+[31:22] it's not 4 million
+[31:24] so how does he feel about that outcome
+[31:27] he thinks he got a bargain right he he
+[31:29] thinks he paid a half million dollars
+[31:31] less than you should have
+[31:33] while everybody else is saying they're
+[31:34] you know maybe this third guy is saying
+[31:36] yeah that's a reasonable price a little
+[31:38] more than i wanted but the other two are
+[31:39] saying they're saying that is way too
+[31:41] much
+[31:42] and nobody in the league knows what the
+[31:44] right answer is all we know is that the
+[31:46] person who ended up with him is the one
+[31:49] who is most optimistic about it
+[31:51] and he thinks he just won
+[31:54] that's not just true in free agency we
+[31:56] see it in the draft too
+[31:58] so
+[31:59] every year you will hear team executives
+[32:01] come out and say
+[32:03] you know we were picking 37th and we got
+[32:06] this guy who was 15th on our draft board
+[32:08] i can't believe how lucky we were
+[32:10] and when i was in the public domain
+[32:12] i'll be honest i didn't really buy it
+[32:14] you know it sounded like something they
+[32:15] would just say to try to get fans
+[32:17] excited about their draft pick or fight
+[32:19] book
+[32:21] what a good position the team was in or
+[32:22] whatever
+[32:24] but when i started to see how different
+[32:26] teams draft lists were and think about
+[32:28] what that means for this kind of
+[32:31] situation
+[32:32] you realize that it actually
+[32:34] generally is true because it's exactly
+[32:36] the same as the free agency situation
+[32:40] i it's not exactly the same because you
+[32:43] don't always have the opportunity to
+[32:44] acquire the player who you like the most
+[32:47] if you had him
+[32:49] 15th and your next pick was at 30th
+[32:52] maybe somebody else takes him at 27th
+[32:54] who didn't like it as much as he did so
+[32:57] it's not quite like free agency where
+[32:58] it's always going to go to the team that
+[33:00] wants him most
+[33:01] but you're still going to tend to end up
+[33:03] with the players who other teams
+[33:04] wouldn't have taken that by
+[33:06] and you're going to come out of the
+[33:08] draft every year saying
+[33:10] you got really lucky that a bunch of
+[33:12] players fell to you who you would have
+[33:14] had ranked
+[33:15] ahead of a bunch of people who went
+[33:16] earlier
+[33:18] and that happens at every step to
+[33:20] acquire players and it creates a
+[33:22] selection bias whether we're talking
+[33:24] about free agency or trades or the draft
+[33:28] every time you're adding a player to
+[33:29] your roster
+[33:30] the tendency will be to end up with a
+[33:32] player who you like more than most of
+[33:34] the other teams do
+[33:36] and so you're going to like your team
+[33:37] more than most other teams do
+[33:39] and you might be right you know maybe
+[33:41] you know more about how to evaluate
+[33:43] players than anyone else in the league
+[33:45] does maybe they have it wrong and you
+[33:46] have it right
+[33:48] but
+[33:49] if everybody thinks
+[33:51] they have it right
+[33:53] and they all disagree they can't all be
+[33:55] right they can't all
+[33:57] have teams that are better than average
+[33:59] and so some teams are way too optimistic
+[34:02] about their situation
+[34:04] and if you're working for a team it's
+[34:05] incumbent on you to think about how to
+[34:08] assess
+[34:09] how confident you should be in your
+[34:11] your opinion about your team
+[34:14] and that's really important because that
+[34:16] assessment of your team
+[34:18] plays in when you make decisions about
+[34:19] what to do
+[34:20] there are lots of opportunities to
+[34:23] essentially trade
+[34:25] future assets for current assets
+[34:28] and if you think your team is really
+[34:29] good right now there's a lot of
+[34:30] incentive to do that
+[34:32] but what if you're wrong
+[34:35] and you need to understand
+[34:37] no model is perfect there's that old
+[34:39] saying but that that includes whether
+[34:41] you're using an actual quantitative
+[34:43] model or any method you use to decide
+[34:45] how good you think your team is it's not
+[34:47] going to be perfect
+[34:48] and
+[34:49] that those imperfections tend to make
+[34:52] you more optimistic than you should
+[34:54] and i think where there's real value
+[34:56] is in essentially ensembling opinions
+[34:59] and the good news is the internet has no
+[35:01] shortage of opinions about
+[35:03] what a team's likely win total will be
+[35:06] or their odds of making the playoffs or
+[35:08] whatever it might be
+[35:09] and so there's a lot of chance there to
+[35:11] check your gut instinct or your internal
+[35:13] models and see whether the rest of the
+[35:16] world agrees with you
+[35:18] now you might be right
+[35:20] i'm not saying you automatically abandon
+[35:22] your opinion
+[35:24] but you need to question it if they
+[35:25] disagree if they agree with you then
+[35:27] maybe you go ahead and make your moves
+[35:28] with confidence but if they disagree you
+[35:30] need to spend some time thinking about
+[35:32] why
+[35:33] if you can't answer
+[35:35] why those models in the public domain
+[35:37] are higher on
+[35:39] other players than on yours
+[35:41] then you need to be really careful about
+[35:43] thinking about whether you're right you
+[35:45] still might be
+[35:46] but you have to have that caution
+[35:50] so put something put it all together now
+[35:51] and think about whether the public
+[35:54] domain work whether paying attention to
+[35:56] it really does lead to an edging
+[35:58] practice so i'll take one last taki
+[36:00] example here that's another
+[36:02] series of uh
+[36:04] articles that we're looking at the draft
+[36:07] so taking into account how old the
+[36:10] player was how many points he scored
+[36:12] where what
+[36:13] what league played in
+[36:14] a bunch of information and trying to
+[36:16] project what their future looked like
+[36:18] how likely they were to make it how good
+[36:19] they were likely to be if they did
+[36:23] and
+[36:24] this was interesting work and some teams
+[36:26] around the league were paying attention
+[36:28] to it and some of them were using it
+[36:30] directly and some of it were using it as
+[36:33] inspiration for further extensions
+[36:36] and one team actually went further they
+[36:38] went and recruited the researchers who
+[36:40] developed this work
+[36:41] and integrated them with their scouting
+[36:43] staff as consultants
+[36:45] and they gave a talk at the mit sports
+[36:47] conference
+[36:49] a couple years back detailing exactly
+[36:51] how they blended their work into their
+[36:53] decision making processes
+[36:55] and that's how i know they got a lot of
+[36:56] value out of it because not only did
+[36:58] they go do it but they were happy enough
+[37:00] with it to be going out and talking
+[37:02] about it and showing examples of
+[37:05] players where
+[37:08] combining the information they had from
+[37:10] these models with the information they
+[37:12] had in-house helped them make decisions
+[37:16] so in terms of best practices i think
+[37:19] passively monitoring the research that's
+[37:21] in the field is important just knowing
+[37:22] what's out there being able to find
+[37:24] those articles about the draft and think
+[37:26] about how you can use them but active
+[37:28] engagement is even better having these
+[37:31] conversations with researchers gives you
+[37:34] a chance to sneak out of your little
+[37:35] silo every now and then and come across
+[37:37] some new ideas and get people engaged
+[37:40] if you can partner with academic groups
+[37:42] or student interest groups there's a
+[37:44] sports analytics club at nc state that
+[37:46] we worked with for a while and that was
+[37:48] 50 undergrads who are immediately
+[37:51] enthusiastically working on problems
+[37:53] with us
+[37:55] there's an opportunity to tap into the
+[37:56] horsepower and the connectivity that way
+[37:59] like participating in the occasional
+[38:00] conference is important you can do that
+[38:02] as a referee as a speaker or as an
+[38:04] attendee
+[38:05] um
+[38:06] and
+[38:08] if you do all of these things well i
+[38:09] think the public work can be
+[38:12] a constant sort of new ideas
+[38:15] and eventually like based on the example
+[38:17] new hires and new ways of looking at
+[38:19] your own work
+[38:21] and just leading you with that last
+[38:23] thought that
+[38:24] ensembles really do almost always beat
+[38:26] individual models and it's the job of
+[38:29] people who work in teams to make use of
+[38:31] every piece of information they have
+[38:34] so
+[38:35] with that i will
+[38:37] stop here and would be happy to answer
+[38:39] any questions you have
+[38:44] thank you very much eric
+[38:46] um now it's time for questions we um we
+[38:50] can take questions from the q and a
+[38:52] window if you click the
+[38:54] bottom right
+[38:56] uh i think on my screen three dots if
+[38:58] you click on it there you will see a q
+[39:00] and a session
+[39:01] so please input your question
+[39:03] there
+[39:04] and of course panelists you your
+[39:07] your feel free to ask just unmute
+[39:09] yourself you can ask
+[39:17] okay
+[39:18] okay so we got one question
+[39:21] um
+[39:21] how do you determine what parts of the
+[39:24] public domain are trustworthy
+[39:27] and valuable to use
+[39:30] yeah that's so
+[39:33] that's a good question i
+[39:35] i think it is
+[39:37] there's two ways of thinking about it
+[39:39] one is
+[39:41] on some level
+[39:43] everything is valuable even if the
+[39:45] research is
+[39:46] in some fundamental way just kind of
+[39:49] misguided
+[39:51] having someone throw stuff out there
+[39:53] whether it's right or wrong might get
+[39:54] you thinking about something new so
+[39:57] spending a little bit of time just
+[39:59] reading everything has some value
+[40:02] but you do ultimately need to have that
+[40:05] intuition for which things are most
+[40:08] valuable
+[40:09] most well underpinned in terms of the
+[40:11] quality of the study and the quality of
+[40:13] the data they have
+[40:14] and that is
+[40:15] like i said in my little introduction i
+[40:18] i think that is a skill that you can
+[40:20] develop over time
+[40:22] for
+[40:23] getting a sense for what is most likely
+[40:25] to um
+[40:27] to sort of hold up under scrutiny and
+[40:31] what kind of tests you can use to
+[40:32] scrutinize it
+[40:38] um oh that question was from uh alex uh
+[40:41] harriman now the next question is from
+[40:44] darren
+[40:45] or shaftness
+[40:46] c
+[40:47] have you seen
+[40:49] a good example of
+[40:51] data collection by a club
+[40:56] um
+[40:58] so
+[40:59] by the club
+[41:01] there's a caveat there that makes it
+[41:02] tricky i think when
+[41:07] so
+[41:08] when they start by saying
+[41:10] we know teens are very siloed and i
+[41:12] think it's a good bet that lots of teams
+[41:15] have done this and i just didn't know
+[41:16] about it but in terms of the things that
+[41:18] i actually know about i think most teams
+[41:21] when they go to crowdsourced data
+[41:25] generally do it through a company and so
+[41:28] there are companies that will
+[41:30] collect data for you and provide it
+[41:33] and most teams i think would not want to
+[41:36] get into the business of trying to
+[41:37] organize a crowdsourced data collection
+[41:40] effort
+[41:41] that being said in the public domain
+[41:43] there are crowdsourced efforts i
+[41:45] actually
+[41:46] led one back in 2012 or 13 where
+[41:50] we got
+[41:51] uh 30 or 50 different people watching
+[41:53] games i gave them a template for things
+[41:55] we wanted to watch for them some
+[41:56] instruction and we assembled
+[41:58] a pretty robust data set that let us
+[42:01] draw some interesting conclusions
+[42:06] next question is from stephen paziale
+[42:10] hi eric how do you overcome the
+[42:12] challenge of not having a playing career
+[42:15] in the nhl
+[42:17] we see now in the mlb most presidents
+[42:20] have zero playing experience and and the
+[42:23] nhl is trending in that direction how
+[42:26] have you overcome this barrier and what
+[42:29] is the value of having an analytical
+[42:31] mind in charge rather than a former
+[42:34] player
+[42:35] i don't swing the
+[42:38] of the bruins
+[42:40] yeah
+[42:41] i think this is
+[42:43] a real
+[42:44] um
+[42:45] question that
+[42:47] there are things that you understand
+[42:49] about the game from having seen it from
+[42:51] a player's perspective and there is a
+[42:54] level of understanding
+[42:57] i think whether playing or coaching
+[43:00] i think
+[43:01] players and coaches understand
+[43:04] the systems better than somebody who
+[43:06] hasn't played or coached is likely to
+[43:08] they understand more about what's going
+[43:11] on at any given second and about what
+[43:13] each person needs to think about and
+[43:15] what the responsibilities are
+[43:17] it's a full-time job for a coach to
+[43:19] think about all these different wrinkles
+[43:20] and what they're going to do
+[43:22] and of course
+[43:24] it's impossible for me to be as good at
+[43:27] it as they are and so they're always
+[43:29] going to know more about those things
+[43:34] what's important for me to be able to do
+[43:37] is
+[43:38] communicate with them in a way that they
+[43:40] can understand
+[43:41] and so
+[43:42] i don't have to have
+[43:44] as much understanding as they do about
+[43:47] exactly the best way to design a
+[43:49] breakout scheme
+[43:51] but i need to be able to communicate
+[43:53] with them and learn from them about why
+[43:55] we're doing the things we're doing and
+[43:56] what people are asked to do
+[43:58] and
+[43:59] help them see
+[44:01] what information i can collect and how
+[44:03] it can help assist what they're doing
+[44:06] and so
+[44:07] i think there is real value in having
+[44:09] that on ice experience or on the bench
+[44:12] experience um
+[44:14] i
+[44:15] don't think it's the only thing that's
+[44:17] valuable though and
+[44:19] we have a blend of people in our front
+[44:21] office we have people who played with
+[44:23] people who coached we have people who
+[44:25] have only been in management
+[44:27] and
+[44:27] i think having those different
+[44:29] perspectives
+[44:30] with
+[44:32] an innovative environment a
+[44:33] collaborative environment and a
+[44:36] communicative environment
+[44:38] is what ends up making the group most
+[44:40] successful
+[44:45] next question is from otto kaufman
+[44:48] why do not go to overtime when lose no
+[44:52] points and get a point for a lose
+[44:59] not quite sure i understand i assume the
+[45:01] question here is in the nhl standings
+[45:04] they're a little bit weird because
+[45:06] teams that lose in overtime still get a
+[45:09] point
+[45:11] and that dates back to
+[45:14] when there were ties in the nhl
+[45:16] teams at the end of the game often got
+[45:18] very conservative just trying to protect
+[45:22] the point they had in their tie
+[45:24] and
+[45:26] the league wanted to discourage
+[45:28] that conservative play
+[45:30] and so they move to this model where
+[45:33] you don't want the game to end with both
+[45:35] teams just not taking any chances trying
+[45:37] to protect the point they have
+[45:39] and so they added in the overtime loss
+[45:41] point to make it so okay you get that
+[45:43] point whether you win and lose now go
+[45:45] play hard and try and get the extra
+[45:47] point for winning
+[45:49] so it makes the standings a little bit
+[45:51] different from other sports and i know
+[45:52] it causes some confusion but
+[45:55] there was a reason for introducing it
+[46:00] a question from nicholas watts
+[46:04] what is your best advice for a graduate
+[46:06] student with a background in sports
+[46:08] science
+[46:09] who wants to further get into the data
+[46:12] analytics side of the business
+[46:15] i
+[46:15] graduate in may thanks
+[46:18] yeah so
+[46:21] getting into the business is hard like
+[46:24] the challenge is if i post a position
+[46:27] tomorrow i'm going to have 500 resumes
+[46:30] and
+[46:32] they won't all be
+[46:33] qualified but a lot of them will be and
+[46:37] it's hard for me as a hiring manager to
+[46:39] figure out if that big pile of resumes
+[46:41] who the most talented candidate is who
+[46:43] the best fit is
+[46:45] and
+[46:46] [Music]
+[46:47] so the job of the applicant is to find a
+[46:50] way to stand out and
+[46:52] there are basically two ways that i've
+[46:54] seen people be effective at
+[46:57] getting
+[46:58] a little bit extra attention on their
+[47:00] resume
+[47:01] one of them is having done work in the
+[47:03] public domain and having a portfolio of
+[47:06] existing research that the hiring
+[47:08] manager can look at and say you know
+[47:11] look they did some interesting work i
+[47:13] like the way this person thinks
+[47:16] um
+[47:17] that that's
+[47:18] obviously the path i took and
+[47:21] i think people often when they're asked
+[47:23] how to go about getting into a field end
+[47:25] up just describing what worked for them
+[47:27] so that's what worked for me i know it's
+[47:29] one option
+[47:31] i think the other thing that can really
+[47:34] help is networking and having
+[47:36] internships and other things like that
+[47:39] because
+[47:40] if you have an internship on your resume
+[47:42] saying you worked at this team
+[47:44] the first thing i'm gonna do when i get
+[47:45] your resume is call my buddy who works
+[47:47] for that team and ask what he thinks of
+[47:49] you and
+[47:50] if he liked you all of a sudden you're
+[47:52] on the short list already because i've
+[47:54] already got someone telling me no no
+[47:56] there's someone who's worth
+[47:58] talking to
+[47:59] um
+[48:00] so
+[48:02] i know not everyone's always in a
+[48:03] position to be able to take an
+[48:04] internship but i think taking every
+[48:07] opportunity to network that you can
+[48:10] and
+[48:11] if you have the ability to do some
+[48:12] internships i think it can really help
+[48:14] but just making it so that you have
+[48:17] those ways on your resume to make it so
+[48:19] that
+[48:20] somebody who has this big pile of
+[48:22] resumes can figure out which ones are
+[48:25] the standout ones helps a lot
+[48:27] that being said i
+[48:30] in my own personal hiring practices i've
+[48:34] i guess since i've been with the team
+[48:35] i've hired three people
+[48:37] and two of the three
+[48:39] were people i had never heard of before
+[48:41] i posted the job and didn't have any
+[48:43] personal references from so it is
+[48:45] possible to just have a compelling
+[48:48] resume and to interview well and get a
+[48:50] job
+[48:51] but if you're looking for a leg up and
+[48:52] giving yourself the best chance
+[48:55] i think either a portfolio of public
+[48:57] work or
+[48:58] something like an internship
+[49:01] are the easiest ways to
+[49:03] increase your chances
+[49:07] a question from thomas reeves
+[49:10] how much information do you collect and
+[49:12] analyze regarding the actions and
+[49:15] tendencies
+[49:16] of the officiating crew
+[49:18] for your games
+[49:21] um
+[49:22] we have some information on that we we
+[49:24] do some things with it
+[49:28] i think it i think there's been a lot of
+[49:30] that in
+[49:32] um sports like basketball and
+[49:35] baseball
+[49:36] where the officials are playing an
+[49:38] active hand in every play
+[49:41] in hockey for the most part the
+[49:43] officials
+[49:45] are
+[49:46] observing
+[49:47] there are only a few penalties called
+[49:49] per game and most of them are obvious
+[49:52] enough that any ref would have called it
+[49:55] and so
+[49:56] there are not that many opportunities to
+[49:59] try to gain the system by knowing
+[50:01] something about the officials
+[50:03] but we do still pay attention and make
+[50:05] sure that we have whatever information
+[50:07] we might be able to get out of it
+[50:13] thanks eric
+[50:14] uh i think i have covered all the
+[50:16] questions i have seen
+[50:18] and please um if you if we still have
+[50:22] time if you have further questions
+[50:23] please
+[50:24] enter them in the q and a window
+[50:31] it's just a remark i think uh many of
+[50:34] the uh sports analysts they they they
+[50:36] write blogs right and they probably they
+[50:39] put their own analysis out there and
+[50:41] then i guess recruiters may find them if
+[50:43] their blocks have a
+[50:45] big impact
+[50:56] so see there's a question about how to
+[50:58] show public domain work as a job speaker
+[51:01] from wild downlight
+[51:06] there's a lot of ways of doing it i
+[51:08] think um
+[51:09] it depends what your portfolio looks
+[51:12] like i think
+[51:14] um
+[51:15] if you have maintained a blog
+[51:18] it's easy to put on your resume
+[51:20] like rihanna blog you know did this
+[51:24] information you have a couple bullet
+[51:25] points on what it is and tell people
+[51:26] where to find it
+[51:28] um if you haven't if your work is more
+[51:31] like
+[51:32] things that you've done for classes or
+[51:34] for internships or for your own little
+[51:36] fund but not publishing in articles
+[51:40] then i think you do end up
+[51:42] relying on things like a github
+[51:44] repository or personal website i think
+[51:47] any of these is a reasonable way to give
+[51:49] people a viewing into it um it just
+[51:52] needs to be something that you can put
+[51:54] on a resume and say
+[51:55] hey go look at this and you can see more
+[51:57] about me
+[52:00] and
+[52:01] you know
+[52:02] as
+[52:03] as a hiring manager i can tell you
+[52:06] i will almost always go look and see
+[52:08] what the person has done
+[52:10] and again it's partly because it helps
+[52:12] me know more about them as an applicant
+[52:14] it also is another one of these ways to
+[52:17] see what people are thinking about out
+[52:18] there and what information i might be
+[52:20] able to make use of
+[52:22] um so it for sure it's something i would
+[52:25] look at as a hiring manager
+[52:28] i often
+[52:30] in an interview process with a developer
+[52:33] will ask if they have public work that i
+[52:34] can look at because
+[52:36] um being able to look at their code and
+[52:39] see
+[52:40] uh what they do and how they go about it
+[52:42] and
+[52:43] what you know what their strengths and
+[52:46] weaknesses are that sort of thing can be
+[52:48] hard to assess in an interview
+[52:50] environment um
+[52:52] and so i i
+[52:53] i can't speak for what all hiring
+[52:55] managers do but for me personally i love
+[52:57] when people give me access to see
+[53:00] some of their thought processes some of
+[53:02] their coding just give me a view and do
+[53:05] what you were like as a researcher
+[53:10] yeah there are more questions i'm sorry
+[53:12] i missed that
+[53:14] a question from taylor
+[53:16] caruso do you think getting an advanced
+[53:18] degree is necessary to make you stand
+[53:21] out as a candidate in the sports
+[53:23] industry or is it more experienced
+[53:25] connection and research based
+[53:29] um
+[53:31] it's not necessary i think
+[53:33] different team i think there's very big
+[53:36] differences across teams
+[53:38] so remember i went through that list of
+[53:40] 100
+[53:41] people who had data adjacent jobs in the
+[53:43] nhl
+[53:44] and something like 30 of them had a stem
+[53:48] degree
+[53:49] and something like 20 of them it was an
+[53:52] advanced degree
+[53:54] so
+[53:57] that
+[53:58] that's probably not
+[54:00] every team having one out of five
+[54:02] employees having an advanced degree it's
+[54:04] probably
+[54:05] you know maybe half the teams have
+[54:08] half their employees with advanced
+[54:09] degrees and so i think there are
+[54:12] teams where it's a real advantage if you
+[54:15] have shown more training
+[54:17] um
+[54:18] i don't think it's required anywhere and
+[54:20] i think there are teams where it's not
+[54:23] necessarily that big of an advantage
+[54:25] either
+[54:26] um
+[54:27] you know i
+[54:30] every hiring manager is going to be
+[54:31] different and every role within
+[54:34] a team is going to be different and so i
+[54:36] i don't think there is a universal
+[54:38] answer i think it's going to depend on
+[54:40] what kind of problem you want to be
+[54:42] solving and
+[54:44] where the
+[54:45] where it's easiest to acquire the skills
+[54:47] to solve that kind of problem
+[54:49] and also where it's easiest to
+[54:51] demonstrate people that you've acquired
+[54:53] those skills
+[54:57] a question from carlene markey
+[55:00] if most teams go to private data
+[55:02] providers will that change
+[55:05] with the advent of player puck trading
+[55:09] tracking in the nhl
+[55:12] um
+[55:13] maybe
+[55:15] i would guess
+[55:19] i guess they're going to be different
+[55:20] things from different teams so
+[55:22] one of the things that i think is
+[55:24] probably pretty natural is to take
+[55:26] anything that people have been doing by
+[55:28] hand and ask
+[55:30] can we get that automatically out of the
+[55:32] player and tracking data and for
+[55:34] some things the answer might be yes and
+[55:37] then it's just a matter of investing
+[55:38] resources into identifying those but
+[55:41] that's not always that easy
+[55:43] and
+[55:45] not every team is going to
+[55:47] have the time or inclination or ability
+[55:49] to do that
+[55:51] and then there are some things you might
+[55:52] be interested in that you can't get from
+[55:54] player tracking data
+[55:57] if i want to record
+[55:59] how often a defenseman checks over his
+[56:01] shoulder to see what's around him as he
+[56:03] goes back for a puck
+[56:05] that's valuable information about how
+[56:08] well he sees the ice because he can't
+[56:10] see the ice if you're not looking
+[56:13] that we wouldn't have from our tracking
+[56:14] data because we just have a point source
+[56:16] saying where the player is and not
+[56:18] whether his head is turned
+[56:21] and so there's information like that
+[56:23] where his stick is positioned will not
+[56:25] be in the play
+[56:26] and
+[56:27] maybe you need to know that to assess
+[56:29] things and so
+[56:31] i think there will still be a lot of
+[56:32] things that
+[56:35] where
+[56:36] observational techniques or video
+[56:39] analysis and computer vision techniques
+[56:41] still play a role even with puck
+[56:43] tracking and player tracking
+[56:45] um but i do think they're gonna be some
+[56:47] questions that we can answer with that
+[56:49] without going to third parties
+[56:54] a question from broadway pros
+[56:58] i i've read a paper that argues that
+[57:01] teams should be putting their goalie way
+[57:04] earlier in the third period but are
+[57:07] hesitant to take the chance for fear of
+[57:11] backlash from fans and players how do
+[57:14] you bridge the gap gaps between
+[57:17] analytics and the tradition
+[57:19] of the sport
+[57:20] yep
+[57:21] um
+[57:24] yeah so i think that's something that
+[57:27] people face in every sport um i think
+[57:31] there are some places where
+[57:34] it's pretty easy to
+[57:36] um
+[57:38] help people
+[57:39] ultimately everybody wants to win
+[57:41] coaches want to win more than anything
+[57:43] else and
+[57:45] fear of backlash
+[57:47] might play a role in some cases but i
+[57:49] think if they believe it's going to help
+[57:51] them win games
+[57:52] they're generally going to want to do it
+[57:54] the challenge is
+[57:56] they've spent their whole life becoming
+[57:58] one of the world's leading experts in
+[58:00] this and everything they've ever done
+[58:02] said this was the way to do it
+[58:04] and it can be hard to say hold on i've
+[58:06] got some data that says that's wrong and
+[58:10] it's not going to be easy for someone
+[58:12] who is as expert as they are to
+[58:14] immediately drop their opinion and by
+[58:16] the way they probably shouldn't more
+[58:18] often than not
+[58:19] their instinct is going to be right and
+[58:21] there's a reason why decades of
+[58:23] experience led to that conclusion
+[58:26] but
+[58:27] in the cases where they are it really
+[58:29] comes down to communication and
+[58:33] on the goalie pull like the mouth
+[58:36] is moderately complicated and it's
+[58:39] probably not something that a coach is
+[58:41] going to understand easily
+[58:43] but
+[58:45] if i have a conversation that says
+[58:48] yeah no that that intuition that you
+[58:50] have that you wait until there's a
+[58:51] minute left to pull the goalie was right
+[58:54] back when you played because back when
+[58:56] you played teams scored five or six or
+[58:58] seven goals a game
+[58:59] and
+[59:00] let's just wait another minute or two we
+[59:02] might get one here was the right way to
+[59:04] go
+[59:06] nowadays there's way fewer goals being
+[59:08] scored and so
+[59:09] your intuition has to change if you wait
+[59:12] a minute you're probably not scoring a
+[59:14] goal in that minute you're just wasting
+[59:15] a minute of time and so you need to
+[59:18] start pulling the goalie early and
+[59:19] that's something the coach can say yeah
+[59:21] okay i get that
+[59:23] and
+[59:24] that won't lead them to an answer about
+[59:25] how much earlier and you might still
+[59:27] need to talk about what the math says to
+[59:29] get there but i think having that
+[59:31] ability to communicate the reasoning
+[59:33] behind what the models are showing and
+[59:35] help people get a feel for
+[59:38] why this
+[59:39] counter-intuitive result actually makes
+[59:42] sense and the intuition might be off
+[59:44] here
+[59:44] is what's really powerful in this kind
+[59:46] of situation
+[59:49] um thank you eric i think we are getting
+[59:51] to the end but let's take just let's
+[59:53] just take one more question last
+[59:54] question
+[59:55] uh this question is from jeremy burden
+[59:58] um what types of studies or research do
+[60:02] you do for the hurricanes specifically
+[60:04] to gain a competitive advantage over
+[60:07] other teams from your analytics people
+[60:11] yeah i mean
+[60:13] part of how we get a competitive
+[60:14] advantage is not talking specifically
+[60:16] about what we do
+[60:19] there's a limit to how much i can answer
+[60:20] that but we do
+[60:23] we do try to involve
+[60:26] the use of data and quantitative
+[60:28] information in just about everything we
+[60:30] do so
+[60:32] it gets incorporated in different ways
+[60:34] we do different kinds of studies and
+[60:36] provide different kinds of information
+[60:39] um
+[60:40] partly because you need different
+[60:41] information for a question like which
+[60:44] draft prospect is the best bet
+[60:46] then for
+[60:47] what should this player do at this point
+[60:49] in time on the ice um those are just
+[60:52] fundamentally different kinds of
+[60:54] questions that need different kinds of
+[60:56] information
+[60:57] but also each group works differently
+[60:59] and
+[61:00] the way that one group
+[61:02] might need to see something to
+[61:04] understand it and make the best use of
+[61:06] it is different from the way another
+[61:08] group might need to and so
+[61:11] i think there's a really wide variety
+[61:13] of approaches in terms of
+[61:16] what we look at how we look at it how we
+[61:18] present it that's really tailored to who
+[61:22] our audience is within the team
+[61:26] all right
+[61:27] thank you very much eric

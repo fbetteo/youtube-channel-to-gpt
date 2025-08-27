@@ -1,0 +1,915 @@
+Video Title: Untitled_Video
+Video ID: yZXP2WvrW3Q
+URL: https://www.youtube.com/watch?v=yZXP2WvrW3Q
+View Count: 0
+
+[00:02] welcome to the baseball analytics
+[00:04] Workshop um my name is Patrick cumins um
+[00:09] a little bit about me I interned a Major
+[00:11] League Baseball last some summer as a
+[00:13] data analyst intern that was more so on
+[00:15] the business intelligence side of things
+[00:17] but I do know a lot about baseball and I
+[00:18] know a lot about
+[00:19] analytics data science major here at
+[00:22] Yukon I'm a junior and um yeah that's
+[00:26] all you need to know um so these are
+[00:28] some of the technical Concepts that
+[00:31] we're going to be covering is data
+[00:32] visualization techniques and general
+[00:34] graphing this is going to be
+[00:36] yes
+[00:46] what very Cal thank you um we're going
+[00:49] to lean into Data visualization pretty
+[00:51] heavily here um some linear aggression
+[00:53] using Python and we're going to be using
+[00:56] a lot of pandas much like my last
+[00:58] presenter um doing some data
+[01:00] manipulation and some analysis and then
+[01:01] some of the baseball Concepts that we're
+[01:03] going to be getting into um going to
+[01:05] touch on saber metrics a little bit um
+[01:07] and then look at the relationship
+[01:09] between run expectancy and win
+[01:10] expectancy so look at run differential
+[01:12] and win percentage and then lastly we're
+[01:14] going to look at um some different
+[01:16] career trajectories and how you can plot
+[01:19] those and how you can kind of
+[01:20] contextualize a players overall career
+[01:23] and then I just wanted to touch on a
+[01:25] couple of important uh statistics that
+[01:27] we're going to be using a lot today um
+[01:29] batting average which that one's pretty
+[01:31] simple hits over at bats um great way of
+[01:34] telling if you're good at hitting then
+[01:36] we also have slugging percentage which
+[01:37] is a little bit different um that's kind
+[01:40] of
+[01:41] like uh batting average but
+[01:46] each um base is weighted so if you hit a
+[01:49] double it's worth two if you hit a
+[01:51] triple it's worth three and then if you
+[01:53] hit a home run it's worth four it's
+[02:01] then so it's slugging it's basically you
+[02:04] know how effective is your hitting are
+[02:05] you good at getting off base and then
+[02:07] getting extra base hits on base
+[02:09] percentage that's um hits plus walks
+[02:13] plus hit by pitches times you hit by a
+[02:15] pitch uh divided by sacrifice flies uh
+[02:19] at bats and um there's one more but
+[02:24] they're pretty simple um that one again
+[02:27] how good are you just getting on base
+[02:29] and generating the ability to get the
+[02:31] ball in play and getting on and then
+[02:32] lastly Ops which we're going to be
+[02:34] looking a lot at which is just on base
+[02:35] plus slugging which is a more uh
+[02:38] encompassing hitting statistic rather
+[02:40] than just one or the other and then um
+[02:43] I'll ask again just raise your hand if
+[02:44] you've seen
+[02:46] Moneyball saber metrics essentially came
+[02:49] from uh the movie Moneyball which is
+[02:51] based off of a book which is based off
+[02:53] of a story which is which is derived
+[02:55] from a book written by a guy called Bill
+[02:57] James who is basically the inventor
+[03:00] saber metrics uh the definition here is
+[03:02] um the empirical analysis of baseball
+[03:04] especially baseball statistics that
+[03:06] measure in game activity and so why is
+[03:08] this important well ever since Moneyball
+[03:11] for those haven't seen it in 2001 the
+[03:14] Oakland Athletics had an incredibly
+[03:15] small payroll um but used saber metrics
+[03:19] and statistics in a way that baseball
+[03:21] hadn't seen before to create a World
+[03:23] Series contending team and so after that
+[03:25] analytics have become an essential part
+[03:27] of baseball in understanding the game
+[03:29] rather than just using the ey test or
+[03:31] the simple statistics that were
+[03:33] originally used um and so some examples
+[03:35] of saber metrics are um weighted runs
+[03:38] graded plus which is a even more so
+[03:41] overall offensive encompassing stat
+[03:44] that's also averaged to 100 so the
+[03:46] league average is 100 and so if you're
+[03:48] above 100 or below 100 it's kind of
+[03:50] easier to tell how good of a hitter you
+[03:51] are Ops plus is just Ops but again
+[03:54] average to 100 so it's easier to compare
+[03:56] across the entire league and then lastly
+[03:59] FIP with which is Fielding independent
+[04:00] pitching so defense independent ER so
+[04:04] it's able to look at a pitcher's um
+[04:06] ability to pitch without having the
+[04:07] impact of errors or kind of external
+[04:10] factors um so that's saber metrics and
+[04:13] then the um PLO is going to be the
+[04:16] graphing library in Python that we're
+[04:18] using today my pre my predecessor talked
+[04:21] a little bit about map plot lib which is
+[04:22] a more simplistic uh graphing library
+[04:25] but since this is this is the
+[04:27] intermediate level of python I wanted to
+[04:29] Step Up step it up a little bit because
+[04:32] plotly is a little bit more
+[04:33] sophisticated it's all about creating
+[04:35] professional looking graphs simply and
+[04:38] easily and so that's why I wanted to use
+[04:40] it because I want you guys to be able to
+[04:42] use plotly because published graphs from
+[04:45] plotly I believe look and have more
+[04:48] quality than just kind of easily
+[04:49] generated M plot lib ones and there's a
+[04:52] strong plotly Community because I know
+[04:54] that coding is difficult and so having
+[04:55] people on the internet that you can
+[04:57] reach out to and say how does this work
+[04:59] is important and there is a big poly
+[05:02] Community
+[05:03] online and so um where we got our data
+[05:06] from is Layman's or yeah Layman's
+[05:09] database which contains batting fielding
+[05:11] and pitching statistics from 1871 to the
+[05:13] present an incredible resource um it has
+[05:16] standings team stats managerial records
+[05:19] postseason
+[05:20] statistics um Stadium information any
+[05:23] information about baseball you'd ever
+[05:24] need is just in one zip folder that's a
+[05:27] download it's very incredible and that's
+[05:29] where our data is going to be coming
+[05:30] from today so the first thing we did um
+[05:34] is installed the libraries and packages
+[05:36] we're using there's a bunch because I'm
+[05:37] pulling from a bunch of different
+[05:39] resources but you can see plotly you can
+[05:41] see numpy um which is and scipi and then
+[05:44] we get from these pandas and plotly
+[05:48] express which is a module within plotly
+[05:51] that makes some of the graphing easier
+[05:53] and simple and then don't worry about
+[05:55] the the third line that's just for the
+[05:57] formatting of our output um and so the
+[06:00] first thing we do is we read in one of
+[06:03] our data sets which I'm actually going
+[06:04] to just do
+[06:07] this these are all of the
+[06:10] um CSV files which contain the data that
+[06:13] we're going to be using and manipulating
+[06:15] and so the first one we're reading in is
+[06:16] Hall of Fame batting which is um
+[06:18] information regarding um all of the
+[06:22] players in the Hall of Fame currently
+[06:24] and so here's just a look at what a
+[06:25] panda data frame looks like and you can
+[06:27] see this PD here is what we labeled
+[06:30] pandas as so whenever we need to use a
+[06:32] function within pandas we can just
+[06:33] reference it by using PD and so we read
+[06:35] the CSV and um it automatically when you
+[06:39] assign a variable using the read CSV
+[06:41] function it is it is a data frame and so
+[06:44] boom this is what a data frame looks
+[06:46] like you can see there's a ton of
+[06:48] information that we can use to
+[06:50] understand more about baseball and so
+[06:53] now um just wanted to show off some
+[06:56] things you can do with data frames and
+[06:59] columns
+[07:00] in Panda's data frame so um to look at
+[07:03] eras I wanted to take a look at
+[07:04] different eras of baseball but they
+[07:05] didn't include that in the data frame so
+[07:07] we added a column by looking at um each
+[07:10] players's what what era each player was
+[07:13] in during the middle of their career I
+[07:14] thought that was a good way of figuring
+[07:16] out and then using by by using the cut
+[07:18] function in pandas we can create um bins
+[07:21] of each year that is the first and last
+[07:23] year of each era so from 1800 to 1900 is
+[07:27] the 19th century from 1900 to 1919 is
+[07:30] Lively ball from 1919 and so on it's
+[07:33] dead ball integration expansion free
+[07:35] agency and long ball those are the kind
+[07:36] of well-known eras of baseball because
+[07:39] the game has changed a lot so now let's
+[07:42] use this to make our first graph so
+[07:44] let's say I wanted to know how many Hall
+[07:46] of Fame players played in each different
+[07:48] era this is what we can do now um so
+[07:52] we're going to create a new variable
+[07:54] frequency shorten it to freak um which
+[07:57] is the um Hall of Fame which is the era
+[08:00] column in Hall of Fame which we created
+[08:03] above but um Counting the values so the
+[08:06] frequencies per each for each um player
+[08:10] in each era and then we use two frame to
+[08:12] frame function which creates a data
+[08:14] frame with the information that we just
+[08:16] got and then we use the reset index
+[08:17] function um to reset the index of the
+[08:20] data frame because sometimes pandis data
+[08:22] frames can be tricky and the index is
+[08:24] actually where we want our first column
+[08:26] to be so we reset it and include the um
+[08:29] the index because it is good to have and
+[08:31] then this is what our data frame looks
+[08:32] like now and so if we wanted to graph
+[08:34] this we just use we call the plotly
+[08:36] Express using PX and we create a bar
+[08:39] graph
+[08:40] voila um you can see our X is uh the
+[08:43] frequ which is the eror and then our Y
+[08:45] is the frequency and so you just made a
+[08:48] graph using python it's pretty
+[08:51] cool you can do um a lot of this you can
+[08:54] do it as a pie chart similar syntax just
+[08:56] with pi um now you have a pie
+[09:00] chart you can use a Dot
+[09:03] Plot which is scatter which my
+[09:06] predecessor also used um same syntax
+[09:10] again we use the show function to show
+[09:12] uh the plots that we make um just
+[09:15] different ways of representing the same
+[09:16] data but it just shows you that multiple
+[09:18] graphs can show the same information in
+[09:21] different ways um and then maybe even a
+[09:24] histogram and then here we also used one
+[09:27] of the um cooler functions in ploty
+[09:29] which is update traces plot has a lot of
+[09:32] functions that you can use to um get
+[09:34] into the nitty-gritty of your
+[09:36] visualization details like fine-tune
+[09:38] things and so what I did here was just
+[09:39] make lines which um distinguish the
+[09:42] different um bins that we have and so
+[09:47] yeah the with some of the more
+[09:49] sophisticated graphing that we're going
+[09:50] to do throughout this you can see some
+[09:52] of the other um plotly kind of fine
+[09:54] tuning that you can do and then just um
+[09:57] using the index function checking out
+[10:00] every player um on a graph looking just
+[10:04] to see anything just showing off the
+[10:07] index function and then a strip chart
+[10:10] which we'll get to later this can be
+[10:12] pretty
+[10:13] useful so again just different ways of
+[10:16] showing the same information but
+[10:18] understanding how many types of graphs
+[10:19] you can use in plotly and then now if we
+[10:22] wanted to do some two- Factor plotting
+[10:24] we're going to use that Ops statistic
+[10:25] that I talked about not Ops plus because
+[10:27] it's hard to track for um older players
+[10:31] and I just think it's um easier we're
+[10:34] going to use um the Hall of Fame batting
+[10:36] data frame and we're going to use two
+[10:38] different variables we're going to use
+[10:40] the midcareer so where were they at the
+[10:41] middle of their career and what was
+[10:42] their Ops um you'd think this is their
+[10:46] Peak it's the middle of their career but
+[10:47] it's not and I'll get into that later um
+[10:50] and I've added a lowest trend line which
+[10:53] is a um locally weighted scatter plot
+[10:56] smoothing line so it's a smooth
+[10:57] smoothing trend line to showcase some of
+[10:59] plot's nonlinear trend line capabilities
+[11:02] and also just kind of get a feel of our
+[11:04] data a little bit more so you can see in
+[11:06] the 1940s there seems to be kind of a
+[11:08] spike in Ops um this could be from a
+[11:11] number of things but you can see as um
+[11:14] pitching improves and gets better over
+[11:16] time you can see the Ops uh dwindle a
+[11:19] little bit um so that's something cool
+[11:23] and now um let's create another column
+[11:25] in Hall of Fame batting uh called Home
+[11:27] Run rate and let's say you wanted to see
+[11:30] what the home rate was home run home run
+[11:32] rate was for each era of baseball so is
+[11:35] there one time in baseball where hitters
+[11:37] were hitting a lot more home runs and
+[11:39] Etc so we create the Home Run rate
+[11:41] column and then we can create a layered
+[11:44] strip chart of this data and you can see
+[11:47] a little bit it's a little rough around
+[11:49] the edges when using a strip chart but
+[11:51] it appears that dead ball doesn't have a
+[11:53] lot of home runs doesn't have a high
+[11:55] home run rate per hitter and that free
+[11:57] agency tends to have a bit of a median
+[12:00] that's higher than most and so what
+[12:01] should we do next let's create a Dot
+[12:03] Plot
+[12:05] instead which gives us kind of a more
+[12:07] conrete understanding of our our data
+[12:08] and you can see that in the expansion
+[12:10] era which makes sense because this is
+[12:12] when um people were juicing and
+[12:18] um um more uh teams were being
+[12:21] added and um this I just think it's cool
+[12:25] that you can kind of get a feel for the
+[12:26] different areas of baseball and how the
+[12:27] game changes because I feel like in most
+[12:30] sports there wouldn't be this much
+[12:31] fluctuation in home run rate which is a
+[12:33] pretty concrete variable but yeah pretty
+[12:37] cool um now I want to talk about the um
+[12:40] little bit of linear aggression using uh
+[12:42] runs and wins and we're going to create
+[12:44] a model that tries to redict wins using
+[12:46] run differential um so for this one
+[12:49] we're going to uh read in a different
+[12:50] CSV this one is teams which has um
+[12:53] information on pretty much every team
+[12:56] and game that's been played since 1871
+[12:59] so we're going to filter our data set um
+[13:02] and we're going to create a subset of
+[13:03] the data and give it to my team as a
+[13:05] variable I made with year ID team ID
+[13:08] League ID games wins losses runs and
+[13:11] runs allowed and we're going to filter
+[13:13] over here for only um data that's above
+[13:17] the year for teams and Seasons uh above
+[13:20] the year 2000 just to look at the 21st
+[13:23] century and then we're going to create
+[13:25] um two new variables like we've done
+[13:27] before and this can show that Pand is a
+[13:29] arithmetic is super simple you can
+[13:30] divide subtract add columns as long as
+[13:32] they're the same length um it will not
+[13:35] give you um Na values if you try and do
+[13:39] arithmetic on uh Columns of different
+[13:41] lengths it'll just throw you an error so
+[13:44] here you go um now this is what our um
+[13:47] data frame looks like now that we've
+[13:49] added a run differential and a win
+[13:50] percentage statistic you can see a
+[13:52] negative run differential means that a
+[13:54] team gave up more runs than it uh scored
+[13:57] pretty basic
+[13:59] um and so here we're going to use the um
+[14:02] the graphing that we learned about in
+[14:05] the first section to create a scatter
+[14:07] plot with run differential on our X and
+[14:09] win percentage on our Y and then we've
+[14:11] added an ordinary least Square trend
+[14:12] line which is basically just some
+[14:13] squared error trend line um kind of the
+[14:15] most basic uh line you can create for
+[14:19] linear regression and so this
+[14:21] relationship makes a lot of sense
+[14:22] because if you score if you have a
+[14:24] higher run differential if you outscore
+[14:26] more teams you're likely to have a
+[14:27] higher winning percentage
+[14:29] and so um like I say here so now let's
+[14:32] create a model that can try and like I
+[14:35] said predict the number of wins that
+[14:37] team is going to have based on their run
+[14:39] differential so to do this we're going
+[14:41] to use the the stats models package in
+[14:44] library in Python which is pretty cool
+[14:47] um makes things pretty easy that's also
+[14:50] why I use Python rather than R for this
+[14:52] because first off I like Python and also
+[14:54] there's a lot of stuff you can pull from
+[14:56] that makes your life easier and then um
+[14:59] this is us making the model um we're
+[15:02] using stats models formula API who
+[15:05] remembers API from the the last Workshop
+[15:09] a little bit of pulling from there um
+[15:11] and so we're trying to predict win
+[15:12] percentage using run differential that's
+[15:14] what this syntax is here this is the
+[15:16] data and then we fit it to our model
+[15:18] variable and then uh to check our model
+[15:22] accuracy and see how the fit is we can
+[15:25] um use the summary function which gives
+[15:27] us some important statistics um we can
+[15:30] see that it has a high r s and a high F
+[15:33] statistic and the coefficient for our
+[15:35] run differential um the P value for our
+[15:38] run differential coefficient is
+[15:40] low
+[15:57] yes uh just use the ordinary lease
+[15:59] Square oh yeah sorry I used the ordinary
+[16:01] leas squares function within stats
+[16:03] models thank you for reminding me to
+[16:05] talk about that just a function that you
+[16:07] can use from the um module that I pulled
+[16:09] from where you identify the formula um
+[16:12] and the code is just SS ordinary Le
+[16:14] squares like the line I had in the last
+[16:16] scatter plot I apologize for missing
+[16:19] that and then we use the fit function to
+[16:20] fit it to the model this is what our um
+[16:24] model looks like in terms of our summary
+[16:26] so we know it's there's a strong
+[16:27] relationship and a statistically
+[16:30] significant relationship between run
+[16:31] differential and win percentage and so
+[16:33] now we can use it to predict uh wins and
+[16:36] winning percentage so we take we add
+[16:38] another column to our my team's data
+[16:40] frame uh which equals the model
+[16:42] predicting what our win percentage would
+[16:44] be and then uh to get the predicted wins
+[16:47] we just create a simple formula to round
+[16:50] um the amount of games played times uh
+[16:52] the predicted win percentage so again
+[16:55] pretty simple stuff and then yeah adding
+[16:57] columns and pandas is super simple
+[16:58] simple and easy and so let's check how
+[17:01] our model did by first just getting a
+[17:03] look at um how it did just predicting
+[17:05] wins and win percentage so overall
+[17:08] pretty pretty
+[17:09] solid not too shabby but then uh we can
+[17:13] look at the
+[17:14] residuals to see how accurate it was
+[17:17] which is just a better way of seeing it
+[17:19] and so first we get the influence from
+[17:21] our model and then we get the
+[17:22] studentized residuals I use the
+[17:24] studentized residuals because they're
+[17:26] generally better for outlier testing
+[17:28] which is what I'm going to get to in a
+[17:30] second and those also come from stats
+[17:32] models which is the library that we use
+[17:34] to create our model fit and so now let's
+[17:38] create a graph but this time let's not
+[17:40] use plotly express and let's use
+[17:42] plotly's graph objects module which is
+[17:44] where you can get into the more
+[17:46] sophisticated graphing methodologies and
+[17:48] capabilities um so we import numpy here
+[17:51] because I'm going to be using some some
+[17:53] numpy and then we import plotly graph
+[17:55] objects as go once again just making it
+[17:58] easier to read read and use and so
+[18:01] here here I'll give you a sneak peek
+[18:03] this is what we're going to get this is
+[18:05] our this is the um code we had to write
+[18:09] and so you can see here it's basically
+[18:11] um you're creating a figure using God do
+[18:13] figure which is going to be a scatter
+[18:14] plot which has the um the X as our run
+[18:17] differential and then y as our residuals
+[18:19] which we made up here right with our
+[18:22] influence and the um resid studentized
+[18:25] internal function within stats models
+[18:28] and then
+[18:29] um modee is markers that's essentially
+[18:32] just um a Dot Plot instead of a line so
+[18:35] if mode was line it would be a line
+[18:37] chart and then marker we make into a
+[18:40] dictionary um which basically lets us um
+[18:43] get into the
+[18:45] more visual like uh fine-tuning the
+[18:47] visualization aspects of it like what I
+[18:49] wanted to do here was I wanted to um
+[18:51] highlight
+[18:52] outliers so we can see like which teams
+[18:56] outperformed or underperformed the model
+[18:58] by a significant amount and so what I
+[19:00] just made was a panda series and then
+[19:03] added some filters where if the
+[19:05] residuals is over 2.8 it's an outlier um
+[19:08] those are that's an arbitrary value I
+[19:09] created just for the purposes of this
+[19:11] exercise to show that there are a couple
+[19:13] of teams with really big um differences
+[19:16] in the model normally it would be three
+[19:18] so teams or residuals above three or
+[19:20] below three and then again um another
+[19:24] filter for residuals less than or equal
+[19:26] to 2.8 um if it's equal to it to now if
+[19:29] it's less than it's normal and then we
+[19:31] convert those to a string so we can map
+[19:33] those using a um mapping is essentially
+[19:35] like a dictionary um where normal is
+[19:37] equal to zero and all is equal to one
+[19:40] and then we use those in the color scale
+[19:41] function to map zero to Blue and one to
+[19:44] Red so as you can see
+[19:47] here um we have three essentially three
+[19:51] teams that did much better or much worse
+[19:53] than where was expected by the model and
+[19:56] that can be from the fact that baseball
+[19:58] balls can be a really unlucky sport
+[20:00] sometimes so they probably just had some
+[20:02] unlucky breaks or one of the parts of
+[20:05] their team like their Bullpen was really
+[20:07] bad so I just think this is interesting
+[20:09] um kind of what you can do with baseball
+[20:12] and linear aggression um something cool
+[20:16] and so then this is again uh for those
+[20:19] online and those that want to get into
+[20:21] the my GitHub and kind of look through
+[20:22] my Cod I added some annotations for most
+[20:24] of my work and then lastly um plot I
+[20:28] want wanted to look at career
+[20:29] trajectories because baseball does not
+[20:33] have a similar career trajectories in
+[20:34] terms of other sports where it's just
+[20:36] like generally kind of a up and
+[20:41] down as we'll see this can get a little
+[20:43] more it can be I'm sorry
+[20:46] it's um it can be a little more
+[20:49] interesting so for this one we're going
+[20:51] to use two different um mainly we're
+[20:53] going to use batting um more um CSV
+[20:59] files from the Layman database that we
+[21:00] downloaded all of our information from
+[21:03] and then we're going to just replace all
+[21:05] of our na values with zero normally you
+[21:07] shouldn't just immediately do this but
+[21:09] for the purposes of this exercise you
+[21:10] can because that an NA and zero mean the
+[21:13] same for what I'm doing here and so yeah
+[21:15] that's basically what I did um and now I
+[21:18] just created a couple of functions using
+[21:20] um the lock locate function in pandas
+[21:24] which is super helpful and this is when
+[21:26] this is a skill that if you're going to
+[21:27] use pandas
+[21:29] for your for the future and in your
+[21:30] career I would definitely know this is
+[21:32] how you kind of Traverse a data database
+[21:34] raise your hand if you ever use
+[21:36] SQL this is kind of just like the wear
+[21:39] this is how you filter through and so
+[21:40] essentially what I'm doing is um
+[21:42] creating a function that gets us the IDE
+[21:44] of a player because that's their unique
+[21:46] key it's not their first and last name
+[21:48] and so it just will just make um finding
+[21:50] players a lot easier you can see I'm
+[21:53] just searching through the master
+[21:54] database using a first name and a last
+[21:57] name input um um pretty simple stuff and
+[22:01] then it assigns it to the player ID or
+[22:03] it equals the player ID in the
+[22:05] um other data frame and then this one
+[22:09] gets us a birth year for our for
+[22:11] whatever player we're searching for
+[22:13] which will be important um later when
+[22:15] we're trying to get uh statistics per
+[22:17] year for players because in the batting
+[22:19] database um it's not really formatted
+[22:22] that way and so um does anyone know why
+[22:25] I need to do this actually why I need to
+[22:27] um change it so that if there's anyone
+[22:30] with a birth year or birth month which
+[22:32] is less than July we need to add one to
+[22:34] their year it's kind of a weird baseball
+[22:36] cork but baseball age is defined as a
+[22:39] Bas a player's age as of July 1st I
+[22:43] don't know why they decided to do that
+[22:44] but they did um so what we need to do is
+[22:48] like I said for anyone born before July
+[22:50] add one to their year and so then now we
+[22:54] make a third function which is going to
+[22:56] get us all the statistics we need
+[22:59] um for the plotting of our career
+[23:01] trajectories and so we're pulling this
+[23:03] from the batting information but we're
+[23:05] getting we want to get our own data
+[23:07] frame as you'll see in a minute so what
+[23:09] we're doing is um getting the age the
+[23:11] slugging the OBP and the Ops for
+[23:14] whatever player ID input we use which we
+[23:17] can get by using the get ID function
+[23:19] that we made and then this is where um
+[23:21] the get birth year function is important
+[23:23] because um as you can see for the age uh
+[23:27] column in our data frame
+[23:29] we need to subtract the birth year from
+[23:31] the each year that we're getting the
+[23:32] data from and so then as you can see the
+[23:36] calculation for slugging is the same
+[23:38] this is the calculation for on base
+[23:40] percentage so it's um hits plus walks
+[23:44] and hit by pigees are added into the
+[23:46] walks column of the database divided by
+[23:49] hits that BS walks and Sack flies and
+[23:52] then Ops is just slug on base percentage
+[23:55] and so then we're returning um these
+[23:57] four important columns and this is what
+[23:59] we're going to use to look at career
+[24:01] trajectories and so I'm just going to
+[24:03] use Mickey Manel as an example we get
+[24:06] his um ID and then we use that to get
+[24:08] his stats and then boom now we have
+[24:12] career statistics for Mickey M so yeah
+[24:16] what we can use this
+[24:18] for is getting a rough look at what his
+[24:21] career looked like by looking at opss
+[24:23] which is kind of the most encompassing
+[24:24] stat that we have for this database um
+[24:27] if I were to do this again I would
+[24:29] probably try and find a a war statistic
+[24:32] which is the most probably the most
+[24:34] encompassing um offensive statistic you
+[24:36] can use but just for the purposes of
+[24:38] this exercise um we're going to use Ops
+[24:40] and you can see it's a little bit like a
+[24:42] quadratic function generally I mean he's
+[24:44] got some interesting quirks in his early
+[24:47] in late or mid to late 20s um but
+[24:50] generally this is why do we use a
+[24:53] quadratic because that's generally what
+[24:55] a player's career looks like and um so
+[24:58] that's what we're going to do we're
+[24:59] going to model G to make a model that
+[25:01] can predict any player's Peak Age based
+[25:04] off of their Ops and so to do this oh
+[25:08] yes yeah so I feel like the reason that
+[25:10] just to go you're
+[25:13] saying he had B for most of so that
+[25:16] could just be like injuries can impact
+[25:18] like the Ops that people put up in a
+[25:19] certain number of plus he had that freak
+[25:22] injury where he tripped on the uh the um
+[25:25] the sprinkler right so yeah there's all
+[25:28] these little little things in baseball
+[25:30] that can impact your career and make
+[25:32] your career trajectory look whack and so
+[25:34] here's a lot of code which I'll try and
+[25:37] go piece by piece here so first
+[25:42] um we're defi yeah we're defining our
+[25:44] function we're telling uh the stats
+[25:46] variable that it's um it equals the
+[25:48] stats we're calling the get stats
+[25:50] function for the same player ID input
+[25:53] and then what we're doing is we're using
+[25:54] uh num's polyfit
+[25:56] function here
+[26:00] uh to fit for age and Ops and then a
+[26:03] degree of two and then this poly
+[26:05] one-dimensional uh function here just
+[26:08] lets us um it's basically like a
+[26:10] convenience uh function so it lets us
+[26:12] look at the model um and run operations
+[26:16] on the model easily like it's um
+[26:18] onedimensional array and so then that's
+[26:21] our X is a Lin
+[26:22] base um which is basically just a an
+[26:25] interval of 50 points on a graph like
+[26:28] this
+[26:29] and then we apply the model to these
+[26:30] points to get our predicted
+[26:33] curve and then so that's basically the
+[26:35] model which is pretty pretty simple the
+[26:38] the rest of it the graphing aspect of it
+[26:40] so you can see I have two distinct
+[26:42] graphs one is a plot um is the scatter
+[26:46] so that's going to give us all the
+[26:47] individual points for a player's yes
+[26:50] right
+[26:53] so no no that's just a series of points
+[26:56] that we apply the model to
+[27:01] oh yes you're right yes okay
+[27:04] yeah
+[27:12] and this yeah this is just for the graph
+[27:15] oh so
+[27:16] just
+[27:19] yeah
+[27:21] um so this this um plot the
+[27:25] scatter is of all the different points
+[27:27] of his career like we did up
+[27:29] here scatter we call this SC the get
+[27:33] stats function but um this one this is
+[27:37] where we're putting our see you can see
+[27:39] mode is lines because this is where
+[27:40] we're putting our our model so to do to
+[27:44] Overlay two different um graphs in
+[27:47] plotly you just make two different ones
+[27:49] and then you create another variable
+[27:51] that's um a list of both and then you
+[27:54] create you use the go
+[27:56] figure function um using this data so
+[28:00] once again the plot is equal to the
+[28:02] scatter the line is equal to the line
+[28:04] and then the data is the plot the line
+[28:05] and then the figure figures this out and
+[28:07] then boom and then all this stuff at the
+[28:10] bottom is just for refining the graph so
+[28:13] I wanted to add some lines that show the
+[28:15] maximum value of Ops and age for the
+[28:19] model and then update Y axis update
+[28:22] xaxis again um you can see I'm just I
+[28:26] wanted to be able it I wanted it to be
+[28:27] able to translate to any player so
+[28:29] that's where the um minus 0.1 and plus
+[28:31] 0.1 is for the Ops and the minus one and
+[28:34] plus one is for the age and then at the
+[28:36] bottom I just have some titles and
+[28:39] naming and so yeah this is what you
+[28:43] get so you can see that Mickey M's
+[28:46] career has a pretty generally normal um
+[28:51] model or normal trajectory predicted by
+[28:54] the model as you can see and then we
+[28:56] have the two lines we created which is
+[28:58] telling us that he peaked at um age 27
+[29:03] with a predicted Ops of 0.98 at his Peak
+[29:07] and so then I just wanted to try for
+[29:09] other players that I thought would have
+[29:10] different career trajectories like David
+[29:13] Ortiz um so we call the get ID function
+[29:16] to get his ID um and then this is what
+[29:19] his looks like so you can see David
+[29:21] Ortiz peaked way later so he had a he
+[29:24] was pretty good throughout most of his
+[29:27] career and and so this is telling us
+[29:28] that he probably peaked at age 33 does
+[29:31] anyone know why David Ortiz might Peak
+[29:33] later than Mickey Manel just for any
+[29:35] baseball
+[29:40] heads that and the fact that he was a
+[29:43] designated hitter so he never had to
+[29:44] play in the field that'll help um
+[29:48] that'll help a lot and then just another
+[29:50] one Samy
+[29:51] Sosa um he had a more General one more
+[29:55] gradual incline and then decline um
+[29:58] since I have a lot of time left does
+[30:00] anyone have a player that we should try
+[30:03] for
+[30:04] our career projection chart
+[30:10] function actually you can't do anything
+[30:12] he's not that they didn't include him in
+[30:14] the
+[30:21] yeah oh no no he's not he's just for
+[30:24] some reason he's not in this database
+[30:26] it's very confusing
+[30:34] Albert
+[30:37] Pool
+[30:38] yep so I'm
+[30:41] gonna this is a Jupiter oh shoot this is
+[30:43] a Jupiter notebook by the way for anyone
+[30:53] wondering so we're going
+[30:55] to use our function
+[31:03] so they should get
+[31:05] us oh I got to run the whole all right
+[31:07] hold on I got to run
+[31:11] everything so yeah this is just some um
+[31:15] General baseball analytics that you can
+[31:17] do um I kind of left it a little um
+[31:20] open-ended for people to go in and and
+[31:22] go into the GitHub and I wanted people
+[31:24] to be able to build off of this so using
+[31:26] this what you could do is
+[31:28] extrapolate these um career projections
+[31:30] to the eras that we talked about earlier
+[31:33] and so then you can run it and see you
+[31:35] know in different eras are people peing
+[31:37] earlier or later like Cole mentioned are
+[31:39] people in the juice ball era or the juic
+[31:42] player era are they peeking later
+[31:44] because they're on steroids are they
+[31:45] peeking earlier because they're on
+[31:47] steroids um just a lot of cool stuff
+[31:50] that you can
+[31:53] do so now
+[31:58] career career projection
+[32:06] chart I really hope this
+[32:11] works okay so now he he didn't have the
+[32:16] he looked to Peak he had a pretty normal
+[32:20] Peak what's disappointing is that this
+[32:22] doesn't include this year and I'd love
+[32:23] to see how that factors in it'll
+[32:24] probably shift it uh to 26 because he's
+[32:28] having a huge comeback here I mean you
+[32:30] can see his Ops starting to dip um
+[32:34] under
+[32:37] 4.7 yeah I don't know what I don't know
+[32:39] what yeah not a great sign
+[32:44] um yeah what the this is a bad
+[32:48] look
+[32:52] um huh
+[32:58] well excluding Albert
+[33:00] pools the function should can we do
+[33:03] another one I got to redeem myself
+[33:05] here great
+[33:07] one what happened here let me make sure
+[33:10] I didn't accidentally
+[33:18] like I hope
+[33:21] so actually yeah I like that more than
+[33:24] trying another one so yeah this was my
+[33:28] presentation does anyone have any
+[33:30] questions comments
+[33:33] concerns praise
+[33:36] yes thank you so
+[33:42] much oh wait actually I have a good
+[33:44] point um one thing I will say that I
+[33:47] tried to do more so in this presentation
+[33:49] that I learned from my internship in
+[33:50] Major League Baseball is that you can be
+[33:53] as good and Technical like good and
+[33:55] Technical as possible but you're ability
+[33:58] to relay your results and information is
+[34:00] almost just as important so that's why I
+[34:03] tried to do as much data visualization
+[34:04] as possible because um there was an
+[34:07] instance where I had to try and teach
+[34:09] High leverage business Executives about
+[34:11] data science and they they don't have a
+[34:13] clue what's going on they just want to
+[34:15] know how they can use what you're
+[34:16] talking about to improve the product or
+[34:19] the um what they're doing so being able
+[34:21] to translate the data science is just
+[34:24] super
+[34:26] important yes
+[34:30] oh okay I agree it's much EAS to get
+[34:34] start I
+[34:39] think I tend to dise and it
+[34:42] has it has a it does have a larger
+[34:44] Community but um I like I like plot
+[34:59] I guess I guess never mind I guess do
+[35:01] Point like if you're trying to like talk
+[35:03] to business
+[35:12] people just okay thank you for the
+[35:15] Heckle um so why okay so for your use
+[35:19] reses with most your make
+[35:22] sense um what package we did
+[35:26] use like just St model on the package mm
+[35:29] and um polyfit from from numpy got I I
+[35:34] wanted to go uh deeper into the linear
+[35:36] aggression and do some like testing and
+[35:38] and other stuff and kind of maybe Define
+[35:40] one within a different one but I thought
+[35:42] I would run out of time which clearly I
+[35:44] didn't so I didn't um chop it up like I
+[35:49] thought I would but well what time was
+[35:51] this supposed to end I ended what like
+[35:53] 10 minutes early 10 minutes oh okay do
+[35:56] we have any questions from people
+[36:03] online no oh Adam done um I would have
+[36:08] but I'm too scared
+[36:12] that yeah all
+[36:14] right Peyton I'm I've heard your call
+[36:38] oh get whoops well now you can see the
+[36:41] stats
+[36:50] yeah like years
+[36:53] ago yeah this has been pretty good to me
+[36:55] so far plus I like the dark and I didn't
+[36:58] know how to do it in Google collab which
+[37:00] would have done so got
+[37:08] got all right this one works sweet so
+[37:12] yeah he ah unfortunately for Adam he
+[37:15] looked like he peaked a little
+[37:16] early wow he had a interesting career
+[37:19] what happened in
+[37:21] ad31 kind of fell off but yeah this also
+[37:24] um just kind of even more the general
+[37:26] plotting like I did up here you can see
+[37:29] that um it's harder in baseball to have
+[37:33] a consistent career than in any other
+[37:34] sport like you can be really good one
+[37:36] year and then just fall off the next and
+[37:39] it's just
+[37:40] from um slumping The Yips a really minor
+[37:44] injury much like Starling Martz
+[37:48] oblique I talk about
+[37:50] yeah
+[37:53] yeah I think I'm G to end it here you uh
+[37:57] did you have to install anything special
+[38:00] to get the charts to render because for
+[38:03] me when I try to run it it says that
+[38:07] uh renderer could be found really yeah I
+[38:11] mean I could I could do it if I like add
+[38:12] a line code and change it to render as
+[38:15] PNG or something like that but I can't
+[38:16] get like the
+[38:19] interactive um I did not the render
+[38:23] depends also on which so he's using uh V
+[38:26] so I'm assuming V
+[38:28] I also tried Google collab and I got I
+[38:30] didn't have to like
+[38:38] install I apologize s right like I
+[38:44] change yes cool if you wanted to know
+[38:47] why I'm G try
+[38:50] to in 2011 these do I certain I got make
+[38:56] make have the right numbers in me he had
+[39:00] 66 in 122 games he had 66 hits 16
+[39:04] doubles 11 homers 42 RBIs and 177
+[39:07] strikeouts play he also made
+[39:10] 159
+[39:12] oh and then
+[39:14] surprisingly comes back in
+[39:17] 2012 and redeems himself a little
+[39:24] bit huh
+[39:28] I'm gonna thank you all for coming I'm
+[39:31] going to end
+[39:34] the stop recording

@@ -1,0 +1,94 @@
+Video Title: Anthropic's Think Method + n8n AI Agents = Gamechanger #n8n #aiagent #anthropic
+Video ID: ewffzNYb7nI
+URL: https://www.youtube.com/watch?v=ewffzNYb7nI
+View Count: 36,663
+
+[00:00] This is how Enthropic recommends to use
+[00:01] a think tool for your AI agents. All
+[00:03] right, so here is our beautiful ultimate
+[00:05] assistant with the new GPT 4.1 chat
+[00:07] model as well as the new think tool. All
+[00:09] right, can you please create an event
+[00:10] for tonight 7:00 p.m. It will be an hour
+[00:13] long with Dexter Morgan. And can you
+[00:14] send him an email to make sure that time
+[00:16] works? Can you delete my dinner at 6
+[00:18] p.m. And then can you email Michael
+[00:20] Scott to let him know that I'm not going
+[00:21] to make it? Okay, cool. So we just sent
+[00:23] that off. Our ultimate assistant is
+[00:25] going to get that message, use GBT41 in
+[00:27] order to take action. And as you can
+[00:29] see, it's going to hit its different
+[00:30] child agents down here. So, it's using
+[00:32] the contact agent to get that
+[00:33] information, the email addresses. Now,
+[00:35] it's going to hit calendar and email
+[00:36] agent in order to delete that event,
+[00:38] create the event, send off those two
+[00:40] emails, and then, as you can see, it
+[00:42] just used its think tool down here to
+[00:43] make sure that it did everything right.
+[00:45] So, the response that we got was all
+[00:46] set. Your 7 p.m. meeting with Dexter
+[00:48] Morgan has been scheduled, and he's also
+[00:49] been emailed. The 6 p.m. dinner has been
+[00:51] deleted, and Michael Scott has been
+[00:53] notified that you can't make it. So
+[00:54] before we go verify that, let's click
+[00:56] into the Ultimate Assistant and we'll
+[00:57] look at its logs because this lets us
+[00:59] see exactly how it thought about what it
+[01:01] needed to do and what actions it took.
+[01:03] So the first thing it did was contact
+[01:05] agent to get Dexter Morgan's email. And
+[01:07] then it did the same thing for Michael
+[01:08] Scott. Then it went to the calendar
+[01:09] agent to create an event tonight for 7
+[01:11] p.m. called meeting with Dexter Morgan.
+[01:14] Then it went to the email agent to send
+[01:15] Dexter an email to confirm if that
+[01:17] works. It went to the calendar agent to
+[01:18] delete the dinner. It went to the email
+[01:20] agent to let Michael Scott know that
+[01:22] we're not going to make it to dinner.
+[01:23] And then finally, what it did is it used
+[01:25] its think tool, which is basically like
+[01:27] a scratch pad for your agent to write
+[01:28] down its thoughts and its actions and
+[01:30] just to make sure that it's aligned with
+[01:32] what you asked it to do. So, what it
+[01:33] wrote down here was confirmed that all
+[01:35] requested actions were completed,
+[01:37] created the meeting event for 7 p.m.
+[01:38] with Dexter Morgan, emailed him to check
+[01:40] if that time works, deleted the 6 p.m.
+[01:42] dinner, and notified Michael Scott by
+[01:44] email. No further steps needed unless
+[01:46] user requests more. So, if at this point
+[01:48] it realized, okay, I wrote down what I
+[01:50] did and what the user wanted. Oh, I
+[01:52] actually do have more things I need to
+[01:53] do. I'm going to go back and call those
+[01:54] tools until I'm ready to go. So, this
+[01:56] was perfect. It did its actions. It
+[01:58] thought about it, and it decided that we
+[01:59] were finished, and then it let us know
+[02:01] all the things you just requested have
+[02:02] been done. So, looking at my calendar,
+[02:03] you can see the 6 p.m. dinner was
+[02:05] deleted, and we now have a meeting with
+[02:06] Dexter Morgan, and we can see that he
+[02:07] was in fact invited. You can see here in
+[02:09] our sent emails, we have a meeting time
+[02:11] confirmation for Dexter and 7:00 p.m.
+[02:13] So, I'm super excited to continue to
+[02:15] experiment with this kind of stuff. When
+[02:16] you pair a really nice model with the
+[02:18] ability to basically write down its
+[02:19] thoughts and reason, I think that this
+[02:21] is going to be huge for creating agentic
+[02:23] systems. If you want to watch the full
+[02:24] breakdown, the link for that will be
+[02:26] down in the description. And I'll see
+[02:27] you guys over there.

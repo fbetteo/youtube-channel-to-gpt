@@ -1,0 +1,1168 @@
+Video Title: Data Visualization with R: Yiming Zhang [2020 UConn Sports Analytics Symposium]
+Video ID: nk190j7nYJ0
+URL: https://www.youtube.com/watch?v=nk190j7nYJ0
+View Count: 58
+
+[00:00] uh workshop
+[00:02] and share the slides again
+[00:08] okay
+[00:10] all right
+[00:12] now it should be good
+[00:14] okay so for the people who just joined
+[00:16] the workshop please re-download the
+[00:18] newest slides and uh code from the um
+[00:22] the github there's some minor change and
+[00:24] some up some update of the links
+[00:27] okay let's start off the data
+[00:29] virtualization in r
+[00:32] so this slides will go through the
+[00:34] general introduction of the data
+[00:35] virtualization and i will give
+[00:37] introduction to the ggplot2
+[00:40] the key part as i mentioned is the
+[00:42] concept so it's the grammar of graphics
+[00:44] uh so we will go detail to this one and
+[00:48] give you some detailed instruction on
+[00:49] how to
+[00:51] gen how to write the code of the gtplot2
+[00:54] and if we have time we will look at a
+[00:56] case study using the mba data
+[00:59] and then i will introduce some useful
+[01:01] packages and extensions for the gdpr2
+[01:06] okay then let's
+[01:08] look at this first question it is when
+[01:11] and why to realize the data
+[01:14] that's the first question right because
+[01:16] you need to know when and
+[01:18] why to use them then you start to think
+[01:20] about using it
+[01:22] so from the beginning of the data
+[01:23] analysis
+[01:25] it's always the exporter data analysis
+[01:28] the realization is pretty useful because
+[01:30] we can use the plot to explore the
+[01:32] patterns the trend and the distributions
+[01:36] of one variable if you have many
+[01:38] variables in your data set you can
+[01:40] explore the association between the
+[01:42] variables
+[01:43] and in the statistical analysis the the
+[01:46] the data virtualization is also useful
+[01:48] because you can
+[01:50] generate some diagnostic plot like the
+[01:52] qq plot or some other platform
+[01:55] to check the assumption of your linear
+[01:57] regression for example
+[01:59] and at the last step of the
+[02:01] of the analysis you need to report your
+[02:03] results and communicate with the
+[02:05] non-statisticians right so plot is a
+[02:08] more clear way of presenting the
+[02:10] findings
+[02:12] much much better than the tables and the
+[02:15] numbers so i will give an example in the
+[02:18] later part
+[02:19] and another thing is if you have a fancy
+[02:22] plot you can attract your audience
+[02:26] and the last things of course you can
+[02:28] just draw the plots for fun if you are
+[02:30] interested in some
+[02:31] um some sports like basketball you can
+[02:35] download the nba data from their website
+[02:38] and
+[02:40] draw some
+[02:41] interesting picture of a picture by
+[02:42] yourself
+[02:44] just for fun
+[02:45] so let's look at an example for fun okay
+[02:48] so there are 12 data sets
+[02:51] and we can see um the the x-axis and the
+[02:55] y-axis there are two variables in each
+[02:58] data set and one is x and one is white
+[03:00] and one is y so we can
+[03:03] we can draw the scatter plot of the x
+[03:05] and y in each um
+[03:07] each data set and we can see some
+[03:10] special patterns in each data set right
+[03:12] so some for example the circle one looks
+[03:15] like a circle and this one looks like a
+[03:17] dinosaur and this one looks like like an
+[03:19] x shape and this one looks like a star
+[03:21] so they have very very different
+[03:24] patterns different shape um different
+[03:26] distribution of the x and y so what do
+[03:29] you think if we generate the summary
+[03:31] statistics
+[03:32] table for the 12 data sets
+[03:35] they should be very different right
+[03:39] but
+[03:41] if we look at the
+[03:43] summary statistic
+[03:45] summary statistics statistics tables
+[03:48] so there are 12 data sets this is the
+[03:51] mean of x mean of y standard deviation
+[03:55] of x standard deviation of y
+[03:57] and correlation between x and y
+[04:00] they're almost the same
+[04:04] mean of y is almost that's the same
+[04:06] actually the for summary statistics for
+[04:08] a mean and standard deviation
+[04:09] correlation there's no difference
+[04:12] among this 12 data sets
+[04:14] but actually they are very very
+[04:16] different
+[04:17] so that's why uh it's the summary
+[04:19] statistics table is not enough for
+[04:22] describing or describing a a data set
+[04:26] they couldn't the the
+[04:28] summaries the statistics couldn't um
+[04:31] describe distribution so that's why
+[04:33] uh the statistical plot can contain much
+[04:36] much more information than a table of
+[04:38] summary statistics
+[04:40] and we also need to be careful when we
+[04:42] read some descriptive analysis
+[04:45] sometimes the descriptive statistics
+[04:48] couldn't describe a whole picture of the
+[04:52] data
+[04:53] okay that's why we need the data
+[04:55] virtualization
+[04:58] and what to plot here um
+[05:02] this is the next question because we
+[05:03] need to we need to know what to talk
+[05:05] right
+[05:06] so for example if you have one variable
+[05:08] you can plot a histogram you can plot a
+[05:10] bar chart you can plot a density plot a
+[05:13] bar chart if you have a categorical
+[05:15] variable you need to use a bar chart if
+[05:17] you have a
+[05:18] continuous variable you need to use the
+[05:20] histogram or the density plot
+[05:22] if you have two variables for example
+[05:24] two continuous variables you can use
+[05:26] scatter plot one continuous one descript
+[05:29] discrete
+[05:30] variable you can use the box plot or
+[05:32] violent plot
+[05:34] and if you have more than two variables
+[05:35] you can introduce another thing in the
+[05:38] figure to represent the third variable
+[05:40] for example
+[05:42] color you can use the color to represent
+[05:44] the third
+[05:45] variable so we can use heat map
+[05:47] and
+[05:49] in the diagnostic plot we can use the qq
+[05:51] plot to check normality so the heat the
+[05:54] the key part here is we need to think
+[05:56] our data and our variables carefully and
+[05:59] then choose the most proper one for your
+[06:02] statistical plot
+[06:04] okay this is the key part when you draw
+[06:06] some plot so think first and then do it
+[06:12] and then let's look at the data set we
+[06:15] will use the data is from the mba
+[06:18] official website is the stats.nba.com
+[06:22] so there are
+[06:23] one two three four five six seven eight
+[06:25] nine columns here
+[06:27] um so the first one is the team uh just
+[06:31] name of the team the first column second
+[06:33] column is the season
+[06:35] so there are four seasons in the data
+[06:36] sets
+[06:37] from 2015 to 2019
+[06:40] winning rate is was the percentage of
+[06:43] games they won team one at a season
+[06:46] and pps here is the average points of
+[06:49] that team
+[06:50] got in that season
+[06:52] office zip rate
+[06:53] is uh advanced statistics um it shows
+[06:57] how
+[06:59] it measures a team's
+[07:01] points scored per 100 possession in that
+[07:03] season
+[07:04] and the defensive rate is the team allow
+[07:07] other teams to get
+[07:10] the points
+[07:11] allowed for other teams per 100
+[07:13] possessions so here one thing i want to
+[07:15] mention is that the offensive rate the
+[07:17] higher the buy the better
+[07:19] but the defensive rate the lower the
+[07:21] better because the lower defensive
+[07:24] defensive rate that means they allow
+[07:26] others to get less
+[07:28] points per 100 possession in that season
+[07:32] so the defensive rate the lower the
+[07:34] better
+[07:35] pace is the number of possessions per 48
+[07:39] minutes for team
+[07:40] and region is the um
+[07:44] if the team is from east or west
+[07:47] and the abv is the abbreviation of the
+[07:50] team
+[07:50] so for example boston south is is just
+[07:54] bos
+[07:55] all right so this is some introduction
+[07:57] of the variables in the data set
+[08:00] and from that it from that data we can
+[08:02] generate some plots
+[08:04] so what information we can get from this
+[08:07] plot we can see there are four blocks
+[08:10] for each season this is 2015 to 2016 and
+[08:14] 2016 to 2017
+[08:16] and similar for this too and if we read
+[08:19] the language of the
+[08:21] the plot we can see winning rate from
+[08:23] small to large circle so the sides of
+[08:27] the circle
+[08:29] represent different wing rate the larger
+[08:31] size of the circle the higher winning
+[08:33] rate
+[08:34] and we can see the region is different
+[08:36] color so the blue is east and the red is
+[08:39] west so different color represent
+[08:42] if the team comes from
+[08:44] east
+[08:45] east eastern region or western region
+[08:49] and
+[08:50] what else we can see we can see the
+[08:51] x-axis is the offensive rate and y-axis
+[08:54] is a defensive rate right but one thing
+[08:56] here defensive rate is the highest from
+[08:59] the highest defensive rate to the lowest
+[09:01] defensive rate that's because we want to
+[09:04] put
+[09:05] we want to see if the team plays better
+[09:08] in defense they may have a
+[09:11] higher location in this plot so that's
+[09:14] why the defensive rate is from the
+[09:16] highest to the lowest because the lower
+[09:18] defensive rate that means the better
+[09:20] performance on defense and the offensive
+[09:23] rate is from
+[09:25] the lowest to the highest
+[09:27] and what else we can know
+[09:28] so there are some labels for some
+[09:30] circles for example we know which team
+[09:32] are the worst team in that season and we
+[09:35] know which teams are the best team in
+[09:36] that season
+[09:38] and what else
+[09:40] for example we can see in the 2015 2016
+[09:43] season
+[09:45] actually
+[09:46] the best but the best
+[09:48] the best teams are all from west
+[09:51] and if you look at the middle part also
+[09:53] the west team performs better than the
+[09:56] than the um
+[09:59] the eastern team right but it's a little
+[10:02] bit different
+[10:03] in 2018 to 2019 the eastern team ketchup
+[10:07] and what else we can we can see
+[10:09] we can see in the 2015 to 2016 season uh
+[10:14] most of the team are located on the uh
+[10:18] the upper part of this plot right but in
+[10:21] the 2018-2019
+[10:23] season most uh
+[10:25] the most uh teams locate at the right
+[10:29] and lower part of the plot and we know
+[10:32] if it's on the right on the right that
+[10:34] means they play better on offense and if
+[10:36] it's lower that means they play worse on
+[10:39] the defense
+[10:40] so that means there's a trend right the
+[10:43] um
+[10:44] in if it's not four years ago it's like
+[10:47] six uh
+[10:49] five years ago
+[10:50] the teams uh the teams play better in
+[10:54] defense but
+[10:56] after time goes by to 20 16 to 20 uh
+[11:01] 18 to 2019 season
+[11:03] the teams play better in office but play
+[11:05] worse you know in defense
+[11:07] so we can get a lot of information from
+[11:10] one plot
+[11:11] that's
+[11:12] if you have a good plot but if you have
+[11:15] a bad plot what can it happen what what
+[11:17] what can happen so
+[11:20] if you have a bad cloud the bathtub may
+[11:21] be hard to read if the labels and
+[11:23] languages are not clear right and it may
+[11:26] also confuse the people if it's if the
+[11:29] plot is not well designed
+[11:32] and it may also deliver some misleading
+[11:35] information
+[11:37] sometimes we can do it in purpose right
+[11:39] for
+[11:40] example in this plot
+[11:43] we can see the scale of x-axis and
+[11:45] y-axis are pretty the same
+[11:48] but if they are not the same for example
+[11:50] each block has different
+[11:52] x-axis and y-axis
+[11:54] right then the different scales for
+[11:57] x-axis and y-axis then this pattern um
+[12:01] the pat the pat the trend from 2015 to
+[12:04] 2016 to 2018 to 2019 when cannot be seen
+[12:08] because all the circles will be fully
+[12:11] distributed on one block
+[12:14] then we couldn't see this kind of
+[12:16] patterns over years
+[12:18] so
+[12:19] that's why
+[12:20] as i mentioned we need to think first
+[12:22] and then do it we need to be careful
+[12:25] um when we
+[12:27] draw some pic draw some statistical plot
+[12:29] using the data set
+[12:32] all right this is some general
+[12:33] introduction of the data visualization
+[12:36] then let's go to the gt plot part
+[12:39] okay uh here is an uh uh here is a
+[12:43] histogram example the left one is
+[12:46] generated by the gdpr2 and the right one
+[12:49] is generated by the graphic package
+[12:52] which is the r basic package
+[12:55] um so here the um
+[12:59] the information they have are pretty the
+[13:01] same because it's just a
+[13:03] histogram for the different region and
+[13:06] different season
+[13:08] but if we look at the code
+[13:12] ggplot2 only have
+[13:14] two lines of code
+[13:17] but the r basic package
+[13:19] we can see we need to
+[13:22] assign the
+[13:24] the plot the loca the position of the
+[13:26] plot and then two four loops and then
+[13:29] generate a subset of the data and then
+[13:31] draw the plot it's much much more
+[13:34] complicated than the gt plot 2. that's
+[13:36] why i highly recommend it to use the
+[13:38] gdpro 2 and that's why the gb pro 2 is
+[13:41] very popular in the data virtualization
+[13:43] because it's easy to understand
+[13:45] hard
+[13:46] and
+[13:47] code is simple then the rs basic plot
+[13:50] here we can see uh ggplot data we know
+[13:53] the data and we know what is the x and
+[13:57] we know what is the plot
+[13:59] and we know what does the plot split
+[14:00] splitted by region and city
+[14:04] so
+[14:05] so the gdpr 2 is easier to read and much
+[14:09] simpler
+[14:12] then let's go to
+[14:14] like how to draw a picture by the gdpr2
+[14:18] um the key part is the grammar of
+[14:21] graphics
+[14:22] um oh here uh just a another reminder if
+[14:26] for the people who just joined the
+[14:28] workshop please go to the website the
+[14:30] github and re-download the slides and
+[14:32] code
+[14:34] some things are updated in the newest
+[14:36] version thank you
+[14:38] okay so let's go to the key part of the
+[14:41] gt plot the grammar of graphics now how
+[14:44] to understand the grammar of graphics
+[14:46] the basic idea is
+[14:48] you have a data
+[14:50] and you have a plot
+[14:53] and how you connect the data with the
+[14:55] plot
+[14:56] and how you draw the plot
+[14:58] so you want to use some uh part in the
+[15:01] gdpro 2 to connect the variables onto
+[15:04] connect the variables to the
+[15:08] features of one plot and you draw the
+[15:11] different layers and put them together
+[15:14] so the basic idea is the graphics
+[15:16] combination of independent building
+[15:18] blocks so let's look at in details the
+[15:21] data is very easy to understand data is
+[15:23] just the data you want to realize and
+[15:26] there is a set of aesthetic mappings
+[15:28] what is synthetic mappings means that
+[15:31] means
+[15:32] this mapping can map the variables in
+[15:34] the data
+[15:36] to
+[15:37] some attributes in your figure for
+[15:40] example in the previous um in the
+[15:42] previous
+[15:43] figure you want to draw the offensive
+[15:46] rate on the x-axis that means you want
+[15:49] to the aesthetic mappings link the
+[15:52] offensive rate to the axis x axis in the
+[15:56] figure
+[15:58] okay similarly you can also link the
+[16:01] defensive rate in the data to the y-axis
+[16:05] in the figure
+[16:06] that's what that's that's what that is
+[16:09] the aesthetic mappings means
+[16:12] all right and then is the layer layer
+[16:14] made up of the geometric elements and
+[16:17] the statistical transformations but in
+[16:20] this workshop we mainly focus on the
+[16:21] geometric objects because easier to read
+[16:25] it's easier to learn and read the code
+[16:28] that is what you really want to viralize
+[16:31] that variable you can use scatter plot
+[16:34] you can use lines you can use points you
+[16:37] can use polygons different shapes that's
+[16:40] the the geo matrix here means and you
+[16:43] can
+[16:44] add multiple layers to one clock that's
+[16:46] what that's how we how we build a
+[16:50] construct a
+[16:51] complicated plot we just put one layer
+[16:54] second layer third layer
+[16:56] and two
+[16:57] two to one figure
+[17:00] and there's the scale
+[17:02] scale what is scale scale map the values
+[17:04] in the data space to the values in a
+[17:06] static space for example we link
+[17:10] the
+[17:11] um
+[17:12] we link the
+[17:14] region in the data set
+[17:16] to the color in the figure that is one
+[17:19] aesthetic mapping and the scale can
+[17:21] control you know we have east and west
+[17:25] in the region and we have red and blue
+[17:28] in the color
+[17:29] how these two things these two set of
+[17:31] things connect with each other that's
+[17:33] how the scale control scale can
+[17:37] specify you want to link the east to the
+[17:41] blue and to link the west to the red
+[17:44] that is what does scale work in the
+[17:47] grammar of graphics
+[17:49] and then it's the coordinate system it's
+[17:52] just the x1 xy axis
+[17:55] and the facet this is important this is
+[17:58] the i think this one of the useful um
+[18:02] useful feature in the gdpr2 the facet
+[18:05] describes how to break up the data into
+[18:07] subsets and how to display those subsets
+[18:10] as small multiples
+[18:12] and theme you can use the theme controls
+[18:15] the uh like the
+[18:17] how you want to display the plot you can
+[18:19] change the it controls the font size or
+[18:22] the background color or
+[18:24] lantern box where do you want to put the
+[18:26] lens and how's the label of the lens and
+[18:28] those stuff so you can change uh
+[18:31] you can design your own style plot by
+[18:34] changing the theme part
+[18:36] all right this is a basic introduction
+[18:38] of the grammar of graphics maybe it's
+[18:40] hard to understand at this time so i
+[18:42] will give some in uh give some examples
+[18:44] to help you
+[18:46] um understand what is the what does it
+[18:48] really means
+[18:51] okay so this is the start
+[18:54] of the plotting a graph
+[18:56] gg plot function
+[18:59] is always the first line
+[19:02] okay so we for example here p
+[19:05] we assign p as a g plot figure and g
+[19:08] plot is always the first line
+[19:12] and we can specify the data
+[19:15] and a static mapping in the gtplot
+[19:18] functions
+[19:19] for example here data equals to
+[19:22] the data you want to you want to realize
+[19:25] and aes means aesthetic mapping
+[19:28] you can map
+[19:30] you can map
+[19:31] the offensive rate to x-axis
+[19:35] and winning rate
+[19:36] to y-axis
+[19:39] at this time you only create a static
+[19:41] mapping so if you if you show this plot
+[19:45] uh the r will give you a plain plot with
+[19:48] only a static mapping for example you
+[19:50] know offensive rate is x-axis and
+[19:53] winning rate is the y-axis and because
+[19:56] you didn't add any geo
+[19:58] matrix you didn't so there's nothing on
+[20:01] on this plot
+[20:03] all right then for the aesthetic
+[20:05] mappings um
+[20:07] when you when you specify the aesthetic
+[20:09] mapping we know we you you need to
+[20:11] specify what
+[20:12] part of the plot you want to
+[20:15] um
+[20:16] uh
+[20:17] this is the part of the plot and this is
+[20:19] the variable in the data set
+[20:21] so
+[20:22] it can be x it's axis
+[20:25] x-axis y is the y-axis and if you
+[20:27] specify color that means the color of
+[20:30] the boundary of something for example if
+[20:32] you have a bar and you
+[20:34] you
+[20:35] you specify the color that means the
+[20:39] boundary of the bar
+[20:40] the color control the color of the
+[20:42] boundary of the bar and the field
+[20:44] control the inside of the bar
+[20:48] and the shape you you can specify the
+[20:50] the shape can be different shape of
+[20:52] points
+[20:54] or specify the size different size of
+[20:56] points and also line type different
+[20:58] types of lines and there are many other
+[21:00] aesthetic mappings
+[21:03] in the gt plot too
+[21:07] okay then let's go to the geometries so
+[21:09] what is geo matrix geometrics are the
+[21:12] actual graphic elements
+[21:14] which is displayed in the plot so they
+[21:17] can virtualize the mapping variables
+[21:20] from the data
+[21:22] and we use the plus symbol to connect
+[21:24] multiple geometric functions and now
+[21:26] actually we also use we use plus to
+[21:28] connect every function in the gdpro code
+[21:32] so for example the p here is the ggplot
+[21:34] function you generate here
+[21:37] digiplot you specify the aesthetic
+[21:39] mappings axis offensive rate wise
+[21:42] winning rate and you use plus gm
+[21:45] point then it will draw the point
+[21:49] with aesthetic mappings x to the
+[21:52] offensive rate and y to the winning rate
+[21:56] and we can also specify the data and the
+[21:59] static mappings in the gm function as
+[22:01] well
+[22:01] uh they don't have to be the same as
+[22:03] those in the gdpr function so for
+[22:06] example here if we don't have anything
+[22:08] in the gdpr
+[22:10] function that's totally fine we can
+[22:13] specify the data here in the geo
+[22:15] function also the aesthetic mappings in
+[22:18] the gm function
+[22:19] but if you specify the data and and
+[22:22] aesthetic mappings in the gdpr function
+[22:25] it will
+[22:26] can uh it will um
+[22:28] give this kind of settings to every geom
+[22:32] functions without special
+[22:35] uh without any specific
+[22:38] specification of the data and the static
+[22:40] mappings
+[22:42] but if you put the data and the static
+[22:44] mappings in one geom function this can
+[22:47] only control the setting
+[22:49] for this geo function
+[22:52] and this cannot control the settings for
+[22:54] other gm functions in this gt plot
+[22:57] okay
+[23:01] there's uh because we know we have
+[23:03] different plots to draw
+[23:06] so we have different gm functions to use
+[23:09] so for example one continuous variable
+[23:12] um
+[23:12] this is you can draw a histogram it's
+[23:14] very straightforward just geom histogram
+[23:17] geom density is the density plot
+[23:21] and
+[23:22] uh if you have two variables continuous
+[23:24] x continuous y um
+[23:26] you can use gm point to draw the scatter
+[23:29] plot gm line uh to draw the line plot
+[23:33] line chart although it doesn't make any
+[23:36] sense in this data set but you still can
+[23:38] draw it
+[23:39] uh you can draw the dense two-dimen
+[23:41] two-dimensional density
+[23:43] and you even can fit a linear mode
+[23:45] linear regression uh in the gdpr too you
+[23:48] can use the geom
+[23:50] smooth and you can specify the formula
+[23:56] i'm sorry please
+[24:00] [Music]
+[24:08] okay i think now it should be fine
+[24:13] all right let's continue um
+[24:16] so um you can uh fit a linear regression
+[24:20] here
+[24:21] and then um draw the linear trend of
+[24:24] this between the offensive rate and the
+[24:27] winning rate of course
+[24:29] if they play better in the office then
+[24:31] they should have higher winning rate
+[24:35] okay then is if we have this crit x and
+[24:38] continuous y we can use box plot or
+[24:41] violin plot
+[24:43] but here the x axis is the season we
+[24:45] have four seasons and y axis is the
+[24:47] winning rate we can see the different
+[24:50] um distribution of the winning rate in
+[24:52] the different season using the wildling
+[24:55] plot where you can we can see the five
+[24:56] numbers
+[24:57] uh the median first quartile second
+[25:00] quartile and some outliers
+[25:02] that's also medium minimum and maximum
+[25:05] of the
+[25:06] winning rate in each
+[25:09] seasons
+[25:12] okay
+[25:13] as i mentioned before we can put
+[25:15] multiple layers of gene functions
+[25:17] together right so here we can draw the
+[25:19] histogram first thing firstly and then
+[25:22] put the density plot
+[25:24] after
+[25:26] the histogram we use plus to connect to
+[25:30] connect them so we will have a histogram
+[25:33] and a density plot as well on one
+[25:37] um on one plot
+[25:40] similarly um we can draw the scatter
+[25:43] plot first
+[25:44] and then
+[25:46] draw the linear trend between these two
+[25:48] variables
+[25:51] or
+[25:52] we can draw the violin plot show the
+[25:55] density
+[25:56] of the
+[25:57] winning rate in each season and then
+[26:00] draw the box plot to show the summary
+[26:02] statistics of each season
+[26:06] and
+[26:07] that means
+[26:09] that picture can combine the information
+[26:12] of the two pictures right
+[26:14] that's why the gdpr 2 can
+[26:17] can add a lot of information to one
+[26:20] figure because we can just put multiple
+[26:22] gm layers together
+[26:25] one thing we need to be
+[26:26] we need to be
+[26:28] careful is that
+[26:30] the order of gm function is important
+[26:33] for example um
+[26:36] the box
+[26:37] we we can see here the violin plot is
+[26:40] larger than the box plot
+[26:42] so
+[26:42] the first
+[26:44] the first geom layer will be put at the
+[26:47] bottom and the last geometer will be put
+[26:49] at the top
+[26:50] so if we draw the box plot first
+[26:53] then we draw the while in plot but the
+[26:55] welding plot is larger than the box plot
+[26:57] so the while in plug will block the box
+[26:59] plot then we couldn't see the box plot
+[27:01] so actually the order of the gene
+[27:03] function it really matters just be
+[27:06] careful when you design your own
+[27:09] your your own figures
+[27:13] and that's it as i mentioned this is
+[27:15] very important feature of gtd plot2
+[27:18] um
+[27:19] the facet function can help you make
+[27:21] panel plot very easily
+[27:23] um there are many two functions one is
+[27:26] facet wrap so when you want to block
+[27:29] when you want to speed split your data
+[27:32] based on one variable you use facet wrap
+[27:36] for example here
+[27:37] we want to uh we know this we know this
+[27:41] plot before
+[27:43] which is um this one okay this is for
+[27:46] the
+[27:47] whole data set but we want to compare
+[27:49] the different season
+[27:52] then we can specify
+[27:54] facet wrap
+[27:56] to the season
+[27:58] just like this and then it will give us
+[28:01] a
+[28:02] scatter plot with linear trend in
+[28:05] different season
+[28:07] you can also specify any row and column
+[28:09] to control how many rows how many
+[28:12] columns do you do you want
+[28:15] and if you have two variables
+[28:17] for example we want to split the data to
+[28:20] different season for a different region
+[28:24] then we need to use facet grid
+[28:28] same plot plus facet
+[28:31] grid and we specify the row
+[28:35] row variable first and then the column
+[28:38] variable so
+[28:40] you can see the row variable is east and
+[28:42] west so it's region then the column
+[28:43] variable is different season and if you
+[28:46] do like this it will give you a linear
+[28:48] trend with scatter plot for each season
+[28:52] and each region
+[28:56] okay so this is one uh important
+[28:59] function of ggplot2 the the facet
+[29:02] function
+[29:05] okay that is the scale
+[29:08] as i mentioned the scale function is
+[29:11] control how we can plot we can maps the
+[29:14] data values to the visual values of an
+[29:16] aesthetic
+[29:18] so we can see there's some examples of
+[29:20] the scale functions
+[29:22] and the format of the scale function is
+[29:24] always like scale
+[29:27] underline
+[29:29] element one
+[29:30] underline
+[29:31] element two
+[29:33] and element one here is uh always crease
+[29:37] one corresponds with
+[29:39] with an aesthetic mappings in the gm
+[29:42] function
+[29:43] for example x means
+[29:45] the sk this scale function control the x
+[29:47] axis
+[29:49] y means the scale function control the y
+[29:51] axis color is just control the color
+[29:54] view control the inside of the inside
+[29:56] color of some symbol
+[29:58] and the second element
+[30:02] corresponds the characteristics of of
+[30:05] the
+[30:06] static mappings or the variables
+[30:08] for example
+[30:09] uh x
+[30:11] continuous here means that means the
+[30:12] variable is a continuous variable this
+[30:14] create is
+[30:16] is a discrete variable and gradient here
+[30:18] that means you want to
+[30:20] change the color gradiently and menu
+[30:23] means you want to change the color
+[30:24] inside of something
+[30:26] uh manually so you can specify uh what
+[30:30] what color you want to um we want to
+[30:33] assign by
+[30:34] yourself of course that of course they
+[30:37] have different combinations so
+[30:39] it's easy to read for example this this
+[30:41] means the scale function to control the
+[30:44] x-axis with continuous variable of
+[30:47] course if we change this one to discrete
+[30:49] that means that means the scale function
+[30:51] to control the x-axis with discrete
+[30:53] variable
+[30:54] and this one similarly and this one is
+[30:57] scale function to control the color
+[30:59] changing in the gradient way
+[31:01] okay
+[31:03] and that's how we how we read this scale
+[31:06] function
+[31:07] and we can also specify the label of the
+[31:10] x the axis or the legend in the scale
+[31:13] function
+[31:14] and
+[31:14] the color is a little bit tricky it's
+[31:17] hard to remember all the code of the
+[31:19] color so i put the cheat sheet color
+[31:22] cheat sheet here
+[31:23] and you can see
+[31:26] um you can see this uh you can find the
+[31:31] different code of colors here you can
+[31:33] find what color you want to use
+[31:36] and the put the code into the scale
+[31:39] color or the scale
+[31:41] view function to control the color
+[31:46] all right
+[31:47] and then let's look at one example
+[31:50] okay
+[31:51] um
+[31:52] this is
+[31:53] an example
+[31:55] this is we have four aesthetic mappings
+[31:57] here
+[31:58] we can see x equals to so we we map the
+[32:02] offensive rate to x axis defensive rate
+[32:05] to y-axis
+[32:07] winning rate to color
+[32:10] and region to shape
+[32:12] okay so we have four is that aesthetic
+[32:15] mappings
+[32:16] and we we can generate a
+[32:20] scatter plot
+[32:21] with color and shape different shape of
+[32:24] the points
+[32:25] and scale
+[32:27] here the scale function
+[32:29] control the x-axis with continuous
+[32:32] variable we can rename the label of this
+[32:34] x-axis to offensive rate and limits here
+[32:38] means
+[32:39] we want to give a limit of the x-axis so
+[32:42] from 97 to 116.
+[32:46] and scale
+[32:48] controlling the y-axis and we want to
+[32:50] reverse this y-axis why we want to
+[32:53] reverse because as i mentioned the
+[32:55] defensive rate is the lower the better
+[32:57] but we want to put the better team at
+[32:59] the top of the
+[33:01] of the figure so we need to reverse the
+[33:03] y-axis otherwise by default it will draw
+[33:07] from 90 90 the the lowest uh number will
+[33:10] at the bottom and the highest number
+[33:11] will either
+[33:12] uh the top so we want to reverse this
+[33:15] y-axis
+[33:17] and scale
+[33:18] controlling the color in a gradient way
+[33:22] so we can
+[33:23] rename the label of the legend for the
+[33:26] color
+[33:27] and we can specify the lowest winning
+[33:30] rate we want uh green color and the
+[33:33] highest winning rate we want we want red
+[33:36] color so we can see for the
+[33:39] uh the the team with worst offensive
+[33:42] rate and defensive rate they always have
+[33:44] a lower
+[33:45] winning rate so their color is
+[33:47] green and the best team they have the
+[33:50] highest winning rates so their color is
+[33:52] red so the the color the w the color of
+[33:55] the winning rate change gradiently from
+[33:58] the
+[33:59] uh green to right to right and we can
+[34:02] see
+[34:02] a very clear trend is from the left um
+[34:06] bottom corner
+[34:08] is to the right
+[34:10] the color change
+[34:12] from green in the left bottom corner to
+[34:15] the red in the right
+[34:19] upper corner
+[34:21] and scale shape shape is the um
+[34:25] different region right so we can
+[34:28] change the label of the
+[34:29] region here we can because before is
+[34:33] maybe lower case of the east and west
+[34:35] but we can specify what label we want to
+[34:38] give
+[34:39] for the
+[34:40] shape
+[34:43] okay this is an example
+[34:44] on how to use the scale function
+[34:49] um
+[34:50] and then we there's still a lot of
+[34:53] things in the gdpro 2 for example
+[34:57] this coordinate function can control the
+[35:01] transformation of the coordinate system
+[35:03] such as the
+[35:05] the coordinate trends uh
+[35:07] we can specify we want to transform
+[35:10] transfer y to the square root of y
+[35:13] and we can also change the theme of the
+[35:14] plot using the theme function
+[35:17] and the labs can set the title subtitle
+[35:20] and captions theme
+[35:23] can customize
+[35:25] some like titles labels fonts background
+[35:28] the grid lines on the background and the
+[35:31] lens and the engine position something
+[35:33] like that
+[35:34] so we can see the r help for for the
+[35:36] details and gt save can save the plot to
+[35:39] your local drive
+[35:40] all right
+[35:41] and there's
+[35:43] i introduced so many things and it's
+[35:44] hard to memorize all the stuff so the
+[35:47] cheat sheet of gdpr 2
+[35:49] is pretty useful
+[35:51] we can see we can click this link and
+[35:56] we can see um the ggplot uh cheat sheet
+[36:01] you can see different types of um
+[36:04] plots you want you want you just find
+[36:06] what cloud you want to draw and then
+[36:08] check the code
+[36:10] uh what's the gm function i'm sorry
+[36:13] what's the gm function and what's the
+[36:15] key
+[36:16] um
+[36:18] what's the key aesthetic mappings in the
+[36:20] gm function
+[36:23] and here for example they can also
+[36:25] give different themes you can see the
+[36:27] how the theme function changed the
+[36:29] background of the
+[36:31] ggplot
+[36:33] so this our cheat sheet is very helpful
+[36:37] and our help as i mentioned is also a
+[36:39] great resource you can check the details
+[36:41] of each function and there are also a
+[36:44] lot of
+[36:45] um
+[36:46] the examples this is why i like the
+[36:48] gdpro 2. they have a lot of documents
+[36:51] for you to check and they are all online
+[36:54] all free
+[36:55] so for example this one you can see
+[36:57] different examples of gtplot you for
+[37:00] example you want to draw the scatter
+[37:01] plot you just go to the scatter plot and
+[37:03] see one example to see how they
+[37:06] draw the plot and you can just
+[37:09] use the code to draw to write the
+[37:11] similar code as their examples their
+[37:13] examples are pretty fancy like this
+[37:19] this is a book for the gdpr2 but
+[37:22] normally we don't need it because the
+[37:24] online from online resources are pretty
+[37:26] none
+[37:28] as i mentioned i will leave five minutes
+[37:30] for the q a so maybe we may not have
+[37:32] enough time to go through the case study
+[37:35] but i put the code here you can see how
+[37:38] to draw this
+[37:40] picture
+[37:42] it's also available in the practice code
+[37:44] you can see all the this kind of ggplot
+[37:47] code in the practice 2020 r file
+[37:52] so
+[37:52] then i will uh introduce some useful
+[37:55] packages and extensions for the gdpr 2.
+[37:59] um
+[38:01] so
+[38:02] i will not go it go through it in
+[38:04] details because i think i don't have
+[38:06] enough time
+[38:07] uh just look at this uh this link
+[38:10] so this link is um they show
+[38:14] what extension available for ggplot
+[38:17] so for example gt animate i've also
+[38:19] showed this one
+[38:21] gd themes
+[38:23] and different fantasy plots you can just
+[38:27] find the plot to find the packages you
+[38:29] are interested in
+[38:31] and then download the package and draw
+[38:33] the plot and look at check the example
+[38:35] in each extension
+[38:37] so i will just introduce several
+[38:40] useful extensions for example gg alley
+[38:42] is very good package to generate eda
+[38:46] exploratory data analysis plot it can
+[38:48] show the
+[38:50] scatter plot
+[38:51] uh the density plot and correlation
+[38:53] together and in the easy way just one
+[38:56] line of code
+[38:57] similarly for the
+[38:58] for the heat map
+[39:02] and gg extra they can combine the
+[39:05] marginal
+[39:06] density versus the
+[39:09] scatter plot you know scatter plot we
+[39:11] need two variables
+[39:13] to draw the scatter plot but this gg gg
+[39:17] extra gd marginal can also show the
+[39:19] density plot for each
+[39:22] each variable and you can also divide it
+[39:25] to split it to different
+[39:27] regions like east and west
+[39:30] gtanimate is a fancy
+[39:32] package so you can draw the animation
+[39:35] you can you can draw a like dynamic plot
+[39:39] to show the trend uh how the how it
+[39:43] changed over time for example here
+[39:45] this is is change over time this
+[39:48] 2017 to 20 2018 2018 to 2019 and then go
+[39:51] back to 2015 to 2016 for example we can
+[39:54] see this is the golden state warrior how
+[39:56] the uh their offensive offense and
+[39:59] defense performance change over time and
+[40:01] also their winning rate change over time
+[40:04] or the philadelphia we know philadelphia
+[40:06] got
+[40:07] um and bit after they got nb their
+[40:10] winning rate increased a lot so that's
+[40:12] why we can see this philadelphia
+[40:15] change a lot in this in the four seasons
+[40:19] so this is the gg animate
+[40:22] and also put the code in the slides and
+[40:25] the um and the
+[40:27] practice 2020 r code
+[40:29] so this is all the um
+[40:31] uh the thing all the contents in my
+[40:33] slides
+[40:34] um i as a promise i i will leave five
+[40:38] minutes for the q a now it's 2 45 so if
+[40:41] you have any questions uh you can put in
+[40:44] the chat because there there are too
+[40:46] many people maybe you can put in the
+[40:47] chat and i can answer the questions
+[40:50] thank you
+[41:01] or if you um
+[41:03] if there's no okay how hard is gg
+[41:05] animate to use
+[41:06] well it's harder than the gdpro if you
+[41:09] look at the
+[41:11] code in the slides it's much longer than
+[41:14] the
+[41:15] um
+[41:16] much longer than the normal the gt plot
+[41:19] code and you need to specify how it
+[41:22] changed over time
+[41:24] uh but the uh the link of the gd
+[41:28] extension
+[41:29] uh the gtx the extension of the gdplot
+[41:32] uh they give a very
+[41:34] detailed instruction of the gt animation
+[41:37] so you can check the detail and draw the
+[41:40] plot by yourself
+[41:45] is the gt animate only used for time
+[41:48] seasonal changes what other things could
+[41:50] you use it for
+[41:52] well it's a it's a good question so
+[41:56] i as i remember
+[41:59] you can set what what do you want to
+[42:04] what do you want to how to say like
+[42:06] change it based what variable so of
+[42:08] course you can set the
+[42:10] time or season
+[42:12] here but you can also set any
+[42:14] variable it can be continuous variable
+[42:18] or
+[42:19] categorical variable it's pretty
+[42:21] flexible
+[42:23] so for example you want to see
+[42:26] let's say how the winning rate for one
+[42:29] team change over offensive rating so you
+[42:33] can have you can generate data set with
+[42:36] one team's offensive rate and winning
+[42:39] rate in the last 10 seasons
+[42:42] and you can set this one
+[42:45] as the offensive rate and you can see
+[42:47] how the winning rates change
+[42:50] in different offensive rate
+[42:52] so it's pretty flexible you can do
+[42:54] whatever you want
+[42:56] actually for the gt ftd animate
+[43:02] yeah no problem
+[43:03] uh um yeah is there any other questions
+[43:06] uh because i think our participants is
+[43:09] leaving so if you have question other no
+[43:12] other talk you can also admit yourself
+[43:14] to talk to ask directly
+[43:25] does gd animate only work with html
+[43:28] documents
+[43:29] um yeah this is a good question so i
+[43:32] didn't try it in the in the latex
+[43:34] actually
+[43:35] uh probably only available in html
+[43:38] because i i think latex doesn't allow
+[43:43] this kind of animation in the pdf file
+[43:46] so
+[43:47] um probably only html documents but you
+[43:50] can also draw it in r you know
+[43:53] um just um
+[43:55] i i don't know if can uh generate some
+[43:58] gif
+[43:59] uh files
+[44:00] uh i didn't try it before
+[44:03] um but i think uh
+[44:06] it can be saved you may i mean save this
+[44:09] animation in
+[44:10] some other format of the documents
+[44:13] like the gif
+[44:15] but you can also put it in the html
+[44:17] documents
+[44:21] yep
+[44:32] any other questions
+[44:41] yeah thank you all for coming to my
+[44:44] workshop i'm
+[44:45] very happy for you to come and uh if you
+[44:48] have more questions i will i will stay
+[44:50] there for
+[44:51] um longer time so if you have any other
+[44:54] questions please just feel free to ask
+[44:56] but i know the time is out you also need
+[44:58] to attend the next session so
+[45:01] uh also please please feel free to leave
+[45:03] the workshop that will just stay here
+[45:05] for
+[45:06] maybe five to ten minutes
+[45:09] thank you
+[45:40] okay are there any other resources you
+[45:43] could recommend for learning about
+[45:44] ggplot
+[45:46] um
+[45:48] well uh
+[45:49] yeah actually there are um yeah there
+[45:52] are a lot of resources and i already
+[45:54] show a lot in the slides and for others
+[45:58] i
+[46:00] only to be honest i didn't use some
+[46:02] other resource i think it's pretty
+[46:04] uh pretty um enough for all the use of
+[46:08] dd plot in your
+[46:10] data analysis but if you just search
+[46:12] ggplot you really can see there are a
+[46:14] lot of documents um
+[46:17] online
+[46:18] and there are also a lot of a lot of
+[46:20] tutorials actually and also a lot of um
+[46:24] like youtube videos so
+[46:27] just search gt plot2 then you you can
+[46:29] see a lot of things
+[46:31] yeah so
+[46:32] that's one good point one good thing for
+[46:34] ggplot2 because there are a lot of
+[46:36] documents and i think there is also a
+[46:38] forum
+[46:39] um to
+[46:40] for people to answer the questions of
+[46:42] gdpr2
+[46:44] um so you can get a lot of help from the
+[46:46] online documents
+[46:53] yeah
+[46:54] from my experience the most important
+[46:56] the most useful one is the gdpr cheat
+[46:58] sheet
+[46:59] because it's really hard to
+[47:02] remember all the things
+[47:04] so
+[47:05] i always have a gd pro cheat sheet when
+[47:08] i draw the pictures so that is part is
+[47:11] pretty useful
+[47:38] yeah if you have further questions you
+[47:39] can just feel free to unmute yourself
+[47:42] and ask
+[48:09] okay if there
+[48:10] um there is no questions
+[48:13] then i will end this session
+[48:16] and
+[48:17] i hope you have enjoyed the the workshop
+[48:19] today and
+[48:21] enjoy the uc ses symposium today
+[48:25] thank you
+[48:27] bye

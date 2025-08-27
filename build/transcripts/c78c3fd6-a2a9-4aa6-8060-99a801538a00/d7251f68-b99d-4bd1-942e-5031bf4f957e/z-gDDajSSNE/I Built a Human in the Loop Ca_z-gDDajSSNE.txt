@@ -1,0 +1,703 @@
+Video Title: I Built a Human in the Loop Calendar Agent in n8n with No Code
+Video ID: z-gDDajSSNE
+URL: https://www.youtube.com/watch?v=z-gDDajSSNE
+View Count: 29,322
+
+[00:00] what we'll be looking at today is a
+[00:01] human in- thee Loop calendar agent this
+[00:02] thing is super intelligent it's going to
+[00:04] make sure you don't have any conflicting
+[00:05] events it's going to make sure you're
+[00:06] scheduling events at the right time with
+[00:08] the right attendees and it's not going
+[00:09] to do anything until you personally say
+[00:12] okay I'm good to go with that the
+[00:13] correction agent is able to take your
+[00:14] feedback as well as the original message
+[00:16] and then revise the prompt to send back
+[00:18] to you for approval once it's finally
+[00:20] approved we hit off to the calendar
+[00:21] agent and then it finally takes action
+[00:23] for us all right so I'm going to say
+[00:24] create an event with Michael Scott for
+[00:25] dinner at 5:00 p.m. tonight I'm going to
+[00:27] fire this off and as you can see it's
+[00:28] going to the intent agent which is going
+[00:30] to get the events and look at our
+[00:32] contact information to make sure we're
+[00:34] not you know having any scheduling
+[00:35] conflicts as well as getting the correct
+[00:37] email for Michael Scott as you can see
+[00:39] we got this message that says you
+[00:40] requested to create a dinner event at
+[00:41] 5:00 p.m. tonight with Michael Scott I
+[00:43] found two contacts for Michael Scott
+[00:45] before creating the event there is a
+[00:47] scheduling conflict there's a meeting
+[00:48] titled Corporate Retreat discussion from
+[00:50] 4:17 to 5:17 would you like to change
+[00:52] the time for dinner or would you like to
+[00:53] proceed with another date and time so
+[00:55] now we're able to click on respond and
+[00:56] it's going to open up this page where we
+[00:58] can leave feedback first of all what I'm
+[00:59] going to say is send it to his business
+[01:02] email and then I'm going to say keep the
+[01:04] time for dinner so now we hit submit we
+[01:07] go back to the human in the loop and we
+[01:09] can see that it's going off to the
+[01:10] correction agent which is going to take
+[01:11] the original intent as well as our
+[01:13] feedback and now we have a new message
+[01:14] waiting for us on telegram which says
+[01:17] new intent you would like to schedule
+[01:18] dinner for tonight 5:00 P p.m. with
+[01:19] Michael Scott and as you can see it now
+[01:21] has his business email address
+[01:22] associated with this invitation and then
+[01:24] it asks us once again if we want to
+[01:25] schedule even though we have a conflict
+[01:27] so I'm going to hit respond I'm gonna
+[01:28] open this up and I'm just going to say
+[01:30] yes so now that I've said yes we go back
+[01:32] into this workflow and you can see now
+[01:33] it has passed it off to the calendar
+[01:34] agent to actually create that event so
+[01:37] now it's going to right there we have
+[01:38] our dinner invitation set for 5:00 p.m.
+[01:41] and if we click into the invitation we
+[01:42] can see that it did in fact invite
+[01:43] Michael at dundermifflin.com which was
+[01:46] his business email address okay but now
+[01:48] I'm going to say move my dinner tonight
+[01:49] to 7:30 p.m. so we'll send that off
+[01:51] we'll see the exact same thing happen
+[01:52] the intent agent is first of all going
+[01:54] to get events to make sure it's going to
+[01:55] move the correct one and then it's going
+[01:57] to pass that over to us to respond in
+[01:59] Telegram so here's the message as you
+[02:00] can see right here in the workflow the
+[02:02] telegram node is waiting for us and it
+[02:03] says you have a dinner invitation
+[02:05] scheduled for 5: to 600 with an attendee
+[02:07] Michael at Dunder mlin can you please
+[02:08] confirm if you want to move this dinner
+[02:10] to 7:30 p.m. instead so I'm going to hit
+[02:12] respond open this up and I'm going to
+[02:14] say yep that's good and then as soon as
+[02:17] I submit this and go back to the
+[02:18] workflow we can see it's going to go up
+[02:19] here to the calendar agent who's going
+[02:20] to get events in order to update event
+[02:22] and then on the left hand side you can
+[02:23] see that that dinner invitation got
+[02:24] moved to 7:30 and finally our telegram
+[02:27] assistant responds and says dinner
+[02:28] invitation has been rescheduled for
+[02:30] tonight 7:30 to 8:30 with Michael you
+[02:32] can view the updated event here then the
+[02:34] last thing we can do here is say
+[02:35] actually just delete my dinner for
+[02:37] tonight it's going to go through it's
+[02:38] going to grab that event and then it's
+[02:39] going to understand that we need to
+[02:40] delete it so now it's waiting for us
+[02:42] again it says you have a dinner
+[02:43] invitation for tonight February 19th 730
+[02:46] to 8:30 and then it also includes the
+[02:47] attendee and it says would you like me
+[02:49] to proceed with deleting this event once
+[02:51] again opened up that message we're going
+[02:52] to respond with yes and coming back into
+[02:54] the workflow we can see it's going up to
+[02:55] the calendar agent to get events and
+[02:57] grab that ID and now it's going to
+[02:58] delete it and as you can see down here
+[02:59] here it just vanished the dinner
+[03:02] invitation for tonight has been
+[03:03] successfully deleted so now that we've
+[03:05] seen a quick demo of how this works
+[03:06] let's get into the build and break it
+[03:07] down and by the way if you want to
+[03:09] download this workflow for free head
+[03:10] over to my fre School Community the link
+[03:11] for that's down in the description once
+[03:13] you get here click on YouTube resources
+[03:15] click on the post associated with this
+[03:16] video and then you'll have the workflow
+[03:17] right here to download but if you're
+[03:19] looking for more Hands-On approach and
+[03:20] you want to watch me build this step by
+[03:21] step head over to the paid Community the
+[03:23] link for that's also down in the
+[03:24] description we got a great community of
+[03:25] members always asking questions and
+[03:27] sharing resources about NN we've got a
+[03:29] great class section of different Deep
+[03:30] dive topics like building agents Vector
+[03:32] databases apis HTTP requests and then
+[03:34] here's the step-by-step series I was
+[03:36] talking about where I'm doing all of my
+[03:37] builds from YouTube step- by-step live
+[03:39] in this course and then we've got five
+[03:41] live calls per week so I'd love to see
+[03:43] you guys in these calls but let's get
+[03:44] back to the video okay so what did we
+[03:46] just see in the demo what happens is
+[03:48] we're talking to our agent with telegram
+[03:50] through a telegram trigger of course and
+[03:51] then we're feeding that into an intent
+[03:53] agent so what's going on inside this
+[03:55] intent agent is it has access to our
+[03:57] calendar using this tool called get
+[03:58] events and it has access to our contact
+[04:00] database using this air table tool which
+[04:02] searches for records so the intent
+[04:04] agent's job is to take the user query
+[04:06] from telegram search through events
+[04:09] search through our contact information
+[04:10] and then create an intent this is what
+[04:12] the human wants it then sends the human
+[04:14] the intent over to telegram where we are
+[04:16] able to you know answer any
+[04:18] clarification questions and also approve
+[04:20] or basically deny the message once
+[04:23] telegram gets our feedback here we send
+[04:24] that into a check feedback AI node where
+[04:27] it is going to understand okay this is
+[04:28] the human's feedback is this an approval
+[04:30] message and can we send it off to the
+[04:31] calendar agent or is it denied and we
+[04:34] need to send it to a correction agent in
+[04:35] order to make the changes and then we'll
+[04:37] send that back to the human for review
+[04:39] so obviously if the message is denied
+[04:40] and it gets sent to the correction agent
+[04:42] the correction agent is going to look at
+[04:43] the original intent that the agent made
+[04:45] over here and it's also going to look at
+[04:47] the feedback that we gave and then based
+[04:49] on combining those two inputs it's going
+[04:50] to create a new intent and then from
+[04:52] there once it's approved it goes up here
+[04:54] to the calendar agent who has different
+[04:55] tools like creating events creating
+[04:57] events with attendees getting events
+[04:59] updating events and deleting events
+[05:01] finally from there the output is passed
+[05:03] back to us in telegram so that the agent
+[05:04] can say hey we did that job for you so
+[05:07] that's what's going on at a high level
+[05:08] but let's get into each node and see
+[05:10] what's going on here so the best way to
+[05:11] break this down I think is going to be
+[05:13] we're going to send through an example
+[05:14] that's going to be a very simple one
+[05:16] creating an event we're not going to
+[05:17] send it through the feedback loop we're
+[05:18] just going to confirm that it's correct
+[05:20] so I'm going to hit test workflow I'm
+[05:21] going to say create an event with Nate
+[05:22] herkelman for today at 1:30 p.m. for
+[05:24] lunch and we'll see it go through this
+[05:26] process of getting Nate Herman's contact
+[05:28] information it's going to to get events
+[05:30] to make sure that we're not conflicting
+[05:31] with anything and then now we have our
+[05:33] message which says you would like to
+[05:34] create a lunch event with Nate at 1:30
+[05:37] here's his email there are no scheduling
+[05:38] conflicts for the time would you like me
+[05:40] to proceed with creating the event we're
+[05:41] going to hit respond open up this link
+[05:43] and all I'm going to say in here is yes
+[05:45] submit that go back to the workflow and
+[05:47] then it's going to be approved so now
+[05:48] the calendar agent is creating that
+[05:50] event with an attendee and then we can
+[05:52] see over here we have that event that
+[05:53] just got created launch with Nate
+[05:54] herkelman at 1:30 and now we can just
+[05:57] break down how the data just flowed
+[05:58] through this workflow flow okay so first
+[06:00] things first starting with the intent
+[06:01] agent let's open it up here what we're
+[06:04] getting as the user message is we're
+[06:05] sending it a user query and all the user
+[06:07] query is is what we said in telegram so
+[06:10] in this case we're saying create an
+[06:11] event with Nate herkelman for today at
+[06:13] 1:30 p.m. for lunch and now let's dive
+[06:15] into the system prompt so we have an
+[06:16] overview you're calendar assistant your
+[06:18] job is to look at the incoming query and
+[06:20] determine the intent you have two tools
+[06:22] contacts and get events so we have to
+[06:24] specify when and how to use these tools
+[06:26] in contacts we said use this tool to get
+[06:28] contact information like email address
+[06:31] this tool must be used if the user
+[06:32] requests to create an event with an
+[06:34] attendee if no attendee is specified you
+[06:36] don't need to use this tool simple and
+[06:38] then we have the tool get events use
+[06:40] this to get events when the user wants
+[06:42] to create delete or update an event you
+[06:44] should provide details about the event
+[06:45] to confirm it is the right one to update
+[06:47] or delete also pretty simple and now we
+[06:49] move into giving it some rules so you
+[06:52] must always get events using the G
+[06:54] events tool to make sure there are no
+[06:55] scheduling conflicts when you are asked
+[06:57] to move update or delete an event must
+[06:59] use get events to confirm the event you
+[07:02] must output the event details like date
+[07:04] time and any attendee emails and this is
+[07:07] important because the correction agent
+[07:08] later down the line doesn't have access
+[07:10] to the contact database we easily could
+[07:11] give it access to it but we wanted to
+[07:13] make sure that the data is passing
+[07:14] through the whole way and it's you know
+[07:16] keeping all the information we need and
+[07:18] then finally we gave it some guidelines
+[07:19] for output you must output the request
+[07:21] from the user and ask any clarification
+[07:23] questions so then you know the example
+[07:25] do we need to use the business email or
+[07:27] the personal email always output the
+[07:28] email of the contact the user requested
+[07:30] if requested and then finally if there
+[07:32] are two records of contact information
+[07:34] for a single name output the email and
+[07:36] type of contact and then of course we
+[07:37] gave it the current date and time so it
+[07:39] can accurately make these events now
+[07:41] let's take a look at the tools the first
+[07:42] one is a get events tool so all that's
+[07:44] happening in here is we're doing a get
+[07:45] many operation looking for events within
+[07:47] our Google Calendar we chose our
+[07:49] calendar and then we chose to return all
+[07:51] but returning all within a specified
+[07:53] time range which is after this parameter
+[07:56] and before this parameter so what we did
+[07:58] here is we clicked on the little button
+[07:59] right here that says let the model
+[08:00] Define this parameter and we gave the
+[08:02] description of looking for any events
+[08:04] after 12:01 a.m. of the day the user
+[08:07] requested and looking for any events
+[08:09] before 11:59 of the day the user
+[08:11] requested so essentially if you know in
+[08:13] this case we're looking for February
+[08:14] 19th because we said create an event for
+[08:16] today and it's pulling back these events
+[08:19] because this is what's on our calendar
+[08:20] for today because it's looking between
+[08:22] you know basically the morning and the
+[08:23] night and then grabbing all the events
+[08:24] in between that's how it's able to let
+[08:26] us know if there's any scheduling
+[08:27] conflicts and then next what we're doing
+[08:29] is we're just searching through the
+[08:30] entire contact database in this case we
+[08:32] only have eight records so it's not too
+[08:34] difficult but we're looking in the
+[08:35] contact table of the contact base within
+[08:37] our air table so this is what it looks
+[08:38] like as you can see um we only have one
+[08:41] instance where there's two names that
+[08:43] are duplicated which is Michael Scott
+[08:45] two different emails and then this is
+[08:46] the example where we said hey this is
+[08:47] the type of email which type do you want
+[08:49] to send this invite to Okay cool so
+[08:51] that's what's going on within the intent
+[08:52] agent nothing too crazy as you can see
+[08:54] all of the agents here are hooked up to
+[08:55] 40 mini so the intent agent the check
+[08:57] feedback agent the correction agent as
+[08:59] well as the actual calendar agent but
+[09:01] from here we have to move into the set
+[09:02] intent node which is where the magic all
+[09:04] really happens and this is because we
+[09:07] are doing a variable number of revisions
+[09:10] so sometimes it'll go through on the
+[09:11] first try and it gets approved like we
+[09:13] just saw but sometimes it's going to go
+[09:15] through once maybe even twice and when
+[09:17] that happens where there's this feedback
+[09:19] loop we need to make sure that the
+[09:21] calendar agent over here who's actually
+[09:22] taking action is getting the most recent
+[09:25] updated version of our intent and so if
+[09:28] we weren't to set this right here this
+[09:30] agent wouldn't know whether it's
+[09:31] supposed to grab intent from this agent
+[09:34] or from this agent so if we're able to
+[09:35] set it here we can reference it right in
+[09:37] this guy where we're saying hey this is
+[09:39] what you're going to be looking at and
+[09:40] this is what you're going to take action
+[09:41] based on because right here you can see
+[09:43] we're referencing the node called set
+[09:44] intent which of course is this one
+[09:47] anyways hopefully that makes sense if it
+[09:48] doesn't we can deep dive into it more in
+[09:50] the paid Community but for now let's
+[09:51] just keep moving along so we're setting
+[09:53] the intent right here which is json.
+[09:55] output if we use Json rather than
+[09:57] referencing a node it's just going to
+[09:58] pull whatever is coming right before
+[10:00] this node so in this case what's getting
+[10:02] right before this node is the intent
+[10:04] agent or the correction agent because we
+[10:06] Loop it back into this node so this
+[10:07] one's dynamically pulling the most
+[10:09] recent intent anyways from there we're
+[10:11] also having to make sure that the human
+[10:12] in the loop telegram node is sending
+[10:14] over us most recent intent as well so
+[10:16] we're able to reference json. intent
+[10:18] because it's referencing the set intent
+[10:21] parameter right here as you can see it's
+[10:22] always going to be pulling that so
+[10:24] within this human in the loop node we
+[10:25] have a few options the chat ID is
+[10:27] obviously coming from the telegram
+[10:28] trigger as you can you see this node
+[10:29] right here telegram trigger and we're
+[10:31] referencing the chat ID so that it comes
+[10:33] back in the same thread that we started
+[10:34] this process with we're obviously giving
+[10:37] it the message to send over this is the
+[10:39] one that we have to confirm or deny or
+[10:41] just provide feedback about and then
+[10:43] finally we're choosing the response type
+[10:45] so you could do approval and you could
+[10:47] say you know there's only one button
+[10:48] which is approve you could have approve
+[10:50] and disapprove but what we're doing here
+[10:52] is doing free text so that we're able to
+[10:54] feed in our feedback dynamically to the
+[10:57] agents and they can look at okay here's
+[10:58] the human feedback here's the original
+[11:00] intent now let's merge these together to
+[11:02] create a new intent awesome so from
+[11:05] there we get our actual feedback so in
+[11:06] this case all we said in that response
+[11:08] form was yes but if we said something
+[11:10] like you know choose his business email
+[11:11] and actually let's move it to 7:00 p.m.
+[11:13] instead of 8:00 p.m. that's where we get
+[11:15] the feedback right here so we get that
+[11:17] feedback and then it gets passed into
+[11:19] the check feedback AI node so in here
+[11:22] this is basically just going to classify
+[11:23] what's coming back so what we give it is
+[11:26] the text to classify right what we're
+[11:28] classifying is whatever we set in that
+[11:30] form so all we did is drag in the text
+[11:32] from the human in the loop node and as
+[11:34] you can see it's json. data. text and so
+[11:36] that's what it's going to be looking at
+[11:38] and it has to decide if it's either
+[11:39] approved or denied based on the
+[11:41] description that we give each category
+[11:43] so let's take a look at these
+[11:44] descriptions the first one is approved
+[11:47] and so I'll open this one up and we can
+[11:49] see this is what is classified as an
+[11:50] approved message the human is confirming
+[11:52] or agreeing with our request this means
+[11:55] they acknowledge that the provided
+[11:56] information or action is correct and
+[11:58] ready to proceed approval messages often
+[12:00] include phrases like yes looks good to
+[12:02] me send it correct stuff like that and
+[12:06] now on the exact opposite side of things
+[12:08] we have the category of denied and so we
+[12:10] had to give it also some prompting in
+[12:11] here the human is providing feedback
+[12:13] that does not indicate approval this
+[12:15] could include requests for changes
+[12:17] Corrections or additional clarifications
+[12:19] a denial may also involve specifying a
+[12:21] type of email like business or personal
+[12:23] so example denial phrases look like
+[12:26] business change the time delete both
+[12:28] today February 22nd all that kind of
+[12:31] stuff and so how I was able to figure
+[12:32] out what to put here is that I was doing
+[12:34] tests and sometimes I would say
+[12:36] something like you know it would ask me
+[12:38] do you want to use Michael Scott's
+[12:39] business or personal email and I would
+[12:40] just respond in the feedback form and
+[12:42] say business and it wouldn't get
+[12:43] categorized as approved or denied it
+[12:45] would just go nowhere so I was like okay
+[12:47] I got to be a little more specific here
+[12:48] and that could be a very common use case
+[12:50] is just saying business or personal
+[12:52] email rather than a full-on sentence so
+[12:54] we were able to prompt that in there and
+[12:56] then as you could see in the example it
+[12:58] was able to push it down the dened
+[12:59] branch in this case all we said was yes
+[13:01] so the agent knew it was a an approved
+[13:04] message and it pushed it down the
+[13:05] approved Branch as you can see there's
+[13:06] one item and if we click into the denied
+[13:08] Branch there are no items so we can also
+[13:10] see this by zooming out looking over
+[13:12] here we have approved and denied we can
+[13:14] see approved there's one item and it
+[13:16] went down this path because it's green
+[13:18] and then denied the correction agent got
+[13:19] nothing in this case because there was
+[13:21] no denial message so finally that query
+[13:24] gets passed into the calendar agent
+[13:25] let's take a look at what it's getting
+[13:26] here as you know we are giving it the
+[13:29] output from the set intent node so this
+[13:31] is what it looks like it's basically
+[13:32] just the message that we got in our
+[13:34] telegram but if you notice there's like
+[13:36] a clarification question at the end and
+[13:38] so we want the agent to ignore this um
+[13:41] otherwise it's going to get a little
+[13:42] confused and it won't even take action
+[13:44] so how we told it to ignore this was in
+[13:45] the system prompt of course so we gave
+[13:48] it the overview your calendar assistant
+[13:50] your responsibilities include creating
+[13:52] getting deleting events we gave it each
+[13:54] tool so create event with attendee
+[13:56] create event get events delete event and
+[13:58] up event and for each tool we told it
+[14:00] how and when to use it so for something
+[14:02] like create events and create events
+[14:03] with attendees it's pretty intuitive but
+[14:05] in order to update or delete an event in
+[14:07] nadn what you have to do is you have to
+[14:10] feed it the event ID to actually update
+[14:13] or delete as you can see right here so
+[14:15] what we have to do in the system prompt
+[14:17] is we have to tell it okay so you've got
+[14:19] G events you have to use G events before
+[14:21] you delete or update an event in order
+[14:24] to get that ID of the event to update so
+[14:26] it's basically just intelligently
+[14:27] grabbing all events back understanding
+[14:29] which one we're looking to update and
+[14:31] then getting the ID of that and then
+[14:32] passing that ID into the update event or
+[14:34] delete event tool so hope that makes
+[14:37] sense but anyways back to what I was
+[14:39] trying to say about the rules we said
+[14:41] turn the incoming query into an action
+[14:43] ignore clarification questions just take
+[14:46] action based on the intent that you
+[14:47] receive so because of that rule the
+[14:49] agent's able to look at a message like
+[14:51] you want to create an event at 5:00 p.m.
+[14:53] with Nate is that correct and it won't
+[14:55] get confused about like is this an
+[14:56] action am I just like looking at
+[14:58] something it knows that it needs to turn
+[15:00] everything into an action and it will
+[15:01] just take action because if it gets to
+[15:03] the agent at this point we know the
+[15:04] humans already approved it so there's no
+[15:06] need to ask further questions and
+[15:08] finally we just said you know here's the
+[15:09] current date and time once again and
+[15:11] then if a duration for an event isn't
+[15:12] specified just assume it will be an hour
+[15:14] so if you remember in this example our
+[15:16] incoming query was to create an event
+[15:18] with Nate herkelman for today at 1:30
+[15:20] p.m. we didn't never say how long it was
+[15:22] going to be but in this create event
+[15:23] with attending node because we have the
+[15:25] model fill out all of these parameters
+[15:27] we can see that it made the event for 1
+[15:28] hour starting from 1:30 to 2:30 with the
+[15:31] correct um attendee as well as the
+[15:34] correct summary and then finally all
+[15:37] we're doing over here is responding to
+[15:39] ourselves back in telegram so we once
+[15:41] again mapped the correct chat ID we gave
+[15:44] the output of the previous calendar
+[15:46] agent as the text so what it said was I
+[15:48] have successfully created the lunch
+[15:49] event with Nate herkelman today at 1:30
+[15:51] um we have the event we have the start
+[15:54] time the participants a link to the
+[15:56] event as well um there were no
+[15:57] scheduling conflicts so it's perfect and
+[15:59] then that's pretty much the end of the
+[16:00] process okay but now let's do an example
+[16:03] where we actually send it to the
+[16:04] correction agent for feedback and then
+[16:06] we'll dive into how it works so let me
+[16:08] hit test workflow here and we'll ask it
+[16:10] to um create an event with Michael Scott
+[16:16] hopefully you guys aren't sick of the
+[16:16] Michael Scott example um 4 7:30
+[16:22] p.m. for business discussion okay so
+[16:26] we'll send this off it should be getting
+[16:28] a events making sure there's no
+[16:29] conflicts it's going to be getting
+[16:31] Michael Scott's contact information and
+[16:32] there's two contact information because
+[16:34] there's two records for him so we got
+[16:35] our message um basically I found two
+[16:38] email addresses for Michael Scott
+[16:39] business and personal which email would
+[16:41] you like to use for this event so I'll
+[16:42] hit respond we'll open up this tab I'm
+[16:44] going to say let's say personal in this
+[16:46] case so we'll send off personal go back
+[16:49] to the workflow and now we can see that
+[16:51] that got denied so it went to the
+[16:52] correction agent and um before we we
+[16:55] respond to the agent let's just go in
+[16:56] here real quick so what it's saying is
+[16:59] you know here's the original intent and
+[17:00] here's the human feedback so on the
+[17:02] right we have the original intent was to
+[17:03] create an event for business discussion
+[17:05] with Michael Scott 7:30 here are the
+[17:07] email addresses that you found in the
+[17:09] contact database and then our human
+[17:11] feedback was saying we want to use the
+[17:13] personal email address so then the
+[17:15] output is you want to create an event
+[17:16] for a business discussion with Michael
+[17:18] Scott using his personal address Mike
+[17:20] atgr scott.com and then as you can see
+[17:22] it's asking us is this correct so we'll
+[17:24] come in here we'll hit respond open this
+[17:26] up it's asking us is this correct all we
+[17:29] have to say is yes and then go back to
+[17:30] the workflow it's going to go to the
+[17:31] calendar agent who should be creating an
+[17:33] event with an attendee any second now
+[17:35] there we go and then it's going to
+[17:36] respond to us in telegram so we'll open
+[17:37] up telegram um I hate that the Emojis
+[17:40] always pop up the event for the business
+[17:41] discussion with Michael Scott has been
+[17:43] created here are the details personal
+[17:45] email address you know created it for an
+[17:47] hour at 7:30 if we open up the calendar
+[17:49] right here we can see there it is
+[17:50] business discussion with Michael Scott
+[17:51] and he got invited so that's how it
+[17:53] works now we'll come back into here and
+[17:55] we'll just see what happened through
+[17:57] this process cool so the first first
+[17:58] thing I want to do is hop into the set
+[18:00] intent node we click into here and we
+[18:02] can see there were two runs so the first
+[18:04] time it ran the original message that we
+[18:06] got in telegram which was saying hey
+[18:08] which email address do we use once we
+[18:10] responded it came through and took our
+[18:12] feedback and then it said hey okay we
+[18:14] understand we want to use the personal
+[18:15] email address so same exact thing with
+[18:18] the telegram human in the loop node we
+[18:20] can see that the first run we responded
+[18:21] with personal and then once it got
+[18:23] through and corrected it the second time
+[18:25] we said yes and then that's when the
+[18:27] check feedback node was able ble to
+[18:29] finally approve it because the first
+[18:30] time it went to the denied Branch as you
+[18:32] can see personal got denied and then the
+[18:35] second time it was yes and it got
+[18:37] approved so I hope that all makes sense
+[18:39] um let's take a look at the actual
+[18:41] system prompt within the correction
+[18:42] agent now cool so this one's not as long
+[18:44] all we said was you know the overview is
+[18:46] you're a correction agent your job is to
+[18:47] look at original output and then correct
+[18:49] it based on the human feedback so those
+[18:51] are the two parameters we defined in
+[18:53] that user message and now for the output
+[18:55] your job is to Output the new intent of
+[18:57] the request always include all the
+[18:59] details required like email address of
+[19:01] attendees time date summary Etc and this
+[19:05] is just so if it keeps looping through
+[19:07] we're always keeping those core details
+[19:09] of um you know what's the time what's
+[19:10] the date what's the summary and what are
+[19:11] the attendees email addresses because we
+[19:14] don't have the ability to go back to the
+[19:17] contact agent in the beginning or sorry
+[19:18] the intent agent in the beginning
+[19:20] because that's the only one that has
+[19:21] access to the contact database and then
+[19:23] finally we said ask a clarification
+[19:24] question if necessary if there's nothing
+[19:26] to clarify just ask is this correct so
+[19:28] that's what you saw in that most recent
+[19:30] example so like I said I spun this thing
+[19:31] up and I've been playing around with it
+[19:33] and I think it's super cool I think that
+[19:34] the humanin the loop aspect of these
+[19:36] different nodes is going to be really
+[19:37] cool to just like play around with
+[19:39] different assistants and how you can
+[19:40] Implement human in the loop within your
+[19:42] daily processes just a reminder this
+[19:43] isn't the only way to do it you can
+[19:45] prompt your intent agent differently you
+[19:47] can set up the calendar agent
+[19:48] differently if you don't like the way
+[19:49] that the feedback is happening you can
+[19:50] change all that kind of stuff up um and
+[19:52] all that is going to happen within the
+[19:54] actual architecture and prompting of
+[19:56] these agents so like I said this
+[19:58] template you can downlo for free by
+[19:59] joining the fre School Community Link
+[20:00] for that's in the description and then
+[20:02] you could get in here and you could just
+[20:03] mess around with the prompting of the
+[20:04] intent agent and the correction agent
+[20:06] and all this kind of stuff and really
+[20:07] just customize this thing to make sure
+[20:09] it fits the way that you want you know a
+[20:11] calendar assistant to act for you
+[20:12] anyways I don't want this one to go too
+[20:14] long I just wanted to hop in here show
+[20:15] you guys something that I'd worked on
+[20:16] and I really would like to hear some
+[20:18] feedback on you know how can we make
+[20:19] this thing better because that's where
+[20:21] the future of these agentic systems are
+[20:22] going is like not just completely
+[20:24] removing the human out of the system but
+[20:26] it's how can we leverage Ai and you know
+[20:29] Loop Us in so that we can you know just
+[20:31] save time and focus on higher impact
+[20:33] things rather than worrying about if an
+[20:35] agent is you know scheduling invites to
+[20:37] the wrong email or for the wrong time or
+[20:39] for the wrong date so as always really
+[20:41] appreciate you guys making it to the end
+[20:42] of this one if you enjoyed this video if
+[20:44] you learn something new please give it a
+[20:46] like definitely helps me out a ton and I
+[20:48] will see you guys in the next video
+[20:49] thanks everyone

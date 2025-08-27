@@ -1,0 +1,38 @@
+Video Title: How I Automated Product Videography with AI  #n8n #artificialintelligence #aiagent
+Video ID: G15MNFIPLKI
+URL: https://www.youtube.com/watch?v=G15MNFIPLKI
+View Count: 126,276
+
+[00:00] I just automated product videography
+[00:02] with no code. Okay. So, all I have to do
+[00:03] in this form submission is enter in a
+[00:05] picture of a product, enter in the
+[00:07] product name, the product description,
+[00:09] and my email address. And we'll send
+[00:10] this off, and we'll see the workflow
+[00:12] over here start to fire off. So, after
+[00:14] our image has been generated, we're
+[00:15] uploading it to a API to get a public
+[00:17] URL so we can feed that URL of the image
+[00:20] into Runway to generate a professional
+[00:22] video. So, anyways, it just finished up.
+[00:25] It ended up hitting this check eight
+[00:26] times, which indicates I should probably
+[00:28] increase the wait time over here. But
+[00:29] anyways, let's go look at our finished
+[00:31] products. So, we just got this new
+[00:32] email. Here are the requested marketing
+[00:34] materials for your toothpaste. So, first
+[00:36] let's look at the video cuz I think
+[00:37] that's more exciting. So, let me open up
+[00:38] this
+[00:39] link. Wow, we got a 10-second video.
+[00:42] It's spinning. It's 3D. The lighting is
+[00:44] changing. This looks awesome. And then,
+[00:46] of course, it also sends us that image
+[00:48] in case we want to use that as well. And
+[00:50] one of the steps in the workflow is that
+[00:51] it's going to upload your original image
+[00:52] to your Google Drive. So, here you can
+[00:54] see this was the original and then this
+[00:55] was the finished product.

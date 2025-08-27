@@ -1,0 +1,61 @@
+Video Title: Instantly Level up RAG Agents with Vector Re-ranking #aiagent #n8n #artificialintelligence
+Video ID: friueqL7-LQ
+URL: https://www.youtube.com/watch?v=friueqL7-LQ
+View Count: 19,852
+
+[00:00] Here's how to instantly make your rag
+[00:01] agent smarter with reranking. Okay, so
+[00:03] let's get started. I'm going to real
+[00:04] quick hop into an Excalibraw and
+[00:06] actually explain what's going on behind
+[00:07] the scenes when we do rag so that we all
+[00:09] understand how the reranker is going to
+[00:11] work. So the first step with rag
+[00:12] obviously is we want to get our text
+[00:14] document into a vector database. And how
+[00:17] that works is the document is split up
+[00:18] into smaller manageable chunks. The
+[00:20] chunks are then fed into an embeddings
+[00:22] model and the embeddings model turns
+[00:23] them into a numerical representation of
+[00:26] the meaning of what's in this chunk. and
+[00:27] then they get placed somewhere in that
+[00:29] multi-dimensional space which is our
+[00:31] vector database. From there we go to
+[00:32] search through it. So let's say this
+[00:34] text document right here was the rules
+[00:36] of golf. If we now go to ask what do I
+[00:38] do if my ball goes out of bounds, this
+[00:40] question is getting embedded the same
+[00:42] way these chunks did up here with the
+[00:44] exact same embeddings model and then it
+[00:46] also gets placed in that
+[00:47] multi-dimensional vector database. So
+[00:49] then our question gets vectorzed and
+[00:50] it's placed right here. And then it
+[00:52] basically is going to grab the nearest
+[00:54] other vectors because that's how it
+[00:55] knows they're similar in meaning and
+[00:56] it's going to pull them back. So it
+[00:58] pulls back these three vectors in this
+[01:00] case and then these vectors get turned
+[01:02] back into their textbased chunks and
+[01:04] those chunks get fed into our rag agent
+[01:06] which it's able to use to answer our
+[01:08] question. Anyways, what happens when we
+[01:09] use a reranker is pretty cool because
+[01:11] this allows us to basically pull back
+[01:13] way more than just the three nearest
+[01:15] neighbors. we can pull back 10, 20 or 30
+[01:18] vectors because all of these are going
+[01:20] to get fed into the reranker and then it
+[01:22] will basically look at which ones are
+[01:23] actually the most relevant. It will
+[01:24] assign a relevant score and then it will
+[01:26] grab just the top three most relevant
+[01:29] answers. So, I know that was quick, but
+[01:30] hopefully at least it makes sense. And
+[01:32] now let's hop back into nitn and take a
+[01:33] look at how we set this up. If you want
+[01:35] to watch the full breakdown, click on
+[01:36] that play button right here.

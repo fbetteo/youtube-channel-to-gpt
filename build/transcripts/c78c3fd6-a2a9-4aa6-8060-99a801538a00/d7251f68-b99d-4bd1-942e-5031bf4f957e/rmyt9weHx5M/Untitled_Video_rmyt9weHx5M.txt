@@ -1,0 +1,106 @@
+Video Title: Untitled_Video
+Video ID: rmyt9weHx5M
+URL: https://www.youtube.com/watch?v=rmyt9weHx5M
+View Count: 0
+
+[00:00] I'm about to show you the quickest and
+[00:01] easiest way that you're able to
+[00:02] self-host your NAND. Install the MCP
+[00:04] servers community node and then connect
+[00:06] to any MCP server that you want. Now,
+[00:08] there are a ton of different platforms
+[00:09] that you can use to host NAND. The
+[00:11] reason I'm using Alstio is because it's
+[00:12] going to be really simple for deploying
+[00:14] and managing open- source software. I'm
+[00:16] going to sign up with a new account. So,
+[00:17] I'm going to log out and sign up as a
+[00:19] new user. Okay, there we go. We are now
+[00:21] activated. So, I'm going to come up here
+[00:22] to services and I am going to add a new
+[00:24] service. What we're going to do is just
+[00:25] type in Nadn and it's going to be a
+[00:27] really quick oneclick install.
+[00:29] Basically, I'm going to just be
+[00:30] deploying on HNER as a cloud provider.
+[00:32] I'm going to switch to my region. And
+[00:34] then you have different options for
+[00:35] service plans. Then I went ahead and
+[00:37] called this NAN- demo. What you can do
+[00:39] here is you can add more volume. So if
+[00:41] you wanted to, you could increase the
+[00:42] amount of storage. And as you can see
+[00:43] down here, it's going to increase your
+[00:45] hourly price. I'm not going to do that,
+[00:46] but you do have that option. Here I'm
+[00:48] going to click create service. We're
+[00:49] deploying your service. Please wait. And
+[00:51] this is basically just going to take a
+[00:52] few minutes to spin up. But what we're
+[00:53] going to do is come down here to our
+[00:54] network. And this is our actual domain
+[00:56] to go to. So if I select all of this and
+[00:58] I just click go to this app, it's going
+[01:01] to spin up our NN environment. And
+[01:02] because this is the first time we're
+[01:03] visiting it, we just have to do the
+[01:05] setup. So what's next is we need to
+[01:06] install a community node. So if you come
+[01:08] down here to your settings and you click
+[01:10] on settings, we can go all the way down
+[01:12] here to community nodes. And now we have
+[01:14] to install a community node. So in the
+[01:16] description, we have the GitHub
+[01:17] repository for this NAND nodes MCP that
+[01:19] was made by Nerding. But all we have to
+[01:21] do is basically just copy this line
+[01:22] right here. I'm just going to copy
+[01:25] naden-nodes-mc. Click on install a
+[01:27] community node. Put that in there. And
+[01:28] so the reason you can only do this on
+[01:29] self-hosted is because these nodes are
+[01:31] not a native verified node from n. So
+[01:34] it's just like, you know, we're
+[01:36] downloading it from a public source, at
+[01:37] least the code. And then we hit install.
+[01:39] Package installed. We can now see we
+[01:40] have one community node which is the
+[01:42] MCP. Cool. So I'm going to leave my
+[01:44] settings and I'm going to open up a new
+[01:46] workflow. And we're just going to hit
+[01:47] tab to see if we have the actual node.
+[01:49] So if I type in MCP, we can see that we
+[01:51] have MCP client and we have this little
+[01:53] block which just means that it is part
+[01:54] of the community node. So obviously we
+[01:56] have the operation but we haven't set up
+[01:58] a credential yet. So now what you're
+[02:00] going to do is go to a different link in
+[02:01] the description which is the GitHub
+[02:03] repository for different MCP servers.
+[02:06] And we can pretty much connect to any of
+[02:07] these like I said without having to run
+[02:10] any code in our terminal and install
+[02:11] some stuff. I think first we'll start
+[02:13] off with Airbnb because this one is
+[02:14] going to be free. You don't even have to
+[02:16] go get an API key. So you can see here
+[02:17] we have a command which is npx and then
+[02:19] we have an array of arguments which is
+[02:21] -y this open bnb thing and then also the
+[02:24] ignore robots text. So first of all I'm
+[02:26] just going to grab the command which is
+[02:27] npx. Copy that and then we're just going
+[02:30] to paste the command right into there
+[02:31] npx. So first is the dashy. Now I'm
+[02:34] going to go back and grab the at@ open
+[02:36] bnb put a space and then paste it in
+[02:39] there. And then I'm going to put another
+[02:40] space and then we're going to grab this
+[02:41] last part which is the ignore robots
+[02:44] txt. So it's as easy as that. As you can
+[02:46] see, there are two tools. The first one
+[02:47] is Airbnb search and then the second one
+[02:49] is Airbnb listing details. If you want
+[02:51] to see the full breakdown, I'll put the
+[02:53] link to the video in the description.

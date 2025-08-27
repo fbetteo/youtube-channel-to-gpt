@@ -1,0 +1,775 @@
+Video Title: From Zero to RAG Agent: Full Beginner's Course (no code)
+Video ID: cCD303XsUjI
+URL: https://www.youtube.com/watch?v=cCD303XsUjI
+View Count: 54,231
+
+[00:00] By the end of this video, you'll have
+[00:01] built your very own Rag AI agent, even
+[00:03] if you're starting at the complete
+[00:04] beginning, without having to write a
+[00:06] single line of code. So, we're going to
+[00:07] break all of it down. I'm going to
+[00:09] explain it as simply as I can. We're
+[00:10] going to walk through the build step by
+[00:11] step. And by the end, I think you're
+[00:13] going to be really shocked at how much
+[00:14] simpler this all is than you initially
+[00:16] thought. Let's not waste any time and
+[00:18] get straight into it. So, just wanted to
+[00:19] start off with a quick definition of RAG
+[00:21] since it's probably a term that you've
+[00:22] been hearing but may not completely
+[00:24] understand. So, RAG stands for retrieval
+[00:26] augmented generation. And the simplest
+[00:28] way to think about it is retrieving
+[00:29] information in order to answer a
+[00:31] question accurately. So if someone asks
+[00:33] you how many feet are in a mile and you
+[00:34] don't know, you'd probably Google it.
+[00:36] You'd retrieve that answer and then
+[00:37] you'd respond to them. And so when I say
+[00:39] rag agent, we're basically just building
+[00:40] an intelligent AI agent that has access
+[00:42] to different data sources so that when
+[00:44] you ask it a question, it's able to look
+[00:46] up the information, look up the right
+[00:48] answer, and then provide a response to
+[00:49] you. So I just wanted to clear that up
+[00:51] because I think a lot of people
+[00:52] associate Rag with explicitly vector
+[00:54] databases, but that's definitely not the
+[00:56] case. Rag just means getting more
+[00:58] information to intelligently generate an
+[01:00] answer. However, today we are going to
+[01:02] be building a rag agent that works with
+[01:03] a vector database. If you don't
+[01:05] understand what a vector database is,
+[01:06] don't worry. Here's what it is. A vector
+[01:08] database is a multi-dimensional space
+[01:11] where we have different vectors
+[01:12] everywhere. And those are all of the
+[01:14] dots that you see right here. And all of
+[01:15] these vectors represent different chunks
+[01:17] of text and they're placed in this space
+[01:19] based on the meaning. So over here we
+[01:21] have apple and banana. So all of the
+[01:23] vectors that are in this area probably
+[01:25] have to do with fruits. And then on this
+[01:27] side we have wolf, dog, and cat. So all
+[01:29] of the vectors on this side of the
+[01:30] vector database probably have to do with
+[01:32] animals. And right here you can see a
+[01:33] query coming through that's kitten and
+[01:35] it's placed near the other animals. But
+[01:36] I'll explain the whole query concept in
+[01:38] a few slides later. So anyways, I said
+[01:40] we're going to be setting up a vector
+[01:42] database for our AI agent. And in order
+[01:44] to do that, we need to set up two
+[01:46] different things for this vector rag.
+[01:48] The first one is going to be a rag
+[01:49] pipeline which basically just means we
+[01:51] need to get data into our vector
+[01:52] database. And then the second part is
+[01:54] going to be the actual rag agent where
+[01:56] that's when we actually get to talk to
+[01:58] the data in our vector database. So the
+[02:00] first part of what we're doing here is
+[02:01] the rag pipeline and it's really simple.
+[02:04] So let me break it down. So here's a
+[02:05] visualization of a rag pipeline. We
+[02:07] start off with a text document and this
+[02:09] is what we want to put inside of our
+[02:10] vector database. Then we have to do
+[02:12] three things. we have to chunk it so
+[02:14] that all of the pieces get split into
+[02:16] different chunks. And each of those
+[02:17] chunks is what's going to be associated
+[02:19] with one vector, one of those dots in
+[02:21] the graph. After it's chunked, we run it
+[02:23] through an embeddings model. And this
+[02:25] basically just means we're turning that
+[02:26] text into a bunch of numbers. And then
+[02:29] with those numbers, with those
+[02:30] embeddings, we're able to vectorize the
+[02:32] information. And that's how they get
+[02:34] placed based on the meaning. So in this
+[02:36] case, we can just pretend that the first
+[02:37] top chunk has to do with company
+[02:39] information, the middle chunk has to do
+[02:40] with finances, and then the bottom chunk
+[02:42] has to do with marketing. So that's why
+[02:44] they're placed in different areas in
+[02:45] this vector database. And we're going to
+[02:47] be building our rag pipeline and our rag
+[02:49] agent in a software called Nadn, which
+[02:51] lets us drag and drop, no code, super
+[02:53] easy. And this is what it's going to end
+[02:55] up looking like in nitn. So it's super
+[02:57] simple. We're going to be getting our
+[02:59] document from Google Drive. And then
+[03:00] once we have it, we have to chunk,
+[03:02] embed, and vectorize. So we're going to
+[03:04] use this data loader to chunk it, this
+[03:06] embeddings model to embed it, and then
+[03:08] this superbase node to vectorize it and
+[03:09] put it in our vector database. And as
+[03:11] you can see, it's a really simple setup.
+[03:12] It's only five different nodes, and no
+[03:15] coding will be required. And now the
+[03:17] second part of the system once our data
+[03:18] is actually in that vector database is
+[03:20] we have to build an agent that can talk
+[03:22] to it. So here's a visualization of how
+[03:24] a rag agent works. And it's a very
+[03:26] similar process. So the agent gets
+[03:28] triggered when we make a query. So
+[03:29] that's how it would start off. Let's say
+[03:30] in this case our query is what is
+[03:32] company X's mission statement. The agent
+[03:35] then takes that query and then it's
+[03:36] basically going to send it off to the
+[03:38] embeddings model to get embedded and
+[03:40] turned into numbers. And we run it
+[03:42] through the same embeddings model that
+[03:43] we did earlier in the pipeline so that
+[03:45] everything is consistent and matches up.
+[03:47] Once that query is embedded, it
+[03:49] basically gets vectorized and placed in
+[03:51] that vector database. And you can see
+[03:53] right here because we asked about
+[03:54] company X's mission statement, it gets
+[03:56] placed near the other vector that had to
+[03:57] do with the company information. From
+[03:59] there, we pull back the company vector
+[04:01] because it's close to this one. We pull
+[04:03] back the actual query that was asked in
+[04:05] the first place. And then the AI agent
+[04:06] uses its AI brain to generate an answer
+[04:09] for us. And so that's why back in this
+[04:11] slide, we had the query equals kitten.
+[04:12] And that's how we know it got placed
+[04:14] near other animal related vectors. So
+[04:17] what is this going to look like when we
+[04:18] get into NIDN? As you can see, once
+[04:20] again, not too difficult. We have a chat
+[04:22] trigger right here. And this is how we
+[04:24] can talk to the agent and we trigger it
+[04:25] with a query. From there, the agent
+[04:27] takes our query and it has to send it to
+[04:28] the embeddings model to be embedded.
+[04:30] After that, it's going to send it back
+[04:32] to Superbase to be vectorized. The
+[04:33] agent's then going to look at our
+[04:35] original query, the vectorzed
+[04:36] information, and then it's going to use
+[04:37] its brain to generate an answer for us.
+[04:40] And for this specific use case, the
+[04:41] document that we are going to vectorize
+[04:43] is going to be a 22page PDF going over
+[04:46] the rules of golf. So, once again, this
+[04:48] process is we're going to chunk up the
+[04:49] document. We're going to embed it and
+[04:51] vectorize it, and that's how it gets in
+[04:52] our vector database. And once we have
+[04:54] all the information in the vector
+[04:55] database, we can talk to it through our
+[04:57] AI agent. So that's the example that
+[04:59] we're going to build out today together.
+[05:01] But just so we can zoom out real quick,
+[05:03] the actual data source for the vector
+[05:05] database does not always have to be a
+[05:06] textbased document. And the way that we
+[05:08] talk to our agent doesn't always have to
+[05:10] be a chat trigger. Data sources could be
+[05:12] whatever we want. It could be whenever a
+[05:14] new record or a new ticket in HubSpot is
+[05:17] submitted, we turn that into a vector.
+[05:19] Could be an air table trigger. It could
+[05:20] be every single email we get, we want to
+[05:22] put that into a vector database. There's
+[05:24] tons of different use cases. Same thing
+[05:25] with the agent trigger. It could be
+[05:27] something where the agent only works
+[05:28] when we talk to it and we send it like a
+[05:30] text message. Or it could also be, okay,
+[05:32] whenever I get an email, I want the
+[05:34] agent to read the email, look up
+[05:36] information in my vector database, and
+[05:37] then respond for me. Or it could just be
+[05:39] every morning, the agent's going to go
+[05:41] off, look in the vector database, and
+[05:42] send me some sort of summary. Or the
+[05:44] agent could also be triggered on
+[05:45] something like a form submission. So
+[05:47] there's lots of ways that you can bake
+[05:48] in Rag and Rag agents into whatever sort
+[05:51] of flow you're looking to automate. And
+[05:52] finally, just wanted to touch on real
+[05:54] quick. There's different providers for
+[05:55] vector databases, and they all kind of
+[05:57] have their strengths and weaknesses.
+[05:58] What we're going with today is
+[06:00] Superbase. I'm not going to dive too
+[06:01] deep into exactly why I'm choosing
+[06:03] Superbase today. It has more than just
+[06:05] vector database capabilities. It also
+[06:06] lets us do relational database stuff.
+[06:08] And what we're going to do today is
+[06:10] we're going to use Superbase for the
+[06:11] vector store, which is built on top of
+[06:13] Postgress SQL. So it's kind of a twoin
+[06:14] one. and we're going to use Postgress
+[06:16] SQL for our short-term memory. So, I'll
+[06:18] show you guys all of this. Let's go over
+[06:20] to nitn and get set up. All right, so
+[06:22] here we are at subabase.com. And if you
+[06:24] haven't set this up before, don't worry.
+[06:26] We're going to walk through that
+[06:26] together. What I'm going to do is just
+[06:28] click right here on this green button
+[06:29] that says start your project. You can
+[06:31] see that I already have a project set
+[06:33] up. What I'm going to do is just go
+[06:34] ahead and create a new one. I'm going to
+[06:35] be able to spin up this one for free.
+[06:36] I'm just going to call this one test.
+[06:38] And then I need to give myself a
+[06:40] database password. So, I've given myself
+[06:42] a password. And don't forget this
+[06:43] password because we're obviously going
+[06:44] to have to use this later to connect
+[06:46] Nitn to our Subase. All right, so right
+[06:48] now you can see our project is going to
+[06:50] be spinning up right now and this will
+[06:51] eventually go green. So while we're
+[06:53] waiting for this to get set up, let's
+[06:54] hop over to Niten and create a new
+[06:56] workflow in order for us to start this
+[06:59] whole rag pipeline. So like I told you
+[07:01] guys, what we're going to be putting in
+[07:02] our vector database today is this PDF
+[07:04] that's in my Google Drive called the
+[07:06] rules of golf simplified, and it is a
+[07:08] 22page PDF. Real quick, guys, I figured
+[07:10] that it would be a better experience to
+[07:11] go through this video using the exact
+[07:13] same PDF that I've got right here, just
+[07:15] so you can follow everything I'm doing
+[07:16] step by step. So, I'll have a link to
+[07:18] this PDF in my free school community.
+[07:20] The link for that will be down in the
+[07:21] description. You'll join the free school
+[07:23] and then when you come in here, just
+[07:25] search right here for the title of the
+[07:26] video or go to YouTube resources and
+[07:28] when you find the post associated with
+[07:30] the video, you'll see there'll be
+[07:32] resources right here. So, that was a bad
+[07:34] example, but in this one, you can see
+[07:35] there's a JSON file, and this is where
+[07:37] I'll attach the PDF for you to use. So,
+[07:40] in order for us to access that PDF, we
+[07:42] are going to have to connect to Google
+[07:44] Drive and end it in. So, what I'm going
+[07:46] to do real quick is hit tab. I'm going
+[07:47] to type in Google Drive. I misspelled
+[07:50] Google a little bit. Click on that. And
+[07:51] then I'm going to open up the actions,
+[07:53] which is going to be download file. Now
+[07:55] that I'm in this node, all I have to do
+[07:57] is connect to my Google account. If you
+[07:58] don't know how to do that or haven't had
+[07:59] that set up yet, go ahead and check out
+[08:01] this video. I walk through it step by
+[08:02] step. It'll take like 3 minutes. Once
+[08:04] you finish that and you're connected to
+[08:05] your Google Drive, all we're going to do
+[08:06] is look through our list of different
+[08:08] documents in our account. And ours was
+[08:11] called Rules of Golf. So, I'll type in
+[08:12] rule and we should see it pop up right
+[08:14] there. And now I'm going to be able to
+[08:16] pull in this PDF. So, if I hit execute
+[08:18] step, we should be able to see it come
+[08:19] through on this right hand side. And
+[08:21] there it is. It is our binary data,
+[08:23] which is our rules of golf PDF. And what
+[08:26] you'll also notice is when you ran this
+[08:27] node, it automatically added this when
+[08:30] clicking execute workflow trigger, which
+[08:32] basically means whenever I click this
+[08:33] button down here, it's going to run the
+[08:35] rest of the nodes that we have linked
+[08:37] up. So we have our PDF right here, and
+[08:39] all we have to do next is actually put
+[08:41] it into Superbase. So it's going to be
+[08:42] super simple. I'm going to click on this
+[08:44] plus button after the Google Drive. I'm
+[08:46] going to type in Superbase and we can
+[08:48] see we have Superbase and this is where
+[08:50] we have like our relational tables and
+[08:51] stuff. But what we want to do is access
+[08:53] a vector store. So I'm going to click on
+[08:55] Superbase vector store I'm going to
+[08:57] click on add documents to vector store
+[08:59] and now what we're going to have to do
+[09:00] is set up our superbase credential and
+[09:02] also in subbase create a vector database
+[09:05] table. So in order to create our
+[09:07] superbase credential I'm going to open
+[09:09] up this dropown and click on create new
+[09:10] credential and what it asks us for is a
+[09:12] host and a service ro secret. So all I
+[09:15] have to do is go back into subbase. You
+[09:17] can see now our project status is green
+[09:18] everything's healthy and on this lefth
+[09:20] hand side I'm going to go over all the
+[09:21] way down to settings. In here, I'm going
+[09:24] to scroll all the way down on this lefth
+[09:25] hand side to data API. And then right
+[09:28] here, this project URL is actually our
+[09:30] host. So, I'll click on copy. We'll go
+[09:32] back into edit end and we will paste the
+[09:33] host right there. And then in order to
+[09:35] get our service roll secret, we're going
+[09:36] to go back into Subbase. I'm going to
+[09:38] click on this left-hand side right here
+[09:40] where it says API keys. And then this
+[09:42] button right here, service ro secret.
+[09:44] You'll hit reveal. You'll copy it and
+[09:46] then you'll paste that into the section.
+[09:48] So, I just copied that key, pasted it in
+[09:50] here. And now if I hit save, we should
+[09:52] be connected to Superbase. Then it's
+[09:55] always best practice to name that
+[09:56] credential either your email or the date
+[09:58] or whatever it is just so you can keep
+[10:00] them all separate. So we've officially
+[10:01] connected to Superbase. And now what we
+[10:03] need to do is set up a table. If I click
+[10:05] into here, you can see that there's no
+[10:06] tables in our account. This may seem
+[10:08] technical, but it's going to be super
+[10:10] easy. You're just going to click on docs
+[10:11] right here. You're going to scroll a
+[10:13] little bit down where there is a quick
+[10:14] start for setting up your vector store.
+[10:16] And then once we get to this page, all
+[10:18] we have to do is scroll down a little
+[10:19] bit and copy this SQL command right here
+[10:21] and go back into our Subase and on the
+[10:24] lefth hand side, we're going to go to
+[10:25] the SQL editor. Once this opens up,
+[10:27] we're just going to click on new SQL
+[10:28] snippet. Paste that in there. Don't have
+[10:30] to change anything. And then hit run.
+[10:32] And this is basically going to create a
+[10:35] vector database for us called documents.
+[10:38] If you've already run this command
+[10:39] before and you want to create a
+[10:40] different table, all you have to do is
+[10:42] get rid of this first two lines that say
+[10:43] create extension vector because you've
+[10:45] already created the extension. And then
+[10:47] right here where it says create table
+[10:48] documents, you'll just change that name.
+[10:50] Instead of documents, you'll put in the
+[10:52] name that you want for your table. And
+[10:54] then you'll just have to change every
+[10:55] instance in the rest of the command
+[10:57] where you see documents. You'll put in
+[10:59] whatever you typed in right here for
+[11:00] your table name. But now, if I go on the
+[11:02] lefth hand side and go to table editor,
+[11:04] you can see that we have a table right
+[11:05] here called documents. and it's waiting
+[11:07] for us to put in our vectors. So, back
+[11:10] in Nitn, I can open this up and we
+[11:12] should see if we just refresh this list,
+[11:14] maybe we should see our table right here
+[11:16] called documents. And I don't want to
+[11:18] confuse you guys. So, if you followed
+[11:19] all the steps I just did, you won't have
+[11:20] to worry about this. But if you did
+[11:22] create a different table, let's say you
+[11:23] created a table called test, you would
+[11:25] just make sure you change this right
+[11:27] here to match test rather than match
+[11:30] documents. And now that we've connected
+[11:32] here, we just have to do two more
+[11:33] things. we have to chunk and then embed
+[11:36] so that we can actually vectorize. The
+[11:38] first thing we're going to do is chunk.
+[11:39] And in order to do that, we're going to
+[11:40] click on this plus right here under
+[11:42] document. This is going to open up some
+[11:44] document loaders for us. And I'm going
+[11:46] to choose default data loader. Now,
+[11:48] what's happening here is we're just
+[11:49] basically telling Subase, here's what I
+[11:51] want to vectorize, and here's how I want
+[11:52] you to chunk it up. And the good news is
+[11:54] we can basically just leave the text
+[11:55] splitting as simple. So, it splits up
+[11:57] every thousand characters with 200
+[11:59] characters of overlap. If you wanted to
+[12:01] get more custom, you could always create
+[12:03] custom, you know, 500 characters, 2,000
+[12:05] characters, whatever you want. But right
+[12:07] now, we're just going to keep it as
+[12:08] simple. And then one more thing that's
+[12:09] kind of tricky is we have to tell it
+[12:10] what document to look at to actually
+[12:12] embed. And it's set by default to JSON.
+[12:16] And we can't do that because our PDF is
+[12:18] right here. And if you'll notice at the
+[12:19] top right here, this PDF is being stored
+[12:21] as binary. So, we want to change the
+[12:23] type of data to binary. Now, we should
+[12:25] be all set up when it comes to loading
+[12:27] data and chunking. So now that we have
+[12:29] our chunking set up, we just need to
+[12:31] connect our embeddings model. So I'm
+[12:32] going to click on the plus button right
+[12:33] here. I'm going to click on embeddings
+[12:35] openai. And if you don't have an OpenAI
+[12:38] account, all you have to do is click on
+[12:39] create new credential. And you just need
+[12:41] an API key. So what you have to do is go
+[12:43] to OpenAI API in order to make an
+[12:46] account. This is different than just
+[12:47] having a chat GBT plan because you'll
+[12:49] have to add billing information to your
+[12:50] OpenAI API account. And once you get
+[12:53] here, you'll just go to your dashboard.
+[12:54] You'll click on API keys and you'll
+[12:56] create a new key. And all you have to do
+[12:57] is copy that key and then you'll paste
+[12:59] it right there and you'll be connected.
+[13:01] And now all we have to do is choose
+[13:02] model text embedding 3 small. If you
+[13:05] followed all my steps, you should be
+[13:06] good to go. But if you did set up a
+[13:08] vector database with different
+[13:09] dimensions, you'll have to make sure
+[13:10] that those line up right here. But I
+[13:12] don't want to confuse you guys. If you
+[13:13] did what I did, then you won't have to
+[13:15] touch that at all. Okay, so everything
+[13:16] looks like it should be set up. I'm
+[13:18] going to hit the play button above our
+[13:19] vector store. And what this is doing is
+[13:21] it's chunking, it's embedding, and now
+[13:22] finally it's vectorizing just like we
+[13:24] saw earlier on that slide. And what you
+[13:28] can see is that we got 77 vectors. So
+[13:30] that 22page PDF that we were looking at
+[13:32] right here, it ended up splitting and
+[13:34] chunking into 77 different vectors. So
+[13:37] if I go into my subbase table and we
+[13:38] give this a sec, there we go. We should
+[13:40] have 77 rows of information about the
+[13:44] rules of golf. And if you want to see
+[13:46] the data that's actually in each vector,
+[13:48] you would look at this column called
+[13:49] content. And if I open this up, you can
+[13:51] see here's the first vector. The rules
+[13:53] of golf simplified rule one. You start
+[13:55] the game within the te and ground and
+[13:56] hit the ball until it ends up in the
+[13:58] hole. Blah blah blah. So here's this
+[14:00] first vector. Here's this 10th vector.
+[14:02] And then here is, you know, the 41st
+[14:04] vector. In this column, we have
+[14:05] metadata. And then in this column, we
+[14:07] have the actual numerical
+[14:08] representation, which is our embedding.
+[14:11] So we have our data in here, which was
+[14:13] the first step. That was the rag
+[14:14] pipeline. Now, let's head back into nitn
+[14:17] and let's create an AI agent that can
+[14:18] actually talk to the information in
+[14:20] here. So, what I'm going to do is hit
+[14:22] tab and I'm going to type in AI agent
+[14:24] and grab that agent right there. Now, as
+[14:26] we talked about, the way we want to
+[14:27] trigger this agent is just through a
+[14:29] conversation. So, I'm going to grab a
+[14:31] chat trigger, which is right here. And
+[14:33] then all I have to do is hook up this
+[14:35] chat trigger right into the front of the
+[14:36] agent. And now it will be able to get
+[14:38] our messages when we talk to it. Now, we
+[14:40] need to connect a brain to our AI agent.
+[14:42] So, if I click on the plus under chat
+[14:43] model, I'm going to scroll down here and
+[14:45] grab OpenAI chat model just because if
+[14:48] you are setting all this up for the
+[14:49] first time, you already know how to get
+[14:50] there and get your API key and you
+[14:52] already have that credential set up. And
+[14:53] now we just need to choose a model to
+[14:55] use. I'm going to stick with GPT4.1
+[14:57] mini. And now our agent has a brain. And
+[14:59] the final step is just to give it a tool
+[15:01] so that it can actually look in this
+[15:02] vector database. So, we're going to
+[15:03] click on tool. We are going to type in
+[15:06] superbase vector store.
+[15:09] The operation's already set to retrieve
+[15:11] documents as a tool for AI agent. The
+[15:13] description, I'm just going to say call
+[15:15] this tool to look up the rules of golf.
+[15:20] So, this is just me telling the agent
+[15:21] what this tool does and when to use it.
+[15:23] And then once again, we just have to
+[15:25] choose the right table to look through,
+[15:26] which in our case is called documents.
+[15:28] And then the limit is basically how many
+[15:30] vectors do you want it to actually pull
+[15:31] back. Right now, we'll just stick with
+[15:33] four. And then the last thing we have to
+[15:34] do is actually connect another
+[15:35] embeddings model because as you guys
+[15:37] know the query has to get embedded as
+[15:39] well. And something that's really simple
+[15:41] is we already have an embeddings model
+[15:42] set up down here. So I can actually just
+[15:44] drag this into that exact same one from
+[15:47] down here. You don't have to do that.
+[15:48] You could add a new one. But just to
+[15:51] show you guys that they use the same
+[15:52] one. I'll do it like this. So without
+[15:54] even giving our agent any sort of
+[15:56] instructions or system prompt, let's
+[15:58] test this out and see how it works. All
+[16:00] right. All right. So, here we are in the
+[16:01] PDF about the rules of golf. And what
+[16:03] I'm going to do is just ask it basically
+[16:04] about the practice rules. So, I'm just
+[16:06] going to say, what am I allowed to do
+[16:07] for practice? Let's see if the agent
+[16:09] understands that we're talking about
+[16:11] golf and that it needs to use the
+[16:12] subbase vector store, which it did. And
+[16:14] now, it's going to take that information
+[16:16] and return an answer to us. And then
+[16:18] we'll basically validate if it is
+[16:20] correct or not. So, right here, we get
+[16:22] our answer. According to the rules of
+[16:23] golfer practice, before or between
+[16:25] rounds, you can practice on the course
+[16:26] the day of each match. You cannot
+[16:28] practice on the course the day of stroke
+[16:30] play tournament or before playoff on the
+[16:31] course. And also during the round, you
+[16:34] cannot hit a practice shot while playing
+[16:36] a hole or between holes. And if we go
+[16:37] over to the PDF, you can see that's
+[16:39] pretty much exactly word for word what
+[16:40] we were looking for. And just to show
+[16:42] you guys what actually happened behind
+[16:44] the scenes, you can click into the agent
+[16:45] and you can click on logs and this will
+[16:47] show us exactly what just happened. So
+[16:49] the human asked the AI agent, what am I
+[16:51] allowed to do for practice? That's what
+[16:52] triggered the workflow. The agent uses
+[16:54] the superbase vector store and sends off
+[16:56] the query practice rules in golf. And
+[16:58] then this gets embedded using the
+[17:00] embeddings model right here. And then
+[17:02] what we get back after that gets
+[17:04] embedded is the answer which is these
+[17:06] four different vectors which is the
+[17:08] actual content in the vector database.
+[17:10] So then the AI agent will look at all
+[17:12] this context and it will think about the
+[17:14] question it was asked in the first place
+[17:15] and then it will actually give us an
+[17:16] output which is what we saw down here in
+[17:19] the chat message section. So now that
+[17:21] we've validated that the AI agent can
+[17:23] look through the Superbase vector
+[17:24] database, we have one issue, which is it
+[17:26] has no memory. So we literally just
+[17:28] asked it about the rules of golf. So now
+[17:30] if I asked it, so I can't hit a practice
+[17:32] shot between holes, it should be able to
+[17:34] just use its memory because it just
+[17:36] looked that up already and answer us.
+[17:38] But what it's going to do is it's going
+[17:39] to go ahead and search the vector
+[17:40] database again because it's treating
+[17:42] each of our messages as a completely
+[17:44] individual unique conversation. So it's
+[17:46] fine because it got the answer right
+[17:48] again. But ideally it would be able to
+[17:50] look through its memory and realize we
+[17:51] just talked about this. I don't have to
+[17:53] look up anything. I can just provide
+[17:54] them an answer. So the way we're going
+[17:56] to set up that memory is we are going to
+[17:58] use Postgress because we've already set
+[17:59] up our whole soup base thing. So I'm
+[18:01] going to click on the plus under memory
+[18:03] right here. And you can see we could use
+[18:05] a simple memory which would store
+[18:06] everything in NADN. But if we want to be
+[18:08] able to look through the different
+[18:09] interactions that we're having with our
+[18:11] AI agent and store that in Subbase, what
+[18:13] we're going to do is connect to a
+[18:14] Postgress chat memory. So the first
+[18:17] thing that we actually have to do though
+[18:18] is connect to our Postgress credential.
+[18:20] So to set up this credential, I'm going
+[18:22] to open up the dropown, click on create
+[18:23] new credential, and you can see it's a
+[18:25] little bit different than that original
+[18:26] Superbase one, but just follow what I do
+[18:28] and you'll be all set. I'm going to go
+[18:30] into Superbase. And at the top of the
+[18:32] screen, you can see there's a connect
+[18:33] button. So, I'm going to click on this
+[18:35] and I'm just going to scroll down a
+[18:36] little bit where we have right here the
+[18:37] transaction pooler. I'm going to click
+[18:39] right here on view parameters and then
+[18:41] we just have to grab a few of these
+[18:43] things. So, the first one is going to be
+[18:45] the host. I'm going to copy the host and
+[18:47] we're going to go back into nitn and
+[18:49] just paste that in right here.
+[18:52] The database I can leave as postgress
+[18:54] because if you can see right here the
+[18:56] database is Postgress. But the user
+[18:58] we're going to copy this and go back in
+[19:00] and paste that in as a user.
+[19:03] The password is going to be the password
+[19:04] that you set up when you created your
+[19:06] project earlier in the video. So, let me
+[19:07] type that in real quick. And then the
+[19:09] last thing we need to do is the port,
+[19:10] which if we go back into this screen, we
+[19:12] can see right here we have the port
+[19:14] 6543. So, all I have to do is come in
+[19:17] here, paste that there, and then if we
+[19:19] hit save, we should go green. Connection
+[19:21] tested successfully. And so once we
+[19:23] start chatting with our agent, once
+[19:25] again, it's going to store not only what
+[19:27] we asked the agent, but it's also going
+[19:29] to store the agent's response to us in a
+[19:31] different table in Subase. So let me
+[19:32] chat with the agent and then I'll show
+[19:34] you guys that. So now if I'm talking to
+[19:35] my agent and I say, "Hello, my name is
+[19:37] Nate." We're going to send that off.
+[19:38] It's going to check if we've talked to
+[19:40] it before. It's now going to answer us.
+[19:42] And we can see that if I go into
+[19:44] Subbase, there's going to be a new table
+[19:46] right here. If I just refresh this real
+[19:47] quick, called Niden chat histories. And
+[19:50] if I click into that, it's basically
+[19:52] going to have human content. So every
+[19:54] time we talk to it, it's going to store
+[19:55] that here. And then it's also going to
+[19:56] store the AI agent's response to us
+[19:58] every single time. And so now if I was
+[20:00] to come into the AI agent and say,
+[20:02] "What's my name?" It's going to look in
+[20:04] the Postgress memory and then it will be
+[20:05] able to answer us because it actually
+[20:07] has that context window. Your name is
+[20:09] Nate. How can I help you today? Two
+[20:11] things though to keep in mind real
+[20:12] quick. The first one is that in this
+[20:13] Postgress chat memory, the context
+[20:15] window length is five. So every time we
+[20:17] talk to it, it's only going to remember
+[20:19] the five most recent interactions. But
+[20:21] you have the ability to adjust this
+[20:22] context window length. But then the AI
+[20:24] would just be processing more tokens.
+[20:26] And then one other thing to keep in mind
+[20:27] in Postgress, what it's doing is it's
+[20:29] going to store these messages with a
+[20:31] session ID and that's how it looks it
+[20:32] up. So if we are to go into NN and clear
+[20:35] the session, it's going to start a new
+[20:37] session and it's no longer going to
+[20:39] remember that. So if I now say what's my
+[20:40] name, it's not going to be able to get
+[20:42] that because it's looking through a
+[20:43] different session ID. I don't have
+[20:45] access to your personal information. And
+[20:47] then if I go into the Superbase table
+[20:49] and refresh, we can see that these two
+[20:51] interactions that we just had were a
+[20:53] different session ID than these four
+[20:55] previous ones. So it's not a huge deal
+[20:57] because right now we're just chatting
+[20:58] with the agent using this chat trigger.
+[21:00] But if you were using, you know, like
+[21:02] Gmail or you were using text message or
+[21:04] something, you could store the session
+[21:06] ID as someone's email address or
+[21:07] someone's phone number. And that's how
+[21:09] the agent could actually retain all of
+[21:10] that context with that individual
+[21:12] person. Okay, so you've officially just
+[21:14] built your first rag pipeline where you
+[21:16] got data into a vector database and you
+[21:18] built a rag agent that can talk to the
+[21:20] data in there as well. There's lots of
+[21:22] ways to expand off of this type of
+[21:23] system. I'd say the next one would be
+[21:25] actually creating it so it's a little
+[21:26] bit more dynamic so that whenever you
+[21:28] drop a new doc into a Google Drive
+[21:30] folder, it would automatically get
+[21:32] pushed into Superbase and then creating
+[21:34] a second pipeline down here where
+[21:35] whenever you update that document, it
+[21:37] basically deletes the old vectors, the
+[21:39] outdated ones, and then it puts the new
+[21:41] ones into the vector database. And
+[21:43] that's how you can make sure the
+[21:44] information that the agent's actually
+[21:45] looking at and using to answer you is
+[21:47] accurate and real time and relevant.
+[21:49] Then another thing you want to do is
+[21:51] have a different system over here where
+[21:53] whenever a file is deleted, it's also
+[21:55] going to delete all those vectors from
+[21:56] the database so you can keep the whole
+[21:58] database very clean. So if you're
+[22:00] interested in seeing this type of build,
+[22:01] let me know in the comments and I'd love
+[22:02] to make a YouTube video to cover how
+[22:04] simple this would be to set up. But I
+[22:05] also just did a live build of this
+[22:07] system on my paid community. Link for
+[22:09] that would be down in the description.
+[22:10] This is a really great community of
+[22:12] members who are building with niten and
+[22:13] sharing their challenges and their wins
+[22:15] every single day. We've also got two
+[22:16] full courses in here. One's called Agent
+[22:18] Zero, which is like the foundations for
+[22:20] AI automation, and then 10 hours to 10
+[22:22] seconds where you learn how to identify,
+[22:24] design, and build time-saving
+[22:25] automations. Anyways, I'd love to see
+[22:27] you guys in this community. But that's
+[22:28] going to do it for this one. If you
+[22:30] enjoyed the video or you learned
+[22:31] something new, please give it a like.
+[22:32] Definitely helps me out a ton. And as
+[22:34] always, I appreciate you guys making it
+[22:35] to the end of the video. I'll see you
+[22:37] all in the next one. Thanks so much,
+[22:38] guys.

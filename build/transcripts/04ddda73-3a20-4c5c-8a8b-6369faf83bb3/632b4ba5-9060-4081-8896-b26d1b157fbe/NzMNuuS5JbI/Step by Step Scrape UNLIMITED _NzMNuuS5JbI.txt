@@ -1,0 +1,807 @@
+Video Title: Step by Step: Scrape UNLIMITED Emails for FREE with n8n
+Video ID: NzMNuuS5JbI
+URL: https://www.youtube.com/watch?v=NzMNuuS5JbI
+View Count: 28,663
+
+[00:00] all right what we have here is a trigger
+[00:01] workflow that's going to take all 97 of
+[00:03] these search queries which are looking
+[00:04] for sub regions in California and
+[00:06] looking for dentists and it's going to
+[00:07] run them through this workflow which is
+[00:09] going in and scraping them in Google
+[00:11] getting their emails and then putting it
+[00:13] into a Google sheet for us so let's test
+[00:15] out this workflow and we can see it take
+[00:16] place I will also pull up the Google
+[00:19] sheet that it is populating this
+[00:20] information into and we can see this
+[00:22] happen in real time and this is all
+[00:23] going to happen for free and it's going
+[00:25] to get you hundreds and even thousands
+[00:27] of emails depending on how many queries
+[00:29] you put in right here but it's going to
+[00:31] be free and you're not going to have to
+[00:32] use any you know external apis or use
+[00:34] credits as you can see that first
+[00:35] workflow just finished up that first
+[00:37] query so we've got 12 in here we can
+[00:39] also go to our executions and if this
+[00:41] will refresh in a second we'll be able
+[00:43] to see that it's it's triggering
+[00:44] multiple as you can see the trigger went
+[00:46] off and then it's going to scrape emls
+[00:47] this one just succeeded and now it's
+[00:49] doing the other one in the trigger you
+[00:51] can see that we wait for I have it set
+[00:53] for 6 seconds to wait in between each
+[00:54] execution but this is just going to keep
+[00:56] going and it's going to keep scraping
+[00:57] emails so I'm going to let this run I'm
+[01:00] going to let this finish up and I will
+[01:01] just sort of speed this up so you guys
+[01:03] can see that it's actually happening um
+[01:04] in this workflow and it's not me pacing
+[01:06] in any information so let's let this
+[01:08] finish
+[01:18] [Music]
+[01:21] up okay as you can see the first 10 have
+[01:23] finished up we've got 159 total items
+[01:25] have come back and in this spreadsheet
+[01:27] you can see that we have 159 emails in
+[01:29] here and we're going to continue to let
+[01:31] this run but before I do I just wanted
+[01:32] to say this build was 100% inspired by
+[01:34] acam I'll tag his LinkedIn right up here
+[01:37] and a a link to his LinkedIn down in the
+[01:40] description so I found his build on
+[01:41] LinkedIn and I and I wanted to play
+[01:43] around with it so thank you for for the
+[01:45] build and let's get back to the video
+[01:47] all right just checking back in you can
+[01:48] see 58 items out of the 97 have finished
+[01:52] and we are at 814 total items here 814
+[01:55] total emails as you can see in this
+[01:57] Excel sheet and so this will get us
+[01:59] clear over 1,000 if we let this finish
+[02:01] up so let's just let it keep going real
+[02:03] quick all right so went ahead and
+[02:04] stopped it because we almost got to
+[02:06] 1,000 easily would have cleared 1,000
+[02:07] emails as you can see we got 909 so
+[02:10] let's um let's quickly look into the
+[02:11] executions here and we can see um just
+[02:14] every time that it ran which would have
+[02:15] been about 60 times if we remember
+[02:17] correctly so looking at all these
+[02:18] executions we're able to see exactly
+[02:20] what happened and what was going through
+[02:22] as you can see each time it was an
+[02:23] individual different query so each one
+[02:26] was looking for um a different sort of
+[02:27] sub region and scraping through so if
+[02:29] you you want to understand how to you
+[02:31] know set up this workflow and get it
+[02:32] going then stay tuned cuz I'm about to
+[02:34] walk through step by step how to do this
+[02:36] if you're looking to download this NN
+[02:38] workflow that I'm about to show in this
+[02:39] video you can get the template in the
+[02:40] free school community so the link for
+[02:42] that will be down in the description
+[02:43] you'll join this click on YouTube
+[02:45] resources and there'll be a post for
+[02:46] each video I make you'll just click into
+[02:48] the post for this video and you'll see
+[02:50] the um workflow template to download as
+[02:52] well as there's a few code Snippets
+[02:54] later in this video and I'll place the
+[02:55] code Snippets in here too so I'll see
+[02:57] you guys in there all right now to
+[02:58] actually build this workflow flow we
+[03:00] need to understand a few things so first
+[03:01] of all we're scraping these business
+[03:03] emails from Google Maps so in this
+[03:06] example right here we're scraping for
+[03:08] the query of Bay Area dentist and that
+[03:10] search is going within Google Maps so
+[03:12] right here you can see in the HTTP
+[03:14] request it's going to Google Map or
+[03:16] sorry google.com/ Maps search and then
+[03:19] we're using the Json query which is Bay
+[03:21] Area dentist as you can see from over
+[03:23] here so real quick let me just make this
+[03:25] um let's throw this onto a new sheet
+[03:28] sheet two so I can just show you guys
+[03:29] how this is going to work hit test
+[03:31] workflow it's going to scrape in here
+[03:32] from Bay Area dentist we're just doing
+[03:35] some logic here to filter the data or
+[03:37] sorry organize the data how we want it
+[03:39] um optimize the data how we want it and
+[03:40] then it's going to run through here and
+[03:41] this is where it's actually going to
+[03:42] scrape out sort of those emails from
+[03:44] each of those pages on Google Maps the
+[03:46] businesses on Google Maps and then once
+[03:48] again getting the data how we want it
+[03:49] and then it gets put into the sheet in
+[03:50] this case we got 10 emails so if we go
+[03:53] to sheet two we can see those 10 emails
+[03:55] right here so let's just get rid of
+[03:58] these for testing purposes and now we'll
+[04:00] get into actually how do we build this
+[04:02] so the first thing to understand is
+[04:04] we're we're searching Google Maps
+[04:05] obviously so when you go to Google Maps
+[04:07] this is sort of the URL that you get um
+[04:10] and this is what it looks like but then
+[04:11] when you want to Define down and search
+[04:13] for example in the United States where
+[04:14] you want to look for you search
+[04:16] something like California real estate
+[04:18] and it's going to pull up a ton of
+[04:19] different ones sort of the the highest
+[04:22] you know SEO businesses that are here
+[04:25] and it's not going to give you as many
+[04:27] so in this case our request would have
+[04:29] have been like California plus real plus
+[04:32] estate because in an HTTP request you
+[04:34] can't have blank space you need to have
+[04:36] the pluses to separate um where space
+[04:38] would be so that is like the search that
+[04:40] would be taking place but what we're
+[04:42] going to do is Define down within
+[04:44] California different um like sub regions
+[04:46] or like sub neighborhoods so that's why
+[04:48] here we went with Bay Area because now
+[04:50] we're getting more hits in this area and
+[04:52] then we're just going to iterate over um
+[04:54] multiple different sub regions so that's
+[04:55] why in the demo you saw there were 97
+[04:57] queries that we were feeding in which
+[04:59] these were all just different sort of
+[05:01] you know sub regions right here so once
+[05:04] you understand that now we will hop into
+[05:07] Ann here is a new workflow I created for
+[05:10] the purpose of building out this
+[05:12] workflow and then we'll also build out
+[05:13] that trigger workflow as well but we're
+[05:15] going to start here
+[05:17] so we're going to obviously this one
+[05:19] this workflow is going to be called by
+[05:20] another workflow so that's how we're
+[05:22] going to start this one off and for
+[05:24] testing purposes once again we want to
+[05:27] use Bay Area as an example so you're
+[05:29] going to come in here you're going to
+[05:31] type in query in quotes colon and then
+[05:35] Bay plus area plus um real plus estate
+[05:40] and so you could do this obviously with
+[05:41] different sub regions or
+[05:43] different um Industries it could be um
+[05:46] in aram's video he did the example of
+[05:47] dentists in New York so he did you know
+[05:50] different regions in New York but we're
+[05:51] doing California real estate so now we
+[05:54] have this data to test as it goes
+[05:56] through the next thing to do here is
+[05:58] that we want to actually make our http
+[06:00] request so within here we're going to
+[06:02] keep it as a get because we're asking
+[06:05] for information back from a specific URL
+[06:07] which once again we will go back here
+[06:09] and we can actually just grab this part
+[06:11] of the URL
+[06:14] https ww.google.com Maps search so
+[06:19] that's where we're going to go um I'll
+[06:21] put this in here and so just to show you
+[06:23] guys if we copy and pasted this into
+[06:24] Google we would get you know Google Maps
+[06:26] so that's how that's going to work and
+[06:28] then we just want to specify
+[06:30] what we're searching for within this
+[06:31] search so we're change this to an
+[06:33] expression that way we can drag in this
+[06:35] query right here and obviously this is
+[06:37] going to be dynamic based on what we put
+[06:39] in the um the final test when we want to
+[06:43] use that trigger workflow to send in
+[06:45] boom bay area boom different query boom
+[06:47] different query boom different query and
+[06:49] that's how it was looping over this
+[06:50] workflow and so that's really all we
+[06:51] need to do we'll hit test step to make
+[06:53] sure it's
+[06:54] working as you can see it got our ugly
+[06:56] chunk of HTML data back so that is why
+[06:59] we we need to add a code node for this
+[07:01] next one in order to parse out the
+[07:04] information we want so I'm going to
+[07:05] paste in a snippa of code here all right
+[07:07] now I put in this code here once again
+[07:09] this will be in my fre School Community
+[07:10] just look for YouTube resources look for
+[07:12] this video and it will be in there so
+[07:14] now we can hit test and we will see what
+[07:16] we get back out of this huge massive
+[07:18] chunk of HTML now we're getting ton of
+[07:20] these sort of um business domains and as
+[07:22] you can see a lot of these are
+[07:24] duplicates these are kind of like the
+[07:26] not the information we want at all so
+[07:28] that is why our next note is is going to
+[07:29] be to sort of filter out this
+[07:31] information so here we're grabbing a
+[07:33] filter node and within filter all we
+[07:36] want to do is we're going to be
+[07:37] filtering this value which is all the
+[07:39] URLs coming back and then we want to
+[07:41] make sure that it does not match a
+[07:44] particular reg X so regular expression
+[07:47] we're going to throw in this um query I
+[07:51] guess you could call it or this
+[07:52] information and this is just saying that
+[07:55] everything within these brackets or
+[07:56] sorry within the parentheses is what is
+[07:58] like in this list of things that we
+[07:59] don't want the URL to match and then
+[08:02] everything is being separated here by a
+[08:05] um I forget the what they call them but
+[08:06] the vertical bar and so if we test the
+[08:09] step we will see that it's filtering out
+[08:11] a ton of items it only kept 32 which are
+[08:13] going to be actual um business domains
+[08:15] that we want to email although you can
+[08:16] see there's some duplicates so we're
+[08:17] going to remove those in a sec but as of
+[08:19] now in the discarded pile you can see
+[08:22] all of these emails that we don't want
+[08:24] so um Google Google Google user content
+[08:28] gstatus
+[08:30] um ggh htb schema all this kind of stuff
+[08:33] and just make sure you have this put in
+[08:35] right if you put like spaces it's not
+[08:37] going to work so we'll test this
+[08:39] again and you can see now we we kept
+[08:41] some of those items that we didn't want
+[08:43] because like the schema didn't work
+[08:44] because we had a space in these GG phts
+[08:48] so make sure you don't have spaces in
+[08:50] between um the vertical bars and then if
+[08:53] this isn't working for you for some
+[08:54] reason what you could do and it's just a
+[08:56] little more tedious is you could do does
+[08:59] not contain contain and that way you
+[09:01] could type in in each individual one and
+[09:02] then you could go again and say okay it
+[09:04] also can't contain um you know this
+[09:06] information but this is probably just
+[09:08] the easiest quickest way to do it if you
+[09:10] really wanted to you could throw in like
+[09:12] the the Dooms although if you did it
+[09:14] like this I think you'd have to add this
+[09:16] um you'd have to add this this backslash
+[09:19] in order to s in order to um signify to
+[09:23] regular expression that you know that's
+[09:25] like how it would work but you can
+[09:29] pretty much just get away with doing it
+[09:30] like this so hopefully I didn't spend
+[09:32] too much time there but let's test this
+[09:33] step again and we will move on to the
+[09:35] next part of this which is wanting to
+[09:37] get rid of these duplicate values so
+[09:40] we'll add remove duplicates and you want
+[09:42] to do remove items repeated within
+[09:44] current input not these other two
+[09:46] actions so this is just going to take
+[09:47] anything from URL and you could just
+[09:50] leave it as all but I'm just going to
+[09:51] drag in url so anything in this field
+[09:53] it's going to get rid of that's a
+[09:54] duplicate so if you remember we had 32
+[09:57] items right here and now we have 20
+[09:59] items coming back because it removes
+[10:00] those duplicates okay now we want to do
+[10:02] another HTTP request because right now
+[10:04] we have these 20 um different sort of
+[10:06] domains coming back and we need to
+[10:08] search through them in order to go get
+[10:10] some more emails so we're going to do an
+[10:12] HTP
+[10:14] request and we're going to be doing it
+[10:16] from this URL so it's super easy we
+[10:18] don't have to type anything out all
+[10:19] we're doing is grabbing this URL but
+[10:22] there's 20 coming back and we want to
+[10:24] Loop so we want to add a loop and then
+[10:27] we're going to have to get rid of this
+[10:28] thing and we we don't want this to be
+[10:29] the done field we want to um hook this
+[10:32] up here so it would have been smarter to
+[10:35] just add a loop first and then HTTP
+[10:36] request so do that um unless you're
+[10:39] following this exactly step by step then
+[10:41] you probably did that what I just did
+[10:42] but anyways the important thing here to
+[10:45] do is as we know it's going to Loop
+[10:47] through all 20 of these items and what
+[10:49] we can do within this loopover items
+[10:51] node is make sure that it doesn't stop
+[10:53] if there's an error in one of those URLs
+[10:55] because currently all those 20 right
+[10:57] here are going to parse through and when
+[10:59] it's being searched through the HTP
+[11:01] request if any of them error the whole
+[11:02] workflow will stop and so in the case of
+[11:04] you're running like 97 queries like in
+[11:06] the example the whole workflow would
+[11:08] fail or it would stop when it hit that
+[11:10] failure so we want to make sure that
+[11:11] this is continuing and we want to
+[11:13] continue using an error output so as you
+[11:16] can see anything that errors will just
+[11:17] go down this branch and nothing will
+[11:18] happen we'll basically just skip it and
+[11:20] then we'll set up the logic for the ones
+[11:22] that are successful what do they do so
+[11:25] as of now we are grabbing these URLs I
+[11:28] think that's all we need to do we'll hit
+[11:30] save and we'll test the step to make
+[11:31] sure that everything's happening
+[11:33] properly so it just went through here
+[11:35] now it's going to be searching all um of
+[11:38] those items okay so now we got an error
+[11:40] and it did stop so that's not what we
+[11:42] want we want it to be able to keep going
+[11:44] because it only did five so the resource
+[11:47] you were requesting could not be found
+[11:49] maybe this is the one as well we need to
+[11:50] make sure that this
+[11:52] continues um so maybe we can try this
+[11:56] test that
+[11:57] again see it coming through
+[12:00] and it was number five that
+[12:04] failed okay there we go so now it would
+[12:06] have just passed over the one that was
+[12:08] erroring and now we're able to keep
+[12:09] going so that's exactly what we
+[12:12] wanted and this one should finish up and
+[12:14] then we'll continue with the logic of
+[12:16] these 17 runs that did work as you can
+[12:18] see two of them actually aired so that's
+[12:20] fine because now the workflow is going
+[12:21] to keep going because we have a done
+[12:22] branch and now we can set up this done
+[12:24] Branch workflow or logic sorry okay
+[12:27] we're going to drag this out and we are
+[12:28] going to to do another
+[12:30] loop and another essential thing is we
+[12:33] want to make sure this do the same thing
+[12:35] continue if it's an err and it's going
+[12:37] to use an error output so now we have an
+[12:39] error Branch here and so we're going to
+[12:41] get rid of this replace me and we're
+[12:42] going to add a code
+[12:44] node and let me paste in some code real
+[12:46] quick all right here's our code this
+[12:48] one's basically just parsing out the
+[12:49] actual emails into the format that we
+[12:51] want you'll see that in a sec but
+[12:53] another thing we need to do the same
+[12:54] thing here is we if if one of these
+[12:56] errors which they likely will every once
+[12:58] in a while out of like you know th URLs
+[13:01] come back at least probably two or three
+[13:02] are going to err so we want to make sure
+[13:04] it doesn't stop the whole workflow we
+[13:05] just want to make sure that it continues
+[13:07] on throughout the logic so I don't think
+[13:10] we can just test the step directly
+[13:11] because it's a loop we have to run the
+[13:12] whole thing again so we will just test
+[13:15] the whole workflow and then we can see
+[13:17] everything going
+[13:18] on um once this finishes up it'll come
+[13:21] down to this Loop and it will Loop
+[13:22] through this code node and then I'll
+[13:23] show you guys what I was talking about
+[13:25] with the whole parsing emails and once
+[13:27] again both these code Snippets will be
+[13:29] in the school so join the link in the
+[13:31] description
+[13:32] but let's let this one finish up and
+[13:36] then it will come down here and this
+[13:37] Loop will be really really quick this is
+[13:38] always the longest step is you'll be
+[13:40] waiting for these to finish up as you
+[13:42] can see that was super quick so
+[13:44] sometimes when you're running this at
+[13:45] the end some runs might take a minute or
+[13:48] two some will be 20 30 seconds and it's
+[13:50] going to be waiting on this step right
+[13:52] here so let's look at this code node see
+[13:54] how this information is coming through
+[13:56] so it's getting this huge chunk again
+[13:58] the chunk that comes through pretty much
+[14:00] whenever you do HTTP request and so
+[14:02] usually need a code note after to parse
+[14:04] the information so the 16th run nothing
+[14:07] came back here we got all these emails
+[14:09] so as you can see it took this
+[14:10] information and it got just the emails
+[14:11] we want number two nothing number three
+[14:15] that that one AED um for blah blah blah
+[14:17] so let's just see so a lot of times this
+[14:20] will happen like this but anyways you
+[14:23] will get some emails so now we need to
+[14:25] set up the logic of once we get those
+[14:26] emails from this done Branch right here
+[14:29] which are all the emails what are we
+[14:31] actually going to do with these emails
+[14:33] okay so we're going to drag out the done
+[14:34] and we're going to grab an aggregate
+[14:36] node and this is going to be taking the
+[14:38] emails that come back from the loop
+[14:40] after it's been put through the code and
+[14:41] parsed through and then we want to
+[14:43] actually just aggregate them together
+[14:45] but we want to make sure that we turn on
+[14:46] merge list and I don't think we can test
+[14:48] we're going to have to test the whole
+[14:49] workflow y we're going to have to test
+[14:51] the whole workflow um okay so we'll test
+[14:53] the whole workflow and see how this
+[14:54] information is coming back we want to
+[14:56] make sure it's in a list so that we can
+[14:58] um successfully split them back out and
+[15:01] it's hard to it's hard to visually
+[15:03] understand when I'm just explaining it
+[15:04] so we'll actually be able to pin this
+[15:06] data and it will be nice because then I
+[15:07] can show you but yeah just keep in mind
+[15:10] when you're kind of testing these Loops
+[15:11] you it's it's tough to pin the data at
+[15:13] least unless I'm doing it wrong but now
+[15:15] we have all these emails that are coming
+[15:17] through in the from the loop and then we
+[15:19] have them in one nice um sort of field
+[15:22] right here so that's why we wanted to do
+[15:24] it as merge list otherwise it would
+[15:26] still be sort of individual objects and
+[15:28] that's not how want it so let me pin
+[15:31] this data and now that it's pinned here
+[15:33] this is going to stay so that's good for
+[15:34] testing and we can add our um split out
+[15:38] so it's going to turn a list and it's
+[15:40] going to put them into separate items
+[15:42] and obviously we're just going to drag
+[15:44] the list of emails don't drag one
+[15:46] individual one and then we should just
+[15:48] be able to test it and it should be how
+[15:50] we want it perfect so we have these
+[15:52] emails now because we can put them into
+[15:54] an individual row within our sheets and
+[15:57] you might have noticed now that we have
+[15:58] a couple duplicates or more than a
+[16:00] couple we've got some duplicates so
+[16:03] pretty much the final step here is
+[16:04] another remove duplicates we're going to
+[16:06] Cho the first one remove items repeated
+[16:08] within current input and then we want to
+[16:12] select the field which will be from the
+[16:13] split out node we're grabbing emails so
+[16:16] we'll test
+[16:17] this we have 23 actual emails coming out
+[16:20] out of 246 so in this case tons of
+[16:23] duplicates so it's a good thing that we
+[16:25] did that otherwise um we'd be sending
+[16:27] emails to the same same inbox over and
+[16:29] over and over and then we just need to
+[16:31] add them to our Google Sheets node so we
+[16:33] remember you want to append a row in a
+[16:35] sheet that's how you actually get them
+[16:36] in there we have signed in with with our
+[16:39] account grab the right document grab the
+[16:42] right sheet and then it's going to map
+[16:45] them we have a column in there called
+[16:47] emails when you're setting up your sheet
+[16:49] to put stuff into if you don't put a
+[16:53] sort of like a column header it's not
+[16:55] going to work so make sure you just
+[16:56] throw something in there that way you
+[16:58] have a column to match on and all we're
+[17:01] going to do is send emails to the column
+[17:03] called emails so this is what's coming
+[17:06] through we have our first example of an
+[17:07] email and if we hit test
+[17:10] step as you can see it's going to send
+[17:12] those items into our Google sheet you
+[17:13] can CL click into here and there we go
+[17:15] 23 items just came through sorry here's
+[17:18] the one we're working on so this is the
+[17:19] one we just did and 23 items came
+[17:21] through and so that's pretty much how
+[17:23] this one works um now we need to set up
+[17:26] the logic of building that trigger
+[17:28] workflow I'll talk about why we want to
+[17:29] do it like that in order to parse a
+[17:32] specific query through so you know this
+[17:33] one's going to Bay Area real estate and
+[17:36] then that one will run and then the
+[17:37] trigger will send a different query to
+[17:38] the next workflow and so on so let's get
+[17:40] into that
+[17:42] workflow okay so this one is being
+[17:45] triggered manually and I'll talk about
+[17:47] some cool use cases as once you see how
+[17:49] this works I'll talk about some ways you
+[17:51] can make this even more
+[17:52] automated but the first thing that we
+[17:54] want to do is we want to grab a loop
+[17:57] because we we're going to obviously for
+[18:00] if we put in 100 queries to search
+[18:02] through in California for Real Estate we
+[18:05] put them in here and then we want it to
+[18:07] just send off bam first one bam second
+[18:09] one bam third one so let's remove this
+[18:11] and we will grab um workflow oh yeah it
+[18:15] was right there workflow um execute
+[18:18] workflow so this is the same way that a
+[18:21] an AI agent can call another workflow
+[18:23] you can also have a workflow call a
+[18:24] workflow it doesn't have to specifically
+[18:26] be an agent calling a workflow as a tool
+[18:28] so we're searching from our database
+[18:30] we're going to grab the scrape demo that
+[18:32] we just
+[18:33] built and that pretty much all we need
+[18:36] to do here we might have to change the
+[18:37] way that it uh we should probably change
+[18:39] on error we don't if if one of the
+[18:42] workflows errors we wanted to make sure
+[18:43] it's again continuing so make sure you
+[18:47] set up that otherwise it won't run
+[18:48] through all 100 items however however
+[18:50] many you put in there and then finally
+[18:51] we just want to wait and so I did six I
+[18:54] think you could five you could do
+[18:56] probably even like three we'll try 3 um
+[19:01] but the whole point is that you you just
+[19:02] don't want it to you don't want the
+[19:04] emails to overwrite each other in
+[19:07] the um you know in the sheet otherwise
+[19:10] you'd just be putting information on top
+[19:12] of each other if it was just sending out
+[19:14] looping super fast so that's why we do
+[19:17] the weight here and now we're pretty
+[19:19] much ready we want to talk about how you
+[19:20] actually send off different queries into
+[19:23] the workflow so in here I came in chat
+[19:25] gbt and I said give me a list of search
+[19:27] queries for the keyword real estate for
+[19:29] 100 sub areas micro neighborhoods of
+[19:31] California and then you had to you know
+[19:33] just show it how it's going to be
+[19:34] structured so this is the one that I did
+[19:36] in the demo so we'll do a different one
+[19:39] um we will ask
+[19:41] for for the keyword let's try something
+[19:44] like um Finance let's just do 20 and
+[19:50] let's do
+[19:52] Chicago and then an
+[19:55] example we will just say
+[19:59] South plus Loop Plus Finance all right
+[20:05] so we'll send that
+[20:06] off and this should give us one to do
+[20:10] and so my my thought was we're
+[20:13] triggering this manually right so once
+[20:15] this finishes
+[20:17] up I'll show you exactly what I'm
+[20:19] talking about but so we've got our
+[20:21] 20 we're going to come in here and put
+[20:24] in this mock data so should just be able
+[20:26] to grab this paste that in there perfect
+[20:29] no errors and now we have these 20
+[20:31] search queries that it's going to send
+[20:32] to Google Maps and scrape for
+[20:34] emails so let's just test this and see
+[20:38] if I made any mistakes and if if I did
+[20:39] we'll we'll live figure them out
+[20:41] together but um another way you could do
+[20:44] this that could be pretty cool is
+[20:46] obviously I use chat gbt to generate
+[20:48] this
+[20:49] stuff you could map this up where you
+[20:52] know you have logic over here where you
+[20:54] can send the query or you can chat to
+[20:56] some sort of agent right in here and
+[20:58] just have it do it in here so instead of
+[21:01] going
+[21:02] to okay so it only went through two
+[21:04] items um let's check our sheet okay so
+[21:08] we got a couple
+[21:10] emails let's see what happened so we'll
+[21:14] go to our executions of
+[21:15] the um thingy the
+[21:20] scraper so in
+[21:23] here okay wait what was the
+[21:25] error see the first one came through how
+[21:28] many did this give
+[21:29] us this gave us 10 emails which is I
+[21:32] think is how many we have right here
+[21:33] okay we don't even have
+[21:35] 10 um so what happened here
+[21:40] maybe Lincoln Park Finance that's the
+[21:42] one that went
+[21:47] through okay let me just look into this
+[21:49] real quick and I'll be back with what
+[21:51] happened okay I figured out what
+[21:53] happened the executions just didn't
+[21:54] refresh so we weren't looking at real
+[21:55] information but this is the first run it
+[21:58] gave us our seven email addresses which
+[21:59] as you can see we had these
+[22:01] seven and then the second run when it
+[22:04] tried to go after it scraped through
+[22:07] what was this Lincoln Park Finance it
+[22:10] only had two items and then from those
+[22:13] two items we only actually got one set
+[22:16] and then it just stopped because there
+[22:17] was no more information so maybe we need
+[22:20] to make this
+[22:22] where in here on air it would also
+[22:26] continue and on here it would also also
+[22:28] continue so you want to make sure
+[22:30] everything's still continuing that way
+[22:32] it will um will always go through if
+[22:36] that makes sense so let's also just
+[22:38] unpin some of this data actually that
+[22:40] that shouldn't make a difference but we
+[22:42] want to make sure every step is
+[22:43] continuing that way if for instance one
+[22:45] scrape like Bay real estate which in
+[22:48] this case that one's fine but the one
+[22:50] that we just shot I think it was Lincoln
+[22:51] Park Finance nothing actually passed
+[22:54] through here but we want the workflow to
+[22:56] continue because that's the only reason
+[22:57] to stopped is not because it
+[22:59] errored but because it um just didn't
+[23:02] have any data coming through so we'll
+[23:03] try this again we'll see if that change
+[23:05] worked um and then if not we'll get in
+[23:07] there and just look again what happened
+[23:09] and then if we still can't figure it out
+[23:11] we'll just search up or switch up the
+[23:12] search term and go with something that
+[23:15] works maybe maybe Finance isn't the best
+[23:18] way the best thing to look for on Google
+[23:20] Maps but there we go we got our first
+[23:22] seven ons again now we're in the second
+[23:23] one and it stopped again so we will look
+[23:26] into that so exact same thing as what
+[23:28] happened the first time it gave us our
+[23:30] seven but then when we come to the
+[23:33] second execution of um Lincoln Park
+[23:37] Finance once again right here it ends so
+[23:42] maybe always output data okay that's
+[23:46] what we need to do so much smarter than
+[23:48] continuing okay so always outut data so
+[23:51] even if nothing comes through we want it
+[23:53] to still output so that it at least
+[23:56] signifies to the trigger where workflow
+[23:58] that we finished that way um it'll
+[24:02] continue going for the rest of the
+[24:03] queries because we've only gotten we'd
+[24:05] only gotten these two done we still have
+[24:07] 18 more to go
+[24:09] so um hopefully you guys like this sort
+[24:12] of live thing where errors happen and we
+[24:15] try to look into what happened and how
+[24:16] to fix them but um once again this is
+[24:19] going to scrape the first one give us
+[24:21] seven emails hopefully the second one it
+[24:23] will give us nothing but it will still
+[24:25] continue to pass through the process so
+[24:27] now r on number two
+[24:29] really hope this one continues to pass
+[24:34] through please please please we got our
+[24:37] seven emails from that first
+[24:39] workflow that first
+[24:45] query you would think that if no data is
+[24:47] coming through it would be quicker
+[24:49] okay perfect so that seemed to be the
+[24:52] issue I'm glad we got that figured out
+[24:54] live because I actually didn't um I
+[24:56] hadn't run into a situation where that
+[24:57] happened so
+[24:59] good takeaway here making sure that if
+[25:01] you're looping stuff through where you
+[25:03] want the workflow to trigger multiple
+[25:05] times that you have um the always output
+[25:09] data turned on and maybe that's like a
+[25:11] super simple thing but it passed my mind
+[25:14] in this case and now we're getting
+[25:15] through the rest of our actual um
+[25:18] queries that we put in here which we put
+[25:19] in 20 queries so let's let this one
+[25:23] finish up and I'll be back Okay I lied
+[25:25] I'm back already so we're on run six 43
+[25:29] items so far I wanted to show you guys
+[25:31] more about like if you clicked into down
+[25:32] here all executions then we could
+[25:35] obviously see the trigger is still
+[25:37] running because we triggered it so it's
+[25:38] been running for 2 minutes and then
+[25:40] these have been all the iterations of
+[25:42] the past queries that it's been feeding
+[25:44] through so this one's running for it's
+[25:45] been running for 30 seconds now as you
+[25:48] can see they're kind of going to vary so
+[25:50] um what was the first one of this run we
+[25:52] trigger this at 1309 so 1309 right here
+[25:56] the first one was 13 seconds then 20
+[25:57] seconds 20 seconds 9 seconds 30 seconds
+[26:00] um I've had a few that will take
+[26:01] multiple minutes some are as quick as
+[26:03] you know like this one 9 seconds this
+[26:04] one's going for um this one will
+[26:06] probably push a minute but it's cool
+[26:08] because you can look in here and see um
+[26:10] how they're sort of staggered and
+[26:14] where's the oh I I closed out of the
+[26:15] trigger workflow so we can't see that
+[26:16] live anymore but obviously this one is
+[26:19] running so we'll just come into here
+[26:21] real quick which is just one of the
+[26:23] scraping examples and we can look at the
+[26:26] the executions so this one is is we can
+[26:29] see that one's going right now this one
+[26:31] was for Gold Coast Finance for this one
+[26:33] we got 13 emails back as you can see and
+[26:36] they were put into our Google sheet
+[26:38] which is um right here with our items
+[26:42] so yeah I hope you guys found this one
+[26:45] interesting um that one just finished up
+[26:47] it took a minute and 26 and we only got
+[26:50] like maybe three or four emails from
+[26:52] that but I hope you guys found this one
+[26:55] interesting once again huge shout out to
+[26:58] um acram uh his profile is in the
+[27:01] description but I thought this was a
+[27:02] super cool use case
+[27:04] of you know having a workflow and I
+[27:07] thought this this idea was super neat
+[27:08] the way that you iterate through items
+[27:10] that you put here and once again I think
+[27:12] it could be really cool to you know you
+[27:15] have some sort of open AI messageer
+[27:16] model over here because that's
+[27:17] essentially what we did in chat BTA to
+[27:19] get this stuff in the first place you
+[27:21] would have this this over here and you
+[27:23] would want it
+[27:24] to you know have an interface where you
+[27:27] could chat to it and and then you could
+[27:28] just ask it right in here to find um you
+[27:32] know say I want to find places in or I
+[27:34] want to find dentists in um Texas and
+[27:38] then this model would figure out okay
+[27:39] well based on how we prompted it would
+[27:41] figure out to find sub regions in Texas
+[27:44] and then format them into this sort of
+[27:46] query format with the sub regions plus
+[27:49] whatever the keyword was which in this
+[27:50] case I just said I think I said dentis
+[27:52] in Texas so that would be really cool
+[27:54] and it could be an expansion on that um
+[27:57] so I might play around with that and see
+[27:59] what I can do there but that would even
+[28:01] automate the process even more which
+[28:03] could be super cool
+[28:05] and yeah any questions um please reach
+[28:08] out leave me a comment or hop in the
+[28:10] community and I'd love to talk so thanks
+[28:12] for watching this one guys I'll see you
+[28:14] in the next one

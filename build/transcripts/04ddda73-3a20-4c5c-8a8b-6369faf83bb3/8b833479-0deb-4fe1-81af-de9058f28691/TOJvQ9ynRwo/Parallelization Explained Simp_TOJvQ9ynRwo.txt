@@ -1,0 +1,58 @@
+Video Title: Parallelization Explained Simply (10x faster workflows)  #aiagent #n8n #artificialintelligence
+Video ID: TOJvQ9ynRwo
+URL: https://www.youtube.com/watch?v=TOJvQ9ynRwo
+View Count: 10,462
+
+[00:00] Today I'm going to be talking about an
+[00:01] automation technique that I hardly see
+[00:03] anyone talking about on YouTube and I've
+[00:04] actually never covered it on this
+[00:06] channel either. Understanding
+[00:07] parallelization and subworkflows is
+[00:09] really going to level up your automation
+[00:10] game. Okay, so what parallelization is
+[00:13] besides a mouthful is that you're
+[00:15] running multiple tasks at the same time
+[00:17] instead of one after another. And just
+[00:19] in case it hasn't quite stuck yet,
+[00:20] pretend that we want to cook these three
+[00:22] turkeys and they each will take 30
+[00:24] minutes to cook, but we only have one
+[00:26] oven to use. So without parallelization,
+[00:28] we'd cook the first one and then we'd
+[00:30] cook the second one and then we'd cook
+[00:31] the third one and it would take a total
+[00:33] of 90 minutes. But if we're able to use
+[00:35] parallelization, which means we would
+[00:37] have three ovens that can all run at the
+[00:39] same time, the whole cook time of these
+[00:41] three turkeys would only be 30 minutes
+[00:43] and it's just going to be a lot more
+[00:44] efficient. Now let's quickly talk about
+[00:46] drawbacks and considerations of using
+[00:48] parallelization resource limits. So, for
+[00:50] example, in our flow where we're calling
+[00:52] perplexity to do some research, we may
+[00:54] have a limit where you can't do more
+[00:56] than 20 per minute or something like
+[00:57] that. And if you do run into an issue
+[00:59] like that, then you do have to consider
+[01:01] looping individually through each item
+[01:03] or sending over batches of 20 or
+[01:05] something like that. You can't process a
+[01:07] 100 items all in parallel. Another thing
+[01:09] to think about would be error handling.
+[01:11] So, if you're running 50 items in
+[01:12] parallel and one of them errors, how do
+[01:14] you handle just that one that aired and
+[01:16] what do you want to do with the rest of
+[01:17] the ones? Okay, so that's drawbacks and
+[01:20] considerations of parallelization. And
+[01:22] so clearly you don't always want to go
+[01:23] straight for parallelization, but it's
+[01:25] really important to understand still to
+[01:27] use subflows because subworkflows are
+[01:29] really valuable. If you want to watch
+[01:30] that full breakdown, click on that play
+[01:31] button right here, and I'll see you guys
+[01:33] over

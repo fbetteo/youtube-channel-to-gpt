@@ -1,0 +1,247 @@
+Video Title: Full Year Statcast Data in Minutes!
+Video ID: IT9zJ8Rn6K8
+URL: https://www.youtube.com/watch?v=IT9zJ8Rn6K8
+View Count: 402
+
+[00:01] hey everyone in this video I'm going to
+[00:04] show everyone how to relatively quickly
+[00:08] acquire a full season's worth of
+[00:10] statcast data
+[00:12] INR as well as acquiring the play IDs to
+[00:16] have
+[00:17] video necess or instituted with it so
+[00:21] that way you have the play IDs to be
+[00:23] able to go on baseball's Zant and check
+[00:26] out that video
+[00:28] so I'm show you how to do that and give
+[00:32] a shout out to Scott Powers for creating
+[00:34] the saber metrics package so obviously
+[00:37] we will need that um so if you have it
+[00:43] or have not have it installed just
+[00:46] simply run
+[00:48] this saber power savear
+[00:52] metrics and you'll have it installed so
+[00:55] remove that comment but we'll say
+[00:58] library sa our matx and then another
+[01:02] package we'll install to make sure we
+[01:05] can run our code
+[01:08] efficiently is
+[01:10] paralleli and what paralleli
+[01:14] does is allows us to see how many core
+[01:18] workers our machine has and that way we
+[01:21] don't overload our computer when we're
+[01:24] acquiring all the statcast
+[01:26] data and I'll show you that um shortly
+[01:30] here and then we'll load in D plyr as
+[01:35] well as HTTR and if you don't have
+[01:38] either of those installed you should
+[01:39] have deer installed if you have tidy
+[01:41] verse installed deer is installed then
+[01:44] HTTR if you don't have installed same
+[01:46] thing install that packages
+[01:48] HTTR so the reason why I like paralleli
+[01:53] is allows us to create a way to safely
+[01:59] compared to other packages see how many
+[02:03] cores that we can have to be able to run
+[02:05] parallel processing and essentially
+[02:07] parallel
+[02:08] processing in a nutshell is basically
+[02:11] saying like we're going to open up let's
+[02:13] say we have 10 workers or 10 cores we're
+[02:17] going to open up 10 sessions of our
+[02:19] studio running you know getting a week's
+[02:21] worth of statcast data at a time that's
+[02:24] in a nutshell what it
+[02:26] is but this allows you to kind of see
+[02:30] like what you're working with cuz every
+[02:32] machine is different so what appears on
+[02:34] my machine when I run this code may be
+[02:37] different for you in terms of what is
+[02:40] available so we'll run available workers
+[02:43] from the parallel
+[02:44] package so you got to run Library first
+[02:48] then run
+[02:49] it and so it gives you Local Host but
+[02:54] seems like I have 16 so in my case I can
+[02:57] run up to 16 I wouldn't recommend
+[03:00] running the amount of cores that you
+[03:02] have maybe a couple fewer you know like
+[03:05] 12 um could be good 14 in case of 16 you
+[03:09] have more great you know you can run
+[03:10] more but don't go over that amount so
+[03:14] we're going to create a cluster and
+[03:16] we're going to call and we're going to
+[03:17] call it
+[03:20] parallell and we're going to
+[03:22] say make cluster pck and so essentially
+[03:26] what that does is allows us to run those
+[03:30] cores based on the amount of that we put
+[03:32] so we'll say in this case I'll put 12
+[03:35] and allows us to run our parallel
+[03:38] processing for the code that we're about
+[03:40] to run so then we create that
+[03:43] cluster and again this The Tick Tock
+[03:47] part is optional again it just shows you
+[03:50] how quickly or how quickly um your code
+[03:54] runs so we'll put tick here and talk or
+[03:58] excuse me talk at the bottom and then
+[04:01] we'll have the code in between it and
+[04:03] what it'll do is when you run through
+[04:06] all this code it'll tell you how much
+[04:07] time it laps when you ran this
+[04:11] so for a basic
+[04:14] example we'll run Savant data or we'll
+[04:16] call a data set called Savant data save
+[04:19] our
+[04:21] metrics and we'll say download baseball
+[04:24] Sant our start date will be opening
+[04:28] day which was was March 28th and then
+[04:32] our end date will be the end of the
+[04:36] regular
+[04:38] season which is September 30th and then
+[04:42] lastly to be able to run clusters put CL
+[04:46] equals cluster to then be able to run it
+[04:50] and
+[04:52] so we'll run
+[04:54] that oh excuse me I forgot the Tik Tock
+[04:58] package so
+[05:00] Tik Tock package and we'll run
+[05:04] this now it'll pull this data in again
+[05:09] based upon the amount of cores I have I
+[05:12] have 16 but I'm only using 12 and now
+[05:15] we're going to download all these pay
+[05:17] payloads to be able to do
+[05:20] that now we can see that through pulling
+[05:25] that data on my end it took roughly a
+[05:28] little over two minutes so pretty nice
+[05:32] to be able to say that with 125 seconds
+[05:35] passing to pull an entire season's worth
+[05:38] of stat cast data but now we're going to
+[05:41] go back into it and acquire the play
+[05:45] byplay data to get the play ID as well
+[05:48] so what we'll do is run
+[05:50] PVP we'll say Saar
+[05:56] metrics download stats API
+[06:00] take the same start date and end date so
+[06:02] opening day to the end of the regular
+[06:05] season our level will be MLB our game
+[06:10] type will be the regular
+[06:11] season and our cluster will also be
+[06:15] added now when the PBP file gets pulled
+[06:20] it actually gives
+[06:21] you or excuse me we'll run this on the
+[06:24] outside but when the PVP file gets
+[06:27] pulled
+[06:29] it's in uh a list of four separate data
+[06:32] frames and we want the pitch data frame
+[06:35] so then we'll take the pitch data frame
+[06:37] we'll select the game ID at bat numbers
+[06:42] actually the event
+[06:44] index and then the pitch number as well
+[06:48] as the play ID again the play ID is
+[06:51] important to get video for every single
+[06:56] pitch with the stack data so if you want
+[07:01] to have the video side of it now the
+[07:03] play byplay data starts at zero for at
+[07:06] bat number so we have to adjust and add
+[07:09] one to every at bat number then the last
+[07:12] part that we'll do on the outside is
+[07:14] join the Savant
+[07:16] data from left to right by doing left
+[07:20] join Sant data mlbb PBP by game
+[07:25] ID at bat
+[07:28] number and then pitch number so we join
+[07:33] those data but let's go back and we're
+[07:36] going to rerun this
+[07:39] again and it'll go through that process
+[07:43] again to be able to pull that
+[07:44] play-by-play
+[07:50] data so it it'll still run through the
+[07:54] Savant data on my end will again take
+[07:58] roughly two minutes but then the play
+[08:00] byplay will take a little bit longer but
+[08:02] you know however long it takes you know
+[08:04] feel free to walk away you know grab a
+[08:07] bite to eat something like that so I
+[08:10] don't imagine it's going to take hours
+[08:12] but it might take like half an hour an
+[08:14] hour again depending on your machine and
+[08:16] how many clusters you have
+[08:19] available what it allows you to do so
+[08:23] we'll come back to it and we'll see the
+[08:26] results now we've seen that the on my
+[08:30] end the process took 652 seconds which
+[08:35] was nearly 11 minutes so not not too bad
+[08:39] in my opinion to inquire a entire Year's
+[08:42] worth of statcast data here in our again
+[08:46] shout out to Scott Powers for that sa
+[08:48] metrics package to make it a little bit
+[08:50] quicker but now we can
+[08:52] pull the play-by-play data so we run
+[08:57] this code that we typed out earlier and
+[09:00] I'm going to show it to you so it's just
+[09:01] got game ID at bet number pitch number
+[09:04] and each game has or each pitch has a
+[09:07] play ID so we can join that data
+[09:11] set and we'll
+[09:13] do we'll just call this
+[09:18] S500 we'll take the first 500 rows of
+[09:23] that Savant data set that we created so
+[09:26] that way we're not overloading our
+[09:28] machine
+[09:29] you see you have just about every bit of
+[09:32] Stack ass data you can think of now
+[09:35] there might be some differences in where
+[09:37] the columns are
+[09:38] placed and there might be some
+[09:40] differences in terms
+[09:43] of what columns are available but I know
+[09:50] recently you have expected woba expected
+[09:53] batting average but recently there has
+[09:55] been new columns coming out so like um
+[09:58] Delta pit
+[10:00] unexpectancy you know the back score
+[10:02] difference the hypers speed I'm not 100%
+[10:05] sure on what that means but I will
+[10:08] inform everyone and then the break with
+[10:12] gravity arm arm angle data as well you
+[10:16] know pitcher days until previous game
+[10:19] number of times for the order the
+[10:21] batting
+[10:22] age um win expectancy for home and
+[10:27] batter
+[10:30] so pretty pretty neat stuff does have
+[10:32] that arm
+[10:33] angle data I just don't remember where
+[10:36] it was placed in
+[10:39] here but I'm sure we'll find
+[10:44] it of where it may
+[10:49] be but it should be in here let me make
+[10:52] sure to find it here right here is our
+[10:55] arm angle data so we still have the raw
+[10:57] arm angle data plus additional columns
+[10:59] but you have the play play ID so what
+[11:01] you can do is just do HTTR
+[11:06] browse and we'll say URL equals Sant
+[11:12] data
+[11:18] um or excuse me browse and then from the
+[11:22] savear metrics
+[11:25] package we can do get video URL
+[11:30] and then we can say MLB PVP play ID
+[11:34] we'll just do one now if it works it you
+[11:37] should up a video and in this case I
+[11:41] don't know if it's going to be different
+[11:43] for everyone else but in this case it
+[11:45] pulls up a called strike take the next
+[11:48] step and it all starts right
+[11:51] now strike one see on
+[11:55] here and that's totally fine I
+[11:58] completely understand but but that still
+[12:00] allows you to see like Savant videos and
+[12:03] you can save that but that is a quick
+[12:06] and easy way to get an entire season's
+[12:09] worth of statcast data plus get the play
+[12:12] IDs for video and it all takes roughly
+[12:16] you know 10 to 15 minutes to do it so
+[12:19] thank you so much for watching hope you
+[12:21] have a great rest of your day

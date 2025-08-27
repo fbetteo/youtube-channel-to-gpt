@@ -1,0 +1,415 @@
+Video Title: Untitled_Video
+Video ID: 7ywyeksY97M
+URL: https://www.youtube.com/watch?v=7ywyeksY97M
+View Count: 0
+
+[00:03] Alison, we already or 10th. Okay. Great. Hello everyone happy. Saturday. Um, I'm so happy to be with you all even remotely.
+[00:13] Um, my name is Alison, and I consider myself a data driven storyteller.
+[00:18] I'm currently with the Seattle tracking of the where I do analytically driven writing for them, and also on air analysis during games. But my job today is.
+[00:30] Simply to facilitate conversation between 4, very brilliant and exciting guests that we have and with that in mind, our topic today is to talk about data science competitions in sports analytics.
+[00:43] This can be such a great channel for people to either bolster their skills meet other people within the sports analytics community, or get themselves noticed for future opportunities.
+[00:55] And each of the people we have here has extensive experience in, in each of those.
+[01:00] Avenues and so, with that, I could sit here and read to you a long boring bio of each person.
+[01:06] But I think what would be more exciting is for each of our panelists to share with you a little bit about themselves and their background specifically, when it comes to data science competitions and Brendan, let's start with you.
+[01:20] For sure thanks, Allison. So my name is Brandon Kuma guy.
+[01:23] I'm currently a master's student at Simon university where I'm working on statistics and sports, and I'm also an intern with analytics as our data scientists, where I work on the hockey team there, or the hockey research development team.
+[01:37] Uh, so, in the past, I've had a bit of success with some competition. So, Mike's NFL big uh, I haven't, uh, I was part of the winning team last year and the year before, and the staff.
+[01:50] Data cup, which is a hockey competition. Um, I was part of the winning team for that, and also UConn here a couple years ago back when it was online I won the poster competition.
+[02:02] We'll just have you pass that Mike? Right over to Mike? Yes. All right. So, uh, my name's Mike Lopez.
+[02:09] I work at the National Football League, and for a long time in sports, uh, data competitions were hackathons that were overnight and requires you to travel in San hotel and.
+[02:20] Not sleep a lot and, uh, when I was at league office, we thought about that model. Um, but for us, it, it made more sense, especially with the complexity of some of our current tracking data specifically the next 1 stats made more sense to give folks more time.
+[02:32] So, we started a competition called the big, um, which I will, um, you know, hopefully not sound arrogant and say that it is 1 of the easiest ways into sports. If you can do a good job with big datable data. Um, there is, there is the potential to get hired. It's not just in football.
+[02:46] It's really in all sports, we share our player tracking data.
+[02:51] This year we will be entering, I think our 5th big, which will hopefully launch as of late September. That's a joke because we're a couple of weeks behind. But the the idea is, we shared in the fall and then submissions are due in the winter.
+[03:04] And it is, um, if you're interested in data science competitions in sports, it's a decent way into the field. Um, it also gives you a sort of a sense of what teams are dealing with now, which is a lot of times when you're answering these questions, you're in the same spot as some analyst on a team.
+[03:20] You mentioned earlier that the sort of complexity of, of what's going on in front offices and how the public data doesn't always reflect that at least in the big database you are seeing the complexity that front offices are facing.
+[03:30] And someone who recently won the big data, will ask him to tell us about yourself.
+[03:38] Hi, everyone to me, um, currently the director of analytics and research at pursuit care, a mental health company and yes, I had the opportunity to participate in the 2021 big 1st,
+[03:53] time learning about football 1st, time wrangling, that kind of data. Thank you Mike for making it essentially a 3 month competition, because you definitely needed all that time. I've been involved in that. been involved in that
+[04:08] Competition I've also been involved as a judge for the big data cup, which is hockey focused, so yeah.
+[04:16] Thank you far too humble. Awesome as a landmark in this field. Meg introduce yourselves as to everyone.
+[04:24] Sure. Hey, everybody I'm Meg crystal. Um, I am a product manager at Kaggle, which is a competitive data science platform. That's where you can go to actually compete in, uh, competitions like the big data bowl.
+[04:38] Um, I've worked at Kaggle, um, almost all of our products for the last 5 or 6 years or so. I mostly work on, uh, data sets and notebooks, but I have a very, very special space in my heart for competition.
+[04:51] So I've dabbled in competitions as well.
+[04:54] Designed to several of my own I've also spent some time as a product manager at Stack Overflow where I worked on public. Q. and a.
+[05:01] Um, so kind of my whole shtick is online technical communities that care about open knowledge sharing.
+[05:07] And then, yeah, before industry I worked, uh, I didn't work. I, I got master's degrees of linguistics at NC state in UCLA, and I have a little bit of experience working as a data scientist myself as well. Um, yeah, that's a bit about me.
+[05:21] Awesome, well, we want this to be a conversation, so I may pose a question to 1 of you. 1st, but anyone please do jump in. If the topic interests you and Mike, you mentioned this already but I wanted to hear from each of you as well.
+[05:34] We'll start with you, Mike, talk about career advancement and how data competitions really can be a part of finding the next step in your career in analytics or sports analytics.
+[05:45] If you follow Mike on Twitter, you'll see, every time someone in sports analytics wins a championship. He's sure to celebrate them.
+[05:52] So I think a lot of companies that are nascent and their data organizations, when they go to hire data scientists or developers, uh, the folks that are doing the hiring, and again, you can mention this. So hopefully, I'm not sounding too repetitive.
+[06:05] They don't necessarily have the awareness of what they're looking for. And so, in that sense.
+[06:10] It can be hard when you get a stack of 300 resumes to sift through and identify the person that is the best candidate for your team. Um, and having a, you know, having something on your resume.
+[06:22] That speaks to your ability to answer and ask questions and sports can be a big leg up.
+[06:28] And I think that is 1 of the main primary reasons that folks do this competition is so that they can say, hey, when you have a medium sized dataset, because even the NFL tracking data, I wouldn't really call big data. But when you have a complex data set that that.
+[06:44] Teams are trying to sift through, you know, I'm the type of person that can come and answer some of those questions. And so I think for us it's always important to share the most up to date novel types of questions that teams are asking.
+[06:57] Because people have had NFL play by play data for a couple of decades.
+[07:01] At this point, you can probably improve it when probability model or make unexpected points model that will help, but to be able to go through and answer questions with some of the most complex data, I think is really where folks are trying to.
+[07:13] On an edge.
+[07:15] Meg from your experience, what have you seen in terms of people using these kind of competitions in, in various fields to, to take the next step professionally?
+[07:24] Um, yeah, I mean, that's a huge component of what brings people to toggle competitions.
+[07:29] I think what we provide is a really unique opportunity for people to get access to data and the kinds of problems that, you know, companies or research organizations are different.
+[07:40] You know, different institutions are actually facing, has this real world flexibility element that, you know, is.
+[07:48] So different from just the kinds of, like, toy problems you might, otherwise, um, you know, create, or, you know, work on and so, yeah, it provides a real kind of learn by doing experience. So people are able to acquire new skills.
+[08:04] People can also connect with other folks, have an interest in this field who may have skills and ideas to share. So you can learn from others. And then, of course, it's a way to actually showcase your work. So, even if you're not winning a competition, it provides a way.
+[08:18] To share ideas, share your creativity.
+[08:22] Um, and, yeah, and ultimately I've seen, you know, success story after success story of people who have had, you know, career advancement, opportunities through capital competitions.
+[08:35] Yes, it's, it's really a rewarding part of my job to see that play out.
+[08:40] And that feeds to something. I definitely wanted to hear. Awesome from you. 1st, you already alluded to this?
+[08:44] Yeah, you've known the data science space, so well, for quite some time but you learn football as part of your competition and talk about the opportunity to build on additional skills and also working within a team.
+[08:57] Maybe people help people understand how you can build a team. And use a team to really provide the best product.
+[09:03] Yeah, absolutely so, I want to say, as a self taught data scientist,
+[09:10] these opportunities have been absolutely instrumental in 2 ways 1 sharpening my technical and statistical know how,
+[09:21] but also learning how to work in collaboration with others whether that's in a team or in a presentation setting and those.
+[09:31] Those facets have been really, really helpful in helping me advance in my career.
+[09:36] In fact, it's oftentimes been the topic at interviews in which I was expected to delve into these projects and they were not very interested in the other topics.
+[09:49] So, I think for career advancement, it's been really, really helpful. Um, yeah.
+[09:56] And Brendan YouTube, you've worked on teams, maybe share a little bit of how you develop a team. Who do you find who you can work with and how do you find those working relationships that Osman just mentioned to make them really at the height of productivity?
+[10:09] So that you can get to the final prize.
+[10:12] Yeah, uh, yeah, so with that, like, in terms of kind of creating the team or picking a team, I just reached out to people. So, uh, for the big data cop, I just knew a friend from Twitter pretty much, and we teamed up and then he knew a couple other friends.
+[10:26] So we just kind of ended up making this.
+[10:30] Was I random group of hockey, Twitter people uh, then we just kind of work towards it every day. Um, like all of us put in a lot of effort into.
+[10:41] You know, building it up day by day, just incrementally trying to improve our models and we were all on the same page and that we really wanted to try to build out. Like, we have this big picture for what we wanted to do for our project.
+[10:52] And it was a bit ambitious, but, um, I, I guess part of.
+[10:56] What made us good there was that everyone was kind of putting all the effort they could into that both in that and the big data pool, which I'll kind of talk about a bit in a 2nd, too.
+[11:08] Um, but, yeah, I think it's important to all be on the same page and that, like.
+[11:13] That are being in when you're in the competition, just, um, I'll be on the same page and what your goal is, or what your goal is for the outcome. Like, do you want to go in there and try to win the competition which might be a bit more work.
+[11:26] Like, it's gonna you're gonna have to make some sacrifices. Like, you know, you might have to sacrifice, say, not doing quite as well on a mid term as you would like, or not really spending as much time with friends as you would like, during that time period.
+[11:40] Um, but also, on the other hand, you could.
+[11:42] Just do the competition just to go in and build a project. That's.
+[11:46] Still, very good. Um, but you don't have to put in that extra commitment where you're kind of working over time and trying to make the perfect visual or something like that.
+[11:56] Um, so, yeah, I guess that's 1 thing in terms of team building that you should be aware of, when you're doing these competitions is just, you know, all kind of be on the same page or else still have kind of people pulling in different directions and on top of that too.
+[12:08] Just having a diverse range of skill sets on your team is.
+[12:11] Really awesome. Like, um, say.
+[12:15] During our big data ball competition um, I I think I worked really well with our team, because we all had kind of our own thing that we can specialize on, like, say, um, my teammate Riker he was a big football guy.
+[12:27] I knew not very much about football, so he was able to kind of guide us along in the parts that I was doing, or a couple of other teammates to help us, kind of figure that part out. And then on top of that just.
+[12:41] Having someone like my other team in on the big Robyn who is, uh, PhD, she had some good statistical and algorithmic ideas to add to the projects where I was a bit better on the coding side. So we kind of help bounce back and forth there.
+[12:55] And help build out our projects.
+[12:57] Awesome you mentioned, Brendan, the importance of having a diverse set of skills and Mike will start with you and I want to hear from everyone on this as a participant. What kind of resources should you be? Sure.
+[13:10] To have both within the members of your team and then also technical resources. What should you have in place to deliver a product for your submission?
+[13:20] So, I mean, I think that the technical resource question, I almost don't even worry about because our job now is to share the data. And I kind of have the easy job once it's out there. It's out there.
+[13:28] Um, but I, I do think 1 of the things that is the reality is, there's a lot of ways you can get help 1 of the resources on capital that we like the most is that sort of discussion and forum section where you can ask questions. And there will just be people that answer them that you don't know.
+[13:43] Um, and the other thing that's really neat that I'll call out is a couple of groups have historically asked for help from.
+[13:50] Outside sort of subject matter experts, asthma as 1.
+[13:53] really fun example, where she asked for help from a former NFL coach, and then last year, I believe the 1 of the groups of students from Pittsburgh asked the punter on the University of Pittsburgh football team for some help on where punters aim.
+[14:08] There's a lot of people out there that have a passion for the sport that are probably going to be willing to help you. Um, you know, just sort of 1, overview phone call. Like, what could you look at? What would be good ideas? And I think those are generally under utilized 1 of the things I think we'll do.
+[14:21] And this year is be datable competition is we're really going to push participants to find a coach or a former player to work with on a submission.
+[14:30] Not necessarily because we expect the coach or the former player to learn to know how to code, but they'll have a lot of sort of context for why players might have been doing something.
+[14:38] And that context is, is always the trickiest part of the, these submissions is, you know, what are the things that, you know, are responsible for the, the dots moving in the directions that they're moving.
+[14:48] Meg, you know, these resources inside. Now you've already heard about some of them what what do you look for in terms of the elements you need both human and technical to, to get to a point in a project.
+[14:59] Um, yeah, Mike actually already touched on a lot of really great, great elements. So I can add maybe a couple of things. Um, I mean, well, 1st, I do want to emphasize the kind of point about a diversity of.
+[15:13] Skill sets perspectives, experience, um, you know, that adds a lot to a team, you know, in machine learning there's this concept of ensemble and, you know, that's the way to win a competition.
+[15:24] You know, the same goes for, uh, the participants who are working together as a team, you know, you can ensemble those perspectives and experiences and end up with a better result. Um, pretty consistently I would say.
+[15:36] Um, so other things that I've heard from, uh, participants is honestly just somebody who can manage, like, basic project.
+[15:43] It's kind of like an overlooked, maybe aspect of, you know, team success, but, you know, just somebody who can keep a team organized and I hear teams wanting to, you know, when they form kind of negotiate.
+[15:56] Things like, you know, we've got people who are in Europe and in North America. How do we handle communication? A sync.
+[16:03] How do we track, you know, the results of the experiments that we're working on, uh, independently um, and, uh, kind of yeah, just somebody who adds that project management layer uh, maybe this is my product manager bias speaking.
+[16:17] Um, but I do think that it adds a lot to just like the organization of a team and then also, you know, it's more likely that others are going to want to work with you in the future. If you're, you know, somebody who's reliable, consistent, and just a good good team player. Um, so to speak.
+[16:32] Um, and then.
+[16:33] Yeah, I I think.
+[16:35] The Chicago community, and just the community at large is incredibly helpful. You know, we really care about people.
+[16:43] You know, being open and sharing, and we think it's sort of a thing that, you know, it's the rising tide that lives all boats, this open sharing element. And so yeah asking questions not being afraid to say you don't know how to do something.
+[16:56] Um, you know, I think it's maybe more important than just what are the technical tools because those are always changing.
+[17:03] All right, awesome. Well, we have to hear the story. Tell us. Yeah, it depends on. Or the height of the pandemic I should say was, was an interesting time.
+[17:14] I, uh,
+[17:15] I think it was really important for our team to make sure that our idea is something that can be understood by coach slash player people who actually play the sport for a living.
+[17:30] And communication I know. Is a big.
+[17:32] Criteria for winning the competition and so I basically just found him on Twitter and sent him a message and he was receptive to that. I don't know if I would be as successful doing it today, but it certainly worked in 2021.
+[17:46] um, and I want to stress that, you know, I'm I didn't know this person. There was no kind of connection there. It's, it's really you can be anyone and and perhaps get access to these people.
+[18:00] access to these people
+[18:02] So, I think that was really important for us. We had multiple questions, multiple avenues that we wanted to take this project to and it really helped us whittle it down to the 1.
+[18:14] we were going to go with and I think Meg is right on the money on sort of needing a project manager and a team, because with these open ended questions it's really hard.
+[18:25] To set yourself in a direction and keep up with with the project and make sure you're finished with it on time and it helps also keep things fun while not rushing to write your submission or not rushing to do the
+[18:39] coding parts. Um, so, yeah, that was.
+[18:43] That was really fun and, um, you know, looking back on it, uh.
+[18:48] We had a lot of technical considerations, uh, that, you know, we addressed by looking back. Maybe we would do things differently.
+[18:59] I think, you know, when you're working remotely with a team, uh, it's important to have tools in place to make sure that you're working efficiently and that everyone has visibility as to what you're doing. Especially since, you know, there's certain.
+[19:13] Project aspects are dependent on others, so I think it was a huge 1 for us. Um.
+[19:20] Looking back, I think we would have put maybe the data behind a database to be able to query it more rapidly. Uh, we would also maybe create a package that helps streamline the data wrangling aspects of it. So, we're not duplicating every single time.
+[19:34] We want to look at the data.
+[19:36] Yeah, lots, lots of lessons learned that I will for sure. Reply this coming competition and Brendan, I want to make sure you have an opportunity to add anything, but I also wanted to ask you you have worked with so many different teams.
+[19:51] Are there instances, and certainly, we're not looking to be negative, but are there instances where you've had to work through a team issue and how have you gotten through that what resources did you use to make sure the team stay productive? Even if there were maybe communication hitches or something like that.
+[20:08] Yeah, yeah, I think with that, um, in terms of issues that have come up in the past, um, uh, I guess when an issue does come up, so someone maybe doesn't coat something, right? Or it's not really working and you have a quick deadline coming up.
+[20:22] It's sort of all hands on deck, like, in our big project, say, Robin, and I worked on 1 side, then our other key teammates record, and worked on sort of the other part of the project.
+[20:33] Um, so if they were having an issue, then we would help out and we would help.
+[20:38] Then kind of work through it and try to.
+[20:40] Figure out where the issue lies and just all work together as a team and come together, have a meeting and figure that out. So then they can keep moving on what they're doing and we'll get back to work on what we're doing.
+[20:51] And it, it'll make everything a bit more efficient and then the same thing, vice versa we're having an issue too. Um, yeah, in terms of just building a good submission and everything. Uh, I.
+[21:03] Pretty much like the Parrot, everything that Mike Megan, somebody just said. Uh, but on top of that as well, I think.
+[21:09] Excitement is the big thing for me, and in terms of building a good submission, both within your team, but also you're trying to excite that drug is a bit to get a a good grade on on their assessment of you. Right?
+[21:22] So, you you want to have a submission that can kind of excite both.
+[21:27] Sides of judges where you have people who make more be more sports oriented, like coaches. Um, on the other hand, you'll have people that are just straight up data scientists that like the sport, but they're more interested in the methods that you're doing.
+[21:41] Um, so being able to have submission that kind of walks that line, where you can both say from a coaches perspective, like, this can help you win more games or this,
+[21:49] this can help you do your job better and on the other hand have something cool where you're doing some cool unique statistical method, or.
+[21:57] Something new that people don't usually see, I think that's big.
+[22:00] Um, not on top of that as well. I'm, I'm a big fan of making good.
+[22:04] Like, visuals are trying to make things visually exciting.
+[22:07] And, yeah, like, I, I guess I, a huge shout out to.
+[22:11] The people that made Nick the package, and are all the tidy verse packages with our studio, like GG plot and animate were really helpful there and doing that.
+[22:21] Um, but, yeah, I think that's that's key to you just having having a way to kind of present it present your ideas visually.
+[22:29] Intuitively really helps communicate those difficult kind of more advanced, statistical models or methods that you're using to an audience that might not know that quite as well.
+[22:42] And Meg also talked about lessons learned and so again, this is something I want to hear from each of you because you come at data competitions from different perspectives, but lessons learned as maybe someone who's organizing a data competition.
+[22:54] And you mentioned always growing the community, what kind of feedback do you strive to provide? What kind of feedback should an entrance expect to receive, whether they win or not in a data competition?
+[23:07] Oh, that's a really good great question. So the feedback that I've seen in the context of capital competitions would really come largely from the community itself if you're sharing your approach.
+[23:20] So, when a competition ends, you know, some of the top competitors, but even just anybody who wants to share, you know, their, their submission will often do what's called like a, we call them winner's, write ups but it doesn't have to be the winner.
+[23:36] And people will share them in the discussion forums, the ones that Mike mentioned, um, and they'll just kind of like, outline their approach. They'll share some of their code.
+[23:45] They'll share ideas about, you know, this is what worked this is what didn't, um, and that ends up being, like, really great fodder for discussion and feedback about, like, um, you know, kind of like post competition close.
+[23:58] It's like a little bit of like a debrief or a postmortem or, you know, so to speak. Um, and so that's like, where.
+[24:06] I see a lot of the open feedback that's shared.
+[24:09] Um, there may also be feedback shared, um, in, in between winners and the hosts themselves. But, um, yeah, I can't speak to that Super specifically.
+[24:20] Um, but, uh, yeah, those winter rate ups end up being incredibly valuable resources because then when we launch a new competition that's around maybe a similar problem. People will go back to those past competitions for inspiration. So.
+[24:33] Um, yeah, I don't know, you know, we've run, you know, the big identical year to year people if there's anything, you know, any knowledge or insights that's translated, you know, over the course of years people will go back and reference that, um, and apply it were relevant.
+[24:47] Um, so, yeah, I think, kind of got your question but, uh, yeah, that's those are my thoughts. Mike, what do you see from, you know, that? I've seen different approaches to, from when judges review submissions and then there's feedback. Provided.
+[25:00] What are do you have perspectives on what kind of feedback? Uh.
+[25:03] You can expect to receive.
+[25:06] So, we have a couple of rounds of judging the 1st, round of judging is done by team analytics staffers. So we send it to data scientists and other analysts on teams and ask them to review all the submissions. We work with Kaggle on what?
+[25:20] The best criterion for scoring is ultimately it comes down to what the team analysts are looking for and, um, you know, their, their perspective is a mix of both.
+[25:31] Subject specific expertise and the football side, and also a good amount of data savvy. Um, we tried to balance it. Every paper gets read by at least 2 judges just. So that there's there's enough sort of balance.
+[25:43] Um, we actually use statistical modeling to account for judge or bias, but, but typically, what they're looking for is folks that have the data awareness, but also have the football context.
+[25:53] Um, you know, that's a thin line to walk in terms of having and being able to submit something that covers all those bases. But ultimately that.
+[26:01] That's kind of where they're looking for Brandon's right that there's a lot of focus on their end about communication and results whether that's a visualization or something else that you can do in your submission. That sort of says, Here's.
+[26:13] Here's what I did. Here's what I'm trying to do and here's what shows it. Um.
+[26:17] You know, from a a real world.
+[26:21] Perspective the accuracy of a model, you know, when you're a GM or a head coach, if you can improve accuracy by 1%, that might not necessarily mean something to them, but if you can get them to act on what you ever you're trying to do in the 1st place that's a much, much bigger,
+[26:35] sort of a factor of a submission and the submissions. That that do that aren't necessarily the ones that improve accuracy by 1%, but they're the ones that get people to make different decisions, based on their work. And so that's ultimately what you're trying to do, and 1 of the other aspects.
+[26:50] other aspects
+[26:51] That I'll just call out, especially because we're going to launch in is.
+[26:54] You know, a submission doesn't have to be all encompassing. You don't have to try and solve football with a submission. You don't have to try and solve hockey or they did a horse racing 1. right? You have to move the literature for just a little bit.
+[27:06] And if that means taking a simplified approach, and instead of looking, sort of everything of about a position, or about a play, you know, look at 1 specific position, or look at 1 specific position on a certain play type, um,
+[27:17] that can be a little bit easier in the sense that you're not trying to solve the whole sport, you're just trying to solve for 1 specific question. And I think.
+[27:24] The submissions that tend to do well, you know, try and reduce all those, come back complexity of the tracking data down to sort of those simple components.
+[27:33] Brendan, I'll ask you because you made the great point of decide what your intent is, when you enter a data competition.
+[27:39] So, if we're talking about, maybe a group or an individual who maybe feels there at more of a introductory level of their skills, and they're coming at this to learn, do you have an example of feedback you've received, or how feedback are going through this process?
+[27:53] Can help someone kind of advance down the path of knowledge and skill.
+[27:58] Yeah, yeah, for sure. Yeah, I think, um, well, going through the process, we got a lot of feedback in both of the competitions. We did just from people that we knew sort of in the industry.
+[28:08] So say, um, on our big, uh, on that sign up, raise your university, and we're lucky enough to have some former champions that won the big data ball a few years before that.
+[28:18] So, Alison, I know, you know, Danny pretty well then also, um, Matt and Lucas blue, who were part of the, I think the 2019 or. and nineteen or
+[28:27] The inaugural championship, uh, so when we were preparing for our presentation in the big datable final, they gave it a look over, it gave us some great feedback on that.
+[28:38] So, I know obviously not everyone's just going to have people like that. That's right. They're like a Stone's throw away to, um, get them feedback on it. But generally people online are.
+[28:49] Very helpful in the sports analytics community icon. Um, so, yeah, like, even if you do your submission and you just want.
+[28:56] Someone to take a look over, um, it might be worth it to just reach out to some people that are already established in the industry.
+[29:03] Uh, they might not always be able to help you because, uh, I'm pretty sure a good chunk of the judges for the big data and make data, copper, all industry people. So, they, they, I don't think they'd be able to give you a review before. You submit, but.
+[29:16] Uh, yeah, I think that would be worth it just to, you know, reach out to some people and talk to people online and interact to people. That's sort of how I got, um, got started in the industry and started rolling the ball down the hill by talking to people that.
+[29:30] Uh, I met online. Really? So, yeah, I think that's that's an important thing to do.
+[29:36] Awesome, I know. You've been both, you've submitted entrance, but then you've also judged other competitions. You've also run mentorship programs through hockey graphs. What is your perspective on that feedback loop that participants might receive?
+[29:50] And and how that can help someone who's maybe just starting out in this field or looking to improve their skill set.
+[29:55] Yeah, I think Brendan brought up something that is.
+[30:01] Oftentimes successful is, is reaching out to people with your idea on getting their feedback. Um, I say, given just how busy some people can be.
+[30:12] Um, and I think that it's helpful to maybe reach out to them, but also be as detailed as possible.
+[30:20] Not really asking them to review your whole project idea, but maybe certain aspects that you're wondering about, I think that will increase the likelihood of getting an actual response back. I think.
+[30:31] Something else that can be done is sharing snippets of your analysis on Kaggle because it accommodates that. And there's a pretty healthy comment section. I know. We got a lot of feedback through that when our submission was done.
+[30:46] Um, some good, some bad, you know, it's, it's a democratic process. Um, so that that could also be a way to Gardner some, some feedback as well. And, of course, Twitter, Twitter users, especially sports users are very active.
+[31:01] On there and happy to share opinions, um, in terms of me, being on the other side of judging, I think Mike, I'll just echo what he said.
+[31:11] Uh, it's not always about having the most technically complex project 1, that has the most accuracy. It's really about communication.
+[31:20] You'll lose the judges if they're not understanding what you're trying to do, what you're trying to solve for and being able to communicate how your project will help in.
+[31:31] Their decision making, or helping their evaluation, depending on the project goes a super, super long way.
+[31:38] So those are my 2 cents. Well, and that leads us right to, you know, of course, we have the, that, a competition with our poster finalists coming later today, but let's flip the switch here.
+[31:51] We've talked a lot about the participant experience, but we have people on this panel who have put on data competitions as well and maybe someone's watching or listening. Who's like, hmm, I might be wanting to do this. It's super easy. Right Mike can you walk us through?
+[32:05] How to design a successful data science.
+[32:07] Competition.
+[32:08] We got lucky, I mean, if I knowing what I know about the week now, if I tried to share tracking data.
+[32:18] Now, and sort of launch a data science competition. I'm not I'm not totally sure we would have the traction to do it. Um, when I started at the league, it was kind of an idea. It was like, hey, let's, let's.
+[32:27] Let's try and get some of our data public, but there's companies play millions of dollars for access to NFL next in stats.
+[32:35] And here I am putting it on a get hub page and my.
+[32:38] 3rd month at the NFL league office. Um, so that's, that's kind of the trick is sort of a combination of the data complexity and and the novelty of that data, because ultimately people want to analyze newer data sets that they haven't seen before. Um.
+[32:52] And also, you know, having questions that can actually help the league, you know, for us, it's always been really important to collaborate with both our next stats team. The idea about who has been our principal sponsor for the last couple of seasons.
+[33:05] On what questions that we could ask that would also benefit them because ultimately we're really office I would love to learn about, you know, how to use tracking data to predict all kinds of holding penalty or things. That would really help our team.
+[33:19] But most people out in the public don't necessarily care about that and also our next steps team probably wouldn't care about that either. So, it's kind of a collaborative process of what are the questions that we could encourage participants to solve for. That would ultimately help us.
+[33:31] And, you know, I think 1 of our favorite competitions was.
+[33:34] 2020 where we did a Russian prediction model, and, you know, that that single.
+[33:40] Model that was submitted that 1, that competition, I think is now produced for metrics.
+[33:46] That you can go on that site and look at, and, you know, that that competition costs the league about 100,000 dollars, you know, in terms of sponsorship and whatever.
+[33:57] And in terms of if you're getting 4 metrics that are on the site, and used on air, you know, that, I don't know if we'll ever advocate that because that was, you know, sort of a big win in terms of. terms of
+[34:08] And we're working with our partners to have a story that a lot of people can buy into.
+[34:12] Meg, what have you learned about putting on data competitions through the years?
+[34:17] Yeah, happy to answer that question. Yeah, our team obviously thinks very, very deeply about what does a successful data science competition look like, and, you know, 1 of the biggest things that we care about, or that we kind of optimize for.
+[34:31] So to speak is just providing.
+[34:34] Really great experiences for our community that they're going to find is helpful opportunities to learn new skills connect with others in the community advanced their careers. That's typically what, you know, kind of characterizes people's motivation for participating in competitions.
+[34:49] And so we try to align around that objective and, you know, at the end of the day, I think, you know, there's a few things that are really important. And 1st is.
+[35:00] Having a really clear problem, and to solve that relates to some business objective people are less interested in participating in competitions where there's maybe some like abstract problem or it's just sort of,
+[35:15] like, oh, you can, you could theoretically do machine learning on this problem. But, you know, the, why isn't very clear people really care actually quite a lot about what is that? Why.
+[35:25] Um, and they want to know that this is going to have a positive outcome for the, you know, the host, whoever that may be, maybe, um, and so really designing around, like, a very clear business objective.
+[35:39] Um, and then, of course, there's a lot that goes into design of the data set itself. Um, quite a lot, you know, it could theoretically almost be infinite amount of work that you put into preparing a dataset, um, and doing things like checking for leakage.
+[35:54] Um, making sure that you have appropriate test, uh, train and evaluation sets.
+[35:59] Um, you know, in particular the private leaderboard toggle has been super powerful for preventing things like overfeeding selecting an appropriate evaluation metric. Um, getting all of these things right.
+[36:11] Is really important to making sure that the competition feels fair that it feels it's high quality. And then it's ultimately really important to the success. And then finally, the last thing we really care about is just creating, like, an exciting sense of community.
+[36:25] I think Brendan mentioned 1 of the things that he's interested in in working.
+[36:29] With the team is just like that sense of excitement. Um, and so.
+[36:33] Uh, you know, you know, the prize is, of course, like a big part of that and sometimes you try to include, you know, even prizes, not just for winning, but, you know, doing things like sharing,
+[36:46] publicly your code or ideas as the. The competition goes on. So just kind of like other elements of, like, excitement around a competition like that. So, yeah.
+[36:56] All right, Brendan now, is your chance are there things that you've seen in data competitions that you really loved and wish you saw more of or things that maybe fell short? No names mentioned.
+[37:07] In terms of like other submissions or even my own. Okay. And just from from the organizer perspective what's really made a successful experience for you.
+[37:16] Yeah, yeah, I mean, I guess I could give a quick shout out to Mike here and not the big data ball data was the cleanest status that I worked with. It was so nice and smooth and all the tracking data seemed perfect.
+[37:28] We didn't really find an error and anything at least as as far as we looked in our data cleaning process. Um, so, yeah, that was super awesome to work with, um, same with the stoppage data, too. Like, it was, it wasn't quite at the same level of granularity.
+[37:42] We were just looking at play by play data. So, like, you have a shot and.
+[37:46] Us and recoveries, and where they're coming from on the ice, but you don't have every Player's location. That was still super easy to work with like, the, the data was very logical and how things broke down there. There was some weird things that would happen.
+[38:01] But it was just weird things in hockey, like, uh, there's things you'll see stuff in the data that you think oh, wow. That that actually happens in a game like, uh, There'll be a shot at 1 and then you'll see a shot at the other end 2 seconds later.
+[38:14] And it'll be because someone took a.
+[38:16] It missed the net rims around the boards went down to the other side of the ice and someone on the other team just took a shot immediately, right? As they got to the puck. So, um, yeah, I guess that's.
+[38:27] That's not really not not really anything negative on staff.
+[38:31] We'd start, like, just weird stuff that happens in hockey, and I think in most sports, but yeah, especially with the little puck bouncing around everywhere that's, um, it's gonna be a bit of a pain to really do model hockey stuff in hockey quite as well as some other sports, but, um,
+[38:46] yeah, yeah, I don't really have too much like anything negative to say, because both have been super awesome and they've been great learning experiences for me and having great for.
+[38:57] Both like professional development and just advancing my career forward in terms of job opportunities.
+[39:03] Awesome anything you've seen that really makes a data competition even a superior experience, as opposed to just a great experience.
+[39:12] Yeah, definitely as someone who engages with sports for fun and not so much for professional development or landing, uh, a job in sports, it's, it's really the community aspect. It's, it's like the 2021.
+[39:27] thousand and twenty one
+[39:28] Version of the big data was was just incredible. A lot of us were terminally online unfortunately. So we tweeted a lot. We tweeted tips on how to approach the data.
+[39:42] She would have been online anyways um, all the packages that have been developed, um, as a result.
+[39:53] And just yeah, just all the exchange that that happened is was.
+[39:58] Really made it fun for me and and I know that's a consideration for the organizers and they've all.
+[40:05] Done a fantastic job in fostering that we have just a few minutes left before we open it up to questions, um, from our attendees, but I wanted to just last call.
+[40:17] We've heard so many great points about what really makes a submission stand out, or what really makes a winning submission. Does anyone have any points that maybe they think we haven't really touched on that people can take away when they start to put their submission together.
+[40:33] I'll circle back on 1 thing, which is there there is some luck involved in the competition. You know, we send out papers, but we can't send out every paper to every judge.
+[40:43] So, there's some, just lock base there.
+[40:46] Um, there's also a little bit of lock in terms of, you know, if you're trying to maximize or solver or metric that things can can help you or or not help you 1 of the very 1st,
+[40:58] Kaggle sports competitions was a March machine learning competition back in 2014, um. and fourteen um
+[41:05] The winners, the 2 winners are in this room. I was 1 of them and the other 1 is, uh, Greg Matthews who's sitting over there and there were a couple of ways that we got. Really lucky. 1 was 1 of the 2 of us.
+[41:17] I won't say who it was, but it wasn't me coded, Ohio State as Ohio. And in that year in 2014, that meant that we gave ohio's team strength was Ohio State, or has there was a much better team.
+[41:31] Ohio was the 13 seed and actually happened to win their 1st game. their first game
+[41:35] So, we got really lucky because Greg made a typo. Um.
+[41:39] I'm sorry, 1 of the 2 of us made a typo and we ended up winning that competition and that was based on accuracy, like, based on your log loss. And so what was lost wins but a couple of things happened.
+[41:52] We actually didn't originally when the competition somebody 1, but then was removed for cheating. And so we were actually in 2nd place.
+[42:00] But got bumped up because the 1st place person had submitted multiple entries. So we got lucky in that way. And then what we did is, we, we simulated the entire tournament to figure out how lucky we got, which was, like, if we assume that we were right in all of our probabilities for the competition were the truth.
+[42:14] How often would our submission? Which was the truth. Actually, when and I think we won about 10% of the time, and so, even when we knew we were right? And we had the ground truth probabilities. We were still about 9 times more likely than not to. to
+[42:29] The competition with our, our treat.
+[42:32] Probability so, that that kind of gave us a good perspective is that when you go into this, you know, there's some lock on, in terms of how you code there's some walk in terms of who your judges are. And and even when you're.
+[42:42] You're solving for something that has a sort of a ground truth solution. You're, you're being assessed based on your accuracy. There's also inherent luck there.
+[42:50] And I think that, that, you know, for participants, you know, the, the process is the reward there and, you know, we offer pretty big prizes in the which we do because I want to be able to reward people for outstanding work.
+[43:04] But a lot of the reasons that you want to enter these competitions is the process itself and the learning, the community building, your skill set, putting yourself.
+[43:12] Inside the yourself inside the front office as the teams to try and answer the questions that they're trying to solve for to.
+[43:19] Anyone else have thoughts on what makes a winning submission.
+[43:27] I love the idea that a winning submission is 1 in which you've learned something through the process of developing that submission. And I think that this is somewhat similar to Mike's thoughts.
+[43:41] But I think submitting their competition can be a very humbling experience. I have heard a lot of times competitors are joining their very 1st, casual competition, and they go in blazing hot with confidence and they're like.
+[43:54] This seems easy I'm going to be at the top of the leader part of it, a win a prize. And then the private leader for that is revealed, which is evaluated on a subset of the test set, and they find out that they've over fit dramatically.
+[44:09] They've dropped hundreds of places in the leaderboard and then they're like, oh, my God. And my advice is that happens to the best machine learners in the world that, you know, you've seen that happen.
+[44:21] You know, countless times and, uh, take away from it, you know, what did you, you know, there's that that in itself, as a learning experience, um, you'll learn how to, over, you know, to avoid overfeeding next time just take away what you can learn from it.
+[44:34] And embrace it as a humbling experience, and build on that for your next next submission. Um, so.
+[44:43] Awesome any final thoughts or Brendan.
+[44:48] Yeah, I'd say like, Mike was saying, lock is definitely part of it, like, part of our submission when we coded it out. We were just kind of scrambling to get the code together. And it was a little bit messy. Then I went back about a month ago.
+[45:01] When we were preparing for another presentation on the same subject, uh, and I recorded it and I made it kind of nice and fancy and the code a lot cleaner. But it took about triple the time to run and overall running it on all.
+[45:14] The data would have taken, like.
+[45:16] 18 hours for, so not not just something that I, I guess there's little things along the way like like Mike was saying, you know, in a typo.
+[45:27] Good enough, we need to good luck and and in the big data ball, there's 268 submissions and I saw at least 40 really? Great ones that I was very like oh, are these guys gonna beat us? So that's something to be aware of too. Um, but, yeah, I think. but yeah i think
+[45:42] Even not, even if you don't win, I think it's more about the friends you make along the way like 1 of my teammates, um, on the big data C*** tyrol Stokes he's a good friend of mine now. I didn't even know him before the competition.
+[45:56] Um, he taught me he's probably taught me more than any other individual about data science and sports analytics.
+[46:03] And, yeah, anything related to this, this field. Um, and now he's my direct Co worker at, and he's teaching me even more stuff every day. So, yeah, he helped me get the job there too.
+[46:14] So, even if we didn't win the competition, I would consider that a massive line from my career. So.
+[46:21] All right before we turn it over to questions. Awesome. You get the final word. Yeah. Just some small final thoughts. I think, as important as it is to have a project manager on the team, we should also have a hater on the team.
+[46:35] Someone that, like, anticipates all all the inefficiencies everything that could go wrong with your project things that are in the back of judges minds.
+[46:50] So I think having a healthy amount of criticism on your project, and especially as you're writing, it is helpful. I think also letting the judges, and everyone who's reading your submission kind of take a peek inside your model.
+[47:04] Especially if it's a machine learning 1, there's a lot of great work on explain ability.
+[47:09] And that's something also, that translates, you know, when you work professionally, you know, even the non technical stakeholders are gonna have some questions about how your project came to be.
+[47:19] So, I think that helps also having maybe a social media strategy around your project. I know. We were very, we thought about that a lot. We made sure to share as much as we can before the competition.
+[47:32] Um, when the submission was launched, we hyped it up. Uh, so we got lots of good.
+[47:39] Back and I think that already made us winners in my book, you know, I mean, obviously it was nice getting 15,000 dollars, you know, all, you know, all the all the social media interactions with our project. Really made it worth it.
+[47:52] Um, and it helped also, I think, in the credibility of of our work and that can bias things. I don't know. know
+[48:00] I think it did for us. Well, awesome. Meg, Mike and Brandon I appreciate so much your insights through this formal part of the panel. We want to have a few minutes here for any questions from the audience for any member of the panel here today.
+[48:15] Turn it over to those of you in person, I'll go 1st.
+[48:28] So, you mentioned Amazon Web service, and the next gen, stats that you have in the NFL is there like an API that interprets what's happening on the field and then, you know,
+[48:38] transmits that into a data set or are there actually some human beings that are watching the game and inputting certain variables manually and if so.
+[48:47] How do you account for that error? Because I'm sure, you know, like the, the, a lot of things.
+[48:52] And a computer, and I couldn't actually, you know, translate that into actual data. So, how do you account for some of the human element of, um, creating some of those variables if that does exist in the NFL.
+[49:05] So, I think I can't speak to hockey, but at least on the football side.
+[49:09] You know, the, the way the player tracking data comes in, um, there are sort of 2 ways that events can be tagged.
+[49:14] Uh, 1 is automated using the tracking data itself, so, for example, you know, the ball is is placed down by the, uh, field judge or side judge, and it's sort of sitting there that that says, like, okay, the Ball's in play, but it's not ready to be snapped,
+[49:29] um, then everybody gets out the line gets set and then the ball is snapped well, that that ball is snapped that movement of the ball suggest that okay, this is the time that we register the ball snap. So, whenever you start, you know, when we pick the start of a play to happen in.
+[49:44] Nfl, that's what we would choose. Um, there are other things that happen within a play that there are spotters at the field that would tag manually. Um.
+[49:54] I think the lead works pretty hard to try to make sure that the definitions are universal, um, ubiquitous throughout because the, the people that are doing it are scoring it by watching it and trying to tag 1 within the game that that happened.
+[50:06] You know, for example, this year, you know, we're tracking quarterback slides so, when a quarterback is on the run and then decides to slide in the open field, we don't have an algorithm to do that. We're relying on somebody to identify. All right that's a quarterback. And that person's slid.
+[50:21] Is there are there differences? Probably somebody might start the quarterback slide tag at the when the player decides to start the slide somebody else might do it at the end. You know, but we try to work with them to sort of say, like, okay, well, we're gonna market when the knee hits the ground or something like that.
+[50:36] So, those are definite. I wouldn't call them issues, but there are things that that could get in the way of getting all you can from the tracking data, but it's a mix of both sort of automated tasks. But then also event tags.
+[50:53] Um, Hello.
+[51:02] Hi, um, oh, okay. It's working, uh.
+[51:07] I'm not sure if this is a question, although I'd love to hear what the panelists have to say Alison mentioned that we're hosting the data challenge here.
+[51:16] This is the 1st time that, uh, it's been done at all and it's actually a pretty big deal because it's a student competition where students are working with real world.
+[51:30] Baseball player tracking data, uh, to my knowledge, and maybe the panel can speak to this.
+[51:36] I don't think player tracking data has been available in a public competition before and we've gotten some great great. Um.
+[51:47] I need a lot of entries, but the work for the finalists, and we have a graduate and an undergraduate division. Um.
+[51:55] 3 posters each, but please go out and see them. People have done some amazing work. And, uh, so much of what you said in this panel, really you know, it sounds like we did it. Right?
+[52:07] Because a lot of the things, I mean, we, we had, um.
+[52:11] Much more than just like the idea of fitting a model. Uh, this was truly data science. Um, it was a bit open ended.
+[52:19] So, you know, it was just make sure there's player movement involved, but, uh, we had, uh, not just people with technical backgrounds. We had players, we had active and retired, majorly players as judges.
+[52:34] We had an umpire. We had a scout, um, you know, we had people from front offices. We had people in academia, uh, and.
+[52:43] Part of the important thing with the posters and with the papers that we were given was that things had to be accessible and understandable to people in industry.
+[52:54] You know, it wasn't just going to be enough to say, okay, my algorithm worked. You actually, you know, there had to be a point to it and the fact that.
+[53:02] It was ultimately something that would be used and would be interesting.
+[53:06] So, I'm really excited. Um, I don't know how many people hear baseball people, but it's the 1st time we've done this and I really hope everybody comes out and takes a look because we've had people come in quite literally from all over the world.
+[53:20] To do this not kidding. We had someone come from overseas.
+[53:24] So, anyway, I'd be curious about the player tracking stuff, but otherwise yeah.
+[53:34] Stop.
+[53:39] So, my question is, when you guys make new rules in the league, how much of data influences the decision to implement a new rule.
+[53:52] Uh, I, is that I might be the only person on a lead office so I think that might be for me but, uh.
+[54:01] I mean, I, there's for generally for almost NFL.
+[54:07] Big rules, we try to help, you know, support from a perspective of what are you trying to solve for and in other words.
+[54:15] You know, you're when you evaluate an overtime rule, for example, are you trying to maximize excitement? Are you trying to minimize injuries? Are you trying to make it the simplest explanation for fans?
+[54:27] Because whatever format you might come up with, and that's just a totally example, but also the most recent 1, you might come up with a different solution and depending on what you're, you know, what part of that conversation you're trying to support.
+[54:38] Data might play a pretty, pretty big role. Equity was the role last year that we played a lot with, in terms of what are the most competitive equitable formats.
+[54:47] Uh, foreign overtime format, you know, the only really way to answer that is with data you can have conjectures about what you think a format might do for equity. But but but that would be 1 that would, you know, where data would play a big role. But there might be other parts of the conversation where.
+[55:02] You know, data would be less important, but I think with each growing year, you know, at least at the NFL side, you know, data plays a larger role in terms of understanding and supplementing those conversations.
+[55:14] So, when you guys talk about, like, reaching out to coaches for the big data bull and stuff like that, what's the best way to reach out with them and just keep consistent contact throughout the project?
+[55:25] So, I mean, I think this is a road that's probably less paved than maybe it should be we, when we often hear from teams there, when they're looking for analysts, you know, some are looking for.
+[55:37] You know, folks with the data science skills, others are looking for quite literally coaches that also know a little bit about.
+[55:44] You know, statistics and so that's really who we're targeting. Um, how, and what the conversation looks like to get in touch with those people. We're a little less clear on, you know, but I think this year we're gonna push.
+[55:56] Folks to reach out to coaches, um, you know, if.
+[55:59] There's a high school football team. Is there an assistant coach that is interested in data in every town? Probably not, but there's several 100 colleges where there's an offensive line coach or a, um.
+[56:12] Uh, secondary coach, or somebody who might know about expected points in 1 probability. Um, and, you know, you might strike out 3 or 4 times, but if you find a coach who says, like, hey, I'll help you out, you know, here's a, here's your analysis and.
+[56:25] You know, why did the defensive and do this or why did they're running back there. You know, those are the types of things that I think really helps. So, um, you know, what those look like and how successful all of them will be. We're certainly not. Sure. But it's something we're going to continue to push for.
+[56:41] Awesome before the next question, I'm curious when you reached out to the NFL resource, you did were there continued communications to that end? Or was it more transactional with your questions?
+[56:53] Yeah, so looking back on how we approached it, I, I think it.
+[56:59] Uh, we had to make it such that.
+[57:02] It was an ease it was easy for him to say. Yes. So, with that being said, we're like, we would just love.
+[57:10] 15 to 30 minutes of your time on zoom, we'll send you a link. We just want to discuss.
+[57:17] Blah, blah, blah, about defensive effectiveness. Um, so that was helpful, cause I think most people, you know, would be willing to just sit around for 30 minutes and talk about, uh, things in a low stakes way. Not so much.
+[57:31] You kind of sending them, you know, a written analysis and for them to look it over. So that was helpful and yeah, we ended up following each other on Twitter and and talked about a few things here here and there.
+[57:46] Uh, but it really did start with just, you know, an approach in which, you know, it's low stakes, informal, kind of office hours style. Like, we're just here to kind of, uh.
+[57:57] Uh, ask you some questions, general questions so.
+[58:01] Yeah, for those of you who have participated in these competitions, uh,
+[58:11] what's 1 thing that you wish you spent more time on and what's 1 thing is wish you spent less time on.
+[58:21] It's a good question.
+[58:25] I think in terms of stuff that, like, I, I feel like there's sometimes where I get a bit stuck in the weeds on stuff, where I try to fix it a little bit too much on, like, how the code looks.
+[58:37] Or how like, how, like, kind of reproducible the process is, which is very valuable. Um, there's sometimes where I spend a bit too much time making that a bit too perfect.
+[58:48] Uh, at least for me, like, I, I do most of the coding type of stuff when I'm on these projects. So, um.
+[58:55] Huh.
+[58:55] Not that I do most of the coding, but like, that's that's the main thing that I, I focus my time on. Um, so, yeah, I guess just a little too much just focusing on perfecting things are being too much of a perfectionist.
+[59:07] I feel like that that can kind of come a bit later in the process when you're trying to make the perfect like, submission or presentation but yeah. Just making sure that everything is correct is the main thing.
+[59:20] Um, once you have that you can kind of move on then revisit that if.
+[59:25] A point where just have kind of welcome to files, but don't really.
+[59:30] Overstressed the coding, at least for me. Um, yeah, I, I guess that would be my answer there. Sorry if that's, uh, I don't know too much other than the, the coding stuff. There.
+[59:42] Yeah, I think for us, looking back on it, we spent a lot of time on feature engineering.
+[59:48] I think we spent a lot of time on it because it was mostly our 1st time approaching this data, and, you know, in sort of making an effort to code everything up yourself.
+[60:02] It helps you deepen your understanding of the data and the dynamics that you find in there, but looking back on it, I.
+[60:10] I think now the big data ball is a few years old, a lot of code is out there.
+[60:17] So, if you can find any sorts of efficiencies in re, adopting someone's code to generate those features themselves, I think that would be the way to go. Because it certainly took us.
+[60:28] A long time I get those features up up and going.
+[60:33] Yeah, that's actually a good point for this year's competition too and.
+[60:39] Speaking back to some of this stuff, Mega said, too about how we can use previous cargo forms and discussions to really drive this year's competition. And so, you know, it seems like a new year and it will be a totally different theme.
+[60:50] But, in essence, a lot of the themes and metrics that are features, you can create will be similar to years past.
+[60:58] All right, I want to be sure to keep us on time. I don't know how many more questions are in the room, but do we want to keep going or shall we move on to lunch in our poster session? All.
+[61:09] Defer to those in the room. Yes.
+[61:20] Can you see any questions online? There are no additional questions online for this. Excuse me? Uh, there is 1 that just came in. We'll end with this 1 then I think this is from Tim, um, for us and Brendan. How did you deal with the unproductive days?
+[61:35] While doing the project.
+[61:41] Just grind it out at the end.
+[61:47] Yeah, the big data ball that was really 90% of our work was done in the last 2 or 3 weeks. So we basically just sacrificed our Christmas holiday to get a good submission in.
+[61:59] Um, that's really like, I, I guess that's kind of my, my experience, not really my advice there. there
+[62:07] Um, so, yeah, like, during the semester, we were pretty busy with coursework and stuff, um, where we really just met once a week and kind of brainstorm and did a little bit of coding here and there and when we had a few spare hours.
+[62:20] Uh, but, yeah, once classes I did, we just kinda got down to where we all went home and just worked remotely and.
+[62:27] You know, I think the last few days I stayed up until 30 a M, just making sure that the code was good, but.
+[62:33] Yeah, yeah, that's that's kind of my experience there.
+[62:37] Yeah, I think on that, you know, it really is dependent on people's schedules and, you know, I'm privileged enough to have a 9 to 5 where, after 5, I can, you know, dedicate myself to this.
+[62:49] We wanted to make sure not to push this to the last minute. Once again, going back to the social media strategy.
+[62:56] We pushed our submission a whole 2 days before we kind of got a saver that a little bit and people check this out and, um, helped.
+[63:06] So get credibility for our project, but with that being said unproductive days, those are going to happen. Um, but I think it's important to stick as much as possible to regular check ins.
+[63:19] I'm pretty sure we met, you know, at least once a week and there was an, you know, a ton of pressure associated with each check. It wasn't like someone was supposed to come in and having had their quote unquote homework done.
+[63:33] Uh, we could just check in, on things that were half baked, um, and just talk about that, you know, as a group and that was really helpful. It's, it's not always helpful to just show when something's done. It's also helpful to show it while things are underway.
+[63:48] Uh, so.
+[63:49] Yeah, the regular check ins, you know, when holidays happen, you know, it's okay to to not be as productive as possible but I think going back to the project management side, I think what helps.
+[64:02] Things be fun and productive is really someone that has an eye for deadlines and making sure that things are being done. Um.
+[64:11] As time goes on. Awesome. Well, I can't think of a better way to have 1 more question. Okay.
+[64:18] Um, when can we expect an announcement on the theme of this year's big data?
+[64:26] This year's team will be offensive and defensive lineman evaluation on past plays, uh, will be sharing data from last year. Drop back passes.
+[64:37] And, uh, yeah, like I said earlier, you can expect that competition to drop in late September. There. You go very important. All right on that note.
+[64:49] Um, you heard about our exciting s, AMP P, data competition in the posters that are available to you we strongly encourage those of you who are there to check those out during this lunch break.
+[65:00] Um, and we will be coming back for our training workshops at 145 again. five again
+[65:07] Brendan asthma Meg can't Thank you enough virtual applause and hopefully applause there in the room for everyone. And thank you for sharing your knowledge. Your wisdom and your time.
+[65:16] Thank you thank you. Thank you very much Alison. Megan?
+[65:23] Brendan and Mike.

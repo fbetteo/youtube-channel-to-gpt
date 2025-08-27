@@ -1,0 +1,212 @@
+Video Title: How to Connect Slack to n8n (2025) (Step-by-Step)
+Video ID: qk5JH6ImK0I
+URL: https://www.youtube.com/watch?v=qk5JH6ImK0I
+View Count: 41,398
+
+[00:00] So, this is the quickest and easiest way
+[00:01] to connect Slack to any event. So, I'm
+[00:03] setting up a new Slack workspace. So,
+[00:04] you guys know I'm walking through every
+[00:06] single step. So, I just gave it a name.
+[00:07] I'm giving it my name. I don't need to
+[00:09] invite anyone else. I'm creating my
+[00:10] first channel and I'm starting with the
+[00:12] limited free version. Okay. So, now that
+[00:14] we have this connected, all we have to
+[00:15] do is come down here to the apps and
+[00:16] click on add apps. Now, we're going to
+[00:18] go to browse apps. So, this pulls up our
+[00:20] Slack Workspaces app section where we
+[00:22] can click on build. We can click on your
+[00:23] apps and then we're able to create a new
+[00:25] one. Okay. So, here we are. You can
+[00:26] ignore these other apps that are
+[00:27] assigned to a different workspace. You
+[00:29] can also get here by going to
+[00:31] api.slack.com/apps. And now we're just
+[00:33] going to click create new app. We're
+[00:34] going to start building one from
+[00:35] scratch. We're going to give this app a
+[00:36] name and assign it to a specific
+[00:38] workspace. So here you can see I'm
+[00:39] assigning it to the workspace I just
+[00:40] made. We're going to hit create app. And
+[00:42] then it pulls up this configuration
+[00:43] panel. And now it may look like there's
+[00:45] a lot going on, but we're going to break
+[00:46] it down. It's not too difficult. So
+[00:48] first I just wanted to talk about we
+[00:49] have two things that we're going to
+[00:50] connect here. One is going to be a
+[00:52] trigger that's going to be listening to
+[00:53] our Slack channel, and one is just going
+[00:54] to be the ability to send messages to a
+[00:56] Slack channel. So, if we click into this
+[00:58] send message one first and we go up here
+[01:00] to create a new credential, we can see
+[01:02] that we can just sign in with OOTH 2.
+[01:03] So, if I click connect my account, it's
+[01:05] going to pull it up right here and it's
+[01:06] going to have a message saying here is
+[01:08] like what NADN wants to have permission
+[01:10] to within your Slack workspace. I'm also
+[01:12] going to change the workspace to the one
+[01:13] we just made. And now you can see these
+[01:15] are the different permissions. All I
+[01:17] have to do is click allow and we will
+[01:18] have connected successfully. And there
+[01:20] we go. We get two green messages and I
+[01:22] want to verify that by clicking into the
+[01:24] channels. However, we can't see them
+[01:25] yet. So the reason why it doesn't work
+[01:27] yet is because we haven't given it
+[01:28] permission. Okay. So back in this page,
+[01:30] what we want to do is we want to come
+[01:31] down here to OOTH and permissions and we
+[01:33] want to scroll down to bot token scopes.
+[01:36] We're going to add an OOTH scope which
+[01:37] we will have app meions read. We also
+[01:40] want to do channels read. We can do
+[01:41] other things like channels join. We can
+[01:43] do chat read, chat, write. This is
+[01:45] basically just telling Slack and telling
+[01:47] Naden what they can do. I'm going to
+[01:49] leave it with these scopes for now, but
+[01:51] you can get in there and basically
+[01:52] customize what you want this bot to be
+[01:54] able to do. So now that we have this set
+[01:55] up, we can scroll up a little bit and we
+[01:57] can see right here we can install to
+[01:59] awesome AI stuff, which is just the
+[02:00] workspace that I just made. We want to
+[02:02] allow it to go into our workspace. And
+[02:05] now it is in there and we have a bot
+[02:07] user OOTH token. And so that's the other
+[02:09] way you could have verified your account
+[02:11] if you copied this token and you came
+[02:12] back into Slack. And if we were to
+[02:14] create a new credential, you could do an
+[02:15] access token rather than the OOTH. If I
+[02:17] show you guys that right here and we hit
+[02:19] save and now we are going to be once
+[02:20] again connected. And now we can click in
+[02:22] here and see our channels. And for
+[02:23] example, we can go to the YouTube
+[02:25] channel, send a message of hi, and what
+[02:26] you're going to see is that we have this
+[02:28] error not in channel. So this just
+[02:30] basically means that our app isn't in
+[02:31] that YouTube channel yet. So now back in
+[02:33] our Slack, we basically have to invite
+[02:35] that app that we just made into this
+[02:36] channel. So I'm going to do at testing
+[02:38] because this is the app that we just
+[02:39] made. And I'm going to say hi. And then
+[02:41] it's going to prompt us to invite the
+[02:43] app to the channel. So I'll just click
+[02:45] add them. Now they have been added. We
+[02:47] can go back into Slack, hit test step,
+[02:49] and it should be able to send that
+[02:50] message in our channel because we've now
+[02:52] added the user and he is saying hi.
+[02:55] Okay, cool. So, that's sending messages.
+[02:56] Now, let's talk about how we can set up
+[02:58] this web hook over here so that we can
+[02:59] have a workflow trigger from Slack. So,
+[03:02] we'll click into here, and we can see
+[03:03] that we have the same access token
+[03:04] already configured, but now we have to
+[03:06] configure the web hook. So, what we're
+[03:08] going to do is click this web hook real
+[03:09] quick to copy it to our clipboard. We're
+[03:11] going to go back into the nasty page of
+[03:14] OOTH and permissions we were looking at,
+[03:15] but now we're going to go to event
+[03:16] subscription. So, right below OOTH and
+[03:18] permissions, and we want to enable
+[03:20] events. What we're going to do is paste
+[03:22] in that web hook right here that we just
+[03:23] copied and now it's going to verify it.
+[03:25] So, back in Nit, I'm quickly just going
+[03:27] to choose a channel. So, we'll choose
+[03:28] YouTube because we already know that our
+[03:30] testing app is in there. We'll hit test
+[03:32] step. So, now this this trigger is
+[03:33] listening. And then if we go back into
+[03:35] here and we hit retry, now it's going to
+[03:37] be verified. So, we should be good to go
+[03:39] now. And what we want to do is open up
+[03:41] this panel that says subscribe to bot
+[03:43] events. And we can add a bot user event.
+[03:45] That basically just says when does this
+[03:47] workflow actually trigger. For now,
+[03:49] let's just choose app mention. So this
+[03:50] just means if we ever are in Slack and
+[03:52] we say, hey, you know, I want to talk to
+[03:54] our N. I'm going to do at testing and
+[03:56] then I'll be able to talk. So we're
+[03:57] going to save those changes. So we'll go
+[03:59] back into Nitn. We can see that our
+[04:00] Slack trigger is listening for us. And
+[04:02] now if we go into the channel and we say
+[04:04] at testing hello, send that off. It's
+[04:08] going to be sent to Naden. Right here,
+[04:10] it just got the message. And if we
+[04:11] scroll over, we can see the text was
+[04:13] hello. So, pulling it all together, when
+[04:15] we mention our app in the Slack channel,
+[04:17] it'll trigger this workflow. We can feed
+[04:19] that into something like an AI agent
+[04:20] where we're just going to drag in the
+[04:21] text that we send. So, right here, in
+[04:23] this case, I'm dragging in that variable
+[04:24] from the left Slack trigger into the
+[04:26] prompt user message so the agent can
+[04:28] look at it. And in this case, it's
+[04:29] looking at the text hello. And then what
+[04:31] we want to do is we want to configure on
+[04:33] this right hand side the response from
+[04:35] the agent back to Slack. So if I just
+[04:37] run this quick node, the agent will
+[04:39] respond with, "Hello, how can I help you
+[04:40] today?" And if we open up the Slack
+[04:42] message, we can respond with what the
+[04:44] agent responded to us with. So if we
+[04:46] drag in the agents output right here as
+[04:48] the message text and we hit test step,
+[04:51] we can see that that message will be
+[04:52] sent over to Slack. And in this case, it
+[04:54] just said, "Hello, how can I help you
+[04:55] today?" So let's just do a full live run
+[04:57] now that we have everything set up.
+[04:59] We're going to hit test workflow. So
+[05:00] Slack is listening for us. I'm going to
+[05:02] come into here. We're going to at the
+[05:04] testing app and say, "Tell me a joke."
+[05:08] And then as soon as I send this off,
+[05:09] we're going to go back in here. We'll
+[05:11] see this message come into Slack, hit
+[05:13] the agent, and respond to our Slack
+[05:14] channel. And if we switch back in here,
+[05:16] it says, "Why don't scientists trust
+[05:18] Adam atoms?" Because they make up
+[05:19] everything. Real quick, last thing I
+[05:20] wanted to mention is that what we did in
+[05:22] here is we put in our URL, which was a
+[05:24] web hook test URL. Meaning, if we were
+[05:26] to come in here and make this workflow
+[05:28] active, it would no longer be working
+[05:30] because this trigger is going to switch
+[05:31] over to the production URL. So, whenever
+[05:34] you do go to make this workflow active,
+[05:36] all you have to do is that exact same
+[05:37] step we did where you're going to click
+[05:39] this, copy it, change the URL, paste it
+[05:42] in here, and let it verify, and then
+[05:43] you'll be good to go. So, that's really
+[05:45] all there is to it. If this video helped
+[05:46] you out, please give it a like.
+[05:48] Definitely helps me out a ton.
+[05:49] Appreciate you guys making it to the
+[05:50] end, and I'll see you in the next one.
+[05:51] Thanks.

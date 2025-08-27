@@ -1,0 +1,1069 @@
+Video Title: I made these 23 websites (and earned $562,943)
+Video ID: hCMEGQfLIEM
+URL: https://www.youtube.com/watch?v=hCMEGQfLIEM
+View Count: 758,223
+
+[00:00] in 2021 I was fired from a software
+[00:02] engineer job and I decided to go solo
+[00:04] and build my own websites today I have
+[00:06] built 23 websites from software habit
+[00:08] Strikers and AI tools and I do
+[00:10] everything myself from the code the
+[00:12] design and the marketing I'm going to
+[00:13] show you every website that I made as
+[00:15] well as the revenue it has generated
+[00:17] you'll see that it's very uneven some
+[00:18] never made money some made well over
+[00:20] five figures and I'm also going to share
+[00:22] three of those website that got acquired
+[00:24] the first app I built right after I got
+[00:26] fired is called mood to movie it's a
+[00:27] movie recommendation based on your mood
+[00:29] so if you feel like you're sleepy it's
+[00:31] probably going to recommend you some
+[00:32] action movies you can scroll through
+[00:34] them and if for some reason you don't
+[00:35] like the movie you can actually hide it
+[00:37] and you will not see it again I never
+[00:39] tried to monetize this app but the post
+[00:41] went quite viral in total since I
+[00:42] launched it it got 100,000 visitors one
+[00:44] of the reason is because I posted on ION
+[00:46] news I had zero audience back then and I
+[00:48] made the post there as a nobody and the
+[00:50] post went viral and I got I don't know I
+[00:52] think about 10,000 visitors from that
+[00:54] post and then it started some kind of
+[00:56] like viral Loop where some people on Tik
+[00:57] Tok would basically get this information
+[01:00] and reshare it on other platforms that's
+[01:01] probably why we see some spikes in
+[01:04] traffic all around here and also I added
+[01:06] a little joke it was not really intended
+[01:08] but the horny mood it actually got
+[01:10] people speak about this they seem like
+[01:12] to enjoy the joke and that created some
+[01:14] kind of like Word of Mouth organic word
+[01:16] of mouth so pretty fun experience
+[01:18] overall after m movie I thought of
+[01:20] creating a project that potentially
+[01:21] could generate Revenue so I'm a big fan
+[01:23] of atomic habits the book and I thought
+[01:26] what if we combine habits and games and
+[01:28] I had this idea of building a habit
+[01:30] tracker where you could stick your
+[01:32] habits and it's going to grow a little
+[01:34] garden a virtual Garden that you can
+[01:36] friends can see so this is the landing
+[01:37] page a few video demoing the product and
+[01:40] it's priced at $9 per month or $54 per
+[01:44] year when the users get access to the
+[01:45] product they end up on their like a
+[01:47] habit page where you can add any habits
+[01:49] you want and then you can tick them and
+[01:51] you have this habit grid that's going to
+[01:53] fill so you see I've have not been
+[01:54] really consistent recently and then you
+[01:56] have missions so for instance if you
+[01:58] show up every day you can open a box and
+[02:00] that box will give you some little
+[02:01] rewards so that you can plant flowers
+[02:03] later in the game and you have a few
+[02:05] achievement you have the streck system
+[02:07] to gamify everything here is the little
+[02:09] garden so you have different kinds of
+[02:11] flowers they different Rarity you unlock
+[02:13] them as you progress through the game
+[02:15] and you can plant them with the gems you
+[02:17] collected from the quests and there's
+[02:18] also a social part where you can see
+[02:21] what your friends are doing but there's
+[02:22] a little Board of who's being the most
+[02:24] consistent and you can see here I also
+[02:26] managed to get 14,000 users on the app
+[02:29] the traffic charts looks like this so I
+[02:32] started launching the app on March 2022
+[02:34] there has been a few spikes I'll will
+[02:36] share which one of those later and the
+[02:38] traffic has been pretty consistent with
+[02:40] a few thousand visitors per month to
+[02:41] launch the product I went on Hacker News
+[02:43] for the second time and I got also
+[02:45] really lucky the number of points here
+[02:47] show that the app went quite viral and
+[02:48] that explained the spike in April 2022
+[02:51] where I get 14,000 visitors and thanks
+[02:54] to that I also got the first customers
+[02:56] for the first time since a long long
+[02:58] time it was about 2 years ago since I
+[02:59] haven't done any entrepreneurship
+[03:01] projects I was really happy and I was so
+[03:02] happy that actually my wife and I open a
+[03:05] bottle of champagne I'm going to spare
+[03:07] you the The
+[03:09] Laughing there you go I spent about a
+[03:11] year growing this habit tracker I will
+[03:14] show you what the revenue looks like so
+[03:16] I launched it about April 2022 and then
+[03:19] the revenue was not crazy whatsoever it
+[03:21] was about hundred few hundred per month
+[03:23] at this point I decided to remove the
+[03:25] free plan and the revenue really went up
+[03:27] and then I stopped working on the app so
+[03:29] obviously the revenue went down later
+[03:31] and for the monthly recuring Revenue it
+[03:33] went to something like $300 per month in
+[03:36] recuring Revenue I also built an app IOS
+[03:39] and Android app you can find it actually
+[03:41] on the store still so it also had some
+[03:43] Revenue coming from the stores I think
+[03:44] it's about an extra 50% so probably at
+[03:47] the peak it was about $500 Mr and
+[03:49] because I stopped working on the app the
+[03:50] revenue obviously went down and around
+[03:52] this time someone on Twitter reached out
+[03:54] to me and offered to buy the product
+[03:56] that's why the revenue is actually zero
+[03:58] right now because we did transition to
+[04:00] its own stripe accounts so I ended up
+[04:02] selling the Habit tracker to that person
+[04:03] for $10,000 so in total it made almost
+[04:06] $6,000 in Revenue plus around $2,000
+[04:09] from the IOS and Android store so that's
+[04:12] roughly 17 to $18,000 at this point I'm
+[04:16] trying to grow my habit tracker but I am
+[04:17] a developer and I love creating stuff
+[04:19] too much and so I try to find some
+[04:21] clever way to do marketing by creating
+[04:23] things and came up with books calculator
+[04:25] it's basically a mini app that if you
+[04:26] tell it how much you want to read every
+[04:28] day at which speed for how long you're
+[04:31] going to be able to read these many
+[04:32] books and it's going to show you some of
+[04:34] the books you can read it's basically a
+[04:35] way to visualize your habits over the
+[04:37] long run and if you curse and you say oh
+[04:39] I want some motivation to read more then
+[04:41] he's going to do a little promotion for
+[04:42] habits Garden I launched the tool on
+[04:44] producton Twitter and everything and I
+[04:46] don't remember why there was a spike in
+[04:48] traffic at the beginning but it happened
+[04:49] and then the traffic has been pretty
+[04:51] consistent over time and it's now a
+[04:52] little bit growing at this point on
+[04:54] Twitter I heard some people talking
+[04:55] about programmatic SEO and I am totally
+[04:58] new to SEO so I was like oh let's try
+[05:00] programmatic SEO for this project see if
+[05:02] I can learn something and I realized
+[05:03] that for books there's some keywords
+[05:05] that are easier to rank and so I created
+[05:08] all those pages so if you type here for
+[05:09] instance I build programmatically all
+[05:12] those pages so I think maybe they're
+[05:14] like over 300 Pages ranking on Google
+[05:16] probably at the moment as you can see
+[05:17] here we have one page another page and
+[05:19] so I'm basically trying to rank a bunch
+[05:21] of URLs on Google and traffic wise in
+[05:23] the search console so Google will not
+[05:25] let me show you the data before December
+[05:27] but I started as zero like any project
+[05:29] and there was nothing for a month and
+[05:31] then someday at some point Google
+[05:32] started to pick my URLs and started to
+[05:34] send some traffic to it and it's not
+[05:37] crazy but it's driving few dozens of
+[05:38] clicks per day and it doesn't look like
+[05:40] it's going to stop so it's not making
+[05:42] any money but it's bringing some traffic
+[05:43] and it's sending the traffic to The
+[05:44] Habit tracker the fourth website I buil
+[05:46] is called 50 hacks it's a list of the
+[05:49] best productivity hack on the internet
+[05:51] so anyone can post a new productivity
+[05:54] hack like uh I don't know like no phone
+[05:56] in the morning or Airplane Mode whatever
+[05:58] this is that his is helping you and then
+[06:00] anyone as well without an account can
+[06:02] like or dislike those posts I try to
+[06:05] mimic what's happening on Reddit so
+[06:06] there is a Hot Tab where you would
+[06:08] basically see the most recent hacks
+[06:11] posted that got the most engagement you
+[06:13] have the new one where people basically
+[06:15] the most recent post and you have the
+[06:16] top ones all time and for each of them
+[06:19] you can go click it and you can have a
+[06:21] conversation with other users on the
+[06:22] platform again without an account I
+[06:24] launched it on product T and for the
+[06:26] first time ever I got a badge and it
+[06:28] ended up being second product of the day
+[06:29] so I was so happy and that also helped
+[06:32] my Twitter account grow a little bit so
+[06:33] I started to have a little audience
+[06:35] traffic-wise it got a big burst at the
+[06:38] very beginning 45,000 visitor on the
+[06:40] month of the launch and in total so far
+[06:42] 200,000 visitors that's quite a lot
+[06:44] because it went viral a little bit
+[06:45] everywhere people would restare this on
+[06:47] Twitter Tik Tok and everything and and
+[06:49] consistently there will be some new
+[06:50] people coming onto the platform and so I
+[06:52] decided to monetize it with
+[06:54] advertisement so at the bottom of each
+[06:56] post there will be an ad placement as
+[06:58] well as somewhere yeah you can see here
+[07:01] this is an ad for instance for actually
+[07:03] one of my products dog fooding my own
+[07:05] product and at the bottom there is
+[07:06] another Banner here that is an ad as
+[07:08] well and if I'm not mistaken to promote
+[07:11] to advertise on 50 hacks yeah so this is
+[07:13] the pay wall to advertise on 50 hack
+[07:15] it's connected directly to my analytics
+[07:17] dashboard and is going to show you how
+[07:19] much traffic you can expect to get on
+[07:21] your site and there is a payment link it
+[07:23] didn't make a lot of money but it made
+[07:25] $350 which is pretty fun for a project
+[07:28] like this one some when in the summer of
+[07:30] 2022 I was traveling from Indonesia to
+[07:33] France and I set myself a stupid
+[07:35] challenge of building an entire app
+[07:37] within the plane and I commented on
+[07:39] Twitter so that I had something to
+[07:40] deliver and I managed to deliver a
+[07:42] little something it's called body Crush
+[07:44] it's a accountability groups for uh
+[07:47] friends this is the landing page here
+[07:48] and then when you sign up you can join
+[07:51] uh groups with people and you can
+[07:53] complete your habits and you can see
+[07:55] what they completed so you can either
+[07:56] create a new group or you can join an
+[07:59] existing group so you have groups for uh
+[08:01] I don't know people who wants to tweet
+[08:03] every day people to want to become game
+[08:04] developers Health Group like workout
+[08:06] stretch every day and all those kind of
+[08:08] like daily habits and when you complete
+[08:10] your habit is going to show some little
+[08:12] Comet I launched it on product T and to
+[08:14] my surprise he also got a badge third
+[08:16] product of the day which is amazing for
+[08:17] a very tiny product like this one I
+[08:19] guess it's because I got so much love
+[08:21] from people on Twitter that they helped
+[08:23] and pushed the launch a little bit
+[08:25] higher traffic-wise nothing as much as
+[08:27] the previous apps about 10,000 visitors
+[08:29] in total and the app was free and it's
+[08:31] still 100% free so no revenue generated
+[08:34] for this one then I also built this
+[08:35] little game called decision game the ID
+[08:38] is if you have two options like you
+[08:40] hesitate between let's say a burger and
+[08:42] a pizza then when you press Start you
+[08:44] have the overthinking monsters that try
+[08:46] to eat Kitty and you have to choose one
+[08:48] or the other before the monster actually
+[08:49] eats the cat and when you press the cat
+[08:53] is happy and your score is saved in the
+[08:55] database and you can see there are
+[08:57] 25,000 people who won the game and 5,000
+[09:00] who let the overthinking Monster eat the
+[09:02] cat traffic-wise it was about 32,000
+[09:04] visitors so I launched around here he
+[09:06] got decent traffic and then now it's
+[09:08] almost to zero every month one of the
+[09:10] reason I buil this game was to promote
+[09:12] habits Garden my habit tracker shortly
+[09:14] after that I realized I already built a
+[09:16] bunch of apps that use games in order to
+[09:18] achieve real life goals so I decided to
+[09:20] create a gamify list it's a directory of
+[09:23] gamification app so whether you're
+[09:24] trying to learn math JavaScript Finance
+[09:27] building habits any app that will used
+[09:29] games will appear in here and so I paid
+[09:32] someone on um I think it was upwork to
+[09:34] gather some information about games so
+[09:36] we have the famous duelingo we have my
+[09:38] decision game here we have my habit
+[09:40] tracker here and also apps like Strava
+[09:42] that use some leaderboards and things
+[09:43] like that and each app would get a page
+[09:46] so for dualingo for instance people can
+[09:48] actually leave reviews you would have
+[09:50] some information about the app is it
+[09:51] free is it not free where you can use it
+[09:53] related apps and you can also search
+[09:55] apps by categories let's say carrier you
+[09:57] can have apps to I don't know do
+[09:59] something like team buildings and all
+[10:00] that traffic wise we are at a pretty
+[10:03] decent traffic I launched but nothing
+[10:05] crazy happened but you I'll show you why
+[10:07] it's getting consistent traffic with
+[10:09] about 30,000 visitors on the app so far
+[10:11] it's because um I didn't know it was
+[10:13] random but actually I rank for some
+[10:15] keywords like for instance you can see
+[10:17] basker here there are some keywords that
+[10:19] start to rank for those apps and somehow
+[10:21] people find the app valuable so Google
+[10:23] keep pushing and giving me some more
+[10:25] Impressions every month I Tred to
+[10:26] capitalize on the traffic and add a
+[10:28] monetization on the app so you can
+[10:30] promote your own app it will be featured
+[10:32] on some different places on the site
+[10:34] it's been a few months now and I managed
+[10:35] to get zero customers at the end of the
+[10:38] year 2022 I started building an app
+[10:40] called visualize habit it's basically an
+[10:43] extension of books calculator you can
+[10:44] pick any habits say how much you going
+[10:46] to do per day how many days per week and
+[10:48] it's going to show you some nice visuals
+[10:50] on what you can achieve over a year and
+[10:52] then you can build your little habits
+[10:53] card where you can see all the habits
+[10:55] you want to pick and some fun things
+[10:57] like I don't know if you read 18 books
+[10:59] you read for like 3 days and 19 hours in
+[11:01] total for instance so let me show you
+[11:03] how that works let's say I'm going to
+[11:04] build on my habit gried and I want to
+[11:06] code I don't know 30 minutes uh three
+[11:08] times a week and I want to walk let's
+[11:10] say 10 minutes every day and when you
+[11:12] press enter then you're going to see
+[11:14] your habits gri I call it this way
+[11:17] pretty visual there's a way to share
+[11:19] your card so you will download the photo
+[11:20] and you can send it to any friends it's
+[11:22] a little promotion for my habit tracker
+[11:24] habits garden and when you click on this
+[11:26] link it's going to open automatically
+[11:28] the app habit garden and it's going to
+[11:30] import all the habits the person wanted
+[11:32] to build so there is a little onboarding
+[11:34] flow and you can see you can take your
+[11:35] new walk habit and then yeah that's
+[11:37] typical of morning flow for habit Garden
+[11:40] traffic wise it was probably one of the
+[11:42] best launch I've ever made the month I
+[11:44] launched so it shows the traffic for
+[11:45] January but because I launched it I
+[11:47] think by the end of the year so that's
+[11:48] probably the New Year resolution time
+[11:50] that's also helping a lot it went viral
+[11:52] on Reddit and other platforms and it got
+[11:55] a golden Kitt award from productons and
+[11:57] as well as a producton badge you part of
+[11:59] it is because I started to make those
+[12:00] videos where I would plug myself into a
+[12:04] popular movie or a popular podcast and
+[12:07] promote my app in my YouTube channel if
+[12:08] you want you'll see a bunch of those
+[12:10] videos they do usually do pretty well on
+[12:12] Twitter because they're pretty new and
+[12:14] people were not expecting to see these
+[12:15] from a mini startup fer So that
+[12:17] obviously brought a lot of traffic to
+[12:19] the app and managed to get a bunch of
+[12:21] signups for habits Garden I built
+[12:23] another habit tracker style I promise
+[12:25] this is the last one it's called heroit
+[12:27] where basically you pick a workout
+[12:29] Avatar and every day when you work out
+[12:31] you're going to grow your little Avatar
+[12:32] he got the product tant product of the
+[12:34] day which I was really really happy with
+[12:36] when you sign up you have your this is
+[12:38] your dashboard so those are my avatars
+[12:40] let's say I surf this morning you can
+[12:42] complete and you get a little bit of XP
+[12:44] you can also create new avatars by
+[12:45] choosing whatever sports that you like
+[12:48] save the frequency and then create your
+[12:49] avatar there's also a mobile app for
+[12:51] hero fits it's available on the app
+[12:54] store and on the Android store same as I
+[12:56] did for habits Garden it's called
+[12:57] capacitor it's a tech that will
+[12:59] basically take all my HTML CSS files and
+[13:02] put them into a web view that is going
+[13:04] to run on any device and So within a few
+[13:07] days I had the app live on the stores I
+[13:09] actually built this app Live on YouTube
+[13:11] if you find somewhere in my channel some
+[13:13] of the first streams I did for I think
+[13:15] what seven days yeah spent seven days
+[13:16] building the product I did it live while
+[13:18] I was actually eating some days I would
+[13:20] spend 10 hours on the stream and bunch
+[13:23] of people from Twitter would come and
+[13:25] debug me help me with the design like
+[13:27] Manu I remember is the one who helped me
+[13:29] me make those acute Avatar things over
+[13:31] was a really fun experience and so when
+[13:33] I launched on product hunt I managed to
+[13:34] get the product of the Day badge thanks
+[13:37] to the community of people who actually
+[13:39] help and supported the launch and
+[13:41] traffic-wise nothing crazy but still
+[13:43] pretty decent and for some reason it's
+[13:44] still getting some monthly traffic and
+[13:46] of course I tried to add a paid plan to
+[13:49] add more avatars but I think I made like
+[13:51] probably $30 of Sales Early 2023
+[13:55] everybody was talking about Ai and I
+[13:56] wanted to build an app that uses CH GPT
+[13:59] and I was totally new to AI so I reached
+[14:01] out to my friend called Martin and
+[14:03] together we built Naval AI it's a little
+[14:05] chatbot on messenger and on Telegram and
+[14:08] WhatsApp that's using CH pt4 that was
+[14:10] trained on naval's tweet Naval ravikant
+[14:13] and then inside of your WhatsApp you can
+[14:15] ask question to Naval at least what's
+[14:17] looks like a version of Naval it's a
+[14:20] fairly simple landing page I also made a
+[14:22] little funish video about the product
+[14:25] where I was actually talking to naal
+[14:27] here I was wondering how do become
+[14:29] famous like you being a celebrity is no
+[14:32] good uh same it's also available in my
+[14:34] YouTube channel if you want to have a
+[14:35] look at it we disconnected the app cuz
+[14:37] it was a little bit pricey and some
+[14:39] people were abusing the system and it's
+[14:41] not like it was a business we just did
+[14:43] this for fun so I think we made a few
+[14:44] hundred I don't have access to a stripe
+[14:46] account and traffic-wise we had a decent
+[14:49] traffic for a tiny app like this one to
+[14:51] stay on the naval Trend I built Naval 25
+[14:54] so I pulled 300 quotes from Naval and
+[14:56] put them on a little website and they
+[14:58] are organized by the most liked one and
+[15:00] people can vote for them if they want
+[15:02] where you have random Cotes and you have
+[15:03] to choose the one you like the most and
+[15:04] you have 25 votes this one is pretty
+[15:06] nice and then it's going to increase the
+[15:08] counters and update the page every day
+[15:10] or every 12 hours it's a very simple app
+[15:12] I did just for fun and it didn't get
+[15:14] much traffic okay so this is the last
+[15:16] app I built that did not make money it's
+[15:18] called fake it until you make it it's an
+[15:20] app that's available on IOS and Android
+[15:22] it's a very simple app you can basically
+[15:24] send yourself fake payment notification
+[15:26] that look like the stripe notifications
+[15:27] you would use it either to prank your
+[15:29] friends or to motivate yourself to go
+[15:31] back and grind and do the work the link
+[15:32] page is pretty simple I made a video in
+[15:34] The Wolf of Wall Street and this video
+[15:36] actually got a bunch of attention and
+[15:38] that's the moment where my Twitter
+[15:40] account started to grow back then the
+[15:41] app was paid I think I made probably two
+[15:43] sales actually it made a little bit of
+[15:44] money like probably like something like
+[15:45] $30 I made the app free now and instead
+[15:48] I'm adding a promotion for another
+[15:50] product of mine I'm going to show you
+[15:51] later at this point I had built over 10
+[15:54] products and I had a little portfolio
+[15:55] website for myself where I would show
+[15:57] little cards of the things that I built
+[15:59] and I got good feedback from people on
+[16:01] Twitter so I decided to make it a
+[16:03] product and so I built Indie page it's
+[16:05] like link tree for entrepreneurs where
+[16:07] you can have your own profile
+[16:08] descriptions and show all of your
+[16:10] startups there about 5,000 solopreneur
+[16:12] registered and the profiles are public
+[16:14] so this is for instance the profile of
+[16:15] Martin you can see his uh Revenue you
+[16:18] can see all of his startups link just
+[16:20] like you would do on link tree and you
+[16:21] have some other cool features like you
+[16:23] have some analytics you can personalize
+[16:24] your page you can connect a newsletter
+[16:26] and it's priced at $25 for one year
+[16:29] access or $45 for an entire lifetime
+[16:31] deal this is my Indie page dashboard so
+[16:33] you see in my profile I can do anything
+[16:36] here I can use markdown to update my B
+[16:38] right here I can connect my newsletter
+[16:40] like substack or beehive and then I can
+[16:42] add any startup I want I can drag and
+[16:45] drop and reorganize them hide them add
+[16:47] some new startups I can also connect
+[16:48] them with stripe so that's what I do for
+[16:51] all my startup I add a stripe restricted
+[16:53] API key to Indie page and it's going to
+[16:55] fetch automatically the revenue from
+[16:57] stripe so that the revenue is
+[16:58] automatically updated every 12 hours and
+[17:01] then I can personalize my page so I can
+[17:03] change uh the font I can change the
+[17:05] colors for instance I can do literally a
+[17:08] bunch of things and I have access to
+[17:09] some analytics so I can see the total
+[17:11] visitors on my Indie page I can see
+[17:14] where the peoples are coming from I can
+[17:15] see which links they click and few other
+[17:18] things like this and finally people can
+[17:19] connect their own domain name so it
+[17:21] looks like a really a portfolio website
+[17:24] I try to make a kind of like a clone of
+[17:26] product tant where startups will be
+[17:28] displayed on a discovery page and people
+[17:30] can upvote those it got some attention
+[17:33] but it did not do anything crazy when I
+[17:35] launched on producton back then it ended
+[17:37] up being product of the day I was really
+[17:39] happy I think it was one of my best
+[17:40] launch so far and traffic-wise there has
+[17:43] been almost 200,000 visitors that's
+[17:45] quite a lot it's also because some
+[17:47] people share the Indie page to Their
+[17:48] audience so it also brings some extra
+[17:50] traffic for instance this is my own
+[17:52] Indie page and revenue wise this is an
+[17:54] old strap account I disconnected it in
+[17:56] January so you would add three, ,000 in
+[17:59] Revenue to this so it made a little bit
+[18:01] above $1,000 with something ranging from
+[18:05] 500 to$ 1,200 every month I wanted to
+[18:08] play with AI a little bit more so I
+[18:10] created Mech Ling it's a website
+[18:12] generator using AI so people would type
+[18:15] some text and the AI will create a
+[18:16] landing page for that query it would add
+[18:19] pictures text and buttons the landing
+[18:20] page is fairly simple it shows some
+[18:22] customers demo as you can see here two
+[18:24] features and the price has changed but
+[18:26] when I started it was a onetime payment
+[18:28] like something $30 per landing page so
+[18:30] let me show you the dashboard uh let me
+[18:31] pick one website and there are a bunch
+[18:34] of features on each of those websites
+[18:36] I'm going to show a demo of each of them
+[18:38] so this is the website editor by default
+[18:40] is going to generate the website and
+[18:42] then the customer can do anything they
+[18:44] want so uh you can change the text you
+[18:46] can add some new buttons you can change
+[18:49] where those buttons will go you can
+[18:51] change the font the colors the themes
+[18:54] there really are many things you can do
+[18:56] here you can also add sections so there
+[18:58] are few like headers testimonials ctas
+[19:02] pricing really a bunch of things here I
+[19:04] basically took all the components I
+[19:05] built for my previous website and I try
+[19:07] to put them in this site and when
+[19:09] someone adds a website it will normally
+[19:11] I think if I remember well is going to
+[19:14] populate create some uh text using CH
+[19:16] GPT and sometimes if it's working it
+[19:19] should create an an image with AI the
+[19:22] customers can also use let's say with
+[19:24] typ PCAT they can also use the unsplash
+[19:26] library and add anything they want in
+[19:28] here so I'm going to remove that section
+[19:30] because it's not supposed to be here and
+[19:32] the user can preview the website on
+[19:34] mobile laptop whatever so that they know
+[19:37] what how the page will look like and
+[19:39] when they're ready they can actually
+[19:40] deploy the site to their own domain name
+[19:43] or they can export the code to HTML and
+[19:45] there are also a few analytics like how
+[19:47] many visitors on the site same I reuse
+[19:49] what I use for my other product in the
+[19:51] page same components applied here
+[19:53] traffic wise it went pretty well it's a
+[19:55] trendy AI product so a bunch of visitors
+[19:58] over 10,000 visitors per month and
+[20:00] revenue wise I started under a different
+[20:02] branding it started as lending AI it
+[20:05] made about 7,000 us and then I rebranded
+[20:08] to make lending later because lending AI
+[20:10] was actually used by a big software
+[20:12] company and it made another uh 8.6 th000
+[20:16] so in total it was something around
+[20:18] 167,000 and Tech wise I was spending
+[20:20] about 10% of the profit for open EI
+[20:23] credits so for copy generation with chbt
+[20:26] and for the image generation using
+[20:27] stable diffusion around November
+[20:29] December 2023 I realized I was competing
+[20:32] against uh big companies like framer uh
+[20:35] Squarespace even WordPress like all
+[20:36] those website builder and so it was kind
+[20:38] of hard to know how to take the product
+[20:40] to the next level and I decided to sell
+[20:42] the product so I listed it on acquire
+[20:44] and within a few weeks the deal was done
+[20:47] and made $35,000 in sale from this
+[20:50] startup and so in total for Ming I made
+[20:53] a little bit over
+[20:54] $50,000 I stayed in the AI world and I
+[20:57] created work book PDF it's a little
+[20:59] platform where you can generate
+[21:01] exercises to learn a new language on the
+[21:03] topics that you love so let's say you
+[21:04] want to learn French and you love food
+[21:06] you can create a workbook with exercises
+[21:09] all about food so you would get
+[21:10] exercises with word related to food as
+[21:12] well as some like a food uh cultural
+[21:15] facts and interesting things the Ling
+[21:16] page looks like this there is a little
+[21:18] demo of the workbook so people know what
+[21:21] they are purchasing and the pricing it's
+[21:23] a day pass so if you access the product
+[21:25] for 30day you will pay $30 I they don't
+[21:28] want to go for subscriptions because I'm
+[21:30] a big fan of no subscription as a
+[21:32] customer I don't like subscriptions so I
+[21:34] would like to avoid subscriptions if I
+[21:35] can and when you get access to one of
+[21:37] those PS you can basically generate any
+[21:38] workbooks on the student side this is
+[21:40] what you will see you can create a
+[21:42] workbook where you would pick the
+[21:43] language you actually want to learn you
+[21:45] would choose the level you're at and you
+[21:46] would pick the topic that you're
+[21:48] interested in and once the workbook is
+[21:49] generated you will have this little page
+[21:52] right here where you have exercises
+[21:53] where you have to match words some
+[21:55] interesting cultural facts complete the
+[21:57] sentence find the right missing words
+[21:59] and all these kind of grammar vocabulary
+[22:01] things you can also download it as a PDF
+[22:04] file so that you can print it and do it
+[22:07] without a computer traffic-wise it also
+[22:09] went pretty well I launched it on AI
+[22:11] directory tools and it's still getting
+[22:13] consistent traffic but it's not really
+[22:15] making much money it made some money
+[22:16] during the launch time and then now it's
+[22:19] a few dozen dollars per month at this
+[22:22] point I was doing the same thing over
+[22:23] and over like set up a landing page send
+[22:25] emails to customer to confirm their
+[22:27] login listen for for stripe events so I
+[22:29] can update the user in the database and
+[22:31] all that and I decided to make a little
+[22:32] boiler plate for myself so I can reuse
+[22:34] it for all my projects and I thought why
+[22:36] not making it open so that anyone can
+[22:38] use it and so I created chip fast it's a
+[22:40] codebase for developers to launch their
+[22:43] startups faster this is the Ling page
+[22:45] here and we have a little demo of the
+[22:47] product which is me with a beard
+[22:49] explaining what's going on in the boiler
+[22:51] plate it's price uh like this at the
+[22:53] moment and we have some testimonials
+[22:55] here and one of the biggest thing for
+[22:58] the spiler plate is that I was a nobody
+[23:00] for years like for six years I was no
+[23:03] one literally like doing project that
+[23:04] nobody wanted to use and seeing that I
+[23:07] received hundreds of messages from
+[23:09] people who purchased sh fast and that
+[23:11] say that it changed their lives it made
+[23:13] me just so so so happy yeah enough of me
+[23:15] bragging but the testimonials are one of
+[23:17] the most precious thing I got from this
+[23:19] B plate so it is a codebase so it's
+[23:22] available on GitHub and there's also a
+[23:24] little documentation that helps the
+[23:26] people to get started set up their
+[23:27] landing page shut up stripe and all that
+[23:29] kind of things there also a bunch of
+[23:30] components as I keep making new apps I
+[23:33] add new components to the bo plate so
+[23:35] it's more complete traffic wise it is
+[23:37] probably the app that got the most
+[23:39] traffic I've ever had 4,000 visitors in
+[23:42] the last 6 months or so maybe 7 months
+[23:45] now most is coming from social media so
+[23:47] like Twitter and YouTube and also some
+[23:49] word of mouth and financially this is
+[23:51] the first trap account I had I
+[23:53] disconnected it in early January so
+[23:55] that's uh a little bit over $200,000 us
+[23:58] Genera since the launch plus another
+[24:01] $176,000 and something like probably
+[24:03] $8,000 collected from other payments
+[24:05] like PayPal so in total she F made
+[24:08] $380,000 in Revenue had to turn on the
+[24:11] lights it's getting dark here I built by
+[24:13] dispute it's a little software that
+[24:15] helps prevent disputes or chargeback
+[24:17] happening on stripe quick backstory when
+[24:19] I was working on hadits Garden the first
+[24:21] five payments that were made were made
+[24:23] with a fraudulent credit card so someone
+[24:25] testing a stolen credit card on my site
+[24:27] and the payment went through and I was
+[24:29] banned like literally banned from stripe
+[24:31] overnight and luckily I had a little
+[24:33] audience on Twitter back then and I
+[24:35] managed to speak with someone who had a
+[24:37] deeper look at my account and reinstated
+[24:39] it but I was really really scared so
+[24:41] this product by dispute aims at reducing
+[24:43] chances that you have fraudulent
+[24:44] payments in your account I show some
+[24:46] examples of you know like if this
+[24:48] happened then do that there is also this
+[24:51] little component here so some solo
+[24:53] entrepreneurs like myself back then have
+[24:55] no clue that you could get in trouble
+[24:56] for a few disputes on Stripes so but
+[24:58] this is what I try to highlight on this
+[25:00] page and then I have a few demo of the
+[25:02] product and we have the pricing section
+[25:05] here where it's basically a pay per
+[25:06] transaction the more transaction you
+[25:09] protect the cheaper it gets and on the
+[25:11] dashboard size this is what it looks
+[25:12] like so this is my I actually use that
+[25:14] product for all of my other products so
+[25:17] you would add a new stripe account by
+[25:19] dispute would listen to events on your
+[25:20] stripe accounts and based on the rules
+[25:22] you set up it will try to prevent some
+[25:24] fraudulent actions so you would add new
+[25:26] rules like let's say if a credit card
+[25:28] was reported stolen then refund the last
+[25:30] payment and then there is a little
+[25:32] notification tab where this is the
+[25:34] actual data that's happening on my
+[25:36] account and you can directly go to your
+[25:37] stripe account to check the transactions
+[25:39] or sometimes even just refund it or send
+[25:42] yourself an email or all this kind of
+[25:44] like uh prevention traffic wise it's
+[25:46] still pretty decent couple thousand
+[25:47] visitors during the launch nice and
+[25:49] MoneyWise it made
+[25:52] $32,000 when I launched it and then as
+[25:54] for other accounts I had to swap my
+[25:56] account and it made another 700 50 bucks
+[25:59] this year so we are almost at $4,000 in
+[26:01] revenue for any new product I launch I
+[26:03] created one funish video that I would
+[26:06] post on social media so either I would
+[26:08] go with Leonardo DiCaprio in The Wolf of
+[26:10] Wall Street or I would play World of
+[26:12] Warcraft in real life and those videos
+[26:15] really helped me Kickstart the journey
+[26:17] it would create an initial boost on all
+[26:19] my launch and get the first visitors and
+[26:21] people on Twitter love the video so I
+[26:22] decided to make a mini course so this is
+[26:24] the landing page where I'm basically
+[26:26] telling my story exactly how it happened
+[26:28] with seen here the first video I made
+[26:29] with jogan for the product visualized
+[26:31] habits that started to Kink things off
+[26:33] and then the story as it is today where
+[26:36] most of my product actually end up
+[26:37] getting a product on badge and even I
+[26:40] got some big names in the game that were
+[26:42] reaching out to me that say they love
+[26:44] the videos so the landing page would
+[26:45] show some features like everything that
+[26:47] the course is about little hints most of
+[26:50] the fun jokes are made with AI I'm
+[26:53] actually not a smart guy and another
+[26:54] funny guy as well but the AI chpt is
+[26:57] really good at crafting jokes and that
+[26:58] is what I use to make those videos and I
+[27:00] also use AI to create fake backgrounds
+[27:03] and create those like a fake characters
+[27:04] in the movie The course looks like this
+[27:07] so this is the curriculum on the left
+[27:08] and on the right there are all the
+[27:10] videos where I basically explain
+[27:11] everything that I do how to do step by
+[27:13] step from the script to shooting
+[27:15] yourself editing the movie and also
+[27:17] break down some of the videos that I
+[27:19] made traffic wise it's doing pretty
+[27:21] decent it's also connected to my Twitter
+[27:23] so the traffic is coming from there and
+[27:25] financially it made 6.7 th000 last year
+[27:28] and this year it made 88.7 th000 so a
+[27:32] total of about
+[27:33] $15,000 the next website is called logas
+[27:36] it's a free tool to generate a little
+[27:38] icons so for every website I make I
+[27:41] always do the same process I take an SVG
+[27:43] and I just change the width and add some
+[27:45] colors and this is the logo for all my
+[27:47] products and I thought why not making it
+[27:49] a product itself and so you would go
+[27:51] here choose whatever icon you want and
+[27:53] then you can change uh the size of the
+[27:54] icon you can change the width of uh the
+[27:56] borders change the colors everything
+[27:58] there are some presets like this like
+[28:00] that rounded whatever you want you can
+[28:02] also ask AI to make a logo for you so
+[28:05] you can describe your business and it
+[28:06] will suggest some icons and matching
+[28:08] colors and here on the right side
+[28:09] there's a little promotion for my sh
+[28:11] fast B plate so that hopefully it's
+[28:13] paying back the time I invested for this
+[28:14] product I launched it on product tun and
+[28:16] it was I think my best launch so far so
+[28:18] product of the day product of the week
+[28:20] and second product of the month as well
+[28:22] as a goldon kitty award for 2023 I was
+[28:25] so happy I guess it's uh this video who
+[28:27] helped a lot where I'm playing
+[28:30] with Matthew M people loved it and
+[28:33] obviously that spread the word out and
+[28:35] the launch went quite viral at the same
+[28:37] time when people download their logo
+[28:39] right here is going to save those logos
+[28:41] in my database and I created a little
+[28:43] directory of logos made with logo fast
+[28:46] and if you go here you can see for
+[28:48] instance a logo made for uh softwares
+[28:50] and you can see some of the logos that
+[28:52] were made and if you click on some of
+[28:54] them you can actually save it on your
+[28:56] local browser or you can download it or
+[28:58] you can even edit it and then it's going
+[29:00] to open Logo fast and let you edit that
+[29:02] SV the purpose of this experiment is to
+[29:04] rank some pages on Google I tried
+[29:06] earlier this year and Google has already
+[29:08] ranked over 2,000 pages so if you search
+[29:11] for icons for a SAS for instance you
+[29:13] might find one of the icons generated
+[29:15] with logo fast it didn't make any money
+[29:17] directly but thanks to the promotion for
+[29:18] ship fast it generated some sales
+[29:20] although I didn't trke any of them when
+[29:22] I realized I gave stripe over ,000 just
+[29:25] to generate PDF invoices I decided to
+[29:28] build my own product so I don't have to
+[29:29] pay the stripe fee so I created Z
+[29:31] invoice this is the Ling page though the
+[29:33] typical when you create invoice with
+[29:34] stripe for one time payment you can pay
+[29:36] up to $1 per invoice and with invoice
+[29:38] it's a onetime payment and you can
+[29:39] generate as many invoices as you want
+[29:41] the current pricing is this way it's a
+[29:43] onetime payment of $49 or 69 for
+[29:45] unlimited strap accounts and then the
+[29:47] customers going end up on their
+[29:48] dashboard where they have a unique link
+[29:50] that looks like this that they can send
+[29:52] to the customers so that the customers
+[29:53] can automatically generate their
+[29:54] invoices the users can edit the details
+[29:56] they want to show on their invoice so
+[29:58] they can change your business name the
+[29:59] customer support emails their V8 numbers
+[30:01] and all that and on the customer side
+[30:03] when they send the link to the customers
+[30:05] they'll land on this page where they can
+[30:07] retrieve invoices or actually they can
+[30:09] retrieve any payments made for the
+[30:11] business and when they click here
+[30:12] they'll get an email that looks like
+[30:14] this and when they click on this link
+[30:16] they would end up on this page where
+[30:18] they can see all the payments they made
+[30:19] for the business and they can download
+[30:21] their invoice as well as edit a few
+[30:23] information if they made a mistake in
+[30:25] the name or if they want to change the
+[30:26] vat number for instance and financially
+[30:28] wise it made a little bit over $4,000
+[30:31] for the past 2 month of running the
+[30:32] product and my most recent product is
+[30:34] called poop up it's a little pluging
+[30:36] that lets your website show some
+[30:38] notifications like the one at the top
+[30:39] right I created it after Zenvo because
+[30:41] people love the notification I even got
+[30:43] the attention of gearmo the CEO of
+[30:45] versal which was absolutely amazing so
+[30:48] this is how the lending page looks like
+[30:50] um we have a little demo of the product
+[30:51] with some of the features some use cases
+[30:54] and the pricing here so it's price one
+[30:56] time payment $9 for one website and $19
+[30:59] for unlimited websites the user
+[31:01] dashboards looks like this so people
+[31:03] would add their website here and then
+[31:05] they could click on it and they can
+[31:06] customize anything from when to show the
+[31:08] message to when should they hide the
+[31:10] message and they can also customize the
+[31:11] message itself so they can drag and drop
+[31:13] to reorganize uh change the text change
+[31:15] the icons as they want and at the bottom
+[31:17] there is a little script to add to their
+[31:19] website for the pop-ups to show up and
+[31:21] when it's going to work is going to look
+[31:22] like a little bit like this here you go
+[31:26] and revenue wise it made three 32,000
+[31:28] since the launch which was like a little
+[31:30] bit over a month ago so pretty nice for
+[31:32] a tiny product like this one it took me
+[31:34] 3 days to create this product I'll link
+[31:36] to another video here if you are curious
+[31:37] about the tricks I use to build fast
+[31:40] there are two more softwares I would
+[31:41] like to show you that I created at the
+[31:43] very beginning of the journey when I was
+[31:44] learning how to code so the past two
+[31:45] years or so I was a solo entrepreneur
+[31:48] making all those projects I showed you
+[31:49] and then prior to that I was working as
+[31:51] a software engineer for a company and
+[31:52] prior to that I was learning how to code
+[31:54] and I created those softwares and the
+[31:56] first one I created is called virally
+[31:58] Bots it's the Ling page you can see here
+[32:00] it's basically a little messenger
+[32:02] Facebook Messenger bot to increase
+[32:04] escape room businesses conversions so I
+[32:06] would work with escap room business
+[32:08] where you would go with your friends to
+[32:09] solve Clues and puzzles and I would
+[32:11] connect a little messenger bot to their
+[32:13] Facebook page so it would look like this
+[32:14] their users would type on the buttons on
+[32:17] their Facebook Messenger app and the bot
+[32:18] will automatically replies with a few
+[32:20] games you could have puzzles like solve
+[32:22] this puzzle here solve that puzzle and
+[32:25] they would get some points and when they
+[32:27] get enough points they can get a
+[32:29] discount coupon for the escape room
+[32:30] business I was working with and so my
+[32:31] customers would use these fun messenger
+[32:34] games to convince their own customers
+[32:36] that they are the best escape rooms in
+[32:37] town as I was learning how to code this
+[32:39] is basically just a lending page there
+[32:41] is no user account if they want to get
+[32:43] started they would have to email me and
+[32:45] I would have to manually go to their
+[32:46] Facebook page to connect a messenger bot
+[32:48] and I remember taking a course on UD me
+[32:50] where the teacher was explaining how to
+[32:52] interact with a Facebook API and I just
+[32:54] copy pasted what I had deployed a
+[32:57] node.js uh server I think he was Heroku
+[32:59] back then and it was working and I was
+[33:01] just adding some more messages I
+[33:03] literally had no real understanding of
+[33:05] what was actually going on and so I
+[33:06] spent a little bit over a year on this
+[33:08] business it's actually how I made my
+[33:10] first internet Dollar online so it
+[33:12] generated a little bit over $69,000 us I
+[33:15] grow to couple thousand per month uh the
+[33:19] Mr actually I think reach 4K in the
+[33:21] month of December 2019 escap room
+[33:24] businesses would pay $200 per month to
+[33:27] access product the messenger bot and I
+[33:29] had a couple like maybe 20 customers at
+[33:31] the same time then covid killed the
+[33:33] entire business and then I burned out
+[33:35] and I abandoned the business completely
+[33:37] and he keept making a little bit of
+[33:38] money over the years until the last
+[33:39] customer turn really recently this
+[33:41] business helped me understand the
+[33:42] foundation of programming and I built
+[33:44] another software later that would cover
+[33:47] the most important part of web
+[33:48] development one of the main struggle I
+[33:50] had with viral bot is that customers
+[33:52] would have to share their messenger but
+[33:54] with their customers in order to get
+[33:56] results and because of that not all
+[33:58] escap from businesses were getting good
+[33:59] results with the product so I decided to
+[34:01] create a new one called game widget
+[34:03] which is basically a similar thing so
+[34:05] it's a game but instead of being on
+[34:07] Facebook Messenger it's on a website so
+[34:09] the code is old so it's hard to show you
+[34:11] but they used to be a little widget here
+[34:13] at the bottom left that people can click
+[34:15] and actually play a game and so when
+[34:16] they would click here it will open a
+[34:18] pop-up window in the center and they
+[34:19] will be able to play this game right
+[34:21] here and so it's like a mini escape room
+[34:23] within a website so people can go across
+[34:26] different rooms and then they have some
+[34:28] puzzles to solve so here they would use
+[34:29] the key to open the safe to get the lamp
+[34:32] they could turn on the light here using
+[34:33] the lamp get some stuff and once they're
+[34:35] done solving all the puzzles they will
+[34:37] get a discount coupon for the business
+[34:39] so they can book I launched this product
+[34:40] for a very wide Market I didn't Target
+[34:43] Escape rooms but like basically any
+[34:44] business so I really struggle to get
+[34:46] customers I think I get about $50 in
+[34:49] monthly recurring Revenue the pricing is
+[34:51] set to pay per use so it's $19 per 500
+[34:55] website visitors which is a little bit
+[34:57] price but the commer rates were really
+[34:59] good and just like what Co happened and
+[35:01] my other software went down I also
+[35:02] abandoned this business and didn't touch
+[35:04] it the product was making about $50 to
+[35:06] $80 per month and so last year I decided
+[35:08] to try to sell it and I managed to find
+[35:10] a buyer so it was exactly 80 Mr so
+[35:13] that's pretty almost nothing and the
+[35:15] person bought it for $4.3 th000 which is
+[35:18] kind of amazing that was the first
+[35:19] startup that got Acquired and I was
+[35:21] really happy with that all right that's
+[35:22] a wrap if you want to check the text I'm
+[35:25] using to build all those products I'll
+[35:26] link to a video somewhere right here and
+[35:28] if you enjoy the video and would like to
+[35:29] subscribe to the channel That would
+[35:30] really mean a lot until the next video I
+[35:32] hope you just ship it

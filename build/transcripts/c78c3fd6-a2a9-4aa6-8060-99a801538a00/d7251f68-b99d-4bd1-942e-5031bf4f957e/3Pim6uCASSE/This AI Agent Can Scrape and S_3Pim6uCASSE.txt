@@ -1,0 +1,577 @@
+Video Title: This AI Agent Can Scrape and Screenshot the Web with No Code (n8n tutorial)
+Video ID: 3Pim6uCASSE
+URL: https://www.youtube.com/watch?v=3Pim6uCASSE
+View Count: 29,383
+
+[00:00] So, this one AI agent right here can
+[00:02] search the web for anything using just
+[00:03] one tool and one API call. It can get as
+[00:06] many search results as you want and it
+[00:07] can also scrape all of the content from
+[00:09] that search result and it can take a
+[00:11] screenshot of the whole page for you.
+[00:12] And the cool thing is we can talk to it
+[00:14] using completely natural language and it
+[00:16] will take care of the rest. So, let's do
+[00:17] a quick demo talking to the agent and
+[00:19] then we're just going to jump in and I'm
+[00:20] going to show you guys how to set this
+[00:21] up. And as always, no coding background
+[00:23] is necessary. Okay, so I'm going to ask
+[00:25] this agent to help me find three
+[00:26] articles on reddit.com where the
+[00:28] following words are all in the title,
+[00:30] which should be AI, automation, and
+[00:32] help. So, it's using its tool right now,
+[00:34] Firecrol Search, to make that request.
+[00:36] It's saying, okay, we're looking at
+[00:37] Reddit. We want to make sure it has
+[00:38] these words in the title, and it's going
+[00:40] to get markdown format of the results as
+[00:42] well as screenshots. Okay, so we just
+[00:45] got those results. It said, here are
+[00:46] three articles from Reddit, and here are
+[00:47] the words that are in the titles. We
+[00:49] have help with automation AI, and then
+[00:51] we have the link right here to the
+[00:53] actual source. So, let's open that up.
+[00:55] You can see it links to an actual Reddit
+[00:56] post in the end Reddit. And what we can
+[00:58] do is we can look at the screenshot to
+[01:00] make sure it matches what we got in the
+[01:01] actual URL. And there it is. We can zoom
+[01:04] in. This is the full Reddit thread that
+[01:05] we can go ahead and read through in
+[01:07] screenshot format. All right. So, let's
+[01:08] take a look at the next one. Seeking
+[01:10] help for an AI automation, which has all
+[01:12] of the words that we were looking for in
+[01:13] the title. And we have the URL once
+[01:15] again, but even better, let's just open
+[01:17] up the actual screenshot and take a look
+[01:19] at this page. Seeking help for an A
+[01:21] automation. and then we can read the
+[01:22] rest of the thread. Cool. And the last
+[01:24] one, of course, powerful AI tools to
+[01:26] help you in your daily life. As you can
+[01:28] see, they're all from Reddit. So, the
+[01:29] agent was able to specify just
+[01:31] reddit.com. All of them have those three
+[01:33] keywords in the title, and they all have
+[01:35] our screenshots for us. And because the
+[01:37] agent had to make this answer a little
+[01:39] more concise, if we click into the
+[01:40] actual search, we can see that for each
+[01:42] of these results, we do indeed get a
+[01:45] full markdown scrape of the actual
+[01:48] results if we wanted to do something
+[01:49] with that, but the agent just doesn't
+[01:51] want to return all of that for us. And
+[01:52] just to look at the actual body request
+[01:54] we're sending over in this case, it's
+[01:56] super super simple. It's only three
+[01:57] things we're really sending over. And
+[01:59] for the search query over here, you can
+[02:00] see it's sending over these three words
+[02:02] must all be in the title. So AI,
+[02:04] automation, and help. And then it's
+[02:06] saying it has to be from the site
+[02:07] reddit.com. And then we're saying we
+[02:09] only wanted three results. So that's
+[02:11] super cool. I hope you guys can see how
+[02:12] simple this is going to be to set up.
+[02:14] This may look a little bit intimidating,
+[02:16] but don't worry, it's not too bad at
+[02:17] all. We're going to walk through it all.
+[02:18] And if you want to download this
+[02:19] template real quick to follow along with
+[02:21] the rest of the video, you can do so by
+[02:23] joining my free school community and
+[02:25] downloading it. So the link for this
+[02:26] community is in the description. Once
+[02:28] you join, you will have to search for
+[02:29] the title of the video or you can click
+[02:31] on YouTube resources. And when you click
+[02:33] on that, just find the post associated
+[02:35] with this video and there'll be a JSON
+[02:36] file right here for you to download,
+[02:38] which when you import it into NN, it
+[02:40] will open up this exact template. All
+[02:42] right, so I know that was a quick demo,
+[02:43] but I really just want to hop in and
+[02:45] show you guys how this stuff works. So,
+[02:46] let's get into the video. So, what we're
+[02:48] doing today is we're using Firecrawl's
+[02:50] new search endpoint, which is super
+[02:52] powerful. It basically lets you search
+[02:53] the web for anything. You have full
+[02:55] customization over what to actually
+[02:57] search for, and then you can go ahead
+[02:58] and scrape the content from all of those
+[02:59] search results in any form you want as
+[03:01] well. So, it's super powerful. We're
+[03:02] going to take a look. Here's Firecrawl.
+[03:04] You can get there using the link in the
+[03:05] description. As you can see, turn
+[03:06] websites into LLM ready data. And it's
+[03:08] also open source, but you could also
+[03:10] come here and start for free with 500
+[03:12] credits. And you can use code herk 10
+[03:14] for 10% off for a full year. So super
+[03:16] cool. Let's get started. I'm going to go
+[03:18] to the docs and we're going to go to the
+[03:19] search endpoint which says search the
+[03:21] web and get full content from results.
+[03:23] So it says firecross search API allows
+[03:25] you to perform web searches and
+[03:26] optionally scrape the results all in one
+[03:28] API call. So, I'm going to go to the API
+[03:30] documentation for this search endpoint
+[03:32] and we're going to take a quick quick
+[03:33] look at what this actually is doing and
+[03:35] how this works. And then we're just
+[03:36] going to dive into some N& examples
+[03:38] because that's the best way to really
+[03:39] learn. So, first thing we want to look
+[03:41] at is just that we have query operators.
+[03:44] This basically just means we're able to
+[03:46] filter our searches better. So, if we
+[03:48] put anything in there as a string, it's
+[03:50] just going to search a non-fuzzy match,
+[03:52] which means if we type in firecrawl,
+[03:54] it's going to only search for exactly
+[03:55] firecraw. It's not going to autofix
+[03:56] typos. We're able to use this little
+[03:59] dash in order to exclude things. So if
+[04:01] we want to search for something and we
+[04:02] want to exclude the site firecrawl or we
+[04:04] want to exclude the word bad from the
+[04:05] search result, we can exclude them by
+[04:07] doing that. We can specify certain sites
+[04:09] that we want. We can specify words in
+[04:11] the URLs, words in the titles and things
+[04:13] that are related to certain domains. So
+[04:15] I'm aware that this may look a little
+[04:16] confusing. Trust me, it's not too bad at
+[04:18] all. I also have all of these search
+[04:20] query operators right here in the
+[04:21] template for you to look at and the body
+[04:23] parameters so everything's in one place.
+[04:25] as well as I did a full video on APIs
+[04:27] and understanding that documentation if
+[04:29] you want to check that out right here.
+[04:31] But real quick, let's go see what the
+[04:32] body parameters are telling us. Like I
+[04:33] said, this is basically just a full menu
+[04:36] of different settings and filters we're
+[04:37] allowed to use. So, obviously, we have a
+[04:39] search query, which has to be there
+[04:40] every time. We can then tell Firecrawl
+[04:42] how many results we want back. We can
+[04:44] limit that to five. We can go all the
+[04:45] way up to 100. We're able to do a
+[04:47] timebased search parameter with natural
+[04:48] language. So, I could say I just want
+[04:50] stuff from May or April of 2025. We have
+[04:53] language, we have country, we have
+[04:54] location, we have timeout. We can ignore
+[04:56] invalid URLs. And then here's the cool
+[04:58] part with scrape options where we can
+[05:00] basically say how we want to get the
+[05:02] results from each of those sites back.
+[05:03] So it can be markdown, HTML, raw HTML,
+[05:06] links, screenshot, screenshot of the
+[05:08] full page, or JSON. So now that we've
+[05:11] had a brief introduction to this
+[05:12] documentation, what this search endpoint
+[05:14] can do, let's take a quick look at a few
+[05:16] examples. So here's the first one where
+[05:18] we're doing a search for within a
+[05:20] specific website. So in here you can see
+[05:22] all I did was in the body I'm only
+[05:24] sending over two things. So we're
+[05:25] keeping it really really simple. We're
+[05:27] searching for the word Natek and we're
+[05:30] specifying that the site has to be
+[05:33] www.geekygadgets.com and we only want
+[05:35] five results. So if I go ahead and hit
+[05:37] execute step, it's going to make that
+[05:38] search and we can see that we have five
+[05:40] different results and all of these have
+[05:42] URLs. They all show the title and then
+[05:44] they all show a quick brief description.
+[05:46] And if I was to open up this URL right
+[05:48] here, we can see that it is indeed Geeky
+[05:50] Gadgets and it is about Nate Herk. And
+[05:53] if you'll notice, all of these five
+[05:54] results come back from Geeky Gadgets.
+[05:57] All right, cool. So that's a specific
+[05:58] website. Let's look at excluding certain
+[06:00] terms. So once again, we're keeping it
+[06:02] really simple. We're just saying a query
+[06:04] and a limit. We're doing Natek. We're
+[06:07] excluding anything that has the word
+[06:09] school in the URL. And then for limit,
+[06:11] let's just do six so we can show that
+[06:13] it's different. I'll hit execute step.
+[06:15] And then we'll see what we get back over
+[06:16] here really, really quick. As you can
+[06:18] see, we have six total results and we
+[06:20] don't have any of these URLs coming from
+[06:23] school, which is nice because if I was
+[06:25] to get rid of this exclusion and we're
+[06:27] just searching for Nate Herk, what we'll
+[06:29] see is that we probably will get
+[06:30] something from school. As you can see
+[06:32] right here, the second hit was already
+[06:34] from school.com. So, because we use that
+[06:36] exclusion operator, we don't get that.
+[06:38] All right. Now, let's look at word
+[06:40] appearing in a URL. So, I'm going to
+[06:41] come back into here once again. We're
+[06:43] doing the same query and limit. We're
+[06:44] doing Nate Herk. And now we're only
+[06:46] searching for things where the URL has
+[06:48] the word school. So hit execute step.
+[06:50] This thing runs super quick. It's
+[06:52] awesome. And now all five of these
+[06:54] results all have the word school in the
+[06:56] actual URL. And then of course you can
+[06:58] do the exact same thing with the title.
+[07:00] So instead of URL, you could also do in
+[07:03] title. You could have multiple words
+[07:04] appearing in a title like we saw in that
+[07:06] quick demo earlier with the agent. And
+[07:08] finally, the pro tip where you can
+[07:10] basically stack a ton of these in the
+[07:12] same query. So it's really really cool.
+[07:13] So in this one, what we're doing is
+[07:15] we're searching for Nate Herk. We're
+[07:16] saying the site has to be youtube.com.
+[07:18] We're excluding anything that are, you
+[07:20] know, shorts. And then we're also saying
+[07:22] in the title, it has to have the word
+[07:24] automation. And we're looking for five.
+[07:26] So I'm going to hit execute step. We're
+[07:27] going to see how quick that comes back.
+[07:29] All of these sites are coming from
+[07:31] YouTube.com. If we take a closer look,
+[07:33] we'll see that all of the titles have
+[07:34] the word automation. So automation,
+[07:36] automation, automation,
+[07:39] automation, and automation. And also the
+[07:42] reason why some of these aren't even my
+[07:44] videos is because most of my titles
+[07:46] don't actually have the word automation
+[07:47] in it. So you can see that that search
+[07:48] is being very very specific. And
+[07:51] finally, you'll notice that there are no
+[07:52] shorts in here. So that's how you can
+[07:54] stack different things. And that's how
+[07:55] this stuff works. It's really about
+[07:57] being able to understand the different
+[07:58] operators, understanding the different
+[08:00] body parameters, and being able to, you
+[08:01] know, customize them how you want, tweak
+[08:03] different things. But let's set up an
+[08:06] actual HTTP request together and let's
+[08:08] look at how we can actually return all
+[08:10] of the results in different formats.
+[08:12] Okay, so all you'd have to do is you'd
+[08:14] come to this button right here,
+[08:15] firecross search endpoint, and click on
+[08:17] that. And then what we need to do is we
+[08:18] just want to copy this curl command
+[08:20] right here. So I'm going to hit copy.
+[08:22] I'm going to come back into our N
+[08:23] workflow and I'm going to pull up an
+[08:25] HTTP request. Then all I have to do is
+[08:27] click on import curl, paste it in there,
+[08:29] and hit import. And now we are basically
+[08:31] configured. You can see that what we
+[08:33] need to do is grab an API token from
+[08:35] Firecrawl. So once again, go to
+[08:37] Firecrawl and use code Herk 10 to get
+[08:40] 10% off for a year. And then once you're
+[08:42] there, this is what it will look like.
+[08:43] We'll go back over to Firecrawl. And you
+[08:45] want to go to your dashboard. And this
+[08:47] is where we can get our API key. So you
+[08:49] can see I have my API key right here.
+[08:51] I'm going to go ahead and just copy my
+[08:53] API key. And what we're going to do is
+[08:55] you could put it in right here after
+[08:57] bearish space and then paste in your API
+[08:59] key. But what I've done for all these
+[09:01] different requests and what I think that
+[09:03] you should do is save your fire crawl
+[09:05] API key to nitn. So the way we do that
+[09:08] is we'll turn off headers right here. We
+[09:10] will go to authentication and choose
+[09:12] generic. We will choose header and then
+[09:15] as you can see I have a ton of different
+[09:16] headers saved and all I would do is I'd
+[09:18] choose my fire crawl one. But if you
+[09:20] don't have one already you will click on
+[09:22] create new credential. And so when you
+[09:23] click on create new credential I would
+[09:25] recommend you rename it up here to
+[09:26] firecrawl. For the name, you're going to
+[09:28] do authorization with a capital A. For
+[09:30] the value, you're going to type in
+[09:31] capital B bearer space API key just like
+[09:35] it showed up in that curl command. And
+[09:36] also, if we go back to the
+[09:37] documentation, you can see right here,
+[09:39] authorization is header and it has to
+[09:41] come in the form of bearer space
+[09:44] token. And then once you save that,
+[09:46] you're good to go and you'll never have
+[09:47] to do that again. So, we have that all
+[09:49] set up. And now what we can see is we
+[09:51] have like our full list of body
+[09:53] parameters where we have our query, our
+[09:55] limit, our timebased result, we have
+[09:57] language, country, location, timeout,
+[09:59] invalid URLs, and then a scrape options.
+[10:02] So let's play with these different
+[10:03] settings to see how we can tweak our
+[10:04] search results. First of all, what I'm
+[10:06] going to do is in the query, let's say
+[10:08] we're just going to search for OpenAI.
+[10:09] So we'll start there. For limit, let's
+[10:11] say we just want to get two results
+[10:13] back. For timebased search, let's just
+[10:16] say we want to look from May of 2025.
+[10:20] Language, English, country, US,
+[10:22] location. I'm going to come in here and
+[10:24] just put any timeout, we'll leave this.
+[10:27] Ignore invalid URLs. We'll leave it as
+[10:28] false. And then for scrape options,
+[10:30] let's go take a look at the options that
+[10:31] we have. So, if we come right here, we
+[10:34] can see that this controls the scraping
+[10:37] behavior for each result, letting you
+[10:38] specify which formats to return. We have
+[10:41] a couple different options, and you can
+[10:42] also include multiple. So we can do
+[10:44] markdown, we can do HTML, we can do
+[10:46] screenshot. Super cool. You can also see
+[10:48] in the example we have to put a new
+[10:51] field below it called formats. So
+[10:53] actually what I'm going to do is I'm
+[10:54] just going to copy this right here
+[10:55] because it makes it super easy. So I'm
+[10:57] copying that. I'm going to open up our
+[10:59] request and I'm just going to basically
+[11:01] replace the scrape options right there.
+[11:03] And we'll just tab this over so it fits.
+[11:06] Um hopefully everything is fine here. I
+[11:09] think that we should be good to go. But
+[11:11] if we get an error, we'll just come in
+[11:12] here and fix it. And this is basically
+[11:14] saying we want to return markdown links
+[11:16] and screenshot. Let's just do markdown
+[11:17] and screenshot for now. And we'll try to
+[11:19] send that over and we'll see if this
+[11:21] errors or
+[11:22] not. And by the way, if you ever need
+[11:24] help formatting these requests, go over
+[11:26] to chatbt and give it a screenshot of
+[11:28] the documentation. Give it a screenshot
+[11:30] of what you're trying to do and it will
+[11:31] help you out. Chadbt is really good with
+[11:33] JSON or Claude, any of the AI models.
+[11:36] Okay, so it looks like though we only
+[11:38] got one result back. So because of our
+[11:39] parameters, maybe it only was able to
+[11:41] find one result. We have right here
+[11:43] openai.com, we have latest news. So
+[11:45] what's cool is you can see right here we
+[11:47] got our markdown, which is cool. If I
+[11:48] switch to table view, we can see we got
+[11:50] basically the entire article in markdown
+[11:53] format. So that's awesome. And then
+[11:54] right below that, we got our screenshot.
+[11:56] So let me click open to the screenshot
+[11:58] and we can see what we got. So this is a
+[12:00] screenshot of the basically the
+[12:03] beginning page that it just went ahead
+[12:04] and scraped. Now you can see I can't
+[12:07] scroll down or I can't change that at
+[12:08] all. So what we could do is if we change
+[12:10] our parameter right here from screenshot
+[12:12] and we change that to screenshot at full
+[12:14] page. We should be able to get the
+[12:16] entire page back. So let me go ahead and
+[12:17] try this again. So I put in screenshot
+[12:19] at full page. We're going to try that
+[12:21] one more time and we'll see if we have a
+[12:23] full screenshot. That's going to be
+[12:24] super cool. Okay, there we go. We just
+[12:26] got it back. Let me scroll down to our
+[12:28] screenshot right here and open this bad
+[12:30] boy up. Boom. So we have a screenshot of
+[12:33] the entire page. We can go ahead and
+[12:34] zoom in and we could scroll through the
+[12:36] entire page that it just went ahead and
+[12:37] scraped. Nice. So hopefully that shows
+[12:39] you guys how you can get stuff from all
+[12:40] these results. Super cool. But let's
+[12:42] take an example of if we have like five
+[12:45] things. So I'm going to change the limit
+[12:46] to five. I'm going to change the search
+[12:48] query to we're just going to do Nate
+[12:50] Herk again. And um yeah, that's perfect.
+[12:53] So we're going to run this firecross
+[12:55] search endpoint. We're hopefully going
+[12:57] to get five results. And each result is
+[12:59] going to have markdown of the actual
+[13:01] page that it scraped as well as a
+[13:04] screenshot. So here's the first one. Um
+[13:06] this is from school co-founder and true
+[13:07] of true horizon AI. And we can see right
+[13:10] here we have a screenshot. So let's pull
+[13:11] this one
+[13:12] up. Okay, cool. So this just basically
+[13:15] took a screenshot of my school profile
+[13:17] which is awesome. I'm switching over to
+[13:18] schema view just so we can see the stuff
+[13:20] easier. So that was the first result.
+[13:21] The second result is going to be the
+[13:23] learn with Microsoft page. So, let me
+[13:26] open up this
+[13:27] image. There you go. This is my Learn
+[13:29] with Microsoft page, and it is the
+[13:30] screenshot of the entire page. Sweet.
+[13:32] So, I think you guys get the point.
+[13:34] Let's move on real quick to how we could
+[13:35] actually do this as an agent tool. And
+[13:37] let me show you guys what really is
+[13:39] important when you're doing this with an
+[13:40] agent. So, because we have different
+[13:43] search query operators, and that's where
+[13:44] a lot of the power comes in, what we had
+[13:46] to do was make sure that the agent
+[13:48] itself is aware of these different
+[13:50] parameters and how to send them over to
+[13:51] its tool. Because right now in the tool
+[13:53] all we're doing is we're saying give me
+[13:55] a query and give me a limit. So it's
+[13:57] very very simple. But in order for this
+[13:59] agent to actually understand how to send
+[14:00] over queries that work, we had to tell
+[14:02] it about the operators. So if I open
+[14:05] this up, we started off by saying you're
+[14:07] a firecall search query generator agent.
+[14:09] You have access to a tool called
+[14:10] firecall search. Your job is to convert
+[14:12] natural language instructions into a
+[14:14] properly formatted firecall query using
+[14:16] supported operators. You're going to
+[14:18] send that query along with a limit
+[14:20] parameter to the firecross search tool.
+[14:22] So, I'm not going to read off this
+[14:23] entire prompt because you guys can
+[14:24] access it for free if you join my free
+[14:26] school community and download the
+[14:27] template. But basically, what I said was
+[14:29] here's how you construct your queries.
+[14:31] Um, you know, here's your exact phrase.
+[14:33] You can use exclusions, you can use
+[14:35] sites, urls, all in title, stuff like
+[14:37] that. Um, I gave it a few instructions
+[14:40] with calling that tool. And then just a
+[14:42] few examples so it knows how to output
+[14:44] the stuff and how it sends stuff over to
+[14:46] the tool. And so if you guys noticed
+[14:49] right here, we didn't actually have it
+[14:50] return any information besides like a
+[14:52] quick description. So I'm going to do is
+[14:54] I'm just going to paste in the scrape
+[14:55] options. So I'm telling it we want
+[14:57] markdown and a screenshot of the full
+[14:58] page once again. And now let's try out
+[15:00] an example. All right. So, I'm asking it
+[15:03] to find me articles on Forbes that
+[15:05] include the word artificial intelligence
+[15:06] in the title, but exclude the word
+[15:08] agent. So, we'll basically let it think
+[15:10] about it. Okay, so something happened
+[15:12] with the JSON parameter. We'll take a
+[15:14] look at that in a sec. It's going to try
+[15:15] again. So, it tried twice, didn't work.
+[15:17] Tried three times, it didn't work. Um,
+[15:19] tried four times and didn't work. So,
+[15:20] let's just go ahead and stop this
+[15:21] execution and we'll take a look to see
+[15:23] what happened. Okay, so the error that
+[15:25] we got was that the JSON wasn't proper
+[15:27] JSON. So, if I come into here, we have
+[15:29] to figure out what went wrong. And so
+[15:31] what happened is that I added a new
+[15:33] option, but I didn't put a comma after
+[15:35] this guy. So it's not going to work. So
+[15:38] let me just go ahead and try that exact
+[15:39] thing again. I'm going to resend that.
+[15:41] And hopefully it's going to think about
+[15:42] it. It's going to create that correct
+[15:44] search term. And then we're not going to
+[15:45] error. Looks like it is going to work
+[15:47] because it's been spinning for a bit
+[15:48] longer now. And I'll check in when it's
+[15:50] done. All right, there we go. We just
+[15:52] got here are articles from Forbes that
+[15:54] have the word artificial intelligence in
+[15:56] the title, but exclude the word agent.
+[15:57] So this first one is literally just
+[15:58] called artificial intelligence. Let's
+[16:00] just open up this URL real quick to see
+[16:02] if it's a real Forbes article. Okay, so
+[16:04] there are ads absolutely everywhere, but
+[16:06] you can see this is a Forbes article
+[16:07] called artificial intelligence. And what
+[16:09] we can also do is we can open up this
+[16:10] screenshot to see that it captured a
+[16:12] screenshot of the entire article. We can
+[16:14] zoom in. We can scroll through the whole
+[16:16] thing. And that's pretty awesome. And
+[16:18] then of course it did the same with the
+[16:20] next five. So we've got artificial
+[16:21] intelligence 101. We have the pros and
+[16:23] cons of artificial intelligence. Each of
+[16:25] these have a URL, a description, and a
+[16:27] screenshot. And none of them have the
+[16:29] word agent in the title. All right,
+[16:31] guys. So, that's going to do it for this
+[16:32] one. I thought that this search endpoint
+[16:34] is super cool, a great release from
+[16:35] Firecrawl. And don't forget, you can get
+[16:37] 10% off for a year using code herk10. If
+[16:40] you enjoyed this style of video and you
+[16:41] want a more hands-on approach with
+[16:42] learning n, then definitely check out my
+[16:44] paid community. The link for that will
+[16:45] be also in the description. We got a
+[16:47] great community of members that are
+[16:48] building stuff with NN every single day.
+[16:49] They're sharing their wins, sharing
+[16:51] their challenges, stuff like that. It's
+[16:52] great to be in a community of
+[16:53] like-minded individuals. We've also got
+[16:55] a classroom section with two full
+[16:57] courses at the moment. We're expanding
+[16:58] this library as we speak. We've got
+[17:00] agent zero, which is like beginners
+[17:01] foundations. And then we've got 10 hours
+[17:03] to 10 seconds where you learn how to
+[17:05] identify, design, and build time-saving
+[17:07] automations. So, I'd love to see you
+[17:09] guys in these live calls. But that's
+[17:10] going to do it for today's video. If you
+[17:12] enjoyed it, you learned something new,
+[17:13] please give it a like. Definitely helps
+[17:14] me out a ton. And as always, I
+[17:16] appreciate you guys making it to the end
+[17:17] of the video. I'll see you on the next
+[17:19] one. Thanks, everyone.

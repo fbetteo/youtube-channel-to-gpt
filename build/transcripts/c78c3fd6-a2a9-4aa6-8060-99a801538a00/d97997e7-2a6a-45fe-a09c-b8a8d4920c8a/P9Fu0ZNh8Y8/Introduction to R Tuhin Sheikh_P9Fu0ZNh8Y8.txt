@@ -1,0 +1,1369 @@
+Video Title: Introduction to R: Tuhin Sheikh [2020 UConn Sports Analytics Symposium]
+Video ID: P9Fu0ZNh8Y8
+URL: https://www.youtube.com/watch?v=P9Fu0ZNh8Y8
+View Count: 45
+
+[00:00] later on um we can
+[00:02] we can always uh or you can always visit
+[00:05] the recording and and still learn okay
+[00:07] so i'm i'm going to share my screen so
+[00:10] once i share my screen maybe i'm not
+[00:12] going to see the participant list so if
+[00:16] you have any question
+[00:18] you can ask me so
+[00:19] webex meeting is good uh for for a small
+[00:22] number of participants uh
+[00:24] um but for a high number of participants
+[00:26] uh even uh webex event is is much better
+[00:30] so i'm going to share my screen and
+[00:33] start our workshop for today
+[00:36] um
+[00:40] can any of you just confirm that whether
+[00:42] you guys can hear me clearly and see my
+[00:45] screen
+[00:49] you're good
+[00:50] yeah thank you
+[00:52] so i i hope that all of you know the
+[00:56] the link of
+[00:57] the conference
+[00:58] uh so if you if you visit the link then
+[01:01] you will have all the information of the
+[01:03] workshop where to find uh the workshop
+[01:06] materials so
+[01:08] uh
+[01:09] on the main home page of the of the
+[01:11] conference if you click on the workshops
+[01:14] you'll find all the workshops that we
+[01:16] are offering uh through this conference
+[01:19] and i'm conducting the first one that is
+[01:22] the introductory level enter to
+[01:24] r um
+[01:26] and if you click on the github links
+[01:29] so this will take you to the
+[01:32] uh repository
+[01:42] so if you
+[01:43] if all of you could mute yourself then
+[01:45] yeah it would be better
+[01:46] um so yeah
+[02:04] all right so this is the github uh
+[02:07] repository and uh
+[02:09] i have uh given here all the all the
+[02:12] necessary files and information
+[02:15] um
+[02:16] so mostly like i created an rmd file i
+[02:19] will let you know what are the files
+[02:20] here
+[02:22] and here in the in the link
+[02:25] about uh so if you click that link you
+[02:27] can visit this link directly uh all the
+[02:31] slides all the slides are down here okay
+[02:34] so i'm going to uh i mean i'm going to
+[02:36] present through this slide and also
+[02:39] through
+[02:40] all the codes that i'm going to show you
+[02:42] okay
+[02:43] so
+[02:44] let's
+[02:45] move on
+[02:52] okay
+[02:53] so as i said like if you can visit the
+[02:56] uh conference link you will find all the
+[02:58] links available like the workshop link
+[03:01] the
+[03:01] the
+[03:02] slides link and the prerequisites i
+[03:05] already uh informed you guys before that
+[03:09] you don't need to
+[03:11] like
+[03:12] have an experience in r but please
+[03:15] install r and r studio so that you can
+[03:17] you can go with me or right now we are
+[03:20] having a 50 minutes workshop so if you
+[03:22] cannot do everything with me it's fine
+[03:25] because you will have the video you can
+[03:27] always uh
+[03:28] you know check back and try again later
+[03:31] so uh just before i start a little bit
+[03:35] about myself
+[03:37] i'm a fourth year phd student in instead
+[03:39] uh at university of connecticut
+[03:42] um
+[03:43] uh the main research techniques that i
+[03:45] have been doing
+[03:47] mostly bayesian survival data analysis
+[03:50] and long-term data analysis
+[03:53] and also i am working on
+[03:56] bayesian model assessment and co-data
+[03:59] analysis
+[04:00] i'm also interested in machine learning
+[04:03] and deep learning framework especially
+[04:05] in the field of survival data
+[04:08] and in the future i really want to
+[04:11] contribute to the biostatistics uh field
+[04:14] to methodological development so i i do
+[04:17] also have my personal website so you can
+[04:20] visit later on if you want to uh learn
+[04:22] more about me
+[04:24] so uh let's go through the workshop
+[04:27] prerequisites
+[04:28] as i said uh
+[04:30] having little to no experiences is
+[04:32] completely okay because uh in this
+[04:34] workshop we're just going to
+[04:37] give you some really pretty much basic
+[04:39] stuff so that
+[04:42] you you know uh how to start with this
+[04:45] programming languages and what this
+[04:46] programming language can do where should
+[04:48] you start how should you start
+[04:50] and uh the the one thing that i i might
+[04:53] require that you you have the enthusiasm
+[04:56] you really want to learn this
+[04:57] programming so that is the only
+[04:59] requirement other things
+[05:01] i don't need so no experience is needed
+[05:03] so what are the aims of this workshop uh
+[05:06] first of all like since i assume that
+[05:08] most of you don't have
+[05:11] much experience
+[05:14] using r
+[05:15] so like uh
+[05:17] i will let you know or teach you the
+[05:20] basic functions
+[05:22] the synthesis synthetic structure data
+[05:24] manipulation and some real life uh data
+[05:28] example uh i will uh i will i will also
+[05:32] show you some of the useful library and
+[05:35] uh i will also introduce you with uh the
+[05:37] ide
+[05:38] which is r studio and some useful
+[05:40] references so just just just before i go
+[05:43] further sometimes on the virtual
+[05:45] platform uh the voice freezes video
+[05:48] freezes so if you cannot listen to me
+[05:51] just just let me know
+[05:53] speak out then then i will be able to
+[05:55] know that uh you cannot hear me okay
+[05:58] so let's move on
+[06:00] we have a lot of things to do and we
+[06:02] have very limited time so these are the
+[06:04] basics so like i'm going to give you a
+[06:06] basic
+[06:07] uh some file system which is which is
+[06:09] really important so if you're going to
+[06:11] work with a programming language you you
+[06:14] need to deal with the data set which
+[06:16] comes in the form of file and other
+[06:18] structure
+[06:19] reading the data that is
+[06:22] letting r know how to how to read your
+[06:24] data and how you can also write data
+[06:26] data management and there is a very
+[06:28] useful tool or our package deployer
+[06:32] which is uh really very useful i use it
+[06:35] almost every day so i will just
+[06:38] i want to you know introduce you guys
+[06:40] with uh with this our package
+[06:44] so uh as i said since my assumption is
+[06:47] that you are pretty new to r so just a
+[06:50] very very brief intro very brief what is
+[06:52] r r is a free software um
+[06:55] it's an environment for statistical
+[06:57] computing graphics
+[06:59] but nowadays people from other
+[07:01] disciplines are also
+[07:04] using r um many of the textbooks are
+[07:08] having an r version so that people
+[07:10] can can use it uh people can do analysis
+[07:13] using this software um
+[07:16] and this is just like other statistical
+[07:20] analysis packages
+[07:21] like sas
+[07:22] spss so if you're
+[07:25] closely related to industry um
+[07:28] you might know about sas or heard about
+[07:31] sas spss is also another software um
+[07:36] these all are pretty good for import
+[07:38] export data manipulation data analysis
+[07:40] uh and reporting
+[07:42] and uh some of the basic uh you know pre
+[07:46] historical uh information if you visit
+[07:49] this website this is the uh main uh our
+[07:52] website our project dot org so if you
+[07:56] visit this website you will
+[07:59] learn uh or get to know a lot of lot of
+[08:01] details about about r
+[08:04] and uh this slide i i really want to
+[08:07] stress upon because why should we learn
+[08:10] r because there are many many
+[08:12] programming languages uh in the market
+[08:14] uh many software's in the market
+[08:16] so the first thing that is free and open
+[08:20] source so you don't need to pay money
+[08:23] so you can use it
+[08:24] there is a very user friendly ide
+[08:28] so which is called artist studio rd
+[08:31] studios is pretty much helpful i will i
+[08:33] will briefly talk about our studio in a
+[08:35] few minutes uh there's there's some nice
+[08:38] feature of our uh over the last few
+[08:41] years is called application development
+[08:44] uh r shiny maybe many of you might be
+[08:47] interested to you know present your work
+[08:49] in an application so uh
+[08:52] basically always we we thought like
+[08:54] application could be a very uh computer
+[08:57] savvy things uh maybe uh analytics
+[09:00] people or statisticians uh
+[09:02] they might not have that ability to to
+[09:04] create an application but r has created
+[09:06] a very nice and easy platform to to make
+[09:10] uh
+[09:11] application development so if you just
+[09:13] uh google our shiny you will you will
+[09:15] get some flavor but for this workshop we
+[09:17] are we have limited space so another
+[09:21] nice feature this is pretty new because
+[09:23] uh if you were using uh our five years
+[09:26] ago maybe this this circle i could not
+[09:29] add because nowadays python uh c
+[09:32] programming and many other languages can
+[09:34] be integrated with r as well
+[09:37] visualization is very advanced level in
+[09:40] our
+[09:42] in computation with python or other
+[09:44] languages or javascript also
+[09:46] it's it's pretty much compatible
+[09:49] it really doesn't matter which operating
+[09:52] system you're using you might be using
+[09:54] microsoft
+[09:56] linux or other operating system ios
+[09:59] it is compatible
+[10:00] and this thing i maybe sometimes people
+[10:04] uh
+[10:05] underestimate that user community like
+[10:08] if you are having some trouble while
+[10:11] using this programming language
+[10:13] a community can help you so they're
+[10:16] a big resource of our users uh who
+[10:19] always can help you uh without knowing
+[10:21] each other as well so these are the main
+[10:24] uh reasons why should we learn r or why
+[10:27] i learned r uh
+[10:30] and ide uh this is uh integrated
+[10:33] development in environment so uh just uh
+[10:37] if you have our install if you have rs
+[10:40] studio installed so rs studio is is just
+[10:43] more like a software you know a
+[10:45] framework many things are built in so
+[10:48] you might not need to code everything
+[10:50] some of the things r studio will give
+[10:52] you uh just like an automated feature
+[10:56] so let's let's go through
+[10:59] artist studio because
+[11:01] i always use rs studio
+[11:03] i would also encourage you guys to to
+[11:06] use rs studio so once you click on the
+[11:08] rs studio i believe that you have
+[11:12] rstudio downloaded so i will i will show
+[11:15] in a few few moments so rs studio has
+[11:19] four panels you can see that each of
+[11:21] this
+[11:22] these are uh four panels this one this
+[11:26] one this one this one
+[11:28] and if you look at my slide so each
+[11:31] panel has different name uh the first
+[11:33] one is called code editor so we are
+[11:37] going to write our code on this this
+[11:39] code editor then our environment our
+[11:42] environment will tell you like which
+[11:44] which packages or which data frames you
+[11:47] have uploaded what are the programs you
+[11:49] ran many other things are preserved in
+[11:52] the environment
+[11:54] our console is the main area where you
+[11:57] are going to actually going to run the
+[11:59] codes and you you are going to see the
+[12:01] results
+[12:02] and help files and graphs
+[12:05] these parts are useful if you are stuck
+[12:08] somewhere you want to eat some health
+[12:10] from our
+[12:11] i will show you how to how to ask for
+[12:13] help through r
+[12:15] and
+[12:16] files and graphs all other things are
+[12:18] preserved in this in this
+[12:21] panel so
+[12:23] as you can see i have many things loaded
+[12:25] here for you so um not want to confuse
+[12:28] you right now but these are the four
+[12:31] four panels just i i showed you a few
+[12:33] minutes ago okay
+[12:34] so let's move on to the next slide
+[12:38] so uh we just talked about 10 to 15
+[12:42] minutes just introduce what is our what
+[12:45] is rs studio why should we learn our
+[12:48] what are the specs so far so we are
+[12:51] going to start with a very very basic
+[12:53] thing so like r as a calculator so if
+[12:56] you have a calculator
+[12:58] you're just going to use it right uh
+[13:01] so let me show you a few details like
+[13:05] if you write
+[13:06] um
+[13:09] five plus seven you will get
+[13:12] calculation i i can i can make it a
+[13:15] little bit bigger
+[13:20] okay
+[13:22] so if you write
+[13:23] 5 times 5 25
+[13:26] if you want to calculate exponential of
+[13:28] 2
+[13:29] just see xp of 2 if you want to
+[13:31] calculate log of
+[13:33] 5 you can just type log so why i'm just
+[13:37] writing it very quickly
+[13:39] it's the reason that this is a
+[13:40] high-level language so high-level
+[13:42] languages are very very similar to our
+[13:45] actual languages so in in mathematics if
+[13:48] you write exponential just in the same
+[13:50] way we code exp in r the way you write
+[13:55] log
+[13:56] the same way we write log
+[13:59] similarly the parenthesis also works
+[14:02] very similarly the first parenthesis
+[14:04] will work first
+[14:05] then the second one
+[14:08] and this way so you can always test uh
+[14:11] uh how how you know comfortable are uh
+[14:15] is with our actual high-level language
+[14:17] so that's why it's called high-level
+[14:19] language so let's move on and show you
+[14:22] some other interesting stuff
+[14:25] so
+[14:26] it's very possible that that the first
+[14:29] time user
+[14:30] you might not know how to use a
+[14:32] particular function
+[14:34] uh again you might not know which
+[14:36] function to use right
+[14:38] so basically this these three bullet
+[14:40] points all together can help us
+[14:44] one thing we can search directly the
+[14:47] function if we know the function which
+[14:49] function we want to we want to search we
+[14:51] want to know you can directly search the
+[14:54] function
+[14:55] if you don't know a particular function
+[14:57] but you know something that that you
+[14:59] want to do
+[15:00] then
+[15:01] you can use this function called help
+[15:04] dot search
+[15:05] and in the parenthesis
+[15:07] with the quotation mark just type the
+[15:10] text you want to search so then r will
+[15:12] try to find that that particular uh
+[15:16] quotation text
+[15:18] for you
+[15:20] so let me show you a little
+[15:21] demonstration here
+[15:23] so
+[15:24] like
+[15:28] for example i i really don't know how to
+[15:30] use
+[15:31] this main function in r
+[15:34] so if you
+[15:35] type
+[15:36] question mark question mark means i
+[15:38] don't know
+[15:39] and then the name of the function mean
+[15:43] then it will give you a big panel where
+[15:46] it will tell you that how to use this
+[15:48] arithmetic mean
+[15:49] and one of the things that that i really
+[15:52] uh i really like about r is that even if
+[15:56] you are a very new user so you you are
+[15:59] the best example for this since you are
+[16:01] a very new user you might not know what
+[16:04] are the things uh
+[16:06] uh mean so if you go down at the end of
+[16:10] that documentation you will see there
+[16:13] there are a few reproducible example
+[16:16] so if you really don't understand
+[16:18] anything
+[16:19] just just copy those reproducible
+[16:22] example and paste it in the r console
+[16:25] and then you will get some answer
+[16:27] and then you can play play around so
+[16:29] what are the what are the arguments we
+[16:31] have why this arguments are used
+[16:34] for example
+[16:36] if you type mean
+[16:37] and then use a parenthesis
+[16:40] and i cannot show my keyboard but in
+[16:42] your keyboard if you type tab
+[16:46] then tab will allow you what are the
+[16:48] arguments it has so it will give you the
+[16:50] options which arguments you can use and
+[16:53] what arguments uh should should you use
+[16:56] for and if you forget uh why should you
+[16:58] use it just give the question mark and
+[17:01] that function name it will take you to
+[17:04] that particular documentation okay
+[17:06] and also what i said like if you don't
+[17:08] know uh
+[17:10] what is the function so again you can
+[17:12] see that i'm just typing help dot
+[17:15] and it is
+[17:17] actually guiding me what are the
+[17:18] functions we have okay
+[17:21] so like help dot search so i don't need
+[17:23] to
+[17:24] type everything so i just typed help
+[17:26] then if i type help dot search and if
+[17:29] you don't understand what you are going
+[17:30] to search
+[17:31] then just tab it will allow you what
+[17:34] kind of search you want to do
+[17:36] so for example if you write linear
+[17:39] regression
+[17:41] then on the search it might take some
+[17:44] time because it it will go through the r
+[17:47] documentation and it will try to go
+[17:50] through this this this quotation text
+[17:52] whatever it finds like you can see on
+[17:54] the right panel linear regression linear
+[17:57] regression whatever it finds it will it
+[17:59] will go and help okay
+[18:01] so this um
+[18:04] this part is uh is is really helpful
+[18:07] in sometimes when you really don't know
+[18:09] what to do
+[18:11] but you know some text you know some
+[18:13] helpful text and you try to search with
+[18:16] that text and other thing i think
+[18:18] everyone knows just go to google and
+[18:21] just try to search something uh
+[18:24] just write something whatever you are
+[18:25] not understanding how to do mean of a
+[18:28] number in r so you will find something
+[18:30] so google and stack overflow these are
+[18:33] very good resources for you know
+[18:34] community uh community health
+[18:37] perspective so
+[18:38] let's move on
+[18:40] so now i'm going to show you how we can
+[18:43] assign values in in r so r
+[18:46] works in this way the other softwares
+[18:49] also works differently like matlab
+[18:52] it works like a mathematical library
+[18:54] everything should be a matrix form but
+[18:56] just just consider x is something called
+[18:59] we we call a variable and you want to
+[19:02] assign some values or text or whatever
+[19:06] uh in that in that
+[19:08] variable and how you can do this so
+[19:10] there are pretty pretty much of many
+[19:12] ways of doing that like less than and
+[19:15] hyphen sign
+[19:17] equal sign
+[19:18] hyphen or
+[19:19] greater sign these are the signs are
+[19:21] used for for assigning values in r so so
+[19:25] for example if i type
+[19:29] then
+[19:30] this five value is stored
+[19:33] in x so if you type x it will give you
+[19:36] the value of five okay
+[19:38] so let me zoom in a little bit
+[19:44] so not always it it only
+[19:47] can store the numerical values it can
+[19:50] also store text so if you type like
+[19:54] hello
+[19:56] world
+[19:57] and then if you type x
+[19:59] it has already stored x value as
+[20:03] as a hello world so these are these are
+[20:05] some some basic ways uh
+[20:08] assigning operators to
+[20:10] a particular uh variable okay so these
+[20:13] are the few basic things then you you
+[20:15] need to know like you cannot always play
+[20:18] with the software just like a calculator
+[20:19] so this is this is more superior than a
+[20:22] calculator not only just a small
+[20:24] calculator it can do uh
+[20:26] many many things so assigning values to
+[20:29] a particular variable is is really very
+[20:31] important so let's move on and just try
+[20:33] to show you
+[20:35] that we don't need to design only one
+[20:38] values to the to the uh to the variable
+[20:41] you can assign multiple values you can
+[20:43] assign many many values so one of the
+[20:45] ways to assign or combine the values
+[20:49] is called this c function this is this
+[20:52] should not be called a function but this
+[20:54] is the structure why how we create the
+[20:56] vectors we call a vector vector is a
+[20:58] list of numbers or list of object which
+[21:01] are combined together into one one uh
+[21:05] assigned operator so
+[21:08] for example if i type x
+[21:10] less than
+[21:12] hyphen
+[21:13] and then c c means combine and what are
+[21:15] the things you want to combine
+[21:18] so these three things you want to
+[21:19] combine so if you type x then you can
+[21:22] see that these three values you have
+[21:25] assigned inside x
+[21:27] now the question is if you want to go to
+[21:30] different locations of x
+[21:32] you can type x
+[21:36] third bracket or uh which which
+[21:38] parenthesis you want to call it just
+[21:43] so if you type one then it goes to the
+[21:45] first position if you type two
+[21:48] it goes to second position if you type
+[21:50] three then it goes to
+[21:52] third position so these are called the
+[21:55] positioning
+[21:57] the ordering
+[21:58] or the location of those assigned values
+[22:01] inside inside our
+[22:03] variable and also if you want to if you
+[22:05] want to uh you know
+[22:08] see the first two elements not the third
+[22:11] element then you can type this colon
+[22:13] this colon sign is really useful in r it
+[22:17] says if you don't assign anything it
+[22:19] will just count one two three four up to
+[22:22] that number okay so for instance if i
+[22:25] type one to three then it goes to one
+[22:28] three okay
+[22:29] so
+[22:31] these are the pretty basic that i i
+[22:33] showed you
+[22:34] some of the interesting stuff uh which i
+[22:36] kept in the slide maybe i don't need to
+[22:39] do everything or explain everything you
+[22:41] can always try um
+[22:44] with with this these examples but just
+[22:47] to just to show you what are the logical
+[22:49] operators in r so
+[22:52] for example the x1
+[22:54] is a value is 5.
+[22:56] so if sometimes you know this value but
+[22:59] it is possible that you are working with
+[23:01] variable where you really don't know
+[23:03] what that the first value is and you
+[23:06] want to see whether it is uh less than
+[23:09] 10
+[23:11] if you type less than 10 so it will
+[23:13] understand you are asking r whether it
+[23:16] is true or false so it will give you
+[23:18] true
+[23:19] okay so these are the free few
+[23:21] interesting things um
+[23:24] you can always play with um and if you
+[23:26] don't know just just just google it
+[23:28] you'll find something so let's move on
+[23:31] and and give you some bunch of uh
+[23:34] interesting and important uh functions
+[23:36] that that are heavily used so
+[23:39] uh i think we talked about 25 minutes
+[23:41] just to want to verify
+[23:43] can
+[23:44] one of you just confirm you can hear me
+[23:46] clearly till now no
+[23:48] problem i can hear you yeah that's great
+[23:53] thank you so much so these are some
+[23:55] useful function i know i i might not
+[23:57] have enough time to show you all of this
+[24:00] function i wish i could have so if i had
+[24:02] like three hours workshop i would just
+[24:04] give you all the details of these
+[24:06] examples of this function but
+[24:09] you may always you know want to revisit
+[24:12] this these slides and and try to
+[24:14] understand this this this functions each
+[24:17] of this function has different character
+[24:19] different styles different usefulness so
+[24:22] for instance just want to give you one
+[24:24] example with
+[24:26] replication so this ref function as i
+[24:29] told you earlier that
+[24:31] r is a high-level language so it's its
+[24:33] functions are pretty much just like our
+[24:36] uh
+[24:37] daily life uh you know uh
+[24:39] languages so
+[24:40] from replication it is rep
+[24:44] so it will replicate so replicate
+[24:46] function is is really really useful and
+[24:48] it's a wonderful function so as i
+[24:51] already told you that
+[24:53] if i have
+[24:55] combined one two three that means it's
+[24:59] going to be a vector one to three
+[25:01] so now if you want to
+[25:04] write something like one two three one
+[25:05] two three i want this twice i want this
+[25:08] to repeat two times then this ref
+[25:11] function
+[25:13] repetition the first thing it says what
+[25:15] do you want to repeat so this you want
+[25:18] to repeat times means this whole thing
+[25:20] two times so times two so this will give
+[25:23] you one two three one two three
+[25:25] so now sometimes it is possible that uh
+[25:29] you may not want to repeat this way
+[25:32] you want to repeat like one twice two
+[25:34] twice three twice
+[25:36] so each equal to two
+[25:38] so this is a very very useful function
+[25:40] and i'm pretty sure when you will use
+[25:42] this for for your purpose uh you will
+[25:45] definitely benefit from this function
+[25:47] there are other interesting functions
+[25:49] just just use a question mark and enter
+[25:53] the function in our console and you will
+[25:55] get some some flavor of of the
+[25:57] usefulness of that function there are
+[25:59] some other functions i just categorized
+[26:01] into different uh different slides these
+[26:04] are mostly important for auditing and
+[26:07] subsetting of
+[26:10] of uh the numbers or variables i will i
+[26:12] will show uh through one quiz example so
+[26:16] last year we we had some a little bit
+[26:18] more time slightly so i i could ask
+[26:21] the participant try try this
+[26:24] but we don't have we have very limited
+[26:26] time so this is a quiz example just try
+[26:28] to visualize so what what you have
+[26:30] learned so far
+[26:31] so i told you how to combine numbers
+[26:33] into a vector
+[26:35] how to assign a vector into a variable
+[26:38] then these are the information that i
+[26:40] want to calculate like length of this
+[26:43] vector that means how many elements we
+[26:45] have inside this vector what are the
+[26:47] unique values so if you are really
+[26:49] interested i just want the unique values
+[26:52] not the duplicated ones i want these
+[26:54] values to be sorted out so if you are an
+[26:57] excel user you might always use filter
+[27:00] or sort many many times you might want
+[27:02] to you know see the
+[27:04] frequency distribution which number came
+[27:07] how many times this number came once or
+[27:09] twice or many many times so let let's
+[27:12] let's go through
+[27:14] this uh simple example
+[27:17] so the first thing
+[27:18] as i told you already
+[27:20] that c is
+[27:22] used for combining purpose
+[27:25] and the numbers you will write it will
+[27:27] combine together into the assigned
+[27:29] variable so then if you type x then you
+[27:32] will see that 3 3 5 5 10 20. so these
+[27:36] are the numbers you you have stored
+[27:39] then if you want to learn how many
+[27:41] numbers you have so this is very simple
+[27:43] you have only six or six numbers but if
+[27:46] you have 6 000 or 600 or 500 then it's
+[27:49] going to be impossible for you to to
+[27:51] know how many numbers you have you
+[27:53] cannot count through your eyes so then
+[27:55] if you type length as i said this is a
+[27:58] high level language so just type length
+[28:00] and type x you'll see that there are six
+[28:03] numbers
+[28:04] if you type unique the same word that we
+[28:07] used in our text unique and then if you
+[28:09] type x
+[28:10] now you can see
+[28:12] we typed three twice five twice but
+[28:16] those were not unique so it is only
+[28:18] giving me the unique numbers 3 5 10 and
+[28:20] 20.
+[28:24] luckily this this number numbers are
+[28:28] ordered or sorted so that's why if you
+[28:30] sort it already gives you the sorted
+[28:31] numbers now if you use the table
+[28:34] function
+[28:35] it will give you the frequency
+[28:36] distribution so the frequency
+[28:38] distribution comes like this the first
+[28:41] row are the numbers the second row are
+[28:43] the number of frequencies it has okay
+[28:46] so these are a few interesting tips and
+[28:49] you know functions that i i just wanted
+[28:51] to give you some
+[28:53] interesting flavor
+[28:55] obviously i do have the answers of this
+[28:58] quiz so so this is nothing to test you
+[29:00] so this is just to give you the interest
+[29:03] um
+[29:04] how uh and what are the interesting
+[29:06] problems you you can you can have so
+[29:09] just uh a little detail about our data
+[29:13] structure because so far what i have
+[29:15] talked this is very very basic stuff
+[29:17] what are the operators how you should
+[29:20] store number and the one thing which is
+[29:22] not very very basic uh like this
+[29:25] functions these functions are very very
+[29:27] useful
+[29:29] you might use it many many times if you
+[29:31] start using our software
+[29:33] so this slide i don't want to spend many
+[29:36] times
+[29:38] it just tell you that r can handle many
+[29:41] types of
+[29:42] variables it can be numeric it can be
+[29:45] character valuable it can be logical
+[29:47] variable you you might want to deal with
+[29:49] a data frame you might want to deal with
+[29:52] metrics many many things so all these
+[29:54] things can be done using r
+[29:57] so to give you a flavor of the data
+[30:00] structure i'm going to tell you what
+[30:02] type of data structure we have okay so
+[30:05] the first two things we have is called
+[30:07] vector and list so vector you already
+[30:09] know so i don't want to spend time on
+[30:11] that so vector you already know
+[30:14] list is little bit different so list is
+[30:16] something
+[30:17] the list you know right so like i have a
+[30:19] list of
+[30:21] your participant
+[30:22] name and their email address and other
+[30:25] things so this is this is a kind of list
+[30:27] so list combines many many information
+[30:30] from different sources
+[30:31] so let me give you one example of list
+[30:37] so like this is a list
+[30:41] so list
+[30:43] as i said the list is a function so the
+[30:45] same way we are talking or terming list
+[30:48] and then list what does it do it lists
+[30:52] multiple vectors or multiple uh numbers
+[30:55] or characters it can list many things
+[30:58] just just the way we list in in excel
+[31:00] file somewhere we have numbers somewhere
+[31:02] we have name some email address many
+[31:05] many things so if you type x then you
+[31:07] can see it comes in a different way the
+[31:10] first list it will give you one two the
+[31:12] second list five eight nine so a good
+[31:16] thing about list is that it can uh list
+[31:19] a numeric number you can also list uh
+[31:21] the characters together also so these
+[31:24] are a few interesting thing and the
+[31:26] location of list is little bit different
+[31:29] than vector because you can see here
+[31:32] they're double parenthesis so double
+[31:34] parenthesis uh tell you that this is a
+[31:37] list this is not a vector okay so these
+[31:40] are a few things so like if you go
+[31:41] through this example you'll get some
+[31:43] idea
+[31:44] so what is an array area is something uh
+[31:48] which is more than one dimension so like
+[31:50] vector is always comes with one
+[31:52] dimension so you have one dimension for
+[31:55] example your list i i have i have one
+[31:57] dimension of your first name but if i
+[32:00] have your first name your last name your
+[32:03] email address so i have three columns so
+[32:05] i have multiple dimension so this array
+[32:09] is uh helpful if you really want to deal
+[32:11] with the multiple dimension uh data set
+[32:17] and it has two arguments like it asks
+[32:19] you given the numbers
+[32:21] and then it has one argument called time
+[32:25] or dim or whatever way you pronounce it
+[32:28] is the dimension dimension tell you how
+[32:31] many rows how many columns you have in
+[32:34] your in your array so
+[32:37] uh one good thing in array is that it
+[32:39] can go beyond many many dimension like
+[32:42] uh three rows
+[32:44] two columns and uh then another x is uh
+[32:48] two to z so x y z many many dimensions
+[32:52] you can deal with but matrix is is it's
+[32:56] pretty much simple like one to two
+[32:58] dimension okay so i have this uh
+[33:01] reproducible example here so if you just
+[33:03] use the matrix function
+[33:05] and then it give you uh
+[33:08] if you give
+[33:09] are
+[33:10] that
+[33:11] i have
+[33:13] the numbers
+[33:14] one through six so i already showed you
+[33:17] that if you type one through six it will
+[33:20] start from one two three four five six
+[33:22] and then if you type n row so
+[33:26] what it would do it will arrange the
+[33:28] numbers in two rows okay
+[33:31] so these are a few basic things
+[33:34] and i have one example
+[33:37] like quiz example you can you can just
+[33:39] visualize just just think about it this
+[33:42] would be enough about solving this
+[33:43] problem so you have two matrices so the
+[33:46] first thing type these matrices so what
+[33:49] you would do so a you will use the
+[33:53] function matrix
+[33:54] then type the vector
+[33:56] combined one two three four
+[33:59] and then write how many rows it has it
+[34:01] has two rows
+[34:03] so these are the way like you can do a
+[34:05] and b so these example i kept here only
+[34:08] for those who has a little bit
+[34:10] mathematical background otherwise just
+[34:12] forget about this example and if you're
+[34:14] from a little bit math background then
+[34:16] you can play with this example so just
+[34:18] just my goal was to i gave you some
+[34:21] example of matrix so whether you can use
+[34:23] the matrix or not okay
+[34:26] so let's skip that
+[34:29] so now i'm just going to give you
+[34:31] uh some idea about our function so how
+[34:35] these functions are used so
+[34:37] as we have used main function we have
+[34:39] used
+[34:40] a list function so these are the some
+[34:42] function if you want to create your own
+[34:44] function you can also do that in r so
+[34:47] the basic uh structure is that a
+[34:50] function
+[34:51] starts with the function
+[34:55] and then some arguments which arguments
+[34:57] you want to use and two curly braces
+[34:59] inside which you are going to discuss
+[35:01] your function okay so i i have here a
+[35:04] very very tiny simple function for you
+[35:07] just to you know understand the logic uh
+[35:10] how it works so i name my function as
+[35:14] find abs so abs means absolute value
+[35:19] and as i have used function
+[35:21] in my parenthesis i have one argument
+[35:23] called x
+[35:24] and if x is greater than zero then give
+[35:27] me x
+[35:29] or give me minus 1. so
+[35:32] the the the point here
+[35:34] i really want to have the positive
+[35:36] numbers if there is any negative numbers
+[35:38] i want to get uh you know minus of of
+[35:41] that value so you just input that value
+[35:44] if it is greater than zero it will give
+[35:46] you that value if it is not then it will
+[35:49] give you times minus of that value okay
+[35:52] so
+[35:54] uh i have another example but i think i
+[35:58] don't have much time to to explain this
+[36:00] so this is an example where i want you
+[36:03] guys to you know try uh whether you can
+[36:06] write a function uh you will give some x
+[36:09] value you will give some y value and it
+[36:11] will give you x to the power y value so
+[36:13] say x is 2 y is 3 and you want to get x
+[36:16] to the power 3. so
+[36:19] we have only 13 minutes so let's just
+[36:22] skip that example also but these are all
+[36:24] inside the slide and you can always
+[36:27] revisit this video
+[36:29] you can always try uh later on right
+[36:32] so there is
+[36:33] one or two slide i kept just to
+[36:35] understand you know give you some hint
+[36:37] about loop and conditioning so loop
+[36:39] means like uh
+[36:41] you repeat certain things you go from
+[36:44] one two three and other locations
+[36:47] repeatedly so there are two uh or there
+[36:50] are more not two but two basic
+[36:53] functions that we usually use one is
+[36:54] called for loop the other one is called
+[36:57] a while loop so four means you you
+[36:59] assign that you you you run the loop
+[37:03] from one to five
+[37:05] and while is somewhere important or
+[37:07] necessary sometimes if you if you want
+[37:10] to continue the loop until certain
+[37:12] certain conditions so while is used for
+[37:16] for that purpose like here i am running
+[37:18] the loop from one to five and printing
+[37:21] those indexes
+[37:24] so while on the other hand i am not
+[37:26] telling him that are that that run one
+[37:30] to five i'm telling so we start with one
+[37:33] and add every one value and stop
+[37:36] whenever you have the five value so
+[37:38] these are the few uh uh looping
+[37:41] functions which are really useful and
+[37:43] this fla this slide i i would request
+[37:46] all of you guys if you are very new to r
+[37:49] you definitely need that so you might
+[37:52] want to investigate whether some value
+[37:54] is less than or greater than or less
+[37:56] than equal to or greater than equal to
+[37:58] not equal to
+[38:00] these are our operation
+[38:02] and these are the syntaxes that are used
+[38:04] in r okay so there are subtle
+[38:06] differences uh although it's a high
+[38:08] level language but it cannot write equal
+[38:10] and then cross okay so if you write
+[38:13] exclamatory sign and then equal it will
+[38:15] understand you are telling him do not
+[38:17] equal thing okay
+[38:20] so a very very tiny example because we
+[38:23] don't have much time so just just want
+[38:25] to give you a little bit brief uh
+[38:28] understanding so
+[38:30] if and else i think uh even if you you
+[38:33] don't do programming you we always do
+[38:36] conditioning right so if certain
+[38:38] condition met do this if certain
+[38:40] condition not met do
+[38:42] whatever thing so this is the way we
+[38:44] have two example i really want you guys
+[38:46] to you know after our workshop just copy
+[38:50] this code and paste it in in your our
+[38:52] console and see what are the what are
+[38:54] the things you you have and try to make
+[38:58] justification why
+[38:59] i'm getting this result and how i'm
+[39:01] getting this result so this example i'm
+[39:04] also skipping
+[39:06] so this is the next part i really want
+[39:08] to spend around 10 10 minutes we have
+[39:12] only 10 minutes so these are the few few
+[39:15] codes
+[39:16] that you might need always so
+[39:19] like you you visit uh google that you
+[39:22] you want to do certain things you want
+[39:24] to do regression you want to do sports
+[39:27] analyzes you want to
+[39:28] do sports scrapping and you need certain
+[39:31] package so how to how to install that
+[39:33] package so this install dot packages
+[39:37] this code is is really useful to install
+[39:40] a package so once you write like
+[39:46] once you write install
+[39:48] dot packages
+[39:50] and then on the
+[39:52] quotation mark if you write down the
+[39:55] name of the package
+[39:59] and then press enter so
+[40:02] i have already installed that package
+[40:04] that's why it's asking me whether you
+[40:06] have to restart again so it will just
+[40:09] install in few seconds and once you are
+[40:11] done with installing it will you will
+[40:14] not be able to use it unless you library
+[40:16] it library means loading the package
+[40:18] into your computer so installing main
+[40:21] calling the calling the package from r
+[40:24] and library means storing and loading
+[40:26] the package into your r console and only
+[40:28] then you can use it okay so these are
+[40:31] the two functions you you might want to
+[40:33] play with and also sometimes you know
+[40:35] some of the
+[40:36] uh
+[40:38] online platform or textbook you will see
+[40:40] that inside a certain package there are
+[40:42] many many data but you really don't know
+[40:45] which data you want to use so like
+[40:48] i already have this
+[40:51] this package installed
+[40:53] so
+[40:53] then if i
+[40:55] type
+[40:56] data
+[40:57] inside the package
+[40:59] layman then it will give me
+[41:02] all the data set that are hidden inside
+[41:04] are not hidden that are included within
+[41:07] this package so this package is also
+[41:09] also interesting it has some some um
+[41:12] you know sports data sets
+[41:15] and then some of the
+[41:18] you know codes and functions i want to
+[41:21] introduce because we don't have uh that
+[41:23] level of time maybe three hours workshop
+[41:26] would be would be really very helpful so
+[41:28] these are the functions you really
+[41:30] really want to stress upon and these are
+[41:32] very very simple function just just go
+[41:35] type this function
+[41:36] use question mark and then write read
+[41:39] the table and then just follow the
+[41:40] documentation and these i'm sure you
+[41:43] will you will very love it when you will
+[41:46] see
+[41:47] these functions
+[41:49] because the documentations are are
+[41:50] pretty much impressive and very very
+[41:52] simple
+[41:53] um
+[41:54] let's uh
+[41:56] let's let me show you a few of the
+[41:57] examples i have using some of the
+[41:59] functions since since this this this
+[42:02] whole slide i'm showing you honestly
+[42:04] this is also created in r so that's why
+[42:07] the the codes you can see these are the
+[42:10] exact same uh you know view uh when you
+[42:13] run the code inside r you will have the
+[42:15] same same view as i'm showing you in in
+[42:18] this slide because this slide is also
+[42:20] created using r so
+[42:23] i use a data set betting
+[42:26] and
+[42:27] at first whenever you have a data you
+[42:29] the first thing you want to you want to
+[42:31] know that
+[42:32] what are the structure of the data what
+[42:34] do we have inside the data so this is
+[42:36] structure function uh short form of
+[42:39] structure str will give you all the
+[42:42] variables you have
+[42:44] and what are the types of those variable
+[42:46] whether it's a categorical variable
+[42:48] whether it's a string variable with this
+[42:50] numerical variable it will give you all
+[42:52] the information inside this structure
+[42:54] function
+[42:56] then
+[42:57] this function is also also interesting
+[42:59] so since we we don't this data is not
+[43:02] our main priority our priority are our
+[43:04] basics so if you want to learn more
+[43:07] about the data set just click this link
+[43:10] whenever you you'll follow follow this
+[43:12] slide so this link has all the details
+[43:14] of this data set like each variable what
+[43:16] does it mean so this function uh is is
+[43:20] really interesting so you you have a big
+[43:22] big very big data set um
+[43:25] many many rows but you want to see only
+[43:27] few rows just like a snapshot so head
+[43:30] means the snapshot so the head of the of
+[43:32] the data the first first first few few
+[43:34] rows um of the reset so as you can see
+[43:37] it is showing me six rows uh you may
+[43:40] also specify like how many rows you want
+[43:42] to see
+[43:43] and also
+[43:44] if your data set is very very big like
+[43:47] uh
+[43:48] 10 columns hundreds of columns and but
+[43:50] you want to see only a few columns like
+[43:53] three or four or five so you can specify
+[43:56] like which columns you want to see
+[43:59] so as i said excuse me as i said like
+[44:01] this is just like a data frame it has
+[44:03] two dimensions right it has rows it has
+[44:06] columns so this comma
+[44:10] it helps r to understand that you are
+[44:12] only specifying the columns not the rows
+[44:15] so if you specify the columns it will go
+[44:17] and find those columns
+[44:19] and give you all those rows okay
+[44:24] then um these are the few few
+[44:27] interesting thing i think if i can
+[44:29] introduce you with all these basics you
+[44:32] can independently work work with r so
+[44:35] like inside betting
+[44:37] there are many variables many columns
+[44:40] just like an excel file it has different
+[44:42] column name right
+[44:43] so in r the data frame you can call
+[44:46] those names using this dollar sign so
+[44:48] this dollar sign helps r to understand
+[44:51] that inside this data frame you have
+[44:53] this name
+[44:54] variable that name variable and if you
+[44:57] want to see particularly that row
+[45:01] then you can also specify just like you
+[45:04] wrote one through four you can also type
+[45:06] like
+[45:07] that variable name in a quotation mark
+[45:09] it will give you exactly exactly that uh
+[45:12] that that column of that player id
+[45:17] and then um
+[45:19] other details like uh
+[45:22] uh
+[45:23] i want to show
+[45:25] yeah so that example is is also
+[45:28] interesting um like uh we have in our
+[45:32] data set we have year information
+[45:35] uh but we want to see only 1871
+[45:40] data only so
+[45:42] in the data
+[45:44] inside the big parenthesis
+[45:46] if you type that batting dollar sign
+[45:49] year id
+[45:51] equal to 1871 so it will go through each
+[45:54] row of the data frame and only select
+[45:57] those row which has 1871 data set other
+[46:00] rows it will not show you
+[46:03] so other examples i'm not going to
+[46:05] discuss you can just visit and and play
+[46:07] with this example these are very very a
+[46:09] simple type of example but once you play
+[46:12] you will get the actual flavor how how
+[46:14] it works but this double equal sign if
+[46:17] you remember in few slides back i told
+[46:20] you like not equal dollar sign equal
+[46:23] greater equal greater than equal sign so
+[46:25] these are the way are understand so if
+[46:27] you are asking r understand that i'm
+[46:30] telling you
+[46:31] find out
+[46:32] where the year right is exactly 1871
+[46:34] then you have to use the double equal
+[46:36] sign
+[46:41] so we don't have much time but i have uh
+[46:44] another package called deployer so from
+[46:47] the deployer package i'm going to show
+[46:49] you
+[46:50] one example so that you you can learn
+[46:52] that it has many many features so which
+[46:54] you can later explore uh anytime inside
+[46:58] the same package we have a data called
+[47:00] salaries so this salaries data gives you
+[47:04] different time period
+[47:06] and different player identity and their
+[47:09] salary
+[47:11] so this is the head of the data as i
+[47:13] already showed you
+[47:14] and then it tries to if i if i want to
+[47:17] do if i want to see
+[47:19] and only select only few few
+[47:23] variables instead of the whole data
+[47:26] then this
+[47:27] uh
+[47:28] operator percentage greater than
+[47:31] percentage this operator is is really
+[47:34] really interesting and this this takes
+[47:36] into account the salary data and then
+[47:39] use this select function so select
+[47:41] function
+[47:42] already knows that is coming from this
+[47:44] data set so then player id is a column
+[47:47] of salaries data year id is also a
+[47:50] column of salaries data so these are
+[47:52] some smart feature of r this deployer is
+[47:55] a very high level package so if you just
+[47:58] just get some of the grasp uh it would
+[48:01] be great like i think it would be great
+[48:04] so there is another function i just want
+[48:06] to stress upon uh so i gave you example
+[48:09] of two data set the first one is padding
+[48:12] the second one is salaries
+[48:14] and there these are information coming
+[48:16] from the same uh individual same player
+[48:20] so if you want to combine these two data
+[48:22] set
+[48:22] this left join right join or full join
+[48:26] these functions are really very useful
+[48:28] so i have one example in my slide
+[48:31] you can play with this and
+[48:35] i don't think i have
+[48:36] time for
+[48:39] another quiz example but just just want
+[48:42] to show you
+[48:43] another function this is called filter
+[48:45] so filter if you are familiar with with
+[48:48] microsoft excel so excel also has filter
+[48:52] feature you can click on filter and
+[48:55] filter out different things and keep
+[48:57] only those things which are really
+[48:58] important to you okay
+[49:00] so
+[49:05] um all right so our timing is very very
+[49:07] limited i already
+[49:10] reached to 150.
+[49:12] uh so these are the few resources i just
+[49:15] want to give you uh if you are
+[49:17] interested go visit those resources and
+[49:20] and
+[49:21] revisit this whole slide you might also
+[49:24] have the video uh you can always play
+[49:26] with this these examples
+[49:28] and uh good luck with coding with our r
+[49:32] is really really really interesting and
+[49:35] and very very simple and i have my email
+[49:37] address here and you can also
+[49:41] like visit
+[49:42] that that website uh the conference
+[49:45] website to know about us to learn about
+[49:48] us
+[49:48] uh and uh yeah hopefully uh
+[49:52] this this would be this would be pretty
+[49:54] much helpful so our time is totally
+[49:57] finished but i would not say uh uh
+[50:00] goodbye but if you have any questions
+[50:03] you can ask and uh you can admit
+[50:06] yourself and
+[50:07] and you may
+[50:09] if you have any question
+[50:11] you can ask
+[50:13] thank you so much
+[50:15] yeah i appreciate it thank you
+[50:17] thank you
+[50:19] thank you no problem thank you
+[50:22] thank you thank you so much
+[50:25] thank you thanks for joining
+[50:29] thank you so much we appreciate it
+[50:52] yeah sure
+[50:53] martin you have a question
+[50:58] yeah you can unmute and ask directly if
+[51:01] you want
+[51:04] no it is
+[51:06] so uh martin asked a very good question
+[51:08] is it necessary to uh you know memorize
+[51:11] every single code actually no so our as
+[51:14] i as i showed you that even if you
+[51:17] forgot just just give question mark and
+[51:19] then just type few few part of the
+[51:21] function
+[51:22] so you don't need to memorize uh
+[51:25] some things like like uh the the c
+[51:28] combining vector metrics these are the
+[51:31] few codes only few basic codes if you
+[51:33] can memorize this will save your time
+[51:36] but
+[51:36] also it's not necessary even if you
+[51:39] don't memorize you can deal with
+[51:40] everything
+[51:43] it's all right
+[51:45] you can you can forget codes i also
+[51:47] forget codes i i always have to you know
+[51:49] search in in google uh to uh okay so i
+[51:53] forget this stuff how to do regression
+[51:55] how to combine two two data sets so
+[51:58] it's it's completely okay the more
+[52:00] you will do uh you will feel more
+[52:02] confident with this with this language
+[52:06] and more functions will be stored
+[52:08] in your brain yeah but it's completely
+[52:11] okay to forget
+[52:17] yeah if you have any
+[52:19] okay bye martin any question uh we can
+[52:23] still discuss
+[52:41] uh hi
+[52:42] hi jared yeah hi um
+[52:45] should i call you mr um you can call me
+[52:47] to hint
+[52:49] okay
+[52:49] thank you thank you uh thank you for the
+[52:51] workshop today um
+[52:54] i have a little bit of experience with
+[52:56] um matlab
+[52:58] and at least from the surface um both of
+[53:01] these kind of look similar
+[53:03] like a little like
+[53:05] differences with like the the functions
+[53:07] and everything but i was wondering what
+[53:09] the differences between the two would be
+[53:11] and i guess and as a whole like with
+[53:13] languages in general like what
+[53:16] makes them distinct from one another
+[53:18] yeah so one of the major difference uh
+[53:20] between r and matlab so the name matlab
+[53:23] it comes from like uh matrix it it
+[53:26] considered everything from a matrix
+[53:28] point of view even if you write a vector
+[53:30] it will consider it's a matrix of
+[53:33] 1 by certain certain columns so
+[53:37] other than that like r has
+[53:40] more
+[53:41] comfort zone in terms of you know
+[53:44] variable categories uh but i should not
+[53:46] compare r and matlab in this way because
+[53:48] matlab is also also very user friendly
+[53:51] so if you are
+[53:52] uh you know very comfortable with matlab
+[53:55] i'm pretty sure if you spend few weeks
+[53:56] with r you will be able to have the same
+[53:59] efficiency as you have in matlab so
+[54:03] few things that i i really find um
+[54:06] are more helpful is is the is the error
+[54:10] directory like if you do certain errors
+[54:12] r will be very very specific that you
+[54:15] have certain line starting function
+[54:17] where you are having some error or you
+[54:19] are missing something so matlab's error
+[54:22] directory is
+[54:23] i think
+[54:26] i would i would uh recommend r in that
+[54:28] case but matlab has some other
+[54:30] advantages like it has a good memory if
+[54:33] you are dealing with a very very big
+[54:35] data set
+[54:36] our
+[54:37] matlab might not have any memory uh
+[54:40] problem but r might tell you that uh i i
+[54:43] cannot allocate that much memory in in
+[54:46] uh indeed in this data set
+[54:48] but from other perspective like uh
+[54:52] the the parenthesis if you remember like
+[54:55] i wrote
+[54:58] i wrote combined 1 5 6 like this but in
+[55:02] matlab everything comes in
+[55:05] this third bracket parenthesis like it
+[55:08] consider everything from metrics point
+[55:10] of view so this is sometimes
+[55:11] advantageous sometimes not and matlab
+[55:14] has some other other positive aspects
+[55:17] like
+[55:18] engineering uh image processing those
+[55:20] kind of fills are more uh you know have
+[55:23] resources in matlab our artists still
+[55:26] are not that much um resourceful in
+[55:30] terms of uh medical imaging image
+[55:32] processing for some part of the interest
+[55:36] engineering works but
+[55:38] i i might not say that
+[55:41] because i'm our user i like our i find
+[55:44] it more comfortable
+[55:46] and uh another thing i would say like
+[55:49] the documentation are very uh
+[55:51] reproducible in r like if you go to the
+[55:54] documentation of r it will give you very
+[55:56] very tiny simple example and you can
+[55:58] always reproduce this example in your
+[56:01] console um
+[56:02] yeah but i i would i would recommend if
+[56:05] you were very uh good with matlab
+[56:08] uh if you spend few weeks with our
+[56:10] basics i think you will have similar
+[56:13] efficiency in r as well maybe you like r
+[56:16] as well
+[56:17] yeah perfect yeah thank you thank you no
+[56:20] problem yeah
+[56:26] okay so if
+[56:28] anybody doesn't have any more question
+[56:31] then i'm going to
+[56:33] stop the recording and
+[56:36] okay so stop it so once i stop it

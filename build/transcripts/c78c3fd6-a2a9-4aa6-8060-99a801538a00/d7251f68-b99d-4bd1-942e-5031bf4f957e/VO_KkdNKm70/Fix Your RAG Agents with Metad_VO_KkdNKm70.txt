@@ -1,0 +1,55 @@
+Video Title: Fix Your RAG Agents with Metadata  #artificialintelligence #intelligentagent #n8n #aiagent
+Video ID: VO_KkdNKm70
+URL: https://www.youtube.com/watch?v=VO_KkdNKm70
+View Count: 13,634
+
+[00:00] Here's how to make your rag agent
+[00:01] smarter with metadata. So, I'm going to
+[00:03] send off this message that says, "What's
+[00:04] the difference between a relational
+[00:06] database and a vector database?" Our
+[00:07] agent is going to search through
+[00:08] Superbase. It's going to use a reranker
+[00:10] to sort those results. And now, we're
+[00:12] going to get our answer based on a
+[00:14] YouTube transcript. And you can see, not
+[00:16] only was our agent able to search
+[00:18] through an answer for us, it also gave
+[00:20] us the exact YouTube video that it
+[00:21] pulled this data from, the exact
+[00:23] timestamp that it pulled the data from,
+[00:25] and then we can also go right here and
+[00:26] click into the link if we want to watch
+[00:28] the full video. And the only reason it
+[00:30] was able to give us this extra context
+[00:32] is because we enriched the chunks with
+[00:34] this information in the metadata. If
+[00:36] you've been following my channel for a
+[00:38] while now, you've probably seen this
+[00:39] exact Excal Draw visualization. But
+[00:41] either way, let's run through it real
+[00:42] quick. So, what we start off with over
+[00:44] here is our transcript. And then what
+[00:46] happens is we have to chunk it up and
+[00:47] run it through an embedded model in
+[00:48] order to get turned into different
+[00:50] vectors. And each of these dots or
+[00:52] vector points is basically associated
+[00:54] with one chunk of the transcript. So
+[00:56] transcript could have 20 chunks, 30
+[00:58] chunks, 50 chunks, just depending on how
+[01:00] long the video is. And so the issue here
+[01:02] is without metadata, when we're looking
+[01:04] back at this specific chunk, we actually
+[01:06] don't know which YouTube video it came
+[01:08] from. So, if we put three YouTube video
+[01:10] transcripts in our vector database,
+[01:12] transcript A, transcript B, and
+[01:13] transcript C, with metadata, we can give
+[01:16] each chunk extra information, like the
+[01:18] title of the full video it came from, or
+[01:20] the URL of the full video it came from,
+[01:22] or the timestamp of this specific chunk
+[01:25] in the transcript. If you want to watch
+[01:26] the full breakdown, click on that play
+[01:28] button right here.

@@ -1,0 +1,1037 @@
+Video Title: Untitled_Video
+Video ID: t1HIzYNbKAw
+URL: https://www.youtube.com/watch?v=t1HIzYNbKAw
+View Count: 0
+
+[00:01] thank you very much uh I'm Neil Spencer
+[00:04] I'm a statistics Professor here in the
+[00:05] department and I'm here to welcome our
+[00:08] second keyn note speaker for today uh
+[00:10] we're going to have Professor Kristen
+[00:12] Morgan uh Professor Morgan is an
+[00:15] assistant professor of biomedical
+[00:17] engineering here at University of
+[00:18] Connecticut her work focuses on
+[00:20] implementing in a let me see if I get
+[00:23] this right implementing Innovative gate
+[00:25] protocols and musos scal modeling to
+[00:28] accelerate individuals reh abilitation
+[00:30] and improve their longterm goals today
+[00:33] she'll be speaking about an
+[00:34] interdisciplinary datadriven approach to
+[00:36] improve player recovery and performance
+[00:40] uh yeah welcome you to the stage uh
+[00:42] Professor Morgan
+[01:20] shots up unting
+[01:30] all righty well thank you for the kind
+[01:32] introduction and and thank you for
+[01:33] allowing me to be here today um I've
+[01:35] been coming to this conference for many
+[01:37] years so I think if you stick around
+[01:38] long enough they invite you to speak all
+[01:41] right so yeah like they said I'm going
+[01:43] to be talking about uh interdisciplinary
+[01:45] datadriven approach to improve player
+[01:47] performance and
+[01:49] recovery so in our lab we really focus
+[01:51] mainly on lower extremity injuries uh
+[01:54] specifically ACL injuries are interior
+[01:56] cruciate ligament injuries um so not
+[01:58] familiar if you're not famili with this
+[02:00] about 250 to upwards about 400,000 ACL
+[02:03] injuries occur every year about 1 point
+[02:06] we spend about $ 1.5 billion do annually
+[02:08] on just reconstruction Rehabilitation
+[02:11] care uh so it's a very costly injury uh
+[02:14] but one of the challenges is that about
+[02:15] 44% of individuals fail to return back
+[02:18] to their previously functional level so
+[02:20] despite our best efforts we still don't
+[02:21] really understand what's
+[02:25] happening so when we think about these
+[02:27] individuals who suffer from ACL injury
+[02:29] often the results of this is that they
+[02:31] have neuromuscular inhibition so are not
+[02:33] able to kind of activate their muscles
+[02:34] in the same way they were and this leads
+[02:36] to some abnormal gate
+[02:38] biomechanics and the result of that
+[02:40] often is they lead to generating between
+[02:42] Li
+[02:44] asymmetry and they actually have
+[02:45] elevated need loading and why this is
+[02:47] problematic is we start to think about
+[02:49] the individuals who have an ACL injury
+[02:51] these people are going to be young like
+[02:52] you all um in their early teen or late
+[02:55] teens early 20s and one of the problems
+[02:57] is we started to realize about 10 years
+[02:59] after AC reconstruction people often
+[03:01] develop NEOS arthritis so you're
+[03:03] starting to realize that 10 years when
+[03:05] you're in your 30s you're getting
+[03:06] individuals who have needs of somebody
+[03:07] much much older than they are so we
+[03:10] really want to figure out ways to combat
+[03:12] this so this is what our lab is kind of
+[03:15] focused on our mission is to kind of
+[03:16] figure out how can we better address
+[03:18] this injury mechanism so one way we do
+[03:21] this is we develop Innovative
+[03:22] Rehabilitation protocols to Aid
+[03:24] recovery the next is we're going to
+[03:26] start to develop some novel metrics to
+[03:28] kind of assess performance or assess
+[03:31] performance and then third we want to
+[03:33] actually start building some patient
+[03:34] specific models to optimize
+[03:39] performance so the first kind of thing
+[03:41] we got into was looking at this uh
+[03:43] purposely induced gaym asymmetry so what
+[03:47] we found in individuals who have a
+[03:48] poststroke uh who suffer from a stroke
+[03:50] they often have neuromuscular inition
+[03:52] that leads to between limb gate
+[03:53] asymmetry now we recognize that a stroke
+[03:55] and an ACL are two very different injury
+[03:57] mechanisms so we're not kind of
+[03:59] correlating that any way but we do
+[04:01] recognize that this between between Li
+[04:03] gate e symmetry is kind of is apparent
+[04:05] in both populations so the idea was that
+[04:08] we people found Ryman at all have shown
+[04:10] that split belt asymmetric walking has
+[04:13] been used to correct between Lim gate
+[04:14] differences and so we kind of said well
+[04:16] why don't we piggy back off of this a
+[04:18] little bit so we do a lot of borrowing
+[04:19] in our lab and we wanted to see well can
+[04:22] we start to apply this asymmetric
+[04:23] walking to the ACL population so if
+[04:26] you're not familiar a split belt
+[04:28] treadmill we were able to kind of
+[04:30] independently um controlled each belt
+[04:33] and so we can set one belt at one speed
+[04:34] and one belt at another and we kind of
+[04:37] perturb people to the best of our
+[04:39] abilities so what Ryman has shown is
+[04:41] that you actually if you appropriately
+[04:43] apply this pertubation you can actually
+[04:45] correct this between Lim asymmetry and
+[04:47] so you'll notice then we have this
+[04:48] pre-adaptation stage which is where
+[04:50] they're asymmetric this gate adaptation
+[04:52] where we kind of apply this perturbation
+[04:54] it kind of shocks the system
+[04:56] destabilizes them so it actually
+[04:57] magnifies asymmetry initially but over
+[04:59] time your body starts to realize wait
+[05:01] there's something going on here we need
+[05:02] to correct it and then you see that
+[05:04] beautiful convergence down to symmetric
+[05:06] gate we also recognize that you can't uh
+[05:09] apply an asymmetric walk into somebody
+[05:11] completely for the rest of their life so
+[05:13] we do have to remove that perturbation
+[05:14] but we want to see does it stay and so
+[05:16] that last phase of post adaptation is is
+[05:18] looking at that gate storage so once we
+[05:21] apply this perturbation we want to say
+[05:22] once we remove it are they going to
+[05:23] store and what you'll notice is you see
+[05:25] this negative after effect so again they
+[05:27] they kind of the the system you know wax
+[05:30] out a little bit and what you notice is
+[05:32] that they kind of they have a negative
+[05:34] after effect and that the gate symmetry
+[05:35] goes in the opposite direction but then
+[05:37] over time it actually gets back to the
+[05:39] symmetric so it's a really neat kind of
+[05:41] thing and so we said well again why
+[05:42] don't we apply this to the ACL
+[05:45] population that's what we did so we have
+[05:49] um reduced between limb gate differences
+[05:50] and so the goals of this work was to
+[05:52] reduce between limb differences and then
+[05:54] see if we could actually lead to the
+[05:55] adoption and Stor of healthy gate and we
+[05:58] of course used our split belt instrument
+[06:00] of treadmill and we use a 05
+[06:02] pertubation so we do have
+[06:04] state-ofthe-art facilities uh we are
+[06:06] located in gamle where the basketball
+[06:08] teams play so we try to sneak into the
+[06:10] games um but what you notice is that
+[06:12] again we have our split belt treadmill
+[06:14] we have a Vicon motion capture system
+[06:17] and we work with a lot of other
+[06:18] colleagues that allow us to have some
+[06:19] really great um
+[06:22] equipment so thinking about our
+[06:24] asymmetric walking protocol uh we
+[06:27] started off by getting a population of
+[06:28] convenience and edly uh we have
+[06:31] individuals about 15 individuals uh
+[06:33] majority of them females and their time
+[06:35] since surgery was about 4 years um a
+[06:38] given take a couple of years and so
+[06:40] here's our protocol where we have them
+[06:42] do a f minute warm-up just to get
+[06:43] acclimated to the treadmill if you've
+[06:45] ever been on it it's very weird so you
+[06:46] need that time to get acclimated uh then
+[06:48] we have our Baseline walking at 1.0 and
+[06:50] 1.5 me per
+[06:53] second um then we have our first
+[06:57] adaptation so when we were starting this
+[06:58] out we had no idea what kind of one of
+[07:00] the big things that's going to come out
+[07:01] out is which way do you apply the
+[07:03] perturbation because we had no idea at
+[07:05] first we knew it was work but we had no
+[07:06] idea which way would be the appropriate
+[07:09] so we had a first adaptation where we
+[07:10] had one limb at the let's say the right
+[07:12] limb at the 1.5 speed and then we had
+[07:15] them do the post adaptation I don't know
+[07:17] if I should let them
+[07:19] in why
+[07:21] not all right more the marer um so we
+[07:25] had him do a first uh adaptation and
+[07:28] then we had a two-minute you know post
+[07:29] adaptation of storage and then we have
+[07:32] flipped the perturbation and had uh the
+[07:34] now the left leg was going to go at the
+[07:35] 1.5 meters per second and then we again
+[07:38] followed up with a two-minute post
+[07:45] adaptation all
+[07:47] right so one of the big things about
+[07:50] this is like we said we had to start to
+[07:51] figure out well what asymmetry are we
+[07:53] trying to correct and and how do we
+[07:55] actually classify the limbs so what was
+[07:57] interesting is one of the things on the
+[07:59] in the lab is you notice that people get
+[08:00] on the treadmill you can actually a lot
+[08:02] of the things we're going to talk about
+[08:03] are going to be very visual so often
+[08:05] times you somebody comes in with an ACL
+[08:06] injury and they come in they have a limp
+[08:08] you can kind of see it sometimes when
+[08:09] they get up on the treadmill so we had
+[08:11] to start to figure out which limb do we
+[08:12] actually set at which speed and one of
+[08:14] the things that the lab came up with was
+[08:16] looking at this overloaded versus
+[08:17] underloaded Limb and so we started to
+[08:19] care about loading rate asymmetry uh
+[08:22] loading rate is just kind of how fast
+[08:23] that force is applied to the limb
+[08:25] especially in that kind of loading
+[08:26] response phase so we decideed to say
+[08:28] okay well which limb is going to be the
+[08:29] overloaded and underloaded limb the
+[08:31] overload limb is the one that has the
+[08:32] faster loading higher loading rate and
+[08:34] the underloaded limb is the one that has
+[08:35] the lower loading
+[08:37] rate and why this matters is because
+[08:40] when we first started looking at the
+[08:41] data we compared typically the
+[08:42] reconstructed and non-reconstructed Limb
+[08:45] and what we noticed is that there was no
+[08:47] between lib differences but like we said
+[08:49] visually we could see something so we
+[08:50] said well what's what's going on there
+[08:52] and that's why we looked at this
+[08:53] overloaded and underloaded Limb and then
+[08:56] it we teased out that there was that
+[08:57] between limb difference that we were
+[08:58] looking at so again this is telling us
+[09:00] that it's not always the ne the
+[09:02] reconstructed and non-reconstructed limb
+[09:04] um and specifically remember that this
+[09:06] population is about four years out and
+[09:07] so we'll talk about why the
+[09:08] reconstructed limb and non-reconstructed
+[09:10] limb don't always Co inspi with the
+[09:12] overloaded and
+[09:14] underloaded so getting to the good stuff
+[09:17] we were able to use this so the thing is
+[09:19] we wanted to start apply this asymmetric
+[09:21] walking and we want to see well does it
+[09:23] restore uh between Lim G symmetry or
+[09:25] gate symmetry sorry and so when we did
+[09:28] this we have the 10-minute adaptation
+[09:31] and so what we noticed is when we had
+[09:33] the overloaded limit 1.5 or the
+[09:34] underloaded limit 1.1 or 1.0 we saw that
+[09:38] there was initial convergence to around
+[09:40] four minutes however we were applying
+[09:42] this pertubation for 10 minutes and we
+[09:43] saw towards the end that it kind of
+[09:45] diverged and so we were like well this
+[09:46] isn't too bad we did get some
+[09:48] convergence and maybe this is telling us
+[09:49] that we only need to apply this for 10
+[09:51] minutes
+[09:53] right but we then looked at kind of our
+[09:55] overloaded data when it was at 1.0 m/s
+[09:58] and what we found there is that actually
+[10:01] that over 10 minutes we saw this really
+[10:02] beautiful convergence and at the end of
+[10:04] the 10 minutes Mark they're right where
+[10:05] we wanted them to be so this is very
+[10:08] exciting because as anybody who knows
+[10:09] with research it doesn't always uh go
+[10:11] how's you
+[10:12] plan so we said all right well this
+[10:14] might be too good to be true we haven't
+[10:16] we've they they work when we apply the
+[10:17] perturbation but we don't know what
+[10:19] happens when the perturbation is removed
+[10:20] right so now we looked at this
+[10:22] deadaptation and we said okay what
+[10:24] happened in the 1.5 and again we saw
+[10:27] that there was kind of that initial
+[10:28] negative after effect and they started
+[10:30] to kind of converge back to symmetric
+[10:31] but they didn't quite get there below
+[10:34] and behold we looked at our deadaptation
+[10:36] when the overload limb was at 1.0 and we
+[10:39] saw again that negative after effect but
+[10:41] then around two minutes we got close to
+[10:42] that zero a Between liim Difference so
+[10:44] this was given us a lot of confidence
+[10:47] and that what we were doing was correct
+[10:48] and we're not harming any of these
+[10:50] individuals so we had to have some stats
+[10:53] since this is a stats conference um but
+[10:55] one of the things we wanted to kind of
+[10:57] point out is the fact that if you notice
+[10:59] about this deadaptation when the one
+[11:01] overloaded limb is at the 1.0 m/ second
+[11:04] we find not only that they're more
+[11:05] symmetric but so there's less a between
+[11:07] limb difference especially at the
+[11:09] two-minute mark But if you notice is
+[11:11] that at the two-minute Mark the
+[11:12] overloaded limb um has loading rates
+[11:15] that are kind of comparable and even
+[11:16] less than what they were during the
+[11:18] symmetric so not only are we getting
+[11:19] them to be kind of loading at the same
+[11:21] um both limbs are the same but it's kind
+[11:23] of actually going lower than what it was
+[11:24] before so this is kind of a good thing
+[11:27] it's a really good thing actually
+[11:30] so the take home from this is that
+[11:32] purposely induced asymmetric walking can
+[11:35] reduce between limb gate asymmetry um
+[11:39] especially when we have a 0 five
+[11:41] difference uh we also saw that these
+[11:43] individuals um exhibited short-term
+[11:45] storage short-term storage um and so one
+[11:48] of the things that we want to think take
+[11:50] away from this is that yes this worked
+[11:52] but it's really important to have this
+[11:53] kind of limb classification looking at
+[11:55] this overloaded versus underloaded limb
+[11:57] is very important and also we want to
+[11:59] start to figure out well how can we
+[12:00] start to optimize this a little bit so
+[12:02] right now we you know this perose before
+[12:04] we had this population of convenience
+[12:05] here about four years out now we're
+[12:07] working on individuals who are within
+[12:09] one year and so we're really changing a
+[12:10] lot about what's the magnitude of the
+[12:12] pertubation that's most important to
+[12:13] them um and also kind of you know what
+[12:16] is the duration of the perturbation so
+[12:17] if you think about Tylenol and dosing
+[12:19] it's like how many Tylenols do they get
+[12:21] and how long should they be taking it so
+[12:23] that's really what we're kind of going
+[12:24] on from here and so this is kind of what
+[12:26] we're doing when we talk about aiding in
+[12:27] the recovery uh I know a lot of talks
+[12:29] today we'll talk about recovery and
+[12:31] probably in the short term but when we
+[12:32] think about Rehabilitation it's more of
+[12:33] a long-term
+[12:36] recovery so the next thing we wanted to
+[12:38] do was we said okay we got them to kind
+[12:40] of we're eting this recovery can we
+[12:42] start to assess their performance and so
+[12:45] we wanted the goal of this was to kind
+[12:46] of develop new metrics that have
+[12:47] Universal ranges of healthy gate
+[12:49] Dynamics and so this is where we kind of
+[12:51] borrow again from statistics this time
+[12:53] to see if we can get
+[12:55] there and so a lot of this work started
+[12:57] when we when I was at the University of
+[13:00] Kentucky for a postc worked with Brian
+[13:02] norn and what was really interesting is
+[13:06] one of the things is they had a he works
+[13:07] a lot with ACL injury ACL reconstruction
+[13:09] patients so this is individual who's had
+[13:11] an ACL reconstruction and what is
+[13:14] interesting about this is they've been
+[13:15] cleared to return back to sport now
+[13:17] could you guess just based on looking at
+[13:19] this what limb do you think is the
+[13:20] reconstructed
+[13:22] limb thoughts yeah yeah left one so I
+[13:26] don't know your background you're not a
+[13:28] clinician maybe but but yeah exactly
+[13:29] give her a round of applause um so so
+[13:32] yeah we're not clinicians but very
+[13:34] obviously we can see that the ACL
+[13:36] reconstructor limb is his front limb and
+[13:38] again I repeat that this individual was
+[13:40] asked to cleared to return back to Sport
+[13:42] and we kind of already really noticed
+[13:44] that maybe they shouldn't be and again
+[13:45] I'm not a clinician I don't want to
+[13:47] fault them um they're great we need them
+[13:49] um so yeah so one of the things as we
+[13:51] started talking about and this is a
+[13:53] sports conference so I watch sports I
+[13:55] don't play I'm retired um but one of the
+[13:57] things that we notice is that
+[13:59] um they always talk about the eye test
+[14:01] right and so a lot of these things that
+[14:02] we would get into lab we notice very
+[14:04] visually there's a difference so we
+[14:06] started saying well can we come up with
+[14:07] metrics that only quantify these
+[14:09] differences but again are very
+[14:11] visual so that's going to be the theme
+[14:13] of this section um and so we wanted to
+[14:16] start again we talked about between
+[14:18] limit symmetry between limb symmetry is
+[14:19] very important um but we also want to
+[14:21] get healthy ranges of gate uh so we
+[14:24] started to look at things like a
+[14:25] regression analysis and punk plots um
+[14:28] and autor regressive modeling to see if
+[14:29] we can actually kind of quantify and
+[14:31] have some really nice visual metrics to
+[14:33] assess
+[14:35] performance and so again we're we're
+[14:37] coming up with a performance dashboard
+[14:39] this is just kind of our vision board
+[14:40] for a performance dashboard um but again
+[14:43] I think a lot of the ideas for this work
+[14:44] is can we actually take some of these
+[14:46] metrics and characterize certain aspects
+[14:48] of movement so uh a couple of things
+[14:51] that we're looking at right now is like
+[14:52] this Force attenuation capacity and
+[14:53] stress test assessments that I'll kind
+[14:55] of talk to in a minute um but we're kind
+[14:58] of branding some of the these these
+[14:59] ratios and and metrics that we've come
+[15:01] up
+[15:02] with so when I talk about this Force
+[15:05] attenuation capacity well when we start
+[15:07] thinking about biomechanics and
+[15:08] biomedical engineering they often model
+[15:10] this um movement as a mass spring damper
+[15:13] relationship and so from this we start
+[15:17] to notice that when you have this model
+[15:19] um some of the critical features of this
+[15:21] model are the peak for or the
+[15:22] accelerations and velocities right and
+[15:24] so if those are the critical features we
+[15:26] wanted to use metrics that actually can
+[15:28] capture those critical featur features
+[15:29] or or service somewhat of surrogates for
+[15:31] this so we've looked at things like Peak
+[15:33] force and loading rates to actually kind
+[15:35] of talk about how individuals attenuate
+[15:37] force and how they control their
+[15:42] movement and so one of the things so in
+[15:45] the previous work we talked about
+[15:46] loading rate was a really big indicator
+[15:48] of uh limb loading Dynamics and and kind
+[15:50] of restoring healthy gate and so we
+[15:52] wanted to say well can we kind of expand
+[15:54] upon this so we started to see if we can
+[15:55] look at that and exploit the
+[15:57] relationship between Peak force and
+[15:58] loting rate to kind of actually
+[16:00] characterize uh motor
+[16:02] control so we go back to our asymmetric
+[16:06] walking population and what we found is
+[16:09] again now we've we also collected some
+[16:10] healthy controls they went through the
+[16:12] same
+[16:13] protocol and so what we wanted to do is
+[16:16] we wanted to look at limb loading
+[16:17] Dynamics in this population so what we
+[16:19] did is we wanted to exploit the linear
+[16:20] relationship between Peak force and
+[16:22] loading rate and so what you know is
+[16:24] very clearly the healthy individuals
+[16:26] really fall within this linear region
+[16:29] and then when we look at the overloaded
+[16:30] and underloaded limb we start to see
+[16:32] that they start to fall outside of this
+[16:33] region right so again a very quick
+[16:35] visual for us to understand um healthy
+[16:37] and pathological movement so this is
+[16:40] when they were doing kind of the
+[16:41] symmetric
+[16:42] trials and then when we had them do the
+[16:44] asymetric walking protocol over time
+[16:46] what we really like to see is that at
+[16:48] first the overloaded limb was outside
+[16:51] and then as they converged over the 10
+[16:52] minutes both of the limbs fell inside
+[16:54] the region and they overlapped so again
+[16:56] a very great visual metric to see that
+[16:58] we were getting the beautiful
+[16:59] convergence that we wanted and again not
+[17:01] only were they symmetric but they fell
+[17:02] into the healthy range so um that was
+[17:05] really
+[17:07] exciting and so again we had to kind of
+[17:09] figure out well that was during the
+[17:10] perturbation how is this going to
+[17:12] maintain after the perturbation and so
+[17:14] we did our 10-minute de adaptation and
+[17:16] behold we got most of these indiv to the
+[17:19] healthy region so again this is the
+[17:22] start of our kind of visual metrics that
+[17:23] we're we're excited to kind of do the
+[17:25] past the eye test right so this was all
+[17:27] in Walking we ALS Al had some
+[17:29] individuals who are doing some running
+[17:31] and so what we did is again we plotted
+[17:32] our healthy
+[17:34] controls we defined our region of
+[17:36] healthy
+[17:38] Dynamics and then we placed our po aclr
+[17:41] individuals on top of that they fell
+[17:42] outside this range so again this is
+[17:44] telling us another really nice way to
+[17:46] kind of delineate between healthy and
+[17:48] pathological gate and what's really
+[17:50] important about this is we like the fact
+[17:52] that if we can conr with a region of
+[17:53] healthy Dynamics when you're kind of
+[17:55] going like a larger um study you know if
+[17:58] we have have somebody who's going to
+[17:59] come in the lab and we just need to do a
+[18:00] quick gate assessment once we have this
+[18:02] region of healthy Dynamics we don't need
+[18:04] to kind of continue to collect a whole
+[18:05] another bunch of ACL individuals to
+[18:07] compare it to we just see where do you
+[18:08] fall in the plot and go from there uh so
+[18:11] we kind of Envision this as maybe
+[18:13] looking at thinking about it as a BMI
+[18:14] indexes if we can kind of extend this
+[18:16] out and see how far are you away from
+[18:18] this kind of linear line and this region
+[18:20] of healthy Dynamics and start to kind of
+[18:22] figure out what this means about your
+[18:23] motor
+[18:27] function so again like we said we wanted
+[18:29] to exploit this linear relationship and
+[18:31] we were able to successfully do this and
+[18:33] and and it really tied in nicely to our
+[18:35] previous
+[18:36] work so we kind of said let's push our
+[18:38] luck a little bit let's see if we can
+[18:39] carry on and find some other metrics
+[18:41] that can um explain some of these things
+[18:43] so again we started looking at this
+[18:46] relationship this is again looking more
+[18:47] at running and we looked at um in
+[18:49] running the two big Peaks are impact and
+[18:51] active Peaks and so we want to see well
+[18:53] can we create this ratio of active to
+[18:55] impact Peak to evaluate force and
+[18:57] attenuation in motor control during
+[19:00] running and we did this because of the
+[19:02] success of our previous work and a lot
+[19:04] of these again metrics came from
+[19:06] conversations we had with physical
+[19:07] therapists so a lot of times I would
+[19:09] come to Brian I say I have this great
+[19:10] metric you know can we use it and he's
+[19:11] like this would never be applied in the
+[19:13] clinic so I think this was helpful for
+[19:15] us to understand is that sometimes you
+[19:17] can come up with a great metric but it
+[19:18] needs to be interpretable and it needs
+[19:20] to be able to be easily implemented
+[19:21] right and so what he did say though is
+[19:23] he goes well we really want when we talk
+[19:26] to some of the clinicians and doctors
+[19:27] they want a red yellow green light
+[19:29] metric right so we want to be able to
+[19:30] say very quickly um green are they
+[19:32] cleared to go yellow they need to be
+[19:34] hold and red uh there's a clear no-go so
+[19:37] that was kind of the the impetus for
+[19:38] this work and again we looked at this
+[19:41] active to impact Peak ratio again we got
+[19:43] this beautiful relationship between the
+[19:45] two again our ACLS are on the right and
+[19:47] they fell outside of this region so this
+[19:49] was very very
+[19:52] exciting but then we also kind of want
+[19:54] to say all right well this is
+[19:56] great but we still haven't had a red
+[19:59] yellow green light
+[20:02] right so what we want to do is we want
+[20:05] to say specifically with the individuals
+[20:06] when we think about this red yellow
+[20:07] green light it's going to be like a
+[20:08] return to sport metric right so we
+[20:11] decided to implement a logistic
+[20:13] regression model right so we applied a
+[20:15] lisc regression looking at the Active
+[20:17] impact Peak ratio and then looking at
+[20:19] probability of healthy limb performance
+[20:21] and so again when we started to think
+[20:23] back you know a lot of times in
+[20:24] literature we have um when we think
+[20:26] about limb symmetry indices they talk
+[20:28] about point n or greater is a gun of
+[20:30] good metric so we started to figure out
+[20:31] well what is the probability of a
+[20:32] healthy limb performance at 0. n or
+[20:34] above and so that was going to give us
+[20:36] our range for green um the ones between
+[20:39] 75 and 09 were giv us our range for
+[20:41] yellow and then our probability for less
+[20:44] than 75 was kind of our red noo so this
+[20:46] is what we liked about this active to
+[20:48] impact Peak is the logistic regression
+[20:50] was really beautiful and allowing us to
+[20:51] kind of create this red yellow and
+[20:55] green so we also started to figure out
+[20:58] well you know we had one metric and
+[21:00] again I continue to say we get greedy we
+[21:01] looked at this um late to Mid knee
+[21:04] flexion Peak so if you again look at the
+[21:06] knee flexion angles during running uh
+[21:08] and looking at the late to mid peak
+[21:10] flexion we actually again created
+[21:12] another logistic aggression out of this
+[21:13] and then we created our red yellow and
+[21:15] green metrics for these so again what's
+[21:17] nice about both of these is again once
+[21:19] we have this metric or we have this
+[21:20] model we can apply individual apply
+[21:23] individuals one at a time and get that
+[21:25] information back
+[21:26] out and so one of the final things we
+[21:29] did is said well let's see how well
+[21:31] these two together kind of are able to
+[21:33] classify or differentiate between the
+[21:34] healthy and post ACR individuals and
+[21:37] what we got is again there's always one
+[21:39] person who messes it up but for the most
+[21:41] part we got some really strong uh
+[21:43] differentiation between using these two
+[21:45] metrics and so again moving forward we
+[21:47] like to kind of continue to collect more
+[21:48] data to make sure that this holds um but
+[21:50] this is a really nice thing that gave us
+[21:52] a lot of visual confidence to make sure
+[21:53] that we know these metrics are are
+[21:55] performing
+[21:57] well so again those were kind of our
+[21:59] Force attenuation two metrics we had the
+[22:02] active and impact Peak uh the late to
+[22:04] mid peak knee flexion and the force vers
+[22:06] loading rate and so we wanted to get
+[22:08] into our stress test right so you know
+[22:10] again this is more branding than
+[22:11] anything um but we want to do stress
+[22:13] test we want to see how the system
+[22:15] performs when it's under different types
+[22:16] of loading conditions right so again we
+[22:18] start to look at like walking and we
+[22:20] have uh walking at you know the 1.0 and
+[22:22] the 1.5 conditions and so what we've
+[22:25] talked about here and I think one of the
+[22:26] the previous speaker talking about about
+[22:27] the idea of gate variability or the
+[22:29] variability in movement and so one of
+[22:31] the things we know is gate variability
+[22:33] is a really big in delineating between
+[22:35] healthy and pathological gate and
+[22:37] individuals in our field and so we use
+[22:39] these Pon car plots again I'm not French
+[22:42] but I'm trying um and so what they're
+[22:44] able to do is we kind of they actually
+[22:47] were coming out of heart rate
+[22:48] variability um so they're usually
+[22:50] typically measuring beatto beat Dynamics
+[22:52] and so we said we don't have beat to
+[22:54] beat but we do have stride to stride and
+[22:56] so that's what we were doing there is we
+[22:57] wanted to kind see if we can model the
+[23:00] the variability and their
+[23:01] movement and again this was nice because
+[23:04] the sd1 and sd2 metrics allowed us to
+[23:06] characterize the short and long-term um
+[23:09] adaptations and variabilities in
+[23:10] individuals during this
+[23:12] walking so again we took our our famous
+[23:15] uh
+[23:16] population and we really start started
+[23:18] looking at this in the Baseline walking
+[23:20] speeds and so again we have our slow
+[23:23] which is kind of our kind of our
+[23:24] Baseline relaxed and then we have our
+[23:25] fast walking which is kind of our stress
+[23:27] test condition
+[23:29] right and so very quickly what we'll
+[23:32] show is that when we have the healthy
+[23:35] control limbs uh we have the underloaded
+[23:38] limb and the overloaded limb and when we
+[23:40] look at the 1.0 MERS per second we see
+[23:43] that there was actually a little
+[23:44] variability difference between the three
+[23:45] groups which wasn't exciting um but it
+[23:49] it was what it was sometimes your
+[23:50] results are not exciting but then we
+[23:52] thought about it the 1.0 it's kind of
+[23:53] like when you're walking into class this
+[23:55] is not a stressful condition uh so we
+[23:57] figure that any kind of abnormalities or
+[23:59] neuromuscular impairments would be Mass
+[24:01] probably at this condition so he said
+[24:03] well let's go from there and see what
+[24:04] happens at
+[24:06] 1.5 and lo and behold at 1.5 we got what
+[24:09] we're looking for so on the right we see
+[24:11] the overloaded limb and we see this very
+[24:13] much of an explosion of variability as
+[24:15] we like to say and so when we thought
+[24:17] about it we said a 1.5 um these
+[24:20] individuals who had this overloaded limb
+[24:21] that we know has is suffering from
+[24:23] neuromuscular inhibition we saw very
+[24:25] quickly um that they were unable to kind
+[24:27] of maintain
+[24:28] their Dynamics at this faster speed so
+[24:31] again when we think about a heart rate
+[24:32] stress test when they really put place
+[24:34] at you and have you running at these
+[24:35] higher speeds for a prolonged period
+[24:37] your system and any failures in the
+[24:39] system are going to be really pronounced
+[24:40] and so it was nice that we were able to
+[24:42] capture that
+[24:47] here okay and so then our stats were
+[24:50] just confirming that yes the overloaded
+[24:52] limb uh variability both the sd1 and st2
+[24:56] sd2 were significantly different and the
+[24:58] healthy controls in the underloaded limb
+[25:00] during this 1.5 m/s
+[25:06] condition and again just highlighting
+[25:08] that under these stressful conditions
+[25:10] any under underlying neuromuscular
+[25:12] dysfunction became really
+[25:14] prevalent and then one of our last kind
+[25:17] of metrics under this um stress test
+[25:20] condition so we talked about stress test
+[25:22] we talked about neuromuscular stress
+[25:23] tests really um but we're also starting
+[25:25] to think about cognitive stress tests so
+[25:26] in our lab we started to work with
+[25:28] individuals who have different levels of
+[25:29] cognitive impairment and what's been
+[25:32] interesting about that is um you know
+[25:34] coming through the research from this
+[25:35] they start talking about uh individuals
+[25:38] with who have cognitive impairment their
+[25:40] gate displays hidden and unexpected
+[25:41] fractal properties and what we really
+[25:43] interpreted this is that there's
+[25:45] underlying um patterns in the data right
+[25:48] so underlying unexpected patterns in the
+[25:50] data and so we really want to start to
+[25:51] figure out how can we kind of capture
+[25:53] these underlying Dynamics specifically
+[25:55] to kind of test about cognitive
+[25:56] impairment and you're wondering why do
+[25:58] we care about cognitive impairment in
+[26:00] sports and so again some of the
+[26:01] individuals will talk about are very
+[26:03] severely have cognitive impairment but
+[26:05] other level of cognitive impairment you
+[26:06] think about somebody who's suffering
+[26:07] from a concussion right that's going to
+[26:09] be a level of cognitive impairment so we
+[26:11] want to see how can we transfer some of
+[26:13] these kind of um these time varying
+[26:15] measures of gate variability to detect
+[26:17] these changes in cognitive impairment
+[26:19] and function and so again we started to
+[26:22] use autoaggressive modeling we use a
+[26:23] second order AR modeling so again
+[26:25] thinking about when it was a good model
+[26:27] fit but also know second order AR models
+[26:29] you can take the ar1 coefficient and the
+[26:31] ar2 coefficient plot them against each
+[26:33] other and it creates a very nice visual
+[26:35] and so that's what we decided to do
+[26:37] there and so what we did is again like
+[26:39] the previous one we took their stride
+[26:40] time Dynamics and we plotted the ar2
+[26:43] model to them and so we were fortunate
+[26:45] to have 13 individuals who performed a
+[26:47] single and dual task walking so single
+[26:49] walking is just walking um at the 1.25
+[26:52] meters per second just normal walking
+[26:54] and then dual task is when you're
+[26:55] walking and kind of think about walking
+[26:57] and chewing gum right it's hard to do
+[26:58] two things at once so we had them
+[27:00] walking and do a Serial sevens task
+[27:02] where they're given a number then they
+[27:03] have to count backwards by seven and so
+[27:05] you increasing your cognitive load to
+[27:07] have to be able to do this so again we
+[27:09] had this healthy population and we had
+[27:12] him do a single task walking we fit
+[27:14] their AR model coefficients to it and
+[27:16] that's where they resided in this this
+[27:18] model and then we said well what's going
+[27:20] on with the Dual task and we started to
+[27:23] see in
+[27:24] this uh well within like a few minutes
+[27:27] so it wasn't like we came day they did
+[27:29] it one day and then came back another
+[27:30] day we saw a shift in what their gate
+[27:32] Dynamics were doing so it was kind of
+[27:34] interesting to see that there was an
+[27:35] increase and taxing on their cognitive
+[27:37] load and function that we could we could
+[27:39] actually detect from their motor
+[27:41] function and so again these are kind of
+[27:44] the two regions that we want to think
+[27:45] about so again I talked about how this
+[27:47] kind of work started from some of the
+[27:49] Cog work we were looking at in
+[27:51] populational cognitive impairment and so
+[27:53] what's really significant about these is
+[27:54] when you see the blue is kind of this
+[27:56] healthy region for this population and
+[27:58] the pink is this healthy region or the
+[28:00] region for the individuals who had the
+[28:02] cognitive um impairment or cognitive
+[28:04] impairment but they're doing the Dual
+[28:05] task so like we said we've done this
+[28:07] work in some other populations
+[28:10] before and what was interesting about
+[28:13] that is we've noticed that individuals
+[28:15] who had neuromuscular impairment and
+[28:17] again continual stride time their stride
+[28:20] times resided in that outward region of
+[28:22] the AR triangle we had the individuals a
+[28:25] healthy control were in that blue region
+[28:26] and then the individuals with the
+[28:28] impairment were in the pink and what was
+[28:30] really interesting for us to note is
+[28:32] that the individuals in the blue and
+[28:35] pink really kind of corresponded to what
+[28:36] we saw when we had the Dual task so
+[28:38] again this is telling us that there
+[28:39] might be some specific regions
+[28:41] associated with not only cognitive
+[28:43] impairment healthy control but then we
+[28:45] also picked up the individuals with
+[28:46] neuromuscular impairment and so again we
+[28:48] like this idea is that maybe we can use
+[28:50] this triangle to identify where people
+[28:51] based on where you reside we can
+[28:53] actually kind of uh understand what your
+[28:56] uh level function is
+[28:58] or what your kind of injury type is and
+[29:01] so again we've done this again in people
+[29:03] who have ALS and huntingtons and
+[29:04] controls we looked at the ar1 ar2 and
+[29:07] their means dry
+[29:10] time we bootstrap their data and then we
+[29:13] got some really nice kind of clustering
+[29:15] between the three groups and so what we
+[29:16] like about this is that you know again
+[29:18] you might start the controls however
+[29:20] depending on what kind of neur muscular
+[29:22] or neuro um cognitive impairment you
+[29:24] have we can actually track that movement
+[29:28] so again in a function of time we've
+[29:30] actually done some work in sports tasks
+[29:32] so this is again we've done some work
+[29:33] with uh University of Western Australia
+[29:35] and University of Tennessee uh for my
+[29:37] PhD and where we looked at athletes and
+[29:40] we were able to kind of use this open
+[29:41] SIM computational modeling and allows us
+[29:43] to create you know subject specific
+[29:45] simulations of individuals which is
+[29:47] really nice and what's nice about this
+[29:48] is we can get out information about
+[29:50] muscle function and Joint loading that
+[29:52] you really can't measure in the lab
+[29:53] right now so again we did this jump
+[29:56] Landing task
+[29:58] and the result of this is we were able
+[30:00] to kind of generate simulations of these
+[30:02] individuals and get out their muscle
+[30:04] function right and so this is kind of
+[30:06] cool when you think about you know
+[30:07] athletes and things like this was is a
+[30:08] jump loading task but and you know now
+[30:11] the previous week was talking about the
+[30:12] amount of um motion capture systems that
+[30:14] you can create now we can take this
+[30:16] information and understand what their
+[30:18] muscles and joints are doing at the same
+[30:20] time but more importantly the last two
+[30:22] slides we have is talking about
+[30:23] performance optimization so again
+[30:25] thinking about the audience today in the
+[30:27] sports Analytics
+[30:28] uh our collaborators have used this to
+[30:30] kind of do performance optimization
+[30:31] where we take a movement and see can we
+[30:33] actually how do we kind of change your
+[30:35] movement bi a mechanics to reduce the
+[30:36] loading on your joints uh so that's one
+[30:38] of the works that they're
+[30:40] doing um one of the things we started
+[30:42] looking at in our lab is kind of
+[30:43] performance optimization with respect to
+[30:45] reducing knee loading and so one of the
+[30:47] things we have is we again we took some
+[30:49] of our population from the individuals
+[30:50] who are doing that asymmetric walking
+[30:53] and you know again we talked about
+[30:54] reducing knee loading is a major factor
+[30:56] in this so we've done this where we've
+[30:58] applied our performance our optimization
+[30:59] routine criteria we have the
+[31:02] before and after and you can kind of see
+[31:04] the Divergence between the two models
+[31:06] showing that the different strategies
+[31:07] that they're taking and what's been
+[31:09] really interesting to
+[31:11] see is that both pre and
+[31:13] postoptimization we were able to reduce
+[31:15] knee loing by 20% so again this is how
+[31:18] we kind of plan to take all that
+[31:19] information we've had and start to use
+[31:21] it to kind of apply performance
+[31:22] optimization and optimizing people's
+[31:26] movement so again here's a summary of
+[31:28] our three goals I want to thank our
+[31:30] students some of which are here today uh
+[31:32] for the work uh help on this work our
+[31:35] funding agencies because we couldn't do
+[31:36] any of this without
+[31:37] them and I would happy to take any
+[31:40] questions
+[32:02] yeah great question so you're asking
+[32:03] about have we looked into if there's any
+[32:05] long-term storage um not yet so you know
+[32:09] again we it's a that's the long-term
+[32:10] goal and so you know that's what we tell
+[32:12] the funding agencies give us more money
+[32:13] to investigate this um but yeah I think
+[32:17] right now the bigger isue you're seeing
+[32:19] like which is the optimal perturbation
+[32:20] what is the the the duration of this but
+[32:22] absolutely that's going to one of the
+[32:24] things we want to see and and talking
+[32:25] with some other people we also want to
+[32:26] figure out we only see them in the lab
+[32:29] we'd love to be able to put a foot
+[32:30] sensor in them have them walk around the
+[32:31] world and see you know truly get that
+[32:33] long-term storage so that's the goal and
+[32:36] you know help us get funding for that
+[32:37] right
+[32:40] thanks
+[32:51] yeah so we do have that information we
+[32:54] haven't necessarily teased out what you
+[32:57] know how how the those people are
+[32:58] looking but we have had a handful of
+[32:59] people who had um multiple
+[33:01] reconstructions on one limb and then
+[33:02] both of them had like on each limb um so
+[33:05] that's something that you're right we
+[33:06] have to kind of tease up and figure out
+[33:07] where do they fall within this Paradigm
+[33:09] and and what's going on with them but um
+[33:11] but like you're you're highlighting the
+[33:12] fact is unfortunately if you have one
+[33:14] you're more likely to have a secondary
+[33:15] one yeah yes
+[33:37] yeah so you're talking about like yeah
+[33:38] what how is that going to be taxing it
+[33:40] absolutely could um and and we don't
+[33:43] know so you like you said this is kind
+[33:44] of the first hot off the presses we're
+[33:46] seeing like we can actually te detect
+[33:48] this and so maybe the idea is like can
+[33:50] we figure out a way to you know train
+[33:52] people that when they're going to do
+[33:54] this that they're they're going to be
+[33:55] able to maintain their their gate
+[33:56] Dynamics but yeah a great point and kind
+[33:58] of interesting and challenging at the
+[34:00] same time yeah
+[34:11] yes oh
+[34:13] so that's a complicated question um yeah
+[34:17] we would love to do that so we haven't
+[34:19] necessar we we've done a little bit of
+[34:21] that work um but not enough to kind of
+[34:24] give you the answer to that but um but
+[34:26] yeah no exactly because like you said
+[34:28] you you really do want this Baseline on
+[34:30] individuals to then when when something
+[34:32] happens know how much are they actually
+[34:33] deviating from where they were before
+[34:35] you know it's we always see them
+[34:36] afterwards so we'd love to kind of get
+[34:37] this information we'd love to screen
+[34:38] everybody in the world get their
+[34:40] Baseline and then get like you know like
+[34:42] you said look at it afterwards see how
+[34:43] it
+[34:51] effects that is our I I always talk
+[34:53] about that instrumented tremble is my
+[34:55] baby I don't have kids that is my kid um
+[34:58] so yeah we we use it for everything and
+[35:00] and so one of the goals is it's it's a
+[35:01] great piece of Machinery but it's it's
+[35:03] huge it's not portable and so that's why
+[35:06] we really want to get into wearables
+[35:07] that are going to be able to measure the
+[35:08] same information out in the real world
+[35:11] um to get us but yeah the force plates
+[35:12] are gold yeah yep okay last one
+[35:46] yeah so do they undergo what we do um I
+[35:48] don't know but I'll say they should um
+[35:50] no you know I I I don't know so it's
+[35:53] it's it's going to be interesting it
+[35:54] would be lovely to work with a group
+[35:55] like that and see how their work is
+[35:57] similar and what we can learn from each
+[35:58] other but yeah I don't have that Insider
+[36:00] information maybe I'll get it
+[36:02] today right well I think I'm out of time
+[36:05] but thank you very much um fa soon

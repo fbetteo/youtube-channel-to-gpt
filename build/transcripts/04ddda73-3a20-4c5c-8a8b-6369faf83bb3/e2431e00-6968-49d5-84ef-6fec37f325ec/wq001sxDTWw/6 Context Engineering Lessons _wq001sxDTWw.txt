@@ -1,0 +1,743 @@
+Video Title: 6 Context Engineering Lessons From 204 AI Automations (no code)
+Video ID: wq001sxDTWw
+URL: https://www.youtube.com/watch?v=wq001sxDTWw
+View Count: 31,384
+
+[00:00] After building over 200 nocode AI
+[00:02] automations, I've come to realize that
+[00:03] context engineering is the most
+[00:05] important thing in determining the
+[00:06] quality and consistency of the AI
+[00:08] systems. So today I'm going to be going
+[00:10] over the six most important context
+[00:12] engineering lessons that I've learned,
+[00:13] breaking it all down and applying it to
+[00:15] NAN AI agents. So I don't want to waste
+[00:17] any time here. There are timestamps down
+[00:19] below if you want to jump around, but
+[00:20] let's get right into it. All right, just
+[00:21] to start off here with module one, intro
+[00:23] to context engineering if it's a term
+[00:25] that you've never heard before. So
+[00:27] context engineering is the art of
+[00:28] feeding your AI agent the right
+[00:30] information that it needs to complete
+[00:31] tasks effectively. Unlike prompt
+[00:34] engineering which focuses on crafting
+[00:36] the perfect single instruction, context
+[00:38] engineering is about building systems
+[00:39] that can dynamically provide relevant
+[00:41] information to the agent. So in a
+[00:43] nutshell, the agent should be able to
+[00:44] receive some sort of message that
+[00:45] triggers it. It should understand, I
+[00:47] have all of these different tools. I
+[00:48] have all of these different sources of
+[00:49] data or information that I can look at.
+[00:51] Which ones do I actually use to get
+[00:53] information to help me answer or do the
+[00:55] right task? Now, the problem is most AI
+[00:57] agents today that aren't using a lot of
+[00:59] context engineering, it's like having a
+[01:01] conversation with someone who forgets
+[01:02] everything right after you've said it.
+[01:04] So, the solution is after the agent
+[01:06] reads through its system prompt, it
+[01:07] should understand, I have these
+[01:08] different tools that I can use to get
+[01:10] more context and this is going to
+[01:12] transform me from a simple question and
+[01:13] answer tool to an actual assistant that
+[01:15] can remember things and take action
+[01:17] intelligently. And I just wanted to say
+[01:19] that this isn't a new concept. It's been
+[01:21] around. I think the term context
+[01:23] engineering is a little bit more on the
+[01:24] newer side, but it's always been around.
+[01:26] These are videos I've made multiple
+[01:27] multiple months ago talking about the
+[01:29] foundation of AI systems and automations
+[01:31] is data and context. And over here was a
+[01:34] completely separate video where I talked
+[01:35] about context is absolutely everything.
+[01:38] The systems are only going to work as
+[01:39] well as the data and context you feed
+[01:41] in. Data in, data out, garbage in,
+[01:44] garbage out. And especially if you're
+[01:45] working on systems for a client or
+[01:47] something like that, you're really going
+[01:48] to have to leverage their subject matter
+[01:50] expertise to train the systems to behave
+[01:52] the way an employee in their business
+[01:54] would. Also, you may have noticed that
+[01:57] kind of behind me, my background is very
+[01:58] bare. This is probably the last video
+[02:00] you'll see from me in this apartment as
+[02:02] I'm transitioning to my new apartment,
+[02:04] which is pretty exciting, but sad day.
+[02:07] Anyways, if it's still not really
+[02:08] clicking and you want a bit of a deeper
+[02:09] dive on some of the more technicalities
+[02:11] of context engineering and where the
+[02:13] term came from, then definitely check
+[02:14] out Cole Meen's video he did covering
+[02:16] this topic. I'll link that in the
+[02:17] description below. But in our video,
+[02:19] we're going to be focusing more on
+[02:20] actually bringing this into Nen and on
+[02:22] no code solutions. So there's really
+[02:24] these six main components of context
+[02:26] engineering. So let me quickly break it
+[02:28] down. So just to go through the
+[02:29] chronological flow of an AI agent, the
+[02:32] first aspect is the user input. This is
+[02:34] basically the dynamic request that we're
+[02:36] asking the agent to do every single time
+[02:38] we trigger it. So it receives the input
+[02:40] and then the second piece of context is
+[02:42] the system prompt which has been around
+[02:43] for a long time. Prompt engineering.
+[02:45] This is where it will read through its
+[02:46] instructions to understand okay what
+[02:48] tools do I have? What do I need to do?
+[02:50] What is the user asking of me? The next
+[02:52] piece is memory where it can go check
+[02:54] what are my past conversations I've had
+[02:55] with this person. Is there anything that
+[02:57] we've already talked about that can help
+[02:58] me do my job better? Then we have
+[03:00] retrieve knowledge which can kind of go
+[03:02] handinhand with tools but I just broke
+[03:03] them up for now but you know subbase
+[03:06] right here it is a tool and then so is
+[03:08] send a message in Gmail but the idea is
+[03:10] that it can use its tools in order to
+[03:12] access different knowledge that it has.
+[03:14] So that could be a vector database it
+[03:15] could be an API call to search the web
+[03:17] it could be looking up something in a
+[03:19] CRM. That's all an element of getting
+[03:21] more context to take action more
+[03:24] effectively. And then the final piece
+[03:26] would be if we have like a structured
+[03:27] output parser where we're going to tell
+[03:28] the agent this is how we need you to
+[03:30] output information. So hopefully this
+[03:33] diagram looks pretty familiar to you if
+[03:35] you've built a few agents in NN already.
+[03:36] And that's sort of the breakdown of
+[03:38] different ways that we can give the
+[03:40] agent more context. That doesn't mean
+[03:41] that every agent or every system we
+[03:43] build has to have all six of these, but
+[03:46] these are the different things you can
+[03:47] kind of tweak and play around with. And
+[03:48] this is a really cool analogy I heard
+[03:50] which is kind of like the difference
+[03:51] between prompt engineering and context
+[03:53] engineering. Prompt engineering is like
+[03:55] studying for an exam, you know, the week
+[03:57] before. But context engineering is
+[03:59] showing up to the exam with a cheat
+[04:00] sheet that you can look at every single
+[04:02] time you're faced with a problem you
+[04:04] don't know. For the best results on that
+[04:06] exam, you're going to want to have both
+[04:07] good studying and a good cheat sheet.
+[04:10] But ultimately, if you only had to have
+[04:11] one, I'd probably rather have a cheat
+[04:13] sheet. All right, so moving on to module
+[04:15] two. This is about memory systems in AI
+[04:17] agents. So there's kind of three
+[04:19] categories of memory that we have in
+[04:21] Naden AI agents. The first one is
+[04:23] working memory, which is just basically
+[04:24] the agent's processing things. It's
+[04:26] using its system prompt and it's using
+[04:28] its chat model in between actions to
+[04:30] figure out what did I just do, what do I
+[04:32] still need to do. And this is on an
+[04:34] execution basis. We have short-term
+[04:36] memory, which is kind of like just
+[04:37] conversation history, a brief context
+[04:40] window of what has been said to whoever
+[04:42] is currently interacting with the
+[04:44] system. And then we have long-term
+[04:45] memory, which is a bit more of that
+[04:46] persistent knowledge that can survive
+[04:48] across sessions. So when we have all
+[04:51] elements of proper memory, our agent can
+[04:53] be able to remember user preferences,
+[04:55] remember previous conversations, and
+[04:57] also maintain context across multiple
+[04:59] sessions. So when it comes to short-term
+[05:01] memory and we're talking about a context
+[05:02] window, we have the ability to choose
+[05:04] what that context window length is. So
+[05:07] in this case, what we have is a
+[05:08] conversation between Nate and an AI
+[05:10] agent. Because we gave it short-term
+[05:12] memory, it's able to make sense as an
+[05:13] actual conversation. I said, "Hey, my
+[05:15] name's Nate." It said, "Hey, how can I
+[05:16] assist you?" I said, "I have a dog named
+[05:18] Workflow." It said, "That's a great
+[05:20] name. How old is workflow? What kind of
+[05:21] dog?" I said, "He's a golden retriever.
+[05:23] What should we do this weekend?" And it
+[05:25] answers because it remembers that we
+[05:27] have a golden retriever. It answers all
+[05:28] this kind of stuff because it knows our
+[05:30] retriever is named workflow. And these
+[05:32] would be three separate interactions
+[05:33] that would be stored as a pair. So if
+[05:35] our context window was two, it would
+[05:37] only remember the most recent two
+[05:39] interactions that we've actually had.
+[05:41] And we have the ability to change that
+[05:42] context window length if we actually
+[05:44] come to the memory system that we have
+[05:46] set up whether it is simple memory in
+[05:48] naden or postgress memory or z memory
+[05:51] whatever we want to set up. So right
+[05:52] here you can see context window length
+[05:54] we chose three but just keep in mind
+[05:56] something we're also going to cover
+[05:57] later in this video is the longer your
+[05:59] context window the more tokens that will
+[06:01] be processed. So it will be more
+[06:03] expensive but your agent will retain
+[06:05] more context and more conversation
+[06:06] history. And the next aspect of this
+[06:08] short-term memory is a session ID. So,
+[06:11] we're able to set a session ID, which is
+[06:13] pretty cool because our agent can have
+[06:14] unique conversations with person A,
+[06:16] person B, person C, and keep them all
+[06:18] separate in its memory. So, we could
+[06:21] link something up as a session ID like
+[06:23] an email address. So, every time an
+[06:25] agent receives an email, it's going to
+[06:26] look at the email address and say,
+[06:27] "Okay, let me go see conversations I've
+[06:29] had with this email address, and then
+[06:31] I'll be able to use that conversation
+[06:33] history to answer the question." Same
+[06:35] thing with like a phone number. if it is
+[06:37] a text SMS bot or something like that or
+[06:39] employee ID if it's like an internal
+[06:41] Slack agent whatever the case is the
+[06:43] session ID can basically link back to
+[06:45] one person and then when we come to
+[06:47] think about long-term memory this is
+[06:49] persistent memory that survives across
+[06:50] sessions and in N&N it can be stored in
+[06:53] multiple different ways we'd have a user
+[06:55] graph with something like Zep which I
+[06:56] have a video on and the benefit of a
+[06:58] user graph is that you can see there is
+[07:00] a user in the middle which in this case
+[07:02] is John Doe but then it has different
+[07:04] relationships and it understands
+[07:06] preferences about the user. Things like
+[07:08] what do they like, where do they live,
+[07:09] what do they do on a daily basis, and
+[07:11] the relationships is what makes this
+[07:13] user graph powerful rather than just a
+[07:15] bunch of random facts that may not link
+[07:17] together. You can also really simply
+[07:18] just store memories in a Google doc, and
+[07:20] then you can tell your agent, this is a
+[07:21] Google doc with long-term memory about
+[07:23] user A. If you want to look up
+[07:24] information, use that tool. It could
+[07:26] also be a vector store, which would be
+[07:28] more of a chunkedbased retrieval. Or it
+[07:30] could also be something like a CRM where
+[07:31] when a request comes in, you're going to
+[07:33] look up that lead or that client in the
+[07:35] CRM, find out information about them,
+[07:37] and then use that to tailor your
+[07:39] response back or the actions you need to
+[07:41] take. All right, moving on to module
+[07:43] three, which is about using tool calling
+[07:45] for rag. It's kind of a good segue from
+[07:47] that end of module two because we were
+[07:49] talking about using tools to access
+[07:50] something like a Google doc memory or
+[07:53] superbase or HubSpot. And tool calling
+[07:55] can also be referred to as function
+[07:57] calling, especially if you're looking at
+[07:58] like some documentation about an AI
+[08:00] model. But what it allows us to do is it
+[08:03] allows our agent to interact with these
+[08:04] external systems, send off a request to
+[08:06] receive data back, perform actions
+[08:08] beyond just generating text. It's like
+[08:11] giving your agent hands and feet in the
+[08:12] digital world. So, you know, chatbt on
+[08:15] its own, if it didn't have any tools,
+[08:17] all you could do is kind of talk to it
+[08:18] and have a conversation. But if you
+[08:19] wanted it to send an email for you or
+[08:21] talk to your nan workflow or whatever it
+[08:23] is, you'd have to give it access to that
+[08:25] tool or that function. And then rag
+[08:27] retrie augmented generation is a
+[08:29] technique where AI agents retrieve
+[08:31] relevant external documents or data at
+[08:33] query time and uses it to respond more
+[08:36] accurately. So the most simple analogy I
+[08:37] like to put it in terms of is let's say
+[08:39] I asked you what's the capital of
+[08:41] California. If you didn't know the
+[08:42] capital, you would probably look it up,
+[08:45] which would be your aspect of rag,
+[08:46] looking up information, retrieving
+[08:48] information. So you can generate a more
+[08:50] accurate answer. It does commonly get
+[08:52] associated with vector search rag or you
+[08:54] know chunk based rag which is why a lot
+[08:57] of people think of a rag agent and they
+[08:58] immediately think of a vector database.
+[09:00] So of course that's the first example
+[09:02] which we have a vector database rag down
+[09:04] here. This first flow is basically we're
+[09:06] putting a Google doc from our drive into
+[09:08] a superbase vector store. And then up
+[09:10] here we have an AI agent and you can see
+[09:12] that under the tool section it's
+[09:14] connected to a tool called superbase
+[09:16] vector store. So now when we ask our AI
+[09:18] agent a question, it's probably not
+[09:20] going to know the answer because it's
+[09:21] pretty specific to the Google doc, but
+[09:23] it knows that it has a tool called
+[09:24] Subbase Vector Store with information
+[09:27] that it can use to answer the user's
+[09:29] question more accurately. But like I
+[09:30] said, it doesn't just have to be a
+[09:32] vector database. Here's an AI agent that
+[09:34] has three different tools. Perplexity
+[09:35] for research, Tavly for research, and
+[09:37] open weather map to get weather
+[09:39] information. So obviously if we ask this
+[09:40] AI agent, what's the weather like in
+[09:42] Chicago? It's not going to know. But it
+[09:44] knows I have a tool called open weather
+[09:46] map which I can go ahead and hit which
+[09:48] will let me find the weather. Same thing
+[09:50] for research. The agent will have
+[09:51] information about whatever it was
+[09:52] actually trained on using its AI model,
+[09:55] but it won't know, you know, an article
+[09:56] that came out yesterday about some crazy
+[09:58] event. It would have to look up the
+[10:01] research on the web using one of its two
+[10:03] tools. And then there's also using tools
+[10:05] to get information from your internal
+[10:07] systems. So something like HubSpot
+[10:08] getting contact data or you know project
+[10:11] data air table same thing or Google
+[10:14] sheets and those are all still aspects
+[10:15] of rag because the data that exists here
+[10:18] it was not trained on in the AI model
+[10:20] and it has to reach out externally to
+[10:22] get it and then of course where it gets
+[10:23] cool is when you have all sorts of
+[10:25] different tools and the agent realizes
+[10:26] okay here's what this tool does here's
+[10:28] what this tool does here's what this
+[10:29] tool has access to now which one do I
+[10:31] use and that's where you do need a good
+[10:33] prompt engineering strategy in order to
+[10:35] make sure your agent understands that.
+[10:37] So, just to put that into perspective
+[10:38] real quick with a use case that doesn't
+[10:40] have any vector search, let's say I'm
+[10:42] talking to my ultimate assistant and I
+[10:44] say, "Can you send an email to Dexter
+[10:45] Morgan with a blog post about Nvidia's
+[10:48] recent earnings report?" So, what would
+[10:50] happen here is the first piece of
+[10:51] context is the Telegram trigger that
+[10:53] sets off the workflow. So, we grab a
+[10:55] message from Telegram and then the agent
+[10:57] basically will look at its system prompt
+[10:59] which is inside the ultimate assistant.
+[11:01] It will read the system prompt. It will
+[11:03] then use its chat model in order to
+[11:05] start to process what do I do next. From
+[11:07] there, it decides, okay, the first thing
+[11:09] I need to do is actually create a blog
+[11:11] post about Nvidia's recent earnings
+[11:13] report. So, I'm going to hit my content
+[11:15] creator agent, which is Rag, because I
+[11:17] need a blog post. So, the content
+[11:19] creator agent makes that blog post, and
+[11:20] then we come back to the ultimate
+[11:22] assistant, who then has to think about
+[11:23] what's next. Then it realizes, okay, I'm
+[11:25] going to send this as an email to Dexter
+[11:26] Morgan, but I don't have Dexter Morgan's
+[11:28] email. So, I'm going to hit my contact
+[11:30] agent for more rag. The contact agent
+[11:33] then comes back with the email address.
+[11:35] The ultimate assistant says, "Okay, now
+[11:36] I'm good to go. I can actually go ahead
+[11:38] and send that email off because I have
+[11:40] the two things I needed, which were the
+[11:42] blog post and Dexter Morgan's contact
+[11:44] information." Moving on to module four,
+[11:46] I did want to have a quick section about
+[11:47] chunkbased retrieval because it is so
+[11:49] important, but it's something that has a
+[11:52] lot of complexities that are important
+[11:53] to think about. So chunkbased retrieval,
+[11:55] which is usually a vector database with
+[11:57] embeddings and stuff, is a technique
+[11:59] where large documents are broken down
+[12:00] into manageable pieces that can be
+[12:02] searched and retrieved more effectively.
+[12:04] Now, this is important because AI agents
+[12:06] with different AI models have different
+[12:08] context windows and sometimes those are
+[12:10] limited. So you couldn't drop a 65page
+[12:13] PDF at your agent and expect it to be
+[12:15] able to see all of it and read all of it
+[12:16] and process all of it at one time. But
+[12:19] if we chunked them up and we put them
+[12:20] into a vector database, the agent would
+[12:22] be able to really quickly and easily
+[12:24] search through them semantically and
+[12:26] pull back the chunks that it needs. The
+[12:28] issue here is that with chunkbased
+[12:29] retrieval, we're losing the
+[12:31] relationships and the context of the
+[12:33] entire document as a whole. So, if I
+[12:35] dropped in a 65page PDF, it got chunked
+[12:38] up and put into a database and I said,
+[12:40] "Hey, Mr. AI agent, can you summarize
+[12:42] that whole PDF?" It would not do a very
+[12:44] good job. There are some things we can
+[12:46] do though to make our chunkbased
+[12:47] retrieval a little more accurate and
+[12:49] customize it to our use cases. So, let
+[12:51] me dive into that real quick. Before we
+[12:52] get there, I just wanted to explain
+[12:54] visually how this works. So, this is our
+[12:56] 65page PDF. We chunk it up into a bunch
+[12:59] of pieces. We run it through an embedded
+[13:00] model to get turned into a numerical
+[13:03] representation of that chunk. And then
+[13:05] the chunks are placed in the
+[13:06] multi-dimensional space based on the
+[13:09] meaning. So let's say this chunk right
+[13:10] here was talking about trees, it would
+[13:12] get put up here. This chunk was talking
+[13:14] about dogs, it would get put over here.
+[13:16] And then this chunk was talking about
+[13:18] fruit, it gets put here. So in the
+[13:20] future, if we put in more chunks and we
+[13:22] put in a whole PDF about dogs, they'll
+[13:24] all be near this other chunk that means
+[13:27] dogs. And we can use things like
+[13:28] metadata, which is just data about data,
+[13:31] to make the context of the chunks more
+[13:33] rich. So in this example, we're putting
+[13:36] in transcripts of a YouTube video. So we
+[13:38] have YouTube video A, YouTube video B,
+[13:40] and YouTube video C. If we put all the
+[13:42] chunks in the vector database, we
+[13:43] wouldn't actually know which chunk came
+[13:45] from which original video. But if we add
+[13:48] metadata like okay this chunk the title
+[13:51] of the video was this the URL of the
+[13:53] video was this and the timestamp of this
+[13:55] specific chunk in the overall larger
+[13:57] video is this and then when our agent
+[13:59] actually pulls back the chunks it knows
+[14:01] exactly what video the URL and exactly
+[14:03] what time in that video it came from. So
+[14:05] that's a way we can really enrich our
+[14:07] data and our retrieval and our answer
+[14:09] generation with our AI agents using
+[14:12] something like metadata. There's also
+[14:14] other things you can do with chunkbased
+[14:15] retrieval like reranking or scoring
+[14:17] because when you pull back the most
+[14:19] relevant chunks, they'll usually be a
+[14:20] relevant score. So you can have a
+[14:21] workflow where you're taking back a
+[14:23] bunch of chunks and then you're only
+[14:24] going to keep ones with a relevant score
+[14:25] above like 75 or something like that. Or
+[14:28] you could use a reranker. So I'll show a
+[14:29] real quick visualization of what that
+[14:31] means. So let's say we ask a question
+[14:33] about what do I do if my ball goes out
+[14:34] of bounds. That question gets embedded
+[14:37] and put into the vector database. We'll
+[14:39] grab the nearest vectors and pull them
+[14:41] back. When we pull those back, they get
+[14:43] turned back into their actual text
+[14:44] representation and then we feed all
+[14:47] those into the rag agent who will then
+[14:48] answer. But if we use a re-ranker, what
+[14:50] we can do is rather than pulling back
+[14:52] just three chunks, we could pull back 10
+[14:55] and then we could feed them all into a
+[14:56] reranker. It will automatically assess
+[14:58] which ones are the most relevant and
+[14:59] then keep the top three and then feed
+[15:01] those into the agent and arguably you'll
+[15:03] get more accurate results. Anyways,
+[15:06] here's the actual system I used for that
+[15:08] YouTube transcript rag agent. And I just
+[15:10] wanted to show you guys this is kind of
+[15:11] the pipeline that we have where we're
+[15:13] getting the transcript, we're getting
+[15:14] the timestamps, and everything we need
+[15:16] and feeding that into a vector database.
+[15:18] And what we can do is inside right here,
+[15:20] this default data loader. That's where
+[15:22] we can load in the metadata we want like
+[15:24] the video title, the timestamp, and the
+[15:26] video URL. All right, moving on to
+[15:28] module five, we have summarization
+[15:30] techniques. Summarization is the process
+[15:32] of condensing large amounts of
+[15:33] information into a concise relevant
+[15:35] summary that can be efficiently
+[15:37] processed by the AI model. Kind of
+[15:38] similar to the theory of chunking
+[15:40] because you know we don't want to feed
+[15:41] so much information into an AI model.
+[15:43] This is really important not only when
+[15:45] we're thinking about the context window
+[15:46] but also from a cost perspective because
+[15:48] the more characters the AI model
+[15:50] receives the more tokens it has to
+[15:52] process which means it's going to be
+[15:53] more expensive for you. So the idea here
+[15:56] is if we can take a big chunk of text
+[15:58] that has good information that we need
+[16:00] but just summarize it in the key points,
+[16:02] it will still help the agent create a
+[16:04] better answer and it will optimize our
+[16:06] cost. So one cool example of that is a
+[16:08] video I did recently with Zep memory
+[16:09] which is like a user relational graph
+[16:11] for memory. And what you can see is if
+[16:13] we use Zep memory natively like this, it
+[16:16] was pulling in so much context and a lot
+[16:19] of it wasn't even that relevant and we
+[16:21] were wasting so many tokens every single
+[16:22] time. So what I did is I pulled in
+[16:24] context window and user graph separately
+[16:27] through an an HTTP request and I was
+[16:29] able to control keeping the relevant
+[16:31] ones only keeping a few and feeding
+[16:33] those into the AI agent and it processed
+[16:36] way less tokens and it cut the cost
+[16:38] significantly. Another cool way you
+[16:40] could think about summarization is, you
+[16:42] know, it doesn't have to be vector
+[16:43] database, but in this case, let's say it
+[16:44] is. What you're doing over here is
+[16:46] you're giving the agent access to the
+[16:48] vector database and everything it pulls
+[16:50] back gets processed by the AI model,
+[16:51] which could be tons of tokens and it
+[16:53] could get expensive. But over here on
+[16:55] the right is a cool thing that you can
+[16:56] do where you're going to do rag in a
+[16:58] subworkflow. So same theory the agent
+[17:00] will hit it superbase tool to get
+[17:02] information but rather than just quering
+[17:04] the tool and getting the raw output it
+[17:06] will be quering a subworkflow that we
+[17:08] built which then queries the tool feeds
+[17:10] it into a summarization chain makes it
+[17:12] more concise and then feeds that summary
+[17:14] back to the main agent and it's
+[17:16] basically keeping all the same important
+[17:18] information and doing its job for
+[17:20] cheaper. And then finally which I think
+[17:22] is probably the most important module is
+[17:24] about mindset. So these are the five
+[17:26] things I wanted to touch on that I found
+[17:27] myself talking a lot about in my
+[17:29] communities and stuff like that when I
+[17:30] was answering questions about context
+[17:32] engineering. The first one is to begin
+[17:34] with the end in mind. If you have a
+[17:36] highle idea of the system you want to
+[17:38] build, you typically know what the agent
+[17:40] will be doing and what type of queries
+[17:42] it will be receiving. And if you can
+[17:43] define the exact queries your agent will
+[17:45] send and the document types it needs.
+[17:47] This will help you decide whether it
+[17:48] needs to fetch full files or if relevant
+[17:50] chunk semantic search is sufficient or
+[17:53] not. And when you understand the type of
+[17:54] knowledge bases the agent will actually
+[17:56] need to use, that's going to help you
+[17:58] set up your pipeline in the beginning,
+[17:59] which is the foundation of everything of
+[18:02] how am I actually going to get this data
+[18:04] into something that my agent can talk
+[18:05] to. Do I need to give it the full doc?
+[18:07] Do I need to chunk it up? What do I need
+[18:08] to do here? So before you build that
+[18:10] database, that source of truth, think
+[18:12] about the way the agent is going to use
+[18:14] it. A lot of times it's not just going
+[18:15] to be one database. Maybe it's multiple
+[18:17] vector stores or maybe it's multiple
+[18:18] files and folders. The second point
+[18:20] would be about designing your data
+[18:22] pipeline. These data pipelines are so
+[18:24] important. You have to think about all
+[18:25] the sources that you're going to have.
+[18:26] Are these going to be static or dynamic?
+[18:28] Do they update frequently? Do I delete
+[18:30] them frequently? How do I set up an
+[18:31] automation to keep all of this relevant?
+[18:34] If your agent's looking at a scraped
+[18:35] website, how often does the website get
+[18:37] updated? How often do we need to
+[18:38] re-trigger the automation to pull in the
+[18:40] website? Same thing with your database
+[18:42] folders, your vector databases, you need
+[18:44] to think about your refresh frequency
+[18:46] and what happens in the case of
+[18:47] deletions. And that leads really well
+[18:49] into the next point, which is ensuring
+[18:51] data accuracy. The whole reason of
+[18:53] setting up context engineering and our
+[18:54] rag systems is so the agent uses its
+[18:56] tools, it pulls back relevant,
+[18:59] up-to-date, accurate information and
+[19:01] then answers. So if your knowledge bases
+[19:03] are out ofd or inaccurate and the agent
+[19:05] pulls it back, it's going to also answer
+[19:07] inaccurately. But really the data
+[19:09] pipeline is so so important. It is
+[19:11] basically the foundation of
+[19:12] standardizing your data, preparing it to
+[19:14] come in and then uploading it to the
+[19:16] right spot. And this is where you have a
+[19:18] lot of control because what you want to
+[19:20] do is have predictable inputs,
+[19:22] predictable standardization, and then
+[19:24] predictable loading into a database.
+[19:26] Point number four is to optimize context
+[19:28] windows. Load only the most relevant
+[19:30] information to control costs and prevent
+[19:33] overload. If you're taking a history
+[19:34] exam and you need to look up information
+[19:36] about World War I, you would have your
+[19:37] cheat sheet with clear labels and you
+[19:40] would literally just go straight to the
+[19:41] little section about World War I.
+[19:43] There's no reason you would start from
+[19:44] the beginning of your whole cheat sheet,
+[19:46] read all of it through all the way down,
+[19:48] and then finally get to what you
+[19:49] actually need. So, if you can set up
+[19:51] systems to make sure that your agents
+[19:52] only looking and making requests for the
+[19:55] most relevant information based on that
+[19:57] user input, then quicker executions,
+[19:59] more highquality results, more
+[20:01] consistent results, and also most
+[20:03] importantly, cheaper results. And then
+[20:05] number five, which I think is really
+[20:06] important, is to embrace AI
+[20:08] specialization. ever I have an AI agent
+[20:11] or an AI model in some aspect of an
+[20:13] automation, I try to think to myself,
+[20:15] how can I make this AI just do one job
+[20:18] really well? It's cool that you can have
+[20:20] AI agents do tons of different jobs and
+[20:22] all handle it in one like some sort of
+[20:23] super agent. But that's kind of the
+[20:25] whole reason why with the Ultimate
+[20:26] Assistant, rather than giving it all the
+[20:28] Gmail tools, all the calendar tools, all
+[20:30] the contact tools, we give it fewer
+[20:32] tools and then all it has to do is take
+[20:34] care of basically delegating the query
+[20:36] to the right spot. If you have a process
+[20:38] of like four major steps where your
+[20:40] agent could do research, write the
+[20:42] report, you know, create a message,
+[20:43] whatever it is, it would probably be
+[20:45] more consistent for you to have one
+[20:48] agent take care of each of those steps
+[20:49] in the process. Think of it like an
+[20:51] assembly line. Everyone does one thing
+[20:53] and then they take that input, they do
+[20:55] it, and then they pass it off to the
+[20:56] next step. This makes it way more
+[20:58] efficient. This makes everyone really
+[20:59] good and really quick at their own job.
+[21:01] And it also helps with your prompting
+[21:03] because then you're able to get in there
+[21:04] and really specifically prompt this one
+[21:06] agent to do its one job. And then the
+[21:08] cool thing there is you can have each AI
+[21:11] step use a different AI model if you
+[21:13] want. We all know different models are
+[21:15] good at different things and sometimes
+[21:16] it can be tough to see which model
+[21:18] should I use for which use case. But if
+[21:19] you have everything split up, you can go
+[21:21] ahead and test a different model for
+[21:22] every single different step in the
+[21:24] process. So that was all I had for you
+[21:26] guys today. I didn't want to overwhelm
+[21:28] you with too much information, but
+[21:29] hopefully it was helpful. If you want to
+[21:31] access the link to this Excal so you can
+[21:32] take a look on your own time, then you
+[21:34] can access it in my free school
+[21:36] community. The link for that will be
+[21:37] down in the description. All you have to
+[21:38] do is join the community and then search
+[21:40] for the title of the video up at the top
+[21:42] or you can go to YouTube resources, find
+[21:44] the post associated with this video and
+[21:47] let's say it was this video right here.
+[21:49] You would see basically a link somewhere
+[21:51] in this post that would take you to the
+[21:52] Excalibraw. And if you found this video
+[21:54] interesting and you're looking to deeper
+[21:55] dive into some of those aspects of
+[21:57] context engineering that I touched on,
+[21:58] then definitely check out my paid
+[22:00] community. Link for that is also down in
+[22:01] the description. We've got a great
+[22:03] community of members. Everyone is
+[22:04] building every day with NADN sharing
+[22:06] their challenges, sharing their wins,
+[22:08] sharing their projects. And we've got a
+[22:09] classroom section with two full courses.
+[22:11] Agent Zero is the foundations for AI
+[22:13] automation. So if you're a beginner, a
+[22:15] great place to get some structured
+[22:16] guidance. And then 10 hours to 10
+[22:18] seconds where you learn how to identify,
+[22:20] design, and build time-saving
+[22:21] automations. So, that's going to do it
+[22:23] for this one. I would love to see you
+[22:24] guys in those communities, but hope you
+[22:26] enjoyed the video. If you did or if you
+[22:27] learned something new, please give it a
+[22:28] like. It definitely helps me out a ton.
+[22:30] And as always, I really appreciate you
+[22:32] guys making it to the end of the video.
+[22:33] I'll see you on the next one. Thanks
+[22:35] guys.

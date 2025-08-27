@@ -1,0 +1,134 @@
+Video Title: 3 lessons from 900 days of coding startups
+Video ID: ebcakmRzl0I
+URL: https://www.youtube.com/watch?v=ebcakmRzl0I
+
+[00:00] after I got fired as a software engineer
+[00:02] in November 2021 I started building tiny
+[00:04] little websites with one goal in mind
+[00:06] become financially independent as I'm
+[00:08] recording this video I made
+[00:10] $121,000 in the last 30 days with seven
+[00:12] website I built 92% of that is profit
+[00:15] and I am a solo developer wearing
+[00:17] underwear all day long except when I'm
+[00:18] making those videos I don't have any
+[00:20] employee I don't have any meetings I
+[00:21] don't have any deadlines I got lucky in
+[00:24] fact exactly one year ago I was making
+[00:26] $11,000 per month with all my websites
+[00:28] and when I got started I made $ for 5
+[00:31] months I would never believe what's
+[00:32] happening today because there is no
+[00:34] magic recipe for success but I
+[00:36] discovered something when I started the
+[00:37] journey 900 days ago I joined Twitter
+[00:39] and hang out with other developers
+[00:41] chasing the same dream build our own app
+[00:43] and Achieve Financial Freedom every day
+[00:45] we'll share progress we make on our
+[00:46] little website and share our learnings
+[00:48] but after a few months not getting
+[00:49] really good results most of them stopped
+[00:51] showing up daily and gave up but a small
+[00:54] group of developers did not give up and
+[00:56] keep showing up fast forward to today
+[00:58] most of those developers make well over
+[01:00] $10,000 per month so here is the thing
+[01:03] luck is math if you show up for long
+[01:05] enough even though you don't feel like
+[01:06] it luck will find you I launched website
+[01:09] in the void for 600 days there were tons
+[01:12] of opportunities to give up but I kept
+[01:14] showing up every single day and I would
+[01:17] never earn 120k in the last 30 days if I
+[01:19] gave them so here are three ways I manag
+[01:21] to say consistent and motivated shipping
+[01:23] apps every day for the past 2 and A2
+[01:25] years the first project I work on as an
+[01:27] independent developer is called mood to
+[01:29] movie it's a very simple app that
+[01:31] recommends movies based on your mood it
+[01:33] took me just a few days to build the
+[01:34] first version of the product because in
+[01:36] my head there is some kind of monkey
+[01:38] that wants to have instant results so I
+[01:40] can easily convince him to work hard for
+[01:42] a couple days but it's much harder to
+[01:44] get it to work hard on something without
+[01:45] getting results for month in fact in
+[01:47] 2017 when I started the journey I spent
+[01:50] an entire year working on a product that
+[01:51] got zero users and I just burned out
+[01:53] completely and stop working on any
+[01:55] project for another year so now whatever
+[01:57] I have an ID in mind I always try to
+[01:59] ship the smallest version of that
+[02:01] product usually one feature that I can
+[02:03] build in a couple days sometimes a week
+[02:05] and show it as fast as I can to
+[02:07] customers I usually don't like hanging
+[02:09] out with people I spend most of my time
+[02:11] alone or hanging out with my wife but
+[02:13] being isolated is no good and at the
+[02:15] same times humans are very social
+[02:17] creatures and we can leverage those
+[02:19] social interactions to motivate
+[02:20] ourselves when I joined Twitter 2 and a
+[02:22] half years ago I would follow other
+[02:24] developers doing the same thing as me
+[02:26] and I remember this guy called dun he
+[02:27] was writing crispy tweets and he had
+[02:29] around the same number of followers as
+[02:31] me and every morning I would try to make
+[02:32] a tweet that would have more likes or
+[02:34] engagement than him it usually did sorry
+[02:36] buddy there is Another Monkey in my
+[02:38] brain that wants to play game so I
+[02:40] compare myself with other entrepreneurs
+[02:41] at the same stage so I can leverage my
+[02:44] desire for competition no jealousy just
+[02:46] healthy competition because in the end
+[02:48] we all win most of my product made at
+[02:50] least $1 and so I was really tempted to
+[02:52] focus and try to grow each of them and
+[02:54] actually people ask me often why do I
+[02:56] work on so many project instead of
+[02:58] focusing on just one and there is
+[02:59] another monkey in my head that have
+[03:01] expectations the more time I spend on a
+[03:03] specific task the higher the
+[03:04] expectations so I could select one
+[03:06] project and keep adding features and
+[03:07] features and features but that will also
+[03:09] grow my expectations and if nothing big
+[03:11] happens then I will just simply burn out
+[03:14] instead I will launch a tiny website and
+[03:16] move on to the next project unless
+[03:18] something big happens like it was the
+[03:19] case for ship fast one of my products I
+[03:21] would rather quit too early and miss an
+[03:23] opportunity than quit too late and
+[03:25] burnout shipping websites is like a
+[03:27] muscle if you on progress you have to
+[03:29] practice consist L try looking one hour
+[03:31] every day with you and your code editor
+[03:33] until it becomes a habit and to avoid
+[03:35] losing motivation and stay consistent
+[03:38] try what worked for me sh very tiny
+[03:39] little projects join some kind of
+[03:41] community where there are like-minded
+[03:43] people where you can healthily compete
+[03:44] against them and quit even if it's too
+[03:46] early so you don't burn out in the end
+[03:48] entrepreneurs who show up daily will be
+[03:50] rewarded I've seen this with my own
+[03:52] experience as well as other developers
+[03:54] so now it's your time to commit and feel
+[03:56] that GitHub contribution board all right
+[03:58] if you want to see the 20 plus website I
+[04:00] built as an independent developer here's
+[04:02] a link to another video and if you enjoy
+[04:04] this one consider subscribing to the
+[04:05] channel that really means a lot and
+[04:07] until the next video I root for you and
+[04:08] I hope you just ship it

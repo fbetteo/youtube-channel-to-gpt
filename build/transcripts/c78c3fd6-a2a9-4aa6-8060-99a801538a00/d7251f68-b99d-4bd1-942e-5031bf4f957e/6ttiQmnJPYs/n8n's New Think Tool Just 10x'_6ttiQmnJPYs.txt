@@ -1,0 +1,60 @@
+Video Title: n8n's New Think Tool Just 10x'd AI Agents  #n8n #aiagent #artificialintelligence
+Video ID: 6ttiQmnJPYs
+URL: https://www.youtube.com/watch?v=6ttiQmnJPYs
+View Count: 26,393
+
+[00:00] NN's new think tool makes your agent so
+[00:02] much smarter. Okay, so here is our think
+[00:03] agent. As you can see, it has two tools
+[00:05] as well as a think tool. So, what I'm
+[00:07] going to do in this chat is ask it if me
+[00:09] and three friends can stay from April
+[00:11] 15th to April 20th. So, we'll send that
+[00:13] off and we'll see what it does. You're
+[00:14] going to see here that it's going to
+[00:15] call both the quoter and the
+[00:16] availability tool. And then it's going
+[00:18] to hit the think tool. And then you'll
+[00:19] notice it hit the quotot. So, as you can
+[00:22] see, it responds to us with you and your
+[00:23] three friends, four guests total can
+[00:25] stay from April 15th to the 20th. Those
+[00:27] dates are available. However, I was
+[00:29] unable to retrieve a quote for your
+[00:30] requested stay at this time. If we click
+[00:32] into the logs of the actual agent, we
+[00:34] will see exactly what it did. You can
+[00:36] see that it first called the
+[00:36] availability tool, which the response is
+[00:38] that the dates are available. It then
+[00:40] tried to call the quot tool, and the
+[00:42] response was no quote provided. So, the
+[00:44] agent at this point realized, okay, I
+[00:45] ran into an issue. I'm going to use this
+[00:47] think tool to think about what I need to
+[00:48] do. Basically, what this is is a scratch
+[00:50] pad for the agent just to write
+[00:51] something down and think about it. So,
+[00:53] we're essentially turning GPT41, which
+[00:55] is not a reasoning model, into a
+[00:57] reasoning model. What it wrote down was
+[00:58] availability has been confirmed, but the
+[01:00] quote was not provided. I need to retry
+[01:02] the quote request with the correct
+[01:04] number of guests and dates. So, it's
+[01:05] thinking, okay, maybe I just sent over
+[01:07] the wrong information. Let me go ahead
+[01:08] and try again. What it did is it called
+[01:10] the quoter tool once again. And same
+[01:12] thing, no quote provided. And so, what I
+[01:14] just did is I fixed the quotot. So,
+[01:16] let's go ahead and resend this off and
+[01:17] see if we get anything different. It
+[01:19] should call both these tools and then it
+[01:20] should call the think tool just to make
+[01:22] sure that it did everything correctly.
+[01:23] As you can see, it just called the think
+[01:24] tool. And now we have our actual
+[01:26] availability with the quote. If you want
+[01:28] to watch the full video, the link for
+[01:30] that's down in the description.

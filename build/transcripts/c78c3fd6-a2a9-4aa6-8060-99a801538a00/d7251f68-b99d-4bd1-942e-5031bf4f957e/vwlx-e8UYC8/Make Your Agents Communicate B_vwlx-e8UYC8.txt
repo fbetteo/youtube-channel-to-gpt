@@ -1,0 +1,597 @@
+Video Title: Make Your Agents Communicate Better in n8n (Feedback, Specifying Inputs, Agent Logs)
+Video ID: vwlx-e8UYC8
+URL: https://www.youtube.com/watch?v=vwlx-e8UYC8
+View Count: 35,998
+
+[00:00] today we're going to be talking about
+[00:01] how you can make your AI agents
+[00:02] communicate with each other much more
+[00:04] effectively the whole point of building
+[00:05] out these multi- agentic autonomous
+[00:07] systems is that we can trigger the
+[00:09] workflow something will happen in that
+[00:10] black box of the agents that we built
+[00:12] and then the output that we get is
+[00:14] something that we're happy with this is
+[00:15] unlike something like Chach BT where
+[00:17] we're constantly doing back and forth
+[00:19] asking it to make small tweaks and
+[00:20] adjustments until we're finally happy
+[00:22] with what we got so by giving these
+[00:23] agents a channel to communicate with
+[00:25] each other they're able to understand
+[00:26] the mistakes fix the mistakes and just
+[00:28] ultimately become a smarter team of
+[00:30] Agents so let's not waste any time and
+[00:32] get straight into this one so what we're
+[00:33] talking about today is specifically if
+[00:34] you're using a parent agent and a child
+[00:36] agent architecture so if you saw my
+[00:38] ultimate assistant video where we had
+[00:39] this one big ultimate assistant who was
+[00:41] sending data off to either an email
+[00:43] calendar blog writer or context agent
+[00:46] what was happening is the child agents
+[00:48] were getting data they were executing a
+[00:50] task and then they were sending that
+[00:51] task completion back to the main agent
+[00:53] essentially that's what I'm going to be
+[00:54] talking about today but how to make it a
+[00:56] little more robust and understanding
+[00:57] what's really going on in that data
+[00:59] transfer between workflows and by the
+[01:01] way if you're looking for more hands-on
+[01:02] experience with learning NN definitely
+[01:03] check out my paid Community the link for
+[01:05] that's down in the description we've
+[01:06] obviously got a great community of
+[01:07] people that are always asking questions
+[01:08] about n andn and sharing projects We've
+[01:10] Got Deep dive courses like building AI
+[01:12] agents as you can see Vector databases
+[01:14] apis HTTP requests and then step by
+[01:16] steps of all the builds that I'm doing
+[01:18] on YouTube we've also got five left
+[01:19] calls per week as you can see they're
+[01:20] all recorded as well just to make sure
+[01:22] you're never getting stuck and meeting
+[01:23] people in the space we would love to see
+[01:25] you guys on a live call sometime but
+[01:26] anyways let's get back to the video okay
+[01:28] so this is our parent agent for today
+[01:29] we're going to be communicating with it
+[01:31] through a chat message that's just going
+[01:32] to be right here in NN and it's going to
+[01:35] be sending information to a story agent
+[01:37] and in this case the first story agent
+[01:38] we're going to look at just looks like
+[01:40] this all it is is a simple when executed
+[01:42] by another workflow trigger it's going
+[01:44] to take details from that first main
+[01:46] agent it's going to create a story and
+[01:47] then it's going to send that story back
+[01:49] to the main agent so let's do a quick
+[01:50] example and then let's look at how this
+[01:52] is actually working okay so the prompts
+[01:54] we're putting in here is create a story
+[01:55] about Bob he's a 20-year-old man who
+[01:57] enjoys skateboarding and eating ice
+[01:58] cream so as you can see right now the
+[02:00] parent agent decided to hit the story
+[02:01] agent and now I got a response back so
+[02:04] we have this story which is called Bob
+[02:05] sweet ride Bob a whirlwind of restless
+[02:08] energy barely contained within a
+[02:09] 20-year-old frame lived in breed
+[02:11] skateboarding anyways we could read the
+[02:12] rest of the story if you want um pretty
+[02:15] much ends off with him getting a scoop
+[02:17] of double chocolate fudge ice cream but
+[02:19] anyways let's take a look at how this
+[02:20] actually worked first let's take a look
+[02:22] at what's going on within the parent
+[02:23] agent we'll click into this guy and
+[02:24] we'll see that first of all there's a
+[02:26] user message and there's a system
+[02:27] message so with the user message this is
+[02:30] going to be the information that we're
+[02:31] feeding into the parent agent every
+[02:33] single time it's going to be different
+[02:34] it's going to be the The Prompt of you
+[02:37] know this is the information to do
+[02:38] something with this is what's triggering
+[02:40] you and then we have the system message
+[02:42] which is more like here's your role this
+[02:43] is what you do here are your rules
+[02:46] anyways as you can see the user message
+[02:47] coming in is json. chat input so it's
+[02:50] just coming from the chat trigger where
+[02:51] we talk to it and it's coming in as
+[02:53] create a story about Bob he's a
+[02:54] 20-year-old man who enjoys skateboarding
+[02:56] and eating ice cream so it's exactly
+[02:57] what we typed in that little chat window
+[03:00] cool now looking at the system message
+[03:01] like I said this is kind of its
+[03:02] instructions so we have an overview you
+[03:04] assist users in creating stories your
+[03:06] job is to send the incoming story
+[03:08] details to the story agent tool and then
+[03:10] we gave it tools which is only one story
+[03:12] agent use this tool to create a story
+[03:14] you must send this tool information
+[03:16] about the story it needs to create and I
+[03:18] misspelled
+[03:20] this anyways finally we gave it rules
+[03:23] which is only output the title of the
+[03:24] story and then the story just so it
+[03:26] wasn't saying like okay I've taken your
+[03:28] information and I've created a story
+[03:29] here it is so we're just getting a title
+[03:31] and the story and another cool thing we
+[03:32] can look at is the logs so in here we
+[03:34] see exactly how the agent was thinking
+[03:36] the first thing it did is it used its
+[03:37] flash 2.0 model so its brain to read
+[03:40] through its system message and then it
+[03:41] had to understand what it needed to do
+[03:43] so it said okay I'll create a story
+[03:44] about Bob 20-year-old man blah blah blah
+[03:46] and it knew based on its tools right
+[03:48] here that it need to use the story agent
+[03:50] to do so so it sent off information to
+[03:52] the story agent which was Bob is a
+[03:54] 20-year-old man who enjoys skateboarding
+[03:55] eating ice cream and then the output
+[03:57] which is the response back from the
+[03:58] story agent
+[04:00] is the story and finally it looks at his
+[04:02] brain one more time to understand what
+[04:03] it needs to do and then it just outputs
+[04:05] the title as well as the story because
+[04:07] we didn't get an actual title back from
+[04:09] the story agent we just got the story so
+[04:11] it had to use its brain once again to
+[04:12] understand okay I also need to Output a
+[04:14] title from there we can click into the
+[04:16] story agent to see what it actually sent
+[04:17] over so on the right we see the output
+[04:19] which is what we got from the story
+[04:20] agent but on the left is the query
+[04:22] that's sent into the story agent and all
+[04:24] we can see here is that we had to give a
+[04:26] description to this tool which is call
+[04:28] this tool to create a story about a
+[04:29] person and then we had basically had to
+[04:32] choose where are we sending this data so
+[04:35] the way we connect this tool is we click
+[04:36] on the plus for Tool and we click on
+[04:38] call NN workflow tool so this means that
+[04:41] we're able to call another workflow um
+[04:43] and send data over so in this case we're
+[04:44] calling over this child agent and we're
+[04:46] able to do so because this workflow
+[04:48] starts with a trigger that is when
+[04:50] executed by another workflow so back
+[04:52] into the parent agent we click into here
+[04:54] we can see that we were able to choose
+[04:55] what workflow we want to send data to
+[04:57] and in this case I just had to type in
+[04:58] story agent number one and that's the
+[05:00] one that we click on and it's sending
+[05:01] data over there so if I click into story
+[05:04] agent number one and I click on
+[05:06] executions we can see right here this is
+[05:08] the execution that we just ran and it
+[05:09] should have a query coming in that was
+[05:11] talking about Bob who's 20 20 years old
+[05:14] and enjoy skateboarding and eating ice
+[05:16] cream so we can see that's what came in
+[05:18] from there we're feeding that into the
+[05:20] child agent and once again just
+[05:21] separating the difference between a user
+[05:23] message and a system message the user
+[05:25] message is what triggers this guy it's
+[05:26] going to change every time and it is the
+[05:28] query that came in from our parent agent
+[05:30] and then the system message here is just
+[05:32] you know you're an expert storywriter
+[05:34] you receive details and your job is to
+[05:35] write an exciting story don't output any
+[05:37] questions use your mind to create a
+[05:39] story even if the details are vague and
+[05:40] always output a story that should be
+[05:42] roughly one to two paragraphs so in here
+[05:44] we're just refining the rules of this
+[05:45] agent and then as you can see what it
+[05:47] output was the actual story that we got
+[05:49] back in the child in the parent agent
+[05:51] workflow and the reason it it was able
+[05:53] to understand this is because right here
+[05:55] it says this tool will call the workflow
+[05:56] you to find below and it will look in
+[05:58] the last node for the response the
+[06:00] workflow needs to start with an execute
+[06:02] workflow trigger so in order to call a
+[06:04] tool like we said we have to have it
+[06:06] when executed by another workflow
+[06:07] trigger and then whatever ends this
+[06:09] process so in this case the agent's the
+[06:10] last node it's just going to pull the
+[06:12] output as the response back to the main
+[06:14] agent as you can see this is exactly
+[06:16] what we got over here when we're looking
+[06:18] at the story agent and if you don't
+[06:19] believe me you could even click on view
+[06:21] sub execution which will take you right
+[06:22] to the execution of this sub child agent
+[06:25] that we just called and as you can see
+[06:26] it's going to be exactly what we were
+[06:27] just looking at which is the query
+[06:30] coming in Bob is a 20-year-old man okay
+[06:32] cool now let's change it up a little bit
+[06:34] what I'm going to do now is we're going
+[06:35] to look at story agent number two and so
+[06:37] the difference between story agent
+[06:38] number one and number two is that in
+[06:40] this case we're defining the input
+[06:41] schema So within our when executed by
+[06:44] another workflow trigger I can click
+[06:45] into here and the default is going to be
+[06:48] defined using Fields below now if we
+[06:51] were to flip back to the first story
+[06:52] agent and we look at this trigger what
+[06:54] we're doing here is we're accepting all
+[06:55] data so everything's going to come
+[06:57] through in a field called json. query
+[06:59] and that is what you could see in the
+[07:00] execution but in this case in story
+[07:02] agent number two we want to Define
+[07:03] what's coming in so we're going to have
+[07:04] the parent agent send over a setting a
+[07:07] main character and an adventure and then
+[07:09] we're just setting the type of data so
+[07:10] all of these are going to be strings and
+[07:12] so now what's really cool about that is
+[07:13] because we know we're looking for those
+[07:15] three things if we come back into the
+[07:16] parent agent and we click into here and
+[07:18] we change the workflow we're going to
+[07:19] send data to so instead of story agent
+[07:21] one we're going to send data to story
+[07:23] agent 2 I'll click on this and you can
+[07:25] see now we have workflow inputs so this
+[07:27] is where we Define from the parent agent
+[07:29] what are you going to send over to this
+[07:31] story agent workflow so all I'm going to
+[07:33] do is click on these three buttons which
+[07:35] is letting the model Define the
+[07:36] parameter so what's what's going to
+[07:38] happen here is it's going to take this
+[07:39] query like like this over here and then
+[07:41] the model is going to fill out okay
+[07:43] based on this query what's the setting
+[07:44] what's the main character and what's the
+[07:46] adventure so in this case it would have
+[07:47] filled out you know um I guess we didn't
+[07:50] give it a setting so it would have said
+[07:51] something like none um it we would have
+[07:53] given the main character of Bob and then
+[07:55] the adventure would have been
+[07:56] skateboarding and eating ice cream so
+[07:58] before we test this out so I can show
+[07:59] you guys how it works I'm going to add
+[08:01] one more thing in the system message
+[08:03] which is now because it has inputs to
+[08:05] send over we just want to Define that a
+[08:06] little bit so in the rules I'm saying
+[08:08] you'll need to send over the following
+[08:10] parameters to the story agent setting
+[08:12] main character and Adventure if a
+[08:14] parameter wasn't given just send over
+[08:15] none provided for that parameter so what
+[08:18] we're going to do here is we are going
+[08:20] to um save this so now we're going to
+[08:22] try sending off a new query and it's
+[08:23] going to hit the new story agent number
+[08:25] two and we're going to say create a
+[08:26] story about Bob he's a 20-year-old man
+[08:28] who lives in Florida and he goes on a
+[08:29] cruise for the day so we've got setting
+[08:31] main character and we have an adventure
+[08:34] so as you can see we have the story it's
+[08:35] called Bob's cruise and obviously it
+[08:37] goes into this two paragraph story and
+[08:39] what I want to show you guys now is that
+[08:40] we can click into the story agent
+[08:42] workflow and we can see on the left hand
+[08:44] side the model was able to fill out the
+[08:46] setting Florida main character Bob and
+[08:49] Adventure was Cru for the day and
+[08:51] obviously on the right what we have is
+[08:53] the actual output of the story so I'm
+[08:54] going to click on view sub execution and
+[08:56] we're going to be able to pull up this
+[08:57] information and see how the data just
+[08:59] flows Lo through this workflow so as
+[09:01] this loads up first thing to remember is
+[09:02] we're getting in the inputs and we
+[09:04] Define these so it's not coming through
+[09:05] as one query it's coming through as
+[09:07] three different things which is setting
+[09:08] main character and Adventure from there
+[09:10] what we're doing is doing a quick check
+[09:12] we're saying are all parameters given we
+[09:15] have Json setting json. main character
+[09:17] and json. adventure and because they're
+[09:19] all there it's going to go down the true
+[09:21] Branch as you can see right here true
+[09:23] one item and it gets sent over to the
+[09:25] child agent What's Happening Here is if
+[09:28] you know we chatted with the and all we
+[09:29] gave was a setting and a main character
+[09:32] it would go down the false Branch right
+[09:34] here and then it would respond to the
+[09:35] agent and say hey not everything was
+[09:37] given please try again and I'll show an
+[09:39] example of that in a sec but for now
+[09:40] let's just keep moving on to the child
+[09:41] agent the only difference really here is
+[09:44] that rather than just pulling in one
+[09:45] json. query as the user prompt we have
+[09:48] to Define these three things so we said
+[09:50] here are your story details you've got
+[09:52] setting main character and adventure and
+[09:53] on the right hand side we have the
+[09:55] actual details coming through okay but
+[09:56] now we want to see what happens if we
+[09:57] don't give all the parameters and
+[09:59] something thing goes down this path
+[10:01] let's go back to the parent agent and we
+[10:03] will chat with the agent once again but
+[10:05] this time I'm going to copy this query
+[10:07] back in but I'm going to get rid of the
+[10:09] adventure so I'm just going to say he's
+[10:10] a 20-year-old man who lives in Florida
+[10:12] and we'll send that off we'll see it's
+[10:13] still going to hit the story agent but
+[10:15] now it says I need to know the adventure
+[10:16] to write the story can you please tell
+[10:18] me the adventure so in here that's
+[10:20] because it says setting is Florida main
+[10:22] character is 20 year old name
+[10:24] 20-year-old man named Bob and the
+[10:25] adventure is none provided so just a
+[10:27] quick reminder in the system prompts we
+[10:29] said um if a parameter wasn't given just
+[10:31] send over none provided so that's how we
+[10:33] know it's always going to be sent over
+[10:34] as none provided and now what I'm going
+[10:37] to do is I'm going to click into this
+[10:38] sub execution of the current workflow it
+[10:41] just called this this child agent and
+[10:43] we're going to see what happened is it
+[10:45] didn't actually go to the agent it went
+[10:46] down to this message because in here
+[10:48] like I said we're checking to make sure
+[10:50] that all of these three parameters don't
+[10:52] equal nonone provided and in this case
+[10:55] Adventure equal nonone provided so it
+[10:56] got sent down the false branch and the
+[10:58] false Branch all we did is we sent over
+[11:02] um a response and it's saying not all
+[11:04] information provided please make sure to
+[11:06] provide a main character a setting and
+[11:08] an adventure so this is now what the
+[11:10] agent is getting um the main agent is
+[11:12] seeing this because as we know what's
+[11:14] happening is the main agent is looking
+[11:16] for whatever is output of the last node
+[11:19] executed in the workflow and in this
+[11:21] case this was the last node so back in
+[11:23] the parent agent we can see what it got
+[11:25] from the story agent right here is not
+[11:26] all information provided please make
+[11:28] sure to provide a main character setting
+[11:30] and an adventure and because it knows
+[11:33] that you know we sent over a main
+[11:35] character in a setting it knows to ask
+[11:36] for an adventure okay cool I hope you
+[11:39] guys are still with me and understand
+[11:40] what's going on we're going to get into
+[11:42] two different scenarios now that are a
+[11:43] little more advanced but really not that
+[11:45] bad um but just want to open your eyes
+[11:47] to the possibilities of having all of
+[11:49] these different ways you can send
+[11:50] information back and forth between your
+[11:52] different agents and if this is the kind
+[11:53] of stuff that interests you definitely
+[11:55] check out the paid Community because we
+[11:56] dive deep into a lot of this kind of
+[11:57] stuff but anyways let's say say we're
+[11:59] looking at this agent now which is just
+[12:01] a child agent as you can see because
+[12:02] it's being called by another workflow
+[12:04] what we're doing here is we're using a
+[12:06] continue on error output with our actual
+[12:09] agent so if you go into the settings and
+[12:12] you look at the on aor message which
+[12:14] action to take when the node execution
+[12:16] fails by default this just stops the
+[12:18] whole workflow and so at this point it
+[12:20] would send back an it would just send
+[12:21] back to your main agent and just say
+[12:23] like error but what we can do is we can
+[12:25] say continue using error output so what
+[12:27] this does is it splits up two output
+[12:30] paths out of the agent a success one and
+[12:32] an error one so in this case we would be
+[12:34] responding with success and we would
+[12:36] just be giving the output of the agent
+[12:37] so it nothing would really change but
+[12:40] then if it errors what we can do is we
+[12:41] can say hey we received this error and
+[12:43] Define exactly what happened and then we
+[12:45] can say please try again so what I'm
+[12:47] going to do here is I have a query set
+[12:48] which is write a story about Charlie
+[12:50] who's 18 and just bought a new car
+[12:52] however in the AI agent it's not looking
+[12:54] at the right user message coming in this
+[12:56] is looking for a chat input looking at
+[12:58] the connection chat trigger node and
+[13:01] that's not connected what we're trying
+[13:02] to look for here and actually to do this
+[13:04] correctly would be json. query because
+[13:06] the query is right here so I'm going to
+[13:08] hit test step and we'll see that this
+[13:09] should error and obviously it's not red
+[13:11] because we have an error output but it
+[13:13] went down the error Branch rather than
+[13:14] the success Branch so in here if we run
+[13:17] this let's say this was being called by
+[13:19] a parent workflow so it went through
+[13:21] here went through here and then it went
+[13:22] through here this is the message that
+[13:24] the main agent would get back which is
+[13:26] we receive this error no prompt
+[13:28] specified please try again but if we
+[13:30] were to go in here and fix this where I
+[13:32] could Define below I could drag in the
+[13:33] Json query and then I'd hit test step um
+[13:36] it's now going to write a story and it's
+[13:37] going to go down the success branch and
+[13:39] then the agent's going to actually get
+[13:40] the story back in its main workflow so
+[13:43] as you can see just finished up and then
+[13:44] we can run this node and we can see the
+[13:46] actual response which is a huge story
+[13:48] about Charlie so obviously this agent
+[13:50] wasn't prompted the same way but this is
+[13:51] just to show you how it can either be
+[13:53] successful or it can be errored and we
+[13:55] can get the actual error message Right
+[13:57] In Here Also real quick just wanted to
+[13:59] show you guys that it is actually like
+[14:00] an error message being output because in
+[14:02] this case it said no prompt specified
+[14:03] but if there was a different error then
+[14:05] this would change and then this message
+[14:06] back to the main agent would also
+[14:08] dynamically change moving on to our last
+[14:09] example which actually isn't an agent
+[14:11] workflow but it's just like the idea of
+[14:13] sending data over to a workflow to
+[14:15] process and then we're getting some sort
+[14:16] of response back at the end in this case
+[14:19] um I just wanted to show how you can
+[14:20] have sort of continuous checks
+[14:21] throughout the the process so right here
+[14:24] we have a first check which is basically
+[14:26] we're saying does the query exist and in
+[14:28] this case you know the agent just messed
+[14:30] up and it sent over a null field so
+[14:31] nothing got sent over so we'll hit test
+[14:33] step and we can see that rather than
+[14:35] going down the rest of the process it
+[14:36] goes down to this try again node which
+[14:38] if we execute this it says no query
+[14:41] received please try again so the main
+[14:42] agent would have got that and then it
+[14:44] would would have thought okay well I
+[14:45] guess for some reason I didn't send over
+[14:46] data let me just try again by the way
+[14:48] what's happening in this workflow is
+[14:49] it's taking a stock ticker it's getting
+[14:51] the chart downloading the chart doing an
+[14:52] analysis and then sending that back and
+[14:54] this is just an example that I had if
+[14:55] you want to watch the full video I'll
+[14:56] link it up here but anyways what I did
+[14:58] is I just changed in here the query so
+[15:01] what we need to do is we need the actual
+[15:03] stock ticker to feed through these
+[15:04] different requests so let's say we send
+[15:06] over information so the query does exist
+[15:08] it'll go down it'll be correct but it's
+[15:10] not an actual stock ticker what we set
+[15:12] in here was just the word Apple so it's
+[15:14] not going to process this correct so if
+[15:15] I run this HTTP request it's going to
+[15:18] error as well because what we're doing
+[15:19] in here is we're supposed to be feeding
+[15:20] in a stock ticker so we're looking for
+[15:23] Nasdaq colon and in this case it should
+[15:25] have been AAPL for Apple stock ticker
+[15:27] but it sent over Apple so obviously
+[15:29] that's not going to work using this git
+[15:31] chart API so we got an error and then if
+[15:33] we run this error message down here the
+[15:34] main agent who sent this over would have
+[15:36] said invalid ticker please check and try
+[15:38] again and obviously there's different
+[15:40] reasons that this could error it could
+[15:41] be because your credential expired or
+[15:42] you ran out of credits but in this case
+[15:44] you know it's invalid ticker and you're
+[15:46] able to set exactly what happened and
+[15:48] keep in mind in this request what we're
+[15:49] doing is we're doing settings and we're
+[15:51] having it continue using error output
+[15:53] just like we did in that previous agent
+[15:54] because otherwise it's just going to be
+[15:56] one output branch and it's going to just
+[15:57] stop if it fails but in this case what
+[15:59] we're doing is we're getting a specific
+[16:00] message sent back to the agent and we're
+[16:02] doing that with these other nodes as
+[16:03] well where we have a success and an
+[16:04] error branch and then we're setting
+[16:05] exactly what happened in this case we're
+[16:07] saying unable to download chart please
+[16:08] try again in this case we're saying
+[16:10] analysis failed please try again so this
+[16:12] is really just to show you guys you know
+[16:14] open your eyes on how you can have sort
+[16:15] of continuous checks throughout your
+[16:16] workflows that you can send back to the
+[16:18] main agent as feedback rather than just
+[16:20] getting like a standard error message
+[16:22] now one thing to keep in mind here is
+[16:24] you know this is not perfect because
+[16:25] let's say it was an API key issue right
+[16:27] here you would con continuously be
+[16:29] sending back to your main agent try
+[16:31] again and then the agent would send over
+[16:33] a ticker that may be correct and then
+[16:34] you'd send back try again and it would
+[16:36] just go it could be an endless loop so
+[16:38] how you'd want to fix that is with the
+[16:39] prompting of your main agent you'd want
+[16:40] to say like you know only call that that
+[16:42] tool three times Max um or you could
+[16:45] build in like a count you're setting
+[16:47] you're sending over like a counter field
+[16:49] as well so every time you're sending
+[16:50] over you know increase one to the
+[16:52] counter and then you could do a check
+[16:54] here where if counter equals 3 or yeah
+[16:57] if counter equals 3
+[16:59] then you're just going to stop the
+[17:00] process because at that point we don't
+[17:02] want to get stuck in an endless loop so
+[17:03] just wanted to throw that that out there
+[17:05] in case you guys end up trying to
+[17:06] implement this kind of stuff and then
+[17:07] you end up running like $100 in credits
+[17:09] don't be mad at me um you know just
+[17:11] wanted to throw that out there but
+[17:13] anyways yeah that's kind of the idea
+[17:15] here so that's going to be it for this
+[17:16] one hope it was helpful hope you learned
+[17:18] something new if you did please give it
+[17:19] a like definitely helps me out a ton and
+[17:21] as always really appreciate you guys
+[17:23] making it to the end of the video and I
+[17:24] will see you guys in the next one thanks

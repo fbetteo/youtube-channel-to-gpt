@@ -1,0 +1,379 @@
+Video Title: Hockey Analytics with R: Meghan Hall [2021 UConn Sports Analytics Symposium]
+Video ID: rqhGYSRSvF4
+URL: https://www.youtube.com/watch?v=rqhGYSRSvF4
+View Count: 256
+
+[00:02] All right, um, I assume all of you can see my screen. I'm assuming all of you are in the correct place you are here at the intro to hockey analytics with our, uh, workshop. I hope you have enjoyed some of the other conference offerings today.
+[00:16] My name is Mega hall and kind of before we get started into the workshop, just a little bit of housekeeping.
+[00:23] Um, at the bottom of every slide, I have a tiny URL that links to maybe basically this workshop page on my website.
+[00:34] We're gonna go over in a minute kind of the structure of the day, but just if you ever want to access the slides, you can yourself. If you probably, if you want to access them later. But if you happen to miss something, you can also go back.
+[00:47] And I also have a file with all of the code we're going to go through in today's workshop.
+[00:52] Of course, all the code is going to be on the screen and we're going to talk through it, but I also have it all on GitHub and kind of 1 handy file again useful for if you need it during the workshop or later.
+[01:03] But coding along in the workshop as we'll talk about, and as if you read the email I sent this morning, you would know is optional for today because we're kind of constrained on venue and time a little bit.
+[01:14] That is totally option. That you can code along if you want or you don't have to. But again, like I said, we will get into that in a minute. I'm assuming since. I have not heard otherwise. That you all can hear me and see my screen. But, if that is not correct.
+[01:27] Please or if anything kind of happens to go wrong throughout the presentation, please just drop something in chat. Oh, someone sent me a thumbs up. Thank you. Um.
+[01:36] This is my 1st time running a Webex meeting so apologies in advance. I have practiced, but apologies in advance. If something goes terribly wrong. And I did have the setting to mute everyone upon entry. You're more than welcome to, you know.
+[01:48] Speak up with questions as I also address in my email, we don't really have time to do, like, really individual debugging questions if we're getting a certain error, but I'm happy to address kind of those more specific individual questions.
+[02:03] Later after the workshop. All right but to get started before, we kind of talk about me.
+[02:09] I just wanted to share a couple of assumptions I have about you all I created this workshop with the assumption that people viewing it know a little bit about our and a little bit about hockey.
+[02:20] The hockey part 1st, I think it's totally fine. If you happen to know nothing about hockey.
+[02:27] Um, we're not going to get Super in depth into, like, hockey strategy and terminology and things that we need to know. So if you don't know a lot about hockey, that's fine.
+[02:36] Um, if you know a ton about hockey, and you were expecting, um, a lot of in depth, you know, hockey strategy and terminology, then I apologize in advance. Um, but also wanted this to be a little welcoming for people. If they were newer to hockey.
+[02:48] And same for our, I think this will be most useful if you have some familiarity.
+[02:53] With our, you've used it before you're familiar with syntax and like, how to get data, et cetera.
+[02:59] But I also think that this will be worthwhile even if you are super new to our I think it will be a good showcase of some of the things that are can do. And I would probably recommend that you just kind of watch and listen along and kind of absorb everything.
+[03:14] And then later you can look through the slides again, look through the code and kind of use it as a learning exercise.
+[03:20] And if you know a ton about R, well, I certainly hope that you still get some tidbits of information perhaps specifically, you know, some ways that you can use, are to make your hockey analysis more effective.
+[03:31] But if you are a Super our experts, then you probably will want to be coding along and maybe you're even doing.
+[03:36] You know, more with kind of the data that we're working with today.
+[03:39] Either of those again. Totally. Fine. I tried to make this. This is who the workshop is targeted for, but I'm hoping that we can kind of still capture people's interests. Even if you're ever spectrum of knowledge you are.
+[03:51] Wherever you're at kind of on these topics,
+[03:55] but about me,
+[03:56] uh,
+[03:56] the things I do mostly for money,
+[03:58] um,
+[03:59] which I'm lucky enough to also,
+[04:00] like,
+[04:00] the things that I do for work,
+[04:02] um,
+[04:02] I've worked in the higher ed industry for several years,
+[04:05] and I'm a data manager,
+[04:07] and I also work professionally in sports analytics.
+[04:09] I'm a data scientist at zealous analytics, which is a sports analytics company and they're I focus mostly on data on baseball data.
+[04:20] And the things I do that are mostly for fun, and also, sometimes for money got interested in doing hockey analysis a few years ago. So I have written my work on member at hockey graphs and right there I've presented various hockey analytics.
+[04:34] Um, research at several conferences, and then also kind of through that really got into learn that as I was someone who kind of taught myself are within the past few years.
+[04:44] Um, really had an affinity toward beginners and helping people learn our particularly people who were kind of coming to our from.
+[04:51] Sports analytics interest, just because that's how high became familiar with our um, so I do a bunch of tutorials and workshops.
+[04:59] I have a bunch on my website. I do workshops at conferences like this. I also teach sometimes more, I guess, standard traditional courses. I taught a database course at earlier this summer.
+[05:11] So, that's kind of the other half of all the things that I do.
+[05:17] But today's agenda kind of, as I mentioned before.
+[05:20] Today, we're really just going to explore how various aspects of our makes it easier to do your hockey analysis.
+[05:28] That's a lot to do with data manipulation.
+[05:32] Anytime you're working with hockey analytics, sports analytics in general it's very rare that you have exactly the data that you want in the format that you're going to need.
+[05:42] You also need to be able to rearrange, manipulate your data look at different levels of observation different levels of detailed, different aggregations, et cetera.
+[05:50] And making all those changes is quite easy through our specifically with the tidy verse. If you're not familiar with the tidy versus versus a collection of packages. And in case you're really new to our packages are basically.
+[06:03] You can think about kind of his apps on your phone is ways that collect a bunch of different functions together that let you do things, but the tidy versus the collection of packages, that kind of share a similar philosophy opinions about data work. So, we're going to look at.
+[06:19] Several tidy verse functions that are helpful that again, make your hockey analysis easier and same with data visualization and we're going to we're going to introduce a couple of sports specific packages as well within the universe. But again, make it way easier to do your hockey analysis.
+[06:35] And to do that, we're going to go through a basic hockey analysis question. The question that we're going to address is as it says, fairly basic. That's partly because, you know, we have a limited timeframe.
+[06:46] I at least cannot do groundbreaking hockey analysis, research in 45 minutes. And as I said, I wanted this to also be welcoming to someone who is new to hockey in general. So they didn't want to have to address.
+[06:59] You know, go through some examples that required a lot of previous knowledge about hockey. So we're going to go through a basic.
+[07:05] Hockey, and I asked this question basically, by looking at the day in the life of an HR PowerPoint.
+[07:09] And as I had mentioned before in my email coding along with me, as I'm going to kind of walk through a bunch of steps.
+[07:18] Is completely optional. I did include.
+[07:21] If you saw my email this morning, I did just include for your own knowledge, the list of libraries that we're going to be using in the ways.
+[07:28] To get the data that we're going to be using in case, that might save a little bit of time. But again, you are totally more than welcome. I often when I view workshops, like this, just like to kind of listen and absorb and think it through and then go later and kind of play with the code at my own speed.
+[07:42] So I don't feel like I'm missing things.
+[07:43] But again, choose your own adventure kind of day today.
+[07:48] So, the 1st question, if you are again, news hockey analysis, as it would be in any sport is like, where, where in the world is my data. What actually do I have access to.
+[07:58] And I guess good news is that there is aggregate data that's really available for most hockey leagues around the world. Um, the quality of that data definitely varies based upon what you're looking at.
+[08:12] But for most leagues, certainly North America, you can find pretty easily, like, basic box score, hockey stats. So you're talking about, you know, the number of goals, the number of points, um, et cetera in a given game.
+[08:25] Those kinds of things are available on lead websites and also kind of a really good resource for that also is elite prospects dot com.
+[08:34] For some of the more popular leagues, I suppose, the more high profile leaks, like the HR, which is kind of the triple a of hockey.
+[08:45] Um, and the, the Canadian hockey, which is the top Junior league.
+[08:49] On their website,
+[08:50] they do have some event data where,
+[08:53] if you are say,
+[08:53] proficient with web scraping I know there's a web scraping workshop also today um,
+[08:58] you might be able to scrape certain events that at this time this event happened at this time,
+[09:03] this event happened things that are give you a little bit more detail than just,
+[09:06] you know,
+[09:07] the box score of a game.
+[09:09] But the real downside for this aggregate data that's available is.
+[09:14] For these kinds of leaks, there really isn't any data that's available on time on ice, which is again when you're talking about skaters non goal is the amount of time that that skater spent on the ice.
+[09:25] It's often not available in these kind of box for aggregate manner.
+[09:30] And the rare event data that is available generally is not detailed enough for you to be able to calculate that on your own, which I think is a real bummer is kind of a real constraint for doing any kind of non NHL hockey analysis.
+[09:44] To kind of put it in perspective with another sport it would kind of be as, if you were doing baseball research.
+[09:52] And you were trying to evaluate pitchers compare pictures, and you knew that in a given game, you know, this picture gave up 1 run and he had 4 strikeouts. I mean, that's some information.
+[10:02] But if you don't know how many innings that picture through, or how many pitches he threw, you're really losing a lot of.
+[10:09] Valuable context there, you're kind of missing your main denominator for.
+[10:14] You know, the rate stacks that you would want to calculate it's certainly possible with data that you have for, like, for sorry for, like, college data, like to see that this player had averaged, like, point 7 5.
+[10:28] Uh, points per game and again, that's a very basic rate. Stat, but without having the actual time that that player spent on the ice, especially compared to other people, um, is a real negative for that type of data.
+[10:41] So, again, that's a major constraint with working with non NHL data.
+[10:45] I'm another interesting data source is, I've also linked to it here in the slides is the big data cup, which was a data competition presented by, which is a hockey company.
+[10:57] The data competition is over it was earlier this year, but the data is still available. It's some pretty.
+[11:02] Um, fairly detailed play by play event data.
+[11:06] From some women's hockey games, and also some junior hockey games. So that's also interesting data to play with.
+[11:13] And then, lastly, there are often these kind of specialty data sources that are often available for a fee. If you, you know, support someone on Patreon, you can get access to their data.
+[11:22] These links that I've shown here, there's kind of these sources for a women's hockey data.
+[11:28] The, which is again kind of the main Canadian, junior hockey league, and also for the NHL and when you talk, when you hear about micro stats in hockey, that's often smaller statistics that are not tracked in kind of a standard.
+[11:41] In kind of the standard box score, so maybe zone entries or past assists or things like that.
+[11:49] And so it is, you know, not surprising that the best resource we have for hockey data is NHL data. Uh, the NHL provides online.
+[11:58] Basically, they provide shop maps and they provide these HTML game reports that are very easy to be, uh.
+[12:05] Easy to scrape them and you don't even have to know anything about web scraping because there is a great new package. Um.
+[12:11] New for this season from Dan Morris called hockey. R that makes it very easy to scrape NHL play by play data. Um, there used to be scraping functions. That were available. If you've been kind of if you've ever done any hockey analysis work probably familiar with Josh.
+[12:26] And Luke younger who ran.
+[12:29] Excuse me, who still run the evolving hockey website, they had some very useful scraper functions, but Dan, actually put all those functions into a package it's on CRN, that you can download called hotjar that just makes it way easier especially for beginners.
+[12:43] And there's some other helper functions in hotjar that help kind of assist with analysis. So we're going to go through. We're going to look at those 2.
+[12:51] So, again, you've probably familiar with this list if you looked at the email that I sent this morning, if you're interested in coating along.
+[12:57] These are the packages that we're going to use today. I mentioned the tiny verse when you load the tidy verse, it loads a bunch of different packages, which will.
+[13:06] Encompass all that we're going to use today. I also like to bring people's attention to the janitor package, which is kind of a smaller not as well known package, but has a couple of really handy functions for cleaning data as you might expect from the name.
+[13:20] hotjar, we discussed best source for getting NHL data, and which we will discuss closer to the end of the workshop.
+[13:29] Is another Super handy package that's useful for plotting location data so you can create shop maps on a rink.
+[13:36] And we'll look at that as well and then those last 3 packages are just some kind of extra nice to have packages for creating nice tables and plots, which we will also do toward the end of the workshop.
+[13:49] All right, so these are a few of the sample functions that are available from the hockey are package this 1st, 1 here scrape game. You can scrape the play by play data from an individual game. Every NHL game has a unique game.
+[14:02] And there's also scrape day, which allows you to scrape again all the gains from a particular day, and even scrape season. Dan has a lot of data in his package. The functions can scrape data from many years, going back.
+[14:15] I think back to, like, 2008 I want to say, and you can also specify whether you want to scrape just regular season, or just play off games or.
+[14:25] Or everything is what we're going to do today, is it's less interesting to look at 1 day's worth of games. Of course, you can't really make a lot of conclusions from 1 day's worth of games, but mostly just for space reasons.
+[14:38] If you scrape an entire season of data, that's been close to a 1Million rows.
+[14:42] Um, a 1Million observations of data, and I don't like to presume that everyone has that much memory on their computers.
+[14:49] So, today's data that we're going to look at is just play by play data from 1 day from last season. I think it was 14 games worth. And again, if you're coding along.
+[14:58] You can use this function if you want it will take a couple minutes because it's scraping.
+[15:05] Or, if you see in this, in my code file, I do have this data saved as a CSV on GitHub. So you can read it indirectly from there, which is faster.
+[15:15] So, up to you again, whenever you're doing this code, whether that's an hour later, you can do either of those options. But I wanted to show you how I got the data. I just got the data from doing this exact function.
+[15:27] Okay, so I've mentioned play by play in event data, kind of a lot. Um, so what exactly what do I mean, when I say that we have play by play data also, sometimes known as event data.
+[15:36] It is at the structure, she might expect where we have a 1 row per event.
+[15:43] And there are lots of different variables associated with that event this play by play data file that comes from hotjar has 105 variables,
+[15:50] which is a lot a lot of the most of the shot type events,
+[15:55] like a shot or a goal a miss shot a block shot et cetera has a location attached to it and X and Y,
+[16:02] coordinate that just corresponds to wherever that shot was taken on the rink.
+[16:05] We'll discuss how to use that later also along with the players that were on the ice at that time the time in the game, the score of the game strength state. The goal is et cetera, et cetera.
+[16:17] Just again, because of time, we don't have time to go through all 105 variables that are available. But I highly recommend that you that you take a look at that again. If you're interested in continuing to work with hockey data.
+[16:29] So, when I talk about events, what does that mean? These are all the events that are in this particular play by play dataset again this is 1 day's worth of games. It was 14 gains. I think the data ends up being around.
+[16:43] 8,000 or 8,500 observations and as you can see the vast majority of those are what's known as change events, which is when there was some kind of line change players were.
+[16:53] They're coming onto the ice, early, the ice going back to the bench. That is super useful, because it means you can calculate time on ice and we know how long each player spend on the ice. You're able to calculate that which is great. We're not actually going to that's not going to be a basis of.
+[17:07] Our analysis today, but you can absolutely do that. Which means that.
+[17:12] You can, of course, make kind of the best observations from you can do the best analysis from NHL data then you can with other data just because we have.
+[17:20] Just because we have this time on nice data and the other events that you can see might be what you expect, we've got face offs, shots, giveaways, goals, penalties, et cetera.
+[17:31] And so, if you're familiar with hockey, you probably recognize that these events listed here are not all of the events in a given hockey game. Of course. And so, that kind of leads people to the natural question of well, what about tracking data?
+[17:46] Because particularly if you have any experience with doing analytics work with other sports, baseball, soccer, football, basketball.
+[17:53] Whatever tracking data has become very popular, which is, in essence, being able to track.
+[17:58] Not just again, like, we have with hockey data, just kind of what events happen and at what time.
+[18:04] Tracking data allows you to have information about where everyone is, where the ball, the puck, et cetera is at any given time.
+[18:13] Much more granular as you can assume allows you to take a lot more observations. Draw a lot more conclusions from that data.
+[18:21] How you might be familiar with, um, the datable that NHL, uh, sorry, the NFL runs, um, kind of the public data competition. They use tracking data in that.
+[18:31] The NHL is at the very beginning of its journey with tracking data. They are just starting to.
+[18:39] Implement that, and that data is not currently available to the public. Hopefully they will someday be, um, some kind of NHL datable. Like we have in the NFL.
+[18:49] All right, so I had mentioned that we're going to look at today. We're going to look at we're going to focus on a powerplay. We're going to look at the day in the life of a power play. And again, if you are new to hockey.
+[19:00] Powerful happens when 1 player on a team does something bad. Does something against the rules literally gets sent a time out, go to the penalty box and then their team is down a skater for generally 2 minutes. There are some exceptions.
+[19:15] Generally. 2 minutes. 1 team will have 5 theaters, and the other team will have 4. there are other strength States.
+[19:21] That can result from a power play particularly if there are multiple penalties, et cetera, but the most common strength state during a power play is once he has 5 skaters. And 1 team has 4 skaters.
+[19:32] So, we're going to basically filter all of our data to only those types of scenarios. I only want events that happened during a power play meaning that the string state was either 5 versus 444 versus 5.
+[19:44] So, I can get my data down to that format by using a lot of the.
+[19:51] Tiny verse, and burbs that you may be familiar with if you're familiar with R, mutate is again for creating new variables, we're going to create this new variable for powerplay team to specify who our powerplay team is. We can filter again.
+[20:06] I mentioned that I only wanted games that are within a certain strength state.
+[20:11] We can you select, which is like, filter, but filter focuses on rows and select focuses on columns. I mentioned that standard play by play data from hockey has 105 observations. We rarely want all 105 variables.
+[20:23] So, being able to select is helpful.
+[20:28] And then it's removed empty is a really neat function that comes from the janitor package that again will just, as it say, will remove any columns or rows that have all any values.
+[20:41] So, it's just an empty function to know. So we end up with on data that looks like this.
+[20:46] And most of these data screenshots, there are often more variables that I'm showing here and certainly more rows. I'm just showing a subset. Um, so I don't want you to be confused if you see a variable in a select function, but then does not show up.
+[20:59] Um, in the chart, or sorry in the table here. So this is a subset.
+[21:03] So this is what our play by play data looks like at least the selection of it after I have filtered to powerplay events, only.
+[21:11] Very important, whenever you're working with any kind of data is to immediately identify whatever your unique identifiers are here.
+[21:19] We have, as I mentioned before game ID uniquely identifying every game and event index uniquely identifies every event within a game. So the 2 of those together can uniquely identify.
+[21:30] Any event you can see here, you've got faced offs and shots, et cetera and with all of those, we have listed all the players who.
+[21:39] Are on the ice, so that's what I'm focusing on. There are many other observations that come along with this data, but we're mostly focusing on kind of what the event is, who the power play team is and then who the players are on the ice.
+[21:54] So, the question I mentioned we have is we're going to look at a day in the life of an NHL powerplay.
+[21:59] Since we only have 1 day's worth of games here and so to do that, I'm interested in looking at the positional breakdown of a power play.
+[22:07] This is something that has changed over the past several seasons when a team was on a powerplay, they used to maintain the same.
+[22:16] Kind of positional structure that most teams have it even strength, which means they have 3 forwards and 2 defense. If both teams are playing, even strengthen NHL game. That is.
+[22:27] 99.5% of the time the positional breakdown, but it has become popular over the past several seasons too. When you're on a power play again, when you have a skater advantage over the other team, you actually use 4 forwards in 1 defense, instead of 3 forwards on 2 defense.
+[22:41] You're a little riskier defensively. But again, the main goal of a powerplays that you have an offensive advantage to mind is what kind of stack that often advantage by adding another forward. So, that has become very popular. So we're going to look again, this 1 day of games.
+[22:55] We're going to look at kind of what the breakdown is. What teams use, what kind of position structure on their power play.
+[23:04] So this is the same. This is the same screenshot as before. This is the data that we have. We have 1 row per event.
+[23:10] And we have the players listed, but if I'm interested in knowing, like, for example, for this 1st event, the face off, that lasted 18 seconds I know the players that are on the ice.
+[23:21] So, how can I figure out what the positional structure was of that team? I need to have position data for the 1st part, which I do not have the position of a player is not included in the play by play data but we do have it. So, we'll get to that in a 2nd.
+[23:35] But in order, if I know I have that data separately, I probably need to join it in somehow to this data, which means, I probably need to adjust the level of detail for the level of observation of my data.
+[23:50] So this data as we can see 1 row per event, but I actually want to kind of turn this data on its head so that I have 1 row per player, instead of 1 row per event.
+[24:02] So I want to end up with actually, like, 5 rows per event that list every player on his own row.
+[24:08] So, to do that, there is a very handy function.
+[24:11] And again, part of the favors called pivot longer, which again makes the data longer, and kind of turns it on its head. So I'm going to do that here. And then I'm going to end up with kind of exactly. As I wanted.
+[24:23] This is that 1st event that face off the event index of 37.
+[24:27] Instead of having 1 row and a half 51 for every player, which is perfect because now I can kind of join in that position data and figure out how many forwards and how many defense men this team had.
+[24:38] At that point in time. So another great aspect of the hockey are package is not only can you scrape.
+[24:45] Nhl play by play data you can also get roster data, which comes from hockey reference.
+[24:50] That count uses the get rosters.
+[24:53] Function or also again, if you're doing this code, I also have that data saved.
+[24:59] As a CSV and get hub that you can just read directly.
+[25:02] Your option choose your own adventure.
+[25:05] So, to do that, I'm just going to clean the data a little bit.
+[25:08] There are some duplicates in that data because player players can, of course, play for multiple teams in a given season. So I'm just going to get a unique list of players and positions and it looks like this again. This is just a subset.
+[25:20] So, a couple of things that the 1st thing that I should kind of notice.
+[25:24] Is in hockey, it is not very common. We don't really have access to unique player IDs so all the kind of joining and matching has to be done on name.
+[25:33] Um, which is not ideal, which we will kind of address the couple of reasons why that's not ideal.
+[25:38] The other thing that I personally notice 1st of all is this data that comes from the rosters is kind of your standard.
+[25:44] Title case names are capitalized with the space in between, but if we go back to our play by play data, we have a period instead of space.
+[25:54] So, a little bit frustrating, but nothing that can't be.
+[25:58] Handled with these stream replace functions, I'm going to get to that other problem in a 2nd. Um, so.
+[26:05] The Stringer package is lives within the tidy verse has tons of functions that are great for manipulating string data. So here it allows me I can I know that I need to replace spaces and hyphens with periods.
+[26:19] Easy to do in just a couple of lines of code.
+[26:22] The other function that I wanted to show off is this get dupes function, which again comes from the janitor package, which will show you any duplicate values you have in your dataset based on whatever variables that you specify.
+[26:35] So, in this little couple of lines of code here, I'm asking for, do I have any player duplicates in my dataset because, you know, if we don't have unique identifiers, and we're addressing on name, there might be players that have the same name.
+[26:48] And I've never done any work with hockey analysis, or if you do.
+[26:51] You will quickly become familiar with the Sebastian onhole problem. A lot of people are familiar with the Sebastian who who is a forward.
+[27:00] Um, who is the better more popular Sebastian on who place in Carolina but there's also Sebastian, who is a defense who plays for the islanders. So, this is an unfortunate problem.
+[27:11] Something he wants to keep out always a annoying issue when you're dealing with names instead of.
+[27:17] Unique identifiers, you might have duplicates, but I happen to know the.
+[27:22] Defense version of Sebastian, Ohio does not play very often. He did not play in these games so I'm just going to filter him out of this dataset.
+[27:31] And then, as I mentioned, we can use our string replace functions and now we have our player names that are in roughly the same format as we have in our play by play data.
+[27:41] All right, so another kind of issue with dealing with names is we already addressed the possible issue. We might have duplicate names, but you might also have if you're dealing with names from different sources. Um, those names that might have.
+[27:54] Differences in terms of nicknames in particular. Uh, so what I'm doing here is this player data frame is our original data frame that came from our event data that has 1 row per player.
+[28:05] And then I'm going to join in my position data here, and I'm going to filter for anyone who has a value, or basically didn't get matched who kind of fell through the cracks.
+[28:16] And I give this list of players,
+[28:18] and I know from doing hockey analysis work,
+[28:20] that these players show up a lot often again,
+[28:23] when you're dealing with names,
+[28:24] josh's can become Joshua was Mitchell's become mitch's mix become Nicholas is so this stuff is also very willing to deal with but happens whenever you have to join data with name,
+[28:35] which happens in hockey all the time.
+[28:37] So I would become familiar with this process. So, anytime you're dealing with names, always look for duplicates. Always look for any mismatches. Anyone who kind of fell through the cracks and then all you have to do again.
+[28:47] Change these names address either the middle name for sorry the full name, the nickname, et cetera.
+[28:53] And then we can join in again and we're going to create this variable called just forward. That's just a 01 variable. That is.
+[29:02] Determines whether someone is a forward or not, which will allow us to kind of sum up the number of forwards that any team has at any given time.
+[29:10] So, if I do that again, we're going this is back to our event data. It became player level data.
+[29:16] And we've joined in our position variable here and then our dummy kind of.
+[29:21] 01 forward variable. So this is very helpful. We've kind of made it to our middle step where I now know.
+[29:29] Everyone who is on the ice and what position they play and now I just kind of need to re, aggregate it. So I can find.
+[29:34] Kind of 2 things 1st, at any given time again for this.
+[29:39] Event index 37 this face off. How many forwards did this team have.
+[29:44] And then we can do another aggregation and see of all of the events and all of the time. How much time did each team have with 44 words versus 3 forwards.
+[29:54] And we can do this with again, just a few lines of code, particularly using the group by and summarize.
+[30:01] Combination of function, which is a very popular, tidy verse combination.
+[30:05] Of functions that basically serves as, if you're new to our pivot table in Excel, um, it groups and aggregate your data.
+[30:13] So, my 1st, step 1st, step, as I mentioned, you going to group by our event index and our team. So now we're back to 1 row per event.
+[30:22] And not just summed up my number of forwards. So I know that at this event, this team had 4 forwards.
+[30:28] For this event, they also had 4 forwards, et cetera, but for this event they had 3 forwards.
+[30:33] So, that's kind of step 1 and once I have data activated that way.
+[30:37] I can take and do another group and this is where I'm going to group all the time not just by event. I'm going to group all the time for that whole team and I can see, for example.
+[30:46] Arizona in this 1 game, they played of all of their power play time.
+[30:50] Uh, they spent 74 seconds that's the main unit of time and data. They spent 74 seconds with 34 words and 166 seconds with 4. 4 words.
+[31:03] And then next we can add, I wanted to show, I feel like this is not a function of a lot of people know about about this ad tally function. It's a great shortcut because it groups your data and summarizes it without aggregating it.
+[31:15] So, you're not losing any rose, but you're just kind of getting your total value. So, as you can see here, this ad tally function has created this new variable called total time.
+[31:26] Which is thumbs up these 2, gives you the appropriate denominator really to calculate a percentage. That's what we're doing. So, for each team, like, here for Arizona, it's just adding up this 166 and 74, and you get 240.
+[31:39] And then we're just calculating the percent. So, this is pretty standard. It's basically 31% versus 69%.
+[31:46] And then, lastly, I only care, I don't care about.
+[31:50] The percentage of time that they spent with 3 forwards I only care about 4 forwards, because that's my question.
+[31:55] So, now that I have done, kind of all this aggravation data manipulation, I have successfully gotten the data that I want.
+[32:03] I have 1 row per team and it shows me exactly what percentage of.
+[32:08] The game that they played, they had 4 or 4 words on their power play. You can see Arizona was again at 69%.
+[32:14] Um, Buffalo, 63, and then we had a couple of teams again. I mentioned this is becoming very popular.
+[32:19] And so a lot of teams spend all of their power play time with, for forwards, as you can see here in these couple of examples with Calvary in Chicago.
+[32:27] So, we have this little table here. This table is fine for.
+[32:32] Just kind of showing you the result of the data, but if I were presenting this in some kind of.
+[32:37] Fashion, whether that was, you know, in a presentation or in a paper or really anything, I would want some kind of visualization that looks.
+[32:44] Better than this, you could imagine some kind of nice table perhaps.
+[32:49] I was for the alert, we're going to do a table and a plot with this.
+[32:53] Data, but you can imagine some kind of table that show the percentage.
+[32:57] You know, sorted nicely, maybe even colored according to the percentage and then you could even imagine perhaps instead of just showing the team abbreviation, we can show the team logo. That'd be cool. Right?
+[33:08] Well, thankfully, that is also a Super neat function within the hockey. Our package it has this comes with this data frame.
+[33:15] Called team logos colors, which exactly as you might expect.
+[33:19] Contains all the logo links and team colors for every team.
+[33:23] I didn't list all of the variables here, but there's also the alternate colors and even alternate logos, et cetera.
+[33:30] So, all we need to do again, this forward data set, this dataset is on.
+[33:36] Our end point really that had all of our aggregated data that we want to visualize in some way. And so all we need to do is join in.
+[33:44] This logos data I'm only interested, particularly in the logo in this primary color.
+[33:49] And then we can use that, and we can exactly create that table that we just talked about where we have.
+[33:56] Our percentage is sorted here, we've got a little bit of color, even got a gradient and then instead of showing the abbreviation, just for another bit of added interest, we can show.
+[34:07] The team will go so I created this table with GT, which is a great package for creating any kind of HTML table.
+[34:16] You can do an entire lecture on GT,
+[34:18] so I'm not going to kind of go through all the details of creating a table,
+[34:22] but it is fairly straightforward and a couple of functions that I wanted to point out that are really useful,
+[34:28] particularly what I use to use the logos.
+[34:31] Is this GT image rose function and that basically is telling GT hey, this column is not actually this call. It actually contains a link to an image and I want that image to show up in my table.
+[34:46] So, that makes it very easy in the same. You can format a percentage, which is what we did. It's always nicer to have things formatted as a percentage then as a decimal.
+[34:54] And then it's again really easy to just color a row. We colored that percentage row and you can specify a pallet.
+[35:02] And we have it sorted, so just like that. And then if you didn't want to make a table, perhaps you wanted to take that same data.
+[35:09] And instead make a plot, you can do that as well.
+[35:12] Um, GG plot, which again you might be familiar with if you are just familiar with our general it's kind of.
+[35:19] Probably the most popular way to create data visualizations within.
+[35:23] Um, within our, it is part of the, um, but I think a lot of people, even if they don't tend to use the tidy verse a lot, um, do use plot.
+[35:33] And similar to how you can do a whole lecture on GT I mean, earlier this summer, I taught a entire.
+[35:40] Semester length course on plot to so you can do, you can go really in depth with GG plot. So I'm just again gonna show very quickly.
+[35:49] Mostly just want to showcase how easy it is to create kind of publication quality. Really nice.
+[35:56] Plots and tables pretty easily with various functions in R, which are really helpful for your hockey data, because you can do great hockey analysis. But if you can't present it in a compelling way.
+[36:07] People are going to pay less attention to it for sure. So this is the exact same data that we.
+[36:13] Um, aggregated previously the same data that we put in our table and now we're just putting it in a plot.
+[36:20] And instead of using the logos, like we did in a table here, I just used those color values, go back and show these team colors. If you're not familiar this is a hex code.
+[36:32] Which specifies an exact color and.
+[36:36] That is what GG plot uses if you, I'll show you where you can put it in the code. And then GG plot just knows to make.
+[36:43] That bar that corresponds to that team, using that hex code from our data frame.
+[36:49] And saying we have things sorted and so this also makes it easier to see that we have about half a dozen teams that.
+[36:57] Only used for forwards on their power play. I'm going to kind of decreased from there and we even had Minnesota, which is kind of known for this, the Minnesota wild defensive team that still sticks pretty hard to their 3 forward.
+[37:10] 2 defensive structure on a power plant.
+[37:15] So, how I did this again, it's pretty easy only less than 10 lines of code. Really to make this kind of nice plot. And the 1 thing that I wanted to point out, how you can.
+[37:25] Tell are that I want to use these hex codes that correspond to these teams.
+[37:30] It's just within this genome bar layer, which is the layer with plot that tells our to create a bar chart.
+[37:38] Your specifying your fill argument, which controls the color.
+[37:42] And here, you're just going to put in exactly a direct reference to that hex code column.
+[37:48] And that's all you need to do in order to kind of again, create this nice plot with the colors.
+[37:54] Which is great for using any time. You're doing any kind of sports.
+[37:58] Um, analysis, work and visualization. It is often nice to use logos and colors associated with that team just because people are familiar with those.
+[38:07] People are familiar that Toronto, for example, is blue, California's red, et cetera, so using using other colors that don't necessarily match to a teams colors, um, can be confusing.
+[38:18] So having that data so easily accessible in the hockey our package is really great. Because before that, you've had to kind of loaded on its own or use some other packages and it was harder. So, having that.
+[38:30] Is a real selling point of hockey. All right the other package I wanted to talk about that I mentioned earlier is 40, which is another fairly new package.
+[38:41] It's not quite as new as the hockey package, but it is was created by Ross trucker. I have a link to the GitHub page for that package here in the slides.
+[38:50] And it includes tons of functions in order to aid in.
+[38:55] Plotting all sorts of rinks courts fields.
+[38:59] Most sports in, which you can plot on a wrinkle court where something happens the sporty package has functions to create that for you before this package existed. It was.
+[39:11] Not impossible, but definitely kind of difficult and not super beginner friendly to create.
+[39:16] Like, basically an image of a hockey rink that you could then appropriately map coordinates on to. So, having this 40 hour package, makes it so much easier to.
+[39:26] Create those kind of shot plots so Here's a very simple example. This is show and then we'll kind of I want to show you another example as well.
+[39:38] So, to get the data for this plot, I'm going back to my original power play data frame, which is kind of the 1st step we did, which was just filtering our total play by play data into PowerPoint data only.
+[39:48] And here I've filtered again, I've created this new data frame.
+[39:52] Called powerplay shots and I'm just filtered all. I want are shots on goal as well as goals. And I only want those events from the power play team. During a power play.
+[40:04] Most of the offence does come from the powerplay team as you might expect but there are generally a few shot events from the penalty killing team. But I didn't want to include those here. I just want to look at powerplay team.
+[40:15] So, if we all you need to do to create again, this baseline link is use this geo hockey function that comes from this 40 hour package. The only argument necessary is we want NHL rank so it's NHL.
+[40:29] And then you can use a standard geo point layer, which you might be familiar with, from other GD plot work to specify where the shots are.
+[40:38] You can think of a rank as just a standard coordinate system. Okay.
+[40:44] And your why got positive values to the right and, you know, and negative values like, to the left and down it's a pretty standard coordinate system. And in the play by play data that comes out of hockey are.
+[40:56] There are 2 separate coordinates. 1 is just the raw X and Y, which is just where that shot was taken from.
+[41:05] And also, this is super handy. Um, there's also X fixed and Y, fixed, which has a function.
+[41:13] Already kind of comes already goes through the function that corrects the coordinates so that if you make a shot plot with that data, because often people will show shot plots from a given game or a given period in a game.
+[41:26] The home team always shoots to the right and the way team only shoots to the left, which is really handy. Just for kind of general when you're making general.
+[41:34] So, that's what I've done here again, in specifying the data that I want.
+[41:38] And then my aesthetics were just plotting my X.
+[41:41] To my expect is this X fixed and then the, why is my wife fixed? So your super basic shot plot looks like this here at the bottom.
+[41:50] But for my particular purpose, I'm just interested in powerplay shots, which is what these are.
+[41:56] But I don't really care about the home team and the way team, because this is like 14 games or something like that. Um, so I'm not so interested in the.
+[42:06] And having the home team on the right in the way team on the left what I want is I want all the shots on the same half.
+[42:14] I want them colored as you can see here. I've echoed the color in my title.
+[42:19] So this is showing shots and goals on the power play on a given night.
+[42:24] So, this example is more common again. If you're looking at a given game, that's what people would expect to see, but if you're looking at some other kind of.
+[42:34] Specify specific situation maybe it's all goals by 1 player or all goals of a certain.
+[42:41] Shot type like all goals that were scored off the snapshot for example. Um, you might want to show everything on just 1, half of the rank because the home, in a way doesn't really matter in that case.
+[42:51] So, to do that, it does require a little bit of finessing of your coordinates.
+[42:58] So, I will confess, I am not great with spatial things like coordinates within this 40 hour package. I assume most of you are better with those kinds of things than I am within this 40 hour package.
+[43:11] There are really helpful functions that allow you to reflect and rotate and transform your coordinates but I need to because I'm not great with special stuff. I'm not great with coordinates.
+[43:22] I need to think it through on my own and create my own functions to kind of specify what coordinates I need.
+[43:28] So, I've created here in this example, my own X and Y, coordinates because I want.
+[43:35] This is just if you can imagine, this is just the negative ex coordinates right that we're showing here on the plot, but I don't want just.
+[43:43] I want all the shots to show up here, not just the shots that actually had a negative ex coordinate so to do that.
+[43:50] I just need a little else, so I'm just going to say.
+[43:54] If the coordinate was actually on the right side of the rink and had a positive X, I'm just going to multiply that.
+[44:01] By negative 1 and same for the why? Because if you're moving your X over to the other side of the rink, you need to flip the Y as well. So same for the Y, if my X is greater than 0 that I need to multiply that. Y, by negative 1.
+[44:14] And thought about this a lot and I'm pretty sure it's right but again, the spatial coordinate stuff is not my forte.
+[44:21] And then we again, uh, just doing a little sorting here.
+[44:25] And then to make the actual rink, all you need to do, if you just want this half ring here is just full surface, equals false. That will give you a half rank. And there's also.
+[44:37] Options if you want to rotate like it's common with, I think, with basketball courts, if you don't show the full court, you just kind of show.
+[44:45] Imagining rotating the corner, I mean, you can also rotate the rink that messes me up a little bit with the coordinates. So I just stick with half of a hockey rink.
+[44:53] And the same as before, I'm just specifying what X and Y, I want here on my in my aesthetic argument.
+[45:01] And just like, you might expect if you've worked with GG plot before you worked with the GM point layer, like, in making a scatterplot, you can adjust all of these aesthetics. I want my points to be a little bigger.
+[45:12] I can also control color just by saying, if it's a goal, I want it to be this hex code. If not. I want to do that hex code.
+[45:20] And same with alpha Alpha is just alpha means transparency.
+[45:25] Here and so if you'll notice the.
+[45:28] My goals, these kind of purple red dots are at full transparency and just the shots are about half transparency.
+[45:37] So, I can do that again here with my alpha as well.
+[45:42] And then everything else, just creating a title. And sub title is fairly standard GG plot.
+[45:47] Changing things, and that's how you can adjust your rank if only if you only want to show half of a hockey rink.
+[45:57] All right, so we have made it through over 45 minutes of this workshop.
+[46:02] And just kind of recap what we did explored.
+[46:05] Again, lots of different data manipulation techniques the tiny verse.
+[46:09] Looked at various Stringer functions to help us deal with the issue of having to match on name, which is never ideal.
+[46:16] Um, we use pivot, there's also a pivot wire function, which we did not do, but does the opposite of a pivot longer, um, in order to look at our data from kind of a different level of observation.
+[46:27] The way I need to think of it, instead of at the row of an, at the level of an event, we changed it to look at the level of a player. Instead. We use left joins a little bit to put data together to add in logo data to add and position data.
+[46:40] And then, of course, all the various deep fire verbs, selecting filtering, mutating grouping, summarizing, et cetera.
+[46:47] And then, hopefully, I showcased how easy it is that once you have your final data frame that you can make various visualizations with that, and made a table with GT and a plot with 2.
+[46:58] And hopefully, again, showed how hockey can be super useful, because it has all those logos and colors that are so easily available and you can just match them on your team abbreviation. And then, lastly, using us 40 are fairly new package for creating shot plots.
+[47:13] And showed how we can create both a basic shot plot with your home on the right and new way on the left, which is what people expect generally if you're looking at a whole game or if you're looking at a specific situation. Like, we were with powerplay shots out of.
+[47:27] Put all those shots on to basically the same half a blank.
+[47:31] So, we flew through a lot of information in the past 48 minutes.
+[47:37] As I mentioned before if you go to the code at a later time, and you have any questions about either things aren't working, or you have specific questions about why.
+[47:48] You know, we did things or things like that. You are always free to email me. You hopefully got an email from me if you were registered for the workshop as of yesterday. But if you don't my.
+[48:01] Email is available on my website. You can also find me on Twitter if you have any we have a couple of minutes.
+[48:07] So, if you have any kind of general questions, either about hockey analytics, or working in sports analytics in general, um, I'm happy to take those feel free to unmute yourself.
+[48:17] And I'll also hang around for a couple of minutes after our session is over. If you have questions as well.
+[48:36] No questions. Oh, thank you. Appreciate that.
+[48:40] Um, again, I know you might.
+[48:45] There was a lot of information to go through in 15 minutes. So I assume that lots of you are going to.
+[48:49] Maybe hopefully come back to this code later so I just want to reiterate, um, more than happy to answer any questions via email about the code, or we just have general questions about working in sports analytics kind of how to get started.
+[49:01] Um, in that field, I am also available, but I hope you enjoy.
+[49:06] Hopefully, this was helpful, gave you a little bit of an introduction to hockey analytics specifically, uh, using hockey analytics with R.
+[49:13] And I hope you enjoy the rest of the workshop.

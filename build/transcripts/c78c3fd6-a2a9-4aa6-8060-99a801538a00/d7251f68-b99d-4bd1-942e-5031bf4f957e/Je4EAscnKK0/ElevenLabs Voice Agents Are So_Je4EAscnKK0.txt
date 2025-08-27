@@ -1,0 +1,505 @@
+Video Title: ElevenLabs Voice Agents Are So Easy to Build (No Code!)
+Video ID: Je4EAscnKK0
+URL: https://www.youtube.com/watch?v=Je4EAscnKK0
+View Count: 40,991
+
+[00:00] hey there I'm Archer what can I do for
+[00:02] you hey Archer can you help me send an
+[00:05] email of course I'd be delighted to help
+[00:08] who's the email for and what's it about
+[00:10] just give me the details and I'll get it
+[00:12] sent out awesome yeah I just wanted to
+[00:15] send one to Phil I wanted to ask about
+[00:17] an update for the project that we
+[00:18] discussed last
+[00:19] week got it so you want to send an email
+[00:22] to Phil asking about a project update no
+[00:25] problem I'll handle that just hang tight
+[00:28] while I send this off all done it's been
+[00:30] sent to Phil he'll be getting that email
+[00:32] any minute anything else I can help you
+[00:34] with yeah could you actually go ahead
+[00:36] and help me send another
+[00:37] one of course I'm always happy to lend a
+[00:40] hand or rather an email address who is
+[00:42] this email for and what's it about just
+[00:44] give me the details and I'll Whip It Up
+[00:47] just another one to fill I forgot to
+[00:48] mention that I wanted to see if he wants
+[00:50] to get lunch
+[00:53] tomorrow all right another email to Phil
+[00:56] this time to ask about lunch tomorrow
+[00:58] I'm on it just a sec gotcha the email is
+[01:01] on its way to Phil he'll be sure to see
+[01:03] your invitation for lunch tomorrow let
+[01:04] me know if you need anything else no
+[01:07] that's going to be it thanks Archer
+[01:09] you're very welcome always happy to help
+[01:11] especially when it comes to emails happy
+[01:14] to handle any other messages you need to
+[01:15] send in the future have a great day okay
+[01:18] so that was a quick demo of the super
+[01:19] cool conversational voice agent that we
+[01:21] built using 11 labs and NN his name is
+[01:24] Archer and he helps us send emails as
+[01:26] you can tell he was very enthusiastic
+[01:27] about sending emails so here's that
+[01:30] first emo that we asked Archer to send
+[01:31] to Phil hi Phil I hope this message
+[01:33] finds you well I'm writing to inquire
+[01:34] about the project update we discussed
+[01:35] last week could you please share the
+[01:37] latest development at your earliest
+[01:38] convenience looking forward to your
+[01:39] response best Nate and then we asked
+[01:41] Archer to send another email just asking
+[01:43] if he wants to get lunch tomorrow to
+[01:44] fill so hi Phil I was wondering if
+[01:47] you're available for lunch tomorrow let
+[01:48] me know what works for you best Nate so
+[01:49] now that we've seen a quick demo we
+[01:51] heard the voice we've seen the emails
+[01:52] actually come through we're going to hop
+[01:53] back into NN and we're going to explain
+[01:55] what's going on here so that you guys
+[01:56] can get this sort of system up and
+[01:57] running for yourselves okay so there are
+[01:59] a few things that I want to break down
+[02:00] here first of all just within nadn
+[02:03] whenever you're building an AI agent as
+[02:04] you guys should know there's going to be
+[02:06] an input and then that input's going to
+[02:08] be fed into the agent the agent's going
+[02:09] to use its system prompt and its brain
+[02:11] to understand what tools it needs to hit
+[02:14] it's going to use those tools to take
+[02:15] action and then there's going to be some
+[02:16] sort of output so in the past when we've
+[02:18] done tutorials on personal assistants
+[02:20] email agents whatever it was rag agents
+[02:23] usually that the input that we've been
+[02:24] using has been something like telegram
+[02:26] or Gmail or even just the nadn chat
+[02:29] trigger
+[02:30] pretty much all we're switching out here
+[02:31] for the input and the output is 11 Labs
+[02:34] so we're going to be getting a post
+[02:36] request from 11 Labs which is going to
+[02:37] send over the body parameters like who
+[02:39] the email is going to um what the
+[02:41] message is going to say stuff like that
+[02:43] and then the agent once it actually does
+[02:44] that it's going to respond using this
+[02:46] respond to web hook node so we'll get
+[02:48] into 11 labs and I'll show you guys how
+[02:49] I prompted the agent and everything like
+[02:51] that in 11 Labs but first let's take a
+[02:53] quick look at what's going on in the
+[02:54] super simple agent setup here in nadn so
+[02:57] these are tools that I've used multiple
+[02:58] times on videos on my channel channel
+[03:00] the first one is contact data so it's
+[03:02] just a simple Google sheet this is what
+[03:03] it looks like here's Phil's information
+[03:05] with the correct Gmail that we were
+[03:06] having information sent to and then I
+[03:08] just put other ones in here just to sort
+[03:09] of dummy data but all we're doing is
+[03:11] we're hooking up the tool um Google
+[03:13] Sheets it's going to be reading get rows
+[03:16] sheet within the document we link the
+[03:18] document that's pretty much all we had
+[03:19] to do um and then we just called it
+[03:21] contact data so that when we're
+[03:22] prompting the agent it knows when to use
+[03:24] this tool what it has and then the
+[03:26] actual tool that sends emails is the
+[03:28] send email tool so in here we're
+[03:30] connecting a Gmail tool um this one is
+[03:33] you know we're using all the from AI
+[03:35] functions which makes it really really
+[03:37] easy um we're sending a message of
+[03:39] course and so the from AI function
+[03:41] basically takes the query coming in from
+[03:43] the agent and understands um dynamically
+[03:46] the AI is looking for okay what's the
+[03:48] email address based on the user's
+[03:49] message okay we grab the email address
+[03:51] we're going to put it in the two
+[03:52] parameter how can we make a subject out
+[03:54] of this message we'll put it here and
+[03:56] then how can we actually construct an
+[03:57] email body and we put it there so that's
+[04:00] all that's going on here we've got our
+[04:01] tools we' obviously got a chat model in
+[04:04] this case we're just using um GPT
+[04:06] 40 and then we have the actual what's
+[04:09] taking place within the agent so
+[04:11] obviously there's an input coming in so
+[04:13] that's where we Define this information
+[04:15] input agent output and then the actual
+[04:18] system message for the agent so the
+[04:20] system message is a little bit different
+[04:21] than the user agent the system message
+[04:23] is defining the role this is your job as
+[04:26] an agent this is what you should be
+[04:27] doing these are the tools you have and
+[04:29] then the user me message is like each
+[04:31] execution each each run each time that
+[04:33] we interact with the agent through 11
+[04:35] Labs it's going to be a different user
+[04:37] message coming in but the system message
+[04:38] is always going to remain the same as
+[04:40] it's the prompt for the AI agent's
+[04:42] Behavior anyways let's take a look at
+[04:44] the prompt that we have here first the
+[04:46] overview is that you are an AI agent
+[04:48] responsible for Drafting and sending
+[04:49] professional emails based on the user's
+[04:51] instructions you have access to two
+[04:53] tools contact data to find email
+[04:55] addresses and send email to compose and
+[04:57] send emails your objective is to
+[04:59] identify the recipient's contact
+[05:00] information draft a professional email
+[05:03] and sign off as Nate before sending the
+[05:06] tools you have obviously uh contact data
+[05:08] it retrieves email addresses based on
+[05:09] the name so we have an example input
+[05:11] John Doe example output an email address
+[05:14] and then send email sends an email with
+[05:15] a subject and a body the example input
+[05:17] here is an email address um subject and
+[05:20] a body with example email subject body
+[05:22] um so that's what we have for the system
+[05:25] message and then for the um user message
+[05:28] as you can see basically just saying um
+[05:31] okay so the email is going to be for
+[05:32] this person and the email content is
+[05:34] going to be this so in this case this
+[05:35] execution it was the emails for fill and
+[05:38] the email content is asking about lunch
+[05:40] tomorrow so that's all that we're being
+[05:42] fed in from 11 labs and then the agent
+[05:45] takes that information to grab the
+[05:47] contact information and then it uses its
+[05:49] AI brain to make the email message
+[05:52] finally it basically just responds to
+[05:54] the web hook with um the email to fill
+[05:57] regarding lunch tomorrow has been
+[05:58] successfully sent and then 11 Labs
+[06:00] captures that response back and then it
+[06:02] can respond to us with gotcha we were
+[06:04] able to send that off for you is there
+[06:05] anything else you need so that's pretty
+[06:08] much all that's going on here um if you
+[06:09] see in the actual web hook what we're
+[06:12] getting here is you know there's
+[06:13] different things coming back we have
+[06:14] different little technical parameters
+[06:16] all this kind of stuff all that we want
+[06:18] to configure and I'll show you guys how
+[06:20] we configured this in 11 Labs is the the
+[06:22] Json body request that's being sent over
+[06:24] so we're in table format if we went to
+[06:26] Json we could see down here we're
+[06:28] looking at body and the body we set up
+[06:30] two fields to send over from 11 labs to
+[06:32] NN using that post request web hook the
+[06:36] first field that we set up was two and
+[06:38] as you can see that's when the 11 Labs
+[06:40] model based on what we say figures out
+[06:44] who the email is going to and puts that
+[06:45] there and then figures out what's the
+[06:47] email content what do you want me to say
+[06:49] in this email and then throws that in
+[06:51] here so um that's how that's going to
+[06:53] work as far as setting up the actual web
+[06:55] hook node right here um we have a we
+[06:58] wanted to switch a to a post method
+[07:00] because 11 Labs is sending us
+[07:02] information um we have a test URL and a
+[07:04] production URL the test one we use for
+[07:07] now and we have to manually have nadn
+[07:09] listen for a test event um I will show
+[07:12] an example of what happens if we don't
+[07:14] actually do this later in the video but
+[07:16] when you push the app into production
+[07:18] you make the workflow active you would
+[07:20] want to put this web hook in 11 Labs as
+[07:22] the production URL rather than the test
+[07:24] URL so that you can make sure that the
+[07:26] stuff's actually coming over we put our
+[07:28] paths n just to clean up this URL all
+[07:31] that it does is changes the URL um and
+[07:33] then authentication we put none and then
+[07:35] finally for response instead of doing
+[07:36] immediately or wait when last node
+[07:38] finishes we want to do using respond to
+[07:40] web hook node that way we get the
+[07:43] information the agent takes place and
+[07:44] then responds and then all we have here
+[07:45] is respond to web hook so it's very
+[07:47] simple as you can see it's only you know
+[07:49] really four nodes you know the email the
+[07:51] brain um and then the two tools and the
+[07:54] web hooks so um hopefully that all made
+[07:57] sense we are going to hop into 11 labs
+[08:00] and start playing around with this stuff
+[08:02] also a quick side note if you want to
+[08:03] hop into this workflow check out the
+[08:04] prompts play around with how I
+[08:06] configured things um you will be able to
+[08:08] download this workflow for free in the
+[08:09] free school Community Link for that will
+[08:11] be down in the description you'll just
+[08:12] come into here you'll click on YouTube
+[08:14] resources you will click on the post
+[08:15] associated with this video and then
+[08:17] you're able to download the workflow
+[08:18] right here once you download the
+[08:20] workflow you can import it from file and
+[08:22] then you will have this exact canvas pop
+[08:25] up on your screen then if you're looking
+[08:26] to take your skills with nadn a little
+[08:28] bit farther feel free to check out my
+[08:29] Community the link for that will also be
+[08:31] down in the description great community
+[08:32] in here a lot of people obviously are
+[08:34] learning nadn and um asking questions
+[08:36] sharing builds sharing resources got a
+[08:39] great classroom section going over you
+[08:40] know client builds and some deep dive
+[08:42] topics as well as five live calls per
+[08:44] week so you can always make sure you're
+[08:45] getting your questions answered okay
+[08:47] anyways back to the video so in 11 labs
+[08:50] this is the email agent this is just the
+[08:51] test environment where we're going to be
+[08:53] talking to it to try things out so we'll
+[08:54] go back and we'll see how we actually
+[08:56] configured this agent if you're
+[08:57] wondering why I named a marcher it's
+[08:59] just because his actual voice is Archer
+[09:00] so um that wasn't my creativity there
+[09:03] anyways once we are in the configuration
+[09:05] section of the actual agent we need to
+[09:07] set up a few things so first is the
+[09:09] first message um we pretty much just
+[09:11] when we click on call the agent it's
+[09:12] going to say hey there I'm Archer what
+[09:13] can I do for you otherwise um if we
+[09:15] leave this blank then we will be the
+[09:17] ones to start the conversation but from
+[09:19] there you will set up a system prompt so
+[09:21] in here the system prompt I have is you
+[09:23] are friendly and funny personal
+[09:24] assistant who loves helping the user
+[09:26] with tasks in an upbeat and approachable
+[09:28] way your role is to assist the user with
+[09:30] sending emails when the user provides
+[09:32] details like who the email is for and
+[09:34] what's it about you will pass that
+[09:35] information to the nadn tool and wait
+[09:37] for its response I'll show you guys in a
+[09:39] sec how we configure the naden tool and
+[09:41] how all that works but anyways once you
+[09:44] get confirmation from naden that the
+[09:45] email was sent cheerfully let the user
+[09:47] know it's done and ask if there's
+[09:48] anything else you can help with keep
+[09:50] your tone light friendly and witty while
+[09:52] remaining efficient and clear in your
+[09:54] responses so as you can see in the
+[09:55] system prompt I didn't even really put
+[09:57] in anything about the way it should be
+[09:58] conversated as far as like sounding
+[10:01] natural and using filler words and um
+[10:04] and sometimes I do that to make it sound
+[10:06] more natural but this voice I found just
+[10:07] sounded pretty good just as is then
+[10:10] we're setting up the large language
+[10:11] model um right now we're using Gemini
+[10:13] 1.5 flash just because it says it's the
+[10:14] fastest you have other things you can
+[10:16] use here but I'm just sticking with this
+[10:17] one and so this is what it uses to
+[10:20] extract information pretty much out of
+[10:22] the conversation to pass it to n8n or
+[10:24] figure out how it's going to respond to
+[10:25] you that's what's going on here and then
+[10:28] with temperature um I talked about I
+[10:30] like to put a little bit higher
+[10:31] especially for some fun use cases like
+[10:32] this um basically this is just the
+[10:34] randomness and creativity of the
+[10:35] responses generated so that it's always
+[10:37] going to be a little different it's
+[10:38] going to be a little fun um the higher
+[10:40] you put it but if you wanted it to be
+[10:41] more consistent and you had like you
+[10:43] know you were trying to get some sort of
+[10:45] information
+[10:46] back um right the way you want it then
+[10:48] you would probably want to lower this a
+[10:49] little bit um and then you have stuff
+[10:51] like knowledge base so if this was maybe
+[10:54] like um a customer support you'd be able
+[10:56] to put some knowledge base in there or
+[10:58] if you watch my previous voice video
+[11:00] about um sort of doing voice rag you
+[11:02] could still do the sending it to edn
+[11:04] hitting a vector database from edn and
+[11:06] then getting the response back but
+[11:08] anyways um in this case this is where we
+[11:10] set up the tool that we were able to
+[11:11] call up here as you saw in the system
+[11:13] prompt so the tool edn this is where
+[11:16] you're putting the web Hook from your
+[11:19] the web hook URL from NN that's where
+[11:21] you're putting that right here as you
+[11:22] can see um web hook- test naden the
+[11:25] method is going to be a post so we can
+[11:26] send information from 11 labs to nadn
+[11:30] and we just named it nadn to make the
+[11:32] system prompt to make more sense for um
+[11:34] just just for me when I was creating
+[11:35] this it makes sense to send something to
+[11:37] the tool called naden anyways as you can
+[11:40] see the description is use this tool to
+[11:42] take action upon the user's request and
+[11:44] so we can pretty much just leave it as
+[11:45] that we don't have any headers or
+[11:47] authorization going in here but we do
+[11:48] need to send over body parameters um
+[11:51] otherwise if we didn't have this nothing
+[11:52] would be sent over to n in at all so the
+[11:55] description of the body parameters is in
+[11:57] a friendly way ask the user to provide
+[12:00] the name of the recipient and what the
+[12:01] email is about unless they already
+[12:03] provided that information so the llm is
+[12:05] understanding when it's conversating
+[12:07] with the human it needs to extract the
+[12:09] name of the person to send and an email
+[12:12] to and then actually what is the email
+[12:13] going to have as you can see we didn't
+[12:15] have to put in like oh what's the
+[12:17] subject of the email because our AI
+[12:18] agent in n8n can use its brain to figure
+[12:21] out a subject so we have two parameters
+[12:23] that we're sending over if you remember
+[12:26] when we were in here we got the two
+[12:27] parameters from the body right here
+[12:29] which was two an email content and so
+[12:31] that's as you can see what we set up
+[12:33] here so the first one was a string it
+[12:35] was called two and this is who the email
+[12:36] is going to and then the second one was
+[12:38] also a string it's called email content
+[12:40] and this is what is the email about so
+[12:43] we hit save changes now we have a tool
+[12:45] that gets called whenever um The Voice
+[12:48] agent realizes it has information to
+[12:49] send over to n ATN to send an email and
+[12:52] it has the right parameters to do so so
+[12:53] now we have this voice agent pretty much
+[12:55] set up here with its tools and it system
+[12:56] prompt we're going to test the agent and
+[12:59] remember earlier I talked about the fact
+[13:00] that right now we're testing so we have
+[13:02] to have the web hook actively listening
+[13:04] once this is in production it's going to
+[13:05] be listening all the time but right now
+[13:07] we have to manually hit test event
+[13:09] before we call it otherwise it's not
+[13:10] going to work so I'm going to talk to
+[13:11] Archer ask him to send an email it's
+[13:13] going to go through and then we're going
+[13:14] to ask going to send another email where
+[13:16] we don't hit this web hook test event
+[13:18] and then we'll see what he says he's
+[13:20] probably just going to say he couldn't
+[13:21] access the database or he couldn't find
+[13:23] the contact information something like
+[13:25] that hey there I'm Archer what can I do
+[13:26] for you hey Archer can you help me send
+[13:29] email of course I'd love to help who's
+[13:32] the email for and what's it about tell
+[13:34] me the details and I'll Whip It Up in a
+[13:36] jiffy sweet um it's going to be for Phil
+[13:39] okay so the email is for Phil what's it
+[13:41] about I'm ready to get this email sent
+[13:43] out yeah just let them know that I'm
+[13:46] caught in traffic and I'm going to be
+[13:47] late to the
+[13:48] meeting got it so you want to let Phil
+[13:51] know you're running late because of
+[13:52] traffic I'll get that email sent out
+[13:55] right away all done I just sent the
+[13:57] email to Phil letting him know you're
+[13:59] running late anything else I can help
+[14:01] you with yeah I'm actually going to need
+[14:03] to send another one no problem who's
+[14:05] this one for and what's it about I'm
+[14:07] ready to send email number two yeah can
+[14:10] you let Phil know that um I actually
+[14:12] just drove my car off a
+[14:14] bridge oh my goodness I can't send an
+[14:17] email like that maybe you should call
+[14:19] Phil instead is there someone else you
+[14:21] want to send an email
+[14:24] to um no can you send an email to Phil
+[14:28] I'm so sorry I can't send an email like
+[14:30] that it sounds like you're in a
+[14:32] difficult situation is there someone
+[14:34] else you can reach out to for
+[14:37] help okay didn't expect that so I guess
+[14:39] the model doesn't want to say something
+[14:40] like that we'll try again um workflow is
+[14:44] not active so let's see hey there I'm
+[14:46] Archer what can I do for you hey Archer
+[14:49] can you send an
+[14:50] email of course I'd be happy to help you
+[14:53] with that who is the email for and what
+[14:55] is it about I'll get it sent out in a
+[14:58] jiffy just wanted to touch base with
+[15:00] Phil about um the meeting later
+[15:03] today okay so you want to send an email
+[15:06] to Phil about the meeting later today
+[15:08] got it I'll get this done right away
+[15:10] anything else I can help with today oops
+[15:12] looks like there was an error sending
+[15:13] that email it's possible there's a typo
+[15:16] in the email address or something is
+[15:17] wrong on my end let me try again can you
+[15:20] please double check the email address
+[15:22] okay anyway so that's how it works as
+[15:23] you can see the second time the web hook
+[15:25] wasn't active so wasn't able to send
+[15:27] that um that email for us because it
+[15:30] pretty much NN wasn't looking for the
+[15:32] request to come through so no
+[15:33] information got passed through so that's
+[15:35] going to be it for this one I hope that
+[15:36] everything made sense um it's just
+[15:37] really cool how easy it basically is to
+[15:39] switch out an input and you can have the
+[15:41] agent function the same obviously a few
+[15:43] things would change as you start to add
+[15:44] more tools your user message would have
+[15:46] to be tweaked a little bit you'd have to
+[15:47] tweak the actual system prompt a little
+[15:49] bit but as you can see in this one kept
+[15:50] it very very simple basically just told
+[15:52] it its role gave it the the two tools
+[15:54] and how to use them and as you can see
+[15:57] um it was pretty seamless as far as
+[15:58] being able to have the agent fill in
+[16:00] things make the messages and then send
+[16:02] them off pretty easily so um as always
+[16:04] if this one helped please leave a like
+[16:06] definitely helps me out um I always
+[16:07] really appreciate it and thanks for
+[16:09] making it to the end of the video I will
+[16:10] see you guys in the next one

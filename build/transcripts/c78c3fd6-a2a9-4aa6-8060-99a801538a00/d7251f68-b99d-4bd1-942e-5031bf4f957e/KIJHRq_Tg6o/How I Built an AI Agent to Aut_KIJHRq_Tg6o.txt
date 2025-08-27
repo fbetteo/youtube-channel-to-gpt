@@ -1,0 +1,702 @@
+Video Title: How I Built an AI Agent to Automate my Emails in n8n (Step by Step, No Code)
+Video ID: KIJHRq_Tg6o
+URL: https://www.youtube.com/watch?v=KIJHRq_Tg6o
+View Count: 56,883
+
+[00:00] hey guys today we're going to be going
+[00:01] over this framework that's going to help
+[00:02] you create different AI agents in order
+[00:04] to automate your inbox in this workflow
+[00:06] that we're going to be walking through
+[00:07] step byep today it starts by watching
+[00:09] for your emails and then it evaluates
+[00:10] them to see if they're customer support
+[00:12] related or not if they are it's going to
+[00:13] hit the customer support agent that has
+[00:16] access to your internal policies your
+[00:17] FAQ stuff like that so that it can craft
+[00:19] you an accurate draft in that same
+[00:21] thread of the original email and then
+[00:23] you can go in there and approve it
+[00:25] before you send it off and finally it's
+[00:27] going to notify you on slack or telegram
+[00:29] whatever you want it to be and it's just
+[00:30] going to say hey we got this email this
+[00:32] is what it's talking about we created a
+[00:33] draft if you want to go in there check
+[00:35] it out and then send it let's do a quick
+[00:37] demo see this thing in action we'll hit
+[00:38] test workflow we will see that the Gmail
+[00:40] trigger pulls in an email we're now
+[00:41] checking if it's customer support it is
+[00:43] so it's hitting the agent the agent's
+[00:44] looking in our Vector database for
+[00:46] information on the policies um it's
+[00:48] creating an email right now it just hit
+[00:49] it the Gmail tool it made a draft and as
+[00:51] you can see we just got a message back
+[00:53] in telegram so we got a little summary
+[00:54] about what just happened and then if we
+[00:56] go into our email we can see that we got
+[00:58] this email and then we also have a draft
+[01:00] which was you know replying to this
+[01:02] email and it has information about what
+[01:04] the customer asked about so um that's
+[01:06] how this workflow works and you know
+[01:08] let's not waste any time and hop
+[01:09] straight into the step-by-step tutorial
+[01:11] okay here we are within NN as always the
+[01:13] first step when you're creating a
+[01:14] workflow is to set up the trigger so in
+[01:17] here we have the options of we can
+[01:18] trigger this this workflow manually we
+[01:20] can do it on an app event we can
+[01:21] schedule it but here what we're going to
+[01:23] do is actually none of these we're going
+[01:25] to do a trigger of Gmail so what we want
+[01:27] to do is when a email comes through
+[01:29] that's when this workflow is going to
+[01:31] execute and the agent's going to look at
+[01:32] the EML and understand if it's for
+[01:34] customer support or not customer support
+[01:36] So as always the first thing you need to
+[01:38] do is set up your credentials so I
+[01:39] already have mine connected here but you
+[01:40] need to create a new credential you need
+[01:42] to sign in with Google and if you don't
+[01:43] understand how to set up your o consent
+[01:45] screen and all that you can go into the
+[01:46] N end docs super simple or I also made a
+[01:48] video about it which I will tag right up
+[01:50] here so anyways once we have that
+[01:52] connected we need to set up how this is
+[01:54] going to work so as you can see our
+[01:55] event is on message received that's
+[01:57] what's going to trigger this workflow
+[01:59] and then we also have a couple other
+[02:01] options here which we can simplify or
+[02:02] not simplify the um email coming back so
+[02:05] let me show you what the difference is
+[02:06] there I'm going to come up here and hit
+[02:08] fetch test event this is going to pull
+[02:09] the most recent email that we got and as
+[02:11] you can see we got a snippet which is
+[02:13] hey I was wondering how I can track my
+[02:14] order also what is your refund policy
+[02:16] Thanks James and in this case it's fine
+[02:18] as you can see we didn't get a ton of
+[02:19] information back this information just
+[02:21] got simplified um and like I said in
+[02:23] this case it's fine but we're going to
+[02:24] turn it off because if you had a longer
+[02:26] email the email would get cut off short
+[02:28] so now you can see we have a lot more
+[02:29] information coming back um it may be a
+[02:31] little more confusing to look at but
+[02:32] it's important so the agent is going to
+[02:35] be able to get full context of the email
+[02:37] that is coming through also one quick
+[02:39] tip we just trigger this this um email
+[02:41] trigger and we want to be able to play
+[02:43] with this data for the rest of the
+[02:44] workflow while we're testing so if you
+[02:46] come up to the top right and hit pin
+[02:47] data this data is now pinned once we
+[02:49] refresh everything we don't have to
+[02:50] reload this trigger we're just going to
+[02:52] have this email to play with for the
+[02:54] rest of our workflow so fun tip from
+[02:57] here we just want to grab a set field so
+[02:58] we can clean up some of the data that's
+[02:59] coming through through make it easier to
+[03:00] look at and also make it easier to
+[03:02] reference so I'm going to grab a set
+[03:03] field we can just call this
+[03:06] um set content that's going to be good
+[03:08] enough for us to understand what we're
+[03:09] looking at and the first thing that we
+[03:10] want to set is the email body so we will
+[03:15] have that be the subject and then we're
+[03:16] going to scroll down to try to find the
+[03:17] actual content that's coming through in
+[03:19] the email right here we have um HTML we
+[03:22] have textas HTML but we're looking for
+[03:24] the actual text which is right here so
+[03:25] we're going to grab this field drag that
+[03:27] into the value section and now we have
+[03:29] json. text but what's actually coming
+[03:31] through as json. text is the email so
+[03:33] hey I was wondering how I can track my
+[03:34] order also what's your refund policy
+[03:36] Thanks James so now we have the email
+[03:38] coming through you could also go through
+[03:40] here and if you wanted to you can set
+[03:41] other fields like the subject um like
+[03:43] the ID like um you know the the the who
+[03:47] it's from that kind of thing but
+[03:49] actually what I'm going to do is I want
+[03:50] to set the thread ID so we're going to
+[03:52] grab the thread ID and this is going to
+[03:54] be important so later when we want to
+[03:55] create that draft and we want to
+[03:57] associate it with this email that's
+[03:58] coming through we can plug in this
+[04:00] thread ID so that it knows what to
+[04:01] respond to so in thread ID we're just
+[04:03] going to drag in right there thread ID
+[04:05] and this isn't necessary we could always
+[04:06] reference it later from the Gmail
+[04:08] trigger but sometimes it's easier just
+[04:09] to have some information set and that
+[04:11] way you know where it is so we'll
+[04:13] actually just go ahead and test the step
+[04:14] real quick so we can see that what comes
+[04:15] through is the email body as well as the
+[04:17] thread ID real quick I wanted to
+[04:18] introduce you guys to a super cool
+[04:20] platform called Mind Studio it's an
+[04:21] integrated development environment to
+[04:23] develop AI features and workflows
+[04:24] without coding making it accessible to
+[04:26] developers and non-technical users alike
+[04:29] with mind Studio Studio you can access
+[04:30] over 50 AI models across text image
+[04:32] audio generation and soon even video
+[04:35] it's not just about having access to
+[04:36] models it's about flexibility that mind
+[04:38] Studio can autogenerate workflows using
+[04:40] AI train on your data sources scrape the
+[04:42] web and execute JavaScript or python
+[04:44] code you can mix and match these models
+[04:46] to find the perfect balance between cost
+[04:48] and performance and you can even deploy
+[04:50] AI workers as apps or apis and integrate
+[04:52] them with tools like zapier make or
+[04:54] virtually any platform that supports
+[04:55] HTTP requests if you're intrigued join
+[04:58] the free introduct webinar to learn how
+[05:00] mind Studio can bring your ideas to life
+[05:02] sign up now at the link below in the
+[05:04] description got the email we've got the
+[05:05] content set now what we want to do is we
+[05:07] want to add a large language model to be
+[05:09] able to look at the email content and
+[05:10] determine if it's customer support
+[05:12] related or not so we're going to come
+[05:13] into here we're going to add a open AI
+[05:16] node we're going to grab a message model
+[05:18] node which is oh I passed it right here
+[05:21] and now from here you need to just
+[05:23] obviously connect your credential we
+[05:25] need to choose the type of model so I'm
+[05:27] going to go with a 40 mini in this case
+[05:29] and then we're going to set the system
+[05:30] prompts right here which is going to be
+[05:32] let me pull this up in expression mode
+[05:34] we're saying prompt analyze the content
+[05:36] of the email and determine whether it's
+[05:38] related to customer support if the email
+[05:40] pertains to any of the following topics
+[05:41] Mark customer support is true otherwise
+[05:43] Mark is false so we wanted to Output a
+[05:45] field called customer support with
+[05:47] either true or false and then we just
+[05:48] gave it some topics that would be
+[05:50] customer support like order status um
+[05:53] issues with with damag products returns
+[05:55] refunds subscriptions all that kind of
+[05:57] stuff and then we just told it to Output
+[05:59] the following following um in a Json
+[06:01] format Json format with a field called
+[06:03] customer support and said it is true or
+[06:05] false so we've got that um that's our
+[06:07] system prompt this is telling this node
+[06:09] how to act now we want to add a user
+[06:11] which is just going to be um we're
+[06:13] dragging in the email body but first
+[06:14] before we do that we want to say here is
+[06:17] the incoming email add a little colon in
+[06:20] the space and then we'll drag in the
+[06:21] incoming email so now it's going to be
+[06:23] looking at that email we're going to
+[06:24] Output the content as Json so it
+[06:26] actually comes out in a field called
+[06:28] customer support and we'll hit test step
+[06:30] see if it worked so in this case
+[06:32] customer support came back true um why
+[06:34] we wanted to Output it as Json because
+[06:36] if we didn't do this I will just show
+[06:37] you real quick it's going to Output as
+[06:39] content and then customer support true
+[06:41] so it's doing what we want it to but we
+[06:43] want the field to actually be called
+[06:44] customer support so that we can call it
+[06:46] in later so that's why we want to Output
+[06:48] it as is Json I'm just going to come in
+[06:50] here and call
+[06:51] this customer
+[06:53] support eval um so now this node is just
+[06:57] evaluating if um this this email is
+[07:00] customer support related or not all
+[07:02] right now that we have that saying true
+[07:03] or false what we're going to do in here
+[07:05] is grab a switch node so we want two
+[07:07] different things to take place if
+[07:09] customer support is true then it's going
+[07:11] to go off and it's going to create that
+[07:12] draft for us in response to that email
+[07:15] and if it's false then we want it to go
+[07:17] down a different path which will either
+[07:18] notify us that we got an email that's
+[07:20] not customer support related or you know
+[07:22] any other logic so first let's just set
+[07:24] up this switch so we're just going to
+[07:27] say oops customer support that's what's
+[07:30] going on within this node um the first
+[07:32] value is going to be um we're saying is
+[07:35] customer support right here is this and
+[07:38] this is a Boolean as you can see it's
+[07:39] not a string so over here the letter a
+[07:42] means that this field is a string um
+[07:45] this block means that content is an
+[07:46] object this little hashtag or what's it
+[07:49] called a pound sign shows that index is
+[07:51] a digit field or a number field and then
+[07:54] finally this check mark just shows that
+[07:56] um customer support is a Boolean so
+[07:57] we're going to go to Boolean and we're
+[07:58] going to say it's true
+[08:00] so if this is true um we're going to
+[08:02] rename this output and call it Customer
+[08:05] Support I'm going to type that a lot in
+[08:07] this video and then anyways we're going
+[08:08] to we're going to dve drag another one
+[08:10] it's going to be Boolean is false and
+[08:12] this output is going to be not
+[08:17] customer support okay so we'll hit test
+[08:20] step we can see because customer support
+[08:23] is true it's going to come out the
+[08:24] branch of customer support so that's
+[08:27] what's going on right here so let's
+[08:28] continue down the path of assuming that
+[08:30] this is a customer support email we'll
+[08:31] drag some logic out this way and in this
+[08:33] case what we want to do is now we're
+[08:35] going to add our AI agent so in here we
+[08:38] are going to call this guy the customer
+[08:42] support agent okay so we have a customer
+[08:44] support agent this is going to be a we
+[08:48] could do a conversational because we
+[08:49] want it to um you know respond with very
+[08:53] human-like ANW so actually we'll try
+[08:55] conversational we're not going to take
+[08:57] from previous note automatically we're
+[08:58] going to Define below and the text that
+[09:00] we're getting is going to be we're
+[09:01] feeding it in the original customer
+[09:03] support email that's coming through so
+[09:05] we're going to go back to the set
+[09:06] content node and we're going to drag in
+[09:07] the email body this is what we want this
+[09:09] customer support agent to look at
+[09:11] evaluate grab our information in order
+[09:14] to respond to it accurately and then
+[09:15] respond to it accurately so um from here
+[09:20] we will need to add a system prompt so
+[09:21] we'll add this in for now but we will
+[09:23] obviously change this up what we want to
+[09:25] do next is we want to obviously give the
+[09:27] agent a brain so I'm going to come in
+[09:29] here and give it for mini um we're going
+[09:32] to leave the memory as blank for now but
+[09:33] what we want to do is add a tool so we
+[09:35] need to give the agent understanding of
+[09:38] customer support policies and guidelines
+[09:39] for our company so I'm going to grab a
+[09:42] vector store tool we're going to call
+[09:44] this one customer support docs we're
+[09:49] saying that this tool retrieves data
+[09:53] about our or no not data we'll do
+[09:55] retrieves
+[09:56] information about our customer
+[10:00] support
+[10:02] policies um and
+[10:06] faq's okay so Vector store tool we need
+[10:09] to connect our model to this as well
+[10:11] we'll leave this one as for mini we need
+[10:13] to add the vector store which is going
+[10:14] to be pine cone um we're adding our
+[10:16] index which is sample our name space
+[10:18] which will be
+[10:20] called customer support and we haven't
+[10:22] done this we'll do this in a sec but
+[10:24] that's what we're going to be loading it
+[10:25] into and then finally we need to choose
+[10:27] the actual embedding for our agent or
+[10:28] for our Factor store which we're going
+[10:30] to do embedding three small so we have
+[10:32] this configured um now what we're going
+[10:35] to do next is actually add our document
+[10:37] to our Pine con Vector store so here's
+[10:39] the customer support document that I
+[10:40] have right here um customer support
+[10:42] policies and FAQs we've got policies
+[10:43] FAQs of course this was just generated
+[10:45] for me by chat gbt so anyways we have
+[10:48] this document we're going to load it
+[10:50] into um our pine cone so I have this one
+[10:54] already in here as pulling customer
+[10:56] support policies and FAQs we'll hit test
+[10:58] workflow
+[10:59] um we're downloading the file here as
+[11:00] binary we're uploading it to Pine Cone
+[11:02] we have everything set up in here so
+[11:03] that it should be splitting out
+[11:04] correctly so now we have all this
+[11:06] information within that document
+[11:07] embedded up into four different um
+[11:10] vectors and then put into our uh what's
+[11:12] it called our pine cone and as you can
+[11:14] see we're loading it into a namespace
+[11:16] called customer support So now back in
+[11:18] this agent tool that's why we referenced
+[11:20] right here it's look not right here
+[11:22] right here it's looking for a namespace
+[11:24] called customer support so it should be
+[11:25] able to grab accurate information for us
+[11:27] real quick guys I just wanted to say if
+[11:28] you want to download these templates
+[11:30] that are shown in this video go to my
+[11:31] fre School Community Linked In the
+[11:32] description you'll go to YouTube
+[11:34] resources click on the post associated
+[11:36] with this video and then you'll have the
+[11:37] workflow right here to download also if
+[11:39] you're looking to take your nadn and
+[11:40] your a automation skills a little deeper
+[11:42] check out my paid Community we've got a
+[11:43] great classroom that goes over Deep dive
+[11:45] topics real project insights with client
+[11:47] builds we've got a great community and
+[11:49] we've also got um live calls we're doing
+[11:50] about five a week right now so hop in
+[11:52] here I'd love to see you guys finally if
+[11:54] you're looking for me to help you build
+[11:55] out this sort of stuff within your
+[11:56] business or you're looking for some AI
+[11:57] Consulting then book in a call using the
+[11:59] link from my website down below and
+[12:01] let's talk so in here what we're doing
+[12:03] is um the resource is going to be a
+[12:05] draft the operation is obviously that
+[12:06] we're creating a draft um and now we
+[12:09] just need to set up the subject the the
+[12:11] text of the email the message and then
+[12:14] any other properties which we want to do
+[12:16] a thread ID so um first things first we
+[12:19] need to configure this node we're going
+[12:22] to call this
+[12:23] one create draft and we need to set up
+[12:27] the subject and the message so what
+[12:28] we're going to do is use that super cool
+[12:29] from AI expression so we're going to
+[12:31] change the subject to an expression
+[12:33] we're going to come in here grab two
+[12:34] curly braces and we're going to type in
+[12:36] dollar sign from we'll grab from Ai and
+[12:39] then in the key in quotes we're going to
+[12:41] say subject and so this is going to um
+[12:44] the agent's going to understand okay I
+[12:46] have this email that I just got I'm
+[12:48] going to hit the vector database to get
+[12:49] information to answer the email and then
+[12:51] I'm going to make an email and then I
+[12:53] know that here needs to go a subject and
+[12:55] then down here needs to go a message so
+[12:56] it's just a really cool way to give your
+[12:58] agents so was much quicker if you want
+[13:00] to see a video about it I made one I'll
+[13:01] tag it up here but I kind of go in depth
+[13:03] a little more on how these functions
+[13:04] work and the value in them anyways down
+[13:06] here in quotes we're going to put
+[13:08] actually we're going to put email body
+[13:11] Okay so we've got that and then finally
+[13:13] we need to reference the thread ID so
+[13:15] this is also going to be an expression
+[13:16] and we need to pull this dynamically
+[13:18] from the email that we got in the first
+[13:20] place so if you remember we set that
+[13:21] earlier with set content so we're going
+[13:22] to grab set content we're going to type
+[13:24] a do item Json and then finally thread
+[13:28] ID so now this is dynamically pulling in
+[13:30] the thread ID that's associated with the
+[13:32] email that triggered this workflow in
+[13:33] the first place and I think we should be
+[13:36] good to go here with um this node so
+[13:39] we've got our Vector store tool we have
+[13:41] our create draft tool and now we just
+[13:42] need to make sure that this agent has a
+[13:43] prompt so I went ahead and grabbed one
+[13:45] already we're going to change this to an
+[13:47] expression we're going to open this up
+[13:49] and we're going to delete this and paste
+[13:51] in this prompt so basically what I said
+[13:52] in here was you're highly skilled and
+[13:54] empathetic customer support agent
+[13:56] specializing in drafting professional
+[13:58] and helpful response to incoming emails
+[14:01] your tasks are to take the email use the
+[14:02] customer support docs tool to look up
+[14:04] relevant policies create a draft using
+[14:06] the create draft tool and then after
+[14:07] drafting the email provide a concise
+[14:09] summary of the email content as the
+[14:11] output and then I went through specifics
+[14:14] context some examples and all that
+[14:16] boring stuff um but anyways let's see
+[14:19] how see what happens so we're going to
+[14:21] test this step we obviously are hoping
+[14:23] that um the selected tools are not
+[14:26] supported by conversational agent okay
+[14:28] well anyways we'll change this to a
+[14:30] tools agent and see what happens let me
+[14:31] just copy again this prompt because when
+[14:33] you change this it's going to um get
+[14:36] ready your prompt
+[14:38] so we'll grab that in there and let's
+[14:41] see did that okay now we'll test the
+[14:43] step so it's reading the email it's
+[14:45] going to understand to hit the vector
+[14:46] store tool to get that policy
+[14:47] information now it is going to go back
+[14:50] it's going to hit the create draft tool
+[14:51] and then create that draft for us so all
+[14:53] that finished up let's just see the
+[14:55] output that we got which was uh a quick
+[14:58] summary of the email which is perfect in
+[15:00] the
+[15:00] draft we can see that the um subject was
+[15:04] order tracking and refund policy the
+[15:06] message was dear James thank you for
+[15:08] reaching out to track your order you can
+[15:10] log in blah blah blah regarding our
+[15:12] refund policy digital products are
+[15:13] non-refundable blah blah blah and then
+[15:15] best regards Kelly customer support ABC
+[15:17] Corp so if we were to check in here we
+[15:19] would see that um it answered correctly
+[15:22] I don't really want to actually yeah
+[15:24] sure let's go through it okay what was
+[15:26] the first thing we asked um it said to
+[15:28] track your order you can lo into the
+[15:29] account so let's look at how you track
+[15:30] your
+[15:32] order track order you can log in your
+[15:34] account and visit the order history
+[15:36] section or you can use a tracking link
+[15:37] okay perfect um and then for refund
+[15:40] policy digital products are
+[15:41] non-refundable let's look at
+[15:43] digital digital products are
+[15:45] non-refundable unless there's a
+[15:47] technical issue okay so it got the
+[15:48] information right
+[15:50] perfect and we can go into our Gmail and
+[15:53] see if it actually created a draft for
+[15:54] us right here we created a draft and
+[15:57] it's in response to that earlier email
+[15:58] that we sent so now if we like it we can
+[16:00] hit send please specify at least one
+[16:03] recipient okay so we would have to
+[16:04] configure the two which is interesting
+[16:07] um is that not something that ah two
+[16:10] email okay interesting so what we're
+[16:12] going to do is now we're going to grab
+[16:13] the two email so that's actually
+[16:14] something that you know you learn
+[16:15] something new every day so for two email
+[16:17] we want to grab that from the Gmail
+[16:18] trigger um we're going to be looking at
+[16:22] item. Json Dot
+[16:26] from Dot
+[16:30] value um this is me pretty much just
+[16:32] guessing okay actually let's let's do
+[16:34] this the easier way okay what we're
+[16:36] going to do instead is we're going to
+[16:39] set the content over here the two email
+[16:40] as well so this is just going to be who
+[16:42] it's from and then what we want to do is
+[16:44] we want to go all the way down to see
+[16:46] who the EML is from right here it's from
+[16:47] NK 88 and now we've got that information
+[16:50] we'll test this step we have that going
+[16:51] through we're going to do this whole
+[16:52] process again customer support it is
+[16:55] indeed customer support and then right
+[16:57] here we want to fill in who this is
+[16:59] actually going back to we want to grab
+[17:02] um from the set content we're grabbing
+[17:04] item. json. from okay so sorry about
+[17:09] that now we have the two and the thread
+[17:10] ID and all this information so let's try
+[17:12] that one more
+[17:14] time it's going to do the same exact
+[17:16] thing it's going to answer pretty much
+[17:17] the same exact way it's going to create
+[17:18] that draft for us
+[17:21] um so it just created the draft now we
+[17:23] got the output and now if we come into
+[17:25] here we'll go back into our drafts we
+[17:27] can see we have um actually where is
+[17:31] it there we go so there's the new one
+[17:33] dear James and then it actually has the
+[17:35] email which we could send off so you
+[17:36] would pretty much just be able to check
+[17:38] if you like the way that it looks if not
+[17:39] you can make a quick change and then you
+[17:40] can send it off so um that's that now
+[17:43] what's next so two other things that we
+[17:46] want to do here first one is we want to
+[17:47] add an option out here which is going to
+[17:50] be um let's just do telegram so what
+[17:52] we're going to do is we want to just
+[17:54] basically be notified that okay we got
+[17:57] this email and then we were able to to
+[17:58] respond to it automatically so in
+[18:00] telegram what we want to do is send a
+[18:03] text message I can never find it there
+[18:05] it is and um we to connect to your
+[18:07] account and then we want to be sending a
+[18:09] message obviously we're going to have to
+[18:10] configure our text ID and our sorry our
+[18:12] chat ID and our text so real quick let
+[18:15] me show off a how you get your chat ID
+[18:18] in telegram so if you go to the trigger
+[18:20] we'll do on message okay so I'll hit
+[18:23] test step in telegram I will bring in my
+[18:25] telegram trigger and just say hi
+[18:29] and now we can come through in here and
+[18:31] we can see the chat ID so we got our
+[18:32] chat ID right here I'm now going to
+[18:36] paste that into our chat ID field and
+[18:38] now we're good to go with this um we can
+[18:41] get rid of this trigger and then finally
+[18:42] what we need is we need the response
+[18:45] from our agent so this is going to be an
+[18:48] expression it's going to be json. output
+[18:51] because that's what's coming out from
+[18:52] the agent and then finally we're just
+[18:54] going to turn off the append andent
+[18:55] attribution we'll just call this
+[18:58] response
+[18:59] okay so now once that happens and the
+[19:01] agent responds to a customer support
+[19:03] email it's going to let us know that
+[19:04] that happened and we can configure that
+[19:05] later and say like okay we got an email
+[19:07] from blank and it said blank and we sent
+[19:11] it at this time but for now we'll keep
+[19:12] it simple okay now to set up what
+[19:14] happens if we get an email that's not
+[19:15] Customer Support I'm going to copy this
+[19:17] telegram we're going to paste it down
+[19:18] here and we're going to configure this
+[19:20] so the chat ID is going to be the same
+[19:22] the text is not we're going to say you
+[19:25] received an email at um we can do ass
+[19:28] sign now. format so we've got the that
+[19:33] information we can do um minute minute
+[19:37] okay so at 429 um on you know we can
+[19:40] change this too so let's say we just
+[19:42] wanted to do
+[19:45] um actually no we'll just do time so you
+[19:47] just received an email at 4:30
+[19:53] um
+[19:55] saying and then we can grab the actual
+[19:58] content of the email so we'll do the
+[19:59] same thing set
+[20:01] content. item
+[20:03] do Json dot I don't know it just hasn't
+[20:07] been executed so what do we set that as
+[20:09] um email body is that what it was uh
+[20:13] let's
+[20:14] see emo body okay so that should work
+[20:17] now
+[20:18] um go ahead and save that and so this is
+[20:20] pretty much where we're at so let's real
+[20:23] quick let me send off an email that's
+[20:24] not customer support related and we'll
+[20:26] see what the response is okay so yeah
+[20:28] thank you for meeting last week
+[20:29] discussing our quarter for marketing
+[20:31] strategy I'm pretty sure this should be
+[20:33] evaluated as not customer support so
+[20:35] we'll run this through we'll see there
+[20:37] we go not customer support and then if
+[20:39] we hit this we got the telegram
+[20:40] notification of we received an email at
+[20:42] 432 saying dear Alex blah blah blah so
+[20:45] this obviously needs to be formatted
+[20:46] differently um we would just come in
+[20:48] here and we would change the way that
+[20:49] this is coming through but this is just
+[20:51] to show you you know what you can do as
+[20:53] far as how you can set up different
+[20:54] logic so maybe we'd set it up like that
+[20:57] put a colon right here and then we get
+[20:58] this answer
+[20:59] instead um so that's you know if it's
+[21:02] not customer support it'll go this way
+[21:03] if it is customer support it'll go this
+[21:05] way create a draft and then it will
+[21:06] actually send you response so what we
+[21:08] should do real quick is let's make this
+[21:09] workflow active got it and let me fire
+[21:13] off an email and then we will see um you
+[21:15] know the live execution of this
+[21:16] happening without us having to test
+[21:18] anything okay so I pretty much just sent
+[21:20] off an email um I've got my telegram
+[21:21] pulled up the workflow is active we will
+[21:24] be watching to see when this happens as
+[21:26] far as when the draft gets created and
+[21:28] when telegram message comes back okay so
+[21:30] I just got that telegram message back it
+[21:32] said that it drafted an email response
+[21:33] addressing David's concerns about a
+[21:35] defected product um the response
+[21:37] includes instructions on how to report
+[21:38] the defect it gives us a summary where
+[21:40] David informs about blah blah blah and
+[21:42] wants to speak to a live rep so we got
+[21:44] that message and now we can go into our
+[21:46] email if we go to the thread we will see
+[21:49] that there's a draft created right here
+[21:50] for us it has a two field already and it
+[21:52] pretty much tells him how to handle
+[21:55] talking to a live rep and what what he
+[21:56] should do with his defective product so
+[21:57] we can prove that we like it we'll send
+[21:59] it off and um yeah that's going to be
+[22:01] how that works if we go into here we can
+[22:03] see this was the live execution that
+[22:05] just took place because the workflow was
+[22:07] active now and it went through the
+[22:09] branch of customer support it went
+[22:11] through the agent it hit the vector
+[22:12] database it hit the draft and then it
+[22:15] finally sent us that telegram message so
+[22:17] that's going to be it for this one I
+[22:18] know that it was a a pretty simple
+[22:19] walkthrough of a build it uses some
+[22:22] conditional logic it uses an agent and
+[22:24] um aspects of rag as well as creating a
+[22:26] draft using an email tool and if you
+[22:28] guys guys appreciated this one I would
+[22:29] really appreciate if you could drop a
+[22:31] like it really helps me out subscribe
+[22:32] for more NAD and AI agent tutorials and
+[22:35] I will see you guys in the next one
+[22:36] thanks

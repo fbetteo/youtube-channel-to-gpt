@@ -1,0 +1,77 @@
+Video Title: An Army of Media Agents That Do Everything (n8n)  #aiagent #artificialintelligence #n8n
+Video ID: IlNwjnIzrOo
+URL: https://www.youtube.com/watch?v=IlNwjnIzrOo
+View Count: 23,863
+
+[00:00] I just built this ultimate media agent
+[00:01] that can do anything. Okay, so we talked
+[00:03] to our agent through Telegram and on
+[00:04] this lefth hand side you can see I'm
+[00:06] going to send over an image and what the
+[00:07] agent's going to do is first of all
+[00:09] process this into our Google Drive
+[00:10] environment. So here you can see the
+[00:12] agent's pretty eager to help us out.
+[00:13] It's asking us about how we want to name
+[00:15] this and also if we want to change any
+[00:17] sharing settings. So here you can see I
+[00:19] just sent off this message that says to
+[00:20] just name it speaker. What it's going to
+[00:22] do is it's going to go to our Google
+[00:23] Drive agent right here and that is the
+[00:25] one that has the right tools to actually
+[00:27] change the name. As you can see, this
+[00:28] tool right here is called change name.
+[00:29] Okay, so it just responded to us and of
+[00:31] course it's logging all of its actions,
+[00:32] which I'll show you guys later. But if I
+[00:34] pull back up Telegram, it says that it
+[00:35] renamed the file to speaker. I can click
+[00:37] on this link right here and we should
+[00:39] see that exact picture that I just
+[00:40] uploaded. And you can see it exists in
+[00:42] our folder called media. It is called
+[00:43] speaker and it's right here. So now what
+[00:45] I'm going to do is send off this other
+[00:46] message that says, "Please edit that
+[00:48] image. Turn it into a studio looking
+[00:50] image. It should be energetic, colorful,
+[00:52] and highlight the feeling of listening
+[00:53] to music on a speaker." Whatever that
+[00:55] means. the media team will figure it
+[00:57] out. As you can see, just as we
+[00:58] predicted, the creative agent is using
+[01:00] its edit image tool. So, I'll check back
+[01:02] in with you guys once we get that final
+[01:04] product back. All right, look at that.
+[01:05] The agent actually ended up creating
+[01:07] three different images for us. So, we
+[01:08] have a couple different styles that we
+[01:10] can choose from, which is pretty cool.
+[01:11] All right, so just fired off this new
+[01:12] message where I said, "Actually, what I
+[01:14] want you to do is take that first
+[01:15] preview file." So, this was the one that
+[01:17] we liked the best. And then I said,
+[01:19] "Turn that into a video. create a VFX ad
+[01:22] with music and lights that sync to the
+[01:24] beat as an advertisement for a JBL
+[01:26] speaker. Real quick, wanted to update
+[01:27] you guys. The creative agent has full
+[01:28] autonomy to use its tools to help us out
+[01:30] with our media. And you can see it's
+[01:32] going to turn that image into a video,
+[01:33] but it also wanted to try out creating
+[01:35] its own video with just text. So, I'm
+[01:37] not too confident how good this one will
+[01:39] be, but we'll definitely take a look.
+[01:41] All right, so that just finished up. I'm
+[01:43] very, very impressed. So, this first one
+[01:45] is the one that was actually the image
+[01:47] turned into video. So, let's click into
+[01:48] this real quick. We'll hear the audio.
+[01:58] If you want to see how you can set up
+[01:59] this exact system for free, then click
+[02:01] on that play button right here to watch
+[02:02] the full video. And I'll see you guys
+[02:03] over there.

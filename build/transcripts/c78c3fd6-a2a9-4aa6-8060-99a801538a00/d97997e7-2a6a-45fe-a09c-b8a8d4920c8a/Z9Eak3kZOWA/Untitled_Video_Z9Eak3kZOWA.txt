@@ -1,0 +1,131 @@
+Video Title: Untitled_Video
+Video ID: Z9Eak3kZOWA
+URL: https://www.youtube.com/watch?v=Z9Eak3kZOWA
+View Count: 0
+
+[00:00] Okay, okay. Okay.
+[00:00] Yeah, yeah.
+[00:00] Good morning everyone.
+[00:02] Good morning. Welcome to the 4th you can sports analytics symposium and this is the 4th time we are doing this, but it's the 2nd time we are doing it in person.
+[00:14] Um, this is a conference open to everyone interest in in sports analytics, professional or amateur.
+[00:22] But we have a unique feature. It is students friendly.
+[00:27] The conference is organized by you can statistical data science lab.
+[00:33] With assistance from, you can these signs club.
+[00:38] We aim to showcase sports analytics to students. We add an accessible level.
+[00:44] Training students in data analytics with application to sports data.
+[00:48] And faster collaboration between academic programs and sports industry.
+[00:55] We started back in 2019, you can see our statistics the 1st time last month. It's 129 registrants and then the next 2 years due to the pandemic, we were able to use the Webex.
+[01:06] So many people all over the world were able to attend the conference this year while I will show you the statistics in a minute. show you the statistics in a minute
+[01:18] Uh, what's new in 2022? We have a data challenge, uh, partner with, uh, sports, media technology and 6 finalists have are presenting their posters.
+[01:29] Actually 1 of them flying from, uh, Jordan, University, University, United Kingdom. university university united kingdom
+[01:38] The 2nd, new thing is we have NSF National Science Foundation travel, support for students, presenting their posters.
+[01:49] And also, this year, the Department of statistics celebrates the 60th anniversary and this is a prelude next week. We have a 2 day conference excellence in statistical sciences. sciences
+[02:03] That's next Friday and Saturday and this year also new.
+[02:09] We have a workshop, uh, instructor team, mostly.
+[02:14] Consisting of undergrad students.
+[02:17] Last year we had all grad students as instructors, and this year I had impact with our data science club more, and we have our talent undergrad, undergrad students, leading workshops and finally we have a U.
+[02:31] S logo. Thank, uh, my niece, Clarissa, attend a 1st year student at Yale. Uh, she made this when she was a high school senior.
+[02:44] And this is the analytics of the statistics of this year. Uh, we have 12,028 registrants from UConn website at the same time. We have 133 from our partner in China. Thank professor HANSEN 1 of, uh, picking University.
+[02:58] china thank professor hansen one of uh picking university
+[03:02] Um, well, this is a table I just show it whenever you see 2 groups I mean, you can't help doing a 22 group comparison.
+[03:10] Uh, this is the composition, uh, you can see, I bet if you do a Chi square test, you will find the significant difference.
+[03:18] Um, well, at this point, I like to start our, uh.
+[03:23] A welcoming remarks the 1st, 1 is, uh, president Dr. Uh.
+[03:30] And she cannot come, but she sent us a, uh, video.
+[03:55] Okay.
+[04:00] Huh.
+[04:10] Uh, huh.
+[04:45] Hello.
+[04:49] Huh.
+[05:04] Huh.
+[05:12] Hello.
+[05:21] Hello.
+[05:40] Hello.
+[05:50] Oh, thank you. Dr Mari.
+[05:57] Next please, uh, joining welcoming a doctor and so.
+[06:03] Uh, piano from the National Science Foundation.
+[06:13] Thank you very much. Uh, so Juno is very kind to invite me to welcome all of you. Hey, hey, bought parking the department yesterday.
+[06:22] So I said, why didn't you come and give a welcome, uh, tacos with the participants of this conference?
+[06:29] So, I'm a professor statistics at the University of South Carolina, where the National women's basketball, basketball, basketball uh, of course, you.
+[06:42] Perennial opponent in this competition in finally broke through last year.
+[06:49] Okay, so, hopefully, it will continue about that. You consult basketball team is 1 of the top very high level basketball, uh, team that we aim always to try to beat them.
+[07:01] Okay, so that's the beauty about sports. I'm a National Science Foundation as a program director in the statistics program. So we decide on, uh, who gets grant money for the research.
+[07:15] And, uh, this is the National Science Foundation.
+[07:19] Building in Alexandria, Virginia, so you see that that's the, the building of that, Ah, Ah, now, Ah, National Science Foundation is a federal agency.
+[07:31] It was formed in 1950 by Congress, and it was formed in order to, uh, speed up science in the United States, up to the 2nd, World War.
+[07:41] And, uh, there was a very nice article by Buddy per Bush who was instrumental in. Doesn't happen. happen
+[07:49] Project, that's the project that developed the atomic bomb during the 2nd World War.
+[07:54] Uh, in that title, the science endless frontier and vertical, he convinced the president to create in Congress to create the National Science Foundation.
+[08:05] But it took 5 years before that happened in the mission agencies to promote progress of science, uh, advanced the National Health prosperity and welfare. And then security, national defense.
+[08:19] Department that we support basic research that means fundamental research, uh, to create knowledge that transforms the future.
+[08:28] When you say basic, those are types of research that might not have immediate impact, but potentially later could have immediate impact, but it's about knowledge. Just learning about things.
+[08:39] Ah, the budget last year NSF was 8.8Billion about 93% of that goes to research funding. Like, what we had. funding like what we had
+[08:49] To this confidence into some faculty in the department I think this coming year, it's about 9.5Billion so we got some increase from the federal government and, uh,
+[08:58] we provide about 25% of all federally supported basic resources in colleges and universities.
+[09:05] So the professors that this issue, they apply for grants to us and, uh, if their proposal is competitive, and we had money, we provide them money pointer. we provide them money pointer
+[09:20] Uh, and, uh, and it doesn't support the health sciences, because that is, but, uh, we support most of mathematics, computer science in the social sciences. Yeah.
+[09:33] So, the types of research that we do, or we support are a basic and fundamental research, because that's the pacemaker of technological progress.
+[09:42] And, uh, as I mentioned earlier, uh, it's about science and engineering, uh, except for the medical.
+[09:49] Sciences and, uh, 100 thing is we tried to support.
+[09:53] Would potentially transform a theme in high risk proposals. Someone could present something that out of the blue. We do not know, but it could be transformative and we tried to encourage those those types of things.
+[10:06] So a lot of things that you see in society like computers, for instance, some, they were very high risk in the early days, but provide support that is that, uh, research and alert.
+[10:20] No, I mean, the statistics program, and this is why, uh, June is a part of this group uh, and, uh, of course, the text is, uh, the foundation behind sports analytics, uh, a lot of the methods that, uh,
+[10:34] you will be, uh, seeing today or statistically, based computer science based and, uh, data science and, uh, uh, the research and statistics, uh, forums now foundation, statistical inference and, uh.
+[10:49] Because it models, uh, uh, analysis collection and, uh, all the things that you will see today um.
+[10:58] Now, uh, 1 of the things that I just wanted to mention before I end snap statistics, the sports go along together. Okay.
+[11:05] Sporting events in completions are beautiful, because there's randomness involved in it and, you know, exactly who is going to win it is not exciting.
+[11:17] But even a team that are unbalanced to things, that aren't, it's still possible that the big upset could happen and that's where the sports Council. Okay. Uh, so there's the presence of randomness.
+[11:29] There's a presence of uncertainty and what that's what makes things exciting worth watching and doing.
+[11:37] Nothing is currently been sports guys so you could train and train, but you might not get it because of some random error and so on and so forth.
+[11:47] And we always tried to aspire to do better in a sporting activity so we tried to better data so we could improve. Okay. And that's the whole essence of this data data data, how to use optimal decisions.
+[12:00] And actually, sports holes is the basis of, uh, was developed by, uh, uh, John has beautiful mind in the 19 twenties and, uh, the motivation for that sports.
+[12:13] And, uh, and so we get into sports and analytics is what.
+[12:17] You'll be running today and, uh, 1 of the things about sports analytics that how do you make optimal decisions? Ah, Ah, he's a hockey field coach and 1 of his pregnancy. How do you make optimal decisions?
+[12:30] So, in order to win, for instance, and this is the things.
+[12:33] He'll be studying or learning today. Okay.
+[12:36] Uh, sorry, you remember Moneyball course is a wonderful starting point, though, sports analytics and so I hope that, uh, for this conference, you'll be able to learn new things and maybe develop new methods that can help, uh,
+[12:51] sporting events in that case. So so I'd like to stop her and, uh, like to thank, uh, professor Julianne organizing committee and, uh, we are pleased to provide.
+[13:03] Partial support for this app or travel. Thank you. Thank you. Thank you.
+[13:11] Our next speaker is coach the head coach of Yukon field hockey.
+[13:21] Thanks June the legs that South Carolina basketball go to remain competitive with the University of Connecticut.
+[13:30] They send you here to do analytics to check out our team. Um, so, uh, hopefully, um, you get a small error in your statistical analysis, and we're able to beat them this year.
+[13:41] Um, so, uh, but thank you for inviting me to make some opening remarks here today. Um.
+[13:47] And I'm going to talk less about the science of data, but more about the application. So, for us as a field hockey program, uh, we use data on a day to day basis.
+[13:57] Uh, we look at heart rate, uh, monitors, which to measure distance covered, uh, accelerations, decelerations and really allow us to control our training load to prevent injury, uh,
+[14:12] to maximize Max benefit is that we can be um, and we use this in conjunction with the drill.
+[14:20] Now, now we can prescribe if we need a hard day at practice, we really start, you know.
+[14:25] What we have to use real wise to do um, but, uh, you know, analytics in sports is really a little bit like a p, back in the.
+[14:36] The 90 s, where it really is, the secret of the slight edge.
+[14:40] So we talk a lot with our team about marginal gains. So you guys probably are familiar with marginal gains theory, at least in a business setting.
+[14:48] We are looking to make 1% gains in a lot of little small spaces.
+[14:52] So, you guys, um, in the future, and I currently are really critical for that.
+[14:59] If you look at professional sports sports.
+[15:02] We use analytics for recruitment. Uh, if you look at, I'm a big, huge Premier League soccer fan.
+[15:08] Um, if you look at the recruitment, uh, if you can buy low, sell high.
+[15:13] Rather than buy high and solo, then you're gonna really do a lot for your budget, but you're also gonna do a lot for the performance of your team.
+[15:21] Um, if you look at recovery, so, you know, we, we look at jps stuff. Um, but we also, um, use our nutritionist, our sport scientist to really help with the recovery and how we do this.
+[15:34] Then we have less injuries, um, we can get back on the field quicker and you, you look at page backers, um, for us, you column, we're gonna miss her this season. She's the best player in college basketball.
+[15:46] Um, potentially, you know, if we had a little bit more statistical information.
+[15:51] Her training load might be different, you know, you know, we, we do our, our athletic trainers and our strength coaches work with training loads.
+[15:59] So, um, you know, that pretty precise for that, but, you know, the greater we get into this, uh, the more we're going to be good at it.
+[16:06] We use it for game planning so we use data, uh, currently my practice where practice now actually, so they're, they're in a video meeting. Um, and we use a.
+[16:19] A video analysis tool called us a sports coat it's done by a company called Huddle. Um, and that we.
+[16:27] Create matrix is, uh, force for some of their set pieces so we know.
+[16:33] How many times they move the ball left and strike it from the rights and stuff like that. So we're able to use that to develop our practice plans. So that now we can go into today's practice and.
+[16:46] Potentially just use it just play against the penalty corners that they're gonna use against us. So, on Sunday.
+[16:53] Because on Sunday we welcome North Carolina here and they're the number 1 team in the country.
+[16:56] Uh, so we're, we're excited to play them, but obviously we have to be ready for them. So, the, uh, the, the analytics part of that is really important. Um, then we also use it for squad rotation.
+[17:08] So, like, again, the, the, the jps numbers help us if someone's have, you know.
+[17:14] Run 10 K's in 2 games in a weekend and usually they're on 8 K's. Perhaps. They, they only play half a game, the next game to protect them from, from injury. And I think you see that in the NBA now a little bit.
+[17:25] Whereas people who get a real, very annoyed when the brown James doesn't play. Um, but they're, they're taking care of him.
+[17:33] You know, they're making sure that he's going to be out of play in the end of the season, the business end of the season.
+[17:37] Um, so, um, I think that, you know, for the students, the undergraduate and graduate, there is a huge marketplace for you, um, to make an impact on sports.
+[17:49] Um, and I think to make a good deal of money doing so, uh, because if you are 1 of the people that can develop an algorithm that helps a certain sport, do certain things, particularly in.
+[18:01] Basketball football, soccer, um, then you're gonna be so, so, uh, inundated with job offers because you are a marginal game, or a huge game.
+[18:12] Uh, there's gonna help those teams be successful in the, in the present and in the future.
+[18:17] Um, so I wish you all the best in your, uh, your studies.
+[18:23] Uh, but then also in your professional careers after this, but, uh, uh, you know, what, what Jim's done today and what he continues to do and providing these opportunities. I think it's fantastic.
+[18:34] Um, and as a coach, um, we need, you.
+[18:38] Yeah, we need you, um, and, uh, you know, please keep working hard to develop, um, our sports and the way that we manage them.
+[18:46] Thank you. Thank you. Bye. Bye.
+[18:52] Pull up tomorrow practice

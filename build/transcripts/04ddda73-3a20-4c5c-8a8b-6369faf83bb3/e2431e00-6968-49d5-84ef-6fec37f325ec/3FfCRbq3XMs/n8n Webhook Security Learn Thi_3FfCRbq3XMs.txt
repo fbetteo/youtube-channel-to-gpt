@@ -1,0 +1,287 @@
+Video Title: n8n Webhook Security: Learn This Before It’s Too Late
+Video ID: 3FfCRbq3XMs
+URL: https://www.youtube.com/watch?v=3FfCRbq3XMs
+View Count: 36,244
+
+[00:00] If you're not protecting your web hooks,
+[00:01] you're putting yourself at risk for
+[00:02] waking up to a $500 bill or leaking your
+[00:05] sensitive information, stuff like that.
+[00:07] So, today I'm going to talk about the
+[00:08] three methods of setting up web hook
+[00:10] authentication. It's going to be super
+[00:11] simple. I'm going to show you an example
+[00:12] of each one and talk about when to use
+[00:14] each one. Okay. So, when we have a web
+[00:16] hook that basically triggers our end
+[00:18] workflow, what we have is a production
+[00:20] URL when our web hook is active. And
+[00:23] that means anyone that accesses this
+[00:24] endpoint right here can hit our workflow
+[00:27] and start it and take action in it. And
+[00:29] so obviously the immediate risk there is
+[00:30] that someone could message your agent a
+[00:33] million times and your agent would send
+[00:34] a million requests to OpenAI or Open
+[00:37] Router or whatever chat model you're
+[00:38] using and you will have to incur that
+[00:41] cost. But then there's also the risk of
+[00:42] the agent being hooked up to different
+[00:44] tools and different systems that access
+[00:46] your databases or your knowledge bases
+[00:48] or your CRM. So anyways, that's why in
+[00:50] your web hook, you probably want to have
+[00:52] a pretty robust path so that it's not
+[00:54] just like Nate and people could guess
+[00:56] it. But if someone does get a hold of
+[00:58] your publicly facing web hook, what you
+[01:01] can do is you can set up authentication.
+[01:02] And we have basic header or JWT. So I'm
+[01:06] going to show you guys an actual example
+[01:07] of me setting up all of these different
+[01:09] authentications. And we'll talk about
+[01:10] when you would want to use each one. So
+[01:12] just to show you guys how this works
+[01:13] initially with a web hook. When you set
+[01:15] it up, by default, the authentication is
+[01:17] going to be on none. And what happens is
+[01:18] I'm going to use this test URL. We're
+[01:20] going to have our edit workflow
+[01:22] listening for someone to hit that web
+[01:24] hook address. And I can go over to
+[01:26] Postman, which just lets us send
+[01:28] requests. I'm going to add a new one.
+[01:29] We're going to send a post request to my
+[01:31] web hook URL. And then I'm just going to
+[01:33] real quick send over a body message. So
+[01:36] the key is going to be message and the
+[01:37] body is going to be hello. So if I send
+[01:40] this over to Naden, you can see it's
+[01:42] going to grab it. The agent's going to
+[01:44] use our money to process it and then
+[01:46] respond to the Postman request, which
+[01:48] says, "Hello, how can I assist you
+[01:49] today?" And so the point being anyone
+[01:51] with this web hook if the workflow is
+[01:53] active could basically talk to my agent.
+[01:56] So the first way that we're going to
+[01:57] talk about is doing a header off. So all
+[01:59] I'm going to do is come into the web
+[02:00] hook right here. I'm going to choose
+[02:02] authentication header off and I'm going
+[02:04] to create a new one. And the easiest way
+[02:05] to think about this is let's say you're
+[02:07] using an API like perplexity or open
+[02:09] weather or whatever you're using.
+[02:11] Typically you have to send over some
+[02:13] sort of API key or password and that's
+[02:15] what actually authenticates you to use
+[02:17] their server. So in this case, just
+[02:19] pretend you're the server. We're setting
+[02:21] up a server with some backend
+[02:22] information that the user wants to
+[02:24] access. And in order for the user to
+[02:25] access it, they have to have our header
+[02:27] off information. So I'm going to go
+[02:29] ahead and create a new header off. The
+[02:31] name I'm just going to put in key. And
+[02:33] for the value, I just put in 1 2 3 4 5.
+[02:35] I'm going to go ahead and save that. And
+[02:37] now in order for someone to access our
+[02:39] web hook, they would have to put in that
+[02:40] exact header off. So our workflow is now
+[02:43] listening for us. And I'm going to go
+[02:44] ahead and just try to send this request
+[02:46] with no header off. and it says
+[02:48] authorization data is wrong. But if I go
+[02:50] to the header section right here and we
+[02:51] add a new one where I type in key and I
+[02:54] type in 1 2 3 4 5. Now if I send this,
+[02:58] we can see that our end workflow got
+[03:00] that information. It processed it and it
+[03:02] sent us back the response. Hello, how
+[03:04] can I assist you today? So that's the
+[03:05] first method which is header off. Very
+[03:07] simple to set up and we have basically
+[03:08] one key and one value. Now let's talk
+[03:10] about the next method which is going to
+[03:12] be basic off. So basic is very similar
+[03:14] because it's still kind of like a key
+[03:16] value pair, but it's more of a username
+[03:18] and a password. So if I go to basic goth
+[03:20] and we go ahead and create a new one,
+[03:22] you can see that we are prompted to set
+[03:23] up a username and a password. And so I
+[03:25] put in test as the user. I put in 1 2 3
+[03:27] 4 5 once again as the password. And
+[03:29] we're going to go ahead and save this.
+[03:30] And now if we have our workflow
+[03:32] listening for us and we go into Postman
+[03:34] and we're not sending over any headers
+[03:35] or basic off, once again it's going to
+[03:38] say authorization is required. So we
+[03:40] would go to authorization. We would
+[03:42] choose an O type. This is going to be
+[03:43] basic. And then we put in our username
+[03:45] and password. And now that I've put that
+[03:47] in, I can go ahead and send this
+[03:48] request. And AN is going to grab it,
+[03:50] process it, and we're going to get the
+[03:52] response over here, which is hello, how
+[03:53] can I assist you today? So the main
+[03:55] difference between a header off and a
+[03:56] basic off is just that some platforms,
+[03:59] some legacy systems basically have basic
+[04:02] off already integrated. So it's a lot
+[04:04] easier to just set that up and send data
+[04:05] to your web hook. But header offs are a
+[04:07] little bit more universal and
+[04:08] customizable because you can pretty much
+[04:10] always set up headers to send over when
+[04:12] you're making a request. But once again,
+[04:14] I have like a little decision tree right
+[04:16] here so you can figure out what type of
+[04:17] authentication method you need to use.
+[04:19] And then the final one, which may seem a
+[04:21] little bit more complex, but we're going
+[04:23] to make it really simple, is a JWT token
+[04:25] off or JSON web token. And the cool
+[04:28] thing about JSON web tokens is that it
+[04:30] lets you capture a payload. So you can
+[04:32] also see who's accessing it. You know,
+[04:34] what's their email? Are they an admin?
+[04:36] And then based on all that information,
+[04:37] you can give them access to different
+[04:38] things. You can also track sessions, so
+[04:40] you can see how many times someone's
+[04:42] accessing your backend server or
+[04:44] whatever it is. So, let me show you guys
+[04:45] how to set that up. Like I said, it's a
+[04:47] little more complex than header or
+[04:49] basic. And so, I'm at jwt.io, which just
+[04:52] lets us create these JSON web tokens.
+[04:54] So, what happens here is we're telling
+[04:55] it the algorithm and the type. So, don't
+[04:57] really worry about that. We're creating
+[04:59] a payload to send over. So, every time
+[05:01] someone hits our web hook, we're also
+[05:03] going to see their name, if they're an
+[05:04] admin or not. We could also put like
+[05:06] email, phone number, whatever we want in
+[05:07] this payload. And then we basically
+[05:09] create this secret and this is kind of
+[05:11] like a digital signature that says that
+[05:13] this person does have access to hit our
+[05:15] web hook. And once we put that in, we
+[05:17] get a JSON web token that has different
+[05:19] elements and it's basically encoded to
+[05:22] say who's accessing it and send over the
+[05:24] right payload. So in order to set this
+[05:25] up in NADN, what I'm going to do is I'm
+[05:27] going to copy this secret our signature
+[05:30] down here. We're going to go into the
+[05:31] web hook and we're going to choose JWT
+[05:34] off. Now, when I go to create a new one,
+[05:37] you can see that we need a key type and
+[05:39] an algorithm. So, right here, we're
+[05:40] going to keep it as passphrase and HS
+[05:42] 256, which is kind of like the most
+[05:44] common method. You can also see right
+[05:46] here we have algorithm HS256.
+[05:49] And so, remember, I copied this key down
+[05:51] here. That's what we're going to put in
+[05:52] right here as the secret. And now that
+[05:54] we have that secret set up, I can hit
+[05:55] save. And now we have our JWT off set
+[05:59] up. So, if we have the workflow
+[06:00] listening for us again and I go back
+[06:02] into jwt.io,
+[06:04] this would be my web token, which is
+[06:06] unique to me, Nate, an admin. So, I will
+[06:10] copy this right here. I will go back
+[06:12] into Postman. We're going to change off
+[06:14] of basic off. And we're actually going
+[06:15] to do bearer token rather than JWT
+[06:17] bearer because this allows us to just
+[06:19] put in one full token, which is exactly
+[06:21] what I just copied in JWT.io. So now if
+[06:25] I send this over to NN, it's going to
+[06:26] capture that and it's going to process
+[06:29] it and send us back a response which
+[06:30] once again is hello, how can I assist
+[06:31] you today? But what's cool about this is
+[06:34] if we go to the actual web hook response
+[06:36] that was captured and we scroll all the
+[06:38] way over to the right, we can see that
+[06:40] we capture this JWT payload and this is
+[06:43] where we can see the information about
+[06:44] who actually made this request. So, what
+[06:46] we'd be able to do with that is
+[06:48] basically say, okay, if admin equals
+[06:50] true, I'm going to send them up here to
+[06:52] this agent that has admin access. But if
+[06:55] admin equals false, they're going to
+[06:56] come down here to this agent that does
+[06:58] not have admin access. You could also
+[07:00] then start to see, you know, which of my
+[07:01] employees are accessing this service and
+[07:03] how many times are they accessing it,
+[07:04] what times are they accessing it. You
+[07:05] can look them up in your system based on
+[07:07] their email address and then you can see
+[07:08] what should they actually have access to
+[07:10] and route them to the right agent.
+[07:11] There's also some more complex things
+[07:12] you can do like you can set up their
+[07:14] token to only work for a day or you can
+[07:15] put some sort of time box on it. Not
+[07:17] really going to dive into the weeds of
+[07:18] that right now, but I really just wanted
+[07:19] to bring this to you guys' attention as
+[07:21] you go to set up, you know, your voice
+[07:22] agents or your your DM automations or
+[07:25] whatever it is where you have a web hook
+[07:27] that people publicly can access and you
+[07:30] want to make sure that they're not
+[07:31] abusing it. And as always, if you want
+[07:32] to download this template just so you
+[07:33] can play around with it and look at this
+[07:35] decision tree, all you have to do is go
+[07:36] to my free school community. The link
+[07:37] for that will be down in the
+[07:38] description. Once you get there, you'll
+[07:40] search up here for the title of this
+[07:41] video or you can click on YouTube
+[07:43] resources and scroll till you find it.
+[07:44] Let's say this is the post associated
+[07:46] with this video. You'd be able to click
+[07:47] on it. You'd see the YouTube video right
+[07:49] here and then you'd also have the file
+[07:50] right here to download. And if you're
+[07:52] interested in exploring some more
+[07:53] complex topics like this or you're a
+[07:55] beginner and you're looking for some
+[07:56] structured guidance, then definitely
+[07:57] check out my paid community. The link
+[07:58] for that is also down in the
+[07:59] description. We got a great community of
+[08:01] members who are sharing their wins and
+[08:02] their challenges they're facing every
+[08:03] day. We have a full classroom section,
+[08:05] agent zero, which is the foundations of
+[08:07] AI automation, and then 10 hours and 10
+[08:09] seconds where you learn how to identify,
+[08:11] design, and build time-saving
+[08:12] automations. So, anyways, would love to
+[08:14] see you guys in those communities. But
+[08:15] that's going to do it for today. I know
+[08:17] it was a quick one, but wanted to make
+[08:18] sure that I got this out so you guys
+[08:20] were aware of what could happen if you
+[08:21] don't protect your web hooks. So, if you
+[08:23] enjoyed or if you learned something new,
+[08:24] please give it a like. It definitely
+[08:25] helps me out a ton. And as always, I
+[08:27] appreciate you guys making it to the end
+[08:28] of the video. I'll see you on the next
+[08:29] one. Thanks guys.

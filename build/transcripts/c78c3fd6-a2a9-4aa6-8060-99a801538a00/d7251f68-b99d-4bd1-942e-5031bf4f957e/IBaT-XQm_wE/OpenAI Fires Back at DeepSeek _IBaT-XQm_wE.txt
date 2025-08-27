@@ -1,0 +1,407 @@
+Video Title: OpenAI Fires Back at DeepSeek With a New Reasoning Model: o3-mini (n8n AI Agent)
+Video ID: IBaT-XQm_wE
+URL: https://www.youtube.com/watch?v=IBaT-XQm_wE
+View Count: 26,604
+
+[00:00] so let's go ahead and throw a query at
+[00:01] this travel agent and we will see what
+[00:02] we get we're asking for it to plan a
+[00:04] 5-day trip to Paris with a budget of
+[00:06] $2,000 so let's see it's hitting the
+[00:08] openai reasoning model right now first
+[00:10] of all it's hitting the resort so it
+[00:12] just grab Resort information it's going
+[00:13] back to open ai's model to see what to
+[00:15] do next it's going to hit either the
+[00:17] flights database or the activities
+[00:19] database to continue planning this
+[00:20] itenerary for us it needs to gather all
+[00:22] the information um like I said to
+[00:24] structure that itinerary um human readly
+[00:26] so now we've got flights information
+[00:28] we've got activities information and
+[00:29] finally right now it's formatting that
+[00:31] into HTML structure and then it's going
+[00:32] to hit the send itenerary Gmail tool in
+[00:35] order to actually send that out to us
+[00:36] and then we'll be able to take a look at
+[00:38] what it what it did okay there we go so
+[00:40] we just saw it hit the send itenerary
+[00:41] Gmail tool now it finished up we'll see
+[00:43] what it said back to us looks like you
+[00:45] received the itenerary email please
+[00:47] check your inbox for the detailed 5day
+[00:49] trip to Paris so let's go ahead and
+[00:51] check that out in our Gmail all right as
+[00:53] you can see we just got this email back
+[00:54] the subject is your 5-day Paris trip I
+[00:56] tenary with a budget of $2,000 so that's
+[00:58] great it keeps that into account when
+[01:00] it's going through and reasoning how to
+[01:01] make this itinerary so we've got our
+[01:03] travel and flight details we're flying
+[01:04] Air France we've got our routes and
+[01:07] we've got the departure and return time
+[01:08] and we have our price then we have
+[01:10] accommodation for a comfortable
+[01:11] centrally located stay we recommend a
+[01:13] budget friendly hotel such as Hotel IIs
+[01:15] Paris um or similar so we've got that
+[01:17] information 600 700 bucks and then we
+[01:19] have a day-by-day itinerary remember we
+[01:21] asked for a 5-day trip so it planned out
+[01:23] 5 days um we have different activities
+[01:26] here morning afternoon evening um we
+[01:28] have even different options down here it
+[01:29] gives us option A and option b stuff
+[01:31] like that and then it's going to give us
+[01:32] a summary at the end of here's the
+[01:34] flight here's the accommodation here's
+[01:35] your expenses um and it's pretty much
+[01:37] keeping everything about $2,000 like we
+[01:39] asked for in the beginning and as you
+[01:41] can see um it's a really nicely
+[01:42] formatted itinerary for us so yesterday
+[01:45] open AI just released 03 mini which is
+[01:47] their newest most cost-efficient
+[01:49] reasoning model to date it seems like
+[01:51] this may have been a direct response to
+[01:52] all the models that deeps has been
+[01:54] releasing lately that have completely
+[01:55] took the World by storm and made
+[01:57] everyone sell their shares of Nvidia
+[01:59] anyways what's really cool about 03 is
+[02:01] that it's their first small reasoning
+[02:02] model that supports highly requested
+[02:04] developer features including function
+[02:06] calling structured outputs and developer
+[02:08] messages making it production ready
+[02:10] right out of the gate this model is
+[02:11] super fast and powerful and optimized
+[02:13] for stem reasoning as you can see it's
+[02:15] outperforming 01 in math in PhD level
+[02:18] science questions in um competition code
+[02:21] all this kind of stuff I'll leave the
+[02:22] link to this open aai release um
+[02:25] information Down Below in the
+[02:26] description if you want to check it out
+[02:27] for yourself but we don't want to spend
+[02:28] too much time here what we want to do is
+[02:30] we want to get into nadn plug it into an
+[02:32] agent with different tools and see how
+[02:33] it works so that's exactly what we're
+[02:35] going to be doing here today as you can
+[02:36] see I built out a travel agent it's
+[02:38] accessing these three different
+[02:39] databases in Pine Cone that have
+[02:41] information on Resorts information on
+[02:42] flights and then information about
+[02:44] different activities to do based on
+[02:45] where you are and um finally it's going
+[02:48] to take all that information and then
+[02:49] put it into an HTML formatted email and
+[02:51] then send out that itinerary based on
+[02:54] the user input of course which in here
+[02:55] we're just chat chatting with a trigger
+[02:57] with an nadn so we played around with
+[02:59] deep see we've seen that it's been
+[03:00] really really cool but when you try to
+[03:02] hook up tools to an agent it's not
+[03:03] really supported for that so it'll be
+[03:05] really cool to see how o03 mini performs
+[03:07] when we give it access to these four
+[03:09] different tools and it also has that
+[03:10] aspect of reasoning through and creating
+[03:12] hopefully a really really nicely
+[03:14] structured itinerary based on all the
+[03:16] information it's going to get from these
+[03:17] databases and what the we ask for up
+[03:20] front so of course step one is to
+[03:21] connect our AI agent to open ai's new
+[03:24] model which is 03 so if we wanted to
+[03:26] click on this chat model and we go down
+[03:27] to open AI chat model what see here is
+[03:30] that let me just fix the credential
+[03:32] because that wasn't my open a credential
+[03:33] but anyways what we'll see here is that
+[03:35] we don't have 03 mini yet so this is
+[03:37] just because it's so new um we may get a
+[03:39] preview out here or something soon it
+[03:41] literally just released yesterday um and
+[03:43] so if you're watching this video later
+[03:45] it will probably be here but for now we
+[03:46] have a really easy solution which is um
+[03:49] we can just connect to open router which
+[03:52] thanks to the update that also happened
+[03:54] yesterday or the day before um we have
+[03:56] the native open a open router chat model
+[03:58] now so this is really cool
+[04:00] all you have to do is go to open router
+[04:02] you will click up in the top right after
+[04:03] you make an account go to Keys create a
+[04:06] new key copy that into your credential
+[04:08] section right here when you go to create
+[04:10] a new credential paste that key in there
+[04:12] and then you'll have all the models to
+[04:13] choose from and as you can see right
+[04:14] here we have open AI 03 mini what's also
+[04:17] really cool about open router is that
+[04:18] once you are using different models you
+[04:20] can click on activity and you can see
+[04:22] which ones you're using you can see how
+[04:23] much they're costing you all that kind
+[04:24] of stuff so as you can see I've been
+[04:25] playing around with open AI 03 mini it's
+[04:27] been about 007
+[04:30] per input and output um so it's
+[04:32] definitely not too expensive so you saw
+[04:34] a demo in the beginning of this video
+[04:35] Let's really quickly break down what's
+[04:37] actually going on within this workflow
+[04:39] and um and then we'll do one more test
+[04:41] at the end so what we've got here like I
+[04:43] said is three different pine cone
+[04:44] databases so if you were really wanting
+[04:46] to build out a travel agent you'd
+[04:47] probably want to hook it up to different
+[04:49] apis that can go scrape for Resorts go
+[04:51] scrape for flights go scrape for
+[04:52] activities for the say this video I just
+[04:54] want to throw something together quick
+[04:56] and the purpose is still the same of can
+[04:58] 03 reason through the prompt reason
+[05:01] through its system message and
+[05:03] understand how to hit tools and how to
+[05:04] pull information back and clearly it
+[05:06] does because it hits all these three
+[05:07] tools formats the information into HTML
+[05:10] email and then sends it off with the
+[05:11] other tool so it's doing four Total Tool
+[05:13] calls here so as far as the databases go
+[05:15] like I said they're on Pine Cone there
+[05:17] are three different Nam spaces this Nam
+[05:19] space is Resorts this Nam space is
+[05:21] flights and then the last one of course
+[05:22] is activities and if we switch over to
+[05:24] my pine cone real quick you can see I've
+[05:26] got activities flights and Resorts so
+[05:28] that's how we hooked up these three
+[05:29] different databases to this agent and if
+[05:31] you want to replicate this experiment in
+[05:33] your own an instance you can download
+[05:35] this workflow for free as well as this
+[05:36] workflow that I used to push the
+[05:38] documents into pine cone all you have to
+[05:40] do is join my free school Community once
+[05:41] you join all you'll have to do is click
+[05:43] on the post associated with this
+[05:44] specific video you can click into the
+[05:46] Json file and download it once you have
+[05:48] that file all you have to do is click on
+[05:49] the top right three dots in your nadn
+[05:52] click import from file and then once you
+[05:54] choose that Json it'll open up right
+[05:55] here for you and if you're looking to
+[05:56] take your learning with nadn and a
+[05:58] automations a little bit farther you're
+[05:59] looking for more hands-on experience
+[06:00] feel free to check out my paid Community
+[06:02] the link for that will also be down in
+[06:03] the description as you can see we've got
+[06:04] a great community of members who are
+[06:06] learning nadn and also sharing their
+[06:08] resources and their challenges that
+[06:09] they're facing we've got a great
+[06:11] classroom section as well with different
+[06:12] Deep dive topics and these resources are
+[06:14] always being updated and then finally
+[06:15] we've got a calendar with five live
+[06:16] calls per week which is super exciting
+[06:18] we've got three Tech supports one coffee
+[06:20] chat one weekly Q&A and as you can see
+[06:22] in February we've already got three
+[06:23] guest speakers planned which is really
+[06:24] really exciting and hopefully we have
+[06:26] multiple guest speakers every month so
+[06:27] I'd love to see you guys in these calls
+[06:29] let's get back back to the video all
+[06:30] right so that's what the database looks
+[06:31] like that's where it's getting its
+[06:32] information and then the last thing it
+[06:34] needs to do is actually send out the
+[06:35] email so right now I just put my email
+[06:37] it's going to be fixed so every time I
+[06:39] activate this agent it's going to send
+[06:40] an email to this address rather than
+[06:42] being able to dynamically put that in if
+[06:44] you want it to do dynamically you could
+[06:45] do that super easily by making this an
+[06:47] expression and then you utilize the from
+[06:49] AI function that we're using in the the
+[06:50] subject and the message parameters and
+[06:53] just put in from Ai and then the key
+[06:54] would be like an email address or
+[06:56] recipient or something like that anyways
+[06:58] obviously we're sending a message Mage
+[07:00] and we wanted to do HTML this time
+[07:02] rather than text because we could just
+[07:03] get it formatted a little better a
+[07:05] little more human readable for us and
+[07:07] then finally we just turned off the
+[07:08] append naden attribution so that at the
+[07:11] bottom of the email it doesn't say that
+[07:12] this was generated by naden so let's
+[07:15] take a quick look at the prompt and then
+[07:17] we'll send off another example and see
+[07:18] what type of itenerary we get back so I
+[07:20] got this prompt by using my AI agent
+[07:22] prompt architect that gives us markdown
+[07:24] formatted prompts as you can see I told
+[07:25] it what the agent's going to do and then
+[07:27] after it gave me an initial one I was
+[07:28] able to say perfect now I want to add
+[07:29] another tool called send itinerary so
+[07:31] it's able to have that memory and work
+[07:33] with us and then we could copy and paste
+[07:34] this prompt straight into our AI agent
+[07:37] with the markdown because that's super
+[07:38] important for us to be able to
+[07:39] understand as well as um saying like you
+[07:41] know this is your overview this is your
+[07:42] context these are instructions anyways
+[07:44] so we told that you have access to four
+[07:46] tools Resorts is for information about
+[07:48] Resorts flights activities send
+[07:50] itenerary um at the end you have to send
+[07:52] the itenerary in a HTML format what we
+[07:56] wanted to do is give it instructions
+[07:57] because when I first started doing this
+[07:58] it wasn't calling the tools or sometimes
+[08:00] it was just calling one or the other so
+[08:02] what we said is always call all three
+[08:03] data retrieval tools before providing
+[08:05] any response so use all three of the
+[08:07] tools and then based on the retrieved
+[08:08] information create a detailed itinerary
+[08:10] that includes stuff like recommended
+[08:12] Resorts flights a day-by-day breakdown
+[08:14] of activities and then once the
+[08:15] itenerary is logical well paced align
+[08:18] with the Traveler's preferences based on
+[08:20] what they say up front at the beginning
+[08:22] then you can format that final itenerary
+[08:23] and HTML format and send that off to the
+[08:26] send itenerary Gmail tool so um very
+[08:28] simple prompt here we get gave it a few
+[08:29] examples and then we told it sort of how
+[08:31] to structure your HTML and then just
+[08:33] gave it standard operating procedures
+[08:35] and final notes so I know I went through
+[08:37] that quick if you want to take a little
+[08:38] more in-depth look at the prompt go
+[08:40] ahead and download this workflow The
+[08:42] Prompt will be in there and you'll be
+[08:43] able to sort of break down what's going
+[08:44] on okay cool so we broke down what's
+[08:46] going on within this workflow one thing
+[08:48] I want to mention before we do one final
+[08:49] test is that this may not be the optimal
+[08:52] way to structure a travel agent because
+[08:54] this kind of stuff is happening
+[08:56] sequentially rather than variably so
+[08:58] what I mean by that is the agent has
+[09:01] autonomous decision here to use the
+[09:03] different tools but in this case every
+[09:05] single time we want it to check Resorts
+[09:08] check flights check activities and then
+[09:10] send a message so if I was really trying
+[09:12] to build this out to be sort of a
+[09:13] production ready agent what I would do
+[09:15] is build it linearly sequentially rather
+[09:17] than having this be like a parent type
+[09:20] tooling uh multi-tool agent um anyways
+[09:23] so what we would do is maybe have like a
+[09:26] an agent that originally takes the query
+[09:28] and then gets Resort information then
+[09:29] passes it off to another another agent
+[09:31] to get flight information and activity
+[09:33] information then finally a send email
+[09:34] tool um just because having that linear
+[09:37] flow may cut down on sort of like errors
+[09:39] and hallucination with data transfer and
+[09:41] Tool calling okay so now we've got that
+[09:43] out of the way let's send off one more
+[09:45] query to end this one off so what we're
+[09:47] saying here is I need a week-long
+[09:48] vacation in Sydney Australia recommend
+[09:50] flights a hotel with a pool and some
+[09:52] activities so it just hit the resorts
+[09:53] tool now it's going to go back to the
+[09:55] model it's thinking about what to do
+[09:56] next it should be understanding that it
+[09:58] needs to hit flights so it can get
+[09:59] flight information and then finally
+[10:01] needs to get activities so it can
+[10:03] recommend activities of course so it
+[10:05] just hit flights um now it's going to
+[10:07] activities and then it's going to pull
+[10:08] that all back right now it's creating
+[10:09] that HTML formatted itinerary going to
+[10:12] send that off to our Gmail and then
+[10:13] we'll take a look at what we got okay so
+[10:14] here's what we got as you can see it
+[10:16] actually formatted a little bit
+[10:17] differently from the demo in the demo we
+[10:18] got those horizontal bars which I really
+[10:20] liked so maybe we can go back and try to
+[10:22] refix that prompting but here we have
+[10:24] our weeklong Sydney vacation itinerary
+[10:26] um as you can see the HTML looks really
+[10:27] good we've got sort of like headers and
+[10:29] sub headers that kind of stuff we have
+[10:30] our flight details which is a little bit
+[10:32] over a week so maybe that's just because
+[10:34] that's the only flight they had in the
+[10:35] database um hotel accommodations we
+[10:38] asked for a pool looks like this one has
+[10:40] a refreshing pool and top-notch
+[10:41] amenities and then we have 7 Days
+[10:43] planned which are um arrival and
+[10:46] relaxation landmarks Harbor Bridge Bondi
+[10:49] Beach um cultural immersion adventure
+[10:51] and nature and then Leisure and
+[10:53] Department preparation also this one
+[10:55] didn't sign off the same way the other
+[10:56] one did where it was like best regards
+[10:58] your travel team or whatever so there's
+[11:00] a little bit of variability here like I
+[11:02] said the prompt I made really quickly
+[11:03] with that um prompt gbt generator which
+[11:06] you can get in my free school Community
+[11:08] as well but as you can see um we just
+[11:10] spun something up really really quick
+[11:12] like I said this took me probably 5 to
+[11:13] 10 minutes to set up um I used chbt to
+[11:16] just create me some fake example data
+[11:17] for the resorts the flights and the
+[11:19] activities but the purpose of this video
+[11:21] was to show you how to connect to open
+[11:22] ai's new 03 Mini model that's their
+[11:25] reasoning model more cost effective um
+[11:27] you can do that through open router you
+[11:28] can check on your usage up there and the
+[11:30] new native node thanks to the new 1.77
+[11:33] update makes that super super quick and
+[11:35] easy but um yeah as you can see the tool
+[11:37] calling works pretty well the reasoning
+[11:39] is clearly pretty well pretty good as
+[11:41] far as how it's able to plan out an
+[11:43] itenerary based on given information and
+[11:45] then it was able to format something
+[11:46] pretty nice for us as well in an email
+[11:48] so that's all I've got for you guys
+[11:49] today as always really appreciate you
+[11:51] making it to the end hope this one was
+[11:52] helpful if it was please give it a like
+[11:54] definitely helps me out a lot and I will
+[11:56] see you guys in the next one

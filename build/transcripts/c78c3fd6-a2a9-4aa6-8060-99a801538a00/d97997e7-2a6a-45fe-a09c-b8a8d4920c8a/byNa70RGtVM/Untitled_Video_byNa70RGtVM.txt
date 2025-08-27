@@ -1,0 +1,980 @@
+Video Title: Untitled_Video
+Video ID: byNa70RGtVM
+URL: https://www.youtube.com/watch?v=byNa70RGtVM
+View Count: 0
+
+[00:00] hello W welcome to the uh one of our
+[00:04] first parallel sessions this is a
+[00:06] session sponsored by the uh Corey
+[00:08] Stringer Institute so my name is Jackson
+[00:10] Lauder I'll be the chair I'm from uh
+[00:13] Bentley University just because we have
+[00:15] four speakers and I want to keep the
+[00:17] time as quick as possible I'm going to
+[00:18] keep the introductions very brief and on
+[00:21] that note our first speaker is Julie
+[00:24] Berlin from the University of
+[00:26] Connecticut so Julie
+[00:35] hello so today I'm going to talk about
+[00:37] cumulative impact load injury and
+[00:39] cartilage synthesis in College women's
+[00:41] basketball
+[00:43] athletes so there are approximately
+[00:45] 500,000 female basketball athletes both
+[00:48] in the high school and Collegiate
+[00:49] settings that have um are vulnerable to
+[00:52] injury risk and you know when we think
+[00:54] about injury and and what that does to a
+[00:57] person um you know it can cause a lot of
+[00:59] long long term joint health issues as
+[01:01] well as psychological consequences and
+[01:04] can really alter someone's quality of
+[01:05] life long
+[01:07] term injuries specifically um what we'll
+[01:10] talk about today they can they can occur
+[01:11] from both acute high impact loads or
+[01:14] from cumulative loading over time right
+[01:16] so someone takes a really hard step one
+[01:17] time gets injured or someone kind of
+[01:19] takes a lot of repetitive steps over
+[01:22] time and you know Dr Morgan did a nice
+[01:25] job talking about impact loads and
+[01:27] forces um so I'll just Orient you
+[01:29] slightly um quickly here to this image
+[01:31] um we can often measure impacts through
+[01:35] um Force plates or inertial measurement
+[01:37] units um and so on the bottom we see
+[01:40] estimated vertical ground reaction
+[01:42] forces um so during running as well as
+[01:45] kind of the tibial acceleration values
+[01:46] that we would get from an IMU and these
+[01:49] are nice because they can go right you
+[01:51] know with the athlete wherever they are
+[01:53] during
+[01:54] activity so impact loading during
+[01:56] Landing has been associated with acute
+[01:58] joint injuries such as ACL tears um as
+[02:02] well as chronic overuse injuries such as
+[02:04] patelofemoral
+[02:05] pain unfortunately females are six times
+[02:08] more likely than males to sustain
+[02:10] injuries like this and 40 almost 42% of
+[02:14] traumatic joint injuries occur at the
+[02:16] knee and the ankle um and both of these
+[02:18] increase the risk for joint OA
+[02:21] osteoarthritis excuse
+[02:26] me so we wanted to look at whether
+[02:28] impact load was related to lower
+[02:30] extremity injury uh specifically in a
+[02:32] more athletic uh population versus just
+[02:34] in running so we know that excessive
+[02:37] impact loads during Landing can be
+[02:39] injurious to muscular skeletal tissue
+[02:42] such as cartilage bone um especially if
+[02:44] these forces are not appropriately
+[02:46] attenuated so what we have on this graph
+[02:49] um on the Le hand side of the screen is
+[02:51] a um depiction of impact load per minute
+[02:53] and cumulative impact load that was
+[02:55] estimated through two um wearable Imus
+[02:58] on the lower leg this was taken during
+[03:00] running so as you can see um over the
+[03:02] course of about an hour maybe 45 minutes
+[03:06] um the impact load per minute kind of
+[03:09] increased but it was pretty constant and
+[03:11] as that duration went up cumulative
+[03:13] impact load also
+[03:16] increased what we have here is now a
+[03:18] depiction of a basketball um physical
+[03:20] activity um session so over the course
+[03:24] of the session you can see that impact
+[03:25] load per minute was much more variable
+[03:28] um had a lot more higher Peak
+[03:30] and again that cumulative impact load
+[03:32] did increase substantially compared to
+[03:35] you know a running just a straight line
+[03:36] running um
+[03:39] task so to this point high impact loads
+[03:42] coupled with you know potential faulty
+[03:44] alignments or um faulty movement
+[03:46] patterns may actually amplify abnormal
+[03:49] loading of joints um specifically
+[03:51] increasing long-term risk for you know
+[03:53] joint damage and
+[03:56] reinjury so we know that accumula
+[04:00] acute and cumulative impact forces have
+[04:02] been associated with running related
+[04:04] injuries but there's less evidence of
+[04:05] this relationship in basketball athletes
+[04:07] specifically at the lower
+[04:10] limb there has been previous work that
+[04:13] have utilized these sensors to evaluate
+[04:15] relationships between impact load
+[04:17] cumulative bone stimulus and Bone stress
+[04:19] injuries in male basketball athletes um
+[04:21] this has been done in the NBA as well as
+[04:23] in some college division one teams um
+[04:25] some of this research is still
+[04:27] unpublished um but there has been very
+[04:29] limited work in women's um basketball
+[04:33] athletes so we also wanted to know how
+[04:37] impact loading can affect joint health
+[04:38] and injury risk right because we you
+[04:40] know we want to keep our players healthy
+[04:42] and we want to keep their joints healthy
+[04:43] long term even if they do sustain
+[04:46] injury so excessive impact forces you
+[04:49] know not only can they cause injury but
+[04:51] they also might initiate an inflammatory
+[04:53] process in the joint itself um and there
+[04:56] has been some previous work that has dis
+[04:59] discussed serum biomarker panels um that
+[05:01] measure cartilage metabolism so both
+[05:03] degradation and synthesis markers that
+[05:06] can potentially identify individuals um
+[05:08] who might go on to um sustain a lower
+[05:10] extremity injury and the reason why
+[05:13] these serum um biomarkers have been
+[05:15] studied is because they're not abundant
+[05:17] in healthy joints right so if we took
+[05:18] someone who's never had a lower
+[05:19] extremity injury and pulled some blood
+[05:22] likely we wouldn't see elevated levels
+[05:24] of these Mar these markers um
+[05:27] additionally these have been um
+[05:29] established as kind of an early
+[05:31] indication of trauma or potentially load
+[05:33] related inflammation and some previous
+[05:35] Studies have looked at these markers um
+[05:38] before you know someone starts a a
+[05:40] training program especially in the
+[05:41] military and they found that actually
+[05:43] elevations in some of these markers
+[05:45] those Cadets went on to tear their ACL
+[05:48] during that you know study period so it
+[05:50] has been identified as potential injury
+[05:52] risk um in some
+[05:56] populations so you know we really wanted
+[05:59] to kind of helped predict injury risk so
+[06:01] our Central questions were are high
+[06:02] impact load and cumulative limb load
+[06:05] related to injury and can a subset of
+[06:08] impact load metrics and Crum biomarkers
+[06:10] provide some of these important like
+[06:12] indicators for us um of an athlete
+[06:14] that's potentially you know developing
+[06:16] or at risk for a near future
+[06:20] injury again really we wanted to
+[06:22] identify whether athletes um you know in
+[06:25] our team might be uh at risk for a lower
+[06:27] extremity joint injury or performance
+[06:29] deficit
+[06:32] so what we did was we employed a
+[06:33] prospective longitudinal season study
+[06:35] over a single season that track from
+[06:38] about August to the end of April um we
+[06:40] collected daily impact load using these
+[06:43] two um their blue Trident um inertial
+[06:45] measurement unit sensors we also looked
+[06:48] at cartilage biomarkers across the
+[06:50] entire season as we thought that these U
+[06:52] metrics might fluctuate with different
+[06:54] differing levels of impact load and
+[06:56] intensity throughout the season we
+[06:58] collected biomarkers at the offseason so
+[07:00] before they even started any uh
+[07:02] basketball related activities during
+[07:04] their preseason twice during their
+[07:06] regular season once before playoffs and
+[07:08] then once again after they had ceased
+[07:11] all basketball
+[07:12] activities and we really wanted to
+[07:14] correlate these impact metrics with RCM
+[07:17] biomarkers um to identify people at risk
+[07:20] and to also establish you know the
+[07:22] relationship between impact load and
+[07:24] biomarkers um with lower extremity joint
+[07:26] injury and to kind of look at these
+[07:28] relationships together as it hasn't
+[07:30] really been done in this
+[07:33] population so for our methods we had um
+[07:37] 11 Collegiate female basketball athletes
+[07:40] um again who participated in this uh
+[07:42] longitudinal study we collected like I
+[07:44] said daily impact load metrics um the
+[07:48] software that was utilized calculated
+[07:50] cumulative bone stimulus as well as
+[07:52] impact load and step count intensity so
+[07:54] that's how hard someone when they're
+[07:56] stepping how hard or how many G's that
+[07:59] um sensor experience or that limb
+[08:01] experience during that step particularly
+[08:03] and this was collected again every day
+[08:05] during
+[08:08] practice over those six different time
+[08:10] points we did collect those serum
+[08:12] biomarkers of cartilage metabolism and
+[08:14] we looked at one marker of cartilage
+[08:17] degradation which was the C2C as well as
+[08:20] um two markers of cartilage synthesis
+[08:22] cp2 and cs846 I won't ask you to
+[08:25] remember those um but generally we
+[08:27] collected both degradation and synthesis
+[08:29] because we wanted to look at you know
+[08:30] metabolism and whether or not there were
+[08:32] changes in either of those again those
+[08:34] were collected at six time points and
+[08:36] Frozen and processed on the back end of
+[08:38] the study
+[08:41] altoe and then we looked at the
+[08:43] incidence of lower extremity injury this
+[08:44] was recorded by the team's athletic
+[08:46] trainer um or their usual protocol um
+[08:49] injury was defined as um being removed
+[08:53] from play diagnosed by an injury by the
+[08:55] athletic trainer healthc care
+[08:56] professional um Team physician um that
+[08:59] um required or caused them to lose one
+[09:01] or more days in um actual
+[09:04] participation and for the purpose of the
+[09:06] study because we were looking at joint
+[09:08] um cartilage we only looked at lower
+[09:10] extremity joint injuries so we did not
+[09:11] look at like muscular injuries or trunk
+[09:13] or upper extremity injuries that were
+[09:17] sustained so for impact load again um
+[09:21] you should be familiar with this graph
+[09:23] but impact load was calculated um based
+[09:25] on the number of steps at each specific
+[09:27] G that the um IMU measured and so the
+[09:30] metric was um output as the total number
+[09:33] of steps by the actual like acceleration
+[09:36] value that um that it was calculated
+[09:40] out for step count and impact intensity
+[09:43] um we have um the way that the software
+[09:47] uh captures these is that it bends um
+[09:49] actual step counts and intensities into
+[09:51] three different bins one is from 1 to 5
+[09:54] that's the low intensity medium
+[09:56] intensity is from 6 to 20 G's and then
+[09:59] high intensity is from 21 to 200 g so
+[10:02] these sensors I particularly use for
+[10:04] this study because they had the higher
+[10:05] capacity to capture higher accelerations
+[10:08] where some older Imus don't they cap at
+[10:10] like 16g so we would lose a lot of those
+[10:12] higher impacts especially with
+[10:14] basketball
+[10:17] athletes cumulative bone stimulus is
+[10:19] essentially calculated um or it's an
+[10:22] estimate of the peak resultant
+[10:23] acceleration or impact from every foot
+[10:25] contact with the ground throughout the
+[10:27] duration of practice
+[10:31] so as for sensor use and placement we
+[10:32] had these really ugly orange bands um
+[10:35] that went just uh one cent um one IMU
+[10:38] width above the medial malas on both the
+[10:41] left and right limbs um the Imus were
+[10:43] oriented properly so that the global
+[10:45] coordinate systems of each um IMU were
+[10:49] appropriate for the left and right
+[10:51] limbs these were put on before practice
+[10:54] and taken off
+[10:56] after so um to describe kind of impact
+[10:59] load cartilage markers across the season
+[11:02] um over the course of the Season we had
+[11:05] 13 joint injuries including some lateral
+[11:07] ankle sprains uh tibial femoral
+[11:09] cartilage lesion uh medial collateral
+[11:11] ligament injury patellar dislocation um
+[11:16] and we really we we described a lot of
+[11:20] these results descriptively initially
+[11:22] because this is a very small sample and
+[11:24] it was a preliminary study just
+[11:26] initially evaluating these relationships
+[11:28] in this population so to orient you to
+[11:31] this graph this is um a descriptive plot
+[11:33] of impact load and injury over the
+[11:35] course of a season so at the bottom it's
+[11:37] kind of hard to see but you have weeks
+[11:39] um it goes from week one to week 25 we
+[11:42] essentially sum data over the course of
+[11:44] a week that um was Sunday to Saturday um
+[11:49] and kind of lump them into like
+[11:50] preseason regular season and postseason
+[11:52] time points because this is what's
+[11:53] important to us right um the blue line
+[11:56] is left right uh orange is bright and
+[11:59] green is total impact load so just to
+[12:01] give you kind of an example of what that
+[12:03] looks like over the course of the season
+[12:05] and the asteris denote the um recorded
+[12:07] joint injuries that
+[12:09] happened um additionally for our um the
+[12:13] relationship between um impact load
+[12:16] biomarkers and injury we use Point by
+[12:18] serial correlations and then to look at
+[12:20] you know the season long injury
+[12:22] incidents and cartilage markers and
+[12:24] impact load we looked at um Pierce and
+[12:26] product moment
+[12:28] correlations so again descriptively for
+[12:30] our um biomarkers we have our
+[12:32] degradation marker on top and our two
+[12:34] synthesis markers on the bottom um there
+[12:37] we didn't run in uh any differences
+[12:40] between these at each time Point um but
+[12:42] we can kind of see that they there's
+[12:44] there's not a real massive like increase
+[12:46] in any of these except for the bottom um
+[12:48] from offseason to preseason where we saw
+[12:50] a a very large jump um in the
+[12:53] concentrations um comparatively to the
+[12:56] other um two markers
+[12:59] so what we what we actually found
+[13:01] statistically was that when we looked at
+[13:04] impact intensity and its relationship to
+[13:06] injury we found that individuals that
+[13:08] had increased medium range so they took
+[13:11] more steps in that 6 to 20 um G range um
+[13:16] during like the week five which was
+[13:18] around you know mid to late October so
+[13:20] still preseason technically um when they
+[13:24] had increased steps in that range as
+[13:26] well as increased steps in the high
+[13:28] range um dur during week eight which was
+[13:30] just a couple weeks after that so still
+[13:32] very very um on the tail end of
+[13:34] transitioning from um preseason to
+[13:36] regular season um these were both
+[13:38] associated with increased risk of injury
+[13:41] and what we saw um again just
+[13:43] descriptively is that like over um
+[13:46] underneath each one of these bins is the
+[13:49] mean and standard deviation of the steps
+[13:51] that were taken for all athletes over
+[13:53] the course of the entire season um so
+[13:55] there's obviously a wide standard
+[13:56] deviation but the point is is that they
+[13:59] had the most steps in the low range
+[14:01] which is great right they can take all
+[14:03] the steps they want in that low G range
+[14:06] but as they um as we had more people
+[14:09] that had medium and higher impacts in
+[14:12] those in those medium and high ranges
+[14:14] those were when we started to see that
+[14:16] they were experiencing injury um in that
+[14:18] same kind of
+[14:23] week so when we looked at cumulative
+[14:25] bone stimulus and cartilage metabolism
+[14:27] and its relationship to Y what we found
+[14:30] was that the um increase in cartilage
+[14:33] synthesis was uh also associated with
+[14:35] increased cumulative bone stimulus um at
+[14:38] our kind of playoff or postseason time
+[14:41] point for both Limbs and um another our
+[14:45] other cartilage synthesis marker um at
+[14:48] preseason um so at the offseason when
+[14:50] they haven't even started playing as
+[14:52] well as at the very beginning of their
+[14:54] um regular season um this was also
+[14:57] associated with increased um Seas season
+[14:59] long injury incidences so when I was
+[15:01] looking at these results I was like huh
+[15:02] that's interesting like we have this
+[15:04] elevation in cartilage synthesis which
+[15:05] actually doesn't track with what you
+[15:07] think you know we we'd probably you know
+[15:10] assume that you'd see cartilage
+[15:11] degradation markers but we saw this
+[15:13] increase in cartilage synthesis um and
+[15:15] it was associated with season long
+[15:17] injury incidents um in these athlets
+[15:21] specifically so what's the clinical
+[15:23] relevance of this right so it's clear I
+[15:26] mean again this is a preliminary study
+[15:28] but there were temporal changes in this
+[15:30] impact intensity in our cumulative bone
+[15:32] stimulus and cartilage biomarkers and
+[15:35] really kind of underscoring how these
+[15:37] relationships are obviously Dynamic
+[15:38] through n uh through the season which we
+[15:41] expect um what I was very surprised to
+[15:44] see was kind of the relationship between
+[15:45] preseason and early season cartilage
+[15:47] synthesis markers um and subsequent
+[15:50] injury incidents right um and this
+[15:52] really you know to me and to some of my
+[15:55] colleagues highlights the potential uh
+[15:57] feasibility of these biomarkers serving
+[15:59] as early predictors of injury
+[16:01] susceptibility or there's some
+[16:02] underlying joint issue that's going on
+[16:04] in these healthy
+[16:07] athletes this also increases our
+[16:09] understanding of how mechanical loading
+[16:11] might be related to biological responses
+[16:13] right specifically with regards to
+[16:15] cartilage
+[16:16] metabolism and it really kind of
+[16:18] highlights the implication um for
+[16:20] metabolic joint changes and intensity
+[16:22] over the season so as intensity changes
+[16:25] we have changes in these biomarkers like
+[16:27] how does that relate
+[16:31] longterm and then long-term implications
+[16:33] really include you know once we kind of
+[16:36] do this study again in a larger
+[16:38] population um and find maybe find
+[16:41] similar findings you know our hope is to
+[16:42] really include some tailored injury
+[16:44] prevention strategies and training
+[16:46] interventions um to these groups to help
+[16:49] them move appropriately help them load
+[16:50] appropriately um and reduce you know
+[16:53] joint joint injury as well as maintain
+[16:55] joint health um throughout their career
+[16:58] and after
+[17:06] thanks take any questions if you have
+[17:15] any
+[17:26] yeah they might be
+[17:38] um for this particular study we didn't
+[17:39] have anyone like have an issue or have
+[17:42] concerns about providing their blood
+[17:43] serum um what I did was I waited until
+[17:47] the end of the season so following the
+[17:49] cessation of the study um period to
+[17:52] actually process of biomarkers and it
+[17:54] actually took me another like four to
+[17:56] five months to kind of work through
+[17:57] those processing results um so we've
+[18:00] also shared these results only globally
+[18:03] with these athletes we didn't give
+[18:05] individual um like biomarker levels just
+[18:08] from like a an IRB sake um as well as
+[18:12] from a um like interpretability sake I
+[18:15] think the the general results make are
+[18:17] more impactful than someone's single
+[18:18] biomarker level at a single time
+[18:21] Point yes
+[18:36] yeah that's a good question um when we
+[18:38] were designing the study we were
+[18:39] thinking about it but we ran out of
+[18:40] budget so we stuck with the the
+[18:42] cartilage but um honestly that would be
+[18:44] something that I would if I were to
+[18:46] repeat the study I would absolutely add
+[18:47] because that would kind of give us
+[18:49] another layer of information about you
+[18:51] know joint health and the processes
+[18:53] going on in their
+[18:56] body thanks yeah actually collecting
+[18:59] data in the lab right now for a
+[19:01] Department of Defense Grant we have so I
+[19:04] was asked to speak here and I thought
+[19:06] there isn't a more inappropriate place
+[19:07] for me to present because I know nothing
+[19:09] about data science but my fiance is
+[19:12] actually a data engineer so trying to
+[19:14] sneak my way into it and they asked me
+[19:17] to present on the swimmer that I coached
+[19:20] through a record-breaking swim so I'm an
+[19:22] athlete I'm a triathlon coach and I tend
+[19:26] to do some crazy things I try to break
+[19:28] the record for the fastest run across
+[19:31] the Appalachian Trail in Connecticut
+[19:33] which is 51 miles did that um
+[19:36] ultramarathon so I feel like when people
+[19:38] want to do crazy athletic things they
+[19:41] have a habit of reaching out to me um
+[19:43] I'm about to coach this girl who's going
+[19:46] to become the first woman ever to swim
+[19:47] between all seven continents so that's
+[19:49] going to be very interesting and so this
+[19:53] this friend of mine who I used to
+[19:54] compete with decided to have these
+[19:58] insane ideas to do these crazy long
+[20:00] swims and this was a 24 mile swim he
+[20:03] swam from Providence R Island he jumped
+[20:05] in the water and swam all the way to
+[20:06] Jamestown Rhode Island so it was 24
+[20:08] miles it was his third uh third crazy
+[20:11] swim that he did he raised over a
+[20:13] quarter of a million dollars to clean
+[20:15] the oceans through a company called
+[20:16] clean ocean access and this is just kind
+[20:19] of our story of me coaching him uh the
+[20:22] metrics that we collected I'll try to
+[20:24] talk about it in a data science way if I
+[20:26] can it's the movie is on Amazon Prime so
+[20:30] if you want to go ahead and rent the
+[20:31] movie and watch his journey it's all
+[20:33] about his sobriety he's 11 years sober
+[20:36] and his journey of finding Triathlon and
+[20:38] swimming through sobriety and then
+[20:40] continuing along that journey and it's
+[20:42] pretty inspirational it's a really good
+[20:43] documentary just came out last year so
+[20:47] he asked me to coach him and at first I
+[20:49] was a little nervous and I said okay
+[20:51] we'll go out in this adventure together
+[20:53] and after three years I feel like we
+[20:54] really got the hang of it so just to
+[20:56] give you a little bit of a background he
+[20:58] was moving from Connecticut to Vermont
+[21:00] he was working at a private school
+[21:02] working at a new private school in
+[21:03] Vermont so we had to really balance a
+[21:05] lot of his training around his
+[21:07] day-to-day life it was 45 minutes to the
+[21:09] closest pool he was starting to train in
+[21:11] January when it's very cold so you can't
+[21:13] do Open Water swimming so this just
+[21:15] gives you an idea of our periodization
+[21:18] of the volume throughout uh the
+[21:21] beginning of the year and then his swim
+[21:23] was that last week in July so you can
+[21:25] see he was around like 18 to 20,000
+[21:27] yards a week which really isn't that
+[21:29] much if you think about someone who's
+[21:31] competitively swimming in high school or
+[21:33] college but again for him you know we're
+[21:35] trying to balance work life with his
+[21:37] personal life and just some ideas and
+[21:40] strategies of how we coached him so we
+[21:42] tried to do three weeks of increased
+[21:44] volume followed by recovery week which
+[21:46] didn't work out every week because
+[21:48] sometimes life gets in the way a
+[21:49] concussion gets in the way running into
+[21:51] the stairs in your house and uh he had
+[21:53] two kids so obviously it was tough if
+[21:55] they had games and things like that uh
+[21:57] we would do 3 days of strong training
+[21:59] one day of recovery Swimming by uh
+[22:02] followed by two more strong days and uh
+[22:05] you know to get ready for the swim I
+[22:07] reached out to a couple really cool
+[22:08] people Sid Cassidy has the record for
+[22:11] the double crossing of the English
+[22:13] Channel and he also was Team USA Coach
+[22:16] uh for the Open Water Swim Team for a
+[22:18] couple years and so I talked to him on
+[22:20] the phone and he was telling me three
+[22:22] weeks out we want to try to get to 60%
+[22:24] of the total volume of the event day so
+[22:26] around three weeks out we went for an
+[22:28] 11-hour swim and uh he was eating turkey
+[22:31] sandwiches and cookies we were trying to
+[22:33] figure out what would sit well with his
+[22:34] stomach we've been trying to figure out
+[22:36] for three years what would sit well with
+[22:38] his stomach but um that's an that's an
+[22:40] idea of the periodization how he went
+[22:42] from from day to day now I use a program
+[22:45] called training Peaks it's a really cool
+[22:47] platform it basically takes the data off
+[22:50] of his watch loads it up to this
+[22:53] platform and then I get an idea of his
+[22:55] training stress score which is his TSS
+[22:58] the intensity factor fatigue different
+[23:01] types of fatigue annual training load
+[23:03] versus a chronic training load and just
+[23:05] to make all of this simple it's really
+[23:08] estimated off of his swim speed so if
+[23:11] you're a swimmer if you're an endurance
+[23:13] swimmer per se there's something called
+[23:15] your critical swim speed usually if uh
+[23:18] you train at the Olympic Training Center
+[23:20] Team USA they calculate that by swimming
+[23:23] a 400 yard set all out as fast as you
+[23:25] can then you take 3 minutes of rest and
+[23:28] then do a 200 yard set all out at once
+[23:30] and then you put that into equation and
+[23:32] that gives you your critical swim speed
+[23:34] which ideally is the speed that you
+[23:36] could swim for an hour without
+[23:38] decreasing your speed so depending on
+[23:41] the day workout how fast he was swimming
+[23:44] in relationship to his critical swim
+[23:46] speed would give us some of these uh uh
+[23:50] fatigue factors so some of them are
+[23:52] fatigue factors over the course of a
+[23:54] couple days some of them are fatigue
+[23:56] factors over the course of a week and
+[23:57] then some are over the course of a month
+[23:59] so you can see the fatigue the the pink
+[24:02] line here in his annual training load I
+[24:05] think one of the interesting points here
+[24:06] as he went on one of his first long
+[24:08] swims around four 4,000 kilometers in
+[24:11] May and you can see how much that spiked
+[24:14] his annual training load fatigue but
+[24:16] then if you look at his swim where he
+[24:18] actually went 41,000 yards that was his
+[24:20] 24 mile swim the fatigue Factor was
+[24:23] almost similar so by by using this um
+[24:26] periodization to increase load let them
+[24:29] recover you know we tried to keep that
+[24:31] annual training load or that fatigue
+[24:33] Factor the same throughout these these
+[24:35] weeks of really high volume so that's
+[24:38] one cool thing that these programs and
+[24:40] the data allows us to do is track his
+[24:42] annual annual training load his fatigue
+[24:46] try to see when he needs to recover so
+[24:48] that we can then boost performance um
+[24:51] but I think that's a pretty cool
+[24:52] visualization
+[24:54] there so train blocks and workout
+[24:56] examples so the way this program works
+[24:58] is you have Monday through Sunday and
+[25:00] you can go ahead and drag your workouts
+[25:01] into each day so he usually did his long
+[25:04] swims on the weekends so I'd give him a
+[25:06] little bit of a recovery day on Monday
+[25:08] and then on Tuesdays some longer
+[25:10] intervals so I have him doing 3x 500
+[25:13] using paddles Which are these really
+[25:16] large circular plastic paddles you put
+[25:18] on your hands usually with a p buoy in
+[25:21] between the legs so he's really working
+[25:22] his lat muscles his upper body um so we
+[25:25] on that day we had 3x 500 and probably
+[25:28] had some more longer sets after that and
+[25:30] then short rest working on maybe a
+[25:33] little bit more aerobic capacity so 20
+[25:35] sets of 50 yards alternating probably
+[25:38] fast and slow with short rest in between
+[25:41] um and then his long swims more so on
+[25:44] the weekend so that day we did 10,000
+[25:46] yards he was in the open water for
+[25:47] around three hours and he lived in Rhode
+[25:50] Island so he would swim around his dock
+[25:52] put his Gatorade his drinks his food and
+[25:55] everything on top of the dock so he had
+[25:56] that readily accessible
+[25:59] so swim details this was kind of a cool
+[26:01] aspect to to manage and plan because
+[26:04] there's a lot of things we had to think
+[26:05] about shipping channels talking to the
+[26:07] Coast Guard talking to local police
+[26:10] organizing all of that was was quite a
+[26:12] hassle but for sure very fun so we had
+[26:15] to figure out the currents how the
+[26:17] currents worked and the data signs with
+[26:19] the current is actually really
+[26:20] interesting I'll try to play a video um
+[26:22] the safety of the water quality the
+[26:24] ideal time to leave he swam from Block
+[26:27] Island one year here to Jamestown which
+[26:30] was interesting cuz those were really
+[26:31] shark infested waters and he actually
+[26:33] had a shark collar around his ankle it
+[26:35] was a 6 foot long item that looked like
+[26:37] a snake and what was funny was he knew
+[26:40] that it was going to send off this
+[26:42] electrical signal every 6 seconds to
+[26:44] tell the Sharks to stay away but what he
+[26:45] didn't realize it was going to shock him
+[26:47] every six seconds so he did a 9 to 10
+[26:50] hour swim with this thing shocking his
+[26:51] leg every six seconds and that year the
+[26:54] water got down to like 63 degrees and he
+[26:56] was getting really cold so we were
+[26:58] trying to brainstorm what to do about it
+[26:59] we put a second cap on him to try to
+[27:01] keep him warm um so trying to figure out
+[27:05] if he's going to be too cold too warm
+[27:07] psychological component I'll tell you
+[27:09] the way that he gets over the
+[27:11] psychological component is he listens to
+[27:12] reggae music the entire time so this
+[27:15] 14-hour swim he just did 24 miles was
+[27:18] all reggae and what's interesting his
+[27:20] stroke rate how many times he takes a
+[27:23] stroke per minute is around 50 Strokes
+[27:25] per minute and if you know the tempo of
+[27:27] reg music get about 50 beats so he was
+[27:30] listening to rea the entire time we were
+[27:31] tracking his stroke break the entire
+[27:33] time and it was even the entire time
+[27:35] which was pretty cool so we were trying
+[27:37] to figure out where to get him in I just
+[27:39] went over that uh the that's where he
+[27:42] started um up in the the Bay of um
+[27:46] Providence so here are unique
+[27:48] considerations the Sharks we did see a
+[27:50] shark that year um which was interesting
+[27:52] and we we pulled him aside and said do
+[27:54] you want to keep going and he said yep
+[27:55] I'll keep going um jellyfish did the
+[27:58] first swim with him and we went through
+[28:00] a field of thousands of jellyfish and
+[28:02] we're getting stung so that's certainly
+[28:04] a consideration watch the Diana niad
+[28:06] story on on Netflix if you want to know
+[28:08] more about swimming in jellyfish took
+[28:09] her out of the water three times uh the
+[28:11] weather we had a paddle border with us
+[28:14] that uh paddled right next to him so he
+[28:16] could make sure that he was getting his
+[28:18] water food he would bring all of his
+[28:21] stuff to him I don't know if I can get
+[28:22] this to to
+[28:25] play oh maybe so we contacted a company
+[28:29] yeah really cool so we estimated it's
+[28:32] time leaving so the red dots are Ben
+[28:34] leaving and this is uh the current at
+[28:37] different times during the day so you
+[28:38] can see that the current would help him
+[28:40] in the beginning but now as the arrows
+[28:41] are going in the opposite direction you
+[28:42] can see that the current's working
+[28:44] against him and as we get to warmer
+[28:46] colors the current's even stronger so
+[28:49] that's how we were able to try to figure
+[28:51] out when he should try to leave and the
+[28:52] gentleman who owns this company is
+[28:54] absolutely incredible he does this a lot
+[28:56] for sailing competition boers but then
+[28:59] he sat down and did this with a with a
+[29:01] couple of swimmers so we were able to
+[29:03] look at this program and try to figure
+[29:05] out when uh Ben should
+[29:08] leave if I just go back to
+[29:13] PowerPoint right here cool thanks
+[29:22] oops so we obviously wanted to be
+[29:25] careful in case anything went wrong I
+[29:27] will tell you the first year we did this
+[29:28] I felt like we were just a couple of
+[29:30] kids hopping on a boat doing something
+[29:32] stupid and then after he got really cold
+[29:34] after sharks were in the water we
+[29:36] realized we should probably get some
+[29:38] like athletic trainers medical people
+[29:40] involved and if we were doing a
+[29:41] documentary and something went wrong it
+[29:43] wouldn't be a good look for us so uh we
+[29:46] contacted all of the different
+[29:48] surrounding cities and towns police EMS
+[29:51] fire we had a group meeting with all of
+[29:53] them and we figured out all these
+[29:55] different places that we would transport
+[29:56] him in case of an emergency
+[29:58] so um there's a map of that in another
+[30:02] slide I'll tell you another issue that
+[30:04] we had with the Block Island swim was
+[30:06] the Coast Guard so this is a shipping
+[30:08] channel right here so you have all these
+[30:11] boats coming in that are actually
+[30:12] carrying lots of vehicles into Newport
+[30:15] so you have to be really careful when
+[30:17] going through the shipping channels and
+[30:18] we actually had to have the Coast Guard
+[30:20] come out and guide us through the
+[30:22] shipping channel the year we came back
+[30:23] from Block Island and that's a couple
+[30:25] months of paperwork to get clearance for
+[30:27] that so we were trying to figure out if
+[30:29] there was a way for us to bypass the
+[30:31] shipping channels here's another
+[30:32] shipping channel here um and because we
+[30:35] were going through this shipping channel
+[30:37] he ended up landing on this island here
+[30:39] that's Jamestown um but since we went
+[30:41] through the shipping channel at a
+[30:42] certain point we didn't need paperwork
+[30:44] we didn't need the Coast Guard um but
+[30:46] that's certainly something to think
+[30:47] about when you're getting out on the
+[30:48] water for these big
+[30:50] swims so this was the uh emergency
+[30:53] action plan map that we gave out to all
+[30:55] the police departments just to give them
+[30:57] an idea of the ETA that he would show up
+[30:59] at all these different spots and then
+[31:00] the stars are the different docks and
+[31:03] ports that we would bring him to we
+[31:05] would call the EMS and say hey we have
+[31:06] an emergency we had all these
+[31:08] pre-planned we would tell them which one
+[31:10] we were going to then they would already
+[31:11] be there in an ambulance to go ahead and
+[31:13] pick them up so that's what we kind of
+[31:15] handed out to everyone during the
+[31:18] journey so just some tech and materials
+[31:20] we were using he was wearing a Garmin
+[31:22] watch the entire time so that was giving
+[31:24] us um his swim speed his heart rate
+[31:28] he had an ingestible thermostat so we
+[31:30] were looking at core temperature the
+[31:33] interesting thing was the the core
+[31:34] temperature device wasn't reading to our
+[31:37] iPad because he was underwater and
+[31:39] that's a huge problem that they have at
+[31:41] USA swimming on the world stage is they
+[31:44] want to track these swimmers in the
+[31:46] water because you have had instances
+[31:47] where people have died swimming Fran
+[31:49] krippin was an athlete uh Team USA 2010
+[31:52] died during a swimming race in Abu Dhabi
+[31:55] and they didn't find his body until 2
+[31:57] hours later in the water and the issue
+[31:59] is when you have a GPS device and it
+[32:01] goes underwater the signal is then lost
+[32:04] um so technology still still needs to
+[32:06] get to a point where that is fixed but
+[32:09] we were losing that signal all the time
+[32:11] so we weren't really able to accurately
+[32:13] track his core temperature but the water
+[32:14] was pretty warm so we weren't really
+[32:16] worried about it we were actually more
+[32:18] worried about the gentleman standing on
+[32:19] the paddle board because he was in the
+[32:20] direct sun the entire day and and not
+[32:22] drinking that much but that's just some
+[32:24] of the different technology we were
+[32:25] using and then some of the stats so it
+[32:28] took him a little over 14 hours to do
+[32:30] the swim of straight swimming that's
+[32:32] actually an aerial picture of Ben
+[32:33] swimming with the paddle border right
+[32:35] next to him so it took him just under 15
+[32:38] hours he swam 41,000 yards his average
+[32:41] pace was 2 minutes and 9 seconds per 100
+[32:43] yards um that's how many strokes he took
+[32:46] the average stroke rate which is around
+[32:47] that reggae music kind of cool his
+[32:49] average heart rate and he consumed
+[32:51] almost 7.8 L of water so you think about
+[32:54] a 2 L bottle of soda and what that
+[32:57] visually looks like like that's a lot of
+[32:58] water to be drinking when you're
+[32:59] horizontal in the water and uh he
+[33:02] consumed around
+[33:04] 6,415 calories which was a mixture of
+[33:06] peanut butter jelly sandwich there's his
+[33:08] wife and his son and all of us uh
+[33:10] measuring out and getting his food ready
+[33:13] the day before so there are some things
+[33:15] on his his weight pre and post so he
+[33:17] lost a good amount of weight during the
+[33:19] swim and uh he stayed pretty well
+[33:22] hydrated which was which was
+[33:24] great environmental so it was around 81
+[33:27] .5 degre so it wasn't too bad out there
+[33:29] a little windy it got super choppy so at
+[33:31] one point we had 5 foot swells so he was
+[33:34] swimming through 5 foot swells for quite
+[33:36] a while um and then the the current was
+[33:38] working against us for a very long time
+[33:40] so there was one point where he didn't
+[33:42] even make it 300 yards in over an hour
+[33:44] so that psychologically was a little a
+[33:46] little tough for him so there's his
+[33:49] heart rate over the course of the swim
+[33:51] we stopped him and fed him every 30
+[33:53] minutes and then towards the end we were
+[33:54] stopping um a little more often but you
+[33:57] can just see the heart rate monitor was
+[33:59] great with picking up how often uh he
+[34:01] was he was stopping so there was some
+[34:03] really good consistency there and then I
+[34:06] think these are his laps with
+[34:09] his Cadence so Cadence is just split in
+[34:12] half a stroke rate so around 25 for one
+[34:14] arm rotations per per minute and then
+[34:16] his speed so we we had the current in
+[34:18] our favor at the beginning and then this
+[34:20] is when the current was was not in our
+[34:23] favor and then as we got closer to
+[34:24] Jamestown it was it was more so in our
+[34:27] favor
+[34:29] and then there's a a map of his his
+[34:31] route there after he we uploaded the
+[34:34] data and then his fastest so at one
+[34:36] point he was swimming super fast when
+[34:37] the current was in her favor 112 per 100
+[34:40] yards which is incredibly
+[34:43] fast and then there's his body
+[34:45] temperature so you can see we gave him
+[34:47] the the core device that he swallowed
+[34:49] around 1:00 in the morning because we
+[34:51] were afraid that if we gave it to him
+[34:52] the night before he would pass it so we
+[34:54] gave it to him that morning but his
+[34:56] stomach actually didn't empty it into a
+[34:59] small intestine so you can see every
+[35:01] time he took a sip of water his uh
+[35:04] temperature dropped down low so you
+[35:05] could see every 30 minute Mark where the
+[35:08] temperature was dropping and then the
+[35:10] red mark is actually the paddle border
+[35:12] so that was his temperature and it was
+[35:14] consistent the entire time because I
+[35:15] think he was standing up it passed
+[35:17] whereas Ben he was horizontal so it
+[35:19] never passed and then that night his
+[35:22] temperature was above 101 degrees at
+[35:25] some point so he actually had a fever
+[35:26] sleeping
+[35:28] overnight into the next morning so we
+[35:30] thought that was really interesting that
+[35:31] he had a fever that night into the next
+[35:35] day and I think that's it I was worried
+[35:38] that was going to go too long but was I
+[35:40] fine perfect um so I think I'll just
+[35:45] touch a little bit on data science I'm
+[35:47] I'm doing some work down at Southern
+[35:48] Connecticut State University right now
+[35:50] and I'm working with their data science
+[35:51] center there but where I'm finding it's
+[35:54] really helpful is when we collect a lot
+[35:56] of data in the lab lab it doesn't look
+[35:58] as pretty and nice as this it takes a
+[36:00] long time for it to look this pretty and
+[36:02] nice so what the data science department
+[36:04] there is helping us do is we have all
+[36:06] these machines in the lab if we can
+[36:08] automate the transport of the raw data
+[36:11] and the database to A system that then
+[36:14] does some type of machine learning to
+[36:16] create these graphs so it doesn't take
+[36:18] us as exercise scientists two weeks to
+[36:20] go into Excel and create these graphs
+[36:22] and then give them back as a product it
+[36:24] saves us time and then we can start
+[36:26] making money off of it as an actual
+[36:27] retail business so we're working with
+[36:30] that department to export the database
+[36:33] off of these computers to then put it
+[36:35] into graph form so that if someone comes
+[36:38] into the lab and wants to know hey
+[36:39] what's my you know V2 Max which is a
+[36:43] metrics that we measure we do a test
+[36:45] right afterwards instead of giving them
+[36:47] a piece of paper from Excel that has all
+[36:49] these crazy numbers it actually looks
+[36:51] like a nice beautiful graph and we can
+[36:52] give it that to them right away instead
+[36:54] of upload loading the data going through
+[36:57] equations making the pretty graphs and
+[36:59] then giving them giving it to them two
+[37:01] to three weeks later which is currently
+[37:03] what what we're doing um but happy to
+[37:07] take any questions on the swim or not
+[37:10] really data science
+[37:15] but I could try to answer a data science
+[37:17] question but probably won't be pretty
+[37:28] cool fine thank
+[37:34] you definitely want to thank all our
+[37:36] speakers maybe just one more round of
+[37:38] applause this was a terrific so thank
+[37:40] you very
+[37:41] much this concludes our session I think
+[37:44] now we'll have a poster session so you
+[37:46] know please stick around for that and
+[37:48] enjoy some of the sessions in the
+[37:49] afternoon so thank you

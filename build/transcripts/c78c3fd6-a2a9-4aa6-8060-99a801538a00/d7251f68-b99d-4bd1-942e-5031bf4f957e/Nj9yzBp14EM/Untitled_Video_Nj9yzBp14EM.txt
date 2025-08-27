@@ -1,0 +1,549 @@
+Video Title: Untitled_Video
+Video ID: Nj9yzBp14EM
+URL: https://www.youtube.com/watch?v=Nj9yzBp14EM
+View Count: 0
+
+[00:00] These are the five steps I always use
+[00:01] when building AI agents, and they've
+[00:03] helped me generate over $240,000 in the
+[00:05] past 6 months. In this video, I'm going
+[00:07] to be giving you the exact framework
+[00:08] that I use so you can start to build
+[00:10] some powerful AI systems, even if you're
+[00:12] not technical. I used this method to
+[00:13] build all of the automations you've seen
+[00:15] on my channel for the past 7 months, but
+[00:17] I've never really talked about the
+[00:18] actual methodology. So, let's get into
+[00:19] it. Starting with step one is the
+[00:21] foundations. Don't run before you walk.
+[00:23] I see way too many people trying to jump
+[00:25] into a very complex AI agent system, but
+[00:28] they still don't understand how to set
+[00:29] up an API call. So before I started
+[00:31] building agents, I wanted to make sure I
+[00:32] understood the foundational elements. So
+[00:34] I'm sure we all know what large language
+[00:35] models are, but it's really important to
+[00:36] at least at a high level understand how
+[00:38] they work. You also want to understand
+[00:40] some data foundations, APIs, and HTTP
+[00:42] requests and rag and vector databases.
+[00:45] And this exact foundational course is
+[00:46] one of them that I teach in my community
+[00:48] called agent zero. So the first thing to
+[00:49] dive into is large language models.
+[00:52] understanding that at their core,
+[00:53] they're basically designed to predict
+[00:54] the next word or token in a sentence.
+[00:57] And this unlocks some really cool
+[00:58] capabilities, but LLMs at their core
+[01:00] cannot actually take action in anything.
+[01:02] So, it's really important to understand
+[01:03] when do we need to use AI or when do we
+[01:05] not. From there, you really want to
+[01:06] understand the difference between the
+[01:07] most popular large language model
+[01:09] families and whether they're closed
+[01:10] source or open source. Because in our
+[01:12] automations, we're going to switch out
+[01:13] different large language models based on
+[01:15] what we need, based on what the clients
+[01:17] need, and based on what the actual
+[01:18] automation is meant to do. Because all
+[01:20] of these different large language models
+[01:21] have different strengths and weaknesses.
+[01:23] The next thing to dive into would be rag
+[01:24] and vector databases. Together, this
+[01:26] creates a really powerful system where
+[01:28] AI agents can search through a database
+[01:30] of text based on similarity rather than
+[01:32] keyword matching. They can then take
+[01:34] back that data and create an answer for
+[01:36] you based on actual text that we put
+[01:38] into that vector database rather than
+[01:40] hallucinating something that is in its
+[01:41] training data. And so diving into vector
+[01:43] databases, it's definitely important to
+[01:44] understand the way that we take a
+[01:45] document, we chunk it up, we run it
+[01:47] through an embedded model and those
+[01:49] chunks are placed into the vector
+[01:50] database based on the actual meaning of
+[01:52] the words in the chunk. However, when it
+[01:54] comes to some of the stuff with large
+[01:56] language models and vector databases and
+[01:57] semantic search, I have a golden rule
+[01:59] which is just to understand enough to
+[02:01] get the systems to provide value.
+[02:03] Meaning, we don't have to understand the
+[02:04] different parameters and how the weights
+[02:06] change within a large image model when
+[02:07] we're interacting with it and when it's
+[02:09] being trained. And we don't have to
+[02:10] understand the uklitian distance formula
+[02:12] that goes into vector database semantic
+[02:14] search. We just have to understand based
+[02:16] on this input what type of output are we
+[02:18] getting and how can we tweak the system
+[02:20] prompt and build in certain parameters
+[02:22] to make this perform the way we want it
+[02:23] to and actually provide value. In my
+[02:25] opinion, this one may be the most
+[02:26] important which is JSON and APIs because
+[02:29] I see way too many people trying to
+[02:30] build these systems when they don't
+[02:32] understand how to read JSON. And it's
+[02:33] really quite simple. It's just key value
+[02:35] pairs almost like you're looking at an
+[02:37] Excel sheet. So here's an example. Alice
+[02:38] is a 25-year-old student. We have name
+[02:41] Alice, age 25, is student true. And
+[02:44] here's an example where we have an
+[02:45] array. We have a shopping list with
+[02:46] apples, bananas, and milk. And over
+[02:48] here, we have the shopping list array
+[02:50] with apples, bananas, and milk. But the
+[02:51] great news about JSON is because it's so
+[02:53] universal and it's been around for so
+[02:55] long. Pretty much every large language
+[02:56] model is trained on it. So, it's really
+[02:58] easy if you're getting stuck to talk to
+[03:00] something like chatgbt or claude and
+[03:02] have it help you with your JSON. And
+[03:03] it's really really important to
+[03:05] understand first of all what an API is,
+[03:07] but actually how you set up an HTTP
+[03:09] request to use an API to talk to some
+[03:11] sort of thirdparty server. And for
+[03:12] pretty much every single API that you
+[03:14] want to interact with nowadays, you're
+[03:15] going to be sending data to it using
+[03:17] JSON and you're going to be getting data
+[03:18] back using JSON. So understanding the
+[03:21] foundational elements of JSON and API
+[03:23] calls before you get into those
+[03:24] automations and you're in the weeds,
+[03:26] it's going to save you a lot of time, a
+[03:27] lot of energy, and a lot of pain.
+[03:29] Because if we're building automations or
+[03:30] AI agents in something like NADN, we can
+[03:33] only stay within the NAND environment
+[03:35] unless we use some sort of API call to
+[03:37] something like Gmail server, HubSpot
+[03:39] server or just want to search the web in
+[03:41] general. So once you have an
+[03:42] understanding of NAN and you have an
+[03:44] understanding of APIs and how to use
+[03:45] them, the possibilities are truly
+[03:47] infinite. Okay. The second step is
+[03:49] actually identifying high ROI
+[03:51] opportunities. So when you're looking
+[03:52] for a process that you want to automate,
+[03:54] it should tick these four boxes which
+[03:55] are is it repetitive? Is it
+[03:57] timeconuming? Is it errorprone and is it
+[04:00] scalable? And the main one I wanted to
+[04:01] talk about here today is the scalable
+[04:03] one. Because when you identify an
+[04:04] opportunity for a scalable automation,
+[04:07] the ROI there is just going to compound
+[04:08] and compound over time. Meaning as the
+[04:10] business grows, the use of the
+[04:12] automation grows and more time is saved
+[04:14] and more money is saved. And so to
+[04:15] actually show you what this means is
+[04:17] let's say we build out an AI system
+[04:18] somewhere within the sales process. And
+[04:20] what this does is it's going to take in
+[04:22] 50 leads a week and it's going to save
+[04:24] the sales rep five hours a week of them
+[04:26] doing, you know, lead nurturing or
+[04:28] research and creating any sort of sales
+[04:29] brief. And now that a salesperson has
+[04:31] gotten those 5 hours back per week, they
+[04:33] can use those 5 hours to do higher
+[04:35] impact activities which are going to
+[04:37] actually grow the business rather than
+[04:38] them sitting there and doing research.
+[04:40] And as a direct result of the business
+[04:42] growing, we're going to start to get
+[04:43] more leads per week. So now if we start
+[04:45] to get 200 leads per week going through
+[04:46] the eye system, we're going to start to
+[04:48] save more and more time per week. So 20
+[04:50] hours per week rather than 5 hours per
+[04:52] week. And once again, the sales team
+[04:53] getting 20 hours back per week is going
+[04:55] to lead to the business growing even
+[04:56] more, which in turn leads to more leads
+[04:59] going through the system. So hopefully
+[05:01] this really shows you how building
+[05:02] scalable systems can compound over
+[05:04] themselves over time. But maybe you are
+[05:06] asking yourself what's a scalable system
+[05:08] and what's not. So something like a
+[05:09] personal assistant, let's say the
+[05:10] business grows, you know, triples in
+[05:12] revenue during the course of the year.
+[05:14] Does that mean that you will be tripling
+[05:16] the amount of times that you're using
+[05:17] the personal assistant? Maybe you'll
+[05:18] start to use a little more to set up
+[05:19] more meetings or something, but really
+[05:21] that system is not going to compound on
+[05:23] itself the same way that something like
+[05:25] a lead AI system would. And sometimes
+[05:27] truly half the battle is picking the
+[05:28] right process to actually automate and
+[05:30] making sure that it's high ROI. Okay,
+[05:32] now that we've identified the process,
+[05:33] the third step is process mapping. I
+[05:35] think this is something that's super
+[05:36] super overlooked. And whenever I get an
+[05:38] idea for an automation or an AI agent
+[05:40] that I want to build, I'll never just
+[05:41] hop straight into Naden, pull up a new
+[05:44] workflow, and just start building. That
+[05:45] would be like opening a bag of all of
+[05:47] these Legos and you know you need to
+[05:48] make a parrot, but you don't have the
+[05:49] instructions right next to you to build
+[05:51] the parrot. Or you dump out a puzzle on
+[05:53] a table, but you don't know what the end
+[05:55] picture is. The analogy here is that you
+[05:56] definitely still could do it, but you're
+[05:58] going to have a lot more trouble and
+[06:00] it's going to take you a lot longer than
+[06:01] if you would have just looked at the
+[06:02] instruction manual to start with. And so
+[06:04] basically, our job here in the process
+[06:06] mapping step is to build out the
+[06:07] instruction manual. And that means that
+[06:09] we list every single step, no matter how
+[06:11] small. This is going to help make
+[06:12] everything a lot more clear. We're going
+[06:14] to be able to identify certain
+[06:15] bottlenecks or edge cases before we even
+[06:17] get into the build. It's going to help
+[06:19] us with scalability and modularity for
+[06:21] making sure that this is like, you know,
+[06:22] a long-term solution. And of course,
+[06:24] it's going to make your actual build
+[06:25] time, your hands-on keyboard development
+[06:27] in NAND or whatever you're building your
+[06:29] agents, it's going to make that time a
+[06:30] lot more efficient. So, here's a very
+[06:31] simple example of a process map and how
+[06:33] that can transfer into a workflow. As
+[06:35] you can see, we have step one over here,
+[06:36] which is a new email received, and this
+[06:38] is what triggers the automation. So, we
+[06:40] threw in a Gmail trigger. Step two is to
+[06:42] determine if the email is customer
+[06:43] support related. If not, forward to the
+[06:45] correct team. If yes, support team reads
+[06:47] the message. So notice how we list out
+[06:48] what happens based on the decision as
+[06:50] well. And here we're able to identify
+[06:52] right away, okay, we probably need AI
+[06:54] for this classification. So we use an AI
+[06:56] text classifier. We have it split out to
+[06:58] the different paths. And then step three
+[06:59] and four is to look up the information
+[07:01] needed to answer the request as well as
+[07:03] draft a helpful response. So, we knew
+[07:05] that we could use an AI agent right here
+[07:06] to look up information in our Pine Cone
+[07:08] vector database as well as use its chat
+[07:11] model to draft a response to the email.
+[07:13] Step number five is to label the email
+[07:15] for tracking. So, we do that right here
+[07:16] with a label email node. And then the
+[07:18] sixth step is our final data
+[07:20] destination, which is sending the reply
+[07:21] right over here, again, using a Gmail
+[07:23] node. And when you start to do process
+[07:25] mapping and wireframing over and over,
+[07:27] you're going to notice that there's kind
+[07:28] of five main things that you're looking
+[07:29] out for, which is a trigger, which could
+[07:31] be in the form of like a form submission
+[07:33] or a manual trigger or a new email,
+[07:34] whatever starts the process. And the
+[07:36] easiest way to break this down is just
+[07:37] think about how you yourself or someone
+[07:39] on your team manually does this process.
+[07:41] So, we start with a trigger, which is
+[07:42] like what happens in real life that
+[07:44] makes me or my team go start to do this
+[07:47] process. So in nadn that could look like
+[07:49] a form submission or a new email or a
+[07:51] new record in your CRM or a new slack
+[07:53] message whatever it is identify the
+[07:55] trigger and then we have an element of
+[07:56] data sources. So, this can be multiple
+[07:58] things. Probably from the trigger,
+[07:59] you're going to get some initial data
+[08:01] and that's one of the data sources, but
+[08:02] you could also be looking in like a pine
+[08:04] cone vector database or you could be
+[08:05] searching the internet or you could be
+[08:07] looking up some information about a
+[08:08] customer in your CRM. And then there's
+[08:10] probably going to be some element of
+[08:11] data transformation. Whether that's
+[08:12] filtering certain things or merging
+[08:14] certain rows together, whatever it is,
+[08:16] usually we have to do something with the
+[08:18] data. It could even be as simple as just
+[08:19] cleaning it up or removing duplicates,
+[08:21] but we have to do some sort of data
+[08:23] transformation. And by now hopefully you
+[08:24] guys understand the pattern which is you
+[08:26] know every step in this process has some
+[08:28] sort of node associated with it in
+[08:30] naden. Pretty much every process we have
+[08:32] some sort of decision point and this
+[08:34] helps us identify what do we actually
+[08:36] use to make the decision what's the
+[08:37] criteria and then based on that decision
+[08:39] do different things happen for each of
+[08:41] those outputs and then from there it's
+[08:43] kind of whatever ends the process which
+[08:44] is the data destination which is the end
+[08:47] of that you know journey through this
+[08:49] workflow. Step number four is a really,
+[08:51] really important one, which is workflows
+[08:52] versus AI agents. And I actually did
+[08:54] make a full video breaking this down.
+[08:55] So, if you want to check that out, I'll
+[08:56] link it right up here. Anyways, the
+[08:57] whole theory here is AI is cool and AI
+[09:00] agents are cool, but never force AI or
+[09:02] never force an agent into a process that
+[09:05] doesn't actually need it because all
+[09:06] you'd be doing is increasing latency,
+[09:08] increasing the cost, and increasing the
+[09:10] risk of inconsistent outputs and lower
+[09:13] quality outputs. So, here's an example.
+[09:15] We have a customer support agent, which
+[09:16] is going to trigger by a new email. The
+[09:19] agent will then look up information and
+[09:21] then send a reply. And that's cool. It
+[09:23] works. It's an agent. But we could build
+[09:24] out this exact same system for cheaper
+[09:26] and probably it'll be quicker by using a
+[09:29] workflow. You can see it starts with the
+[09:30] same trigger. We have the same process
+[09:32] of searching a knowledge base. We're
+[09:33] filtering out some stuff. We're writing
+[09:35] the email and sending the email. So, it
+[09:36] does the exact same thing, just a lot
+[09:38] more efficient. And you may have noticed
+[09:39] the difference here is that this is a
+[09:41] linear process where it must go 1 2 3 4
+[09:44] 5 6. And we have basically guard rails
+[09:47] that say stay on this path no matter
+[09:48] what. But over here it could go 1 2 3 4
+[09:52] 5 6 7. We don't know what it's going to
+[09:54] do. So just to take a step back real
+[09:55] quick, the evolution we start with
+[09:57] chatbt which is a large language model
+[09:59] where we give it an input at its core.
+[10:01] It can't take any action. It doesn't
+[10:02] have any tools and it gives us an
+[10:04] output. And then from here we got into
+[10:05] AI workflows where we were implementing
+[10:07] an LLM call somewhere within a workflow
+[10:10] because automations have been around for
+[10:11] a long time which was just moving data
+[10:13] from left to right. But now we have the
+[10:15] really cool ability to use an LLM to
+[10:17] either generate some sort of text for us
+[10:19] or make decisions for us. So you can see
+[10:21] here there's an input, there's a tool
+[10:22] call, there's an LLM, and then there's
+[10:24] two other tools and then an output. And
+[10:26] from here we evolved into AI agents
+[10:28] where we have the LLM basically is the
+[10:30] brain of the whole thing and it has
+[10:32] access to the different tools that it
+[10:34] needs to use to get the job done. And so
+[10:36] because this is super cool and there's
+[10:37] been a lot of hype, we've seen a lot of
+[10:38] people, myself included, using agents
+[10:41] wrong where a workflow would just get
+[10:42] the job done a lot better. So here's
+[10:44] another example where we have like a
+[10:45] technical analyst agent where we're
+[10:47] talking to it in Telegram and then it
+[10:48] calls on a tool in order to actually go
+[10:50] get the chart, download it, and make
+[10:52] some sort of analysis. But because we
+[10:54] know that this process is going to
+[10:55] happen in the same order every time
+[10:57] because we've process mapped it, we know
+[10:58] that it makes way more sense to use an
+[11:00] AI workflow where we go 1 2 3 4 5 6 7
+[11:04] and it does the exact same thing as this
+[11:05] AI agent over here, but it's quicker and
+[11:07] cheaper. And then the fifth step is
+[11:08] about PC, proof of concept, and
+[11:11] guardrails. So there are three things
+[11:12] that I like to say here. The first one
+[11:14] is fail fast, debug often. No matter how
+[11:16] experienced you are with Nitn and
+[11:18] building agents, when you start a
+[11:19] workflow from scratch, you're going to
+[11:21] have errors. And the quicker you can get
+[11:22] to those errors and debug them, the
+[11:23] quicker you can get to a PC. And getting
+[11:25] to a PC quick is so so important because
+[11:27] moving on to bullet two, you don't know
+[11:29] what you don't know. This basically
+[11:30] means, you know, when we process map
+[11:32] everything out, we can try to implement
+[11:33] as many guard rails as possible. And we
+[11:35] can try to predict certain scenarios
+[11:37] that may happen and build in fixes for
+[11:39] those. But at the end of the day, you
+[11:40] don't know what you don't know. And
+[11:41] there's going to be multiple edge cases
+[11:43] that are only going to present
+[11:44] themselves once you've exposed this PC
+[11:46] to different users and you've started to
+[11:48] test different prompts running through
+[11:49] the system. and you're likely going to
+[11:51] have more and more edge cases pop up.
+[11:52] And then your job is to basically
+[11:54] identify the patterns of what's causing
+[11:55] this error. What can we do in the
+[11:57] workflow to fix it and make sure that it
+[11:59] doesn't happen? And from there, we move
+[12:00] on to bullet three, which is there's no
+[12:02] such thing as a finished product. And
+[12:04] the reason I say this is because even if
+[12:05] you've built something out and you've
+[12:06] iterated upon it multiple times and
+[12:08] you've built in different guard rails
+[12:09] and you've identified different edge
+[12:10] cases, there's always that element of a
+[12:14] new chat model drops or you've learned
+[12:15] something new that basically changes the
+[12:17] way you structure your workflows or you
+[12:19] want to make something a subworkflow
+[12:20] because it'll be quicker. There's just
+[12:22] always opportunity to learn and
+[12:23] implement new things and also so much
+[12:25] opportunity to make these systems faster
+[12:27] and cheaper. So there are many different
+[12:28] types of guard rails that you can build
+[12:30] in and different edge cases that you may
+[12:31] be exposed to. And some of them are very
+[12:33] simple in the sense that you may be able
+[12:35] to predict them while you're doing your
+[12:36] process mapping. So something like,
+[12:37] okay, someone accidentally submits two
+[12:39] forms. We're going to clean up those
+[12:40] emails by sort of removing duplicates.
+[12:42] That's something that we may work in
+[12:43] from day one. But of course, there are
+[12:44] going to be a lot of things that pop up
+[12:46] that you didn't think about from day
+[12:47] one, even if you did a really robust
+[12:49] process map. So you may need to add
+[12:51] certain conditional checks within your
+[12:52] flow. Or you may need to add some sort
+[12:53] of loop because you're experiencing too
+[12:55] much data. And then maybe within that
+[12:56] loop, you need to have continuing on
+[12:58] error with a certain different output
+[12:59] for anything that have a error. Or you
+[13:01] may realize that this system works great
+[13:02] for 100 records, but what happens if I
+[13:04] expose it to a thousand or 5,000? You
+[13:06] may have to build in some loops. You may
+[13:08] have to build in some subworkflows. You
+[13:09] may have to store data somewhere third
+[13:11] party. You may have to implement
+[13:12] caching. There's just so much stuff that
+[13:14] you don't know until your system
+[13:16] actually starts to have users and you
+[13:18] expose it to more situations. And once
+[13:20] you've identified certain patterns that
+[13:21] are causing the errors or poor quality
+[13:23] responses in your system, there's almost
+[13:25] always a fix for those. So here's a
+[13:27] quick practical example. I had a sub
+[13:28] workflow where the main agent was
+[13:30] sending data to it. You can tell because
+[13:32] I have a when executed by another
+[13:33] workflow trigger. And every one out of
+[13:35] 50 runs or so, I was seeing this error
+[13:37] where a empty query was coming through
+[13:39] for no reason, which basically just
+[13:40] broke the system. So all I had to do was
+[13:42] a quick conditional check where I was
+[13:43] saying, does the query exist? If no,
+[13:45] we're going to send it this way and it's
+[13:46] going to retry. But if yes, then we're
+[13:48] fine and we'll just continue down the
+[13:50] rest of the process. So, you may have to
+[13:51] get creative, but if you've identified a
+[13:53] pattern, you can do something about it
+[13:55] because when it comes to automations,
+[13:57] predictable is better. So, if you know
+[13:58] something happens in a certain way, you
+[14:00] can pretty much build out something to
+[14:02] handle that exact case every time. When
+[14:04] it comes to automations, boring is
+[14:05] better. So, that was my five-step AI
+[14:07] agent playbook that I've been using for
+[14:08] the past months, building these systems,
+[14:10] starting with the foundations,
+[14:12] identifying high ROI opportunities,
+[14:14] process mapping, workflows versus
+[14:16] agents, and then PC and guardrails. And
+[14:18] I really, really believe in taking this
+[14:19] iterative approach where you learn
+[14:21] things that build on top of each other,
+[14:22] especially if you're not coming from a
+[14:24] coding or technical background. And this
+[14:25] is exactly why I created the course from
+[14:27] 10 hours to 10 seconds, which is
+[14:29] basically the exact methodology that I
+[14:30] just covered with you guys, but in much
+[14:32] more detail. There's over 11 hours of
+[14:33] content in here. We talk about picking
+[14:35] the process. We talk about mapping the
+[14:36] steps. We talk about the foundations of
+[14:38] NAND triggers, nodes, different elements
+[14:40] of a workflow, AI nodes, and also
+[14:42] smarter naden workflows. So, if this
+[14:44] sounds like something that you want to
+[14:45] dive into and it interests you, then
+[14:47] definitely check out my paid course and
+[14:48] community using the link down in the
+[14:50] description. What I talked about today
+[14:51] were these two courses, Agent Zero,
+[14:52] which is the foundational course, and
+[14:54] then 10 hours to 10 seconds. And of
+[14:56] course, we've got a great community of
+[14:57] over,200 members. It's growing really
+[14:59] quick, and everyone in here is also
+[15:01] going through those same courses and
+[15:02] building automations every day with
+[15:04] Naden. We also have five live calls per
+[15:05] week where we bring in guest speakers,
+[15:07] Q&As's, coffee chats, tech support just
+[15:10] to make sure you're never getting stuck,
+[15:11] but also meeting people in the space.
+[15:12] So, that's going to do it for today's
+[15:14] video. I hope you guys enjoyed and I
+[15:15] hope you learned something new. If you
+[15:16] did, please give it a like. Definitely
+[15:18] helps me out a ton. And as always, I
+[15:20] appreciate you guys sticking around to
+[15:21] the end of the video. I'll see you in
+[15:22] the next one. Thanks everyone.

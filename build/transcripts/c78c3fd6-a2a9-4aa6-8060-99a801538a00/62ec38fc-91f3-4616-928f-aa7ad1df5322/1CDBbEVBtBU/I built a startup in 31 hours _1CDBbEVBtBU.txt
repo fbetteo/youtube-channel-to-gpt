@@ -1,0 +1,274 @@
+Video Title: I built a startup in 31 hours (SaaS)
+Video ID: 1CDBbEVBtBU
+URL: https://www.youtube.com/watch?v=1CDBbEVBtBU
+
+[00:00] on February 5th I went live on YouTube
+[00:02] and I built a software from the first
+[00:04] line of code to the first customer
+[00:06] within 31 hours of streaming in this
+[00:08] video I am going to share everything
+[00:10] from how did I get the ID and validate
+[00:12] it how I use four unconventional methods
+[00:14] in order to build it really fast and
+[00:16] that is probably going to make some
+[00:17] developers cry and finally we are going
+[00:19] to go over the launch part and how did I
+[00:22] get visitors and get $2,000 of profit
+[00:25] within the first week let's Jump Right
+[00:27] In how to find startup IDs there are
+[00:30] three ways to find them and my favorite
+[00:33] by far is to scratch your own itches
+[00:35] looking around you what you do on a
+[00:36] daily basis and see if you find any
+[00:39] boring annoying tasks that you don't
+[00:41] like that you could have a product to
+[00:43] automate it or delegate it thanks to
+[00:45] that I've been able to generate money
+[00:47] from every single launch that I made my
+[00:49] best product so far ship has made
+[00:51] $300,000 in 6 month thanks to this exact
+[00:54] same way to find IDs for the startup
+[00:56] that I built in 31 hours I was actually
+[00:58] checking my stripe account seeing how
+[01:00] much money I made in 2023 and I realized
+[01:03] that I spent $1.6 th000 on stripe fees
+[01:07] in order to generate PDF invoices I
+[01:10] decided to turn off the option and my
+[01:12] email were flooded with customers asking
+[01:15] for invoices there we go I had a new
+[01:17] product ID born just like that when you
+[01:19] scratch your own itches it's much easier
+[01:21] to validate a startup IDs because you
+[01:23] actually a user of your own startup I
+[01:26] also checked on Twitter and I saw that
+[01:28] there is a recurring uh pattern of
+[01:30] people complaining about stripe invoices
+[01:32] so I had a sense of I might not be the
+[01:34] only one in need of this tool there are
+[01:37] tons of tips and advices to validate
+[01:40] startup IDs um my method is a bit
+[01:42] unconventional but it is to ship it so
+[01:44] fast that if it's a flop it doesn't
+[01:46] really matter so someone at the end of
+[01:48] January 2024 I have a pain in my life
+[01:51] and I have this startup ID to let uh
+[01:54] customers generate invoices themselves
+[01:56] so the sty businesses owners like myself
+[01:58] don't have to do it I would normally
+[01:59] start typing my first line of code and
+[02:01] but instead I went live on YouTube and I
+[02:03] built the entire startup during 31 hours
+[02:06] of streaming from the first line of code
+[02:08] to the first customer these are the
+[02:10] methods that I use to build the startup
+[02:12] really fasing is everything as a
+[02:15] customer that's where you would go on a
+[02:16] website if you don't fully understand
+[02:18] what the product does and as a business
+[02:19] owner that's how you pay the rent and
+[02:22] also how you stay motivated over the
+[02:24] long term so this is one of the first
+[02:26] thing I brainstorm when building a
+[02:28] product I found out last year that free
+[02:30] plans don't really work for solo
+[02:32] preneurs because most free users
+[02:34] actually never convert to pay customers
+[02:36] also that subscriptions are actually
+[02:38] much harder to sell than onetime
+[02:39] payments so I usually ditch
+[02:41] subscriptions I start with onetime
+[02:43] payments it's much easier to implement
+[02:45] as a developer better for users because
+[02:47] they don't have recurring cost and if
+[02:49] the product goes viral and I end up
+[02:52] having a bunch of users and there is a
+[02:53] need for subscription I could still
+[02:55] grandfather the first users and start
+[02:58] charging subscription for the next user
+[02:59] for one payment I found out that less
+[03:02] than $30 is usually a good price point
+[03:04] when you're selling a vitamin a product
+[03:06] that is a nice to have but not a must
+[03:08] have and less than $100 is usually a
+[03:11] good price point for a painkiller so for
+[03:13] my startup Zenvo I priced it at $69
+[03:17] onetime payments um I have barely zero
+[03:19] recurring cost the bandwidth is
+[03:22] extremely cheap the emails to send
+[03:24] secure tokens are also really cheap it's
+[03:26] like usually $1 for a th000 emails so
+[03:29] this is very unlikely that I would get a
+[03:31] customer that would actually cost me
+[03:33] money and finally I added a price encor
+[03:35] to the product at
+[03:36] $49 one time payment this gives you
+[03:39] access to the the product for uh limited
+[03:42] access with only one stripe account this
+[03:44] is important because people have it's a
+[03:46] new kind of product people have no clue
+[03:48] what they're looking at and this helps
+[03:50] them decide roughly what is this product
+[03:54] worth if I add only one plan it would
+[03:56] probably get them confused as a product
+[03:59] obsess developer this part is the one I
+[04:02] struggled the most for years it is to
+[04:04] ship only one feature that one feature
+[04:08] you cannot remove for his invoice it's
+[04:10] the ability for customers to send a link
+[04:13] to their customer so they can generate
+[04:15] invoices anything that is not about that
+[04:17] will be removed there is no way to
+[04:19] preview the invoice no way to edit the
+[04:21] details on the invoice no reset password
+[04:23] thing there is just one big feedback
+[04:26] button at the top of the user dashboard
+[04:28] so that customers can let me know if
+[04:30] they want a new feature here is the red
+[04:32] pill most of startups fail so most of
+[04:35] the features that we build won't be used
+[04:37] by by users that's why I have this
+[04:40] framework of building only one feature
+[04:42] and shipping the first version of the
+[04:44] product with only that feature there is
+[04:46] another crucial part that is often
+[04:48] overlooked by product obsess developers
+[04:50] like me it is the Ling page 90% of
+[04:53] people will never see your product so I
+[04:55] spent 11 hours or 30% of the entire time
+[04:59] building the the Ling page and there are
+[05:00] a few components that are very crucial
+[05:02] for Lending page that converts first is
+[05:04] the problem agitation component it's a
+[05:07] section on your landing page usually
+[05:08] under the hero section that shows that
+[05:11] you understand the customer pain it is
+[05:13] very helpful because it shows respect it
+[05:15] show that you care about your customer
+[05:16] you know why they're here and if you
+[05:18] speak their own language your visitors
+[05:20] are much more likely to convert into
+[05:21] paying customers the headline at the top
+[05:23] of the hero section the H1 tag is very
+[05:26] important it is the promise you make to
+[05:28] your customers it should answer the
+[05:30] question of why would I spend more of my
+[05:33] precious time on this websites I never
+[05:35] ship a startup without some kind of
+[05:37] social proof at first when you don't
+[05:39] have much visitors it's hard to get them
+[05:41] but you can still send a few DMS on
+[05:43] Twitter LinkedIn wherever this is your
+[05:45] hanging outs and ask some people who are
+[05:48] potential customers if they're willing
+[05:49] to try your product for free there are
+[05:51] tons of noise out there and when you
+[05:53] have some kind of social proof on
+[05:54] website you build trust and you increase
+[05:56] your conversion rate because I always
+[05:57] launch product without a free Tri people
+[06:00] would have to pay before actually
+[06:02] signing up I usually display a little
+[06:04] demo video of the funer so me explaining
+[06:07] the product so people know what they're
+[06:08] buying and finally your product name is
+[06:11] very important because that's what
+[06:12] people will remember and later on share
+[06:15] with potential users if they find it
+[06:17] relevant if you are a software engineer
+[06:19] you are going to cringe at the next part
+[06:21] I do not use typescript I do not use G
+[06:23] branches I do not test my code and I
+[06:25] keep the same text stack for the past
+[06:28] two years I still use mongod and I love
+[06:30] it this is usually a loss of time
+[06:31] because it creates constraints and
+[06:34] whenever you want to move fast and break
+[06:35] things it just make everything much
+[06:37] slower because most startups fail I do
+[06:40] not spend too much time thinking about
+[06:41] the marketing side of things and instead
+[06:43] I focus on the launch if I launch well
+[06:46] I'll get enough data and visitors to
+[06:48] know if it's worth it or not to invest
+[06:50] more time into marketing and growing the
+[06:52] product later after 28 hours of
+[06:54] streaming the product Zenvo was done and
+[06:56] I am going to cover the four places I
+[06:58] launched the startup in order to get the
+[07:00] first visitors and the first customers
+[07:02] all right first I will always schedule a
+[07:04] launch on product hunt there are many
+[07:06] people browsing the site every day
+[07:07] bringing some traffic to your product
+[07:09] and giving you an initial boost and
+[07:11] later on if things go well you could be
+[07:13] targeted by other newsleter and media
+[07:15] who would just fed off product hunts and
+[07:17] you could see spikes later on in the
+[07:18] future I also launched on Twitter I
+[07:20] usually use Twitter as a bumper to P to
+[07:24] pump my product hunt launch on Twitter
+[07:26] people like new stuff so if you have
+[07:27] some kind of product that is a bit
+[07:29] trendy or if you use a good headline you
+[07:30] can easily get some traffic even though
+[07:32] you're getting started another platform
+[07:34] I love and I always launch on is hicker
+[07:36] news this is more random than Twitter in
+[07:38] product hunt but if you craft a good
+[07:40] headline your product can go crazy viral
+[07:43] this is what I happened for my first
+[07:45] product and I got something like 10,000
+[07:47] visitors within the first 24 hours and I
+[07:49] had zero audience and nothing back then
+[07:51] and finally the subreddit side project
+[07:54] it's still very active has a decent
+[07:56] number of people can bring a couple
+[07:58] hundred of visitors here your product so
+[08:00] overall a good place to launch a startup
+[08:02] I launched on all those four platforms
+[08:04] within a time frame of like 2 to 3 hours
+[08:06] and 24 hours later and about 4,000
+[08:10] visitors on the site then voice made
+[08:13] $800 and by the end of the week of
+[08:15] launching he made $2,000 in profit and
+[08:18] also received messages from customers
+[08:20] who were happy to finally have a
+[08:22] solution for stripe invoicing which is
+[08:24] promising for the future I still do not
+[08:26] know if I will focus on Z invoice or if
+[08:28] I will let it run by itself I will wait
+[08:30] to have at least 10,000 visitors on the
+[08:33] site in order to see the dollars earned
+[08:37] per visitor metric which is the only
+[08:39] metric I track um to give you a
+[08:42] reference my best website uh ship Fest
+[08:45] gets almost $1 per visitor Revenue so
+[08:48] for 100 visitor I could expect $100
+[08:51] worth in revenue and my worst product
+[08:53] got
+[08:54] 0.06 per visitors it's quite
+[08:57] oversimplified but I found it to be very
+[08:59] relevant to see if there is some kind of
+[09:01] Market fit if I get somewhere above
+[09:05] $0.5 per visitor I think it's a product
+[09:08] that's worth focusing on otherwise it's
+[09:10] good to just let it run by itself fix
+[09:11] some bugs be there for customer support
+[09:13] if needed and just move on to the next
+[09:15] one until you find the product that hits
+[09:17] big in the last two years I started to
+[09:19] ship my startups in days sometimes week
+[09:22] instead of month and my Revenue went
+[09:24] from $1 and $2,000 a month to now about4
+[09:26] to $50,000 a month I think speed is the
+[09:30] entrepreneurs best friend and these
+[09:32] video summarize everything I do in order
+[09:34] to ship fast if you like the video you
+[09:36] can like the video and if you love the
+[09:38] video you can subscribe to the channel
+[09:39] if you're looking for another video I
+[09:40] made one about how I got my first
+[09:42] customer for a software I did not create
+[09:45] you can check that out all right
+[09:48] cheers

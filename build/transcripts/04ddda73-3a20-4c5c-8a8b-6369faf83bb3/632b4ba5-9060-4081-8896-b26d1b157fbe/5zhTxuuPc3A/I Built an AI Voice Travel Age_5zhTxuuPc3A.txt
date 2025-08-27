@@ -1,0 +1,1013 @@
+Video Title: I Built an AI Voice Travel Agent with ElevenLabs and n8n (Free Template)
+Video ID: 5zhTxuuPc3A
+URL: https://www.youtube.com/watch?v=5zhTxuuPc3A
+View Count: 33,909
+
+[00:00] hey there I'm Jessica how can I help you
+[00:02] today hey Jessica I'm looking to plan a
+[00:04] trip great I can definitely help you
+[00:07] with that to start where are you
+[00:09] traveling from
+[00:11] Chicago okay and where are you planning
+[00:14] to go Los
+[00:16] Angeles got it and when are you planning
+[00:19] to leave yeah I want to go from March
+[00:21] 1st to the
+[00:22] 7th okay so you want to leave on March
+[00:25] 1st and return on March 7th how many
+[00:27] Travelers will there be just going to be
+[00:29] me
+[00:32] all righty do you have any activities
+[00:33] you'd like to do in Los Angeles yeah I'd
+[00:36] love to go
+[00:37] surfing okay great finally could I
+[00:40] please get your email address so I can
+[00:41] send you the travel plan sure you can
+[00:44] send that to Nate example.com
+[00:47] perfect please give me a few moments to
+[00:49] look into this yeah no problem take your
+[00:56] time are you still there yep
+[01:01] okay great I have emailed the travel
+[01:04] plan to
+[01:05] you okay awesome I'll go check it out
+[01:08] happy to help have a great trip Okay
+[01:11] cool so as you can see she just ended
+[01:13] the call because she knew it was over
+[01:15] and apparently we have a travel plan in
+[01:17] our inbox so let's go take a look okay
+[01:19] so here it is we have your exciting Los
+[01:21] Angeles getaway March 1st to the 7th get
+[01:23] ready for your La Adventure we're
+[01:25] thrilled to present your upcoming trip
+[01:27] to the City of Angels you'll be soaking
+[01:29] up the Sun explor exporing iconic sites
+[01:30] and creating Unforgettable memories get
+[01:32] ready for a perfect blend of urban
+[01:34] excitement and Beachside relaxation so
+[01:36] the first thing it does is it list our
+[01:38] flights so we're departing from Chicago
+[01:40] to LA on March 1st returning to Chicago
+[01:42] March 7th and then it says we found two
+[01:44] great trip options for you so we have
+[01:46] Frontier and spirit um two great options
+[01:49] anyways um it gives us the duration it
+[01:51] gives us some features it gives us
+[01:52] carbon emissions um and then a price
+[01:55] round trip then it moves into the
+[01:56] resorts so as you can see here we have
+[01:58] three Resort options each one has a
+[02:00] image and we can click into the title of
+[02:02] it to see um the direct website so this
+[02:05] one is the metric um this one is 179 a
+[02:08] night gives us a total rate for how many
+[02:09] days we're staying Walt Disney Concert
+[02:11] Hall is nearby 4minute taxi Third Street
+[02:14] in Lucas hav is a minute walk away free
+[02:16] breakfast free Wi-Fi air conditioning
+[02:18] golf smoke free we have a picture here
+[02:21] for the second one Sunset Marquee as you
+[02:22] can see we could click into this link um
+[02:24] as well and it pulls up this this
+[02:26] website right here we have the total
+[02:28] rate is 5400 so a little pricey but it's
+[02:30] nearby hallay 4minute walk LA airport 39
+[02:33] minute taxi we've got breakfast free
+[02:36] Wi-Fi parking um outdoor pool air
+[02:39] conditioning pet friendly all these
+[02:40] other amenities then we have the stay
+[02:41] open Venice Beach once again we can
+[02:43] click into this link we get the website
+[02:45] right here we can look at you know how
+[02:46] to book this place if we want to stay
+[02:48] there it gives us a rate again which is
+[02:50] 110 per night nearby we have the Venice
+[02:52] boardwalk which is 2 minutes away and
+[02:54] then main Brooks 4minute walk away and
+[02:56] then finally we get some amenities down
+[02:58] there as well and finally remember we
+[03:00] asked for activities so here we have the
+[03:02] Ultimate Guide to surfing in La so the
+[03:04] it gives us a brief description about
+[03:05] what we can do here we can click on the
+[03:07] link and once again it'll bring us into
+[03:09] you know maybe where to do it and any
+[03:11] resources we may need and then we have a
+[03:13] second one which is also where to surf
+[03:15] in La so this one again is going to give
+[03:17] us some more details on if we're trying
+[03:18] to come out here in LA and go surfing
+[03:21] finally it signs off with we're excited
+[03:23] for you to experience the best of Los
+[03:24] Angeles um wishing you Suns soaked days
+[03:27] and Unforgettable Adventures best
+[03:28] regards true Horizon team so now that
+[03:31] we've seen a demo let's dive into how
+[03:33] this all works all right so as you guys
+[03:34] saw in the demo this is what the
+[03:35] workflow looks like obviously the the
+[03:37] trigger is a web hook that 11 lab sends
+[03:40] over information for us to feed into
+[03:42] these three requests where we're getting
+[03:44] activities Resorts and flight
+[03:45] information feeding that into an email
+[03:47] agent to actually create that email in
+[03:49] HTML structure with the images and the
+[03:50] links and all that it sends it off and
+[03:52] then it responds back responding to the
+[03:54] web hook back to the voice agent in 11
+[03:56] Labs so we'll dive into the actual 11
+[03:58] Labs configuration of the agent we'll
+[03:59] dive into all of these nodes here in NN
+[04:01] and see what's going on but I wanted to
+[04:03] say that you know there's a lot going on
+[04:05] in this workflow so we're going to go
+[04:06] over it at a pretty high level if you're
+[04:08] looking for a more Hands-On approach and
+[04:09] you want to see the step-by-step build
+[04:11] and definitely check out the paid
+[04:12] Community the link for this will be down
+[04:13] in the description we have a great
+[04:14] classroom section where we're going over
+[04:16] things crucial to this video like apis
+[04:18] HTTP requests um Step by steps where I'm
+[04:20] doing all the builds from the YouTube
+[04:22] channel and then also other deep di
+[04:23] topics like building agents and Vector
+[04:25] databases also got a great calendar
+[04:27] section with five life calls per week to
+[04:29] make sure you're never getting stuck and
+[04:30] make sure you're meeting people in the
+[04:31] space as well so we love to see you guys
+[04:32] in these calls but you can also download
+[04:34] this workflow for completely free if
+[04:36] you'd like you can do that by joining
+[04:37] the free community which is also linked
+[04:39] in the description you'll come in here
+[04:40] click on YouTube resources click on the
+[04:42] post associated with this video and then
+[04:44] as you can see right here in the post
+[04:45] you'll have all of the workflows
+[04:46] available to download once you download
+[04:48] them you'll come back into ended end
+[04:49] open up a new workflow hit the three
+[04:51] dots in the top right and then you can
+[04:52] click import from file and this workflow
+[04:55] right here will pop up for you um you
+[04:57] know with all the prompting already in
+[04:58] here as you can see this promp is pretty
+[05:00] robust with all this mapping and we have
+[05:01] the system prompt in here so if you want
+[05:03] to just download it then you can do so
+[05:04] by joining the free school Community
+[05:06] okay so we're going to start off in 11
+[05:07] labs and talk about how we conf figured
+[05:09] the agent to actually extract the right
+[05:11] information we need in a conversational
+[05:13] manner it's going to send that
+[05:14] information over like um where you're
+[05:16] traveling to and from the dates you're
+[05:17] traveling how many Travelers what you
+[05:19] want to do there and that gets sent over
+[05:21] to the web hook and then we're going to
+[05:22] go down the process you know one by one
+[05:24] of what each note is doing I'll break it
+[05:26] down as simple as possible and and that
+[05:28] way we can just see how an initial
+[05:30] conversation the data is extracted and
+[05:32] then the end result is you know this
+[05:33] email with research and different
+[05:35] sections broke out but we're going to
+[05:37] hop into 11 Labs first to take a look at
+[05:39] how we configure that voice agent okay
+[05:41] here we are in 11 Labs what you have to
+[05:43] do is go to conversational ai go to
+[05:46] agents and then you're going to create a
+[05:47] new agent um I'm on the starter plan
+[05:49] which is like five bucks a month and as
+[05:50] you can see um I still haven't used like
+[05:51] anywhere near my credits so that's a
+[05:53] great place to start anyways from there
+[05:55] we're creating a new agent and I called
+[05:57] it travel agent and then I created from
+[05:58] a blank template so once you open that
+[06:01] up it's going to look like this and
+[06:02] we're going to go over what you need to
+[06:03] configure to get this thing up and
+[06:05] running so the first thing is you know
+[06:07] you can choose a voice so we chose
+[06:08] Jessica in this case that's why the
+[06:10] travel agent's name is Jessica and then
+[06:12] we have our actual main agent
+[06:13] configuration page so the first thing is
+[06:15] we chose our language we didn't touch
+[06:16] any additional languages and then we set
+[06:18] up the first message so when we hit
+[06:20] start call the agent says hey there I'm
+[06:22] Jessica how can I help you if you leave
+[06:24] this blank then it's just on the human
+[06:26] to start the conversation anyways from
+[06:28] there we set up the system prompt so
+[06:30] what I said here was I gave it an
+[06:31] overview you're a travel assistant your
+[06:33] job is to help the caller create a
+[06:34] travel plan based on the details they
+[06:36] provide next we told it the tool that it
+[06:38] has which is only one we said your tool
+[06:40] is n8n and use this tool to send the
+[06:42] caller's travels details to this will
+[06:44] generate a travel plan and so when we
+[06:45] scroll down a little bit more I'll show
+[06:46] you how we set up the tool and how it
+[06:48] all works but for now just remember that
+[06:49] the 11 Labs agent has access to a tool
+[06:51] called n8n and then we gave it a brief
+[06:53] set of instructions so we said extract
+[06:55] the required details from the caller
+[06:57] then you'll always send the details to
+[06:58] the N to tool after you use the NN tool
+[07:01] say please give me a few moments to look
+[07:03] into this so it's not just awkward
+[07:04] silence if you were forced to speak just
+[07:07] say thanks for your patience I'm almost
+[07:08] done never say there was an issue with
+[07:10] the server and we put this in here
+[07:12] because the NAD you know workflow that
+[07:14] we set up it takes more than it takes
+[07:16] like 20 25 seconds to run and there's a
+[07:19] setting in here if you go into advanced
+[07:22] where we have turn timeout so if 15
+[07:25] seconds passes the agent will be forced
+[07:26] to respond if we don't say anything and
+[07:28] 15 seconds is the m Max I tried to make
+[07:30] it like 30 and 15 is the max so what we
+[07:32] wanted to do is build in a a safeguard
+[07:34] here where it says um you know basically
+[07:36] the agent will be forced to speak so
+[07:38] when you're forced to speak just say
+[07:40] thanks for your patience I'm almost done
+[07:41] rather than saying you know there's an
+[07:43] issue or I can't access the server or
+[07:45] something like that so you know
+[07:46] obviously we don't want that to happen
+[07:47] because nothing is broke it's just
+[07:49] waiting for the email to be written and
+[07:51] finally we said once the travel plan has
+[07:52] been emailed to the caller cheerfully
+[07:54] let them know we have the option to set
+[07:56] up Dynamic variables in this case we
+[07:58] didn't so I'm not going to dive into
+[07:59] that
+[07:59] we have um the llm to choose from as you
+[08:01] can see Gemini 15 flash is the fastest
+[08:04] and that's probably the default but if
+[08:06] you do that when you see your tools down
+[08:07] here it says when using tools we
+[08:09] recommend avoiding Gemini flash um and
+[08:11] using a different more powerful one so
+[08:13] that's why we we chose two here um but
+[08:15] anyways you got your temperature so
+[08:17] default 0.5 we're going to keep it there
+[08:19] just for now basically this is the
+[08:21] creativity or Randomness in you know
+[08:23] when the model is predicting or not
+[08:24] predicting when it's generating its next
+[08:26] words you're just basically widening the
+[08:28] range if you like this you're widening
+[08:30] the range of words it could choose or
+[08:31] you're shortening it for more consistent
+[08:32] results so we're just going to leave it
+[08:34] as 0. five you can limit your token
+[08:36] usage here you can add a static
+[08:37] knowledge base which in this case we
+[08:39] don't really need to do so because we're
+[08:40] using basically search functionality to
+[08:42] get all the information back and then
+[08:44] finally here's where all the magic
+[08:45] happens with the
+[08:47] tools so first thing to note is that the
+[08:49] agent will likely by default have this
+[08:51] end call system tool which just gives
+[08:53] the ability to the agent to end the call
+[08:55] if it knows it's over but then this is
+[08:57] the custom one that we set up so you'll
+[08:58] click on ad tool Custom Tool and then
+[09:01] this is where we configure everything so
+[09:02] this is the screen you'll see and I'm
+[09:04] going to pull it up with our Ed end tool
+[09:06] so first of all we gave it the name andn
+[09:08] then we gave it this description which
+[09:09] is this tool generates a travel plan
+[09:11] once the details are collected we have
+[09:14] the method to be post by default it will
+[09:16] probably be get but you want to change
+[09:17] it to a post because what we're doing is
+[09:19] we're trying to send over data to nadn
+[09:22] to run it through these different apis
+[09:23] and then create an email so that's why
+[09:25] it's going to be a post um we have the
+[09:27] URL right here which is just the web
+[09:29] post URL from naden so if I go back into
+[09:31] my naden click into this web hook you
+[09:33] can see the post request endpoint right
+[09:36] here so this is the one I click to copy
+[09:38] this and then I pretty much paste that
+[09:40] right in there so then 11 Labs knows
+[09:42] where to send the data to now in these
+[09:43] tools you have the options to set up
+[09:45] your you know header parameters path
+[09:46] parameters query parameters we don't
+[09:48] need to do that all you want to do is
+[09:49] enable body parameters and this is
+[09:51] actually going to be the things that we
+[09:53] the attributes that we set up to have
+[09:55] the 11 Labs Gemini 2.0 flash model look
+[09:58] at the trans script when it's
+[09:59] conversating with us pull out these
+[10:01] details and send them to anen so first
+[10:04] of all we describe how this is going to
+[10:05] work we say collect all of these details
+[10:08] from the caller then send the request so
+[10:11] now we're going to set up the different
+[10:12] properties we want to pass over the
+[10:14] first one is return date we're saying
+[10:16] that this is a string data type we're
+[10:17] going to be pulling this from The llm
+[10:19] Prompt rather than using Dynamic
+[10:20] variables and then we describe it as the
+[10:22] day the caller wants to return now what
+[10:25] you could do is you could come in here
+[10:26] and you could um specify the format
+[10:28] because through the different requests
+[10:30] in then then and you guys will see we
+[10:31] want the format to be year year year
+[10:34] Dash or sorry year year year year Dash
+[10:36] Monon month- DayDay but we just Chang
+[10:39] that formatting later so I'll show you
+[10:40] guys that anyways you could specify that
+[10:42] here as well then we have departure date
+[10:45] also a string required the day the
+[10:47] caller wants to leave activities is also
+[10:48] going to be a string any activities the
+[10:50] caller wants to participate in at the
+[10:52] destination so it's just important to
+[10:54] basically give detailed descriptions and
+[10:55] I know these aren't too detailed but
+[10:56] they're pretty straightforward but a
+[10:58] description so the model knows what to
+[11:00] fill in for each identifier then we have
+[11:02] destination where the call is traveling
+[11:04] to it's a string Travelers this one's a
+[11:06] number the total number of Travelers and
+[11:08] then the format I gave it just so it
+[11:09] wasn't spelling out like o n e rather
+[11:11] than giving one you know I put it as a
+[11:13] data type number so it should work
+[11:15] anyways then we have the origin which is
+[11:17] a string where the caller is traveling
+[11:19] from and then we have email an email to
+[11:22] send the travel plan to so that's all we
+[11:24] have those are the maybe seven six seven
+[11:27] properties we have um and then basic
+[11:29] that's all that's going on within our
+[11:30] travel agent within 11 Labs so test that
+[11:33] out a few times you'll basically just
+[11:35] make sure that data is being passed over
+[11:36] correctly and if it is you'll come back
+[11:39] into here this is the web hook response
+[11:42] um these are the headers we don't need
+[11:43] to look at that we only set up body
+[11:44] parameters we can close out of headers
+[11:46] and here we have body what you can see
+[11:48] is we have March 9th March 1st um
+[11:50] Riverboat Tour Chicago one traveler New
+[11:52] York City Nat example.com and so now
+[11:55] what's next is we need to format some of
+[11:57] this stuff because first of all when
+[11:59] we're putting in our requests to you
+[12:01] know the resort or the um flights we
+[12:04] don't want to use these city names what
+[12:06] we want to do is use airport codes so we
+[12:08] have to get the airport codes and then
+[12:09] we also have to turn these dates from
+[12:10] strings into date format okay so before
+[12:13] we do that what I wanted to do is just
+[12:15] set all the fields from the web hook
+[12:17] node so we can always reference this set
+[12:20] Fields node to get everything that was
+[12:22] original data so we're setting the
+[12:24] origin all we have to do is come to the
+[12:25] web hook and drag in the origin setting
+[12:27] the destination dragging in the
+[12:29] destination um departure date you know
+[12:31] this is literally you just drag the
+[12:33] field and then you're dragging it into
+[12:34] the right place um return date return
+[12:37] date Travelers we're dragging that in as
+[12:39] well setting that to a number variable
+[12:40] type rather than a string and then the
+[12:42] same thing for activities and email
+[12:44] we're just dragging them in and so now
+[12:45] you can see the output all we're getting
+[12:47] is just a really clean 1 2 3 4 5 6 seven
+[12:50] things that the 11 Labs model was able
+[12:52] to send over in that body request cool
+[12:54] so from there we're passing it into a
+[12:57] basic llm chain and this is the one
+[12:58] where I talked about we have to format
+[13:00] our dates and get the airport codes so
+[13:02] this is an AI node we're using GPT 40 to
+[13:05] do so because it's aware of city names
+[13:07] and airport codes so what we did is we
+[13:10] gave it um four things we gave it the
+[13:12] origin and here let me pull this up so
+[13:14] you can see the actual result the origin
+[13:16] New York City the destination Chicago
+[13:18] departure date March 1st return date
+[13:20] March 9th so it's going to use its AI
+[13:23] brain to turn the origin and destination
+[13:25] into their airport codes make sure the
+[13:27] departure and return dates are in the
+[13:28] future not the past and here is the
+[13:30] current date and time because 11 Labs
+[13:32] doesn't natively have awareness of what
+[13:35] the current date and time is so if I
+[13:37] said March 9th it could try to book a a
+[13:40] flight for March 9th in 2019 so this is
+[13:42] where we're using the brain of the AI
+[13:44] and the structured output parser which
+[13:47] you can see right here we required
+[13:49] specific output format to Output this
+[13:51] kind of stuff so what we're getting is
+[13:52] origin
+[13:53] JFK destination o for O'Hare um
+[13:57] departure in the format we want and
+[13:59] return date in the format we want and
+[14:01] we're able to do this by using the
+[14:02] structured output parser where we're
+[14:04] basically just defining and if I open it
+[14:06] like this it gets cut off for some
+[14:07] reason but what we're defining is an
+[14:09] object with four things inside of it so
+[14:12] we have um the origin which is a string
+[14:15] we have destination which is a string we
+[14:17] have departure which is a string and
+[14:19] then return which is a string and as you
+[14:20] can see for these date formats we had to
+[14:22] specify like this is how we want you to
+[14:24] Output it and we said all four fields
+[14:26] are required and as you can see on the
+[14:28] output we got all four back back over
+[14:29] here exactly the way we want them okay
+[14:31] so now that that part's done all we have
+[14:33] to do is set up our different requests
+[14:35] so the first one we're doing is the
+[14:36] activities request so in here we are
+[14:38] making a post request to tavali so
+[14:40] you'll go to tavali you can get an API
+[14:41] key for free you'll get like a thousand
+[14:43] free calls um and then we're looking at
+[14:45] the search endpoint so this is a post
+[14:47] request you can copy this curl command
+[14:49] and then you can paste it right into
+[14:50] here import curl paste the command and
+[14:52] then it will populate everything all
+[14:54] you'll need to do is put in your
+[14:55] credential and then set up the query you
+[14:57] want to actually search the internet for
+[14:59] so in this case we're searching for um
+[15:02] Riverboat tour in Chicago because we
+[15:04] mapped back from the set Fields once
+[15:06] again so I'm going to drill down to set
+[15:07] fields we wanted to pick activities so I
+[15:09] dragged in activities and then I said in
+[15:12] and then I dragged in the destination so
+[15:14] every time this is going to be going
+[15:15] through and doing a web search for
+[15:16] whatever activity we said in the
+[15:18] destination that we said the only thing
+[15:20] else I changed is I made the Max results
+[15:22] three rather than one just so we could
+[15:24] get more than one option back and so on
+[15:26] the output what we have are three
+[15:27] different results as you can see result
+[15:29] one result two and result three although
+[15:31] it goes 012 and then each result has
+[15:34] like an article title a URL and then a
+[15:36] brief description of what that article
+[15:37] talks about so that's how we map it into
+[15:39] the email later so I know HTTP requests
+[15:42] and apis and looking through the
+[15:43] documentation can be a little
+[15:45] intimidating a little confusing
+[15:46] especially with these next two these are
+[15:47] Sur API ones where we're looking for
+[15:50] hotel API um and you have a ton of
+[15:52] different parameters to set up and you
+[15:53] have a different like search engine and
+[15:54] a base URL so I'm going to walk through
+[15:56] it kind of at a high level here but if
+[15:58] you're looking at dive into it and
+[15:59] understand it on a deeper level
+[16:01] definitely check out the paid Community
+[16:02] I've got a deep dive course around apis
+[16:04] and HTTP requests so that could be
+[16:06] definitely helpful because apis are
+[16:08] something really important to know
+[16:09] anyways what we're doing here is making
+[16:11] a request to Google hotels API which is
+[16:13] within Ser API if you make a free
+[16:15] account and get your API key you'll get
+[16:17] like 100 free calls a month anyways the
+[16:20] first thing we see is a base URL so this
+[16:23] is the base URL which is Sur ai.com
+[16:25] search so what I did is I put that in
+[16:27] the base URL as
+[16:29] you know right there so anyways we know
+[16:31] the method is git um because it says
+[16:33] right here utilizing a git request and
+[16:35] then what we have are different
+[16:36] parameters that we need to put in here
+[16:38] based on you know to send through so we
+[16:40] get back what we want um the first thing
+[16:42] that we want to do is go down to the
+[16:43] bottom and we'll see here are the Ser
+[16:45] API parameters we need to specify what
+[16:47] search engine we're searching in within
+[16:49] Ser API which will be Google hotels so
+[16:52] back in NN you can see my first query
+[16:54] parameter is called engine and the value
+[16:55] is Google hotels just like it says in
+[16:57] the documentation and then also what I
+[16:59] did is I set up my API key as a
+[17:01] predefined query off so um in the
+[17:05] documentation we can see that also a
+[17:07] query parameter will be API key and then
+[17:09] your API key but what you can do is to
+[17:11] save your credentials you can predefine
+[17:14] them and then have them save so I always
+[17:15] have my Sur API key right here because I
+[17:18] chose you know a query off type A lot of
+[17:20] times they're going to be a header off
+[17:21] type but either way you can create a new
+[17:23] credential and then you'll put in like
+[17:25] api-key right here and then you'll put
+[17:27] in your API key here and it will just be
+[17:29] saved so every time you want to make a
+[17:31] request to Ser API you don't have to go
+[17:32] find your key you already have
+[17:33] everything saved here in nadn so anyways
+[17:35] from there the rest of the parameters we
+[17:37] need to set up are pretty much
+[17:38] dynamically mapped based on our
+[17:40] conversation with the voice agent so the
+[17:42] first thing we can see is we needed to
+[17:43] put in a que if we go up to the top we
+[17:45] can see a q is the search query that's
+[17:47] required and this is basically just the
+[17:49] location that we want to search for
+[17:51] hotels in so we're putting in a Q and
+[17:53] we're dragging in from set Fields so let
+[17:55] me drill down to set Fields we're
+[17:57] dragging in the destination as our
+[17:59] search parameter then we have checkin
+[18:01] date once again we're dragging in our
+[18:03] departure date or actually no we're not
+[18:06] dragging in departure date sorry you can
+[18:08] see here we have check in date and
+[18:09] checkout date we need the format of y y
+[18:12] y y- mm whatever so good thing we
+[18:16] already changed that with an NN where we
+[18:18] want to get this from is the basic chain
+[18:20] node where we change the output so
+[18:21] that's what we dragged in right here for
+[18:23] check-in date we J in departure date and
+[18:25] then for checkout date we drug in return
+[18:28] date so as you can see coming through in
+[18:29] the format that we need then finally we
+[18:31] just need to know how many guests will
+[18:33] be staying so back in um Sur API we can
+[18:37] see that the parameter here was actually
+[18:39] I think I passed it right up here adults
+[18:41] it's an optional parameter and it
+[18:43] defaults to two so we want to specify we
+[18:45] can just say you know we'll throw in our
+[18:46] set Fields the number of Travelers that
+[18:48] is what goes in the adults parameter and
+[18:51] then we can see what we get back is
+[18:53] metadata on our search parameters on our
+[18:55] search we can close out of that we can
+[18:56] close out of this and then we have a
+[18:58] list of properties right here if we
+[18:59] expand this list of properties we can
+[19:01] close out these objects and see how many
+[19:03] properties we got back which is a ton um
+[19:06] so yeah this is what we use also to map
+[19:08] into the email and we only chose the
+[19:10] first you know three for this example
+[19:12] but look how many properties are coming
+[19:13] back um 20 total so that's what we're
+[19:16] getting back from this request so then
+[19:18] after the resorts request we're making a
+[19:20] request for flights so this is once
+[19:22] again Ser API same base URL but we're
+[19:25] going to specify the engine as Google
+[19:27] flights rather than Google hotels so
+[19:29] same thing I'm using the exact same
+[19:30] query off that I had for the previous
+[19:32] one because they're both going to Ser
+[19:33] API um we can come in here to Google
+[19:35] Flights API and we'll see exactly again
+[19:38] we have query parameters and we have
+[19:40] some that are optional and some that are
+[19:42] required so going down to the bottom we
+[19:44] can see the first one we need is engine
+[19:46] it's required and Google flights so
+[19:48] that's where I got that then we have API
+[19:49] key always required so that's why I put
+[19:51] in my query um off right there but then
+[19:54] what we want to do is specify certain
+[19:56] things so departure ID and arrival ID we
+[19:58] you can see that this needs airport
+[19:59] codes not just cities so for the
+[20:02] departure ID and arrival ID we went to
+[20:05] our um basic chain once again where we
+[20:08] had it get those airport codes and then
+[20:10] we could say okay for departure ID we're
+[20:11] going to do origin so we jug that in
+[20:13] there and then for our Ral ID we wanted
+[20:15] to do our destination so then we threw
+[20:18] that in right there finally we have
+[20:20] outbound return date and adults so same
+[20:23] thing we're getting it from our
+[20:24] structured output from the basic chain
+[20:26] where we do our departure and we do our
+[20:28] return turn and then finally from adults
+[20:30] we just do the number of Travelers once
+[20:32] again and then same type of format as
+[20:33] our output from the previous node we
+[20:35] have metadata we can close out of that
+[20:37] our search parameters we can close out
+[20:38] of that and then we have best flights so
+[20:41] we can see we have a list of best
+[20:42] flights if we close out of it we also
+[20:43] have a list of other flights we have
+[20:45] price insights we have airports so we're
+[20:47] getting a lot of stuff back so it's just
+[20:48] about looking through the results and
+[20:50] seeing what actually you need so what we
+[20:52] did is we looked in the best flights we
+[20:54] can close out these objects and see how
+[20:56] many flights it came back with so in
+[20:57] this case it gave us four best flights
+[20:59] and so if we look in the drill down of
+[21:01] each flight we can see we get a
+[21:02] departure airport the ID the time the
+[21:05] arrival airport the duration of the
+[21:06] flight the airline the logo um different
+[21:09] amenities or sorry features carbon
+[21:11] emissions like we have all the stuff
+[21:13] pricing um so that's where you're going
+[21:15] to get for each flight and then it's all
+[21:16] about mapping that into the next node
+[21:18] which is the agent that writes the
+[21:20] emails so first thing I wanted to point
+[21:21] out if you notice for the basic chain
+[21:23] I'm using GPT 40 for the email agent I'm
+[21:25] using claw 3.5 this is just because you
+[21:27] know this is going to be very structured
+[21:29] we're creating content it's going to be
+[21:30] HTML um and I just think that cloud does
+[21:32] a lot better job at that so let's dive
+[21:35] into what's going on within the email
+[21:37] agent because it may seem intimidating
+[21:38] but it's really not too bad Okay so
+[21:40] we've got a user message and a system
+[21:42] message typically what I like to do in
+[21:44] the user message is feed in information
+[21:46] that changes every time so in here I set
+[21:48] a bunch of information about different
+[21:49] flight stuff Resort stuff and um
+[21:53] activity stuff but what we want to do in
+[21:54] the system message is explain the rules
+[21:57] and instructions for how this agent
+[21:58] should be behaving no matter what so
+[22:00] overview you're an expert email writer
+[22:02] specializing in Creative creating travel
+[22:04] plans your job is to Output an HTM email
+[22:07] with clickable links you must output a
+[22:09] subject in an email body in separate
+[22:10] parameters so once again we're using a
+[22:12] structured output parser which I'll show
+[22:14] in a sec anyways objective is that you
+[22:17] are going to receive information about a
+[22:18] vacation plan and you need to break the
+[22:20] email into three sections flights
+[22:22] Resorts activities and then we gave it
+[22:24] sort of like an output format so all of
+[22:26] these sections here are about the output
+[22:28] format so they kind of roll up into this
+[22:31] but here's what we start with the email
+[22:33] should be structured as HTML that will
+[22:34] be sent through email use headers to
+[22:36] separate sections add a horizontal line
+[22:38] to end each section your subject should
+[22:41] contain the travel dates and the arrival
+[22:42] location introduction the goal of this
+[22:45] section is to get the traveler excited
+[22:46] about their trip you must add a
+[22:47] horizontal line after this section um
+[22:51] and then we dive into the three ones of
+[22:52] flights Resorts activities for flights
+[22:54] we said list the departure and return
+[22:55] dates and locations list the flights and
+[22:57] details about each one
+[22:58] Resorts we said list each resort with a
+[23:00] clickable link as the name of the resort
+[23:02] number the list of resorts and then we
+[23:04] had to specify how you actually put the
+[23:06] images in line rather than making them
+[23:08] like an attachment so we said output
+[23:10] images in HTML format like this we're
+[23:13] wrapping an image within this HTML tag
+[23:15] so like the left Arrow IMG and then the
+[23:18] right arrow and then within that we're
+[23:20] putting the source of the image so it's
+[23:21] going to grab the URL that we Define up
+[23:24] in the user message and then we're
+[23:25] setting the style which is we're making
+[23:28] the width 20% and then we're having the
+[23:30] height auto adjust because if when it
+[23:32] was 100% the images were huge compared
+[23:34] to the words So 20% looks a lot better
+[23:36] anyways then I said leave a new line
+[23:38] between the resort name and its image
+[23:39] and after the image just for some
+[23:41] spacing um and then activities list the
+[23:43] activities with clickable links as the
+[23:45] name of the activity provide a brief
+[23:47] description of each activity sign off
+[23:49] sign the email off in a friendly way and
+[23:51] as true Horizon travel team and then at
+[23:53] the bottom important do not output more
+[23:55] than a thousand words or you might start
+[23:57] seeing some stuff get cut off so that is
+[24:00] the system message and as you can see
+[24:01] we're getting HTML body over here with
+[24:04] these tags and then we have our subject
+[24:06] um in different fields of course and an
+[24:08] output object but now let's look at the
+[24:10] actual user message which may look
+[24:13] pretty messy so what we're doing here is
+[24:14] bringing in information from the flights
+[24:16] request the resorts request and then
+[24:18] finally the activities request so let's
+[24:20] dive into how we're mapping this stuff
+[24:22] you may see a red thing right here so
+[24:24] keep in mind every time you make a
+[24:26] request to these different ser apis
+[24:29] typically the the drill down is going to
+[24:30] be the exact same schema every once in a
+[24:32] while something won't exist so like in
+[24:34] this case a link didn't exist and the
+[24:36] good news is it's not going to break the
+[24:38] automation it's just going to leave it
+[24:39] as undefined as you can see oh wherever
+[24:41] that went um yeah right here it just
+[24:43] comes back as undefined so sometimes you
+[24:45] know based on your search if you're
+[24:46] going to places that are maybe smaller
+[24:48] you may have less options or less
+[24:50] pictures less amenities and that's fine
+[24:52] it won't break the automation but some
+[24:54] things may just not show up every time
+[24:55] so just something to keep in mind
+[24:56] anyways what I want you to pay attention
+[24:58] to here is the right side so this is the
+[25:00] actual result it's a lot less messy but
+[25:02] the left side can look pretty you know
+[25:04] ugly anyways we're starting off the
+[25:07] section saying you know here are flights
+[25:09] from New York City to Chicago on March
+[25:11] 1st to March 9th and for this we're
+[25:13] grabbing everything from the set fields
+[25:15] that we set way earlier so if I drill
+[25:17] down right here you know we basically
+[25:18] just dragged in um we want to look at
+[25:21] these are flights from Chicago so Dragon
+[25:22] Chicago or sorry New York City and then
+[25:25] we're saying you know two destination um
+[25:27] departing on this day returning on this
+[25:29] day all that kind of stuff so it's
+[25:30] really easy to just think natural
+[25:32] language how do you want to set this
+[25:33] stuff up for your agent to process in an
+[25:35] email and then we wanted to start giving
+[25:36] it information about each flight so in
+[25:38] this case I only did two but we're going
+[25:39] to open up the flights HTTP request
+[25:42] we're going to close out of this stuff
+[25:43] and we're going to get to flight number
+[25:44] one which is what we're looking for and
+[25:46] let me actually expand this a little bit
+[25:47] so it's easier for us to see um yeah so
+[25:50] what I did here is first I gave it the
+[25:51] airline so I dragged an American you can
+[25:53] see it's American we have the date and
+[25:55] then we have the duration of the flight
+[25:56] which all of this information you can
+[25:57] find right here and basically just drag
+[25:59] in so it makes it super easy then what I
+[26:01] wanted to do is drag in the features so
+[26:03] I dragged in the list of extensions
+[26:04] which looks like this and then it comes
+[26:06] through as you know average leg room
+[26:08] Wi-Fi inseat power all that kind of
+[26:09] stuff um then I talked about the price
+[26:12] so we just come down here we find the
+[26:13] price from this section right here we
+[26:15] said the price is 293 round trip and
+[26:18] that's all we did for the first flight
+[26:19] and then I did the exact same thing for
+[26:20] the second flight so all I did is on the
+[26:22] left hand side I closed out of best
+[26:24] flights zero and I opened up best
+[26:26] flights one and then I map in the exact
+[26:27] same information in the same format um
+[26:30] just so we're getting the same
+[26:31] information about each flight all right
+[26:32] so then moving on to Resorts as you can
+[26:34] see very similar stuff where we're
+[26:36] mapping in the name of the resort so I'm
+[26:38] going to close out of the flights
+[26:39] request and open up the resorts request
+[26:41] close out of the metadata and the
+[26:42] parameters and close out of the brands
+[26:44] we want the properties so the first one
+[26:46] is Hollywood rentals so as you can see I
+[26:48] dragged that in right there I gave it
+[26:50] the link right there um and then I went
+[26:52] down to images which I have to scroll a
+[26:54] little bit further down but here's
+[26:55] images so I dragged in the first
+[26:57] original image to be used in an email
+[27:00] then I scrolled back up and I found the
+[27:01] rate per night right here so I dragged
+[27:03] in this was 60 bucks rate per night the
+[27:05] total rate is um wherever I found that
+[27:09] earlier right here 480 bucks and then if
+[27:12] I go maybe up a little more um no I have
+[27:14] to go down a little more we're looking
+[27:16] for the nearby places so right here we
+[27:17] have a list of nearby places we have
+[27:19] three of them and I dragged in the name
+[27:21] I dragged in you know the duration how
+[27:24] long it takes to get there by this type
+[27:25] of travel so 4 minutes walking in this
+[27:27] case
+[27:28] um and then I just did the same for the
+[27:30] next event or next nearby place as well
+[27:33] so this is where you can really start to
+[27:34] customize the information that you want
+[27:35] your agent to see it's really just about
+[27:37] understanding how you can look through
+[27:38] the schema here and drill down to
+[27:40] exactly what you're looking for because
+[27:42] finally after the nearby places I think
+[27:44] below the images I was able to drag in
+[27:46] right here the list of amenities so when
+[27:48] I drag in the list of amenities it pops
+[27:50] up with all the stuff like air
+[27:52] conditioning crib ironing board board
+[27:54] kitchen smoke free all that kind of
+[27:55] stuff um so that helps too so then of
+[27:58] course as you can imagine for um Resorts
+[28:01] two and three I did the exact same thing
+[28:03] I just close out of property zero open
+[28:05] up property one and then drag in the
+[28:06] same information once again okay then
+[28:08] finally at the bottom activities it's a
+[28:10] lot easier we're going to open up the
+[28:11] activities Tav request we can see our
+[28:13] query was Riverboat tour in Chicago and
+[28:16] then we have three results I'm only
+[28:17] going to drag two in for this example
+[28:19] but I dragged in the title of the
+[28:21] activity the URL for the activity and
+[28:23] then the description and then I just did
+[28:24] the exact same thing for activity number
+[28:26] two which are kind of the same things
+[28:28] but just two different sources to look
+[28:29] at but as you can see that is what the
+[28:32] agent is now getting and using that
+[28:34] information it creates an email based on
+[28:37] these guidelines that we gave it in the
+[28:38] system prompt so that is how it was able
+[28:40] to you know insert these horizontal
+[28:42] lines it made an intro section that was
+[28:43] exciting it talks about our flights ites
+[28:46] does the images 20% rather than making
+[28:48] them huge 100% um so all this kind of
+[28:50] stuff right so we were able to just tell
+[28:52] it how to do this based on the system
+[28:55] prompt that we give within the email
+[28:56] agent um but as you know it outputs a
+[28:58] subject and a body so what we did is
+[29:00] once again same thing we did up here but
+[29:02] it's even easier because there's only
+[29:03] two which are you know we have an object
+[29:05] with two things in it which are going to
+[29:07] be a subject which is a string and an
+[29:08] email body which is also a string and
+[29:10] then they're both required and then over
+[29:12] here it gives us those two parameters
+[29:14] just like we want so then we can feed
+[29:17] them in really nicely to the next node
+[29:19] which is a send an email node we have
+[29:21] our Json output subject so we just
+[29:23] dragged this into there and then we have
+[29:25] our email body which we also just
+[29:27] dragged right into here the one thing we
+[29:29] had to do was make sure that email type
+[29:31] is HTML so it actually comes through
+[29:32] with those tags and formats correctly
+[29:34] with you know headers and all that kind
+[29:35] of stuff and the inline images and then
+[29:38] the two email if we want to drill down
+[29:40] get out of all these requests and go to
+[29:42] the set field here's where we set the
+[29:44] actual email from the user in the very
+[29:46] beginning so I just dragged that into
+[29:47] there so that every time this will be
+[29:49] sending to whoever's on that phone with
+[29:51] Jessica the travel agent and finally as
+[29:53] you know when we set up our web hook we
+[29:55] said to listen for response in the
+[29:57] respond to web hook node so all we
+[29:59] wanted to do was set up a response with
+[30:00] a set field where we said an email has
+[30:03] been sent with the travel plan for blank
+[30:06] we dragged in the travel plan which was
+[30:07] just the subject from the email or the
+[30:09] email agent so an email has been sent
+[30:11] with a travel plan for your Chicago
+[30:13] adventure March 1-9 um we output that
+[30:16] and then we're feeding that directly
+[30:17] into the respond to web hook node we say
+[30:20] just respond with the first incoming
+[30:21] item so it's grabbing this response as
+[30:23] you can see and so that is what the 11
+[30:25] Labs voice agent sees after this whole
+[30:28] process runs and then that's how it
+[30:29] knows to respond to us the human and say
+[30:31] we just sent that email to you you know
+[30:33] go check it out it has your travel plan
+[30:35] and just some final thoughts to wrap up
+[30:37] you know this system prompt it's pretty
+[30:39] brief I kept it really clear really
+[30:41] simple you could definitely get in there
+[30:42] and make some adjustments so like the
+[30:44] way I said you know after you use the NN
+[30:46] tool just say please give me a few
+[30:47] moments to look into this that adds a
+[30:49] little bit of personalization you could
+[30:50] maybe even say like you know you could
+[30:52] do some small talk while you're waiting
+[30:53] for the process to finish you could
+[30:55] maybe have it repeat every step you
+[30:57] could have it ask all the questions
+[30:58] right away I wanted it to sort of
+[31:00] extract the details one by one um so
+[31:02] there's just a lot of stuff you can do
+[31:03] when you're testing out this agent
+[31:05] within your system prompt you can make
+[31:06] them be more serious you can make them
+[31:07] be funny you can play with your
+[31:08] temperature you can even test out the
+[31:10] different models of course which is you
+[31:11] know going to be pretty pretty fun to
+[31:13] test around with but just wanted to say
+[31:15] like when you're in there and if you're
+[31:17] doing this yourself like you can grab
+[31:18] the NN template for sure but play around
+[31:20] with the system prompt maybe don't copy
+[31:22] this exactly and just see how the
+[31:23] different tool calling stuff works but
+[31:25] yeah that's pretty much going to be it
+[31:26] for this one um I know I went pretty
+[31:28] fast so hopefully you guys were able to
+[31:29] follow along and you enjoyed it but like
+[31:30] I said if you want to watch Step by-step
+[31:32] this video um or any of the other builds
+[31:34] I've done on my channel check out the
+[31:36] the paid Community Link for that's in
+[31:37] the description but you can also grab
+[31:38] the template just for free in the free
+[31:40] scho community so that's all I've got um
+[31:42] as always really appreciate you guys
+[31:44] making it to the end of this one if you
+[31:45] learned something new or you just
+[31:46] enjoyed it please give it a like
+[31:48] definitely helps me out a ton but really
+[31:50] appreciate you guys making it to the end
+[31:52] and thank you see you guys in the next
+[31:53] one

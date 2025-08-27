@@ -1,0 +1,34 @@
+Video Title: Having an ACTUAL conversation with my data using ElevenLabs Voice Agent #aiagent #elevenlabs
+Video ID: 8h-cMblpI8I
+URL: https://www.youtube.com/watch?v=8h-cMblpI8I
+View Count: 167,028
+
+[00:00] so I just built this conversational rag
+[00:02] agent using naden and 11 Labs hey there
+[00:04] I'm Eric what information are you
+[00:05] looking for today hey Eric I missed the
+[00:08] last meeting could you fill me in on the
+[00:10] current challenges that we're facing
+[00:11] with our AI chapot
+[00:14] project okay um let me check the project
+[00:17] database the main challenges right now
+[00:19] are integration issues with third-party
+[00:21] apis causing delays and the chatbot
+[00:23] having trouble handling complex customer
+[00:25] queries that need multiple steps of
+[00:27] reasoning okay got it and what team
+[00:30] members are working on this project and
+[00:31] what do the Milestones look like
+[00:33] here okay let me see the team members
+[00:36] are Alice Bob and Charlie the current
+[00:38] Milestones are basic chatbot framework
+[00:40] implementation by January 15 integration
+[00:43] with the website and app by February 5
+[00:45] and internal testing and debugging by
+[00:47] February 20 okay cool that's all I've
+[00:49] got for you okay great is there anything
+[00:52] else I can help you with today if you
+[00:53] want to find out how to build this go to
+[00:54] my channel and watch the full video I
+[00:56] just uploaded don't forget to subscribe
+[00:57] for more NN automations

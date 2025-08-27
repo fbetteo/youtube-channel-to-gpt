@@ -1,0 +1,506 @@
+Video Title: Understanding APIs in n8n (as a beginner)
+Video ID: ju9xk_QX990
+URL: https://www.youtube.com/watch?v=ju9xk_QX990
+View Count: 22,122
+
+[00:00] apis may sound like Tech jargon but
+[00:02] they're really the secret sauce behind
+[00:03] everything that you do on the internet
+[00:04] every day in this video I'm breaking
+[00:06] down apis so simply that anyone can
+[00:08] understand them and then we're going to
+[00:09] hop into nadn and go through some
+[00:10] examples by the end you'll see how apis
+[00:12] can transform your workflows even if
+[00:14] you're a complete beginner let's dive in
+[00:16] okay so today we're going to be
+[00:17] understanding apis and we're going to
+[00:19] have a specific tailor towards
+[00:21] understanding apis within naden naden
+[00:23] has a ton of Integrations so a lot of
+[00:25] times you won't even need to use an API
+[00:26] because they have built-in Integrations
+[00:28] for all the apps that you may use every
+[00:29] day like email calendar um Twitter
+[00:32] LinkedIn all that kind of stuff but if
+[00:34] you do need to access some sort of third
+[00:35] party API you'll see how to do it in
+[00:37] this video first things first what is an
+[00:39] API API stands for application
+[00:42] programming interface and it's just a
+[00:43] set of rules and protocols that allows
+[00:45] different software applications to
+[00:47] communicate with each other and send
+[00:49] data back and forth that sort of thing
+[00:51] simply put an API is what allows nadn to
+[00:53] talk to your email or for calendar to
+[00:55] talk to your nadn so a quick real world
+[00:58] analogy because everything's better with
+[00:59] a real world analogy let's pretend this
+[01:02] guy right here is you and you want to
+[01:04] order food at a restaurant so think of
+[01:06] the API as the waiter in a restaurant
+[01:09] you tell the waiter what you want the
+[01:10] waiter then communicates your order to
+[01:12] the kitchen or to the restaurant and
+[01:14] then the restaurant prepares the
+[01:16] information that you wanted or the dish
+[01:18] that you asked for and then it takes the
+[01:20] request back all the way to you and
+[01:22] Returns the food to you or not returns
+[01:24] but gives you the food so that's sort of
+[01:26] the real world analogy hopefully that
+[01:27] made sense so we have two entities we
+[01:29] have View and then we have the kitchen
+[01:31] and we just need a method for the two
+[01:33] entities to be able to exchange
+[01:34] information that's an API now why are
+[01:37] apis useful apis enable seamless
+[01:39] integration between different software
+[01:41] systems like we talked about and this
+[01:43] allows them to share data and
+[01:44] functionalities between each other so
+[01:46] this is important for Building Systems
+[01:48] or applications because it allows us to
+[01:49] leverage existing Services rather than
+[01:51] having to build things from scratch so
+[01:53] let's say we wanted to convert miles to
+[01:55] kilom instead of having to build out
+[01:57] that calculation we could just leverage
+[01:59] a different third party API that already
+[02:01] does that we could just send information
+[02:03] to it and then wait for the response
+[02:05] back rather than having to you know
+[02:06] build out that whole infrastructure from
+[02:08] scratch okay so if the concept hasn't
+[02:10] stuck yet let's look at some real world
+[02:11] examples so weather data integration
+[02:14] many websites and apps display current
+[02:15] weather information by leveraging apis
+[02:18] provided by weather services so for
+[02:20] example a travel app may show you
+[02:22] real-time weather updates because it's
+[02:23] fetching data from a weather API then we
+[02:26] have social media sharing so when you
+[02:27] share a news article directly to
+[02:29] Facebook or X from a website you're
+[02:31] using that social media platform's API
+[02:34] the API allows the website to
+[02:35] communicate with the social media
+[02:36] platform to post on your behalf then we
+[02:39] have stuff like Payment Processing you
+[02:41] know e-commerce sites often use payment
+[02:43] gateways like PayPal or stripe and these
+[02:45] Services provide apis that handle the
+[02:47] complexities of payment processing these
+[02:49] enable the e-commerce site to securely
+[02:51] process your transactions without
+[02:53] handling sensitive payment information
+[02:55] directly because they just use the API
+[02:57] to talk to each other then our last real
+[02:59] world example third party logins
+[03:00] something you've done probably a million
+[03:02] times websites often allow users to log
+[03:04] in using their Google or Facebook
+[03:06] accounts and this is facilitated by the
+[03:08] respective platforms API which
+[03:10] authenticates the user grants access
+[03:12] without having to create a new account
+[03:14] okay moving on to API methods this stuff
+[03:16] may look like it's going to get a little
+[03:17] technical but it's really not you've got
+[03:19] different methods here and I wanted to
+[03:21] point out that get and post are
+[03:22] underlined this is because 99% of the
+[03:25] time that you are accessing some sort of
+[03:27] API endpoint you're going to be using a
+[03:29] git or a post um but let's break down
+[03:32] all of them just in case so a git is
+[03:34] when you want to retrieve data so an
+[03:36] action for this could be like give me
+[03:38] the current weather when you're reaching
+[03:39] out to a weather API and an analogy for
+[03:42] this is just reading a book you're just
+[03:43] getting information then we have a post
+[03:46] which is you're sending data to um you
+[03:48] know create something or get something
+[03:49] back you're sending information so an
+[03:51] action would be here's policy
+[03:53] information and an analogy for this
+[03:55] would be you're sending a letter then
+[03:57] we've got put which is if you want to
+[03:59] update existing data so you would be
+[04:01] replacing this completely and that would
+[04:03] be like replacing Pages within a book
+[04:05] we've got patch which is partially
+[04:08] updating data you know just kind of
+[04:09] patching it you'd be tweaking this part
+[04:11] and that would be like editing a single
+[04:13] word within a book or within a page then
+[04:16] we've got delete which is to remove data
+[04:18] obviously the action here would just be
+[04:20] erase this it would be like tearing out
+[04:22] a page out of a book and so those are
+[04:24] pretty much the main five methods of
+[04:26] rest apis which I'll talk about rest
+[04:28] apis okay so so rest API stands for
+[04:30] representational State transfer API and
+[04:33] it's just a way for different software
+[04:35] systems to communicate over the web
+[04:36] using a standard HTTP request like get
+[04:40] post put and delete so it organizes its
+[04:43] data into resources which is accessible
+[04:45] through a unique URL and this will make
+[04:47] a lot more sense once we get into naden
+[04:49] and we actually look at these URLs but
+[04:51] basically for every action you have
+[04:53] there's going to be a different API
+[04:54] endpoint which is just the URL that you
+[04:56] would see up top when you're like typing
+[04:58] something into Google there's going to
+[05:00] be different parameters at the end of
+[05:01] them based on what type of action you
+[05:03] want to take like I said it'll make more
+[05:04] sense when we get into it anyways rest
+[05:06] apis are stateless which just means that
+[05:08] each request is independent they follow
+[05:10] consistent patterns which makes them
+[05:11] really simple and scalable and also
+[05:13] they're widely supported for different
+[05:15] Integrations across various platforms
+[05:17] now we're going to get into some
+[05:18] examples within nadn and this is really
+[05:20] crucial because apis play such an
+[05:23] important role when you're sort of
+[05:24] automating workflows for example you
+[05:26] could have a workflow that triggers when
+[05:28] you receive an email which would be
+[05:29] using the email services apii to get
+[05:32] information back from that email
+[05:34] provider then you could process the
+[05:35] content and then if you want to store it
+[05:37] into a database you would be sending a
+[05:39] post request to that database's API in
+[05:41] order to send information to the
+[05:42] database from Ann so this inner
+[05:45] connectedness allows for efficient
+[05:47] automation integrating different
+[05:49] services and really removing the manual
+[05:51] touch point out of that process so like
+[05:53] I said understanding apis is very
+[05:55] fundamental for creating effective
+[05:56] workflows and once you get a good
+[05:58] understanding of it the possibilities of
+[06:00] what you can do in NN are truly endless
+[06:03] okay so for example number one we're
+[06:04] going to be sending a git request to
+[06:06] open weather map API so we're going to
+[06:09] be asking for information back about the
+[06:11] current weather in some sort of city so
+[06:14] in NN when you want to access an API
+[06:16] endpoint you're going to do that through
+[06:18] an HTTP request node so you can see that
+[06:20] we have that right here if you come into
+[06:21] the plus button and type in HTTP you can
+[06:23] see HTTP request so that's what we've
+[06:25] got set up right here if we click into
+[06:27] it we can see that we have a method so
+[06:29] our method here is get because like I
+[06:30] said we want to access this URL of open
+[06:33] weather map and we want to get
+[06:34] information back so anytime that you're
+[06:36] accessing a third party API you want to
+[06:38] look at the documentation for that API
+[06:41] the documentation are going to show you
+[06:42] the different endpoints it's going to
+[06:43] show you the different parameters and
+[06:44] it's going to show you the way that you
+[06:45] can make the request to either get the
+[06:47] information you want or send the
+[06:48] information you want so what we're
+[06:50] looking at right here is the open
+[06:51] weather map apis documentation so as you
+[06:54] can see what we want to do is call
+[06:55] current weather data this is showing us
+[06:58] how to make an API call this is the API
+[07:00] endpoint that we need and then it's
+[07:01] showing us parameters to send off in our
+[07:04] request so the first thing you notice is
+[07:06] that we have three required parameters
+[07:07] we have the latitude the longitude and
+[07:10] the app ID which is just we need to
+[07:13] enter in an API key basically to um let
+[07:17] open weather map know that we have
+[07:18] access to this information so um you can
+[07:21] see this is the the information that we
+[07:23] need so we copy this link we put this
+[07:26] within our URL and you can see I filled
+[07:28] in the latitude the LA longitude and I
+[07:30] filled in the API key so based on this
+[07:32] information that's the stuff that's
+[07:34] required and then we also see that
+[07:35] there's optional Fields so you could um
+[07:38] select the mode you could select the
+[07:40] units and so what I did was I grabbed
+[07:41] the units it's a parameter that we're
+[07:43] putting in and I wanted the units to be
+[07:45] shown Imperial
+[07:47] so in here you can see we have um here
+[07:51] actually let me just make this a little
+[07:52] bigger so we have lat right there 41 we
+[07:55] have longitude which is 87 we have units
+[07:58] which I put Imperial and then we have
+[08:00] our app ID which is just our API key and
+[08:02] so if you want to follow along you'll go
+[08:04] to open Weather make an account um and
+[08:06] then when you go to your account up here
+[08:08] you'll click on my API keys and then
+[08:09] you'll copy this value right here and
+[08:11] that is what's going to go in the API
+[08:14] key section of this endpoint request so
+[08:17] now that I filled in this information we
+[08:19] will hit test
+[08:21] step and you can see that we get um the
+[08:23] information back and this is all the
+[08:25] information I put in the latitude and
+[08:26] longitudes of Chicago and so this was
+[08:29] our request it successfully went through
+[08:31] we sent that off to open weather map and
+[08:33] then it came back to us with information
+[08:35] so then all I did was I just hooked up a
+[08:36] message a model to um summarize that
+[08:39] information we're getting um just so we
+[08:41] can show it in a clean format so
+[08:42] basically we sent off that request and
+[08:44] then we end up getting hello there in
+[08:45] Lovely Chicago today the sky is draped
+[08:47] in cozy overcast clouds um calm and soft
+[08:50] Vibe um about 48.9 de fhe the air is
+[08:55] humid 53% gentle breeze blah blah blah
+[08:58] so um that's that's all that's going on
+[09:00] here real quick just wanted to say that
+[09:02] this workflow as you can see we're going
+[09:03] to be running through some different
+[09:04] examples but this workflow will be
+[09:06] available for download in my free school
+[09:07] Community Link for that will be down in
+[09:08] the description if you want to go a
+[09:10] little farther with nadn you want to hop
+[09:11] on live weekly calls with me and members
+[09:13] of the community check out my paid
+[09:14] Community also will be linked down below
+[09:16] and then if you're looking for me to
+[09:17] help you build out this sort of stuff in
+[09:19] your business or AI Consulting then book
+[09:21] a call on my website which is also
+[09:22] linked down below but let's get back to
+[09:24] the video um so what I wanted to show
+[09:26] you here is yes we just accessed open
+[09:29] weather API and we got the weather but
+[09:31] what's really cool is that NN obviously
+[09:33] has a ton of Integrations so they
+[09:34] actually have an integration for open
+[09:36] weather map API You' come in here um
+[09:39] this is where you put your API key you
+[09:41] create a credential um our operation is
+[09:43] we're looking for weather we have a
+[09:44] format we can select the location so
+[09:46] this is doing the exact same thing that
+[09:48] we just did within our HTTP request as
+[09:50] you can see we're getting back the exact
+[09:51] same information for Chicago but it just
+[09:53] made it a lot easier because we have
+[09:56] like Dragon drop fields or not Dragon
+[09:57] drop we have collapsible fields that we
+[09:59] can just choose information from rather
+[10:01] than having to configure an HTTP request
+[10:04] with different parameters and different
+[10:05] credentials so most of the time um NN is
+[10:08] going to have a lot of Integrations but
+[10:10] that's why I said if you need to access
+[10:11] some sort of third party API you'll go
+[10:13] to the docs and then you'll just have to
+[10:14] read about how you configure your
+[10:17] request okay example number two we're
+[10:19] going to do another git request and
+[10:20] we're using Json placeholder API which
+[10:23] is just a free rest API online where you
+[10:25] can just you know test out how it works
+[10:28] when you want to get information back so
+[10:30] if we go to Json placeholder
+[10:31] documentation we can see um you know the
+[10:34] specs that we need so this is the um
+[10:36] this is the API endpoint we're accessing
+[10:39] https Json placeholder.svg
+[10:59] test step and we're going to get a ton
+[11:00] of random HTML that's just not very um
+[11:03] readable or important to us so as you
+[11:07] remember in here we can see there's
+[11:08] different resources we can access within
+[11:10] Json placeholder so if we want to grab
+[11:12] SL posts we throw this at the end of our
+[11:15] API endpoint that we're trying to access
+[11:17] now we have a new unique um rest API
+[11:20] we'll hit test step and now we can see
+[11:22] we got 100 items and we basically just
+[11:24] got 100 posts of gibberish as you can
+[11:25] see this is all just fake information
+[11:29] back into the placeholder we can see
+[11:30] that if we did a different one we did SL
+[11:33] comments we're going to get 500 comments
+[11:34] back we'll hop back into here change our
+[11:38] API endpoint that we're accessing and
+[11:40] now we're getting comments back we're
+[11:41] getting 500 comments back from Json
+[11:44] placeholder so this is just an example
+[11:46] of you know another way that you can set
+[11:48] up your url different ways that you have
+[11:50] different endpoints to access um in this
+[11:52] case we didn't really have to fill in
+[11:53] any parameters but a lot of times you
+[11:54] will have to do that usually something
+[11:56] with like an API key or um different
+[11:59] information information you'll see in
+[12:00] this next example we're going to be
+[12:01] sending information with a post request
+[12:04] to get articles back now in this final
+[12:06] example I said we were going to be doing
+[12:07] a post request so we're going to be
+[12:09] sending a request to tavali which is
+[12:11] just kind of a super cool search API
+[12:13] we'll be sending information over as far
+[12:15] as what we want to look for and then
+[12:17] it's going to go out get that
+[12:18] information based on the information we
+[12:20] send it and then bring back some
+[12:21] articles for us so um I'll hit this test
+[12:24] workflow we can see it happen real quick
+[12:26] we just sent off a query it's going to
+[12:28] search the internet based on our query
+[12:29] and then summarize the articles for us
+[12:30] so we can read it better but let's hop
+[12:32] into the actual post request so if we go
+[12:36] back into Tav um we can see the
+[12:38] documentation for API reference for the
+[12:40] rest API of course um this is the base
+[12:43] URL as you can see the tabl search and
+[12:44] extract rest API can be accessed through
+[12:47] this base URL so we put this base URL
+[12:49] right here into our tavali and then all
+[12:53] we had to do was add the endpoint of
+[12:55] Slash search because we are searching
+[12:58] for a specific information so we added
+[13:00] that endpoint which is a post request
+[13:02] and now we can see the different
+[13:03] parameters that we need so the two
+[13:05] required parameters are query which is
+[13:08] the search query that you want to
+[13:09] execute within Tav so if you were to go
+[13:11] to Google and you were to type in
+[13:13] something that's the query that we're
+[13:14] sending to Tavy and then of course we
+[13:16] need an API key and that's also required
+[13:19] and then we have optional things so we
+[13:21] have like Max results if you only want
+[13:22] to get Five results back if you only
+[13:24] want to get three results back if you
+[13:26] want to include images all this kind of
+[13:27] stuff um we also did did where is it
+[13:30] topic so for topic we could put general
+[13:32] or news and so I went in there and put
+[13:34] news and I'll show you guys this so
+[13:36] query API key topic and I think we also
+[13:40] maybe include Max results but here is
+[13:42] our post request so we're sending over
+[13:45] our API key of course that just
+[13:47] basically gives us access to hit this
+[13:48] third party API if I didn't put this in
+[13:51] it would just deny our request the query
+[13:53] we're looking for top trends in AI we
+[13:56] wanted to put topic equals news and then
+[13:58] we also put Max equals three so we're
+[14:00] going to be getting really relevant news
+[14:02] articles from tavali and it's also going
+[14:03] to only give us three results because
+[14:05] this is the information we're sending it
+[14:07] to actually go make that request and
+[14:08] then it's going to send us the results
+[14:09] back so um as you can see we already got
+[14:12] we already had this executed so then we
+[14:15] had open a take those articles and
+[14:16] summarize them for us just so it's
+[14:18] easier for us to read as you can see we
+[14:20] got three articles back actually let me
+[14:22] show you in here it's a little easier to
+[14:25] see right here we have URL one UR URL 2
+[14:29] URL 3 so those are the three articles we
+[14:31] got back and then we just had it
+[14:32] summarize it for us so um the Articles
+[14:35] collectively EMP emphasize the pervasive
+[14:37] impact of artificial intelligence across
+[14:39] various sectors highlighting its
+[14:40] transformative role the first article
+[14:42] explains blank the second article
+[14:44] discusses blank The Third Article lastly
+[14:47] The Third Article previews the BL blah
+[14:49] blah okay so as you can see it took
+[14:50] those three articles and summarized them
+[14:52] but the main point was just that we sent
+[14:54] off this request about AI um we wanted
+[14:57] news and we wanted three results and
+[14:59] that's how it came back for us now that
+[15:01] we understand what apis are I just
+[15:02] wanted to touch on how cool it is that
+[15:04] naden has so many Integrations so
+[15:06] something like Gmail if we wanted to
+[15:07] send a message we have this right here
+[15:10] that we can configure all we have to do
+[15:11] is set up the two the subject the
+[15:13] message and the operation rather than
+[15:15] setting up an HTTP request where we're
+[15:17] accessing Gmail and then within Gmail
+[15:18] we're accessing an endpoint to send a
+[15:20] message and then within that endpoint
+[15:21] we're setting up parameters of who's
+[15:23] going to what's the subject what's it
+[15:25] going to say um all that kind of stuff
+[15:26] same thing with air table sheets
+[15:28] calendar and all of these other apps
+[15:32] that you can take action in in nadn
+[15:34] which there's just a ton of Integrations
+[15:36] all of these if they didn't have these
+[15:37] Integrations where you could just go in
+[15:39] and really easily configure what you're
+[15:40] looking for you'd have to set up an HTTP
+[15:43] request with different endpoints and
+[15:44] different parameters so it's really cool
+[15:46] that they have all these Integrations
+[15:47] but it's good to understand that when
+[15:48] you're doing these things all you're
+[15:50] doing is you're making an HTTP request
+[15:52] to or sorry you're making an a request
+[15:54] to an endpoint an API endpoint so it's
+[15:57] really good to understand that and the
+[15:59] three main benefits here are these are
+[16:00] really easy to use it's going to save
+[16:02] you a lot of time and it's going to save
+[16:03] you a lot of Errors because you know
+[16:05] when you get into the documentation of
+[16:07] looking at API endpoints you may have a
+[16:09] few headaches as far as um your API key
+[16:13] had an extra space in it so it didn't
+[16:14] work or your parameters weren't
+[16:16] configured correctly stuff like that so
+[16:18] these Integrations are um really
+[16:21] Lifesavers anyways that's going to be it
+[16:23] for this video like I said if you want
+[16:24] to get in here and just play around with
+[16:25] these examples I made the workflow will
+[16:27] be available for download in the free
+[16:28] schol Community Linked In the
+[16:29] description but I really appreciate you
+[16:31] guys making it all the way to the end of
+[16:32] this one if you enjoyed the video please
+[16:34] give it a like definitely helps me out
+[16:36] and I will see you guys in the next one
+[16:38] thanks
