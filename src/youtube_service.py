@@ -1477,7 +1477,7 @@ async def download_channel_transcripts_task(job_id: str) -> None:
 
     # Process videos concurrently with a limit on parallelism
     # Process in batches to avoid overwhelming the API
-    batch_size = 20  # Process 5 videos at a time
+    batch_size = 10  # Process 5 videos at a time
 
     for batch_num, i in enumerate(range(0, len(videos), batch_size), 1):
         batch_videos = videos[i : i + batch_size]
@@ -1667,19 +1667,19 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
         ValueError: If job ID is not found
     """
     # First try in-memory storage
-    if job_id in channel_download_jobs:
-        job = channel_download_jobs[job_id]
-        logger.debug(f"Found job {job_id} in memory")
+    # if job_id in channel_download_jobs:
+    #     job = channel_download_jobs[job_id]
+    #     logger.debug(f"Found job {job_id} in memory")
+    # else:
+    #     # Fallback to persistent storage
+    job = load_job_from_file(job_id)
+    if job:
+        # Restore to in-memory storage
+        channel_download_jobs[job_id] = job
+        logger.info(f"Restored job {job_id} from persistent storage to memory")
     else:
-        # Fallback to persistent storage
-        job = load_job_from_file(job_id)
-        if job:
-            # Restore to in-memory storage
-            channel_download_jobs[job_id] = job
-            logger.info(f"Restored job {job_id} from persistent storage to memory")
-        else:
-            logger.error(f"Job not found in memory or persistent storage: {job_id}")
-            raise ValueError(f"Job not found with ID: {job_id}")
+        logger.error(f"Job not found in memory or persistent storage: {job_id}")
+        raise ValueError(f"Job not found with ID: {job_id}")
 
     # Calculate progress percentage
     total = job["total_videos"]
@@ -1745,7 +1745,8 @@ async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:
     if job_id not in channel_download_jobs:
         raise ValueError(f"Job not found with ID: {job_id}")
 
-    job = channel_download_jobs[job_id]
+    # job = channel_download_jobs[job_id]
+    job = load_job_from_file(job_id)
 
     if job["status"] != "completed":
         raise ValueError(
