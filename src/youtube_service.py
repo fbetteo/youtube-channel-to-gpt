@@ -269,11 +269,36 @@ def save_job_to_file(job_id: str, job_data: Dict[str, Any]) -> None:
         job_file = os.path.join(JOBS_STORAGE_DIR, f"{job_id}.json")
         # Convert non-serializable objects to serializable format
         # Include videos_metadata since it's needed for prefetch functionality
-        serializable_data = {
-            k: v
-            for k, v in job_data.items()
-            # Don't exclude videos_metadata anymore - we need it for prefetch
-        }
+        serializable_data = {}
+        for k, v in job_data.items():
+            if k == "videos" and v:
+                # Convert Pydantic VideoInfo objects to dictionaries
+                serializable_videos = []
+                for video in v:
+                    if hasattr(video, "dict"):
+                        # It's a Pydantic object, convert to dict
+                        serializable_videos.append(video.dict())
+                    elif hasattr(video, "id"):
+                        # It's an object with attributes, convert to dict
+                        serializable_videos.append(
+                            {
+                                "id": video.id,
+                                "title": getattr(video, "title", ""),
+                                "url": getattr(
+                                    video,
+                                    "url",
+                                    f"https://www.youtube.com/watch?v={video.id}",
+                                ),
+                                "duration": getattr(video, "duration", None),
+                                "publishedAt": getattr(video, "publishedAt", None),
+                            }
+                        )
+                    else:
+                        # It's already a dict or other serializable format
+                        serializable_videos.append(video)
+                serializable_data[k] = serializable_videos
+            else:
+                serializable_data[k] = v
 
         with open(job_file, "w") as f:
             json.dump(serializable_data, f, default=str)
