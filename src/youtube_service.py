@@ -1570,6 +1570,9 @@ async def download_channel_transcripts_task(job_id: str) -> None:
         reservation_id = CreditManager.reserve_credits(user_id, credits_to_reserve)
         job["reservation_id"] = reservation_id
 
+        # Persist the reservation_id to disk
+        update_job_progress(job_id, reservation_id=reservation_id)
+
         logger.info(
             f"Job {job_id}: Successfully reserved {credits_to_reserve} credits, reservation: {reservation_id}"
         )
@@ -1645,36 +1648,48 @@ async def download_channel_transcripts_task(job_id: str) -> None:
 
     # Finalize credit usage - refund unused credits (Phase 2: Batch Credit Management)
     try:
-        if job.get("reservation_id"):
+        job_for_credits = load_job_from_file(job_id)
+        if job_for_credits and job_for_credits.get("reservation_id"):
             CreditManager.finalize_credit_usage(
                 user_id=user_id,
-                reservation_id=job["reservation_id"],
-                credits_used=job["credits_used"],
-                credits_reserved=job["credits_reserved"],
+                reservation_id=job_for_credits["reservation_id"],
+                credits_used=job_for_credits["credits_used"],
+                credits_reserved=job_for_credits["credits_reserved"],
             )
             logger.info(
-                f"Job {job_id}: Finalized credit usage - used {job['credits_used']}/{job['credits_reserved']} credits"
+                f"Job {job_id}: Finalized credit usage - used {job_for_credits['credits_used']}/{job_for_credits['credits_reserved']} credits"
             )
     except Exception as e:
         logger.error(f"Job {job_id}: Error finalizing credit usage: {str(e)}")
         # Don't fail the job for credit finalization errors
 
     # Mark job as completed when all videos are processed
-    job["status"] = "completed"
-    job["end_time"] = time.time()
-    job["duration"] = job["end_time"] - job["start_time"]
+    # Load fresh job data to get the final state
+    final_job = load_job_from_file(job_id)
+    if final_job:
+        end_time = time.time()
+        duration = end_time - final_job["start_time"]
 
-    # Save final job status to persistent storage
-    update_job_progress(
-        job_id, status=job["status"], end_time=job["end_time"], duration=job["duration"]
-    )
+        # Save final job status to persistent storage
+        update_job_progress(
+            job_id, status="completed", end_time=end_time, duration=duration
+        )
 
-    # Final memory tracking
-    final_memory = memory_tracker.log_memory_usage(f"batch_final[{job_id}]")
+        # Final memory tracking
+        final_memory = memory_tracker.log_memory_usage(f"batch_final[{job_id}]")
 
-    logger.info(
-        f"Job {job_id} completed. Processed {job['completed']}/{job['total_videos']} videos successfully."
-    )
+        logger.info(
+            f"Job {job_id} completed. Processed {final_job['completed']}/{final_job['total_videos']} videos successfully."
+        )
+
+        # Log memory summary for the entire job
+        memory_logger.info(
+            f"Job {job_id} memory summary: "
+            f"Peak memory: {_memory_stats['peak_memory_mb']:.2f}MB ({_memory_stats['peak_memory_percent']:.2f}%), "
+            f"GC runs: {_memory_stats['gc_count']}, "
+            f"Memory warnings: {_memory_stats['memory_warnings']}, "
+            f"Final memory: {final_memory.get('process_memory_mb', 0):.2f}MB"
+        )
 
     # Log memory summary for the entire job
     memory_logger.info(
