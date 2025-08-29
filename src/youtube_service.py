@@ -323,20 +323,66 @@ def load_job_from_file(job_id: str) -> Optional[Dict[str, Any]]:
 
 
 def update_job_progress(job_id: str, **updates):
-    """Update job progress and save to persistent storage"""
-    # Always try to load from file first to get the latest state
-    job = load_job_from_file(job_id)
-    if job:
-        # Update the job data with new values
-        job.update(updates)
-        # Update in-memory copy if it exists
-        if job_id in channel_download_jobs:
-            channel_download_jobs[job_id].update(updates)
-        # Save updated job back to persistent storage
-        save_job_to_file(job_id, job)
-        logger.debug(f"Updated job {job_id} progress: {updates}")
-    else:
-        logger.error(f"Cannot update progress for unknown job: {job_id}")
+    """Update job progress and save to persistent storage with atomic operations"""
+    import fcntl  # For file locking on Unix systems
+    import time
+
+    # Try to update with file locking to prevent race conditions
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            job_file = os.path.join(JOBS_STORAGE_DIR, f"{job_id}.json")
+
+            # Lock the file to prevent race conditions
+            with open(job_file, "r+") as f:
+                try:
+                    # Try to lock the file (Unix systems)
+                    fcntl.flock(f.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                except (ImportError, OSError):
+                    # Windows or file locking not available, continue without lock
+                    pass
+
+                # Load current data
+                f.seek(0)
+                job = json.load(f)
+
+                # Apply updates, handling special increment operations
+                for key, value in updates.items():
+                    if key.endswith("_increment"):
+                        # Handle atomic increments
+                        base_key = key.replace("_increment", "")
+                        job[base_key] = job.get(base_key, 0) + value
+                    elif key == "files_append":
+                        # Handle appending to files list
+                        if "files" not in job:
+                            job["files"] = []
+                        job["files"].append(value)
+                    else:
+                        # Regular update
+                        job[key] = value
+
+                # Write back to file
+                f.seek(0)
+                f.truncate()
+                json.dump(job, f, default=str, indent=2)
+
+                # Update in-memory copy if it exists
+                if job_id in channel_download_jobs:
+                    channel_download_jobs[job_id].update(job)
+
+                logger.debug(f"Updated job {job_id} progress: {updates}")
+                return job
+
+        except (json.JSONDecodeError, FileNotFoundError, PermissionError) as e:
+            logger.warning(f"Attempt {attempt + 1} to update job {job_id} failed: {e}")
+            if attempt < max_retries - 1:
+                time.sleep(0.1 * (attempt + 1))  # Exponential backoff
+                continue
+            else:
+                logger.error(
+                    f"Failed to update job {job_id} after {max_retries} attempts"
+                )
+                return None
 
 
 def recover_jobs_from_storage() -> List[str]:
@@ -1650,7 +1696,7 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
         video_id: YouTube video ID to process
         output_dir: Directory to save transcript files
     """
-    # Always load job from file to ensure we have the latest data including videos_metadata
+    # Load job to get initial data
     job = load_job_from_file(job_id)
     if not job:
         logger.error(
@@ -1704,53 +1750,46 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
             )  # 35 second timeout
 
             if file_path:
-                # Update job statistics and track credit usage
-                job["files"].append(
-                    {
-                        "file_path": file_path,
-                        "video_id": video_id,
-                        "language": metadata.get("transcript_language"),
-                        "type": metadata.get("transcript_type"),
-                    }
-                )
-                job["completed"] += 1
-                job["credits_used"] += 1  # Track credit usage for finalization
+                # Create file info object
+                file_info = {
+                    "file_path": file_path,
+                    "video_id": video_id,
+                    "language": metadata.get("transcript_language"),
+                    "type": metadata.get("transcript_type"),
+                }
 
-                # Update progress with persistence
-                update_job_progress(
+                # Use atomic operations to update job progress
+                updated_job = update_job_progress(
                     job_id,
-                    files=job["files"],
-                    completed=job["completed"],
-                    credits_used=job["credits_used"],
+                    files_append=file_info,
+                    completed_increment=1,
+                    credits_used_increment=1,
                 )
 
-                logger.info(
-                    f"Downloaded transcript for video {video_id} ({job['completed']}/{job['total_videos']})"
-                )
+                if updated_job:
+                    logger.info(
+                        f"Downloaded transcript for video {video_id} ({updated_job['completed']}/{updated_job['total_videos']})"
+                    )
+                else:
+                    logger.warning(f"Failed to update progress for video {video_id}")
 
         except asyncio.TimeoutError:
             logger.error(
                 f"Transcript processing for {video_id} timed out after 60 seconds"
             )
-            job["credits_used"] += 1  # Count failed attempts as credit usage
+            # Use atomic increment for credits_used
+            update_job_progress(job_id, credits_used_increment=1)
             raise ValueError("Transcript processing timed out")
 
     except Exception as e:
-        # Log failure but continue with other videos
-        job["failed_count"] += 1
-        job["credits_used"] += 1  # Count failed attempts as credit usage
-
-        # Update progress with persistence
-        update_job_progress(
-            job_id, failed_count=job["failed_count"], credits_used=job["credits_used"]
-        )
+        # Use atomic increments for failure tracking
+        update_job_progress(job_id, failed_count_increment=1, credits_used_increment=1)
 
         logger.error(f"Failed to process video {video_id} for job {job_id}: {str(e)}")
 
     finally:
-        # Increment processed count and update progress
-        job["processed_count"] += 1
-        update_job_progress(job_id, processed_count=job["processed_count"])
+        # Use atomic increment for processed count
+        update_job_progress(job_id, processed_count_increment=1)
 
 
 def get_job_status(job_id: str) -> Dict[str, Any]:
