@@ -268,14 +268,12 @@ def save_job_to_file(job_id: str, job_data: Dict[str, Any]) -> None:
     try:
         job_file = os.path.join(JOBS_STORAGE_DIR, f"{job_id}.json")
         # Convert non-serializable objects to serializable format
+        # Include videos_metadata since it's needed for prefetch functionality
         serializable_data = {
             k: v
             for k, v in job_data.items()
-            if k not in ["videos_metadata"]  # Skip large objects
+            # Don't exclude videos_metadata anymore - we need it for prefetch
         }
-        # Add basic info about metadata
-        if "videos_metadata" in job_data:
-            serializable_data["metadata_count"] = len(job_data["videos_metadata"])
 
         with open(job_file, "w") as f:
             json.dump(serializable_data, f, default=str)
@@ -448,6 +446,12 @@ async def pre_fetch_videos_metadata(
     logger.info(
         f"Successfully pre-fetched metadata for {successful_fetches}/{len(video_ids)} videos"
     )
+
+    # Debug: Log sample of what was fetched
+    if metadata_results:
+        sample_video_id = list(metadata_results.keys())[0]
+        sample_metadata = metadata_results[sample_video_id]
+        logger.debug(f"Sample prefetch result for {sample_video_id}: {sample_metadata}")
 
     return metadata_results
 
@@ -1153,7 +1157,9 @@ async def get_single_transcript(
             video_view_count = None
 
             if pre_fetched_metadata:
-                logger.info("Using pre-fetched metadata")
+                logger.info(
+                    f"Using pre-fetched metadata for video {video_id} (title: {pre_fetched_metadata.get('title', 'No title')})"
+                )
                 # Use pre-fetched metadata (much faster)
                 video_title = pre_fetched_metadata.get("title", "Untitled_Video")
                 video_view_count = pre_fetched_metadata.get("viewCount", 0)
@@ -1407,7 +1413,9 @@ async def start_selected_videos_transcript_download(
         # Pre-fetch metadata for all selected videos
         logger.info(f"Pre-fetching metadata for {len(video_ids)} selected videos...")
         videos_metadata = await pre_fetch_videos_metadata(video_ids)
-        logger.info("Metadata pre-fetching completed")
+        logger.info(
+            f"Metadata pre-fetching completed. Successfully fetched metadata for {len([m for m in videos_metadata.values() if m])} videos."
+        )
 
         # Create a unique job ID
         job_id = str(uuid.uuid4())
@@ -1469,7 +1477,8 @@ async def download_channel_transcripts_task(job_id: str) -> None:
         logger.error(f"Job {job_id} not found for processing")
         return
 
-    job = channel_download_jobs[job_id]
+    # job = channel_download_jobs[job_id]
+    job = load_job_from_file(job_id)
     videos = job["videos"]
     user_id = job["user_id"]
 
@@ -1611,11 +1620,19 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
         video_id: YouTube video ID to process
         output_dir: Directory to save transcript files
     """
-    if job_id not in channel_download_jobs:
-        logger.error(f"Job {job_id} not found for video {video_id}")
+    # Always load job from file to ensure we have the latest data including videos_metadata
+    job = load_job_from_file(job_id)
+    if not job:
+        logger.error(
+            f"Job {job_id} not found in persistent storage for video {video_id}"
+        )
         return
 
-    job = channel_download_jobs[job_id]
+    # Also ensure in-memory job exists for credit tracking
+    if job_id not in channel_download_jobs:
+        channel_download_jobs[job_id] = job
+        logger.debug(f"Restored job {job_id} to memory from file")
+
     video_dir = os.path.join(
         output_dir, video_id
     )  # Use video ID as subdirectory for isolation
@@ -1631,9 +1648,13 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
 
             # Log if we're using pre-fetched metadata
             if video_metadata:
-                logger.debug(f"Using pre-fetched metadata for video {video_id}")
+                logger.debug(
+                    f"Using pre-fetched metadata for video {video_id}: {video_metadata.get('title', 'No title')}"
+                )
             else:
-                logger.debug(f"No pre-fetched metadata for video {video_id}")
+                logger.warning(
+                    f"No pre-fetched metadata for video {video_id}. Available metadata keys: {list(job.get('videos_metadata', {}).keys())[:5]}"
+                )  # Show first 5 keys
 
             # Get transcript with timeout to prevent hanging - use job formatting options and pre-fetched metadata
             transcript_task = asyncio.create_task(
@@ -1848,7 +1869,8 @@ async def create_concatenated_transcript(job_id: str) -> str:
     if job_id not in channel_download_jobs:
         raise ValueError(f"Job not found with ID: {job_id}")
 
-    job = channel_download_jobs[job_id]
+    # job = channel_download_jobs[job_id]
+    job = load_job_from_file(job_id)
     concatenated_parts = []
 
     # Add header with channel information
