@@ -324,11 +324,16 @@ def load_job_from_file(job_id: str) -> Optional[Dict[str, Any]]:
 
 def update_job_progress(job_id: str, **updates):
     """Update job progress and save to persistent storage"""
-    if job_id in channel_download_jobs:
-        # Update in-memory job
-        channel_download_jobs[job_id].update(updates)
-        # Save to persistent storage
-        save_job_to_file(job_id, channel_download_jobs[job_id])
+    # Always try to load from file first to get the latest state
+    job = load_job_from_file(job_id)
+    if job:
+        # Update the job data with new values
+        job.update(updates)
+        # Update in-memory copy if it exists
+        if job_id in channel_download_jobs:
+            channel_download_jobs[job_id].update(updates)
+        # Save updated job back to persistent storage
+        save_job_to_file(job_id, job)
         logger.debug(f"Updated job {job_id} progress: {updates}")
     else:
         logger.error(f"Cannot update progress for unknown job: {job_id}")
