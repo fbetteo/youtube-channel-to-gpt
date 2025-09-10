@@ -188,12 +188,38 @@ The API has been streamlined to focus on core functionality with quota-optimized
   - Each video separated by section markers
   - Consistent formatting across all videos
 
-### Credit Management System
+### Credit Management System (CURRENT - Enhanced with Persistence)
 ```python
 class CreditManager:
-    async def deduct_credits(self, user_id: str, amount: int = 1):
-        # Credits deducted BEFORE download attempt
-        # Even failed downloads consume credits
+    # Phase 1: Upfront credit reservation (prevents overselling)
+    @staticmethod
+    def reserve_credits(user_id: str, amount: int) -> str:
+        # Returns reservation_id for tracking
+    
+    # Phase 2: Credit finalization with refunds for unused credits
+    @staticmethod 
+    def finalize_credit_usage(user_id: str, reservation_id: str, 
+                            credits_used: int, credits_reserved: int):
+        # Refunds unused credits (credits_reserved - credits_used)
+        
+# Job-level credit tracking with persistence
+async def download_channel_transcripts_task(job_id: str):
+    # 1. Reserve credits upfront for all videos
+    reservation_id = CreditManager.reserve_credits(user_id, total_videos)
+    
+    # 2. PERSIST reservation_id to disk immediately
+    update_job_progress(job_id, reservation_id=reservation_id)
+    
+    # 3. Track actual usage per video (atomic increments)
+    # Each video: credits_used_increment=1
+    
+    # 4. Finalize with refund of unused credits
+    CreditManager.finalize_credit_usage(
+        user_id=user_id,
+        reservation_id=job["reservation_id"],  # Loaded from disk
+        credits_used=job["credits_used"],
+        credits_reserved=job["credits_reserved"]
+    )
 ```
 
 ### Rate Limiting Strategy
@@ -201,14 +227,73 @@ class CreditManager:
 - **Authenticated users**: Credit-based access (bypass rate limits)
 - **Fallback**: When credits exhausted, fall back to anonymous rate limiting
 
-### Download Job Management
+### Download Job Management (CURRENT - Persistent Storage Architecture)
 ```python
-# Async job tracking for channel downloads
-channel_download_jobs = {}  # In-memory job status tracking
+# Hybrid job tracking: In-memory + persistent disk storage
+channel_download_jobs = {}  # In-memory job status tracking (for active jobs)
 
-# File cleanup with configurable retention
-async def cleanup_job():
-    youtube_service.cleanup_old_jobs(max_age_hours=24)
+# NEW: Persistent job storage with atomic operations
+JOBS_STORAGE_DIR = os.path.join(settings.temp_dir, "jobs")
+
+# Job persistence functions with atomic file operations
+def save_job_to_file(job_id: str, job_data: Dict[str, Any]) -> None:
+    # Converts Pydantic objects to serializable format
+    # Handles video objects, metadata, and all job state
+
+def load_job_from_file(job_id: str) -> Optional[Dict[str, Any]]:
+    # Loads job from persistent storage
+    # Used for recovery and concurrent access
+
+def update_job_progress(job_id: str, **updates):
+    # ATOMIC operations with file locking (Unix) and retry logic
+    # Supports special operations:
+    # - completed_increment=1: atomic counter increment
+    # - files_append=file_info: atomic list append
+    # - failed_count_increment=1: atomic failure tracking
+```
+
+### Persistent Storage Benefits (CURRENT)
+- **Service Restart Recovery**: Jobs survive service restarts
+- **Credit Reservation Persistence**: `reservation_id` saved to disk for proper cleanup
+- **Race Condition Prevention**: Atomic file operations prevent concurrent update conflicts
+- **Progress Accuracy**: Real-time progress tracking across multiple concurrent video downloads
+- **Audit Trail**: Complete job history preserved on disk
+
+### Metadata Pre-fetching Optimization (CURRENT)
+```python
+# NEW: Efficient metadata pre-fetching at job creation
+async def start_selected_videos_transcript_download():
+    # Pre-fetch ALL video metadata in batches (50 videos per API call)
+    videos_metadata = await pre_fetch_videos_metadata(video_ids)
+    
+    # Store pre-fetched metadata in job for reuse
+    job_data["videos_metadata"] = videos_metadata
+    
+    # Each video download uses pre-fetched data (no additional API calls)
+    pre_fetched_metadata = job.get("videos_metadata", {}).get(video_id, {})
+```
+
+### Atomic Progress Updates (CURRENT)
+```python
+# Individual video completion with atomic operations
+async def process_single_video(job_id: str, video_id: str, output_dir: str):
+    # Success case: atomic multi-field update
+    updated_job = update_job_progress(
+        job_id,
+        files_append=file_info,           # Add file to list atomically
+        completed_increment=1,            # Increment success counter
+        credits_used_increment=1,         # Track credit usage
+    )
+    
+    # Failure case: atomic failure tracking
+    update_job_progress(
+        job_id, 
+        failed_count_increment=1,         # Increment failure counter
+        credits_used_increment=1          # Still count failed attempts
+    )
+    
+    # Always: atomic processed tracking
+    update_job_progress(job_id, processed_count_increment=1)
 ```
 
 ### Stripe Integration (Transcript API)
@@ -259,13 +344,25 @@ async def get_user_credits(user_id: str) -> int
 async def deduct_user_credits(user_id: str, amount: int) -> bool
 ```
 
-### File Management System
+### File Management System (CURRENT - Persistent + Atomic)
 ```python
-# Organized storage with cleanup
+# Organized storage with persistent job tracking
 temp_dir = settings.temp_dir  # "../build/transcripts"
 
-# Automatic cleanup of old files
+# NEW: Persistent job storage directory
+JOBS_STORAGE_DIR = os.path.join(settings.temp_dir, "jobs")
+
+# Each job stored as: {JOBS_STORAGE_DIR}/{job_id}.json
+# Contains: progress, metadata, credit tracking, file lists
+
+# Automatic cleanup with job state preservation
 youtube_service.cleanup_old_jobs(max_age_hours=24)
+# Cleans transcript files but preserves job metadata for audit
+
+# Atomic file operations prevent corruption
+def update_job_progress(job_id: str, **updates):
+    # File locking (Unix) + retry logic for concurrent safety
+    # JSON serialization handles Pydantic objects properly
 ```
 
 ---
