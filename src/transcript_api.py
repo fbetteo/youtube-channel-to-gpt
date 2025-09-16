@@ -599,6 +599,64 @@ class SelectedVideosRequest(BaseModel):
     )
 
 
+class PlaylistRequest(BaseModel):
+    playlist_name: str = Field(..., description="YouTube playlist ID or URL")
+    max_results: int = Field(30, description="Maximum number of videos to fetch")
+    # Formatting options
+    include_timestamps: bool = Field(
+        default=False, description="Include timestamps in transcript"
+    )
+    include_video_title: bool = Field(
+        default=True, description="Include video title in header"
+    )
+    include_video_id: bool = Field(
+        default=True, description="Include video ID in header"
+    )
+    include_video_url: bool = Field(
+        default=True, description="Include video URL in header"
+    )
+    include_view_count: bool = Field(
+        default=False, description="Include video view count in header"
+    )
+    concatenate_all: bool = Field(
+        default=False,
+        description="Return single concatenated file instead of individual files",
+    )
+
+    @validator("max_results")
+    def validate_max_results(cls, v):
+        if v <= 0 or v > 100:
+            raise ValueError("max_results must be between 1 and 100")
+        return v
+
+
+class SelectedPlaylistVideosRequest(BaseModel):
+    playlist_name: str = Field(..., description="YouTube playlist ID or URL")
+    videos: List[VideoInfo] = Field(
+        ..., description="List of selected videos to download transcripts for"
+    )
+    # Formatting options
+    include_timestamps: bool = Field(
+        default=False, description="Include timestamps in transcript"
+    )
+    include_video_title: bool = Field(
+        default=True, description="Include video title in header"
+    )
+    include_video_id: bool = Field(
+        default=True, description="Include video ID in header"
+    )
+    include_video_url: bool = Field(
+        default=True, description="Include video URL in header"
+    )
+    include_view_count: bool = Field(
+        default=False, description="Include video view count in header"
+    )
+    concatenate_all: bool = Field(
+        default=False,
+        description="Return single concatenated file instead of individual files",
+    )
+
+
 def verify_api_key(request: Request):
     """Verify API key for authenticated endpoints"""
     api_key = request.headers.get("X-API-Key")
@@ -1311,15 +1369,17 @@ async def download_selected_videos(
 
         # Start asynchronous transcript retrieval for selected videos
         job_id = await youtube_service.start_selected_videos_transcript_download(
-            channel_name,
-            videos,
-            user_id,
+            channel_name=channel_name,
+            playlist_name=None,  # No playlist for channel downloads
+            videos=videos,
+            user_id=user_id,
             include_timestamps=request.include_timestamps,
             include_video_title=request.include_video_title,
             include_video_id=request.include_video_id,
             include_video_url=request.include_video_url,
             include_view_count=request.include_view_count,
             concatenate_all=request.concatenate_all,
+            is_playlist=False,  # Flag to indicate this is a channel download
         )
 
         return {
@@ -1420,6 +1480,140 @@ async def download_transcript_results(
         logger.error(f"Error downloading results: {str(e)}", exc_info=True)
         raise HTTPException(
             status_code=500, detail=f"Failed to download results: {str(e)}"
+        )
+
+
+# =============================================
+# PLAYLIST ENDPOINTS
+# =============================================
+
+
+@app.get("/playlist/{playlist_id}")
+async def get_playlist_info(
+    playlist_id: str,
+    session: Dict = Depends(get_user_session),
+):
+    """
+    Get information about a YouTube playlist to validate user input.
+    Returns playlist title, description, thumbnail URL, and video count.
+    """
+    try:
+        # Extract playlist ID from URL if needed
+        clean_playlist_id = youtube_service.extract_playlist_id(playlist_id)
+        
+        # Get playlist info using the new service
+        playlist_info = await youtube_service.get_playlist_info(clean_playlist_id)
+        return playlist_info
+
+    except ValueError as e:
+        logger.error(f"Invalid playlist: {str(e)}")
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        logger.error(f"Error getting playlist info: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=500, detail=f"Failed to get playlist information: {str(e)}"
+        )
+
+
+@app.get("/playlist/{playlist_id}/all-videos")
+async def list_all_playlist_videos(
+    playlist_id: str,
+    # payload: dict = Depends(validate_jwt),
+):
+    """
+    Get all videos for a playlist with pagination.
+    Returns a list of videos with metadata for selection in the frontend.
+    """
+    try:
+        # Extract playlist ID from URL if needed
+        clean_playlist_id = youtube_service.extract_playlist_id(playlist_id)
+        
+        # Use the paginated function to get all videos
+        videos = await youtube_service.get_all_playlist_videos(clean_playlist_id)
+
+        # Log the result to help debug
+        logger.info(
+            f"Returning {len(videos)} videos for playlist {playlist_id}"
+        )
+        for i, video in enumerate(videos[:5]):
+            logger.info(f"Video {i+1}: {video['id']} - {video['title']}")
+
+        return videos
+    except ValueError as e:
+        logger.error(f"Invalid playlist: {str(e)}")
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        logger.error(f"Error getting all videos: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Failed to get videos: {str(e)}")
+
+
+@app.post("/playlist/download/selected")
+async def download_selected_playlist_videos(
+    request: SelectedPlaylistVideosRequest,
+    payload: dict = Depends(validate_jwt),
+    session: Dict = Depends(get_user_session),
+):
+    """
+    Start asynchronous download of transcripts for selected videos from a YouTube playlist.
+    Returns a job ID that can be used to check progress and retrieve results.
+
+    REQUIRES AUTHENTICATION: This endpoint requires sufficient credits for the selected videos.
+    Each video transcript attempt will deduct 1 credit.
+    """
+    playlist_name = request.playlist_name
+    videos = request.videos
+    session_id = session["id"]
+    user_id = get_user_id_from_payload(payload)
+
+    # Count number of videos to download
+    num_videos = len(videos)
+
+    try:
+        # Extract playlist ID from URL if needed
+        clean_playlist_id = youtube_service.extract_playlist_id(playlist_name)
+
+        # Check if user has sufficient credits for the selected videos
+        user_credits = CreditManager.get_user_credits(user_id)
+        if user_credits < num_videos:
+            raise HTTPException(
+                status_code=status.HTTP_402_PAYMENT_REQUIRED,
+                detail=f"Insufficient credits. You need {num_videos} credits but only have {user_credits}. Please purchase more credits.",
+            )
+
+        # Start asynchronous transcript retrieval using the existing service
+        # We can reuse the channel download function by passing playlist parameters
+        job_id = await youtube_service.start_selected_videos_transcript_download(
+            channel_name=None,  # No channel for playlist downloads
+            playlist_name=clean_playlist_id,  # Use playlist ID
+            videos=videos,
+            user_id=user_id,
+            include_timestamps=request.include_timestamps,
+            include_video_title=request.include_video_title,
+            include_video_id=request.include_video_id,
+            include_video_url=request.include_video_url,
+            include_view_count=request.include_view_count,
+            concatenate_all=request.concatenate_all,
+            is_playlist=True,  # Flag to indicate this is a playlist download
+        )
+
+        return {
+            "job_id": job_id,
+            "status": "processing",
+            "total_videos": num_videos,
+            "playlist_id": clean_playlist_id,
+            "user_id": user_id,
+            "credits_reserved": num_videos,
+            "user_credits_at_start": user_credits,
+            "message": f"Playlist transcript retrieval started. Credits will be deducted per video attempt (1 credit each). You have {user_credits} credits available. Use the /channel/download/status endpoint to check progress and credit usage.",
+        }
+
+    except ValueError as e:
+        logger.error(f"Invalid playlist request: {str(e)}")
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        logger.error(f"Error starting playlist transcript download: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=500, detail=f"Failed to start playlist transcript download: {str(e)}"
         )
 
 
