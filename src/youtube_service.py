@@ -2222,13 +2222,13 @@ async def create_concatenated_transcript(job_id: str) -> str:
 
 def get_safe_channel_name(job_id: str) -> str:
     """
-    Get a filesystem-safe version of the channel name for a job.
+    Get a filesystem-safe version of the source name (channel or playlist) for a job.
 
     Args:
         job_id: The job identifier
 
     Returns:
-        Safe channel name for use in filenames
+        Safe source name for use in filenames
 
     Raises:
         ValueError: If job ID not found
@@ -2236,8 +2236,16 @@ def get_safe_channel_name(job_id: str) -> str:
     if job_id not in channel_download_jobs:
         raise ValueError(f"Job not found with ID: {job_id}")
 
-    channel_name = channel_download_jobs[job_id]["channel_name"]
-    return sanitize_filename(channel_name)
+    job_data = channel_download_jobs[job_id]
+    
+    # For playlist jobs, use source_name or playlist_id
+    if job_data.get("source_type") == "playlist":
+        source_name = job_data.get("source_name") or job_data.get("playlist_id") or "playlist"
+    else:
+        # For channel jobs, use channel_name or source_name
+        source_name = job_data.get("channel_name") or job_data.get("source_name") or "channel"
+    
+    return sanitize_filename(source_name)
 
 
 async def retry_operation(operation, max_retries=3, retry_delay=1.0, *args, **kwargs):
