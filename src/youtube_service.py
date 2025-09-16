@@ -445,6 +445,40 @@ def extract_youtube_id(url: str) -> str:
     raise ValueError(f"Could not extract YouTube video ID from URL: {url}")
 
 
+def extract_playlist_id(url_or_id: str) -> str:
+    """
+    Extract YouTube playlist ID from various URL formats or validate existing ID.
+
+    Args:
+        url_or_id: YouTube playlist URL or playlist ID
+
+    Returns:
+        The YouTube playlist ID
+
+    Raises:
+        ValueError: If unable to extract a valid YouTube playlist ID
+    """
+    # Common YouTube playlist URL patterns
+    patterns = [
+        r"[?&]list=([a-zA-Z0-9_-]+)",  # ?list=PLxxxxxx or &list=PLxxxxxx
+        r"playlist\?list=([a-zA-Z0-9_-]+)",  # playlist?list=PLxxxxxx
+    ]
+
+    for pattern in patterns:
+        match = re.search(pattern, url_or_id)
+        if match:
+            playlist_id = match.group(1)
+            # Validate that it looks like a valid playlist ID
+            if re.match(r"^[a-zA-Z0-9_-]{10,}$", playlist_id):
+                return playlist_id
+
+    # If no pattern matches, perhaps the input is already just the ID
+    if re.match(r"^[a-zA-Z0-9_-]{10,}$", url_or_id):
+        return url_or_id
+
+    raise ValueError(f"Could not extract YouTube playlist ID from URL: {url_or_id}")
+
+
 def sanitize_filename(filename: str, max_len: int = 30) -> str:
     """
     Sanitizes a filename to be safe for all operating systems.
@@ -853,6 +887,72 @@ async def get_channel_info(channel_name: str) -> Dict[str, Any]:
         raise ValueError(f"Failed to get channel information: {str(e)}")
 
 
+async def get_playlist_info(playlist_id: str) -> Dict[str, Any]:
+    """
+    Get detailed information about a YouTube playlist.
+
+    Args:
+        playlist_id: YouTube playlist ID
+
+    Returns:
+        Dictionary with playlist information (title, description, video count, etc.)
+
+    Raises:
+        ValueError: If playlist is not found
+    """
+    try:
+        def _fetch_playlist_info():
+            # Use thread-safe client
+            client = get_youtube_client()
+            request = client.playlists().list(
+                part="snippet,contentDetails,status",
+                id=playlist_id
+            )
+            return request.execute()
+
+        # Run the blocking API call in a thread pool
+        response = await asyncio.to_thread(_fetch_playlist_info)
+
+        if not response.get("items"):
+            raise ValueError(
+                f"Playlist not found: '{playlist_id}'. "
+                f"Please provide a valid playlist ID or ensure the playlist is public."
+            )
+
+        playlist_info = response["items"][0]
+        snippet = playlist_info["snippet"]
+        content_details = playlist_info["contentDetails"]
+
+        logger.info(
+            f"Successfully fetched playlist '{playlist_id}' (title: '{snippet['title']}')"
+        )
+
+        # Get best thumbnail
+        thumbnails = snippet.get("thumbnails", {})
+        best_thumbnail = (
+            thumbnails.get("maxres")
+            or thumbnails.get("high")
+            or thumbnails.get("medium")
+            or thumbnails.get("default")
+            or {}
+        )
+
+        return {
+            "title": snippet["title"],
+            "description": snippet.get("description", ""),
+            "thumbnail": best_thumbnail.get("url", ""),
+            "videoCount": int(content_details.get("itemCount", 0)),
+            "channelTitle": snippet.get("channelTitle", ""),
+            "channelId": snippet.get("channelId", ""),
+            "playlistId": playlist_id,
+            "publishedAt": snippet.get("publishedAt", ""),
+        }
+
+    except Exception as e:
+        logger.error(f"Error fetching playlist info for {playlist_id}: {str(e)}")
+        raise ValueError(f"Failed to get playlist information: {str(e)}")
+
+
 # async def get_channel_videos(
 #     channel_id: str, max_results: int = None
 # ) -> List[Dict[str, str]]:
@@ -1075,6 +1175,109 @@ async def get_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
         return videos
     except Exception as e:
         logger.error(f"Error in get_all_channel_videos for {channel_id}: {str(e)}")
+        raise ValueError(f"Failed to fetch all videos: {str(e)}")
+
+
+def _fetch_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
+    """
+    Fetch all videos from a playlist (quota efficient).
+    Returns a list of video metadata dicts (id, title, publishedAt, duration category, etc.).
+    """
+    logger.info(f"Fetching all videos from playlist {playlist_id}")
+
+    client = get_youtube_client()
+    all_videos = []
+    next_page_token = None
+
+    # Paginate through all videos in the playlist
+    while True:
+        request = client.playlistItems().list(
+            part="snippet",
+            playlistId=playlist_id,
+            maxResults=50,
+            pageToken=next_page_token,
+        )
+        response = request.execute()
+
+        for item in response.get("items", []):
+            snippet = item["snippet"]
+            # Skip private videos (they appear with empty titles)
+            if not snippet.get("title") or snippet.get("title") == "Private video":
+                continue
+
+            video_id = snippet["resourceId"]["videoId"]
+            all_videos.append(
+                {
+                    "id": video_id,
+                    "title": snippet["title"],
+                    "publishedAt": snippet.get("publishedAt"),
+                    "url": f"https://www.youtube.com/watch?v={video_id}",
+                    "duration": None,  # Will be filled after batch call
+                }
+            )
+
+        next_page_token = response.get("nextPageToken")
+        if not next_page_token:
+            break
+
+    # Get duration information in batches (50 videos per API call)
+    logger.info(f"Fetching duration information for {len(all_videos)} videos")
+
+    for i in range(0, len(all_videos), 50):
+        batch_videos = all_videos[i : i + 50]
+        video_ids = [video["id"] for video in batch_videos]
+
+        # Fetch durations for this batch
+        request = client.videos().list(part="contentDetails", id=",".join(video_ids))
+        durations_response = request.execute()
+
+        # Create a mapping of video_id to duration category
+        duration_map = {}
+        for video_item in durations_response.get("items", []):
+            video_id = video_item["id"]
+            duration_str = video_item["contentDetails"]["duration"]
+            duration_seconds = _parse_duration_to_seconds(duration_str)
+            duration_category = _categorize_duration(duration_seconds)
+            duration_map[video_id] = duration_category
+
+        # Update this batch with duration categories
+        for video in batch_videos:
+            video["duration"] = duration_map.get(video["id"], "unknown")
+
+    logger.info(
+        f"Found {len(all_videos)} videos in playlist {playlist_id}"
+    )
+
+    # Log duration distribution
+    duration_counts = {}
+    for video in all_videos:
+        category = video["duration"]
+        duration_counts[category] = duration_counts.get(category, 0) + 1
+
+    logger.info(f"Duration distribution: {duration_counts}")
+
+    return all_videos
+
+
+async def get_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
+    """
+    Async wrapper for _fetch_all_playlist_videos with better error handling and logging.
+
+    Args:
+        playlist_id: YouTube playlist ID
+
+    Returns:
+        List of video dictionaries with metadata
+    """
+    try:
+        logger.info(f"Fetching all videos for playlist {playlist_id}")
+        videos = await asyncio.to_thread(_fetch_all_playlist_videos, playlist_id)
+        logger.info(
+            f"Successfully fetched {len(videos)} videos for playlist {playlist_id}"
+        )
+        return videos
+    except Exception as e:
+        logger.error(f"Error in get_all_playlist_videos for {playlist_id}: {str(e)}")
         raise ValueError(f"Failed to fetch all videos: {str(e)}")
 
 
@@ -1433,44 +1636,62 @@ async def get_single_transcript(
 
 
 async def start_selected_videos_transcript_download(
-    channel_name: str,
-    videos: List[Dict[str, Any]],
-    user_id: str,
+    channel_name: str = None,
+    playlist_name: str = None,
+    videos: List[Dict[str, Any]] = None,
+    user_id: str = None,
     include_timestamps: bool = False,
     include_video_title: bool = True,
     include_video_id: bool = True,
     include_video_url: bool = True,
     include_view_count: bool = False,
     concatenate_all: bool = False,
+    is_playlist: bool = False,
 ) -> str:
     """
-    Start transcript download for a user-selected list of videos from a channel.
+    Start transcript download for a user-selected list of videos from a channel or playlist.
 
     Args:
-        channel_name: Channel name or ID
+        channel_name: Channel name or ID (for channel downloads)
+        playlist_name: Playlist ID (for playlist downloads)
         videos: List of video dictionaries containing at least 'id' and 'title'
         user_id: User identifier for directory organization
+        is_playlist: Flag to indicate if this is a playlist download
 
     Returns:
         Job ID for tracking the download process
 
     Raises:
-        ValueError: If channel not found or other errors occur
+        ValueError: If channel/playlist not found or other errors occur
     """
     try:
-        # Get channel info to validate channel existence and get channel ID
-        channel_info = await get_channel_info(channel_name)
-        channel_id = channel_info["channelId"]
+        # Determine if this is a channel or playlist download
+        if is_playlist and playlist_name:
+            # Validate playlist exists and get info
+            playlist_info = await get_playlist_info(playlist_name)
+            source_id = playlist_info["playlistId"]
+            source_name = playlist_info["title"]
+            source_type = "playlist"
+            logger.info(f"Starting playlist download for '{source_name}' (ID: {source_id})")
+        elif channel_name:
+            # Get channel info to validate channel existence and get channel ID
+            channel_info = await get_channel_info(channel_name)
+            source_id = channel_info["channelId"]
+            source_name = channel_info["title"]
+            source_type = "channel"
+            logger.info(f"Starting channel download for '{source_name}' (ID: {source_id})")
+        else:
+            raise ValueError("Either channel_name or playlist_name must be provided")
 
         # Count and log the video selection
-        num_videos = len(videos)
+        num_videos = len(videos) if videos else 0
         logger.info(
-            f"Preparing to download {num_videos} selected videos for channel '{channel_name}' (ID: {channel_id})"
+            f"Preparing to download {num_videos} selected videos for {source_type} '{source_name}'"
         )
 
         if not videos:
-            logger.warning(f"No videos selected for channel: {channel_name}")
-            raise ValueError(f"No videos selected for channel: {channel_name}")
+            logger.warning(f"No videos selected for {source_type}: {source_name}")
+            raise ValueError(f"No videos selected for {source_type}: {source_name}")
 
         # Log the list of videos to be downloaded
         logger.info("Selected videos to be downloaded:")
@@ -1499,8 +1720,11 @@ async def start_selected_videos_transcript_download(
         # Initialize job entry in the tracking dictionary
         channel_download_jobs[job_id] = {
             "status": "processing",
-            "channel_name": channel_name,
-            "channel_id": channel_id,
+            "channel_name": channel_name if not is_playlist else None,
+            "playlist_id": playlist_name if is_playlist else None,
+            "source_id": source_id,
+            "source_name": source_name,
+            "source_type": source_type,
             "total_videos": num_videos,
             "processed_count": 0,
             "failed_count": 0,
@@ -1525,7 +1749,7 @@ async def start_selected_videos_transcript_download(
         # Save job to persistent storage immediately after creation
         save_job_to_file(job_id, channel_download_jobs[job_id])
         logger.info(
-            f"Created and saved selected videos job {job_id} for channel {channel_name}"
+            f"Created and saved selected videos job {job_id} for {source_type} {source_name}"
         )
 
         # Start the background task to process transcripts
