@@ -901,12 +901,12 @@ async def get_playlist_info(playlist_id: str) -> Dict[str, Any]:
         ValueError: If playlist is not found
     """
     try:
+
         def _fetch_playlist_info():
             # Use thread-safe client
             client = get_youtube_client()
             request = client.playlists().list(
-                part="snippet,contentDetails,status",
-                id=playlist_id
+                part="snippet,contentDetails,status", id=playlist_id
             )
             return request.execute()
 
@@ -1244,9 +1244,7 @@ def _fetch_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
         for video in batch_videos:
             video["duration"] = duration_map.get(video["id"], "unknown")
 
-    logger.info(
-        f"Found {len(all_videos)} videos in playlist {playlist_id}"
-    )
+    logger.info(f"Found {len(all_videos)} videos in playlist {playlist_id}")
 
     # Log duration distribution
     duration_counts = {}
@@ -1672,14 +1670,18 @@ async def start_selected_videos_transcript_download(
             source_id = playlist_info["playlistId"]
             source_name = playlist_info["title"]
             source_type = "playlist"
-            logger.info(f"Starting playlist download for '{source_name}' (ID: {source_id})")
+            logger.info(
+                f"Starting playlist download for '{source_name}' (ID: {source_id})"
+            )
         elif channel_name:
             # Get channel info to validate channel existence and get channel ID
             channel_info = await get_channel_info(channel_name)
             source_id = channel_info["channelId"]
             source_name = channel_info["title"]
             source_type = "channel"
-            logger.info(f"Starting channel download for '{source_name}' (ID: {source_id})")
+            logger.info(
+                f"Starting channel download for '{source_name}' (ID: {source_id})"
+            )
         else:
             raise ValueError("Either channel_name or playlist_name must be provided")
 
@@ -2239,14 +2241,18 @@ def get_safe_channel_name(job_id: str) -> str:
         raise ValueError(f"Job not found with ID: {job_id}")
 
     job_data = channel_download_jobs[job_id]
-    
+
     # For playlist jobs, use source_name or playlist_id
     if job_data.get("source_type") == "playlist":
-        source_name = job_data.get("source_name") or job_data.get("playlist_id") or "playlist"
+        source_name = (
+            job_data.get("source_name") or job_data.get("playlist_id") or "playlist"
+        )
     else:
         # For channel jobs, use channel_name or source_name
-        source_name = job_data.get("channel_name") or job_data.get("source_name") or "channel"
-    
+        source_name = (
+            job_data.get("channel_name") or job_data.get("source_name") or "channel"
+        )
+
     return sanitize_filename(source_name)
 
 
