@@ -1,0 +1,160 @@
+{
+  "status": "completed",
+  "channel_name": "franbetteo23",
+  "playlist_id": null,
+  "source_id": "UCywdCBGtWq80POOdkvVPtCw",
+  "source_name": "Franco - Sportsjobs Online",
+  "source_type": "channel",
+  "total_videos": 5,
+  "processed_count": 5,
+  "failed_count": 1,
+  "completed": 4,
+  "files": [
+    {
+      "file_path": "../build/transcripts/c78c3fd6-a2a9-4aa6-8060-99a801538a00/d228016a-ea7c-4113-9b8c-a0fc943f8a7c/pGT00gcGcu0/how to get a job in sports ana_pGT00gcGcu0.txt",
+      "video_id": "pGT00gcGcu0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/c78c3fd6-a2a9-4aa6-8060-99a801538a00/d228016a-ea7c-4113-9b8c-a0fc943f8a7c/w_h8FuDn_Tc/AI and machine learning engine_w_h8FuDn_Tc.txt",
+      "video_id": "w_h8FuDn_Tc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/c78c3fd6-a2a9-4aa6-8060-99a801538a00/d228016a-ea7c-4113-9b8c-a0fc943f8a7c/llbxCUvmbwQ/sr football data scientist. Jo_llbxCUvmbwQ.txt",
+      "video_id": "llbxCUvmbwQ",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/c78c3fd6-a2a9-4aa6-8060-99a801538a00/d228016a-ea7c-4113-9b8c-a0fc943f8a7c/PQJEdiA95-U/NFL Big Data Bowl Mentorship p_PQJEdiA95-U.txt",
+      "video_id": "PQJEdiA95-U",
+      "language": "en",
+      "type": "auto-generated"
+    }
+  ],
+  "videos": [
+    {
+      "id": "PQJEdiA95-U",
+      "title": "NFL Big Data Bowl Mentorship program 2026",
+      "publishedAt": "2025-09-16T21:00:34.119Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=PQJEdiA95-U"
+    },
+    {
+      "id": "pGT00gcGcu0",
+      "title": "how to get a job in sports analytics #jobsearch #programming #datascientist #dataanalysis",
+      "publishedAt": "2025-09-16T21:00:34.119Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=pGT00gcGcu0"
+    },
+    {
+      "id": "SyC-cEUHK8s",
+      "title": "Download all the youtube transcripts from a channel",
+      "publishedAt": "2025-09-16T21:00:34.119Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=SyC-cEUHK8s"
+    },
+    {
+      "id": "w_h8FuDn_Tc",
+      "title": "AI and machine learning engineer in soccer for the MLS. #programming #dataanalyst #jobsearch",
+      "publishedAt": "2025-09-16T21:00:34.119Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=w_h8FuDn_Tc"
+    },
+    {
+      "id": "llbxCUvmbwQ",
+      "title": "sr football data scientist. Job in sports analytics #sportsanalysis  #jobsearch  #datascience",
+      "publishedAt": "2025-09-16T21:00:34.119Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=llbxCUvmbwQ"
+    }
+  ],
+  "start_time": 1758056436.229175,
+  "user_id": "c78c3fd6-a2a9-4aa6-8060-99a801538a00",
+  "credits_reserved": 5,
+  "credits_used": 5,
+  "reservation_id": "1fca9fb5-03ba-4644-ba08-8ea0a1c8deea",
+  "videos_metadata": {
+    "PQJEdiA95-U": {
+      "id": "PQJEdiA95-U",
+      "title": "NFL Big Data Bowl Mentorship program 2026",
+      "description": "Don't forget to apply to the NFL big data bowl mentorship program 2026. You get training and one-on-one with NFL analytics professionals. Easiest way to get started in the industry using python or R.\nFollow us and join the newsletter and see all the free resources at www.sportsjobs.online\n#sportanalysis #sportsjobs #usajobs #datascience\u00a0#bigdatabowl",
+      "channelId": "UCywdCBGtWq80POOdkvVPtCw",
+      "channelTitle": "Franco - Sportsjobs Online",
+      "publishedAt": "2025-09-16T13:12:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/PQJEdiA95-U/maxresdefault.jpg",
+      "duration": "0:41",
+      "viewCount": 50,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=PQJEdiA95-U"
+    },
+    "pGT00gcGcu0": {
+      "id": "pGT00gcGcu0",
+      "title": "how to get a job in sports analytics #jobsearch #programming #datascientist #dataanalysis",
+      "description": "Video is from @TransferFlowPodcast \nJobs, tips and resources for sports analytics in www.sportsjobs.online.\nBe sure to subscribe to the newsletter for more.",
+      "channelId": "UCywdCBGtWq80POOdkvVPtCw",
+      "channelTitle": "Franco - Sportsjobs Online",
+      "publishedAt": "2025-08-26T21:04:58Z",
+      "thumbnail": "https://i.ytimg.com/vi/pGT00gcGcu0/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 128,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=pGT00gcGcu0"
+    },
+    "SyC-cEUHK8s": {
+      "id": "SyC-cEUHK8s",
+      "title": "Download all the youtube transcripts from a channel",
+      "description": "this is how easy www.downloadyoutubetranscripts.com works.\nSelect the channel, pick the videos using the filters, download with timestamps, view count and title. Enjoy.",
+      "channelId": "UCywdCBGtWq80POOdkvVPtCw",
+      "channelTitle": "Franco - Sportsjobs Online",
+      "publishedAt": "2025-08-22T18:58:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/SyC-cEUHK8s/hqdefault.jpg",
+      "duration": "1:13",
+      "viewCount": 2,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=SyC-cEUHK8s"
+    },
+    "w_h8FuDn_Tc": {
+      "id": "w_h8FuDn_Tc",
+      "title": "AI and machine learning engineer in soccer for the MLS. #programming #dataanalyst #jobsearch",
+      "description": "AI and machine learning engineer in soccer for the MLS.\n180k-200k salary range\n\nAll the details: https://lnkd.in/d2J5eiX5\n\nCheck out the site for resources to improve your career!",
+      "channelId": "UCywdCBGtWq80POOdkvVPtCw",
+      "channelTitle": "Franco - Sportsjobs Online",
+      "publishedAt": "2025-08-14T22:38:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/w_h8FuDn_Tc/maxresdefault.jpg",
+      "duration": "0:18",
+      "viewCount": 67,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=w_h8FuDn_Tc"
+    },
+    "llbxCUvmbwQ": {
+      "id": "llbxCUvmbwQ",
+      "title": "sr football data scientist. Job in sports analytics #sportsanalysis  #jobsearch  #datascience",
+      "description": "Land a remote job in sports analytics or software in sports. Sumersports is looking for a sr football data scientist. Skills, requirements and responsibilities. \nGet more information and more jobs at www.sportsjobs.online.",
+      "channelId": "UCywdCBGtWq80POOdkvVPtCw",
+      "channelTitle": "Franco - Sportsjobs Online",
+      "publishedAt": "2025-08-11T18:57:50Z",
+      "thumbnail": "https://i.ytimg.com/vi/llbxCUvmbwQ/maxresdefault.jpg",
+      "duration": "0:56",
+      "viewCount": 65,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=llbxCUvmbwQ"
+    }
+  },
+  "include_timestamps": true,
+  "include_video_title": true,
+  "include_video_id": true,
+  "include_video_url": true,
+  "include_view_count": false,
+  "concatenate_all": false,
+  "end_time": 1758056457.1867461,
+  "duration": 20.957571029663086
+}

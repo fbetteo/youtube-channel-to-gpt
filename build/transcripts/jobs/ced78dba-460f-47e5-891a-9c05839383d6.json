@@ -1,0 +1,139 @@
+{
+  "status": "completed",
+  "channel_name": null,
+  "playlist_id": "PLR5RviagxcgcuXvfW0vCOhz_eGsXDJfeu",
+  "source_id": "PLR5RviagxcgcuXvfW0vCOhz_eGsXDJfeu",
+  "source_name": "Sportsjobs",
+  "source_type": "playlist",
+  "total_videos": 4,
+  "processed_count": 4,
+  "failed_count": 0,
+  "completed": 4,
+  "files": [
+    {
+      "file_path": "../build/transcripts/c78c3fd6-a2a9-4aa6-8060-99a801538a00/ced78dba-460f-47e5-891a-9c05839383d6/pGT00gcGcu0/how to get a job in sports ana_pGT00gcGcu0.txt",
+      "video_id": "pGT00gcGcu0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/c78c3fd6-a2a9-4aa6-8060-99a801538a00/ced78dba-460f-47e5-891a-9c05839383d6/w_h8FuDn_Tc/AI and machine learning engine_w_h8FuDn_Tc.txt",
+      "video_id": "w_h8FuDn_Tc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/c78c3fd6-a2a9-4aa6-8060-99a801538a00/ced78dba-460f-47e5-891a-9c05839383d6/PQJEdiA95-U/NFL Big Data Bowl Mentorship p_PQJEdiA95-U.txt",
+      "video_id": "PQJEdiA95-U",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/c78c3fd6-a2a9-4aa6-8060-99a801538a00/ced78dba-460f-47e5-891a-9c05839383d6/llbxCUvmbwQ/sr football data scientist. Jo_llbxCUvmbwQ.txt",
+      "video_id": "llbxCUvmbwQ",
+      "language": "en",
+      "type": "auto-generated"
+    }
+  ],
+  "videos": [
+    {
+      "id": "PQJEdiA95-U",
+      "title": "NFL Big Data Bowl Mentorship program 2026",
+      "publishedAt": "2025-09-16T20:52:23.012Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=PQJEdiA95-U"
+    },
+    {
+      "id": "pGT00gcGcu0",
+      "title": "how to get a job in sports analytics #jobsearch #programming #datascientist #dataanalysis",
+      "publishedAt": "2025-09-16T20:52:23.012Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=pGT00gcGcu0"
+    },
+    {
+      "id": "w_h8FuDn_Tc",
+      "title": "AI and machine learning engineer in soccer for the MLS. #programming #dataanalyst #jobsearch",
+      "publishedAt": "2025-09-16T20:52:23.012Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=w_h8FuDn_Tc"
+    },
+    {
+      "id": "llbxCUvmbwQ",
+      "title": "sr football data scientist. Job in sports analytics #sportsanalysis  #jobsearch  #datascience",
+      "publishedAt": "2025-09-16T20:52:23.012Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=llbxCUvmbwQ"
+    }
+  ],
+  "start_time": 1758055945.7204025,
+  "user_id": "c78c3fd6-a2a9-4aa6-8060-99a801538a00",
+  "credits_reserved": 4,
+  "credits_used": 4,
+  "reservation_id": "3f070d39-b216-4980-940b-7ba1eb70d91f",
+  "videos_metadata": {
+    "PQJEdiA95-U": {
+      "id": "PQJEdiA95-U",
+      "title": "NFL Big Data Bowl Mentorship program 2026",
+      "description": "Don't forget to apply to the NFL big data bowl mentorship program 2026. You get training and one-on-one with NFL analytics professionals. Easiest way to get started in the industry using python or R.\nFollow us and join the newsletter and see all the free resources at www.sportsjobs.online\n#sportanalysis #sportsjobs #usajobs #datascience\u00a0#bigdatabowl",
+      "channelId": "UCywdCBGtWq80POOdkvVPtCw",
+      "channelTitle": "Franco - Sportsjobs Online",
+      "publishedAt": "2025-09-16T13:12:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/PQJEdiA95-U/maxresdefault.jpg",
+      "duration": "0:41",
+      "viewCount": 50,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=PQJEdiA95-U"
+    },
+    "pGT00gcGcu0": {
+      "id": "pGT00gcGcu0",
+      "title": "how to get a job in sports analytics #jobsearch #programming #datascientist #dataanalysis",
+      "description": "Video is from @TransferFlowPodcast \nJobs, tips and resources for sports analytics in www.sportsjobs.online.\nBe sure to subscribe to the newsletter for more.",
+      "channelId": "UCywdCBGtWq80POOdkvVPtCw",
+      "channelTitle": "Franco - Sportsjobs Online",
+      "publishedAt": "2025-08-26T21:04:58Z",
+      "thumbnail": "https://i.ytimg.com/vi/pGT00gcGcu0/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 128,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=pGT00gcGcu0"
+    },
+    "w_h8FuDn_Tc": {
+      "id": "w_h8FuDn_Tc",
+      "title": "AI and machine learning engineer in soccer for the MLS. #programming #dataanalyst #jobsearch",
+      "description": "AI and machine learning engineer in soccer for the MLS.\n180k-200k salary range\n\nAll the details: https://lnkd.in/d2J5eiX5\n\nCheck out the site for resources to improve your career!",
+      "channelId": "UCywdCBGtWq80POOdkvVPtCw",
+      "channelTitle": "Franco - Sportsjobs Online",
+      "publishedAt": "2025-08-14T22:38:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/w_h8FuDn_Tc/maxresdefault.jpg",
+      "duration": "0:18",
+      "viewCount": 67,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=w_h8FuDn_Tc"
+    },
+    "llbxCUvmbwQ": {
+      "id": "llbxCUvmbwQ",
+      "title": "sr football data scientist. Job in sports analytics #sportsanalysis  #jobsearch  #datascience",
+      "description": "Land a remote job in sports analytics or software in sports. Sumersports is looking for a sr football data scientist. Skills, requirements and responsibilities. \nGet more information and more jobs at www.sportsjobs.online.",
+      "channelId": "UCywdCBGtWq80POOdkvVPtCw",
+      "channelTitle": "Franco - Sportsjobs Online",
+      "publishedAt": "2025-08-11T18:57:50Z",
+      "thumbnail": "https://i.ytimg.com/vi/llbxCUvmbwQ/maxresdefault.jpg",
+      "duration": "0:56",
+      "viewCount": 65,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=llbxCUvmbwQ"
+    }
+  },
+  "include_timestamps": true,
+  "include_video_title": true,
+  "include_video_id": true,
+  "include_video_url": true,
+  "include_view_count": false,
+  "concatenate_all": false,
+  "end_time": 1758055954.223066,
+  "duration": 8.502663612365723
+}

@@ -2144,6 +2144,8 @@ async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:
 
         with zipfile.ZipFile(zip_buffer, "w") as zip_file:
             # Use the channel name for the concatenated file
+            if not job.get("channel_name"):
+                job["channel_name"] = job['source_name'] 
             safe_channel_name = sanitize_filename(job["channel_name"])
             filename = f"{safe_channel_name}_all_transcripts.txt"
             zip_file.writestr(filename, concatenated_content)

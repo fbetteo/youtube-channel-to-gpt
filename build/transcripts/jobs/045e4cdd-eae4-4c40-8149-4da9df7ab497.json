@@ -1,0 +1,1852 @@
+{
+  "status": "completed",
+  "channel_name": "cosmicvoid7",
+  "channel_id": "UC9VFI6T4zr-mmZv9YOSG90w",
+  "total_videos": 68,
+  "processed_count": 68,
+  "failed_count": 2,
+  "completed": 66,
+  "files": [
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/yAqIBOT_uiY/What If We Turned Pluto into a_yAqIBOT_uiY.txt",
+      "video_id": "yAqIBOT_uiY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/5zdaQpT4llI/What If Jupiter Disappeared \ud83d\ude30 _5zdaQpT4llI.txt",
+      "video_id": "5zdaQpT4llI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/EKnYmvNgJJ4/What If Mars Had Titan and Gan_EKnYmvNgJJ4.txt",
+      "video_id": "EKnYmvNgJJ4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/7ZuLDM9oCm0/What if Theia Never hit Earth _7ZuLDM9oCm0.txt",
+      "video_id": "7ZuLDM9oCm0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/dZbz8ibEoM4/Replacing the Moon with Ganyme_dZbz8ibEoM4.txt",
+      "video_id": "dZbz8ibEoM4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/2TXDkCK9TqA/Earth orbits a Red Giant \ud83d\ude30 #sp_2TXDkCK9TqA.txt",
+      "video_id": "2TXDkCK9TqA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/yl73ORhCtOg/Earth orbits Betelgeuse \ud83d\ude31 #spa_yl73ORhCtOg.txt",
+      "video_id": "yl73ORhCtOg",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/TvfEoxRzsRc/The largest black hole Entered_TvfEoxRzsRc.txt",
+      "video_id": "TvfEoxRzsRc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/MYqlZuT_X8w/Exploring Gargantua The Black _MYqlZuT_X8w.txt",
+      "video_id": "MYqlZuT_X8w",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/Jd6p4QQaDp8/What If Earth Became a Moon of_Jd6p4QQaDp8.txt",
+      "video_id": "Jd6p4QQaDp8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/a-_7RZzjmFw/What if Apophis hit Earth \ud83d\ude31 #s_a-_7RZzjmFw.txt",
+      "video_id": "a-_7RZzjmFw",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/XW7qsyXxxCI/What happens to the Sun after _XW7qsyXxxCI.txt",
+      "video_id": "XW7qsyXxxCI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/xed6rN_WS6g/What If the Sun Lost Just 1% o_xed6rN_WS6g.txt",
+      "video_id": "xed6rN_WS6g",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/CHfHJVKTmog/Earth was Titled to 90 Degrees_CHfHJVKTmog.txt",
+      "video_id": "CHfHJVKTmog",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/tRyPzwya8ow/All Gas giants Turned into Sta_tRyPzwya8ow.txt",
+      "video_id": "tRyPzwya8ow",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/q44JEA0cv3k/Swapped the Places of Mars and_q44JEA0cv3k.txt",
+      "video_id": "q44JEA0cv3k",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/JQUahoEWc5M/The scariest planets ever disc_JQUahoEWc5M.txt",
+      "video_id": "JQUahoEWc5M",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/X0nxYR1vWYE/Replacing the Sun with the Sma_X0nxYR1vWYE.txt",
+      "video_id": "X0nxYR1vWYE",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/uEA_C0PO-BI/Birth of the Solar system \ud83d\ude31 #s_uEA_C0PO-BI.txt",
+      "video_id": "uEA_C0PO-BI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/0IwrJRqSsS4/Life on the Andromeda Galaxy \ud83d\ude30_0IwrJRqSsS4.txt",
+      "video_id": "0IwrJRqSsS4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/gnFhfqBOAwc/What If Rigel Entered the Sola_gnFhfqBOAwc.txt",
+      "video_id": "gnFhfqBOAwc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/y9ve4rA4lLU/A Giant Water Ball Hits the Su_y9ve4rA4lLU.txt",
+      "video_id": "y9ve4rA4lLU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/dxA2vqp8f78/An Asteroid hit our Earth \ud83d\ude31 #s_dxA2vqp8f78.txt",
+      "video_id": "dxA2vqp8f78",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/gw-uimKEzjY/Replacing the Sun with a Magne_gw-uimKEzjY.txt",
+      "video_id": "gw-uimKEzjY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/oE7HhAdQvSI/Earth lost it's Magnetic Field_oE7HhAdQvSI.txt",
+      "video_id": "oE7HhAdQvSI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/RI5hpLoAiz4/Earth orbits the Biggest star _RI5hpLoAiz4.txt",
+      "video_id": "RI5hpLoAiz4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/24KJeH8Rdwg/Terraforming Saturn \ud83d\ude28 #space #_24KJeH8Rdwg.txt",
+      "video_id": "24KJeH8Rdwg",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/zrzMLg7m3_g/What if Earth was filled with _zrzMLg7m3_g.txt",
+      "video_id": "zrzMLg7m3_g",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/n_rZYa6UyGY/All planets orbiting in Earth'_n_rZYa6UyGY.txt",
+      "video_id": "n_rZYa6UyGY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/y-IjDBszGJg/Earth became Hotter than the S_y-IjDBszGJg.txt",
+      "video_id": "y-IjDBszGJg",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/Sy7Z-60VGzo/A Needle hit Earth \ud83d\ude30 #space #a_Sy7Z-60VGzo.txt",
+      "video_id": "Sy7Z-60VGzo",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/3BvKjkCeAe4/All planets became Sun sized \ud83e\udd2f_3BvKjkCeAe4.txt",
+      "video_id": "3BvKjkCeAe4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/bIBp60gXiw4/Sun became a Red Giant \ud83d\ude31 #spac_bIBp60gXiw4.txt",
+      "video_id": "bIBp60gXiw4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/APVdFqFupfA/Life on Mars \ud83d\ude31 #space #astrono_APVdFqFupfA.txt",
+      "video_id": "APVdFqFupfA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/lX9VBm0GfA8/Titan in Earth's orbit \ud83d\ude30 #spac_lX9VBm0GfA8.txt",
+      "video_id": "lX9VBm0GfA8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/HhIkiWS8oYo/Earth without Water \ud83d\ude30 #space #_HhIkiWS8oYo.txt",
+      "video_id": "HhIkiWS8oYo",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/kUHt0NR92HI/Replacing Sun with Hottest Sta_kUHt0NR92HI.txt",
+      "video_id": "kUHt0NR92HI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/zBMW8WdJfL0/Swap the sizes of Earth and th_zBMW8WdJfL0.txt",
+      "video_id": "zBMW8WdJfL0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/h1WekyaKEZI/Habitable zone filled with Ear_h1WekyaKEZI.txt",
+      "video_id": "h1WekyaKEZI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/lzNkORYMvto/A Watermelon at the Speed of l_lzNkORYMvto.txt",
+      "video_id": "lzNkORYMvto",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/fEco6bxMxjk/Sun Replaced by a Black hole \ud83d\ude30_fEco6bxMxjk.txt",
+      "video_id": "fEco6bxMxjk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/CoyAwEukJhs/All planets became Earth sized_CoyAwEukJhs.txt",
+      "video_id": "CoyAwEukJhs",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/xfvUONSXW0s/Jupiter crashes into Sun \ud83d\ude30 #sp_xfvUONSXW0s.txt",
+      "video_id": "xfvUONSXW0s",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/jkID-9S5Ccg/What if the Moon Hit Earth \ud83d\ude31 #_jkID-9S5Ccg.txt",
+      "video_id": "jkID-9S5Ccg",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/F-1-9VY9Pcs/Earth Stopped Spinning \ud83d\ude30 #spac_F-1-9VY9Pcs.txt",
+      "video_id": "F-1-9VY9Pcs",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/qA_njn4Xljw/Terraforming Pluto \ud83d\ude28 #space #a_qA_njn4Xljw.txt",
+      "video_id": "qA_njn4Xljw",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/xzXjOO6NBRc/Alien life on Trappist 1 \ud83d\ude31 #sp_xzXjOO6NBRc.txt",
+      "video_id": "xzXjOO6NBRc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/0rWawfvLvAo/What if every planet is replac_0rWawfvLvAo.txt",
+      "video_id": "0rWawfvLvAo",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/Oj2uPRneueg/The moon became Hotter than Su_Oj2uPRneueg.txt",
+      "video_id": "Oj2uPRneueg",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/8FPbB7uPNdQ/All Planets Between Earth & Mo_8FPbB7uPNdQ.txt",
+      "video_id": "8FPbB7uPNdQ",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/US7tFBOE9z0/Our Solar system has 3 Suns \ud83d\ude31 _US7tFBOE9z0.txt",
+      "video_id": "US7tFBOE9z0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/nXZJZxq29oA/Terraforming Sun \ud83d\ude28 #space #ast_nXZJZxq29oA.txt",
+      "video_id": "nXZJZxq29oA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/sKy36t9lED4/Terraforming Jupiter \ud83d\ude28 #space _sKy36t9lED4.txt",
+      "video_id": "sKy36t9lED4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/xavx65Oaq0Y/What If Earth and Mars Swapped_xavx65Oaq0Y.txt",
+      "video_id": "xavx65Oaq0Y",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/J-W-WK2wDN8/Earth turned into Pulsar star _J-W-WK2wDN8.txt",
+      "video_id": "J-W-WK2wDN8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/LqdCdMsi97A/Terraforming Moon \ud83d\ude28 #space #as_LqdCdMsi97A.txt",
+      "video_id": "LqdCdMsi97A",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/gJNbZEYNdNg/Rearranging the Planets \ud83e\udd2f #spa_gJNbZEYNdNg.txt",
+      "video_id": "gJNbZEYNdNg",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/fKA12cNXzlc/Black hole Vs White hole has o_fKA12cNXzlc.txt",
+      "video_id": "fKA12cNXzlc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/jHIsoGCyE6Y/A day lasting 730 days \ud83d\ude28 #spac_jHIsoGCyE6Y.txt",
+      "video_id": "jHIsoGCyE6Y",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/AdNLsfkD9Ns/Terraforming Venus \ud83d\ude28 #space #a_AdNLsfkD9Ns.txt",
+      "video_id": "AdNLsfkD9Ns",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/K4j1ua9Ww1M/Sun goes supernova \ud83d\ude31 #astronom_K4j1ua9Ww1M.txt",
+      "video_id": "K4j1ua9Ww1M",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/o32bYy_StB4/What If Earth and Mars Swapped_o32bYy_StB4.txt",
+      "video_id": "o32bYy_StB4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/Zb60y5At_Uw/Terraforming Mars \ud83d\ude28 #space #as_Zb60y5At_Uw.txt",
+      "video_id": "Zb60y5At_Uw",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/PuTkiDJZv78/All the Rocky planets hit Eart_PuTkiDJZv78.txt",
+      "video_id": "PuTkiDJZv78",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/VwmL1TT_nXk/Replacing the Sun \ud83d\ude31 #space #as_VwmL1TT_nXk.txt",
+      "video_id": "VwmL1TT_nXk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/a7bbca91-797b-4cfb-a4d9-c68a6113109a/045e4cdd-eae4-4c40-8149-4da9df7ab497/bU5kxpcUaU8/Betelgeuse as our Sun \ud83d\ude31 #astro_bU5kxpcUaU8.txt",
+      "video_id": "bU5kxpcUaU8",
+      "language": "en",
+      "type": "auto-generated"
+    }
+  ],
+  "videos": [
+    {
+      "id": "5zdaQpT4llI",
+      "title": "What If Jupiter Disappeared? \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=5zdaQpT4llI"
+    },
+    {
+      "id": "TvfEoxRzsRc",
+      "title": "The largest black hole Entered our Solar system \ud83d\ude31 #space #blackhole #astronomy",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=TvfEoxRzsRc"
+    },
+    {
+      "id": "2TXDkCK9TqA",
+      "title": "Earth orbits a Red Giant \ud83d\ude30 #spacesimulation",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=2TXDkCK9TqA"
+    },
+    {
+      "id": "7ZuLDM9oCm0",
+      "title": "What if Theia Never hit Earth \ud83d\ude30 #space #earth #mooon #astronomy",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=7ZuLDM9oCm0"
+    },
+    {
+      "id": "yAqIBOT_uiY",
+      "title": "What If We Turned Pluto into a New Earth? \ud83d\ude28 #space #astronomy #planet",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=yAqIBOT_uiY"
+    },
+    {
+      "id": "EKnYmvNgJJ4",
+      "title": "What If Mars Had Titan and Ganymede as Moons? \ud83d\ude28 #space #solarsystem #mars",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=EKnYmvNgJJ4"
+    },
+    {
+      "id": "dZbz8ibEoM4",
+      "title": "Replacing the Moon with Ganymede \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=dZbz8ibEoM4"
+    },
+    {
+      "id": "Jd6p4QQaDp8",
+      "title": "What If Earth Became a Moon of Jupiter? \ud83d\ude28 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Jd6p4QQaDp8"
+    },
+    {
+      "id": "yl73ORhCtOg",
+      "title": "Earth orbits Betelgeuse \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=yl73ORhCtOg"
+    },
+    {
+      "id": "MYqlZuT_X8w",
+      "title": "Exploring Gargantua: The Black Hole from Interstellar \ud83d\ude31 #space #blackhole #interstellar",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=MYqlZuT_X8w"
+    },
+    {
+      "id": "xed6rN_WS6g",
+      "title": "What If the Sun Lost Just 1% of It's Mass \ud83e\udd2f #space #earth #sun",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xed6rN_WS6g"
+    },
+    {
+      "id": "XW7qsyXxxCI",
+      "title": "What happens to the Sun after it becomes a Red Giant? \ud83d\ude30 #space #solarsystem #sun",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=XW7qsyXxxCI"
+    },
+    {
+      "id": "uEA_C0PO-BI",
+      "title": "Birth of the Solar system \ud83d\ude31 #space #solarsystem #planet",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=uEA_C0PO-BI"
+    },
+    {
+      "id": "q44JEA0cv3k",
+      "title": "Swapped the Places of Mars and Venus \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=q44JEA0cv3k"
+    },
+    {
+      "id": "JQUahoEWc5M",
+      "title": "The scariest planets ever discovered \ud83d\ude30 #space #planet #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=JQUahoEWc5M"
+    },
+    {
+      "id": "tRyPzwya8ow",
+      "title": "All Gas giants Turned into Stars \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=tRyPzwya8ow"
+    },
+    {
+      "id": "a-_7RZzjmFw",
+      "title": "What if Apophis hit Earth \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=a-_7RZzjmFw"
+    },
+    {
+      "id": "0IwrJRqSsS4",
+      "title": "Life on the Andromeda Galaxy \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=0IwrJRqSsS4"
+    },
+    {
+      "id": "CHfHJVKTmog",
+      "title": "Earth was Titled to 90 Degrees \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=CHfHJVKTmog"
+    },
+    {
+      "id": "X0nxYR1vWYE",
+      "title": "Replacing the Sun with the Smallest Star \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=X0nxYR1vWYE"
+    },
+    {
+      "id": "y9ve4rA4lLU",
+      "title": "A Giant Water Ball Hits the Sun \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=y9ve4rA4lLU"
+    },
+    {
+      "id": "gnFhfqBOAwc",
+      "title": "What If Rigel Entered the Solar System? \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=gnFhfqBOAwc"
+    },
+    {
+      "id": "gw-uimKEzjY",
+      "title": "Replacing the Sun with a Magnetar \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=gw-uimKEzjY"
+    },
+    {
+      "id": "zrzMLg7m3_g",
+      "title": "What if Earth was filled with 100% Oxygen \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=zrzMLg7m3_g"
+    },
+    {
+      "id": "dxA2vqp8f78",
+      "title": "An Asteroid hit our Earth \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=dxA2vqp8f78"
+    },
+    {
+      "id": "oE7HhAdQvSI",
+      "title": "Earth lost it's Magnetic Field \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=oE7HhAdQvSI"
+    },
+    {
+      "id": "24KJeH8Rdwg",
+      "title": "Terraforming Saturn \ud83d\ude28 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=24KJeH8Rdwg"
+    },
+    {
+      "id": "RI5hpLoAiz4",
+      "title": "Earth orbits the Biggest star in the Universe \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=RI5hpLoAiz4"
+    },
+    {
+      "id": "uIURwdqtU7k",
+      "title": "All planets are Replaced by a Black hole \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=uIURwdqtU7k"
+    },
+    {
+      "id": "n_rZYa6UyGY",
+      "title": "All planets orbiting in Earth's Orbit \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=n_rZYa6UyGY"
+    },
+    {
+      "id": "h1WekyaKEZI",
+      "title": "Habitable zone filled with Earth clones \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=h1WekyaKEZI"
+    },
+    {
+      "id": "y-IjDBszGJg",
+      "title": "Earth became Hotter than the Sun \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=y-IjDBszGJg"
+    },
+    {
+      "id": "3BvKjkCeAe4",
+      "title": "All planets became Sun sized \ud83e\udd2f #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=3BvKjkCeAe4"
+    },
+    {
+      "id": "bIBp60gXiw4",
+      "title": "Sun became a Red Giant \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=bIBp60gXiw4"
+    },
+    {
+      "id": "Sy7Z-60VGzo",
+      "title": "A Needle hit Earth \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Sy7Z-60VGzo"
+    },
+    {
+      "id": "APVdFqFupfA",
+      "title": "Life on Mars \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=APVdFqFupfA"
+    },
+    {
+      "id": "lX9VBm0GfA8",
+      "title": "Titan in Earth's orbit \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=lX9VBm0GfA8"
+    },
+    {
+      "id": "zBMW8WdJfL0",
+      "title": "Swap the sizes of Earth and the Moon \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=zBMW8WdJfL0"
+    },
+    {
+      "id": "kUHt0NR92HI",
+      "title": "Replacing Sun with Hottest Star \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=kUHt0NR92HI"
+    },
+    {
+      "id": "HhIkiWS8oYo",
+      "title": "Earth without Water \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=HhIkiWS8oYo"
+    },
+    {
+      "id": "CoyAwEukJhs",
+      "title": "All planets became Earth sized \ud83e\udd2f #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=CoyAwEukJhs"
+    },
+    {
+      "id": "fEco6bxMxjk",
+      "title": "Sun Replaced by a Black hole \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=fEco6bxMxjk"
+    },
+    {
+      "id": "lzNkORYMvto",
+      "title": "A Watermelon at the Speed of light \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=lzNkORYMvto"
+    },
+    {
+      "id": "F-1-9VY9Pcs",
+      "title": "Earth Stopped Spinning \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=F-1-9VY9Pcs"
+    },
+    {
+      "id": "jkID-9S5Ccg",
+      "title": "What if the Moon Hit Earth \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=jkID-9S5Ccg"
+    },
+    {
+      "id": "xfvUONSXW0s",
+      "title": "Jupiter crashes into Sun \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xfvUONSXW0s"
+    },
+    {
+      "id": "qA_njn4Xljw",
+      "title": "Terraforming Pluto \ud83d\ude28 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=qA_njn4Xljw"
+    },
+    {
+      "id": "KhW5HJRvkE4",
+      "title": "Earth spinning at the Speed of Light \ud83e\udd2f #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=KhW5HJRvkE4"
+    },
+    {
+      "id": "xzXjOO6NBRc",
+      "title": "Alien life on Trappist 1 \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xzXjOO6NBRc"
+    },
+    {
+      "id": "0rWawfvLvAo",
+      "title": "What if every planet is replaced by Earth? \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=0rWawfvLvAo"
+    },
+    {
+      "id": "sKy36t9lED4",
+      "title": "Terraforming Jupiter \ud83d\ude28 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=sKy36t9lED4"
+    },
+    {
+      "id": "Oj2uPRneueg",
+      "title": "The moon became Hotter than Sun \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Oj2uPRneueg"
+    },
+    {
+      "id": "xavx65Oaq0Y",
+      "title": "What If Earth and Mars Swapped Places? \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xavx65Oaq0Y"
+    },
+    {
+      "id": "US7tFBOE9z0",
+      "title": "Our Solar system has 3 Suns \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=US7tFBOE9z0"
+    },
+    {
+      "id": "8FPbB7uPNdQ",
+      "title": "All Planets Between Earth & Moon \ud83e\udd2f #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=8FPbB7uPNdQ"
+    },
+    {
+      "id": "nXZJZxq29oA",
+      "title": "Terraforming Sun \ud83d\ude28 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=nXZJZxq29oA"
+    },
+    {
+      "id": "fKA12cNXzlc",
+      "title": "Black hole Vs White hole has our Sun \ud83e\udd2f #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=fKA12cNXzlc"
+    },
+    {
+      "id": "LqdCdMsi97A",
+      "title": "Terraforming Moon \ud83d\ude28 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=LqdCdMsi97A"
+    },
+    {
+      "id": "J-W-WK2wDN8",
+      "title": "Earth turned into Pulsar star \ud83d\ude30 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=J-W-WK2wDN8"
+    },
+    {
+      "id": "gJNbZEYNdNg",
+      "title": "Rearranging the Planets \ud83e\udd2f #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=gJNbZEYNdNg"
+    },
+    {
+      "id": "AdNLsfkD9Ns",
+      "title": "Terraforming Venus \ud83d\ude28 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=AdNLsfkD9Ns"
+    },
+    {
+      "id": "VwmL1TT_nXk",
+      "title": "Replacing the Sun \ud83d\ude31 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=VwmL1TT_nXk"
+    },
+    {
+      "id": "Zb60y5At_Uw",
+      "title": "Terraforming Mars \ud83d\ude28 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Zb60y5At_Uw"
+    },
+    {
+      "id": "K4j1ua9Ww1M",
+      "title": "Sun goes supernova \ud83d\ude31 #astronomy #universe #space",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=K4j1ua9Ww1M"
+    },
+    {
+      "id": "jHIsoGCyE6Y",
+      "title": "A day lasting 730 days \ud83d\ude28 #space #astronomy #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=jHIsoGCyE6Y"
+    },
+    {
+      "id": "PuTkiDJZv78",
+      "title": "All the Rocky planets hit Earth \ud83d\ude31 #astronomy #space #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=PuTkiDJZv78"
+    },
+    {
+      "id": "o32bYy_StB4",
+      "title": "What If Earth and Mars Swapped Places? #astronomy #space #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=o32bYy_StB4"
+    },
+    {
+      "id": "bU5kxpcUaU8",
+      "title": "Betelgeuse as our Sun \ud83d\ude31 #astronomy #space #universe",
+      "publishedAt": "2025-09-07T00:49:12.467Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=bU5kxpcUaU8"
+    }
+  ],
+  "start_time": 1757206154.9213123,
+  "user_id": "a7bbca91-797b-4cfb-a4d9-c68a6113109a",
+  "credits_reserved": 68,
+  "credits_used": 70,
+  "reservation_id": "51d4758a-a7c1-42a8-b6d5-2c718d8ae5dc",
+  "videos_metadata": {
+    "5zdaQpT4llI": {
+      "id": "5zdaQpT4llI",
+      "title": "What If Jupiter Disappeared? \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: kerosene\n\nGame: Universe Sandbox \n\n#universe #space #astronomy #jupiter #earth #asteroid #comet #solarsystem",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-09-05T05:40:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/5zdaQpT4llI/maxresdefault.jpg",
+      "duration": "0:48",
+      "viewCount": 95993,
+      "likeCount": 2251,
+      "commentCount": 103,
+      "url": "https://www.youtube.com/watch?v=5zdaQpT4llI"
+    },
+    "TvfEoxRzsRc": {
+      "id": "TvfEoxRzsRc",
+      "title": "The largest black hole Entered our Solar system \ud83d\ude31 #space #blackhole #astronomy",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Kerosene\n\nGame: Universe Sandbox \n\n#space #astronomy #universe #earth #blackhole #solarsystem #phoenixa #planet #spacesimulator #universesandbox",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-09-03T16:50:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/TvfEoxRzsRc/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 100788,
+      "likeCount": 2990,
+      "commentCount": 148,
+      "url": "https://www.youtube.com/watch?v=TvfEoxRzsRc"
+    },
+    "2TXDkCK9TqA": {
+      "id": "2TXDkCK9TqA",
+      "title": "Earth orbits a Red Giant \ud83d\ude30 #spacesimulation",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nGame: Universe Sandbox \n\n#space #astronomy #universe #earth #sun #redgiant #5billionyears #moon #planet #spacesimulator #universesandbox",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-08-25T16:14:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/2TXDkCK9TqA/maxresdefault.jpg",
+      "duration": "1:03",
+      "viewCount": 281621,
+      "likeCount": 7266,
+      "commentCount": 120,
+      "url": "https://www.youtube.com/watch?v=2TXDkCK9TqA"
+    },
+    "7ZuLDM9oCm0": {
+      "id": "7ZuLDM9oCm0",
+      "title": "What if Theia Never hit Earth \ud83d\ude30 #space #earth #mooon #astronomy",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Kerosene\n\nGame: Universe Sandbox \n\n#space #astronomy #universe #earth #moon #planet #spacesimulator #universesandbox",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-08-17T14:11:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/7ZuLDM9oCm0/maxresdefault.jpg",
+      "duration": "0:57",
+      "viewCount": 818945,
+      "likeCount": 18978,
+      "commentCount": 507,
+      "url": "https://www.youtube.com/watch?v=7ZuLDM9oCm0"
+    },
+    "yAqIBOT_uiY": {
+      "id": "yAqIBOT_uiY",
+      "title": "What If We Turned Pluto into a New Earth? \ud83d\ude28 #space #astronomy #planet",
+      "description": "",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-08-09T04:14:04Z",
+      "thumbnail": "https://i.ytimg.com/vi/yAqIBOT_uiY/maxresdefault.jpg",
+      "duration": "1:17",
+      "viewCount": 694678,
+      "likeCount": 18461,
+      "commentCount": 438,
+      "url": "https://www.youtube.com/watch?v=yAqIBOT_uiY"
+    },
+    "EKnYmvNgJJ4": {
+      "id": "EKnYmvNgJJ4",
+      "title": "What If Mars Had Titan and Ganymede as Moons? \ud83d\ude28 #space #solarsystem #mars",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Kerosene\n\nGame: Universe Sandbox \n\n#space #astronomy #universe #earth #moon #saturn #planet #ganymede",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-08-02T14:13:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/EKnYmvNgJJ4/maxresdefault.jpg",
+      "duration": "0:54",
+      "viewCount": 581925,
+      "likeCount": 14439,
+      "commentCount": 248,
+      "url": "https://www.youtube.com/watch?v=EKnYmvNgJJ4"
+    },
+    "dZbz8ibEoM4": {
+      "id": "dZbz8ibEoM4",
+      "title": "Replacing the Moon with Ganymede \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Kerosene\n\nGame: Universe Sandbox \n\n#space #astronomy #universe #earth #moon #saturn #planet #ganymede",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-07-25T13:44:56Z",
+      "thumbnail": "https://i.ytimg.com/vi/dZbz8ibEoM4/maxresdefault.jpg",
+      "duration": "0:55",
+      "viewCount": 686258,
+      "likeCount": 19183,
+      "commentCount": 361,
+      "url": "https://www.youtube.com/watch?v=dZbz8ibEoM4"
+    },
+    "Jd6p4QQaDp8": {
+      "id": "Jd6p4QQaDp8",
+      "title": "What If Earth Became a Moon of Jupiter? \ud83d\ude28 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: no time for caution\n\nGame: Universe Sandbox \n\n#space #astronomy #universe #earth #jupiter #life #planet",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-07-20T09:13:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/Jd6p4QQaDp8/maxresdefault.jpg",
+      "duration": "0:52",
+      "viewCount": 238713,
+      "likeCount": 5346,
+      "commentCount": 114,
+      "url": "https://www.youtube.com/watch?v=Jd6p4QQaDp8"
+    },
+    "yl73ORhCtOg": {
+      "id": "yl73ORhCtOg",
+      "title": "Earth orbits Betelgeuse \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Transgender\n\nGame: Universe Sandbox \n\n#space #astronomy #universe #earth #betelgeuse #planet",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-07-18T16:02:58Z",
+      "thumbnail": "https://i.ytimg.com/vi/yl73ORhCtOg/maxresdefault.jpg",
+      "duration": "0:59",
+      "viewCount": 551940,
+      "likeCount": 13216,
+      "commentCount": 230,
+      "url": "https://www.youtube.com/watch?v=yl73ORhCtOg"
+    },
+    "MYqlZuT_X8w": {
+      "id": "MYqlZuT_X8w",
+      "title": "Exploring Gargantua: The Black Hole from Interstellar \ud83d\ude31 #space #blackhole #interstellar",
+      "description": "",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-07-14T13:03:27Z",
+      "thumbnail": "https://i.ytimg.com/vi/MYqlZuT_X8w/maxresdefault.jpg",
+      "duration": "0:50",
+      "viewCount": 785110,
+      "likeCount": 16641,
+      "commentCount": 207,
+      "url": "https://www.youtube.com/watch?v=MYqlZuT_X8w"
+    },
+    "xed6rN_WS6g": {
+      "id": "xed6rN_WS6g",
+      "title": "What If the Sun Lost Just 1% of It's Mass \ud83e\udd2f #space #earth #sun",
+      "description": "",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-07-12T16:19:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/xed6rN_WS6g/maxresdefault.jpg",
+      "duration": "0:54",
+      "viewCount": 270723,
+      "likeCount": 6095,
+      "commentCount": 215,
+      "url": "https://www.youtube.com/watch?v=xed6rN_WS6g"
+    },
+    "XW7qsyXxxCI": {
+      "id": "XW7qsyXxxCI",
+      "title": "What happens to the Sun after it becomes a Red Giant? \ud83d\ude30 #space #solarsystem #sun",
+      "description": "",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-07-07T05:54:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/XW7qsyXxxCI/maxresdefault.jpg",
+      "duration": "0:55",
+      "viewCount": 939920,
+      "likeCount": 18927,
+      "commentCount": 291,
+      "url": "https://www.youtube.com/watch?v=XW7qsyXxxCI"
+    },
+    "uEA_C0PO-BI": {
+      "id": "uEA_C0PO-BI",
+      "title": "Birth of the Solar system \ud83d\ude31 #space #solarsystem #planet",
+      "description": "",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-07-04T14:19:20Z",
+      "thumbnail": "https://i.ytimg.com/vi/uEA_C0PO-BI/maxresdefault.jpg",
+      "duration": "0:57",
+      "viewCount": 1524495,
+      "likeCount": 31853,
+      "commentCount": 897,
+      "url": "https://www.youtube.com/watch?v=uEA_C0PO-BI"
+    },
+    "q44JEA0cv3k": {
+      "id": "q44JEA0cv3k",
+      "title": "Swapped the Places of Mars and Venus \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: can you hear the music\n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-07-01T13:13:00Z",
+      "thumbnail": "https://i.ytimg.com/vi/q44JEA0cv3k/maxresdefault.jpg",
+      "duration": "0:58",
+      "viewCount": 402759,
+      "likeCount": 7767,
+      "commentCount": 140,
+      "url": "https://www.youtube.com/watch?v=q44JEA0cv3k"
+    },
+    "JQUahoEWc5M": {
+      "id": "JQUahoEWc5M",
+      "title": "The scariest planets ever discovered \ud83d\ude30 #space #planet #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Cornfield chase\n\nGame: Space Engine\n\n#space #astronomy #universe",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-06-29T14:43:35Z",
+      "thumbnail": "https://i.ytimg.com/vi/JQUahoEWc5M/maxresdefault.jpg",
+      "duration": "0:59",
+      "viewCount": 417698,
+      "likeCount": 10254,
+      "commentCount": 148,
+      "url": "https://www.youtube.com/watch?v=JQUahoEWc5M"
+    },
+    "tRyPzwya8ow": {
+      "id": "tRyPzwya8ow",
+      "title": "All Gas giants Turned into Stars \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Transgender\n\nGame: Universe Sandbox \n\n#space #astronomy #universe",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-06-26T05:19:30Z",
+      "thumbnail": "https://i.ytimg.com/vi/tRyPzwya8ow/maxresdefault.jpg",
+      "duration": "0:57",
+      "viewCount": 410338,
+      "likeCount": 8897,
+      "commentCount": 198,
+      "url": "https://www.youtube.com/watch?v=tRyPzwya8ow"
+    },
+    "a-_7RZzjmFw": {
+      "id": "a-_7RZzjmFw",
+      "title": "What if Apophis hit Earth \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Transgender\n\nGame: Universe Sandbox \n\n#space #astronomy #universe",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-06-21T13:19:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/a-_7RZzjmFw/maxresdefault.jpg",
+      "duration": "0:47",
+      "viewCount": 3204060,
+      "likeCount": 53738,
+      "commentCount": 2533,
+      "url": "https://www.youtube.com/watch?v=a-_7RZzjmFw"
+    },
+    "0IwrJRqSsS4": {
+      "id": "0IwrJRqSsS4",
+      "title": "Life on the Andromeda Galaxy \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Cornfield chase\n\nGame: Space Engine\n\n#space #astronomy #universe",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-06-19T11:43:53Z",
+      "thumbnail": "https://i.ytimg.com/vi/0IwrJRqSsS4/maxresdefault.jpg",
+      "duration": "0:59",
+      "viewCount": 2587276,
+      "likeCount": 63825,
+      "commentCount": 977,
+      "url": "https://www.youtube.com/watch?v=0IwrJRqSsS4"
+    },
+    "CHfHJVKTmog": {
+      "id": "CHfHJVKTmog",
+      "title": "Earth was Titled to 90 Degrees \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Transgender\n\nGame: Universe Sandbox \n\n#space #astronomy #universe",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-06-16T19:14:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/CHfHJVKTmog/maxresdefault.jpg",
+      "duration": "0:50",
+      "viewCount": 350357,
+      "likeCount": 6448,
+      "commentCount": 178,
+      "url": "https://www.youtube.com/watch?v=CHfHJVKTmog"
+    },
+    "X0nxYR1vWYE": {
+      "id": "X0nxYR1vWYE",
+      "title": "Replacing the Sun with the Smallest Star \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Transgender\n\nGame: Universe Sandbox \n\n#space #astronomy #universe",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-06-14T07:33:19Z",
+      "thumbnail": "https://i.ytimg.com/vi/X0nxYR1vWYE/maxresdefault.jpg",
+      "duration": "0:45",
+      "viewCount": 302481,
+      "likeCount": 5970,
+      "commentCount": 178,
+      "url": "https://www.youtube.com/watch?v=X0nxYR1vWYE"
+    },
+    "y9ve4rA4lLU": {
+      "id": "y9ve4rA4lLU",
+      "title": "A Giant Water Ball Hits the Sun \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Transgender\n\nGame: Universe Sandbox \n\n#space #astronomy #universe",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-06-12T06:23:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/y9ve4rA4lLU/maxresdefault.jpg",
+      "duration": "0:43",
+      "viewCount": 1742383,
+      "likeCount": 36895,
+      "commentCount": 563,
+      "url": "https://www.youtube.com/watch?v=y9ve4rA4lLU"
+    },
+    "gnFhfqBOAwc": {
+      "id": "gnFhfqBOAwc",
+      "title": "What If Rigel Entered the Solar System? \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: No time for caution\n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-06-10T19:37:51Z",
+      "thumbnail": "https://i.ytimg.com/vi/gnFhfqBOAwc/maxresdefault.jpg",
+      "duration": "0:55",
+      "viewCount": 258015,
+      "likeCount": 5006,
+      "commentCount": 126,
+      "url": "https://www.youtube.com/watch?v=gnFhfqBOAwc"
+    },
+    "gw-uimKEzjY": {
+      "id": "gw-uimKEzjY",
+      "title": "Replacing the Sun with a Magnetar \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Transgender\n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-06-09T04:20:24Z",
+      "thumbnail": "https://i.ytimg.com/vi/gw-uimKEzjY/maxresdefault.jpg",
+      "duration": "0:55",
+      "viewCount": 1488442,
+      "likeCount": 34516,
+      "commentCount": 465,
+      "url": "https://www.youtube.com/watch?v=gw-uimKEzjY"
+    },
+    "zrzMLg7m3_g": {
+      "id": "zrzMLg7m3_g",
+      "title": "What if Earth was filled with 100% Oxygen \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: No time for caution \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-06-03T09:10:17Z",
+      "thumbnail": "https://i.ytimg.com/vi/zrzMLg7m3_g/maxresdefault.jpg",
+      "duration": "0:57",
+      "viewCount": 651977,
+      "likeCount": 16562,
+      "commentCount": 363,
+      "url": "https://www.youtube.com/watch?v=zrzMLg7m3_g"
+    },
+    "dxA2vqp8f78": {
+      "id": "dxA2vqp8f78",
+      "title": "An Asteroid hit our Earth \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: No time for caution \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-05-29T16:58:49Z",
+      "thumbnail": "https://i.ytimg.com/vi/dxA2vqp8f78/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 391710,
+      "likeCount": 6799,
+      "commentCount": 192,
+      "url": "https://www.youtube.com/watch?v=dxA2vqp8f78"
+    },
+    "oE7HhAdQvSI": {
+      "id": "oE7HhAdQvSI",
+      "title": "Earth lost it's Magnetic Field \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Kerosene\n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-05-25T17:15:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/oE7HhAdQvSI/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 605040,
+      "likeCount": 8880,
+      "commentCount": 134,
+      "url": "https://www.youtube.com/watch?v=oE7HhAdQvSI"
+    },
+    "24KJeH8Rdwg": {
+      "id": "24KJeH8Rdwg",
+      "title": "Terraforming Saturn \ud83d\ude28 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Can you hear the music \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-05-22T18:48:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/24KJeH8Rdwg/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 500559,
+      "likeCount": 8063,
+      "commentCount": 191,
+      "url": "https://www.youtube.com/watch?v=24KJeH8Rdwg"
+    },
+    "RI5hpLoAiz4": {
+      "id": "RI5hpLoAiz4",
+      "title": "Earth orbits the Biggest star in the Universe \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Kerosene\n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-05-18T17:12:10Z",
+      "thumbnail": "https://i.ytimg.com/vi/RI5hpLoAiz4/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 461899,
+      "likeCount": 9178,
+      "commentCount": 229,
+      "url": "https://www.youtube.com/watch?v=RI5hpLoAiz4"
+    },
+    "uIURwdqtU7k": {
+      "id": "uIURwdqtU7k",
+      "title": "All planets are Replaced by a Black hole \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: No Time for caution \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-05-17T16:41:55Z",
+      "thumbnail": "https://i.ytimg.com/vi/uIURwdqtU7k/maxresdefault.jpg",
+      "duration": "0:54",
+      "viewCount": 218316,
+      "likeCount": 3487,
+      "commentCount": 71,
+      "url": "https://www.youtube.com/watch?v=uIURwdqtU7k"
+    },
+    "n_rZYa6UyGY": {
+      "id": "n_rZYa6UyGY",
+      "title": "All planets orbiting in Earth's Orbit \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: No Time for caution \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-05-15T17:27:15Z",
+      "thumbnail": "https://i.ytimg.com/vi/n_rZYa6UyGY/maxresdefault.jpg",
+      "duration": "0:53",
+      "viewCount": 814569,
+      "likeCount": 12922,
+      "commentCount": 253,
+      "url": "https://www.youtube.com/watch?v=n_rZYa6UyGY"
+    },
+    "h1WekyaKEZI": {
+      "id": "h1WekyaKEZI",
+      "title": "Habitable zone filled with Earth clones \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Can you hear the Music \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-05-09T15:35:04Z",
+      "thumbnail": "https://i.ytimg.com/vi/h1WekyaKEZI/maxresdefault.jpg",
+      "duration": "0:55",
+      "viewCount": 2009504,
+      "likeCount": 37713,
+      "commentCount": 581,
+      "url": "https://www.youtube.com/watch?v=h1WekyaKEZI"
+    },
+    "y-IjDBszGJg": {
+      "id": "y-IjDBszGJg",
+      "title": "Earth became Hotter than the Sun \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Can you hear the Music \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-05-06T12:33:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/y-IjDBszGJg/maxresdefault.jpg",
+      "duration": "0:54",
+      "viewCount": 604765,
+      "likeCount": 8220,
+      "commentCount": 203,
+      "url": "https://www.youtube.com/watch?v=y-IjDBszGJg"
+    },
+    "3BvKjkCeAe4": {
+      "id": "3BvKjkCeAe4",
+      "title": "All planets became Sun sized \ud83e\udd2f #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Kerosene\n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-05-02T05:03:35Z",
+      "thumbnail": "https://i.ytimg.com/vi/3BvKjkCeAe4/maxresdefault.jpg",
+      "duration": "0:45",
+      "viewCount": 827186,
+      "likeCount": 13831,
+      "commentCount": 294,
+      "url": "https://www.youtube.com/watch?v=3BvKjkCeAe4"
+    },
+    "bIBp60gXiw4": {
+      "id": "bIBp60gXiw4",
+      "title": "Sun became a Red Giant \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Kerosene\n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-28T13:28:04Z",
+      "thumbnail": "https://i.ytimg.com/vi/bIBp60gXiw4/maxresdefault.jpg",
+      "duration": "0:47",
+      "viewCount": 1433154,
+      "likeCount": 21721,
+      "commentCount": 584,
+      "url": "https://www.youtube.com/watch?v=bIBp60gXiw4"
+    },
+    "Sy7Z-60VGzo": {
+      "id": "Sy7Z-60VGzo",
+      "title": "A Needle hit Earth \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Kerosene\n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-26T18:41:57Z",
+      "thumbnail": "https://i.ytimg.com/vi/Sy7Z-60VGzo/maxresdefault.jpg",
+      "duration": "0:45",
+      "viewCount": 359780,
+      "likeCount": 4730,
+      "commentCount": 207,
+      "url": "https://www.youtube.com/watch?v=Sy7Z-60VGzo"
+    },
+    "APVdFqFupfA": {
+      "id": "APVdFqFupfA",
+      "title": "Life on Mars \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Can you hear the music \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-25T15:34:28Z",
+      "thumbnail": "https://i.ytimg.com/vi/APVdFqFupfA/maxresdefault.jpg",
+      "duration": "0:48",
+      "viewCount": 1936776,
+      "likeCount": 33643,
+      "commentCount": 479,
+      "url": "https://www.youtube.com/watch?v=APVdFqFupfA"
+    },
+    "lX9VBm0GfA8": {
+      "id": "lX9VBm0GfA8",
+      "title": "Titan in Earth's orbit \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Can you hear the music \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-24T14:14:09Z",
+      "thumbnail": "https://i.ytimg.com/vi/lX9VBm0GfA8/maxresdefault.jpg",
+      "duration": "0:47",
+      "viewCount": 346371,
+      "likeCount": 4675,
+      "commentCount": 105,
+      "url": "https://www.youtube.com/watch?v=lX9VBm0GfA8"
+    },
+    "zBMW8WdJfL0": {
+      "id": "zBMW8WdJfL0",
+      "title": "Swap the sizes of Earth and the Moon \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Kerosene\n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-23T12:31:20Z",
+      "thumbnail": "https://i.ytimg.com/vi/zBMW8WdJfL0/maxresdefault.jpg",
+      "duration": "0:39",
+      "viewCount": 297674,
+      "likeCount": 3563,
+      "commentCount": 41,
+      "url": "https://www.youtube.com/watch?v=zBMW8WdJfL0"
+    },
+    "kUHt0NR92HI": {
+      "id": "kUHt0NR92HI",
+      "title": "Replacing Sun with Hottest Star \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Kerosene\n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-21T14:08:52Z",
+      "thumbnail": "https://i.ytimg.com/vi/kUHt0NR92HI/maxresdefault.jpg",
+      "duration": "0:51",
+      "viewCount": 698322,
+      "likeCount": 9905,
+      "commentCount": 235,
+      "url": "https://www.youtube.com/watch?v=kUHt0NR92HI"
+    },
+    "HhIkiWS8oYo": {
+      "id": "HhIkiWS8oYo",
+      "title": "Earth without Water \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Can you hear the music \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-19T05:39:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/HhIkiWS8oYo/maxresdefault.jpg",
+      "duration": "0:44",
+      "viewCount": 699043,
+      "likeCount": 8540,
+      "commentCount": 179,
+      "url": "https://www.youtube.com/watch?v=HhIkiWS8oYo"
+    },
+    "CoyAwEukJhs": {
+      "id": "CoyAwEukJhs",
+      "title": "All planets became Earth sized \ud83e\udd2f #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Kerosene\n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-16T21:48:59Z",
+      "thumbnail": "https://i.ytimg.com/vi/CoyAwEukJhs/maxresdefault.jpg",
+      "duration": "0:44",
+      "viewCount": 1324968,
+      "likeCount": 16657,
+      "commentCount": 299,
+      "url": "https://www.youtube.com/watch?v=CoyAwEukJhs"
+    },
+    "fEco6bxMxjk": {
+      "id": "fEco6bxMxjk",
+      "title": "Sun Replaced by a Black hole \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Kerosene\n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-15T14:20:27Z",
+      "thumbnail": "https://i.ytimg.com/vi/fEco6bxMxjk/maxresdefault.jpg",
+      "duration": "0:42",
+      "viewCount": 394370,
+      "likeCount": 4424,
+      "commentCount": 168,
+      "url": "https://www.youtube.com/watch?v=fEco6bxMxjk"
+    },
+    "lzNkORYMvto": {
+      "id": "lzNkORYMvto",
+      "title": "A Watermelon at the Speed of light \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Can you hear the music \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-14T13:22:33Z",
+      "thumbnail": "https://i.ytimg.com/vi/lzNkORYMvto/maxresdefault.jpg",
+      "duration": "0:37",
+      "viewCount": 2165163,
+      "likeCount": 19338,
+      "commentCount": 1132,
+      "url": "https://www.youtube.com/watch?v=lzNkORYMvto"
+    },
+    "F-1-9VY9Pcs": {
+      "id": "F-1-9VY9Pcs",
+      "title": "Earth Stopped Spinning \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Can you hear the music \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-13T08:31:54Z",
+      "thumbnail": "https://i.ytimg.com/vi/F-1-9VY9Pcs/maxresdefault.jpg",
+      "duration": "0:49",
+      "viewCount": 247298,
+      "likeCount": 3148,
+      "commentCount": 60,
+      "url": "https://www.youtube.com/watch?v=F-1-9VY9Pcs"
+    },
+    "jkID-9S5Ccg": {
+      "id": "jkID-9S5Ccg",
+      "title": "What if the Moon Hit Earth \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Can you hear the music \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-11T02:33:49Z",
+      "thumbnail": "https://i.ytimg.com/vi/jkID-9S5Ccg/maxresdefault.jpg",
+      "duration": "0:46",
+      "viewCount": 237969,
+      "likeCount": 3055,
+      "commentCount": 143,
+      "url": "https://www.youtube.com/watch?v=jkID-9S5Ccg"
+    },
+    "xfvUONSXW0s": {
+      "id": "xfvUONSXW0s",
+      "title": "Jupiter crashes into Sun \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Can you hear the music \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-09T13:06:04Z",
+      "thumbnail": "https://i.ytimg.com/vi/xfvUONSXW0s/maxresdefault.jpg",
+      "duration": "0:56",
+      "viewCount": 860119,
+      "likeCount": 11717,
+      "commentCount": 250,
+      "url": "https://www.youtube.com/watch?v=xfvUONSXW0s"
+    },
+    "qA_njn4Xljw": {
+      "id": "qA_njn4Xljw",
+      "title": "Terraforming Pluto \ud83d\ude28 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Can you hear the music \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-07T09:35:04Z",
+      "thumbnail": "https://i.ytimg.com/vi/qA_njn4Xljw/maxresdefault.jpg",
+      "duration": "0:50",
+      "viewCount": 543305,
+      "likeCount": 8217,
+      "commentCount": 211,
+      "url": "https://www.youtube.com/watch?v=qA_njn4Xljw"
+    },
+    "KhW5HJRvkE4": {
+      "id": "KhW5HJRvkE4",
+      "title": "Earth spinning at the Speed of Light \ud83e\udd2f #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: No time for caution \n\nGame: Universe Sandbox\n\n#universe #space #science #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-05T08:51:05Z",
+      "thumbnail": "https://i.ytimg.com/vi/KhW5HJRvkE4/maxresdefault.jpg",
+      "duration": "0:48",
+      "viewCount": 231604,
+      "likeCount": 3666,
+      "commentCount": 96,
+      "url": "https://www.youtube.com/watch?v=KhW5HJRvkE4"
+    },
+    "xzXjOO6NBRc": {
+      "id": "xzXjOO6NBRc",
+      "title": "Alien life on Trappist 1 \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: No time for caution \n\nGame: Universe Sandbox\n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-04T05:27:35Z",
+      "thumbnail": "https://i.ytimg.com/vi/xzXjOO6NBRc/maxresdefault.jpg",
+      "duration": "0:48",
+      "viewCount": 228926,
+      "likeCount": 3804,
+      "commentCount": 63,
+      "url": "https://www.youtube.com/watch?v=xzXjOO6NBRc"
+    },
+    "0rWawfvLvAo": {
+      "id": "0rWawfvLvAo",
+      "title": "What if every planet is replaced by Earth? \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Solitude by M83\n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-02T09:59:37Z",
+      "thumbnail": "https://i.ytimg.com/vi/0rWawfvLvAo/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 290655,
+      "likeCount": 4746,
+      "commentCount": 148,
+      "url": "https://www.youtube.com/watch?v=0rWawfvLvAo"
+    },
+    "sKy36t9lED4": {
+      "id": "sKy36t9lED4",
+      "title": "Terraforming Jupiter \ud83d\ude28 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Can you hear the music \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-04-01T07:06:30Z",
+      "thumbnail": "https://i.ytimg.com/vi/sKy36t9lED4/maxresdefault.jpg",
+      "duration": "0:59",
+      "viewCount": 724887,
+      "likeCount": 12477,
+      "commentCount": 246,
+      "url": "https://www.youtube.com/watch?v=sKy36t9lED4"
+    },
+    "Oj2uPRneueg": {
+      "id": "Oj2uPRneueg",
+      "title": "The moon became Hotter than Sun \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: No time for caution \n\nGame: Universe Sandbox & Space Engine\n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-03-31T15:18:35Z",
+      "thumbnail": "https://i.ytimg.com/vi/Oj2uPRneueg/maxresdefault.jpg",
+      "duration": "0:58",
+      "viewCount": 333035,
+      "likeCount": 5278,
+      "commentCount": 138,
+      "url": "https://www.youtube.com/watch?v=Oj2uPRneueg"
+    },
+    "xavx65Oaq0Y": {
+      "id": "xavx65Oaq0Y",
+      "title": "What If Earth and Mars Swapped Places? \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Can you hear the music \n\nGame: Universe Sandbox \n\n#universe #space #astronomy #mars #earth",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-03-30T11:04:12Z",
+      "thumbnail": "https://i.ytimg.com/vi/xavx65Oaq0Y/maxresdefault.jpg",
+      "duration": "0:52",
+      "viewCount": 253537,
+      "likeCount": 4942,
+      "commentCount": 134,
+      "url": "https://www.youtube.com/watch?v=xavx65Oaq0Y"
+    },
+    "US7tFBOE9z0": {
+      "id": "US7tFBOE9z0",
+      "title": "Our Solar system has 3 Suns \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic Credits: Interstellar theme | Epic version by EpicTrailerMusicUK (check out this channel for more songs)\n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-03-28T07:46:22Z",
+      "thumbnail": "https://i.ytimg.com/vi/US7tFBOE9z0/maxresdefault.jpg",
+      "duration": "0:40",
+      "viewCount": 249505,
+      "likeCount": 4301,
+      "commentCount": 112,
+      "url": "https://www.youtube.com/watch?v=US7tFBOE9z0"
+    },
+    "8FPbB7uPNdQ": {
+      "id": "8FPbB7uPNdQ",
+      "title": "All Planets Between Earth & Moon \ud83e\udd2f #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: No time for caution \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-03-27T06:39:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/8FPbB7uPNdQ/maxresdefault.jpg",
+      "duration": "0:48",
+      "viewCount": 553477,
+      "likeCount": 12003,
+      "commentCount": 364,
+      "url": "https://www.youtube.com/watch?v=8FPbB7uPNdQ"
+    },
+    "nXZJZxq29oA": {
+      "id": "nXZJZxq29oA",
+      "title": "Terraforming Sun \ud83d\ude28 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: No time for caution \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-03-26T02:34:30Z",
+      "thumbnail": "https://i.ytimg.com/vi/nXZJZxq29oA/maxresdefault.jpg",
+      "duration": "0:57",
+      "viewCount": 1136819,
+      "likeCount": 25579,
+      "commentCount": 599,
+      "url": "https://www.youtube.com/watch?v=nXZJZxq29oA"
+    },
+    "fKA12cNXzlc": {
+      "id": "fKA12cNXzlc",
+      "title": "Black hole Vs White hole has our Sun \ud83e\udd2f #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Can you hear the music \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-03-25T04:22:17Z",
+      "thumbnail": "https://i.ytimg.com/vi/fKA12cNXzlc/maxresdefault.jpg",
+      "duration": "0:54",
+      "viewCount": 246583,
+      "likeCount": 4752,
+      "commentCount": 103,
+      "url": "https://www.youtube.com/watch?v=fKA12cNXzlc"
+    },
+    "LqdCdMsi97A": {
+      "id": "LqdCdMsi97A",
+      "title": "Terraforming Moon \ud83d\ude28 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Can you hear the music \n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-03-24T04:42:45Z",
+      "thumbnail": "https://i.ytimg.com/vi/LqdCdMsi97A/maxresdefault.jpg",
+      "duration": "0:53",
+      "viewCount": 5247202,
+      "likeCount": 129662,
+      "commentCount": 1178,
+      "url": "https://www.youtube.com/watch?v=LqdCdMsi97A"
+    },
+    "J-W-WK2wDN8": {
+      "id": "J-W-WK2wDN8",
+      "title": "Earth turned into Pulsar star \ud83d\ude30 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Solitude by M83\n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-03-22T20:27:51Z",
+      "thumbnail": "https://i.ytimg.com/vi/J-W-WK2wDN8/maxresdefault.jpg",
+      "duration": "0:50",
+      "viewCount": 1012334,
+      "likeCount": 21076,
+      "commentCount": 389,
+      "url": "https://www.youtube.com/watch?v=J-W-WK2wDN8"
+    },
+    "gJNbZEYNdNg": {
+      "id": "gJNbZEYNdNg",
+      "title": "Rearranging the Planets \ud83e\udd2f #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Solitude by M83\n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-03-21T13:53:39Z",
+      "thumbnail": "https://i.ytimg.com/vi/gJNbZEYNdNg/maxresdefault.jpg",
+      "duration": "0:58",
+      "viewCount": 493844,
+      "likeCount": 11275,
+      "commentCount": 305,
+      "url": "https://www.youtube.com/watch?v=gJNbZEYNdNg"
+    },
+    "AdNLsfkD9Ns": {
+      "id": "AdNLsfkD9Ns",
+      "title": "Terraforming Venus \ud83d\ude28 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Solitude by M83\n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-03-19T11:45:04Z",
+      "thumbnail": "https://i.ytimg.com/vi/AdNLsfkD9Ns/maxresdefault.jpg",
+      "duration": "0:59",
+      "viewCount": 2375090,
+      "likeCount": 57809,
+      "commentCount": 802,
+      "url": "https://www.youtube.com/watch?v=AdNLsfkD9Ns"
+    },
+    "VwmL1TT_nXk": {
+      "id": "VwmL1TT_nXk",
+      "title": "Replacing the Sun \ud83d\ude31 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Solitude by M83\n\n#universe #space #astronomy #sun #blackhole",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-03-17T04:25:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/VwmL1TT_nXk/maxresdefault.jpg",
+      "duration": "0:55",
+      "viewCount": 794727,
+      "likeCount": 18191,
+      "commentCount": 412,
+      "url": "https://www.youtube.com/watch?v=VwmL1TT_nXk"
+    },
+    "Zb60y5At_Uw": {
+      "id": "Zb60y5At_Uw",
+      "title": "Terraforming Mars \ud83d\ude28 #space #astronomy #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Solitude by M83\n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-03-12T12:08:28Z",
+      "thumbnail": "https://i.ytimg.com/vi/Zb60y5At_Uw/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 1171829,
+      "likeCount": 31801,
+      "commentCount": 729,
+      "url": "https://www.youtube.com/watch?v=Zb60y5At_Uw"
+    },
+    "K4j1ua9Ww1M": {
+      "id": "K4j1ua9Ww1M",
+      "title": "Sun goes supernova \ud83d\ude31 #astronomy #universe #space",
+      "description": "Experience our intriguing realistic simulation as we investigate the impact of a second sun entering our solar system. This scientific exploration delves into the fascinating cosmic dynamics and the hypothetical effects of planetary orbits, climates, and more. Join us on a journey through these celestial complexities!\nMusic: Solitude from M83!\n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-03-08T19:41:00Z",
+      "thumbnail": "https://i.ytimg.com/vi/K4j1ua9Ww1M/maxresdefault.jpg",
+      "duration": "0:57",
+      "viewCount": 205034,
+      "likeCount": 4478,
+      "commentCount": 146,
+      "url": "https://www.youtube.com/watch?v=K4j1ua9Ww1M"
+    },
+    "jHIsoGCyE6Y": {
+      "id": "jHIsoGCyE6Y",
+      "title": "A day lasting 730 days \ud83d\ude28 #space #astronomy #universe",
+      "description": "Experience our intriguing simulation as we investigate the impact of a second sun entering our solar system. This scientific exploration delves into the fascinating cosmic dynamics and the hypothetical effects of planetary orbits, climates, and more. Join us on a journey through these celestial complexities!\nMusic: Solitude from M83!\n\n#universe #space #earth #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-03-06T13:55:30Z",
+      "thumbnail": "https://i.ytimg.com/vi/jHIsoGCyE6Y/maxresdefault.jpg",
+      "duration": "0:56",
+      "viewCount": 122187,
+      "likeCount": 2921,
+      "commentCount": 48,
+      "url": "https://www.youtube.com/watch?v=jHIsoGCyE6Y"
+    },
+    "PuTkiDJZv78": {
+      "id": "PuTkiDJZv78",
+      "title": "All the Rocky planets hit Earth \ud83d\ude31 #astronomy #space #universe",
+      "description": "Experience our intriguing simulation as we investigate the impact of a second sun entering our solar system. This scientific exploration delves into the fascinating cosmic dynamics and the hypothetical effects of planetary orbits, climates, and more. Join us on a journey through these celestial complexities!\n\nMusic: Solitude from M83!\n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-03-04T11:57:56Z",
+      "thumbnail": "https://i.ytimg.com/vi/PuTkiDJZv78/maxresdefault.jpg",
+      "duration": "0:43",
+      "viewCount": 145901,
+      "likeCount": 2685,
+      "commentCount": 88,
+      "url": "https://www.youtube.com/watch?v=PuTkiDJZv78"
+    },
+    "o32bYy_StB4": {
+      "id": "o32bYy_StB4",
+      "title": "What If Earth and Mars Swapped Places? #astronomy #space #universe",
+      "description": "Experience our intriguing simulation as we investigate the impact of a second sun entering our solar system. This scientific exploration delves into the fascinating cosmic dynamics and the hypothetical effects of planetary orbits, climates, and more. Join us on a journey through these celestial complexities!\n\nMusic: Solitude from M83!\n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-02-26T17:29:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/o32bYy_StB4/maxresdefault.jpg",
+      "duration": "0:57",
+      "viewCount": 130991,
+      "likeCount": 2456,
+      "commentCount": 55,
+      "url": "https://www.youtube.com/watch?v=o32bYy_StB4"
+    },
+    "bU5kxpcUaU8": {
+      "id": "bU5kxpcUaU8",
+      "title": "Betelgeuse as our Sun \ud83d\ude31 #astronomy #space #universe",
+      "description": "Dive into our realistic simulation as we explore what happens when a second sun enters our solar system. This scientific journey uncovers the cosmic dynamics and potential effects on planetary orbits, climates, and more. Join us in unraveling these celestial wonders!\n\nMusic: Solitude from M83.\n\nGame: Universe Sandbox \n\n#universe #space #astronomy",
+      "channelId": "UC9VFI6T4zr-mmZv9YOSG90w",
+      "channelTitle": "Cosmic Void",
+      "publishedAt": "2025-02-24T05:59:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/bU5kxpcUaU8/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 201345,
+      "likeCount": 3897,
+      "commentCount": 122,
+      "url": "https://www.youtube.com/watch?v=bU5kxpcUaU8"
+    }
+  },
+  "include_timestamps": false,
+  "include_video_title": true,
+  "include_video_id": false,
+  "include_video_url": false,
+  "include_view_count": true,
+  "concatenate_all": false,
+  "end_time": 1757206300.3429146,
+  "duration": 145.4216022491455
+}

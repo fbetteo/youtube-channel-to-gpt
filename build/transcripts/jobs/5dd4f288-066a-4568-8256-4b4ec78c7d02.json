@@ -1,0 +1,4432 @@
+{
+  "status": "completed",
+  "channel_name": "Dr_Spitzbart",
+  "channel_id": "UCEbKlVw0loRwtS2PVpk5AMQ",
+  "total_videos": 164,
+  "processed_count": 164,
+  "failed_count": 4,
+  "completed": 160,
+  "files": [
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/d8uSiulR4Zg/Warum du krank wirst ohne es z_d8uSiulR4Zg.txt",
+      "video_id": "d8uSiulR4Zg",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/D_sufLDsYcQ/Wie du deine Schilddr\u00fcse in de_D_sufLDsYcQ.txt",
+      "video_id": "D_sufLDsYcQ",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/jIHgRVnk0fI/Diese Infusion ist einzigartig_jIHgRVnk0fI.txt",
+      "video_id": "jIHgRVnk0fI",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/X5m3xpbc9bs/Das schwierigste Thema in der _X5m3xpbc9bs.txt",
+      "video_id": "X5m3xpbc9bs",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/8a-eyw2-01k/Hashimoto - so kann man es beh_8a-eyw2-01k.txt",
+      "video_id": "8a-eyw2-01k",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/UeEFfND0Kxg/Der richtige Serotoninspiegel_UeEFfND0Kxg.txt",
+      "video_id": "UeEFfND0Kxg",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/4lnNOwLf7vo/Guter Schlaf mit einfachen Mit_4lnNOwLf7vo.txt",
+      "video_id": "4lnNOwLf7vo",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/7i1Nrmo8X0I/Kinder & ADHS So kann man es n_7i1Nrmo8X0I.txt",
+      "video_id": "7i1Nrmo8X0I",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/VjWm-T6RzZQ/Demenz - Teil 2_VjWm-T6RzZQ.txt",
+      "video_id": "VjWm-T6RzZQ",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/x60HqEKosLs/Sonnencreme - wichtig oder nic_x60HqEKosLs.txt",
+      "video_id": "x60HqEKosLs",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/uu49lb4Fu-k/Monika Gruber zu Dr. Spitzbart_uu49lb4Fu-k.txt",
+      "video_id": "uu49lb4Fu-k",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/LFFHseSUw98/Panikattacken & Burnout - was _LFFHseSUw98.txt",
+      "video_id": "LFFHseSUw98",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/uK-PCwRSlOI/Gesundheit verstehen - die Mas_uK-PCwRSlOI.txt",
+      "video_id": "uK-PCwRSlOI",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/lZvIz6HPQGA/Viele Krankheiten im Vorfeld v_lZvIz6HPQGA.txt",
+      "video_id": "lZvIz6HPQGA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/n6AqhXtbZ8U/Warum der richtige Selen-Spieg_n6AqhXtbZ8U.txt",
+      "video_id": "n6AqhXtbZ8U",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/odhYOowCVcE/Warum ich keine Mammographie e_odhYOowCVcE.txt",
+      "video_id": "odhYOowCVcE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/mf8SBl-s04g/Die Masterclass! Link in meine_mf8SBl-s04g.txt",
+      "video_id": "mf8SBl-s04g",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/PkD4U7-lsTE/Wie Demenz oft entsteht - und _PkD4U7-lsTE.txt",
+      "video_id": "PkD4U7-lsTE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/0PiNlN5K_f8/Migr\u00e4ne - das kann der Grund s_0PiNlN5K_f8.txt",
+      "video_id": "0PiNlN5K_f8",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/C7Tcv5GBc9A/Masterclass \u201eMentale Gesundhei_C7Tcv5GBc9A.txt",
+      "video_id": "C7Tcv5GBc9A",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/QGQYgLi1DLY/Darmgesundheit - Teil 2_QGQYgLi1DLY.txt",
+      "video_id": "QGQYgLi1DLY",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/C--nk0VoE0Q/Masterclass \u201eBlutwerte\u201c_C--nk0VoE0Q.txt",
+      "video_id": "C--nk0VoE0Q",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/fRpKMEF6bTA/Warum an Krankheiten deutlich _fRpKMEF6bTA.txt",
+      "video_id": "fRpKMEF6bTA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/kIgqis0aTaE/Vitamin D - das m\u00fcsst ihr wiss_kIgqis0aTaE.txt",
+      "video_id": "kIgqis0aTaE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/IyGUZngRj7s/Masterclass \u201eEssenzielle Mediz_IyGUZngRj7s.txt",
+      "video_id": "IyGUZngRj7s",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/DwSlvC6o9lk/Meine Masterclass_DwSlvC6o9lk.txt",
+      "video_id": "DwSlvC6o9lk",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/mw0DQdvosS4/Die Wahrheit \u00fcber RKI, Paul-Eh_mw0DQdvosS4.txt",
+      "video_id": "mw0DQdvosS4",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/re45XMr2jGc/Warum der Darm so wichtig ist _re45XMr2jGc.txt",
+      "video_id": "re45XMr2jGc",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/-ufSlXMFa1M/So steigert ihr eure Fettverbr_-ufSlXMFa1M.txt",
+      "video_id": "-ufSlXMFa1M",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/mvu14Vdkzjg/Der Gesunde hat viele W\u00fcnsche\u2026_mvu14Vdkzjg.txt",
+      "video_id": "mvu14Vdkzjg",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/_5OGDoHhXfM/Bluthochdruck nach der Wahl (T__5OGDoHhXfM.txt",
+      "video_id": "_5OGDoHhXfM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/NC3FlRZbE9E/Hilfe bei Angstst\u00f6rungen_NC3FlRZbE9E.txt",
+      "video_id": "NC3FlRZbE9E",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/XYiioNDX52c/Bluthochdruck - Teil 3_XYiioNDX52c.txt",
+      "video_id": "XYiioNDX52c",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/i9x_Qk3kHB4/Am Sonntag wird gew\u00e4hlt #wahle_i9x_Qk3kHB4.txt",
+      "video_id": "i9x_Qk3kHB4",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/5dZl8nMjvmk/Medikamente & Werbung_5dZl8nMjvmk.txt",
+      "video_id": "5dZl8nMjvmk",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/cFkEEtBzsjI/Das gef\u00e4hrlichste Experiment E_cFkEEtBzsjI.txt",
+      "video_id": "cFkEEtBzsjI",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/AAU4ACrJ4W0/Politik f\u00fcr die Menschen statt_AAU4ACrJ4W0.txt",
+      "video_id": "AAU4ACrJ4W0",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/7ZC6OBF8XCU/Vitamin D - darum ist es so wi_7ZC6OBF8XCU.txt",
+      "video_id": "7ZC6OBF8XCU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/IGWheRYBx6Q/Was tun bei Bluthochdruck Teil_IGWheRYBx6Q.txt",
+      "video_id": "IGWheRYBx6Q",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/S_EIlvheR4A/Warum WASSER so wichtig ist!_S_EIlvheR4A.txt",
+      "video_id": "S_EIlvheR4A",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/-DPHgfhb0jo/Warum unser Gesundheitssystem _-DPHgfhb0jo.txt",
+      "video_id": "-DPHgfhb0jo",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/xSqPhys5auQ/Somatische Intelligenz_xSqPhys5auQ.txt",
+      "video_id": "xSqPhys5auQ",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/WHSlJRevU88/Di\u00e4ten = sinnlos_WHSlJRevU88.txt",
+      "video_id": "WHSlJRevU88",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/4rRlATN-EN0/Elektronische Patientenakte_4rRlATN-EN0.txt",
+      "video_id": "4rRlATN-EN0",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/rtsvFVTae4o/Somatische Intelligenz_rtsvFVTae4o.txt",
+      "video_id": "rtsvFVTae4o",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/9yjp6s1WkGM/Der \u201eErfolg\u201c der Gr\u00fcnen #wahle_9yjp6s1WkGM.txt",
+      "video_id": "9yjp6s1WkGM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/BjopX-ba6Ek/K\u00f6rper & Seele_BjopX-ba6Ek.txt",
+      "video_id": "BjopX-ba6Ek",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/TOel583D5XI/Warum wir uns proaktiv um unse_TOel583D5XI.txt",
+      "video_id": "TOel583D5XI",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/KKdVnW5xz6Y/Darum VERSAGT die Medizin!_KKdVnW5xz6Y.txt",
+      "video_id": "KKdVnW5xz6Y",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/DmjTDq3St7U/Ketogene Ern\u00e4hrung - Teil 1_DmjTDq3St7U.txt",
+      "video_id": "DmjTDq3St7U",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/98HBWOXkmVw/Warum ich keinen Alkohol trink_98HBWOXkmVw.txt",
+      "video_id": "98HBWOXkmVw",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/3LpHIQO2JL4/Ketogene Ern\u00e4hrung - Teil 2_3LpHIQO2JL4.txt",
+      "video_id": "3LpHIQO2JL4",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/jbPiJFuxZxU/Frohe Weihnachten!_jbPiJFuxZxU.txt",
+      "video_id": "jbPiJFuxZxU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/Sk_1SFfehVc/3 Lektionen \u00fcber das Gl\u00fcck_Sk_1SFfehVc.txt",
+      "video_id": "Sk_1SFfehVc",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/nPiV9-c7_wE/R\u00fcckenwindhormone - so bekomms_nPiV9-c7_wE.txt",
+      "video_id": "nPiV9-c7_wE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/O9S6lO0_NzU/Danke an all meine Follower!_O9S6lO0_NzU.txt",
+      "video_id": "O9S6lO0_NzU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/eSM-5Ol6_LA/Ketogene Ern\u00e4hrung (Teil 3)_eSM-5Ol6_LA.txt",
+      "video_id": "eSM-5Ol6_LA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/Wwipi6okbtc/Tinnitus_Wwipi6okbtc.txt",
+      "video_id": "Wwipi6okbtc",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/5CIS-Tzey3A/Bullet-Proof Coffee_5CIS-Tzey3A.txt",
+      "video_id": "5CIS-Tzey3A",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/wmcMIpFmRcw/Chemotherapie - Chance oder ge_wmcMIpFmRcw.txt",
+      "video_id": "wmcMIpFmRcw",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/P2bTE0AoWTY/Darmflora_P2bTE0AoWTY.txt",
+      "video_id": "P2bTE0AoWTY",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/csg815lfRLE/Die Knochenspritze bei Osteopo_csg815lfRLE.txt",
+      "video_id": "csg815lfRLE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/qHYqDQ6cT9w/Zucker damals vs. heute_qHYqDQ6cT9w.txt",
+      "video_id": "qHYqDQ6cT9w",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/xpq3oO1cm8g/Eine Frage aus der Community A_xpq3oO1cm8g.txt",
+      "video_id": "xpq3oO1cm8g",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/VHys9un30h0/Gunnar Kaiser_VHys9un30h0.txt",
+      "video_id": "VHys9un30h0",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/ukxo0FDe3Yo/Warum Magnesium so wichtig ist_ukxo0FDe3Yo.txt",
+      "video_id": "ukxo0FDe3Yo",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/JzWPbHf048w/Krebs & Zucker - wichtig zu wi_JzWPbHf048w.txt",
+      "video_id": "JzWPbHf048w",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/wTDCPsPMwk4/Das Geheimnis eines langen Leb_wTDCPsPMwk4.txt",
+      "video_id": "wTDCPsPMwk4",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/pPV1kPeMSaE/Warum Fruktose ungesund ist_pPV1kPeMSaE.txt",
+      "video_id": "pPV1kPeMSaE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/Hv1nmdKL3dQ/Corona - warum eine Aufarbeitu_Hv1nmdKL3dQ.txt",
+      "video_id": "Hv1nmdKL3dQ",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/toOEPLDYj9I/Panikattacken - das hilft!_toOEPLDYj9I.txt",
+      "video_id": "toOEPLDYj9I",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/3eVDKPBOiNg/Warum das Immunsystem trainier_3eVDKPBOiNg.txt",
+      "video_id": "3eVDKPBOiNg",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/bJFiSzbuBw0/Meine Tipps gegen Stress! #men_bJFiSzbuBw0.txt",
+      "video_id": "bJFiSzbuBw0",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/24BxEfkVTss/Fit durch den Herbst - so geli_24BxEfkVTss.txt",
+      "video_id": "24BxEfkVTss",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/O6sNwqljCEk/Potenz - so kannst du sie nat\u00fc_O6sNwqljCEk.txt",
+      "video_id": "O6sNwqljCEk",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/UGhXsvB-oD0/Was die Entdeckung der Mondfah_UGhXsvB-oD0.txt",
+      "video_id": "UGhXsvB-oD0",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/U28stYJOimQ/Gefahren der veganen Ern\u00e4hrung_U28stYJOimQ.txt",
+      "video_id": "U28stYJOimQ",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/PxCPS3WW7lU/\u00dcbergewicht Daran k\u00f6nnte es li_PxCPS3WW7lU.txt",
+      "video_id": "PxCPS3WW7lU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/h_RtpRSeIAM/Fehldiagnosen durch Mammograph_h_RtpRSeIAM.txt",
+      "video_id": "h_RtpRSeIAM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/4dWNPloN18c/Trump oder Harris \ud83c\uddfa\ud83c\uddf8 Das gr\u00f6\u00dft_4dWNPloN18c.txt",
+      "video_id": "4dWNPloN18c",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/j41n1yQLOR4/\u00c4rzte vs. Mediziner - Teil 2 E_j41n1yQLOR4.txt",
+      "video_id": "j41n1yQLOR4",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/2brgYObtJGg/Haarausfall - so kannst du ihn_2brgYObtJGg.txt",
+      "video_id": "2brgYObtJGg",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/ZARdBIjMyJU/Nahrungserg\u00e4nzung f\u00fcr Kinder_ZARdBIjMyJU.txt",
+      "video_id": "ZARdBIjMyJU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/6tVJgPweTQE/Burnout & Depression verhinder_6tVJgPweTQE.txt",
+      "video_id": "6tVJgPweTQE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/_TDe4KykI5U/Arzt oder Mediziner - das ist __TDe4KykI5U.txt",
+      "video_id": "_TDe4KykI5U",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/NggD2ESsmIA/So bel\u00fcgt uns die Politik - oh_NggD2ESsmIA.txt",
+      "video_id": "NggD2ESsmIA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/jB53pXmkDdA/Ist zuviel Eiwei\u00df sch\u00e4dlich Ei_jB53pXmkDdA.txt",
+      "video_id": "jB53pXmkDdA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/P9fbepUL8lo/Gesundheitssystem & Schule - d_P9fbepUL8lo.txt",
+      "video_id": "P9fbepUL8lo",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/kfi2MUG46nY/\u201eShedding\u201c durch die Impfung -_kfi2MUG46nY.txt",
+      "video_id": "kfi2MUG46nY",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/hkCi4hIKho4/Wer regiert die Welt_hkCi4hIKho4.txt",
+      "video_id": "hkCi4hIKho4",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/YfF7eCNNMp4/R\u00fccktritt der Gr\u00fcnen_YfF7eCNNMp4.txt",
+      "video_id": "YfF7eCNNMp4",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/xH8Q3UqcRpk/Fit durch die Wiesn-Zeit #wies_xH8Q3UqcRpk.txt",
+      "video_id": "xH8Q3UqcRpk",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/5lmb7Po_Ims/Diabetes 1 & 2 - so k\u00f6nnte man_5lmb7Po_Ims.txt",
+      "video_id": "5lmb7Po_Ims",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/tuiAOSyyyhY/Danke an meine Community \ud83d\udcaa\ud83c\udffb\ud83d\ude4f\ud83c\udffb_tuiAOSyyyhY.txt",
+      "video_id": "tuiAOSyyyhY",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/xZ74U7_bFVU/Stoffwechsel richtig verstehen_xZ74U7_bFVU.txt",
+      "video_id": "xZ74U7_bFVU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/jFkq9dha5gE/Long-Covid nach Impfung_jFkq9dha5gE.txt",
+      "video_id": "jFkq9dha5gE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/oh8knXY2UeU/Das Geheimnis f\u00fcr guten Schlaf_oh8knXY2UeU.txt",
+      "video_id": "oh8knXY2UeU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/cmeVmCKKHbU/Frage aus der Community Soll i_cmeVmCKKHbU.txt",
+      "video_id": "cmeVmCKKHbU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/KBfHoP3Dr7o/Krankheiten verhindern bevor s_KBfHoP3Dr7o.txt",
+      "video_id": "KBfHoP3Dr7o",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/8KiNEfXY9M0/Wie richtiges Fasten deine Ges_8KiNEfXY9M0.txt",
+      "video_id": "8KiNEfXY9M0",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/AInWVoDYvXk/Warum Bewegung so wichtig ist!_AInWVoDYvXk.txt",
+      "video_id": "AInWVoDYvXk",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/65BrRP1eCrM/So verhinderst du Tinnitus_65BrRP1eCrM.txt",
+      "video_id": "65BrRP1eCrM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/V51IZleNwdQ/Der gr\u00f6\u00dfte Fehler in der Kinde_V51IZleNwdQ.txt",
+      "video_id": "V51IZleNwdQ",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/Lwpz6NF7EgI/Wille vs. Glauben_Lwpz6NF7EgI.txt",
+      "video_id": "Lwpz6NF7EgI",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/WbxUT99-e3s/War die Corona-Impfung sch\u00e4dli_WbxUT99-e3s.txt",
+      "video_id": "WbxUT99-e3s",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/DrzJ5DeXShI/Depressionen auf nat\u00fcrlichem W_DrzJ5DeXShI.txt",
+      "video_id": "DrzJ5DeXShI",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/4BWY5-fn1TM/Impfungen bei Kindern - meine _4BWY5-fn1TM.txt",
+      "video_id": "4BWY5-fn1TM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/-4a5MFhWano/\u00c4rzte und Heilpraktiker - eine_-4a5MFhWano.txt",
+      "video_id": "-4a5MFhWano",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/7ZJG0xUMRKw/DANKE an die gesamte Community_7ZJG0xUMRKw.txt",
+      "video_id": "7ZJG0xUMRKw",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/BAMuoA_qTcY/Warum Fruktose sch\u00e4dlich sein _BAMuoA_qTcY.txt",
+      "video_id": "BAMuoA_qTcY",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/yHkQQWYSIYA/Gendern & M\u00e4nner im Frauenspor_yHkQQWYSIYA.txt",
+      "video_id": "yHkQQWYSIYA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/iltv4xzshVM/Mit ketogener Ern\u00e4hrung Krankh_iltv4xzshVM.txt",
+      "video_id": "iltv4xzshVM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/naQXwoeux7c/Die neue Angst \ud83d\udc12_naQXwoeux7c.txt",
+      "video_id": "naQXwoeux7c",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/VdojJvrQ3i0/Wie dein Zuckerkonsum Krebs ve_VdojJvrQ3i0.txt",
+      "video_id": "VdojJvrQ3i0",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/pM6tTRmOl-g/Verkalkte Blutgef\u00e4\u00dfe ohne Stat_pM6tTRmOl-g.txt",
+      "video_id": "pM6tTRmOl-g",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/xlUj6HoHU1c/Das Problem mit \u00c4rzten\u2026 #gesun_xlUj6HoHU1c.txt",
+      "video_id": "xlUj6HoHU1c",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/vu54Io_cYZQ/Willst du nur gesund sein - od_vu54Io_cYZQ.txt",
+      "video_id": "vu54Io_cYZQ",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/w_WbC3DUemw/Das gro\u00dfe Problem unserer Gese_w_WbC3DUemw.txt",
+      "video_id": "w_WbC3DUemw",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/1grmDMQo6AM/Das Geheimnis des Gl\u00fccks_1grmDMQo6AM.txt",
+      "video_id": "1grmDMQo6AM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/DDdOrWLc6RE/Das Geheimnis von Magnesium_DDdOrWLc6RE.txt",
+      "video_id": "DDdOrWLc6RE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/R-NX-livxVE/Das Problem mit dem \u201egro\u00dfen Bl_R-NX-livxVE.txt",
+      "video_id": "R-NX-livxVE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/LdWnoH_MaxM/! #arzt #gesund #medizin_LdWnoH_MaxM.txt",
+      "video_id": "LdWnoH_MaxM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/X-14AfWWR2k/Warum es \u201edie Wissenschaft\u201c ni_X-14AfWWR2k.txt",
+      "video_id": "X-14AfWWR2k",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/vhW3rdnPe10/Warum du krank wirst ohne es z_vhW3rdnPe10.txt",
+      "video_id": "vhW3rdnPe10",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/s7BVMgwLfG8/Pr\u00e4vention statt Krankheit #ge_s7BVMgwLfG8.txt",
+      "video_id": "s7BVMgwLfG8",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/U9_ku3Y8uzQ/Impfen oder nicht #gesundheit _U9_ku3Y8uzQ.txt",
+      "video_id": "U9_ku3Y8uzQ",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/JZ5jk5FlK8M/Sonnencreme - ja oder nein #so_JZ5jk5FlK8M.txt",
+      "video_id": "JZ5jk5FlK8M",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/mRBznqpQ0ok/Schwangerschaft klappt nicht D_mRBznqpQ0ok.txt",
+      "video_id": "mRBznqpQ0ok",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/bXuVQ4n38UU/Heilpraktiker besser als Mediz_bXuVQ4n38UU.txt",
+      "video_id": "bXuVQ4n38UU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/tPe8z-b4zVE/Autoimmun-Krankheiten das soll_tPe8z-b4zVE.txt",
+      "video_id": "tPe8z-b4zVE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/J9XGbGbhakA/Warum ich als Arzt etwas \u201eande_J9XGbGbhakA.txt",
+      "video_id": "J9XGbGbhakA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/7gsmcVGv6ig/So entkommst du dem Burnout #d_7gsmcVGv6ig.txt",
+      "video_id": "7gsmcVGv6ig",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/HRvJEJ2tSmM/Wenn ich kein Arzt geworden w\u00e4_HRvJEJ2tSmM.txt",
+      "video_id": "HRvJEJ2tSmM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/RB7x8osIYaY/Fit in den Wechseljahren \ud83d\udcaa\ud83c\udffc #w_RB7x8osIYaY.txt",
+      "video_id": "RB7x8osIYaY",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/jYhi39GN_F0/Die Wahrheit \u00fcber Vitamine #ge_jYhi39GN_F0.txt",
+      "video_id": "jYhi39GN_F0",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/Twi9sX-Ssfw/Warum Vorsorge nicht immer sin_Twi9sX-Ssfw.txt",
+      "video_id": "Twi9sX-Ssfw",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/TAfDUHa5SHc/Mehr Energie im Alltag! #\u00fcbers_TAfDUHa5SHc.txt",
+      "video_id": "TAfDUHa5SHc",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/q0T693SuieE/Ritalin - Fluch oder Segen f\u00fcr_q0T693SuieE.txt",
+      "video_id": "q0T693SuieE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/Di9_dvJ9pXU/So aktivierst du deine Schildd_Di9_dvJ9pXU.txt",
+      "video_id": "Di9_dvJ9pXU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/6eKht0ZBF9Q/Medizinische Fehlinformationen_6eKht0ZBF9Q.txt",
+      "video_id": "6eKht0ZBF9Q",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/9plzu9jhWXA/Die wichtigste Entscheidung di_9plzu9jhWXA.txt",
+      "video_id": "9plzu9jhWXA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/ulAMG2DUOvs/Wie du deine volle Gesundheit _ulAMG2DUOvs.txt",
+      "video_id": "ulAMG2DUOvs",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/Jt32QMNlZ0Q/Vegan leben - gut oder schlech_Jt32QMNlZ0Q.txt",
+      "video_id": "Jt32QMNlZ0Q",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/gmyxWhbgDvg/Gute Fette - schlechte Fette_gmyxWhbgDvg.txt",
+      "video_id": "gmyxWhbgDvg",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/xZE3E63aVxU/Die fehlende Aufarbeitung. Eur_xZE3E63aVxU.txt",
+      "video_id": "xZE3E63aVxU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/n5Y-QQfisNs/Fleisch oder Vegan Was ist ges_n5Y-QQfisNs.txt",
+      "video_id": "n5Y-QQfisNs",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/8dmIyRiwCHw/Hoher Eiwei\u00df-Spiegel im Blut w_8dmIyRiwCHw.txt",
+      "video_id": "8dmIyRiwCHw",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/0XjeX6xM8AA/Corona - Die h\u00e4ufigsten Fragen_0XjeX6xM8AA.txt",
+      "video_id": "0XjeX6xM8AA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/tOOOBoaUC_Y/Dr. Spitzbart im Interview mit_tOOOBoaUC_Y.txt",
+      "video_id": "tOOOBoaUC_Y",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/EPegTKVDigE/Versteckter Zucker in unseren _EPegTKVDigE.txt",
+      "video_id": "EPegTKVDigE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/D4vvHnIaGhQ/Wie man sprichw\u00f6rtlich im Schl_D4vvHnIaGhQ.txt",
+      "video_id": "D4vvHnIaGhQ",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/7bkcWgkwbBs/Das Schilddr\u00fcsenhormon So funk_7bkcWgkwbBs.txt",
+      "video_id": "7bkcWgkwbBs",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/PwEQ125Aw98/Skandal Glyphosat vergiftet un_PwEQ125Aw98.txt",
+      "video_id": "PwEQ125Aw98",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/j-6WZVFxGho/Gesund oder krank \u2013 Ihr Immuns_j-6WZVFxGho.txt",
+      "video_id": "j-6WZVFxGho",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/oEk29Gcaazg/Mammographie - nein danke! War_oEk29Gcaazg.txt",
+      "video_id": "oEk29Gcaazg",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/MipxiqWEgc8/Medikamente und Operationen im_MipxiqWEgc8.txt",
+      "video_id": "MipxiqWEgc8",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/N8ckv5tazRo/Schutz vor Krebs - Mit Ern\u00e4hru_N8ckv5tazRo.txt",
+      "video_id": "N8ckv5tazRo",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/C3W1tYo9FPU/Etwas mehr Energie gef\u00e4llig So_C3W1tYo9FPU.txt",
+      "video_id": "C3W1tYo9FPU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/p6t0n0gyTdY/Serotonin - Ihre Teflon-Beschi_p6t0n0gyTdY.txt",
+      "video_id": "p6t0n0gyTdY",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/5dd4f288-066a-4568-8256-4b4ec78c7d02/vYFUUPDElzo/Symptome heilen - nicht nur be_vYFUUPDElzo.txt",
+      "video_id": "vYFUUPDElzo",
+      "language": "de",
+      "type": "auto-generated"
+    }
+  ],
+  "videos": [
+    {
+      "id": "jIHgRVnk0fI",
+      "title": "Diese Infusion ist einzigartig!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=jIHgRVnk0fI"
+    },
+    {
+      "id": "8a-eyw2-01k",
+      "title": "Hashimoto - so kann man es behandeln!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=8a-eyw2-01k"
+    },
+    {
+      "id": "X5m3xpbc9bs",
+      "title": "Das schwierigste Thema in der Medizin",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=X5m3xpbc9bs"
+    },
+    {
+      "id": "d8uSiulR4Zg",
+      "title": "Warum du krank wirst ohne es zu merken",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=d8uSiulR4Zg"
+    },
+    {
+      "id": "UeEFfND0Kxg",
+      "title": "Der richtige Serotoninspiegel",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=UeEFfND0Kxg"
+    },
+    {
+      "id": "D_sufLDsYcQ",
+      "title": "Wie du deine Schilddr\u00fcse in den Griff bekommen kannst.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=D_sufLDsYcQ"
+    },
+    {
+      "id": "4lnNOwLf7vo",
+      "title": "Guter Schlaf mit einfachen Mitteln",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=4lnNOwLf7vo"
+    },
+    {
+      "id": "x60HqEKosLs",
+      "title": "Sonnencreme - wichtig oder nicht?",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=x60HqEKosLs"
+    },
+    {
+      "id": "7i1Nrmo8X0I",
+      "title": "Kinder & ADHS: So kann man es nat\u00fcrlich behandeln.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=7i1Nrmo8X0I"
+    },
+    {
+      "id": "VjWm-T6RzZQ",
+      "title": "Demenz - Teil 2",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=VjWm-T6RzZQ"
+    },
+    {
+      "id": "LFFHseSUw98",
+      "title": "Panikattacken & Burnout - was steckt dahinter?",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=LFFHseSUw98"
+    },
+    {
+      "id": "0PiNlN5K_f8",
+      "title": "Migr\u00e4ne - das kann der Grund sein",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=0PiNlN5K_f8"
+    },
+    {
+      "id": "uu49lb4Fu-k",
+      "title": "Monika Gruber zu Dr. Spitzbart",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=uu49lb4Fu-k"
+    },
+    {
+      "id": "odhYOowCVcE",
+      "title": "Warum ich keine Mammographie empfehle.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=odhYOowCVcE"
+    },
+    {
+      "id": "uK-PCwRSlOI",
+      "title": "Gesundheit verstehen - die Masterclass!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=uK-PCwRSlOI"
+    },
+    {
+      "id": "lZvIz6HPQGA",
+      "title": "Viele Krankheiten im Vorfeld verhindern!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=lZvIz6HPQGA"
+    },
+    {
+      "id": "PkD4U7-lsTE",
+      "title": "Wie Demenz oft entsteht - und wie man es verhindern k\u00f6nnte.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=PkD4U7-lsTE"
+    },
+    {
+      "id": "PwcXUWGXJQU",
+      "title": "Warum zuviele \u00c4rzte krank machen k\u00f6nnen.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=PwcXUWGXJQU"
+    },
+    {
+      "id": "n6AqhXtbZ8U",
+      "title": "Warum der richtige Selen-Spiegel im Blut wichtig f\u00fcr die Entgiftung ist.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=n6AqhXtbZ8U"
+    },
+    {
+      "id": "mf8SBl-s04g",
+      "title": "Die Masterclass! Link in meinem Profil! \ud83e\udd29",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=mf8SBl-s04g"
+    },
+    {
+      "id": "kIgqis0aTaE",
+      "title": "Vitamin D - das m\u00fcsst ihr wissen!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=kIgqis0aTaE"
+    },
+    {
+      "id": "C--nk0VoE0Q",
+      "title": "Masterclass \u201eBlutwerte\u201c",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=C--nk0VoE0Q"
+    },
+    {
+      "id": "IyGUZngRj7s",
+      "title": "Masterclass \u201eEssenzielle Medizin\u201c",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=IyGUZngRj7s"
+    },
+    {
+      "id": "C7Tcv5GBc9A",
+      "title": "Masterclass \u201eMentale Gesundheit\u201c",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=C7Tcv5GBc9A"
+    },
+    {
+      "id": "DwSlvC6o9lk",
+      "title": "Meine Masterclass",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=DwSlvC6o9lk"
+    },
+    {
+      "id": "fRpKMEF6bTA",
+      "title": "Warum an Krankheiten deutlich mehr verdient wird.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=fRpKMEF6bTA"
+    },
+    {
+      "id": "QGQYgLi1DLY",
+      "title": "Darmgesundheit - Teil 2",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=QGQYgLi1DLY"
+    },
+    {
+      "id": "re45XMr2jGc",
+      "title": "Warum der Darm so wichtig ist - Teil 1",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=re45XMr2jGc"
+    },
+    {
+      "id": "-ufSlXMFa1M",
+      "title": "So steigert ihr eure Fettverbrennung beim Sport!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=-ufSlXMFa1M"
+    },
+    {
+      "id": "mw0DQdvosS4",
+      "title": "Die Wahrheit \u00fcber RKI, Paul-Ehrlich & Co",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=mw0DQdvosS4"
+    },
+    {
+      "id": "5dZl8nMjvmk",
+      "title": "Medikamente & Werbung",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=5dZl8nMjvmk"
+    },
+    {
+      "id": "7ZC6OBF8XCU",
+      "title": "Vitamin D - darum ist es so wichtig (Teil 1)",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=7ZC6OBF8XCU"
+    },
+    {
+      "id": "mvu14Vdkzjg",
+      "title": "Der Gesunde hat viele W\u00fcnsche\u2026",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=mvu14Vdkzjg"
+    },
+    {
+      "id": "NC3FlRZbE9E",
+      "title": "Hilfe bei Angstst\u00f6rungen",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=NC3FlRZbE9E"
+    },
+    {
+      "id": "XYiioNDX52c",
+      "title": "Bluthochdruck - Teil 3",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=XYiioNDX52c"
+    },
+    {
+      "id": "_5OGDoHhXfM",
+      "title": "Bluthochdruck nach der Wahl (Teil 2)",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=_5OGDoHhXfM"
+    },
+    {
+      "id": "i9x_Qk3kHB4",
+      "title": "Am Sonntag wird gew\u00e4hlt #wahlen #wahl #wahl2025",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=i9x_Qk3kHB4"
+    },
+    {
+      "id": "cFkEEtBzsjI",
+      "title": "Das gef\u00e4hrlichste Experiment Europas?",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=cFkEEtBzsjI"
+    },
+    {
+      "id": "IGWheRYBx6Q",
+      "title": "Was tun bei Bluthochdruck? Teil 1!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=IGWheRYBx6Q"
+    },
+    {
+      "id": "AAU4ACrJ4W0",
+      "title": "Politik f\u00fcr die Menschen statt Cancel Culture #m\u00fcnchen #vance #usa #rede",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=AAU4ACrJ4W0"
+    },
+    {
+      "id": "9yjp6s1WkGM",
+      "title": "Der \u201eErfolg\u201c der Gr\u00fcnen #wahlen2025 #gr\u00fcne #habeck",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=9yjp6s1WkGM"
+    },
+    {
+      "id": "-DPHgfhb0jo",
+      "title": "Warum unser Gesundheitssystem revolutioniert werden m\u00fcsste.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=-DPHgfhb0jo"
+    },
+    {
+      "id": "4rRlATN-EN0",
+      "title": "Elektronische Patientenakte",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=4rRlATN-EN0"
+    },
+    {
+      "id": "WHSlJRevU88",
+      "title": "Di\u00e4ten = sinnlos?",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=WHSlJRevU88"
+    },
+    {
+      "id": "KKdVnW5xz6Y",
+      "title": "Darum VERSAGT die Medizin!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=KKdVnW5xz6Y"
+    },
+    {
+      "id": "xSqPhys5auQ",
+      "title": "Somatische Intelligenz",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xSqPhys5auQ"
+    },
+    {
+      "id": "S_EIlvheR4A",
+      "title": "Warum WASSER so wichtig ist!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=S_EIlvheR4A"
+    },
+    {
+      "id": "rtsvFVTae4o",
+      "title": "Somatische Intelligenz",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=rtsvFVTae4o"
+    },
+    {
+      "id": "TOel583D5XI",
+      "title": "Warum wir uns proaktiv um unsere Gesundheit k\u00fcmmern sollten.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=TOel583D5XI"
+    },
+    {
+      "id": "BjopX-ba6Ek",
+      "title": "K\u00f6rper & Seele",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=BjopX-ba6Ek"
+    },
+    {
+      "id": "98HBWOXkmVw",
+      "title": "Warum ich keinen Alkohol trinke",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=98HBWOXkmVw"
+    },
+    {
+      "id": "ZI0wOGfwaUs",
+      "title": "Darum ist Zink so wichtig!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ZI0wOGfwaUs"
+    },
+    {
+      "id": "eSM-5Ol6_LA",
+      "title": "Ketogene Ern\u00e4hrung (Teil 3)",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=eSM-5Ol6_LA"
+    },
+    {
+      "id": "3LpHIQO2JL4",
+      "title": "Ketogene Ern\u00e4hrung - Teil 2",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=3LpHIQO2JL4"
+    },
+    {
+      "id": "DmjTDq3St7U",
+      "title": "Ketogene Ern\u00e4hrung - Teil 1",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=DmjTDq3St7U"
+    },
+    {
+      "id": "Sk_1SFfehVc",
+      "title": "3 Lektionen \u00fcber das Gl\u00fcck",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Sk_1SFfehVc"
+    },
+    {
+      "id": "jbPiJFuxZxU",
+      "title": "Frohe Weihnachten!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=jbPiJFuxZxU"
+    },
+    {
+      "id": "nPiV9-c7_wE",
+      "title": "R\u00fcckenwindhormone - so bekommst du sie!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=nPiV9-c7_wE"
+    },
+    {
+      "id": "O9S6lO0_NzU",
+      "title": "Danke an all meine Follower!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=O9S6lO0_NzU"
+    },
+    {
+      "id": "Wwipi6okbtc",
+      "title": "Tinnitus",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Wwipi6okbtc"
+    },
+    {
+      "id": "P2bTE0AoWTY",
+      "title": "Darmflora",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=P2bTE0AoWTY"
+    },
+    {
+      "id": "5CIS-Tzey3A",
+      "title": "Bullet-Proof Coffee",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=5CIS-Tzey3A"
+    },
+    {
+      "id": "VHys9un30h0",
+      "title": "Gunnar Kaiser",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=VHys9un30h0"
+    },
+    {
+      "id": "JzWPbHf048w",
+      "title": "Krebs & Zucker - wichtig zu wissen!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=JzWPbHf048w"
+    },
+    {
+      "id": "wmcMIpFmRcw",
+      "title": "Chemotherapie - Chance oder gef\u00e4hrlich? #chemo #krebs",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=wmcMIpFmRcw"
+    },
+    {
+      "id": "csg815lfRLE",
+      "title": "Die Knochenspritze bei Osteoporose",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=csg815lfRLE"
+    },
+    {
+      "id": "GVCbxoqcsjI",
+      "title": "Das Problem mit Zucker.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=GVCbxoqcsjI"
+    },
+    {
+      "id": "ukxo0FDe3Yo",
+      "title": "Warum Magnesium so wichtig ist #blutbild #gesundheit #vitalstoffe",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ukxo0FDe3Yo"
+    },
+    {
+      "id": "qHYqDQ6cT9w",
+      "title": "Zucker damals vs. heute",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=qHYqDQ6cT9w"
+    },
+    {
+      "id": "xpq3oO1cm8g",
+      "title": "Eine Frage aus der Community: ADHS - was tun?",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xpq3oO1cm8g"
+    },
+    {
+      "id": "pPV1kPeMSaE",
+      "title": "Warum Fruktose ungesund ist.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=pPV1kPeMSaE"
+    },
+    {
+      "id": "UGhXsvB-oD0",
+      "title": "Was die Entdeckung der Mondfahrt mit Medizin zu tun hat \ud83c\udf0d",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=UGhXsvB-oD0"
+    },
+    {
+      "id": "3eVDKPBOiNg",
+      "title": "Warum das Immunsystem trainiert werden muss#immunsystem #corona",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=3eVDKPBOiNg"
+    },
+    {
+      "id": "wTDCPsPMwk4",
+      "title": "Das Geheimnis eines langen Lebens.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=wTDCPsPMwk4"
+    },
+    {
+      "id": "O6sNwqljCEk",
+      "title": "Potenz - so kannst du sie nat\u00fcrlich steigern!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=O6sNwqljCEk"
+    },
+    {
+      "id": "toOEPLDYj9I",
+      "title": "Panikattacken - das hilft!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=toOEPLDYj9I"
+    },
+    {
+      "id": "bJFiSzbuBw0",
+      "title": "Meine Tipps gegen Stress! #mentalegesundheit #unternehmer",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=bJFiSzbuBw0"
+    },
+    {
+      "id": "Hv1nmdKL3dQ",
+      "title": "Corona - warum eine Aufarbeitung fehlt.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Hv1nmdKL3dQ"
+    },
+    {
+      "id": "24BxEfkVTss",
+      "title": "Fit durch den Herbst - so gelingt es!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=24BxEfkVTss"
+    },
+    {
+      "id": "U28stYJOimQ",
+      "title": "Gefahren der veganen Ern\u00e4hrung",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=U28stYJOimQ"
+    },
+    {
+      "id": "j41n1yQLOR4",
+      "title": "\u00c4rzte vs. Mediziner - Teil 2: Eine pers\u00f6nliche Erfahrung.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=j41n1yQLOR4"
+    },
+    {
+      "id": "4dWNPloN18c",
+      "title": "Trump oder Harris? \ud83c\uddfa\ud83c\uddf8 Das gr\u00f6\u00dfte Ereignis des Jahres steht an!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=4dWNPloN18c"
+    },
+    {
+      "id": "h_RtpRSeIAM",
+      "title": "Fehldiagnosen durch Mammographien? #gesundheit",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=h_RtpRSeIAM"
+    },
+    {
+      "id": "PxCPS3WW7lU",
+      "title": "\u00dcbergewicht? Daran k\u00f6nnte es liegen!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=PxCPS3WW7lU"
+    },
+    {
+      "id": "2brgYObtJGg",
+      "title": "Haarausfall - so kannst du ihn behandeln oder verhindern!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=2brgYObtJGg"
+    },
+    {
+      "id": "NggD2ESsmIA",
+      "title": "So bel\u00fcgt uns die Politik - ohne Konsequenzen.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=NggD2ESsmIA"
+    },
+    {
+      "id": "ZARdBIjMyJU",
+      "title": "Nahrungserg\u00e4nzung f\u00fcr Kinder?",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ZARdBIjMyJU"
+    },
+    {
+      "id": "_TDe4KykI5U",
+      "title": "Arzt oder Mediziner - das ist der Unterschied!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=_TDe4KykI5U"
+    },
+    {
+      "id": "jB53pXmkDdA",
+      "title": "Ist zuviel Eiwei\u00df sch\u00e4dlich? Eine h\u00e4ufige Frage aus der Community #eiwei\u00df #protein #eiweissreich",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=jB53pXmkDdA"
+    },
+    {
+      "id": "6tVJgPweTQE",
+      "title": "Burnout & Depression verhindern",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=6tVJgPweTQE"
+    },
+    {
+      "id": "P9fbepUL8lo",
+      "title": "Gesundheitssystem & Schule - das w\u00fcrde ich \u00e4ndern. #schulsystem #schule #kita #kindergarten",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=P9fbepUL8lo"
+    },
+    {
+      "id": "tuiAOSyyyhY",
+      "title": "Danke an meine Community \ud83d\udcaa\ud83c\udffb\ud83d\ude4f\ud83c\udffb",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=tuiAOSyyyhY"
+    },
+    {
+      "id": "hkCi4hIKho4",
+      "title": "Wer regiert die Welt?",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=hkCi4hIKho4"
+    },
+    {
+      "id": "kfi2MUG46nY",
+      "title": "\u201eShedding\u201c durch die Impfung - Mythos oder Realit\u00e4t?#gesundheit #arzt #medizin",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=kfi2MUG46nY"
+    },
+    {
+      "id": "5lmb7Po_Ims",
+      "title": "Diabetes 1 & 2 - so k\u00f6nnte man es verhindern!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=5lmb7Po_Ims"
+    },
+    {
+      "id": "xH8Q3UqcRpk",
+      "title": "Fit durch die Wiesn-Zeit #wiesn #oktoberfest",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xH8Q3UqcRpk"
+    },
+    {
+      "id": "YfF7eCNNMp4",
+      "title": "R\u00fccktritt der Gr\u00fcnen",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=YfF7eCNNMp4"
+    },
+    {
+      "id": "jFkq9dha5gE",
+      "title": "Long-Covid nach Impfung",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=jFkq9dha5gE"
+    },
+    {
+      "id": "xZ74U7_bFVU",
+      "title": "Stoffwechsel richtig verstehen",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xZ74U7_bFVU"
+    },
+    {
+      "id": "oh8knXY2UeU",
+      "title": "Das Geheimnis f\u00fcr guten Schlaf",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=oh8knXY2UeU"
+    },
+    {
+      "id": "cmeVmCKKHbU",
+      "title": "Frage aus der Community: Soll ich mich gegen G\u00fcrtelrose i*pfen lassen?",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=cmeVmCKKHbU"
+    },
+    {
+      "id": "8KiNEfXY9M0",
+      "title": "Wie richtiges Fasten deine Gesundheit verbessert!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=8KiNEfXY9M0"
+    },
+    {
+      "id": "KBfHoP3Dr7o",
+      "title": "Krankheiten verhindern bevor sie entstehen.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=KBfHoP3Dr7o"
+    },
+    {
+      "id": "AInWVoDYvXk",
+      "title": "Warum Bewegung so wichtig ist!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=AInWVoDYvXk"
+    },
+    {
+      "id": "DrzJ5DeXShI",
+      "title": "Depressionen auf nat\u00fcrlichem Weg bek\u00e4mpfen",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=DrzJ5DeXShI"
+    },
+    {
+      "id": "65BrRP1eCrM",
+      "title": "So verhinderst du Tinnitus",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=65BrRP1eCrM"
+    },
+    {
+      "id": "V51IZleNwdQ",
+      "title": "Der gr\u00f6\u00dfte Fehler in der Kindererziehung",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=V51IZleNwdQ"
+    },
+    {
+      "id": "Lwpz6NF7EgI",
+      "title": "Wille vs. Glauben",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Lwpz6NF7EgI"
+    },
+    {
+      "id": "WbxUT99-e3s",
+      "title": "War die Corona-Impfung sch\u00e4dlich?",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=WbxUT99-e3s"
+    },
+    {
+      "id": "4BWY5-fn1TM",
+      "title": "Impfungen bei Kindern - meine Meinung #gesundheit #eltern #kinder #arzt #elternsein",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=4BWY5-fn1TM"
+    },
+    {
+      "id": "7ZJG0xUMRKw",
+      "title": "DANKE an die gesamte Community",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=7ZJG0xUMRKw"
+    },
+    {
+      "id": "-4a5MFhWano",
+      "title": "\u00c4rzte und Heilpraktiker - eine gute Symbiose?",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=-4a5MFhWano"
+    },
+    {
+      "id": "yHkQQWYSIYA",
+      "title": "Gendern & M\u00e4nner im Frauensport.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=yHkQQWYSIYA"
+    },
+    {
+      "id": "naQXwoeux7c",
+      "title": "Die neue Angst \ud83d\udc12",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=naQXwoeux7c"
+    },
+    {
+      "id": "BAMuoA_qTcY",
+      "title": "Warum Fruktose sch\u00e4dlich sein kann. #gesundheit #aufkl\u00e4rung #zucker #leber #ganzheitlich #medizin",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=BAMuoA_qTcY"
+    },
+    {
+      "id": "pM6tTRmOl-g",
+      "title": "Verkalkte Blutgef\u00e4\u00dfe ohne Statine wieder \u201efreibekommen\u201c #gesundheit #herz #ganzheitlich",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=pM6tTRmOl-g"
+    },
+    {
+      "id": "iltv4xzshVM",
+      "title": "Mit ketogener Ern\u00e4hrung Krankheiten verhindern #gesundheit #ketogeneern\u00e4hrung",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=iltv4xzshVM"
+    },
+    {
+      "id": "VdojJvrQ3i0",
+      "title": "Wie dein Zuckerkonsum Krebs verursachen kann. #gesundheit #krebs #zucker #ern\u00e4hrung",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=VdojJvrQ3i0"
+    },
+    {
+      "id": "vu54Io_cYZQ",
+      "title": "Willst du nur gesund sein - oder leistungsf\u00e4hig?",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=vu54Io_cYZQ"
+    },
+    {
+      "id": "xlUj6HoHU1c",
+      "title": "Das Problem mit \u00c4rzten\u2026 #gesundheit #medizin",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xlUj6HoHU1c"
+    },
+    {
+      "id": "1grmDMQo6AM",
+      "title": "Das Geheimnis des Gl\u00fccks",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=1grmDMQo6AM"
+    },
+    {
+      "id": "s7BVMgwLfG8",
+      "title": "Pr\u00e4vention statt Krankheit #gesundheit #arzt #medizin",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=s7BVMgwLfG8"
+    },
+    {
+      "id": "DDdOrWLc6RE",
+      "title": "Das Geheimnis von Magnesium",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=DDdOrWLc6RE"
+    },
+    {
+      "id": "LdWnoH_MaxM",
+      "title": "! #arzt #gesund #medizin",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=LdWnoH_MaxM"
+    },
+    {
+      "id": "w_WbC3DUemw",
+      "title": "Das gro\u00dfe Problem unserer Gesellschaft #cancelculture #fakenews",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=w_WbC3DUemw"
+    },
+    {
+      "id": "R-NX-livxVE",
+      "title": "Das Problem mit dem \u201egro\u00dfen Blutbild\u201c #medizin #blutwerte #gesundheit #ganzheitlich #gesundleben",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=R-NX-livxVE"
+    },
+    {
+      "id": "X-14AfWWR2k",
+      "title": "Warum es \u201edie Wissenschaft\u201c nicht gibt.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=X-14AfWWR2k"
+    },
+    {
+      "id": "vhW3rdnPe10",
+      "title": "Warum du krank wirst ohne es zu merken.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=vhW3rdnPe10"
+    },
+    {
+      "id": "pewHFOMe5HQ",
+      "title": "Tabuthema Darm #gesundleben #darm #darmgesundheit #darmflora",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=pewHFOMe5HQ"
+    },
+    {
+      "id": "U9_ku3Y8uzQ",
+      "title": "Impfen oder nicht? #gesundheit #vorsorge #gesundleben #arzt #medizin",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=U9_ku3Y8uzQ"
+    },
+    {
+      "id": "mRBznqpQ0ok",
+      "title": "Schwangerschaft klappt nicht? Dieser Trick der Natur kann helfen!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=mRBznqpQ0ok"
+    },
+    {
+      "id": "bXuVQ4n38UU",
+      "title": "Heilpraktiker besser als Mediziner? #arzt #gesundheit #medizin",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=bXuVQ4n38UU"
+    },
+    {
+      "id": "tPe8z-b4zVE",
+      "title": "Autoimmun-Krankheiten: das solltest du wissen!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=tPe8z-b4zVE"
+    },
+    {
+      "id": "JZ5jk5FlK8M",
+      "title": "Sonnencreme - ja oder nein? #sonne #haut #uvschutz #sonnencreme #sommer",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=JZ5jk5FlK8M"
+    },
+    {
+      "id": "7gsmcVGv6ig",
+      "title": "So entkommst du dem Burnout #depression",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=7gsmcVGv6ig"
+    },
+    {
+      "id": "HRvJEJ2tSmM",
+      "title": "Wenn ich kein Arzt geworden w\u00e4re\u2026 #gesundheit #arzt #berufswahl",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=HRvJEJ2tSmM"
+    },
+    {
+      "id": "J9XGbGbhakA",
+      "title": "Warum ich als Arzt etwas \u201eanders\u201c bin.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=J9XGbGbhakA"
+    },
+    {
+      "id": "Twi9sX-Ssfw",
+      "title": "Warum Vorsorge nicht immer sinnvoll ist! #Arzt #gesundheit",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Twi9sX-Ssfw"
+    },
+    {
+      "id": "jYhi39GN_F0",
+      "title": "Die Wahrheit \u00fcber Vitamine #gesundheit #vitamine #nems #nahrungserg\u00e4nzungmittel",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=jYhi39GN_F0"
+    },
+    {
+      "id": "RB7x8osIYaY",
+      "title": "Fit in den Wechseljahren \ud83d\udcaa\ud83c\udffc #wechseljahre #hormone #gesund",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=RB7x8osIYaY"
+    },
+    {
+      "id": "TAfDUHa5SHc",
+      "title": "Mehr Energie im Alltag! #\u00fcbers\u00e4uerung #basisch",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=TAfDUHa5SHc"
+    },
+    {
+      "id": "Di9_dvJ9pXU",
+      "title": "So aktivierst du deine Schilddr\u00fcse! #schilddr\u00fcse #schilddr\u00fcsenprobleme #arzt #gesundheit",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Di9_dvJ9pXU"
+    },
+    {
+      "id": "Jt32QMNlZ0Q",
+      "title": "Vegan leben - gut oder schlecht? #vegan #veganeern\u00e4hrung",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Jt32QMNlZ0Q"
+    },
+    {
+      "id": "ulAMG2DUOvs",
+      "title": "Wie du deine volle Gesundheit erreichst",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ulAMG2DUOvs"
+    },
+    {
+      "id": "q0T693SuieE",
+      "title": "Ritalin - Fluch oder Segen f\u00fcr Kinder? #adhs #adhscommunity #adhserwachsene",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=q0T693SuieE"
+    },
+    {
+      "id": "xZE3E63aVxU",
+      "title": "Die fehlende Aufarbeitung. Eure Meinung?",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xZE3E63aVxU"
+    },
+    {
+      "id": "9plzu9jhWXA",
+      "title": "Die wichtigste Entscheidung diesen Monat.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=9plzu9jhWXA"
+    },
+    {
+      "id": "gmyxWhbgDvg",
+      "title": "Gute Fette - schlechte Fette",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=gmyxWhbgDvg"
+    },
+    {
+      "id": "n5Y-QQfisNs",
+      "title": "Fleisch oder Vegan? Was ist ges\u00fcnder?",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=n5Y-QQfisNs"
+    },
+    {
+      "id": "6eKht0ZBF9Q",
+      "title": "Medizinische Fehlinformationen, intraven\u00f6s verabreicht \u2013 Dr  Spitzbart im Gespr\u00e4ch mit Gunnar Kaiser",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=6eKht0ZBF9Q"
+    },
+    {
+      "id": "0XjeX6xM8AA",
+      "title": "Corona - Die h\u00e4ufigsten Fragen",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=0XjeX6xM8AA"
+    },
+    {
+      "id": "8dmIyRiwCHw",
+      "title": "Hoher Eiwei\u00df-Spiegel im Blut: wichtigster Wert f\u00fcr Deine Gesundheit und Leistungsf\u00e4higkeit",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=8dmIyRiwCHw"
+    },
+    {
+      "id": "tOOOBoaUC_Y",
+      "title": "Dr. Spitzbart im Interview mit Bodo Sch\u00e4fer: Gesundheit und Finanzen",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=tOOOBoaUC_Y"
+    },
+    {
+      "id": "EPegTKVDigE",
+      "title": "Versteckter Zucker in unseren Lebensmitteln",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=EPegTKVDigE"
+    },
+    {
+      "id": "D4vvHnIaGhQ",
+      "title": "Wie man sprichw\u00f6rtlich im Schlaf abnimmt",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=D4vvHnIaGhQ"
+    },
+    {
+      "id": "7bkcWgkwbBs",
+      "title": "Das Schilddr\u00fcsenhormon: So funktioniert Ihre Schilddr\u00fcse optimal",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=7bkcWgkwbBs"
+    },
+    {
+      "id": "j-6WZVFxGho",
+      "title": "Gesund oder krank \u2013 Ihr Immunsystem verr\u00e4ts!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=j-6WZVFxGho"
+    },
+    {
+      "id": "MipxiqWEgc8",
+      "title": "Medikamente und Operationen immer kritisch hinterfragen!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=MipxiqWEgc8"
+    },
+    {
+      "id": "oEk29Gcaazg",
+      "title": "Mammographie - nein danke! Warum diese Untersuchung mehr schadet als nutzt",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=oEk29Gcaazg"
+    },
+    {
+      "id": "PwEQ125Aw98",
+      "title": "Skandal: Glyphosat vergiftet uns Tag f\u00fcr Tag - und das ganz legal!",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=PwEQ125Aw98"
+    },
+    {
+      "id": "p6t0n0gyTdY",
+      "title": "Serotonin - Ihre Teflon-Beschichtung gegen Stress.",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=p6t0n0gyTdY"
+    },
+    {
+      "id": "vYFUUPDElzo",
+      "title": "Symptome heilen - nicht nur behandeln! Entschl\u00fcsseln Sie Ihren Gesundheitscode",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=vYFUUPDElzo"
+    },
+    {
+      "id": "C3W1tYo9FPU",
+      "title": "Etwas mehr Energie gef\u00e4llig? So vermeiden Sie Burnout und Depression",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=C3W1tYo9FPU"
+    },
+    {
+      "id": "N8ckv5tazRo",
+      "title": "Schutz vor Krebs - Mit Ern\u00e4hrung die Heilung unterst\u00fctzen",
+      "publishedAt": "2025-09-14T12:21:35.316Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=N8ckv5tazRo"
+    }
+  ],
+  "start_time": 1757852498.2294385,
+  "user_id": "0dda42c8-ea25-44d2-a746-187ee1676851",
+  "credits_reserved": 164,
+  "credits_used": 168,
+  "reservation_id": "0c1dd4a2-5a3d-4a76-920f-d558c5d911a4",
+  "videos_metadata": {
+    "jIHgRVnk0fI": {
+      "id": "jIHgRVnk0fI",
+      "title": "Diese Infusion ist einzigartig!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-09-07T15:34:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/jIHgRVnk0fI/maxresdefault.jpg",
+      "duration": "1:07",
+      "viewCount": 27944,
+      "likeCount": 1078,
+      "commentCount": 87,
+      "url": "https://www.youtube.com/watch?v=jIHgRVnk0fI"
+    },
+    "8a-eyw2-01k": {
+      "id": "8a-eyw2-01k",
+      "title": "Hashimoto - so kann man es behandeln!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-09-01T07:51:59Z",
+      "thumbnail": "https://i.ytimg.com/vi/8a-eyw2-01k/maxresdefault.jpg",
+      "duration": "1:12",
+      "viewCount": 54300,
+      "likeCount": 2236,
+      "commentCount": 60,
+      "url": "https://www.youtube.com/watch?v=8a-eyw2-01k"
+    },
+    "X5m3xpbc9bs": {
+      "id": "X5m3xpbc9bs",
+      "title": "Das schwierigste Thema in der Medizin",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-08-06T12:19:33Z",
+      "thumbnail": "https://i.ytimg.com/vi/X5m3xpbc9bs/maxresdefault.jpg",
+      "duration": "1:23",
+      "viewCount": 13993,
+      "likeCount": 1112,
+      "commentCount": 66,
+      "url": "https://www.youtube.com/watch?v=X5m3xpbc9bs"
+    },
+    "d8uSiulR4Zg": {
+      "id": "d8uSiulR4Zg",
+      "title": "Warum du krank wirst ohne es zu merken",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-08-05T11:44:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/d8uSiulR4Zg/maxresdefault.jpg",
+      "duration": "0:45",
+      "viewCount": 27637,
+      "likeCount": 1197,
+      "commentCount": 15,
+      "url": "https://www.youtube.com/watch?v=d8uSiulR4Zg"
+    },
+    "UeEFfND0Kxg": {
+      "id": "UeEFfND0Kxg",
+      "title": "Der richtige Serotoninspiegel",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-07-26T14:28:09Z",
+      "thumbnail": "https://i.ytimg.com/vi/UeEFfND0Kxg/maxresdefault.jpg",
+      "duration": "0:39",
+      "viewCount": 20372,
+      "likeCount": 633,
+      "commentCount": 17,
+      "url": "https://www.youtube.com/watch?v=UeEFfND0Kxg"
+    },
+    "D_sufLDsYcQ": {
+      "id": "D_sufLDsYcQ",
+      "title": "Wie du deine Schilddr\u00fcse in den Griff bekommen kannst.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-07-14T17:40:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/D_sufLDsYcQ/maxresdefault.jpg",
+      "duration": "0:52",
+      "viewCount": 22517,
+      "likeCount": 768,
+      "commentCount": 18,
+      "url": "https://www.youtube.com/watch?v=D_sufLDsYcQ"
+    },
+    "4lnNOwLf7vo": {
+      "id": "4lnNOwLf7vo",
+      "title": "Guter Schlaf mit einfachen Mitteln",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-07-04T18:43:54Z",
+      "thumbnail": "https://i.ytimg.com/vi/4lnNOwLf7vo/maxresdefault.jpg",
+      "duration": "1:11",
+      "viewCount": 19371,
+      "likeCount": 1310,
+      "commentCount": 23,
+      "url": "https://www.youtube.com/watch?v=4lnNOwLf7vo"
+    },
+    "x60HqEKosLs": {
+      "id": "x60HqEKosLs",
+      "title": "Sonnencreme - wichtig oder nicht?",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-06-09T12:10:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/x60HqEKosLs/maxresdefault.jpg",
+      "duration": "0:57",
+      "viewCount": 22809,
+      "likeCount": 1120,
+      "commentCount": 27,
+      "url": "https://www.youtube.com/watch?v=x60HqEKosLs"
+    },
+    "7i1Nrmo8X0I": {
+      "id": "7i1Nrmo8X0I",
+      "title": "Kinder & ADHS: So kann man es nat\u00fcrlich behandeln.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-06-06T06:25:30Z",
+      "thumbnail": "https://i.ytimg.com/vi/7i1Nrmo8X0I/maxresdefault.jpg",
+      "duration": "1:37",
+      "viewCount": 26108,
+      "likeCount": 1343,
+      "commentCount": 42,
+      "url": "https://www.youtube.com/watch?v=7i1Nrmo8X0I"
+    },
+    "VjWm-T6RzZQ": {
+      "id": "VjWm-T6RzZQ",
+      "title": "Demenz - Teil 2",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-05-30T17:37:52Z",
+      "thumbnail": "https://i.ytimg.com/vi/VjWm-T6RzZQ/maxresdefault.jpg",
+      "duration": "1:21",
+      "viewCount": 23067,
+      "likeCount": 1494,
+      "commentCount": 39,
+      "url": "https://www.youtube.com/watch?v=VjWm-T6RzZQ"
+    },
+    "LFFHseSUw98": {
+      "id": "LFFHseSUw98",
+      "title": "Panikattacken & Burnout - was steckt dahinter?",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-05-27T12:55:31Z",
+      "thumbnail": "https://i.ytimg.com/vi/LFFHseSUw98/maxresdefault.jpg",
+      "duration": "1:48",
+      "viewCount": 20455,
+      "likeCount": 1659,
+      "commentCount": 26,
+      "url": "https://www.youtube.com/watch?v=LFFHseSUw98"
+    },
+    "0PiNlN5K_f8": {
+      "id": "0PiNlN5K_f8",
+      "title": "Migr\u00e4ne - das kann der Grund sein",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-05-24T12:30:59Z",
+      "thumbnail": "https://i.ytimg.com/vi/0PiNlN5K_f8/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 16038,
+      "likeCount": 1185,
+      "commentCount": 19,
+      "url": "https://www.youtube.com/watch?v=0PiNlN5K_f8"
+    },
+    "uu49lb4Fu-k": {
+      "id": "uu49lb4Fu-k",
+      "title": "Monika Gruber zu Dr. Spitzbart",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-05-23T10:14:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/uu49lb4Fu-k/maxresdefault.jpg",
+      "duration": "2:18",
+      "viewCount": 45766,
+      "likeCount": 3203,
+      "commentCount": 63,
+      "url": "https://www.youtube.com/watch?v=uu49lb4Fu-k"
+    },
+    "odhYOowCVcE": {
+      "id": "odhYOowCVcE",
+      "title": "Warum ich keine Mammographie empfehle.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-05-16T10:25:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/odhYOowCVcE/maxresdefault.jpg",
+      "duration": "0:51",
+      "viewCount": 25961,
+      "likeCount": 2194,
+      "commentCount": 76,
+      "url": "https://www.youtube.com/watch?v=odhYOowCVcE"
+    },
+    "uK-PCwRSlOI": {
+      "id": "uK-PCwRSlOI",
+      "title": "Gesundheit verstehen - die Masterclass!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-05-06T12:59:37Z",
+      "thumbnail": "https://i.ytimg.com/vi/uK-PCwRSlOI/maxresdefault.jpg",
+      "duration": "1:15",
+      "viewCount": 12856,
+      "likeCount": 703,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=uK-PCwRSlOI"
+    },
+    "lZvIz6HPQGA": {
+      "id": "lZvIz6HPQGA",
+      "title": "Viele Krankheiten im Vorfeld verhindern!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-04-21T12:19:13Z",
+      "thumbnail": "https://i.ytimg.com/vi/lZvIz6HPQGA/maxresdefault.jpg",
+      "duration": "0:55",
+      "viewCount": 15242,
+      "likeCount": 993,
+      "commentCount": 12,
+      "url": "https://www.youtube.com/watch?v=lZvIz6HPQGA"
+    },
+    "PkD4U7-lsTE": {
+      "id": "PkD4U7-lsTE",
+      "title": "Wie Demenz oft entsteht - und wie man es verhindern k\u00f6nnte.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-04-19T13:30:15Z",
+      "thumbnail": "https://i.ytimg.com/vi/PkD4U7-lsTE/maxresdefault.jpg",
+      "duration": "1:03",
+      "viewCount": 30350,
+      "likeCount": 1599,
+      "commentCount": 24,
+      "url": "https://www.youtube.com/watch?v=PkD4U7-lsTE"
+    },
+    "PwcXUWGXJQU": {
+      "id": "PwcXUWGXJQU",
+      "title": "Warum zuviele \u00c4rzte krank machen k\u00f6nnen.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-04-16T17:32:40Z",
+      "thumbnail": "https://i.ytimg.com/vi/PwcXUWGXJQU/maxresdefault.jpg",
+      "duration": "1:25",
+      "viewCount": 19450,
+      "likeCount": 1696,
+      "commentCount": 56,
+      "url": "https://www.youtube.com/watch?v=PwcXUWGXJQU"
+    },
+    "n6AqhXtbZ8U": {
+      "id": "n6AqhXtbZ8U",
+      "title": "Warum der richtige Selen-Spiegel im Blut wichtig f\u00fcr die Entgiftung ist.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-04-13T13:09:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/n6AqhXtbZ8U/maxresdefault.jpg",
+      "duration": "0:58",
+      "viewCount": 20855,
+      "likeCount": 1107,
+      "commentCount": 26,
+      "url": "https://www.youtube.com/watch?v=n6AqhXtbZ8U"
+    },
+    "mf8SBl-s04g": {
+      "id": "mf8SBl-s04g",
+      "title": "Die Masterclass! Link in meinem Profil! \ud83e\udd29",
+      "description": "Jetzt auf masterclass.spitzbart.com!",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-04-12T07:13:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/mf8SBl-s04g/maxresdefault.jpg",
+      "duration": "1:15",
+      "viewCount": 7900,
+      "likeCount": 411,
+      "commentCount": 13,
+      "url": "https://www.youtube.com/watch?v=mf8SBl-s04g"
+    },
+    "kIgqis0aTaE": {
+      "id": "kIgqis0aTaE",
+      "title": "Vitamin D - das m\u00fcsst ihr wissen!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-04-09T15:59:33Z",
+      "thumbnail": "https://i.ytimg.com/vi/kIgqis0aTaE/maxresdefault.jpg",
+      "duration": "0:51",
+      "viewCount": 117347,
+      "likeCount": 5411,
+      "commentCount": 226,
+      "url": "https://www.youtube.com/watch?v=kIgqis0aTaE"
+    },
+    "C--nk0VoE0Q": {
+      "id": "C--nk0VoE0Q",
+      "title": "Masterclass \u201eBlutwerte\u201c",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-04-02T14:39:25Z",
+      "thumbnail": "https://i.ytimg.com/vi/C--nk0VoE0Q/maxresdefault.jpg",
+      "duration": "1:54",
+      "viewCount": 18720,
+      "likeCount": 1071,
+      "commentCount": 19,
+      "url": "https://www.youtube.com/watch?v=C--nk0VoE0Q"
+    },
+    "IyGUZngRj7s": {
+      "id": "IyGUZngRj7s",
+      "title": "Masterclass \u201eEssenzielle Medizin\u201c",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-04-01T14:36:16Z",
+      "thumbnail": "https://i.ytimg.com/vi/IyGUZngRj7s/maxresdefault.jpg",
+      "duration": "1:18",
+      "viewCount": 7670,
+      "likeCount": 425,
+      "commentCount": 12,
+      "url": "https://www.youtube.com/watch?v=IyGUZngRj7s"
+    },
+    "C7Tcv5GBc9A": {
+      "id": "C7Tcv5GBc9A",
+      "title": "Masterclass \u201eMentale Gesundheit\u201c",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-03-31T11:29:43Z",
+      "thumbnail": "https://i.ytimg.com/vi/C7Tcv5GBc9A/maxresdefault.jpg",
+      "duration": "0:43",
+      "viewCount": 10325,
+      "likeCount": 474,
+      "commentCount": 6,
+      "url": "https://www.youtube.com/watch?v=C7Tcv5GBc9A"
+    },
+    "DwSlvC6o9lk": {
+      "id": "DwSlvC6o9lk",
+      "title": "Meine Masterclass",
+      "description": "Endlich! Meine Masterclass erscheint! Alle Infos im Video \ud83e\udd73\ud83e\udd29\n\n\ud83d\udce9 dr.spitzbart.com/newsletter",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-03-27T18:54:12Z",
+      "thumbnail": "https://i.ytimg.com/vi/DwSlvC6o9lk/maxresdefault.jpg",
+      "duration": "1:32",
+      "viewCount": 7319,
+      "likeCount": 654,
+      "commentCount": 15,
+      "url": "https://www.youtube.com/watch?v=DwSlvC6o9lk"
+    },
+    "fRpKMEF6bTA": {
+      "id": "fRpKMEF6bTA",
+      "title": "Warum an Krankheiten deutlich mehr verdient wird.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-03-25T13:23:10Z",
+      "thumbnail": "https://i.ytimg.com/vi/fRpKMEF6bTA/maxresdefault.jpg",
+      "duration": "1:13",
+      "viewCount": 9310,
+      "likeCount": 1016,
+      "commentCount": 22,
+      "url": "https://www.youtube.com/watch?v=fRpKMEF6bTA"
+    },
+    "QGQYgLi1DLY": {
+      "id": "QGQYgLi1DLY",
+      "title": "Darmgesundheit - Teil 2",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-03-23T11:39:50Z",
+      "thumbnail": "https://i.ytimg.com/vi/QGQYgLi1DLY/maxresdefault.jpg",
+      "duration": "0:45",
+      "viewCount": 14084,
+      "likeCount": 940,
+      "commentCount": 19,
+      "url": "https://www.youtube.com/watch?v=QGQYgLi1DLY"
+    },
+    "re45XMr2jGc": {
+      "id": "re45XMr2jGc",
+      "title": "Warum der Darm so wichtig ist - Teil 1",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-03-20T17:48:31Z",
+      "thumbnail": "https://i.ytimg.com/vi/re45XMr2jGc/maxresdefault.jpg",
+      "duration": "0:53",
+      "viewCount": 12011,
+      "likeCount": 1131,
+      "commentCount": 25,
+      "url": "https://www.youtube.com/watch?v=re45XMr2jGc"
+    },
+    "-ufSlXMFa1M": {
+      "id": "-ufSlXMFa1M",
+      "title": "So steigert ihr eure Fettverbrennung beim Sport!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-03-14T16:42:38Z",
+      "thumbnail": "https://i.ytimg.com/vi/-ufSlXMFa1M/maxresdefault.jpg",
+      "duration": "1:14",
+      "viewCount": 13558,
+      "likeCount": 1141,
+      "commentCount": 16,
+      "url": "https://www.youtube.com/watch?v=-ufSlXMFa1M"
+    },
+    "mw0DQdvosS4": {
+      "id": "mw0DQdvosS4",
+      "title": "Die Wahrheit \u00fcber RKI, Paul-Ehrlich & Co",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-03-12T17:50:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/mw0DQdvosS4/maxresdefault.jpg",
+      "duration": "1:19",
+      "viewCount": 7604,
+      "likeCount": 904,
+      "commentCount": 19,
+      "url": "https://www.youtube.com/watch?v=mw0DQdvosS4"
+    },
+    "5dZl8nMjvmk": {
+      "id": "5dZl8nMjvmk",
+      "title": "Medikamente & Werbung",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-03-10T17:32:17Z",
+      "thumbnail": "https://i.ytimg.com/vi/5dZl8nMjvmk/maxresdefault.jpg",
+      "duration": "1:02",
+      "viewCount": 8447,
+      "likeCount": 1088,
+      "commentCount": 33,
+      "url": "https://www.youtube.com/watch?v=5dZl8nMjvmk"
+    },
+    "7ZC6OBF8XCU": {
+      "id": "7ZC6OBF8XCU",
+      "title": "Vitamin D - darum ist es so wichtig (Teil 1)",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-03-06T13:03:35Z",
+      "thumbnail": "https://i.ytimg.com/vi/7ZC6OBF8XCU/maxresdefault.jpg",
+      "duration": "0:58",
+      "viewCount": 18651,
+      "likeCount": 1450,
+      "commentCount": 32,
+      "url": "https://www.youtube.com/watch?v=7ZC6OBF8XCU"
+    },
+    "mvu14Vdkzjg": {
+      "id": "mvu14Vdkzjg",
+      "title": "Der Gesunde hat viele W\u00fcnsche\u2026",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-03-01T15:55:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/mvu14Vdkzjg/maxresdefault.jpg",
+      "duration": "1:12",
+      "viewCount": 7177,
+      "likeCount": 707,
+      "commentCount": 11,
+      "url": "https://www.youtube.com/watch?v=mvu14Vdkzjg"
+    },
+    "NC3FlRZbE9E": {
+      "id": "NC3FlRZbE9E",
+      "title": "Hilfe bei Angstst\u00f6rungen",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-02-28T13:14:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/NC3FlRZbE9E/maxresdefault.jpg",
+      "duration": "1:04",
+      "viewCount": 12590,
+      "likeCount": 959,
+      "commentCount": 27,
+      "url": "https://www.youtube.com/watch?v=NC3FlRZbE9E"
+    },
+    "XYiioNDX52c": {
+      "id": "XYiioNDX52c",
+      "title": "Bluthochdruck - Teil 3",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-02-26T17:47:30Z",
+      "thumbnail": "https://i.ytimg.com/vi/XYiioNDX52c/maxresdefault.jpg",
+      "duration": "0:57",
+      "viewCount": 11454,
+      "likeCount": 1135,
+      "commentCount": 11,
+      "url": "https://www.youtube.com/watch?v=XYiioNDX52c"
+    },
+    "_5OGDoHhXfM": {
+      "id": "_5OGDoHhXfM",
+      "title": "Bluthochdruck nach der Wahl (Teil 2)",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-02-25T15:33:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/_5OGDoHhXfM/maxresdefault.jpg",
+      "duration": "0:50",
+      "viewCount": 10646,
+      "likeCount": 681,
+      "commentCount": 18,
+      "url": "https://www.youtube.com/watch?v=_5OGDoHhXfM"
+    },
+    "i9x_Qk3kHB4": {
+      "id": "i9x_Qk3kHB4",
+      "title": "Am Sonntag wird gew\u00e4hlt #wahlen #wahl #wahl2025",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-02-22T12:22:52Z",
+      "thumbnail": "https://i.ytimg.com/vi/i9x_Qk3kHB4/maxresdefault.jpg",
+      "duration": "1:14",
+      "viewCount": 7624,
+      "likeCount": 711,
+      "commentCount": 38,
+      "url": "https://www.youtube.com/watch?v=i9x_Qk3kHB4"
+    },
+    "cFkEEtBzsjI": {
+      "id": "cFkEEtBzsjI",
+      "title": "Das gef\u00e4hrlichste Experiment Europas?",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-02-21T07:19:39Z",
+      "thumbnail": "https://i.ytimg.com/vi/cFkEEtBzsjI/maxresdefault.jpg",
+      "duration": "1:15",
+      "viewCount": 8383,
+      "likeCount": 569,
+      "commentCount": 27,
+      "url": "https://www.youtube.com/watch?v=cFkEEtBzsjI"
+    },
+    "IGWheRYBx6Q": {
+      "id": "IGWheRYBx6Q",
+      "title": "Was tun bei Bluthochdruck? Teil 1!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-02-18T18:15:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/IGWheRYBx6Q/maxresdefault.jpg",
+      "duration": "0:53",
+      "viewCount": 23453,
+      "likeCount": 1464,
+      "commentCount": 21,
+      "url": "https://www.youtube.com/watch?v=IGWheRYBx6Q"
+    },
+    "AAU4ACrJ4W0": {
+      "id": "AAU4ACrJ4W0",
+      "title": "Politik f\u00fcr die Menschen statt Cancel Culture #m\u00fcnchen #vance #usa #rede",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-02-16T10:33:25Z",
+      "thumbnail": "https://i.ytimg.com/vi/AAU4ACrJ4W0/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 8236,
+      "likeCount": 1022,
+      "commentCount": 67,
+      "url": "https://www.youtube.com/watch?v=AAU4ACrJ4W0"
+    },
+    "9yjp6s1WkGM": {
+      "id": "9yjp6s1WkGM",
+      "title": "Der \u201eErfolg\u201c der Gr\u00fcnen #wahlen2025 #gr\u00fcne #habeck",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-02-11T15:44:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/9yjp6s1WkGM/maxresdefault.jpg",
+      "duration": "1:19",
+      "viewCount": 106956,
+      "likeCount": 5144,
+      "commentCount": 202,
+      "url": "https://www.youtube.com/watch?v=9yjp6s1WkGM"
+    },
+    "-DPHgfhb0jo": {
+      "id": "-DPHgfhb0jo",
+      "title": "Warum unser Gesundheitssystem revolutioniert werden m\u00fcsste.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-02-09T16:29:58Z",
+      "thumbnail": "https://i.ytimg.com/vi/-DPHgfhb0jo/maxresdefault.jpg",
+      "duration": "1:05",
+      "viewCount": 7582,
+      "likeCount": 930,
+      "commentCount": 31,
+      "url": "https://www.youtube.com/watch?v=-DPHgfhb0jo"
+    },
+    "4rRlATN-EN0": {
+      "id": "4rRlATN-EN0",
+      "title": "Elektronische Patientenakte",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-02-04T08:00:04Z",
+      "thumbnail": "https://i.ytimg.com/vi/4rRlATN-EN0/maxresdefault.jpg",
+      "duration": "2:02",
+      "viewCount": 6523,
+      "likeCount": 480,
+      "commentCount": 12,
+      "url": "https://www.youtube.com/watch?v=4rRlATN-EN0"
+    },
+    "WHSlJRevU88": {
+      "id": "WHSlJRevU88",
+      "title": "Di\u00e4ten = sinnlos?",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-02-03T16:46:56Z",
+      "thumbnail": "https://i.ytimg.com/vi/WHSlJRevU88/maxresdefault.jpg",
+      "duration": "0:59",
+      "viewCount": 7109,
+      "likeCount": 657,
+      "commentCount": 7,
+      "url": "https://www.youtube.com/watch?v=WHSlJRevU88"
+    },
+    "KKdVnW5xz6Y": {
+      "id": "KKdVnW5xz6Y",
+      "title": "Darum VERSAGT die Medizin!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-01-28T16:00:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/KKdVnW5xz6Y/maxresdefault.jpg",
+      "duration": "0:44",
+      "viewCount": 8721,
+      "likeCount": 1217,
+      "commentCount": 29,
+      "url": "https://www.youtube.com/watch?v=KKdVnW5xz6Y"
+    },
+    "xSqPhys5auQ": {
+      "id": "xSqPhys5auQ",
+      "title": "Somatische Intelligenz",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-01-28T12:01:19Z",
+      "thumbnail": "https://i.ytimg.com/vi/xSqPhys5auQ/maxresdefault.jpg",
+      "duration": "1:06",
+      "viewCount": 5212,
+      "likeCount": 422,
+      "commentCount": 9,
+      "url": "https://www.youtube.com/watch?v=xSqPhys5auQ"
+    },
+    "S_EIlvheR4A": {
+      "id": "S_EIlvheR4A",
+      "title": "Warum WASSER so wichtig ist!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-01-27T16:48:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/S_EIlvheR4A/maxresdefault.jpg",
+      "duration": "1:15",
+      "viewCount": 14753,
+      "likeCount": 1233,
+      "commentCount": 23,
+      "url": "https://www.youtube.com/watch?v=S_EIlvheR4A"
+    },
+    "rtsvFVTae4o": {
+      "id": "rtsvFVTae4o",
+      "title": "Somatische Intelligenz",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-01-24T17:44:17Z",
+      "thumbnail": "https://i.ytimg.com/vi/rtsvFVTae4o/maxresdefault.jpg",
+      "duration": "1:06",
+      "viewCount": 8716,
+      "likeCount": 824,
+      "commentCount": 13,
+      "url": "https://www.youtube.com/watch?v=rtsvFVTae4o"
+    },
+    "TOel583D5XI": {
+      "id": "TOel583D5XI",
+      "title": "Warum wir uns proaktiv um unsere Gesundheit k\u00fcmmern sollten.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-01-22T19:28:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/TOel583D5XI/maxresdefault.jpg",
+      "duration": "0:50",
+      "viewCount": 11662,
+      "likeCount": 1461,
+      "commentCount": 17,
+      "url": "https://www.youtube.com/watch?v=TOel583D5XI"
+    },
+    "BjopX-ba6Ek": {
+      "id": "BjopX-ba6Ek",
+      "title": "K\u00f6rper & Seele",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-01-21T13:58:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/BjopX-ba6Ek/maxresdefault.jpg",
+      "duration": "0:39",
+      "viewCount": 18389,
+      "likeCount": 1837,
+      "commentCount": 23,
+      "url": "https://www.youtube.com/watch?v=BjopX-ba6Ek"
+    },
+    "98HBWOXkmVw": {
+      "id": "98HBWOXkmVw",
+      "title": "Warum ich keinen Alkohol trinke",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-01-17T18:39:15Z",
+      "thumbnail": "https://i.ytimg.com/vi/98HBWOXkmVw/maxresdefault.jpg",
+      "duration": "0:57",
+      "viewCount": 68329,
+      "likeCount": 4994,
+      "commentCount": 172,
+      "url": "https://www.youtube.com/watch?v=98HBWOXkmVw"
+    },
+    "ZI0wOGfwaUs": {
+      "id": "ZI0wOGfwaUs",
+      "title": "Darum ist Zink so wichtig!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-01-15T19:07:10Z",
+      "thumbnail": "https://i.ytimg.com/vi/ZI0wOGfwaUs/maxresdefault.jpg",
+      "duration": "0:36",
+      "viewCount": 27881,
+      "likeCount": 1992,
+      "commentCount": 23,
+      "url": "https://www.youtube.com/watch?v=ZI0wOGfwaUs"
+    },
+    "eSM-5Ol6_LA": {
+      "id": "eSM-5Ol6_LA",
+      "title": "Ketogene Ern\u00e4hrung (Teil 3)",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-01-14T09:37:08Z",
+      "thumbnail": "https://i.ytimg.com/vi/eSM-5Ol6_LA/maxresdefault.jpg",
+      "duration": "1:12",
+      "viewCount": 23906,
+      "likeCount": 2249,
+      "commentCount": 49,
+      "url": "https://www.youtube.com/watch?v=eSM-5Ol6_LA"
+    },
+    "3LpHIQO2JL4": {
+      "id": "3LpHIQO2JL4",
+      "title": "Ketogene Ern\u00e4hrung - Teil 2",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-01-06T10:48:25Z",
+      "thumbnail": "https://i.ytimg.com/vi/3LpHIQO2JL4/maxresdefault.jpg",
+      "duration": "0:46",
+      "viewCount": 43544,
+      "likeCount": 2078,
+      "commentCount": 74,
+      "url": "https://www.youtube.com/watch?v=3LpHIQO2JL4"
+    },
+    "DmjTDq3St7U": {
+      "id": "DmjTDq3St7U",
+      "title": "Ketogene Ern\u00e4hrung - Teil 1",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2025-01-04T09:45:33Z",
+      "thumbnail": "https://i.ytimg.com/vi/DmjTDq3St7U/maxresdefault.jpg",
+      "duration": "0:53",
+      "viewCount": 62589,
+      "likeCount": 2823,
+      "commentCount": 91,
+      "url": "https://www.youtube.com/watch?v=DmjTDq3St7U"
+    },
+    "Sk_1SFfehVc": {
+      "id": "Sk_1SFfehVc",
+      "title": "3 Lektionen \u00fcber das Gl\u00fcck",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-12-31T12:00:33Z",
+      "thumbnail": "https://i.ytimg.com/vi/Sk_1SFfehVc/maxresdefault.jpg",
+      "duration": "1:06",
+      "viewCount": 10616,
+      "likeCount": 839,
+      "commentCount": 6,
+      "url": "https://www.youtube.com/watch?v=Sk_1SFfehVc"
+    },
+    "jbPiJFuxZxU": {
+      "id": "jbPiJFuxZxU",
+      "title": "Frohe Weihnachten!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-12-24T11:50:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/jbPiJFuxZxU/maxresdefault.jpg",
+      "duration": "0:31",
+      "viewCount": 10221,
+      "likeCount": 1681,
+      "commentCount": 72,
+      "url": "https://www.youtube.com/watch?v=jbPiJFuxZxU"
+    },
+    "nPiV9-c7_wE": {
+      "id": "nPiV9-c7_wE",
+      "title": "R\u00fcckenwindhormone - so bekommst du sie!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-12-23T15:15:00Z",
+      "thumbnail": "https://i.ytimg.com/vi/nPiV9-c7_wE/maxresdefault.jpg",
+      "duration": "0:52",
+      "viewCount": 28675,
+      "likeCount": 2120,
+      "commentCount": 36,
+      "url": "https://www.youtube.com/watch?v=nPiV9-c7_wE"
+    },
+    "O9S6lO0_NzU": {
+      "id": "O9S6lO0_NzU",
+      "title": "Danke an all meine Follower!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-12-22T15:53:56Z",
+      "thumbnail": "https://i.ytimg.com/vi/O9S6lO0_NzU/maxresdefault.jpg",
+      "duration": "0:52",
+      "viewCount": 9779,
+      "likeCount": 1782,
+      "commentCount": 75,
+      "url": "https://www.youtube.com/watch?v=O9S6lO0_NzU"
+    },
+    "Wwipi6okbtc": {
+      "id": "Wwipi6okbtc",
+      "title": "Tinnitus",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-12-21T14:00:27Z",
+      "thumbnail": "https://i.ytimg.com/vi/Wwipi6okbtc/maxresdefault.jpg",
+      "duration": "0:53",
+      "viewCount": 13230,
+      "likeCount": 1254,
+      "commentCount": 20,
+      "url": "https://www.youtube.com/watch?v=Wwipi6okbtc"
+    },
+    "P2bTE0AoWTY": {
+      "id": "P2bTE0AoWTY",
+      "title": "Darmflora",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-12-21T08:00:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/P2bTE0AoWTY/maxresdefault.jpg",
+      "duration": "0:45",
+      "viewCount": 11461,
+      "likeCount": 1054,
+      "commentCount": 34,
+      "url": "https://www.youtube.com/watch?v=P2bTE0AoWTY"
+    },
+    "5CIS-Tzey3A": {
+      "id": "5CIS-Tzey3A",
+      "title": "Bullet-Proof Coffee",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-12-20T19:00:05Z",
+      "thumbnail": "https://i.ytimg.com/vi/5CIS-Tzey3A/maxresdefault.jpg",
+      "duration": "0:53",
+      "viewCount": 28053,
+      "likeCount": 1968,
+      "commentCount": 45,
+      "url": "https://www.youtube.com/watch?v=5CIS-Tzey3A"
+    },
+    "VHys9un30h0": {
+      "id": "VHys9un30h0",
+      "title": "Gunnar Kaiser",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-12-20T16:31:09Z",
+      "thumbnail": "https://i.ytimg.com/vi/VHys9un30h0/maxresdefault.jpg",
+      "duration": "0:51",
+      "viewCount": 14034,
+      "likeCount": 1423,
+      "commentCount": 47,
+      "url": "https://www.youtube.com/watch?v=VHys9un30h0"
+    },
+    "JzWPbHf048w": {
+      "id": "JzWPbHf048w",
+      "title": "Krebs & Zucker - wichtig zu wissen!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-12-12T15:41:57Z",
+      "thumbnail": "https://i.ytimg.com/vi/JzWPbHf048w/maxresdefault.jpg",
+      "duration": "0:59",
+      "viewCount": 89793,
+      "likeCount": 3367,
+      "commentCount": 97,
+      "url": "https://www.youtube.com/watch?v=JzWPbHf048w"
+    },
+    "wmcMIpFmRcw": {
+      "id": "wmcMIpFmRcw",
+      "title": "Chemotherapie - Chance oder gef\u00e4hrlich? #chemo #krebs",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-12-10T16:02:56Z",
+      "thumbnail": "https://i.ytimg.com/vi/wmcMIpFmRcw/maxresdefault.jpg",
+      "duration": "1:11",
+      "viewCount": 36268,
+      "likeCount": 1821,
+      "commentCount": 60,
+      "url": "https://www.youtube.com/watch?v=wmcMIpFmRcw"
+    },
+    "csg815lfRLE": {
+      "id": "csg815lfRLE",
+      "title": "Die Knochenspritze bei Osteoporose",
+      "description": "\u201eDie Knochenspritze\u201c bei Osteoporose - ist sie sinnvoll? \ud83d\udc89",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-12-04T16:32:57Z",
+      "thumbnail": "https://i.ytimg.com/vi/csg815lfRLE/maxresdefault.jpg",
+      "duration": "1:15",
+      "viewCount": 15253,
+      "likeCount": 906,
+      "commentCount": 26,
+      "url": "https://www.youtube.com/watch?v=csg815lfRLE"
+    },
+    "GVCbxoqcsjI": {
+      "id": "GVCbxoqcsjI",
+      "title": "Das Problem mit Zucker.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-12-03T14:00:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/GVCbxoqcsjI/maxresdefault.jpg",
+      "duration": "0:31",
+      "viewCount": 31987,
+      "likeCount": 1559,
+      "commentCount": 8,
+      "url": "https://www.youtube.com/watch?v=GVCbxoqcsjI"
+    },
+    "ukxo0FDe3Yo": {
+      "id": "ukxo0FDe3Yo",
+      "title": "Warum Magnesium so wichtig ist #blutbild #gesundheit #vitalstoffe",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-12-02T15:14:14Z",
+      "thumbnail": "https://i.ytimg.com/vi/ukxo0FDe3Yo/maxresdefault.jpg",
+      "duration": "0:53",
+      "viewCount": 140522,
+      "likeCount": 5977,
+      "commentCount": 163,
+      "url": "https://www.youtube.com/watch?v=ukxo0FDe3Yo"
+    },
+    "qHYqDQ6cT9w": {
+      "id": "qHYqDQ6cT9w",
+      "title": "Zucker damals vs. heute",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-12-02T15:03:15Z",
+      "thumbnail": "https://i.ytimg.com/vi/qHYqDQ6cT9w/maxresdefault.jpg",
+      "duration": "0:26",
+      "viewCount": 78876,
+      "likeCount": 1795,
+      "commentCount": 70,
+      "url": "https://www.youtube.com/watch?v=qHYqDQ6cT9w"
+    },
+    "xpq3oO1cm8g": {
+      "id": "xpq3oO1cm8g",
+      "title": "Eine Frage aus der Community: ADHS - was tun?",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-12-02T15:00:38Z",
+      "thumbnail": "https://i.ytimg.com/vi/xpq3oO1cm8g/maxresdefault.jpg",
+      "duration": "1:21",
+      "viewCount": 17016,
+      "likeCount": 1032,
+      "commentCount": 36,
+      "url": "https://www.youtube.com/watch?v=xpq3oO1cm8g"
+    },
+    "pPV1kPeMSaE": {
+      "id": "pPV1kPeMSaE",
+      "title": "Warum Fruktose ungesund ist.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-11-28T15:07:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/pPV1kPeMSaE/maxresdefault.jpg",
+      "duration": "0:44",
+      "viewCount": 23636,
+      "likeCount": 1533,
+      "commentCount": 55,
+      "url": "https://www.youtube.com/watch?v=pPV1kPeMSaE"
+    },
+    "UGhXsvB-oD0": {
+      "id": "UGhXsvB-oD0",
+      "title": "Was die Entdeckung der Mondfahrt mit Medizin zu tun hat \ud83c\udf0d",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-11-27T16:56:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/UGhXsvB-oD0/maxresdefault.jpg",
+      "duration": "0:53",
+      "viewCount": 10957,
+      "likeCount": 1107,
+      "commentCount": 29,
+      "url": "https://www.youtube.com/watch?v=UGhXsvB-oD0"
+    },
+    "3eVDKPBOiNg": {
+      "id": "3eVDKPBOiNg",
+      "title": "Warum das Immunsystem trainiert werden muss#immunsystem #corona",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-11-27T14:06:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/3eVDKPBOiNg/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 7436,
+      "likeCount": 892,
+      "commentCount": 34,
+      "url": "https://www.youtube.com/watch?v=3eVDKPBOiNg"
+    },
+    "wTDCPsPMwk4": {
+      "id": "wTDCPsPMwk4",
+      "title": "Das Geheimnis eines langen Lebens.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-11-24T12:45:33Z",
+      "thumbnail": "https://i.ytimg.com/vi/wTDCPsPMwk4/maxresdefault.jpg",
+      "duration": "0:56",
+      "viewCount": 33685,
+      "likeCount": 2737,
+      "commentCount": 63,
+      "url": "https://www.youtube.com/watch?v=wTDCPsPMwk4"
+    },
+    "O6sNwqljCEk": {
+      "id": "O6sNwqljCEk",
+      "title": "Potenz - so kannst du sie nat\u00fcrlich steigern!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-11-22T17:37:20Z",
+      "thumbnail": "https://i.ytimg.com/vi/O6sNwqljCEk/maxresdefault.jpg",
+      "duration": "0:55",
+      "viewCount": 4960,
+      "likeCount": 341,
+      "commentCount": 16,
+      "url": "https://www.youtube.com/watch?v=O6sNwqljCEk"
+    },
+    "toOEPLDYj9I": {
+      "id": "toOEPLDYj9I",
+      "title": "Panikattacken - das hilft!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-11-22T17:36:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/toOEPLDYj9I/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 11634,
+      "likeCount": 1048,
+      "commentCount": 24,
+      "url": "https://www.youtube.com/watch?v=toOEPLDYj9I"
+    },
+    "bJFiSzbuBw0": {
+      "id": "bJFiSzbuBw0",
+      "title": "Meine Tipps gegen Stress! #mentalegesundheit #unternehmer",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-11-22T17:32:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/bJFiSzbuBw0/maxresdefault.jpg",
+      "duration": "0:40",
+      "viewCount": 14513,
+      "likeCount": 1445,
+      "commentCount": 30,
+      "url": "https://www.youtube.com/watch?v=bJFiSzbuBw0"
+    },
+    "Hv1nmdKL3dQ": {
+      "id": "Hv1nmdKL3dQ",
+      "title": "Corona - warum eine Aufarbeitung fehlt.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-11-13T17:44:57Z",
+      "thumbnail": "https://i.ytimg.com/vi/Hv1nmdKL3dQ/maxresdefault.jpg",
+      "duration": "1:28",
+      "viewCount": 12040,
+      "likeCount": 1697,
+      "commentCount": 111,
+      "url": "https://www.youtube.com/watch?v=Hv1nmdKL3dQ"
+    },
+    "24BxEfkVTss": {
+      "id": "24BxEfkVTss",
+      "title": "Fit durch den Herbst - so gelingt es!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-11-13T17:43:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/24BxEfkVTss/maxresdefault.jpg",
+      "duration": "0:51",
+      "viewCount": 16215,
+      "likeCount": 1697,
+      "commentCount": 37,
+      "url": "https://www.youtube.com/watch?v=24BxEfkVTss"
+    },
+    "U28stYJOimQ": {
+      "id": "U28stYJOimQ",
+      "title": "Gefahren der veganen Ern\u00e4hrung",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-11-11T13:14:19Z",
+      "thumbnail": "https://i.ytimg.com/vi/U28stYJOimQ/maxresdefault.jpg",
+      "duration": "0:55",
+      "viewCount": 14764,
+      "likeCount": 1510,
+      "commentCount": 35,
+      "url": "https://www.youtube.com/watch?v=U28stYJOimQ"
+    },
+    "j41n1yQLOR4": {
+      "id": "j41n1yQLOR4",
+      "title": "\u00c4rzte vs. Mediziner - Teil 2: Eine pers\u00f6nliche Erfahrung.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-11-10T12:29:54Z",
+      "thumbnail": "https://i.ytimg.com/vi/j41n1yQLOR4/maxresdefault.jpg",
+      "duration": "0:55",
+      "viewCount": 27636,
+      "likeCount": 2515,
+      "commentCount": 104,
+      "url": "https://www.youtube.com/watch?v=j41n1yQLOR4"
+    },
+    "4dWNPloN18c": {
+      "id": "4dWNPloN18c",
+      "title": "Trump oder Harris? \ud83c\uddfa\ud83c\uddf8 Das gr\u00f6\u00dfte Ereignis des Jahres steht an!",
+      "description": "harris #usa #trump #trump2024 #harris2024 #wahl #wahlen #wahlkampf",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-11-03T11:44:14Z",
+      "thumbnail": "https://i.ytimg.com/vi/4dWNPloN18c/maxresdefault.jpg",
+      "duration": "1:51",
+      "viewCount": 20637,
+      "likeCount": 1921,
+      "commentCount": 132,
+      "url": "https://www.youtube.com/watch?v=4dWNPloN18c"
+    },
+    "h_RtpRSeIAM": {
+      "id": "h_RtpRSeIAM",
+      "title": "Fehldiagnosen durch Mammographien? #gesundheit",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-31T15:19:00Z",
+      "thumbnail": "https://i.ytimg.com/vi/h_RtpRSeIAM/maxresdefault.jpg",
+      "duration": "0:51",
+      "viewCount": 63831,
+      "likeCount": 3523,
+      "commentCount": 161,
+      "url": "https://www.youtube.com/watch?v=h_RtpRSeIAM"
+    },
+    "PxCPS3WW7lU": {
+      "id": "PxCPS3WW7lU",
+      "title": "\u00dcbergewicht? Daran k\u00f6nnte es liegen!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-29T12:34:47Z",
+      "thumbnail": "https://i.ytimg.com/vi/PxCPS3WW7lU/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 28803,
+      "likeCount": 1819,
+      "commentCount": 27,
+      "url": "https://www.youtube.com/watch?v=PxCPS3WW7lU"
+    },
+    "2brgYObtJGg": {
+      "id": "2brgYObtJGg",
+      "title": "Haarausfall - so kannst du ihn behandeln oder verhindern!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-27T14:54:40Z",
+      "thumbnail": "https://i.ytimg.com/vi/2brgYObtJGg/maxresdefault.jpg",
+      "duration": "1:23",
+      "viewCount": 27131,
+      "likeCount": 1402,
+      "commentCount": 31,
+      "url": "https://www.youtube.com/watch?v=2brgYObtJGg"
+    },
+    "NggD2ESsmIA": {
+      "id": "NggD2ESsmIA",
+      "title": "So bel\u00fcgt uns die Politik - ohne Konsequenzen.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-25T09:55:27Z",
+      "thumbnail": "https://i.ytimg.com/vi/NggD2ESsmIA/maxresdefault.jpg",
+      "duration": "0:54",
+      "viewCount": 13880,
+      "likeCount": 2148,
+      "commentCount": 99,
+      "url": "https://www.youtube.com/watch?v=NggD2ESsmIA"
+    },
+    "ZARdBIjMyJU": {
+      "id": "ZARdBIjMyJU",
+      "title": "Nahrungserg\u00e4nzung f\u00fcr Kinder?",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-23T13:18:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/ZARdBIjMyJU/maxresdefault.jpg",
+      "duration": "0:58",
+      "viewCount": 11754,
+      "likeCount": 884,
+      "commentCount": 20,
+      "url": "https://www.youtube.com/watch?v=ZARdBIjMyJU"
+    },
+    "_TDe4KykI5U": {
+      "id": "_TDe4KykI5U",
+      "title": "Arzt oder Mediziner - das ist der Unterschied!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-23T13:06:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/_TDe4KykI5U/maxresdefault.jpg",
+      "duration": "1:28",
+      "viewCount": 11027,
+      "likeCount": 1305,
+      "commentCount": 47,
+      "url": "https://www.youtube.com/watch?v=_TDe4KykI5U"
+    },
+    "jB53pXmkDdA": {
+      "id": "jB53pXmkDdA",
+      "title": "Ist zuviel Eiwei\u00df sch\u00e4dlich? Eine h\u00e4ufige Frage aus der Community #eiwei\u00df #protein #eiweissreich",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-20T14:16:41Z",
+      "thumbnail": "https://i.ytimg.com/vi/jB53pXmkDdA/maxresdefault.jpg",
+      "duration": "0:40",
+      "viewCount": 23801,
+      "likeCount": 1897,
+      "commentCount": 39,
+      "url": "https://www.youtube.com/watch?v=jB53pXmkDdA"
+    },
+    "6tVJgPweTQE": {
+      "id": "6tVJgPweTQE",
+      "title": "Burnout & Depression verhindern",
+      "description": "In diesem Video geht es um das Thema Burnout und Depressionen.\n\nDr. Michael Spitzbart zeigt, wie man diesen gef\u00e4hrlichen Zust\u00e4nden vorbeugen kann. Mit \u00fcber 30 Jahren Erfahrung als Pr\u00e4ventivmediziner teilt er seine Ansichten \u00fcber die Ursachen von Burnout und Depressionen und warum diese oft durch unser modernes Leben gef\u00f6rdert werden. Er spricht dar\u00fcber, welche Rolle Hormone, N\u00e4hrstoffe und der Lebensstil spielen und warum die Behandlung von Symptomen allein nicht ausreicht. Stattdessen erkl\u00e4rt er, wie man durch eine gezielte St\u00e4rkung des K\u00f6rpers und Geistes pr\u00e4ventiv gegen Burnout und Depressionen vorgehen kann.\n\nErfahre, wie du deinen Energiehaushalt und dein Wohlbefinden langfristig aufbauen und sch\u00fctzen kannst. Wenn du auf der Suche nach echten L\u00f6sungsans\u00e4tzen bist, die \u00fcber die g\u00e4ngigen Medikamente hinausgehen, dann ist dieses Video genau das Richtige f\u00fcr dich! Lass uns gemeinsam an einer gesunden und starken Basis arbeiten, damit Burnout und Depression erst gar keine Chance haben.\n\n\ud83d\udc49 Abonniere den Kanal, um keine weiteren Videos \u00fcber Pr\u00e4vention und Gesundheit zu verpassen!\n\n#BurnoutPr\u00e4vention\n#DepressionVerstehen\n#GesundheitSt\u00e4rken\n#MentaleGesundheit\n#StressManagement\n#Selbstf\u00fcrsorge\n#HormoneUndGesundheit\n#GesunderLebensstil\n#Pr\u00e4ventivmedizin\n#AchtsamkeitImAlltag",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-18T09:00:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/6tVJgPweTQE/maxresdefault.jpg",
+      "duration": "1:24",
+      "viewCount": 28094,
+      "likeCount": 1983,
+      "commentCount": 48,
+      "url": "https://www.youtube.com/watch?v=6tVJgPweTQE"
+    },
+    "P9fbepUL8lo": {
+      "id": "P9fbepUL8lo",
+      "title": "Gesundheitssystem & Schule - das w\u00fcrde ich \u00e4ndern. #schulsystem #schule #kita #kindergarten",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-17T13:00:33Z",
+      "thumbnail": "https://i.ytimg.com/vi/P9fbepUL8lo/maxresdefault.jpg",
+      "duration": "0:43",
+      "viewCount": 9769,
+      "likeCount": 1448,
+      "commentCount": 46,
+      "url": "https://www.youtube.com/watch?v=P9fbepUL8lo"
+    },
+    "tuiAOSyyyhY": {
+      "id": "tuiAOSyyyhY",
+      "title": "Danke an meine Community \ud83d\udcaa\ud83c\udffb\ud83d\ude4f\ud83c\udffb",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-17T10:14:41Z",
+      "thumbnail": "https://i.ytimg.com/vi/tuiAOSyyyhY/maxresdefault.jpg",
+      "duration": "0:56",
+      "viewCount": 10711,
+      "likeCount": 2051,
+      "commentCount": 91,
+      "url": "https://www.youtube.com/watch?v=tuiAOSyyyhY"
+    },
+    "hkCi4hIKho4": {
+      "id": "hkCi4hIKho4",
+      "title": "Wer regiert die Welt?",
+      "description": "Wer regiert die Welt? Und was macht die stetige Nachrichtenflut mit unseren Gehirnen? Hier meine Einsch\u00e4tzung. \n\n#meinung #gesundheit #mentalegesundheit #gedanken",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-08T07:49:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/hkCi4hIKho4/maxresdefault.jpg",
+      "duration": "1:22",
+      "viewCount": 30607,
+      "likeCount": 2592,
+      "commentCount": 184,
+      "url": "https://www.youtube.com/watch?v=hkCi4hIKho4"
+    },
+    "kfi2MUG46nY": {
+      "id": "kfi2MUG46nY",
+      "title": "\u201eShedding\u201c durch die Impfung - Mythos oder Realit\u00e4t?#gesundheit #arzt #medizin",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-06T08:00:34Z",
+      "thumbnail": "https://i.ytimg.com/vi/kfi2MUG46nY/maxresdefault.jpg",
+      "duration": "0:33",
+      "viewCount": 14508,
+      "likeCount": 1149,
+      "commentCount": 51,
+      "url": "https://www.youtube.com/watch?v=kfi2MUG46nY"
+    },
+    "5lmb7Po_Ims": {
+      "id": "5lmb7Po_Ims",
+      "title": "Diabetes 1 & 2 - so k\u00f6nnte man es verhindern!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-05T17:02:58Z",
+      "thumbnail": "https://i.ytimg.com/vi/5lmb7Po_Ims/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 25245,
+      "likeCount": 1420,
+      "commentCount": 27,
+      "url": "https://www.youtube.com/watch?v=5lmb7Po_Ims"
+    },
+    "xH8Q3UqcRpk": {
+      "id": "xH8Q3UqcRpk",
+      "title": "Fit durch die Wiesn-Zeit #wiesn #oktoberfest",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-04T15:30:39Z",
+      "thumbnail": "https://i.ytimg.com/vi/xH8Q3UqcRpk/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 11135,
+      "likeCount": 768,
+      "commentCount": 14,
+      "url": "https://www.youtube.com/watch?v=xH8Q3UqcRpk"
+    },
+    "YfF7eCNNMp4": {
+      "id": "YfF7eCNNMp4",
+      "title": "R\u00fccktritt der Gr\u00fcnen",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-04T15:23:51Z",
+      "thumbnail": "https://i.ytimg.com/vi/YfF7eCNNMp4/maxresdefault.jpg",
+      "duration": "0:43",
+      "viewCount": 12465,
+      "likeCount": 1395,
+      "commentCount": 47,
+      "url": "https://www.youtube.com/watch?v=YfF7eCNNMp4"
+    },
+    "jFkq9dha5gE": {
+      "id": "jFkq9dha5gE",
+      "title": "Long-Covid nach Impfung",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-02T15:24:17Z",
+      "thumbnail": "https://i.ytimg.com/vi/jFkq9dha5gE/maxresdefault.jpg",
+      "duration": "0:51",
+      "viewCount": 12638,
+      "likeCount": 1873,
+      "commentCount": 57,
+      "url": "https://www.youtube.com/watch?v=jFkq9dha5gE"
+    },
+    "xZ74U7_bFVU": {
+      "id": "xZ74U7_bFVU",
+      "title": "Stoffwechsel richtig verstehen",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-02T15:01:09Z",
+      "thumbnail": "https://i.ytimg.com/vi/xZ74U7_bFVU/maxresdefault.jpg",
+      "duration": "0:46",
+      "viewCount": 58487,
+      "likeCount": 3108,
+      "commentCount": 40,
+      "url": "https://www.youtube.com/watch?v=xZ74U7_bFVU"
+    },
+    "oh8knXY2UeU": {
+      "id": "oh8knXY2UeU",
+      "title": "Das Geheimnis f\u00fcr guten Schlaf",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-01T15:01:05Z",
+      "thumbnail": "https://i.ytimg.com/vi/oh8knXY2UeU/maxresdefault.jpg",
+      "duration": "0:58",
+      "viewCount": 27514,
+      "likeCount": 2128,
+      "commentCount": 32,
+      "url": "https://www.youtube.com/watch?v=oh8knXY2UeU"
+    },
+    "cmeVmCKKHbU": {
+      "id": "cmeVmCKKHbU",
+      "title": "Frage aus der Community: Soll ich mich gegen G\u00fcrtelrose i*pfen lassen?",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-10-01T09:00:28Z",
+      "thumbnail": "https://i.ytimg.com/vi/cmeVmCKKHbU/maxresdefault.jpg",
+      "duration": "0:43",
+      "viewCount": 9817,
+      "likeCount": 1276,
+      "commentCount": 41,
+      "url": "https://www.youtube.com/watch?v=cmeVmCKKHbU"
+    },
+    "8KiNEfXY9M0": {
+      "id": "8KiNEfXY9M0",
+      "title": "Wie richtiges Fasten deine Gesundheit verbessert!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-09-30T15:26:00Z",
+      "thumbnail": "https://i.ytimg.com/vi/8KiNEfXY9M0/maxresdefault.jpg",
+      "duration": "1:29",
+      "viewCount": 15252,
+      "likeCount": 894,
+      "commentCount": 32,
+      "url": "https://www.youtube.com/watch?v=8KiNEfXY9M0"
+    },
+    "KBfHoP3Dr7o": {
+      "id": "KBfHoP3Dr7o",
+      "title": "Krankheiten verhindern bevor sie entstehen.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-09-30T09:00:25Z",
+      "thumbnail": "https://i.ytimg.com/vi/KBfHoP3Dr7o/maxresdefault.jpg",
+      "duration": "0:55",
+      "viewCount": 13923,
+      "likeCount": 1484,
+      "commentCount": 12,
+      "url": "https://www.youtube.com/watch?v=KBfHoP3Dr7o"
+    },
+    "AInWVoDYvXk": {
+      "id": "AInWVoDYvXk",
+      "title": "Warum Bewegung so wichtig ist!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-09-29T15:00:08Z",
+      "thumbnail": "https://i.ytimg.com/vi/AInWVoDYvXk/maxresdefault.jpg",
+      "duration": "0:45",
+      "viewCount": 13769,
+      "likeCount": 1530,
+      "commentCount": 28,
+      "url": "https://www.youtube.com/watch?v=AInWVoDYvXk"
+    },
+    "DrzJ5DeXShI": {
+      "id": "DrzJ5DeXShI",
+      "title": "Depressionen auf nat\u00fcrlichem Weg bek\u00e4mpfen",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-09-29T08:00:09Z",
+      "thumbnail": "https://i.ytimg.com/vi/DrzJ5DeXShI/maxresdefault.jpg",
+      "duration": "1:10",
+      "viewCount": 24608,
+      "likeCount": 1127,
+      "commentCount": 66,
+      "url": "https://www.youtube.com/watch?v=DrzJ5DeXShI"
+    },
+    "65BrRP1eCrM": {
+      "id": "65BrRP1eCrM",
+      "title": "So verhinderst du Tinnitus",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-09-28T16:12:12Z",
+      "thumbnail": "https://i.ytimg.com/vi/65BrRP1eCrM/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 26176,
+      "likeCount": 2118,
+      "commentCount": 80,
+      "url": "https://www.youtube.com/watch?v=65BrRP1eCrM"
+    },
+    "V51IZleNwdQ": {
+      "id": "V51IZleNwdQ",
+      "title": "Der gr\u00f6\u00dfte Fehler in der Kindererziehung",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-09-21T15:21:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/V51IZleNwdQ/maxresdefault.jpg",
+      "duration": "1:24",
+      "viewCount": 22260,
+      "likeCount": 1637,
+      "commentCount": 98,
+      "url": "https://www.youtube.com/watch?v=V51IZleNwdQ"
+    },
+    "Lwpz6NF7EgI": {
+      "id": "Lwpz6NF7EgI",
+      "title": "Wille vs. Glauben",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-09-19T15:35:47Z",
+      "thumbnail": "https://i.ytimg.com/vi/Lwpz6NF7EgI/maxresdefault.jpg",
+      "duration": "0:59",
+      "viewCount": 25377,
+      "likeCount": 2139,
+      "commentCount": 38,
+      "url": "https://www.youtube.com/watch?v=Lwpz6NF7EgI"
+    },
+    "WbxUT99-e3s": {
+      "id": "WbxUT99-e3s",
+      "title": "War die Corona-Impfung sch\u00e4dlich?",
+      "description": "#gesundheit #wissen #arzt #medizin #ganzheitlich #gesundleben #",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-09-17T09:27:22Z",
+      "thumbnail": "https://i.ytimg.com/vi/WbxUT99-e3s/maxresdefault.jpg",
+      "duration": "1:25",
+      "viewCount": 24438,
+      "likeCount": 2246,
+      "commentCount": 183,
+      "url": "https://www.youtube.com/watch?v=WbxUT99-e3s"
+    },
+    "4BWY5-fn1TM": {
+      "id": "4BWY5-fn1TM",
+      "title": "Impfungen bei Kindern - meine Meinung #gesundheit #eltern #kinder #arzt #elternsein",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-09-13T14:22:31Z",
+      "thumbnail": "https://i.ytimg.com/vi/4BWY5-fn1TM/maxresdefault.jpg",
+      "duration": "0:54",
+      "viewCount": 12961,
+      "likeCount": 1169,
+      "commentCount": 78,
+      "url": "https://www.youtube.com/watch?v=4BWY5-fn1TM"
+    },
+    "7ZJG0xUMRKw": {
+      "id": "7ZJG0xUMRKw",
+      "title": "DANKE an die gesamte Community",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-09-11T15:27:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/7ZJG0xUMRKw/maxresdefault.jpg",
+      "duration": "0:57",
+      "viewCount": 10523,
+      "likeCount": 1626,
+      "commentCount": 59,
+      "url": "https://www.youtube.com/watch?v=7ZJG0xUMRKw"
+    },
+    "-4a5MFhWano": {
+      "id": "-4a5MFhWano",
+      "title": "\u00c4rzte und Heilpraktiker - eine gute Symbiose?",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-09-07T12:29:50Z",
+      "thumbnail": "https://i.ytimg.com/vi/-4a5MFhWano/maxresdefault.jpg",
+      "duration": "0:29",
+      "viewCount": 26783,
+      "likeCount": 2003,
+      "commentCount": 37,
+      "url": "https://www.youtube.com/watch?v=-4a5MFhWano"
+    },
+    "yHkQQWYSIYA": {
+      "id": "yHkQQWYSIYA",
+      "title": "Gendern & M\u00e4nner im Frauensport.",
+      "description": "\ud83d\udc49\ud83c\udffb Kurzer Hinweis: es soll am Anfang nat\u00fcrlich \u201eund auch die M\u00e4nner im Frauensport\u201c hei\u00dfen\u2026",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-09-01T09:01:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/yHkQQWYSIYA/maxresdefault.jpg",
+      "duration": "0:58",
+      "viewCount": 10686,
+      "likeCount": 1505,
+      "commentCount": 55,
+      "url": "https://www.youtube.com/watch?v=yHkQQWYSIYA"
+    },
+    "naQXwoeux7c": {
+      "id": "naQXwoeux7c",
+      "title": "Die neue Angst \ud83d\udc12",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-08-29T14:53:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/naQXwoeux7c/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 17453,
+      "likeCount": 2395,
+      "commentCount": 92,
+      "url": "https://www.youtube.com/watch?v=naQXwoeux7c"
+    },
+    "BAMuoA_qTcY": {
+      "id": "BAMuoA_qTcY",
+      "title": "Warum Fruktose sch\u00e4dlich sein kann. #gesundheit #aufkl\u00e4rung #zucker #leber #ganzheitlich #medizin",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-08-26T13:16:48Z",
+      "thumbnail": "https://i.ytimg.com/vi/BAMuoA_qTcY/maxresdefault.jpg",
+      "duration": "0:58",
+      "viewCount": 71092,
+      "likeCount": 3345,
+      "commentCount": 89,
+      "url": "https://www.youtube.com/watch?v=BAMuoA_qTcY"
+    },
+    "pM6tTRmOl-g": {
+      "id": "pM6tTRmOl-g",
+      "title": "Verkalkte Blutgef\u00e4\u00dfe ohne Statine wieder \u201efreibekommen\u201c #gesundheit #herz #ganzheitlich",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-08-25T07:44:51Z",
+      "thumbnail": "https://i.ytimg.com/vi/pM6tTRmOl-g/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 85273,
+      "likeCount": 4373,
+      "commentCount": 93,
+      "url": "https://www.youtube.com/watch?v=pM6tTRmOl-g"
+    },
+    "iltv4xzshVM": {
+      "id": "iltv4xzshVM",
+      "title": "Mit ketogener Ern\u00e4hrung Krankheiten verhindern #gesundheit #ketogeneern\u00e4hrung",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-08-16T13:26:45Z",
+      "thumbnail": "https://i.ytimg.com/vi/iltv4xzshVM/maxresdefault.jpg",
+      "duration": "0:55",
+      "viewCount": 207175,
+      "likeCount": 8518,
+      "commentCount": 222,
+      "url": "https://www.youtube.com/watch?v=iltv4xzshVM"
+    },
+    "VdojJvrQ3i0": {
+      "id": "VdojJvrQ3i0",
+      "title": "Wie dein Zuckerkonsum Krebs verursachen kann. #gesundheit #krebs #zucker #ern\u00e4hrung",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-08-13T16:24:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/VdojJvrQ3i0/maxresdefault.jpg",
+      "duration": "0:58",
+      "viewCount": 402996,
+      "likeCount": 12101,
+      "commentCount": 449,
+      "url": "https://www.youtube.com/watch?v=VdojJvrQ3i0"
+    },
+    "vu54Io_cYZQ": {
+      "id": "vu54Io_cYZQ",
+      "title": "Willst du nur gesund sein - oder leistungsf\u00e4hig?",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-08-11T11:56:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/vu54Io_cYZQ/maxresdefault.jpg",
+      "duration": "0:53",
+      "viewCount": 48381,
+      "likeCount": 1729,
+      "commentCount": 17,
+      "url": "https://www.youtube.com/watch?v=vu54Io_cYZQ"
+    },
+    "xlUj6HoHU1c": {
+      "id": "xlUj6HoHU1c",
+      "title": "Das Problem mit \u00c4rzten\u2026 #gesundheit #medizin",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-08-09T16:12:14Z",
+      "thumbnail": "https://i.ytimg.com/vi/xlUj6HoHU1c/maxresdefault.jpg",
+      "duration": "0:42",
+      "viewCount": 34475,
+      "likeCount": 2611,
+      "commentCount": 64,
+      "url": "https://www.youtube.com/watch?v=xlUj6HoHU1c"
+    },
+    "1grmDMQo6AM": {
+      "id": "1grmDMQo6AM",
+      "title": "Das Geheimnis des Gl\u00fccks",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-08-07T10:35:22Z",
+      "thumbnail": "https://i.ytimg.com/vi/1grmDMQo6AM/maxresdefault.jpg",
+      "duration": "1:20",
+      "viewCount": 12533,
+      "likeCount": 824,
+      "commentCount": 29,
+      "url": "https://www.youtube.com/watch?v=1grmDMQo6AM"
+    },
+    "s7BVMgwLfG8": {
+      "id": "s7BVMgwLfG8",
+      "title": "Pr\u00e4vention statt Krankheit #gesundheit #arzt #medizin",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-08-07T10:33:14Z",
+      "thumbnail": "https://i.ytimg.com/vi/s7BVMgwLfG8/maxresdefault.jpg",
+      "duration": "0:46",
+      "viewCount": 66012,
+      "likeCount": 2483,
+      "commentCount": 35,
+      "url": "https://www.youtube.com/watch?v=s7BVMgwLfG8"
+    },
+    "DDdOrWLc6RE": {
+      "id": "DDdOrWLc6RE",
+      "title": "Das Geheimnis von Magnesium",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-08-06T17:02:30Z",
+      "thumbnail": "https://i.ytimg.com/vi/DDdOrWLc6RE/maxresdefault.jpg",
+      "duration": "0:50",
+      "viewCount": 69018,
+      "likeCount": 3964,
+      "commentCount": 69,
+      "url": "https://www.youtube.com/watch?v=DDdOrWLc6RE"
+    },
+    "LdWnoH_MaxM": {
+      "id": "LdWnoH_MaxM",
+      "title": "! #arzt #gesund #medizin",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-08-03T09:05:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/LdWnoH_MaxM/maxresdefault.jpg",
+      "duration": "0:57",
+      "viewCount": 330745,
+      "likeCount": 9008,
+      "commentCount": 195,
+      "url": "https://www.youtube.com/watch?v=LdWnoH_MaxM"
+    },
+    "w_WbC3DUemw": {
+      "id": "w_WbC3DUemw",
+      "title": "Das gro\u00dfe Problem unserer Gesellschaft #cancelculture #fakenews",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-07-31T13:08:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/w_WbC3DUemw/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 13996,
+      "likeCount": 1284,
+      "commentCount": 36,
+      "url": "https://www.youtube.com/watch?v=w_WbC3DUemw"
+    },
+    "R-NX-livxVE": {
+      "id": "R-NX-livxVE",
+      "title": "Das Problem mit dem \u201egro\u00dfen Blutbild\u201c #medizin #blutwerte #gesundheit #ganzheitlich #gesundleben",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-07-30T15:17:49Z",
+      "thumbnail": "https://i.ytimg.com/vi/R-NX-livxVE/maxresdefault.jpg",
+      "duration": "0:54",
+      "viewCount": 133471,
+      "likeCount": 4420,
+      "commentCount": 117,
+      "url": "https://www.youtube.com/watch?v=R-NX-livxVE"
+    },
+    "X-14AfWWR2k": {
+      "id": "X-14AfWWR2k",
+      "title": "Warum es \u201edie Wissenschaft\u201c nicht gibt.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-07-28T16:00:03Z",
+      "thumbnail": "https://i.ytimg.com/vi/X-14AfWWR2k/maxresdefault.jpg",
+      "duration": "0:47",
+      "viewCount": 24791,
+      "likeCount": 2060,
+      "commentCount": 43,
+      "url": "https://www.youtube.com/watch?v=X-14AfWWR2k"
+    },
+    "vhW3rdnPe10": {
+      "id": "vhW3rdnPe10",
+      "title": "Warum du krank wirst ohne es zu merken.",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-07-25T16:46:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/vhW3rdnPe10/maxresdefault.jpg",
+      "duration": "1:12",
+      "viewCount": 15779,
+      "likeCount": 810,
+      "commentCount": 23,
+      "url": "https://www.youtube.com/watch?v=vhW3rdnPe10"
+    },
+    "pewHFOMe5HQ": {
+      "id": "pewHFOMe5HQ",
+      "title": "Tabuthema Darm #gesundleben #darm #darmgesundheit #darmflora",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-07-22T13:46:25Z",
+      "thumbnail": "https://i.ytimg.com/vi/pewHFOMe5HQ/maxresdefault.jpg",
+      "duration": "0:50",
+      "viewCount": 56207,
+      "likeCount": 3601,
+      "commentCount": 39,
+      "url": "https://www.youtube.com/watch?v=pewHFOMe5HQ"
+    },
+    "U9_ku3Y8uzQ": {
+      "id": "U9_ku3Y8uzQ",
+      "title": "Impfen oder nicht? #gesundheit #vorsorge #gesundleben #arzt #medizin",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-07-21T14:54:17Z",
+      "thumbnail": "https://i.ytimg.com/vi/U9_ku3Y8uzQ/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 33578,
+      "likeCount": 3442,
+      "commentCount": 174,
+      "url": "https://www.youtube.com/watch?v=U9_ku3Y8uzQ"
+    },
+    "mRBznqpQ0ok": {
+      "id": "mRBznqpQ0ok",
+      "title": "Schwangerschaft klappt nicht? Dieser Trick der Natur kann helfen!",
+      "description": "In diesem Video teile ich einen erstaunlichen Trick aus der Natur, der von Tier\u00e4rzten angewendet wird und wie er schon vielen Menschen geholfen hat, die Schwierigkeiten hatten, schwanger zu werden. Erfahren Sie, wie einfache, aber effektive Ma\u00dfnahmen aus der Tiermedizin auch bei uns Menschen erstaunliche Ergebnisse erzielen k\u00f6nnen.\n\n\ud83d\udd14 Vergessen Sie nicht, den Kanal zu abonnieren und die Glocke zu aktivieren, um keine weiteren Tipps und Tricks zur Gesundheit zu verpassen!\n\n\ud83d\udc4d **Gef\u00e4llt Ihnen das Video? Hinterlassen Sie einen Daumen hoch und teilen Sie es mit Freunden und Familie!**\n\n\ud83d\udcda **Mehr erfahren:**\n- Website: [www.dr.spitzbart.com](http://www.dr.spitzbart.com)\n- Instagram: [@dr_spitzbart](https://www.instagram.com/dr_spitzbart)\n\n\ud83d\udcac **Kommentare und Fragen:**\nHinterlassen Sie Ihre Gedanken und Fragen unten in den Kommentaren. Ich freue mich auf Ihre R\u00fcckmeldungen!\n\n#Schwangerschaft #Naturheilkunde #Gesundheit #DrSpitzbart #Kinderwunsch #Naturtrick\n\n---",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-07-20T14:15:42Z",
+      "thumbnail": "https://i.ytimg.com/vi/mRBznqpQ0ok/maxresdefault.jpg",
+      "duration": "1:10",
+      "viewCount": 6336,
+      "likeCount": 291,
+      "commentCount": 9,
+      "url": "https://www.youtube.com/watch?v=mRBznqpQ0ok"
+    },
+    "bXuVQ4n38UU": {
+      "id": "bXuVQ4n38UU",
+      "title": "Heilpraktiker besser als Mediziner? #arzt #gesundheit #medizin",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-07-14T09:41:42Z",
+      "thumbnail": "https://i.ytimg.com/vi/bXuVQ4n38UU/maxresdefault.jpg",
+      "duration": "0:59",
+      "viewCount": 49275,
+      "likeCount": 3961,
+      "commentCount": 140,
+      "url": "https://www.youtube.com/watch?v=bXuVQ4n38UU"
+    },
+    "tPe8z-b4zVE": {
+      "id": "tPe8z-b4zVE",
+      "title": "Autoimmun-Krankheiten: das solltest du wissen!",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-07-12T15:42:53Z",
+      "thumbnail": "https://i.ytimg.com/vi/tPe8z-b4zVE/maxresdefault.jpg",
+      "duration": "1:06",
+      "viewCount": 31043,
+      "likeCount": 1449,
+      "commentCount": 68,
+      "url": "https://www.youtube.com/watch?v=tPe8z-b4zVE"
+    },
+    "JZ5jk5FlK8M": {
+      "id": "JZ5jk5FlK8M",
+      "title": "Sonnencreme - ja oder nein? #sonne #haut #uvschutz #sonnencreme #sommer",
+      "description": "Sonnencreme - ja oder nein? (Nat\u00fcrlich soll es UVA statt Vitamin A hei\u00dfen) #sonne #haut #uvschutz #sonnencreme #sommer",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-06-24T16:24:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/JZ5jk5FlK8M/maxresdefault.jpg",
+      "duration": "0:51",
+      "viewCount": 91036,
+      "likeCount": 4432,
+      "commentCount": 207,
+      "url": "https://www.youtube.com/watch?v=JZ5jk5FlK8M"
+    },
+    "7gsmcVGv6ig": {
+      "id": "7gsmcVGv6ig",
+      "title": "So entkommst du dem Burnout #depression",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-06-24T09:17:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/7gsmcVGv6ig/maxresdefault.jpg",
+      "duration": "1:16",
+      "viewCount": 14649,
+      "likeCount": 708,
+      "commentCount": 25,
+      "url": "https://www.youtube.com/watch?v=7gsmcVGv6ig"
+    },
+    "HRvJEJ2tSmM": {
+      "id": "HRvJEJ2tSmM",
+      "title": "Wenn ich kein Arzt geworden w\u00e4re\u2026 #gesundheit #arzt #berufswahl",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-06-23T14:29:20Z",
+      "thumbnail": "https://i.ytimg.com/vi/HRvJEJ2tSmM/maxresdefault.jpg",
+      "duration": "0:56",
+      "viewCount": 11562,
+      "likeCount": 811,
+      "commentCount": 22,
+      "url": "https://www.youtube.com/watch?v=HRvJEJ2tSmM"
+    },
+    "J9XGbGbhakA": {
+      "id": "J9XGbGbhakA",
+      "title": "Warum ich als Arzt etwas \u201eanders\u201c bin.",
+      "description": "Willkommen auf meinem YouTube-Account! Ich freue mich \u00fcber das rege Interesse an meiner Arbeit und den stetigen Zuwachs an Followern. Vor allem lade ich jeden herzlich dazu ein, hier fair und respektvoll mitzudiskutieren. Nur so entsteht ein spannender und fruchtbarer Austausch - im besten Fall mit Erkenntnisgewinn f\u00fcr alle Seiten!",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-06-22T11:48:43Z",
+      "thumbnail": "https://i.ytimg.com/vi/J9XGbGbhakA/maxresdefault.jpg",
+      "duration": "1:11",
+      "viewCount": 5937,
+      "likeCount": 594,
+      "commentCount": 32,
+      "url": "https://www.youtube.com/watch?v=J9XGbGbhakA"
+    },
+    "Twi9sX-Ssfw": {
+      "id": "Twi9sX-Ssfw",
+      "title": "Warum Vorsorge nicht immer sinnvoll ist! #Arzt #gesundheit",
+      "description": "Warum Vorsorge nicht immer sinnvoll ist.\n\n#gesundheit #wissen #vorsorge #gesundheitstipps #krebs #arzt #ganzheitlichegesundheit",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-06-21T07:55:09Z",
+      "thumbnail": "https://i.ytimg.com/vi/Twi9sX-Ssfw/maxresdefault.jpg",
+      "duration": "1:29",
+      "viewCount": 12332,
+      "likeCount": 748,
+      "commentCount": 42,
+      "url": "https://www.youtube.com/watch?v=Twi9sX-Ssfw"
+    },
+    "jYhi39GN_F0": {
+      "id": "jYhi39GN_F0",
+      "title": "Die Wahrheit \u00fcber Vitamine #gesundheit #vitamine #nems #nahrungserg\u00e4nzungmittel",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-06-14T10:00:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/jYhi39GN_F0/hqdefault.jpg",
+      "duration": "1:15",
+      "viewCount": 21531,
+      "likeCount": 1290,
+      "commentCount": 51,
+      "url": "https://www.youtube.com/watch?v=jYhi39GN_F0"
+    },
+    "RB7x8osIYaY": {
+      "id": "RB7x8osIYaY",
+      "title": "Fit in den Wechseljahren \ud83d\udcaa\ud83c\udffc #wechseljahre #hormone #gesund",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-06-13T12:33:20Z",
+      "thumbnail": "https://i.ytimg.com/vi/RB7x8osIYaY/maxresdefault.jpg",
+      "duration": "0:50",
+      "viewCount": 73720,
+      "likeCount": 3762,
+      "commentCount": 125,
+      "url": "https://www.youtube.com/watch?v=RB7x8osIYaY"
+    },
+    "TAfDUHa5SHc": {
+      "id": "TAfDUHa5SHc",
+      "title": "Mehr Energie im Alltag! #\u00fcbers\u00e4uerung #basisch",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-06-08T12:46:12Z",
+      "thumbnail": "https://i.ytimg.com/vi/TAfDUHa5SHc/maxresdefault.jpg",
+      "duration": "0:34",
+      "viewCount": 69528,
+      "likeCount": 4351,
+      "commentCount": 109,
+      "url": "https://www.youtube.com/watch?v=TAfDUHa5SHc"
+    },
+    "Di9_dvJ9pXU": {
+      "id": "Di9_dvJ9pXU",
+      "title": "So aktivierst du deine Schilddr\u00fcse! #schilddr\u00fcse #schilddr\u00fcsenprobleme #arzt #gesundheit",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-06-06T14:20:37Z",
+      "thumbnail": "https://i.ytimg.com/vi/Di9_dvJ9pXU/maxresdefault.jpg",
+      "duration": "0:56",
+      "viewCount": 144514,
+      "likeCount": 7503,
+      "commentCount": 196,
+      "url": "https://www.youtube.com/watch?v=Di9_dvJ9pXU"
+    },
+    "Jt32QMNlZ0Q": {
+      "id": "Jt32QMNlZ0Q",
+      "title": "Vegan leben - gut oder schlecht? #vegan #veganeern\u00e4hrung",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-06-05T13:40:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/Jt32QMNlZ0Q/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 21792,
+      "likeCount": 724,
+      "commentCount": 81,
+      "url": "https://www.youtube.com/watch?v=Jt32QMNlZ0Q"
+    },
+    "ulAMG2DUOvs": {
+      "id": "ulAMG2DUOvs",
+      "title": "Wie du deine volle Gesundheit erreichst",
+      "description": "In meinem neuesten Video m\u00f6chte ich euch die 47 essenziellen Vitalstoffe vorstellen, die f\u00fcr unsere Gesundheit unverzichtbar sind. Diese Vitalstoffe bilden die Grundlage f\u00fcr unser Wohlbefinden und spielen eine entscheidende Rolle bei der Pr\u00e4vention von Krankheiten sowie der Steigerung unserer Leistungsf\u00e4higkeit.\n\nEuer Dr. Michael Spitzbart\n\n\ud83d\udc49 Jetzt das Video ansehen und mehr \u00fcber die 47 lebenswichtigen Vitalstoffe erfahren!\n\n\ud83d\udc49 Die Produkte, die ich empfehle: \n\n- Sanponte Mental Fit\nhttps://www.sanaponte.de/mental-fit.html\n\n- Sanaponte Eiweiss Pro:\nhttps://www.sanaponte.de/eiweiss-pro-vanille-1000g.html\n\n- Sanaponte Immun Abwehr:\nhttps://www.sanaponte.de/immun-abwehr.html\n\n#Vitalstoffe #Gesundheit #Ern\u00e4hrung #Pr\u00e4vention #GesundLeben #LebenswichtigeN\u00e4hrstoffe #DrSpitzbart #Nahrungserg\u00e4nzung #GesundheitsTipps #wohlbefinden",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-05-31T12:23:49Z",
+      "thumbnail": "https://i.ytimg.com/vi/ulAMG2DUOvs/maxresdefault.jpg",
+      "duration": "1:15",
+      "viewCount": 5153,
+      "likeCount": 253,
+      "commentCount": 3,
+      "url": "https://www.youtube.com/watch?v=ulAMG2DUOvs"
+    },
+    "q0T693SuieE": {
+      "id": "q0T693SuieE",
+      "title": "Ritalin - Fluch oder Segen f\u00fcr Kinder? #adhs #adhscommunity #adhserwachsene",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-05-30T16:52:17Z",
+      "thumbnail": "https://i.ytimg.com/vi/q0T693SuieE/maxresdefault.jpg",
+      "duration": "0:53",
+      "viewCount": 86724,
+      "likeCount": 4267,
+      "commentCount": 189,
+      "url": "https://www.youtube.com/watch?v=q0T693SuieE"
+    },
+    "xZE3E63aVxU": {
+      "id": "xZE3E63aVxU",
+      "title": "Die fehlende Aufarbeitung. Eure Meinung?",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-05-29T09:22:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/xZE3E63aVxU/maxresdefault.jpg",
+      "duration": "0:53",
+      "viewCount": 5429,
+      "likeCount": 604,
+      "commentCount": 29,
+      "url": "https://www.youtube.com/watch?v=xZE3E63aVxU"
+    },
+    "9plzu9jhWXA": {
+      "id": "9plzu9jhWXA",
+      "title": "Die wichtigste Entscheidung diesen Monat.",
+      "description": "Die wichtigste Entscheidung diesen Monat.",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-05-25T11:00:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/9plzu9jhWXA/maxresdefault.jpg",
+      "duration": "1:26",
+      "viewCount": 5796,
+      "likeCount": 566,
+      "commentCount": 41,
+      "url": "https://www.youtube.com/watch?v=9plzu9jhWXA"
+    },
+    "gmyxWhbgDvg": {
+      "id": "gmyxWhbgDvg",
+      "title": "Gute Fette - schlechte Fette",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-05-24T11:13:49Z",
+      "thumbnail": "https://i.ytimg.com/vi/gmyxWhbgDvg/maxresdefault.jpg",
+      "duration": "0:47",
+      "viewCount": 10706,
+      "likeCount": 724,
+      "commentCount": 40,
+      "url": "https://www.youtube.com/watch?v=gmyxWhbgDvg"
+    },
+    "n5Y-QQfisNs": {
+      "id": "n5Y-QQfisNs",
+      "title": "Fleisch oder Vegan? Was ist ges\u00fcnder?",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2024-05-22T14:43:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/n5Y-QQfisNs/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 145254,
+      "likeCount": 7370,
+      "commentCount": 538,
+      "url": "https://www.youtube.com/watch?v=n5Y-QQfisNs"
+    },
+    "6eKht0ZBF9Q": {
+      "id": "6eKht0ZBF9Q",
+      "title": "Medizinische Fehlinformationen, intraven\u00f6s verabreicht \u2013 Dr  Spitzbart im Gespr\u00e4ch mit Gunnar Kaiser",
+      "description": "",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2021-09-29T16:26:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/6eKht0ZBF9Q/hqdefault.jpg",
+      "duration": "45:34",
+      "viewCount": 98745,
+      "likeCount": 6100,
+      "commentCount": 382,
+      "url": "https://www.youtube.com/watch?v=6eKht0ZBF9Q"
+    },
+    "0XjeX6xM8AA": {
+      "id": "0XjeX6xM8AA",
+      "title": "Corona - Die h\u00e4ufigsten Fragen",
+      "description": "Corona Immunsystem",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2020-04-13T13:35:13Z",
+      "thumbnail": "https://i.ytimg.com/vi/0XjeX6xM8AA/maxresdefault.jpg",
+      "duration": "27:23",
+      "viewCount": 111936,
+      "likeCount": 5483,
+      "commentCount": 519,
+      "url": "https://www.youtube.com/watch?v=0XjeX6xM8AA"
+    },
+    "8dmIyRiwCHw": {
+      "id": "8dmIyRiwCHw",
+      "title": "Hoher Eiwei\u00df-Spiegel im Blut: wichtigster Wert f\u00fcr Deine Gesundheit und Leistungsf\u00e4higkeit",
+      "description": "Dein Gesamteiwei\u00df-Spiegel im Blut ist der wichtigste Wert \u00fcberhaupt. Muskelmasse, Knochenmasse, Immunsystem, Hormone, Dopamin, Serotonin, Antrieb und Stimmung: alles h\u00e4ngt ab vom Eiwei\u00df (Protein). In der normalen Medizin hat das leider keine Bedeutung. In meinen Augen ist das aber der wichtigste Wert \u00fcberhaupt. Darum geh\u00f6rt Dein Eiwei\u00df-Spiegel immer in den oberen Normbereich f\u00fcr Deine Gesundheit und Leistungsf\u00e4higkeit. - Selbst wenn andere \u00c4rzte etwas anderes behaupten...",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2020-01-24T08:52:17Z",
+      "thumbnail": "https://i.ytimg.com/vi/8dmIyRiwCHw/maxresdefault.jpg",
+      "duration": "1:20",
+      "viewCount": 69432,
+      "likeCount": 2541,
+      "commentCount": 170,
+      "url": "https://www.youtube.com/watch?v=8dmIyRiwCHw"
+    },
+    "tOOOBoaUC_Y": {
+      "id": "tOOOBoaUC_Y",
+      "title": "Dr. Spitzbart im Interview mit Bodo Sch\u00e4fer: Gesundheit und Finanzen",
+      "description": "Am sch\u00f6nsten ist es doch, wenn sich Wohlstand mit Gesundheit paart. Ohne das Eine ist das Andere nichts wert. Beides solltest Du strategisch planen. Also nicht erst mit 60 Jahren \u00fcber die Rente nachdenken. Und nicht erst dann etwas f\u00fcr die Gesundheit tun, wenn die Krankheit da ist. Bodo Sch\u00e4fer ist der Stratege f\u00fcr Finanzen, Dr. Spitzbart der Coach f\u00fcr Deine Gesundheit und Leistungsf\u00e4higkeit. Zusammen ein unschlagbares Team.",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2020-01-23T08:59:51Z",
+      "thumbnail": "https://i.ytimg.com/vi/tOOOBoaUC_Y/maxresdefault.jpg",
+      "duration": "29:01",
+      "viewCount": 104315,
+      "likeCount": 3710,
+      "commentCount": 260,
+      "url": "https://www.youtube.com/watch?v=tOOOBoaUC_Y"
+    },
+    "EPegTKVDigE": {
+      "id": "EPegTKVDigE",
+      "title": "Versteckter Zucker in unseren Lebensmitteln",
+      "description": "Klar - Softdrinks und Energydrinks enthalten jede Menge Zucker, das wissen wir alle. Aber wussten Sie auch, dass sogar Apfelsaft(-schorle) und tafelfertiger Rotkohl viel zuviel Zucker enthalten? Summiert aufs Jahr sind das ca. 50 Kilogramm Zucker. Diese Mengen k\u00f6nnen \u00fcber die Zeit zu Diabetes, Krebs oder anderen chronischen Krankheiten f\u00fchren.",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2020-01-21T14:00:54Z",
+      "thumbnail": "https://i.ytimg.com/vi/EPegTKVDigE/maxresdefault.jpg",
+      "duration": "1:30",
+      "viewCount": 17085,
+      "likeCount": 829,
+      "commentCount": 45,
+      "url": "https://www.youtube.com/watch?v=EPegTKVDigE"
+    },
+    "D4vvHnIaGhQ": {
+      "id": "D4vvHnIaGhQ",
+      "title": "Wie man sprichw\u00f6rtlich im Schlaf abnimmt",
+      "description": "Es gibt zwei Arten von Stoffwechsel: zum einen den Verbrennungsstoffwechsel (beherrscht vom Hormon Glukagon) und zum anderen den Maststoffwechsel (beherrscht durch das Hormon Insulin). Die meisten Menschen befinden sich durch viele kleine Insulinaussch\u00fcttungen st\u00e4ndig im Maststoffwechsel und brauchen deshalb sprichw\u00f6rtlich nur an der Kuchentheke vorbeilaufen - und schon nehmen sie zu. Um Abnehmen zu k\u00f6nnen muss man  Kohlenhydrate meiden, sprich die Insulinaussch\u00fcttung unterbinden. Nur dann hat das Verbrennungshormon eine Chance - f\u00fcr die Fettverbrennung rund um die Uhr. \n\nDie beiden Hormone Insulin und Glukagon befinden sich im steten Wechselspiel. Wird Insulin ausgesch\u00fcttet (z.B. nach dem Genuss nur ein kleines St\u00fcckchens Schokolade) ist das Glukagon f\u00fcr Stunden au\u00dfen vor, es wird Insulin ausgesch\u00fcttet und schon befindet sich der K\u00f6rper wieder im Maststoffwechsel.",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2019-10-30T13:19:47Z",
+      "thumbnail": "https://i.ytimg.com/vi/D4vvHnIaGhQ/maxresdefault.jpg",
+      "duration": "2:05",
+      "viewCount": 61107,
+      "likeCount": 2332,
+      "commentCount": 113,
+      "url": "https://www.youtube.com/watch?v=D4vvHnIaGhQ"
+    },
+    "7bkcWgkwbBs": {
+      "id": "7bkcWgkwbBs",
+      "title": "Das Schilddr\u00fcsenhormon: So funktioniert Ihre Schilddr\u00fcse optimal",
+      "description": "Wichtige Fakten zum Schilddr\u00fcsenhormon: das sollten Sie wissen, wenn Ihre Schilddr\u00fcse optimal funktionieren soll! Dr. med. Michael Spitzbart erkl\u00e4rt, wie die Aminos\u00e4ure Tyrosin und das Spurenelement Jod zusammen auf ganz nat\u00fcrliche Art das wichtige Schilddr\u00fcsenhormon Thyroxin bilden. So funktioniert die Schilddr\u00fcse wieder optimal, ganz ohne Medikamente, wie zum Beispiel  Euthyrox.",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2019-08-23T09:50:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/7bkcWgkwbBs/maxresdefault.jpg",
+      "duration": "3:13",
+      "viewCount": 66819,
+      "likeCount": 2384,
+      "commentCount": 213,
+      "url": "https://www.youtube.com/watch?v=7bkcWgkwbBs"
+    },
+    "j-6WZVFxGho": {
+      "id": "j-6WZVFxGho",
+      "title": "Gesund oder krank \u2013 Ihr Immunsystem verr\u00e4ts!",
+      "description": "Das 4 Punkte Programm f\u00fcr Ihre effektive Abwehr.",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2019-05-21T11:52:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/j-6WZVFxGho/maxresdefault.jpg",
+      "duration": "4:35",
+      "viewCount": 100897,
+      "likeCount": 5169,
+      "commentCount": 171,
+      "url": "https://www.youtube.com/watch?v=j-6WZVFxGho"
+    },
+    "MipxiqWEgc8": {
+      "id": "MipxiqWEgc8",
+      "title": "Medikamente und Operationen immer kritisch hinterfragen!",
+      "description": "Zu viele Medikamente, zu h\u00e4ufiges R\u00f6ntgen und zu fr\u00fche Operationen (z.B. Gelenksersatz wie H\u00fcftprothesen) gef\u00e4hrden Ihre Gesundheit. Apparatemedizin und Operationen bringen das Geld. Bleiben Sie kritisch und holen Sie sich immer eine 2. oder sogar 3. Meinung ein.",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2019-05-17T07:12:49Z",
+      "thumbnail": "https://i.ytimg.com/vi/MipxiqWEgc8/maxresdefault.jpg",
+      "duration": "4:35",
+      "viewCount": 38375,
+      "likeCount": 2270,
+      "commentCount": 121,
+      "url": "https://www.youtube.com/watch?v=MipxiqWEgc8"
+    },
+    "oEk29Gcaazg": {
+      "id": "oEk29Gcaazg",
+      "title": "Mammographie - nein danke! Warum diese Untersuchung mehr schadet als nutzt",
+      "description": "Laut Statistik werden 90 % fr\u00fcherkannt. Das stimmt so aber nicht. Denn nimmt man die Zahlen auseinander erkennt man eine Erfolgsquote im Bereich von tausendsteln. Dann kommt noch die hohe Strahlenbelastung obendrein...",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2019-01-29T07:11:51Z",
+      "thumbnail": "https://i.ytimg.com/vi/oEk29Gcaazg/maxresdefault.jpg",
+      "duration": "2:28",
+      "viewCount": 499215,
+      "likeCount": 18023,
+      "commentCount": 1703,
+      "url": "https://www.youtube.com/watch?v=oEk29Gcaazg"
+    },
+    "PwEQ125Aw98": {
+      "id": "PwEQ125Aw98",
+      "title": "Skandal: Glyphosat vergiftet uns Tag f\u00fcr Tag - und das ganz legal!",
+      "description": "Das weltweit am h\u00e4ufigsten eingesetzte Pestizid Glyphosat gilt laut Weltgesundheitsorganisation (WHO) als wahrscheinlich krebserregend. Die Hersteller-Firma Bayer gibt Millionen daf\u00fcr aus, das Gegenteil zu beweisen. Deren Lobbyisten infiltrieren h\u00f6chst erfolgreich die Politik in Deutschland und in Br\u00fcssel. \nGlyphosat gilt nicht nur als krebserregend, sondern auch als Tryptophan-R\u00e4uber. Ist das mit ein Grund f\u00fcr die stark ansteigende Anzahl der Depressionen? Sch\u00fctzen Sie sich, bevor es zu sp\u00e4t ist.",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2018-11-27T12:44:16Z",
+      "thumbnail": "https://i.ytimg.com/vi/PwEQ125Aw98/maxresdefault.jpg",
+      "duration": "3:15",
+      "viewCount": 28038,
+      "likeCount": 1631,
+      "commentCount": 96,
+      "url": "https://www.youtube.com/watch?v=PwEQ125Aw98"
+    },
+    "p6t0n0gyTdY": {
+      "id": "p6t0n0gyTdY",
+      "title": "Serotonin - Ihre Teflon-Beschichtung gegen Stress.",
+      "description": "So bleiben Sie selbst bei hohen Anforderungen resistent. \nWie Sie Stimmungstiefs, Depression und einen negativen Inneren Dialog durch mehr Serotonin in Gl\u00fcck, Freude und Belastbarkeit verwandeln.",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2018-10-29T15:03:25Z",
+      "thumbnail": "https://i.ytimg.com/vi/p6t0n0gyTdY/maxresdefault.jpg",
+      "duration": "3:26",
+      "viewCount": 72255,
+      "likeCount": 2596,
+      "commentCount": 144,
+      "url": "https://www.youtube.com/watch?v=p6t0n0gyTdY"
+    },
+    "vYFUUPDElzo": {
+      "id": "vYFUUPDElzo",
+      "title": "Symptome heilen - nicht nur behandeln! Entschl\u00fcsseln Sie Ihren Gesundheitscode",
+      "description": "In der heutigen Medizin werden viel zu oft die Symptome behandelt, nicht aber die Ursache. Ein Armutszeugnis! \n\nWarum essentielle, nat\u00fcrliche Stoffe besser wirken als die meisten Medikamente.",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2018-09-03T10:32:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/vYFUUPDElzo/maxresdefault.jpg",
+      "duration": "8:01",
+      "viewCount": 105762,
+      "likeCount": 3349,
+      "commentCount": 154,
+      "url": "https://www.youtube.com/watch?v=vYFUUPDElzo"
+    },
+    "C3W1tYo9FPU": {
+      "id": "C3W1tYo9FPU",
+      "title": "Etwas mehr Energie gef\u00e4llig? So vermeiden Sie Burnout und Depression",
+      "description": "Burnout und Depression sind zwei sehr \u00e4hnliche Krankheiten. Ursache ist immer ein Missverh\u00e4ltnis der Hormone Dopamin (Antrieb) und Serotonin (Stimmung) sowie dem Stress-Hormon Cortisol auf der anderen Seite.\n\nDie Gefahr: Man selbst kann das Missverh\u00e4ltnis der Hormone nicht sp\u00fcren.\n\nAuch hier wieder das altbekannte Bild: Das Symptom wird behandelt, nicht die Ursache. Es werden Serotonin-Wiederaufnahmehemmer (SSRI) verschrieben, die das wenige Serotonin l\u00e4nger wirken lassen sollen. \n\nAber warum die Restwirkung verl\u00e4ngern, wenn man die Eigenproduktion auf nat\u00fcrliche Art und Weise erh\u00f6hen kann? Das ist ganz einfach, wie beim Kuchen backen. Man braucht nur die richtigen Zutaten daf\u00fcr.",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2018-08-17T14:11:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/C3W1tYo9FPU/maxresdefault.jpg",
+      "duration": "8:59",
+      "viewCount": 266865,
+      "likeCount": 9171,
+      "commentCount": 583,
+      "url": "https://www.youtube.com/watch?v=C3W1tYo9FPU"
+    },
+    "N8ckv5tazRo": {
+      "id": "N8ckv5tazRo",
+      "title": "Schutz vor Krebs - Mit Ern\u00e4hrung die Heilung unterst\u00fctzen",
+      "description": "Dr. med. Michael Spitzbart erkl\u00e4rt mit wunderbar einfachen Worten wie man sich vor Krebs sch\u00fctzen kann. Sollte man doch von Krebs betroffen sein ist noch nicht alles verloren. Es es gibt eine Alternative zur Chemotherapie! Das Zauberwort hei\u00dft Ketogene Ern\u00e4hrung - sprich f\u00fcr eine Weile auf jegliche Kohlenhydrate verzichten.\n\nDas Buch zum Video gibts hier: https://bit.ly/2JcR70K",
+      "channelId": "UCEbKlVw0loRwtS2PVpk5AMQ",
+      "channelTitle": "Dr. med. Michael Spitzbart",
+      "publishedAt": "2018-07-11T11:15:54Z",
+      "thumbnail": "https://i.ytimg.com/vi/N8ckv5tazRo/maxresdefault.jpg",
+      "duration": "6:55",
+      "viewCount": 198724,
+      "likeCount": 6170,
+      "commentCount": 513,
+      "url": "https://www.youtube.com/watch?v=N8ckv5tazRo"
+    }
+  },
+  "include_timestamps": false,
+  "include_video_title": true,
+  "include_video_id": true,
+  "include_video_url": true,
+  "include_view_count": false,
+  "concatenate_all": false,
+  "end_time": 1757852858.5585027,
+  "duration": 360.3290641307831
+}

@@ -1,0 +1,2833 @@
+{
+  "status": "completed",
+  "channel_name": "ProjectFootballer",
+  "channel_id": "UC02Tiefb8rCcAi_H4XIMTMw",
+  "total_videos": 105,
+  "processed_count": 105,
+  "failed_count": 5,
+  "completed": 100,
+  "files": [
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/v-Nofl8XIyk/Ever heard of facilitator play_v-Nofl8XIyk.txt",
+      "video_id": "v-Nofl8XIyk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/t4rFDrTLrbU/What Are the REAL Odds of \u201cMak_t4rFDrTLrbU.txt",
+      "video_id": "t4rFDrTLrbU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/vkmceF1J4GA/Has this been your child's aca_vkmceF1J4GA.txt",
+      "video_id": "vkmceF1J4GA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/oWl7BwZzm1c/What does making it mean \u26bd\ufe0f_oWl7BwZzm1c.txt",
+      "video_id": "oWl7BwZzm1c",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/C8y0Op8XlsY/Are We Setting Young Footballe_C8y0Op8XlsY.txt",
+      "video_id": "C8y0Op8XlsY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/ao5TQLYxMl8/Is too much pressure placed on_ao5TQLYxMl8.txt",
+      "video_id": "ao5TQLYxMl8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/76ofvO2-iTk/How do we prepare players for _76ofvO2-iTk.txt",
+      "video_id": "76ofvO2-iTk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/Eqh3876xlTQ/Advice for Parents Navigating _Eqh3876xlTQ.txt",
+      "video_id": "Eqh3876xlTQ",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/oy59zBFYBwU/How would you react if this ha_oy59zBFYBwU.txt",
+      "video_id": "oy59zBFYBwU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/mtb_iLi7VQY/Every single person has a gift_mtb_iLi7VQY.txt",
+      "video_id": "mtb_iLi7VQY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/Y_AlGW1ovZ8/Are only children at a disadva_Y_AlGW1ovZ8.txt",
+      "video_id": "Y_AlGW1ovZ8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/VJe6CfZzQPw/How do we develop decision mak_VJe6CfZzQPw.txt",
+      "video_id": "VJe6CfZzQPw",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/JEW49lKX1cM/The Mindset Behind Raising Foo_JEW49lKX1cM.txt",
+      "video_id": "JEW49lKX1cM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/Hc7mkvBq4R0/What if your child doesn't mak_Hc7mkvBq4R0.txt",
+      "video_id": "Hc7mkvBq4R0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/Ts9Rtc3yYVs/Is reducing the English footba_Ts9Rtc3yYVs.txt",
+      "video_id": "Ts9Rtc3yYVs",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/x4puBeaFrdo/The best decision-makers do th_x4puBeaFrdo.txt",
+      "video_id": "x4puBeaFrdo",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/ePOHweu2GaM/How much should you be coachin_ePOHweu2GaM.txt",
+      "video_id": "ePOHweu2GaM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/Z6vBC0ZdapM/Should your child be playing u_Z6vBC0ZdapM.txt",
+      "video_id": "Z6vBC0ZdapM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/3wBFXLMlGOI/Is your child watching the rig_3wBFXLMlGOI.txt",
+      "video_id": "3wBFXLMlGOI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/AO7e0V3mu6M/What's the best format for you_AO7e0V3mu6M.txt",
+      "video_id": "AO7e0V3mu6M",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/T8-DmKbcOak/Jeremy Sauer & Dan Rice - How _T8-DmKbcOak.txt",
+      "video_id": "T8-DmKbcOak",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/B1rqxj3ZhyM/Are you giving your child too _B1rqxj3ZhyM.txt",
+      "video_id": "B1rqxj3ZhyM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/nAKl5jJ1LFU/Can you persuade NFL fans to g_nAKl5jJ1LFU.txt",
+      "video_id": "nAKl5jJ1LFU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/Pn4Mnys-ZOk/Peter Sturgess - The EX-Englan_Pn4Mnys-ZOk.txt",
+      "video_id": "Pn4Mnys-ZOk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/nGb6S1ASrjE/How to Teach Your Kids Account_nGb6S1ASrjE.txt",
+      "video_id": "nGb6S1ASrjE",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/JaOhj1M-iAQ/USMNT lack creativity in their_JaOhj1M-iAQ.txt",
+      "video_id": "JaOhj1M-iAQ",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/qjfEi5Prw9g/Troy Deeney - Ex-Premier Leagu_qjfEi5Prw9g.txt",
+      "video_id": "qjfEi5Prw9g",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/ua2jKsYlSzI/What Must Change With USA Yout_ua2jKsYlSzI.txt",
+      "video_id": "ua2jKsYlSzI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/CtLR3icuerk/Germany\u2019s Developing Love For _CtLR3icuerk.txt",
+      "video_id": "CtLR3icuerk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/OOh4W_g433k/Wycombe's Plan to Attract Top _OOh4W_g433k.txt",
+      "video_id": "OOh4W_g433k",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/Z87Zn2KYHkg/Players don\u2019t want to be a mem_Z87Zn2KYHkg.txt",
+      "video_id": "Z87Zn2KYHkg",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/s2J_plZSc5o/Is social media affecting Engl_s2J_plZSc5o.txt",
+      "video_id": "s2J_plZSc5o",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/Fd-EjXWL0L8/Richard Allen - Ex Head of Eng_Fd-EjXWL0L8.txt",
+      "video_id": "Fd-EjXWL0L8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/CJxpd45HcfU/NEW Podcast with Ex England FA_CJxpd45HcfU.txt",
+      "video_id": "CJxpd45HcfU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/k0C7_C8u4jA/John Allpress - What's Being T_k0C7_C8u4jA.txt",
+      "video_id": "k0C7_C8u4jA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/naoz5JsPexg/MATT JARVIS Getting Released F_naoz5JsPexg.txt",
+      "video_id": "naoz5JsPexg",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/R9PTD5sECEQ/Can you condition your child t_R9PTD5sECEQ.txt",
+      "video_id": "R9PTD5sECEQ",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/WH_5paWYMDk/MICHAEL HAMILTON - Benefits of_WH_5paWYMDk.txt",
+      "video_id": "WH_5paWYMDk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/B9RY96JJUMc/SE Dons Learning Dark Arts dev_B9RY96JJUMc.txt",
+      "video_id": "B9RY96JJUMc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/urNxaAxT8uQ/Frank Lampard talking about hi_urNxaAxT8uQ.txt",
+      "video_id": "urNxaAxT8uQ",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/Z5Ze19UXTdI/Ep. 4 Meet the Coach Retained _Z5Ze19UXTdI.txt",
+      "video_id": "Z5Ze19UXTdI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/wSxa0r5om9k/Ep. 2 Meet the Coach TAYLOR DA_wSxa0r5om9k.txt",
+      "video_id": "wSxa0r5om9k",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/-3GFIUwO2QI/Ep. 1 Meet the Coach Does intr_-3GFIUwO2QI.txt",
+      "video_id": "-3GFIUwO2QI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/w_4460XkO14/What is \u2018Project Footballer\u2019 \ud83e\udd14_w_4460XkO14.txt",
+      "video_id": "w_4460XkO14",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/awLRo2s7grM/Weekly Q&A Episode 9 What are _awLRo2s7grM.txt",
+      "video_id": "awLRo2s7grM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/niWBYZFjPUs/Weekly Q&A Episode 11 25 reaso_niWBYZFjPUs.txt",
+      "video_id": "niWBYZFjPUs",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/kbCzn4ECam8/Ep. 3 Meet the Coach SEAN GARN_kbCzn4ECam8.txt",
+      "video_id": "kbCzn4ECam8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/jOZpMrjbC2g/Frank Lampard - I Was The RESU_jOZpMrjbC2g.txt",
+      "video_id": "jOZpMrjbC2g",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/BCaIMSssVic/Weekly Q&A Episode 10 How to p_BCaIMSssVic.txt",
+      "video_id": "BCaIMSssVic",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/xRtVOWUgqlE/Weekly Q&A Episode 8 The role _xRtVOWUgqlE.txt",
+      "video_id": "xRtVOWUgqlE",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/tUJG5TQ_boE/Jamie Redknapp \u2018Phones are the_tUJG5TQ_boE.txt",
+      "video_id": "tUJG5TQ_boE",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/EtSjEw3NAJk/Do you agree with Jamie Redkna_EtSjEw3NAJk.txt",
+      "video_id": "EtSjEw3NAJk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/1Hv2C2UGHkA/Harry Redknapp Coaches that ha_1Hv2C2UGHkA.txt",
+      "video_id": "1Hv2C2UGHkA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/qOlronUk_wA/Do you agree with Harry Redkna_qOlronUk_wA.txt",
+      "video_id": "qOlronUk_wA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/3vVdIervXC4/Paul Merson on how different p_3vVdIervXC4.txt",
+      "video_id": "3vVdIervXC4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/cIsngY1_XI0/Do you agree with Sean\u2019s theor_cIsngY1_XI0.txt",
+      "video_id": "cIsngY1_XI0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/FRw96fhPkLs/Weekly Q&A Episode 7 Height In_FRw96fhPkLs.txt",
+      "video_id": "FRw96fhPkLs",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/ue1LKbXGwT0/Has modern football become bor_ue1LKbXGwT0.txt",
+      "video_id": "ue1LKbXGwT0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/biGSIoDy56o/\u201cI\u2019ve learned that extreme dis_biGSIoDy56o.txt",
+      "video_id": "biGSIoDy56o",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/8LN___8ZPb8/Do you agree with Harry Redkna_8LN___8ZPb8.txt",
+      "video_id": "8LN___8ZPb8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/9pssg3t6xak/Joleon Lescott on the pressure_9pssg3t6xak.txt",
+      "video_id": "9pssg3t6xak",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/UcSFExgfugQ/Carlton Cole on the rawness of_UcSFExgfugQ.txt",
+      "video_id": "UcSFExgfugQ",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/eTj7UWmUwjg/How diverse play experiences a_eTj7UWmUwjg.txt",
+      "video_id": "eTj7UWmUwjg",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/pAa7DBk2tEM/Project Footballer Ep.32 - Why_pAa7DBk2tEM.txt",
+      "video_id": "pAa7DBk2tEM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/VYhBkY4dW28/Carlton Cole on the importance_VYhBkY4dW28.txt",
+      "video_id": "VYhBkY4dW28",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/8Fklol7gujc/Weekly Q&A with Dan and Sean E_8Fklol7gujc.txt",
+      "video_id": "8Fklol7gujc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/PWdwgewFbIc/How Jamie Redknapp used a bird_PWdwgewFbIc.txt",
+      "video_id": "PWdwgewFbIc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/z1zOmZ94e7U/Project Footballer Ep.31 - Can_z1zOmZ94e7U.txt",
+      "video_id": "z1zOmZ94e7U",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/YGCLsx1z9iA/Weekly Q&A Ep. 6 Are coaches s_YGCLsx1z9iA.txt",
+      "video_id": "YGCLsx1z9iA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/ujZFpIPqGWM/Weekly Q&A with Darius, Dan an_ujZFpIPqGWM.txt",
+      "video_id": "ujZFpIPqGWM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/ndxQVaVqrhw/Project Footballer Ep.30 - At _ndxQVaVqrhw.txt",
+      "video_id": "ndxQVaVqrhw",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/vFVsDGJXW7o/Project Footballer Ep.29 - Hel_vFVsDGJXW7o.txt",
+      "video_id": "vFVsDGJXW7o",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/izjGIDQCjPU/Weekly Q&A with Darius and Dan_izjGIDQCjPU.txt",
+      "video_id": "izjGIDQCjPU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/wBclRuKj4Qc/Weekly Q&A with Darius and Sea_wBclRuKj4Qc.txt",
+      "video_id": "wBclRuKj4Qc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/HX_v5jwy8hk/Weekly Q&A with Darius and Dan_HX_v5jwy8hk.txt",
+      "video_id": "HX_v5jwy8hk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/EFECkizN1oU/Project Footballer Ep.28 - \u201cHo_EFECkizN1oU.txt",
+      "video_id": "EFECkizN1oU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/x_qS7F25pLI/Joleon Lescott - I started pla_x_qS7F25pLI.txt",
+      "video_id": "x_qS7F25pLI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/JcYZO6Hu20k/Project Footballer Ep. 21 - Pa_JcYZO6Hu20k.txt",
+      "video_id": "JcYZO6Hu20k",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/1oYNEv_yFXc/Is a player's position predete_1oYNEv_yFXc.txt",
+      "video_id": "1oYNEv_yFXc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/dq8CS83DLL0/August Born Birthday You will _dq8CS83DLL0.txt",
+      "video_id": "dq8CS83DLL0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/P1pDG05v_5I/Chelsea Strength and Condition_P1pDG05v_5I.txt",
+      "video_id": "P1pDG05v_5I",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/AJxLkbG6_lA/Why mastering technique alone _AJxLkbG6_lA.txt",
+      "video_id": "AJxLkbG6_lA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/JViTssg3ato/Why do so many academy footbal_JViTssg3ato.txt",
+      "video_id": "JViTssg3ato",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/ykBOGBxE7l0/How to develop a winning menta_ykBOGBxE7l0.txt",
+      "video_id": "ykBOGBxE7l0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/lya5meAXaiM/Sonny Pike The Greatest Footba_lya5meAXaiM.txt",
+      "video_id": "lya5meAXaiM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/K2eFM8iSlYM/I was bullied at Reading Acade_K2eFM8iSlYM.txt",
+      "video_id": "K2eFM8iSlYM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/w1rpHfq6ols/Project Footballer Ep. 15 - Th_w1rpHfq6ols.txt",
+      "video_id": "w1rpHfq6ols",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/8nv4qM9Cz1w/Why England aren't producing c_8nv4qM9Cz1w.txt",
+      "video_id": "8nv4qM9Cz1w",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/6J6GXSA8bZA/Project Footballer Ep 6 - Jami_6J6GXSA8bZA.txt",
+      "video_id": "6J6GXSA8bZA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/U78OF_DMrOI/Jamie Redknapp I was playing f_U78OF_DMrOI.txt",
+      "video_id": "U78OF_DMrOI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/OO8ji7WIn08/Bad habits affected Reece Jame_OO8ji7WIn08.txt",
+      "video_id": "OO8ji7WIn08",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/WfvzLkXdfMU/Jamie Redknapp discusses his o_WfvzLkXdfMU.txt",
+      "video_id": "WfvzLkXdfMU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/Yf9jXEe2gy0/Project Footballer Ep.10 - How_Yf9jXEe2gy0.txt",
+      "video_id": "Yf9jXEe2gy0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/GMdoxaDPD8M/Ethan Pinnock I went from bein_GMdoxaDPD8M.txt",
+      "video_id": "GMdoxaDPD8M",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/FfMiBnrxHAg/Project Footballer Ep 9 - How _FfMiBnrxHAg.txt",
+      "video_id": "FfMiBnrxHAg",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/kteTxNa6cMM/Project Footballer Ep. 1 - Foo_kteTxNa6cMM.txt",
+      "video_id": "kteTxNa6cMM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/wuOq3TJPWfE/Project Footballer Ep. 3 - Coa_wuOq3TJPWfE.txt",
+      "video_id": "wuOq3TJPWfE",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/r4v0PB4rhVE/Project Footballer Ep. 4 - Ars_r4v0PB4rhVE.txt",
+      "video_id": "r4v0PB4rhVE",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/be-Mi83r20E/The father of Reece James & La_be-Mi83r20E.txt",
+      "video_id": "be-Mi83r20E",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/f68fb0b2-6bef-42c0-bc3f-b2f794b6569f/-aZcZXlKwxM/Project Footballer Ep. 2 - Per_-aZcZXlKwxM.txt",
+      "video_id": "-aZcZXlKwxM",
+      "language": "en",
+      "type": "auto-generated"
+    }
+  ],
+  "videos": [
+    {
+      "id": "vkmceF1J4GA",
+      "title": "Has this been your child's academy experience?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=vkmceF1J4GA"
+    },
+    {
+      "id": "76ofvO2-iTk",
+      "title": "How do we prepare players for what comes AFTER 'making it'?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=76ofvO2-iTk"
+    },
+    {
+      "id": "ao5TQLYxMl8",
+      "title": "Is too much pressure placed on young players?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ao5TQLYxMl8"
+    },
+    {
+      "id": "v-Nofl8XIyk",
+      "title": "Ever heard of facilitator players?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=v-Nofl8XIyk"
+    },
+    {
+      "id": "oWl7BwZzm1c",
+      "title": "What does \"making it\" mean? \u26bd\ufe0f",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=oWl7BwZzm1c"
+    },
+    {
+      "id": "C8y0Op8XlsY",
+      "title": "Are We Setting Young Footballers Up To Fail?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=C8y0Op8XlsY"
+    },
+    {
+      "id": "t4rFDrTLrbU",
+      "title": "What Are the REAL Odds of \u201cMaking It\u201d in Football? Chris Platts Breaks it Down",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=t4rFDrTLrbU"
+    },
+    {
+      "id": "Eqh3876xlTQ",
+      "title": "Advice for Parents Navigating the Academy System \u26bd\ufe0f",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Eqh3876xlTQ"
+    },
+    {
+      "id": "oy59zBFYBwU",
+      "title": "How would you react if this happened to your child?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=oy59zBFYBwU"
+    },
+    {
+      "id": "mtb_iLi7VQY",
+      "title": "Every single person has a gift...",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=mtb_iLi7VQY"
+    },
+    {
+      "id": "Ts9Rtc3yYVs",
+      "title": "Is reducing the English football format the right thing to do?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Ts9Rtc3yYVs"
+    },
+    {
+      "id": "Y_AlGW1ovZ8",
+      "title": "Are only children at a disadvantage when it comes to football?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Y_AlGW1ovZ8"
+    },
+    {
+      "id": "JEW49lKX1cM",
+      "title": "The Mindset Behind Raising Football Stars - Jenny Boateng's Winning Formula!",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=JEW49lKX1cM"
+    },
+    {
+      "id": "3wBFXLMlGOI",
+      "title": "Is your child watching the right players? \ud83d\udc40",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=3wBFXLMlGOI"
+    },
+    {
+      "id": "Hc7mkvBq4R0",
+      "title": "What if your child doesn't make it as a footballer?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Hc7mkvBq4R0"
+    },
+    {
+      "id": "VJe6CfZzQPw",
+      "title": "How do we develop decision making skills in young players?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=VJe6CfZzQPw"
+    },
+    {
+      "id": "ePOHweu2GaM",
+      "title": "How much should you be coaching your child?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ePOHweu2GaM"
+    },
+    {
+      "id": "Z6vBC0ZdapM",
+      "title": "Should your child be playing up?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Z6vBC0ZdapM"
+    },
+    {
+      "id": "x4puBeaFrdo",
+      "title": "The best decision-makers do this",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=x4puBeaFrdo"
+    },
+    {
+      "id": "AO7e0V3mu6M",
+      "title": "What's the best format for young footballers?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=AO7e0V3mu6M"
+    },
+    {
+      "id": "B1rqxj3ZhyM",
+      "title": "Are you giving your child too much feedback?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=B1rqxj3ZhyM"
+    },
+    {
+      "id": "nGb6S1ASrjE",
+      "title": "How to Teach Your Kids Accountability",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=nGb6S1ASrjE"
+    },
+    {
+      "id": "qjfEi5Prw9g",
+      "title": "Troy Deeney  - Ex-Premier League Star Discusses How To Raise a Footballer",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=qjfEi5Prw9g"
+    },
+    {
+      "id": "OOh4W_g433k",
+      "title": "Wycombe's Plan to Attract Top Coaches",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=OOh4W_g433k"
+    },
+    {
+      "id": "T8-DmKbcOak",
+      "title": "Jeremy Sauer & Dan Rice  - How To Build The Perfect Football Academy From Scratch",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=T8-DmKbcOak"
+    },
+    {
+      "id": "CtLR3icuerk",
+      "title": "Germany\u2019s Developing Love For Futsal \u2764\ufe0f\ud83c\udde9\ud83c\uddea",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=CtLR3icuerk"
+    },
+    {
+      "id": "Pn4Mnys-ZOk",
+      "title": "Peter Sturgess - The EX-England Head of Futsal Explains Its Importance In The UK",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Pn4Mnys-ZOk"
+    },
+    {
+      "id": "nAKl5jJ1LFU",
+      "title": "Can you persuade NFL fans to get their children into soccer? \ud83e\udd14\ud83c\udfc8",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=nAKl5jJ1LFU"
+    },
+    {
+      "id": "JaOhj1M-iAQ",
+      "title": "USMNT lack creativity in their game \ud83c\uddfa\ud83c\uddf8\u274c",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=JaOhj1M-iAQ"
+    },
+    {
+      "id": "ua2jKsYlSzI",
+      "title": "What Must Change With USA Youth Soccer Culture?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ua2jKsYlSzI"
+    },
+    {
+      "id": "R9PTD5sECEQ",
+      "title": "Can you condition your child to love football? \u26bd\ufe0f\ud83e\udd14",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=R9PTD5sECEQ"
+    },
+    {
+      "id": "CJxpd45HcfU",
+      "title": "NEW Podcast with Ex England FA National Coach John Allpress is LIVE \u26bd\ufe0f\ud83d\udde3\ufe0f",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=CJxpd45HcfU"
+    },
+    {
+      "id": "k0C7_C8u4jA",
+      "title": "John Allpress - What's Being Taught To The English Football Coaches?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=k0C7_C8u4jA"
+    },
+    {
+      "id": "Fd-EjXWL0L8",
+      "title": "Richard Allen - Ex Head of England Talent ID explains what English clubs are taught to scout",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Fd-EjXWL0L8"
+    },
+    {
+      "id": "naoz5JsPexg",
+      "title": "MATT JARVIS: Getting Released From Academy at 16 | Project Footballer",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=naoz5JsPexg"
+    },
+    {
+      "id": "Z87Zn2KYHkg",
+      "title": "Players don\u2019t want to be a meme \ud83d\ude1f\ud83d\udcf5",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Z87Zn2KYHkg"
+    },
+    {
+      "id": "s2J_plZSc5o",
+      "title": "Is social media affecting England\u2019s performances? \ud83d\udcf1\ud83e\udd14",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=s2J_plZSc5o"
+    },
+    {
+      "id": "WH_5paWYMDk",
+      "title": "MICHAEL HAMILTON - Benefits of Joining a Category 3 Academy",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=WH_5paWYMDk"
+    },
+    {
+      "id": "EW_gETKJTnY",
+      "title": "The Dark Arts of Football: SE Dons Podcast is Now LIVE on all Platforms \u26bd\ufe0f\ud83d\udcf8\ud83d\udde3\ufe0f",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=EW_gETKJTnY"
+    },
+    {
+      "id": "B9RY96JJUMc",
+      "title": "SE Dons: Learning Dark Arts develops Football IQ",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=B9RY96JJUMc"
+    },
+    {
+      "id": "Z5Ze19UXTdI",
+      "title": "Ep. 4 Meet the Coach: Retained & Released The best advice to give to parents",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Z5Ze19UXTdI"
+    },
+    {
+      "id": "kbCzn4ECam8",
+      "title": "Ep. 3 Meet the Coach: SEAN GARNIER 'What football developers learn from a professional\u00a0freestyler?'",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=kbCzn4ECam8"
+    },
+    {
+      "id": "urNxaAxT8uQ",
+      "title": "Frank Lampard talking about his footballing surroundings as a youngster \u26bd\ufe0f",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=urNxaAxT8uQ"
+    },
+    {
+      "id": "jOZpMrjbC2g",
+      "title": "Frank Lampard - I Was The RESULT Of My Dad's Project Lampard | Project Footballer",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=jOZpMrjbC2g"
+    },
+    {
+      "id": "wSxa0r5om9k",
+      "title": "Ep. 2 Meet the Coach: TAYLOR DAVIDSON 'Bluetooth is causing injuries\u00a0to\u00a0players'",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=wSxa0r5om9k"
+    },
+    {
+      "id": "-3GFIUwO2QI",
+      "title": "Ep. 1 Meet the Coach: Does introducing multisports as a child increase their chance as\u00a0a\u00a0pro?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=-3GFIUwO2QI"
+    },
+    {
+      "id": "w_4460XkO14",
+      "title": "What is \u2018Project Footballer\u2019? \ud83e\udd14 \u26bd",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=w_4460XkO14"
+    },
+    {
+      "id": "niWBYZFjPUs",
+      "title": "Weekly Q&A Episode 11: 25 reasons that hold players back from making it as professional\u00a0footballers",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=niWBYZFjPUs"
+    },
+    {
+      "id": "BCaIMSssVic",
+      "title": "Weekly Q&A Episode 10: How to prepare your child for the game of the future?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=BCaIMSssVic"
+    },
+    {
+      "id": "awLRo2s7grM",
+      "title": "Weekly Q&A Episode 9: What are your child\u2019s chance of making it Pro, if they don't get\u00a0signed\u00a0at\u00a0U9?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=awLRo2s7grM"
+    },
+    {
+      "id": "biGSIoDy56o",
+      "title": "\u201cI\u2019ve learned that extreme discipline is a key part of the success of the world\u2019s best athletes\u201d",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=biGSIoDy56o"
+    },
+    {
+      "id": "cIsngY1_XI0",
+      "title": "Do you agree with Sean\u2019s theory? \ud83e\udd14 #football #footballdrills #academyfootball",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=cIsngY1_XI0"
+    },
+    {
+      "id": "EtSjEw3NAJk",
+      "title": "Do you agree with Jamie Redknapp here? \ud83e\udd14 #football #academyfootball #jamieredknapp",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=EtSjEw3NAJk"
+    },
+    {
+      "id": "3vVdIervXC4",
+      "title": "Paul Merson on how different players require different coaching experiences \ud83e\udd1d #football #paulmerson",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=3vVdIervXC4"
+    },
+    {
+      "id": "xRtVOWUgqlE",
+      "title": "Weekly Q&A Episode 8: The role of GENETIC influence in player success",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xRtVOWUgqlE"
+    },
+    {
+      "id": "qOlronUk_wA",
+      "title": "Do you agree with Harry Redknapp? \ud83e\udd14 #football #harryredknapp",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=qOlronUk_wA"
+    },
+    {
+      "id": "tUJG5TQ_boE",
+      "title": "Jamie Redknapp: \u2018Phones are the biggest problem for young footballers right now!\u2019 \ud83d\ude24 #football",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=tUJG5TQ_boE"
+    },
+    {
+      "id": "1Hv2C2UGHkA",
+      "title": "Harry Redknapp: \"Coaches that haven't played the game are ruining football!  They are all academics!",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=1Hv2C2UGHkA"
+    },
+    {
+      "id": "FRw96fhPkLs",
+      "title": "Weekly Q&A Episode 7: Height In Football",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=FRw96fhPkLs"
+    },
+    {
+      "id": "ue1LKbXGwT0",
+      "title": "Has modern football become boring? \ud83e\udd14 #football #academyfootball #youthfootball",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ue1LKbXGwT0"
+    },
+    {
+      "id": "UcSFExgfugQ",
+      "title": "Carlton Cole on the rawness of football in Sierra Leone \ud83d\ude24 #football #carltoncole #westham",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=UcSFExgfugQ"
+    },
+    {
+      "id": "YGCLsx1z9iA",
+      "title": "Weekly Q&A Ep. 6: Are coaches spending too much time teaching unnecessary dribbling sequences?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=YGCLsx1z9iA"
+    },
+    {
+      "id": "eTj7UWmUwjg",
+      "title": "How diverse play experiences are used to develop young footballers \ud83e\udd1d #football #footballacademy",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=eTj7UWmUwjg"
+    },
+    {
+      "id": "pAa7DBk2tEM",
+      "title": "Project Footballer Ep.32 - Why are there only 1% of South Asian players in academy football?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=pAa7DBk2tEM"
+    },
+    {
+      "id": "8LN___8ZPb8",
+      "title": "Do you agree with Harry Redknapp\u2019s views on nature vs nurture? \ud83e\udd14 #harryredknapp #jamieredknapp",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=8LN___8ZPb8"
+    },
+    {
+      "id": "9pssg3t6xak",
+      "title": "Joleon Lescott on the pressures that this generation faces in football. #football #youthfootball",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=9pssg3t6xak"
+    },
+    {
+      "id": "VYhBkY4dW28",
+      "title": "Carlton Cole on the importance of blending street grit with game intelligence \ud83e\udd1d #football #westham",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=VYhBkY4dW28"
+    },
+    {
+      "id": "z1zOmZ94e7U",
+      "title": "Project Footballer Ep.31 - Can your child make it in the National League on a cold Tuesday night?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=z1zOmZ94e7U"
+    },
+    {
+      "id": "8Fklol7gujc",
+      "title": "Weekly Q&A with Dan and Sean: Episode 5",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=8Fklol7gujc"
+    },
+    {
+      "id": "PWdwgewFbIc",
+      "title": "How Jamie Redknapp used a birdcage to improve his technique as a child \ud83d\udc4f #football #jamieredknapp",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=PWdwgewFbIc"
+    },
+    {
+      "id": "ujZFpIPqGWM",
+      "title": "Weekly Q&A with Darius, Dan and Chris Robinson: Episode 4",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ujZFpIPqGWM"
+    },
+    {
+      "id": "wBclRuKj4Qc",
+      "title": "Weekly Q&A with Darius and Sean: Episode 3",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=wBclRuKj4Qc"
+    },
+    {
+      "id": "ndxQVaVqrhw",
+      "title": "Project Footballer Ep.30 - At what age is it okay for coaches to swear at your child?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ndxQVaVqrhw"
+    },
+    {
+      "id": "izjGIDQCjPU",
+      "title": "Weekly Q&A with Darius and Dan: Episode 2",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=izjGIDQCjPU"
+    },
+    {
+      "id": "HX_v5jwy8hk",
+      "title": "Weekly Q&A with Darius and Dan: Episode 1",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=HX_v5jwy8hk"
+    },
+    {
+      "id": "vFVsDGJXW7o",
+      "title": "Project Footballer Ep.29 - Help your child avoid being one of 40% of footballers who go bankrupt.",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=vFVsDGJXW7o"
+    },
+    {
+      "id": "EFECkizN1oU",
+      "title": "Project Footballer Ep.28 - \u201cHomeschooling is giving players a huge advantage to go pro\u201d",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=EFECkizN1oU"
+    },
+    {
+      "id": "OTn2NhKXguw",
+      "title": "Project Footballer Ep.27 - Is your child\u2019s speed predetermined by genetics?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=OTn2NhKXguw"
+    },
+    {
+      "id": "8ndvx-rYadE",
+      "title": "David Horrocks: \"AI will track facial expressions and body language to monitor performance\u201d",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=8ndvx-rYadE"
+    },
+    {
+      "id": "qVgO4pTiXt0",
+      "title": "Carlton Cole: \u201cCage Football Made Me The Man I Am Today\u201d",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=qVgO4pTiXt0"
+    },
+    {
+      "id": "1oYNEv_yFXc",
+      "title": "Is a player's position predetermined by genetics, personality, environment or chance?",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=1oYNEv_yFXc"
+    },
+    {
+      "id": "AJxLkbG6_lA",
+      "title": "Why mastering technique alone will not make you a footballer",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=AJxLkbG6_lA"
+    },
+    {
+      "id": "P1pDG05v_5I",
+      "title": "Chelsea Strength and Conditioning Coach explains how to develop Physicality for young players",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=P1pDG05v_5I"
+    },
+    {
+      "id": "dq8CS83DLL0",
+      "title": "August Born Birthday?  \"You will never make it!\" Ajax Consultant discusses Relative Age Bias",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=dq8CS83DLL0"
+    },
+    {
+      "id": "JcYZO6Hu20k",
+      "title": "Project Footballer Ep. 21 - Parents of Leicester academy star Nazar Mahina tell their story!",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=JcYZO6Hu20k"
+    },
+    {
+      "id": "x_qS7F25pLI",
+      "title": "Joleon Lescott - I started playing football as a Right Winger!",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=x_qS7F25pLI"
+    },
+    {
+      "id": "dr66eyXdnIk",
+      "title": "Project Footballer Ep. 19 - The Panel Answers Your Football Questions!",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=dr66eyXdnIk"
+    },
+    {
+      "id": "lya5meAXaiM",
+      "title": "Sonny Pike: The Greatest Footballer That Never Was \"My father and I have never spoken since\"",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=lya5meAXaiM"
+    },
+    {
+      "id": "ykBOGBxE7l0",
+      "title": "How to develop a winning mentality for your child! We speak to top football sports phyciologist",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ykBOGBxE7l0"
+    },
+    {
+      "id": "JViTssg3ato",
+      "title": "Why do so many academy footballers never make it? \ud83d\udcac #football #footballshorts",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=JViTssg3ato"
+    },
+    {
+      "id": "WfvzLkXdfMU",
+      "title": "Jamie Redknapp discusses his obsession with football! #football #footballshorts #jamieredknapp",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=WfvzLkXdfMU"
+    },
+    {
+      "id": "w1rpHfq6ols",
+      "title": "Project Footballer Ep. 15 - The player who turned down a pro football contract to go to Harvard",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=w1rpHfq6ols"
+    },
+    {
+      "id": "8nv4qM9Cz1w",
+      "title": "Why England aren't producing controlling midfielders",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=8nv4qM9Cz1w"
+    },
+    {
+      "id": "K2eFM8iSlYM",
+      "title": "I was bullied at Reading Academy and became depressed with suicidal thoughts",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=K2eFM8iSlYM"
+    },
+    {
+      "id": "OO8ji7WIn08",
+      "title": "Bad habits affected Reece James at U13 level! #reecejames #chelseafc #footballacademy",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=OO8ji7WIn08"
+    },
+    {
+      "id": "Yf9jXEe2gy0",
+      "title": "Project Footballer Ep.10 - How much can technique improve? We hear from Isa - The Technical Trainer",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Yf9jXEe2gy0"
+    },
+    {
+      "id": "FfMiBnrxHAg",
+      "title": "Project Footballer Ep 9 - How important is athleticism in football?  Academy Scouts discuss!",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=FfMiBnrxHAg"
+    },
+    {
+      "id": "U78OF_DMrOI",
+      "title": "Jamie Redknapp: \"I was playing football with pros from as early as I can remember\"",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=U78OF_DMrOI"
+    },
+    {
+      "id": "GMdoxaDPD8M",
+      "title": "Ethan Pinnock:  I went from being paid \u00a330 per week to the Premier League.",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=GMdoxaDPD8M"
+    },
+    {
+      "id": "6J6GXSA8bZA",
+      "title": "Project Footballer Ep 6 - Jamie Mackie tells us how he went from Sunday League to the Premier League",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=6J6GXSA8bZA"
+    },
+    {
+      "id": "be-Mi83r20E",
+      "title": "The father of Reece James & Lauren James tells us how they made it to the top",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=be-Mi83r20E"
+    },
+    {
+      "id": "wuOq3TJPWfE",
+      "title": "Project Footballer Ep. 3 - Coach Danny Edwards talks about his child's journey into academy football",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=wuOq3TJPWfE"
+    },
+    {
+      "id": "r4v0PB4rhVE",
+      "title": "Project Footballer Ep. 4 - Arsenal Legend Paul Merson talks about his U7 child in Academy Football",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=r4v0PB4rhVE"
+    },
+    {
+      "id": "kteTxNa6cMM",
+      "title": "Project Footballer Ep. 1 - Footballer Darius Charles talks about his son's journey into Football",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=kteTxNa6cMM"
+    },
+    {
+      "id": "-aZcZXlKwxM",
+      "title": "Project Footballer Ep. 2 - Perry Mitchel talks about his son signing for Chelsea U9's",
+      "publishedAt": "2025-09-07T11:43:31.118Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=-aZcZXlKwxM"
+    }
+  ],
+  "start_time": 1757245415.8442025,
+  "user_id": "0dda42c8-ea25-44d2-a746-187ee1676851",
+  "credits_reserved": 105,
+  "credits_used": 108,
+  "reservation_id": "65924fe0-37fe-4240-83c8-fc554dc0fb85",
+  "videos_metadata": {
+    "vkmceF1J4GA": {
+      "id": "vkmceF1J4GA",
+      "title": "Has this been your child's academy experience?",
+      "description": "Sean Dyche recently stated that academy players only learn how to pass and receive off the back foot and can\u2019t express themselves as natural footballers.  \n\nHas this been what you have experienced at your child\u2019s academy ?\n\n\ud83d\ude80 Help us reach 20k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nDon\u2019t forget to like, subscribe, and hit the notification bell to stay updated on future episodes. Let us know your thoughts in the comments below!\n\n\ud83d\udd14 Subscribe and hit the notification bell for more insights on what parents must know about academy signings!\n\nCould you develop your child into a footballer if you followed the 'perfect' formula? Sean Conlon, the founder of We Make Footballers and a Scout with Chelsea believes some people can. Follow our journey to discovering what it really takes to become a footballer. \n \nHow much is down to luck, genetics or being born into a football family. \n\n\ud83c\udfa7 Listen to the full podcast on:\nhttps://open.spotify.com/show/2hHiSvpzpc6S50Jn6Hu69e\n\nFollow us on social platforms for more exclusive content and updates! \ud83c\udf1f\nhttps://www.instagram.com/projectfootballer/\nhttps://www.tiktok.com/@project_footballer\n\n\n\n#FootballPassion #KidsFootballTraining #DevelopFootballSkills #RaisingFootballer #YoungFootballers",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-05-22T14:16:03Z",
+      "thumbnail": "https://i.ytimg.com/vi/vkmceF1J4GA/maxresdefault.jpg",
+      "duration": "0:24",
+      "viewCount": 14437,
+      "likeCount": 139,
+      "commentCount": 3,
+      "url": "https://www.youtube.com/watch?v=vkmceF1J4GA"
+    },
+    "76ofvO2-iTk": {
+      "id": "76ofvO2-iTk",
+      "title": "How do we prepare players for what comes AFTER 'making it'?",
+      "description": "We spend a lot of time talking about \u201cmaking it,\u201d but what about what comes AFTER making it?\n\nIn our latest episode with Chris Platts, we explore what life looks like beyond the pro contract - how players can build identity, purpose, and stability after reaching the top level.\n\nThis episode is a must-listen for players, parents, and coaches! \n\nTune in now on YouTube, Spotify, or Apple Podcasts \ud83c\udfa7",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-04-08T16:02:03Z",
+      "thumbnail": "https://i.ytimg.com/vi/76ofvO2-iTk/maxresdefault.jpg",
+      "duration": "0:35",
+      "viewCount": 1590,
+      "likeCount": 6,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=76ofvO2-iTk"
+    },
+    "ao5TQLYxMl8": {
+      "id": "ao5TQLYxMl8",
+      "title": "Is too much pressure placed on young players?",
+      "description": "Just because a kid is great at 9 doesn\u2019t mean they\u2019ll be great at 19.\n\nAll it really shows is that\u2026 they\u2019re great at 9.\n\n\u26a0\ufe0f Predicting who will \u201cmake it\u201d is almost impossible at this stage.\n\nSo what should parents focus on instead?\n\nAre they enjoying it?\nAre they growing as a person?\nAre they making friends and gaining confidence?\n\nThat\u2019s what really matters right now.\n\n\ud83c\udfa7 Full episode is live!\n\nHead to our channel to check it out.\n\n#FootballPassion #KidsFootballTraining #DevelopFootballSkills #RaisingFootballer #YoungFootballers",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-04-03T13:50:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/ao5TQLYxMl8/maxresdefault.jpg",
+      "duration": "0:57",
+      "viewCount": 1248,
+      "likeCount": 14,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=ao5TQLYxMl8"
+    },
+    "v-Nofl8XIyk": {
+      "id": "v-Nofl8XIyk",
+      "title": "Ever heard of facilitator players?",
+      "description": "Ever heard of a facilitator player? \n\nIt\u2019s a harsh term, but it\u2019s real. And it\u2019s something every parent should know is a possibility during their child\u2019s football journey.\n\nIf you haven\u2019t listed to our recent episode, you\u2019re missing out! Head to our channel to tune in today \ud83c\udfa7",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-04-01T16:01:57Z",
+      "thumbnail": "https://i.ytimg.com/vi/v-Nofl8XIyk/maxresdefault.jpg",
+      "duration": "0:51",
+      "viewCount": 2113,
+      "likeCount": 21,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=v-Nofl8XIyk"
+    },
+    "oWl7BwZzm1c": {
+      "id": "oWl7BwZzm1c",
+      "title": "What does \"making it\" mean? \u26bd\ufe0f",
+      "description": "What does it mean to \u201cmake it\u201d in football? \n\nWe\u2019ve had this discussion before, and we\u2019ll probably have it again. Drop your thoughts on the matter down in the comments!\ud83d\udc47\ud83c\udffb\n\n\ud83c\udfa7 If you haven\u2019t tuned in to our latest episode with Chris Platts yet, you\u2019re missing out! Head to our channel to give it a watch \ud83d\ude4c\ud83c\udffb",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-03-28T14:49:45Z",
+      "thumbnail": "https://i.ytimg.com/vi/oWl7BwZzm1c/maxresdefault.jpg",
+      "duration": "0:52",
+      "viewCount": 2383,
+      "likeCount": 18,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=oWl7BwZzm1c"
+    },
+    "C8y0Op8XlsY": {
+      "id": "C8y0Op8XlsY",
+      "title": "Are We Setting Young Footballers Up To Fail?",
+      "description": "New podcast just dropped! \ud83d\udea8\n\nThink your kid\u2019s going to make it pro? \u26bd You need to hear this first.\n\nWe sat down with Chris Platts, a football career coach who\u2019s studied the journeys of 300+ academy players, and the truth might surprise you. \ud83d\udc40\n\nWhat are the real odds of \u2018making it\u2019 as a footballer?\n\nHow do you prepare your child for the pressure, the path, and what comes after football?\n\nThis one\u2019s packed with data-driven insights and truths every football parent should hear. \ud83d\udca5\n\nHead to our channel to tune in!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-03-27T17:07:05Z",
+      "thumbnail": "https://i.ytimg.com/vi/C8y0Op8XlsY/maxresdefault.jpg",
+      "duration": "1:12",
+      "viewCount": 753,
+      "likeCount": 17,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=C8y0Op8XlsY"
+    },
+    "t4rFDrTLrbU": {
+      "id": "t4rFDrTLrbU",
+      "title": "What Are the REAL Odds of \u201cMaking It\u201d in Football? Chris Platts Breaks it Down",
+      "description": "\ud83d\ude80 Help us reach 20k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nIn this episode, we sit down with Chris Platts, a career coach and leading researcher in football career trajectories. Chris holds a PhD focused on the lives of over 300 young footballers and has conducted a large independent study into player career pathways.\n\nTogether, we dive deep into the data behind football development, the real odds of \u201cmaking it,\u201d and how parents can better prepare their children for the realities of academy football. Chris shares actionable advice on how to support young players\u2014whether their career leads to the Premier League, the lower leagues, or beyond football altogether.\n\n\ud83d\udca1 Expect to learn:\n* How to navigate the football academy system.\n* Why it\u2019s essential to define what \u201cmaking it\u201d actually means.\n* How parents can help their children develop resilience and plan for life outside of football.\n\nThis episode is packed with data-driven insights you won\u2019t want to miss.\n\n\ud83d\udd14 Don\u2019t forget to like, subscribe, and hit the notification bell to stay updated on future episodes. Drop your thoughts in the comments below!\n\n#ProjectFootballer #AcademyFootball #YouthDevelopment #FootballJourney #ParentalSupport",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-03-27T16:33:41Z",
+      "thumbnail": "https://i.ytimg.com/vi/t4rFDrTLrbU/maxresdefault.jpg",
+      "duration": "2:15:51",
+      "viewCount": 11247,
+      "likeCount": 170,
+      "commentCount": 35,
+      "url": "https://www.youtube.com/watch?v=t4rFDrTLrbU"
+    },
+    "Eqh3876xlTQ": {
+      "id": "Eqh3876xlTQ",
+      "title": "Advice for Parents Navigating the Academy System \u26bd\ufe0f",
+      "description": "Jenny Boateng\u2019s advice for parents in the academy system: you own your child\u2019s gift \ud83c\udf1f\n\nDon\u2019t panic if one club doesn\u2019t see your child\u2019s potential. Keep working with them, focus on development, and find the right opportunity. And remember\u2014everyone develops at their own pace, so be patient and trust the process! \ud83d\udcaa\n\nWhat\u2019s the best advice you\u2019ve received about navigating academy football? Let us know \ud83d\udc47\n\n#academyfootball #football #footballer #youthfootball",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-03-17T16:46:16Z",
+      "thumbnail": "https://i.ytimg.com/vi/Eqh3876xlTQ/maxresdefault.jpg",
+      "duration": "0:59",
+      "viewCount": 522,
+      "likeCount": 7,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=Eqh3876xlTQ"
+    },
+    "oy59zBFYBwU": {
+      "id": "oy59zBFYBwU",
+      "title": "How would you react if this happened to your child?",
+      "description": "If you haven\u2019t watched yet, in our latest episode we caught up with Jenny and Jeriah Boateng and spent some time unpacking Jeriah\u2019s experience with racism at a young age. \n\nEven though Jenny didn\u2019t expect Jeriah to experience at the age of 10, Jeriah was able to turn what happened into a sports fiction book that helps parents facilitate conversations about racism with their young children. Back in Time is an amazing tool for parents, and such a bright spot to come out of the whole ordeal!\n\nIf you haven\u2019t tuned into the full episode yet, this is one you don\u2019t want to miss. Head to our channel to watch!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-03-06T14:46:10Z",
+      "thumbnail": "https://i.ytimg.com/vi/oy59zBFYBwU/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 638,
+      "likeCount": 8,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=oy59zBFYBwU"
+    },
+    "mtb_iLi7VQY": {
+      "id": "mtb_iLi7VQY",
+      "title": "Every single person has a gift...",
+      "description": "\"Every single child, and every single person has a gift.\"\n\nJenny Boateng shares her approach as a parent: it\u2019s about helping your child discover their unique talents and supporting them in building confidence. Instead of expecting them to follow the same path, she focuses on helping them grow into the best version of themselves. \ud83d\udcaa\n\nOur full episode with Jenny and Jeriah Boateng is now LIVE! Head to our channel to tune in.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-03-05T16:13:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/mtb_iLi7VQY/maxresdefault.jpg",
+      "duration": "0:23",
+      "viewCount": 668,
+      "likeCount": 30,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=mtb_iLi7VQY"
+    },
+    "Ts9Rtc3yYVs": {
+      "id": "Ts9Rtc3yYVs",
+      "title": "Is reducing the English football format the right thing to do?",
+      "description": "Was England's recent decision to reduce the format for youth footballers the right thing to do? \n\nLet us know which side you agree with in the comments!\n\n#youthfootball #englandfootball",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-03-04T17:34:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/Ts9Rtc3yYVs/maxresdefault.jpg",
+      "duration": "1:28",
+      "viewCount": 663,
+      "likeCount": 10,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=Ts9Rtc3yYVs"
+    },
+    "Y_AlGW1ovZ8": {
+      "id": "Y_AlGW1ovZ8",
+      "title": "Are only children at a disadvantage when it comes to football?",
+      "description": "In case you missed it, our latest podcast episode is officially LIVE! \n\nIn the episode, Jenny Boateng, mother of four children and two rising academy football stars, shares her thoughts: at younger ages, it\u2019s all about ball mastery and getting comfortable with the ball. Whether you have siblings or not, that skill can be developed, it just might take more effort from parents to create opportunities at home. \ud83c\udfe0\u26bd\n\nWhat do you think, does being an only child affect football development? \n\nTo catch the full episode, head over to our channel!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-02-28T16:16:27Z",
+      "thumbnail": "https://i.ytimg.com/vi/Y_AlGW1ovZ8/maxresdefault.jpg",
+      "duration": "0:39",
+      "viewCount": 715,
+      "likeCount": 6,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=Y_AlGW1ovZ8"
+    },
+    "JEW49lKX1cM": {
+      "id": "JEW49lKX1cM",
+      "title": "The Mindset Behind Raising Football Stars - Jenny Boateng's Winning Formula!",
+      "description": "\ud83d\ude80 Help us reach 20k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nIn this episode, we\u2019re joined by Jenny and Jeriah Boateng, a mother-son duo with an incredible story. Jeriah is an academy footballer, paving the way for his younger brother Zachary, and their journey is nothing short of inspiring.\n\nJeriah, at just 11 years old, has already made waves both on and off the pitch. After experiencing racism at school, he channeled his emotions into writing a book, Back in Time, which helps parents discuss racism with their young children. His story is a powerful reminder of how challenges can be turned into opportunities for growth and education.\n\nJenny opens up about what it\u2019s like raising academy footballers while managing a family of four, sharing valuable insights on balancing football, school, and life. She also offers advice to parents navigating the academy system, emphasizing the importance of patience, resilience, and fostering multiple passions in young athletes.\n\n\ud83d\udca1 Expect to learn:\n\n* How parents can support their children in academy football.\n* The importance of teaching kids to handle pressure and think beyond the game.\n* How Jeriah\u2019s book is creating meaningful conversations about racism.\n\nThis is an episode packed with wisdom and inspiration\u2014you don\u2019t want to miss it!\n\n\ud83d\udd14 Don\u2019t forget to like, subscribe, and hit the notification bell to stay updated on future episodes. Let us know your thoughts in the comments below!\n\n#ProjectFootballer #AcademyFootball #YouthDevelopment #ParentSupport #FootballJourney",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-02-27T16:22:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/JEW49lKX1cM/maxresdefault.jpg",
+      "duration": "1:26:28",
+      "viewCount": 3834,
+      "likeCount": 65,
+      "commentCount": 8,
+      "url": "https://www.youtube.com/watch?v=JEW49lKX1cM"
+    },
+    "3wBFXLMlGOI": {
+      "id": "3wBFXLMlGOI",
+      "title": "Is your child watching the right players? \ud83d\udc40",
+      "description": "Is your child watching the right players? \ud83d\udc40\n\nIn our latest podcast episode, Troy Deeney shares that he was intentional about watching slower players because he knew those players would teach him the most about his own game. \n\nBy encouraging your child to watch players who share similar traits or challenges\u2014it can inspire them and show them what\u2019s possible when they play to their strengths. \ud83c\udf1f\n\nTo hear more from Troy Deeney, head over to our channel!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-01-20T13:40:30Z",
+      "thumbnail": "https://i.ytimg.com/vi/3wBFXLMlGOI/maxresdefault.jpg",
+      "duration": "0:28",
+      "viewCount": 12442,
+      "likeCount": 140,
+      "commentCount": 16,
+      "url": "https://www.youtube.com/watch?v=3wBFXLMlGOI"
+    },
+    "Hc7mkvBq4R0": {
+      "id": "Hc7mkvBq4R0",
+      "title": "What if your child doesn't make it as a footballer?",
+      "description": "The odds of your child becoming a professional footballer may not be high\u2014but the journey is what truly matters.\n\nBy giving your child the opportunity to compete and strive for their best, you\u2019re teaching skills they\u2019ll carry with them for life, no matter what path they take. \n\nIt\u2019s not just about the destination; it\u2019s about the person they become along the way. \ud83d\ude4c\n\nTo hear more from Troy Deeney, head over to our channel to tune into the full episode!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-01-14T16:48:48Z",
+      "thumbnail": "https://i.ytimg.com/vi/Hc7mkvBq4R0/maxresdefault.jpg",
+      "duration": "0:31",
+      "viewCount": 3253,
+      "likeCount": 45,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=Hc7mkvBq4R0"
+    },
+    "VJe6CfZzQPw": {
+      "id": "VJe6CfZzQPw",
+      "title": "How do we develop decision making skills in young players?",
+      "description": "You may be surprised by how much development can happen while your child is off the ball \ud83d\udc40\n\nThe more we encourage young players to work on their decision making skills when they\u2019re off the ball, the better their decision making will be when they\u2019re able to combine the two skills. \n\nIn our recent podcast with Peter Sturges, we got a chance to dig into a number of things that young players can do to set themselves up for future success. The full episode is now LIVE across YouTube, Spotify and Apple Podcasts, so head over to our channel and check out the full discussion!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-01-14T16:00:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/VJe6CfZzQPw/maxresdefault.jpg",
+      "duration": "1:24",
+      "viewCount": 835,
+      "likeCount": 18,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=VJe6CfZzQPw"
+    },
+    "ePOHweu2GaM": {
+      "id": "ePOHweu2GaM",
+      "title": "How much should you be coaching your child?",
+      "description": "Parents, are you helping or hurting your child by coaching them? \n\nIn our latest episode, Troy Deeney shares why he never coaches his daughter on technique, and instead focuses on mentality and intensity. Do you agree with this approach? \ud83e\udd14\n\nTo listen to our full episode with Troy, head over to our channel!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-01-13T14:56:35Z",
+      "thumbnail": "https://i.ytimg.com/vi/ePOHweu2GaM/maxresdefault.jpg",
+      "duration": "0:31",
+      "viewCount": 4326,
+      "likeCount": 33,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=ePOHweu2GaM"
+    },
+    "Z6vBC0ZdapM": {
+      "id": "Z6vBC0ZdapM",
+      "title": "Should your child be playing up?",
+      "description": "A lot of parents are keen on their child playing up, but is that really the best thing for them? \n\nIn our recent chat with Peter Sturges, we talked about why some children can actually benefit more from playing down. Every child is unique, and it\u2019s all about giving them the best opportunity to work on their weaker skills!\n\nOur full episode with Peter is out now, and you can check it out on YouTube, Spotify and Apple Podcast. Head over to our channel to watch now! \u26bd",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-01-09T16:00:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/Z6vBC0ZdapM/maxresdefault.jpg",
+      "duration": "0:42",
+      "viewCount": 904,
+      "likeCount": 34,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=Z6vBC0ZdapM"
+    },
+    "x4puBeaFrdo": {
+      "id": "x4puBeaFrdo",
+      "title": "The best decision-makers do this",
+      "description": "If you want your child to shine from a young age, this skill can really help them hit the next level \ud83c\udf1f\n\nIn our recent podcast with Peter Sturges, we talked about how vital it is for young players to learn to play with their heads up. Without this skill, children will start to fall behind in their decision making abilities, and they won\u2019t be able to advance their game to the next level. \n\nBeginning to teach this skill early on has really helped our players be so successful at We Make Footballers! \u26bd\n\nTo check out the full podcast episode, head over to our channel!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-01-07T16:00:54Z",
+      "thumbnail": "https://i.ytimg.com/vi/x4puBeaFrdo/maxresdefault.jpg",
+      "duration": "0:43",
+      "viewCount": 12761,
+      "likeCount": 559,
+      "commentCount": 6,
+      "url": "https://www.youtube.com/watch?v=x4puBeaFrdo"
+    },
+    "AO7e0V3mu6M": {
+      "id": "AO7e0V3mu6M",
+      "title": "What's the best format for young footballers?",
+      "description": "The format children play in at a young age makes a HUGE difference! \n\nWhen we give them the opportunity to develop their decision making skills early on, it gives them a big advantage when they begin to play in larger formats.\n\nWe\u2019ve taken this approach at We Make Footballers, and are continually impressed by the decision making skills our players show as they continue to progress in the sport \u26bd\n\nIf you want to check out our full podcast with Peter Sturges, head over to our channel!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-01-06T16:24:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/AO7e0V3mu6M/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 2101,
+      "likeCount": 89,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=AO7e0V3mu6M"
+    },
+    "B1rqxj3ZhyM": {
+      "id": "B1rqxj3ZhyM",
+      "title": "Are you giving your child too much feedback?",
+      "description": "Are you overloading your child with too much information?\n\nTroy Deeney has seen many parents make this mistake \u2014 but breaking things down into simple, manageable pieces can make a huge difference. \u26bd \n\nOur full episode with Troy is out NOW! Head over to our channel to tune in.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-01-03T16:36:39Z",
+      "thumbnail": "https://i.ytimg.com/vi/B1rqxj3ZhyM/maxresdefault.jpg",
+      "duration": "0:45",
+      "viewCount": 1049,
+      "likeCount": 16,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=B1rqxj3ZhyM"
+    },
+    "nGb6S1ASrjE": {
+      "id": "nGb6S1ASrjE",
+      "title": "How to Teach Your Kids Accountability",
+      "description": "A lot of children want to be great footballers. But very few are willing to do what they need to do to make that happen.\n\nIn our latest episode, Troy Deeney how he teaches his kids the difference between wants and needs, and how he holds them accountable to their own goals. \n\nIf you haven\u2019t listened to the full episode yet, you\u2019re missing out! Head over to our channel to tune in.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2025-01-02T16:42:04Z",
+      "thumbnail": "https://i.ytimg.com/vi/nGb6S1ASrjE/maxresdefault.jpg",
+      "duration": "0:47",
+      "viewCount": 2249,
+      "likeCount": 32,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=nGb6S1ASrjE"
+    },
+    "qjfEi5Prw9g": {
+      "id": "qjfEi5Prw9g",
+      "title": "Troy Deeney  - Ex-Premier League Star Discusses How To Raise a Footballer",
+      "description": "\ud83d\ude80 Help us reach 20k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nIn this episode, we sit down with one of our biggest guests to date! Troy Deeney is known to many as a Watford legend, and most certainly a player who enjoyed ruffling the feathers of defenders and fans all around the country.\n\nSince his retirement, Troy had a management spell at Forest Green Rovers, however now spends the majority of his time raising his son and daughter. We discuss with Troy the ins and outs of raising the children of a professional footballer and whether or not he believes they have what it takes to make it as footballers!\n\nExpect to learn how you would raise the perfect footballer, from a retired pro who has gone through so much! This is an episode you cannot miss...\n\nDon\u2019t forget to like, subscribe, and hit the notification bell to stay updated on future episodes. Let us know your thoughts in the comments below!\n\n\ud83d\udd14 Subscribe and hit the notification bell for more insights on what parents must know about academy signings!\n\nCould you develop your child into a footballer if you followed the 'perfect' formula? Sean Conlon, the founder of We Make Footballers and a Scout with Chelsea believes some people can. Follow our journey to discovering what it really takes to become a footballer. \n \nHow much is down to luck, genetics or being born into a football family. \n\n\ud83c\udfa7 Listen to the full podcast on:\nhttps://open.spotify.com/show/2hHiSvpzpc6S50Jn6Hu69e\n\nFollow us on social platforms for more exclusive content and updates! \ud83c\udf1f\nhttps://www.instagram.com/projectfootballer/\nhttps://www.tiktok.com/@project_footballer\n\nCHAPTERS:\n00:00 - Troy\u2019s kids\n01:43 - Troy\u2019s oldest son\n04:59 - Troy\u2019s oldest daughter\n09:20 - Upbringing and Parenting Impact\n12:05 - Brother\u2019s Football Career Insights\n16:40 - Dad\u2019s Practice Drills\n20:07 - Athletic Training for Daughter\n22:55 - Dad's Approach with Younger Brother\n24:50 - Daughter's Football Position\n29:10 - Encouraging Your Daughter\n36:05 - Do Kids Need Instagram?\n38:38 - Do Players Need Instagram?\n41:02 - Financial Gain vs Footballing Gain\n42:53 - Building Children's Mentality\n45:48 - Enhancing Your Career\n51:40 - First Professional Environment\n54:54 - Transition from Midfielder to Striker\n57:50 - Genetics in Football\n1:00:45 - Mentality in Sports\n1:02:30 - Academy Pathway Considerations\n1:05:20 - Your 4-Year-Old Son\n1:07:03 - Taking Son's Football Seriously\n1:10:10 - Getting Kids into Football Clubs\n1:12:05 - Issues with Coaches\n1:15:00 - Instagram Coaches in Football\n1:16:40 - Player Development Strategies\n1:20:00 - Stats on Academy Players\n1:25:03 - We Make Footballers Initiative\n1:25:55 - Experiences at Villa\n1:27:51 - Passing Knowledge to Kids\n1:30:35 - Making it as a Professional Footballer\n1:31:48 - End of Podcast\n\n#FootballPassion #KidsFootballTraining #DevelopFootballSkills #RaisingFootballer #YoungFootballers",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-11-27T17:04:33Z",
+      "thumbnail": "https://i.ytimg.com/vi/qjfEi5Prw9g/maxresdefault.jpg",
+      "duration": "1:32:01",
+      "viewCount": 17448,
+      "likeCount": 237,
+      "commentCount": 43,
+      "url": "https://www.youtube.com/watch?v=qjfEi5Prw9g"
+    },
+    "OOh4W_g433k": {
+      "id": "OOh4W_g433k",
+      "title": "Wycombe's Plan to Attract Top Coaches",
+      "description": "Since Wycome Wanders has been purchased by Georgian billionaire and technology investor Mikheil Lomtadze, they have set out to build the perfect football academy from scratch!  \n\nOne of the changes they will make is paying coaches who work at younger age groups the same pay as those who work with U18 and U21 players. \n\nDo you agree with this approach?\n\nHead to our channel for the full podcast episode!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-11-26T15:19:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/OOh4W_g433k/maxresdefault.jpg",
+      "duration": "0:47",
+      "viewCount": 880,
+      "likeCount": 22,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=OOh4W_g433k"
+    },
+    "T8-DmKbcOak": {
+      "id": "T8-DmKbcOak",
+      "title": "Jeremy Sauer & Dan Rice  - How To Build The Perfect Football Academy From Scratch",
+      "description": "\ud83d\ude80 Help us reach 20k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nIn this episode I sit down with two of the leaders in Wycombe's bold academy vision! Academy Director Jeremy Sauer and Chairman & Chief Football Office Dan Rice offer a behind-the-scenes look at Wycombe's ambitious plans to build one of the leading academies in the UK.  \n\nIn May 2024 Wycombe Wanderers was purchased by the billionaire owner Mikheil Lomtadze through his company Blue Ocean Partners. Mikel and his partners had been looking for a professional club in England without an academy so they could build one from scratch. After great research Wycombe Wanderers came out as the perfect opportunity with its geographical proximity to football talent and its incredible football history and culture.  \n\nExpect to learn how you would create the perfect academy if you were starting one from scratch and what goes into the process from club playing style to how to building the facilities.\n\n\ud83d\udd14 Subscribe and hit the notification bell for more insights on what parents must know about academy signings!\n\nCould you develop your child into a footballer if you followed the 'perfect' formula? Sean Conlon, the founder of We Make Footballers and a Scout with Chelsea believes some people can. Follow our journey to discovering what it really takes to become a footballer. \n \nHow much is down to luck, genetics or being born into a football family. \n\n\ud83c\udfa7 Listen to the full podcast on:\nhttps://open.spotify.com/show/2hHiSvpzpc6S50Jn6Hu69e\n\nFollow us on social platforms for more exclusive content and updates! \ud83c\udf1f\nhttps://www.instagram.com/projectfootballer/\n\nCHAPTERS:\n00:00 - Wycombe's investment in their academy\n01:35 - Leading Academies in the Country\n04:04 - Current Status of Wycombe Academy\n06:40 - Attracting Players from London Clubs\n11:11 - Costs of Running an Academy\n13:44 - Individualisation in Player Development\n17:41 - Unique Features of QPR's Academy\n21:10 - We Make Footballers Initiative\n21:45 - Appeal of Wycombe to Ownership Group\n23:15 - Attracting Top Talent to Wycombe\n29:18 - Fair Staff Compensation and Sustainability\n31:14 - Staff Retention and Career Progression\n32:05 - Interdisciplinary Environment in Academies\n34:40 - Managing Current Workload\n37:34 - Achievements of the New Ownership Team\n41:03 - Experiences from Other Clubs\n43:15 - Jeremy's Journey since AFC Wimbledon\n52:15 - Wycombe Academy Curriculum Overview\n53:00 - Alignment with First Team Strategies\n57:04 - We Make Footballers Initiative\n57:40 - Producing Players for Wycombe and Beyond\n1:01:43 - Positive Community Changes\n1:04:04 - Building a Club from Scratch\n1:06:20 - Dan\u2019s Proudest Moment in Football\n\n#FootballPassion #KidsFootballTraining #DevelopFootballSkills #RaisingFootballer #YoungFootballers",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-10-30T14:39:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/T8-DmKbcOak/maxresdefault.jpg",
+      "duration": "1:10:20",
+      "viewCount": 12072,
+      "likeCount": 164,
+      "commentCount": 13,
+      "url": "https://www.youtube.com/watch?v=T8-DmKbcOak"
+    },
+    "CtLR3icuerk": {
+      "id": "CtLR3icuerk",
+      "title": "Germany\u2019s Developing Love For Futsal \u2764\ufe0f\ud83c\udde9\ud83c\uddea",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-10-30T14:14:19Z",
+      "thumbnail": "https://i.ytimg.com/vi/CtLR3icuerk/maxresdefault.jpg",
+      "duration": "0:59",
+      "viewCount": 2095,
+      "likeCount": 55,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=CtLR3icuerk"
+    },
+    "Pn4Mnys-ZOk": {
+      "id": "Pn4Mnys-ZOk",
+      "title": "Peter Sturgess - The EX-England Head of Futsal Explains Its Importance In The UK",
+      "description": "\ud83d\ude80 Help us reach 20k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nIn this episode, Marcelo and I have the pleasure of speaking with Peter Sturgess, the Ex-Head of Futsal for the FA. Peter is thought of by many as one of the best youth coaches in England, and is responsible for so much of the great work done by the FA in recent years which led to vast improvements in our national team. \n\nJoin us as we dive deep into the help Peter had in creating much of the foundation phase coaching courses in England, as well as his role as Head of Futsal for the FA.\n\nExpect to gain valuable insights into the intricacies of youth football coaching, the importance futsal has on today\u2019s generation and the ongoing journey to produce world-class talent, especially in England!\n\nWhether you\u2019re a coach, a parent, or just a passionate football fan, this conversation is packed with knowledge and perspectives you won\u2019t want to miss!\n\nDon\u2019t forget to like, subscribe, and hit the notification bell to stay updated on future episodes. Let us know your thoughts in the comments below!\n\n\ud83d\udd14 Subscribe and hit the notification bell for more insights on what parents must know about academy signings!\n\nCould you develop your child into a footballer if you followed the 'perfect' formula? Sean Conlon, the founder of We Make Footballers and a Scout with Chelsea believes some people can. Follow our journey to discovering what it really takes to become a footballer. \n \nHow much is down to luck, genetics or being born into a football family. \n\n\ud83c\udfa7 Listen to the full podcast on:\nhttps://open.spotify.com/show/2hHiSvpzpc6S50Jn6Hu69e\n\nFollow us on social platforms for more exclusive content and updates! \ud83c\udf1f\nhttps://www.instagram.com/projectfootballer/\n\nCHAPTERS:\n00:00 - Intro\n01:54 - Legacy in English Football\n03:52 - Teaching Background and FA Career\n09:45 - Contribution to FA Youth Modules\n11:56 - International Influences on Youth Modules\n18:10 - We Make Footballers Initiative\n18:45 - Characteristics of Good Practice\n22:48 - Understanding England DNA\n26:53 - Analyzing Past Mistakes\n28:23 - Developing Skillful Players\n29:45 - Balancing Development Approaches\n30:26 - Definition of Skillful Play\n33:20 - Introducing Tactics in Training\n39:55 - Importance of Futsal\n42:15 - Futsal in Football Academies\n45:05 - Annual Futsal Tournaments\n46:37 - Germany\u2019s Funinho Training Sessions\n51:15 - England vs Spain: Euros Final Analysis\n55:12 - Comparing Spanish and English Youth Players\n56:34 - Teaching Young Players About Space\n01:00:18 - Position vs Positioning Explained\n01:03:11 - Tactical Flexibility and Adaptability\n01:09:20 - Improving Grassroots Football\n01:15:15 - We Make Footballers Initiative\n01:20:15 - Impact of Parents' Behavior on Development\n01:22:34 - Calm Environments and Player Development\n01:27:29 - Coach and Parent Roles in Development\n01:28:20 - Futsal's Role in Youth Training\n01:35:16 - Personal Proudest Moment\n01:37:08 - Finding Peter\n01:38:44 - Wish for Grassroots Football\n01:39:07 - Outro\n\n#FootballPassion #KidsFootballTraining #DevelopFootballSkills #RaisingFootballer #YoungFootballers",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-10-28T18:25:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/Pn4Mnys-ZOk/maxresdefault.jpg",
+      "duration": "1:39:19",
+      "viewCount": 8773,
+      "likeCount": 119,
+      "commentCount": 37,
+      "url": "https://www.youtube.com/watch?v=Pn4Mnys-ZOk"
+    },
+    "nAKl5jJ1LFU": {
+      "id": "nAKl5jJ1LFU",
+      "title": "Can you persuade NFL fans to get their children into soccer? \ud83e\udd14\ud83c\udfc8",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-10-07T11:23:59Z",
+      "thumbnail": "https://i.ytimg.com/vi/nAKl5jJ1LFU/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 2367,
+      "likeCount": 26,
+      "commentCount": 7,
+      "url": "https://www.youtube.com/watch?v=nAKl5jJ1LFU"
+    },
+    "JaOhj1M-iAQ": {
+      "id": "JaOhj1M-iAQ",
+      "title": "USMNT lack creativity in their game \ud83c\uddfa\ud83c\uddf8\u274c",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-09-24T16:04:40Z",
+      "thumbnail": "https://i.ytimg.com/vi/JaOhj1M-iAQ/maxresdefault.jpg",
+      "duration": "0:44",
+      "viewCount": 2612,
+      "likeCount": 11,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=JaOhj1M-iAQ"
+    },
+    "ua2jKsYlSzI": {
+      "id": "ua2jKsYlSzI",
+      "title": "What Must Change With USA Youth Soccer Culture?",
+      "description": "\ud83d\ude80 Help us reach 20k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nIn this episode, we chat about the big issues in youth soccer in the USA. Did you know that 75% of kids quit playing by age 14? We explore why that\u2019s happening and how the focus on winning is making the game less fun and stifling creativity.\n\nWe compare the American approach to soccer with what\u2019s working in countries like Brazil and the UK, where kids have more freedom to play and grow their skills naturally. We also touch on the impact of the expensive pay-to-play system and how it keeps many talented kids from getting a fair shot.\n\nWhether you\u2019re a coach, parent, or just love soccer, this episode offers some real insights on how we can make the sport more enjoyable and accessible for everyone. It\u2019s all about helping the next generation of players fall in love with the game and reach their full potential.\n\nDon\u2019t forget to like, subscribe, and hit the notification bell to stay updated on future episodes. Let us know your thoughts in the comments below!\n\n\ud83d\udd14 Subscribe and hit the notification bell for more insights on what parents must know about academy signings!\n\nCould you develop your child into a footballer if you followed the 'perfect' formula? Sean Conlon, the founder of We Make Footballers and a Scout with Chelsea believes some people can. Follow our journey to discovering what it really takes to become a footballer. \n \nHow much is down to luck, genetics or being born into a football family. \n\n\ud83c\udfa7 Listen to the full podcast on:\nhttps://open.spotify.com/show/2hHiSvpzpc6S50Jn6Hu69e\n\nFollow us on social platforms for more exclusive content and updates! \ud83c\udf1f\nhttps://www.instagram.com/projectfootballer/\n\nCHAPTERS:\n00:00 - Intro\n01:42 - US Soccer Culture Overview\n09:25 - Effective Teaching Styles in Soccer\n15:48 - Impact of Environment on Player Development\n19:28 - Youth Soccer Dropout Rates in the US\n22:06 - Early Game Overload in Youth Soccer\n23:31 - USA National Soccer Team Insights\n26:44 - Passion for Football in America\n29:08 - Christian Pulisic's Influence\n33:44 - Coaching Peter\u2019s Kids\n36:30 - Developing Footballers for Peter\u2019s Kids\n39:10 - Coaching Danny\u2019s Kids\n40:50 - Journey into Coaching\n45:50 - Starting a Coaching Business\n47:15 - Issues in the American Soccer System\n48:55 - Advice for Parents of Aspiring Footballers\n51:35 - Choosing the Right Soccer Team for Kids\n57:45 - Benefits of Playing with Diverse Age Groups\n1:00:31 - Path to Becoming a Professional Footballer\n1:01:10 - Financial Aspects of Professional Soccer\n1:08:50 - Insights on Inter Miami and New York Red Bulls\n1:09:35 - Typical Academy Player Numbers\n1:11:00 - Premier League Youth Recruitment Strategies\n1:14:40 - Comparing NFL and MLS Academies\n1:23:40 - Vision for an Ideal Football Culture\n1:25:50 - Addressing USA\u2019s Soccer Challenges\n1:29:37 - Peter\u2019s Most Memorable Football Moment\n\n#FootballPassion #KidsFootballTraining #DevelopFootballSkills #RaisingFootballer #YoungFootballers",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-09-23T18:15:43Z",
+      "thumbnail": "https://i.ytimg.com/vi/ua2jKsYlSzI/maxresdefault.jpg",
+      "duration": "1:32:14",
+      "viewCount": 10758,
+      "likeCount": 156,
+      "commentCount": 158,
+      "url": "https://www.youtube.com/watch?v=ua2jKsYlSzI"
+    },
+    "R9PTD5sECEQ": {
+      "id": "R9PTD5sECEQ",
+      "title": "Can you condition your child to love football? \u26bd\ufe0f\ud83e\udd14",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-09-10T11:39:05Z",
+      "thumbnail": "https://i.ytimg.com/vi/R9PTD5sECEQ/maxresdefault.jpg",
+      "duration": "0:46",
+      "viewCount": 1800,
+      "likeCount": 19,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=R9PTD5sECEQ"
+    },
+    "CJxpd45HcfU": {
+      "id": "CJxpd45HcfU",
+      "title": "NEW Podcast with Ex England FA National Coach John Allpress is LIVE \u26bd\ufe0f\ud83d\udde3\ufe0f",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-08-28T20:50:58Z",
+      "thumbnail": "https://i.ytimg.com/vi/CJxpd45HcfU/maxresdefault.jpg",
+      "duration": "0:54",
+      "viewCount": 802,
+      "likeCount": 12,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=CJxpd45HcfU"
+    },
+    "k0C7_C8u4jA": {
+      "id": "k0C7_C8u4jA",
+      "title": "John Allpress - What's Being Taught To The English Football Coaches?",
+      "description": "\ud83d\ude80 Help us reach 20k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nIn this episode, Darius and I have the pleasure of speaking with John Allpress, the original creator of the FA Coaching Awards. These awards have evolved into the Youth Module courses currently used across England, shaping our football coaching culture and contributing to the development of the talented players we see in our national senior team today.\n\nJoin us as we dive deep into what the FA tasked John with creating in his groundbreaking coaching courses, the goals they aimed to achieve, and how these initiatives have directly influenced the current state of English football. We\u2019ll also explore how the Premier League manages academies without dictating the coaching philosophy, the importance of fostering a positive learning environment for young players, and the crucial role that both coaches and parents play in developing future stars.\n\nExpect to gain valuable insights into the intricacies of youth football coaching, the evolution of coaching methods in England, and the ongoing journey to produce world-class talent. Whether you\u2019re a coach, a parent, or just a passionate football fan, this conversation is packed with knowledge and perspectives you won\u2019t want to miss!\n\nDon\u2019t forget to like, subscribe, and hit the notification bell to stay updated on future episodes. Let us know your thoughts in the comments below!\n\n\ud83d\udd14 Subscribe and hit the notification bell for more insights on what parents must know about academy signings!\n\nCould you develop your child into a footballer if you followed the 'perfect' formula? Sean Conlon, the founder of We Make Footballers and a Scout with Chelsea believes some people can. Follow our journey to discovering what it really takes to become a footballer. \n \nHow much is down to luck, genetics or being born into a football family. \n\n\ud83c\udfa7 Listen to the full podcast on:\nhttps://open.spotify.com/show/2hHiSvpzpc6S50Jn6Hu69e\n\nFollow us on social platforms for more exclusive content and updates! \ud83c\udf1f\nhttps://www.instagram.com/projectfootballer/\n\nCHAPTERS:\n00:00 - Intro\n01:09 - Original Youth Coaching Awards\n05:43 - Four Stages of Learning\n08:20 - Creating an Environment for Top Players\n14:04 - Common Mistakes in Academies\n18:58 - Issues in 90s Football Coaching\n27:26 - Gaps in FA Modules\n31:22 - Nature vs Nurture in Player Development\n32:24 - Fostering a Love for the Game\n42:47 - Essential Insights for Parents\n48:35 - Changes in English Football Coaching\n51:19 - Future of English Football Coaching\n54:33 - Understanding England's Football Identity\n55:59 - Decision Making vs Tactical Skills\n01:00:00 - Tactical Ability of England\n01:01:35 - England\u2019s Tactical Approaches\n01:05:25 - Psychology of Leadership in Football\n01:08:58 - We Make Footballers Franchise Overview\n01:15:48 - FA\u2019s Youth Development Strategy\n01:19:24 - Challenges in Maintaining Possession\n01:22:30 - Getting Noticed in Football Academies\n01:27:47 - Developing Your Weak Foot\n01:32:54 - We Make Footballers Insights\n01:33:30 - The Longest Audition Experience\n01:38:10 - Greatest Football Memories\n01:39:25 - Highlights of John's Career\n01:40:10 - Outro\n\n#FootballPassion #KidsFootballTraining #DevelopFootballSkills #RaisingFootballer #YoungFootballers",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-08-28T19:56:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/k0C7_C8u4jA/maxresdefault.jpg",
+      "duration": "1:40:29",
+      "viewCount": 17562,
+      "likeCount": 179,
+      "commentCount": 55,
+      "url": "https://www.youtube.com/watch?v=k0C7_C8u4jA"
+    },
+    "Fd-EjXWL0L8": {
+      "id": "Fd-EjXWL0L8",
+      "title": "Richard Allen - Ex Head of England Talent ID explains what English clubs are taught to scout",
+      "description": "\ud83d\ude80 Help us reach 20k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nIn this episode, Marcelo and I speak to Richard Allen, the Ex - Head of Talent ID for the FA as well as the Ex-head of Recruitment for Tottenham and Academy Director for QPR.  He was responsible for creating the original Talent ID courses that govern how we scout in England today.  \n\nThese courses range from teaching scouts at the grassroots level what they should look for and how academy directors should manage their heads of recruitment and their scouting departments. \n\nWe ask the question have academies in England got this right? \n\nHe discusses the importance of technical skills and game intelligence to the psychosocial factors that separate good players from great ones, Richard offers a unique perspective on what it takes to succeed in football. He also discusses the critical role of scouts, the complexities of overcoming biases, and the power of long-term development strategies.\n\nJoin us as we explore the inspiring journeys of players like Harry Kane and Andros Townsend, and learn how persistence, patience, and the right environment can make all the difference. Whether you're an aspiring footballer, a coach, or simply a fan of the beautiful game, this episode is packed with valuable lessons and stories from one of the industry's most respected figures. \n\nExpect to learn how English recruitment works, the English talent ID model,the psychological and social factors which helped Harry Kane get scouted and much much more \n\n\ud83d\udd14 Subscribe and  hit the notification bell for more insights on what parents must know about academy signings!\n\nCould you develop your child into a footballer if you followed the 'perfect' formula? Sean Conlon, the founder of We Make Footballers and a Scout with Chelsea believes some people can. Follow our journey to discovering what it really takes to become a footballer. \n \nHow much is down to luck, genetics or being born into a football family. \n\n\ud83c\udfa7 Listen to the full podcast on:\nhttps://open.spotify.com/show/2hHiSvpzpc6S50Jn6Hu69e\n\nFollow us on social platforms for more exclusive content and updates! \ud83c\udf1f\nhttps://www.instagram.com/projectfootballer/\n\nCHAPTERS:\n00:00 - Intro\n01:24 - Current Role in Football\n06:37 - Success Stories at Tottenham\n11:50 - Harry Kane's Impact\n16:56 - Andros Townsend's Journey\n19:30 - QPR Insights\n22:45 - Football Association Overview\n28:58 - Changes at the FA Explained\n33:07 - We Make Footballers Initiative\n33:41 - Creating a Footballing Philosophy\n36:14 - England DNA Development\n40:31 - Recruiting Players for England\n43:38 - Player Attributes to Look For\n47:15 - Lack of Controllers in England\n49:30 - Development Time for Players\n51:40 - What Would Kroos Be Like at 7\n55:50 - Coaching Philosophy Explained\n57:50 - Understanding Technical Ability\n01:00:14 - Importance of Football IQ\n01:01:33 - We Make Footballers Franchising\n01:03:58 - Communicating with Heads of Recruitment\n01:06:20 - Trust in Scouting\n01:07:10 - Technical Player Development in England\n01:09:04 - Academy Business Models\n01:12:44 - Talent ID Course Overview\n01:14:31 - Educating Beyond Technical Directors\n01:15:36 - Player Assessment Environments\n01:19:15 - Teaching Talent ID Course Content\n01:22:28 - Data Influence in Scouting\n01:27:45 - Work with FIFA\n01:31:20 - Weak Soccer Programs Discussion\n01:32:45 - Role of Genetics in Football\n01:37:55 - Raising a Future Footballer\n01:42:00 - Proudest Moment in Football\n01:44:38 - End\n\n#FootballPassion #KidsFootballTraining #DevelopFootballSkills #RaisingFootballer #YoungFootballers",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-08-12T21:09:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/Fd-EjXWL0L8/maxresdefault.jpg",
+      "duration": "1:44:45",
+      "viewCount": 92010,
+      "likeCount": 923,
+      "commentCount": 231,
+      "url": "https://www.youtube.com/watch?v=Fd-EjXWL0L8"
+    },
+    "naoz5JsPexg": {
+      "id": "naoz5JsPexg",
+      "title": "MATT JARVIS: Getting Released From Academy at 16 | Project Footballer",
+      "description": "\ud83d\ude80 Help us reach 20k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nJoin us for an inspiring behind-the-scenes look at the journey of our special guest, Matt Jarvis, as he shares his incredible story of determination, resilience, and the valuable lessons he learned along the way.\n\nFrom his early days of being sport-crazy, juggling football, swimming, and athletics, to the heart-wrenching moment of being released at 16, and finally, to his triumphant return to football, Matt's journey is a testament to the power of nurturing sporting talent. Parents, coaches, and young athletes will find practical advice on balancing multiple sports, dealing with setbacks, and fostering a competitive yet healthy environment.\n\nDiscover how nature and nurture play pivotal roles in youth football development, and gain insights into the mindset and training techniques that can help your child excel. Whether you're a parent looking to support your child's dreams, a coach aiming to inspire, or an aspiring young footballer, this episode is packed with actionable tips and real-life experiences.\n\nStay tuned until the end for Matt's key advice on parenting in football and the importance of letting children find their own passion. Don't miss out on these valuable lessons from football legends and experts!\n\n\ud83d\udd14 Subscribe and  hit the notification bell for more insights on what parents must know about academy signings!\n\nCould you develop your child into a footballer if you followed the 'perfect' formula? Sean Conlon, the founder of We Make Footballers and a Scout with Chelsea believes some people can. Follow our journey to discovering what it really takes to become a footballer. \n \nHow much is down to luck, genetics or being born into a football family. \n\n\ud83c\udfa7 Listen to the full podcast on:\nhttps://open.spotify.com/show/2hHiSvpzpc6S50Jn6Hu69e\n\nFollow us on social platforms for more exclusive content and updates! \ud83c\udf1f\nhttps://www.instagram.com/projectfootballer/\n\nCHAPTERS:\n00:00 - Intro\n00:57 - Early years\n08:30 - Table tennis\n13:08 - How to support your child in football\n20:00 - Did you have a childhood\n22:28 - Nature vs Nurture - were you always fast\n24:50 - Learning\n27:13 - Jigsaw puzzle analogy - adding layers to your game\n29:28 - Key coaches and mentors\n35:06 - How did you become so efficient\n37:08 - Did you practice this or was it natural talent\n44:30 - How to get scouted if you\u2019re small\n48:42 - The importance of cross country running\n49:20 - What is taught in cross country running\n53:18 - How much faster can players get with good training\n54:13 - Mentality\n58:20 - How did you approach practice and continuous improvement\n1:02:50 - Did you have a nice upbringing\n1:04:30 - Developing a competitive personality\n1:07:40 - Can well-behaved kids become footballers\n1:11:06 - All-time highlight as a player\n1:12:04 - Advice for parents on professional football\n\n#FootballPassion #KidsFootballTraining #DevelopFootballSkills #RaisingFootballer #YoungFootballers",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-07-18T14:27:52Z",
+      "thumbnail": "https://i.ytimg.com/vi/naoz5JsPexg/maxresdefault.jpg",
+      "duration": "1:13:50",
+      "viewCount": 5354,
+      "likeCount": 60,
+      "commentCount": 5,
+      "url": "https://www.youtube.com/watch?v=naoz5JsPexg"
+    },
+    "Z87Zn2KYHkg": {
+      "id": "Z87Zn2KYHkg",
+      "title": "Players don\u2019t want to be a meme \ud83d\ude1f\ud83d\udcf5",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-06-28T15:53:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/Z87Zn2KYHkg/maxresdefault.jpg",
+      "duration": "0:33",
+      "viewCount": 829,
+      "likeCount": 17,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=Z87Zn2KYHkg"
+    },
+    "s2J_plZSc5o": {
+      "id": "s2J_plZSc5o",
+      "title": "Is social media affecting England\u2019s performances? \ud83d\udcf1\ud83e\udd14",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-06-27T15:10:27Z",
+      "thumbnail": "https://i.ytimg.com/vi/s2J_plZSc5o/maxresdefault.jpg",
+      "duration": "0:28",
+      "viewCount": 5180,
+      "likeCount": 33,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=s2J_plZSc5o"
+    },
+    "WH_5paWYMDk": {
+      "id": "WH_5paWYMDk",
+      "title": "MICHAEL HAMILTON - Benefits of Joining a Category 3 Academy",
+      "description": "\ud83d\ude80 Help us reach 20k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nJoin us as we discuss the world of academy signings with Michael Hamilton the Academy Director at AFC Wimbeldon and uncover the truth behind some horror stories involving player recruitment. Learn why it's crucial for parents to be informed about the process and how to navigate the tricky landscape of youth football. \n\nSubscribe now for more insights on what parents must know about academy signings!\n\nWhether you're a die-hard football fan or just love inspiring stories of determination and success, this episode offers valuable lessons and a behind-the-scenes look at the making of a football legend. \n\nCould you develop your child into a footballer if you followed the 'perfect' formula? Sean Conlon, the founder of We Make Footballers and a Scout with Chelsea believes some people can. Follow our journey to discovering what it really takes to become a footballer. \n \nHow much is down to luck, genetics or being born into a football family. \n\n\ud83c\udfa7 Listen to the full podcast on:\nhttps://open.spotify.com/show/2hHiSvpzpc6S50Jn6Hu69e\n\nDon't miss out on our latest updates and exclusive content! Follow us on our other social platforms:\nhttps://www.instagram.com/projectfootballer/\n\nChapters:\n00:00:00 - Horror Stories of the Industry\n00:00:01 - Signed Players\n00:00:02 - Relation to the First Team\n00:00:05 - Introduction and Music\n00:00:06 - The Goal of Being Recognized as a Manager\n00:00:09 - The Best CF Free Academy\n00:00:11 - It's Not About League Status\n00:00:15 - Club Funding\n00:00:18 - Metrics of Success in the Academy\n00:00:21 - Accounting Perspective\n00:00:22 - Financial Fair Play\n00:00:25 - Developing Academy Football\n00:00:28 - Creating a Sustainable Club\n00:00:29 - Understanding the Identification Process\n00:00:32 - Player Development\n00:00:34 - The Reality of Hard Work\n00:00:35 - Player's Pathway\n00:00:38 - Unhappiness at the Academy\n00:00:41 - Desire to Leave\n00:00:42 - Stifled Club\n00:00:44 - Stopping Players from Playing\n00:00:46 - Academy Agents and Parents Awareness\n00:00:48 - Finding the Right Words\n00:00:50 - Understanding Contracts\n00:00:52 - Face-to-Face Interaction\n00:00:53 - Someone's Desire to Tell Me Something\n00:00:55 - Verifying the authenticity of leave\n00:00:57 - Signing for a Cat One Club\n00:01:00 - Loss of a Player\n00:01:01 - No Compensation\n00:01:03 - The Impact of Money in Gaming\n00:01:04 - The Importance of Taking Action\n00:01:06 - The Importance of Networking\n00:01:07 - Horror Stories\n00:01:09 - Stories of Signed Players\n00:01:11 - Related to the first team\n00:01:13 - Authority in Management\n00:01:15 - Problems with the Academy Setup\n00:01:18 - Being Honest\n00:01:19 - It Doesn't Happen",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-06-19T16:08:19Z",
+      "thumbnail": "https://i.ytimg.com/vi/WH_5paWYMDk/maxresdefault.jpg",
+      "duration": "1:58:30",
+      "viewCount": 12638,
+      "likeCount": 120,
+      "commentCount": 19,
+      "url": "https://www.youtube.com/watch?v=WH_5paWYMDk"
+    },
+    "EW_gETKJTnY": {
+      "id": "EW_gETKJTnY",
+      "title": "The Dark Arts of Football: SE Dons Podcast is Now LIVE on all Platforms \u26bd\ufe0f\ud83d\udcf8\ud83d\udde3\ufe0f",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-06-01T12:41:10Z",
+      "thumbnail": "https://i.ytimg.com/vi/EW_gETKJTnY/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 3166,
+      "likeCount": 41,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=EW_gETKJTnY"
+    },
+    "B9RY96JJUMc": {
+      "id": "B9RY96JJUMc",
+      "title": "SE Dons: Learning Dark Arts develops Football IQ",
+      "description": "\ud83d\ude80 Help us reach 10k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nJoin us on a journey with SE Dons as they discuss how learning dark arts develops football IQ! Get ready for an inside look at the Sunday League football team that's changing the game. Don't forget to subscribe for more exciting episodes like this!\n\nFollow their journey from humble beginnings to becoming a renowned Sunday League team with a massive global following. Get ready to learn how strategic play and clever tactics can elevate your performance on the field. Don't forget to hit subscribe for more engaging content and valuable football tips!\n\nWhether you're a die-hard football fan or just love inspiring stories of determination and success, this episode offers valuable lessons and a behind-the-scenes look at the making of a football legend. \n\nCould you develop your child into a footballer if you followed the 'perfect' formula? Sean Conlon, the founder of We Make Footballers and a Scout with Chelsea believes some people can. Follow our journey to discovering what it really takes to become a footballer. \n \nHow much is down to luck, genetics or being born into a football family. \n\n\ud83c\udfa7 Listen to the full podcast on:\nhttps://open.spotify.com/show/2hHiSvpzpc6S50Jn6Hu69e\n\nDon't miss out on our latest updates and exclusive content! Follow us on our other social platforms:\nhttps://www.instagram.com/projectfootballer/\n\nChapters:\n00:00:00 - Introduction to Project Footballer\n00:04:54 - The Origins of SC Don's\n00:09:05 - Football Career Paths\n00:13:24 - Creating Authentic Content in Football\n00:17:40 - The Love of Sunday Morning Football\n00:21:59 - The Challenges of Sunday League Football\n00:26:01 - The Importance of Teamwork and Toughness\n00:30:15 - Memories of Playing against Tough Teams\n00:34:36 - The Evolution of Football Coaching Techniques\n00:39:02 - Shaping Character through Football\n00:44:11 - The Importance of First Impressions\n00:48:41 - The Importance of Confidence and Aggression\n00:52:40 - The Influence of Environment on Aggression in Football Players\n00:57:07 - The Importance of Bravery and Confidence in Football\n01:01:27 - The English Identity\n01:05:45 - The Dilemma of Young Players' Financial Stability\n01:10:25 - A Family's Dreams and Aspirations\n01:15:34 - The Importance of Teaching Children Lessons in Sportsmanship\n01:20:25 - The Importance of Environment and Drive in Becoming a Footballer\n01:24:53 - The Love for Football and the Longest Night\n01:28:50 - The Competitive Spirit in Football\n01:33:00 - Embedding Leadership Qualities\n01:37:13 - The Importance of Football IQ and Dark Arts\n01:41:36 - The Sacrifices of Parents in Youth Football\n01:46:06 - Teaching the Importance of Winning Battles on the Pitch\n01:50:47 - The Central Hub of the House\n01:54:51 - Realizing the Level of Goalkeeper Ball",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-05-31T21:14:38Z",
+      "thumbnail": "https://i.ytimg.com/vi/B9RY96JJUMc/maxresdefault.jpg",
+      "duration": "1:55:26",
+      "viewCount": 17976,
+      "likeCount": 136,
+      "commentCount": 12,
+      "url": "https://www.youtube.com/watch?v=B9RY96JJUMc"
+    },
+    "Z5Ze19UXTdI": {
+      "id": "Z5Ze19UXTdI",
+      "title": "Ep. 4 Meet the Coach: Retained & Released The best advice to give to parents",
+      "description": "\ud83d\ude80 Help us reach 10k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nWelcome to Project Footballer, the voice of youth football supported by Spotify, where we delve deep into the world of youth football with our special guests.\n\nIn this week's episode of Meet the Coach, we are joined by Dan Edwards and Darius Charles to answer your questions and give advice on players released and retained from academies.\n\nThank you for submitting your questions, and we look forward to seeing you on Instagram next Sunday.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-05-18T13:02:51Z",
+      "thumbnail": "https://i.ytimg.com/vi/Z5Ze19UXTdI/maxresdefault.jpg",
+      "duration": "1:10:34",
+      "viewCount": 2346,
+      "likeCount": 40,
+      "commentCount": 8,
+      "url": "https://www.youtube.com/watch?v=Z5Ze19UXTdI"
+    },
+    "kbCzn4ECam8": {
+      "id": "kbCzn4ECam8",
+      "title": "Ep. 3 Meet the Coach: SEAN GARNIER 'What football developers learn from a professional\u00a0freestyler?'",
+      "description": "\ud83d\ude80 Help us reach 10k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nWelcome to Project Footballer, the voice of youth football supported by Spotify, where we delve deep into the world of youth football with our special guests.\n\nIn this week's episode of Meet the Coach, we are joined by the original football freestyler, S\u00e9an Garnier. We will discuss, the decline in street football and the impact it\u2019s having, what life is like for a professional freestyle footballer and find out how good S\u00e9an was at 11 aside football growing up...\n\n\nThank you for submitting your questions, and we look forward to seeing you on Instagram next Sunday.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-04-25T11:55:51Z",
+      "thumbnail": "https://i.ytimg.com/vi/kbCzn4ECam8/maxresdefault.jpg",
+      "duration": "1:22:33",
+      "viewCount": 2002,
+      "likeCount": 25,
+      "commentCount": 7,
+      "url": "https://www.youtube.com/watch?v=kbCzn4ECam8"
+    },
+    "urNxaAxT8uQ": {
+      "id": "urNxaAxT8uQ",
+      "title": "Frank Lampard talking about his footballing surroundings as a youngster \u26bd\ufe0f",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-04-22T08:41:57Z",
+      "thumbnail": "https://i.ytimg.com/vi/urNxaAxT8uQ/maxresdefault.jpg",
+      "duration": "0:56",
+      "viewCount": 12521,
+      "likeCount": 196,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=urNxaAxT8uQ"
+    },
+    "jOZpMrjbC2g": {
+      "id": "jOZpMrjbC2g",
+      "title": "Frank Lampard - I Was The RESULT Of My Dad's Project Lampard | Project Footballer",
+      "description": "\ud83d\ude80 Help us reach 20k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nWelcome to Project Footballer, where we dive deep into how to make your child into a footballer and navigate the world of youth football with our special guests. \n\nIn this episode, we speak to Chelsea legend Frank Lampard, one of the Premier League's most legendary midfielders. From early childhood training under his father's watchful eye to becoming a football icon, Lampard shares personal anecdotes and insights that shaped his career. Discover the intense and unique training methods that set him apart from an early age, the motivations and expectations placed upon him before he was even born, and how these experiences influenced his approach to football and life. Lampard also reflects on the evolution of football training, the challenges of youth development, and his philosophy on coaching and parenting in the modern era. \n\nWhether you're a die-hard football fan or just love inspiring stories of determination and success, this episode offers valuable lessons and a behind-the-scenes look at the making of a football legend. \n\nCould you develop your child into a footballer if you followed the 'perfect' formula? Sean Conlon, the founder of We Make Footballers and a Scout with Chelsea believes some people can. Follow our journey to discovering what it really takes to become a footballer. \n \nHow much is down to luck, genetics or being born into a football family. \n\n\ud83c\udfa7 Listen to the full podcast on:\nhttps://open.spotify.com/show/2hHiSvpzpc6S50Jn6Hu69e\n\nDon't miss out on our latest updates and exclusive content! Follow us on our other social platforms:\nhttps://www.instagram.com/projectfootballer/\n\nJoin us on this journey of empowerment and growth in youth football. Subscribe now to Project Footballer and let's elevate the game together! \u26bd\ufe0f\n\nChapters:\n00:00:00 - Podcast Trailer\n00:01:22 - Youth Football and Talent Spotting\n00:07:20 - Project Footballer Intro\n00:07:38 - Project Lampard\n00:11:05 - Pleasing Everybody, including my Dad\n00:15:55 - Early Years in Football\n00:20:43 - The Importance of Giving Visuals in Football\n00:25:24 - Scanning and awareness in sports\n00:31:09 - Hard work and dedication in becoming a top athlete\n00:36:00 - Developing Shooting Techniques\n00:40:54 - The Hard Work of Becoming a Footballer\n00:45:38 - Developing Technical Skills\n00:50:54 - Scouting Frank Lampard\n00:55:52 - Players Desperate to Get to the Next Level\n01:00:48 - The Frustrations of a Midfield Player\n01:05:38 - Attacking from the Edge of the Box\n01:10:48 - Balancing Push and Rest\n01:15:31 - Recognizing talent and providing confidence\n01:20:21 - The Challenges and Choices of Young Players\n01:31:08 - Resilience and Handling Criticism\n01:36:17 - The Importance of Following Your Child's Passion\n01:41:19 - Coaching in Academy Football and the Importance of Communication\n01:46:37 - The Importance of a Parent as Coach\n01:51:56 - The Benefits of Changing Positions\n01:57:01 - The Evolution of Football Positions\n02:02:09 - Balancing Education and Football\n02:07:21 - The Influence of Environment and Social Skills in Youth Development\n02:12:36 - Becoming a Technician in Football\n02:17:42 - Mastering the Strike Technique\n02:22:30 - Improving Skills through Practice and Repetition\n02:32:47 - Developing Players for Professional Football\n\n---------------------------------",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-04-19T20:00:15Z",
+      "thumbnail": "https://i.ytimg.com/vi/jOZpMrjbC2g/maxresdefault.jpg",
+      "duration": "2:33:03",
+      "viewCount": 316043,
+      "likeCount": 1305,
+      "commentCount": 184,
+      "url": "https://www.youtube.com/watch?v=jOZpMrjbC2g"
+    },
+    "wSxa0r5om9k": {
+      "id": "wSxa0r5om9k",
+      "title": "Ep. 2 Meet the Coach: TAYLOR DAVIDSON 'Bluetooth is causing injuries\u00a0to\u00a0players'",
+      "description": "\ud83d\ude80 Help us reach 10k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nWelcome to Project Footballer, the voice of youth football supported by Spotify, where we delve deep into the world of youth football with our special guests.\n\nIn this week's episode of Meet the Coach, we are joined by Taylor Davidson and Dan Edwards to discuss whether Bluetooth is injuring players, the sports science behind football, answering your questions and much more.\n\nThank you for submitting your questions, and we look forward to seeing you on Instagram next Sunday.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-04-17T16:24:16Z",
+      "thumbnail": "https://i.ytimg.com/vi/wSxa0r5om9k/maxresdefault.jpg",
+      "duration": "1:02:34",
+      "viewCount": 1608,
+      "likeCount": 22,
+      "commentCount": 5,
+      "url": "https://www.youtube.com/watch?v=wSxa0r5om9k"
+    },
+    "-3GFIUwO2QI": {
+      "id": "-3GFIUwO2QI",
+      "title": "Ep. 1 Meet the Coach: Does introducing multisports as a child increase their chance as\u00a0a\u00a0pro?",
+      "description": "\ud83d\ude80 Help us reach 10k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nWelcome to Project Footballer, the voice of youth football supported by Spotify, where we delve deep into the world of youth football with our special guests.\n\nIn this week's episode of Meet the Coach, we are joined by Matt Healy and Scott Shulton to discuss whether introducing multisport as a child increases their chance as a professional.\n\nThank you for submitting your questions, and we look forward to seeing you on Instagram next Sunday.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-04-11T15:58:50Z",
+      "thumbnail": "https://i.ytimg.com/vi/-3GFIUwO2QI/maxresdefault.jpg",
+      "duration": "1:02:06",
+      "viewCount": 2073,
+      "likeCount": 38,
+      "commentCount": 16,
+      "url": "https://www.youtube.com/watch?v=-3GFIUwO2QI"
+    },
+    "w_4460XkO14": {
+      "id": "w_4460XkO14",
+      "title": "What is \u2018Project Footballer\u2019? \ud83e\udd14 \u26bd",
+      "description": "What is \u2018Project Footballer\u2019? \ud83e\udd14 \u26bd\n\nThe voice of youth football \ud83d\udd09 A podcast for parents to help their children be the best they can be \ud83d\udcaa You may not agree with everything that we say, but if you can just take one piece of advice from our guests, then hopefully it\u2019ll help \ud83d\ude4c",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-03-27T17:54:20Z",
+      "thumbnail": "https://i.ytimg.com/vi/w_4460XkO14/maxresdefault.jpg",
+      "duration": "0:53",
+      "viewCount": 894,
+      "likeCount": 15,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=w_4460XkO14"
+    },
+    "niWBYZFjPUs": {
+      "id": "niWBYZFjPUs",
+      "title": "Weekly Q&A Episode 11: 25 reasons that hold players back from making it as professional\u00a0footballers",
+      "description": "\ud83d\ude80 Help us reach 10k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nWelcome to Project Footballer, the voice of youth football supported by Spotify, where we delve deep into the world of youth football with our special guests.\n\nIn this Weekly Q&A, we are joined with Dan Edwards and Matt Healy to answer your questions! \n\nThank you for submitting your questions, and we look forward to seeing you on Instagram next Sunday.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-03-25T15:08:48Z",
+      "thumbnail": "https://i.ytimg.com/vi/niWBYZFjPUs/maxresdefault.jpg",
+      "duration": "1:00:49",
+      "viewCount": 2298,
+      "likeCount": 31,
+      "commentCount": 7,
+      "url": "https://www.youtube.com/watch?v=niWBYZFjPUs"
+    },
+    "BCaIMSssVic": {
+      "id": "BCaIMSssVic",
+      "title": "Weekly Q&A Episode 10: How to prepare your child for the game of the future?",
+      "description": "\ud83d\ude80 Help us reach 10k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nWelcome to Project Footballer, the voice of youth football supported by Spotify, where we delve deep into the world of youth football with our special guests.\n\nIn this Weekly Q&A, we are joined with Coach Rafaz to answer your questions! \n\nThank you for submitting your questions, and we look forward to seeing you on Instagram next Sunday.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-03-21T19:57:58Z",
+      "thumbnail": "https://i.ytimg.com/vi/BCaIMSssVic/maxresdefault.jpg",
+      "duration": "1:14:41",
+      "viewCount": 2626,
+      "likeCount": 31,
+      "commentCount": 9,
+      "url": "https://www.youtube.com/watch?v=BCaIMSssVic"
+    },
+    "awLRo2s7grM": {
+      "id": "awLRo2s7grM",
+      "title": "Weekly Q&A Episode 9: What are your child\u2019s chance of making it Pro, if they don't get\u00a0signed\u00a0at\u00a0U9?",
+      "description": "\ud83d\ude80 Help us reach 10k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nWelcome to Project Footballer, the voice of youth football supported by Spotify, where we delve deep into the world of youth football with our special guests.\n\nIn this Weekly Q&A, we are joined with Danny Edwards and Matt Healy to answer your questions! \n\nThank you for submitting your questions, and we look forward to seeing you on Instagram next Sunday.\n\n\nChapters:\n00:00:00 - A Successful Football Event for Under 6 Players\n00:07:39 - The Growing Gap in Grassroots Football\n00:15:00 - Scouting and Recruitment at the Pre-Academy Level\n00:21:58 - Different Categories of Players\n00:29:08 - Tips for improving as a young football player\n00:36:16 - The Challenges of Training Repetition in Football\n00:43:18 - Making the Right Decisions for Your Child\n00:50:25 - Supporting Your Child's Dreams\n00:57:07 - Balancing dreams and reality in youth sports\n01:04:04 - Late Meal Continuation",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-03-13T12:11:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/awLRo2s7grM/maxresdefault.jpg",
+      "duration": "1:04:20",
+      "viewCount": 2997,
+      "likeCount": 39,
+      "commentCount": 10,
+      "url": "https://www.youtube.com/watch?v=awLRo2s7grM"
+    },
+    "biGSIoDy56o": {
+      "id": "biGSIoDy56o",
+      "title": "\u201cI\u2019ve learned that extreme discipline is a key part of the success of the world\u2019s best athletes\u201d",
+      "description": "Join us as we explore the crucial role of extreme discipline in the success of the world's top athletes. Ruben shares his firsthand experiences working with some of the most accomplished athletes globally, shedding light on the mindset, routines, and habits that set them apart.\n\nFrom meticulously crafted training regimens to the finer nuances of nutrition and recovery, Ruben breaks down the components of elite athletic performance and the unwavering discipline required to achieve it.\n\nWhether you're an aspiring athlete, a fitness enthusiast, or simply curious about the secrets behind peak performance, this episode offers invaluable wisdom and inspiration.\n\nTune in now to gain exclusive access to the mindset of champions and discover how extreme discipline can propel you to new heights in your athletic pursuits and beyond. Don't miss out on this enlightening conversation with Ruben Tabares!\n\nChapters:\n00:00:00 - Developing Daily Habits and Discipline\n00:13:14 - Instilling Discipline and Good Habits\n00:26:24 - Discipline and Self-Love in Parenting\n00:39:58 - The Power of Visualization\n00:53:15 - Developing Young Athletes and their Training\n01:06:25 - The Power of Visualization and Positive Thinking\n01:20:32 - Developing Young Athletes\n01:34:09 - Setting Sam up for Success\n01:48:26 - Discipline and Sacrifice in Sports\n02:01:22 - Farewell and Invitation to Return",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-02-20T18:00:19Z",
+      "thumbnail": "https://i.ytimg.com/vi/biGSIoDy56o/maxresdefault.jpg",
+      "duration": "2:01:36",
+      "viewCount": 4877,
+      "likeCount": 75,
+      "commentCount": 15,
+      "url": "https://www.youtube.com/watch?v=biGSIoDy56o"
+    },
+    "cIsngY1_XI0": {
+      "id": "cIsngY1_XI0",
+      "title": "Do you agree with Sean\u2019s theory? \ud83e\udd14 #football #footballdrills #academyfootball",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-02-16T12:32:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/cIsngY1_XI0/maxresdefault.jpg",
+      "duration": "0:44",
+      "viewCount": 5448,
+      "likeCount": 59,
+      "commentCount": 7,
+      "url": "https://www.youtube.com/watch?v=cIsngY1_XI0"
+    },
+    "EtSjEw3NAJk": {
+      "id": "EtSjEw3NAJk",
+      "title": "Do you agree with Jamie Redknapp here? \ud83e\udd14 #football #academyfootball #jamieredknapp",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-02-12T09:56:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/EtSjEw3NAJk/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 4570,
+      "likeCount": 67,
+      "commentCount": 7,
+      "url": "https://www.youtube.com/watch?v=EtSjEw3NAJk"
+    },
+    "3vVdIervXC4": {
+      "id": "3vVdIervXC4",
+      "title": "Paul Merson on how different players require different coaching experiences \ud83e\udd1d #football #paulmerson",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-02-10T14:44:48Z",
+      "thumbnail": "https://i.ytimg.com/vi/3vVdIervXC4/maxresdefault.jpg",
+      "duration": "0:37",
+      "viewCount": 4630,
+      "likeCount": 54,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=3vVdIervXC4"
+    },
+    "xRtVOWUgqlE": {
+      "id": "xRtVOWUgqlE",
+      "title": "Weekly Q&A Episode 8: The role of GENETIC influence in player success",
+      "description": "In this Weekly Q&A, we are joined with Chris Robinson, Danny Edwards, Sean Conlon and Matt Healy to answer your questions! \n\nThank you for submitting your questions, and we look forward to seeing you on Instagram next Sunday.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-02-09T12:56:52Z",
+      "thumbnail": "https://i.ytimg.com/vi/xRtVOWUgqlE/maxresdefault.jpg",
+      "duration": "1:01:03",
+      "viewCount": 2193,
+      "likeCount": 25,
+      "commentCount": 13,
+      "url": "https://www.youtube.com/watch?v=xRtVOWUgqlE"
+    },
+    "qOlronUk_wA": {
+      "id": "qOlronUk_wA",
+      "title": "Do you agree with Harry Redknapp? \ud83e\udd14 #football #harryredknapp",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-02-08T15:09:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/qOlronUk_wA/maxresdefault.jpg",
+      "duration": "0:52",
+      "viewCount": 7123,
+      "likeCount": 123,
+      "commentCount": 10,
+      "url": "https://www.youtube.com/watch?v=qOlronUk_wA"
+    },
+    "tUJG5TQ_boE": {
+      "id": "tUJG5TQ_boE",
+      "title": "Jamie Redknapp: \u2018Phones are the biggest problem for young footballers right now!\u2019 \ud83d\ude24 #football",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-02-07T10:38:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/tUJG5TQ_boE/maxresdefault.jpg",
+      "duration": "0:37",
+      "viewCount": 73561,
+      "likeCount": 933,
+      "commentCount": 83,
+      "url": "https://www.youtube.com/watch?v=tUJG5TQ_boE"
+    },
+    "1Hv2C2UGHkA": {
+      "id": "1Hv2C2UGHkA",
+      "title": "Harry Redknapp: \"Coaches that haven't played the game are ruining football!  They are all academics!",
+      "description": "\ud83d\ude80 Help us reach 10k subscribers by hitting the subscribe button and joining our community dedicated to youth football development!\n\nWelcome to Project Footballer, the voice of youth football supported by Spotify, where we delve deep into the world of youth football with our special guests.\n\nWelcome to an extraordinary episode featuring a captivating panel discussion with football legends Harry Redknapp, Jamie Redknapp, and Paul Merson. Delve into the world of football, parenting, and the unique dynamics that shape young athletes.\n\nIn this thought-provoking episode, we explore the intricacies of 1-to-1 training and its impact on a budding footballer's development. Can a child be inherently born as a footballer, or is it the result of dedicated training and mentorship? Join us as we unravel the mysteries behind nurturing sporting talent from a young age.\n\nThe conversation takes an insightful turn as we delve into the realm of parenting styles. Discover the delicate balance between being assertive and fostering a relaxed environment for your child's growth in the world of football. Should parents adopt a more hands-on, pushy approach, or is a laid-back attitude more conducive to success? Our panelists, each with their unique experiences, share their perspectives on what works best in shaping a football prodigy.\n\nA highlight of the discussion is the fascinating comparison of parenting styles between the esteemed Harry Redknapp and the insightful Paul Merson. Gain valuable insights into the diverse approaches these football icons have taken in guiding their own children through the challenges of pursuing a career in the beautiful game.\n\nWhether you're a football enthusiast, a parent navigating the world of youth sports, or simply curious about the behind-the-scenes of football development, this episode promises a rich tapestry of experiences and wisdom. Join us as we journey through the minds of these football legends, unlocking the secrets to nurturing the next generation of sporting talent. Don't miss out on this riveting exploration of football, parenting, and the unique stories that shape the beautiful game.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-02-06T19:16:56Z",
+      "thumbnail": "https://i.ytimg.com/vi/1Hv2C2UGHkA/maxresdefault.jpg",
+      "duration": "2:09:17",
+      "viewCount": 48100,
+      "likeCount": 332,
+      "commentCount": 87,
+      "url": "https://www.youtube.com/watch?v=1Hv2C2UGHkA"
+    },
+    "FRw96fhPkLs": {
+      "id": "FRw96fhPkLs",
+      "title": "Weekly Q&A Episode 7: Height In Football",
+      "description": "In this Weekly Q&A, we are joined with Chris Robinson, Danny Edwards, Sean Conlon and Matt Healy to answer your questions! \n\nThank you for submitting your questions, and we look forward to seeing you on Instagram next Sunday.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-01-30T20:04:34Z",
+      "thumbnail": "https://i.ytimg.com/vi/FRw96fhPkLs/maxresdefault.jpg",
+      "duration": "57:21",
+      "viewCount": 2837,
+      "likeCount": 48,
+      "commentCount": 10,
+      "url": "https://www.youtube.com/watch?v=FRw96fhPkLs"
+    },
+    "ue1LKbXGwT0": {
+      "id": "ue1LKbXGwT0",
+      "title": "Has modern football become boring? \ud83e\udd14 #football #academyfootball #youthfootball",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-01-30T19:42:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/ue1LKbXGwT0/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 4541,
+      "likeCount": 44,
+      "commentCount": 9,
+      "url": "https://www.youtube.com/watch?v=ue1LKbXGwT0"
+    },
+    "UcSFExgfugQ": {
+      "id": "UcSFExgfugQ",
+      "title": "Carlton Cole on the rawness of football in Sierra Leone \ud83d\ude24 #football #carltoncole #westham",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-01-26T10:00:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/UcSFExgfugQ/maxresdefault.jpg",
+      "duration": "0:44",
+      "viewCount": 3498,
+      "likeCount": 70,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=UcSFExgfugQ"
+    },
+    "YGCLsx1z9iA": {
+      "id": "YGCLsx1z9iA",
+      "title": "Weekly Q&A Ep. 6: Are coaches spending too much time teaching unnecessary dribbling sequences?",
+      "description": "Rob ursell says that coaches in England are spending too much time teaching young children to dribble and do unnecessary skills.  \n\nTonight on instagram he has invited coaches to join him for an open debate about this subject.   \n\nAre we getting the balance right and is this why England are currently the most successful we have ever been as a football nation? \n\nIs Rob old school with his ideology or ahead of his time?",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-01-15T14:01:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/YGCLsx1z9iA/maxresdefault.jpg",
+      "duration": "1:18:00",
+      "viewCount": 4945,
+      "likeCount": 62,
+      "commentCount": 21,
+      "url": "https://www.youtube.com/watch?v=YGCLsx1z9iA"
+    },
+    "eTj7UWmUwjg": {
+      "id": "eTj7UWmUwjg",
+      "title": "How diverse play experiences are used to develop young footballers \ud83e\udd1d #football #footballacademy",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-01-15T11:00:37Z",
+      "thumbnail": "https://i.ytimg.com/vi/eTj7UWmUwjg/maxresdefault.jpg",
+      "duration": "0:48",
+      "viewCount": 762,
+      "likeCount": 10,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=eTj7UWmUwjg"
+    },
+    "pAa7DBk2tEM": {
+      "id": "pAa7DBk2tEM",
+      "title": "Project Footballer Ep.32 - Why are there only 1% of South Asian players in academy football?",
+      "description": "In this episode, we look to discover why only there are only 1% South Asian players in English academies, whilst the UK population currently has 5% South Asian people, and grassroots football sees 6% of players from the same background.\n\nWhat is causing this huge difference in representation in academies? Let us know your thoughts on our discussion in the comments.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-01-13T16:49:05Z",
+      "thumbnail": "https://i.ytimg.com/vi/pAa7DBk2tEM/maxresdefault.jpg",
+      "duration": "1:53:55",
+      "viewCount": 3272,
+      "likeCount": 58,
+      "commentCount": 39,
+      "url": "https://www.youtube.com/watch?v=pAa7DBk2tEM"
+    },
+    "8LN___8ZPb8": {
+      "id": "8LN___8ZPb8",
+      "title": "Do you agree with Harry Redknapp\u2019s views on nature vs nurture? \ud83e\udd14 #harryredknapp #jamieredknapp",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-01-08T16:14:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/8LN___8ZPb8/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 3279,
+      "likeCount": 29,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=8LN___8ZPb8"
+    },
+    "9pssg3t6xak": {
+      "id": "9pssg3t6xak",
+      "title": "Joleon Lescott on the pressures that this generation faces in football. #football #youthfootball",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-01-04T14:15:16Z",
+      "thumbnail": "https://i.ytimg.com/vi/9pssg3t6xak/maxresdefault.jpg",
+      "duration": "0:44",
+      "viewCount": 3990,
+      "likeCount": 62,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=9pssg3t6xak"
+    },
+    "VYhBkY4dW28": {
+      "id": "VYhBkY4dW28",
+      "title": "Carlton Cole on the importance of blending street grit with game intelligence \ud83e\udd1d #football #westham",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-01-03T18:58:40Z",
+      "thumbnail": "https://i.ytimg.com/vi/VYhBkY4dW28/maxresdefault.jpg",
+      "duration": "0:55",
+      "viewCount": 3634,
+      "likeCount": 50,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=VYhBkY4dW28"
+    },
+    "z1zOmZ94e7U": {
+      "id": "z1zOmZ94e7U",
+      "title": "Project Footballer Ep.31 - Can your child make it in the National League on a cold Tuesday night?",
+      "description": "Welcome back to Project Footballer, the voice of youth football. If your child is pursuing professional football, you probably understand that statistically most academy kids don't play in the Premier League or even the championship if they do get paid to play football.\n\nStatistically, most academy players play in the lower leagues. So as a parent pursuing professional football for your child, you really do need to know what lower league football is like. In. this episode, we speak to three players who play for Scunthorpe United. You learn about their journeys into football. We explain about the lower league structure, the type of football that's played in the National League and that the average wage of a National League player is \u00a336,000 per year.\n\nEstablished in 1899, turning professional in 1912 and being admitted into the league in 1950, Scunthorpe United lost their EFL status after 72 years in 2022. Now on the upward curve under new ownership led by local fans is determined to return the club to its former glory and sustain and stabilise it for generations to come after its very existence was put at risk. For your chance to support Scunthorpe on this exciting new endeavour please visit their website. https://www.scunthorpe-united.co.uk. You can support in many ways whether it\u2019s buying a shirt, cup or even a sign up to the clubs lottery draw. In a clubs time of need the footballing community support can be all the difference. Every penny helps. #UTI",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2024-01-01T15:58:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/z1zOmZ94e7U/maxresdefault.jpg",
+      "duration": "1:19:57",
+      "viewCount": 10630,
+      "likeCount": 153,
+      "commentCount": 30,
+      "url": "https://www.youtube.com/watch?v=z1zOmZ94e7U"
+    },
+    "8Fklol7gujc": {
+      "id": "8Fklol7gujc",
+      "title": "Weekly Q&A with Dan and Sean: Episode 5",
+      "description": "In this Weekly Q&A, we are joined with Danny Edwards and Sean Conlon to answer your questions! \n\nThank you for submitting your questions, and we look forward to seeing you on Instagram next Sunday.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-12-18T16:44:19Z",
+      "thumbnail": "https://i.ytimg.com/vi/8Fklol7gujc/maxresdefault.jpg",
+      "duration": "1:01:19",
+      "viewCount": 1622,
+      "likeCount": 22,
+      "commentCount": 3,
+      "url": "https://www.youtube.com/watch?v=8Fklol7gujc"
+    },
+    "PWdwgewFbIc": {
+      "id": "PWdwgewFbIc",
+      "title": "How Jamie Redknapp used a birdcage to improve his technique as a child \ud83d\udc4f #football #jamieredknapp",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-12-18T10:49:59Z",
+      "thumbnail": "https://i.ytimg.com/vi/PWdwgewFbIc/maxresdefault.jpg",
+      "duration": "0:32",
+      "viewCount": 6109,
+      "likeCount": 97,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=PWdwgewFbIc"
+    },
+    "ujZFpIPqGWM": {
+      "id": "ujZFpIPqGWM",
+      "title": "Weekly Q&A with Darius, Dan and Chris Robinson: Episode 4",
+      "description": "In this Weekly Q&A, we are joined with special guest, Chelsea scout of 20+ years - Chris Robinson to answer your questions! \n\nThank you for submitting your questions, and we look forward to seeing you on Instagram next Sunday.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-12-11T20:49:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/ujZFpIPqGWM/maxresdefault.jpg",
+      "duration": "1:15:04",
+      "viewCount": 1913,
+      "likeCount": 41,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=ujZFpIPqGWM"
+    },
+    "wBclRuKj4Qc": {
+      "id": "wBclRuKj4Qc",
+      "title": "Weekly Q&A with Darius and Sean: Episode 3",
+      "description": "Welcome to Episode 3 of the Weekly Q&A with Darius Charles and Sean Conlon, where we discuss all football topics surrounding grassroots and academy football. \n\nYou sent in your questions, and we tried our best to answer them. Be sure to send in your questions for us to answer this Sunday!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-12-04T18:39:03Z",
+      "thumbnail": "https://i.ytimg.com/vi/wBclRuKj4Qc/maxresdefault.jpg",
+      "duration": "1:07:26",
+      "viewCount": 1304,
+      "likeCount": 26,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=wBclRuKj4Qc"
+    },
+    "ndxQVaVqrhw": {
+      "id": "ndxQVaVqrhw",
+      "title": "Project Footballer Ep.30 - At what age is it okay for coaches to swear at your child?",
+      "description": "In this episode, Darius Charles and Dan Edwards talk to Jess Warner, the blogger known as being \u201cthe one with all the boys\u201d\u2014the mum behind The Only Girl in the House, where she shares tales, tips, tricks, family travels and grumbles of having 5 boys.\n\nIn this Instagram live stream, they discuss how to deal with teammates who are bullies in academy football and much more.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-11-27T21:33:09Z",
+      "thumbnail": "https://i.ytimg.com/vi/ndxQVaVqrhw/maxresdefault.jpg",
+      "duration": "26:55",
+      "viewCount": 1340,
+      "likeCount": 14,
+      "commentCount": 9,
+      "url": "https://www.youtube.com/watch?v=ndxQVaVqrhw"
+    },
+    "izjGIDQCjPU": {
+      "id": "izjGIDQCjPU",
+      "title": "Weekly Q&A with Darius and Dan: Episode 2",
+      "description": "Welcome to Episode 2 of the Weekly Q&A with Darius Charles and Dan Edwards, where we discuss all football topics surrounding grassroots and academy football. \n\nYou sent in your questions, and we tried our best to answer them. Be sure to send in your questions for us to answer this Sunday!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-11-27T15:07:59Z",
+      "thumbnail": "https://i.ytimg.com/vi/izjGIDQCjPU/maxresdefault.jpg",
+      "duration": "25:29",
+      "viewCount": 807,
+      "likeCount": 15,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=izjGIDQCjPU"
+    },
+    "HX_v5jwy8hk": {
+      "id": "HX_v5jwy8hk",
+      "title": "Weekly Q&A with Darius and Dan: Episode 1",
+      "description": "Welcome to Episode 1 of the Weekly Q&A with Darius Charles and Dan Edwards, where we discuss all football topics surrounding grassroots and academy football. \n\nYou sent in your questions, and we tried our best to answer them. Be sure to send in your questions for us to answer this Sunday!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-11-16T21:19:27Z",
+      "thumbnail": "https://i.ytimg.com/vi/HX_v5jwy8hk/maxresdefault.jpg",
+      "duration": "54:34",
+      "viewCount": 1556,
+      "likeCount": 33,
+      "commentCount": 10,
+      "url": "https://www.youtube.com/watch?v=HX_v5jwy8hk"
+    },
+    "vFVsDGJXW7o": {
+      "id": "vFVsDGJXW7o",
+      "title": "Project Footballer Ep.29 - Help your child avoid being one of 40% of footballers who go bankrupt.",
+      "description": "In this episode, we speak with Rob Moore about the importance of managing money in football, whether you make it as a footballer or don't make it. This is a super important topic that needs to be covered, and we hope you can enjoy this episode with an open mind.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-11-05T21:12:54Z",
+      "thumbnail": "https://i.ytimg.com/vi/vFVsDGJXW7o/maxresdefault.jpg",
+      "duration": "1:34:51",
+      "viewCount": 2218,
+      "likeCount": 39,
+      "commentCount": 8,
+      "url": "https://www.youtube.com/watch?v=vFVsDGJXW7o"
+    },
+    "EFECkizN1oU": {
+      "id": "EFECkizN1oU",
+      "title": "Project Footballer Ep.28 - \u201cHomeschooling is giving players a huge advantage to go pro\u201d",
+      "description": "In this episode, we have a panel of guests to answer your questions!\n\nEx-footballer and current senior house parent for Manchester City U18s and U21s Darius Charles, top technical coach Dan Edwards who has worked with the likes of Jesse Lingard, Aur\u00e9lien Tchouam\u00e9ni and Raheem Sterling, Ex-footballer and England Futsal player Rob Ursell and Portia Freno, parent of one of the top U8s in London join us to answer the ultimate question of how to make it as a footballer.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-10-08T17:49:14Z",
+      "thumbnail": "https://i.ytimg.com/vi/EFECkizN1oU/maxresdefault.jpg",
+      "duration": "1:57:09",
+      "viewCount": 5132,
+      "likeCount": 66,
+      "commentCount": 24,
+      "url": "https://www.youtube.com/watch?v=EFECkizN1oU"
+    },
+    "OTn2NhKXguw": {
+      "id": "OTn2NhKXguw",
+      "title": "Project Footballer Ep.27 - Is your child\u2019s speed predetermined by genetics?",
+      "description": "Is your child's speed predetermined by genetics? Jonas Dodoo, one of the world's top speed and directional movement analysts speaks to us about this topic.\n\nHe's worked with some of the fastest Olympic athletes, as well as with 5 Premier League clubs at both academy and professional level. He provides an incredible insight into how you can make your child faster, and whether there's a formula to creating a child with speed.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-09-15T18:57:05Z",
+      "thumbnail": "https://i.ytimg.com/vi/OTn2NhKXguw/maxresdefault.jpg",
+      "duration": "1:32:50",
+      "viewCount": 7472,
+      "likeCount": 144,
+      "commentCount": 24,
+      "url": "https://www.youtube.com/watch?v=OTn2NhKXguw"
+    },
+    "8ndvx-rYadE": {
+      "id": "8ndvx-rYadE",
+      "title": "David Horrocks: \"AI will track facial expressions and body language to monitor performance\u201d",
+      "description": "David is the former head of research and development at Manchester United, providing intelligence and support to the multi-disciplinary team across coaching, science, data, technology, medicine, operations, media and psychology. \n\nHe also wrote an in-depth case study on the success of Gary Neville, looking into his structured deliberate practice and decision making. \n\nIn this episode, we dive deep into football's biggest secrets at the elite level of the game, including how artificial intelligence will impact the future of football. We also look into the success behind Gary Neville in our quest to further explore the question of 'How do you make it as a footballer?'.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-09-06T15:10:20Z",
+      "thumbnail": "https://i.ytimg.com/vi/8ndvx-rYadE/maxresdefault.jpg",
+      "duration": "1:04:03",
+      "viewCount": 1939,
+      "likeCount": 18,
+      "commentCount": 8,
+      "url": "https://www.youtube.com/watch?v=8ndvx-rYadE"
+    },
+    "qVgO4pTiXt0": {
+      "id": "qVgO4pTiXt0",
+      "title": "Carlton Cole: \u201cCage Football Made Me The Man I Am Today\u201d",
+      "description": "Carlton Cole is an English football coach and former professional footballer who played as a striker. He scored 52 goals in 288 Premier League appearances for four clubs. \n\nIn this episode, Carlton opens up about how he made it as a footballer, including some incredible stories about how cage football made him the man he is, how his Mother buying him football boots got him a contract at Chelsea, as well as delving into later on in his career, where Carlton experienced bankruptcy and described himself as 'Concentrating on things that give you temporary happiness.\"\n\nHear Carlton's insightful and motivating story in this episode. Please let us know your feedback on the episode in the comments below!\n\nChapters:\n00:00:00 - The Love for Football Begins in Sierra Leone\n00:04:17 - Developing Skills in Cage Football\n00:08:03 - The Evolution of Football Skills\n00:11:39 - The importance of street football and competition\n00:15:20 - A Description of Cage Football\n00:18:54 - Intensity and Tactics on the Field\n00:22:38 - The Intensity of Cage Football\n00:26:15 - The importance of mental toughness in football\n00:29:43 - The Resilience Learned Through Football\n00:33:17 - Memories of Playing Football\n00:36:56 - The Importance of Looking the Part in Football Trials\n00:40:55 - The Power of Looking the Part\n00:44:33 - The Journey to Success\n00:48:14 - Learning to Hit the Ball\n00:51:53 - Learning to Play Center Back\n00:55:16 - Nothing to Achieve from Football\n00:59:08 - The Motivation to Succeed in Football\n01:02:43 - Challenges in Professional Football\n01:06:13 - Overcoming Adversity and Taking Responsibility\n01:09:50 - Resilience and Self-Reflection\n01:13:24 - The Importance of Resilience and Listening\n01:17:12 - Mixing with Other Students\n01:20:54 - The impact of training on equalizing the playing field in football\n01:25:10 - The Effect of Puberty on Athletes\n01:28:43 - The Changes during Puberty\n01:32:29 - Sending Players on Loan\n01:36:00 - Understanding and Adapting to the New Generation\n01:39:25 - Improving Communication with Players\n01:42:41 - Never Give Up on Your Dream\n01:46:19 - Complimenting Young Players\n01:49:43 - The Impact of Football Performance on Livelihoods",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-08-23T19:06:33Z",
+      "thumbnail": "https://i.ytimg.com/vi/qVgO4pTiXt0/maxresdefault.jpg",
+      "duration": "1:50:39",
+      "viewCount": 6081,
+      "likeCount": 77,
+      "commentCount": 10,
+      "url": "https://www.youtube.com/watch?v=qVgO4pTiXt0"
+    },
+    "1oYNEv_yFXc": {
+      "id": "1oYNEv_yFXc",
+      "title": "Is a player's position predetermined by genetics, personality, environment or chance?",
+      "description": "In this bonus episode, we speak about how to choose your child's play position. This is a bonus episode hosted by Rob Ursell and Sean Conlon. We hope you enjoy and learn as much as we did from these discussions!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-06-14T20:48:39Z",
+      "thumbnail": "https://i.ytimg.com/vi/1oYNEv_yFXc/maxresdefault.jpg",
+      "duration": "1:08:55",
+      "viewCount": 7284,
+      "likeCount": 91,
+      "commentCount": 58,
+      "url": "https://www.youtube.com/watch?v=1oYNEv_yFXc"
+    },
+    "AJxLkbG6_lA": {
+      "id": "AJxLkbG6_lA",
+      "title": "Why mastering technique alone will not make you a footballer",
+      "description": "In this episode of Project Footballer, we speak with professional freestyler and internet personality, Daniel Cutting. He has amassed a huge audience of over 3 million across his socials from showcasing his incredible football technique online. As well as building his son's accounts past 250,000 in a short space of time, setting him up to become either a footballer or content creator.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-05-25T15:59:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/AJxLkbG6_lA/hqdefault.jpg",
+      "duration": "56:45",
+      "viewCount": 6199,
+      "likeCount": 80,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=AJxLkbG6_lA"
+    },
+    "P1pDG05v_5I": {
+      "id": "P1pDG05v_5I",
+      "title": "Chelsea Strength and Conditioning Coach explains how to develop Physicality for young players",
+      "description": "In this episode, we speak to Chelsea Strength and Conditioning coach Harry Knock about how to develop physicality in young players. He answers some interesting questions and provides us with nuggets of information that we all needed to learn!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-05-10T17:24:13Z",
+      "thumbnail": "https://i.ytimg.com/vi/P1pDG05v_5I/maxresdefault.jpg",
+      "duration": "1:34:56",
+      "viewCount": 12082,
+      "likeCount": 185,
+      "commentCount": 12,
+      "url": "https://www.youtube.com/watch?v=P1pDG05v_5I"
+    },
+    "dq8CS83DLL0": {
+      "id": "dq8CS83DLL0",
+      "title": "August Born Birthday?  \"You will never make it!\" Ajax Consultant discusses Relative Age Bias",
+      "description": "In this episode, we speak to Ajax Consultant Stephen Lawrence, who is also the Father of professional footballer, James Lawrence. We take a deep dive into the disadvantages of being born later as a footballer within the UK.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-04-30T11:26:40Z",
+      "thumbnail": "https://i.ytimg.com/vi/dq8CS83DLL0/maxresdefault.jpg",
+      "duration": "1:22:06",
+      "viewCount": 9661,
+      "likeCount": 94,
+      "commentCount": 34,
+      "url": "https://www.youtube.com/watch?v=dq8CS83DLL0"
+    },
+    "JcYZO6Hu20k": {
+      "id": "JcYZO6Hu20k",
+      "title": "Project Footballer Ep. 21 - Parents of Leicester academy star Nazar Mahina tell their story!",
+      "description": "On this episode, we interview the parents of Leicester academy star Nazar Mahina, they tell their story of how they raised Nazar, and how he has gone on to become viral, appearing on multiple HUGE football channels. \n\nAs always, we'd love to hear your feedback on our podcast, and we hope you enjoy this one!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-03-25T12:05:35Z",
+      "thumbnail": "https://i.ytimg.com/vi/JcYZO6Hu20k/maxresdefault.jpg",
+      "duration": "1:11:45",
+      "viewCount": 7894,
+      "likeCount": 109,
+      "commentCount": 27,
+      "url": "https://www.youtube.com/watch?v=JcYZO6Hu20k"
+    },
+    "x_qS7F25pLI": {
+      "id": "x_qS7F25pLI",
+      "title": "Joleon Lescott - I started playing football as a Right Winger!",
+      "description": "In this episode, we speak to English former professional footballer Joleon Lescott, who has previously won 2 Premier League titles, an FA Cup, a League Cup, as well as making over 500 appearances for club and country.\n\nWe discuss how Joleon made it as footballer, what was his journey like? What was his environment like? Joleon also gives a lot of insightful and interesting information that parents can take on board and utilise in their child's football journey. \n\nWe hope you enjoy this episode, please let us know your feedback in the comments below!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2023-02-19T20:56:47Z",
+      "thumbnail": "https://i.ytimg.com/vi/x_qS7F25pLI/maxresdefault.jpg",
+      "duration": "1:40:44",
+      "viewCount": 3978,
+      "likeCount": 61,
+      "commentCount": 6,
+      "url": "https://www.youtube.com/watch?v=x_qS7F25pLI"
+    },
+    "dr66eyXdnIk": {
+      "id": "dr66eyXdnIk",
+      "title": "Project Footballer Ep. 19 - The Panel Answers Your Football Questions!",
+      "description": "In this episode, we've brought together a panel including former Arsenal legend Paul Merson, ex-futsal star Rob Ursell, YouTube sensation Tim Grimwade, Chelsea FC scout Sean Conlon and Spurs scout Marcelo Graca. Together, we answer YOUR questions surrounding academy football and football development, in a bid to further explore the question... how do you make a footballer? Is there a formula?\n\nPlease let us know your thoughts on this episode! Feel free to submit any questions below for future episodes!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2022-11-22T19:33:28Z",
+      "thumbnail": "https://i.ytimg.com/vi/dr66eyXdnIk/maxresdefault.jpg",
+      "duration": "1:43:48",
+      "viewCount": 7104,
+      "likeCount": 66,
+      "commentCount": 33,
+      "url": "https://www.youtube.com/watch?v=dr66eyXdnIk"
+    },
+    "lya5meAXaiM": {
+      "id": "lya5meAXaiM",
+      "title": "Sonny Pike: The Greatest Footballer That Never Was \"My father and I have never spoken since\"",
+      "description": "Sonny Pike has an amazing story to tell. One that could really help parents avoid some potential mistakes, as they try to aid their child\u2019s journey towards becoming a football player.\n\nLong before every aspiring young footballer was social media-famous, Sonny was the first, and only, for many many years after, footballing prodigy who was made accessible, known, and even famous, to the general public, as he took his journey towards being a footballer.\n\nWe hope you enjoy this podcast, let us know your thoughts in the comments!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2022-09-09T15:27:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/lya5meAXaiM/maxresdefault.jpg",
+      "duration": "53:14",
+      "viewCount": 3832,
+      "likeCount": 47,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=lya5meAXaiM"
+    },
+    "ykBOGBxE7l0": {
+      "id": "ykBOGBxE7l0",
+      "title": "How to develop a winning mentality for your child! We speak to top football sports phyciologist",
+      "description": "In this episode, we are joined by Gabriel from Athlete Mentality, an Instagram platform with over 50,000 followers which discusses ways in which athlete mentality can be improved! We discuss how to develop a winning mentality for your child in this episode.\n\nWe hope you enjoy this episode and we look forward to your feedback!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2022-07-26T17:11:45Z",
+      "thumbnail": "https://i.ytimg.com/vi/ykBOGBxE7l0/maxresdefault.jpg",
+      "duration": "1:02:11",
+      "viewCount": 2425,
+      "likeCount": 30,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=ykBOGBxE7l0"
+    },
+    "JViTssg3ato": {
+      "id": "JViTssg3ato",
+      "title": "Why do so many academy footballers never make it? \ud83d\udcac #football #footballshorts",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2022-07-22T11:44:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/JViTssg3ato/maxresdefault.jpg",
+      "duration": "0:53",
+      "viewCount": 1824,
+      "likeCount": 55,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=JViTssg3ato"
+    },
+    "WfvzLkXdfMU": {
+      "id": "WfvzLkXdfMU",
+      "title": "Jamie Redknapp discusses his obsession with football! #football #footballshorts #jamieredknapp",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2022-07-11T15:59:56Z",
+      "thumbnail": "https://i.ytimg.com/vi/WfvzLkXdfMU/maxresdefault.jpg",
+      "duration": "0:38",
+      "viewCount": 5336,
+      "likeCount": 83,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=WfvzLkXdfMU"
+    },
+    "w1rpHfq6ols": {
+      "id": "w1rpHfq6ols",
+      "title": "Project Footballer Ep. 15 - The player who turned down a pro football contract to go to Harvard",
+      "description": "James Fahmy spent his whole career in the academy system, playing for Queens Park Rangers FC and captaining the U18 Professional Development Team. However, he is now studying at the renowned Harvard University, where he is also a NCAA Division 1 student-athlete for the college. We take a look at his journey to Harvard, and the reason why he turned down the oppurtunity of a professional football contract, to focus on his education.\n\nWe hope you enjoy this episode! Let us know in the comments!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2022-07-06T09:58:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/w1rpHfq6ols/maxresdefault.jpg",
+      "duration": "40:00",
+      "viewCount": 2012,
+      "likeCount": 41,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=w1rpHfq6ols"
+    },
+    "8nv4qM9Cz1w": {
+      "id": "8nv4qM9Cz1w",
+      "title": "Why England aren't producing controlling midfielders",
+      "description": "Ex-England Futsal player Rob Ursell has had an amazing career in futsal and football. Known in non-league football as \"The Wizard\", Rob changed his game from being a brilliant 1v1 player to a controlling team player. He has strong views on what's wrong with English academies and why England will never win anything with our current teaching methods. This is a fascinating episode which we found to be extremely thought provoking. How will you think about the development of your child after watching this? Will your thoughts change and will you try to develop your child's football IQ at an earlier age as a result? Let us know in the comments below.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2022-06-15T16:01:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/8nv4qM9Cz1w/maxresdefault.jpg",
+      "duration": "1:17:42",
+      "viewCount": 4421,
+      "likeCount": 59,
+      "commentCount": 14,
+      "url": "https://www.youtube.com/watch?v=8nv4qM9Cz1w"
+    },
+    "K2eFM8iSlYM": {
+      "id": "K2eFM8iSlYM",
+      "title": "I was bullied at Reading Academy and became depressed with suicidal thoughts",
+      "description": "Professional Footballer Fabio Sole and Daniela Osu, a Sports Psychotherapist, discuss coping with mental health & bullying within Academy Football. They also discuss FootballersMinds, a programme, full of activities and techniques targetting the matinence of wellbeing within football. \n\nWe hope you enjoy this podcast, please let us know in the comments!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2022-05-31T12:03:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/K2eFM8iSlYM/maxresdefault.jpg",
+      "duration": "1:03:55",
+      "viewCount": 2252,
+      "likeCount": 57,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=K2eFM8iSlYM"
+    },
+    "OO8ji7WIn08": {
+      "id": "OO8ji7WIn08",
+      "title": "Bad habits affected Reece James at U13 level! #reecejames #chelseafc #footballacademy",
+      "description": "",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2022-05-25T09:15:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/OO8ji7WIn08/maxresdefault.jpg",
+      "duration": "0:49",
+      "viewCount": 9186,
+      "likeCount": 332,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=OO8ji7WIn08"
+    },
+    "Yf9jXEe2gy0": {
+      "id": "Yf9jXEe2gy0",
+      "title": "Project Footballer Ep.10 - How much can technique improve? We hear from Isa - The Technical Trainer",
+      "description": "As part of the blueprint to become a footballer, technical mastery is obviously a vital requirement.  But how much can it improve?  Was Messi born with technical mastery?  Was it just in his spirit?  How much is down to practice? If you can learn technical mastery, how do you learn it?  In this episode we speak to Isa Hussein, who is also known as @the.technical.trainer and considered one of the best technical trainers in the world. \n\nHis clients include Premier League players, Champions League players, academy players and children of ex-footballers and football pundits.  Isa gives his thoughts on whether technique can be improved and to what degree. He breaks down the amount of practice required to make it to the Premier League and what practice is required. \n\nIsa also gives advice to parents on how parents should find a technical coach and what parents should look out for. This is an incredible episode. \n\nLeave a comment below and let us know your thoughts. We read every comment!",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2022-02-25T16:30:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/Yf9jXEe2gy0/maxresdefault.jpg",
+      "duration": "1:29:55",
+      "viewCount": 11152,
+      "likeCount": 145,
+      "commentCount": 13,
+      "url": "https://www.youtube.com/watch?v=Yf9jXEe2gy0"
+    },
+    "FfMiBnrxHAg": {
+      "id": "FfMiBnrxHAg",
+      "title": "Project Footballer Ep 9 - How important is athleticism in football?  Academy Scouts discuss!",
+      "description": "In this episode, we recap what we have learned from the previous 8 episodes. We push to find the answer to discover 'What is the formula to making a footballer!' \n\nThe question we spend the most time discussing is, how important is athleticism? We go down a lot of rabbit holes and really try to answer this question. We don't get an answer and we argue a lot, but there it's certainly a thought-provoking conversation.   \n\nGive us your views in the comments below. How important do you think athleticism is to make it as a footballer?",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2022-02-21T17:44:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/FfMiBnrxHAg/maxresdefault.jpg",
+      "duration": "1:07:54",
+      "viewCount": 9220,
+      "likeCount": 110,
+      "commentCount": 62,
+      "url": "https://www.youtube.com/watch?v=FfMiBnrxHAg"
+    },
+    "U78OF_DMrOI": {
+      "id": "U78OF_DMrOI",
+      "title": "Jamie Redknapp: \"I was playing football with pros from as early as I can remember\"",
+      "description": "In this incredible interview Jamie Redknapp gives us the scoop on how his father and uncle developed two of England's best ever midfielders. He also speaks about his own son's journey through academy football at Chelsea and his thoughts on how much of becoming a footballer is down to nature and how much is down to nurture.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2021-12-29T17:34:42Z",
+      "thumbnail": "https://i.ytimg.com/vi/U78OF_DMrOI/maxresdefault.jpg",
+      "duration": "1:14:16",
+      "viewCount": 11502,
+      "likeCount": 143,
+      "commentCount": 13,
+      "url": "https://www.youtube.com/watch?v=U78OF_DMrOI"
+    },
+    "GMdoxaDPD8M": {
+      "id": "GMdoxaDPD8M",
+      "title": "Ethan Pinnock:  I went from being paid \u00a330 per week to the Premier League.",
+      "description": "Ethan Pinnock is currently playing a significant role in Brentford's debut season in the Premier League, but it hasn't always been smooth sailing for Ethan. He tells us what it was like to be released from Millwall at the age of 15 and how he had to make his way in football from playing in the Conference League to then climbing the ladder to reach the Premiership. Ethan has so many insights to offer to parents of children looking to become footballers.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2021-12-16T13:38:16Z",
+      "thumbnail": "https://i.ytimg.com/vi/GMdoxaDPD8M/maxresdefault.jpg",
+      "duration": "1:25:14",
+      "viewCount": 6305,
+      "likeCount": 90,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=GMdoxaDPD8M"
+    },
+    "6J6GXSA8bZA": {
+      "id": "6J6GXSA8bZA",
+      "title": "Project Footballer Ep 6 - Jamie Mackie tells us how he went from Sunday League to the Premier League",
+      "description": "Jamie Mackie tells us his incredible story of how he went from playing local Sunday league football with his school mates at age 16 to playing in the Premier League and scoring in one of the most famous games in football history against Manchester City. This is a fascinating insight into the positives and negatives of skipping the normal academy football journey which is common for most footballers in the modern game.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2021-11-26T16:19:30Z",
+      "thumbnail": "https://i.ytimg.com/vi/6J6GXSA8bZA/maxresdefault.jpg",
+      "duration": "1:28:30",
+      "viewCount": 4060,
+      "likeCount": 62,
+      "commentCount": 7,
+      "url": "https://www.youtube.com/watch?v=6J6GXSA8bZA"
+    },
+    "be-Mi83r20E": {
+      "id": "be-Mi83r20E",
+      "title": "The father of Reece James & Lauren James tells us how they made it to the top",
+      "description": "Reece James is considered one of the top players in the world in his position. His sister also plays at the highest level of the female game. What did their father Nigel do to help foster such talent? In this incredible interview we find out the key decisions Nigel made to help his children make it.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2021-11-08T18:45:34Z",
+      "thumbnail": "https://i.ytimg.com/vi/be-Mi83r20E/maxresdefault.jpg",
+      "duration": "1:39:33",
+      "viewCount": 19620,
+      "likeCount": 346,
+      "commentCount": 26,
+      "url": "https://www.youtube.com/watch?v=be-Mi83r20E"
+    },
+    "wuOq3TJPWfE": {
+      "id": "wuOq3TJPWfE",
+      "title": "Project Footballer Ep. 3 - Coach Danny Edwards talks about his child's journey into academy football",
+      "description": "Danny Edwards is a performance coach to the stars. He has worked with the likes of Virgil Van Dijk, David Luiz, Daniel Sturridge, Daniel James, Gary Cahil to name a few.  Danny's son, Theo is with QPR's academy. Danny gives us a brilliant insight into what he does with his son to help him achieve football success. Danny also reflects on what he would do differently if he had the chance. He tells us what he has learned from his time in academy football.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2021-11-08T18:45:22Z",
+      "thumbnail": "https://i.ytimg.com/vi/wuOq3TJPWfE/maxresdefault.jpg",
+      "duration": "1:03:55",
+      "viewCount": 4551,
+      "likeCount": 52,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=wuOq3TJPWfE"
+    },
+    "r4v0PB4rhVE": {
+      "id": "r4v0PB4rhVE",
+      "title": "Project Footballer Ep. 4 - Arsenal Legend Paul Merson talks about his U7 child in Academy Football",
+      "description": "Ex-England and Arsenal legend Paul Merson has a 6 year old son named Freddy, currently in academy football. Paul talks about his journey making it as a footballer and how Freddy's journey compares.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2021-11-08T18:45:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/r4v0PB4rhVE/maxresdefault.jpg",
+      "duration": "1:20:50",
+      "viewCount": 9492,
+      "likeCount": 95,
+      "commentCount": 9,
+      "url": "https://www.youtube.com/watch?v=r4v0PB4rhVE"
+    },
+    "kteTxNa6cMM": {
+      "id": "kteTxNa6cMM",
+      "title": "Project Footballer Ep. 1 - Footballer Darius Charles talks about his son's journey into Football",
+      "description": "Darius Charles is a footballers currently playing for AFC Wimbledon. He was Wycombe Wanderers club captain during the 19/20 season in which they were promoted to the Championship. Darius's son plays for Fulham Academy in their U12's. Darius gives excellent insight into how he is raising his son Malaki and helping him navigate his journey through academy football.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2021-11-08T18:45:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/kteTxNa6cMM/maxresdefault.jpg",
+      "duration": "56:09",
+      "viewCount": 4316,
+      "likeCount": 69,
+      "commentCount": 11,
+      "url": "https://www.youtube.com/watch?v=kteTxNa6cMM"
+    },
+    "-aZcZXlKwxM": {
+      "id": "-aZcZXlKwxM",
+      "title": "Project Footballer Ep. 2 - Perry Mitchel talks about his son signing for Chelsea U9's",
+      "description": "Perry Mitchel is the father of Khalil, one of the top U9 players in the UK. This is a fascinating interview in which we learn the sacrifice and dedication it takes to develop a player like Khailil. Press-ups and burpees before bed, non-negotiable bed times, speaking to Khalil like a grown up from a young age, ice baths, hill runs and a ban on fizzy drinks are just some of the methods which have led to Khalil achieving such high levels of ability.",
+      "channelId": "UC02Tiefb8rCcAi_H4XIMTMw",
+      "channelTitle": "Project Footballer",
+      "publishedAt": "2021-11-08T18:44:52Z",
+      "thumbnail": "https://i.ytimg.com/vi/-aZcZXlKwxM/maxresdefault.jpg",
+      "duration": "1:23:55",
+      "viewCount": 13951,
+      "likeCount": 136,
+      "commentCount": 23,
+      "url": "https://www.youtube.com/watch?v=-aZcZXlKwxM"
+    }
+  },
+  "include_timestamps": false,
+  "include_video_title": true,
+  "include_video_id": true,
+  "include_video_url": true,
+  "include_view_count": false,
+  "concatenate_all": false,
+  "end_time": 1757245650.9847186,
+  "duration": 235.14051604270935
+}

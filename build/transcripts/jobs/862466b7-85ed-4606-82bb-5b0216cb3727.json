@@ -1,0 +1,1927 @@
+{
+  "status": "completed",
+  "channel_name": "fussballtrainingimkinder-u7965",
+  "channel_id": "UCD64KYH_09HlXjusfRu_ndA",
+  "total_videos": 71,
+  "processed_count": 71,
+  "failed_count": 3,
+  "completed": 68,
+  "files": [
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/gocvojwqkh0/#67 Podcast-Folge mit Matthias_gocvojwqkh0.txt",
+      "video_id": "gocvojwqkh0",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/wzM5_2VuFNM/Podcast-Folge #77 mit Antje He_wzM5_2VuFNM.txt",
+      "video_id": "wzM5_2VuFNM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/68jQSboJotc/#68 Podcast-Folge mit Andre Me_68jQSboJotc.txt",
+      "video_id": "68jQSboJotc",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/mjmrJeGigQc/#66 Podcast-Folge mit Dominik _mjmrJeGigQc.txt",
+      "video_id": "mjmrJeGigQc",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/VcSi-VoNy8A/#61 Podcast-Folge mit Burak Ye_VcSi-VoNy8A.txt",
+      "video_id": "VcSi-VoNy8A",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/dwbtHPH3Jgc/#64 Podcast-Folge mit Daniel S_dwbtHPH3Jgc.txt",
+      "video_id": "dwbtHPH3Jgc",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/osfSDFyhaWE/#63 Podcast-Folge mit Markus H_osfSDFyhaWE.txt",
+      "video_id": "osfSDFyhaWE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/JKZl3iC1qUs/Podcast-Folge mit Andreas Bles_JKZl3iC1qUs.txt",
+      "video_id": "JKZl3iC1qUs",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/QGPQn7RLPzA/#62 Podcast-Folge mit Patrick _QGPQn7RLPzA.txt",
+      "video_id": "QGPQn7RLPzA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/fNcrOEEAPwc/#58 Podcast-Folge mit Henoch F_fNcrOEEAPwc.txt",
+      "video_id": "fNcrOEEAPwc",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/DqcmQF2G65g/#56 Podcast-Folge mit Tobias K_DqcmQF2G65g.txt",
+      "video_id": "DqcmQF2G65g",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/Q7idBNzseew/#54 Podcast-Folge mit Andreas _Q7idBNzseew.txt",
+      "video_id": "Q7idBNzseew",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/J4H2mBDxxRU/#52 Podcast-Folge mit Malte Bo_J4H2mBDxxRU.txt",
+      "video_id": "J4H2mBDxxRU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/JvPsESih1Rg/#51 Podcast-Folge mit RWE U15-_JvPsESih1Rg.txt",
+      "video_id": "JvPsESih1Rg",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/L3r6onQYzBY/#53 Podcast-Folge mit UEFA Pro_L3r6onQYzBY.txt",
+      "video_id": "L3r6onQYzBY",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/rElx7GrFTio/#50 Podcast-Folge mit Benjamin_rElx7GrFTio.txt",
+      "video_id": "rElx7GrFTio",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/DOnYAqvTszU/#55 Podcast-Folge mit \u00f6sterrei_DOnYAqvTszU.txt",
+      "video_id": "DOnYAqvTszU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/fqcRYQ6sV2M/#57 Podcast-Folge mit Thomas G_fqcRYQ6sV2M.txt",
+      "video_id": "fqcRYQ6sV2M",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/SNzIKbWSySA/#59 Podcast-Folge mit Norbert _SNzIKbWSySA.txt",
+      "video_id": "SNzIKbWSySA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/A0zGD6mx02k/#47 Podcast-Folge mit Moritz H_A0zGD6mx02k.txt",
+      "video_id": "A0zGD6mx02k",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/oPxxeZzWt8o/Podcast-Folge mit HSV U11 Trai_oPxxeZzWt8o.txt",
+      "video_id": "oPxxeZzWt8o",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/u_EKc3TVkvA/Mein Podcast- Gastauftritt bei_u_EKc3TVkvA.txt",
+      "video_id": "u_EKc3TVkvA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/POa6MSzxKd4/Podcast Folge mit Farat Toku, _POa6MSzxKd4.txt",
+      "video_id": "POa6MSzxKd4",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/8b34lQGgc1o/Podcast Folge mit Max Bergmann_8b34lQGgc1o.txt",
+      "video_id": "8b34lQGgc1o",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/uu0Dc6aTLbQ/Kreativ coachen- mein neuer Na_uu0Dc6aTLbQ.txt",
+      "video_id": "uu0Dc6aTLbQ",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/5YT_XgUO30A/Podcast- Folge mit Julia Hofma_5YT_XgUO30A.txt",
+      "video_id": "5YT_XgUO30A",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/ncA2bthbRic/#49 Podcast Folge mit Yannik L_ncA2bthbRic.txt",
+      "video_id": "ncA2bthbRic",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/x8rEy4ezGic/Chancen und Risiken der Au\u00dfens_x8rEy4ezGic.txt",
+      "video_id": "x8rEy4ezGic",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/I4X1DBLIpko/Podcast- Folge mit Techniktrai_I4X1DBLIpko.txt",
+      "video_id": "I4X1DBLIpko",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/IvWIR1cwYLk/Podcast- Folge mit Askin Polat_IvWIR1cwYLk.txt",
+      "video_id": "IvWIR1cwYLk",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/TlR-yMuV1m0/Podcast- Folge mit Sven Schimm_TlR-yMuV1m0.txt",
+      "video_id": "TlR-yMuV1m0",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/Uk6srmNvrZs/Podcast Folge mit Ex- National_Uk6srmNvrZs.txt",
+      "video_id": "Uk6srmNvrZs",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/xGB-ceAVv64/Podcast Folge mit Lasse Bork, _xGB-ceAVv64.txt",
+      "video_id": "xGB-ceAVv64",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/EVRDTdDK8yM/Podcast Folge mit Lo\u00efc Fav\u00e9, z_EVRDTdDK8yM.txt",
+      "video_id": "EVRDTdDK8yM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/Jk5Z47FvAiU/Podcast Folge mit Joel Porsch _Jk5Z47FvAiU.txt",
+      "video_id": "Jk5Z47FvAiU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/C7OWoosYXxI/Podcast- Folge mit ehemaliger _C7OWoosYXxI.txt",
+      "video_id": "C7OWoosYXxI",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/I-del7DR3p8/Podcast Folge mit Jugendtraine_I-del7DR3p8.txt",
+      "video_id": "I-del7DR3p8",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/ukWxSNVbw_Y/Podcast Folge mit Robin Sch\u00fc\u00dfl_ukWxSNVbw_Y.txt",
+      "video_id": "ukWxSNVbw_Y",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/04x8BMV90cs/Podcast- Folge mit DAZN- Exper_04x8BMV90cs.txt",
+      "video_id": "04x8BMV90cs",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/-tfcbkgXwjo/Podcast- Folge mit Silvan Schl_-tfcbkgXwjo.txt",
+      "video_id": "-tfcbkgXwjo",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/i_DnqamAODs/Top 3 Tipps f\u00fcr Kinder- und Ju_i_DnqamAODs.txt",
+      "video_id": "i_DnqamAODs",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/EYoQC8K7uS8/Podcast- Folge mit Lukas Oden,_EYoQC8K7uS8.txt",
+      "video_id": "EYoQC8K7uS8",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/-pOTbJikTyk/Podcast- Folge mit Christian P_-pOTbJikTyk.txt",
+      "video_id": "-pOTbJikTyk",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/6mBFIjitVbM/Podcast- Folge mit Benjamin Be_6mBFIjitVbM.txt",
+      "video_id": "6mBFIjitVbM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/Re695em_mec/Podcast Folge mit Horst Lutz \u00fc_Re695em_mec.txt",
+      "video_id": "Re695em_mec",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/vZTSB4fZu74/Podcast Folge mit Nico Koch \u00fcb_vZTSB4fZu74.txt",
+      "video_id": "vZTSB4fZu74",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/7ucOLkk5gP4/Podcast Folge mit Peter Hyball_7ucOLkk5gP4.txt",
+      "video_id": "7ucOLkk5gP4",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/K3DqL5tGM4k/Podcast- Folge mit Leo- Jonath_K3DqL5tGM4k.txt",
+      "video_id": "K3DqL5tGM4k",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/oR7GI2LAGoM/Podcast- Folge mit Profi- Trai_oR7GI2LAGoM.txt",
+      "video_id": "oR7GI2LAGoM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/n23dbTs4Hwo/Podcast- Folge mit Baris Tunca_n23dbTs4Hwo.txt",
+      "video_id": "n23dbTs4Hwo",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/JSp2VKrNc4A/Podcast- Folge zum Thema Wie b_JSp2VKrNc4A.txt",
+      "video_id": "JSp2VKrNc4A",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/faykvPxhE80/Podcast Folge mit Elko Duckste_faykvPxhE80.txt",
+      "video_id": "faykvPxhE80",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/Q0tv12-tlSU/Podcast- Folge mit Christian R_Q0tv12-tlSU.txt",
+      "video_id": "Q0tv12-tlSU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/rHBtGT9U9zk/Podcast- Folge zum Thema Schne_rHBtGT9U9zk.txt",
+      "video_id": "rHBtGT9U9zk",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/8EjiuKSPH-s/Podcast- Folge mit Sebastian M_8EjiuKSPH-s.txt",
+      "video_id": "8EjiuKSPH-s",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/NhbCL_pwreI/Podcast- Folge mit Sportpsycho_NhbCL_pwreI.txt",
+      "video_id": "NhbCL_pwreI",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/4HltbS8nR-A/Podcast- Folge mit Nils Hahn v_4HltbS8nR-A.txt",
+      "video_id": "4HltbS8nR-A",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/NpDONx7oUDc/Podcast- Folge mit Athletiktra_NpDONx7oUDc.txt",
+      "video_id": "NpDONx7oUDc",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/HmRlnGXp3UU/Podcast- Folge mit Peter Hybal_HmRlnGXp3UU.txt",
+      "video_id": "HmRlnGXp3UU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/AXAMkrVrqGw/Podcast- Folge mit Leon Staege_AXAMkrVrqGw.txt",
+      "video_id": "AXAMkrVrqGw",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/fQQGkHCLoTA/Ausschnitt aus meinem Gespr\u00e4ch_fQQGkHCLoTA.txt",
+      "video_id": "fQQGkHCLoTA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/ZXEJXKIkXLM/Podcast Folge mit Susanne Amar_ZXEJXKIkXLM.txt",
+      "video_id": "ZXEJXKIkXLM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/gjCpk7asNvE/Podcast- Folge mit Malgorzata _gjCpk7asNvE.txt",
+      "video_id": "gjCpk7asNvE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/z51d8P-nC2A/Podcast- Folge mit Thomas Klau_z51d8P-nC2A.txt",
+      "video_id": "z51d8P-nC2A",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/QtDkDXLgi4A/Podcast \u00fcber Ern\u00e4hrung im Fu\u00dfb_QtDkDXLgi4A.txt",
+      "video_id": "QtDkDXLgi4A",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/kfrzgVRkfls/Podcast mit Sportwissenschaftl_kfrzgVRkfls.txt",
+      "video_id": "kfrzgVRkfls",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/xExJ9Urr1TM/Podcast mit Matthias Nowak zum_xExJ9Urr1TM.txt",
+      "video_id": "xExJ9Urr1TM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/862466b7-85ed-4606-82bb-5b0216cb3727/PYa1S2nlvvE/Podcast mit Burak Bahar, U15- _PYa1S2nlvvE.txt",
+      "video_id": "PYa1S2nlvvE",
+      "language": "de",
+      "type": "auto-generated"
+    }
+  ],
+  "videos": [
+    {
+      "id": "wzM5_2VuFNM",
+      "title": "Podcast-Folge #77 mit Antje Heimsoeth \u00fcber positives F\u00fchren und mentale St\u00e4rke",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=wzM5_2VuFNM"
+    },
+    {
+      "id": "68jQSboJotc",
+      "title": "#68 Podcast-Folge mit Andre Meyer, ehemaliger Cheftrainer Profis Hallescher FC",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=68jQSboJotc"
+    },
+    {
+      "id": "gocvojwqkh0",
+      "title": "#67 Podcast-Folge mit Matthias Strohmaier",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=gocvojwqkh0"
+    },
+    {
+      "id": "mjmrJeGigQc",
+      "title": "#66 Podcast-Folge mit Dominik Voglsinger \u00fcber Kreativit\u00e4t und Spielintelligenz",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=mjmrJeGigQc"
+    },
+    {
+      "id": "xDJhEME-Ud8",
+      "title": "#65 Podcast-Folge mit Fynn Cedric Bach, Videoanalyst bei  der 1. Mannschaft von Aalborg BK",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xDJhEME-Ud8"
+    },
+    {
+      "id": "dwbtHPH3Jgc",
+      "title": "#64 Podcast-Folge mit Daniel Stredak, U20-Co Trainer, \u00fcber die Trainingsphilosophie Deutschland",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=dwbtHPH3Jgc"
+    },
+    {
+      "id": "osfSDFyhaWE",
+      "title": "#63 Podcast-Folge mit Markus Halfmann, Leiter Entwicklungsbereich (U11-U15) beim 1. FC K\u00f6ln",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=osfSDFyhaWE"
+    },
+    {
+      "id": "QGPQn7RLPzA",
+      "title": "#62 Podcast-Folge mit Patrick May von \"Goalimpact\"",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=QGPQn7RLPzA"
+    },
+    {
+      "id": "VcSi-VoNy8A",
+      "title": "#61 Podcast-Folge mit Burak Yelken \u00fcber F\u00fchrung und Vermittlung  von offensivtaktischen Inhalten",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=VcSi-VoNy8A"
+    },
+    {
+      "id": "JKZl3iC1qUs",
+      "title": "Podcast-Folge mit Andreas Blessing zum Thema \"Teamentwicklung\"",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=JKZl3iC1qUs"
+    },
+    {
+      "id": "SNzIKbWSySA",
+      "title": "#59 Podcast-Folge mit Norbert Elgert",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=SNzIKbWSySA"
+    },
+    {
+      "id": "fNcrOEEAPwc",
+      "title": "#58 Podcast-Folge mit Henoch F\u00f6rster, Gr\u00fcnder von \"Bolzplatzkind\", \u00fcber Bolzplatzmentalit\u00e4t",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=fNcrOEEAPwc"
+    },
+    {
+      "id": "fqcRYQ6sV2M",
+      "title": "#57 Podcast-Folge mit Thomas Gronnemark, u.a. bekannt als Einwurftrainer von J\u00fcrgen Klopp",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=fqcRYQ6sV2M"
+    },
+    {
+      "id": "DqcmQF2G65g",
+      "title": "#56 Podcast-Folge mit Tobias Kirr, U11 Trainer / Scouting beim FC N\u00fcrnberg",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=DqcmQF2G65g"
+    },
+    {
+      "id": "DOnYAqvTszU",
+      "title": "#55 Podcast-Folge mit \u00f6sterreichischem U16 Co-Nationaltrainer Renato Gligoroski",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=DOnYAqvTszU"
+    },
+    {
+      "id": "Q7idBNzseew",
+      "title": "#54 Podcast-Folge mit Andreas Bosch \u00fcber die Entwicklung von \"Teamflow\"",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Q7idBNzseew"
+    },
+    {
+      "id": "L3r6onQYzBY",
+      "title": "#53 Podcast-Folge mit UEFA Pro Lizenz-Inhaber Pascal Bach \u00fcber Verkomplizierung des Fu\u00dfballs",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=L3r6onQYzBY"
+    },
+    {
+      "id": "J4H2mBDxxRU",
+      "title": "#52 Podcast-Folge mit Malte Boven \u00fcber Sportorganisationsentwicklung und F\u00fchrung",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=J4H2mBDxxRU"
+    },
+    {
+      "id": "JvPsESih1Rg",
+      "title": "#51 Podcast-Folge mit RWE U15-Trainer Julian Hasselberg \u00fcber Conditioning-Spielformen",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=JvPsESih1Rg"
+    },
+    {
+      "id": "rElx7GrFTio",
+      "title": "#50 Podcast-Folge mit Benjamin Benter \u00fcber Stellenwert des Athletiktrainings und Belastungssteuerung",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=rElx7GrFTio"
+    },
+    {
+      "id": "ncA2bthbRic",
+      "title": "#49 Podcast Folge mit Yannik Lamberz, U13 Trainer Bayer 04 Leverkusen",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ncA2bthbRic"
+    },
+    {
+      "id": "oPxxeZzWt8o",
+      "title": "Podcast-Folge mit HSV U11 Trainerin Kristin Witte",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=oPxxeZzWt8o"
+    },
+    {
+      "id": "A0zGD6mx02k",
+      "title": "#47 Podcast-Folge mit Moritz Hajek vom Deutschen Fu\u00dfball Internat (DFI)",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=A0zGD6mx02k"
+    },
+    {
+      "id": "uu0Dc6aTLbQ",
+      "title": "\"Kreativ coachen\"- mein neuer Name",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=uu0Dc6aTLbQ"
+    },
+    {
+      "id": "x8rEy4ezGic",
+      "title": "Chancen und Risiken der Au\u00dfenseiterrolle im Fu\u00dfball mit Sportpsychologe Leonard Kai Fuhlert",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=x8rEy4ezGic"
+    },
+    {
+      "id": "8b34lQGgc1o",
+      "title": "Podcast Folge mit Max Bergmann, bekannt als Co- Trainer des Drittligisten Hallescher FC",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=8b34lQGgc1o"
+    },
+    {
+      "id": "u_EKc3TVkvA",
+      "title": "Mein Podcast- Gastauftritt bei \"Technik vor Taktik\"",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=u_EKc3TVkvA"
+    },
+    {
+      "id": "POa6MSzxKd4",
+      "title": "Podcast Folge mit Farat Toku, zuletzt 3. Liga Trainer bei Viktoria Berlin",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=POa6MSzxKd4"
+    },
+    {
+      "id": "I4X1DBLIpko",
+      "title": "Podcast- Folge mit Techniktrainer Markus Steffen",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=I4X1DBLIpko"
+    },
+    {
+      "id": "5YT_XgUO30A",
+      "title": "Podcast- Folge mit Julia Hofmann von \"Home of Goals\"",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=5YT_XgUO30A"
+    },
+    {
+      "id": "Jk5Z47FvAiU",
+      "title": "Podcast Folge mit Joel Porsch von \"Coaching Zone\" \u00fcber Taktiktraining im Jugendfu\u00dfball",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Jk5Z47FvAiU"
+    },
+    {
+      "id": "I-del7DR3p8",
+      "title": "Podcast Folge mit Jugendtrainer Frederik Retsch",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=I-del7DR3p8"
+    },
+    {
+      "id": "EVRDTdDK8yM",
+      "title": "Podcast Folge mit Lo\u00efc Fav\u00e9, zuletzt Co- Trainer bei den Profis vom FC St. Pauli",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=EVRDTdDK8yM"
+    },
+    {
+      "id": "xGB-ceAVv64",
+      "title": "Podcast Folge mit Lasse Bork, Athletiktrainer der Profis von Holstein Kiel",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xGB-ceAVv64"
+    },
+    {
+      "id": "TlR-yMuV1m0",
+      "title": "Podcast- Folge mit Sven Schimmel \u00fcber Mentaltraining, seine eigenen Erfahrungen  und Thomas Tuchel",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=TlR-yMuV1m0"
+    },
+    {
+      "id": "Uk6srmNvrZs",
+      "title": "Podcast Folge mit Ex- Nationalspieler Christian Pander \u00fcber Mentaltraining und sein Buch",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Uk6srmNvrZs"
+    },
+    {
+      "id": "IvWIR1cwYLk",
+      "title": "Podcast- Folge mit Askin Polat \u00fcber seine Arbeit im NLZ, in der T\u00fcrkei und als  Buch- Autor",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=IvWIR1cwYLk"
+    },
+    {
+      "id": "ukWxSNVbw_Y",
+      "title": "Podcast Folge mit Robin Sch\u00fc\u00dfler, U13 Trainer im NLZ vom SC Paderborn",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ukWxSNVbw_Y"
+    },
+    {
+      "id": "C7OWoosYXxI",
+      "title": "Podcast- Folge mit ehemaliger Nationalspielerin und U- M\u00e4dchen Nationaltrainerin Anouschka Bernhard",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=C7OWoosYXxI"
+    },
+    {
+      "id": "04x8BMV90cs",
+      "title": "Podcast- Folge mit DAZN- Experte und Ex- Profi Sebastian Knei\u00dfl",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=04x8BMV90cs"
+    },
+    {
+      "id": "-tfcbkgXwjo",
+      "title": "Podcast- Folge mit Silvan Schlegel \u00fcber die Pr\u00e4vention von typischen Knieverletzungen im Fu\u00dfball",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=-tfcbkgXwjo"
+    },
+    {
+      "id": "i_DnqamAODs",
+      "title": "Top 3 Tipps f\u00fcr Kinder- und Jugendtrainer mit Cheftrainer Bo Svensson von Mainz 05",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=i_DnqamAODs"
+    },
+    {
+      "id": "EYoQC8K7uS8",
+      "title": "Podcast- Folge mit Lukas Oden, Torwarttrainer beim VFB L\u00fcbeck",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=EYoQC8K7uS8"
+    },
+    {
+      "id": "6mBFIjitVbM",
+      "title": "Podcast- Folge mit Benjamin Benter \u00fcber Athletiktraining in der Jugend vom KSC",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=6mBFIjitVbM"
+    },
+    {
+      "id": "-pOTbJikTyk",
+      "title": "Podcast- Folge mit Christian Puta \u00fcber Krafttraining im Nachwuchsfu\u00dfball",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=-pOTbJikTyk"
+    },
+    {
+      "id": "Re695em_mec",
+      "title": "Podcast Folge mit Horst Lutz  \u00fcber Life Kinetik im Kinder- und Jugendfu\u00dfball",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Re695em_mec"
+    },
+    {
+      "id": "vZTSB4fZu74",
+      "title": "Podcast Folge mit Nico Koch  \u00fcber Athletiktraining im Kinder- und Jugendfu\u00dfball",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=vZTSB4fZu74"
+    },
+    {
+      "id": "7ucOLkk5gP4",
+      "title": "Podcast  Folge mit Peter Hyballa zur Ausbildung des Gegenpressings im Jugendfu\u00dfball",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=7ucOLkk5gP4"
+    },
+    {
+      "id": "oR7GI2LAGoM",
+      "title": "Podcast- Folge mit Profi- Trainer Christoph Dabrowski",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=oR7GI2LAGoM"
+    },
+    {
+      "id": "K3DqL5tGM4k",
+      "title": "Podcast- Folge mit Leo- Jonathan Te\u00dfmann, Autor von \"Denkfabrik Nachwuchsfussball\"",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=K3DqL5tGM4k"
+    },
+    {
+      "id": "8EjiuKSPH-s",
+      "title": "Podcast- Folge mit Sebastian Mundruc, Inhaber von Cogniprove",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=8EjiuKSPH-s"
+    },
+    {
+      "id": "n23dbTs4Hwo",
+      "title": "Podcast- Folge mit Baris Tuncay, U13 Trainer im NLZ vom Hamburger SV",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=n23dbTs4Hwo"
+    },
+    {
+      "id": "faykvPxhE80",
+      "title": "Podcast  Folge mit Elko Duckstein, Co- Trainer der U12 vom FC Magdeburg",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=faykvPxhE80"
+    },
+    {
+      "id": "Q0tv12-tlSU",
+      "title": "Podcast- Folge mit Christian Riecks, sportlicher Leiter U12- U15 bei Holstein Kiel",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Q0tv12-tlSU"
+    },
+    {
+      "id": "JSp2VKrNc4A",
+      "title": "Podcast- Folge zum Thema \"Wie bilde ich Talente aus?\" mit St\u00fctzpunktkoordinator Bj\u00f6rn R\u00e4del.",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=JSp2VKrNc4A"
+    },
+    {
+      "id": "rHBtGT9U9zk",
+      "title": "Podcast- Folge zum Thema \"Schnelligkeit im Fu\u00dfball\" mit dem Schnelligkeitszentrum Berlin",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=rHBtGT9U9zk"
+    },
+    {
+      "id": "4HltbS8nR-A",
+      "title": "Podcast- Folge mit Nils Hahn vom FC Hansa Rostock",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=4HltbS8nR-A"
+    },
+    {
+      "id": "NhbCL_pwreI",
+      "title": "Podcast- Folge mit Sportpsychologe Leonard Kai Fuhlert vom \"Schnelligkeitszentrum Berlin\"",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=NhbCL_pwreI"
+    },
+    {
+      "id": "HmRlnGXp3UU",
+      "title": "Podcast- Folge mit Peter Hyballa \u00fcber Anforderungen an Trainer und Spieler und Strukturen im Fu\u00dfball",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=HmRlnGXp3UU"
+    },
+    {
+      "id": "NpDONx7oUDc",
+      "title": "Podcast- Folge mit Athletiktrainer Nils Heim \u00fcber M\u00f6glichkeiten eines Home- Athletiktrainings",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=NpDONx7oUDc"
+    },
+    {
+      "id": "ZXEJXKIkXLM",
+      "title": "Podcast Folge mit Susanne Amar \u00fcber Zusammenarbeit und Kommunikation mit Eltern",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ZXEJXKIkXLM"
+    },
+    {
+      "id": "QtDkDXLgi4A",
+      "title": "Podcast \u00fcber Ern\u00e4hrung im Fu\u00dfball mit Dennis Tittel vom \"Schnelligkeitszentrum Berlin\"",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=QtDkDXLgi4A"
+    },
+    {
+      "id": "fQQGkHCLoTA",
+      "title": "Ausschnitt aus meinem Gespr\u00e4ch mit Herr Dr.  Gerald H\u00fcther",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=fQQGkHCLoTA"
+    },
+    {
+      "id": "gjCpk7asNvE",
+      "title": "Podcast- Folge mit Malgorzata M. Iwanowitsch von \"Socatots\" und \"Brazilian Soccer Schools\"",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=gjCpk7asNvE"
+    },
+    {
+      "id": "z51d8P-nC2A",
+      "title": "Podcast- Folge mit Thomas Klaus, Gr\u00fcnder der \"Fussballschule Tirol\" und LAZ- Standortleiter",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=z51d8P-nC2A"
+    },
+    {
+      "id": "AXAMkrVrqGw",
+      "title": "Podcast- Folge mit Leon Staege von  \"Moving Monkey\"",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=AXAMkrVrqGw"
+    },
+    {
+      "id": "kfrzgVRkfls",
+      "title": "Podcast mit Sportwissenschaftler und Sportmediziner Dr. Dr. Matthias Lochmann \u00fcber Funino",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=kfrzgVRkfls"
+    },
+    {
+      "id": "xExJ9Urr1TM",
+      "title": "Podcast mit Matthias Nowak zum Thema Beidf\u00fc\u00dfigkeit",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xExJ9Urr1TM"
+    },
+    {
+      "id": "OY6iNLUiiig",
+      "title": "Podcast mit Martin Kr\u00fcger (Athletiktrainer Union Berlin)",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=OY6iNLUiiig"
+    },
+    {
+      "id": "bvbV1r8PpWY",
+      "title": "Podcast mit Thomas Staack",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=bvbV1r8PpWY"
+    },
+    {
+      "id": "PYa1S2nlvvE",
+      "title": "Podcast mit Burak Bahar, U15- Trainer von Hannover 96",
+      "publishedAt": "2025-09-08T15:05:59.008Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=PYa1S2nlvvE"
+    }
+  ],
+  "start_time": 1757343958.9435697,
+  "user_id": "0dda42c8-ea25-44d2-a746-187ee1676851",
+  "credits_reserved": 71,
+  "credits_used": 74,
+  "reservation_id": "27854a17-07a0-438f-b8b8-f20189063ad6",
+  "videos_metadata": {
+    "wzM5_2VuFNM": {
+      "id": "wzM5_2VuFNM",
+      "title": "Podcast-Folge #77 mit Antje Heimsoeth \u00fcber positives F\u00fchren und mentale St\u00e4rke",
+      "description": "In Folge #77 spreche ich mit Antje Heimsoeth. Antje ist Mental Coach und Speakerin. Gemeinsam sprechen wir \u00fcber positives F\u00fchren und mentale St\u00e4rke. \n\nQuelle 30:05 min. Die drei Grundbed\u00fcrfnisse des Menschen: \nDeci, Edward L.; Ryan, Richard M.: Die Selbstbestimmungstheorie der Motivation und ihre Bedeutung f\u00fcr die P\u00e4dagogik - In: Zeitschrift f\u00fcr P\u00e4dagogik 39 (1993) 2, S. 223-238 - URN: urn:nbn:de:0111-pedocs-111739 - DOI: 10.25656/01:11173.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2024-10-14T11:35:15Z",
+      "thumbnail": "https://i.ytimg.com/vi/wzM5_2VuFNM/maxresdefault.jpg",
+      "duration": "50:11",
+      "viewCount": 47,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=wzM5_2VuFNM"
+    },
+    "68jQSboJotc": {
+      "id": "68jQSboJotc",
+      "title": "#68 Podcast-Folge mit Andre Meyer, ehemaliger Cheftrainer Profis Hallescher FC",
+      "description": "In Folge #68 spreche ich mit Andre Meyer \u00fcber seine Sicht auf die Ausbildung im Kinder- und Jugendfu\u00dfball. Neben seiner Cheftrainert\u00e4tigkeit bei den Profis des Drittligisten Hallescher FC und seiner Trainert\u00e4tigkeiten beim Berliner AK und Erzgebirge Aue, konnte Andre auch zahlreiche Erfahrungen in Nachwuchsleistungszentren sammeln. So hatte er bei Vereinen wie Union Berlin, Hertha, Augsburg und K\u00f6ln das Amt als Jugendtrainer und sportlicher Leiter (Union Berlin und Augsburg) inne.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2024-03-23T12:47:47Z",
+      "thumbnail": "https://i.ytimg.com/vi/68jQSboJotc/maxresdefault.jpg",
+      "duration": "40:50",
+      "viewCount": 119,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=68jQSboJotc"
+    },
+    "gocvojwqkh0": {
+      "id": "gocvojwqkh0",
+      "title": "#67 Podcast-Folge mit Matthias Strohmaier",
+      "description": "In Folge #67 spreche ich mit Matthias Strohmaier. Dieser ist Founder und CEO bei der Skillers.Academy, Keynote Speaker und TV Experte. Matthias hat Ten Hag, Guardiola und Julian Nagelsmann als Trainer erleben d\u00fcrfen und profitiert so auch als Trainer von diesen Erfahrungen. Gemeinsam sprechen wir \u00fcber seine Hospitation bei Ten Hag und dar\u00fcber, wie man ein zielf\u00fchrendes Individualtraining gestalten kann.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2024-03-18T08:30:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/gocvojwqkh0/maxresdefault.jpg",
+      "duration": "38:03",
+      "viewCount": 63,
+      "likeCount": 1,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=gocvojwqkh0"
+    },
+    "mjmrJeGigQc": {
+      "id": "mjmrJeGigQc",
+      "title": "#66 Podcast-Folge mit Dominik Voglsinger \u00fcber Kreativit\u00e4t und Spielintelligenz",
+      "description": "In Folge #66 spreche ich mit Dominik Voglsinger \u00fcber die Themen Kreativit\u00e4t und Spielintelligenz. Zu diesem Thema hat er auch gemeinsam mit Matthias Nowak ein Buch namens \"Kreativ-Spielformen\" ver\u00f6ffentlicht.\n\nQuelle zur Inattentional Blindness:\nMemmert, Daniel und Philip Furley: \u201cI Spy with My Little Eye!\u201d.Breadth of Attention, Inattentional Blindness, and Tactical Decision Making in Team Sports.2007, S.365. Online verf\u00fcgbar unter: https://www.researchgate.net/publication/5965992_I_Spy_with_My_Little_Eye_Breadth_of_Attention_Inattentional_Blindness_and_Tactical_Decision_Making_in_Team_Sports\n\nQuelle zurm Kriterium der N\u00fctzlichkeit bei der Kreativit\u00e4t: \nMemmert, Daniel: Kreativit\u00e4t im Sportspiel.2012, S.40. Online verf\u00fcgbar unter: https://www.researchgate.net/publication/234111579_Kreativitat_im_Sportspiel\n\nQuelle zu der Kreativit\u00e4t bei den letzten 8 Aktionen eines Tores:\nKempe, Matthias und Memmert, Daniel: \u201cGood, better, creative\u201d.the influence of creativity on goal scoring in elite soccer. 2018. Online verf\u00fcgbar unter: https://www.researchgate.net/publication/324264818_Good_better_creative_the_influence_of_creativity_on_goal_scoring_in_elite_soccer",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2024-03-09T23:34:09Z",
+      "thumbnail": "https://i.ytimg.com/vi/mjmrJeGigQc/maxresdefault.jpg",
+      "duration": "1:03:14",
+      "viewCount": 120,
+      "likeCount": 3,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=mjmrJeGigQc"
+    },
+    "xDJhEME-Ud8": {
+      "id": "xDJhEME-Ud8",
+      "title": "#65 Podcast-Folge mit Fynn Cedric Bach, Videoanalyst bei  der 1. Mannschaft von Aalborg BK",
+      "description": "In der heutigen Folge spreche ich mit Fynn. Dieser ist Videoanalyst bei Aalborg BK in der zweith\u00f6chsten d\u00e4nischen Liga. Gemeinsam sprechen wir \u00fcber die individuelle F\u00f6rderung von einzelnen Spielern und wie Videoanalyse hierbei unterst\u00fctzend dienen kann.\nWenn dir die Folge gefallen hat, w\u00fcrde ich mich \u00fcber ein Abo freuen.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2024-02-16T13:39:25Z",
+      "thumbnail": "https://i.ytimg.com/vi/xDJhEME-Ud8/maxresdefault.jpg",
+      "duration": "29:15",
+      "viewCount": 87,
+      "likeCount": 2,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=xDJhEME-Ud8"
+    },
+    "dwbtHPH3Jgc": {
+      "id": "dwbtHPH3Jgc",
+      "title": "#64 Podcast-Folge mit Daniel Stredak, U20-Co Trainer, \u00fcber die Trainingsphilosophie Deutschland",
+      "description": "In Folge #64 spreche ich mit Daniel Stredak. Dieser ist nicht nur Co-Trainer der deutschen U20-Nationalmannschaft, sondern auch Teil des DFB-Kompetenzteams zur Nachwuchsf\u00f6rderung um Hannes Wolf. Gemeinsam sprechen wir \u00fcber die Trainingsphilosophie Deutschland. Wenn dir die Folge gefallen hat, w\u00fcrde ich mich \u00fcber ein Abo freuen.\n\nBildquelle: DFB",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2024-02-12T10:59:10Z",
+      "thumbnail": "https://i.ytimg.com/vi/dwbtHPH3Jgc/maxresdefault.jpg",
+      "duration": "35:34",
+      "viewCount": 250,
+      "likeCount": 4,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=dwbtHPH3Jgc"
+    },
+    "osfSDFyhaWE": {
+      "id": "osfSDFyhaWE",
+      "title": "#63 Podcast-Folge mit Markus Halfmann, Leiter Entwicklungsbereich (U11-U15) beim 1. FC K\u00f6ln",
+      "description": "In Folge#63 spreche ich mit Markus Halfmann . Markus ist Leiter des Entwicklungsbereichs (U11-U15) beim Nachwuchsleistungszentrum des 1. FC K\u00f6ln. Gemeinsam sprechen wir \u00fcber seine Arbeit und die Arbeitsweise in diesem Altersbereich. \nWenn dir die Folge gefallen hat, w\u00fcrde ich mich sehr freuen, wenn du meinen Kanal abonnierst.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2024-02-06T17:37:03Z",
+      "thumbnail": "https://i.ytimg.com/vi/osfSDFyhaWE/maxresdefault.jpg",
+      "duration": "46:25",
+      "viewCount": 228,
+      "likeCount": 2,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=osfSDFyhaWE"
+    },
+    "QGPQn7RLPzA": {
+      "id": "QGPQn7RLPzA",
+      "title": "#62 Podcast-Folge mit Patrick May von \"Goalimpact\"",
+      "description": "In Folge #62 spreche ich mit Patrick May. Dieser arbeitet f\u00fcr \"Goalimpact\", ein Unternehmen, das Spieler anhand von Daten objektiv bewertet und so Clubs, Scouts und Spieleragenten dabei hilft, gute Spieler zu finden. Gemeinsam sprechen wir \u00fcber sogenannte \"Hidden heroes\". Hierbei geht es um Spieler, deren besonderen Leistungen auf dem Platz unerkannt bleiben und daher unterbewertet werden.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2024-01-30T18:39:59Z",
+      "thumbnail": "https://i.ytimg.com/vi/QGPQn7RLPzA/maxresdefault.jpg",
+      "duration": "37:35",
+      "viewCount": 82,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=QGPQn7RLPzA"
+    },
+    "VcSi-VoNy8A": {
+      "id": "VcSi-VoNy8A",
+      "title": "#61 Podcast-Folge mit Burak Yelken \u00fcber F\u00fchrung und Vermittlung  von offensivtaktischen Inhalten",
+      "description": "In Folge #61 spreche ich mit Burak Yelken \u00fcber F\u00fchrung und die Vermittlung von offensivtaktischen Inhalten. Dieser ist Lehrer und Cheftrainer der U19 vom FSV Frankfurt 1899. \nWenn dir der Podcast gef\u00e4llt, freue ich mich \u00fcber eine Sterne-Bewertung und Feedback sehr!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2024-01-27T18:39:49Z",
+      "thumbnail": "https://i.ytimg.com/vi/VcSi-VoNy8A/maxresdefault.jpg",
+      "duration": "32:48",
+      "viewCount": 250,
+      "likeCount": 10,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=VcSi-VoNy8A"
+    },
+    "JKZl3iC1qUs": {
+      "id": "JKZl3iC1qUs",
+      "title": "Podcast-Folge mit Andreas Blessing zum Thema \"Teamentwicklung\"",
+      "description": "In Folge #60 spreche ich mit Andreas Blessing. Andreas ist unter anderem Experte zum Thema Teamentwicklung. Genau dieser Thematik widmet sich die heutige Folge. Viel Spa\u00df beim H\u00f6ren!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2024-01-24T15:29:55Z",
+      "thumbnail": "https://i.ytimg.com/vi/JKZl3iC1qUs/maxresdefault.jpg",
+      "duration": "1:00:11",
+      "viewCount": 68,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=JKZl3iC1qUs"
+    },
+    "SNzIKbWSySA": {
+      "id": "SNzIKbWSySA",
+      "title": "#59 Podcast-Folge mit Norbert Elgert",
+      "description": "In der heutigen Folge spreche ich mit Norbert Elgert, U19 Trainer der Schalker Knappenschmiede und Autor des Buches \"GIB ALLES Nur Nie Auf!\". Viele (welt)ber\u00fchmte Profifu\u00dfballer wurden von Elgert ausgebildet, darunter u.a. Mesut \u00d6zil, Leroy Sane, Manuel Neuer, Julian Draxler und Benedikt H\u00f6wedes.  \n\nCopyright Bild: FC Schalke 04",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2024-01-19T10:45:45Z",
+      "thumbnail": "https://i.ytimg.com/vi/SNzIKbWSySA/maxresdefault.jpg",
+      "duration": "42:35",
+      "viewCount": 226,
+      "likeCount": 3,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=SNzIKbWSySA"
+    },
+    "fNcrOEEAPwc": {
+      "id": "fNcrOEEAPwc",
+      "title": "#58 Podcast-Folge mit Henoch F\u00f6rster, Gr\u00fcnder von \"Bolzplatzkind\", \u00fcber Bolzplatzmentalit\u00e4t",
+      "description": "In der heutigen Folge spreche ich mit Henoch F\u00f6rster, welcher die Fashion Marke \"Bolzplatzkind\" gegr\u00fcndet hat. Thematisch geht es diesmal um Bolzplatzmentalit\u00e4t.\nBolzplatz ist f\u00fcr Henoch Freiheit und abschalten zu k\u00f6nnen. Spielen zu k\u00f6nnen, wie ER es m\u00f6chte.\nAu\u00dferdem sprechen wir dar\u00fcber, wie man den Bolzplatz in die Vereine kriegen k\u00f6nnte. Diese Folge solltest du auf keinen Fall verpassen!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2024-01-11T10:35:20Z",
+      "thumbnail": "https://i.ytimg.com/vi/fNcrOEEAPwc/maxresdefault.jpg",
+      "duration": "32:23",
+      "viewCount": 64,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=fNcrOEEAPwc"
+    },
+    "fqcRYQ6sV2M": {
+      "id": "fqcRYQ6sV2M",
+      "title": "#57 Podcast-Folge mit Thomas Gronnemark, u.a. bekannt als Einwurftrainer von J\u00fcrgen Klopp",
+      "description": "In der heutigen Podcast-Folge spreche ich mit Thomas Gronnemark \u00fcber das Trainieren von Einw\u00fcrfen. Thomas hat u.a. f\u00fcnf Jahre beim FC Liverpool als Einwurftrainer unter Cheftrainer J\u00fcrgen Klopp gearbeitet. Der Spezialist f\u00fcr Einw\u00fcrfe unterscheidet zwischen weiten, schnellen und intelligenten Einw\u00fcrfen. Ein wichtiger Bestandteil seiner Philosophie ist es, freie R\u00e4ume zu kreieren. Au\u00dferdem sagt er von sich, dass er ein kreativer Coach sei. Wenn du mehr \u00fcber seine Einwurf-Philosophie erfahren willst, solltest du diese Folge auf gar keinen Fall verpassen!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2024-01-06T13:10:45Z",
+      "thumbnail": "https://i.ytimg.com/vi/fqcRYQ6sV2M/maxresdefault.jpg",
+      "duration": "43:23",
+      "viewCount": 48,
+      "likeCount": 1,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=fqcRYQ6sV2M"
+    },
+    "DqcmQF2G65g": {
+      "id": "DqcmQF2G65g",
+      "title": "#56 Podcast-Folge mit Tobias Kirr, U11 Trainer / Scouting beim FC N\u00fcrnberg",
+      "description": "In der heutigen Folge habe ich Tobias Kirr zu Gast. Dieser ist Trainer der U11 beim FC N\u00fcrnberg und dort auch f\u00fcr das Scouting zust\u00e4ndig. Gemeinsam sprechen wir \u00fcber seine T\u00e4tigkeitsbereiche.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2024-01-04T17:37:52Z",
+      "thumbnail": "https://i.ytimg.com/vi/DqcmQF2G65g/maxresdefault.jpg",
+      "duration": "44:19",
+      "viewCount": 243,
+      "likeCount": 1,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=DqcmQF2G65g"
+    },
+    "DOnYAqvTszU": {
+      "id": "DOnYAqvTszU",
+      "title": "#55 Podcast-Folge mit \u00f6sterreichischem U16 Co-Nationaltrainer Renato Gligoroski",
+      "description": "In der heutigen Folge spreche ich mit Renato Gligoroski \u00fcber kreatives Coaching. Renato ist Co-Trainer der \u00f6sterreichischen U16 Nationalmannschaft. Gemeinsam sprechen wir \u00fcber kreatives Coaching in Hinblick auf verschiedene Themenfelder des Jugendtrainings. Ein besonders spannender Aspekt ist hierbei u.a. der Umgang mit dem biologischen Alter. \n\nIm Folgenden findest du hier noch zwei Methoden zur Ermittlung des biologischen Alters, welche Renato in dieser Folge thematisiert, und seine Homepage:\n\nMirwald-Methode\nKhamis-Roche Methode\n\nhttp://footballeering.at",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-12-29T15:20:28Z",
+      "thumbnail": "https://i.ytimg.com/vi/DOnYAqvTszU/maxresdefault.jpg",
+      "duration": "1:23:33",
+      "viewCount": 131,
+      "likeCount": 2,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=DOnYAqvTszU"
+    },
+    "Q7idBNzseew": {
+      "id": "Q7idBNzseew",
+      "title": "#54 Podcast-Folge mit Andreas Bosch \u00fcber die Entwicklung von \"Teamflow\"",
+      "description": "In der heutigen Folge habe ich einen absoluten Fachmann rund um das Thema Mentaltraining zu Gast. Andreas Bosch ist Gr\u00fcnder von \"Flow Champions\", Referent f\u00fcr den Bund Deutscher Fu\u00dfballlehrer (BDFL), Pr\u00e4sident des Deutschen Bundesverbandes Sportmentaltraining e.V., A-lizensierter Mentaltrainer und DOSB Ausbilder. Gemeinsam sprechen Andreas und ich dar\u00fcber, was \"Teamflow\" ist und wie man diesen als Trainer entwickeln kann. \n\nViel Spa\u00df beim Reinh\u00f6ren!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-12-28T15:27:00Z",
+      "thumbnail": "https://i.ytimg.com/vi/Q7idBNzseew/maxresdefault.jpg",
+      "duration": "47:05",
+      "viewCount": 35,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=Q7idBNzseew"
+    },
+    "L3r6onQYzBY": {
+      "id": "L3r6onQYzBY",
+      "title": "#53 Podcast-Folge mit UEFA Pro Lizenz-Inhaber Pascal Bach \u00fcber Verkomplizierung des Fu\u00dfballs",
+      "description": "In der heutigen Folge spreche ich mit Pascal Bach. Dieser hat in Litauen seine UEFA- Pro Lizenz absolviert. Unter anderem war er Co- Trainer bei den Profis vom SV 07 Elversberg, Scout im NLZ beim VFB Stuttgart und freiberuflicher Experte im Bereich der Trainerausbildung.\n\nGemeinsam sprechen Pascal und ich u.a., dar\u00fcber, ...\n\n... ob wir den Fu\u00dfball verkomplizieren.\n... Raymond Verheijens einheitliche Fu\u00dfballsprache eine Hilfe ist und wieso das Spiel Fu\u00dfball immer der Ausgangspunkt unserer \u00dcberlegungen sein sollte und...\n... welche Rolle Spielprinzipien in der Vermittlung spielen.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-12-19T14:52:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/L3r6onQYzBY/maxresdefault.jpg",
+      "duration": "49:00",
+      "viewCount": 122,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=L3r6onQYzBY"
+    },
+    "J4H2mBDxxRU": {
+      "id": "J4H2mBDxxRU",
+      "title": "#52 Podcast-Folge mit Malte Boven \u00fcber Sportorganisationsentwicklung und F\u00fchrung",
+      "description": "In der heutigen Folge spreche ich mit Malte Boven. Malte ist durch seine zahlreichen Erfahrungen in den Nachwuchsleistungszentren vom VFB Stuttgart, dem HSV, FC St. Pauli und der SPVGG Greuther F\u00fcrth ein absoluter Fachmann rund um den Kinder- und Jugendfu\u00dfball. Diese Erfahrungen im Leistungssport kann mein Gast durch seine T\u00e4tigkeit als Sportlehrer weiter erg\u00e4nzen.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-12-15T09:03:55Z",
+      "thumbnail": "https://i.ytimg.com/vi/J4H2mBDxxRU/maxresdefault.jpg",
+      "duration": "1:06:17",
+      "viewCount": 268,
+      "likeCount": 3,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=J4H2mBDxxRU"
+    },
+    "JvPsESih1Rg": {
+      "id": "JvPsESih1Rg",
+      "title": "#51 Podcast-Folge mit RWE U15-Trainer Julian Hasselberg \u00fcber Conditioning-Spielformen",
+      "description": "In dieser Folge spreche ich mit Julian Hasselberg. Julian trainiert die U15 von Rot-Weiss Essen. Au\u00dferdem hat er beim Bund Deutscher Fu\u00dfball-Lehrer zum Thema \"Conditioning-Spielformen -Trainingsintensit\u00e4t nachhaltig steigern\" referiert. Auch in dieser Folge dreht sich alles um diese Spielformen. Viel Spa\u00df beim Zuh\u00f6ren!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-12-11T09:43:47Z",
+      "thumbnail": "https://i.ytimg.com/vi/JvPsESih1Rg/maxresdefault.jpg",
+      "duration": "42:19",
+      "viewCount": 200,
+      "likeCount": 1,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=JvPsESih1Rg"
+    },
+    "rElx7GrFTio": {
+      "id": "rElx7GrFTio",
+      "title": "#50 Podcast-Folge mit Benjamin Benter \u00fcber Stellenwert des Athletiktrainings und Belastungssteuerung",
+      "description": "In dieser Folge spreche ich bereits zum zweiten Mal mit Benjamin Benter. Vielleicht ist es daher etwas weniger schlimm, dass wir versehentlich die Selbstvorstellung ausgelassen haben. F\u00fcr diejenigen, die aber noch nichts \u00fcber ihn wissen: Benjamin ist Athletiktrainer und Gr\u00fcnder des Unternehmens \"Pro Athlete Solution\". Dar\u00fcber hinaus war er Bereichsleiter Athletik in der Jugend des Karlsruher SC. Viel Spa\u00df beim H\u00f6ren!\n\nZitat-Quelle: Which Einstein isolated fitness from football?. Zugriff am 10.11.2023 unter: https://www.fcevolution.com/which-einstein-isolated-fitness-from-football/.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-11-17T19:24:53Z",
+      "thumbnail": "https://i.ytimg.com/vi/rElx7GrFTio/maxresdefault.jpg",
+      "duration": "58:13",
+      "viewCount": 54,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=rElx7GrFTio"
+    },
+    "ncA2bthbRic": {
+      "id": "ncA2bthbRic",
+      "title": "#49 Podcast Folge mit Yannik Lamberz, U13 Trainer Bayer 04 Leverkusen",
+      "description": "In dieser Folge spreche ich mit dem U13 Trainer aus dem Nachwuchs des aktuellen Tabellenf\u00fchrers der 1. Fu\u00dfball Bundesliga, Bayer 04 Leverkusen: Yannik Lamberz. Gemeinsam sprechen Yannik und ich \u00fcber seine Trainingsphilosophie in dieser Altersklasse.\n\nZitat-Quelle: Welt: Die besten Zitate und Spielszenen des Johan Cruyff. Zugriff am 08.11.2023 unter: https://www.welt.de/sport/fussball/article153674121/Die-besten-Zitate-und-Spielszenen-des-Johan-Cruyff.html.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-11-14T10:16:41Z",
+      "thumbnail": "https://i.ytimg.com/vi/ncA2bthbRic/maxresdefault.jpg",
+      "duration": "48:48",
+      "viewCount": 418,
+      "likeCount": 10,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=ncA2bthbRic"
+    },
+    "oPxxeZzWt8o": {
+      "id": "oPxxeZzWt8o",
+      "title": "Podcast-Folge mit HSV U11 Trainerin Kristin Witte",
+      "description": "In der heutigen Folge spreche ich mit Kristin Witte. Kristin trainiert die U11 des Nachwuchsleistungszentrums vom Hamburger SV und wurde zur Trainerin des Jahres 2023 ausgezeichnet. Gemeinsam sprechen wir \u00fcber diese Auszeichnung und ihren Ausbildungsansatz in der U11.\n\nZitat-Quelle: Sportliches Konzept Sportclub Borussia Lindenthal-Hohenlind; Zugriff am 03.11.2023 unter https://www.scblh.de/own_pages/view/23",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-11-03T17:16:50Z",
+      "thumbnail": "https://i.ytimg.com/vi/oPxxeZzWt8o/maxresdefault.jpg",
+      "duration": "49:55",
+      "viewCount": 349,
+      "likeCount": 7,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=oPxxeZzWt8o"
+    },
+    "A0zGD6mx02k": {
+      "id": "A0zGD6mx02k",
+      "title": "#47 Podcast-Folge mit Moritz Hajek vom Deutschen Fu\u00dfball Internat (DFI)",
+      "description": "In der heutigen Folge spreche ich mit Moritz Hajek \u00fcber M\u00f6glichkeiten der Individualisierung durch ein Kleingruppentraining. \n\nIntro und Outro:\nEingesprochen von Marc Wirth, Anfragen \u00fcber marcwirth23@web.de\nMusik \"Rock Sport Workout\" by Infraction",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-10-30T16:28:34Z",
+      "thumbnail": "https://i.ytimg.com/vi/A0zGD6mx02k/maxresdefault.jpg",
+      "duration": "43:46",
+      "viewCount": 86,
+      "likeCount": 2,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=A0zGD6mx02k"
+    },
+    "uu0Dc6aTLbQ": {
+      "id": "uu0Dc6aTLbQ",
+      "title": "\"Kreativ coachen\"- mein neuer Name",
+      "description": "\"Ich w\u00fcrde einfach anfangen.\" Diesen Tipp hat mir am 15.10. ein anderer Gast auf dem Podcast-Treffen vom Techniktrainer, Markus Steffen, in M\u00f6nchengladbach gegeben. Was es hiermit auf sich hat und wie es zu meinem neuen Podcast-Name gekommen ist, erf\u00e4hrst du in dieser kurzen Folge, diesmal ohne Gast. In den n\u00e4chsten Folgen kannst du dich bereits auf weitere spannende G\u00e4ste freuen, hierf\u00fcr habe ich bereits einige Zusagen. \n\nQuellen:\n\ndivergentes bzw. divergierendes Denken vs. konvergentes Denken: \n- Hannes Wendler: Psychologie der Kreativit\u00e4t, 2021, S.3; [online verf\u00fcgbar unter:  https://www.researchgate.net/publication/354723340_Psychologie_der_Kreativitat_-_Digitalversion].\n- Antje Klinge und Mechthild Sch\u00fctte: \u00c4sthetik und Kreativit\u00e4t im Sport. In: Grundlagen von Sport und Sportwissenschaft. Handbuch Sport und Sportwissenschaft, hrsg. v. Arne G\u00fcllich und Michael Kr\u00fcger, Berlin 2022, S.180.\n\nEntstehung kreativer Bewegungsformen oder -verbindungen:\n- Antje Klinge und Mechthild Sch\u00fctte: \u00c4sthetik und Kreativit\u00e4t im Sport. In: Grundlagen von Sport und Sportwissenschaft. Handbuch Sport und Sportwissenschaft, hrsg. v. Arne G\u00fcllich und Michael Kr\u00fcger, Berlin 2022, S.181.\n\nKreativit\u00e4t von historischer und pers\u00f6nlicher Bedeutung nach Brodbeck: \n- Antje Klinge und Mechthild Sch\u00fctte: \u00c4sthetik und Kreativit\u00e4t im Sport. In: Grundlagen von Sport und Sportwissenschaft. Handbuch Sport und Sportwissenschaft, hrsg. v. Arne G\u00fcllich und Michael Kr\u00fcger, Berlin 2022, S.181/182.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-10-22T15:17:47Z",
+      "thumbnail": "https://i.ytimg.com/vi/uu0Dc6aTLbQ/hqdefault.jpg",
+      "duration": "9:44",
+      "viewCount": 49,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=uu0Dc6aTLbQ"
+    },
+    "x8rEy4ezGic": {
+      "id": "x8rEy4ezGic",
+      "title": "Chancen und Risiken der Au\u00dfenseiterrolle im Fu\u00dfball mit Sportpsychologe Leonard Kai Fuhlert",
+      "description": "Immer wieder spricht man im Fu\u00dfball von \"David gegen Goliath\"- doch gehen mit dieser Rolle des vermeintlichen Au\u00dfenseiters auch Chancen einher, die du dir als Trainer mit deiner Mannschaft zunutze machen kannst? Hier\u00fcber spricht Leonard Kai Fuhlert, Sportpsychologe vom \"Schnelligkeitszentrum Berlin\", in diesem Video. Viel Spa\u00df beim Zusehen!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-07-30T13:52:47Z",
+      "thumbnail": "https://i.ytimg.com/vi/x8rEy4ezGic/maxresdefault.jpg",
+      "duration": "8:43",
+      "viewCount": 136,
+      "likeCount": 3,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=x8rEy4ezGic"
+    },
+    "8b34lQGgc1o": {
+      "id": "8b34lQGgc1o",
+      "title": "Podcast Folge mit Max Bergmann, bekannt als Co- Trainer des Drittligisten Hallescher FC",
+      "description": "In der heutigen Folge spreche ich mit Max Bergmann \u00fcber Themen wie den Aufstieg als Trainer auf der Karriereleiter, die Zusammenarbeit innerhalb eines Trainerstabs und seine Ansichten \u00fcber die Ausbildung im Nachwuchsfu\u00dfball. Au\u00dferdem gibt er praktische Tipps zum Thema Videoanalyse.\n\nZitat- Quelle: https://smallpdf.com/de/blog/teamwork-zitate; abgerufen am 14.06.2023.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-06-15T12:38:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/8b34lQGgc1o/maxresdefault.jpg",
+      "duration": "44:38",
+      "viewCount": 218,
+      "likeCount": 3,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=8b34lQGgc1o"
+    },
+    "u_EKc3TVkvA": {
+      "id": "u_EKc3TVkvA",
+      "title": "Mein Podcast- Gastauftritt bei \"Technik vor Taktik\"",
+      "description": "Ich war zu Gast im Podcast \"Technik vor Taktik\" von Markus Steffen. Dieser arbeitet als Techniktrainer mit Spielern vom NLZ bis hin zur 1. Bundesliga. Gemeinsam haben wir \u00fcber die Zusammenarbeit in einem Verein und meine Trainingsans\u00e4tze gesprochen. Es lohnt sich auch in die Folge mit Markus reinzuh\u00f6ren, die wir zum Thema Techniktraining im Kinder- und Jugendfu\u00dfball f\u00fcr meinen Podcast aufgenommen haben. \n\nDas Gespr\u00e4ch wurde am 05.05.2023 aufgenommen.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-06-02T14:00:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/u_EKc3TVkvA/maxresdefault.jpg",
+      "duration": "40:23",
+      "viewCount": 171,
+      "likeCount": 1,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=u_EKc3TVkvA"
+    },
+    "POa6MSzxKd4": {
+      "id": "POa6MSzxKd4",
+      "title": "Podcast Folge mit Farat Toku, zuletzt 3. Liga Trainer bei Viktoria Berlin",
+      "description": "In dieser Folge spreche ich mit Farat Toku \u00fcber den Umgang als Trainer mit schwierigen Situationen. Eine wesentliche Rolle spielt in diesem Zusammenhang die Kommunikation. H\u00f6r rein und erfahre, wie du deine Mannschaft in schwierigen Situationen unterst\u00fctzen kannst!\n\nZitat- Quelle: Martina Senghas: Paul Watzlawick \u2013 Warum wir nicht NICHT kommunizieren k\u00f6nnen; Zugriff am 01.05.2023 unter https://www.swr.de/swr2/wissen/paul-watzlawick-warum-wir-nicht-nicht-kommunizieren-koennen-swr2-wissen-2021-07-23-100.html.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-05-01T10:19:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/POa6MSzxKd4/maxresdefault.jpg",
+      "duration": "38:59",
+      "viewCount": 182,
+      "likeCount": 3,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=POa6MSzxKd4"
+    },
+    "I4X1DBLIpko": {
+      "id": "I4X1DBLIpko",
+      "title": "Podcast- Folge mit Techniktrainer Markus Steffen",
+      "description": "In der heutigen Folge spreche ich mit Markus Steffen \u00fcber Techniktraining im Nachwuchsfu\u00dfball. Dieser ist Techniktrainer und arbeitet mit Spielern vom Nachwuchsleistungszentrum bis hin zur 1. Bundesliga. Viel Spa\u00df beim Reinh\u00f6ren! \n\nZitat- Quelle: Judith G\u00fcnther: FUSSBALL-WM 2018. Ja zum Ballbesitz - nur richtig. Woran L\u00f6ws Spielsystem krankt; Zugriff unter https://www.n-tv.de/sport/fussball_wm_2018/Woran-Loews-Spielsystem-krankt-article20515457.html am 21.04.2023.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-04-21T09:48:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/I4X1DBLIpko/maxresdefault.jpg",
+      "duration": "41:38",
+      "viewCount": 395,
+      "likeCount": 8,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=I4X1DBLIpko"
+    },
+    "5YT_XgUO30A": {
+      "id": "5YT_XgUO30A",
+      "title": "Podcast- Folge mit Julia Hofmann von \"Home of Goals\"",
+      "description": "In dieser Podcast- Folge spreche ich mit Julia \u00fcber das Training pers\u00f6nlicher und sozialer Kompetenzen im Nachwuchsfu\u00dfball.\n\nZitat- Quelle: Marius Buhl: \u201eGebr\u00fcllt wie Geis\u00adtes\u00adkranke\u201c; Zugriff unter https://11freunde.de/artikel/gebr%C3%BCllt-wie-geisteskranke/599622 am 16.04.2023.\n\nBuch- Quelle \u00fcber den Einfluss des sozialen Umfeldes: James Clear: Atomic Habits. An Easy & Proven Way to BuildGood Habits & Break Bad Ones. 2022, S. 113-123.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-04-18T19:04:16Z",
+      "thumbnail": "https://i.ytimg.com/vi/5YT_XgUO30A/maxresdefault.jpg",
+      "duration": "53:11",
+      "viewCount": 74,
+      "likeCount": 1,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=5YT_XgUO30A"
+    },
+    "Jk5Z47FvAiU": {
+      "id": "Jk5Z47FvAiU",
+      "title": "Podcast Folge mit Joel Porsch von \"Coaching Zone\" \u00fcber Taktiktraining im Jugendfu\u00dfball",
+      "description": "In der heutigen Folge spreche ich mit Joel Porsch von \"Coaching Zone\" \u00fcber Taktiktraining im Jugendfu\u00dfball. Wie hoch ist der Stellenwert von Taktik und was ist der Sinn davon in diesem Bereich? Schlie\u00dfen sich Taktik und Kreativit\u00e4t gegenseitig aus? Und kann Taktiktraining den Spielern vielleicht sogar Spa\u00df machen? Diesen und weiteren Fragen widmen wir uns in dieser Episode.\n\nZitat- Quelle: \n\nHanno Bode: \"Viererkette, F\u00fcnferkette, Perlenkette\": Der HSV und sein Abwehrproblem. Verf\u00fcgbar unter: https://www.ndr.de/sport/fussball/Viererkette-Fuenferkette-Perlenkette-Der-HSV-und-sein-Abwehrproblem,hsv26790.html; abgerufen am 14.04. 2023.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-04-14T18:17:40Z",
+      "thumbnail": "https://i.ytimg.com/vi/Jk5Z47FvAiU/maxresdefault.jpg",
+      "duration": "57:21",
+      "viewCount": 150,
+      "likeCount": 1,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=Jk5Z47FvAiU"
+    },
+    "I-del7DR3p8": {
+      "id": "I-del7DR3p8",
+      "title": "Podcast Folge mit Jugendtrainer Frederik Retsch",
+      "description": "Gemeinsam mit dem Jugendtrainer Frederik Retsch spreche ich \u00fcber seine Sicht auf Breiten- und Leistungssport im Jugendfu\u00dfball sowie seinen eigenen Trainingsansatz.\n\nZitat- Quelle: Olaf Jansen: Kritik an DFB-Trainerausbildung - \"Wir wollen euch nicht!\", verf\u00fcgbar unter: https://www.sportschau.de/fussball/amateurfussball/dfb-trainerausbildung-kritik-100.html",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-04-07T17:01:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/I-del7DR3p8/maxresdefault.jpg",
+      "duration": "53:09",
+      "viewCount": 298,
+      "likeCount": 5,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=I-del7DR3p8"
+    },
+    "EVRDTdDK8yM": {
+      "id": "EVRDTdDK8yM",
+      "title": "Podcast Folge mit Lo\u00efc Fav\u00e9, zuletzt Co- Trainer bei den Profis vom FC St. Pauli",
+      "description": "In der heutigen Folge spreche ich mit Lo\u00efc Fav\u00e9. Dieser war Jugendtrainer und sportlicher Leiter beim Eimsb\u00fctteler TV (ETV) und zuletzt Co- Trainer beim FC St. Pauli unter Timo Schultz. Thema waren seine Ausbildungsphilosophie beim ETV und seine Lehren, die er aus dem Ausland mitgenommen hat. \n\nZitat- Quelle: Instagram- Beitrag von \"ampeltrainer_podcast\" vom 15. M\u00e4rz 2023.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-03-27T20:19:13Z",
+      "thumbnail": "https://i.ytimg.com/vi/EVRDTdDK8yM/maxresdefault.jpg",
+      "duration": "48:59",
+      "viewCount": 252,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=EVRDTdDK8yM"
+    },
+    "xGB-ceAVv64": {
+      "id": "xGB-ceAVv64",
+      "title": "Podcast Folge mit Lasse Bork, Athletiktrainer der Profis von Holstein Kiel",
+      "description": "In der heutigen Podcast- Folge spreche ich mit Lasse Bork. Dieser arbeitet als Athletiktrainer f\u00fcr die Profis von Holstein Kiel. Zuvor war er als Leiter des athletischen Bereiches f\u00fcr das Nachwuchsleistungszentrum des Zweitligisten zust\u00e4ndig. Gemeinsam sprechen wir \u00fcber Game- Speed und Belastungssteuerung.\n\nZitat- Quelle: Geese, R.: Fu\u00dfball- Erfolgsfaktor Kondition. Zugriff am 03.03.2023 unter: https://www.iat.uni-leipzig.de/datenbanken/iks/sponet/Record/1735",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-03-04T07:49:42Z",
+      "thumbnail": "https://i.ytimg.com/vi/xGB-ceAVv64/maxresdefault.jpg",
+      "duration": "48:14",
+      "viewCount": 133,
+      "likeCount": 2,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=xGB-ceAVv64"
+    },
+    "TlR-yMuV1m0": {
+      "id": "TlR-yMuV1m0",
+      "title": "Podcast- Folge mit Sven Schimmel \u00fcber Mentaltraining, seine eigenen Erfahrungen  und Thomas Tuchel",
+      "description": "In der heutigen Podcast- Folge spreche ich mit Sven Schimmel, welcher heutzutage als Mental- Coach t\u00e4tig ist. Dabei kann er auf seine eigenen Erfahrungen als Spieler zur\u00fcckzugreifen. In der Jugend spielte er unter anderem unter Thomas Tuchel. Des Weiteren erz\u00e4hlt er davon, wie ein Trainer dazu beigetragen hat, dass er seinen ersten Profivertrag unterschreiben konnte.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-01-30T11:58:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/TlR-yMuV1m0/maxresdefault.jpg",
+      "duration": "54:11",
+      "viewCount": 125,
+      "likeCount": 3,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=TlR-yMuV1m0"
+    },
+    "Uk6srmNvrZs": {
+      "id": "Uk6srmNvrZs",
+      "title": "Podcast Folge mit Ex- Nationalspieler Christian Pander \u00fcber Mentaltraining und sein Buch",
+      "description": "In der heutigen Folge spreche ich mit Christian Pander. Dieser konnte in seiner Profi- Laufbahn bei Schalke 04, Hannover 96 und der deutschen Nationalmannschaft einige Erfahrungen sammeln, die ihm heute in seiner Arbeit als Mentaltrainer als Unterst\u00fctzung dienen. Gemeinsam haben wir \u00fcber Mentaltraining und sein Buch gesprochen.\n\nZitat- Quelle: Nina Vogl. 11 Zitate von Bastian Schweinsteiger, die dein Leben bereichern. Verf\u00fcgbar unter: https://muenchen.mitvergnuegen.com/2019/zitate-bastian-schweinsteiger/, Stand vom 23.01.2023.\n\nHinweis: Die Podcast- Folge kann aufgrund der Nennung des Buches unbezahlte Werbung enthalten.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-01-23T10:08:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/Uk6srmNvrZs/maxresdefault.jpg",
+      "duration": "31:15",
+      "viewCount": 109,
+      "likeCount": 0,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=Uk6srmNvrZs"
+    },
+    "IvWIR1cwYLk": {
+      "id": "IvWIR1cwYLk",
+      "title": "Podcast- Folge mit Askin Polat \u00fcber seine Arbeit im NLZ, in der T\u00fcrkei und als  Buch- Autor",
+      "description": "In der heutigen Podcast- Folge spreche ich mit Askin Polat. Dieser war jahrelang in den Nachwuchsleistungszentren von Fortuna D\u00fcsseldorf und Bayer Leverkusen als Trainer aktiv. Hierbei ist er verschiedenste Altersklassen durchlaufen und konnte somit umfangreiche Erfahrungen als Coach sammeln. Seine Erfahrungen gibt er heute an andere weiter: Er unterst\u00fctzt strukturell im Aufbau der t\u00fcrkischen Nachwuchsarbeit und ist inzwischen auch dreifacher Buch- Autor. Das vierte Buch ist in Planung.\n\nHinweis: Die Folge kann unbezahlte Werbung beinhalten, da u.a. die B\u00fccher des Gastes Thema sind.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2023-01-04T15:45:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/IvWIR1cwYLk/maxresdefault.jpg",
+      "duration": "52:24",
+      "viewCount": 581,
+      "likeCount": 4,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=IvWIR1cwYLk"
+    },
+    "ukWxSNVbw_Y": {
+      "id": "ukWxSNVbw_Y",
+      "title": "Podcast Folge mit Robin Sch\u00fc\u00dfler, U13 Trainer im NLZ vom SC Paderborn",
+      "description": "In der heutigen Folge spreche ich mit Robin Sch\u00fc\u00dfler. Dieser trainiert die U13 beim SC Paderborn und ist zudem als Autor bei \"Thefalsefullback\" t\u00e4tig, einem Internetblog f\u00fcr Fu\u00dfballtraining- und taktik.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-12-16T12:15:58Z",
+      "thumbnail": "https://i.ytimg.com/vi/ukWxSNVbw_Y/maxresdefault.jpg",
+      "duration": "42:47",
+      "viewCount": 466,
+      "likeCount": 5,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=ukWxSNVbw_Y"
+    },
+    "C7OWoosYXxI": {
+      "id": "C7OWoosYXxI",
+      "title": "Podcast- Folge mit ehemaliger Nationalspielerin und U- M\u00e4dchen Nationaltrainerin Anouschka Bernhard",
+      "description": "In dieser Folge spreche ich mit der SHFV- Verbandssportlehrerin Anouschka Bernhard, welche unter anderem Erfahrungen als ehemalige Nationalspielerin und U- M\u00e4dchen Nationaltrainerin der U16 und U17 M\u00e4dchen vorzuweisen hat.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-11-11T10:56:58Z",
+      "thumbnail": "https://i.ytimg.com/vi/C7OWoosYXxI/maxresdefault.jpg",
+      "duration": "43:29",
+      "viewCount": 183,
+      "likeCount": 3,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=C7OWoosYXxI"
+    },
+    "04x8BMV90cs": {
+      "id": "04x8BMV90cs",
+      "title": "Podcast- Folge mit DAZN- Experte und Ex- Profi Sebastian Knei\u00dfl",
+      "description": "In dieser Folge spreche ich mit Sebastian Knei\u00dfl \u00fcber die Ausbildung von Nachwuchsfu\u00dfballern. Hierbei ist ihm die Pers\u00f6nlichkeitsentwicklung der Spieler ein besonderes Anliegen.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-10-28T07:43:37Z",
+      "thumbnail": "https://i.ytimg.com/vi/04x8BMV90cs/maxresdefault.jpg",
+      "duration": "52:13",
+      "viewCount": 157,
+      "likeCount": 2,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=04x8BMV90cs"
+    },
+    "-tfcbkgXwjo": {
+      "id": "-tfcbkgXwjo",
+      "title": "Podcast- Folge mit Silvan Schlegel \u00fcber die Pr\u00e4vention von typischen Knieverletzungen im Fu\u00dfball",
+      "description": "In der heutigen Folge spreche ich mit dem Physiotherapeut Silvan Schlegel \u00fcber die Pr\u00e4vention von Knieverletzungen im Fu\u00dfball. Wenn du die Verletzungswahrscheinlichkeit deiner Spieler reduzieren m\u00f6chtest, dann h\u00f6re unbedingt rein! \n\nDu m\u00f6chtest keinen Content mehr verpassen? Dann abonniere diesen Kanal!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-10-24T10:52:19Z",
+      "thumbnail": "https://i.ytimg.com/vi/-tfcbkgXwjo/maxresdefault.jpg",
+      "duration": "57:48",
+      "viewCount": 99,
+      "likeCount": 4,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=-tfcbkgXwjo"
+    },
+    "i_DnqamAODs": {
+      "id": "i_DnqamAODs",
+      "title": "Top 3 Tipps f\u00fcr Kinder- und Jugendtrainer mit Cheftrainer Bo Svensson von Mainz 05",
+      "description": "In diesem Video seht ihr einen Gastbeitrag vom 1. FSV Mainz 05. In diesem h\u00f6rt ihr Bo Svenssons Top 3 Tipps f\u00fcr Kinder- und Jugendtrainer.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-10-11T13:26:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/i_DnqamAODs/maxresdefault.jpg",
+      "duration": "2:13",
+      "viewCount": 448,
+      "likeCount": 6,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=i_DnqamAODs"
+    },
+    "EYoQC8K7uS8": {
+      "id": "EYoQC8K7uS8",
+      "title": "Podcast- Folge mit Lukas Oden, Torwarttrainer beim VFB L\u00fcbeck",
+      "description": "In dieser Folge spreche ich mit Lukas Oden, welcher von seiner Arbeit als Torwarttrainer beim VFB L\u00fcbeck erz\u00e4hlt.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-10-09T09:08:45Z",
+      "thumbnail": "https://i.ytimg.com/vi/EYoQC8K7uS8/maxresdefault.jpg",
+      "duration": "44:26",
+      "viewCount": 202,
+      "likeCount": 4,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=EYoQC8K7uS8"
+    },
+    "6mBFIjitVbM": {
+      "id": "6mBFIjitVbM",
+      "title": "Podcast- Folge mit Benjamin Benter \u00fcber Athletiktraining in der Jugend vom KSC",
+      "description": "In dieser Folge spreche ich mit Benjamin Benter \u00fcber seine Arbeit als Bereichsleiter Athletik (Jugend) und Athletiktrainer der U19 beim Karlsruher SC.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-10-02T08:41:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/6mBFIjitVbM/maxresdefault.jpg",
+      "duration": "47:26",
+      "viewCount": 172,
+      "likeCount": 3,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=6mBFIjitVbM"
+    },
+    "-pOTbJikTyk": {
+      "id": "-pOTbJikTyk",
+      "title": "Podcast- Folge mit Christian Puta \u00fcber Krafttraining im Nachwuchsfu\u00dfball",
+      "description": "In dieser Folge spreche ich mit Christian Puta, welcher an dem KINGS- Projekt beteiligt ist, \u00fcber Krafttraining im Nachwuchsfu\u00dfball! \n\nHinweis: Die Folge kann unbezahlte Werbung enthalten.\n\nHier geht es zum KINGS- Blog: https://medium.com/@kingsstudy/kings-studie-krafttraining-im-nachwuchsleistungssport-7a5ff189eddc",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-09-21T06:27:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/-pOTbJikTyk/maxresdefault.jpg",
+      "duration": "1:21:25",
+      "viewCount": 189,
+      "likeCount": 6,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=-pOTbJikTyk"
+    },
+    "Re695em_mec": {
+      "id": "Re695em_mec",
+      "title": "Podcast Folge mit Horst Lutz  \u00fcber Life Kinetik im Kinder- und Jugendfu\u00dfball",
+      "description": "In der heutigen Folge spreche ich mit dem Gr\u00fcnder von Life Kinetik dar\u00fcber, wie man seinen Ansatz in das Fu\u00dfballtraining mit Kindern und Jugendlichen integrieren und wie man sich weiterbilden kann. \n\nAnmerkung: Die Folge enth\u00e4lt aufgrund des Besprochenen unbezahlte Werbung.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-09-13T11:18:14Z",
+      "thumbnail": "https://i.ytimg.com/vi/Re695em_mec/maxresdefault.jpg",
+      "duration": "1:03:21",
+      "viewCount": 413,
+      "likeCount": 5,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=Re695em_mec"
+    },
+    "vZTSB4fZu74": {
+      "id": "vZTSB4fZu74",
+      "title": "Podcast Folge mit Nico Koch  \u00fcber Athletiktraining im Kinder- und Jugendfu\u00dfball",
+      "description": "In dieser Folge spreche ich mit Nico Koch \u00fcber das Athletiktraining im Kinder- und Jugendfu\u00dfball. Nico ist Damen Trainer in der Rheinlandliga, wurde in seiner Arbeit stark durch Raymond Verheijen gepr\u00e4gt und hat sich in letzter Zeit viel mit dem fu\u00dfballspezifischen Athletiktraining auseinandergesetzt.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-08-17T06:49:33Z",
+      "thumbnail": "https://i.ytimg.com/vi/vZTSB4fZu74/maxresdefault.jpg",
+      "duration": "52:08",
+      "viewCount": 750,
+      "likeCount": 11,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=vZTSB4fZu74"
+    },
+    "7ucOLkk5gP4": {
+      "id": "7ucOLkk5gP4",
+      "title": "Podcast  Folge mit Peter Hyballa zur Ausbildung des Gegenpressings im Jugendfu\u00dfball",
+      "description": "In dieser Folge spreche ich mit Profi- Trainer Peter Hyballa, der zurzeit neu beim slowakischen Erstligisten AS Trencin t\u00e4tig ist. Thema ist die Ausbildung des Gegenpressings im Jugendfu\u00dfball!\n\nHinweis: In dieser Folge gehen wir auf Hyballas Buch ein, welches auch im Thumbnail abgebildet ist, weshalb es zu unbezahlter Werbung kommen kann.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-06-18T21:27:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/7ucOLkk5gP4/maxresdefault.jpg",
+      "duration": "45:34",
+      "viewCount": 624,
+      "likeCount": 8,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=7ucOLkk5gP4"
+    },
+    "oR7GI2LAGoM": {
+      "id": "oR7GI2LAGoM",
+      "title": "Podcast- Folge mit Profi- Trainer Christoph Dabrowski",
+      "description": "In dieser Folge spreche ich mit Christoph Dabrowski, der bis vor kurzem als Trainer der Profis von Hannover 96 t\u00e4tig war, \u00fcber eigene Erfahrungen, Trends und seine Ausbildungsphilosophie im  Nachwuchsfu\u00dfball.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-06-02T01:17:56Z",
+      "thumbnail": "https://i.ytimg.com/vi/oR7GI2LAGoM/maxresdefault.jpg",
+      "duration": "34:44",
+      "viewCount": 439,
+      "likeCount": 8,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=oR7GI2LAGoM"
+    },
+    "K3DqL5tGM4k": {
+      "id": "K3DqL5tGM4k",
+      "title": "Podcast- Folge mit Leo- Jonathan Te\u00dfmann, Autor von \"Denkfabrik Nachwuchsfussball\"",
+      "description": "In der heutigen Podcast- Folge spreche ich mit dem Autor von \"Denkfabrik Nachwuchsfussball- Wie k\u00f6nnen wir es besser machen?\" \u00fcber Talentprognosen in jungen Jahren.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-05-08T14:59:38Z",
+      "thumbnail": "https://i.ytimg.com/vi/K3DqL5tGM4k/maxresdefault.jpg",
+      "duration": "47:44",
+      "viewCount": 432,
+      "likeCount": 8,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=K3DqL5tGM4k"
+    },
+    "8EjiuKSPH-s": {
+      "id": "8EjiuKSPH-s",
+      "title": "Podcast- Folge mit Sebastian Mundruc, Inhaber von Cogniprove",
+      "description": "In dieser Folge spreche ich mit Sebastian Mundruc \u00fcber die Ausbildung von Spielern, welche gute Entscheidungen auf dem Platz treffen k\u00f6nnen und \u00fcber die mentalen Aspekte hierbei!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-04-22T11:00:39Z",
+      "thumbnail": "https://i.ytimg.com/vi/8EjiuKSPH-s/maxresdefault.jpg",
+      "duration": "56:24",
+      "viewCount": 183,
+      "likeCount": 4,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=8EjiuKSPH-s"
+    },
+    "n23dbTs4Hwo": {
+      "id": "n23dbTs4Hwo",
+      "title": "Podcast- Folge mit Baris Tuncay, U13 Trainer im NLZ vom Hamburger SV",
+      "description": "In dieser Folge spreche ich mit Baris Tuncay. Baris ist U13- Trainer im NLZ beim Hamburger SV. In der neuesten Folge spreche ich mit meinem Gast \u00fcber seine Zusammenarbeit mit Youssoufa Moukoko, Ausbildungsideen in der U13 und den \u00dcbergang auf das Gro\u00dffeld. Wenn du keine Folge mehr verpassen m\u00f6chtest, abonniere diesen Kanal oder folge mir auf Spotify. Hier auf YouTube sind neben dem Podcast bereits weitere Projekte in Planung.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-04-07T11:00:35Z",
+      "thumbnail": "https://i.ytimg.com/vi/n23dbTs4Hwo/maxresdefault.jpg",
+      "duration": "36:25",
+      "viewCount": 729,
+      "likeCount": 10,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=n23dbTs4Hwo"
+    },
+    "faykvPxhE80": {
+      "id": "faykvPxhE80",
+      "title": "Podcast  Folge mit Elko Duckstein, Co- Trainer der U12 vom FC Magdeburg",
+      "description": "In dieser Folge spreche ich mit Elko Duckstein \u00fcber seine Arbeit als Co- Trainer und verschiedene Aspekte der Ausbildung bei der U12 vom FC Magdeburg. H\u00f6rt rein und abonniert den Kanal!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-01-14T17:00:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/faykvPxhE80/maxresdefault.jpg",
+      "duration": "46:38",
+      "viewCount": 324,
+      "likeCount": 6,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=faykvPxhE80"
+    },
+    "Q0tv12-tlSU": {
+      "id": "Q0tv12-tlSU",
+      "title": "Podcast- Folge mit Christian Riecks, sportlicher Leiter U12- U15 bei Holstein Kiel",
+      "description": "In dieser Folge spreche ich mit Christian Riecks \u00fcber Talentf\u00f6rderung bei Holstein Kiel und im Allgemeinen",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2022-01-03T20:09:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/Q0tv12-tlSU/maxresdefault.jpg",
+      "duration": "42:22",
+      "viewCount": 783,
+      "likeCount": 14,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=Q0tv12-tlSU"
+    },
+    "JSp2VKrNc4A": {
+      "id": "JSp2VKrNc4A",
+      "title": "Podcast- Folge zum Thema \"Wie bilde ich Talente aus?\" mit St\u00fctzpunktkoordinator Bj\u00f6rn R\u00e4del.",
+      "description": "In dieser Folge spreche ich mit Bj\u00f6rn R\u00e4del, welcher u.a. St\u00fctzpunktkoordinator in Schleswig- Holstein und B- Lizenz Ausbilder ist. Hier erf\u00e4hrst du, was f\u00fcr ihn ein Talent im Fu\u00dfball ausmacht und wie du Spieler beim Sprung in den DFB- St\u00fctzpunkt oder ins Nachwuchsleistungszentrum unterst\u00fctzen kannst. Wenn du keine Folge mehr verpassen m\u00f6chtest, abonniere diesen Kanal!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2021-05-26T12:58:25Z",
+      "thumbnail": "https://i.ytimg.com/vi/JSp2VKrNc4A/maxresdefault.jpg",
+      "duration": "34:12",
+      "viewCount": 1067,
+      "likeCount": 20,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=JSp2VKrNc4A"
+    },
+    "rHBtGT9U9zk": {
+      "id": "rHBtGT9U9zk",
+      "title": "Podcast- Folge zum Thema \"Schnelligkeit im Fu\u00dfball\" mit dem Schnelligkeitszentrum Berlin",
+      "description": "In dieser Folge spreche ich mit Laura Stosno- Krohn und Christopher Stosno vom Schnelligkeitszentrum Berlin \u00fcber das Thema \"Schnelligkeit im Fu\u00dfball\". Hierbei geht es um deutlich mehr, als um lineare Sprints. Wenn du wissen m\u00f6chtest, welche Komponenten Schnelligkeit im Fu\u00dfball umfasst und wie du diese trainieren kannst, dann h\u00f6re dir diese Folge unbedingt an!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2021-05-07T09:29:34Z",
+      "thumbnail": "https://i.ytimg.com/vi/rHBtGT9U9zk/maxresdefault.jpg",
+      "duration": "43:34",
+      "viewCount": 670,
+      "likeCount": 26,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=rHBtGT9U9zk"
+    },
+    "4HltbS8nR-A": {
+      "id": "4HltbS8nR-A",
+      "title": "Podcast- Folge mit Nils Hahn vom FC Hansa Rostock",
+      "description": "In dieser Folge spreche ich mit dem Co- Trainer der U11 von Hansa Rostock \u00fcber verschiedene Themen rund um den Trainings- und Spielbetrieb im Kinderfu\u00dfball und seine eigene Arbeit beim FC Hansa Rostock.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2021-03-09T21:46:13Z",
+      "thumbnail": "https://i.ytimg.com/vi/4HltbS8nR-A/maxresdefault.jpg",
+      "duration": "27:45",
+      "viewCount": 403,
+      "likeCount": 10,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=4HltbS8nR-A"
+    },
+    "NhbCL_pwreI": {
+      "id": "NhbCL_pwreI",
+      "title": "Podcast- Folge mit Sportpsychologe Leonard Kai Fuhlert vom \"Schnelligkeitszentrum Berlin\"",
+      "description": "In dieser Folge spreche ich mit Leonard Kai Fuhlert aus sportpsychologischer Perspektive \u00fcber den Einfluss der Corona- Pandemie auf Fu\u00dfballmannschaften und dar\u00fcber, wie man als Trainer seine Mannschaft auch in schwierigen Situationen erreichen kann. \n\n\nHinweis: Das Webinar, auf welches in der Folge hingewiesen wird, findet nicht am kommenden Wochenende statt, da die Aufnahme erst nach dem Webinar hochgeladen wurde. Auf meiner Facebook- Seite habe ich jedoch auf dieses hingewiesen.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2020-12-12T16:38:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/NhbCL_pwreI/maxresdefault.jpg",
+      "duration": "1:03:01",
+      "viewCount": 359,
+      "likeCount": 11,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=NhbCL_pwreI"
+    },
+    "HmRlnGXp3UU": {
+      "id": "HmRlnGXp3UU",
+      "title": "Podcast- Folge mit Peter Hyballa \u00fcber Anforderungen an Trainer und Spieler und Strukturen im Fu\u00dfball",
+      "description": "In dieser Folge spreche ich mit Peter Hyballa \u00fcber Anforderungen an Trainer und Spieler, zudem geht es um Strukturen im Fu\u00dfball. Peter Hyballa sollte so ziemlich jedem Trainer bekannt sein. W\u00e4hrend dieser zum Zeitpunkt der Aufnahme noch vereinslos war, hat Hyballa jetzt bei Wisla Krakau unterschrieben. Ich w\u00fcnsche euch viel Spa\u00df mit der Folge!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2020-12-04T13:23:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/HmRlnGXp3UU/maxresdefault.jpg",
+      "duration": "56:20",
+      "viewCount": 1484,
+      "likeCount": 19,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=HmRlnGXp3UU"
+    },
+    "NpDONx7oUDc": {
+      "id": "NpDONx7oUDc",
+      "title": "Podcast- Folge mit Athletiktrainer Nils Heim \u00fcber M\u00f6glichkeiten eines Home- Athletiktrainings",
+      "description": "In dieser Folge spreche ich mit Nils Heim \u00fcber M\u00f6glichkeiten und Ans\u00e4tze eines Home- Athletiktrainings. Nils ist Athletiktrainer und trainiert Fu\u00dfballmannschaften bis hin zur Regionalliga. Zudem ist er Ausbilder bei der Deutschen Kraft- und Konditionstrainer Akademie (DKKA).\n\n\nHier ein Link mit Guidelines von der DKKA f\u00fcr ein optimales Krafttraining Zuhause: https://www.dkka.de/blog/effektives-heimtraining",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2020-11-22T23:39:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/NpDONx7oUDc/maxresdefault.jpg",
+      "duration": "1:03:32",
+      "viewCount": 404,
+      "likeCount": 9,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=NpDONx7oUDc"
+    },
+    "ZXEJXKIkXLM": {
+      "id": "ZXEJXKIkXLM",
+      "title": "Podcast Folge mit Susanne Amar \u00fcber Zusammenarbeit und Kommunikation mit Eltern",
+      "description": "In dieser Folge spreche ich mit Susanne Amar, Coach f\u00fcr Trainer und Eltern, \u00fcber Kriterien und M\u00f6glichkeiten einer gelungenen Zusammenarbeit und Kommunikation mit den Spielereltern. \n\n\n\n\nFoto von Susanne Amar: Copyright \u00a9Martin Rottenkolber",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2020-11-19T10:37:03Z",
+      "thumbnail": "https://i.ytimg.com/vi/ZXEJXKIkXLM/maxresdefault.jpg",
+      "duration": "47:11",
+      "viewCount": 225,
+      "likeCount": 4,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=ZXEJXKIkXLM"
+    },
+    "QtDkDXLgi4A": {
+      "id": "QtDkDXLgi4A",
+      "title": "Podcast \u00fcber Ern\u00e4hrung im Fu\u00dfball mit Dennis Tittel vom \"Schnelligkeitszentrum Berlin\"",
+      "description": "In dieser Folge spreche ich mit Dennis Tittel vom \"Schnelligkeitszentrum Berlin\" \u00fcber Ern\u00e4hrung im Kinder- und Jugendfu\u00dfball. Wenn dich interessiert, worauf in Bezug auf das Ess- sowie Trinkverhalten zu achten ist und wie Konzepte zur Aufkl\u00e4rungsarbeit in diesem Themenfeld aussehen k\u00f6nnten, ist diese Episode wie f\u00fcr dich gemacht. Dir gef\u00e4llt der Podcast? Dann lass doch gerne ein Abo da und verpasse keine Folge mehr!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2020-08-19T18:05:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/QtDkDXLgi4A/maxresdefault.jpg",
+      "duration": "46:25",
+      "viewCount": 274,
+      "likeCount": 8,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=QtDkDXLgi4A"
+    },
+    "fQQGkHCLoTA": {
+      "id": "fQQGkHCLoTA",
+      "title": "Ausschnitt aus meinem Gespr\u00e4ch mit Herr Dr.  Gerald H\u00fcther",
+      "description": "Von unseren Spielern erwarten wir Flexibilit\u00e4t in unvorhersehbaren Situationen. Wie die Technik so wollte, wurde diese Flexibilit\u00e4t auch von mir verlangt, als nur die ersten 15 Minuten unserer Podcast- Aufnahme gespeichert wurden. Anstatt einer Podcast. Aufnahme habe ich mich nun also f\u00fcr eine Beitragsreihe auf meiner Facebook- Seite entschieden. Im Rahmen dieser stelle ich euch im ersten Teil die 15 Minuten, welche gespeichert wurden zur Verf\u00fcgung. Auch hier stecken sehr spannende und lehrreiche Aussagen von Herr Dr. Gerald H\u00fcther drin. Kaum ein Gespr\u00e4ch hat mich so sehr gepackt und gepr\u00e4gt wie dieses. Viel Spa\u00df beim H\u00f6ren! In den weiteren Beitr\u00e4gen erl\u00e4utere ich auf meiner Facebook- Seite die Erkenntnisse und Lehren, welche ich aus dem Gespr\u00e4ch mit Herr Dr. Gerald H\u00fcther gezogen habe.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2020-08-14T10:05:05Z",
+      "thumbnail": "https://i.ytimg.com/vi/fQQGkHCLoTA/maxresdefault.jpg",
+      "duration": "15:13",
+      "viewCount": 250,
+      "likeCount": 9,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=fQQGkHCLoTA"
+    },
+    "gjCpk7asNvE": {
+      "id": "gjCpk7asNvE",
+      "title": "Podcast- Folge mit Malgorzata M. Iwanowitsch von \"Socatots\" und \"Brazilian Soccer Schools\"",
+      "description": "In dieser Folge erz\u00e4hle ich im Nachgang von der Podcast- Aufnahme mit der Inhaberin zweier Fu\u00dfballschulen. Dies hat den Grund, dass es bei der Aufnahme technische Probleme bei meinen eigenenen Sprechanteilen gab. Ihr h\u00f6rt selbstverst\u00e4ndlich trotzdem die Originalantworten von Malgorzata M. Iwanowitsch. \n\nThemen waren der Spielbetrieb im Kinderfu\u00dfball, die Schulung von Beidf\u00fc\u00dfigkeit in ihren Fu\u00dfballschulen und das Gr\u00fcnden einer Fu\u00dfballschule. Au\u00dferdem erfahrt ihr ihre top 3 Tipps f\u00fcr Trainerneulinge. Viel Spa\u00df beim Zuh\u00f6ren!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2020-07-10T23:38:54Z",
+      "thumbnail": "https://i.ytimg.com/vi/gjCpk7asNvE/maxresdefault.jpg",
+      "duration": "33:27",
+      "viewCount": 185,
+      "likeCount": 13,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=gjCpk7asNvE"
+    },
+    "z51d8P-nC2A": {
+      "id": "z51d8P-nC2A",
+      "title": "Podcast- Folge mit Thomas Klaus, Gr\u00fcnder der \"Fussballschule Tirol\" und LAZ- Standortleiter",
+      "description": "In dieser Folge spreche ich mit Thomas Klaus. Thomas ist Gr\u00fcnder der \"Fussballschule Tirol\", LAZ- Standortleiter, t\u00e4tig in der \u00f6sterreichischen Trainerausbildung und besucht s\u00e4mtliche Kurse von Raymond Verheijen.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2020-07-08T19:49:35Z",
+      "thumbnail": "https://i.ytimg.com/vi/z51d8P-nC2A/maxresdefault.jpg",
+      "duration": "51:42",
+      "viewCount": 435,
+      "likeCount": 12,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=z51d8P-nC2A"
+    },
+    "AXAMkrVrqGw": {
+      "id": "AXAMkrVrqGw",
+      "title": "Podcast- Folge mit Leon Staege von  \"Moving Monkey\"",
+      "description": "In dieser Folge spreche ich mit einem absoluten Bewegungsexperten, Leon Staege von \"Moving Monkey\", \u00fcber die Wichtigkeit einer vielseitigen Bewegungsschulung. H\u00f6rt einfach mal rein!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2020-07-01T07:31:34Z",
+      "thumbnail": "https://i.ytimg.com/vi/AXAMkrVrqGw/maxresdefault.jpg",
+      "duration": "27:49",
+      "viewCount": 252,
+      "likeCount": 6,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=AXAMkrVrqGw"
+    },
+    "kfrzgVRkfls": {
+      "id": "kfrzgVRkfls",
+      "title": "Podcast mit Sportwissenschaftler und Sportmediziner Dr. Dr. Matthias Lochmann \u00fcber Funino",
+      "description": "In dieser Folge spreche ich mit Dr. Dr. Matthias Lochmann \u00fcber den aktuellen Spielbetrieb im Kinderfu\u00dfball und wie Funino den dort vorherrschenden Problemen entgegenwirken kann.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2020-06-28T08:59:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/kfrzgVRkfls/maxresdefault.jpg",
+      "duration": "51:17",
+      "viewCount": 1186,
+      "likeCount": 24,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=kfrzgVRkfls"
+    },
+    "xExJ9Urr1TM": {
+      "id": "xExJ9Urr1TM",
+      "title": "Podcast mit Matthias Nowak zum Thema Beidf\u00fc\u00dfigkeit",
+      "description": "In dieser Episode spreche ich mit Matthias Nowak \u00fcber Beidf\u00fc\u00dfigkeit und warum, der FC Bayern M\u00fcnchen seines Erachtens in seiner Nachwuchsarbeit das falsche Signal sendet. \n\n\n\nDu willst wissen, wieso Beidf\u00fc\u00dfigkeit unabdingbar ist und welchen Rahmen du f\u00fcr ein gelingendes Training von Beidf\u00fc\u00dfigkeit schaffen solltest? Dann h\u00f6r jetzt in die neue Folge rein",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2020-05-29T00:48:58Z",
+      "thumbnail": "https://i.ytimg.com/vi/xExJ9Urr1TM/hqdefault.jpg",
+      "duration": "44:03",
+      "viewCount": 1155,
+      "likeCount": 21,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=xExJ9Urr1TM"
+    },
+    "OY6iNLUiiig": {
+      "id": "OY6iNLUiiig",
+      "title": "Podcast mit Martin Kr\u00fcger (Athletiktrainer Union Berlin)",
+      "description": "In dieser Folge spreche ich mit Union Berlins Athletiktrainer Martin Kr\u00fcger \u00fcber das Athletiktraining. Du willst wissen, wie sich ein Aufstieg in die 1. Bundesliga anf\u00fchlt, welche Ziele ein Athletiktraining verfolgt, wie man das Athletiktraining in das Mannschaftstraining integriert u.v.m.? Dann h\u00f6r in diese Episode rein!",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2020-05-13T23:08:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/OY6iNLUiiig/maxresdefault.jpg",
+      "duration": "24:55",
+      "viewCount": 709,
+      "likeCount": 10,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=OY6iNLUiiig"
+    },
+    "bvbV1r8PpWY": {
+      "id": "bvbV1r8PpWY",
+      "title": "Podcast mit Thomas Staack",
+      "description": "In der zweiten Episode meines Podcasts spreche ich mit Thomas Staack welcher unter anderem f\u00fcr das Fachmagazin \"Fu\u00dfballtraining Junior\" schreibt.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2020-05-11T14:15:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/bvbV1r8PpWY/maxresdefault.jpg",
+      "duration": "30:21",
+      "viewCount": 535,
+      "likeCount": 16,
+      "commentCount": 3,
+      "url": "https://www.youtube.com/watch?v=bvbV1r8PpWY"
+    },
+    "PYa1S2nlvvE": {
+      "id": "PYa1S2nlvvE",
+      "title": "Podcast mit Burak Bahar, U15- Trainer von Hannover 96",
+      "description": "In dieser Folge geht Burak Bahar auf seine Zeit vor Hannover, auf seine jetzige Arbeit in der Akademie und auf vorab gestellte Zuschauerfragen ein.",
+      "channelId": "UCD64KYH_09HlXjusfRu_ndA",
+      "channelTitle": "Kreativ coachen",
+      "publishedAt": "2020-04-30T14:12:43Z",
+      "thumbnail": "https://i.ytimg.com/vi/PYa1S2nlvvE/maxresdefault.jpg",
+      "duration": "35:10",
+      "viewCount": 1102,
+      "likeCount": 20,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=PYa1S2nlvvE"
+    }
+  },
+  "include_timestamps": false,
+  "include_video_title": true,
+  "include_video_id": true,
+  "include_video_url": true,
+  "include_view_count": false,
+  "concatenate_all": false,
+  "end_time": 1757344110.2888663,
+  "duration": 151.34529662132263
+}

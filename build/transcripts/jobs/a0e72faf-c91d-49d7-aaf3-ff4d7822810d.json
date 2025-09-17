@@ -1,0 +1,1372 @@
+{
+  "status": "completed",
+  "channel_name": "rosemarygladstar.official",
+  "playlist_id": null,
+  "source_id": "UCJQU34u00afHdkyDecNddGg",
+  "source_name": "Rosemary Gladstar's Science & Art of Herbalism",
+  "source_type": "channel",
+  "total_videos": 51,
+  "processed_count": 51,
+  "failed_count": 6,
+  "completed": 45,
+  "files": [
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/ODWJMuYBR2U/Ed Smith Voices of Our Herbal _ODWJMuYBR2U.txt",
+      "video_id": "ODWJMuYBR2U",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/nvpp9lerJio/Dr. Christopher Hobbs Voices o_nvpp9lerJio.txt",
+      "video_id": "nvpp9lerJio",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/U-ZY2bt2pFw/The Generosity of Plants An In_U-ZY2bt2pFw.txt",
+      "video_id": "U-ZY2bt2pFw",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/DscgIwa7GhU/Meet Wendy Mackenzie of Everla_DscgIwa7GhU.txt",
+      "video_id": "DscgIwa7GhU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/EsWSge3dtOc/Margi Flint Voices of Our Herb_EsWSge3dtOc.txt",
+      "video_id": "EsWSge3dtOc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/nj0VgsgGQkk/Jane Bothwell Voices of Our He_nj0VgsgGQkk.txt",
+      "video_id": "nj0VgsgGQkk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/8KtiMRrhCbM/Phyllis Light Voices of Our He_8KtiMRrhCbM.txt",
+      "video_id": "8KtiMRrhCbM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/Ofe7wkoEEYg/Mark Blumenthal Voices of Our _Ofe7wkoEEYg.txt",
+      "video_id": "Ofe7wkoEEYg",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/l3C45uZ0P8U/Herbs for Children's Health A _l3C45uZ0P8U.txt",
+      "video_id": "l3C45uZ0P8U",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/qGOePh5mqoU/David Hoffmann Voices of Our H_qGOePh5mqoU.txt",
+      "video_id": "qGOePh5mqoU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/T6uY2szrM8Q/Matthew Wood Voices of Our Her_T6uY2szrM8Q.txt",
+      "video_id": "T6uY2szrM8Q",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/xMG9avqfXjA/The 10-fingered salute, just a_xMG9avqfXjA.txt",
+      "video_id": "xMG9avqfXjA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/ZJlP9JEmlpM/Brooke Medicine Eagle Voices o_ZJlP9JEmlpM.txt",
+      "video_id": "ZJlP9JEmlpM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/kmtATpiAJ-s/Brigitte Mars Voices of Our He_kmtATpiAJ-s.txt",
+      "video_id": "kmtATpiAJ-s",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/O1Cc3iTayXs/The Herbalist's Path Affordabl_O1Cc3iTayXs.txt",
+      "video_id": "O1Cc3iTayXs",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/Z9b-D1HstEs/Roc\u00edo Alarc\u00f3n Voices of Our He_Z9b-D1HstEs.txt",
+      "video_id": "Z9b-D1HstEs",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/TXqVUYKdnpQ/Sara Katz Voices of Our Herbal_TXqVUYKdnpQ.txt",
+      "video_id": "TXqVUYKdnpQ",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/snu2hM5H0qY/Karyn Sanders Voices of Our He_snu2hM5H0qY.txt",
+      "video_id": "snu2hM5H0qY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/KCjQr5wu_J0/One of the best ways to learn _KCjQr5wu_J0.txt",
+      "video_id": "KCjQr5wu_J0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/cNUzD1Z00CU/Mindy Green Voices of Our Herb_cNUzD1Z00CU.txt",
+      "video_id": "cNUzD1Z00CU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/3F-N9ao8hgk/Kat Maier Voices of Our Herbal_3F-N9ao8hgk.txt",
+      "video_id": "3F-N9ao8hgk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/h71W7GLeJ68/David Winston Voices of Our He_h71W7GLeJ68.txt",
+      "video_id": "h71W7GLeJ68",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/OyfGD8loNdM/Rosemary Gladstar's Blue Dream_OyfGD8loNdM.txt",
+      "video_id": "OyfGD8loNdM",
+      "language": "en",
+      "type": "manual"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/O8Rf4DXY5ZM/Plants our are elders. Take a _O8Rf4DXY5ZM.txt",
+      "video_id": "O8Rf4DXY5ZM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/OjGXIGdRCTY/Winter Solstice Greetings from_OjGXIGdRCTY.txt",
+      "video_id": "OjGXIGdRCTY",
+      "language": "en",
+      "type": "manual"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/WQjxsqfr5GU/Join us at the International H_WQjxsqfr5GU.txt",
+      "video_id": "WQjxsqfr5GU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/CEjWlEO4a0g/Simple things can make a diffe_CEjWlEO4a0g.txt",
+      "video_id": "CEjWlEO4a0g",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/gycjaARRR-8/Mullein - A Walk in the Garden_gycjaARRR-8.txt",
+      "video_id": "gycjaARRR-8",
+      "language": "en",
+      "type": "manual"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/vu3Dp3Fg2KM/Fire Cider with Rosemary Glads_vu3Dp3Fg2KM.txt",
+      "video_id": "vu3Dp3Fg2KM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/8NGOhk0H_ro/In celebration of Plant a Tree_8NGOhk0H_ro.txt",
+      "video_id": "8NGOhk0H_ro",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/QDzfTEGmvbU/What\u2019s growing in your garden _QDzfTEGmvbU.txt",
+      "video_id": "QDzfTEGmvbU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/iOJ9VbJQYKg/What practices do you hold to _iOJ9VbJQYKg.txt",
+      "video_id": "iOJ9VbJQYKg",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/J2pc0a9EbLE/Deepening our relationship wit_J2pc0a9EbLE.txt",
+      "video_id": "J2pc0a9EbLE",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/5WwKuxPbCf4/If we stand in the right place_5WwKuxPbCf4.txt",
+      "video_id": "5WwKuxPbCf4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/_o82mlzVLis/Plants speak to us\u2026will you ta__o82mlzVLis.txt",
+      "video_id": "_o82mlzVLis",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/VQbdFHbO_q4/Ever the rebel \ud83d\ude02 but what trut_VQbdFHbO_q4.txt",
+      "video_id": "VQbdFHbO_q4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/8DuSl9kUZKM/Milky oats (Avena sativa)\u2026how _8DuSl9kUZKM.txt",
+      "video_id": "8DuSl9kUZKM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/nm0GjginwjY/Lemon Balm for breakfast, anyo_nm0GjginwjY.txt",
+      "video_id": "nm0GjginwjY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/yIBlSi1tFxs/Herbalism is kitchen medicine._yIBlSi1tFxs.txt",
+      "video_id": "yIBlSi1tFxs",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/qyD7BD4mek8/Rosemary Gladstar on Rosemary _qyD7BD4mek8.txt",
+      "video_id": "qyD7BD4mek8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/3-klCV_o408/You can never have enough Thym_3-klCV_o408.txt",
+      "video_id": "3-klCV_o408",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/d6z6j6B_g-U/Tips for storing your herbs\u2026_d6z6j6B_g-U.txt",
+      "video_id": "d6z6j6B_g-U",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/x9LzuqAV6pQ/Rosemary\u2019s Favorite Plant\u2026wait_x9LzuqAV6pQ.txt",
+      "video_id": "x9LzuqAV6pQ",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/j2AVQ_fVD0A/Rosemary on plant relationship_j2AVQ_fVD0A.txt",
+      "video_id": "j2AVQ_fVD0A",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/a0e72faf-c91d-49d7-aaf3-ff4d7822810d/zGREYfkgqIM/Let your dreams fly!_zGREYfkgqIM.txt",
+      "video_id": "zGREYfkgqIM",
+      "language": "en",
+      "type": "auto-generated"
+    }
+  ],
+  "videos": [
+    {
+      "id": "U-ZY2bt2pFw",
+      "title": "The Generosity of Plants: An Invitation to Walk with Rosemary Gladstar",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=U-ZY2bt2pFw"
+    },
+    {
+      "id": "l3C45uZ0P8U",
+      "title": "Herbs for Children's Health: A Companion Class with Rosemary Gladstar",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=l3C45uZ0P8U"
+    },
+    {
+      "id": "DscgIwa7GhU",
+      "title": "Meet Wendy Mackenzie of Everlasting Herb Farm",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=DscgIwa7GhU"
+    },
+    {
+      "id": "ODWJMuYBR2U",
+      "title": "Ed Smith | Voices of Our Herbal Elders Ep. 16",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ODWJMuYBR2U"
+    },
+    {
+      "id": "nvpp9lerJio",
+      "title": "Dr. Christopher Hobbs | Voices of Our Herbal Elders Ep. 15",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=nvpp9lerJio"
+    },
+    {
+      "id": "Ofe7wkoEEYg",
+      "title": "Mark Blumenthal | Voices of Our Herbal Elders Ep. 14",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Ofe7wkoEEYg"
+    },
+    {
+      "id": "EsWSge3dtOc",
+      "title": "Margi Flint | Voices of Our Herbal Elders Ep. 13",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=EsWSge3dtOc"
+    },
+    {
+      "id": "8KtiMRrhCbM",
+      "title": "Phyllis Light | Voices of Our Herbal Elders Ep. 12",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=8KtiMRrhCbM"
+    },
+    {
+      "id": "nj0VgsgGQkk",
+      "title": "Jane Bothwell | Voices of Our Herbal Elders Ep. 11",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=nj0VgsgGQkk"
+    },
+    {
+      "id": "qGOePh5mqoU",
+      "title": "David Hoffmann | Voices of Our Herbal Elders Ep. 10",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=qGOePh5mqoU"
+    },
+    {
+      "id": "xMG9avqfXjA",
+      "title": "The 10-fingered salute, just add Lemon Balm!",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xMG9avqfXjA"
+    },
+    {
+      "id": "T6uY2szrM8Q",
+      "title": "Matthew Wood | Voices of Our Herbal Elders Ep. 9",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=T6uY2szrM8Q"
+    },
+    {
+      "id": "KCjQr5wu_J0",
+      "title": "One of the best ways to learn about a plant is to work with just that plant\u2026 #rosemarygladstar",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=KCjQr5wu_J0"
+    },
+    {
+      "id": "kmtATpiAJ-s",
+      "title": "Brigitte Mars | Voices of Our Herbal Elders Ep. 8",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=kmtATpiAJ-s"
+    },
+    {
+      "id": "ZJlP9JEmlpM",
+      "title": "Brooke Medicine Eagle | Voices of Our Herbal Elders Ep. 7",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ZJlP9JEmlpM"
+    },
+    {
+      "id": "O1Cc3iTayXs",
+      "title": "The Herbalist's Path: Affordable Healthcare for Your Home & Community with Rosemary Gladstar",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=O1Cc3iTayXs"
+    },
+    {
+      "id": "cNUzD1Z00CU",
+      "title": "Mindy Green | Voices of Our Herbal Elders Ep. 6",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=cNUzD1Z00CU"
+    },
+    {
+      "id": "Z9b-D1HstEs",
+      "title": "Roc\u00edo Alarc\u00f3n | Voices of Our Herbal Elders Ep. 5",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Z9b-D1HstEs"
+    },
+    {
+      "id": "snu2hM5H0qY",
+      "title": "Karyn Sanders | Voices of Our Herbal Elders Ep. 4",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=snu2hM5H0qY"
+    },
+    {
+      "id": "TXqVUYKdnpQ",
+      "title": "Sara Katz | Voices of Our Herbal Elders Ep. 3",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=TXqVUYKdnpQ"
+    },
+    {
+      "id": "3F-N9ao8hgk",
+      "title": "Kat Maier | Voices of Our Herbal Elders Ep. 2",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=3F-N9ao8hgk"
+    },
+    {
+      "id": "h71W7GLeJ68",
+      "title": "David Winston | Voices of Our Herbal Elders Ep. 1",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=h71W7GLeJ68"
+    },
+    {
+      "id": "O8Rf4DXY5ZM",
+      "title": "Plants our are elders. Take a moment today to honor this wise green nation. \ud83c\udf3f\ud83d\udc9a #rosemarygladstar",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=O8Rf4DXY5ZM"
+    },
+    {
+      "id": "OM4kx8RCuIE",
+      "title": "Tea for Headache \ud83c\udf3f 3 parts chamomile\u2022 3 parts lemon balm\u2022 1 part passionflower\u2022 1 part skullcap",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=OM4kx8RCuIE"
+    },
+    {
+      "id": "WQjxsqfr5GU",
+      "title": "Join us at the International Herb Symposium this year!  https://www.internationalherbsymposium.com",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=WQjxsqfr5GU"
+    },
+    {
+      "id": "CEjWlEO4a0g",
+      "title": "Simple things can make a difference\u2026",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=CEjWlEO4a0g"
+    },
+    {
+      "id": "OyfGD8loNdM",
+      "title": "Rosemary Gladstar's Blue Dream Tea",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=OyfGD8loNdM"
+    },
+    {
+      "id": "OjGXIGdRCTY",
+      "title": "Winter Solstice Greetings from Rosemary Gladstar",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=OjGXIGdRCTY"
+    },
+    {
+      "id": "gycjaARRR-8",
+      "title": "Mullein - A Walk in the Garden with Herbalist Rosemary Gladstar",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=gycjaARRR-8"
+    },
+    {
+      "id": "vu3Dp3Fg2KM",
+      "title": "Fire Cider with Rosemary Gladstar!",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=vu3Dp3Fg2KM"
+    },
+    {
+      "id": "8NGOhk0H_ro",
+      "title": "In celebration of Plant a Tree day!",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=8NGOhk0H_ro"
+    },
+    {
+      "id": "iOJ9VbJQYKg",
+      "title": "What practices do you hold to connect with your intuition and that ancient source of knowing?",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=iOJ9VbJQYKg"
+    },
+    {
+      "id": "VQbdFHbO_q4",
+      "title": "Ever the rebel \ud83d\ude02 but what truth\u2026",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=VQbdFHbO_q4"
+    },
+    {
+      "id": "J2pc0a9EbLE",
+      "title": "Deepening our relationship with plants\u2026",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=J2pc0a9EbLE"
+    },
+    {
+      "id": "nm0GjginwjY",
+      "title": "Lemon Balm for breakfast, anyone?",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=nm0GjginwjY"
+    },
+    {
+      "id": "5WwKuxPbCf4",
+      "title": "If we stand in the right place with our hearts open and our minds ready\u2026\ud83c\udf3f\u2728\ud83d\udc96",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=5WwKuxPbCf4"
+    },
+    {
+      "id": "QDzfTEGmvbU",
+      "title": "What\u2019s growing in your garden today? \ud83c\udf3f\ud83d\udc95",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=QDzfTEGmvbU"
+    },
+    {
+      "id": "yIBlSi1tFxs",
+      "title": "Herbalism is kitchen medicine. \ud83c\udf3f\ud83d\udc96 What do you love about herbalism?",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=yIBlSi1tFxs"
+    },
+    {
+      "id": "_o82mlzVLis",
+      "title": "Plants speak to us\u2026will you take some time today to spend with them?",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=_o82mlzVLis"
+    },
+    {
+      "id": "8DuSl9kUZKM",
+      "title": "Milky oats (Avena sativa)\u2026how have you worked with them?",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=8DuSl9kUZKM"
+    },
+    {
+      "id": "d6z6j6B_g-U",
+      "title": "Tips for storing your herbs\u2026",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=d6z6j6B_g-U"
+    },
+    {
+      "id": "m5MtfIqz_WU",
+      "title": "Start your herbal apothecary!",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=m5MtfIqz_WU"
+    },
+    {
+      "id": "x9LzuqAV6pQ",
+      "title": "Rosemary\u2019s Favorite Plant\u2026wait for it. \ud83d\ude02",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=x9LzuqAV6pQ"
+    },
+    {
+      "id": "qyD7BD4mek8",
+      "title": "Rosemary Gladstar on Rosemary as an important antioxidant...and why she defends free radicals. \ud83d\ude09\ud83d\ude02",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=qyD7BD4mek8"
+    },
+    {
+      "id": "3-klCV_o408",
+      "title": "You can never have enough Thyme!",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=3-klCV_o408"
+    },
+    {
+      "id": "wdcc_Mc2ICo",
+      "title": "February 24, 2022",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=wdcc_Mc2ICo"
+    },
+    {
+      "id": "ldem4uEbzDc",
+      "title": "What are you dreaming of, dear herbalists?",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ldem4uEbzDc"
+    },
+    {
+      "id": "j2AVQ_fVD0A",
+      "title": "Rosemary on plant relationships and Elder Medicine. And a special message at the end!",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=j2AVQ_fVD0A"
+    },
+    {
+      "id": "9F1dGIYFUME",
+      "title": "\ud83d\udd25 Fire Cider is a hot, spicy, and oh so delicious immunity booster! \ud83d\udd25",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=9F1dGIYFUME"
+    },
+    {
+      "id": "zGREYfkgqIM",
+      "title": "Let your dreams fly!",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=zGREYfkgqIM"
+    },
+    {
+      "id": "XzDpLwEVvF4",
+      "title": "Rosemary Gladstar's Science & Art of Herbalism Home Study Course",
+      "publishedAt": "2025-09-17T08:33:33.313Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=XzDpLwEVvF4"
+    }
+  ],
+  "start_time": 1758098014.1030104,
+  "user_id": "0dda42c8-ea25-44d2-a746-187ee1676851",
+  "credits_reserved": 51,
+  "credits_used": 52,
+  "reservation_id": "6af0c554-cef4-4903-8912-0293d6450c95",
+  "videos_metadata": {
+    "U-ZY2bt2pFw": {
+      "id": "U-ZY2bt2pFw",
+      "title": "The Generosity of Plants: An Invitation to Walk with Rosemary Gladstar",
+      "description": "I\u2019m so delighted to share this offering with you. The Generosity of Plants is more than a book\u2014it\u2019s a collection of quotes, reflections, and stories gathered from a lifetime of walking with the plants and the people who love them.\n\nThis video is the beginning of A Gift from the Plants, a special email journey I\u2019ve created to celebrate the release of this new book. Over the next few weeks, I\u2019ll be sharing short videos, readings, and simple herbal inspirations drawn from the heart of this work.\n\n\ud83c\udf3f Sign up here to join the free series:\nhttps://scienceandartofherbalism.com/a-gift-from-the-plants-optin\n\n\ud83c\udf3c 10% of royalties from this book are donated to @UnitedPlantSavers, in gratitude for their work protecting native medicinal plants and their habitats.\n\nHeartfelt thanks to @StoreyPublishing for helping bring this book to life so beautifully, and for their continued support of herbal voices and plant wisdom.\n\nWith love and deep appreciation,\nRosemary\n\nP.S. If you haven't ordered the book yet, there is still a chance to get some juicy pre-order bonuses if you order before April 22, 2025! https://scienceandartofherbalism.com/the-generosity-of-plants/\n\n** Credits **\nVideography by Danielle Cohen Photography\nOpening Music:  \"Rainbows\" by Michelle Nyre \nClosing Music:  \"Sunrise\" by Michelle Nyre \n\n#newbook",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2025-04-15T20:13:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/U-ZY2bt2pFw/maxresdefault.jpg",
+      "duration": "4:17",
+      "viewCount": 1786,
+      "likeCount": 171,
+      "commentCount": 15,
+      "url": "https://www.youtube.com/watch?v=U-ZY2bt2pFw"
+    },
+    "l3C45uZ0P8U": {
+      "id": "l3C45uZ0P8U",
+      "title": "Herbs for Children's Health: A Companion Class with Rosemary Gladstar",
+      "description": "Join Rosemary Gladstar in this class Herbs for Children's Health as we celebrate the release of the 3rd edition of her book \"Herbs for Children's Health!\" \n\nIn this highly accessible handbook, best-selling author and herbal medicine expert Rosemary Gladstar offers her time-tested, safe, and gentle natural recipes, along with simple care advice for addressing children\u2019s everyday health needs. Parents of babies and toddlers will discover how easy it is to create a home medicine cabinet of herbal remedies for everything from colic to cradle cap, diaper rash, earaches, colds, cuts, teething, and more.\n\n\ud83c\udf3f Resources \ud83c\udf3f\n\ud83c\udf31 Get the new \"Herbs for Children's Health\" here: https://scienceandartofherbalism.com/H4CH\n\ud83c\udf31 Get Rosemary's book list Herbal Books for Children's Health: https://bookshop.org/lists/herbal-books-for-children-s-health\n\n\ud83c\udf3f Thank you for joining this special class on Herbs for Children\u2019s Health. If you\u2019re feeling inspired to deepen your herbal studies, I invite you to explore The Science & Art of Herbalism, my home study course that blends rich tradition with hands-on learning. Use the code HERBALFAMILY at checkout to receive an additional $75 off the Print+Online bundle (expires 11/14/24). Visit scienceandartofherbalism.com/coupon/herbalfamily to learn more. Happy herbal adventures to you all! \ud83c\udf31\u2728",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2024-10-11T16:00:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/l3C45uZ0P8U/maxresdefault.jpg",
+      "duration": "47:56",
+      "viewCount": 8757,
+      "likeCount": 777,
+      "commentCount": 38,
+      "url": "https://www.youtube.com/watch?v=l3C45uZ0P8U"
+    },
+    "DscgIwa7GhU": {
+      "id": "DscgIwa7GhU",
+      "title": "Meet Wendy Mackenzie of Everlasting Herb Farm",
+      "description": "If you haven\u2019t had the opportunity to meet Wendy Mackenzie, I\u2019m delighted to make the introduction. Wendy is a sparkling star in herbal circles and always stands out in a crowd because of her bright, zesty spirit and warm, welcoming smile. Just being around Wendy makes me happy! She was one of my early apprentices and graduated from The Science and Art of Herbalism in 2004.\n\nA fellow Vermonter, we\u2019ve kept in touch through the years, and it\u2019s been amazing, though not surprising, to watch Wendy\u2019s herbal company grow into a nationally award-winning business. Wendy brings not only a deep passion for her herbal work, but also a keen sense of integrity and commitment to everything she does. Her beautiful gardens at Everlasting Herb Farm are an inspiration and home to her rapidly expanding herbal business. But let\u2019s let Wendy tell her own story\u2026\n\n~ Rosemary Gladstar\n\n~ STAY IN TOUCH WITH WENDY MACKENZIE ~\n\ud83c\udf3f Website: https://everlastingherbfarm.com/ \n\ud83c\udf3f Facebook: https://www.facebook.com/meadowscapebotanicalsbyeverlastingherbfarm \n\ud83c\udf3f Instagram: https://www.instagram.com/meadowscapebotanicals \n\ud83c\udf3f YouTube: @Everlastingherbfarm   \n\n~ STAY IN TOUCH WITH ROSEMARY GLADSTAR ~\n\ud83c\udf3f Rosemary's website: https://scienceandartofherbalism.com\n\ud83c\udf3f Rosemary's Instagram:  https://www.instagram.com/rosemarygladstar  \n\ud83c\udf3f Rosemary's Facebook:  https://www.facebook.com/RosemaryGladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2024-09-27T11:00:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/DscgIwa7GhU/maxresdefault.jpg",
+      "duration": "7:40",
+      "viewCount": 968,
+      "likeCount": 85,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=DscgIwa7GhU"
+    },
+    "ODWJMuYBR2U": {
+      "id": "ODWJMuYBR2U",
+      "title": "Ed Smith | Voices of Our Herbal Elders Ep. 16",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n\nIn this engaging episode of \"Voices of our Herbal Elders,\" I have the pleasure of speaking with the legendary Ed Smith, affectionately known as Herbal Ed. With over 50 years of experience, Ed has been a cornerstone in the revitalization of American herbalism. From his early days working with renowned figures like Dr. John Christopher and Ann Wigmore to co-founding Herb Pharm, Ed shares his rich journey filled with wisdom, humor, and profound insights. Join us as we delve into his incredible stories of herbal adventures, his favorite plant allies, and the timeless lessons he's learned along the way.\n\n~ RESOURCES ~\n\ud83c\udf3f Ed Smith\u2019s Facebook: https://www.facebook.com/herbal.ed \n\ud83c\udf3f Ed Smith\u2019s Instagram: https://www.instagram.com/herbal_ed \n\n\ud83c\udf3f Herb Pharm website: https://www.herb-pharm.com/ \n\ud83c\udf3f Herb Pharm YouTube: https://m.youtube.com/TheHerbPharm \n\n\ud83c\udf3f Rosemary's website: https://scienceandartofherbalism.com\n\ud83c\udf3f Rosemary's Instagram:  https://www.instagram.com/rosemarygladstar    \n\ud83c\udf3f Rosemary's Facebook:  https://www.facebook.com/RosemaryGladstar \n\n~ DISCLAIMER ~\nThe herbal and plant information in this video is for educational purposes only. The information contained is not intended as a substitute for the advice provided by your physician or other medical professional. If you have or suspect that you have a serious health problem, promptly contact your health care provider. Always consult with a health care practitioner before using any herbal remedy or food, especially if you are pregnant, nursing, or have a medical condition.\n\n\nI hope you enjoy this Inner-View as well! If you did, please share this episode with others!\n#VoicesOfOurHerbalElders #InnerViewsWithRosemaryGladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2024-06-14T09:00:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/ODWJMuYBR2U/maxresdefault.jpg",
+      "duration": "1:18:21",
+      "viewCount": 3152,
+      "likeCount": 138,
+      "commentCount": 25,
+      "url": "https://www.youtube.com/watch?v=ODWJMuYBR2U"
+    },
+    "nvpp9lerJio": {
+      "id": "nvpp9lerJio",
+      "title": "Dr. Christopher Hobbs | Voices of Our Herbal Elders Ep. 15",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n\nIn this captivating episode of \"Voices of our Herbal Elders,\" I welcome my dear friend, the esteemed Dr. Christopher Hobbs, a fourth-generation herbalist, licensed acupuncturist, clinician, botanist, mycologist, and research scientist with over four decades of experience. Dr. Hobbs has significantly influenced modern herbalism through his extensive knowledge, research, and teachings. Join us as we delve into his rich history with plants, his profound spiritual connection to nature, and his dedication to sharing herbal wisdom.\n\n~ RESOURCES ~\n\ud83c\udf3f Dr. Christopher Hobbs\u2019 website: https://christopherhobbs.com \n\ud83c\udf3f Dr. Christopher Hobbs\u2019 Facebook: https://www.facebook.com/drchristopherhobbs \n\ud83c\udf3f Dr. Christopher Hobbs\u2019 Instagram: https://www.instagram.com/christopherhobbs1 \n\ud83c\udf3f Dr. Christopher Hobbs\u2019 YouTube: https://www.youtube.com/channel/UCLT12Y2vZM_xCaQSBS84xoA \n\n\ud83c\udf3f World Herb Library: https://worldherblibrary.org \n\n\ud83c\udf3f Rosemary's website: https://scienceandartofherbalism.com\n\ud83c\udf3f Rosemary's Instagram:  https://www.instagram.com/rosemarygladstar  \n\ud83c\udf3f Rosemary's Facebook:  https://www.facebook.com/RosemaryGladstar\n\n~ DISCLAIMER ~\nThe herbal and plant information in this video is for educational purposes only. The information contained is not intended as a substitute for the advice provided by your physician or other medical professional. If you have or suspect that you have a serious health problem, promptly contact your health care provider. Always consult with a health care practitioner before using any herbal remedy or food, especially if you are pregnant, nursing, or have a medical condition.\n\n\nI hope you enjoy this Inner-View as well! If you did, please share this episode with others!\n#VoicesOfOurHerbalElders #InnerViewsWithRosemaryGladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2024-05-24T09:00:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/nvpp9lerJio/maxresdefault.jpg",
+      "duration": "1:03:59",
+      "viewCount": 2941,
+      "likeCount": 187,
+      "commentCount": 10,
+      "url": "https://www.youtube.com/watch?v=nvpp9lerJio"
+    },
+    "Ofe7wkoEEYg": {
+      "id": "Ofe7wkoEEYg",
+      "title": "Mark Blumenthal | Voices of Our Herbal Elders Ep. 14",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n\nIn this enlightening episode of \"Voices of our Herbal Elders,\" I was delighted to be joined by my friend Mark Blumenthal, a true pioneer in the world of herbalism and the founder and executive director of the American Botanical Council. Mark shared his invaluable insights and personal experiences that have significantly shaped the herbal movement globally. His commitment to the scientific validation and ethical promotion of herbalism offers our listeners a deeply inspiring glimpse into the passionate advocacy and educational efforts that underpin modern herbal practices.\n\nAmerican Botanical Council is celebrating 40 years of HerbalGram. Be sure to visit their website at https://www.herbalgram.com to learn more!\n\n\n~ RESOURCES ~\n\ud83c\udf3f American Botanical Council's website: https://www.herbalgram.com\n\ud83c\udf3f American Botanical Council's  YouTube: https://www.youtube.com/herbalgram\n\ud83c\udf3f American Botanical Council's  Facebook: https://www.facebook.com/HerbalGram\n\ud83c\udf3f American Botanical Council's  Instagram: https://www.instagram.com/herbalgramabc\n\ud83c\udf3f Mark Blumenthal's LinkedIn: https://www.linkedin.com/in/herbcowboy\n\n\ud83c\udf3f Rosemary's website: https://scienceandartofherbalism.com\n\ud83c\udf3f Rosemary's Instagram:  https://www.instagram.com/rosemarygladstar  \n\ud83c\udf3f Rosemary's Facebook:  https://www.facebook.com/RosemaryGladstar\n\n~ DISCLAIMER ~\nThe herbal and plant information in this video is for educational purposes only. The information contained is not intended as a substitute for the advice provided by your physician or other medical professional. If you have or suspect that you have a serious health problem, promptly contact your health care provider. Always consult with a health care practitioner before using any herbal remedy or food, especially if you are pregnant, nursing, or have a medical condition.\n\n\nI hope you enjoy this Inner-View as well! If you did, please share this episode with others!\n\n#VoicesOfOurHerbalElders #InnerViewsWithRosemaryGladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2024-05-03T10:00:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/Ofe7wkoEEYg/maxresdefault.jpg",
+      "duration": "1:37:09",
+      "viewCount": 2988,
+      "likeCount": 163,
+      "commentCount": 14,
+      "url": "https://www.youtube.com/watch?v=Ofe7wkoEEYg"
+    },
+    "EsWSge3dtOc": {
+      "id": "EsWSge3dtOc",
+      "title": "Margi Flint | Voices of Our Herbal Elders Ep. 13",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n\nIn this inspiring episode of \"Voices of our Herbal Elders,\" I sit down with Margi Flint, an incredibly insightful and beloved herbalist whose expertise spans across plant medicine, music, and the arts. Known for her heartfelt approach to herbal medicine and her deep-seated belief in the healing power of plants, Margi shares insights from her multifaceted journey, including her work under the mentorship of William LaSassier, her unique integration of music and herbalism, and her creative expressions through lithograph art.\n\n~ RESOURCES ~\n\ud83c\udf3f Margi Flint\u2019s website: https://earthsongherbals.com/\n\ud83c\udf3f Margi Flint\u2019s Facebook: https://www.facebook.com/margi.flint\n\ud83c\udf3f Margi Flint\u2019s Instagram: https://www.instagram.com/flintmargi/\n\n\ud83c\udf3f Rosemary's website: https://scienceandartofherbalism.com\n\ud83c\udf3f Rosemary's Instagram:  https://www.instagram.com/rosemarygladstar  \n\ud83c\udf3f Rosemary's Facebook:  https://www.facebook.com/RosemaryGladstar\n\n~ DISCLAIMER ~\nThe herbal and plant information in this video is for educational purposes only. The information contained is not intended as a substitute for the advice provided by your physician or other medical professional. If you have or suspect that you have a serious health problem, promptly contact your health care provider. Always consult with a health care practitioner before using any herbal remedy or food, especially if you are pregnant, nursing, or have a medical condition.\n\nI hope you enjoy this Inner-View as well! If you did, please share this episode with others!\n\n#VoicesOfOurHerbalElders #InnerViewsWithRosemaryGladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2024-04-05T10:00:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/EsWSge3dtOc/maxresdefault.jpg",
+      "duration": "59:07",
+      "viewCount": 3492,
+      "likeCount": 203,
+      "commentCount": 15,
+      "url": "https://www.youtube.com/watch?v=EsWSge3dtOc"
+    },
+    "8KtiMRrhCbM": {
+      "id": "8KtiMRrhCbM",
+      "title": "Phyllis Light | Voices of Our Herbal Elders Ep. 12",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n\nThis episode of \"Voices of our Herbal Elders\" brings you an intimate conversation with Phyllis Light, a revered herbalist whose deep roots in Southern folk medicine illuminate her profound connection with the healing power of plants. \n\nBorn into a lineage of herbalists, Phyllis carries the wisdom of her Creek/Cherokee heritage, blending it with her extensive knowledge acquired over more than four decades in natural health and healing. As the founder and director of the Appalachian Center for Natural Health, Phyllis has dedicated her life to educating others about the efficacy and sanctity of traditional herbalism, sharing insights that bridge the past with the present to inspire future generations of herbalists.\n\n~ RESOURCES ~\n\ud83c\udf3f Phyllis Lights\u2019 website: https://www.phyllisdlight.com\n\ud83c\udf3f Phyllis Lights\u2019 Facebook: https://www.facebook.com/phyllis.d.light\n\ud83c\udf3f Phyllis Lights\u2019 Instagram: https://www.instagram.com/phyllisdlight\n\ud83c\udf3f Phyllis Lights\u2019 LinkedIn: https://www.linkedin.com/in/phyllis-d-light-0a4641b2/ \n\n\n\ud83c\udf3f Rosemary's website: https://scienceandartofherbalism.com\n\ud83c\udf3f Rosemary's Instagram:  https://www.instagram.com/rosemarygladstar  \n\ud83c\udf3f Rosemary's Facebook:  https://www.facebook.com/RosemaryGladstar\n\n~ DISCLAIMER ~\nThe herbal and plant information in this video is for educational purposes only. The information contained is not intended as a substitute for the advice provided by your physician or other medical professional. If you have or suspect that you have a serious health problem, promptly contact your health care provider. Always consult with a health care practitioner before using any herbal remedy or food, especially if you are pregnant, nursing, or have a medical condition.\n\n\nI hope you enjoy this Inner-View as well! If you did, please share this episode with others!\n\n#VoicesOfOurHerbalElders #InnerViewsWithRosemaryGladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2024-03-15T10:00:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/8KtiMRrhCbM/maxresdefault.jpg",
+      "duration": "1:17:35",
+      "viewCount": 3221,
+      "likeCount": 183,
+      "commentCount": 16,
+      "url": "https://www.youtube.com/watch?v=8KtiMRrhCbM"
+    },
+    "nj0VgsgGQkk": {
+      "id": "nj0VgsgGQkk",
+      "title": "Jane Bothwell | Voices of Our Herbal Elders Ep. 11",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n\nIn this inspiring episode of \"Voices of our Herbal Elders,\" I am honored to welcome the remarkable Jane Bothwell, a foundational figure in the world of herbalism and a beacon of wisdom in the herbal community. With decades of experience, Jane shares her profound journey, insights, and stories that illuminate the path of natural healing and deep connection with plant allies. As the founder of the Dandelion Herbal Center, Jane's influence extends through generations of herbalists, touching the hearts and minds of all who have had the privilege to learn from her. \n\nThis conversation is a journey through the roots of American herbalism, exploring the challenges and triumphs encountered along the way, and delving into the spiritual and practical aspects of working with plants. Jane's warmth, wisdom, and passion for plant medicine shine through in every story she shares, making this episode a treasure trove of herbal lore and inspiration.\n\nI hope you enjoy this Inner-View as well! If you do, please share this episode with others!\n\n~ RESOURCES ~\n\ud83c\udf3f Jane Bothwell's Analog for At-Risk Plants: https://unitedplantsavers.org/species-at-risk-list/\n\ud83c\udf3f Dandelion Herbal Center: https://dandelionherb.com/\n\n\ud83c\udf3f Rosemary's Website: https://scienceandartofherbalism.com/\n\ud83c\udf3f Rosemary's Instagram:  https://www.instagram.com/rosemarygladstar/  \n\ud83c\udf3f Rosemary's Facebook:  https://www.facebook.com/RosemaryGladstar/\n\n~ DISCLAIMER ~\nThe herbal and plant information in this video is for educational purposes only. The information contained is not intended as a substitute for the advice provided by your physician or other medical professional. If you have or suspect that you have a serious health problem, promptly contact your health care provider. Always consult with a health care practitioner before using any herbal remedy or food, especially if you are pregnant, nursing, or have a medical condition.\n\n#VoicesOfOurHerbalElders #InnerViewsWithRosemaryGladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2024-02-23T10:00:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/nj0VgsgGQkk/maxresdefault.jpg",
+      "duration": "1:03:56",
+      "viewCount": 2537,
+      "likeCount": 131,
+      "commentCount": 8,
+      "url": "https://www.youtube.com/watch?v=nj0VgsgGQkk"
+    },
+    "qGOePh5mqoU": {
+      "id": "qGOePh5mqoU",
+      "title": "David Hoffmann | Voices of Our Herbal Elders Ep. 10",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n\nIn this compelling episode of \"Voices of our Herbal Elders,\" I sit down with the brilliant herbalist David Hoffmann. Journey with us as we delve into the transformative power of herbs in the 21st century, challenge the modern perspectives on profit, and emphasize the urgent need for radical green healing. David offers both a profound historical reflection and a forward-thinking vision, making this conversation an essential listen for anyone passionate about herbalism and the health of our planet.\n\nI hope you enjoy this Inner-View! If you do, please share this episode with others!\n\n~ RESOURCES ~\n\ud83c\udf3f Rosemary's website: https://scienceandartofherbalism.com/\n\ud83c\udf3f Rosemary's Instagram:  https://www.instagram.com/rosemarygladstar/  \n\ud83c\udf3f Rosemary's Facebook:  https://www.facebook.com/RosemaryGladstar/\n\n~ DISCLAIMER ~\nThe herbal and plant information in this video is for educational purposes only. The information contained is not intended as a substitute for the advice provided by your physician or other medical professional. If you have or suspect that you have a serious health problem, promptly contact your health care provider. Always consult with a health care practitioner before using any herbal remedy or food, especially if you are pregnant, nursing, or have a medical condition.\n\n#VoicesOfOurHerbalElders #InnerViewsWithRosemaryGladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2024-02-09T10:00:39Z",
+      "thumbnail": "https://i.ytimg.com/vi/qGOePh5mqoU/maxresdefault.jpg",
+      "duration": "1:02:01",
+      "viewCount": 4648,
+      "likeCount": 283,
+      "commentCount": 31,
+      "url": "https://www.youtube.com/watch?v=qGOePh5mqoU"
+    },
+    "xMG9avqfXjA": {
+      "id": "xMG9avqfXjA",
+      "title": "The 10-fingered salute, just add Lemon Balm!",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2024-02-08T13:31:54Z",
+      "thumbnail": "https://i.ytimg.com/vi/xMG9avqfXjA/maxresdefault.jpg",
+      "duration": "0:36",
+      "viewCount": 3521,
+      "likeCount": 455,
+      "commentCount": 7,
+      "url": "https://www.youtube.com/watch?v=xMG9avqfXjA"
+    },
+    "T6uY2szrM8Q": {
+      "id": "T6uY2szrM8Q",
+      "title": "Matthew Wood | Voices of Our Herbal Elders Ep. 9",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n\nIn this riveting episode, join me as I sit down with the legendary herbalist Matthew Wood. Dive deep into the ancient wisdom and modern applications of herbalism, uncovering Matthew's profound insights from years of study and practice. From heartwarming stories of healing to groundbreaking insights on the intricate balance between plants and our health, this interview promises to inspire both novice herbal enthusiasts and seasoned practitioners alike.\n\nI hope you enjoy this Inner-View as well! If you did, please share this episode with others!\n\nMatthew Wood's Institute of Herbalism has generously extended an offer for all Voices of our Herbal Elders listeners. Use coupon code MWIHthanksRosemary when registering for the upcoming Year 1 Program to save 10% off enrollment! This offer expires May 5, 2024.\n\n~ RESOURCES ~\n\ud83c\udf3f Matthew Wood's website: https://www.matthewwoodinstituteofherbalism.com/\n\ud83c\udf3f Matthew Wood's Facebook: https://www.facebook.com/matthewwoodinstituteofherbalism/\n\ud83c\udf3f Matthew Wood's Instagram:  https://www.instagram.com/matthewwoodherbalist/\n\n\ud83c\udf3f Rosemary's website: https://scienceandartofherbalism.com/\n\ud83c\udf3f Rosemary's Instagram:  https://www.instagram.com/rosemarygladstar/  \n\ud83c\udf3f Rosemary's Facebook:  https://www.facebook.com/RosemaryGladstar/\n\n~ DISCLAIMER ~\nThe herbal and plant information in this video is for educational purposes only. The information contained is not intended as a substitute for the advice provided by your physician or other medical professional. If you have or suspect that you have a serious health problem, promptly contact your health care provider. Always consult with a health care practitioner before using any herbal remedy or food, especially if you are pregnant, nursing, or have a medical condition.\n\n#VoicesOfOurHerbalElders #InnerViewsWithRosemaryGladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2024-01-26T10:00:30Z",
+      "thumbnail": "https://i.ytimg.com/vi/T6uY2szrM8Q/maxresdefault.jpg",
+      "duration": "1:03:35",
+      "viewCount": 4910,
+      "likeCount": 290,
+      "commentCount": 19,
+      "url": "https://www.youtube.com/watch?v=T6uY2szrM8Q"
+    },
+    "KCjQr5wu_J0": {
+      "id": "KCjQr5wu_J0",
+      "title": "One of the best ways to learn about a plant is to work with just that plant\u2026 #rosemarygladstar",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2024-01-17T19:00:58Z",
+      "thumbnail": "https://i.ytimg.com/vi/KCjQr5wu_J0/maxresdefault.jpg",
+      "duration": "0:53",
+      "viewCount": 6882,
+      "likeCount": 0,
+      "commentCount": 8,
+      "url": "https://www.youtube.com/watch?v=KCjQr5wu_J0"
+    },
+    "kmtATpiAJ-s": {
+      "id": "kmtATpiAJ-s",
+      "title": "Brigitte Mars | Voices of Our Herbal Elders Ep. 8",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n\nIn this enlightening episode of \"Voices of our Herbal Elders,\" I dive deep into the heart of herbalism with the legendary Brigitte Mars. Brigitte, an author and educator with a legacy woven into the very roots of the herbal community, shares her profound connection with nature and healing. \n\nFrom her unique experiences with psychedelics to her advocacy for cannabis and her service as a psychedelic sitter and an end-of-life doula, Brigitte's journey is as diverse as the flora she cherishes. Her reflections on a childhood shaped by the disciplined environment of a boarding school bring a deep understanding of how our earliest interactions with the world influence our healing paths. This interview is not just a conversation; it's an exploration of a life lived in deep symbiosis with the earth and its ancient wisdom.\n\nI hope you enjoy this Inner-View as well! If you did, please share this episode with others!\n\n~ RESOURCES ~\n\ud83c\udf3f Brigitte's website: https://brigittemars.com/\n\ud83c\udf3f Brigitte's TikTok: https://www.tiktok.com/@brigittemars01 \n\ud83c\udf3f Brigitte's Facebook: https://www.facebook.com/brigittemarsherbal\n\ud83c\udf3f Brigitte's Instagram:  https://www.instagram.com/brigitte.mars/  \n\n\ud83c\udf3f Rosemary's website: https://scienceandartofherbalism.com/\n\ud83c\udf3f Rosemary's Instagram:  https://www.instagram.com/rosemarygladstar/  \n\ud83c\udf3f Rosemary's Facebook:  https://www.facebook.com/RosemaryGladstar/\n\n~ DISCLAIMER ~\nThe herbal and plant information in this video is for educational purposes only. The information contained is not intended as a substitute for the advice provided by your physician or other medical professional. If you have or suspect that you have a serious health problem, promptly contact your health care provider. Always consult with a health care practitioner before using any herbal remedy or food, especially if you are pregnant, nursing, or have a medical condition.",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2024-01-12T13:33:22Z",
+      "thumbnail": "https://i.ytimg.com/vi/kmtATpiAJ-s/maxresdefault.jpg",
+      "duration": "1:01:20",
+      "viewCount": 2783,
+      "likeCount": 193,
+      "commentCount": 21,
+      "url": "https://www.youtube.com/watch?v=kmtATpiAJ-s"
+    },
+    "ZJlP9JEmlpM": {
+      "id": "ZJlP9JEmlpM",
+      "title": "Brooke Medicine Eagle | Voices of Our Herbal Elders Ep. 7",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n\nIn this episode of \"Voices of our Herbal Elders,\" I had the pleasure of delving deep into the world of ancient herbal wisdom with herbalist and musician, Brooke Medicine Eagle. With roots firmly planted in traditional teachings, Brooke paints a vivid tapestry of her experiences, wisdom, and passion for the Earth. Listen in as we journey through mesmerizing landscapes, discuss the power of feminine energy in today's awakening world, and learn how the blend of modern and ancient knowledge can bring about transformative healing.\n\nI hope you enjoy this Inner-View as well! If you did, please share this episode with others!",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2023-12-29T10:00:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/ZJlP9JEmlpM/maxresdefault.jpg",
+      "duration": "1:01:10",
+      "viewCount": 2945,
+      "likeCount": 176,
+      "commentCount": 11,
+      "url": "https://www.youtube.com/watch?v=ZJlP9JEmlpM"
+    },
+    "O1Cc3iTayXs": {
+      "id": "O1Cc3iTayXs",
+      "title": "The Herbalist's Path: Affordable Healthcare for Your Home & Community with Rosemary Gladstar",
+      "description": "Welcome to this captivating journey into the heart of herbalism! In this replay of a live class,  Rosemary Gladstar shares the beautiful blend of history and practice that makes herbalism so enchanting.\n\nWe\u2019ll dive into the world of herbs, where the simple plants in our kitchens transform into potent remedies. It\u2019s a delightful form of magic accessible to all. From crafting herbal candies and truffles to understanding the subtleties of herbal formulas, this class is a tapestry of learning and discovery.\n\nWe\u2019ll also delve into practical questions, unraveling the mysteries of herbal remedies together. Rosemary will introduce you to the varied paths in herbalism, from community-based practices to clinical expertise.\n\nTo continue your journey on the herbalist's path, join Rosemary in her home study course The Science & Art of Herbalism. For a limited time, use the coupon code OnThePath to take an additional $10 off!* Learn more at https://scienceandartofherbalism.com/product/the-classic-printed-plus-online-course/\n\n~ RESOURCES ~\n\ud83c\udf3f Rosemary's website: https://scienceandartofherbalism.com/\n\ud83c\udf3f Rosemary's Instagram:  https://www.instagram.com/rosemarygladstar/  \n\ud83c\udf3f Rosemary's Facebook:  https://www.facebook.com/RosemaryGladstar/\n\n~ DISCLAIMER ~\nThe herbal and plant information in this video is for educational purposes only. The information contained is not intended as a substitute for the advice provided by your physician or other medical professional. If you have or suspect that you have a serious health problem, promptly contact your health care provider. Always consult with a health care practitioner before using any herbal remedy or food, especially if you are pregnant, nursing, or have a medical condition.\n\n*Coupon cannot be combined with other coupons.",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2023-12-22T19:47:16Z",
+      "thumbnail": "https://i.ytimg.com/vi/O1Cc3iTayXs/maxresdefault.jpg",
+      "duration": "1:21:42",
+      "viewCount": 23113,
+      "likeCount": 1240,
+      "commentCount": 73,
+      "url": "https://www.youtube.com/watch?v=O1Cc3iTayXs"
+    },
+    "cNUzD1Z00CU": {
+      "id": "cNUzD1Z00CU",
+      "title": "Mindy Green | Voices of Our Herbal Elders Ep. 6",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n\nJourney with me as I uncover the deep-rooted passion and wisdom of renowned herbalist, Mindy Green. Spanning across decades of herbal history, transformation, and growth, this \u201cVoices of our Herbal Elders\u201d inner-view will ignite your spirit, revealing both the challenges and triumphs of modern herbalists. Explore the lush landscapes of herbal wisdom, from humble balcony gardens to the bustling world of the herb industry.\n\nI hope you enjoy this Inner-View as well! If you did, please share this episode with others!\n#VoicesOfOurHerbalElders #InnerViewsWithRosemaryGladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2023-12-01T10:00:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/cNUzD1Z00CU/maxresdefault.jpg",
+      "duration": "1:03:47",
+      "viewCount": 2476,
+      "likeCount": 174,
+      "commentCount": 21,
+      "url": "https://www.youtube.com/watch?v=cNUzD1Z00CU"
+    },
+    "Z9b-D1HstEs": {
+      "id": "Z9b-D1HstEs",
+      "title": "Roc\u00edo Alarc\u00f3n | Voices of Our Herbal Elders Ep. 5",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n\nJoin me as I dive into a profound conversation with the passionate herbalist, ethnobotanist, and shaman Roc\u00edo Alarc\u00f3n. From the heart of Ayahuasca traditions to the symbolic grace of hummingbirds, we traverse a journey that underscores the importance of protecting our ancestral traditions against the challenges of globalization. Explore the harmonious connection between nature and humanity in this eye-opening episode of \"Voices of our Herbal Elders.\"\n\nI hope you enjoy this Inner-View as well! If you did, please share this episode with others!\n\n#VoicesOfOurHerbalElders #InnerViewsWithRosemaryGladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2023-11-10T10:00:34Z",
+      "thumbnail": "https://i.ytimg.com/vi/Z9b-D1HstEs/maxresdefault.jpg",
+      "duration": "1:13:16",
+      "viewCount": 2506,
+      "likeCount": 150,
+      "commentCount": 15,
+      "url": "https://www.youtube.com/watch?v=Z9b-D1HstEs"
+    },
+    "snu2hM5H0qY": {
+      "id": "snu2hM5H0qY",
+      "title": "Karyn Sanders | Voices of Our Herbal Elders Ep. 4",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n\nIn this enlightening episode of Voices of our Herbal Elders, I delve deep into the world of plant medicine with renowned herbalist Karyn Sanders, a teacher's teacher. Tune in to explore the profound wisdom that Karyn shares as she discusses her journey with plants, the significance of deep listening, and the transformative power of embracing fear. Discover the magic of connecting with plants, and how they can guide us on a spiritual journey towards self-discovery and growth.\n\nKaryn Sanders has worked with plants for most of her life. She was first trained in Native American traditional plant medicine by her grandmother. In her mid-teens she apprenticed with a Mexican curandera and has subsequently studied with various traditional teachers as well as Western herbalists. Karyn has been teaching and practicing herbal medicine from an energetic perspective for over 42 years. Karyn co-founded the Blue Otter School of Herbal Medicine in 2003. She also created, produced and hosted The Herbal Highway, a radio show (and now a podcast) that has aired weekly since 1997 on KPFA, 94.1FM out of Berkeley, California. \n\nI hope you enjoy this Inner-View as well! If you did, please share this episode with others!\n\n#VoicesOfOurHerbalElders #InnerViewsWithRosemaryGladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2023-10-27T09:00:41Z",
+      "thumbnail": "https://i.ytimg.com/vi/snu2hM5H0qY/maxresdefault.jpg",
+      "duration": "49:20",
+      "viewCount": 2829,
+      "likeCount": 167,
+      "commentCount": 20,
+      "url": "https://www.youtube.com/watch?v=snu2hM5H0qY"
+    },
+    "TXqVUYKdnpQ": {
+      "id": "TXqVUYKdnpQ",
+      "title": "Sara Katz | Voices of Our Herbal Elders Ep. 3",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n\nIn this third episode of Voices of our Herbal Elders, I am honored to introduce the enchanting Sara Katz\u2014co-founder of Herb Pharm, the leading maker of liquid herbal extracts in the United States, and former president of United Plant Savers.\n\nIn this captivating conversation, Sara, the spirited co-founder of Herb Pharm, unfurls the tapestry of her herbal journey, sparkling with challenges embraced as opportunities, deep connections with plants, and tales of collaboration with other herbal enthusiasts. \n\nFor over 45 years Sara Katz has thrived amidst the forested mountains and wild plants of southern Oregon. There she co-founded and developed the company Herb Pharm and continues to consult and serve on Herb Pharm\u2019s board of directors. Involved with United Plant Savers since its beginning, Sara served as UpS board president for 9 years. Sara remains dedicated to her lifelong passions for all things wild, medicinal plants in particular, and taking care of plants, people and our precious planet.\n\nI hope you enjoy this Inner-View as well! If you did, please share this episode with others!\n\n#VoicesOfOurHerbalElders #InnerViewsWithRosemaryGladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2023-10-13T09:00:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/TXqVUYKdnpQ/maxresdefault.jpg",
+      "duration": "1:00:13",
+      "viewCount": 2775,
+      "likeCount": 153,
+      "commentCount": 7,
+      "url": "https://www.youtube.com/watch?v=TXqVUYKdnpQ"
+    },
+    "3F-N9ao8hgk": {
+      "id": "3F-N9ao8hgk",
+      "title": "Kat Maier | Voices of Our Herbal Elders Ep. 2",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n \nWelcome to our second episode of Voices of our Herbal Elders! In this episode, I am joined by the remarkable Kat Maier\u2014renowned herbalist, founder of Sacred Plant Traditions, and author of Energetic Herbalism.\n\nIn this insightful conversation, Kat discusses bridging the gap between conventional medicine and herbalism, emphasizing the importance of rigorous training and the scientific aspect of herbal medicine. She also talks about community initiatives, such as a botanical mobile clinic, and the impact of plants on her life. I am always inspired by Kat\u2019s ability to weave the worlds of spirit and medicine into a rich tapestry of meaning and this conversation was no exception!\n\nKat Maier, RH (AHG), is the founder and director of Sacred Plant Traditions, a center for herbal studies in Charlottesville, Virginia. In clinical practice for over 30 years, Kat teaches internationally at universities, conferences, and herbal schools. She is a founding member of Botanica Mobile Clinic, a nonprofit dedicated to providing accessible herbal medicine to local communities. As a passionate steward of the plants, Kat also served as president of United Plant Savers and was the recipient of the organization\u2019s first Medicinal Plant Conservation Award.   \n\nI hope you enjoy this Inner-View as well! If you did, please share this episode with others!\n\n#VoicesOfOurHerbalElders #InnerViewsWithRosemaryGladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2023-09-22T09:00:04Z",
+      "thumbnail": "https://i.ytimg.com/vi/3F-N9ao8hgk/maxresdefault.jpg",
+      "duration": "1:20:36",
+      "viewCount": 4764,
+      "likeCount": 265,
+      "commentCount": 18,
+      "url": "https://www.youtube.com/watch?v=3F-N9ao8hgk"
+    },
+    "h71W7GLeJ68": {
+      "id": "h71W7GLeJ68",
+      "title": "David Winston | Voices of Our Herbal Elders Ep. 1",
+      "description": "Join Rosemary Gladstar as she invites herbal elders to share the stories of their journey into the lush world of plants in these Inner-Views.\n\nWelcome to the first inaugural episode of Voices of our Herbal Elders! In this episode, I am joined by my dear friend David Winston.\n\nI learned so much from David, from an inspiring story about the life-saving impact of Nettle seeds to his ability to bridge the worlds of the intellect and the Earth. I came away inspired and hopeful.\n\nDavid Winston is an Herbalist and Ethnobotanist who has been in clinical practice for nearly 50 years and is an herbal consultant to physicians, herbalists and researchers throughout the USA, Europe and Canada. David is the founder/director of the Herbal Therapeutics Research Library, the dean of David Winston\u2019s Center for Herbal Studies, and the president of Herbalist & Alchemist, Inc. David is also a founding/professional member of the American Herbalist Guild, and he is on the American Botanical Council and the American Herbal Pharmacopoeia Advisory Boards.  \n\nI hope you enjoy this Inner-View as well! If you did, please like and subscribe to our channel for notifications!\n\n#VoicesOfOurHerbalElders #InnerViewsWithRosemaryGladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2023-09-01T10:00:37Z",
+      "thumbnail": "https://i.ytimg.com/vi/h71W7GLeJ68/maxresdefault.jpg",
+      "duration": "1:03:28",
+      "viewCount": 10323,
+      "likeCount": 583,
+      "commentCount": 61,
+      "url": "https://www.youtube.com/watch?v=h71W7GLeJ68"
+    },
+    "O8Rf4DXY5ZM": {
+      "id": "O8Rf4DXY5ZM",
+      "title": "Plants our are elders. Take a moment today to honor this wise green nation. \ud83c\udf3f\ud83d\udc9a #rosemarygladstar",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2023-08-23T21:28:27Z",
+      "thumbnail": "https://i.ytimg.com/vi/O8Rf4DXY5ZM/maxresdefault.jpg",
+      "duration": "0:47",
+      "viewCount": 2682,
+      "likeCount": 327,
+      "commentCount": 6,
+      "url": "https://www.youtube.com/watch?v=O8Rf4DXY5ZM"
+    },
+    "OM4kx8RCuIE": {
+      "id": "OM4kx8RCuIE",
+      "title": "Tea for Headache \ud83c\udf3f 3 parts chamomile\u2022 3 parts lemon balm\u2022 1 part passionflower\u2022 1 part skullcap",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2023-08-03T22:16:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/OM4kx8RCuIE/maxresdefault.jpg",
+      "duration": "0:40",
+      "viewCount": 2355,
+      "likeCount": 251,
+      "commentCount": 5,
+      "url": "https://www.youtube.com/watch?v=OM4kx8RCuIE"
+    },
+    "WQjxsqfr5GU": {
+      "id": "WQjxsqfr5GU",
+      "title": "Join us at the International Herb Symposium this year!  https://www.internationalherbsymposium.com",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2023-03-02T16:16:16Z",
+      "thumbnail": "https://i.ytimg.com/vi/WQjxsqfr5GU/maxresdefault.jpg",
+      "duration": "0:28",
+      "viewCount": 1403,
+      "likeCount": 110,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=WQjxsqfr5GU"
+    },
+    "CEjWlEO4a0g": {
+      "id": "CEjWlEO4a0g",
+      "title": "Simple things can make a difference\u2026",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2023-02-05T00:03:53Z",
+      "thumbnail": "https://i.ytimg.com/vi/CEjWlEO4a0g/maxresdefault.jpg",
+      "duration": "0:43",
+      "viewCount": 1919,
+      "likeCount": 278,
+      "commentCount": 6,
+      "url": "https://www.youtube.com/watch?v=CEjWlEO4a0g"
+    },
+    "OyfGD8loNdM": {
+      "id": "OyfGD8loNdM",
+      "title": "Rosemary Gladstar's Blue Dream Tea",
+      "description": "This Blue Dream Tea is one of my favorite uplifting teas.  Each of the herbs in this tea has a gentle yet powerful impact on the nervous system.\n\nRecipe for Blue Dream Tea\n1 part Hawthorn leaf and flowers\n2 parts Milky Oat tops\n1 part Linden flowers\n1 part St. John's Wort\n1 part Lemon Balm\n1 part Roses\nOptional: add a few flowers of the Butterfly Pea plant for its enchanting beautiful blue coloring.\n\nPour boiling water over herbs and let steep for 10-15 minutes.\n\nNote: This recipe is meant to be adapted, adding those nervines which will support you best in this moment.\n\nJoin Rosemary Gladstar in The Science & Art of Herbalism today! https://scienceandartofherbalism.com/",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2023-01-25T18:09:12Z",
+      "thumbnail": "https://i.ytimg.com/vi/OyfGD8loNdM/maxresdefault.jpg",
+      "duration": "5:22",
+      "viewCount": 8916,
+      "likeCount": 565,
+      "commentCount": 17,
+      "url": "https://www.youtube.com/watch?v=OyfGD8loNdM"
+    },
+    "OjGXIGdRCTY": {
+      "id": "OjGXIGdRCTY",
+      "title": "Winter Solstice Greetings from Rosemary Gladstar",
+      "description": "Rosemary reads the poem \"You are the Medicine\" by Mar\u00eda Sabina Magdalena Garc\u00eda. Mar\u00eda Sabina was a Mazatec shaman, a medicine woman, a curandera, and a wise woman. \n\nWishing you all a wonderful Winter Solstice. Sing, dance, celebrate together from my heart to yours with love. ~ Rosemary Gladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-12-27T19:35:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/OjGXIGdRCTY/maxresdefault.jpg",
+      "duration": "2:15",
+      "viewCount": 2054,
+      "likeCount": 188,
+      "commentCount": 11,
+      "url": "https://www.youtube.com/watch?v=OjGXIGdRCTY"
+    },
+    "gycjaARRR-8": {
+      "id": "gycjaARRR-8",
+      "title": "Mullein - A Walk in the Garden with Herbalist Rosemary Gladstar",
+      "description": "Join Rosemary Gladstar in \"A Walk in the Garden\" video series as she wanders through the woodland gardens of Sage Mountain Botanical Sanctuary. Rosemary introduces some of her special plant allies, uncommon medicinal and woodland plants, and special tidbits about more common garden herbs. Here you\u2019ll meet Mullein, a friendly, fuzzy plant with a long list of actions and applications, including fighting ear infections, a remedy for respiratory distress, and the best all-natural backpacker\u2019s toilet paper!\n\nThis video is a preview from A Walk in the Garden with Herbalist Rosemary Gladstar video series. Get the rest of the video series at https://scienceandartofherbalism.com/product/a-walk-in-the-garden-with-herbalist-rosemary-gladstar-full-package/",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-11-03T20:37:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/gycjaARRR-8/maxresdefault.jpg",
+      "duration": "6:58",
+      "viewCount": 22261,
+      "likeCount": 1319,
+      "commentCount": 24,
+      "url": "https://www.youtube.com/watch?v=gycjaARRR-8"
+    },
+    "vu3Dp3Fg2KM": {
+      "id": "vu3Dp3Fg2KM",
+      "title": "Fire Cider with Rosemary Gladstar!",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-10-19T00:51:05Z",
+      "thumbnail": "https://i.ytimg.com/vi/vu3Dp3Fg2KM/maxresdefault.jpg",
+      "duration": "0:51",
+      "viewCount": 6598,
+      "likeCount": 487,
+      "commentCount": 7,
+      "url": "https://www.youtube.com/watch?v=vu3Dp3Fg2KM"
+    },
+    "8NGOhk0H_ro": {
+      "id": "8NGOhk0H_ro",
+      "title": "In celebration of Plant a Tree day!",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-09-28T22:35:58Z",
+      "thumbnail": "https://i.ytimg.com/vi/8NGOhk0H_ro/maxresdefault.jpg",
+      "duration": "0:24",
+      "viewCount": 1256,
+      "likeCount": 126,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=8NGOhk0H_ro"
+    },
+    "iOJ9VbJQYKg": {
+      "id": "iOJ9VbJQYKg",
+      "title": "What practices do you hold to connect with your intuition and that ancient source of knowing?",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-09-13T13:49:54Z",
+      "thumbnail": "https://i.ytimg.com/vi/iOJ9VbJQYKg/maxresdefault.jpg",
+      "duration": "0:23",
+      "viewCount": 1328,
+      "likeCount": 116,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=iOJ9VbJQYKg"
+    },
+    "VQbdFHbO_q4": {
+      "id": "VQbdFHbO_q4",
+      "title": "Ever the rebel \ud83d\ude02 but what truth\u2026",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-09-07T11:27:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/VQbdFHbO_q4/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 863,
+      "likeCount": 100,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=VQbdFHbO_q4"
+    },
+    "J2pc0a9EbLE": {
+      "id": "J2pc0a9EbLE",
+      "title": "Deepening our relationship with plants\u2026",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-07-21T23:57:03Z",
+      "thumbnail": "https://i.ytimg.com/vi/J2pc0a9EbLE/maxresdefault.jpg",
+      "duration": "0:58",
+      "viewCount": 1407,
+      "likeCount": 192,
+      "commentCount": 3,
+      "url": "https://www.youtube.com/watch?v=J2pc0a9EbLE"
+    },
+    "nm0GjginwjY": {
+      "id": "nm0GjginwjY",
+      "title": "Lemon Balm for breakfast, anyone?",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-07-19T20:29:30Z",
+      "thumbnail": "https://i.ytimg.com/vi/nm0GjginwjY/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 2492,
+      "likeCount": 223,
+      "commentCount": 5,
+      "url": "https://www.youtube.com/watch?v=nm0GjginwjY"
+    },
+    "5WwKuxPbCf4": {
+      "id": "5WwKuxPbCf4",
+      "title": "If we stand in the right place with our hearts open and our minds ready\u2026\ud83c\udf3f\u2728\ud83d\udc96",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-07-08T18:19:43Z",
+      "thumbnail": "https://i.ytimg.com/vi/5WwKuxPbCf4/maxresdefault.jpg",
+      "duration": "0:56",
+      "viewCount": 815,
+      "likeCount": 108,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=5WwKuxPbCf4"
+    },
+    "QDzfTEGmvbU": {
+      "id": "QDzfTEGmvbU",
+      "title": "What\u2019s growing in your garden today? \ud83c\udf3f\ud83d\udc95",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-07-05T18:43:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/QDzfTEGmvbU/maxresdefault.jpg",
+      "duration": "0:17",
+      "viewCount": 747,
+      "likeCount": 46,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=QDzfTEGmvbU"
+    },
+    "yIBlSi1tFxs": {
+      "id": "yIBlSi1tFxs",
+      "title": "Herbalism is kitchen medicine. \ud83c\udf3f\ud83d\udc96 What do you love about herbalism?",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-07-01T21:30:14Z",
+      "thumbnail": "https://i.ytimg.com/vi/yIBlSi1tFxs/maxresdefault.jpg",
+      "duration": "0:41",
+      "viewCount": 1521,
+      "likeCount": 155,
+      "commentCount": 3,
+      "url": "https://www.youtube.com/watch?v=yIBlSi1tFxs"
+    },
+    "_o82mlzVLis": {
+      "id": "_o82mlzVLis",
+      "title": "Plants speak to us\u2026will you take some time today to spend with them?",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-06-17T19:18:05Z",
+      "thumbnail": "https://i.ytimg.com/vi/_o82mlzVLis/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 722,
+      "likeCount": 83,
+      "commentCount": 3,
+      "url": "https://www.youtube.com/watch?v=_o82mlzVLis"
+    },
+    "8DuSl9kUZKM": {
+      "id": "8DuSl9kUZKM",
+      "title": "Milky oats (Avena sativa)\u2026how have you worked with them?",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-06-13T11:45:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/8DuSl9kUZKM/maxresdefault.jpg",
+      "duration": "0:28",
+      "viewCount": 2195,
+      "likeCount": 156,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=8DuSl9kUZKM"
+    },
+    "d6z6j6B_g-U": {
+      "id": "d6z6j6B_g-U",
+      "title": "Tips for storing your herbs\u2026",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-06-08T14:27:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/d6z6j6B_g-U/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 1510,
+      "likeCount": 110,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=d6z6j6B_g-U"
+    },
+    "m5MtfIqz_WU": {
+      "id": "m5MtfIqz_WU",
+      "title": "Start your herbal apothecary!",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-06-01T16:16:17Z",
+      "thumbnail": "https://i.ytimg.com/vi/m5MtfIqz_WU/maxresdefault.jpg",
+      "duration": "0:56",
+      "viewCount": 11307,
+      "likeCount": 891,
+      "commentCount": 6,
+      "url": "https://www.youtube.com/watch?v=m5MtfIqz_WU"
+    },
+    "x9LzuqAV6pQ": {
+      "id": "x9LzuqAV6pQ",
+      "title": "Rosemary\u2019s Favorite Plant\u2026wait for it. \ud83d\ude02",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-04-22T11:54:09Z",
+      "thumbnail": "https://i.ytimg.com/vi/x9LzuqAV6pQ/maxresdefault.jpg",
+      "duration": "0:07",
+      "viewCount": 1985,
+      "likeCount": 89,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=x9LzuqAV6pQ"
+    },
+    "qyD7BD4mek8": {
+      "id": "qyD7BD4mek8",
+      "title": "Rosemary Gladstar on Rosemary as an important antioxidant...and why she defends free radicals. \ud83d\ude09\ud83d\ude02",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-04-18T21:20:48Z",
+      "thumbnail": "https://i.ytimg.com/vi/qyD7BD4mek8/maxresdefault.jpg",
+      "duration": "1:00",
+      "viewCount": 2633,
+      "likeCount": 240,
+      "commentCount": 6,
+      "url": "https://www.youtube.com/watch?v=qyD7BD4mek8"
+    },
+    "3-klCV_o408": {
+      "id": "3-klCV_o408",
+      "title": "You can never have enough Thyme!",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-03-25T16:17:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/3-klCV_o408/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 1114,
+      "likeCount": 87,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=3-klCV_o408"
+    },
+    "wdcc_Mc2ICo": {
+      "id": "wdcc_Mc2ICo",
+      "title": "February 24, 2022",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-02-25T00:42:55Z",
+      "thumbnail": "https://i.ytimg.com/vi/wdcc_Mc2ICo/maxresdefault.jpg",
+      "duration": "0:39",
+      "viewCount": 599,
+      "likeCount": 43,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=wdcc_Mc2ICo"
+    },
+    "ldem4uEbzDc": {
+      "id": "ldem4uEbzDc",
+      "title": "What are you dreaming of, dear herbalists?",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-01-23T16:58:38Z",
+      "thumbnail": "https://i.ytimg.com/vi/ldem4uEbzDc/maxresdefault.jpg",
+      "duration": "0:17",
+      "viewCount": 1077,
+      "likeCount": 64,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=ldem4uEbzDc"
+    },
+    "j2AVQ_fVD0A": {
+      "id": "j2AVQ_fVD0A",
+      "title": "Rosemary on plant relationships and Elder Medicine. And a special message at the end!",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-01-13T23:39:33Z",
+      "thumbnail": "https://i.ytimg.com/vi/j2AVQ_fVD0A/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 971,
+      "likeCount": 83,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=j2AVQ_fVD0A"
+    },
+    "9F1dGIYFUME": {
+      "id": "9F1dGIYFUME",
+      "title": "\ud83d\udd25 Fire Cider is a hot, spicy, and oh so delicious immunity booster! \ud83d\udd25",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2022-01-07T17:49:31Z",
+      "thumbnail": "https://i.ytimg.com/vi/9F1dGIYFUME/maxresdefault.jpg",
+      "duration": "0:51",
+      "viewCount": 952,
+      "likeCount": 53,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=9F1dGIYFUME"
+    },
+    "zGREYfkgqIM": {
+      "id": "zGREYfkgqIM",
+      "title": "Let your dreams fly!",
+      "description": "",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2021-11-22T01:44:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/zGREYfkgqIM/maxresdefault.jpg",
+      "duration": "0:16",
+      "viewCount": 4474,
+      "likeCount": 204,
+      "commentCount": 3,
+      "url": "https://www.youtube.com/watch?v=zGREYfkgqIM"
+    },
+    "XzDpLwEVvF4": {
+      "id": "XzDpLwEVvF4",
+      "title": "Rosemary Gladstar's Science & Art of Herbalism Home Study Course",
+      "description": "Have you longed to feel confident practicing herbal home care\u2014for yourself, your family, your community?\n\nThe Science & Art of Herbalism Home Study Course is a ten lesson course taken at your own pace, with homework review and guidance provided by carefully selected herbalists and Rosemary herself. Though it thoroughly instills in the student the practical skills necessary to practice herbal home health care, it doesn\u2019t ignore the rich spirit and essence of herbalism.\nThe heart of this course is the development of a deep personal relationship with the plant world. Many of our students have written telling us that this course has been transformational and one of the most self- empowering studies they have undertaken.\n\nNow, more than ever, we need the gifts of self-care and ceremony. We need herbalists in our homes and communities.\n\nYou will find a wealth of information contained within the lessons of Rosemary\u2019s Science & Art of Herbalism home study course. This is a hands-on practical course that\u2019s designed to introduce you to the world of herbs.\nIt will take you into your kitchen, gardens, weedy lots, herb stores and apothecaries ~ and if you\u2019re lucky enough, the woodlands, fields, mountain tops and seashores to look for plant medicine.\n\nLEARN how you can transform your life with the study of herbalism!\nhttps://scienceandartofherbalism.com/product/the-classic-printed-plus-online-course/\n\nSUBSCRIBE to Rosemary's YouTube channel\nhttps://www.youtube.com/channel/UCJQU34u00afHdkyDecNddGg?sub_confirmation=1\n\nMusic \"Sometimes I\" by Rising Appalachia \u2764\ufe0f\nhttps://www.youtube.com/user/RisingAppalachiaRA \n\n\n#herbalism #onlinecourse #printcourse #rosemarygladstar",
+      "channelId": "UCJQU34u00afHdkyDecNddGg",
+      "channelTitle": "Rosemary Gladstar's Science & Art of Herbalism",
+      "publishedAt": "2021-05-01T17:16:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/XzDpLwEVvF4/maxresdefault.jpg",
+      "duration": "3:23",
+      "viewCount": 17661,
+      "likeCount": 220,
+      "commentCount": 8,
+      "url": "https://www.youtube.com/watch?v=XzDpLwEVvF4"
+    }
+  },
+  "include_timestamps": false,
+  "include_video_title": true,
+  "include_video_id": true,
+  "include_video_url": true,
+  "include_view_count": false,
+  "concatenate_all": false,
+  "end_time": 1758098138.071349,
+  "duration": 123.96833848953247
+}

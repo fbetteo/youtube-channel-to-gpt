@@ -1,0 +1,892 @@
+{
+  "status": "completed",
+  "channel_name": "mynonleatherlife",
+  "channel_id": "UCMB7akbrFVYXzJOc7JHMX-Q",
+  "total_videos": 32,
+  "processed_count": 32,
+  "failed_count": 0,
+  "completed": 32,
+  "files": [
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/cabOv__-_7M/The Most Powerful Conversation_cabOv__-_7M.txt",
+      "video_id": "cabOv__-_7M",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/V0LvJIQH8dQ/The CORE FANTASY that drives w_V0LvJIQH8dQ.txt",
+      "video_id": "V0LvJIQH8dQ",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/Cp87cI44Jao/HOW to ESCALATE to an INTIMATE_Cp87cI44Jao.txt",
+      "video_id": "Cp87cI44Jao",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/CjoWVUbS6dM/THE TOP 7 Blindspots CRUSHING _CjoWVUbS6dM.txt",
+      "video_id": "CjoWVUbS6dM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/BxJKeOP09f0/5 MASSIVE Blind Spots about ME_BxJKeOP09f0.txt",
+      "video_id": "BxJKeOP09f0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/hkGDBNid57g/Want more HOOKUPS DON'T KILL h_hkGDBNid57g.txt",
+      "video_id": "hkGDBNid57g",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/OrDCAualIlo/4 Building Blocks of Female Er_OrDCAualIlo.txt",
+      "video_id": "OrDCAualIlo",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/D0ZQsCBLaDc/10 Things That Push Me Down in_D0ZQsCBLaDc.txt",
+      "video_id": "D0ZQsCBLaDc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/eF3BfhJj-SY/How to make a woman MELT using_eF3BfhJj-SY.txt",
+      "video_id": "eF3BfhJj-SY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/hVMS_QG9ixc/The SHOCKING PRIMAL FANTASY at_hVMS_QG9ixc.txt",
+      "video_id": "hVMS_QG9ixc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/ALoV656CMqQ/How ANYONE can learn to be mor_ALoV656CMqQ.txt",
+      "video_id": "ALoV656CMqQ",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/PtGfJ-9ZuQw/5 Unattractive Attitudes Women_PtGfJ-9ZuQw.txt",
+      "video_id": "PtGfJ-9ZuQw",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/i0zmpGz9y4E/How to Tell If a Girl is INTER_i0zmpGz9y4E.txt",
+      "video_id": "i0zmpGz9y4E",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/N9Gd3u4pHkU/The Call of the VOID The dange_N9Gd3u4pHkU.txt",
+      "video_id": "N9Gd3u4pHkU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/nWUOfZzT3zM/10 Secret Things Girls deeply _nWUOfZzT3zM.txt",
+      "video_id": "nWUOfZzT3zM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/GLJQrIeS0BU/What do women WANT and WHY 7 c_GLJQrIeS0BU.txt",
+      "video_id": "GLJQrIeS0BU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/-INHIgXpMIY/Why She WANTS You to Break Out_-INHIgXpMIY.txt",
+      "video_id": "-INHIgXpMIY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/DuobmPXxOK4/I Interview The Most Skilled G_DuobmPXxOK4.txt",
+      "video_id": "DuobmPXxOK4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/Bc0_8Onwj_4/WHY women CRAVE dominance and _Bc0_8Onwj_4.txt",
+      "video_id": "Bc0_8Onwj_4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/AvAQWfhqqvo/3 Female Fantasies Girls Are I_AvAQWfhqqvo.txt",
+      "video_id": "AvAQWfhqqvo",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/iWf7UEmaLis/How to Provide the BEST Sexual_iWf7UEmaLis.txt",
+      "video_id": "iWf7UEmaLis",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/1EuS9irQSyU/The SIMPLE TRUTH about WHY Gir_1EuS9irQSyU.txt",
+      "video_id": "1EuS9irQSyU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/yx0Cz1InEPk/17 Tests You Need to Pass as a_yx0Cz1InEPk.txt",
+      "video_id": "yx0Cz1InEPk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/rFpWNmbP3ik/The #1 Thing Women Crave in Me_rFpWNmbP3ik.txt",
+      "video_id": "rFpWNmbP3ik",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/s_xRCLmKG-g/6 Inexplicably Attractive Thin_s_xRCLmKG-g.txt",
+      "video_id": "s_xRCLmKG-g",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/Cz2l5NLxvn8/#1 Reason Women See You as Sex_Cz2l5NLxvn8.txt",
+      "video_id": "Cz2l5NLxvn8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/71ytfUTiSCU/The #1 Thing Men Don't Underst_71ytfUTiSCU.txt",
+      "video_id": "71ytfUTiSCU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/uFzZPB_WIT0/6 Tips to Subtly Dom a Woman o_uFzZPB_WIT0.txt",
+      "video_id": "uFzZPB_WIT0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/gMl0Ze22rDA/The Raw Attractive Power All M_gMl0Ze22rDA.txt",
+      "video_id": "gMl0Ze22rDA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/VuYBlXwXrVA/SECRETS of the FEMALE MIND 7 R_VuYBlXwXrVA.txt",
+      "video_id": "VuYBlXwXrVA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/ILXWo2tK31Y/The Best Line to Use When Aski_ILXWo2tK31Y.txt",
+      "video_id": "ILXWo2tK31Y",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/449ab2f6-95e2-4cd3-8047-f60537ecf1d0/92404631-ac3a-443a-9eef-cddb658a4b0c/S367Hg0KeYY/The Top Things a Guy Could Do _S367Hg0KeYY.txt",
+      "video_id": "S367Hg0KeYY",
+      "language": "en",
+      "type": "auto-generated"
+    }
+  ],
+  "videos": [
+    {
+      "id": "CjoWVUbS6dM",
+      "title": "THE TOP 7 Blindspots CRUSHING YOUR RESULTS with WOMEN",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=CjoWVUbS6dM"
+    },
+    {
+      "id": "Cp87cI44Jao",
+      "title": "HOW to ESCALATE to an INTIMATE ENCOUNTER CORRECTLY",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Cp87cI44Jao"
+    },
+    {
+      "id": "hkGDBNid57g",
+      "title": "Want more HOOKUPS? DON'T KILL her LADYBONER!",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=hkGDBNid57g"
+    },
+    {
+      "id": "eF3BfhJj-SY",
+      "title": "How to make a woman MELT using SOFT DOM/GENTLE DOM Techniques",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=eF3BfhJj-SY"
+    },
+    {
+      "id": "hVMS_QG9ixc",
+      "title": "The SHOCKING PRIMAL FANTASY at the BOTTOM of the VORTEX",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=hVMS_QG9ixc"
+    },
+    {
+      "id": "V0LvJIQH8dQ",
+      "title": "The CORE FANTASY that drives women to ORGASM and WHY",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=V0LvJIQH8dQ"
+    },
+    {
+      "id": "cabOv__-_7M",
+      "title": "The Most Powerful Conversation Algorithm in the World: The 5 Secrets of Effective Communication",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=cabOv__-_7M"
+    },
+    {
+      "id": "BxJKeOP09f0",
+      "title": "5 MASSIVE Blind Spots about MEN That Women Won't Admit in a MILLION YEARS",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=BxJKeOP09f0"
+    },
+    {
+      "id": "D0ZQsCBLaDc",
+      "title": "10 Things That Push Me Down into the Vortex in the Bedroom",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=D0ZQsCBLaDc"
+    },
+    {
+      "id": "OrDCAualIlo",
+      "title": "4 Building Blocks of Female Erotic Fantasies that Women Know About But Won't Tell YOU",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=OrDCAualIlo"
+    },
+    {
+      "id": "nWUOfZzT3zM",
+      "title": "10 Secret Things Girls deeply CRAVE in the Bedroom but Will NEVER Tell you",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=nWUOfZzT3zM"
+    },
+    {
+      "id": "i0zmpGz9y4E",
+      "title": "How to Tell If a Girl is INTERESTED in you: 6 Core Behavioral Patterns",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=i0zmpGz9y4E"
+    },
+    {
+      "id": "GLJQrIeS0BU",
+      "title": "What do women WANT and WHY: 7 core, foundational sexual desires of women explained",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=GLJQrIeS0BU"
+    },
+    {
+      "id": "N9Gd3u4pHkU",
+      "title": "The Call of the VOID: The dangerous VORTEX of Sexual Attraction MEN create in the female mind",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=N9Gd3u4pHkU"
+    },
+    {
+      "id": "ALoV656CMqQ",
+      "title": "How ANYONE can learn to be more dominant",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ALoV656CMqQ"
+    },
+    {
+      "id": "-INHIgXpMIY",
+      "title": "Why She WANTS You to Break Out of the Friendzone: The Raw Attractive Power ALL MEN HAVE, Part 2",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=-INHIgXpMIY"
+    },
+    {
+      "id": "PtGfJ-9ZuQw",
+      "title": "5 Unattractive Attitudes Women Secretly SENSE in Men but Will Never Admit",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=PtGfJ-9ZuQw"
+    },
+    {
+      "id": "Bc0_8Onwj_4",
+      "title": "WHY women CRAVE dominance and how YOU underestimate her DARK sexual drives",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Bc0_8Onwj_4"
+    },
+    {
+      "id": "DuobmPXxOK4",
+      "title": "I Interview The Most Skilled Guy I EVER Slept With on His Top TIPS for Guys",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=DuobmPXxOK4"
+    },
+    {
+      "id": "AvAQWfhqqvo",
+      "title": "3 Female Fantasies Girls Are Into Without Even Realizing It",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=AvAQWfhqqvo"
+    },
+    {
+      "id": "yx0Cz1InEPk",
+      "title": "17 Tests You Need to Pass as a Man to LEVEL UP in Dating",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=yx0Cz1InEPk"
+    },
+    {
+      "id": "iWf7UEmaLis",
+      "title": "How to Provide the BEST Sexual Experience for a Woman: My Top 10 Tips",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=iWf7UEmaLis"
+    },
+    {
+      "id": "1EuS9irQSyU",
+      "title": "The SIMPLE TRUTH about WHY Girls Say they want NICE GUYS but LOVE the Bad BOYS",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=1EuS9irQSyU"
+    },
+    {
+      "id": "Cz2l5NLxvn8",
+      "title": "#1 Reason Women See You as Sexual Candidate and 10 Concrete Tips to Avoid the Friendzone",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Cz2l5NLxvn8"
+    },
+    {
+      "id": "rFpWNmbP3ik",
+      "title": "The #1 Thing Women Crave in Men that is Constantly Underestimated by Men",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=rFpWNmbP3ik"
+    },
+    {
+      "id": "VuYBlXwXrVA",
+      "title": "SECRETS of the FEMALE MIND: 7 Reasons Women Reject You You'd Never Guess",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=VuYBlXwXrVA"
+    },
+    {
+      "id": "s_xRCLmKG-g",
+      "title": "6 Inexplicably Attractive Things Men Do",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=s_xRCLmKG-g"
+    },
+    {
+      "id": "gMl0Ze22rDA",
+      "title": "The Raw Attractive Power All Men Have that Women Won't Admit to Feeling",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=gMl0Ze22rDA"
+    },
+    {
+      "id": "71ytfUTiSCU",
+      "title": "The #1 Thing Men Don't Understand About What Women Want",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=71ytfUTiSCU"
+    },
+    {
+      "id": "uFzZPB_WIT0",
+      "title": "6 Tips to Subtly Dom a Woman on a Date and Make Her See You as Instantly Attractive",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=uFzZPB_WIT0"
+    },
+    {
+      "id": "S367Hg0KeYY",
+      "title": "The Top Things a Guy Could Do on a Date that Would Make Me want to Sleep With Him",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=S367Hg0KeYY"
+    },
+    {
+      "id": "ILXWo2tK31Y",
+      "title": "The Best Line to Use When Asking a Girl Out and the #1 Mistake Guys w Approach Anxiety Make",
+      "publishedAt": "2025-09-07T16:36:43.952Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ILXWo2tK31Y"
+    }
+  ],
+  "start_time": 1757263008.114738,
+  "user_id": "449ab2f6-95e2-4cd3-8047-f60537ecf1d0",
+  "credits_reserved": 32,
+  "credits_used": 32,
+  "reservation_id": "42831e0c-4ef2-4426-a7cb-f7887885fdae",
+  "videos_metadata": {
+    "CjoWVUbS6dM": {
+      "id": "CjoWVUbS6dM",
+      "title": "THE TOP 7 Blindspots CRUSHING YOUR RESULTS with WOMEN",
+      "description": "Hi guys, decided to post a video to get back into the swing of things. Check out my live: https://www.youtube.com/live/Kkr6KbfwJQ8?si=FRZk1jSDJQg7EI8Y last night for a much more in-depth discussion of all these blindspots, plus one very important one I forgot to mention: the male fantasy of hyperfemininity. \n\nGo here to get a 1-on-1 consultation: \nPay with CC: https://calendly.com/victorianied/1-on-1-consultation\nPay with Paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nOr if you got something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nBuy me a coffee: https://ko-fi.com/mynonleatherlife\nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\n\nThe video that changed my life: https://www.youtube.com/watch?v=D8WbWzU9bMA&t=2s\n\nBook recs I think everyone should read: https://tinyurl.com/4tu5pc32\n\nThank you so much for watching and commenting. \n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2023-11-17T18:06:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/CjoWVUbS6dM/maxresdefault.jpg",
+      "duration": "16:20",
+      "viewCount": 86273,
+      "likeCount": 4806,
+      "commentCount": 1230,
+      "url": "https://www.youtube.com/watch?v=CjoWVUbS6dM"
+    },
+    "Cp87cI44Jao": {
+      "id": "Cp87cI44Jao",
+      "title": "HOW to ESCALATE to an INTIMATE ENCOUNTER CORRECTLY",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nWhy my channel is called MY NON LEATHER LIFE: \nhttps://www.youtube.com/watch?v=D8WbWzU9bMA&t=2s\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\nEDIT: what the runway really is is the steps that it would take to get a woman fully aroused enough to have an orgasm that fires on all cylinders\u2014physical, mental and emotional. Since the way we think of sex revolves around PIV and the male orgasm many men don\u2019t understand that women need their sexual likes and interests catered to get maximally aroused as well. Most men seem to assume it should happen for women the exact same way it happens for men\u2014 staring at your body parts. NEWS FLASH: it\u2019s not enough. \n\nWomen have a runway that you must pilot. Are you on the runway?? Or do you think that the plane should be able to take off without the thrust and the speed and the engine lol and whatever else makes the plane take flight! Many guys do expect women to be like them, SUPER TURNED ON without any escalation on their part. And then they are wondering if something is wrong with them. Nothing is wrong with you. But did you even begin to approach the runway. And once on the runway did you try to skip and take off before the end of the runway? The runway is the fastest route to lift off so stay the course!\n\nPlease let me know your thoughts in the comments down below! \n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \n\nTip me thru Kofi: https://ko-fi.com/mynonleatherlife\nvenmo: mynonleatherlife\n\nI do offer zoom coaching or through the phone. \nJust email me for info and to set up a date.\n\nEmail: mynonleatherlife at gmail\n\nOne interview that changed my life forever: https://www.youtube.com/watch?v=D8WbWzU9bMA\n\nSubscribe to my bfs channel BEARDO SPEAKS:\nhttps://www.youtube.com/channel/UCH8H...\n\nThank you so much for watching and commenting!!!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2022-06-02T05:47:30Z",
+      "thumbnail": "https://i.ytimg.com/vi/Cp87cI44Jao/maxresdefault.jpg",
+      "duration": "17:34",
+      "viewCount": 178782,
+      "likeCount": 7778,
+      "commentCount": 1039,
+      "url": "https://www.youtube.com/watch?v=Cp87cI44Jao"
+    },
+    "hkGDBNid57g": {
+      "id": "hkGDBNid57g",
+      "title": "Want more HOOKUPS? DON'T KILL her LADYBONER!",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nWhy my channel is called MYNONLEATHERLIFE:\nhttps://www.youtube.com/watch?v=D8WbWzU9bMA&t=2s\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\n\nTHE TERM RELATIONSHIP MATRIX SEEMS TO HAVE CONFUSED EVERYONE. I DID NOT READ OUT ALL SAMPLE ASSORTMENT OF THE WORDS AND PHRASES N THE RELATIONSHIP MATRIX LIKE I DID FOR THE CASUAL MATRIX SO I CAN SEE WHY YOU ALL ASSUMED IT MEANS JUST SAY YOU WANT A RELATIONSHIP AND SAY YOU WANT TO MARRY HER. IT DOESN't mean that. It's about entering into the female gaze. Throw in a flavor. it doesn't mean u suddenly have to become a wimpy whiny desperate person. \n\nRule #1: NEVER LIE. \n\nDon't fudge the truth. Don't lie. You do not have to and should not lie and say you're looking for a relationship. Just say you're open, if asked, which technically you are, aren't you, if you are blown away by the girl of your dreams. Just don't dismiss any possibility for any sort of connection, whether shallow or deeper, out of hand because that is what women are hoping for and without a chance of that there's nothing in it for them 99% of the time. Unless they can really run the hookup and get exactly what they want out of sex...which most don't know how to do perfectly, especially when they're in their 20s.\n\nEven if the girl is dying to have a casual hookup with you, your lack of social awareness and etiquette will kill her desire to give it to YOU. \n\nYou also shouldn't say you are looking for a relationship in your online dating profile in order to appear more on the relationship matrix. That can appear desperate and needy. Just don't say anything about it one way or another. If asked directly, you can give a response that is honest but leaves room for possibilities, which is also honest. \n\nA lot of girls when they're younger won't even realize what you are telegraphing with your casual hookup language, but they will get a general sense of \"you're dumb, shallow and lack social awareness\" from it. They might think it is worth it though anyway if you look good and are cool enough, but it's better not to risk it and to understand how to create a better first impression. \n\nIf someone asks you what you are looking for you can say \"I'm open to whatever happens whether that's a short term thing or a relationship with the right person\". The odds of it happening may be one in a million, but it is true, and you won't instantly make her feel like no way I can give it to someone so repulsive. \n\nAlso it is ok to be honest and direct about your sensual attraction to HER. Just don't bring in your attraction to other women or desire for other women unless she is already super into you and super turned on unless you want to risk an instant rejection.\n\nPlease let me know your thoughts in the comments down below! \n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \n\nTip me thru Kofi: https://ko-fi.com/mynonleatherlife\nvenmo: mynonleatherlife\n\nI do offer zoom coaching or through the phone. \nJust email me for info and to set up a date.\n\nEmail: mynonleatherlife at gmail\n\nOne interview that changed my life forever: https://www.youtube.com/watch?v=D8WbWzU9bMA\n\nSubscribe to my bfs channel BEARDO SPEAKS:\nhttps://www.youtube.com/channel/UCH8H...\n\nThank you so much for watching and commenting!!!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2022-05-15T20:57:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/hkGDBNid57g/hqdefault.jpg",
+      "duration": "11:21",
+      "viewCount": 125801,
+      "likeCount": 4551,
+      "commentCount": 977,
+      "url": "https://www.youtube.com/watch?v=hkGDBNid57g"
+    },
+    "eF3BfhJj-SY": {
+      "id": "eF3BfhJj-SY",
+      "title": "How to make a woman MELT using SOFT DOM/GENTLE DOM Techniques",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\n\nI asked my b/f to demonstrate 4 techniques from the overarching extremely powerful technique of dd/lg or what I heard people calling in my last video The Father Frame. LOL! \n\nThese are just 4\n1. Pet names\n2. Infantalizing praise\n3. Straight up mocking\n4. Comforting and Soothing\n\nREMEMBER: KINK IS NOT ABUSE and always do your best to act respectfully. Everything I discuss is meant to be completely consensual. Let me know if you have any questions or thoughts! I love to read your comments. Thanks so much for commenting and watching. \n\nOne interview that inspired me to go vegan: https://www.youtube.com/watch?v=D8WbW...\n\nSubscribe to my bfs channel BEARDO SPEAKS:\nhttps://www.youtube.com/channel/UCH8H153bIY63WpoWU1nIqvA\n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \n\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\nEmail: mynonleatherlife@gmail.com",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2022-03-12T01:44:27Z",
+      "thumbnail": "https://i.ytimg.com/vi/eF3BfhJj-SY/hqdefault.jpg",
+      "duration": "27:24",
+      "viewCount": 93548,
+      "likeCount": 3106,
+      "commentCount": 432,
+      "url": "https://www.youtube.com/watch?v=eF3BfhJj-SY"
+    },
+    "hVMS_QG9ixc": {
+      "id": "hVMS_QG9ixc",
+      "title": "The SHOCKING PRIMAL FANTASY at the BOTTOM of the VORTEX",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nPLEASE READ THE DESCRIPTION IN ORDER TO UNDERSTAND WHAT I'M SAYING\n\nGo here to get a 1-on-1 $60 consultation: https://calendly.com/victorianied/1-on-1-consultation\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\n\nNot watching the vid and assuming can cause dangerous misinterpretations \n\nFirst thing is: \n1. This is a pattern you can watch for and see if it applies. Please don't ASSUME it applies to everyone. As I said, level 1 would be basic attraction to men and many people will just have that. \n2. Everything I mentioned should be done consensually even role playing a non consensual fantasy that's why they call it CONSENSUAL non consent. I am completely opposed to the non consensual violation of any living being, human or non human. \n3. This is an erotic FANTASY. Not a male supremacist manifesto. I hate that I have to say this. Many men enjoy watching MMA probably because of some subconscious possibly evolutionary draw towards violence. It doesn't mean you want to get punched in the head by a passerby. Let a sexual fantasy be a fantasy and don't assume women want to be actually enslaved or anything of that sort. Cause stating the obvious here...they don't. \n\nNow onto the real description: \n\nUnderstand the fantasy at the bottom of the vortex. Then understand the watered down forms of this fantasy that appear in many areas of dating and romance. But understand the final form where every element is turned up to 11. \n\nIn order to understand the final form, I recommend two books. \n\nBook 1: The Story of O https://amzn.to/3FDMEBl\nBook 2: Owned and Owner https://amzn.to/3Ie97qo\n\nThese are very intense books, but in my opinion contain some wisdom that hardly anyone wants to admit to. The wisdom being: There are some powerful mating instincts that are with us in this modern day and age even though they're best suited for the JUNGLE. \n\nThese mating instincts in my opinion allow female mammals the chance to BE TRANQUILIZED FOR A MOMENT so they can surrender to the male mammal they have the most powerful admiration for and accept the idea of mating, when female mammals in the wild are perfectly independent and capable of surviving just fine on their own. It has to be a very powerful INSTINCT AND URGE to allow the highly unusual act of allowing someone to climb on top of you to allow oneself to be mated with to occur. \n\nThe video that turned me vegan: https://www.youtube.com/watch?v=D8WbWzU9bMA\n\nIf you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2022-01-31T16:46:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/hVMS_QG9ixc/maxresdefault.jpg",
+      "duration": "17:27",
+      "viewCount": 85382,
+      "likeCount": 3551,
+      "commentCount": 584,
+      "url": "https://www.youtube.com/watch?v=hVMS_QG9ixc"
+    },
+    "V0LvJIQH8dQ": {
+      "id": "V0LvJIQH8dQ",
+      "title": "The CORE FANTASY that drives women to ORGASM and WHY",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\n\nA very important disclaimer: Kinks and fantasies can be dangerous and potentially traumatic or abusive. If you are acting out an intense fantasy, get consent, have an in depth discussion and a safe word. You need to be on the same page because you are playing with fire so play safely. \n\nWomen are telling you what they fantasize about...body, mind and soul...in the genre of literature they have created to stimulate themselves erotically called ROMANCE. \n\nI boiled it down to the formula ALPHA IN LOVE. \n\nThis title represents two core aspects of the female evolutionary dating drive. Both are key for the most complete orgasmic bliss a woman can have.\n\n Attracting the ALPHA is step one and making him fall IN LOVE is step two.  Do not proceed to step two before she is convinced of step one. \n\nAlpha can mean different things to different women. It does not mean only BUFF RICH HOT and CONFIDENT but that the woman assesses you as worthy and deserving for her personal tastes and instincts. \n\n1. Alpha= the instinct for good genes that will bring survival advantages to her offspring and will protect her against other guys\n2. In love=the instinct to create a super strength unbreakable emotional bond to keep the guy around for division of parenting labor. \n\nThe heat and the depth of many women's fantasies spring from these two goals.\n\nIf only I could: attract the alpha and inspire an unbreakable bond built off something I have that no other woman has. \n\nCommon female kinks and sexual fantasies develop around glorifying and eroticizing aspects of this goal. \n\nSo knowing this you can incorporate this core concept into your dirty talk or love life or romantic life to turn a woman on at the deepest level. \n\nLet me know if you have any questions or thoughts. I love to read your comments. Thanks so much for commenting and watching. \n\nSUBSCRIBE TO MY BF's CHANNEL BEARDO SPEAKS for future vids where he will explain some good stuff: https://www.youtube.com/channel/UCH8H153bIY63WpoWU1nIqvA\n\nAnd please comment below. I love to read your comments. Good or bad I do learn so much from them. \n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife@gmail.com\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2021-09-23T22:19:52Z",
+      "thumbnail": "https://i.ytimg.com/vi/V0LvJIQH8dQ/maxresdefault.jpg",
+      "duration": "15:35",
+      "viewCount": 1294383,
+      "likeCount": 35241,
+      "commentCount": 5845,
+      "url": "https://www.youtube.com/watch?v=V0LvJIQH8dQ"
+    },
+    "cabOv__-_7M": {
+      "id": "cabOv__-_7M",
+      "title": "The Most Powerful Conversation Algorithm in the World: The 5 Secrets of Effective Communication",
+      "description": "Jason's coaching website: \nhttps://cbtcoachingservices.com/\n\nA bit of a different video. Not about dating tips for men, but about one of the most important bits of knowledge I've ever learned that I use every day that I wanted you guys to know about: The 5 Secrets of Effective Communication. \n\nThe 5 Secrets was developed by my personal hero, Dr. David D. Burns, whose books and ideas cured me of severe depression when nothing else worked. The 5 Secrets is his genius contribution to the art of communication. \n\nIn this video, I interview a master of The 5 Secrets, Jason Sudol, who is a coach who is certified in Dr. Burns approach to overcoming depression, anxiety, habits and addictions and relationship problems. \n\nI personally work with Jason every week to get better at the 5 secrets cause they're so helpful to me. \n\n(He also cured me of severe public speaking anxiety and I really can't recommend him enough to you if any of you are struggling with depression or other issues. He works with people online: https://cbtcoachingservices.com/)\n\nHere are The 5 Secrets from the website of Dr. David Burns: \n\n1. The Disarming Technique: You find truth in what the other person is saying, even if it seems illogical, self-serving, distorted, or just plain \u201cwrong.\u201d\n2. Thought and Feeling Empathy: You summarize what the other person just said (Thought Empathy) and acknowledge how he or she is probably feeling, given what he or she just said (Feeling Empathy)\n3. \u201cI Feel\u201d Statements: You express your own feelings and ideas openly according to the formula, \u201cI\u2019m feeling X, Y, and Z right now,\u201d where are X, Y and Z refer to any of a wide variety of feeling words, such as anxious, attacked, hurt, or sad.\n4. Stroking: You convey warmth, caring and respect, even in the heat of battle\n5.Inquiry: You ask gentle, probing questions to learn more about what the other person is thinking and feeling\n\nI've read so many books and listened to so many podcasts on the subject of communication and none of them work as well for challenging conversations as this easy to remember but truly profound and beautiful little formula known as the 5 secrets. \n\nIt's not a script in any way and you never have to say \"the right thing\" or be dishonest or fake in any way, but it orients you towards 5 aspects of conversation that profoundly resonate with people and it can change everything 180 degrees and melt the heart of even your worst enemy. \n\nAs always I love your comments, please feel free to share your thoughts and feedback. \n\nMore videos about blind spots and dating coming soon!\n\nJason's weekly Meetup to Practice the 5 Secrets: https://www.meetup.com/developing-better-relationships/\n\nThe bible for The 5 Secrets is the masterpiece: Feeling Good Together by Dr. David Burns:\nhttps://amzn.to/3qhHPYB\n\nThe book that cured me and many others of depression Feeling Good by David Burns: \nhttps://amzn.to/3vBelWo\n\nDavid Burns' website: \nhttps://feelinggood.com/\n\nI also am a huge fan and regular weekly listener of Dr. Burn's Podcast The Feeling Good Podcast. Episodes 65-70 cover the 5 Secrets:\nhttps://feelinggood.com/list-of-feeling-good-podcasts/\n\n---\n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\nThe most important decision I ever made: https://www.youtube.com/watch?v=byTxzzztRBU\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2021-06-18T04:31:33Z",
+      "thumbnail": "https://i.ytimg.com/vi/cabOv__-_7M/maxresdefault.jpg",
+      "duration": "54:37",
+      "viewCount": 64843,
+      "likeCount": 2477,
+      "commentCount": 311,
+      "url": "https://www.youtube.com/watch?v=cabOv__-_7M"
+    },
+    "BxJKeOP09f0": {
+      "id": "BxJKeOP09f0",
+      "title": "5 MASSIVE Blind Spots about MEN That Women Won't Admit in a MILLION YEARS",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\n\nUnderstanding these 5 blind spots of women can help you to understand women.\n\nIt is easy to hate women if you don't understand the causes of their behavior. Women have the same problem with not understanding the vast and numerous blind spots of men and it leads them to hate men and say things like \"all men are trash!\". Understanding the blind spots at the source can untangle our thinking and make us more compassionate towards the other side.\n\nThe 5 Blind Spots are: \n\nBlind Spot #1. Selection Bias causes women to have a skewed idea of men as a whole. They project the traits of men who don't need any help with women onto ALL men because that's who women are attracted to and it's out of sight out of mind for the guys they're not interested in. \n\nTherefore when women give dating advice to men, they're talking to the guys they're attracted to who could benefit from toning it down. But they forget that the majority of guys could be hurt by this advice as they need to TONE IT UP. \n\nBlind spot #2:\u00a0 women don't understand how rare it is or hard it is for a guy to sleep with a woman\n\nThey have female sexual privilege and don't see it. This causes women to perceive men as shallow, desperate, classless, perverted, and basically immoral. It seems completely logical from their perspective because they don't realize their privilege in this one area.\n\nBlind Spot #3: Women want to keep some gender roles in dating and romance but no where else and don't see it as a contradiction. \n\nBlind Spot #4: women don't realize how easy it would be for them to get casual sex.\u00a0\n\nBonus Blind Spot: Women don't realize how deeply brainwashed they've been by fear of sexual promiscuity\n\nBlind Spot #5: Women don't understand why men would NOT want to be in a relationship and do NOT see the emotional labor\u00a0men do in relationships\n\nKeep in mind men certainly have more than their fair share of blind spots about women that women are equally annoyed by. \n\nPlease comment below with whatever you have to say!\n---------\n\nThe most important decision I ever made: https://www.youtube.com/watch?v=GPHPVvKoZDI\n------\n\nAnd if you got something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting. \n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2021-06-14T05:39:39Z",
+      "thumbnail": "https://i.ytimg.com/vi/BxJKeOP09f0/maxresdefault.jpg",
+      "duration": "21:32",
+      "viewCount": 210703,
+      "likeCount": 9381,
+      "commentCount": 2213,
+      "url": "https://www.youtube.com/watch?v=BxJKeOP09f0"
+    },
+    "D0ZQsCBLaDc": {
+      "id": "D0ZQsCBLaDc",
+      "title": "10 Things That Push Me Down into the Vortex in the Bedroom",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\n\nPutting it all out there because I'm an emotional masochist and am feeling in a good mood tonight and want to help y'all out. MIGHT DELETE LATER.\n\nThought I'd do a little heart to heart tonight about the hottest things my boyfriend does in the bedroom.  My goal: to help you understand certain secrets that are never spoken aloud and to help you understand and have wisdom and compassion instead of bitterness towards women. \n\nHere are the 10 things: \n\nThese definitely do NOT apply to all women. These are some of my personal kinks. SOME women share them absolutely as they are common kinks but not necessarily to the same degree and it\u2019s definitely not the norm for ALL. My tastes are definitely more extreme than most. I encourage you guys to learn about ALL the kinks out there, the ones I mention in the video being some of them. \n\n1. Overflows with pure LUST and RUM* (raw untamed masculinity) for me and my body\n2. Channels that lust into loving physical aggression \n3. Ddlgs me, calling me princess and teasing me constantly\n4. Jokingly plays on my insecurities by making fun of me for my insecurities\n5. Dirty talks about my fantasies during seggs and tells and records erotic stories for me\n6. Isn't afraid to tap into his inner abusive misogynistic boyfriend for me even thought he is absolutely a sex-positive compassionate feminist\n7. Encourages me to express myself however I want and express more\n8. Passes my sh*t tests. I didn't explain the example very well but basically the example was when I said u don\u2019t deserve to f**k me and he said: I know I don't, but it doesn't matter cause I'm doing it anyway--something like that\n9. Willing to fight me \n10. Compliments me during the act and after a lot\n\nMy Boyfriend Agreed to Demo These Moves on his Channel *BEARDO SPEAKS* Subscribe below!\nhttps://www.youtube.com/channel/UCH8H153bIY63WpoWU1nIqvA\n\nPlease comment below if you have any questions, comments, refutations, harsh critiques. I love to hear your thoughts. I hope this helps.\n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2021-05-14T04:08:33Z",
+      "thumbnail": "https://i.ytimg.com/vi/D0ZQsCBLaDc/maxresdefault.jpg",
+      "duration": "21:39",
+      "viewCount": 129007,
+      "likeCount": 5079,
+      "commentCount": 964,
+      "url": "https://www.youtube.com/watch?v=D0ZQsCBLaDc"
+    },
+    "OrDCAualIlo": {
+      "id": "OrDCAualIlo",
+      "title": "4 Building Blocks of Female Erotic Fantasies that Women Know About But Won't Tell YOU",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\n\nI hate that I have to say this but:\n\nI AM COMPLETELY OPPOSED TO ANY KIND OF NON CONSENSUAL VIOLATION OF ANY HUMAN OR NON HUMAN BEING. \n\n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2021-03-15T21:15:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/OrDCAualIlo/hqdefault.jpg",
+      "duration": "21:11",
+      "viewCount": 126793,
+      "likeCount": 4579,
+      "commentCount": 844,
+      "url": "https://www.youtube.com/watch?v=OrDCAualIlo"
+    },
+    "nWUOfZzT3zM": {
+      "id": "nWUOfZzT3zM",
+      "title": "10 Secret Things Girls deeply CRAVE in the Bedroom but Will NEVER Tell you",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe most important decision I ever made: https://www.youtube.com/watch?v=GPHPVvKoZDI\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\nDisclaimer: ALL THIS should only be done with CONSENT, DISCUSSION and a SAFE WORD bare minimum. \n\nThank you guys so much for watching and for your support. \n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2021-03-03T21:31:10Z",
+      "thumbnail": "https://i.ytimg.com/vi/nWUOfZzT3zM/maxresdefault.jpg",
+      "duration": "18:29",
+      "viewCount": 807688,
+      "likeCount": 25712,
+      "commentCount": 4035,
+      "url": "https://www.youtube.com/watch?v=nWUOfZzT3zM"
+    },
+    "i0zmpGz9y4E": {
+      "id": "i0zmpGz9y4E",
+      "title": "How to Tell If a Girl is INTERESTED in you: 6 Core Behavioral Patterns",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\nRule #1 is never wait for a girl to display interest in you before asking her out. If you want to, you have permission to ask her out. If she is NOT interested she can say no or make up an excuse. Most girls expect guys to ask them out so they don't expect to NEED to show interest even if they are interested. \n\nBut if you STILL want to know the signs she is interested in you, see the 6 following behavioral patterns to look for and be aware of: \n\n1. Exaggerated Hyper Feminine Behaviors\n-Fake smiling \n-Talking in a high soft or whiny hyperfeminine voice\n-Pretending to be much weaker than they are strength wise\n-Pretending to be dumb or clueless \n-Laughing at ALL your jokes\n-Wearing sexier clothes around u\n\n2. Virginal Behaviors \n-Pretending to be classy, virginal and not interested in sex... makes her seem hard to get and a prize\n-Pretending they don\u2019t want to have sex for a long time cause they want to take it slow \n\n3.Competition simulating behaviors\n-Pretending to be busy all the time and not responding to your texts \n-Pretending they are talking to other guys maybe to make u jealous \n\n4. Proximity behaviors \n-She will always find ways to just bump into u or just be around u\n\n5. Submissive behaviors\n-Faking multiple orgasms\n-Submissive body language\n\n6. Emotional closeness behaviors: \n-Acts like she wants to be friends (doesn\u2019t mean she just wants to be friends but could also mean romantic interest)\n-Wants to talk on the phone with u for a long time \n\nThank you for watching. Please comment down below with any feedback good or bad. It could help me grow and improve my youtube channel. I really enjoy hearing your stories, thoughts and comments. Feel free to dm me on ig at greenelover as well. \n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2021-02-16T03:13:00Z",
+      "thumbnail": "https://i.ytimg.com/vi/i0zmpGz9y4E/maxresdefault.jpg",
+      "duration": "15:44",
+      "viewCount": 375561,
+      "likeCount": 13439,
+      "commentCount": 2142,
+      "url": "https://www.youtube.com/watch?v=i0zmpGz9y4E"
+    },
+    "GLJQrIeS0BU": {
+      "id": "GLJQrIeS0BU",
+      "title": "What do women WANT and WHY: 7 core, foundational sexual desires of women explained",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\nFrom my in depth analysis of my own fantasies and also the themes I have observed in popular culture movies, tv shows, books and romance novels that resonate with women I will explain to you 7 things that answer the age old question What Do Women Want and WHY. \n\n1. They want to be a wild stallion who can't be tamed except for by the strongest alpha man.\n\nWHY? The more alpha you are as a woman the more alpha your guy has to be. The strongest guy is the guy you can count on to give you and your offspring the best chances for survival as well as a good chance of having strong genes. Knowing you have warded off weaker guys and attracted only the strongest guy capable of taming you creates an intense mental mindgasm. \n\n2. They want masculinity\n\nWHY? Men were the key to her safety and protection in less civilized society and can be again if things were to devolve here due to their superior strength on average. Women want their best bet for someone CAPABLE of protecting them and their offspring. The best bet is a guy who can handle himself in society and among other guys and rise to the top or at least higher up on the pecking order. Those qualities that allow him to rise to the top are seen by women as masculinity. \n\n3. They want ownership by one man-the fantasy underneath monogamy and true love.\n\nWHY? It's safest to raise a baby under the protection of one strong man who is very devoted to you and your offspring. Women feel this pull and longing for union with one strong man who will protect them and keep them and the baby safe. They crave deep devotion, union, and respect for this one man. This is the fantasy of \"true love\" that women are lured to like a moth to a flame. \n\n4. They often crave an even darker side of ownership that veers towards objectification, control and other darker things for their femininity and beauty\n\nWHY? Bad guys can protect you just as well as the good guys. Maybe it is a trait some women inherited that allowed their ancestors to survive abusive life situations or even be attracted to these powerful strong but bad men and scenarios, like mice attracted to cats. \n\n5. They want competition over them and for them by men. \n\nWHY? Competition allows the fittest to rise to the top and show off their traits. This display of these traits is extremely mentally satisfying for women. \n\n6. They want aggressive, wild, intense passionate sex\n\nWHY? It's truly living, it's exciting, it's an emotional roller coaster. Also I believe women often crave a sexual \"story line\" to engage their brain to the maximum. When the story line mirrors these deep primal fantasies that they often have deep down it is maximally explosive for women.\n\n7.They want deep emotional trust and vulnerability to heal deep wounds they hide\n\nThis is the one societally acceptable deep female desire. Romance is based on this desire. So conveniently I believe women hide all of their fantasies usually but this one. Then men get the wrong idea thinking this is ALL women want. This one is as kinky as any of the others and they do crave it. But it is not ALL they crave. But deep vulnerability is acceptable for women to crave for whatever reason. The other darker ones are much harder to admit. \n\nWHY? I don't know. They crave being sexually healed by their one man creating an intense state of trust, vulnerability, depth, idk. \n\nLet me know if this was helpful or if this is obvious to you guys. I love your comments so much! Thank you so much for writing to me. Also you can let me know negative feedback as well and if you disagree with what is being said or are annoyed.\n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2021-02-07T17:12:56Z",
+      "thumbnail": "https://i.ytimg.com/vi/GLJQrIeS0BU/maxresdefault.jpg",
+      "duration": "16:11",
+      "viewCount": 174552,
+      "likeCount": 6135,
+      "commentCount": 1055,
+      "url": "https://www.youtube.com/watch?v=GLJQrIeS0BU"
+    },
+    "N9Gd3u4pHkU": {
+      "id": "N9Gd3u4pHkU",
+      "title": "The Call of the VOID: The dangerous VORTEX of Sexual Attraction MEN create in the female mind",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\nThe VORTEX is a concept that can help you understand how women experience sexual turn on and attraction. \n\nThe VORTEX is acting on her whether she tells you or not. Women know it is dangerous to be swept down into the VORTEX. Women feel the pull of the vortex without letting you know they feel the pull of the vortex. Why? Because at the bottom of the vortex is a very very un pc state where very ancient primal fantasies are acting on her making her completely weak and vulnerable. \n\nSo wouldn't YOU stop yourself from being drawn down into the vortex too? Sometimes women can't help it though and they're pulled down into the vortex. Sometimes you merely feel yourself being pulled, as if by a strong magnetic field, to the edge of the vortex and you dig your heels in. \n\nMen often create the vortex so why is she going to tell you to enhance the pull of the vortex when she's in danger of being pulled under? \n\nWomen are often, consciously or subconsciously, scared of the vortex and for very very good reason. It's a dangerous place. Truly. \n\nThank you so much to each and every one of you who came to the q and A with me at the Fearless Man. You made me not only feel the pull of the vortex lol, but I was so touched by how kind and accepting you were to me. I only wish I could have talked to each of you for much longer. Thank you all and thanks to The Fearless Man for having me. \n\nComment below any thoughts, good or bad, and message me on ig at greenelover if you have any situations or questions you want my feedback on. I love to read your thoughts and learn a lot from your comments.\n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2021-02-02T22:58:40Z",
+      "thumbnail": "https://i.ytimg.com/vi/N9Gd3u4pHkU/maxresdefault.jpg",
+      "duration": "11:06",
+      "viewCount": 272555,
+      "likeCount": 9815,
+      "commentCount": 1535,
+      "url": "https://www.youtube.com/watch?v=N9Gd3u4pHkU"
+    },
+    "ALoV656CMqQ": {
+      "id": "ALoV656CMqQ",
+      "title": "How ANYONE can learn to be more dominant",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\n\nI always suspected many women desired much more physical aggression and domination in the bedroom however very few guys have the confidence or know how to do it. I recently watched a course on how to do it by a guy who has slept with 500+ women. He saw this as the most common theme amongst all the women he had slept with. \n\nMost fantasies of domination I believe have an evolutionary purpose and theme corresponding to getting to breed with and be under the protection of the strongest, smartest, best equipped man. But that doesn't mean you actually have to BE the strongest, smartest guy....you merely need to know how to take the actions he might take. And that is easy to do with a course like the one I took (review coming soon). \n\nWhat if you're like the opposite of a chad or whatever. Will women buy it? My answer is yes because it is a skill that is SO high in demand and so FEW chads know how to do it. Although the CHADs seem to be the men from a woman's evolutionary fantasies...they don't know how to take the actions these evolutionary alphas would have taken. That is where someone who simply has studied and learned a little about escalating physical dominance can rise to the top. \n\nIf you're super nerdy you're in good company since most kinky people are nerdy. Most of the best doms I've seen are nerdy. \n\nWomen will absolutely see you differently if you know how to do this. \n\nI think it would give one confidence too knowing you have a skill women crave and even pay to experience. \n\nAnyway lmk what you think. This vid was a little all over the place but I hope it's helpful. The description says it better than the video maybe. \n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2021-01-26T21:57:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/ALoV656CMqQ/maxresdefault.jpg",
+      "duration": "13:55",
+      "viewCount": 156509,
+      "likeCount": 5865,
+      "commentCount": 616,
+      "url": "https://www.youtube.com/watch?v=ALoV656CMqQ"
+    },
+    "-INHIgXpMIY": {
+      "id": "-INHIgXpMIY",
+      "title": "Why She WANTS You to Break Out of the Friendzone: The Raw Attractive Power ALL MEN HAVE, Part 2",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\nThe brat taming fantasy is extremely common among women and something many of them crave. It's about being a strong \"alpha female\" and finding a guy who is stronger. \n\nIt's about testing and provoking him, going head to head, power move to power move but ultimately having him best you. \n\nIt's about the rush of having him best you, feeling the thrill, glow, and pride of having found a worthy \"mate\". \n\nPart of the brat taming fantasy is poking the bear. Sticking your fingers in the tiger cage. And having that tiger get fed up and ROARRRRR back at you. Then you giggle to yourself, enjoying the raw POWER and strength of that tiger. \n\nWhen you're in some strange ambiguous friendzone situation many of you guys don't realize the women is waiting for your power move. She senses your raw attractive power and she wants to see your power, your backbone, your spine. Obviously not all friendzone situations apply. Sometimes she is only ever going to see you as a friend. \n\nHowever what I will say is women crave this fantasy so often that learning how to be more dominant is a skill that is more valuable to them than gold. You can definitely learn these skills. \n\nThey will pay for a guy with these skills. So learn these skills. \n\nI'm taking a really good class on how to do it for men that I will review for you all soon. \n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2021-01-21T22:57:10Z",
+      "thumbnail": "https://i.ytimg.com/vi/-INHIgXpMIY/maxresdefault.jpg",
+      "duration": "10:21",
+      "viewCount": 145313,
+      "likeCount": 5678,
+      "commentCount": 957,
+      "url": "https://www.youtube.com/watch?v=-INHIgXpMIY"
+    },
+    "PtGfJ-9ZuQw": {
+      "id": "PtGfJ-9ZuQw",
+      "title": "5 Unattractive Attitudes Women Secretly SENSE in Men but Will Never Admit",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\nOften times I have talked to a guy and although on the surface I am complimenting and supporting the guy, I am also secretly sensing some attitudes or beliefs he holds that I know will turn off the majority of women. \n\nI boiled down those attitudes into 5 categories that women often sense about men and are like NOPE. NOT what I'm looking for. Instead of feeling discouraged by this though, I hope you will re-evaluate and perhaps realize what women are looking for, what you have to be for the majority of them, and how they WANT you to be the man you may have been scared to be. \n\nThe 5 attitudes are: \n\n1. A FEMININE ATTITUDE\n\nYOU want to be what the WOMAN wants to be. \n\nBut the woman has more clout in the dating market so she's gonna get to play the leading role whether you like it or not. \n\nThe woman wants you to shower HER with attention, compliments, adoration, offerings. Not the other way around. She doesn't want to give to you. She wants to receive. If she senses you want to RECEIVE too much, she will see you as \"wanting to be the girl\" in the relationship. \n\nSo make peace with the idea that she wants to see you wanting to be the GIVER. The father figure. The older, wiser man. And she wants to be the princess. \n\n2. A SUBMISSIVE ATTITUDE\n\nDo you want to be submissive in the bedroom or do you want and are you intending to lead? \n\nShe wants to be able to let go in bed with you. She wants you to be the guy in her fantasies. So she is gonna sense if you are wanting HER to be that for YOU. \n\nMany guys do dream of a dominant woman who is confident and can take the lead....but so do most girls. I know it is very sexy for a lot of guys to imagine something like a woman who is so overcome with lust and desire for him that she is aggressively coming on to him and telling him he is a sex god she just can't get enough of. I get it. Just know that fantasy is much more so a male fantasy than a female fantasy. It is usually a turn off for the woman, since she is the aggressor and not the receiver of the attention and focus in that scenario. \n \nSo it is important for her that you be capable of leading and enjoy doing that. Man this is so huge. I see it in these women's groups all the time. The guy isn't taking the initiative, he's not making her feel desired, courted, sexy, taken. They hate that. \n\n3. BEING TOO FEMINIST\n\nHey. Hopefully no girls see this video. I am feminist. Feminism is incredibly important in my opinion. But a lot of girls are not ready for a feminist guy in the bedroom. Asking for consent too bluntly sometimes with a girl who is not ready to own her sexual desires can force a girl's hand and give her no choice but to save face and refuse. It can also be a turn off for girls who are fantasizing about more old school gender roles. I see guy's making this mistake a lot and NO GIRL IS EVER GONNA TELL THEM THIS cause we all see the importance of feminism!!\n\n4. NOT GRASPING THE POWER OF HIS MASCULINITY\n\nI don't know how to explain this one that great. But you're a man. Women look up to you. I know they might not say they do, but they do. Women admire your natural gifts. Women are awed by the power of the testosterone coursing through your veins. Women crave the white hot dirtiness of your sexual desires. \n\nI get that overcoming shame can be extremely hard and tricky. But you guys have way more shame then you should. You are often hot and cool (despite having a high rejection rate or having been insulted by women), but many of you don't see that...and it's unattractive. It's the same with women I'm sure who are super unconfident and put themselves down. And you're probably like, hey you're not perfect but I think you're hot and I'd totally do you don't ruin it for me. PLEASE. \n\n5. SUCCESS\n\nAre you a slacker or can you succeed in the real world. Women are sensing this about you. Do you have what it takes. Cause if you do, she can adore and respect you and be the adoring women she wants to be deep down. \n\n6. REACTIVITY\n\nAre u gonna snap on her with some resentment and bitterness towards women? She is searching and sensing for your ability to be safe. \n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2021-01-17T23:00:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/PtGfJ-9ZuQw/maxresdefault.jpg",
+      "duration": "14:18",
+      "viewCount": 364494,
+      "likeCount": 13199,
+      "commentCount": 2438,
+      "url": "https://www.youtube.com/watch?v=PtGfJ-9ZuQw"
+    },
+    "Bc0_8Onwj_4": {
+      "id": "Bc0_8Onwj_4",
+      "title": "WHY women CRAVE dominance and how YOU underestimate her DARK sexual drives",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI&t=0s\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\nA lot of guys don't seem to understand WHY women crave dominance, WHY they want the asshole, WHY they're so into \"alpha males\", WHY they love Christian Grey so much, WHY they want to be \"IN THEIR FEMININE\", WHY they want a guy to take control, WHY they want a guy to take the lead, WHY WHY WHY. \n\nIt all comes back to CHARLES DARWIN and natural selection and all that. \n\nEvolution. \n\nIt doesn't matter if the guy is an asshole if the qualities that make him an asshole allow him to defend you and your children from another guy who wants to kill you and your children. \n\nIt doesn't matter if a guy roughly pushes you up against the wall and you got rug burn from him grabbing your arms, as long as you realize that he is gonna be aggressive enough to strike first at another guy or predator who tries to kill you. \n\nIt doesn't matter that a guy is arrogant and talks to you in a condescending way, as long as he is smart enough to help your family navigate life and ultimately survive. \n\nOn a subconscious level, most women want to see PROOF that you're strong, athletic, smart, and powerful in social situations. And their fantasies about dominance are about PROOF that you have what it takes. (Also why they're into badboys, outlaws and criminal types etc)\n\nWhen a woman gets PROOF thru you taking the lead in the bedroom etc her deep evolutionary pleasure centers that guide her toward the right mate are lighting up like a christmas tree. \n\nWOMEN often crave a SHOW of these dark controlling characteristics. THAT is WHY they often crave these DARK fantasies that are darker than what a lot of men even have. That's why they are actually the ones searching for the most disturbing and degrading explicit materials a lot of times, as talked about in many articles on the web. \n\nSO DON't UNDERESTIMATE and don't be fooled thinking it's all butterflies and rainbows and rosepetals. It's not. \n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2021-01-07T19:51:05Z",
+      "thumbnail": "https://i.ytimg.com/vi/Bc0_8Onwj_4/maxresdefault.jpg",
+      "duration": "7:45",
+      "viewCount": 437752,
+      "likeCount": 10607,
+      "commentCount": 1356,
+      "url": "https://www.youtube.com/watch?v=Bc0_8Onwj_4"
+    },
+    "DuobmPXxOK4": {
+      "id": "DuobmPXxOK4",
+      "title": "I Interview The Most Skilled Guy I EVER Slept With on His Top TIPS for Guys",
+      "description": "Go here to get a 1-on-1 $60 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\nForgive my poor interviewing skills. But the topics covered are: \n\n1. What do you think is the biggest mistake guys make when it comes to dating?\n\nANSWER: Don't fixate on getting the HOTTEST women. Date less attractive women so you will be getting experience in the meantime so when you're dream girl comes around you won't be so ILL PREPARED and lacking experience. No shame in dating girls who aren't 10s. \n\n(Sadly, I saw this so much at my rejection club where I had guys ask out strangers to get over their fear of rejection...many guys would focus on the 1 tiny, blond, teen looking girl and literally ignore any other women in the building due to their lack of peak attractiveness. It was as if they didn't exist! But they do exist and will often be much more easy going then a girl who can't take any more guys hitting on her and has trauma from being so attractive. That girl will take some greater skill, so build that skill anyway you can!!)\n\n2. What can a guy do to be more attractive to women?\n\nANSWER: maintain calm and seem in control\n(so important)\n\n3. What do you think makes you so good in the bedroom?\n\nAnswer: Be bold, try things, push the action, be confident, be a leader, act rather than ask without hurting anyone (a tall order)\n\n4. Why do you think girls like you?\n\n5. Why do you think strippers like you so much?\n\nRespect them, treat a princess like a W#$%$ and a W$%^# like a princess, don't be intimidated by them, make it sexy, \n\n6. What is your best advice for being good in the bedroom?\n\nbe the leader, be aggressive, do what you think she's gonna like and see if she actually likes it. \n\n7. How do you think a guy can be more dominant in the bedroom?\n\nAll women are different, but for most, you want to be slowly escalating things, kiss before end of the date, be bold but measured taking small steps forward. \n\n8. How do you understand female psychology so well in the bedroom and understand their most hidden secret fantasies and mentality?\n\nPay attention, there's no script, you have to pick up on her signals, don't have a plan\n\n9. What would you have done differently when u were younger when it comes to sex and dating?\n\ndated around more, had less pride, you don't have to find THE ONE\n\n10. How do you unleash the raw masculine power in the bedroom so well?\n\n11. How do you manage to act so complimentary and flattering to women all the time?\n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2021-01-05T03:59:59Z",
+      "thumbnail": "https://i.ytimg.com/vi/DuobmPXxOK4/maxresdefault.jpg",
+      "duration": "25:50",
+      "viewCount": 291907,
+      "likeCount": 8503,
+      "commentCount": 1480,
+      "url": "https://www.youtube.com/watch?v=DuobmPXxOK4"
+    },
+    "AvAQWfhqqvo": {
+      "id": "AvAQWfhqqvo",
+      "title": "3 Female Fantasies Girls Are Into Without Even Realizing It",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\n\nA video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\nAlways get CONSENT, always NEGOTIATE what you're ok with beforehand, and ALWAYS establish a safe word before trying to play out any of these fantasies. Also please learn the difference between abuse and kink. And don't confuse the two. \n\nThere are 3 common fantasies that many BUT DEFINITELY NOT ALL girls are drawn to often without even knowing it's a thing. \n\nMany girls do not take the time to research, excavate, and uncover their sexuality and unique sexual interests, but if they did they would understand why they are drawn to certain movies, tv shows, clothing items or styles, and certain behaviors they crave from men. \n\nAs a guy you will often need to be the one to suggest or offer that a girl might be into something and see if she lights up or says she is into it, since girls often just passively accept what is offered to them in the bedroom. Therefore you should understand common female fantasies and kinks as deeply as possible. If she does happen to be into it and you get it, this will cause you to blow her mind and give her an experience light years beyond most guys capabilities. \n\n3 Female Fantasies You Should Know: \n\n1. Being a brat and being brat tamed by a brat tamer\n\nThis one is about the desire to be put \"in your place\". The desire to provoke, push, angrily rant against and have the guy not back down, but take it totally next level and take control of the situation...often ending in being disciplined or somehow utterly one-upped. \n\n2. CNC\n\nThis one can be many things to different people and is a surprisingly common fantasy among women. I would type more here but idk if I'll get in trouble so listen in the video. \n\n3. DDLG\n\nThis one is about the desire for a pure unconditional strong nurturing kind of love that may have been lost as we age. \n\n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2020-12-29T07:19:49Z",
+      "thumbnail": "https://i.ytimg.com/vi/AvAQWfhqqvo/maxresdefault.jpg",
+      "duration": "12:46",
+      "viewCount": 551687,
+      "likeCount": 13464,
+      "commentCount": 1736,
+      "url": "https://www.youtube.com/watch?v=AvAQWfhqqvo"
+    },
+    "yx0Cz1InEPk": {
+      "id": "yx0Cz1InEPk",
+      "title": "17 Tests You Need to Pass as a Man to LEVEL UP in Dating",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\nTEST 1: The opening message \nDon't send something too long = desperate\nDon't send something too short = not serious, not worth it\n\nA couple sentences only is best. Mention and ask about a specific thing you noticed about her or her profile, and succinctly compliment her is a foolproof method.\n\nTEST 2: Does the conversation go on too long without you setting up the date?\nGirls don't wanna talk forever contrary to popular belief... they want u to take charge and set up a date. \n\nTEST 3: Do you take the initiative to completely plan the time and place for the date?\nGirls are watching for this. \n\nTEST 4. Is your outfit current, cool and fashionable enough?  \nDon't underestimate how much of an effect this has on girls because they are not going to be embarrassed to show you off to their friends. \n\nTEST 5: Is the guy rude to the waiter?\nOldest dating advice in the book for girls and every girl knows this is the #1 way to assess a guy lol. \n\nTEST 6: Do you exude calm, assertive \"Leader\" energy?\nDo what you have to do to improve your calm, confident vibes however you can. You want to appear someone who is capable of handling and getting it done. Call it dominance, call it confidence, call it \"masculine energy\", just try to be aware of it and improve it if you can. \n\nTEST 7. Is he asking questions about me or going on about himself? \nYou are trying to impress her, but to impress her ask her questions about herself. \n\nTEST 8: Is the date boring small talk or can you get into deep discussions and open up emotionally? \n\nTEST 9. Do you pay the bill?\nShe notices if you pay the bill. \n\nTEST 10. Do you at least try to kiss her?\nYou should always at least try even if it's awkward and not the right moment. The attempt will earn points, and no attempt will lose points and make you appear more wimpy. \n\nTEST 11. Is the kiss good?\nTry to improve your kissing skills as much as possible. \n\nTEST 12. Do you make a move to try to take things to the next level? \nFor example, do you ask her to come to your place in a non pushy way like saying, \"do you want to come hang out and check out {that thing I mentioned?} We can talk and drink tea or whatever you want to do. I'd just like to keep talking to you.\" This gives her a convenient excuse to accept your invitation. \n\nTEST 13: How big is it?\nCan be very important to some girls. Not so important to others. \n\nTEST 14: Is he slow, sensual and in the moment in bed or is he pushing and acting desperate for sex?\n\nTEST 15. Is he interested in me or just sex?\nThis one is so obvious to girls that I never thought to mention it, but girls are always evaluating you on this one. ALWAYS. Slip in compliments about who she is as a person if you are interested in her for more than just sex. This is why a girl will get very annoyed sometimes if you just compliment her body or looks. She wants you to compliment her personality and see into who she is on a much deeper level than that. Hopefully this one is obvious to you all. \n\nTEST 16: Does he respect your desire to not go any further?\nSO crucial to give off safe, respectful and supportive vibes so that she actually feels safe enough to go further. This one is often a true test as to how safe and respectful you are to trust enough to have sex with. \n\nTEST 17. Does he text the next day? \nShe is waiting for you to text her. \n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2020-12-22T04:41:34Z",
+      "thumbnail": "https://i.ytimg.com/vi/yx0Cz1InEPk/maxresdefault.jpg",
+      "duration": "12:18",
+      "viewCount": 81028,
+      "likeCount": 3070,
+      "commentCount": 653,
+      "url": "https://www.youtube.com/watch?v=yx0Cz1InEPk"
+    },
+    "iWf7UEmaLis": {
+      "id": "iWf7UEmaLis",
+      "title": "How to Provide the BEST Sexual Experience for a Woman: My Top 10 Tips",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\nIt's wild but I've been on over 250 dates when I was dating in NYC. Tracked it all on a spreadsheet so I can prove it. When I think of valuable advice I'd offer for guys this is what comes to mind. I hope the video might be of use to someone who finds it. LMK your thoughts good or bad as I'd love to hear it either way. You can also just read the tips down below if the vid is too long or watch me in double speed. \n\nTip # 1: GO SLOWER\n\nIt's so important to go slow. Don't be that guy who is always rushing the foreplay, rushing through actually feeling the skin beneath your fingertips, and RELISHING the moment. It is so attractive when a guy really knows how to savor the make-out and doesn't impatiently hurry you along to the finish line. \n\nTip #2: START WITH \"NON SEXUAL\" BODY PARTS AND BUILD UP \n\nhands, fingers, neck, back, sides, waist, stomach, legs, hair, face--all extremely important and overlooked areas where you should begin and build up to the main attraction. Slow burn style. Never 0-100, but 0, 10, 20, 30, 40, 50, 60, 70, 80, 90...\n\nTip # 3: FOREPLAY IS EVERYTHING\n\nEverything will feel better for the woman with foreplay. Everything is activated, alive and fully warmed up. It will feel better, in fact, the best it can feel this way. Don't skip to the finish line. \n\nTIP #4: DONT USE LUBE \n\nIf your using lube she isn\u2019t ready yet. Go back to more foreplay. Look into getting  omgyes.com to get some good ideas for what girls like for foreplay. \n\nTIP # 5: TELL HER YOU UNCONDITIONALLY ACCEPT HER BODY\n\nDuring foreplay and beyond, be continuously reassuring her that she is hot, sexy, beautiful and even throw in once if you want, that u \"love and unconditionally accept every part of her body\" or something to that effect. Do you know how insecure girls are about their bodies? Let me know in comments below. This can do wonders to help her relax, let go, and enjoy it much more than she would have had you said nothing. \n\nTIP # 5: ASK WHAT SHE'S INTO\n\nWhile making out, ask what she is into. A lot of girls will say I don't know! But if she does know, you will give her the opportunity to coach you into what she has been dreaming about. Follow her lead there, do what she asks and the sex will level up guaranteed in her mind. Share a little about what you're into as well to help her open up. Vulnerability for Vulnerability. \n\nTip # 6: KNOW THE MOST IMPORTANT AREA and WHY IT'S SO IMPORTANT TO GIRLS\n\nI know it's hard, but learn where the clit is. Also make sure she orgasms. And don't assume she can orgasm without direct stimulation on this all important area. Also don't assume she will do it in your presence without your reassurance and encouragement. \n\nTIP # 7: GIVE HER THE GIFT OF YOUR GENEROSITY \n\nShe has faced a lot of societal prejudices, fears for her own safety, and let you into her life in the most intimate and vulnerable way. Be a generous, giving gentleman and don't expect reciprocation. She may not feel comfortable giving it yet, testing how much you will invest first and how well you will treat her. For me, it was truly unforgivable if the guy was not respectful and generous in the first encounter. So many are though. The service provided does not go unnoticed and unappreciated. \n\nTIP # 8: MAINTAIN CALM AND RESPECT EVEN WHEN REBUFFED\n\nWorst thing you can do is get upset, triggered, or be reactive when she says she doesn't want to go further. Yes it may be a test to see how willing you are to respect her boundaries. Back off, go down a level in intensity, don't get upset and she may, respecting your attitude and safety you provided her with, become more in the mood later in the night. If not bow out respectfully and follow up the next day and try to see her again!\n\nTIP #9: MAINTAIN CONNECTION AFTER SEX AND DO AFTERCARE\n\nShe will remember you if you do this, absolutely. \n\nTIP # 10: TEXT HER THE NEXT DAY AND STAY COMPLIMENTARY AND FRIENDLY EVEN IF YOU DON'T SEE HER AGAIN\n\nConnections, friends, networks are everything in life. You shared something special. Be kind, reassuring, appreciative, and friendly after no matter what happens and she will always think of you fondly forever. \n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2020-12-09T05:00:28Z",
+      "thumbnail": "https://i.ytimg.com/vi/iWf7UEmaLis/maxresdefault.jpg",
+      "duration": "19:28",
+      "viewCount": 88287,
+      "likeCount": 3846,
+      "commentCount": 389,
+      "url": "https://www.youtube.com/watch?v=iWf7UEmaLis"
+    },
+    "1EuS9irQSyU": {
+      "id": "1EuS9irQSyU",
+      "title": "The SIMPLE TRUTH about WHY Girls Say they want NICE GUYS but LOVE the Bad BOYS",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\nIt is strange how girls say they want one thing, but crave something else in the bedroom, right? \n\nThe same girl who is posting about feminism may be fantasizing about something opposite in the bedroom? How can this be??? Are we massive hypocrites? \n\nNO!!!\n\nTwo brains with their own reasons and rules co-exist in our minds at the same time. \n\nI call it:\nNORMAL BRAIN      and \nSEX BRAIN\n\nOne is for the modern world in which EQUALITY is absolutely NECESSARY and LONG OVER DUE! \n\nThe other is for the bedroom where evolutionary logic dominates and a completely separate rationale of TABOO PRIMAL FANTASIES that have nothing to do with equality take over. \n\nPicture these two brains existing on two sides of a wheel that can be spun. \n\nWhen the wheel is spun, triggered by dominant behaviors, NEW RULES APPLY. \n\nI do experience this wheel spinning between the two brains exactly as I described. \n\nI hope this helps you and thank you for watching. \n\n(My apologies at posting another horribly synced video...next video I think the problem will be fixed)\n\nPlease comment down below!\n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2020-12-03T01:31:40Z",
+      "thumbnail": "https://i.ytimg.com/vi/1EuS9irQSyU/hqdefault.jpg",
+      "duration": "5:06",
+      "viewCount": 108152,
+      "likeCount": 4483,
+      "commentCount": 856,
+      "url": "https://www.youtube.com/watch?v=1EuS9irQSyU"
+    },
+    "Cz2l5NLxvn8": {
+      "id": "Cz2l5NLxvn8",
+      "title": "#1 Reason Women See You as Sexual Candidate and 10 Concrete Tips to Avoid the Friendzone",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\nBooks I think everyone should read: https://tinyurl.com/4tu5pc32\n\nI tell you this because I want you to be at least CONSIDERED as a sexual candidate. I DO NOT want you to get rejected outright without even a chance in hell: \n\nMost women, especially when they're young, only know how to have a submissive sexual experience. Therefore she is ONLY able to accept a guy who can provide a passable dominant vibe. It is IMPOSSIBLE for her to fathom having sex with a guy who is not exhibiting enough dominant behaviors cause she wouldn't even know how to do it.\n\nMost young women sadly do not have the sexual confidence to take and get what THEY need from sex. Sadly many women do not even know how to orgasm nor do they feel it is necessary to do so during sex. It is a well accepted fact that many many women FAKE orgasms because they feel the pressure is SO HUGE to please the guy. Women are very rarely comfortable demanding what they deserve, admitting what they like or even KNOWING what they like sexually. \n\nTherefore women are looking for what they know. They have been raised and possibly primed, evolutionarily speaking, to look for a strong, dominant guy. \n\nIn fact, they're looking for the strongest, best, most dominant evolutionarily speaking guy they can get. BUT YOU WILL DO. IF and only IF, you exhibit a passable level of dominant behavior. \n\nYou do NOT need to be BORN some sort of confident sex god. OFTEN you merely need to be good enough, passably dominant, so that she can even CONSIDER having sex with you when she feels in the mood for a hookup. \n\nMake sure to hit the points in this checklist when going out with a girl: \n\n1. You should initiate all initial messages and further the conversation with questions\n2. You should suggest and put forward a specific place, time and date for the date\n3. You should ask her questions on the date rather than talking about yourself too much to impress her\n4. You should compliment her frequently on the date\n5. You should direct the date and ideally take her to a different places on the date\n6. You should guide her there by holding her hand and leading her there \n7. You should pay to put her in a 1950s state of mind\n8. You should physically escalate instead of kissing her at the end with no build up\nAlways 0-10-20-30-40-50-60-70-80-90-100 rather than 0-100 REAL QUICK\n9. You should ask her to come back to your place with a convenient hang out excuse (and be ok with just hanging out if that's what she wants)\n10. At your place you should initiate the makeout\n11. You should text her saying the date went well and take 100% responsibility for initiating the the next date\n\nPlease tell me any thoughts you have in the comments. I love to read the comments. I respond to all unless I miss one. Then just comment again please and let me know I haven't responded yet. I hope this helps you.\n\n(I apologize for syncing being horribly off in this video. I will film with my phone from now on)\n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2020-12-02T16:06:47Z",
+      "thumbnail": "https://i.ytimg.com/vi/Cz2l5NLxvn8/maxresdefault.jpg",
+      "duration": "10:00",
+      "viewCount": 311280,
+      "likeCount": 11319,
+      "commentCount": 1159,
+      "url": "https://www.youtube.com/watch?v=Cz2l5NLxvn8"
+    },
+    "rFpWNmbP3ik": {
+      "id": "rFpWNmbP3ik",
+      "title": "The #1 Thing Women Crave in Men that is Constantly Underestimated by Men",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\n\nDominance. Men totally underestimate how important this is to women. \n\nMost men do not seem to realize how this is first and foremost in women's minds and a HUGE part of how and why men are attractive to women. \n\nMen are on to it for sure, but even so they are still glossing over how important it really is to women. \n\nWomen are assessing men for dominance all the time. \n\nWomen have a primal software which does this for them. I would never chose to do this because I find it judgmental, but I simply DO do this by instinct. \n\nIf you project enough of this quality, you will be considered as a sexual candidate. If not you will be instantly disqualified. \n\nI say this so men can realize that it is ok to bring this part of themselves out more than they allow themselves to. \n\nMost women are expecting a guy to take the lead totally. The more the guy takes the lead the more attractive he will probably be to a girl because women are secretly fantasizing about dominant guys. Even guys who are dominant, women are often wishing they would step up even more and be more so. \n\nThis is due to a primal software as I mentioned developed through thousands of years of evolution where women who were the best at picking the strongest mates had offspring that were most likely to survive. So now we all are very good at assessing this. \n\nThis is not something intrinsic that you either have or you don't though. A guy can very quickly become a sexual candidate simply by acting more dominant, confident and assertive. \n\nLet me know what you think. please give me any feedback negative or positive and I will listen to the negative as well as the positive. \n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2020-11-26T02:36:03Z",
+      "thumbnail": "https://i.ytimg.com/vi/rFpWNmbP3ik/maxresdefault.jpg",
+      "duration": "9:51",
+      "viewCount": 574651,
+      "likeCount": 18408,
+      "commentCount": 2409,
+      "url": "https://www.youtube.com/watch?v=rFpWNmbP3ik"
+    },
+    "VuYBlXwXrVA": {
+      "id": "VuYBlXwXrVA",
+      "title": "SECRETS of the FEMALE MIND: 7 Reasons Women Reject You You'd Never Guess",
+      "description": "The video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\n\nIf you get rejected you may really beat yourself up thinking you must be either ugly, unconfident, defective etc... But there's a lot of reasons you might not think about that could cause a woman to reject you which are for more likely. Read below to understand the female mind and WHY they think like this: \n\n1. You have no idea how terrifying the thought of a simple date or meeting alone with a man is on a subconscious level. Most women have a collective unconscious style deep fear of men that must be overcome when accepting a simple date. They might reject you cause they are not brave enough at the time to risk a meeting. \n\n2. IF you get her number but she doesn't call you back, see above. She probably gave u the # in a moment of bravery or fear of rejecting you in the moment, but is too scared to consider going through with it. She may repress this fear into \"she's not interested\" but there is a deep underlying fear of meeting new people and fear of violent men preying on her for sex only. \n\n3. She feels pressure to date \"eye candy\" to impress her friends. \n\nA lot of girls won't even consider a guy if he isn't \"eye candy\" because she is not secure enough to assert her own preferences and stand up to judgmental peers she associates with. Sad but true. \n\n4. You didn't actually ASK for her number. You just had a conversation and then when you didn't get strong enough signals from her you just left without asking. Terrible idea. Always ask. Don't wait for her to flirt cause not all girls want to be the aggressor and will act as passive as possible. \n\n5. You need to work on your style cause your clothes are not making you appear cool enough \n\n6. You come across as too \"suave\" which makes her think you are an amateur who needed to \"study\" to talk to women. Always better to just genuinely talk and ask her rather than using any lines or trying to appear more confident than you are. \n\n7. You got her number, but then just messaged with her, and didn't actually ask her out. \n\n8. You're shorter than her and she feels extremely insecure about not \"being the girl\" and she feels fat and like you won't see her as \"feminine\".\n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2019-06-10T02:18:59Z",
+      "thumbnail": "https://i.ytimg.com/vi/VuYBlXwXrVA/maxresdefault.jpg",
+      "duration": "11:57",
+      "viewCount": 115144,
+      "likeCount": 4020,
+      "commentCount": 541,
+      "url": "https://www.youtube.com/watch?v=VuYBlXwXrVA"
+    },
+    "s_xRCLmKG-g": {
+      "id": "s_xRCLmKG-g",
+      "title": "6 Inexplicably Attractive Things Men Do",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\n\n1. Sticks up for himself or me in front of other guys\n2. is physically aggressive with me in a playful way (sorry that was kinda unclear in the vid. Don't take this one as advice cause you have to know for sure the other person is into it or it is wrong and immoral)\n3. Leaves me to go do work\n4. Shows me his private interests \n5. enters into the male lust trance\n6. Takes the lead in or takes care of a group\n\nPlease comment any examples you have for things you find inexplicably attractive in women or men below, I would love to hear them.",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2019-06-06T08:14:16Z",
+      "thumbnail": "https://i.ytimg.com/vi/s_xRCLmKG-g/maxresdefault.jpg",
+      "duration": "9:02",
+      "viewCount": 296732,
+      "likeCount": 9354,
+      "commentCount": 947,
+      "url": "https://www.youtube.com/watch?v=s_xRCLmKG-g"
+    },
+    "gMl0Ze22rDA": {
+      "id": "gMl0Ze22rDA",
+      "title": "The Raw Attractive Power All Men Have that Women Won't Admit to Feeling",
+      "description": "Go here to get a 1-on-1 consultation: \npay with cc: https://calendly.com/victorianied/1-on-1-consultation\npay with paypal: https://calendly.com/victorianied/1-on-1-consultation-pay-with-paypal\n\nThe video that changed my life: https://www.youtube.com/watch?v=D8WbWzU9bMA&t=2s\n\nThis may be the most revealing video I have ever made. I didn't want to share this secret of the female mind but thought I should. I may have to make another more concise video on it but I will summarize my point below: \n\nJust like heterosexual men see women differently than hetero women see women.... WOMEN see men differently than men could ever see themselves. It's just a lot of women won't tell men that they sense the fundamental core male energy that all men possess. Yes ALL men. I see it in literally any guy simmering under the surface. I guess sense it would be a better word as it is, as much as I hate that word, an energy, that affects the body. \n\nSO this energy is simmering in men all the time but most men do not bring it out. You could go through a whole date with a girl with her sensing it simmering under the surface but you don't bring it out, and she rejects you. Does that mean you were unattractive or that the fact that you didn't bring it out was unattractive? It's the latter. \n\nWhat is this energy? Well I know it's there but if I had to put words to it it's the power of knowing that \n1. It's a real live man\n2. He's somewhat fundamentally unknowable and mysterious in his man desires and point of view\n3. He's got desire for women\n4. And lighter fluid in the form of excess testosterone and physical strength and wild physicality\n5. That he has like raw emotional intensity and strength just from being a larger, almost more wild rough version of a woman\n\nAll that is sitting there in check. Like I said you could get laughed at and rejected and the girl still knows all of that is inside you, subconsciously. She knows if you knew how to tap into it you could bring it out at any time. But you don't so you won't. So she can sleep easy. \n\nWays you can bring it out are through raw honesty about what you feel and want. Not watered down the slightest amount. In the excellent book Mode One by Alan Roger Currie that describes something similar, he says if guys took a truth serum and had to say what was ACTUALLY?? on their minds they would be suddenly much more attractive to women. They would be bringing out their RAW actually PRIMAL desires, and that is what women find attractive not your trying to impress her and flatter her. Women want to have the experience of a real live wildcard of a man...not a tame house cat that they can manipulate and control. \n\n(no house cats were manipulated in the writing of this description)\n\nI could reject a guy for not bringing more of this out (It's like something feels off to me and I'm NOT getting the energy I need from him so I have no choice but to reject him--is what it feels like) and still know he has it simmering under the surface. In fact, i'd be keeping him around, hoping he somehow wises up and brings it out one day, and when he does I would reconsider. \n\nBut I AM NOT going to hand him the keys to the kingdom. Subconsciously I feel HE needs to be man enough to find it in himself or I'll find someone else who will. \n\nEvery man has this quality. It can not be taken away from him. Maybe you understand what I mean if you're a guy and you understand that ALL women have something essentially feminine about them and it is always attractive no matter what.  \n\nI hope you understand my meaning in this video and if you feel me, please comment down below!\n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2019-06-03T08:39:25Z",
+      "thumbnail": "https://i.ytimg.com/vi/gMl0Ze22rDA/maxresdefault.jpg",
+      "duration": "10:07",
+      "viewCount": 3105773,
+      "likeCount": 118154,
+      "commentCount": 16424,
+      "url": "https://www.youtube.com/watch?v=gMl0Ze22rDA"
+    },
+    "71ytfUTiSCU": {
+      "id": "71ytfUTiSCU",
+      "title": "The #1 Thing Men Don't Understand About What Women Want",
+      "description": "The video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\n\nMy point in this video is that a lot of women want a certain kind of submissive sexual experience and they go looking for it in all the wrong places. \n\nSome women cannot face the dark side of sexuality and get into tantra and sacred sexuality where they yearn to be \"ravished\" by the divine masculine who \"holds space\" for their experience of the divine feminine. They feel making it \"sacred\" makes it a valid desire since spirituality isn't dirty, shameful and wrong. \n\nMy only problem with this is it really overcomplicates the matter for men getting really convoluted advice from these spiritual teachers about how to \"become consciousness\" and \"hold space\" and \"bring a woman into her feminine\". This is really fancy words for the same old strong dominant male lead type that can be seen in every woman's romance novel.\n\nIt goes back to animal mating behavior: the woman wants the strongest possible guy she can get, whether that be in intelligence, physical strength or social skills so that she can pass on the strongest genes to her offspring. A lot of that psychology is at play during romance. \n\nEven if a guy let's say uses a wheelchair due to a genetic disease, he could still have extremely strong social skills or \"confidence\". He would still be extremely attractive to women (Check out the youtube of squirmy and grubs). \n\nA guy might be emotionally mature and this could be an attractive strength as well. Definitely is for me. \n\nBut yeah, many women crave this experience of being overpowered by masculine strength. Yet they don't know how to get it in a safe and controlled way. Like how they do it in the kink community with negotiation and consent. Or even straight up asking a guy for it. \n\nInstead of speaking up about their desire, women try to bait a guy to instinctually do it by acting as \"feminine\" and passive as possible. This is the basis of a lot of dating advice for women. \n\nA lot of women think they have to be submissive in their whole life to experience something they could have only in the bedroom. Conservative traditional anti feminist women come to mind. They could have both but they don't know that. (Some want it 24/7 but that is a small minority). \n\nAnyway, guys should watch out for this in dating and take into account this may be an experience a woman is looking for but hasn't been able to see it clearly herself. Everyone is different, but as a guy you should start a discussion about it and you might be surprised to find she is more into it than you thought. Never assume, but awareness that this is something she is into could be key.",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2019-06-01T04:14:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/71ytfUTiSCU/maxresdefault.jpg",
+      "duration": "10:08",
+      "viewCount": 81704,
+      "likeCount": 2690,
+      "commentCount": 378,
+      "url": "https://www.youtube.com/watch?v=71ytfUTiSCU"
+    },
+    "uFzZPB_WIT0": {
+      "id": "uFzZPB_WIT0",
+      "title": "6 Tips to Subtly Dom a Woman on a Date and Make Her See You as Instantly Attractive",
+      "description": "The video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\n\nA girl will decide if you are IN or OUT pretty quickly on a date. In other words, she will know by the vibe and energy you are giving off whether or not she sees you as a sexual candidate. \n\nA good way to make sure she sees you as a candidate is to give off subtle signs of assertiveness, confidence which I basically see as a preliminary form of \"domming\" her. \n\nThere are tons of different ways you can do this but I just gave 6 random examples. They are as follows: \n\n1. Call her by a pet name but in a joking way. \n\nObviously it is a little early to be calling someone baby, sweetheart, etc... and it would probably be perceived as quite irritating and obnoxious by many, but if you do it in a joking way, you can get away with it, while also getting away with calling her a name like that which is a total dom move and it should have some effect whether she likes it or not. \n\n2. Express anger (not at her) but at something you're talking about\nIf she sees you're not afraid to go full throttle and unleash your emotions, she will be impressed at your devil may care attitude and realize that you won't be scared to unleash in the bedroom as well. \n\n3. compliment her appearance at not the right times\nInterrupt her to compliment her appearance. Total dom move. \n\n4. Talk about guy stuff like sports or other typical guy topics like working out\nDon't go overboard and bore her but even bringing this stuff up can create subtle polarity and remind her that she is on a date with a red blooded man\n\n5. tease her\nLook up vids on how to flirt with girls by teasing on youtube. There are a lot. This is the not so subtle art of verbal and mental domination, definitely my kink. \n\n6. Don't be afraid to talk about sex or your sexual preferences and ask her some questions about hers. \nBe genuine but even if she appears chill on the surface, it probably will have some effect.\n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2018-09-15T06:54:58Z",
+      "thumbnail": "https://i.ytimg.com/vi/uFzZPB_WIT0/maxresdefault.jpg",
+      "duration": "8:51",
+      "viewCount": 522265,
+      "likeCount": 18107,
+      "commentCount": 1643,
+      "url": "https://www.youtube.com/watch?v=uFzZPB_WIT0"
+    },
+    "S367Hg0KeYY": {
+      "id": "S367Hg0KeYY",
+      "title": "The Top Things a Guy Could Do on a Date that Would Make Me want to Sleep With Him",
+      "description": "The video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\n\nThe Tips which I will try to express more articulately below: \n\nTo create chemistry and increase the likelihood of her going home with you:\n\n1. You must be evaluating her during the conversation and expressing to her that you find her desirable, aesthetically, intellectually and sexually (if applicable). Intersperse abrupt seeming compliments into your conversation. The effect on her will be to remember that you see her in a sexual or sexually charged at least, light-- as a MAN not just as a friend. These compliments can be non threatening and polite--all the way up to \"mode one\" style blunt, honest and direct that you find her extremely sexually attractive....(that should be saved for later in the night though once you establish a good rapport). They all have the same affect on a girl which is that she remembers that this is an exciting, sexually charged experience, not just a conversation with a friend.\n\n2. Touch her hand quickly. I forgot to mention in the video that you should never try to touch a girl inappropriately but hand or elbow or non sexual parts of the body very quickly do have an effect. Try to get some non sexual touch involved if you can. It does work. \n\n3. Always ask her at the end of the date if she wants to come over to your place to hang out in a non pressure filled way. Say you want to show her something you mentioned in the conversation. This will give her an excuse to come over if she wants to. Whether she says no or yes, the fact you asked shows you have confidence. I respected this and it increased the guy's attractiveness in my eyes. Often I only considered going over just cause I was impressed they had the confidence to ask. \n\n4. Don't make the mistake of not going in for the kiss just because she isn't telegraphing to you that she is 100% in. You can ASK if it is ok if you are not sure. That is fine. But try to sit near her, near enough to kiss her when the time is right. \n\n5. If you get in bed with a girl, never rush, be impatient with her or expect her to return the favor in a demanding way. Be generous, be patient. Expect nothing in return. Sex is not transactional. Put her first. She will see that you respect her and are generous and want to return the favor in time. When guys became too pushy and wanted to rush into what was in it for them, I was extremely turned off and often left. \n\n6. Compliment her frequently during the makeout.\n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2018-07-21T09:09:19Z",
+      "thumbnail": "https://i.ytimg.com/vi/S367Hg0KeYY/maxresdefault.jpg",
+      "duration": "13:09",
+      "viewCount": 252663,
+      "likeCount": 9139,
+      "commentCount": 1197,
+      "url": "https://www.youtube.com/watch?v=S367Hg0KeYY"
+    },
+    "ILXWo2tK31Y": {
+      "id": "ILXWo2tK31Y",
+      "title": "The Best Line to Use When Asking a Girl Out and the #1 Mistake Guys w Approach Anxiety Make",
+      "description": "The video that changed my life: https://www.youtube.com/watch?v=GPHPVvKoZDI\n\nUse this line to make a woman feel that there is more to her than her external appearance...that you are attracted to something indescribable and transcendent about her very being....this is what women long to hear and long to find: a man who is compelled to talk to them by something he can't even understand in himself....something deep and primal about a woman's unique essence. \n\nThe line is: Hey, I know this sounds totally out of the blue, but *I just had to ask*: can I have your number? \n\n#1 Mistake guys make when trying to ask girls out: talking to her and waiting for a green light to ask her out. At the end of your brief conversation (the line can be used without conversation either but a little conversation will go a long way) ask NO MATTER WHAT. The line I supplied above is not offensive, not disrespectful, not creepy, etc...\n\nAlways remember when you are rejected, never get upset and lash out. Just say, I totally understand....and keep asking other women out. BILLIONS of women in the sea. It is \"low value\" to get stuck on one, even if she was absolutely amazing. Sadly.\n\nAnd if you've gotten something from my videos and want to buy me a coffee or send me a note or a tip, I would greatly appreciate that. \nvenmo: mynonleatherlife\npaypal: mynonleatherlife@gmail.com\nEmail: mynonleatherlife at gmail\nBuy me a coffee: https://ko-fi.com/mynonleatherlife\n\nThank you so much for watching and commenting!\n\n-Victoria",
+      "channelId": "UCMB7akbrFVYXzJOc7JHMX-Q",
+      "channelTitle": "MyNonLeatherLife",
+      "publishedAt": "2018-07-17T22:13:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/ILXWo2tK31Y/maxresdefault.jpg",
+      "duration": "8:32",
+      "viewCount": 154944,
+      "likeCount": 5699,
+      "commentCount": 855,
+      "url": "https://www.youtube.com/watch?v=ILXWo2tK31Y"
+    }
+  },
+  "include_timestamps": false,
+  "include_video_title": true,
+  "include_video_id": true,
+  "include_video_url": true,
+  "include_view_count": false,
+  "concatenate_all": false,
+  "end_time": 1757263086.172413,
+  "duration": 78.05767512321472
+}

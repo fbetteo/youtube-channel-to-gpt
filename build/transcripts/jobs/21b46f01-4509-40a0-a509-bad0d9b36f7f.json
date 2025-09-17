@@ -1,0 +1,1332 @@
+{
+  "status": "completed",
+  "channel_name": null,
+  "playlist_id": "PL3tbVpB8I8wASpqvSK4bqrYoHQIRATELz",
+  "source_id": "PL3tbVpB8I8wASpqvSK4bqrYoHQIRATELz",
+  "source_name": "Soccer Drills for U5 & U7",
+  "source_type": "playlist",
+  "total_videos": 50,
+  "processed_count": 50,
+  "failed_count": 6,
+  "completed": 44,
+  "files": [
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/6twpNd7anIQ/How to play a great warm-up ga_6twpNd7anIQ.txt",
+      "video_id": "6twpNd7anIQ",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/BilrRgwXqqA/Soccer Drills Fun Games for Ki_BilrRgwXqqA.txt",
+      "video_id": "BilrRgwXqqA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/JSP0LcPPHKk/Soccer Practice Simplified For_JSP0LcPPHKk.txt",
+      "video_id": "JSP0LcPPHKk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/auAN7ltYVKo/U6 soccer model training sessi_auAN7ltYVKo.txt",
+      "video_id": "auAN7ltYVKo",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/Yr_AqMLGD4s/U5 Week1_Yr_AqMLGD4s.txt",
+      "video_id": "Yr_AqMLGD4s",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/G5XWVfoYgLc/Kids Soccer Games - Dribbling _G5XWVfoYgLc.txt",
+      "video_id": "G5XWVfoYgLc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/LYhhybvKlLI/U56 Soccer Training Session_LYhhybvKlLI.txt",
+      "video_id": "LYhhybvKlLI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/GSdpELFl2mc/U8 Activities_GSdpELFl2mc.txt",
+      "video_id": "GSdpELFl2mc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/nhQmElmkBgs/FIFA 12 Coaching Manual Spatia_nhQmElmkBgs.txt",
+      "video_id": "nhQmElmkBgs",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/Bq7BNW-oK-0/Soccer Drills Passing & Receiv_Bq7BNW-oK-0.txt",
+      "video_id": "Bq7BNW-oK-0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/zqt_c00WM-Q/Soccer Drill Defending & Press_zqt_c00WM-Q.txt",
+      "video_id": "zqt_c00WM-Q",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/GRPjap5U11Q/FFA Small Sided Football Train_GRPjap5U11Q.txt",
+      "video_id": "GRPjap5U11Q",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/CEqJun9wlN8/1v1 Defending_CEqJun9wlN8.txt",
+      "video_id": "CEqJun9wlN8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/q1Kj5v1xDrU/Pressing Masterclass With Davi_q1Kj5v1xDrU.txt",
+      "video_id": "q1Kj5v1xDrU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/WkhbInv1MeE/4 Football Skills for 5 and 6 _WkhbInv1MeE.txt",
+      "video_id": "WkhbInv1MeE",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/fsfG8oTOYac/U4 Active Start Soccer Session_fsfG8oTOYac.txt",
+      "video_id": "fsfG8oTOYac",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/qk4VsYy4nRo/Ball Control Drills For U7, U8_qk4VsYy4nRo.txt",
+      "video_id": "qk4VsYy4nRo",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/rN_ltKltpuY/U8 New Soccer Coaches Training_rN_ltKltpuY.txt",
+      "video_id": "rN_ltKltpuY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/Kb58F3r_TQM/10 Best Soccer Passing Drills _Kb58F3r_TQM.txt",
+      "video_id": "Kb58F3r_TQM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/hXcgw7U6qCw/Dribbling Drill For Close Ball_hXcgw7U6qCw.txt",
+      "video_id": "hXcgw7U6qCw",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/zQOJ6EQsAag/Dribbling Warm-up #2 U8-U10 Ch_zQOJ6EQsAag.txt",
+      "video_id": "zQOJ6EQsAag",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/XqlIE6iPPyI/Soccer drills & ball control b_XqlIE6iPPyI.txt",
+      "video_id": "XqlIE6iPPyI",
+      "language": "el",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/FiwQOZMhPRI/Best 7-a-side Football Formati_FiwQOZMhPRI.txt",
+      "video_id": "FiwQOZMhPRI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/h2CGa4kMdew/7v7 Player Formation_h2CGa4kMdew.txt",
+      "video_id": "h2CGa4kMdew",
+      "language": "en",
+      "type": "manual"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/zmLhyIh3aOU/Breakdown of the 1-2-3-1 Forma_zmLhyIh3aOU.txt",
+      "video_id": "zmLhyIh3aOU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/fkWe7QjMdsU/Specific Positional Rondo - 7 _fkWe7QjMdsU.txt",
+      "video_id": "fkWe7QjMdsU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/Ii_Yy6DFGAA/SoccerFootball Tactics 7vs7 (U_Ii_Yy6DFGAA.txt",
+      "video_id": "Ii_Yy6DFGAA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/dkoWJPzxylA/3 Drills To Help Your Team Spr_dkoWJPzxylA.txt",
+      "video_id": "dkoWJPzxylA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/kmmDtmfgos0/1vs1 Dribbling Soccer Drill At_kmmDtmfgos0.txt",
+      "video_id": "kmmDtmfgos0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/3qQLOYKQQ9o/Warm Up 1v1 Defense and Tackli_3qQLOYKQQ9o.txt",
+      "video_id": "3qQLOYKQQ9o",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/AgYjTunpVZ8/Soccer Drill Receiving And Tur_AgYjTunpVZ8.txt",
+      "video_id": "AgYjTunpVZ8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/BVSbHtBRSTU/Midfielder Specific Drills - I_BVSbHtBRSTU.txt",
+      "video_id": "BVSbHtBRSTU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/84PjqpAqEc4/22 Drills for Beginners to Dev_84PjqpAqEc4.txt",
+      "video_id": "84PjqpAqEc4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/1IV2CGbGC3Q/Is this the new best session a_1IV2CGbGC3Q.txt",
+      "video_id": "1IV2CGbGC3Q",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/EDJKPs2Qcag/Pass & Move Drill U9 U10 U11 U_EDJKPs2Qcag.txt",
+      "video_id": "EDJKPs2Qcag",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/5vs8lxx9uUU/How to Dribble like a Pro! \ud83d\udd25_5vs8lxx9uUU.txt",
+      "video_id": "5vs8lxx9uUU",
+      "language": "nl",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/YhoVghSxtGA/Inside Look at CFL Players' Li_YhoVghSxtGA.txt",
+      "video_id": "YhoVghSxtGA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/IivQgGN34Pk/Football Speed Training - Beco_IivQgGN34Pk.txt",
+      "video_id": "IivQgGN34Pk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/NpCfUK-JIVM/Dan Crowley How to improve cha_NpCfUK-JIVM.txt",
+      "video_id": "NpCfUK-JIVM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/cDNp7fr7T1k/Change of Direction Training f_cDNp7fr7T1k.txt",
+      "video_id": "cDNp7fr7T1k",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/YHnQtydwmdQ/GLIDE OFF DEFENDERS with these_YHnQtydwmdQ.txt",
+      "video_id": "YHnQtydwmdQ",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/dapco5HlNKU/IMPROVE YOUR CREATIVITY WITH P_dapco5HlNKU.txt",
+      "video_id": "dapco5HlNKU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/OwhYTWae-_s/Ronaldo Tutorial Knuckleball T_OwhYTWae-_s.txt",
+      "video_id": "OwhYTWae-_s",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/893af7f5-0083-4577-987a-cb6a92f7bcf3/21b46f01-4509-40a0-a509-bad0d9b36f7f/Zb1CFosEx18/How To Stop Muscle Soreness_Zb1CFosEx18.txt",
+      "video_id": "Zb1CFosEx18",
+      "language": "en",
+      "type": "auto-generated"
+    }
+  ],
+  "videos": [
+    {
+      "id": "6twpNd7anIQ",
+      "title": "How to play a great warm-up game for youth soccer",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=6twpNd7anIQ"
+    },
+    {
+      "id": "BilrRgwXqqA",
+      "title": "Soccer Drills: Fun Games for Kids 3, 4, 5, 6",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=BilrRgwXqqA"
+    },
+    {
+      "id": "JSP0LcPPHKk",
+      "title": "Soccer Practice Simplified For 5-9 Year Olds",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=JSP0LcPPHKk"
+    },
+    {
+      "id": "OS1i1mBLp0U",
+      "title": "Deleted video",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=OS1i1mBLp0U"
+    },
+    {
+      "id": "LYhhybvKlLI",
+      "title": "U5/6 Soccer Training Session",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=LYhhybvKlLI"
+    },
+    {
+      "id": "G5XWVfoYgLc",
+      "title": "Kids Soccer Games - Dribbling & Shooting",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=G5XWVfoYgLc"
+    },
+    {
+      "id": "auAN7ltYVKo",
+      "title": "U6 soccer model training session",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=auAN7ltYVKo"
+    },
+    {
+      "id": "Yr_AqMLGD4s",
+      "title": "U5 Week1",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Yr_AqMLGD4s"
+    },
+    {
+      "id": "ss0omDAkfeI",
+      "title": "Demotraining U5 U6 RFC Wetteren",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ss0omDAkfeI"
+    },
+    {
+      "id": "GSdpELFl2mc",
+      "title": "U8 Activities",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=GSdpELFl2mc"
+    },
+    {
+      "id": "Bq7BNW-oK-0",
+      "title": "Soccer Drills: Passing & Receiving (U9)",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Bq7BNW-oK-0"
+    },
+    {
+      "id": "nhQmElmkBgs",
+      "title": "FIFA 12 Coaching Manual | Spatial Awareness",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=nhQmElmkBgs"
+    },
+    {
+      "id": "q1Kj5v1xDrU",
+      "title": "Pressing Masterclass With David Moyes 1v1 Pressing",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=q1Kj5v1xDrU"
+    },
+    {
+      "id": "ytF8WjjVw14",
+      "title": "1. Coerver \u0422\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0430 | U7 - U10 | \u0415 \u0438 D - Junior",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ytF8WjjVw14"
+    },
+    {
+      "id": "GRPjap5U11Q",
+      "title": "FFA Small Sided Football Training Practices Under 6 & 7",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=GRPjap5U11Q"
+    },
+    {
+      "id": "CEqJun9wlN8",
+      "title": "1v1 Defending",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=CEqJun9wlN8"
+    },
+    {
+      "id": "zqt_c00WM-Q",
+      "title": "Soccer Drill: Defending & Pressing (U11)",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=zqt_c00WM-Q"
+    },
+    {
+      "id": "fsfG8oTOYac",
+      "title": "U4 Active Start Soccer Session",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=fsfG8oTOYac"
+    },
+    {
+      "id": "qk4VsYy4nRo",
+      "title": "Ball Control Drills For U7, U8 & U9 Soccer/Football 2021",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=qk4VsYy4nRo"
+    },
+    {
+      "id": "WkhbInv1MeE",
+      "title": "4 Football Skills for 5 and 6 year olds to learn",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=WkhbInv1MeE"
+    },
+    {
+      "id": "XqlIE6iPPyI",
+      "title": "Soccer drills & ball control by Adam U6-U7",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=XqlIE6iPPyI"
+    },
+    {
+      "id": "mTjBz7525KQ",
+      "title": "Dribbling + remate",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=mTjBz7525KQ"
+    },
+    {
+      "id": "rN_ltKltpuY",
+      "title": "U8 New Soccer Coaches Training -Video 1 - Star Formation",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=rN_ltKltpuY"
+    },
+    {
+      "id": "zQOJ6EQsAag",
+      "title": "Dribbling Warm-up #2 U8-U10 Changing Speed and Direction, 1/2/3 Turns, Collecting Gates",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=zQOJ6EQsAag"
+    },
+    {
+      "id": "hXcgw7U6qCw",
+      "title": "Dribbling Drill For Close Ball Control | Football/Soccer | U9, U10, U11, U12",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=hXcgw7U6qCw"
+    },
+    {
+      "id": "Kb58F3r_TQM",
+      "title": "10 Best Soccer Passing Drills for U8, U10 and U12 | Fun Soccer Drills by MOJO",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Kb58F3r_TQM"
+    },
+    {
+      "id": "Y5IiB4ERQ5M",
+      "title": "Youth Soccer 7v7 Positions and Shapes",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Y5IiB4ERQ5M"
+    },
+    {
+      "id": "h2CGa4kMdew",
+      "title": "7v7 Player Formation",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=h2CGa4kMdew"
+    },
+    {
+      "id": "FiwQOZMhPRI",
+      "title": "Best 7-a-side Football Formations & Strategies",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=FiwQOZMhPRI"
+    },
+    {
+      "id": "zmLhyIh3aOU",
+      "title": "Breakdown of the 1-2-3-1 Formation (7v7)",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=zmLhyIh3aOU"
+    },
+    {
+      "id": "Ii_Yy6DFGAA",
+      "title": "Soccer/Football Tactics | 7vs7 (U9-U10) | Advantages of the 1-2-3-1",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Ii_Yy6DFGAA"
+    },
+    {
+      "id": "fkWe7QjMdsU",
+      "title": "Specific Positional Rondo - 7 a-side team shape",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=fkWe7QjMdsU"
+    },
+    {
+      "id": "kmmDtmfgos0",
+      "title": "1vs1 Dribbling Soccer Drill | Attacking & Defending Exercises",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=kmmDtmfgos0"
+    },
+    {
+      "id": "3qQLOYKQQ9o",
+      "title": "Warm Up: 1v1 Defense and Tackling",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=3qQLOYKQQ9o"
+    },
+    {
+      "id": "EDJKPs2Qcag",
+      "title": "Pass & Move Drill | U9 U10 U11 U12 | Soccer/Football Passing Combination",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=EDJKPs2Qcag"
+    },
+    {
+      "id": "AgYjTunpVZ8",
+      "title": "Soccer Drill: Receiving And Turning (U8)",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=AgYjTunpVZ8"
+    },
+    {
+      "id": "dkoWJPzxylA",
+      "title": "3 Drills To Help Your Team Spread Out | Prevent Bunching | Football/Soccer",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=dkoWJPzxylA"
+    },
+    {
+      "id": "1IV2CGbGC3Q",
+      "title": "Is this the new best session activator in youth soccer?",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=1IV2CGbGC3Q"
+    },
+    {
+      "id": "84PjqpAqEc4",
+      "title": "22 Drills for Beginners to Develop Ball Control",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=84PjqpAqEc4"
+    },
+    {
+      "id": "BVSbHtBRSTU",
+      "title": "Midfielder Specific Drills - Individual Midfielder Training",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=BVSbHtBRSTU"
+    },
+    {
+      "id": "YhoVghSxtGA",
+      "title": "Inside Look at CFL Players' Linear Speed Training Session at OTA HQ",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=YhoVghSxtGA"
+    },
+    {
+      "id": "NpCfUK-JIVM",
+      "title": "Dan Crowley\u00a0|\u00a0How to improve change of direction | Soccer drill",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=NpCfUK-JIVM"
+    },
+    {
+      "id": "cDNp7fr7T1k",
+      "title": "Change of Direction Training for Pro Football Players [Agility Breakdown]",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=cDNp7fr7T1k"
+    },
+    {
+      "id": "YHnQtydwmdQ",
+      "title": "GLIDE OFF DEFENDERS with these 4 agility drills",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=YHnQtydwmdQ"
+    },
+    {
+      "id": "IivQgGN34Pk",
+      "title": "Football Speed Training - Become a faster Player!",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=IivQgGN34Pk"
+    },
+    {
+      "id": "CeTeukoxfI0",
+      "title": "In the pocket. Stay calm, no panic. #soccertraining #soccerdrills",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=CeTeukoxfI0"
+    },
+    {
+      "id": "5vs8lxx9uUU",
+      "title": "How to Dribble like a Pro! \ud83d\udd25",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=5vs8lxx9uUU"
+    },
+    {
+      "id": "OwhYTWae-_s",
+      "title": "Ronaldo Tutorial Knuckleball Techniques \ud83e\udd2f\ud83d\ude2e\u200d\ud83d\udca8",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=OwhYTWae-_s"
+    },
+    {
+      "id": "Zb1CFosEx18",
+      "title": "How To Stop Muscle Soreness",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Zb1CFosEx18"
+    },
+    {
+      "id": "dapco5HlNKU",
+      "title": "IMPROVE YOUR CREATIVITY WITH PHIL FODEN | 3 Training Drills To Improve Your Chance Creation",
+      "publishedAt": "2025-08-28T13:55:55.510Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=dapco5HlNKU"
+    }
+  ],
+  "start_time": 1758144281.0357535,
+  "user_id": "893af7f5-0083-4577-987a-cb6a92f7bcf3",
+  "credits_reserved": 50,
+  "credits_used": 50,
+  "reservation_id": "73122f06-fd06-4327-88ed-fb555234198d",
+  "videos_metadata": {
+    "6twpNd7anIQ": {
+      "id": "6twpNd7anIQ",
+      "title": "How to play a great warm-up game for youth soccer",
+      "description": "warm-up activity",
+      "channelId": "UCUwOwEFmGUrKmwCecvHNHxg",
+      "channelTitle": "secondnaturesoccer",
+      "publishedAt": "2013-12-04T21:55:47Z",
+      "thumbnail": "https://i.ytimg.com/vi/6twpNd7anIQ/hqdefault.jpg",
+      "duration": "0:33",
+      "viewCount": 20178,
+      "likeCount": 110,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=6twpNd7anIQ"
+    },
+    "BilrRgwXqqA": {
+      "id": "BilrRgwXqqA",
+      "title": "Soccer Drills: Fun Games for Kids 3, 4, 5, 6",
+      "description": "http://www.soccerhelp.com Soccer drills, fun kids games, soccer patches, rules, positions and how to coach youth soccer. 700 Testimonials are at http://www.soccerhelp.com/shshop/testimonials.php  This is our Hit the Coach game for ages 3, 4, 5, 6, U4 and U6. Click soccerhelpvideo above to see more SoccerHelp videos. Our training program works.",
+      "channelId": "UCiLfmCaYeDh4gvwMtTP6UBA",
+      "channelTitle": "SoccerHelp.com video",
+      "publishedAt": "2008-08-19T06:22:31Z",
+      "thumbnail": "https://i.ytimg.com/vi/BilrRgwXqqA/hqdefault.jpg",
+      "duration": "1:05",
+      "viewCount": 897759,
+      "likeCount": 1850,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=BilrRgwXqqA"
+    },
+    "JSP0LcPPHKk": {
+      "id": "JSP0LcPPHKk",
+      "title": "Soccer Practice Simplified For 5-9 Year Olds",
+      "description": "Learn more here- http://www.soccervideos.com/products/soccer-practice-simplified\n\nDesigned to be a companion for the Soccer Practice Simplified book, this progressive program shows clear, concise examples of:\n* Warm-up Games * Technical Exercises * Skill Games * Coordination Games * Game Situation Games",
+      "channelId": "UCw6ysXj1CecYB-_g2S8PHvw",
+      "channelTitle": "Soccer Videos",
+      "publishedAt": "2013-11-07T23:48:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/JSP0LcPPHKk/hqdefault.jpg",
+      "duration": "3:49",
+      "viewCount": 602565,
+      "likeCount": 2264,
+      "commentCount": 32,
+      "url": "https://www.youtube.com/watch?v=JSP0LcPPHKk"
+    },
+    "OS1i1mBLp0U": {},
+    "LYhhybvKlLI": {
+      "id": "LYhhybvKlLI",
+      "title": "U5/6 Soccer Training Session",
+      "description": "This large group session adds activities that can be used in a small or large group setting.",
+      "channelId": "UCrXteZZf_3FisYgW69kkTUQ",
+      "channelTitle": "John Murnan",
+      "publishedAt": "2018-06-05T21:06:59Z",
+      "thumbnail": "https://i.ytimg.com/vi/LYhhybvKlLI/maxresdefault.jpg",
+      "duration": "15:07",
+      "viewCount": 76001,
+      "likeCount": 702,
+      "commentCount": 11,
+      "url": "https://www.youtube.com/watch?v=LYhhybvKlLI"
+    },
+    "G5XWVfoYgLc": {
+      "id": "G5XWVfoYgLc",
+      "title": "Kids Soccer Games - Dribbling & Shooting",
+      "description": "http://www.soccerhelp.com Soccer drills, games, patches and how to coach youth soccer. 700 Testimonials are at http://www.soccerhelp.com/shshop/testimonials.php This is from the Coach Doug DVD about how to coach kids soccer to ages 3, 4, 5, 6, U4 and U6. Click soccerhelpvideo above to see more SoccerHelp videos. Our training program works.",
+      "channelId": "UCiLfmCaYeDh4gvwMtTP6UBA",
+      "channelTitle": "SoccerHelp.com video",
+      "publishedAt": "2008-08-19T06:22:28Z",
+      "thumbnail": "https://i.ytimg.com/vi/G5XWVfoYgLc/hqdefault.jpg",
+      "duration": "1:51",
+      "viewCount": 215559,
+      "likeCount": 362,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=G5XWVfoYgLc"
+    },
+    "auAN7ltYVKo": {
+      "id": "auAN7ltYVKo",
+      "title": "U6 soccer model training session",
+      "description": "This video contains activities geared to the U6 age group along with lots of suggestions for how to run a more effective session.",
+      "channelId": "UCrXteZZf_3FisYgW69kkTUQ",
+      "channelTitle": "John Murnan",
+      "publishedAt": "2016-07-15T22:33:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/auAN7ltYVKo/hqdefault.jpg",
+      "duration": "25:27",
+      "viewCount": 228851,
+      "likeCount": 1763,
+      "commentCount": 45,
+      "url": "https://www.youtube.com/watch?v=auAN7ltYVKo"
+    },
+    "Yr_AqMLGD4s": {
+      "id": "Yr_AqMLGD4s",
+      "title": "U5 Week1",
+      "description": "The coaching DVD provides detailed curriculum for an entire season to help the parent coach create a fun and appropriate level of programming.  \nThis is a preview of the first week of a U5 training session.  \nThe DVD series will include an introduction to the Second Nature philosophy and 8 training sessions.",
+      "channelId": "UCUwOwEFmGUrKmwCecvHNHxg",
+      "channelTitle": "secondnaturesoccer",
+      "publishedAt": "2013-06-06T19:47:45Z",
+      "thumbnail": "https://i.ytimg.com/vi/Yr_AqMLGD4s/maxresdefault.jpg",
+      "duration": "3:56",
+      "viewCount": 625524,
+      "likeCount": 5453,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=Yr_AqMLGD4s"
+    },
+    "ss0omDAkfeI": {
+      "id": "ss0omDAkfeI",
+      "title": "Demotraining U5 U6 RFC Wetteren",
+      "description": "",
+      "channelId": "UCoLDrCytgth-osQV2nx47-Q",
+      "channelTitle": "Mini Duivels",
+      "publishedAt": "2016-10-05T16:52:35Z",
+      "thumbnail": "https://i.ytimg.com/vi/ss0omDAkfeI/maxresdefault.jpg",
+      "duration": "12:31",
+      "viewCount": 51988,
+      "likeCount": 458,
+      "commentCount": 7,
+      "url": "https://www.youtube.com/watch?v=ss0omDAkfeI"
+    },
+    "GSdpELFl2mc": {
+      "id": "GSdpELFl2mc",
+      "title": "U8 Activities",
+      "description": "U8 Activities",
+      "channelId": "UCvJNhFOOa9YYb8lhb5hGvyQ",
+      "channelTitle": "Tennessee State Soccer Association",
+      "publishedAt": "2015-01-02T04:11:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/GSdpELFl2mc/maxresdefault.jpg",
+      "duration": "18:06",
+      "viewCount": 454316,
+      "likeCount": 4270,
+      "commentCount": 65,
+      "url": "https://www.youtube.com/watch?v=GSdpELFl2mc"
+    },
+    "Bq7BNW-oK-0": {
+      "id": "Bq7BNW-oK-0",
+      "title": "Soccer Drills: Passing & Receiving (U9)",
+      "description": "Soccer/Football Coaching Drill for the U9 age group aimed at improving players' passing and receiving skills.\n\n\nView more sessions like this in full here - www.thecoachingmanual.com",
+      "channelId": "UCHCkQnt7cQqA6ZC41f1W4cA",
+      "channelTitle": "The Coaching Manual",
+      "publishedAt": "2016-09-06T13:02:14Z",
+      "thumbnail": "https://i.ytimg.com/vi/Bq7BNW-oK-0/maxresdefault.jpg",
+      "duration": "3:02",
+      "viewCount": 683921,
+      "likeCount": 2939,
+      "commentCount": 47,
+      "url": "https://www.youtube.com/watch?v=Bq7BNW-oK-0"
+    },
+    "nhQmElmkBgs": {
+      "id": "nhQmElmkBgs",
+      "title": "FIFA 12 Coaching Manual | Spatial Awareness",
+      "description": "This video has been created to give you a better understanding of spatial awareness on the pitch, how to receive on the move, support a player on the ball and practice the perfect weight of pass. Brought to you by The Coaching Manual.\r\n \r\nEA SPORTS Exclusive offer -  All FIFA12 users can claim 25% off a full year's subscription, Use promo code FIFA12 when you register online by clicking this link http://bit.ly/TCMFIFA12\r\n \r\nThe Coaching Manual have created a series of \"nuggets\" exclusively for EA SPORTS, these give you a taste of the quality of video our members are privy to. With over 80 football coaching videos on-line; From attacking drills to defensive drills, including warm-ups and small sided games; we've covered all essential aspects of youth football. Have a look on our site to see what you can learn, and what difference you can make to Grass Roots Football. Get the knowledge. Pass it on.",
+      "channelId": "UCoyaxd5LQSuP4ChkxK0pnZQ",
+      "channelTitle": "EA SPORTS FC",
+      "publishedAt": "2011-11-10T16:53:13Z",
+      "thumbnail": "https://i.ytimg.com/vi/nhQmElmkBgs/hqdefault.jpg",
+      "duration": "4:05",
+      "viewCount": 216029,
+      "likeCount": 1465,
+      "commentCount": 31,
+      "url": "https://www.youtube.com/watch?v=nhQmElmkBgs"
+    },
+    "q1Kj5v1xDrU": {
+      "id": "q1Kj5v1xDrU",
+      "title": "Pressing Masterclass With David Moyes 1v1 Pressing",
+      "description": "1v1 Warm Up Drill by former Man Utd Manager David Moyes. See the full session here: https://thecoachingmanual.com/Session/1066 This is the warm up for a 3 part session which is exclusive to The Coaching Manual. The coaching detail is first class",
+      "channelId": "UCHCkQnt7cQqA6ZC41f1W4cA",
+      "channelTitle": "The Coaching Manual",
+      "publishedAt": "2018-12-03T14:48:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/q1Kj5v1xDrU/maxresdefault.jpg",
+      "duration": "7:09",
+      "viewCount": 278846,
+      "likeCount": 3419,
+      "commentCount": 177,
+      "url": "https://www.youtube.com/watch?v=q1Kj5v1xDrU"
+    },
+    "ytF8WjjVw14": {
+      "id": "ytF8WjjVw14",
+      "title": "1. Coerver \u0422\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0430 | U7 - U10 | \u0415 \u0438 D - Junior",
+      "description": "\u0422\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0430 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0430 \u0438\u0437 \u0431\u043b\u043e\u043a\u043e\u0432 \u043c\u0435\u0442\u043e\u0434\u0438\u043a\u0438 Coerver Coaching, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u043d\u0430\u0433\u043b\u044f\u0434\u043d\u043e \u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0435\u0442, \u043a\u0430\u043a \u043d\u0443\u0436\u043d\u043e \u0441\u0442\u0440\u043e\u0438\u0442\u044c \u0442\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043e\u0447\u043d\u044b\u0439 \u043f\u0440\u043e\u0446\u0435\u0441\u0441  \u0415 \u0438 D - Junior \u0441 \u0441\u0430\u043c\u043e\u0433\u043e \u043d\u0430\u0447\u0430\u043b\u0430 \u0441 \u0434\u0435\u0442\u044c\u043c\u0438 \u0432\u043e\u0437\u0440\u0430\u0441\u0442\u043d\u043e\u0439 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438 U7, U8, U9 \u0438 U10. \n\n\u041f\u0440\u0435\u0438\u043c\u0443\u0449\u0435\u0441\u0442\u0432\u0430 \u0442\u0430\u043a\u0438\u0445 \u0442\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043e\u043a \u0432 \u0442\u043e\u043c, \u0447\u0442\u043e \u043e\u043d\u0438 \u043e\u0434\u0438\u043d\u0430\u043a\u043e\u0432\u043e \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0442 \u0438 \u0434\u043b\u044f \u0441\u0442\u0430\u0440\u0448\u0438\u0445 \u0432\u043e\u0437\u0440\u0430\u0441\u0442\u043d\u044b\u0445 \u0433\u0440\u0443\u043f\u043f, \u0442\u0430\u043a \u043a\u0430\u043a \u043c\u0435\u0442\u043e\u0434\u0438\u043a\u0430 Coerver Coaching \u0434\u0435\u043b\u0430\u0435\u0442 \u0443\u043f\u043e\u0440 \u043d\u0430 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u043e\u043c \u043e\u0441\u0432\u043e\u0435\u043d\u0438\u0438 \u043f\u0440\u0438\u0435\u043c\u043e\u0432 \u043e\u0442 \u043f\u0440\u043e\u0441\u0442\u043e\u0433\u043e \u043a \u0441\u043b\u043e\u0436\u043d\u043e\u043c\u0443. \u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u044f \u044d\u0442\u0438\u043c \u0442\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0430\u043c \u044e\u043d\u044b\u0439 \u0444\u0443\u0442\u0431\u043e\u043b\u0438\u0441\u0442 \u0431\u044b\u0441\u0442\u0440\u0435\u0435 \u0430\u0434\u0430\u043f\u0442\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u043a \u0442\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043e\u0447\u043d\u043e\u043c\u0443 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0443 \u0438 \u043e\u0441\u0432\u0430\u0438\u0432\u0430\u0435\u0442 \u043c\u043d\u043e\u0436\u0435\u0441\u0442\u0432\u043e \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u043f\u0440\u0438\u0435\u043c\u043e\u0432 \u0432 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0443\u043f\u0440\u0430\u0436\u043d\u0435\u043d\u0438\u0439, \u043c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u043e \u043f\u0440\u0438\u0431\u043b\u0438\u0436\u0435\u043d\u043d\u044b\u0445 \u043a \u0438\u0433\u0440\u043e\u0432\u044b\u043c. \n\n\u0422\u0430\u043a\u0438\u043c \u043e\u0431\u0440\u0430\u0437\u043e\u043c, \u044e\u043d\u044b\u0439 \u0444\u0443\u0442\u0431\u043e\u043b\u0438\u0441\u0442 \u0440\u0430\u0441\u043a\u0440\u0435\u043f\u043e\u0449\u0430\u0435\u0442\u0441\u044f, \u0441\u043c\u0435\u043b\u043e \u0438\u0434\u0435\u0442 \u0432 \u043e\u0431\u044b\u0433\u0440\u044b\u0448 \u0438 \u043d\u0430\u043c\u043d\u043e\u0433\u043e \u0431\u044b\u0441\u0442\u0440\u0435\u0435 \u0443\u0441\u0432\u0430\u0438\u0432\u0430\u0435\u0442 \u0442\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0441\u0445\u0435\u043c\u044b \u0432 \u0431\u0443\u0434\u0443\u0449\u0435\u043c. \n\n\u0412\u0430\u0436\u043d\u044b\u043c \u0430\u043a\u0446\u0435\u043d\u0442\u043e\u043c \u043c\u0435\u0442\u043e\u0434\u0438\u043a\u0438 Coerver Coaching \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0442\u0435\u0445\u043d\u0438\u043a\u0430 \u0440\u0430\u0431\u043e\u0442\u044b \u0441 \u043c\u044f\u0447\u043e\u043c. \u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u044f \u0433\u0440\u0430\u043c\u043e\u0442\u043d\u043e \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u043d\u044b\u043c \u0442\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0430\u043c \u044e\u043d\u044b\u0439 \u0444\u0443\u0442\u0431\u043e\u043b\u0438\u0441\u0442 \u0443\u0441\u0432\u0430\u0438\u0432\u0430\u0435\u0442 \u043c\u043d\u043e\u0436\u0435\u0441\u0442\u0432\u043e \u0441\u043b\u043e\u0436\u043d\u044b\u0445 \u043f\u0440\u0438\u0435\u043c\u043e\u0432 \u0438 \u0444\u0438\u043d\u0442\u043e\u0432 \u0438\u0433\u0440\u0430\u044e\u0447\u0438, \u0447\u0442\u043e \u043f\u043e\u043b\u043e\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0441\u043a\u0430\u0437\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u043d\u0430 \u0435\u0433\u043e \u0438\u0433\u0440\u0435 \u0432 \u043a\u043e\u043c\u0430\u043d\u0434\u0435, \u0433\u0434\u0435, \u0432 \u043e\u0442\u043b\u0438\u0447\u0438\u0438 \u043e\u0442 \u0441\u0432\u043e\u0438\u0445 \u043f\u0430\u0440\u0442\u043d\u0435\u0440\u043e\u0432, \u043e\u043d \u043c\u043e\u0436\u0435\u0442 \u043f\u0440\u043e\u044f\u0432\u0438\u0442\u044c \u0443\u0432\u0435\u0440\u0435\u043d\u043d\u043e \u043d\u0435\u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u044b\u0435 \u0445\u043e\u0434\u044b \u0438 \u0438\u043d\u0434\u0438\u0432\u0438\u0434\u0443\u0430\u043b\u044c\u043d\u043e\u0435 \u043c\u0430\u0441\u0442\u0435\u0440\u0441\u0442\u0432\u043e \u0438, \u0442\u0435\u043c \u0441\u0430\u043c\u044b\u043c, \u043e\u0431\u043e\u0441\u0442\u0440\u0438\u0442\u044c \u0438\u0433\u0440\u043e\u0432\u0443\u044e \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u044e.",
+      "channelId": "UCpn-RJWrw9azvBlUbRVAX6Q",
+      "channelTitle": "Deutsche Fussballschule",
+      "publishedAt": "2017-03-01T14:04:34Z",
+      "thumbnail": "https://i.ytimg.com/vi/ytF8WjjVw14/maxresdefault.jpg",
+      "duration": "27:23",
+      "viewCount": 88082,
+      "likeCount": 1407,
+      "commentCount": 12,
+      "url": "https://www.youtube.com/watch?v=ytF8WjjVw14"
+    },
+    "GRPjap5U11Q": {
+      "id": "GRPjap5U11Q",
+      "title": "FFA Small Sided Football Training Practices Under 6 & 7",
+      "description": " ",
+      "channelId": "UCm1Kdx8kxqttxJqEQzKZ6lw",
+      "channelTitle": "Football Victoria",
+      "publishedAt": "2011-07-26T04:34:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/GRPjap5U11Q/hqdefault.jpg",
+      "duration": "7:02",
+      "viewCount": 109519,
+      "likeCount": 1006,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=GRPjap5U11Q"
+    },
+    "CEqJun9wlN8": {
+      "id": "CEqJun9wlN8",
+      "title": "1v1 Defending",
+      "description": "Description",
+      "channelId": "UC_3k_8jEah8OaA1mOGtQ0lA",
+      "channelTitle": "Premier Soccer Academy",
+      "publishedAt": "2015-09-05T20:39:48Z",
+      "thumbnail": "https://i.ytimg.com/vi/CEqJun9wlN8/hqdefault.jpg",
+      "duration": "11:32",
+      "viewCount": 32232,
+      "likeCount": 395,
+      "commentCount": 10,
+      "url": "https://www.youtube.com/watch?v=CEqJun9wlN8"
+    },
+    "zqt_c00WM-Q": {
+      "id": "zqt_c00WM-Q",
+      "title": "Soccer Drill: Defending & Pressing (U11)",
+      "description": "Defending and Pressing soccer drill for the U11 age group.\n\nSee more sessions like this on our website - https://thecoachingmanual.com",
+      "channelId": "UCHCkQnt7cQqA6ZC41f1W4cA",
+      "channelTitle": "The Coaching Manual",
+      "publishedAt": "2016-07-14T11:10:08Z",
+      "thumbnail": "https://i.ytimg.com/vi/zqt_c00WM-Q/maxresdefault.jpg",
+      "duration": "3:30",
+      "viewCount": 398751,
+      "likeCount": 2253,
+      "commentCount": 26,
+      "url": "https://www.youtube.com/watch?v=zqt_c00WM-Q"
+    },
+    "fsfG8oTOYac": {
+      "id": "fsfG8oTOYac",
+      "title": "U4 Active Start Soccer Session",
+      "description": "U4 Active Start program for the Welland Soccer Club ( http://www.wellandsoccerclub.com ) at the Young's Sportsplex, Welland, ON.  Coach: Frank DeChellis",
+      "channelId": "UC3FmxnL4mMIRMl8QuhiD12w",
+      "channelTitle": "Frank DeChellis",
+      "publishedAt": "2013-03-08T12:37:51Z",
+      "thumbnail": "https://i.ytimg.com/vi/fsfG8oTOYac/maxresdefault.jpg",
+      "duration": "12:09",
+      "viewCount": 427518,
+      "likeCount": 2685,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=fsfG8oTOYac"
+    },
+    "qk4VsYy4nRo": {
+      "id": "qk4VsYy4nRo",
+      "title": "Ball Control Drills For U7, U8 & U9 Soccer/Football 2021",
+      "description": "Training Gear We Use!\nSet of 50 Cones https://amzn.to/3nVBxQY \nSet of 20 Flat Disks https://amzn.to/3nNBXJb\nSKLZ Hurdles https://amzn.to/3nUNarC\nSKLZ Ladder https://amzn.to/40M0qNz\nSoccer Tennis Net https://amzn.to/43oP4ky\nPop Up Goals https://amzn.to/40PqkAf\nPoles (For Grass) https://amzn.to/40NauWR\nPoles (For Turf/Astro) https://amzn.to/3MoWFcS\nBibs (All Sizes) https://amzn.to/3KHLw5D\n\n\nCoaches Gear We Use!\nLCD Tactic Board https://amzn.to/40PPApT\nMagnetic Tactic Board https://amzn.to/3ZNonTw\nCoaches Notebook https://amzn.to/3ZPOTf9\nBall Pump https://amzn.to/3Mn4T52\nCoaches Seat https://amzn.to/43bUIq0\nBall Carry Bag https://amzn.to/3mmkW8x\nWhistle & Stop Watch Combo https://amzn.to/3mf6ijy\n\nPlease note, if you use any of the links to purchase items from Amazon, the channel will receive a commission percentage. This will not effect the price or your buying experience. \n\nIn this video, we go over 6 different drills that will help you improve your ball control. \nThese drills are aimed towards U7, U8 & U9 age groups, but they can be used for older ages too. These drills are designed to incorporate both feet, to help you improve your ball control with both your left and right foot. Being able to use both feet will benefit your game, and help you improve faster. \n\nThe drills are as follows:\nFoundations - with progression \nToe Taps - with progression\nSole Roll\nMoving Sole Roll \nOutside Inside\nZig Zag Time Challenge \n\nTime yourself on the last challenge and see how fast you can complete it. \n\nSubscribe for weekly videos!\n\n\nSUBSCRIBE: https://www.youtube.com/@KSPerformance?sub_confirmation=1 \n   Thanks for showing your support!\n\n\nEMAIL: ksperformancefootball@gmail.com \n\n\nFOLLOW US\n    Facebook: https://www.facebook.com/KSperformancefootball/ \n    Instagram: https://www.instagram.com/ks_performance_football/ \n\n\nPLAYLISTS\n   Rondos: https://www.youtube.com/playlist?list=PLdyn9mzmWtGmmdkLXMCygw88O-eWkTuv7 \n   \n   Passing Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGnxbgLjwgAYDhKflrHXODpu     \n\n   Shooting Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGkYC8l9mgsW9C0mBj1GX8Sr \n  \n   U6, U7, U8, U9 Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGn84H14bCnP0loxWdHq1phL \n\n   Pro Team Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGnB0SBWB1vODDdkT8Eeo68E \n\n\n\n\n\nsoccer, football, training, exercise soccer training, passing exercise soccer, exercise for soccer, exercise for soccer training, soccer warm up exercise, football drills, soccer drills, passing drills, soccer passing, football passing, passing, tiki taka drill, possession drills, training coach, coaching kids, football training, youth football, professional soccer training, youth soccer, youth football, football soccer coaching, professional football training, football rondo, soccer rondo, warm up drills, triangle passing, fitness drills, passing training, shooting drills, finishing drills, how to coach, lifestyle, train, footy, juggle, freestyle, cristiano, messi, offseason, preseason, cardio, stamina, soccer specific",
+      "channelId": "UCFbW6k0VlddrwG4W_TvpkJQ",
+      "channelTitle": "KS Performance",
+      "publishedAt": "2020-06-03T13:38:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/qk4VsYy4nRo/maxresdefault.jpg",
+      "duration": "5:57",
+      "viewCount": 489818,
+      "likeCount": 7260,
+      "commentCount": 97,
+      "url": "https://www.youtube.com/watch?v=qk4VsYy4nRo"
+    },
+    "WkhbInv1MeE": {
+      "id": "WkhbInv1MeE",
+      "title": "4 Football Skills for 5 and 6 year olds to learn",
+      "description": "Beginner Skills eBook download:  https://www.stan.store/Zaleto\n\nWe have put together an easy to follow guide, featuring 10 skills, drills and challenges, perfect for young players, aged 5-10 year olds to get better at football. \n\nThis ebook contains the key foundations of all the future advanced skills. Great for players to learn new skills and build confidence. You can quickly download it onto any of your devices from:\n\n https://www.stan.store/zaleto\n\nIn this video:\nIn the video 5 year old Arlo is guided through the steps of a ball manipulation move; a turn; a beat the man move and juggling challenge. \n\n1. Boxing\n2. Stop Turn\n3. Scissors\n4. Karate Kid juggle\n5. Combo\n\nEnjoy and as you can see from the video it will take some patience with a 5 year old!!\n\n\u26bd\ufe0f Check out this video with Arlo learning the Maradona and sole roll (and a lot more cheekiness!): https://youtu.be/t-x7od-aTzo \n\n\ud83d\udc49\ud83d\udca5 Don\u2019t forget to subscribe to our YouTube channel for more content. A lot more high quality tutorials, practice ideas, challenges, guides and interviews will be hitting this channel \ud83d\udd25\n\nFollow Zaleto on Social Media:\nFollow us on Instagram: https://www.instagram.com/zaletosoccer/\nDiscover us on Twitter: https://twitter.com/ZaletoSoccer\nFind us on Facebook: https://www.facebook.com/zaleto/\nTik Tok clips: https://vm.tiktok.com/tbhR6y/\nAdd us on Snapchat: www.snapchat.com/add/zaletosoccer \n\nLearn the Moves\nBuild Confidence\nMaster the Ball \u26bd\ufe0f\nLove the Game \u2764\ufe0f\n\nEnjoy your practicing \ud83d\udc4d\n\nContact: jamie@zaleto.net\nwww.zaleto.net\n\nOur mission at Zaleto is to help every player, whatever your ability, to take your game to the next level. There are videos for beginners to advanced players to help you IMPROVE. We will show you skills and practices that will transfer on to the pitch and will make you a better player.\n\nZaleto is based in England, provided by Jamie Harrison, a former Academy Manager and Professional Coach, who holds the UEFA A Licence and FA Advanced Youth Award qualifications.\n\nThank you for watching.",
+      "channelId": "UCfXWyZEcsCM4L5OC_0srfZQ",
+      "channelTitle": "Zaleto Soccer",
+      "publishedAt": "2020-04-03T05:30:00Z",
+      "thumbnail": "https://i.ytimg.com/vi/WkhbInv1MeE/maxresdefault.jpg",
+      "duration": "9:55",
+      "viewCount": 934369,
+      "likeCount": 7550,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=WkhbInv1MeE"
+    },
+    "XqlIE6iPPyI": {
+      "id": "XqlIE6iPPyI",
+      "title": "Soccer drills & ball control by Adam U6-U7",
+      "description": "Presented by AfterSchoolSoccer2016",
+      "channelId": "UC11DZP7eI92YYeq7Vc5TE5Q",
+      "channelTitle": "CoachSaad_N_Sons",
+      "publishedAt": "2016-03-13T04:10:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/XqlIE6iPPyI/maxresdefault.jpg",
+      "duration": "1:01",
+      "viewCount": 69013,
+      "likeCount": 380,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=XqlIE6iPPyI"
+    },
+    "mTjBz7525KQ": {
+      "id": "mTjBz7525KQ",
+      "title": "Dribbling + remate",
+      "description": "",
+      "channelId": "UCVNXswyaz7Joi08hkJ8Wn_Q",
+      "channelTitle": "Vaimaca F\u00fatbol",
+      "publishedAt": "2017-03-25T00:07:19Z",
+      "thumbnail": "https://i.ytimg.com/vi/mTjBz7525KQ/maxresdefault.jpg",
+      "duration": "2:44",
+      "viewCount": 3938,
+      "likeCount": 33,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=mTjBz7525KQ"
+    },
+    "rN_ltKltpuY": {
+      "id": "rN_ltKltpuY",
+      "title": "U8 New Soccer Coaches Training -Video 1 - Star Formation",
+      "description": "Video Tutorial for New Soccer Coaches in the U8 (ages 6 and 7), 5 v 5 (5 players on the field). Boys or Girls.  Learn how to easily teach your kids to stay in formation, hold their position, move as a unit and where to stand on the field during different game situations.\n\nClick on the link below to obtain an outline of the video series:\nhttps://www.dropbox.com/s/nf9h1gd852bsynw/NEW%20SOCCER%20COACHES%20INSTRUCTIONAL%20VIDEOS%20AGES%206-7.PDF?dl=0",
+      "channelId": "UCqsTWz7uWN6M2mXgjB5qqzg",
+      "channelTitle": "Brian Haufschild",
+      "publishedAt": "2018-06-04T15:53:54Z",
+      "thumbnail": "https://i.ytimg.com/vi/rN_ltKltpuY/maxresdefault.jpg",
+      "duration": "11:52",
+      "viewCount": 65582,
+      "likeCount": 1094,
+      "commentCount": 64,
+      "url": "https://www.youtube.com/watch?v=rN_ltKltpuY"
+    },
+    "zQOJ6EQsAag": {
+      "id": "zQOJ6EQsAag",
+      "title": "Dribbling Warm-up #2 U8-U10 Changing Speed and Direction, 1/2/3 Turns, Collecting Gates",
+      "description": "",
+      "channelId": "UCodxmtGbt6FOur_jXBq2i8A",
+      "channelTitle": "AYSO644 and Weston Select",
+      "publishedAt": "2017-03-25T03:53:04Z",
+      "thumbnail": "https://i.ytimg.com/vi/zQOJ6EQsAag/hqdefault.jpg",
+      "duration": "7:55",
+      "viewCount": 241302,
+      "likeCount": 2373,
+      "commentCount": 20,
+      "url": "https://www.youtube.com/watch?v=zQOJ6EQsAag"
+    },
+    "hXcgw7U6qCw": {
+      "id": "hXcgw7U6qCw",
+      "title": "Dribbling Drill For Close Ball Control | Football/Soccer | U9, U10, U11, U12",
+      "description": "Use this simple but effective drill to improve your close control of the football.\n\nThis video shows 6 variations that can be performed, but feel free to create your own. Just remember to use both feet! \nThis drill will help you improve your dribbling by focusing on keeping the ball close and tight when going round the cone but also becoming more comfortable with both feet.\n\n\nSUBSCRIBE: https://www.youtube.com/@KSPerformance?sub_confirmation=1 \n   Thanks for showing your support!\n\n\nEMAIL: ksperformancefootball@gmail.com \n\n\nFOLLOW US\n    Facebook: https://www.facebook.com/KSperformancefootball/ \n    Instagram: https://www.instagram.com/ks_performance_football/ \n\n\nPLAYLISTS\n   Rondos: https://www.youtube.com/playlist?list=PLdyn9mzmWtGmmdkLXMCygw88O-eWkTuv7 \n   \n   Passing Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGnxbgLjwgAYDhKflrHXODpu     \n\n   Shooting Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGkYC8l9mgsW9C0mBj1GX8Sr \n  \n   U6, U7, U8, U9 Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGn84H14bCnP0loxWdHq1phL \n\n   Pro Team Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGnB0SBWB1vODDdkT8Eeo68E \n\n\n\n\n\nsoccer, football, training, exercise soccer training, passing exercise soccer, exercise for soccer, exercise for soccer training, soccer warm up exercise, football drills, soccer drills, passing drills, soccer passing, football passing, passing, tiki taka drill, possession drills, training coach, coaching kids, football training, youth football, professional soccer training, youth soccer, youth football, football soccer coaching, professional football training, football rondo, soccer rondo, warm up drills, triangle passing, fitness drills, passing training, shooting drills, finishing drills, how to coach, lifestyle, train, footy, juggle, freestyle, cristiano, messi, offseason, preseason, cardio, stamina, soccer specific",
+      "channelId": "UCFbW6k0VlddrwG4W_TvpkJQ",
+      "channelTitle": "KS Performance",
+      "publishedAt": "2020-12-06T19:00:08Z",
+      "thumbnail": "https://i.ytimg.com/vi/hXcgw7U6qCw/maxresdefault.jpg",
+      "duration": "4:13",
+      "viewCount": 82693,
+      "likeCount": 1171,
+      "commentCount": 14,
+      "url": "https://www.youtube.com/watch?v=hXcgw7U6qCw"
+    },
+    "Kb58F3r_TQM": {
+      "id": "Kb58F3r_TQM",
+      "title": "10 Best Soccer Passing Drills for U8, U10 and U12 | Fun Soccer Drills by MOJO",
+      "description": "To pass effectively, young soccer players need to know how to receive the ball, control it and how to use different parts of the foot to move the ball in different ways. Passing is at the heart of possession, and effective passing and ball control can set any team up for success.\n\nHere are the fun soccer drills for kids in this video:\n0:07 Gates Passing\n1:22 Numbers Passing\n3:06 Barcelona\n4:47 Triangle Goal Game\n6:28 3v2 to Goal\n8:00 Rondo 5v2\n9:37 5 Goal Game\n11:10 Hot Box\n12:43 2v2v2 Keep-Away\n14:38 3v3+1 Keep-Away\n\n-----\nABOUT MOJO:\n\nMOJO is the best coaching resource in youth sports. It's a mobile app for parents and coaches to make youth sports training easy, stress-free, and fun. With MOJO, coaches can plan practices at the tap of a button (for free!), and parents can access training for their kids anytime, anywhere.\n\nMOJO has a library of hundreds of activities designed by top youth coaches and organizations like FC Barcelona, NFL FLAG, and more. Videos are produced by award-winning teams: finally, high-quality coaching content that's fun to watch and teach.\n\nMOJO is used by more than 20,000 teams and backed by US Youth Soccer, Positive Coaching Alliance, and numerous others. No matter your experience level, MOJO helps you improve your game with game-changing content and technology - it's no wonder the Webby Awards named MOJO 2021's best sports app.\n\nGET MOJO:\nDownload the app for free: get.mojo.sport/youtube\nVisit our website: www.mojo.sport\n\nFOLLOW MOJO:\nFacebook: @yougotmojo\nTwitter: @yougotmojo\nInstagram: @yougotmojo",
+      "channelId": "UCY6jYOza3nOOfUzadS2T3AA",
+      "channelTitle": "yougotmojo",
+      "publishedAt": "2021-08-09T20:39:37Z",
+      "thumbnail": "https://i.ytimg.com/vi/Kb58F3r_TQM/maxresdefault.jpg",
+      "duration": "16:29",
+      "viewCount": 1070998,
+      "likeCount": 9469,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=Kb58F3r_TQM"
+    },
+    "Y5IiB4ERQ5M": {
+      "id": "Y5IiB4ERQ5M",
+      "title": "Youth Soccer 7v7 Positions and Shapes",
+      "description": "Introduction to a 2-3-1 formation for youth soccer 7v7 games (U.S. Soccer U9 and U10 age divisions). This video is intended to help coaches, parents, and players start to understand the basic strategies of the game. Coaches can ask their players how to \"make good shapes\" and \"move together\" throughout the season to help players develop a better understanding of their position and movement. \n\n\nMusic: \"Exception\" by Jincheng Zhang, provided by the YouTube audio library.",
+      "channelId": "UCy5abvt1J1R3lfXWHZ9PaLw",
+      "channelTitle": "Soccer Dots",
+      "publishedAt": "2017-08-28T20:24:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/Y5IiB4ERQ5M/hqdefault.jpg",
+      "duration": "2:49",
+      "viewCount": 527133,
+      "likeCount": 5356,
+      "commentCount": 60,
+      "url": "https://www.youtube.com/watch?v=Y5IiB4ERQ5M"
+    },
+    "h2CGa4kMdew": {
+      "id": "h2CGa4kMdew",
+      "title": "7v7 Player Formation",
+      "description": "Lee goes over the 7v7 soccer formation.   This formation is one of the two (the other being 5v5) that will be used this coming Fall.  Remember, if you have additional questions, be sure to reach out!    \n\nuscore-soccer.com/",
+      "channelId": "UC2E5Oxv6t7CBiq1LKoH8TnA",
+      "channelTitle": "uScore Soccer",
+      "publishedAt": "2019-08-28T19:06:41Z",
+      "thumbnail": "https://i.ytimg.com/vi/h2CGa4kMdew/maxresdefault.jpg",
+      "duration": "3:22",
+      "viewCount": 246852,
+      "likeCount": 3267,
+      "commentCount": 39,
+      "url": "https://www.youtube.com/watch?v=h2CGa4kMdew"
+    },
+    "FiwQOZMhPRI": {
+      "id": "FiwQOZMhPRI",
+      "title": "Best 7-a-side Football Formations & Strategies",
+      "description": "Buy the latest football training products here: https://www.amazon.co.uk/shop/catalansoccer\nHere are the best 7 v 7 Football Formations and how to coach them!\n\nSubscribe to our Channel for more Coaching Tips coming Soon! \nhttps://www.youtube.com/channel/UCwiVCwpYzvGBnA0bt_YTpEg?sub_confirmation=1.\n\nTalk to us on TWITTER: https://twitter.com/CatalanSoccer\n\nInsta - 'CatalanSoccer'\n\nFacebook - https://www.facebook.com/CatalanSoccer\n\nwww.catalansoccer.com",
+      "channelId": "UCwiVCwpYzvGBnA0bt_YTpEg",
+      "channelTitle": "Catalan Soccer",
+      "publishedAt": "2019-03-10T10:58:45Z",
+      "thumbnail": "https://i.ytimg.com/vi/FiwQOZMhPRI/maxresdefault.jpg",
+      "duration": "7:20",
+      "viewCount": 295230,
+      "likeCount": 4490,
+      "commentCount": 162,
+      "url": "https://www.youtube.com/watch?v=FiwQOZMhPRI"
+    },
+    "zmLhyIh3aOU": {
+      "id": "zmLhyIh3aOU",
+      "title": "Breakdown of the 1-2-3-1 Formation (7v7)",
+      "description": "A detailed look at the 7v7 formation 1-2-3-1.\n\nPart 1: Understanding what a formation is\nPart 2: The 7v7 field including the \"build out line\"\nPart 3: The positions and shape of the team\nPart 4: Advantages and disadvantages",
+      "channelId": "UCbBcVXsi-Gf-XrzzcasR3ow",
+      "channelTitle": "Next Play Soccer Training",
+      "publishedAt": "2021-02-06T01:20:41Z",
+      "thumbnail": "https://i.ytimg.com/vi/zmLhyIh3aOU/maxresdefault.jpg",
+      "duration": "8:08",
+      "viewCount": 70520,
+      "likeCount": 1061,
+      "commentCount": 30,
+      "url": "https://www.youtube.com/watch?v=zmLhyIh3aOU"
+    },
+    "Ii_Yy6DFGAA": {
+      "id": "Ii_Yy6DFGAA",
+      "title": "Soccer/Football Tactics | 7vs7 (U9-U10) | Advantages of the 1-2-3-1",
+      "description": "For coaches looking for tips/ideas on the advantages of the 1-2-3-1 in 7vs7 youth soccer.\n\nFor similiar videos check out our Building out from the Back video:\n\nhttps://www.youtube.com/watch?v=iNVDYah_Kss\n\nPlease check out and support the Ball Chat Sports Podcast for Sport related discussion and opinion:\n\nSpotify : https://open.spotify.com/show/4XSC4fgzzVeNcOj40P8Omp\nAnchor : https://anchor.fm/ballchat-sports\nGoogle Pod : https://www.google.com/podcasts?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy80N2Q5ZWUxOC9wb2RjYXN0L3Jzcw==\n\nFollow us on social media:\n\nTwitter : twitter.com/BallChatSports\u200b\nInsta : www.instagram.com/ball.chat.sports.podcast/\n\n\n#soccertactics\u200b #soccer\u200b #youthsoccer\u200b #football\u200b #footballtactics\u200b #formations\u200b #analysis\u200b #tactics\u200b #defensiveshape\u200b #defending\u200b #soccersystems\u200b #soccerformations #klopp\u200b #liverpool\u200b #mancity",
+      "channelId": "UCcJf8c-Qy9uDnszE78TFKeQ",
+      "channelTitle": "AB Soccer Coaching",
+      "publishedAt": "2020-03-31T22:41:43Z",
+      "thumbnail": "https://i.ytimg.com/vi/Ii_Yy6DFGAA/maxresdefault.jpg",
+      "duration": "16:14",
+      "viewCount": 74582,
+      "likeCount": 751,
+      "commentCount": 35,
+      "url": "https://www.youtube.com/watch?v=Ii_Yy6DFGAA"
+    },
+    "fkWe7QjMdsU": {
+      "id": "fkWe7QjMdsU",
+      "title": "Specific Positional Rondo - 7 a-side team shape",
+      "description": "",
+      "channelId": "UC82Byiy21w8H29e9r7_-wAw",
+      "channelTitle": "CNS TV",
+      "publishedAt": "2016-09-17T12:17:25Z",
+      "thumbnail": "https://i.ytimg.com/vi/fkWe7QjMdsU/maxresdefault.jpg",
+      "duration": "11:47",
+      "viewCount": 27967,
+      "likeCount": 339,
+      "commentCount": 5,
+      "url": "https://www.youtube.com/watch?v=fkWe7QjMdsU"
+    },
+    "kmmDtmfgos0": {
+      "id": "kmmDtmfgos0",
+      "title": "1vs1 Dribbling Soccer Drill | Attacking & Defending Exercises",
+      "description": "This competitive 1vs1 training drill (exercise) develops attacking and defending skills in one vs one situations. Economical practice as we can train and coach both sides of the ball if desired. \nFor attacking: dribbling, close control, feints, moves, turns and changes of direction.  \nFor defending: blocking, tackling, delay, reactions.\nCoaches can easily coach during natural stoppages either defending or attacking skills.  The drill can also be used as a warm-up or fun game for a variety of ages (Youth, kids, club, high-school, college).",
+      "channelId": "UCFsk-Os-gRsuZwuRDQ9wYmg",
+      "channelTitle": "Professional Soccer Coaching",
+      "publishedAt": "2021-03-24T21:17:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/kmmDtmfgos0/maxresdefault.jpg",
+      "duration": "3:19",
+      "viewCount": 2828777,
+      "likeCount": 27384,
+      "commentCount": 178,
+      "url": "https://www.youtube.com/watch?v=kmmDtmfgos0"
+    },
+    "3qQLOYKQQ9o": {
+      "id": "3qQLOYKQQ9o",
+      "title": "Warm Up: 1v1 Defense and Tackling",
+      "description": "Position Specific Coaching Clinics\n\nCarlos Juarez - Defending/Transition\nUSMNT Asst Coach/Head Scout | US Soccer Staff Instructor",
+      "channelId": "UCT2l8ngrEFoCr5QgW6TivbQ",
+      "channelTitle": "Jaye Romo",
+      "publishedAt": "2013-03-23T02:00:27Z",
+      "thumbnail": "https://i.ytimg.com/vi/3qQLOYKQQ9o/maxresdefault.jpg",
+      "duration": "11:17",
+      "viewCount": 2929,
+      "likeCount": 33,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=3qQLOYKQQ9o"
+    },
+    "EDJKPs2Qcag": {
+      "id": "EDJKPs2Qcag",
+      "title": "Pass & Move Drill | U9 U10 U11 U12 | Soccer/Football Passing Combination",
+      "description": "Training Gear We Use!\nSet of 50 Cones https://amzn.to/3nVBxQY \nSet of 20 Flat Disks https://amzn.to/3nNBXJb\nSKLZ Hurdles https://amzn.to/3nUNarC\nSKLZ Ladder https://amzn.to/40M0qNz\nSoccer Tennis Net https://amzn.to/43oP4ky\nPop Up Goals https://amzn.to/40PqkAf\nPoles (For Grass) https://amzn.to/40NauWR\nPoles (For Turf/Astro) https://amzn.to/3MoWFcS\nBibs (All Sizes) https://amzn.to/3KHLw5D\n\n\nCoaches Gear We Use!\nLCD Tactic Board https://amzn.to/40PPApT\nMagnetic Tactic Board https://amzn.to/3ZNonTw\nCoaches Notebook https://amzn.to/3ZPOTf9\nBall Pump https://amzn.to/3Mn4T52\nCoaches Seat https://amzn.to/43bUIq0\nBall Carry Bag https://amzn.to/3mmkW8x\nWhistle & Stop Watch Combo https://amzn.to/3mf6ijy\n\nPlease note, if you use any of the links to purchase items from Amazon, the channel will receive a commission percentage. This will not effect the price or your buying experience. \n\nIt's important for younger players to learn the benefits of movement both before and after they pass the ball. Typically it is harder for players to understand and perform the movement after they have made a pass. Use this pass and move drill to help them get into the habit of moving into space after they pass. \nThis drill can be used in any shape, and any distance between the cones. The focus of the drill is to have one less player than cones (5 payers to 6 cones for example). The player will pass to a teammate and then move to the free cone. There is a second progression with adding a one-two/wall pass before moving to free cone. \nEnjoy!\n\n\nSUBSCRIBE: https://www.youtube.com/@KSPerformance?sub_confirmation=1 \n   Thanks for showing your support!\n\n\nEMAIL: ksperformancefootball@gmail.com \n\n\nFOLLOW US\n    Facebook: https://www.facebook.com/KSperformancefootball/ \n    Instagram: https://www.instagram.com/ks_performance_football/ \n\n\nPLAYLISTS\n   Rondos: https://www.youtube.com/playlist?list=PLdyn9mzmWtGmmdkLXMCygw88O-eWkTuv7 \n   \n   Passing Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGnxbgLjwgAYDhKflrHXODpu     \n\n   Shooting Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGkYC8l9mgsW9C0mBj1GX8Sr \n  \n   U6, U7, U8, U9 Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGn84H14bCnP0loxWdHq1phL \n\n   Pro Team Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGnB0SBWB1vODDdkT8Eeo68E \n\n\n\n\n\nsoccer, football, training, exercise soccer training, passing exercise soccer, exercise for soccer, exercise for soccer training, soccer warm up exercise, football drills, soccer drills, passing drills, soccer passing, football passing, passing, tiki taka drill, possession drills, training coach, coaching kids, football training, youth football, professional soccer training, youth soccer, youth football, football soccer coaching, professional football training, football rondo, soccer rondo, warm up drills, triangle passing, fitness drills, passing training, shooting drills, finishing drills, how to coach, lifestyle, train, footy, juggle, freestyle, cristiano, messi, offseason, preseason, cardio, stamina, soccer specific",
+      "channelId": "UCFbW6k0VlddrwG4W_TvpkJQ",
+      "channelTitle": "KS Performance",
+      "publishedAt": "2021-11-15T14:30:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/EDJKPs2Qcag/maxresdefault.jpg",
+      "duration": "1:55",
+      "viewCount": 728600,
+      "likeCount": 8450,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=EDJKPs2Qcag"
+    },
+    "AgYjTunpVZ8": {
+      "id": "AgYjTunpVZ8",
+      "title": "Soccer Drill: Receiving And Turning (U8)",
+      "description": "Receiving and Turning soccer/football coaching drill for the U8 age group.\n\nSign-Up to The Coaching Manual to access these sessions in full - www.thecoachingmanual.com/signup",
+      "channelId": "UCHCkQnt7cQqA6ZC41f1W4cA",
+      "channelTitle": "The Coaching Manual",
+      "publishedAt": "2016-09-06T13:01:16Z",
+      "thumbnail": "https://i.ytimg.com/vi/AgYjTunpVZ8/hqdefault.jpg",
+      "duration": "3:49",
+      "viewCount": 692431,
+      "likeCount": 5439,
+      "commentCount": 56,
+      "url": "https://www.youtube.com/watch?v=AgYjTunpVZ8"
+    },
+    "dkoWJPzxylA": {
+      "id": "dkoWJPzxylA",
+      "title": "3 Drills To Help Your Team Spread Out | Prevent Bunching | Football/Soccer",
+      "description": "Training Gear We Use!\nSet of 50 Cones https://amzn.to/3nVBxQY \nSet of 20 Flat Disks https://amzn.to/3nNBXJb\nSKLZ Hurdles https://amzn.to/3nUNarC\nSKLZ Ladder https://amzn.to/40M0qNz\nSoccer Tennis Net https://amzn.to/43oP4ky\nPop Up Goals https://amzn.to/40PqkAf\nPoles (For Grass) https://amzn.to/40NauWR\nPoles (For Turf/Astro) https://amzn.to/3MoWFcS\nBibs (All Sizes) https://amzn.to/3KHLw5D\n\n\nCoaches Gear We Use!\nLCD Tactic Board https://amzn.to/40PPApT\nMagnetic Tactic Board https://amzn.to/3ZNonTw\nCoaches Notebook https://amzn.to/3ZPOTf9\nBall Pump https://amzn.to/3Mn4T52\nCoaches Seat https://amzn.to/43bUIq0\nBall Carry Bag https://amzn.to/3mmkW8x\nWhistle & Stop Watch Combo https://amzn.to/3mf6ijy\n\nPlease note, if you use any of the links to purchase items from Amazon, the channel will receive a commission percentage. This will not effect the price or your buying experience. \n\nPreventing players from bunching up is a hard task for any coach. Use these 3 drills to help the players learn the importance of spreading out, and how beneficial it is. \nThese drills encourage the players to problem solve, and spread out on their own accord. These drills are not to be instructed as 'spread out' drills, but more drills that indirectly teach that. The best way for players to learn through their own play!\n\n\n\nSUBSCRIBE: https://www.youtube.com/@KSPerformance?sub_confirmation=1 \n   Thanks for showing your support!\n\n\nEMAIL: ksperformancefootball@gmail.com \n\n\nFOLLOW US\n    Facebook: https://www.facebook.com/KSperformancefootball/ \n    Instagram: https://www.instagram.com/ks_performance_football/ \n\n\nPLAYLISTS\n   Rondos: https://www.youtube.com/playlist?list=PLdyn9mzmWtGmmdkLXMCygw88O-eWkTuv7 \n   \n   Passing Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGnxbgLjwgAYDhKflrHXODpu     \n\n   Shooting Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGkYC8l9mgsW9C0mBj1GX8Sr \n  \n   U6, U7, U8, U9 Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGn84H14bCnP0loxWdHq1phL \n\n   Pro Team Drills: https://www.youtube.com/playlist?list=PLdyn9mzmWtGnB0SBWB1vODDdkT8Eeo68E \n\n\n\n\n\nsoccer, football, training, exercise soccer training, passing exercise soccer, exercise for soccer, exercise for soccer training, soccer warm up exercise, football drills, soccer drills, passing drills, soccer passing, football passing, passing, tiki taka drill, possession drills, training coach, coaching kids, football training, youth football, professional soccer training, youth soccer, youth football, football soccer coaching, professional football training, football rondo, soccer rondo, warm up drills, triangle passing, fitness drills, passing training, shooting drills, finishing drills, how to coach, lifestyle, train, footy, juggle, freestyle, cristiano, messi, offseason, preseason, cardio, stamina, soccer specific",
+      "channelId": "UCFbW6k0VlddrwG4W_TvpkJQ",
+      "channelTitle": "KS Performance",
+      "publishedAt": "2022-01-12T14:30:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/dkoWJPzxylA/maxresdefault.jpg",
+      "duration": "2:53",
+      "viewCount": 994064,
+      "likeCount": 5815,
+      "commentCount": 69,
+      "url": "https://www.youtube.com/watch?v=dkoWJPzxylA"
+    },
+    "1IV2CGbGC3Q": {
+      "id": "1IV2CGbGC3Q",
+      "title": "Is this the new best session activator in youth soccer?",
+      "description": "Develop 1v1 and 2v1 skills in your youth players!\n\nJohn Kokkoris \n 3Four3 Coaching https://343coaching.com/\n\n\n00:00 Start\n00:11 Why Battle Boxes?\n01:28 Setup\n02:51 1v1 Basic\n06:09 1v1 Pass/Receive\n08:40 2v1 Basic",
+      "channelId": "UCxjqkVEAAQfWN2iW1oEaXTw",
+      "channelTitle": "Coach Rory Soccer",
+      "publishedAt": "2023-08-03T20:17:48Z",
+      "thumbnail": "https://i.ytimg.com/vi/1IV2CGbGC3Q/maxresdefault.jpg",
+      "duration": "11:49",
+      "viewCount": 82445,
+      "likeCount": 1496,
+      "commentCount": 99,
+      "url": "https://www.youtube.com/watch?v=1IV2CGbGC3Q"
+    },
+    "84PjqpAqEc4": {
+      "id": "84PjqpAqEc4",
+      "title": "22 Drills for Beginners to Develop Ball Control",
+      "description": "In this video, we\u2019ll show you 22 fundamental ball control drills for beginner football and soccer players. These exercises will help players get more familiar and comfortable with the soccer ball by utilizing every surface of the foot and getting maximum touches on the ball. These exercises will additionally help improve body shape, balance and coordination. \n\n00:00 Intro\n00:26 Exercise 1\n00:56 Exercise 2\n01:25 Exercise 3\n01:51 Exercise 4\n02:19 Exercise 5\n02:43 Exercise 6\n03:05 Exercise 7\n03:32 Exercise 8\n03:59 Exercise 9\n04:27 Exercise 10\n04:57 Exercise 11\n05:24 Exercise 12\n05:58 Exercise 13\n06:22 Exercise 14\n06:48 Exercise 15\n07:10 Exercise 16\n07:36 Exercise 17\n08:05 Exercise 18\n08:42 Exercise 19\n09:08 Exercise 20\n09:34 Exercise 21\n10:09 Exercise 22\n\n\nFollow SOCCSTER on Instagram: https://www.instagram.com/soccster/\nFollow SOCCSTER on TikTok: https://www.tiktok.com/@soccster?\n\n\nMUSIC:\nTrack: Tobu - Memory Lane [NCS Release]\nMusic provided by NoCopyrightSounds.\nWatch: https://youtu.be/9YJk3tTDSXA\nFree Download / Stream: http://NCS.io/MemoryLane\n\nSong: Jim Yosef - Link [NCS Release]\nMusic provided by NoCopyrightSounds.\nWatch: https://youtu.be/9iHM6X6uUH8\nDownload/Stream: http://ncs.io/LinkYO\n\nJim Yosef - Eclipse [NCS Release]\nhttps://www.youtube.com/watch?v=1WP_YLn1D1c&list=PLWrDLda1m-L8NsrLPmJ1y8rfHWzFYVcxg&index=14\n\nDistrion & Alex Skrindo - Entropy [NCS Release]\nhttps://www.youtube.com/watch?v=iaKgF1Vf5bQ&list=PLWrDLda1m-L8NsrLPmJ1y8rfHWzFYVcxg&index=12",
+      "channelId": "UC570LhUZtzfMdwWbprUWwfw",
+      "channelTitle": "SOCCSTER",
+      "publishedAt": "2022-10-08T10:00:08Z",
+      "thumbnail": "https://i.ytimg.com/vi/84PjqpAqEc4/maxresdefault.jpg",
+      "duration": "10:42",
+      "viewCount": 246089,
+      "likeCount": 5757,
+      "commentCount": 87,
+      "url": "https://www.youtube.com/watch?v=84PjqpAqEc4"
+    },
+    "BVSbHtBRSTU": {
+      "id": "BVSbHtBRSTU",
+      "title": "Midfielder Specific Drills - Individual Midfielder Training",
+      "description": "In this video, RC takes you through 3 midfielder specific drills to take your game to the next level. These 3 drills mainly focus on passing and receiving, turning, footwork, and distribution. \n\n\u27a9 Follow me on social media:\nInstagram: http://www.instagram.com/rcperformanc...\nFacebook: https://www.facebook.com/RC-Performance-Training-LLC-1654964278054672\nTikTok: http://www.tiktok.com/t/ZTdKeP1GG/\n\n#soccer #workout #soccertraining",
+      "channelId": "UC3lr0xiVk2Rvr5JO29fXq8Q",
+      "channelTitle": "RC Performance Training",
+      "publishedAt": "2022-12-09T16:00:09Z",
+      "thumbnail": "https://i.ytimg.com/vi/BVSbHtBRSTU/maxresdefault.jpg",
+      "duration": "8:05",
+      "viewCount": 198552,
+      "likeCount": 6192,
+      "commentCount": 49,
+      "url": "https://www.youtube.com/watch?v=BVSbHtBRSTU"
+    },
+    "YhoVghSxtGA": {
+      "id": "YhoVghSxtGA",
+      "title": "Inside Look at CFL Players' Linear Speed Training Session at OTA HQ",
+      "description": "Check Out Five Four Performance on IG\n\ud83d\udc47\ud83c\udffc\nhttps://www.instagram.com/fivefourperformance\n\nThe 3-Step System for Athletic Speed\n\ud83d\udc49\ud83c\udffc https://athleticspeedsystem.com/?el=youtubeorganic\n\nOTA University\n\ud83d\udc49\ud83c\udffchttps://otauniversity.com/certificationyt/\n\nFor Year Round Training Check OTA PRO\n\ud83d\udc47\ud83c\udffc\ud83d\udc47\ud83c\udffc\ud83d\udc47\ud83c\udffc\nhttps://overtimeathletes.com/pro\n\n===================================================\nGet 1-On-1 Coaching And Your Own Custom Plan Anywhere In The World\n\ud83d\udc49\ud83c\udffc https://www.overtimeathletes.co/elitecoachingyoutube\n\nExpand your knowledge and discover our free athletic lessons, exclusively for new subscribers \ud83d\udc47\ud83c\udffc\n\n\ud83d\ude80 Vertical Jump: \nTake your leap to new heights \u27a1\ufe0f https://overtimeathletes.com/vertical\n\ud83c\udfc3\u200d\u2642\ufe0f Speed: \nEnhance your agility and speed \u27a1\ufe0f https://overtimeathletes.com/speed\n\ud83c\udfcb\ufe0f Strength: \nBuild a foundation of power and resilience \u27a1\ufe0f https://overtimeathletes.com/strength\n\ud83d\udcaa Muscle Mass: \nBuild athletic muscle, boost performance \u27a1\ufe0f https://overtimeathletes.com/musclemass\n\u26be Baseball: \nFine-tune your game on the diamond \u27a1\ufe0f https://overtimeathletes.com/baseball\n\ud83c\udfc8 Football: \nDominate the field with confidence \u27a1\ufe0f https://overtimeathletes.com/football\n\nGear up with OTA Apparel: \n\u27a1\ufe0f https://otaapparel.com\n\nTake your workouts to new levels with OTA Bands for added resistance and intensity:\n\u27a1\ufe0f https://otabands.com\n\nStay updated with exclusive content and insights by subscribing:\n\u27a1\ufe0f https://bit.ly/overtimeathletessub\n\nConnect with us on social media for daily inspiration and community: \n\ud83d\udcf8 Instagram: https://www.instagram.com/overtimeathletes \n\ud83d\udcd8 Facebook: https://www.facebook.com/overtimeathletes \n\ud83e\udd33 TikTok: https://www.tiktok.com/@overtimeathletes\n\nAbout Overtime Athletes:\n\nMy passion is Speed and Power and I want to devote myself to helping you guys out to become a complete dominant athlete. I work with a wide variety of athletes here in South Florida but want to help anyone and everyone improve in any sport or physical goal they might have.\n\nJoin our community of dedicated athletes and unlock your full potential with Overtime Athletes \ud83d\ude80 \u27a1 https://www.youtube.com/overtimeathletes",
+      "channelId": "UCM4GEVa1Qi1CTdJg0ljdoow",
+      "channelTitle": "overtimeathletes",
+      "publishedAt": "2024-02-23T16:34:49Z",
+      "thumbnail": "https://i.ytimg.com/vi/YhoVghSxtGA/maxresdefault.jpg",
+      "duration": "19:43",
+      "viewCount": 69200,
+      "likeCount": 1608,
+      "commentCount": 20,
+      "url": "https://www.youtube.com/watch?v=YhoVghSxtGA"
+    },
+    "NpCfUK-JIVM": {
+      "id": "NpCfUK-JIVM",
+      "title": "Dan Crowley\u00a0|\u00a0How to improve change of direction | Soccer drill",
+      "description": "This pull-push drill from the Arsenal youngster and Coerver Coaching will help you to develop your speed in changing direction \u2013 so get on it \n\nSUBSCRIBE: http://fft.sm/6lZeN3\nWEBSITE: http://fft.sm/XLBtaK\n\nFollow FourFourTwo Performance on:\nInstagram: http://fft.sm/TfnkQl\nFacebook: http://fft.sm/UXATZS\nTwitter: http://fft.sm/HcBNn9\n\nFollow FourFourTwo on:\nTwitter: http://fft.sm/IVvx5C\nFacebook: http://fft.sm/8h27Gv\nGoogle+: http://fft.sm/tBDyjD \nSnapchat: FourFourTwoUK",
+      "channelId": "UCC15bXbPxX_Q6pqKxko-ZkA",
+      "channelTitle": "FourFourTwo",
+      "publishedAt": "2016-09-13T11:46:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/NpCfUK-JIVM/maxresdefault.jpg",
+      "duration": "3:52",
+      "viewCount": 534468,
+      "likeCount": 8341,
+      "commentCount": 51,
+      "url": "https://www.youtube.com/watch?v=NpCfUK-JIVM"
+    },
+    "cDNp7fr7T1k": {
+      "id": "cDNp7fr7T1k",
+      "title": "Change of Direction Training for Pro Football Players [Agility Breakdown]",
+      "description": "Check out Usama Mujtaba\n\u2192 https://www.fivefourperformance.com/\n\u2192 https://www.instagram.com/fivefourperformance/\n\n===============================================\n\nAgility Program \u2192 https://overtimeathletes.com/gamespeed-agility/?el=youtubeorganic\nTrain With OTA (Remote Coaching) \u2192 https://overtimeathletes.com/remote\n\nOTA University (Certification)\n\ud83d\udc49\ud83c\udffchttps://otauniversity.com/certificationyt/\n\nFor Year Round Training Check OTA PRO\n\ud83d\udc47\ud83c\udffc\ud83d\udc47\ud83c\udffc\ud83d\udc47\ud83c\udffc\nhttps://overtimeathletes.com/pro\n\n===================================================\nGet 1-On-1 Coaching And Your Own Custom Plan Anywhere In The World\n\ud83d\udc49\ud83c\udffc https://www.overtimeathletes.co/elitecoachingyoutube\n\nExpand your knowledge and discover our free athletic lessons, exclusively for new subscribers \ud83d\udc47\ud83c\udffc\n\n\ud83d\ude80 Vertical Jump: \nTake your leap to new heights \u27a1\ufe0f https://overtimeathletes.com/vertical\n\ud83c\udfc3\u200d\u2642\ufe0f Speed: \nEnhance your agility and speed \u27a1\ufe0f https://overtimeathletes.com/speed\n\ud83c\udfcb\ufe0f Strength: \nBuild a foundation of power and resilience \u27a1\ufe0f https://overtimeathletes.com/strength\n\ud83d\udcaa Muscle Mass: \nBuild athletic muscle, boost performance \u27a1\ufe0f https://overtimeathletes.com/musclemass\n\u26be Baseball: \nFine-tune your game on the diamond \u27a1\ufe0f https://overtimeathletes.com/baseball\n\ud83c\udfc8 Football: \nDominate the field with confidence \u27a1\ufe0f https://overtimeathletes.com/football\n\nGear up with OTA Apparel: \n\u27a1\ufe0f https://otaapparel.com\n\nTake your workouts to new levels with OTA Bands for added resistance and intensity:\n\u27a1\ufe0f https://otabands.com\n\nStay updated with exclusive content and insights by subscribing:\n\u27a1\ufe0f https://bit.ly/overtimeathletessub\n\nConnect with us on social media for daily inspiration and community: \n\ud83d\udcf8 Instagram: https://www.instagram.com/overtimeathletes \n\ud83d\udcd8 Facebook: https://www.facebook.com/overtimeathletes \n\ud83e\udd33 TikTok: https://www.tiktok.com/@overtimeathletes\n\nAbout Overtime Athletes:\n\nMy passion is Speed and Power and I want to devote myself to helping you guys out to become a complete dominant athlete. I work with a wide variety of athletes here in South Florida but want to help anyone and everyone improve in any sport or physical goal they might have.\n\nJoin our community of dedicated athletes and unlock your full potential with Overtime Athletes \ud83d\ude80 \u27a1 https://www.youtube.com/overtimeathletes",
+      "channelId": "UCM4GEVa1Qi1CTdJg0ljdoow",
+      "channelTitle": "overtimeathletes",
+      "publishedAt": "2023-03-30T16:30:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/cDNp7fr7T1k/maxresdefault.jpg",
+      "duration": "14:11",
+      "viewCount": 344650,
+      "likeCount": 9362,
+      "commentCount": 60,
+      "url": "https://www.youtube.com/watch?v=cDNp7fr7T1k"
+    },
+    "YHnQtydwmdQ": {
+      "id": "YHnQtydwmdQ",
+      "title": "GLIDE OFF DEFENDERS with these 4 agility drills",
+      "description": "How beat defenders easily - use these 4 agility drills to improve as a football players and learn how to glide off defenders like Messi and Neymar by improving your overall agility with and without the football. In today's video, 7MLC will give you 4 agility football drills that you can use to glide off the defender and beat him easily, because we often see that an agile footballer is also a great dribbler due to the low centre of gravity and great explosiveness that an agile player will often have. So in today's video, 7MLC also known as Michael Lewis Cunningham will teach you 4 drills that you can use to become stronger and more agile on the football pitch and in order to learn to use that agility to easily beat defenders - so if you want to improve as a football player, these 4 agility drills are absolutely essential. \n\nBUY THE PUMA ULTRA 1.1 FOOTBALL BOOTS RIGHT HERE: \nhttps://www.unisportstore.com/football-boots/puma-ultra/\n\nIf you contribute with subtitles, titles or descriptions leave your name here, and we will make sure that the world knows who helped grow the unisportlife experience! \n\nFOLLOW US ON SOCIAL MEDIA; \n\ud83d\udd1d *Facebook*: http://www.facebook.com/Unisportstore \n\ud83d\udcf8 *Instagram*: http://instagram.com/unisportstore/\n\ud83d\udcf2  Our *homepage and store*: http://www.unisportstore.com/\n\ud83d\udd4a *Twitter*: https://twitter.com/unisportlife\n\u25b6\ufe0f *Youtube*: http://www.youtube.com/channel/UC5SQGzkWyQSW_fe-URgq7xw?sub_confirmation=1\n\ud83c\udfb5 *TikTok* https://www.tiktok.com/@unisportstore?lang=en",
+      "channelId": "UC5SQGzkWyQSW_fe-URgq7xw",
+      "channelTitle": "Unisport",
+      "publishedAt": "2020-11-05T15:30:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/YHnQtydwmdQ/maxresdefault.jpg",
+      "duration": "6:37",
+      "viewCount": 357480,
+      "likeCount": 16361,
+      "commentCount": 286,
+      "url": "https://www.youtube.com/watch?v=YHnQtydwmdQ"
+    },
+    "IivQgGN34Pk": {
+      "id": "IivQgGN34Pk",
+      "title": "Football Speed Training - Become a faster Player!",
+      "description": "#speedtraining #footballspeedtraining #soccerspeedtraining\nTogether with Unisport we developed a speed program for footballers that will make you a faster player on the pitch!\n\nThe drills are designed in a way, that no matter if you are a pro or beginner, you can easily adjust them to your performance level and improve your speed!\n-----------------------\nTrain with Tanner Speed!\n\u26bd Online Course - https://tannerspeedacademy.com/products/elevate-your-speed\n\ud83e\ude9c Agility Ladders - https://tannerspeedacademy.com/collections/equipment\n\ud83c\udfc3\u200d\u2642\ufe0f Online Running Analysis -  https://tannerspeedacademy.com/products/online-running-analysis\n-----------------------\nFollow us on Social Media\n\ud83d\udcf7 Instagram: https://www.instagram.com/tannerspeed/\n\ud83d\udd35 Facebook: https://www.facebook.com/tannerspeedacademy/\n-----------------------\n\ud83c\udfc3Visit our Website\nhttp://www.tannerspeedacademy.com/",
+      "channelId": "UCG7wUZa1S14Iorwiv15W97g",
+      "channelTitle": "TannerSpeedTraining",
+      "publishedAt": "2021-04-28T08:44:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/IivQgGN34Pk/maxresdefault.jpg",
+      "duration": "19:36",
+      "viewCount": 22939,
+      "likeCount": 724,
+      "commentCount": 30,
+      "url": "https://www.youtube.com/watch?v=IivQgGN34Pk"
+    },
+    "CeTeukoxfI0": {
+      "id": "CeTeukoxfI0",
+      "title": "In the pocket. Stay calm, no panic. #soccertraining #soccerdrills",
+      "description": "",
+      "channelId": "UC3lr0xiVk2Rvr5JO29fXq8Q",
+      "channelTitle": "RC Performance Training",
+      "publishedAt": "2025-02-17T21:47:47Z",
+      "thumbnail": "https://i.ytimg.com/vi/CeTeukoxfI0/maxresdefault.jpg",
+      "duration": "0:24",
+      "viewCount": 10241,
+      "likeCount": 405,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=CeTeukoxfI0"
+    },
+    "5vs8lxx9uUU": {
+      "id": "5vs8lxx9uUU",
+      "title": "How to Dribble like a Pro! \ud83d\udd25",
+      "description": "This is exercises for young players between 7/15 years old. \nIt's important to try keep balance between cones and react fast! \n#soccer #football #skills",
+      "channelId": "UCQH-yyw3LziR84sQEvE3FvQ",
+      "channelTitle": "AA Soccer Training ",
+      "publishedAt": "2023-01-25T16:10:55Z",
+      "thumbnail": "https://i.ytimg.com/vi/5vs8lxx9uUU/maxresdefault.jpg",
+      "duration": "0:30",
+      "viewCount": 105439,
+      "likeCount": 2117,
+      "commentCount": 58,
+      "url": "https://www.youtube.com/watch?v=5vs8lxx9uUU"
+    },
+    "OwhYTWae-_s": {
+      "id": "OwhYTWae-_s",
+      "title": "Ronaldo Tutorial Knuckleball Techniques \ud83e\udd2f\ud83d\ude2e\u200d\ud83d\udca8",
+      "description": "#football #shorts #cristianoronaldo #ronaldo #knuckleball #freekick #goat #goat #reaction #moments #viralvideo",
+      "channelId": "UC6NJVNuibWilqOTeNCWZVIg",
+      "channelTitle": "Hoanftbl",
+      "publishedAt": "2025-02-22T13:03:13Z",
+      "thumbnail": "https://i.ytimg.com/vi/OwhYTWae-_s/maxresdefault.jpg",
+      "duration": "0:22",
+      "viewCount": 7231098,
+      "likeCount": 344485,
+      "commentCount": 648,
+      "url": "https://www.youtube.com/watch?v=OwhYTWae-_s"
+    },
+    "Zb1CFosEx18": {
+      "id": "Zb1CFosEx18",
+      "title": "How To Stop Muscle Soreness",
+      "description": "",
+      "channelId": "UCIaPFTiWzQBupBJRBTyo6pQ",
+      "channelTitle": "Bulking Not Sulking",
+      "publishedAt": "2025-06-21T16:29:09Z",
+      "thumbnail": "https://i.ytimg.com/vi/Zb1CFosEx18/maxresdefault.jpg",
+      "duration": "2:07",
+      "viewCount": 6891763,
+      "likeCount": 113666,
+      "commentCount": 3861,
+      "url": "https://www.youtube.com/watch?v=Zb1CFosEx18"
+    },
+    "dapco5HlNKU": {
+      "id": "dapco5HlNKU",
+      "title": "IMPROVE YOUR CREATIVITY WITH PHIL FODEN | 3 Training Drills To Improve Your Chance Creation",
+      "description": "\u25ba SUBSCRIBE to Pro Direct Soccer: http://bit.ly/Sub2ProDirect\n\nPhil Foden gives us three training drills to use if you want to improve your creativity on the pitch \ud83d\udc40 The Manchester City and England winger talks us through the three drills he'd work on to improve his playmaking and finishing at the highest level \ud83d\udd25 This is the Art of The Creator with Phil Foden.\n\nShop his full Nike at Pro:Direct Soccer:\nClothing: https://www.prodirectsport.com/soccer/l/mens/departments-clothing/subdepartment-performance/activity-football/brand-nike/\nBoots: https://www.prodirectsport.com/soccer/l/adults/departments-boots/activity-football/brand-nike/pack-phantom/\n\nMore from Pro:Direct Soccer on social:\n\n\u25ba Tiktok: https://www.tiktok.com/@prodirectsoccer\n\u25ba Instagram: https://www.instagram.com/prodirectsoccer/\n\u25ba Facebook: https://www.facebook.com/prodirectsoccer\n\u25ba X: https://x.com/ProD_Soccer\n\u25ba Our Store: https://www.prodirectsport.com/soccer/\n\n#prodirectsoccer #philfoden #manchestercity #mancity #footballtraining #winger  #footballchallenge #footballskills #footballdrills\n\n00:00 - Intro\n00:13 - Sharp Dribble & Finish\n01:13 - The Give & Go\n02:24 - Receive & Finish",
+      "channelId": "UCofdn4dfNSBIubU62D7Hf7Q",
+      "channelTitle": "Pro:Direct Soccer",
+      "publishedAt": "2025-03-04T15:30:22Z",
+      "thumbnail": "https://i.ytimg.com/vi/dapco5HlNKU/maxresdefault.jpg",
+      "duration": "4:52",
+      "viewCount": 54259,
+      "likeCount": 2304,
+      "commentCount": 29,
+      "url": "https://www.youtube.com/watch?v=dapco5HlNKU"
+    }
+  },
+  "include_timestamps": false,
+  "include_video_title": true,
+  "include_video_id": true,
+  "include_video_url": true,
+  "include_view_count": false,
+  "concatenate_all": true,
+  "end_time": 1758144375.7327156,
+  "duration": 94.6969621181488
+}

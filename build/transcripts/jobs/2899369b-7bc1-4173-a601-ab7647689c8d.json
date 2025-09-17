@@ -1,0 +1,2767 @@
+{
+  "status": "completed",
+  "channel_name": "benhbader",
+  "channel_id": "UCjHifwrbviOci6If4i0qA8Q",
+  "total_videos": 103,
+  "processed_count": 103,
+  "failed_count": 7,
+  "completed": 96,
+  "files": [
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/t6YjtQmztIo/We sell $2.3Mmonth of info wit_t6YjtQmztIo.txt",
+      "video_id": "t6YjtQmztIo",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/mmLfH7G9mUo/I made $11M with webinars. Her_mmLfH7G9mUo.txt",
+      "video_id": "mmLfH7G9mUo",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/PvaByhwgb4c/The only AI Agency niche you'r_PvaByhwgb4c.txt",
+      "video_id": "PvaByhwgb4c",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/eJ0kMbs38_o/The NEW Way To Make $100kMonth_eJ0kMbs38_o.txt",
+      "video_id": "eJ0kMbs38_o",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/qjQNDCcGdNo/Best ways to make money with A_qjQNDCcGdNo.txt",
+      "video_id": "qjQNDCcGdNo",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/fXT7ycl_I30/why complete idiots are making_fXT7ycl_I30.txt",
+      "video_id": "fXT7ycl_I30",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/Ey7U2vuEwAo/How to get your first AI Opera_Ey7U2vuEwAo.txt",
+      "video_id": "Ey7U2vuEwAo",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/B2PzbM8uyiA/This 21 yo made his first clie_B2PzbM8uyiA.txt",
+      "video_id": "B2PzbM8uyiA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/BQVvBhoeLOc/How I used negative visualizat_BQVvBhoeLOc.txt",
+      "video_id": "BQVvBhoeLOc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/_aDtFzpR73w/How I made $194k last month so__aDtFzpR73w.txt",
+      "video_id": "_aDtFzpR73w",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/VKUzsaIGuk0/We've sold $30M in Info, here _VKUzsaIGuk0.txt",
+      "video_id": "VKUzsaIGuk0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/HNI5v69dcE0/how to make fk you money with _HNI5v69dcE0.txt",
+      "video_id": "HNI5v69dcE0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/vktS7cPwvNY/Tour My $6M Miami Penthouse Wi_vktS7cPwvNY.txt",
+      "video_id": "vktS7cPwvNY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/B3jp9xcpjPA/getting rich is easy, you're j_B3jp9xcpjPA.txt",
+      "video_id": "B3jp9xcpjPA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/c-4OnDa4u5M/This 19 yo made $250k in 27 da_c-4OnDa4u5M.txt",
+      "video_id": "c-4OnDa4u5M",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/X9e2NYmH4hA/How I\u2019m Selling Shovels in the_X9e2NYmH4hA.txt",
+      "video_id": "X9e2NYmH4hA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/uT7FY3VBEPE/The ONLY AI business worth sta_uT7FY3VBEPE.txt",
+      "video_id": "uT7FY3VBEPE",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/Pv_m_7AzrCs/The SMARTEST Way to Capitalize_Pv_m_7AzrCs.txt",
+      "video_id": "Pv_m_7AzrCs",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/IIIPPhYfL6I/i made $233,325 from one clien_IIIPPhYfL6I.txt",
+      "video_id": "IIIPPhYfL6I",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/xhvD7vjmrxc/Rewire Your Mind to Get Rich H_xhvD7vjmrxc.txt",
+      "video_id": "xhvD7vjmrxc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/lERu_2bYCT8/How Phillip Karcz is making $8_lERu_2bYCT8.txt",
+      "video_id": "lERu_2bYCT8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/7u0agaj42xk/i became a millionaire 4 years_7u0agaj42xk.txt",
+      "video_id": "7u0agaj42xk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/Ug1vGg_LDgA/This 21 yo Makes $150KMonth Fr_Ug1vGg_LDgA.txt",
+      "video_id": "Ug1vGg_LDgA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/A3kSEHnliic/The DARK TRUTH About Online Bu_A3kSEHnliic.txt",
+      "video_id": "A3kSEHnliic",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/eZcQyOmNLlY/Hijacking Attention is The New_eZcQyOmNLlY.txt",
+      "video_id": "eZcQyOmNLlY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/bv8dUOkjLLI/i failed online biz for 2 year_bv8dUOkjLLI.txt",
+      "video_id": "bv8dUOkjLLI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/-e8xB3F_aIQ/Why Iman Gadzhi Investing In W_-e8xB3F_aIQ.txt",
+      "video_id": "-e8xB3F_aIQ",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/dJkVTbsfL8E/How Jace England made $204,000_dJkVTbsfL8E.txt",
+      "video_id": "dJkVTbsfL8E",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/ng1QfN1KrBY/From BROKE copywriter to $10km_ng1QfN1KrBY.txt",
+      "video_id": "ng1QfN1KrBY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/zUX-25RU0ok/Simple Email Copywriting Maste_zUX-25RU0ok.txt",
+      "video_id": "zUX-25RU0ok",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/U1VVRc5p5qE/The BEST Online Businesses to _U1VVRc5p5qE.txt",
+      "video_id": "U1VVRc5p5qE",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/Z0HCqZ4dx3U/The problem with a comfortable_Z0HCqZ4dx3U.txt",
+      "video_id": "Z0HCqZ4dx3U",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/2pC22RYw-oc/How to scale a coaching busine_2pC22RYw-oc.txt",
+      "video_id": "2pC22RYw-oc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/5CubWnkOp7Y/Growth Operating Died In 2024._5CubWnkOp7Y.txt",
+      "video_id": "5CubWnkOp7Y",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/9Bajl5saeMg/SMMA is cooked... do this inst_9Bajl5saeMg.txt",
+      "video_id": "9Bajl5saeMg",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/FJ9ZVWNmbhI/Proof that copywriting can cha_FJ9ZVWNmbhI.txt",
+      "video_id": "FJ9ZVWNmbhI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/Kg5Nhlw9Ngg/This industry will make you a _Kg5Nhlw9Ngg.txt",
+      "video_id": "Kg5Nhlw9Ngg",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/-Maq_ziQSOQ/how to make fck you money with_-Maq_ziQSOQ.txt",
+      "video_id": "-Maq_ziQSOQ",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/uSIobt4IP3w/3 steps to make $10kmo from ON_uSIobt4IP3w.txt",
+      "video_id": "uSIobt4IP3w",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/KAnoQwD1hio/Making $100kmonth as a copywri_KAnoQwD1hio.txt",
+      "video_id": "KAnoQwD1hio",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/hSVWATYGUVY/Is the American Dream dead_hSVWATYGUVY.txt",
+      "video_id": "hSVWATYGUVY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/lbh0o7sGarc/How this 18 year old turned $1_lbh0o7sGarc.txt",
+      "video_id": "lbh0o7sGarc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/C_jcbcHLVSY/How to become a lucky person_C_jcbcHLVSY.txt",
+      "video_id": "C_jcbcHLVSY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/lDjCO-P7B68/This mindset made me rich at 2_lDjCO-P7B68.txt",
+      "video_id": "lDjCO-P7B68",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/otveWYWy8ww/Why you're struggling to stay _otveWYWy8ww.txt",
+      "video_id": "otveWYWy8ww",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/Shy9IkjDTRo/How to stop overthinking so yo_Shy9IkjDTRo.txt",
+      "video_id": "Shy9IkjDTRo",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/hvu7YPzlqVI/A simple way to build a new ha_hvu7YPzlqVI.txt",
+      "video_id": "hvu7YPzlqVI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/lVNWFNtc6v4/it's impossible to fail if you_lVNWFNtc6v4.txt",
+      "video_id": "lVNWFNtc6v4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/dgnhgqOhcXM/How copywriting gave me my dre_dgnhgqOhcXM.txt",
+      "video_id": "dgnhgqOhcXM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/f1SGHaVRqh0/From frat bro to making miliio_f1SGHaVRqh0.txt",
+      "video_id": "f1SGHaVRqh0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/gzlbDHm5GoA/You will NEVER get rich if you_gzlbDHm5GoA.txt",
+      "video_id": "gzlbDHm5GoA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/tSRrpY_dZWs/getting rich doesn\u2019t make you _tSRrpY_dZWs.txt",
+      "video_id": "tSRrpY_dZWs",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/xphCKLaCZRk/the ONLY agency worth starting_xphCKLaCZRk.txt",
+      "video_id": "xphCKLaCZRk",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/2jj8qyEOUm0/the one-person agency that mak_2jj8qyEOUm0.txt",
+      "video_id": "2jj8qyEOUm0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/dDl2G8QBpCE/How this 29 year old made $35M_dDl2G8QBpCE.txt",
+      "video_id": "dDl2G8QBpCE",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/1XX-UJ94pts/become a great copywriter in 3_1XX-UJ94pts.txt",
+      "video_id": "1XX-UJ94pts",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/3YyJHCfxhD0/How to experience life to the _3YyJHCfxhD0.txt",
+      "video_id": "3YyJHCfxhD0",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/ESKjRmLuGOY/quantity = quality_ESKjRmLuGOY.txt",
+      "video_id": "ESKjRmLuGOY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/gsycu6VbJ04/How I'd build a $10kmonth info_gsycu6VbJ04.txt",
+      "video_id": "gsycu6VbJ04",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/L_t3UHXeKZs/Watch this if you know you wer_L_t3UHXeKZs.txt",
+      "video_id": "L_t3UHXeKZs",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/EKq1dbAX8EU/How to detach from people and _EKq1dbAX8EU.txt",
+      "video_id": "EKq1dbAX8EU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/HULEvj7pxJc/how to get pretty privilege as_HULEvj7pxJc.txt",
+      "video_id": "HULEvj7pxJc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/VNxfqNdY4yU/i figured out how to get rich _VNxfqNdY4yU.txt",
+      "video_id": "VNxfqNdY4yU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/ZBBvQZcMpS8/How this ex-college athlete ma_ZBBvQZcMpS8.txt",
+      "video_id": "ZBBvQZcMpS8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/RfdPCPuujIY/Remove your scarcity mindset i_RfdPCPuujIY.txt",
+      "video_id": "RfdPCPuujIY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/1uU-f5sxiOw/if you hesitate, you die_1uU-f5sxiOw.txt",
+      "video_id": "1uU-f5sxiOw",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/uJ4UfOcMqPM/i used to fly first class... a_uJ4UfOcMqPM.txt",
+      "video_id": "uJ4UfOcMqPM",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/PIjXAx-Hm8I/it's okay to be selfish if you_PIjXAx-Hm8I.txt",
+      "video_id": "PIjXAx-Hm8I",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/xpI35fO4kMA/You're one decision away from _xpI35fO4kMA.txt",
+      "video_id": "xpI35fO4kMA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/BdVeECbyxEI/How to never work another job _BdVeECbyxEI.txt",
+      "video_id": "BdVeECbyxEI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/DVtoeGfdqZo/don't waste another day waitin_DVtoeGfdqZo.txt",
+      "video_id": "DVtoeGfdqZo",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/GfC99Qfqnec/FREE $100kmonth copywriter liv_GfC99Qfqnec.txt",
+      "video_id": "GfC99Qfqnec",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/k0801eqrhio/people dumber than you are mak_k0801eqrhio.txt",
+      "video_id": "k0801eqrhio",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/RRwsIOK2JHA/the one decision all men have _RRwsIOK2JHA.txt",
+      "video_id": "RRwsIOK2JHA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/yMr-GQ4EbGc/If you're lost, here's how you_yMr-GQ4EbGc.txt",
+      "video_id": "yMr-GQ4EbGc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/mexbcalbN8M/I used this formula to sell $1_mexbcalbN8M.txt",
+      "video_id": "mexbcalbN8M",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/PAdP-ogZWc8/simple mindset shift that made_PAdP-ogZWc8.txt",
+      "video_id": "PAdP-ogZWc8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/YWZknc-AOa4/You can change your life in 90_YWZknc-AOa4.txt",
+      "video_id": "YWZknc-AOa4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/aeLaf8h6p1g/how i'd make $100k asap if i h_aeLaf8h6p1g.txt",
+      "video_id": "aeLaf8h6p1g",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/Elsd7c0oHCg/I figured out how to never wor_Elsd7c0oHCg.txt",
+      "video_id": "Elsd7c0oHCg",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/7kfbpWXMKB8/how to save yourself from medi_7kfbpWXMKB8.txt",
+      "video_id": "7kfbpWXMKB8",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/Rt-zYhYh2AY/get ahead of 99% of people by _Rt-zYhYh2AY.txt",
+      "video_id": "Rt-zYhYh2AY",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/nvOepZr49_w/How I make $104,511 per month _nvOepZr49_w.txt",
+      "video_id": "nvOepZr49_w",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/sSg1foAYaOs/I found the best business mode_sSg1foAYaOs.txt",
+      "video_id": "sSg1foAYaOs",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/axIZD6v6Hps/The only trait you NEED to mak_axIZD6v6Hps.txt",
+      "video_id": "axIZD6v6Hps",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/chY-zYXNYDs/The hard way to build discipli_chY-zYXNYDs.txt",
+      "video_id": "chY-zYXNYDs",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/8VknXE8AfKI/chasing happiness will ruin yo_8VknXE8AfKI.txt",
+      "video_id": "8VknXE8AfKI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/mhQLxvr44Fc/the brutal truth of making mil_mhQLxvr44Fc.txt",
+      "video_id": "mhQLxvr44Fc",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/Tveg_wPZYWA/how I got my first few copywri_Tveg_wPZYWA.txt",
+      "video_id": "Tveg_wPZYWA",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/r49pxktAfW4/how i accidentally made $124,2_r49pxktAfW4.txt",
+      "video_id": "r49pxktAfW4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/1dFFde8Ujt4/why you're procrastinating_1dFFde8Ujt4.txt",
+      "video_id": "1dFFde8Ujt4",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/SuO_9tFc_9U/The one thing that will save y_SuO_9tFc_9U.txt",
+      "video_id": "SuO_9tFc_9U",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/tqpB3D3U_34/how to become a magnetic perso_tqpB3D3U_34.txt",
+      "video_id": "tqpB3D3U_34",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/GsM6_PrvwoU/i hit $100k per month while dr_GsM6_PrvwoU.txt",
+      "video_id": "GsM6_PrvwoU",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/RG6_tbHknJI/from frat bro to 7 figures in _RG6_tbHknJI.txt",
+      "video_id": "RG6_tbHknJI",
+      "language": "en",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/45ea65d7-6955-4fca-bc89-7c09742d6266/2899369b-7bc1-4173-a601-ab7647689c8d/AxJthc8INh4/you're not lost, you just don'_AxJthc8INh4.txt",
+      "video_id": "AxJthc8INh4",
+      "language": "en",
+      "type": "auto-generated"
+    }
+  ],
+  "videos": [
+    {
+      "id": "eJ0kMbs38_o",
+      "title": "The NEW Way To Make $100k/Month Growth Operating",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=eJ0kMbs38_o"
+    },
+    {
+      "id": "_aDtFzpR73w",
+      "title": "How I made $194k last month so you can just copy me",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=_aDtFzpR73w"
+    },
+    {
+      "id": "Ey7U2vuEwAo",
+      "title": "How to get your first AI Operating client in 90 days or less",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Ey7U2vuEwAo"
+    },
+    {
+      "id": "B2PzbM8uyiA",
+      "title": "This 21 y/o made his first client $622k in 3 days (AI Operating)",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=B2PzbM8uyiA"
+    },
+    {
+      "id": "fXT7ycl_I30",
+      "title": "why complete idiots are making millions",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=fXT7ycl_I30"
+    },
+    {
+      "id": "qjQNDCcGdNo",
+      "title": "Best ways to make money with AI in 2025 (TIER LIST)",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=qjQNDCcGdNo"
+    },
+    {
+      "id": "BQVvBhoeLOc",
+      "title": "How I used negative visualization to make millions at 24",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=BQVvBhoeLOc"
+    },
+    {
+      "id": "PvaByhwgb4c",
+      "title": "The only AI Agency niche you're still early to...",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=PvaByhwgb4c"
+    },
+    {
+      "id": "mmLfH7G9mUo",
+      "title": "I made $11M with webinars. Here's my entire slide deck.",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=mmLfH7G9mUo"
+    },
+    {
+      "id": "t6YjtQmztIo",
+      "title": "We sell $2.3M/month of info without showing our faces",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=t6YjtQmztIo"
+    },
+    {
+      "id": "HNI5v69dcE0",
+      "title": "how to make \"f**k you\" money with AI Operating",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=HNI5v69dcE0"
+    },
+    {
+      "id": "VKUzsaIGuk0",
+      "title": "We've sold $30M in Info, here are the secrets",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=VKUzsaIGuk0"
+    },
+    {
+      "id": "uT7FY3VBEPE",
+      "title": "The ONLY AI business worth starting in 2025",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=uT7FY3VBEPE"
+    },
+    {
+      "id": "B3jp9xcpjPA",
+      "title": "getting rich is easy, you're just in the hard part",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=B3jp9xcpjPA"
+    },
+    {
+      "id": "X9e2NYmH4hA",
+      "title": "How I\u2019m Selling Shovels in the AI Goldrush (Easy Money)",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=X9e2NYmH4hA"
+    },
+    {
+      "id": "c-4OnDa4u5M",
+      "title": "This 19 y/o made $250k in 27 days from ONE client",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=c-4OnDa4u5M"
+    },
+    {
+      "id": "vktS7cPwvNY",
+      "title": "Tour My $6M Miami Penthouse With A Private Rooftop Pool",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=vktS7cPwvNY"
+    },
+    {
+      "id": "IIIPPhYfL6I",
+      "title": "i made $233,325 from one client as an \"AI Operator\"",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=IIIPPhYfL6I"
+    },
+    {
+      "id": "Pv_m_7AzrCs",
+      "title": "The SMARTEST Way to Capitalize on the AI Gold Rush",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Pv_m_7AzrCs"
+    },
+    {
+      "id": "xhvD7vjmrxc",
+      "title": "Rewire Your Mind to Get Rich: Hudson Cosper x Ben Bader",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xhvD7vjmrxc"
+    },
+    {
+      "id": "lERu_2bYCT8",
+      "title": "How Phillip Karcz is making $87k/mo with 3 clients",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=lERu_2bYCT8"
+    },
+    {
+      "id": "7u0agaj42xk",
+      "title": "i became a millionaire 4 years after dropping out of college",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=7u0agaj42xk"
+    },
+    {
+      "id": "ng1QfN1KrBY",
+      "title": "From BROKE copywriter to $10k/mo with one small pivot",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ng1QfN1KrBY"
+    },
+    {
+      "id": "bv8dUOkjLLI",
+      "title": "i failed online biz for 2 years, now i'm a millionaire",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=bv8dUOkjLLI"
+    },
+    {
+      "id": "Ug1vGg_LDgA",
+      "title": "This 21 y/o Makes $150K/Month From ONE Client (Info-Agency)",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Ug1vGg_LDgA"
+    },
+    {
+      "id": "eZcQyOmNLlY",
+      "title": "\"Hijacking Attention\" is The New Way To Get Rich Quick",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=eZcQyOmNLlY"
+    },
+    {
+      "id": "dJkVTbsfL8E",
+      "title": "How Jace England made $204,000 in 10 days from ONE client",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=dJkVTbsfL8E"
+    },
+    {
+      "id": "A3kSEHnliic",
+      "title": "The DARK TRUTH About Online Business Gurus",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=A3kSEHnliic"
+    },
+    {
+      "id": "-e8xB3F_aIQ",
+      "title": "Why Iman Gadzhi Investing In Whop Will Make Us Rich",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=-e8xB3F_aIQ"
+    },
+    {
+      "id": "zUX-25RU0ok",
+      "title": "Simple Email Copywriting Masterclass (Live Demo)",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=zUX-25RU0ok"
+    },
+    {
+      "id": "Z0HCqZ4dx3U",
+      "title": "The problem with a comfortable life",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Z0HCqZ4dx3U"
+    },
+    {
+      "id": "5CubWnkOp7Y",
+      "title": "Growth Operating Died In 2024... Do THIS Now",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=5CubWnkOp7Y"
+    },
+    {
+      "id": "uSIobt4IP3w",
+      "title": "3 steps to make $10k/mo from ONE copywriting client",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=uSIobt4IP3w"
+    },
+    {
+      "id": "2pC22RYw-oc",
+      "title": "How to scale a coaching business to $100k/mo organically",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=2pC22RYw-oc"
+    },
+    {
+      "id": "U1VVRc5p5qE",
+      "title": "The BEST Online Businesses to Start in 2025",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=U1VVRc5p5qE"
+    },
+    {
+      "id": "FJ9ZVWNmbhI",
+      "title": "Proof that copywriting can change your life in 3 months",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=FJ9ZVWNmbhI"
+    },
+    {
+      "id": "NNKTWuoDBJs",
+      "title": "This mindset will make you rich in your 20's",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=NNKTWuoDBJs"
+    },
+    {
+      "id": "-Maq_ziQSOQ",
+      "title": "how to make \"f*ck you\" money with info-product copywriting",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=-Maq_ziQSOQ"
+    },
+    {
+      "id": "9Bajl5saeMg",
+      "title": "SMMA is cooked... do this instead",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=9Bajl5saeMg"
+    },
+    {
+      "id": "Kg5Nhlw9Ngg",
+      "title": "This industry will make you a millionaire in 2025",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Kg5Nhlw9Ngg"
+    },
+    {
+      "id": "hSVWATYGUVY",
+      "title": "Is the American Dream dead?",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=hSVWATYGUVY"
+    },
+    {
+      "id": "lbh0o7sGarc",
+      "title": "How this 18 year old turned $1 into millions",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=lbh0o7sGarc"
+    },
+    {
+      "id": "KAnoQwD1hio",
+      "title": "Making $100k/month as a copywriter\u2026 10 principles",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=KAnoQwD1hio"
+    },
+    {
+      "id": "lDjCO-P7B68",
+      "title": "This mindset made me rich at 24",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=lDjCO-P7B68"
+    },
+    {
+      "id": "otveWYWy8ww",
+      "title": "Why you're struggling to stay consistent (and how to fix it)",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=otveWYWy8ww"
+    },
+    {
+      "id": "C_jcbcHLVSY",
+      "title": "How to become a lucky person",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=C_jcbcHLVSY"
+    },
+    {
+      "id": "Shy9IkjDTRo",
+      "title": "How to stop overthinking so you can get rich",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Shy9IkjDTRo"
+    },
+    {
+      "id": "hvu7YPzlqVI",
+      "title": "A simple way to build a new habit",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=hvu7YPzlqVI"
+    },
+    {
+      "id": "dgnhgqOhcXM",
+      "title": "How copywriting gave me my dream life at 24",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=dgnhgqOhcXM"
+    },
+    {
+      "id": "lVNWFNtc6v4",
+      "title": "it's impossible to fail if you actually try",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=lVNWFNtc6v4"
+    },
+    {
+      "id": "gsycu6VbJ04",
+      "title": "How I'd build a $10k/month info-product agency in 2025 (step by step)",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=gsycu6VbJ04"
+    },
+    {
+      "id": "gzlbDHm5GoA",
+      "title": "You will NEVER get rich if you don't understand this",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=gzlbDHm5GoA"
+    },
+    {
+      "id": "2jj8qyEOUm0",
+      "title": "the one-person agency that makes me $100k/mo at 23",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=2jj8qyEOUm0"
+    },
+    {
+      "id": "xphCKLaCZRk",
+      "title": "the ONLY agency worth starting in 2025",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xphCKLaCZRk"
+    },
+    {
+      "id": "dDl2G8QBpCE",
+      "title": "How this 29 year old made $35M selling online courses",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=dDl2G8QBpCE"
+    },
+    {
+      "id": "f1SGHaVRqh0",
+      "title": "From frat bro to making miliions online... 5 lessons",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=f1SGHaVRqh0"
+    },
+    {
+      "id": "tSRrpY_dZWs",
+      "title": "getting rich doesn\u2019t make you successful",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=tSRrpY_dZWs"
+    },
+    {
+      "id": "ESKjRmLuGOY",
+      "title": "quantity = quality",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ESKjRmLuGOY"
+    },
+    {
+      "id": "3YyJHCfxhD0",
+      "title": "How to experience life to the fullest",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=3YyJHCfxhD0"
+    },
+    {
+      "id": "1XX-UJ94pts",
+      "title": "become a great copywriter in 3 steps (how to practice)",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=1XX-UJ94pts"
+    },
+    {
+      "id": "RfdPCPuujIY",
+      "title": "Remove your scarcity mindset in 10 minutes",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=RfdPCPuujIY"
+    },
+    {
+      "id": "L_t3UHXeKZs",
+      "title": "Watch this if you know you were born to be a winner",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=L_t3UHXeKZs"
+    },
+    {
+      "id": "HULEvj7pxJc",
+      "title": "how to get \"pretty privilege\" as a man (without being rich)",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=HULEvj7pxJc"
+    },
+    {
+      "id": "VNxfqNdY4yU",
+      "title": "i figured out how to get rich using this instant mindset shift lol",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=VNxfqNdY4yU"
+    },
+    {
+      "id": "1uU-f5sxiOw",
+      "title": "if you hesitate, you die",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=1uU-f5sxiOw"
+    },
+    {
+      "id": "xpI35fO4kMA",
+      "title": "You're one decision away from a completely different life",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xpI35fO4kMA"
+    },
+    {
+      "id": "EKq1dbAX8EU",
+      "title": "How to detach from people and societal pressure",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=EKq1dbAX8EU"
+    },
+    {
+      "id": "PIjXAx-Hm8I",
+      "title": "it's okay to be selfish if you want to get rich",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=PIjXAx-Hm8I"
+    },
+    {
+      "id": "uJ4UfOcMqPM",
+      "title": "i used to fly first class... and then i lost it all",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=uJ4UfOcMqPM"
+    },
+    {
+      "id": "ZBBvQZcMpS8",
+      "title": "How this ex-college athlete made $30M in his 20's",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=ZBBvQZcMpS8"
+    },
+    {
+      "id": "DVtoeGfdqZo",
+      "title": "don't waste another day waiting for life to start",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=DVtoeGfdqZo"
+    },
+    {
+      "id": "k0801eqrhio",
+      "title": "people dumber than you are making millions lol",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=k0801eqrhio"
+    },
+    {
+      "id": "mexbcalbN8M",
+      "title": "I used this formula to sell $10M worth of digital products",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=mexbcalbN8M"
+    },
+    {
+      "id": "RRwsIOK2JHA",
+      "title": "the one decision all men have to make in their 20's",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=RRwsIOK2JHA"
+    },
+    {
+      "id": "GfC99Qfqnec",
+      "title": "FREE $100k/month copywriter live call",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=GfC99Qfqnec"
+    },
+    {
+      "id": "BdVeECbyxEI",
+      "title": "How to never work another job you hate",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=BdVeECbyxEI"
+    },
+    {
+      "id": "aeLaf8h6p1g",
+      "title": "how i'd make $100k asap if i had to start all over",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=aeLaf8h6p1g"
+    },
+    {
+      "id": "yMr-GQ4EbGc",
+      "title": "If you're lost, here's how you find your passion",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=yMr-GQ4EbGc"
+    },
+    {
+      "id": "PAdP-ogZWc8",
+      "title": "simple mindset shift that made me millions",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=PAdP-ogZWc8"
+    },
+    {
+      "id": "YWZknc-AOa4",
+      "title": "You can change your life in 90 days",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=YWZknc-AOa4"
+    },
+    {
+      "id": "Rt-zYhYh2AY",
+      "title": "get ahead of 99% of people by understanding one thing",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Rt-zYhYh2AY"
+    },
+    {
+      "id": "nvOepZr49_w",
+      "title": "How I make $104,511 per month as a growth operator",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=nvOepZr49_w"
+    },
+    {
+      "id": "Hxlm9W6BN-A",
+      "title": "Miami boat day with millionaire friends",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Hxlm9W6BN-A"
+    },
+    {
+      "id": "Elsd7c0oHCg",
+      "title": "I figured out how to never work a 9-5",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Elsd7c0oHCg"
+    },
+    {
+      "id": "7kfbpWXMKB8",
+      "title": "how to save yourself from mediocrity",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=7kfbpWXMKB8"
+    },
+    {
+      "id": "Jj7uUEcuv2g",
+      "title": "pov: you're a 23 year old entrepreneur making millions in Miami",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Jj7uUEcuv2g"
+    },
+    {
+      "id": "Zoipa5wfnCY",
+      "title": "day in the life of a 23 year old entrepreneur in Miami",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Zoipa5wfnCY"
+    },
+    {
+      "id": "sSg1foAYaOs",
+      "title": "I found the best business model for beginners in 2024",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=sSg1foAYaOs"
+    },
+    {
+      "id": "2SK4nUa2cVA",
+      "title": "3 steps to take control of your life and create a new identity",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=2SK4nUa2cVA"
+    },
+    {
+      "id": "NXaMbKSp7K0",
+      "title": "I impulsively bought my $165,000 dream car at 23",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=NXaMbKSp7K0"
+    },
+    {
+      "id": "mhQLxvr44Fc",
+      "title": "the brutal truth of making millions selling courses",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=mhQLxvr44Fc"
+    },
+    {
+      "id": "chY-zYXNYDs",
+      "title": "The \"hard way\" to build discipline but it actually works lol",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=chY-zYXNYDs"
+    },
+    {
+      "id": "Tveg_wPZYWA",
+      "title": "how I got my first few copywriting clients as a beginner",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Tveg_wPZYWA"
+    },
+    {
+      "id": "8VknXE8AfKI",
+      "title": "chasing happiness will ruin your life",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=8VknXE8AfKI"
+    },
+    {
+      "id": "tqpB3D3U_34",
+      "title": "how to become a magnetic person that everybody loves",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=tqpB3D3U_34"
+    },
+    {
+      "id": "axIZD6v6Hps",
+      "title": "The only trait you NEED to make millions",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=axIZD6v6Hps"
+    },
+    {
+      "id": "GsM6_PrvwoU",
+      "title": "i hit $100k per month while drinking 3 nights a week",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=GsM6_PrvwoU"
+    },
+    {
+      "id": "SuO_9tFc_9U",
+      "title": "The one thing that will save you from a mediocre life",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=SuO_9tFc_9U"
+    },
+    {
+      "id": "r49pxktAfW4",
+      "title": "how i accidentally made $124,255  in a month as a copywriter",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=r49pxktAfW4"
+    },
+    {
+      "id": "1dFFde8Ujt4",
+      "title": "why you're procrastinating",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=1dFFde8Ujt4"
+    },
+    {
+      "id": "AxJthc8INh4",
+      "title": "you're not lost, you just don't trust yourself",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=AxJthc8INh4"
+    },
+    {
+      "id": "RG6_tbHknJI",
+      "title": "from frat bro to 7 figures in 2 years",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=RG6_tbHknJI"
+    },
+    {
+      "id": "5KMSdasV5Bc",
+      "title": "Grant Lannin x Cardinal Mason x Ben Bader FULL PODCAST Ep. 1",
+      "publishedAt": "2025-09-10T14:35:20.099Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=5KMSdasV5Bc"
+    }
+  ],
+  "start_time": 1757514923.2124207,
+  "user_id": "45ea65d7-6955-4fca-bc89-7c09742d6266",
+  "credits_reserved": 103,
+  "credits_used": 105,
+  "reservation_id": "fd61ba0b-5ea5-4551-b69c-197477631caa",
+  "videos_metadata": {
+    "eJ0kMbs38_o": {
+      "id": "eJ0kMbs38_o",
+      "title": "The NEW Way To Make $100k/Month Growth Operating",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next to learn how AI Operating works: https://youtu.be/X9e2NYmH4hA?si=nz_6aR-chNrmYGuG\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-09-03T19:35:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/eJ0kMbs38_o/maxresdefault.jpg",
+      "duration": "26:46",
+      "viewCount": 2791,
+      "likeCount": 141,
+      "commentCount": 23,
+      "url": "https://www.youtube.com/watch?v=eJ0kMbs38_o"
+    },
+    "_aDtFzpR73w": {
+      "id": "_aDtFzpR73w",
+      "title": "How I made $194k last month so you can just copy me",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next to learn how AI Operating works: https://youtu.be/X9e2NYmH4hA?si=nz_6aR-chNrmYGuG\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-08-27T15:09:45Z",
+      "thumbnail": "https://i.ytimg.com/vi/_aDtFzpR73w/maxresdefault.jpg",
+      "duration": "10:22",
+      "viewCount": 7412,
+      "likeCount": 374,
+      "commentCount": 36,
+      "url": "https://www.youtube.com/watch?v=_aDtFzpR73w"
+    },
+    "Ey7U2vuEwAo": {
+      "id": "Ey7U2vuEwAo",
+      "title": "How to get your first AI Operating client in 90 days or less",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next to learn how AI Operating works: https://youtu.be/X9e2NYmH4hA?si=nz_6aR-chNrmYGuG\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-08-16T15:48:47Z",
+      "thumbnail": "https://i.ytimg.com/vi/Ey7U2vuEwAo/maxresdefault.jpg",
+      "duration": "24:53",
+      "viewCount": 6541,
+      "likeCount": 378,
+      "commentCount": 56,
+      "url": "https://www.youtube.com/watch?v=Ey7U2vuEwAo"
+    },
+    "B2PzbM8uyiA": {
+      "id": "B2PzbM8uyiA",
+      "title": "This 21 y/o made his first client $622k in 3 days (AI Operating)",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/X9e2NYmH4hA?si=nz_6aR-chNrmYGuG\n\nHave your own info-business making more than $30k/mo? Apply to work with me here: https://www.ninetyfourmarketing.com/apply-here\n\nGet daily emails: https://go.benbader.com/start\n\nYahya's IG: https://www.instagram.com/yahyahishamm/\n\nYahya's YT: https://www.youtube.com/@UCoupzhbmsQ3GUB_rOWMdAYw \n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-08-11T16:56:09Z",
+      "thumbnail": "https://i.ytimg.com/vi/B2PzbM8uyiA/maxresdefault.jpg",
+      "duration": "36:41",
+      "viewCount": 4580,
+      "likeCount": 216,
+      "commentCount": 35,
+      "url": "https://www.youtube.com/watch?v=B2PzbM8uyiA"
+    },
+    "fXT7ycl_I30": {
+      "id": "fXT7ycl_I30",
+      "title": "why complete idiots are making millions",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/X9e2NYmH4hA?si=nz_6aR-chNrmYGuG\n\nHave your own info-business making more than $30k/mo? Apply to work with me here: https://www.ninetyfourmarketing.com/apply-here\n\nGet daily emails: https://go.benbader.com/start\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-08-08T18:12:42Z",
+      "thumbnail": "https://i.ytimg.com/vi/fXT7ycl_I30/maxresdefault.jpg",
+      "duration": "11:01",
+      "viewCount": 3178,
+      "likeCount": 241,
+      "commentCount": 31,
+      "url": "https://www.youtube.com/watch?v=fXT7ycl_I30"
+    },
+    "qjQNDCcGdNo": {
+      "id": "qjQNDCcGdNo",
+      "title": "Best ways to make money with AI in 2025 (TIER LIST)",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/X9e2NYmH4hA?si=nz_6aR-chNrmYGuG\n\nHave your own info-business making more than $30k/mo? Apply to work with me here: https://www.ninetyfourmarketing.com/apply-here\n\nGet daily emails: https://go.benbader.com/start\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-08-05T22:34:38Z",
+      "thumbnail": "https://i.ytimg.com/vi/qjQNDCcGdNo/maxresdefault.jpg",
+      "duration": "13:12",
+      "viewCount": 3080,
+      "likeCount": 171,
+      "commentCount": 11,
+      "url": "https://www.youtube.com/watch?v=qjQNDCcGdNo"
+    },
+    "BQVvBhoeLOc": {
+      "id": "BQVvBhoeLOc",
+      "title": "How I used negative visualization to make millions at 24",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/X9e2NYmH4hA?si=nz_6aR-chNrmYGuG\n\nHave your own info-business making more than $30k/mo? Apply to work with me here: https://www.ninetyfourmarketing.com/apply-here\n\nGet daily emails: https://go.benbader.com/start\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-08-01T18:34:31Z",
+      "thumbnail": "https://i.ytimg.com/vi/BQVvBhoeLOc/maxresdefault.jpg",
+      "duration": "11:05",
+      "viewCount": 2951,
+      "likeCount": 189,
+      "commentCount": 25,
+      "url": "https://www.youtube.com/watch?v=BQVvBhoeLOc"
+    },
+    "PvaByhwgb4c": {
+      "id": "PvaByhwgb4c",
+      "title": "The only AI Agency niche you're still early to...",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/X9e2NYmH4hA?si=nz_6aR-chNrmYGuG\n\nHave your own info-business making more than $30k/mo? Apply to work with me here: https://www.ninetyfourmarketing.com/apply-here\n\nGet daily emails: https://go.benbader.com/start\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-07-30T15:55:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/PvaByhwgb4c/maxresdefault.jpg",
+      "duration": "23:09",
+      "viewCount": 5608,
+      "likeCount": 295,
+      "commentCount": 28,
+      "url": "https://www.youtube.com/watch?v=PvaByhwgb4c"
+    },
+    "mmLfH7G9mUo": {
+      "id": "mmLfH7G9mUo",
+      "title": "I made $11M with webinars. Here's my entire slide deck.",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/X9e2NYmH4hA?si=nz_6aR-chNrmYGuG\n\nHave your own info-business making more than $30k/mo? Apply to work with me here: https://www.ninetyfourmarketing.com/apply-here\n\nGet daily emails: https://go.benbader.com/start\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-07-27T20:42:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/mmLfH7G9mUo/maxresdefault.jpg",
+      "duration": "19:27",
+      "viewCount": 4646,
+      "likeCount": 274,
+      "commentCount": 28,
+      "url": "https://www.youtube.com/watch?v=mmLfH7G9mUo"
+    },
+    "t6YjtQmztIo": {
+      "id": "t6YjtQmztIo",
+      "title": "We sell $2.3M/month of info without showing our faces",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/X9e2NYmH4hA?si=nz_6aR-chNrmYGuG\n\nHave your own info-business making more than $30k/mo? Apply to work with me here: https://www.ninetyfourmarketing.com/apply-here\n\nDannys channel: https://www.youtube.com/@UCLhIG0zZ_n-G_aon4rwv_Yw \n\nPhillips channel: https://www.youtube.com/@UCL2gc3NLuZhR8rFIFlu0qGw \n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-07-19T14:19:59Z",
+      "thumbnail": "https://i.ytimg.com/vi/t6YjtQmztIo/maxresdefault.jpg",
+      "duration": "38:17",
+      "viewCount": 5802,
+      "likeCount": 257,
+      "commentCount": 36,
+      "url": "https://www.youtube.com/watch?v=t6YjtQmztIo"
+    },
+    "HNI5v69dcE0": {
+      "id": "HNI5v69dcE0",
+      "title": "how to make \"f**k you\" money with AI Operating",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next to see how to use AI correctly: https://youtu.be/X9e2NYmH4hA?si=nz_6aR-chNrmYGuG\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-07-16T14:37:09Z",
+      "thumbnail": "https://i.ytimg.com/vi/HNI5v69dcE0/maxresdefault.jpg",
+      "duration": "28:14",
+      "viewCount": 43452,
+      "likeCount": 2342,
+      "commentCount": 139,
+      "url": "https://www.youtube.com/watch?v=HNI5v69dcE0"
+    },
+    "VKUzsaIGuk0": {
+      "id": "VKUzsaIGuk0",
+      "title": "We've sold $30M in Info, here are the secrets",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-07-11T14:42:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/VKUzsaIGuk0/maxresdefault.jpg",
+      "duration": "30:53",
+      "viewCount": 7964,
+      "likeCount": 312,
+      "commentCount": 45,
+      "url": "https://www.youtube.com/watch?v=VKUzsaIGuk0"
+    },
+    "uT7FY3VBEPE": {
+      "id": "uT7FY3VBEPE",
+      "title": "The ONLY AI business worth starting in 2025",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nGet Poppy AI ($25 OFF With Code BEN): https://start.getpoppy.ai/ben\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-07-08T14:30:51Z",
+      "thumbnail": "https://i.ytimg.com/vi/uT7FY3VBEPE/maxresdefault.jpg",
+      "duration": "21:27",
+      "viewCount": 10412,
+      "likeCount": 574,
+      "commentCount": 39,
+      "url": "https://www.youtube.com/watch?v=uT7FY3VBEPE"
+    },
+    "B3jp9xcpjPA": {
+      "id": "B3jp9xcpjPA",
+      "title": "getting rich is easy, you're just in the hard part",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-06-30T15:32:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/B3jp9xcpjPA/maxresdefault.jpg",
+      "duration": "13:48",
+      "viewCount": 7850,
+      "likeCount": 492,
+      "commentCount": 49,
+      "url": "https://www.youtube.com/watch?v=B3jp9xcpjPA"
+    },
+    "X9e2NYmH4hA": {
+      "id": "X9e2NYmH4hA",
+      "title": "How I\u2019m Selling Shovels in the AI Goldrush (Easy Money)",
+      "description": "How to get your first $10k/mo client (Live Training): https://go.benbader.com/register\n\nWork with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nGet Poppy AI ($25 OFF With Code BEN): https://start.getpoppy.ai/ben\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-06-24T15:20:40Z",
+      "thumbnail": "https://i.ytimg.com/vi/X9e2NYmH4hA/maxresdefault.jpg",
+      "duration": "12:51",
+      "viewCount": 34021,
+      "likeCount": 2038,
+      "commentCount": 122,
+      "url": "https://www.youtube.com/watch?v=X9e2NYmH4hA"
+    },
+    "c-4OnDa4u5M": {
+      "id": "c-4OnDa4u5M",
+      "title": "This 19 y/o made $250k in 27 days from ONE client",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader\n\nBrady\u2019s Instagram: https://www.instagram.com/bradycumminss",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-06-15T13:09:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/c-4OnDa4u5M/maxresdefault.jpg",
+      "duration": "23:02",
+      "viewCount": 5330,
+      "likeCount": 220,
+      "commentCount": 33,
+      "url": "https://www.youtube.com/watch?v=c-4OnDa4u5M"
+    },
+    "vktS7cPwvNY": {
+      "id": "vktS7cPwvNY",
+      "title": "Tour My $6M Miami Penthouse With A Private Rooftop Pool",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-06-12T22:40:55Z",
+      "thumbnail": "https://i.ytimg.com/vi/vktS7cPwvNY/maxresdefault.jpg",
+      "duration": "15:17",
+      "viewCount": 12629,
+      "likeCount": 447,
+      "commentCount": 65,
+      "url": "https://www.youtube.com/watch?v=vktS7cPwvNY"
+    },
+    "IIIPPhYfL6I": {
+      "id": "IIIPPhYfL6I",
+      "title": "i made $233,325 from one client as an \"AI Operator\"",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-06-09T20:53:52Z",
+      "thumbnail": "https://i.ytimg.com/vi/IIIPPhYfL6I/maxresdefault.jpg",
+      "duration": "9:37",
+      "viewCount": 6807,
+      "likeCount": 350,
+      "commentCount": 33,
+      "url": "https://www.youtube.com/watch?v=IIIPPhYfL6I"
+    },
+    "Pv_m_7AzrCs": {
+      "id": "Pv_m_7AzrCs",
+      "title": "The SMARTEST Way to Capitalize on the AI Gold Rush",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nGet Poppy AI ($25 OFF With Code BEN): https://start.getpoppy.ai/ben\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-06-04T14:44:50Z",
+      "thumbnail": "https://i.ytimg.com/vi/Pv_m_7AzrCs/maxresdefault.jpg",
+      "duration": "20:17",
+      "viewCount": 19565,
+      "likeCount": 1298,
+      "commentCount": 110,
+      "url": "https://www.youtube.com/watch?v=Pv_m_7AzrCs"
+    },
+    "xhvD7vjmrxc": {
+      "id": "xhvD7vjmrxc",
+      "title": "Rewire Your Mind to Get Rich: Hudson Cosper x Ben Bader",
+      "description": "Hudson Cosper & Ben Bader full podcast.\n\nHudsons Channel: https://www.youtube.com/@UC4m2oyT3nNRwZWINO5TEuNQ \n\nWork with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-05-27T17:59:33Z",
+      "thumbnail": "https://i.ytimg.com/vi/xhvD7vjmrxc/maxresdefault.jpg",
+      "duration": "1:02:44",
+      "viewCount": 13783,
+      "likeCount": 819,
+      "commentCount": 80,
+      "url": "https://www.youtube.com/watch?v=xhvD7vjmrxc"
+    },
+    "lERu_2bYCT8": {
+      "id": "lERu_2bYCT8",
+      "title": "How Phillip Karcz is making $87k/mo with 3 clients",
+      "description": "Interview with Phillip Karcz.\n\nWork with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader\n\nPhillips Instagram: https://www.instagram.com/phillipkarcz/\n\nPhillips Youtube: https://www.youtube.com/@UCL2gc3NLuZhR8rFIFlu0qGw",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-05-22T15:38:34Z",
+      "thumbnail": "https://i.ytimg.com/vi/lERu_2bYCT8/maxresdefault.jpg",
+      "duration": "29:34",
+      "viewCount": 8119,
+      "likeCount": 367,
+      "commentCount": 42,
+      "url": "https://www.youtube.com/watch?v=lERu_2bYCT8"
+    },
+    "7u0agaj42xk": {
+      "id": "7u0agaj42xk",
+      "title": "i became a millionaire 4 years after dropping out of college",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-05-15T20:34:22Z",
+      "thumbnail": "https://i.ytimg.com/vi/7u0agaj42xk/maxresdefault.jpg",
+      "duration": "20:04",
+      "viewCount": 4567,
+      "likeCount": 277,
+      "commentCount": 32,
+      "url": "https://www.youtube.com/watch?v=7u0agaj42xk"
+    },
+    "ng1QfN1KrBY": {
+      "id": "ng1QfN1KrBY",
+      "title": "From BROKE copywriter to $10k/mo with one small pivot",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-05-07T23:15:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/ng1QfN1KrBY/maxresdefault.jpg",
+      "duration": "28:22",
+      "viewCount": 3735,
+      "likeCount": 173,
+      "commentCount": 40,
+      "url": "https://www.youtube.com/watch?v=ng1QfN1KrBY"
+    },
+    "bv8dUOkjLLI": {
+      "id": "bv8dUOkjLLI",
+      "title": "i failed online biz for 2 years, now i'm a millionaire",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-05-01T18:58:37Z",
+      "thumbnail": "https://i.ytimg.com/vi/bv8dUOkjLLI/maxresdefault.jpg",
+      "duration": "23:03",
+      "viewCount": 16340,
+      "likeCount": 829,
+      "commentCount": 82,
+      "url": "https://www.youtube.com/watch?v=bv8dUOkjLLI"
+    },
+    "Ug1vGg_LDgA": {
+      "id": "Ug1vGg_LDgA",
+      "title": "This 21 y/o Makes $150K/Month From ONE Client (Info-Agency)",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-04-24T15:11:41Z",
+      "thumbnail": "https://i.ytimg.com/vi/Ug1vGg_LDgA/maxresdefault.jpg",
+      "duration": "35:49",
+      "viewCount": 9573,
+      "likeCount": 412,
+      "commentCount": 66,
+      "url": "https://www.youtube.com/watch?v=Ug1vGg_LDgA"
+    },
+    "eZcQyOmNLlY": {
+      "id": "eZcQyOmNLlY",
+      "title": "\"Hijacking Attention\" is The New Way To Get Rich Quick",
+      "description": "Why building an info-product agency gives you the highest points of leverage\n\nWork with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-04-19T17:57:43Z",
+      "thumbnail": "https://i.ytimg.com/vi/eZcQyOmNLlY/maxresdefault.jpg",
+      "duration": "10:28",
+      "viewCount": 5826,
+      "likeCount": 349,
+      "commentCount": 29,
+      "url": "https://www.youtube.com/watch?v=eZcQyOmNLlY"
+    },
+    "dJkVTbsfL8E": {
+      "id": "dJkVTbsfL8E",
+      "title": "How Jace England made $204,000 in 10 days from ONE client",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader\n\nJace's Instagram: https://www.instagram.com/jaceengland.ig",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-04-09T15:23:57Z",
+      "thumbnail": "https://i.ytimg.com/vi/dJkVTbsfL8E/maxresdefault.jpg",
+      "duration": "36:11",
+      "viewCount": 8009,
+      "likeCount": 364,
+      "commentCount": 34,
+      "url": "https://www.youtube.com/watch?v=dJkVTbsfL8E"
+    },
+    "A3kSEHnliic": {
+      "id": "A3kSEHnliic",
+      "title": "The DARK TRUTH About Online Business Gurus",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-04-07T15:33:05Z",
+      "thumbnail": "https://i.ytimg.com/vi/A3kSEHnliic/maxresdefault.jpg",
+      "duration": "10:05",
+      "viewCount": 4714,
+      "likeCount": 328,
+      "commentCount": 49,
+      "url": "https://www.youtube.com/watch?v=A3kSEHnliic"
+    },
+    "-e8xB3F_aIQ": {
+      "id": "-e8xB3F_aIQ",
+      "title": "Why Iman Gadzhi Investing In Whop Will Make Us Rich",
+      "description": "How to capitalize off of Iman Gadzhi's new investment into Whop.\n\nWork with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-04-03T22:44:37Z",
+      "thumbnail": "https://i.ytimg.com/vi/-e8xB3F_aIQ/maxresdefault.jpg",
+      "duration": "9:13",
+      "viewCount": 12257,
+      "likeCount": 643,
+      "commentCount": 82,
+      "url": "https://www.youtube.com/watch?v=-e8xB3F_aIQ"
+    },
+    "zUX-25RU0ok": {
+      "id": "zUX-25RU0ok",
+      "title": "Simple Email Copywriting Masterclass (Live Demo)",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-03-05T22:06:15Z",
+      "thumbnail": "https://i.ytimg.com/vi/zUX-25RU0ok/maxresdefault.jpg",
+      "duration": "17:16",
+      "viewCount": 5542,
+      "likeCount": 368,
+      "commentCount": 52,
+      "url": "https://www.youtube.com/watch?v=zUX-25RU0ok"
+    },
+    "Z0HCqZ4dx3U": {
+      "id": "Z0HCqZ4dx3U",
+      "title": "The problem with a comfortable life",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-02-18T23:44:42Z",
+      "thumbnail": "https://i.ytimg.com/vi/Z0HCqZ4dx3U/maxresdefault.jpg",
+      "duration": "11:33",
+      "viewCount": 4508,
+      "likeCount": 337,
+      "commentCount": 46,
+      "url": "https://www.youtube.com/watch?v=Z0HCqZ4dx3U"
+    },
+    "5CubWnkOp7Y": {
+      "id": "5CubWnkOp7Y",
+      "title": "Growth Operating Died In 2024... Do THIS Now",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-02-13T22:04:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/5CubWnkOp7Y/maxresdefault.jpg",
+      "duration": "8:12",
+      "viewCount": 7986,
+      "likeCount": 423,
+      "commentCount": 70,
+      "url": "https://www.youtube.com/watch?v=5CubWnkOp7Y"
+    },
+    "uSIobt4IP3w": {
+      "id": "uSIobt4IP3w",
+      "title": "3 steps to make $10k/mo from ONE copywriting client",
+      "description": "Learn how to land a $10k/month info-product copywriting client with this system from Ben Bader.\n\nWork with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-02-04T14:52:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/uSIobt4IP3w/maxresdefault.jpg",
+      "duration": "10:27",
+      "viewCount": 7036,
+      "likeCount": 427,
+      "commentCount": 44,
+      "url": "https://www.youtube.com/watch?v=uSIobt4IP3w"
+    },
+    "2pC22RYw-oc": {
+      "id": "2pC22RYw-oc",
+      "title": "How to scale a coaching business to $100k/mo organically",
+      "description": "Learn how Ben Bader sold $10m worth of online courses in just 2 years. Discover his copywriting secrets and how he built a successful info product agency.\n\nWork with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-01-30T00:46:57Z",
+      "thumbnail": "https://i.ytimg.com/vi/2pC22RYw-oc/maxresdefault.jpg",
+      "duration": "16:41",
+      "viewCount": 6234,
+      "likeCount": 380,
+      "commentCount": 38,
+      "url": "https://www.youtube.com/watch?v=2pC22RYw-oc"
+    },
+    "U1VVRc5p5qE": {
+      "id": "U1VVRc5p5qE",
+      "title": "The BEST Online Businesses to Start in 2025",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-01-23T18:52:15Z",
+      "thumbnail": "https://i.ytimg.com/vi/U1VVRc5p5qE/maxresdefault.jpg",
+      "duration": "11:11",
+      "viewCount": 4776,
+      "likeCount": 232,
+      "commentCount": 41,
+      "url": "https://www.youtube.com/watch?v=U1VVRc5p5qE"
+    },
+    "FJ9ZVWNmbhI": {
+      "id": "FJ9ZVWNmbhI",
+      "title": "Proof that copywriting can change your life in 3 months",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-01-21T21:53:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/FJ9ZVWNmbhI/maxresdefault.jpg",
+      "duration": "21:00",
+      "viewCount": 10797,
+      "likeCount": 736,
+      "commentCount": 67,
+      "url": "https://www.youtube.com/watch?v=FJ9ZVWNmbhI"
+    },
+    "NNKTWuoDBJs": {
+      "id": "NNKTWuoDBJs",
+      "title": "This mindset will make you rich in your 20's",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/-Maq_ziQSOQ?si=peZnBGZzLIbz4F69\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-01-15T20:20:33Z",
+      "thumbnail": "https://i.ytimg.com/vi/NNKTWuoDBJs/maxresdefault.jpg",
+      "duration": "13:58",
+      "viewCount": 5650,
+      "likeCount": 413,
+      "commentCount": 77,
+      "url": "https://www.youtube.com/watch?v=NNKTWuoDBJs"
+    },
+    "-Maq_ziQSOQ": {
+      "id": "-Maq_ziQSOQ",
+      "title": "how to make \"f*ck you\" money with info-product copywriting",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/xphCKLaCZRk?si=nayikyhHSvKz1b7E\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-01-09T13:56:16Z",
+      "thumbnail": "https://i.ytimg.com/vi/-Maq_ziQSOQ/maxresdefault.jpg",
+      "duration": "17:53",
+      "viewCount": 14453,
+      "likeCount": 883,
+      "commentCount": 77,
+      "url": "https://www.youtube.com/watch?v=-Maq_ziQSOQ"
+    },
+    "9Bajl5saeMg": {
+      "id": "9Bajl5saeMg",
+      "title": "SMMA is cooked... do this instead",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nWatch this next: https://youtu.be/xphCKLaCZRk?si=nayikyhHSvKz1b7E\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2025-01-02T01:30:47Z",
+      "thumbnail": "https://i.ytimg.com/vi/9Bajl5saeMg/maxresdefault.jpg",
+      "duration": "13:15",
+      "viewCount": 7516,
+      "likeCount": 362,
+      "commentCount": 55,
+      "url": "https://www.youtube.com/watch?v=9Bajl5saeMg"
+    },
+    "Kg5Nhlw9Ngg": {
+      "id": "Kg5Nhlw9Ngg",
+      "title": "This industry will make you a millionaire in 2025",
+      "description": "Work with me directly: https://go.benbader.com/the-artisan-lab\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-12-28T21:51:54Z",
+      "thumbnail": "https://i.ytimg.com/vi/Kg5Nhlw9Ngg/maxresdefault.jpg",
+      "duration": "19:08",
+      "viewCount": 9219,
+      "likeCount": 606,
+      "commentCount": 60,
+      "url": "https://www.youtube.com/watch?v=Kg5Nhlw9Ngg"
+    },
+    "hSVWATYGUVY": {
+      "id": "hSVWATYGUVY",
+      "title": "Is the American Dream dead?",
+      "description": "Watch this next: https://youtu.be/xphCKLaCZRk?si=nayikyhHSvKz1b7E\n\nWork with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-12-24T17:32:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/hSVWATYGUVY/maxresdefault.jpg",
+      "duration": "8:33",
+      "viewCount": 5007,
+      "likeCount": 311,
+      "commentCount": 50,
+      "url": "https://www.youtube.com/watch?v=hSVWATYGUVY"
+    },
+    "lbh0o7sGarc": {
+      "id": "lbh0o7sGarc",
+      "title": "How this 18 year old turned $1 into millions",
+      "description": "Watch this next: https://youtu.be/xphCKLaCZRk?si=nayikyhHSvKz1b7E\n\nWork with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-12-18T01:02:13Z",
+      "thumbnail": "https://i.ytimg.com/vi/lbh0o7sGarc/maxresdefault.jpg",
+      "duration": "23:14",
+      "viewCount": 6559,
+      "likeCount": 353,
+      "commentCount": 43,
+      "url": "https://www.youtube.com/watch?v=lbh0o7sGarc"
+    },
+    "KAnoQwD1hio": {
+      "id": "KAnoQwD1hio",
+      "title": "Making $100k/month as a copywriter\u2026 10 principles",
+      "description": "Watch this next: https://youtu.be/xphCKLaCZRk?si=nayikyhHSvKz1b7E\n\nWork with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-12-16T18:36:57Z",
+      "thumbnail": "https://i.ytimg.com/vi/KAnoQwD1hio/maxresdefault.jpg",
+      "duration": "12:18",
+      "viewCount": 4051,
+      "likeCount": 311,
+      "commentCount": 16,
+      "url": "https://www.youtube.com/watch?v=KAnoQwD1hio"
+    },
+    "lDjCO-P7B68": {
+      "id": "lDjCO-P7B68",
+      "title": "This mindset made me rich at 24",
+      "description": "Watch this next: https://youtu.be/xphCKLaCZRk?si=nayikyhHSvKz1b7E\n\nWork with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-12-10T20:44:41Z",
+      "thumbnail": "https://i.ytimg.com/vi/lDjCO-P7B68/maxresdefault.jpg",
+      "duration": "12:46",
+      "viewCount": 6195,
+      "likeCount": 460,
+      "commentCount": 51,
+      "url": "https://www.youtube.com/watch?v=lDjCO-P7B68"
+    },
+    "otveWYWy8ww": {
+      "id": "otveWYWy8ww",
+      "title": "Why you're struggling to stay consistent (and how to fix it)",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-12-02T21:51:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/otveWYWy8ww/maxresdefault.jpg",
+      "duration": "6:24",
+      "viewCount": 3787,
+      "likeCount": 310,
+      "commentCount": 35,
+      "url": "https://www.youtube.com/watch?v=otveWYWy8ww"
+    },
+    "C_jcbcHLVSY": {
+      "id": "C_jcbcHLVSY",
+      "title": "How to become a lucky person",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-11-26T23:39:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/C_jcbcHLVSY/maxresdefault.jpg",
+      "duration": "13:12",
+      "viewCount": 3149,
+      "likeCount": 236,
+      "commentCount": 47,
+      "url": "https://www.youtube.com/watch?v=C_jcbcHLVSY"
+    },
+    "Shy9IkjDTRo": {
+      "id": "Shy9IkjDTRo",
+      "title": "How to stop overthinking so you can get rich",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-11-19T20:14:12Z",
+      "thumbnail": "https://i.ytimg.com/vi/Shy9IkjDTRo/maxresdefault.jpg",
+      "duration": "8:45",
+      "viewCount": 5653,
+      "likeCount": 489,
+      "commentCount": 47,
+      "url": "https://www.youtube.com/watch?v=Shy9IkjDTRo"
+    },
+    "hvu7YPzlqVI": {
+      "id": "hvu7YPzlqVI",
+      "title": "A simple way to build a new habit",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-11-12T20:31:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/hvu7YPzlqVI/maxresdefault.jpg",
+      "duration": "9:35",
+      "viewCount": 3514,
+      "likeCount": 351,
+      "commentCount": 54,
+      "url": "https://www.youtube.com/watch?v=hvu7YPzlqVI"
+    },
+    "dgnhgqOhcXM": {
+      "id": "dgnhgqOhcXM",
+      "title": "How copywriting gave me my dream life at 24",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-10-16T14:41:04Z",
+      "thumbnail": "https://i.ytimg.com/vi/dgnhgqOhcXM/maxresdefault.jpg",
+      "duration": "14:18",
+      "viewCount": 6794,
+      "likeCount": 405,
+      "commentCount": 45,
+      "url": "https://www.youtube.com/watch?v=dgnhgqOhcXM"
+    },
+    "lVNWFNtc6v4": {
+      "id": "lVNWFNtc6v4",
+      "title": "it's impossible to fail if you actually try",
+      "description": "Why risk is an illusion.\n\nWork with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-10-14T18:19:03Z",
+      "thumbnail": "https://i.ytimg.com/vi/lVNWFNtc6v4/maxresdefault.jpg",
+      "duration": "10:10",
+      "viewCount": 6740,
+      "likeCount": 578,
+      "commentCount": 70,
+      "url": "https://www.youtube.com/watch?v=lVNWFNtc6v4"
+    },
+    "gsycu6VbJ04": {
+      "id": "gsycu6VbJ04",
+      "title": "How I'd build a $10k/month info-product agency in 2025 (step by step)",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nBusiness Instagram: https://www.instagram.com/benonbusiness\n\nPersonal Instagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-09-30T20:46:08Z",
+      "thumbnail": "https://i.ytimg.com/vi/gsycu6VbJ04/maxresdefault.jpg",
+      "duration": "10:47",
+      "viewCount": 10410,
+      "likeCount": 556,
+      "commentCount": 69,
+      "url": "https://www.youtube.com/watch?v=gsycu6VbJ04"
+    },
+    "gzlbDHm5GoA": {
+      "id": "gzlbDHm5GoA",
+      "title": "You will NEVER get rich if you don't understand this",
+      "description": "Work with me 1 on 1: https://go.benbader.com/the-artisan-lab\n\nSubscribe to my newsletter: https://go.benbader.com/start\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-09-27T18:30:40Z",
+      "thumbnail": "https://i.ytimg.com/vi/gzlbDHm5GoA/maxresdefault.jpg",
+      "duration": "11:01",
+      "viewCount": 4903,
+      "likeCount": 410,
+      "commentCount": 38,
+      "url": "https://www.youtube.com/watch?v=gzlbDHm5GoA"
+    },
+    "2jj8qyEOUm0": {
+      "id": "2jj8qyEOUm0",
+      "title": "the one-person agency that makes me $100k/mo at 23",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-09-11T17:28:56Z",
+      "thumbnail": "https://i.ytimg.com/vi/2jj8qyEOUm0/maxresdefault.jpg",
+      "duration": "12:51",
+      "viewCount": 11193,
+      "likeCount": 695,
+      "commentCount": 88,
+      "url": "https://www.youtube.com/watch?v=2jj8qyEOUm0"
+    },
+    "xphCKLaCZRk": {
+      "id": "xphCKLaCZRk",
+      "title": "the ONLY agency worth starting in 2025",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-09-09T18:23:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/xphCKLaCZRk/maxresdefault.jpg",
+      "duration": "15:10",
+      "viewCount": 36321,
+      "likeCount": 1552,
+      "commentCount": 84,
+      "url": "https://www.youtube.com/watch?v=xphCKLaCZRk"
+    },
+    "dDl2G8QBpCE": {
+      "id": "dDl2G8QBpCE",
+      "title": "How this 29 year old made $35M selling online courses",
+      "description": "Check out Tims channel: @TimothyLuong_ \n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-08-25T18:08:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/dDl2G8QBpCE/maxresdefault.jpg",
+      "duration": "51:01",
+      "viewCount": 10249,
+      "likeCount": 604,
+      "commentCount": 60,
+      "url": "https://www.youtube.com/watch?v=dDl2G8QBpCE"
+    },
+    "f1SGHaVRqh0": {
+      "id": "f1SGHaVRqh0",
+      "title": "From frat bro to making miliions online... 5 lessons",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-08-19T16:50:09Z",
+      "thumbnail": "https://i.ytimg.com/vi/f1SGHaVRqh0/maxresdefault.jpg",
+      "duration": "14:50",
+      "viewCount": 6148,
+      "likeCount": 409,
+      "commentCount": 53,
+      "url": "https://www.youtube.com/watch?v=f1SGHaVRqh0"
+    },
+    "tSRrpY_dZWs": {
+      "id": "tSRrpY_dZWs",
+      "title": "getting rich doesn\u2019t make you successful",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-08-11T22:34:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/tSRrpY_dZWs/maxresdefault.jpg",
+      "duration": "21:59",
+      "viewCount": 5486,
+      "likeCount": 345,
+      "commentCount": 53,
+      "url": "https://www.youtube.com/watch?v=tSRrpY_dZWs"
+    },
+    "ESKjRmLuGOY": {
+      "id": "ESKjRmLuGOY",
+      "title": "quantity = quality",
+      "description": "",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-08-08T14:55:03Z",
+      "thumbnail": "https://i.ytimg.com/vi/ESKjRmLuGOY/maxresdefault.jpg",
+      "duration": "0:27",
+      "viewCount": 5669,
+      "likeCount": 431,
+      "commentCount": 8,
+      "url": "https://www.youtube.com/watch?v=ESKjRmLuGOY"
+    },
+    "3YyJHCfxhD0": {
+      "id": "3YyJHCfxhD0",
+      "title": "How to experience life to the fullest",
+      "description": "",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-08-07T19:12:35Z",
+      "thumbnail": "https://i.ytimg.com/vi/3YyJHCfxhD0/maxresdefault.jpg",
+      "duration": "0:32",
+      "viewCount": 2633,
+      "likeCount": 119,
+      "commentCount": 5,
+      "url": "https://www.youtube.com/watch?v=3YyJHCfxhD0"
+    },
+    "1XX-UJ94pts": {
+      "id": "1XX-UJ94pts",
+      "title": "become a great copywriter in 3 steps (how to practice)",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-08-06T20:46:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/1XX-UJ94pts/maxresdefault.jpg",
+      "duration": "13:17",
+      "viewCount": 13112,
+      "likeCount": 1005,
+      "commentCount": 43,
+      "url": "https://www.youtube.com/watch?v=1XX-UJ94pts"
+    },
+    "RfdPCPuujIY": {
+      "id": "RfdPCPuujIY",
+      "title": "Remove your scarcity mindset in 10 minutes",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-08-04T18:23:34Z",
+      "thumbnail": "https://i.ytimg.com/vi/RfdPCPuujIY/maxresdefault.jpg",
+      "duration": "10:21",
+      "viewCount": 6165,
+      "likeCount": 532,
+      "commentCount": 51,
+      "url": "https://www.youtube.com/watch?v=RfdPCPuujIY"
+    },
+    "L_t3UHXeKZs": {
+      "id": "L_t3UHXeKZs",
+      "title": "Watch this if you know you were born to be a winner",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-07-25T17:40:03Z",
+      "thumbnail": "https://i.ytimg.com/vi/L_t3UHXeKZs/maxresdefault.jpg",
+      "duration": "12:01",
+      "viewCount": 5267,
+      "likeCount": 370,
+      "commentCount": 57,
+      "url": "https://www.youtube.com/watch?v=L_t3UHXeKZs"
+    },
+    "HULEvj7pxJc": {
+      "id": "HULEvj7pxJc",
+      "title": "how to get \"pretty privilege\" as a man (without being rich)",
+      "description": "This is how you become magnetic and get treated like an IG baddie even if you're a man lol.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-07-21T13:28:45Z",
+      "thumbnail": "https://i.ytimg.com/vi/HULEvj7pxJc/maxresdefault.jpg",
+      "duration": "10:17",
+      "viewCount": 7120,
+      "likeCount": 508,
+      "commentCount": 55,
+      "url": "https://www.youtube.com/watch?v=HULEvj7pxJc"
+    },
+    "VNxfqNdY4yU": {
+      "id": "VNxfqNdY4yU",
+      "title": "i figured out how to get rich using this instant mindset shift lol",
+      "description": "Ben Bader shares how he scales info product businesses (online courses) to $100k per month plus as a growth operator & copywriter, and insights from his own coaching program.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-07-18T22:31:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/VNxfqNdY4yU/maxresdefault.jpg",
+      "duration": "14:58",
+      "viewCount": 6942,
+      "likeCount": 422,
+      "commentCount": 37,
+      "url": "https://www.youtube.com/watch?v=VNxfqNdY4yU"
+    },
+    "1uU-f5sxiOw": {
+      "id": "1uU-f5sxiOw",
+      "title": "if you hesitate, you die",
+      "description": "In this video Ben Bader shares why having a safety net will sabotage your chance of success.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-07-15T23:58:14Z",
+      "thumbnail": "https://i.ytimg.com/vi/1uU-f5sxiOw/maxresdefault.jpg",
+      "duration": "13:38",
+      "viewCount": 7683,
+      "likeCount": 631,
+      "commentCount": 87,
+      "url": "https://www.youtube.com/watch?v=1uU-f5sxiOw"
+    },
+    "xpI35fO4kMA": {
+      "id": "xpI35fO4kMA",
+      "title": "You're one decision away from a completely different life",
+      "description": "How a single decision can make or break you.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-07-08T15:22:22Z",
+      "thumbnail": "https://i.ytimg.com/vi/xpI35fO4kMA/maxresdefault.jpg",
+      "duration": "5:54",
+      "viewCount": 7978,
+      "likeCount": 697,
+      "commentCount": 112,
+      "url": "https://www.youtube.com/watch?v=xpI35fO4kMA"
+    },
+    "EKq1dbAX8EU": {
+      "id": "EKq1dbAX8EU",
+      "title": "How to detach from people and societal pressure",
+      "description": "Treat yourself like someone you're responsible for helping.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-07-04T15:28:57Z",
+      "thumbnail": "https://i.ytimg.com/vi/EKq1dbAX8EU/maxresdefault.jpg",
+      "duration": "12:51",
+      "viewCount": 6923,
+      "likeCount": 471,
+      "commentCount": 56,
+      "url": "https://www.youtube.com/watch?v=EKq1dbAX8EU"
+    },
+    "PIjXAx-Hm8I": {
+      "id": "PIjXAx-Hm8I",
+      "title": "it's okay to be selfish if you want to get rich",
+      "description": "In this video, Ben Bader talks about how being authentic and honest about your desires will help give you the motivation to accomplish your goals.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-07-02T23:13:40Z",
+      "thumbnail": "https://i.ytimg.com/vi/PIjXAx-Hm8I/maxresdefault.jpg",
+      "duration": "11:20",
+      "viewCount": 6652,
+      "likeCount": 491,
+      "commentCount": 67,
+      "url": "https://www.youtube.com/watch?v=PIjXAx-Hm8I"
+    },
+    "uJ4UfOcMqPM": {
+      "id": "uJ4UfOcMqPM",
+      "title": "i used to fly first class... and then i lost it all",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-06-30T19:14:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/uJ4UfOcMqPM/maxresdefault.jpg",
+      "duration": "6:20",
+      "viewCount": 6026,
+      "likeCount": 464,
+      "commentCount": 85,
+      "url": "https://www.youtube.com/watch?v=uJ4UfOcMqPM"
+    },
+    "ZBBvQZcMpS8": {
+      "id": "ZBBvQZcMpS8",
+      "title": "How this ex-college athlete made $30M in his 20's",
+      "description": "In this video I interview @robthebankmotion. Robert Oliver is a eCommerce entrepreneur who exited Genius brand for eight figures.\n\nSimply put, this Rob guy has motion. If you want to be more handsome, richer, and more athletic, I highly suggest you watch this entire video. Side effects may include supermodels in your DM's. We are not liable for any hearts you may break as a result of watching this video. Sit back, relax and enjoy.\n\nRobs Socials:\nYouTube: @robthebankmotion \nInstagram: https://www.instagram.com/robthebank\nTwitter: https://x.com/thegeniusceo\n\n----\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-06-27T18:22:57Z",
+      "thumbnail": "https://i.ytimg.com/vi/ZBBvQZcMpS8/maxresdefault.jpg",
+      "duration": "27:31",
+      "viewCount": 9885,
+      "likeCount": 524,
+      "commentCount": 72,
+      "url": "https://www.youtube.com/watch?v=ZBBvQZcMpS8"
+    },
+    "DVtoeGfdqZo": {
+      "id": "DVtoeGfdqZo",
+      "title": "don't waste another day waiting for life to start",
+      "description": "How to stop complaining about your life and take ownership of your future.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-06-25T00:15:24Z",
+      "thumbnail": "https://i.ytimg.com/vi/DVtoeGfdqZo/maxresdefault.jpg",
+      "duration": "12:56",
+      "viewCount": 7429,
+      "likeCount": 589,
+      "commentCount": 72,
+      "url": "https://www.youtube.com/watch?v=DVtoeGfdqZo"
+    },
+    "k0801eqrhio": {
+      "id": "k0801eqrhio",
+      "title": "people dumber than you are making millions lol",
+      "description": "How to develop conviction in yourself.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-06-21T20:02:42Z",
+      "thumbnail": "https://i.ytimg.com/vi/k0801eqrhio/maxresdefault.jpg",
+      "duration": "12:08",
+      "viewCount": 39137,
+      "likeCount": 2638,
+      "commentCount": 174,
+      "url": "https://www.youtube.com/watch?v=k0801eqrhio"
+    },
+    "mexbcalbN8M": {
+      "id": "mexbcalbN8M",
+      "title": "I used this formula to sell $10M worth of digital products",
+      "description": "How we've scaled coaching businesses to $100k per month.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-06-18T12:50:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/mexbcalbN8M/maxresdefault.jpg",
+      "duration": "19:32",
+      "viewCount": 12660,
+      "likeCount": 866,
+      "commentCount": 63,
+      "url": "https://www.youtube.com/watch?v=mexbcalbN8M"
+    },
+    "RRwsIOK2JHA": {
+      "id": "RRwsIOK2JHA",
+      "title": "the one decision all men have to make in their 20's",
+      "description": "Understanding this one thing will help you take control of your life and create your own reality.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-06-17T01:12:14Z",
+      "thumbnail": "https://i.ytimg.com/vi/RRwsIOK2JHA/maxresdefault.jpg",
+      "duration": "13:54",
+      "viewCount": 8750,
+      "likeCount": 601,
+      "commentCount": 78,
+      "url": "https://www.youtube.com/watch?v=RRwsIOK2JHA"
+    },
+    "GfC99Qfqnec": {
+      "id": "GfC99Qfqnec",
+      "title": "FREE $100k/month copywriter live call",
+      "description": "How to build a growth operating business and scale info product businesses.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-06-13T23:23:42Z",
+      "thumbnail": "https://i.ytimg.com/vi/GfC99Qfqnec/maxresdefault.jpg",
+      "duration": "30:55",
+      "viewCount": 10082,
+      "likeCount": 572,
+      "commentCount": 27,
+      "url": "https://www.youtube.com/watch?v=GfC99Qfqnec"
+    },
+    "BdVeECbyxEI": {
+      "id": "BdVeECbyxEI",
+      "title": "How to never work another job you hate",
+      "description": "This will help you escape a mediocre life.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-06-12T23:36:53Z",
+      "thumbnail": "https://i.ytimg.com/vi/BdVeECbyxEI/maxresdefault.jpg",
+      "duration": "19:47",
+      "viewCount": 5695,
+      "likeCount": 401,
+      "commentCount": 47,
+      "url": "https://www.youtube.com/watch?v=BdVeECbyxEI"
+    },
+    "aeLaf8h6p1g": {
+      "id": "aeLaf8h6p1g",
+      "title": "how i'd make $100k asap if i had to start all over",
+      "description": "Here's how to make your first $100k as fast as humanly possible.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-06-09T22:56:08Z",
+      "thumbnail": "https://i.ytimg.com/vi/aeLaf8h6p1g/maxresdefault.jpg",
+      "duration": "14:31",
+      "viewCount": 11625,
+      "likeCount": 832,
+      "commentCount": 102,
+      "url": "https://www.youtube.com/watch?v=aeLaf8h6p1g"
+    },
+    "yMr-GQ4EbGc": {
+      "id": "yMr-GQ4EbGc",
+      "title": "If you're lost, here's how you find your passion",
+      "description": "How to find your passion.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nIf you're a coach, consultant, or course seller, go here: https://www.ninetyfourmarketing.com/apply-here\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-06-07T22:41:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/yMr-GQ4EbGc/maxresdefault.jpg",
+      "duration": "9:01",
+      "viewCount": 5008,
+      "likeCount": 377,
+      "commentCount": 50,
+      "url": "https://www.youtube.com/watch?v=yMr-GQ4EbGc"
+    },
+    "PAdP-ogZWc8": {
+      "id": "PAdP-ogZWc8",
+      "title": "simple mindset shift that made me millions",
+      "description": "The emotional cycle of change explained simply.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-06-05T17:26:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/PAdP-ogZWc8/maxresdefault.jpg",
+      "duration": "10:49",
+      "viewCount": 6795,
+      "likeCount": 601,
+      "commentCount": 100,
+      "url": "https://www.youtube.com/watch?v=PAdP-ogZWc8"
+    },
+    "YWZknc-AOa4": {
+      "id": "YWZknc-AOa4",
+      "title": "You can change your life in 90 days",
+      "description": "10 rules to change your life in the next 90 days.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-06-03T18:18:28Z",
+      "thumbnail": "https://i.ytimg.com/vi/YWZknc-AOa4/maxresdefault.jpg",
+      "duration": "11:21",
+      "viewCount": 15037,
+      "likeCount": 1121,
+      "commentCount": 127,
+      "url": "https://www.youtube.com/watch?v=YWZknc-AOa4"
+    },
+    "Rt-zYhYh2AY": {
+      "id": "Rt-zYhYh2AY",
+      "title": "get ahead of 99% of people by understanding one thing",
+      "description": "How to get ahead of 99% of other people by understanding that there are no shortcuts to the best things in life. if you subconsciously feel unworthy of success, the fruits of your labor will be spoiled. genuine relationships will elude you and the experiences that money buys are meaningless if you can\u2019t share them with people you love.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-05-31T18:15:28Z",
+      "thumbnail": "https://i.ytimg.com/vi/Rt-zYhYh2AY/maxresdefault.jpg",
+      "duration": "10:09",
+      "viewCount": 8625,
+      "likeCount": 749,
+      "commentCount": 98,
+      "url": "https://www.youtube.com/watch?v=Rt-zYhYh2AY"
+    },
+    "nvOepZr49_w": {
+      "id": "nvOepZr49_w",
+      "title": "How I make $104,511 per month as a growth operator",
+      "description": "In this video, I share how I built my marketing agency, which has now been popularized as the \"growth operator\" business model.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nInstagram: https://www.instagram.com/benhbader/\n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-05-28T20:24:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/nvOepZr49_w/maxresdefault.jpg",
+      "duration": "13:11",
+      "viewCount": 19352,
+      "likeCount": 1086,
+      "commentCount": 93,
+      "url": "https://www.youtube.com/watch?v=nvOepZr49_w"
+    },
+    "Hxlm9W6BN-A": {
+      "id": "Hxlm9W6BN-A",
+      "title": "Miami boat day with millionaire friends",
+      "description": "Boat day in Miami with Ben Bader, Cardinal Mason, Robert Oliver, Jimmy Farley, Bobby Blandino, and Tim Morris.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-05-26T20:35:39Z",
+      "thumbnail": "https://i.ytimg.com/vi/Hxlm9W6BN-A/maxresdefault.jpg",
+      "duration": "8:02",
+      "viewCount": 6377,
+      "likeCount": 359,
+      "commentCount": 42,
+      "url": "https://www.youtube.com/watch?v=Hxlm9W6BN-A"
+    },
+    "Elsd7c0oHCg": {
+      "id": "Elsd7c0oHCg",
+      "title": "I figured out how to never work a 9-5",
+      "description": "How to escape the 9-5.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-05-23T13:19:56Z",
+      "thumbnail": "https://i.ytimg.com/vi/Elsd7c0oHCg/maxresdefault.jpg",
+      "duration": "14:54",
+      "viewCount": 21456,
+      "likeCount": 1507,
+      "commentCount": 174,
+      "url": "https://www.youtube.com/watch?v=Elsd7c0oHCg"
+    },
+    "7kfbpWXMKB8": {
+      "id": "7kfbpWXMKB8",
+      "title": "how to save yourself from mediocrity",
+      "description": "Got bored and accidentally made a movie. Enjoy :)\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-05-21T17:53:00Z",
+      "thumbnail": "https://i.ytimg.com/vi/7kfbpWXMKB8/maxresdefault.jpg",
+      "duration": "11:42",
+      "viewCount": 9613,
+      "likeCount": 893,
+      "commentCount": 164,
+      "url": "https://www.youtube.com/watch?v=7kfbpWXMKB8"
+    },
+    "Jj7uUEcuv2g": {
+      "id": "Jj7uUEcuv2g",
+      "title": "pov: you're a 23 year old entrepreneur making millions in Miami",
+      "description": "In this video, I meet a man named Donald who teaches me about life; I buy my friend Rob some birthday gifts and hang out with some friends.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-05-18T14:57:43Z",
+      "thumbnail": "https://i.ytimg.com/vi/Jj7uUEcuv2g/maxresdefault.jpg",
+      "duration": "13:25",
+      "viewCount": 8866,
+      "likeCount": 658,
+      "commentCount": 128,
+      "url": "https://www.youtube.com/watch?v=Jj7uUEcuv2g"
+    },
+    "Zoipa5wfnCY": {
+      "id": "Zoipa5wfnCY",
+      "title": "day in the life of a 23 year old entrepreneur in Miami",
+      "description": "Spend a day with Ben Bader in Miami.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader  \n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-05-16T13:24:14Z",
+      "thumbnail": "https://i.ytimg.com/vi/Zoipa5wfnCY/maxresdefault.jpg",
+      "duration": "13:25",
+      "viewCount": 11461,
+      "likeCount": 678,
+      "commentCount": 144,
+      "url": "https://www.youtube.com/watch?v=Zoipa5wfnCY"
+    },
+    "sSg1foAYaOs": {
+      "id": "sSg1foAYaOs",
+      "title": "I found the best business model for beginners in 2024",
+      "description": "How to pick the best business model in 2024\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader\u00a0\u00a0\n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-05-14T20:26:49Z",
+      "thumbnail": "https://i.ytimg.com/vi/sSg1foAYaOs/maxresdefault.jpg",
+      "duration": "9:25",
+      "viewCount": 8315,
+      "likeCount": 492,
+      "commentCount": 57,
+      "url": "https://www.youtube.com/watch?v=sSg1foAYaOs"
+    },
+    "2SK4nUa2cVA": {
+      "id": "2SK4nUa2cVA",
+      "title": "3 steps to take control of your life and create a new identity",
+      "description": "Me explaining how to create a new personal identity on my way to get a pup cup.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader/\n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-05-12T16:35:13Z",
+      "thumbnail": "https://i.ytimg.com/vi/2SK4nUa2cVA/maxresdefault.jpg",
+      "duration": "20:10",
+      "viewCount": 10286,
+      "likeCount": 708,
+      "commentCount": 91,
+      "url": "https://www.youtube.com/watch?v=2SK4nUa2cVA"
+    },
+    "NXaMbKSp7K0": {
+      "id": "NXaMbKSp7K0",
+      "title": "I impulsively bought my $165,000 dream car at 23",
+      "description": "My honest review and things I learned buying a Porsche 911 turbo at the age of 23.\n\nSubscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nMy other socials:\n\nInstagram: https://www.instagram.com/benhbader/\n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-05-09T18:03:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/NXaMbKSp7K0/maxresdefault.jpg",
+      "duration": "10:10",
+      "viewCount": 10520,
+      "likeCount": 626,
+      "commentCount": 144,
+      "url": "https://www.youtube.com/watch?v=NXaMbKSp7K0"
+    },
+    "mhQLxvr44Fc": {
+      "id": "mhQLxvr44Fc",
+      "title": "the brutal truth of making millions selling courses",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nInstagram: https://www.instagram.com/benhbader/\n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-05-07T15:00:19Z",
+      "thumbnail": "https://i.ytimg.com/vi/mhQLxvr44Fc/maxresdefault.jpg",
+      "duration": "12:29",
+      "viewCount": 5111,
+      "likeCount": 303,
+      "commentCount": 59,
+      "url": "https://www.youtube.com/watch?v=mhQLxvr44Fc"
+    },
+    "chY-zYXNYDs": {
+      "id": "chY-zYXNYDs",
+      "title": "The \"hard way\" to build discipline but it actually works lol",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nInstagram: https://www.instagram.com/benhbader/\n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-05-05T23:26:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/chY-zYXNYDs/maxresdefault.jpg",
+      "duration": "8:05",
+      "viewCount": 5245,
+      "likeCount": 422,
+      "commentCount": 53,
+      "url": "https://www.youtube.com/watch?v=chY-zYXNYDs"
+    },
+    "Tveg_wPZYWA": {
+      "id": "Tveg_wPZYWA",
+      "title": "how I got my first few copywriting clients as a beginner",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nInstagram: https://www.instagram.com/benhbader/\n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-05-01T22:35:34Z",
+      "thumbnail": "https://i.ytimg.com/vi/Tveg_wPZYWA/maxresdefault.jpg",
+      "duration": "8:28",
+      "viewCount": 9730,
+      "likeCount": 802,
+      "commentCount": 59,
+      "url": "https://www.youtube.com/watch?v=Tveg_wPZYWA"
+    },
+    "8VknXE8AfKI": {
+      "id": "8VknXE8AfKI",
+      "title": "chasing happiness will ruin your life",
+      "description": "Subscribe to my newsletter: https://go.benbader.com/start\n\nLearn how to build a copywriting business: https://www.copymba.com/bb-opt-in?el=ben-YT\n\nInstagram: https://www.instagram.com/benhbader/\n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-04-30T12:03:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/8VknXE8AfKI/maxresdefault.jpg",
+      "duration": "8:22",
+      "viewCount": 3459,
+      "likeCount": 281,
+      "commentCount": 71,
+      "url": "https://www.youtube.com/watch?v=8VknXE8AfKI"
+    },
+    "tqpB3D3U_34": {
+      "id": "tqpB3D3U_34",
+      "title": "how to become a magnetic person that everybody loves",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nInstagram: https://www.instagram.com/benhbader/\n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-04-28T12:05:59Z",
+      "thumbnail": "https://i.ytimg.com/vi/tqpB3D3U_34/maxresdefault.jpg",
+      "duration": "11:56",
+      "viewCount": 6867,
+      "likeCount": 537,
+      "commentCount": 88,
+      "url": "https://www.youtube.com/watch?v=tqpB3D3U_34"
+    },
+    "axIZD6v6Hps": {
+      "id": "axIZD6v6Hps",
+      "title": "The only trait you NEED to make millions",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nInstagram: https://www.instagram.com/benhbader/\n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-04-25T12:19:14Z",
+      "thumbnail": "https://i.ytimg.com/vi/axIZD6v6Hps/maxresdefault.jpg",
+      "duration": "12:42",
+      "viewCount": 9733,
+      "likeCount": 720,
+      "commentCount": 113,
+      "url": "https://www.youtube.com/watch?v=axIZD6v6Hps"
+    },
+    "GsM6_PrvwoU": {
+      "id": "GsM6_PrvwoU",
+      "title": "i hit $100k per month while drinking 3 nights a week",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nInstagram: https://www.instagram.com/benhbader\n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@UCjHifwrbviOci6If4i0qA8Q",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-04-23T14:55:49Z",
+      "thumbnail": "https://i.ytimg.com/vi/GsM6_PrvwoU/maxresdefault.jpg",
+      "duration": "8:11",
+      "viewCount": 6730,
+      "likeCount": 412,
+      "commentCount": 94,
+      "url": "https://www.youtube.com/watch?v=GsM6_PrvwoU"
+    },
+    "SuO_9tFc_9U": {
+      "id": "SuO_9tFc_9U",
+      "title": "The one thing that will save you from a mediocre life",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nInstagram: https://www.instagram.com/benhbader/\n\nTwitter: https://twitter.com/benhbader\n\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-04-21T14:32:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/SuO_9tFc_9U/maxresdefault.jpg",
+      "duration": "15:47",
+      "viewCount": 15984,
+      "likeCount": 1039,
+      "commentCount": 125,
+      "url": "https://www.youtube.com/watch?v=SuO_9tFc_9U"
+    },
+    "r49pxktAfW4": {
+      "id": "r49pxktAfW4",
+      "title": "how i accidentally made $124,255  in a month as a copywriter",
+      "description": "Subscribe to my newsletter (free): https://go.benbader.com/start\n\nGet coaching from me (paid): https://go.benbader.com/the-artisan-lab\n\nInstagram:   https://www.instagram.com/benhbader  \n\nTwitter:   https://twitter.com/benhbader\n\n Tik Tok: https://www.tiktok.com/@UCjHifwrbviOci6If4i0qA8Q",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-04-19T00:06:30Z",
+      "thumbnail": "https://i.ytimg.com/vi/r49pxktAfW4/maxresdefault.jpg",
+      "duration": "10:14",
+      "viewCount": 18594,
+      "likeCount": 1103,
+      "commentCount": 104,
+      "url": "https://www.youtube.com/watch?v=r49pxktAfW4"
+    },
+    "1dFFde8Ujt4": {
+      "id": "1dFFde8Ujt4",
+      "title": "why you're procrastinating",
+      "description": "Subscribe to my newsletter: https://go.benbader.com/start\n\nInstagram:  https://www.instagram.com/benhbader\n\nTwitter:  https://twitter.com/benhbader\n  \nTik Tok:  https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-04-10T01:50:55Z",
+      "thumbnail": "https://i.ytimg.com/vi/1dFFde8Ujt4/maxresdefault.jpg",
+      "duration": "8:46",
+      "viewCount": 6389,
+      "likeCount": 442,
+      "commentCount": 75,
+      "url": "https://www.youtube.com/watch?v=1dFFde8Ujt4"
+    },
+    "AxJthc8INh4": {
+      "id": "AxJthc8INh4",
+      "title": "you're not lost, you just don't trust yourself",
+      "description": "Subscribe to my newsletter: https://go.benbader.com/start\n\nInstagram: https://www.instagram.com/benhbader/\nTwitter: https://twitter.com/benhbader\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2024-01-10T00:28:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/AxJthc8INh4/maxresdefault.jpg",
+      "duration": "7:19",
+      "viewCount": 7368,
+      "likeCount": 592,
+      "commentCount": 61,
+      "url": "https://www.youtube.com/watch?v=AxJthc8INh4"
+    },
+    "RG6_tbHknJI": {
+      "id": "RG6_tbHknJI",
+      "title": "from frat bro to 7 figures in 2 years",
+      "description": "Subscribe to my newsletter: https://go.benbader.com/start\n\nInstagram: https://www.instagram.com/benhbader/\nTwitter: https://twitter.com/benhbader\nTik Tok: https://www.tiktok.com/@benhbader",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2023-12-13T19:14:25Z",
+      "thumbnail": "https://i.ytimg.com/vi/RG6_tbHknJI/maxresdefault.jpg",
+      "duration": "11:46",
+      "viewCount": 12001,
+      "likeCount": 805,
+      "commentCount": 98,
+      "url": "https://www.youtube.com/watch?v=RG6_tbHknJI"
+    },
+    "5KMSdasV5Bc": {
+      "id": "5KMSdasV5Bc",
+      "title": "Grant Lannin x Cardinal Mason x Ben Bader FULL PODCAST Ep. 1",
+      "description": "Follow these fine young gentlemen on Instagram:\n\n@benhbader @cardinalmase @grantlannin",
+      "channelId": "UCjHifwrbviOci6If4i0qA8Q",
+      "channelTitle": "Ben Bader",
+      "publishedAt": "2023-07-30T17:54:10Z",
+      "thumbnail": "https://i.ytimg.com/vi/5KMSdasV5Bc/maxresdefault.jpg",
+      "duration": "1:43:42",
+      "viewCount": 13377,
+      "likeCount": 490,
+      "commentCount": 26,
+      "url": "https://www.youtube.com/watch?v=5KMSdasV5Bc"
+    }
+  },
+  "include_timestamps": false,
+  "include_video_title": true,
+  "include_video_id": true,
+  "include_video_url": true,
+  "include_view_count": false,
+  "concatenate_all": true,
+  "end_time": 1757515148.2175221,
+  "duration": 225.00510144233704
+}

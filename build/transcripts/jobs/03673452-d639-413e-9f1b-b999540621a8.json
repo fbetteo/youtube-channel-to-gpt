@@ -1,0 +1,1297 @@
+{
+  "status": "completed",
+  "channel_name": null,
+  "playlist_id": "PLWzccsezPgzY9pVyWtJq0934uJZ1Afu9N",
+  "source_id": "PLWzccsezPgzY9pVyWtJq0934uJZ1Afu9N",
+  "source_name": "QS24 Gesundheitskompass Podcast",
+  "source_type": "playlist",
+  "total_videos": 48,
+  "processed_count": 48,
+  "failed_count": 5,
+  "completed": 43,
+  "files": [
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/G-L2Mf24-4U/Podcast Warum explodieren die _G-L2Mf24-4U.txt",
+      "video_id": "G-L2Mf24-4U",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/sBUXGqTHQ0M/Podcast Stottern - Neue Hoffnu_sBUXGqTHQ0M.txt",
+      "video_id": "sBUXGqTHQ0M",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/xykarg4N_Pc/Podcast Hormone und Gyn\u00e4kologi_xykarg4N_Pc.txt",
+      "video_id": "xykarg4N_Pc",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/zHsJbCF7DGk/Podcast Erektionsprobleme vers_zHsJbCF7DGk.txt",
+      "video_id": "zHsJbCF7DGk",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/1dU4Pstlghk/Podcast Trauer und Verlust Hof_1dU4Pstlghk.txt",
+      "video_id": "1dU4Pstlghk",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/FAZgNTYrFog/Podcast Wirbels\u00e4ulenfehlstellu_FAZgNTYrFog.txt",
+      "video_id": "FAZgNTYrFog",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/pgWcFUyka0Y/Podcast Die wahre Wahrheit \u00fcbe_pgWcFUyka0Y.txt",
+      "video_id": "pgWcFUyka0Y",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/Ncni_eMKTKU/Podcast Das Verhexungssyndrom _Ncni_eMKTKU.txt",
+      "video_id": "Ncni_eMKTKU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/BtcI4_sZoeQ/Podcast Franz von Assisi \u2013 Ein_BtcI4_sZoeQ.txt",
+      "video_id": "BtcI4_sZoeQ",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/V1fqE2vmMYE/Podcast Die Verbindung zwische_V1fqE2vmMYE.txt",
+      "video_id": "V1fqE2vmMYE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/WJX4J5lH76Y/Podcast Medizinische Kosmetik _WJX4J5lH76Y.txt",
+      "video_id": "WJX4J5lH76Y",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/l7qkjspYDo4/Podcast Faltenfrei durch nat\u00fcr_l7qkjspYDo4.txt",
+      "video_id": "l7qkjspYDo4",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/q3ph2Z5_Keo/Podcast Organspender per Geset_q3ph2Z5_Keo.txt",
+      "video_id": "q3ph2Z5_Keo",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/q5OTw533wOA/Podcast Die ungeschw\u00e4rzten RKI_q5OTw533wOA.txt",
+      "video_id": "q5OTw533wOA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/nPBPG3CbeVM/Podcast Hirntod und Organspend_nPBPG3CbeVM.txt",
+      "video_id": "nPBPG3CbeVM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/nKSFd_7CZTE/Podcast Die Bedeutung von Omeg_nKSFd_7CZTE.txt",
+      "video_id": "nKSFd_7CZTE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/Z3wFN8IRvh0/Podcast Spike-Opathie Neue Weg_Z3wFN8IRvh0.txt",
+      "video_id": "Z3wFN8IRvh0",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/rMXWacDv7GE/Podcast Mythen und L\u00fcgen zum T_rMXWacDv7GE.txt",
+      "video_id": "rMXWacDv7GE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/Jbu5fa9zZIo/Podcast Ethik im Organhandel E_Jbu5fa9zZIo.txt",
+      "video_id": "Jbu5fa9zZIo",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/9pH6iJEyPKU/Podcast Wie reagiert unser Org_9pH6iJEyPKU.txt",
+      "video_id": "9pH6iJEyPKU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/jibuN3PhJI0/Podcast Die S\u00e4ure-Basen-Verwir_jibuN3PhJI0.txt",
+      "video_id": "jibuN3PhJI0",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/xTmDuLtIfPU/Podcast Die Insekten-Debatte E_xTmDuLtIfPU.txt",
+      "video_id": "xTmDuLtIfPU",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/hjRoaig5atI/Podcast Schilddr\u00fcse im Fokus J_hjRoaig5atI.txt",
+      "video_id": "hjRoaig5atI",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/hg6JtnOEJWg/Podcast Heilung in Rekordzeit _hg6JtnOEJWg.txt",
+      "video_id": "hg6JtnOEJWg",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/SGBvIuy8lRA/Podcast Seniorenzentren im Wan_SGBvIuy8lRA.txt",
+      "video_id": "SGBvIuy8lRA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/NELWMiezQjg/Podcast Die Kraft von Proteine_NELWMiezQjg.txt",
+      "video_id": "NELWMiezQjg",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/rPAbYo9fikE/Podcast Krebsrisiko senken Neu_rPAbYo9fikE.txt",
+      "video_id": "rPAbYo9fikE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/H-Rq-p7w3xI/Podcast Vergessen Sie alles, w_H-Rq-p7w3xI.txt",
+      "video_id": "H-Rq-p7w3xI",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/OZeacjmNTwM/Podcast Resonanzen \u2013 Tesla-Tec_OZeacjmNTwM.txt",
+      "video_id": "OZeacjmNTwM",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/B1bbEG87_oA/Podcast Krebs Wie Diagnosen un_B1bbEG87_oA.txt",
+      "video_id": "B1bbEG87_oA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/qgeJZ7AinYo/Podcast Die Welt des Mikrobiom_qgeJZ7AinYo.txt",
+      "video_id": "qgeJZ7AinYo",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/RzmKrZZvcZA/Podcast Endlich Hilfe bei viel_RzmKrZZvcZA.txt",
+      "video_id": "RzmKrZZvcZA",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/iq_YWxiSAZI/Podcast Demenz und Depression _iq_YWxiSAZI.txt",
+      "video_id": "iq_YWxiSAZI",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/IPr4xwtCosY/Podcast Mobilfunkstrahlung bee_IPr4xwtCosY.txt",
+      "video_id": "IPr4xwtCosY",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/_1zQtbKrF_4/Podcast Gesundheit versus Kran__1zQtbKrF_4.txt",
+      "video_id": "_1zQtbKrF_4",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/-mWLLATLZcE/Podcast Die Alzheimer L\u00fcge Ver_-mWLLATLZcE.txt",
+      "video_id": "-mWLLATLZcE",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/y1a_XmACRGk/Podcast Kinder & ADHS \u2013 Die Sc_y1a_XmACRGk.txt",
+      "video_id": "y1a_XmACRGk",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/EyM70d4IBZQ/Podcast Entgiftung von innen h_EyM70d4IBZQ.txt",
+      "video_id": "EyM70d4IBZQ",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/kPN7p8grBIQ/Podcast Lasertherapie \u2013 Die Zu_kPN7p8grBIQ.txt",
+      "video_id": "kPN7p8grBIQ",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/LwSaPe_ZiV0/Podcast Umweltgifte und stille_LwSaPe_ZiV0.txt",
+      "video_id": "LwSaPe_ZiV0",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/VqiITT2nE8o/Podcast Wie kann man Diabetes _VqiITT2nE8o.txt",
+      "video_id": "VqiITT2nE8o",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/_tEJ1JKMftI/Podcast Autoimmunerkrankungen __tEJ1JKMftI.txt",
+      "video_id": "_tEJ1JKMftI",
+      "language": "de",
+      "type": "auto-generated"
+    },
+    {
+      "file_path": "../build/transcripts/0dda42c8-ea25-44d2-a746-187ee1676851/03673452-d639-413e-9f1b-b999540621a8/7_maOZ956yI/Podcast Explosionsartiger Anst_7_maOZ956yI.txt",
+      "video_id": "7_maOZ956yI",
+      "language": "de",
+      "type": "auto-generated"
+    }
+  ],
+  "videos": [
+    {
+      "id": "G-L2Mf24-4U",
+      "title": "Podcast: Warum explodieren die Krebsdiagnosen? | Kolloquium Medicine",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=G-L2Mf24-4U"
+    },
+    {
+      "id": "zHsJbCF7DGk",
+      "title": "Podcast: Erektionsprobleme verstehen: \u00dcber Hindernisse und L\u00f6sungen | Dr. med. Karoline Bischof",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=zHsJbCF7DGk"
+    },
+    {
+      "id": "xykarg4N_Pc",
+      "title": "Podcast: Hormone und Gyn\u00e4kologie: Wo Frauen Hilfe bekommen | Fach\u00e4rztin Marianne Krug",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xykarg4N_Pc"
+    },
+    {
+      "id": "V1fqE2vmMYE",
+      "title": "Podcast: Die Verbindung zwischen Kiefergelenk und Wirbels\u00e4ule | Dr. med. dent. G\u00e1bor R\u00f3za",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=V1fqE2vmMYE"
+    },
+    {
+      "id": "FAZgNTYrFog",
+      "title": "Podcast: Wirbels\u00e4ulenfehlstellung als Ursache von \u00fcber 120 Krankheiten | Dr. med. Matthias D. Meier",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=FAZgNTYrFog"
+    },
+    {
+      "id": "sBUXGqTHQ0M",
+      "title": "Podcast: Stottern -  Neue Hoffnung f\u00fcr Betroffene | Prof. Dr. med. Sch\u00fctz und Dr. med. Wiechel",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=sBUXGqTHQ0M"
+    },
+    {
+      "id": "1dU4Pstlghk",
+      "title": "Podcast: Trauer und Verlust: Hoffnung nach dem Abschied mit Dr. med. Petra Wiechel",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=1dU4Pstlghk"
+    },
+    {
+      "id": "BtcI4_sZoeQ",
+      "title": "Podcast: Franz von Assisi \u2013 Ein Portr\u00e4t | Bruder Niklaus Kuster und Moderator Alexander Glogg",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=BtcI4_sZoeQ"
+    },
+    {
+      "id": "pgWcFUyka0Y",
+      "title": "Podcast: Die wahre Wahrheit \u00fcber das Sterben: Was Sterbende wirklich bereuen! | Dr. med. Hempel",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=pgWcFUyka0Y"
+    },
+    {
+      "id": "Ncni_eMKTKU",
+      "title": "Podcast: Das Verhexungssyndrom: Schattenseiten der Geistheilung | Dr. Dr. Walter von Lucadou",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Ncni_eMKTKU"
+    },
+    {
+      "id": "Jbu5fa9zZIo",
+      "title": "Podcast: Ethik im Organhandel: Ein kritischer Diskurs | Prof. Dr. Dr. Walach und Dr. med. Wiechel",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Jbu5fa9zZIo"
+    },
+    {
+      "id": "q3ph2Z5_Keo",
+      "title": "Podcast: Organspender per Gesetz? Die schockierende Wahrheit \u00fcber die neue Gesetzeslage",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=q3ph2Z5_Keo"
+    },
+    {
+      "id": "nPBPG3CbeVM",
+      "title": "Podcast: Hirntod und Organspende | Kolloquium Medicine",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=nPBPG3CbeVM"
+    },
+    {
+      "id": "Z3wFN8IRvh0",
+      "title": "Podcast: Spike-Opathie: Neue Wege zur Entfernung von Spike-Proteinen aus dem K\u00f6rper",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=Z3wFN8IRvh0"
+    },
+    {
+      "id": "q5OTw533wOA",
+      "title": "Podcast: Die ungeschw\u00e4rzten RKI-Files: Was uns w\u00e4hrend der Pandemie wirklich verschwiegen wurde",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=q5OTw533wOA"
+    },
+    {
+      "id": "WJX4J5lH76Y",
+      "title": "Podcast: Medizinische Kosmetik: Getestet an der ETH Z\u00fcrich | Dr. Feldhaus und Dr. Emanuel",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=WJX4J5lH76Y"
+    },
+    {
+      "id": "l7qkjspYDo4",
+      "title": "Podcast: Faltenfrei durch nat\u00fcrliche Kosmetik | Helena Paulus zu Gast bei QS24",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=l7qkjspYDo4"
+    },
+    {
+      "id": "SA42AyZH9QI",
+      "title": "Podcast: Das Cholesterin-M\u00e4rchen | Dr. med. Thomas Rau bei QS24",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=SA42AyZH9QI"
+    },
+    {
+      "id": "nKSFd_7CZTE",
+      "title": "Podcast: Die Bedeutung von Omega-3 f\u00fcr die Herzgesundheit | Prof. Dr. med. Clemens von Schacky",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=nKSFd_7CZTE"
+    },
+    {
+      "id": "rMXWacDv7GE",
+      "title": "Podcast: Mythen und L\u00fcgen zum Thema Salz | Sybille Binder im Gespr\u00e4ch bei Moderator Alexander Glogg",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=rMXWacDv7GE"
+    },
+    {
+      "id": "vWuTJPLMRwA",
+      "title": "Podcast: Gesunder und ungesunder Zucker | Dr. med. Kurt Mosetter im Gespr\u00e4ch bei QS24",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=vWuTJPLMRwA"
+    },
+    {
+      "id": "jibuN3PhJI0",
+      "title": "Podcast: Die S\u00e4ure-/Basen-Verwirrung \u2013 Was ist jetzt basisch und was sauer? | Dr. med. Kurt Mosetter",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=jibuN3PhJI0"
+    },
+    {
+      "id": "hjRoaig5atI",
+      "title": "Podcast: Schilddr\u00fcse im Fokus: Jodmangel, Ern\u00e4hrung, Gesundheit | Dr. rer. nat. Markus Stark",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=hjRoaig5atI"
+    },
+    {
+      "id": "hg6JtnOEJWg",
+      "title": "Podcast: Heilung in Rekordzeit: Wie Enzyme den Heilungsprozess beschleunigen k\u00f6nnen | Dr. med. M\u00fcnch",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=hg6JtnOEJWg"
+    },
+    {
+      "id": "xTmDuLtIfPU",
+      "title": "Podcast: Die Insekten-Debatte: Eine Perspektive f\u00fcr die Ern\u00e4hrung | Dr. med. Simon Feldhaus",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=xTmDuLtIfPU"
+    },
+    {
+      "id": "9pH6iJEyPKU",
+      "title": "Podcast: Wie reagiert unser Organismus auf Insekten im Essen? | Dr. med. Kurt E. M\u00fcller",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=9pH6iJEyPKU"
+    },
+    {
+      "id": "SGBvIuy8lRA",
+      "title": "Podcast: Seniorenzentren im Wandel: Wie Mikron\u00e4hrstoffe das Leben der Bewohner verbessern k\u00f6nnen",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=SGBvIuy8lRA"
+    },
+    {
+      "id": "NELWMiezQjg",
+      "title": "Podcast: Die Kraft von Proteinen f\u00fcr die Gesundheit im Alter | Mark Warnecke",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=NELWMiezQjg"
+    },
+    {
+      "id": "H-Rq-p7w3xI",
+      "title": "Podcast: Vergessen Sie alles, was Sie \u00fcber Eiwei\u00df, Proteine und Aminos\u00e4uren zu wissen glaubten!",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=H-Rq-p7w3xI"
+    },
+    {
+      "id": "rPAbYo9fikE",
+      "title": "Podcast: Krebsrisiko senken: Neue Erkenntnisse aus bahnbrechender Studie | Prof. Dr. med. J\u00f6rg Spitz",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=rPAbYo9fikE"
+    },
+    {
+      "id": "B1bbEG87_oA",
+      "title": "Podcast: Krebs: Wie Diagnosen unser Leben \u00e4ndern | Dr. med. Petra Wiechel bei QS24",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=B1bbEG87_oA"
+    },
+    {
+      "id": "c7MlpKKeQJM",
+      "title": "Podcast: Krebs: Unsichtbare Ursachen und pr\u00e4ventive Ans\u00e4tze | Krebsforscher Lothar Hirneise",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=c7MlpKKeQJM"
+    },
+    {
+      "id": "qgeJZ7AinYo",
+      "title": "Podcast: Die Welt des Mikrobioms: Was der Darm \u00fcber Gesundheit verr\u00e4t | Prof. Dr. Burkhard Sch\u00fctz",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=qgeJZ7AinYo"
+    },
+    {
+      "id": "OZeacjmNTwM",
+      "title": "Podcast: Resonanzen \u2013 Tesla-Technologie und Naturmedizin | Arthur Tr\u00e4nkle im Gespr\u00e4ch bei QS24",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=OZeacjmNTwM"
+    },
+    {
+      "id": "y1a_XmACRGk",
+      "title": "Podcast: Kinder & ADHS \u2013 Die Schulmedizin kann auch lebensgef\u00e4hrliche Folgen haben | Prof. Schubert",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=y1a_XmACRGk"
+    },
+    {
+      "id": "_1zQtbKrF_4",
+      "title": "Podcast: Gesundheit versus Krankheit: Wo ziehen wir die Grenze? | Dr. med. Petra Wiechel",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=_1zQtbKrF_4"
+    },
+    {
+      "id": "RzmKrZZvcZA",
+      "title": "Podcast: Endlich Hilfe bei vielen Erkrankungen? - Kleinsche Felder \u2013 die innovative Weltneuheit",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=RzmKrZZvcZA"
+    },
+    {
+      "id": "-mWLLATLZcE",
+      "title": "Podcast: Die Alzheimer L\u00fcge: Verborgene Wahrheiten | PD Dr. med. Michael Nehls im Gespr\u00e4ch bei QS24",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=-mWLLATLZcE"
+    },
+    {
+      "id": "iq_YWxiSAZI",
+      "title": "Podcast: Demenz und Depression sind kein unabwendbares Schicksal! | Prof. Dr. med. J\u00f6rg Spitz",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=iq_YWxiSAZI"
+    },
+    {
+      "id": "IPr4xwtCosY",
+      "title": "Podcast: Mobilfunkstrahlung beeinflusst unsere Gehirnaktivit\u00e4t st\u00e4rker als gedacht! | Dr. Diana Henz",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=IPr4xwtCosY"
+    },
+    {
+      "id": "kPN7p8grBIQ",
+      "title": "Podcast: Lasertherapie \u2013 Die Zukunft der neurologischen Gesundheit! | Dr. med. Michael Weber",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=kPN7p8grBIQ"
+    },
+    {
+      "id": "LwSaPe_ZiV0",
+      "title": "Podcast: Umweltgifte und stille Entz\u00fcndungen: Die unsichtbare Bedrohung | Dr. med. Harald Burgard",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=LwSaPe_ZiV0"
+    },
+    {
+      "id": "EyM70d4IBZQ",
+      "title": "Podcast: Entgiftung von innen heraus: Die Rolle der Leber und genetische Faktoren | Prof. Dr. K\u00f6nig",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=EyM70d4IBZQ"
+    },
+    {
+      "id": "NCvA5rL9Xwg",
+      "title": "Podcast: Der Segen f\u00fcr alle Gelenk- und Muskelschmerzen | Das altbew\u00e4hrte Heilmittel",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=NCvA5rL9Xwg"
+    },
+    {
+      "id": "j6qq8jKQh0E",
+      "title": "Podcast: Was die Werbung verschweigt: Die dunkle Seite der Abnehmspritze! | Prof. Andreas Pf\u00fctzner",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=j6qq8jKQh0E"
+    },
+    {
+      "id": "VqiITT2nE8o",
+      "title": "Podcast: Wie kann man Diabetes erkennen, wenn der Blutzucker noch normals ist | Prof. Dr. Pf\u00fctzner",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=VqiITT2nE8o"
+    },
+    {
+      "id": "_tEJ1JKMftI",
+      "title": "Podcast: Autoimmunerkrankungen: Ursachen und L\u00f6sungsans\u00e4tze | Prof. J\u00f6rg Spitz & Dr. Petra Wiechel",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=_tEJ1JKMftI"
+    },
+    {
+      "id": "7_maOZ956yI",
+      "title": "Podcast: Explosionsartiger Anstieg von Autoimmunerkrankungen | Prof. Dr. med. habil. Ulrich Amon",
+      "publishedAt": "2025-09-17T07:28:13.031Z",
+      "duration": null,
+      "url": "https://www.youtube.com/watch?v=7_maOZ956yI"
+    }
+  ],
+  "start_time": 1758094093.74631,
+  "user_id": "0dda42c8-ea25-44d2-a746-187ee1676851",
+  "credits_reserved": 48,
+  "credits_used": 53,
+  "reservation_id": "62f27b0c-0f43-4bd5-a5a0-56b807eb957b",
+  "videos_metadata": {
+    "G-L2Mf24-4U": {
+      "id": "G-L2Mf24-4U",
+      "title": "Podcast: Warum explodieren die Krebsdiagnosen? | Kolloquium Medicine",
+      "description": "In letzter Zeit haben die Krebsdiagnosen alarmierende H\u00f6chstwerte erreicht. Neueste Statistiken zeigen einen dramatischen Anstieg, der viele Fragen aufwirft. Was k\u00f6nnte der Grund daf\u00fcr sein? In diesem Beitrag wollen wir die Meinungen von Experten zusammenfassen, um das komplexe Zusammenspiel von Faktoren, die zu diesem Anstieg f\u00fchren, zu beleuchten.\n\n\n\n\nDie Experten\n\n\n\n  \u2022  Dr. med. Dietrich Klinghardt, Arzt, Wissenschaftler und Ausbildner\n  \u2022  Prof. Dr. med. Brigitte K\u00f6nig , Expertin f\u00fcr Mikrobiologie und Infektionsimmunologie\n  \u2022  Lothar Hirneise, Krebsforscher\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-08-15T10:10:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/G-L2Mf24-4U/maxresdefault.jpg",
+      "duration": "31:25",
+      "viewCount": 2251,
+      "likeCount": 103,
+      "commentCount": 24,
+      "url": "https://www.youtube.com/watch?v=G-L2Mf24-4U"
+    },
+    "zHsJbCF7DGk": {
+      "id": "zHsJbCF7DGk",
+      "title": "Podcast: Erektionsprobleme verstehen: \u00dcber Hindernisse und L\u00f6sungen | Dr. med. Karoline Bischof",
+      "description": "\u00dcber Erektionsprobleme schweigen M\u00e4nner und genau das sollten sie nicht tun. Doch wie hei\u00dft es im Song \u201eM\u00e4nner\u201c von Herbert Gr\u00f6nemeyer?: \u201eM\u00e4nner sind auch Menschen, M\u00e4nner sind etwas sonderbar und M\u00e4nner sind so verletzlich..\u201c Kein Wunder also, dass sie \u00fcber \u201em\u00e4nnliche Probleme\u201c nicht offen sprechen wollen. Zu gro\u00df ist die Angst, nur noch als \u201ehalber Mann\u201c gesehen zu werden. Sie haben ein Bild von \u201eM\u00e4nnlichkeit\u201c im Kopf, woran sie nicht r\u00fctteln wollen. Stattdessen bei\u00dfen sie die Z\u00e4hne zusammen in der Hoffnung, das sich ihr Problem von alleine l\u00f6sen wird. Doch der m\u00e4nnliche K\u00f6rper ist keine Maschine. Wer \u00fcber seine Leiden nicht spricht, um sich helfen zu lassen, w\u00e4hlt unn\u00f6tig seine Leiden. \n\n\n\n\n\u201eWenn wir \u00fcber Erektionsprobleme sprechen, m\u00fcssen wir auch die Scham und den Druck verstehen, den viele M\u00e4nner empfinden.\u201c\n\n\n\n\n\u201eHeilung\u201c f\u00e4ngt im Kopf an, d. h. nur wer sich seinem Problem stellt und entschlossen ist, sich helfen zu lassen, hat eine Chance, zur alten \u201eM\u00e4nnlichkeit\u201c, wenn das \u00fcberhaupt so wichtig ist, zur\u00fcckzufinden. Ein Mann ist mehr als die Klischee ihm weismachen wollen.\n\n\n\n\nZu Gast bei QS24 Dr. med. Karoline Bischof",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-08-13T10:13:56Z",
+      "thumbnail": "https://i.ytimg.com/vi/zHsJbCF7DGk/maxresdefault.jpg",
+      "duration": "30:10",
+      "viewCount": 644,
+      "likeCount": 35,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=zHsJbCF7DGk"
+    },
+    "xykarg4N_Pc": {
+      "id": "xykarg4N_Pc",
+      "title": "Podcast: Hormone und Gyn\u00e4kologie: Wo Frauen Hilfe bekommen | Fach\u00e4rztin Marianne Krug",
+      "description": "Im Rahmen eines Gespr\u00e4chs mit der Hormonexpertin Dr. med. Marianne Krug wird deutlich, dass viele Frauen mit hormonellen Problemen k\u00e4mpfen, bei ihrem Gyn\u00e4kologen aber oft nicht die erhoffte Unterst\u00fctzung finden. Wir begleiten die Leser(innen) auf eine Entdeckungsreise in die Welt der Hormone.\n\n\n\n\nFach\u00e4rztin Marianne Krug im Interview mit Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/wo-gynaekologen-keine-ahnung-haben--fachaerztin-marianne-krug--naturmedizin--qs24) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-08-11T10:14:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/xykarg4N_Pc/maxresdefault.jpg",
+      "duration": "27:12",
+      "viewCount": 801,
+      "likeCount": 56,
+      "commentCount": 6,
+      "url": "https://www.youtube.com/watch?v=xykarg4N_Pc"
+    },
+    "V1fqE2vmMYE": {
+      "id": "V1fqE2vmMYE",
+      "title": "Podcast: Die Verbindung zwischen Kiefergelenk und Wirbels\u00e4ule | Dr. med. dent. G\u00e1bor R\u00f3za",
+      "description": "Wussten Sie schon, dass Ihr Kiefer mehr Einfluss auf Ihren gesamten K\u00f6rper hat, als Sie denken? Dr. G\u00e1bor R\u00f3za beschreibt eindrucksvoll, wie ein falscher Biss nicht nur Zahnschmerzen, sondern auch R\u00fcckenschmerzen und sogar Tinnitus oder andere von um die 200 Symptomen verursachen kann. Lassen Sie uns in die faszinierende Verbindung zwischen Kiefergelenk und Wirbels\u00e4ule und die Ursachen unterschiedlicher Krankheitsbilder eintauchen. Ein ganzheitlicher Ansatz zur Schmerzbehandlung bei \u00fcber 200 Krankheitsbildern.\n\n\n\n\nAlexander Glogg im Gespr\u00e4ch mit Dr. med. dent. G\u00e1bor R\u00f3za\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/der-biss-wirbelsaeulen-komplex-der-ursprung-von-entzuendungen-krankheit--schmerzen--qs24) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-08-08T10:09:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/V1fqE2vmMYE/maxresdefault.jpg",
+      "duration": "32:09",
+      "viewCount": 1271,
+      "likeCount": 67,
+      "commentCount": 23,
+      "url": "https://www.youtube.com/watch?v=V1fqE2vmMYE"
+    },
+    "FAZgNTYrFog": {
+      "id": "FAZgNTYrFog",
+      "title": "Podcast: Wirbels\u00e4ulenfehlstellung als Ursache von \u00fcber 120 Krankheiten | Dr. med. Matthias D. Meier",
+      "description": "Hinter vielen chronischen Leiden steckt ein faszinierendes Zusammenspiel von Struktur und Funktion. Dr. Matthias D. Meier, ein ehemaliger Unfallchirurg, hat sich diesem komplexen Thema gewidmet und herausgefunden, was die Selbstheilungskr\u00e4fte unseres K\u00f6rpers tats\u00e4chlich ausmacht. Dieses Wissen k\u00f6nnte nicht nur Heilpraktikern, sondern auch jedem einzelnen von uns helfen, seinen Gesundheitsweg neu zu definieren.\n\n\n\n\nDr. med. Matthias D. Meier im Gespr\u00e4ch bei Moderator Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/wirbelsaeulenfehlstellung-als-ursache-von-ueber-120-krankheiten--dr-med-matthias-d-meier--qs24) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-08-06T10:40:20Z",
+      "thumbnail": "https://i.ytimg.com/vi/FAZgNTYrFog/maxresdefault.jpg",
+      "duration": "54:06",
+      "viewCount": 833,
+      "likeCount": 30,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=FAZgNTYrFog"
+    },
+    "sBUXGqTHQ0M": {
+      "id": "sBUXGqTHQ0M",
+      "title": "Podcast: Stottern -  Neue Hoffnung f\u00fcr Betroffene | Prof. Dr. med. Sch\u00fctz und Dr. med. Wiechel",
+      "description": "Stottern ist eine Herausforderung, die viele Menschen in Stille ertragen, oft besch\u00e4mt und zur\u00fcckhaltend im sozialen Austausch. Der Weg aus dieser Isolation ist jedoch nicht nur m\u00f6glich, sondern kann auch befreiend sein. In diesem Artikel werden wir die verschiedenen Facetten des Stotterns beleuchten und den Weg zu einem selbstbewussten Auftritt aufzeigen.\n\n\n\n\nProf. Dr. med. Burkhard Sch\u00fctz und Dr. med. Petra Wiechel im Gespr\u00e4ch bei Moderator Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/stottern-ueberwinden-die-inspirierende-reise-von-prof-dr-burkhard-schuetz--qs24-gremium) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-08-04T10:19:41Z",
+      "thumbnail": "https://i.ytimg.com/vi/sBUXGqTHQ0M/maxresdefault.jpg",
+      "duration": "27:48",
+      "viewCount": 586,
+      "likeCount": 31,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=sBUXGqTHQ0M"
+    },
+    "1dU4Pstlghk": {
+      "id": "1dU4Pstlghk",
+      "title": "Podcast: Trauer und Verlust: Hoffnung nach dem Abschied mit Dr. med. Petra Wiechel",
+      "description": "Der Verlust eines Menschen kann das Leben eines Menschen f\u00fcr immer ver\u00e4ndern. Wie geht man mit der pl\u00f6tzlichen Einsamkeit und der tiefen Trauer um? Diese Frage stellen sich viele. Lassen Sie uns \u00fcber Erfahrungen, die das Leben pr\u00e4gen, und m\u00f6gliche Wege zur Heilung des Schmerzes nachdenken.\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/nie-mehr-und-das-fuer-immer-abschied-ohne-wiederkehr--dr-med-petra-wiechel--visite--qs24) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-08-01T10:23:47Z",
+      "thumbnail": "https://i.ytimg.com/vi/1dU4Pstlghk/maxresdefault.jpg",
+      "duration": "24:34",
+      "viewCount": 1516,
+      "likeCount": 80,
+      "commentCount": 18,
+      "url": "https://www.youtube.com/watch?v=1dU4Pstlghk"
+    },
+    "BtcI4_sZoeQ": {
+      "id": "BtcI4_sZoeQ",
+      "title": "Podcast: Franz von Assisi \u2013 Ein Portr\u00e4t | Bruder Niklaus Kuster und Moderator Alexander Glogg",
+      "description": "Wussten Sie, dass einer der gr\u00f6\u00dften Heiligen der katholischen Kirche, Franz von Assisi, nicht immer gl\u00e4ubig war? Diese Entdeckung gibt einen faszinierenden Blick auf sein Leben und seine Erfahrungen, die ihn pr\u00e4gten und ihn dazu f\u00fchrten, f\u00fcr die Rechte der Ausgegrenzten und f\u00fcr Frieden einzutreten. Mit Bruder Niklaus Kuster tauchen wir in seine bewegende Geschichte ein und sehen, wie seine fr\u00fchen Entscheidungen und Herausforderungen dazu beitrugen, seinen Glauben zu formen.\n\n\n\n\n\ufeffBruder Niklaus Kuster im Gespr\u00e4ch bei Moderator Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/franz-von-assisi-der-heilige-der-die-welt-veraenderte--bruder-niklaus-kuster--qs24) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-07-30T10:13:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/BtcI4_sZoeQ/maxresdefault.jpg",
+      "duration": "56:31",
+      "viewCount": 709,
+      "likeCount": 47,
+      "commentCount": 12,
+      "url": "https://www.youtube.com/watch?v=BtcI4_sZoeQ"
+    },
+    "pgWcFUyka0Y": {
+      "id": "pgWcFUyka0Y",
+      "title": "Podcast: Die wahre Wahrheit \u00fcber das Sterben: Was Sterbende wirklich bereuen! | Dr. med. Hempel",
+      "description": "Stellen Sie Sie sich vor, Sie haben den Blick auf die letzten Tage Ihres Lebens gerichtet und Sie fragen sich, was Sie bereuen? Dr. Christa-Maria Hempel, eine erfahrene Palliativmedizinerin, hat in ihrer Praxis viele solcher Momente miterlebt. Wir gehen den Fragen nach, die Sterbende h\u00e4ufig aufwerfen, und lernen, welche Lektionen uns ihre Einsichten lehren k\u00f6nnen.\n\n\n\n\nAlexandra Wurlitzer im Gespr\u00e4ch mit Dr. med. Christa-Maria Hempel\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/die-wahre-wahrheit-ueber-das-sterben-was-sterbende-wirklich-bereuen--qs24-gesundheitsfernsehen) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-07-28T10:04:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/pgWcFUyka0Y/maxresdefault.jpg",
+      "duration": "27:00",
+      "viewCount": 1379,
+      "likeCount": 92,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=pgWcFUyka0Y"
+    },
+    "Ncni_eMKTKU": {
+      "id": "Ncni_eMKTKU",
+      "title": "Podcast: Das Verhexungssyndrom: Schattenseiten der Geistheilung | Dr. Dr. Walter von Lucadou",
+      "description": "Im faszinierenden Universum der Heilung stiess die Autorin dieses Beitrages vor einiger Zeit auf ein au\u00dfergew\u00f6hnliches Ph\u00e4nomen, das ihre Neugier weckte: das Verhexungssyndrom. Diese Nebenwirkung der geistigen Heilung bleibt oft im Schatten der Wissenschaft und findet nur selten die Aufmerksamkeit, die sie verdient. Vieles um dieses Syndrom scheint verschwommen, vieles unklar. Hier soll ein wenig mehr Klarheit in das Ph\u00e4nomen gebracht werden. Ein Blick hinter die Kulissen der Geistheilung.\n\n\n\n\nAlexander Glogg im Gespr\u00e4ch mit Dr. Dr. Walter von Lucadou\n\n\n\n\nZum interaktiven Beitra (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/verhexungssyndrom-die-schattenseiten-der-geistheilung--dr-dr-walter-von-lucadou--qs24) g (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/TUfvm4sXkxvAouC70tll) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-07-25T10:23:55Z",
+      "thumbnail": "https://i.ytimg.com/vi/Ncni_eMKTKU/maxresdefault.jpg",
+      "duration": "1:00:15",
+      "viewCount": 1044,
+      "likeCount": 52,
+      "commentCount": 3,
+      "url": "https://www.youtube.com/watch?v=Ncni_eMKTKU"
+    },
+    "Jbu5fa9zZIo": {
+      "id": "Jbu5fa9zZIo",
+      "title": "Podcast: Ethik im Organhandel: Ein kritischer Diskurs | Prof. Dr. Dr. Walach und Dr. med. Wiechel",
+      "description": "Die Organspende in Deutschland basiert auf dem Prinzip der freiwilligen Einwilligung. Das bedeutet, dass jeder B\u00fcrger aktiv entscheiden muss, ob er Organspender werden m\u00f6chte oder nicht. Diese Entscheidung kann durch eine Registrierung in einem Organspenderausweis oder in einem entsprechenden Register erfolgen. Doch die Realit\u00e4t sieht oft anders aus.\n\n\n\n\nProf. Dr. Dr. Harald Walach und Dr. med. Petra Wiechel im Gespr\u00e4ch bei Moderator Alexander Glogg\n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-07-23T10:16:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/Jbu5fa9zZIo/maxresdefault.jpg",
+      "duration": "59:45",
+      "viewCount": 680,
+      "likeCount": 42,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=Jbu5fa9zZIo"
+    },
+    "q3ph2Z5_Keo": {
+      "id": "q3ph2Z5_Keo",
+      "title": "Podcast: Organspender per Gesetz? Die schockierende Wahrheit \u00fcber die neue Gesetzeslage",
+      "description": "Organspenden sind ein emotionales und komplexes Thema. Es betrifft inzwischen fast alle Menschen. Die Widerspruchsregelung ist ein wichtiges Thema in der Diskussion um Organspenden. Diese Regel besagt, dass Menschen automatisch als Organspender gelten, wenn sie nicht aktiv widersprechen. In der Schweiz ist jeder B\u00fcrger automatisch Organspender solange er sich nicht ausdr\u00fccklich dagegen entschieden. Dies bedeutet, dass auch, wenn jemand nicht in ein Organspenderregister eingetragen ist, er dennoch Spender ist.\n\n\n\n\nProf. Dr. med. J\u00f6rg Spitz und Dr. med. Petra Wiechel\u00a0im Interview mit Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/organspender-per-gesetz-die-schockierende-wahrheit-ueber-die-neue-gesetzeslage--qs24-gremium) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-07-21T10:07:04Z",
+      "thumbnail": "https://i.ytimg.com/vi/q3ph2Z5_Keo/maxresdefault.jpg",
+      "duration": "36:32",
+      "viewCount": 1048,
+      "likeCount": 60,
+      "commentCount": 5,
+      "url": "https://www.youtube.com/watch?v=q3ph2Z5_Keo"
+    },
+    "nPBPG3CbeVM": {
+      "id": "nPBPG3CbeVM",
+      "title": "Podcast: Hirntod und Organspende | Kolloquium Medicine",
+      "description": "Was bedeutet es, wirklich tot zu sein? Diese Frage besch\u00e4ftigt nicht nur Philosophen, sondern auch Mediziner und Ethiker in der heutigen Gesellschaft. Stellen Sie sich vor, Sie k\u00f6nnten in die tiefsten Fragen des Lebens und des Sterbens eintauchen. In diesem Beitrag diskutieren wir diese komplexen Fragestellungen in einer F\u00fclle von Perspektiven.\n\n\n\n\nDie Experten\n\n\n\n  \u2022  Univ.-Prof. Dr. med. Dr. rer. nat. M. Sc. Christian Schubert, Psychoneuroimmunologe\n  \u2022  Dr. Thomas Rau \u2013 Medizinischer Direktor der Klinik Biomed Sonnenberg\n  \u2022  Prof. Dr. Elmar Wienecke - Professor f\u00fcr Mikron\u00e4hrstoff- und Regulationsmedizin\n  \u2022  Peer Zebergs - Gesundheitsanalyst\n\n\n\nModeration: Alexandra Wurlitzer\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/hirntod-und-organspende--kolloquium-medicine--qs24-gesundheitsfernsehen) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-07-18T10:34:44Z",
+      "thumbnail": "https://i.ytimg.com/vi/nPBPG3CbeVM/maxresdefault.jpg",
+      "duration": "1:03:19",
+      "viewCount": 612,
+      "likeCount": 24,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=nPBPG3CbeVM"
+    },
+    "Z3wFN8IRvh0": {
+      "id": "Z3wFN8IRvh0",
+      "title": "Podcast: Spike-Opathie: Neue Wege zur Entfernung von Spike-Proteinen aus dem K\u00f6rper",
+      "description": "In einer Zeit, in der das Thema Gesundheit und Heilung mehr denn je im Vordergrund steht, \u00fcberraschen uns die neuesten Forschungsergebnisse \u00fcber Spikeopathie. Diese innovative Therapie k\u00f6nnte der Schl\u00fcssel zur Bek\u00e4mpfung von Spikeproteinen sein, die viele Menschen nach einer Impfung betroffen haben. Hier werfen wir einen Blick auf die Expertenansichten und auf spannende neue Entwicklungen.\n\n\n\n\nUnsere Experten:\n\n\n\n  \u2022  Prof. Dr. Brigitte K\u00f6nig\n  \u2022  Prof. Dr. Albrecht Hempel\n  \u2022  Prof. Dr. Stefan Hockertz\n  \u2022  Dr. med. Kurt M\u00fcller\n\n\n\nModeration: Alexander Glogg\n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-07-16T10:14:16Z",
+      "thumbnail": "https://i.ytimg.com/vi/Z3wFN8IRvh0/maxresdefault.jpg",
+      "duration": "1:00:15",
+      "viewCount": 3908,
+      "likeCount": 196,
+      "commentCount": 14,
+      "url": "https://www.youtube.com/watch?v=Z3wFN8IRvh0"
+    },
+    "q5OTw533wOA": {
+      "id": "q5OTw533wOA",
+      "title": "Podcast: Die ungeschw\u00e4rzten RKI-Files: Was uns w\u00e4hrend der Pandemie wirklich verschwiegen wurde",
+      "description": "Die Diskussion rund um die RKI Files hat in den letzten Monaten f\u00fcr viele Debatten gesorgt. Wie kann es sein, dass solche wichtigen Informationen \u00fcber die Corona-Ma\u00dfnahmen so wenig publik gemacht werden? In diesem Beitrag nehmen wir uns die Zeit, die kritischen Aspekte unter die Lupe zu nehmen und aufzuzeigen, welche Fragen die RKI Files aufwerfen. Die Erkenntnisse k\u00f6nnten f\u00fcr viele Menschen von Bedeutung sein, gerade in Zeiten, in denen das Vertrauen in \u00f6ffentliche Institutionen immer wichtiger wird und dennoch infrage gestellt wird.\n\n\n\n\nProf. Dr. Andreas S\u00f6nnichsen und Dr. med. Petra Wiechel im Interview mit Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/die-ungeschwaerzten-rki-files-was-uns-waehrend-der-pandemie-wirklich-verschwiegen-wurde--qs24) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-07-14T10:11:27Z",
+      "thumbnail": "https://i.ytimg.com/vi/q5OTw533wOA/maxresdefault.jpg",
+      "duration": "59:45",
+      "viewCount": 3590,
+      "likeCount": 229,
+      "commentCount": 17,
+      "url": "https://www.youtube.com/watch?v=q5OTw533wOA"
+    },
+    "WJX4J5lH76Y": {
+      "id": "WJX4J5lH76Y",
+      "title": "Podcast: Medizinische Kosmetik: Getestet an der ETH Z\u00fcrich | Dr. Feldhaus und Dr. Emanuel",
+      "description": "Nicht wenige Menschen k\u00e4mpfen mit irritierter Haut \u2013 ein st\u00e4ndiges Problem, das viele in Unsicherheit st\u00fcrzt. Mit dem bahnbrechenden Wirkstoff OM24\u00ae l\u00e4sst sich die Hautpflege revolutionieren.\n\n\n\n\nDr. med. Simon Feldhaus und Dr. sc. nat. Hans Emanuel im Interview mit Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/bis-zu-350x-staerker-als-vitamin-e--das-geheimnis-hinter-om24--qs24-wissenschafts-gremium) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-07-11T10:14:12Z",
+      "thumbnail": "https://i.ytimg.com/vi/WJX4J5lH76Y/maxresdefault.jpg",
+      "duration": "36:32",
+      "viewCount": 309,
+      "likeCount": 11,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=WJX4J5lH76Y"
+    },
+    "l7qkjspYDo4": {
+      "id": "l7qkjspYDo4",
+      "title": "Podcast: Faltenfrei durch nat\u00fcrliche Kosmetik | Helena Paulus zu Gast bei QS24",
+      "description": "Hautpflege ist mehr als nur ein paar Produkte auftragen. Gab es einmal einen bedeutenden Moment, in dem man den Unterschied zwischen oberfl\u00e4chlicher Pflege und echter Hautnahrung verstand? Viele von uns haben diesen Aha-Moment erlebt, und genau darum geht es. Die Entdeckung der Geheimnisse, die hinter einer strahlenden Haut stehen. Und diese Geheimnisse sind gar nicht s schwer zu verstehen.\n\n\n\n\nZu Gast bei QS24 Frau Helena Paulus, Wirkstoffexpertin\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/falten-ade---ganz-ohne-spritze-und-filler--naturmedizin--qs24-gesundheitsfernsehen) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-07-09T10:05:54Z",
+      "thumbnail": "https://i.ytimg.com/vi/l7qkjspYDo4/maxresdefault.jpg",
+      "duration": "29:47",
+      "viewCount": 943,
+      "likeCount": 45,
+      "commentCount": 7,
+      "url": "https://www.youtube.com/watch?v=l7qkjspYDo4"
+    },
+    "SA42AyZH9QI": {
+      "id": "SA42AyZH9QI",
+      "title": "Podcast: Das Cholesterin-M\u00e4rchen | Dr. med. Thomas Rau bei QS24",
+      "description": "Cholesterin ist ein Schlagwort, das oft mit Angst und Verwirrung behaftet ist. W\u00e4hrend viele Menschen einen hohen Cholesterinspiegel f\u00fcr gef\u00e4hrlich halten, bleibt die Frage: Was ist Cholesterin und wie wirkt Cholesterin wirklich? In diesem Beitrag teilen wir die Erkenntnisse eines Experten, der nicht nur auf die Werte von Cholesterin eingeht, sondern auch die Rolle der Pharmakonzerne in der modernen Medizin hinterfragt.\n\n\n\n\nZu Gast: Dr. med. Thomas Rau, Medizinischer Direktor des BioMed Center Sonnenberg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/das-cholesterin-maerchen--dr-med-thomas-rau--naturmedizin--qs24-gesundheitsfernsehen) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-07-07T10:11:05Z",
+      "thumbnail": "https://i.ytimg.com/vi/SA42AyZH9QI/maxresdefault.jpg",
+      "duration": "27:46",
+      "viewCount": 1509,
+      "likeCount": 74,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=SA42AyZH9QI"
+    },
+    "nKSFd_7CZTE": {
+      "id": "nKSFd_7CZTE",
+      "title": "Podcast: Die Bedeutung von Omega-3 f\u00fcr die Herzgesundheit | Prof. Dr. med. Clemens von Schacky",
+      "description": "Stellen Sie sich vor, Sie k\u00f6nnten durch eine kleine Ver\u00e4nderung in Ihrer Ern\u00e4hrung das Risiko f\u00fcr schwere Krankheiten wie Herzinfarkt stark senken. Experten warnen, dass nahezu vier von f\u00fcnf Menschen einen Mangel aufweisen, w\u00e4hrend sie ahnungslos durch den Alltag gehen. Dabei ist es alles andere als kompliziert, die richtige Versorgung mit diesen essentiellen Fetten zu sichern und alles andere als ein Geheimnis. Wobei ein \u201eGeheimnis\u201c zur Herzgesundheit in Omega-3-Fetts\u00e4uren verborgen liegt.\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/ueberraschende-todesfaelle-koennten-vermieden-werden--prof-dr-med-clemens-von-schacky--qs24) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/) \n\n\n\n\nProf. Dr. med. Clemens von Schacky im Interview mit Alexander Glogg",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-07-04T10:17:37Z",
+      "thumbnail": "https://i.ytimg.com/vi/nKSFd_7CZTE/maxresdefault.jpg",
+      "duration": "33:08",
+      "viewCount": 1499,
+      "likeCount": 102,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=nKSFd_7CZTE"
+    },
+    "rMXWacDv7GE": {
+      "id": "rMXWacDv7GE",
+      "title": "Podcast: Mythen und L\u00fcgen zum Thema Salz | Sybille Binder im Gespr\u00e4ch bei Moderator Alexander Glogg",
+      "description": "Die Debatte um das Salz ist so alt wie die Menschheit selbst. Einst galt es als Gold und heute wird es oft als Gesundheitsrisiko ge\u00e4chtet. In diesem Beitrag beleuchten wir, wie sich unsere Sicht auf das gemeine K\u00fcchensalz und alternative Mineralsalzquellen relativiert. Aber was steckt wirklich hinter diesen Mythen? Und warum ist Salz f\u00fcr unseren K\u00f6rper von Bedeutung?\n\n\n\n\nSybille Binder im Gespr\u00e4ch bei Moderator Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/mythen-und-luegen-zum-thema-salz--sybille-binder--naturmedizin--qs24-gesundheitsfernsehen) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-07-02T10:07:02Z",
+      "thumbnail": "https://i.ytimg.com/vi/rMXWacDv7GE/maxresdefault.jpg",
+      "duration": "30:38",
+      "viewCount": 1450,
+      "likeCount": 110,
+      "commentCount": 6,
+      "url": "https://www.youtube.com/watch?v=rMXWacDv7GE"
+    },
+    "vWuTJPLMRwA": {
+      "id": "vWuTJPLMRwA",
+      "title": "Podcast: Gesunder und ungesunder Zucker | Dr. med. Kurt Mosetter im Gespr\u00e4ch bei QS24",
+      "description": "Der Zucker, ein scheinbar omnipr\u00e4sentes S\u00fc\u00dfungsmittel, hat die Gesellschaft in den letzten Jahrzehnten gespalten. W\u00e4hrend einige ihn als \u00dcbelt\u00e4ter f\u00fcr zahlreiche gesundheitliche Probleme ansehen, bestehen andere auf den positiven Aspekt bei bestimmten Zuckerarten. Dr. Kurt Mosetter, ein renommierter Arzt und Ern\u00e4hrungsexperte spricht \u00fcber die faszinierende Welt des Zuckers und enth\u00fcllt erstaunliche Informationen, die selbst den erfahrensten Ern\u00e4hrungsexperten \u00fcberraschen k\u00f6nnten, denn Zucker ist nicht gleich Zucker.\n\n\n\n\nDr. med. Kurt Mosetter im Gespr\u00e4ch bei Moderator Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/gesunder-und-ungesunder-zucker--dr-med-kurt-mosetter--naturmedizin--qs24-gesundheitsfernsehen) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-06-30T10:05:34Z",
+      "thumbnail": "https://i.ytimg.com/vi/vWuTJPLMRwA/maxresdefault.jpg",
+      "duration": "30:59",
+      "viewCount": 923,
+      "likeCount": 39,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=vWuTJPLMRwA"
+    },
+    "jibuN3PhJI0": {
+      "id": "jibuN3PhJI0",
+      "title": "Podcast: Die S\u00e4ure-/Basen-Verwirrung \u2013 Was ist jetzt basisch und was sauer? | Dr. med. Kurt Mosetter",
+      "description": "Die Diskussion \u00fcber saure und basische Lebensmitteln ist oft verwirrend. Viele Menschen glauben, dass bestimmte Nahrungsmittel basisch oder sauer sind. Entsprechend treffen sie Entscheidungen, ohne die zugrunde liegenden wissenschaftlichen Prinzipien zu verstehen. Ein zentraler Punkt in dieser Debatte ist der pH-Wert.\n\n\n\n\nDr. med. Kurt Mosetter im Gespr\u00e4ch bei Moderator Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/die-saeure-basen-verwirrung--was-ist-jetzt-basisch-und-was-sauer--dr-med-kurt-mosetter--qs24) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-06-27T10:08:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/jibuN3PhJI0/maxresdefault.jpg",
+      "duration": "34:08",
+      "viewCount": 1592,
+      "likeCount": 128,
+      "commentCount": 6,
+      "url": "https://www.youtube.com/watch?v=jibuN3PhJI0"
+    },
+    "hjRoaig5atI": {
+      "id": "hjRoaig5atI",
+      "title": "Podcast: Schilddr\u00fcse im Fokus: Jodmangel, Ern\u00e4hrung, Gesundheit | Dr. rer. nat. Markus Stark",
+      "description": "Die Gesundheit der Schilddr\u00fcse wird oft als ein untersch\u00e4tztes Thema betrachtet, obwohl sie eine zentrale Rolle in unserem K\u00f6rper spielt. Viele Menschen sind sich nicht bewusst, wie tiefgehend Jodmangel mit Symptomen wie M\u00fcdigkeit, Gewichtszunahme und Stimmungsschwankungen zusammenh\u00e4ngt. Es lohnt, der Schilddr\u00fcse Aufmerksamkeit zu schenken.\n\n\n\n\nAlexandra Wurlitzer im Gespr\u00e4ch mit Dr. rer. nat. Markus Stark\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/ist-jodmangel-die-hauptursache-von-schilddruesenerkrankungen--dr-rer-nat-markus-stark--qs24) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-06-25T10:06:50Z",
+      "thumbnail": "https://i.ytimg.com/vi/hjRoaig5atI/maxresdefault.jpg",
+      "duration": "30:28",
+      "viewCount": 1364,
+      "likeCount": 122,
+      "commentCount": 14,
+      "url": "https://www.youtube.com/watch?v=hjRoaig5atI"
+    },
+    "hg6JtnOEJWg": {
+      "id": "hg6JtnOEJWg",
+      "title": "Podcast: Heilung in Rekordzeit: Wie Enzyme den Heilungsprozess beschleunigen k\u00f6nnen | Dr. med. M\u00fcnch",
+      "description": "Verletzungen durch Bewegung sind die mit Abstand h\u00e4ufigsten Unf\u00e4lle in der Freizeit: allein zwei Millionen Sportverletzungen werden j\u00e4hrlich verzeichnet.\u00a0Das Immunsystem reagiert hierauf stets mit der Freisetzung proinflammatorischer Zytokine, darunter zum Beispiel der Tumornekrose-Faktor alpha und Interleukin-1. Diese Botenstoffe sollen den Entz\u00fcndungsablauf steuern und die Produktion von Antik\u00f6rpern anregen. Ist Sport also doch \u201eMord\u201c?\n\n\n\n\nAlexander Glogg im Gespr\u00e4ch mit Dr. med. Hellmut M\u00fcnch\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/heilung-in-rekordzeit-wie-enzyme-den-heilungsprozess-beschleunigen-koennen--naturmedizin--qs24) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-06-23T10:05:28Z",
+      "thumbnail": "https://i.ytimg.com/vi/hg6JtnOEJWg/maxresdefault.jpg",
+      "duration": "26:41",
+      "viewCount": 1621,
+      "likeCount": 99,
+      "commentCount": 9,
+      "url": "https://www.youtube.com/watch?v=hg6JtnOEJWg"
+    },
+    "xTmDuLtIfPU": {
+      "id": "xTmDuLtIfPU",
+      "title": "Podcast: Die Insekten-Debatte: Eine Perspektive f\u00fcr die Ern\u00e4hrung | Dr. med. Simon Feldhaus",
+      "description": "Die Diskussion \u00fcber Insekten als Lebensmittelquelle gewinnt zunehmend an Fahrt. Vor kurzem sprach ein leidenschaftlicher Wissenschaftler \u00fcber die Zukunft unserer Ern\u00e4hrung und betonte, dass die gute alte vegetarische Ern\u00e4hrungsweise pass\u00e9 sein k\u00f6nnte, wenn wir uns nicht bald an neue Proteinquellen wie Insekten gew\u00f6hnen.\n\n\n\n\nSind wir wirklich bereit f\u00fcr diese kulinarische Revolution?\n\n\n\n\n\ufeffDr. med. Simon Feldhaus im Interview mit Alexander Glogg\n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-06-20T10:35:39Z",
+      "thumbnail": "https://i.ytimg.com/vi/xTmDuLtIfPU/maxresdefault.jpg",
+      "duration": "23:29",
+      "viewCount": 294,
+      "likeCount": 14,
+      "commentCount": 1,
+      "url": "https://www.youtube.com/watch?v=xTmDuLtIfPU"
+    },
+    "9pH6iJEyPKU": {
+      "id": "9pH6iJEyPKU",
+      "title": "Podcast: Wie reagiert unser Organismus auf Insekten im Essen? | Dr. med. Kurt E. M\u00fcller",
+      "description": "Haben Sie schon von der Idee geh\u00f6rt, Insekten als Nahrungsmittel zu integrieren? Abgesehen von Schock und Skepsis k\u00f6nnte das auch einen neuen Trend in unserer Ern\u00e4hrung einl\u00e4uten. Diese unkonventionelle Proteinquelle, angereichert mit Omega 3 Fetts\u00e4uren, wird von vielen schon als revolution\u00e4r gefeiert. Aber was \u201edenkt\u201c unser K\u00f6rper wirklich \u00fcber diese unerwarteten Nahrungsbestandteile? Und was denken wir selbst dar\u00fcber?\n\n\n\n\n\ufeffDr. med. Kurt E. M\u00fcller im Gespr\u00e4ch bei Moderator Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/ekel-essen-mit-insekten-bald-in-allen-nahrungsmitteln-drin--dr-med-simon-feldhaus--qs24) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-06-18T10:19:27Z",
+      "thumbnail": "https://i.ytimg.com/vi/9pH6iJEyPKU/maxresdefault.jpg",
+      "duration": "29:09",
+      "viewCount": 824,
+      "likeCount": 57,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=9pH6iJEyPKU"
+    },
+    "SGBvIuy8lRA": {
+      "id": "SGBvIuy8lRA",
+      "title": "Podcast: Seniorenzentren im Wandel: Wie Mikron\u00e4hrstoffe das Leben der Bewohner verbessern k\u00f6nnen",
+      "description": "Die Qualit\u00e4t der Ern\u00e4hrung in Seniorenheimen hat entscheidenden Einfluss auf die Gesundheit der Bewohner. In Japan wird Mikron\u00e4hrstoffversorgung vom Staat finanziert und systematisch umgesetzt, w\u00e4hrend in Europa dieser Aspekt oft vollst\u00e4ndig vernachl\u00e4ssigt wird. Wie sieht es wirklich aus in unseren Altersheimen? Welche Bedeutung hat die Mikron\u00e4hrstoffversorgung f\u00fcr die gesunde Altersvorsorge? Und was sind uns unsere Senioren wert, wenn es um eine individuell passende Vitalstoffversorgung im Alter geht? Wir nehmen Sie mit auf eine Forschungsreise durch die Ern\u00e4hrungslandschaft der Senioren.\n\n\n\n\n\ufeffProf. Dr. Elmar Wienecke im Interview mit Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/seniorenzentren-im-wandel-wie-mikronaehrstoffe-das-leben-der-bewohner-verbessern-koennen--qs24) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-06-16T10:12:20Z",
+      "thumbnail": "https://i.ytimg.com/vi/SGBvIuy8lRA/maxresdefault.jpg",
+      "duration": "26:29",
+      "viewCount": 444,
+      "likeCount": 27,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=SGBvIuy8lRA"
+    },
+    "NELWMiezQjg": {
+      "id": "NELWMiezQjg",
+      "title": "Podcast: Die Kraft von Proteinen f\u00fcr die Gesundheit im Alter | Mark Warnecke",
+      "description": "Die Gesundheit \u2014 ein Wort, das f\u00fcr viele von uns wie ein leeres Versprechen klingt, bis wir tats\u00e4chlich sp\u00fcren, wie wertvoll sie ist. Der Beitrag eines Leistungssportlers und heute Arztes, der die Beinahe-Unsterblichkeit des K\u00f6rpers studiert hat, gibt uns unerwartete Einsichten: Proteine sind nicht nur ein Teil der Ern\u00e4hrung, sondern das Fundament unseres Lebens. Wir tauchen ein in die Welt der Proteine und ihres Einflusses auf unsere Gesundheit \u2013 von der Kindheit bis ins hohe Alter. Es ist an der Zeit, die oft ignorierte Wahrheit \u00fcber Proteine, Aminos\u00e4uren und Kollagene zu offenbaren.\n\n\n\n\nMark Warnecke im Gespr\u00e4ch bei Moderator Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/alexander-glogg-was-mir-in-6000-interviews-noch-nie-so-klar-erklaert-wurde--naturmedizin--qs24) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-06-13T10:20:25Z",
+      "thumbnail": "https://i.ytimg.com/vi/NELWMiezQjg/maxresdefault.jpg",
+      "duration": "59:09",
+      "viewCount": 903,
+      "likeCount": 39,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=NELWMiezQjg"
+    },
+    "H-Rq-p7w3xI": {
+      "id": "H-Rq-p7w3xI",
+      "title": "Podcast: Vergessen Sie alles, was Sie \u00fcber Eiwei\u00df, Proteine und Aminos\u00e4uren zu wissen glaubten!",
+      "description": "Die Ern\u00e4hrung spielt eine entscheidende Rolle in unserem t\u00e4glichen Leben, und doch besch\u00e4ftigt sich nur ein kleiner Teil der Bev\u00f6lkerung mit diesem so wichtigen Thema. Es scheint, dass sie davon \u00fcberzeugt ist, Gesundheit sei ein Geburtsrecht. Sie irrt. Gesundheit ist ein fragiler Zustand, der 24/7 nach unserer Aufmerksamkeit verlangt. Je mehr wir sie ignorieren, desto schlechter stehen die Chancen auf ein gesundes Altern. Aminos\u00e4uren, Peptiden und Proteinen spielen dabei eine wichtige Rolle in vielen biologischen Prozessen und doch kaum einer wei\u00df davon, weil es f\u00fcr Laien zu komplex und auch zu verwirrend ist.\n\n\n\n\nAlexander Glogg im Gespr\u00e4ch mit Mark Warnecke\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/BCvpv5jWs6VyF7DApCYF) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-06-11T10:08:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/H-Rq-p7w3xI/maxresdefault.jpg",
+      "duration": "34:42",
+      "viewCount": 2681,
+      "likeCount": 156,
+      "commentCount": 19,
+      "url": "https://www.youtube.com/watch?v=H-Rq-p7w3xI"
+    },
+    "rPAbYo9fikE": {
+      "id": "rPAbYo9fikE",
+      "title": "Podcast: Krebsrisiko senken: Neue Erkenntnisse aus bahnbrechender Studie | Prof. Dr. med. J\u00f6rg Spitz",
+      "description": "Manchmal sind es die einfachsten Dinge, die den gr\u00f6\u00dften Unterschied machen. In einer Welt, in der wir st\u00e4ndig von neuen Gesundheitsrisiken h\u00f6ren, kann die Erkenntnis, dass man durch allt\u00e4gliche Entscheidungen wie Bewegung und Ern\u00e4hrung sein Krebsrisiko um bis zu 70 Prozent reduzieren kann, fast zu sch\u00f6n erscheinen, um wahr zu sein. Doch genau das zeigt eine aktuelle Studie von Dr. Heike A. Bischof-Ferrari aus Z\u00fcrich. Lassen Sie uns tiefer in diese Erkenntnisse eintauchen und die spannende Verbindung zwischen Lebensstil und Krebspr\u00e4vention entdecken.\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/70-weniger-krebsrisiko-neue-erkenntnisse-aus-bahnbrechender-studie--qs24-wissenschafts-gremium) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/) \n\n\n\n\n\ufeffProf. Dr. med. J\u00f6rg Spitz und Dr. med. Petra Wiechel im Interview mit Alexander Glogg",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-06-09T10:20:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/rPAbYo9fikE/maxresdefault.jpg",
+      "duration": "34:52",
+      "viewCount": 2624,
+      "likeCount": 156,
+      "commentCount": 6,
+      "url": "https://www.youtube.com/watch?v=rPAbYo9fikE"
+    },
+    "B1bbEG87_oA": {
+      "id": "B1bbEG87_oA",
+      "title": "Podcast: Krebs: Wie Diagnosen unser Leben \u00e4ndern | Dr. med. Petra Wiechel bei QS24",
+      "description": "Das Wort 'Krebs' f\u00fchlt sich an wie ein Schlag ins Gesicht. Wie aber damit umgehen, wenn die Realit\u00e4t einem den Boden unter den F\u00fcssen wegzieht? Lassen Sie uns Inspirationen und Erfahrungen teilen, die auf einem pers\u00f6nlichen Umgang mit solchen Diagnosen beruhen und wie diese helfen k\u00f6nnen, auf diesem schwierigen Weg eine eigene Richtung zu finden.\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/brustkrebs--was-nun--dr-med-petra-wiechel--visite--qs24-gesundheitsfernsehen) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-06-06T10:03:28Z",
+      "thumbnail": "https://i.ytimg.com/vi/B1bbEG87_oA/maxresdefault.jpg",
+      "duration": "18:02",
+      "viewCount": 861,
+      "likeCount": 49,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=B1bbEG87_oA"
+    },
+    "c7MlpKKeQJM": {
+      "id": "c7MlpKKeQJM",
+      "title": "Podcast: Krebs: Unsichtbare Ursachen und pr\u00e4ventive Ans\u00e4tze | Krebsforscher Lothar Hirneise",
+      "description": "Krebs geh\u00f6rt zu den h\u00e4ufigsten Diagnosen der heutigen Zeit, und das Bewusstsein dar\u00fcber, was zu einer solchen Krankheit f\u00fchren kann, ist mehr denn je gefragt. Lothar Hirneise, ein erfahrener Krebsforscher, beleuchtet die unterschiedlichen Ursachen von Krebs. Anhand seiner weitreichenden Erkenntnisse und der Auswirkungen von Stress sowie psychischen Traumata lernen Sie die vielschichtigen Aspekte der Krebsforschung kennen.\n\n\n\n\n\ufeffKrebsforscher Lothar Hirneise im Interview mit Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/die-3-hauptursachen-von-krebs--krebsforscher-lothar-hirneise--naturmedizin--qs24) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-06-04T10:22:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/c7MlpKKeQJM/maxresdefault.jpg",
+      "duration": "30:53",
+      "viewCount": 1686,
+      "likeCount": 132,
+      "commentCount": 3,
+      "url": "https://www.youtube.com/watch?v=c7MlpKKeQJM"
+    },
+    "qgeJZ7AinYo": {
+      "id": "qgeJZ7AinYo",
+      "title": "Podcast: Die Welt des Mikrobioms: Was der Darm \u00fcber Gesundheit verr\u00e4t | Prof. Dr. Burkhard Sch\u00fctz",
+      "description": "Der Darm wird oft als \"zweites Gehirn\" bezeichnet und das aus gutem Grund. Gesunde Bakterien helfen nicht nur bei der Verdauung, sondern beeinflussen auch unsere Stimmung, unser Immunsystem und unsere generelle Gesundheit. In diesem Artikel reisen wir zusammen durch die unglaubliche Welt des Mikrobioms und entdecken, wie wichtig eine ausgewogene Ern\u00e4hrung ist, um unsere nat\u00fcrliche Bakterienflora zu f\u00f6rdern.\n\n\n\n\n\ufeffProf. Dr. med. Burkhard Sch\u00fctz und Dr. med. Petra Wiechel im Interview mit Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/TUfvm4sXkxvAouC70tll) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-06-02T10:05:56Z",
+      "thumbnail": "https://i.ytimg.com/vi/qgeJZ7AinYo/maxresdefault.jpg",
+      "duration": "51:19",
+      "viewCount": 1358,
+      "likeCount": 78,
+      "commentCount": 5,
+      "url": "https://www.youtube.com/watch?v=qgeJZ7AinYo"
+    },
+    "OZeacjmNTwM": {
+      "id": "OZeacjmNTwM",
+      "title": "Podcast: Resonanzen \u2013 Tesla-Technologie und Naturmedizin | Arthur Tr\u00e4nkle im Gespr\u00e4ch bei QS24",
+      "description": "Resonanz ist weit mehr als ein physikalisches Ph\u00e4nomen \u2013 sie bildet die Grundlage vieler nat\u00fcrlicher und biologischer Prozesse. In der Naturmedizin verstehen wir Resonanz als die F\u00e4higkeit bestimmter Schwingungen, heilend auf K\u00f6rper und Geist zu wirken. Ob in der Musik, in der Zellkommunikation oder in therapeutischen Verfahren \u2013\u00fcberall ist Schwingung ein zentrales Wirkprinzip. Nikola Tesla brachte es einst auf den Punkt: \u201eIf you want to find the secrets of the universe, think in terms of energy, frequency and vibration\u201c (Willst du das Universum verstehen, dann denke in Energie, Frequenzen und Schwingungen). Das Genie war davon \u00fcberzeugt, dass das Universum auf fundamentale Weise von diesen Eigenschaften bestimmt wird. Er stellte zudem fest:\n\n\n\n\n\u201eEnergie kann nicht erschaffen oder zerst\u00f6rt werden, sie kann nur \u00fcbertragen werden.\u201c\n\n\n\n\nArthur Tr\u00e4nkle im Gespr\u00e4ch bei Moderator Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/QxKQSGRQ4wsnGp5DQtOI) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-05-30T10:17:45Z",
+      "thumbnail": "https://i.ytimg.com/vi/OZeacjmNTwM/maxresdefault.jpg",
+      "duration": "29:49",
+      "viewCount": 830,
+      "likeCount": 33,
+      "commentCount": 6,
+      "url": "https://www.youtube.com/watch?v=OZeacjmNTwM"
+    },
+    "y1a_XmACRGk": {
+      "id": "y1a_XmACRGk",
+      "title": "Podcast: Kinder & ADHS \u2013 Die Schulmedizin kann auch lebensgef\u00e4hrliche Folgen haben | Prof. Schubert",
+      "description": "Die moderne Medizin steht vor der Herausforderung des reduktiven Materialismus. Professor Dr. Christian Schubert fordert eine neue, ganzheitliche Perspektive, die Psyche und sozialen Einfluss in den Mittelpunkt r\u00fcckt. Nur so kann nachhaltiges menschliches Wohlbefinden geschaffen werden.\n\n\n\n\n\ufeffAlexander Glogg im Gespr\u00e4ch mit Univ.-Prof. Dr. Dr. med. M. Sc. Christian Schubert\n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-05-28T10:25:41Z",
+      "thumbnail": "https://i.ytimg.com/vi/y1a_XmACRGk/maxresdefault.jpg",
+      "duration": "1:03:38",
+      "viewCount": 1133,
+      "likeCount": 65,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=y1a_XmACRGk"
+    },
+    "_1zQtbKrF_4": {
+      "id": "_1zQtbKrF_4",
+      "title": "Podcast: Gesundheit versus Krankheit: Wo ziehen wir die Grenze? | Dr. med. Petra Wiechel",
+      "description": "Gesundheit und Krankheit sind zwei Seiten derselben Medaille, da k\u00f6rperliche und psychische einander abh\u00e4ngig sind. Das Verst\u00e4ndnis dieser Dynamik ist essenziell f\u00fcr ein gesundes Leben, denn unsere Reaktionen auf Ungleichgewichte in diesem System k\u00f6nnen in vielen F\u00e4llen als Heilungsprozesse betrachtet werden. Die Philosophie hinter Gesundheit und Krankheit ist sehr komplex. Jeder von uns kennt das Gef\u00fchl, sich unwohl zu f\u00fchlen, was nicht bedeuten muss, dass eine damit verbundene Krankheit das Ende der Welt bedeutet. Vor einigen Jahren erlebte Frau Dr. Petra Wiechel eine Phase, in der ihr K\u00f6rper gegen sie selbst zu k\u00e4mpfen schien. Damals stellte sie sich die Frage: \"Wann wird Unwohlsein zur Krankheit?\". Die Antwort auf diese Frage ist der Ausgangspunkt f\u00fcr diesen Beitrag.\n\n\n\n\n\ufeffDr. med. Petra Wiechel im Gespr\u00e4ch bei Moderator Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/dibHqb33WOxJ6iAORLBR) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-05-26T10:07:05Z",
+      "thumbnail": "https://i.ytimg.com/vi/_1zQtbKrF_4/maxresdefault.jpg",
+      "duration": "28:32",
+      "viewCount": 790,
+      "likeCount": 50,
+      "commentCount": 0,
+      "url": "https://www.youtube.com/watch?v=_1zQtbKrF_4"
+    },
+    "RzmKrZZvcZA": {
+      "id": "RzmKrZZvcZA",
+      "title": "Podcast: Endlich Hilfe bei vielen Erkrankungen? - Kleinsche Felder \u2013 die innovative Weltneuheit",
+      "description": "Dieser Beitrag geht der faszinierenden Welt der Kleinschen Felder auf den Grund, die mithilfe von besonderen magnetischen Feldern die Blutzirkulation und Selbstheilungskr\u00e4fte des K\u00f6rpers effektiv f\u00f6rdern. Wir untersuchen die Funktionsweise der Kleinschen Felder, ihre Vorteile und die wissenschaftlichen Erkenntnisse, die diese Technologie unterst\u00fctzen.\n\n\n\n\n\ufeffAlexander Glogg im Gespr\u00e4ch mit Bernhard Klein\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/oJ3KIDDGucUaHdG149Nz) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-05-23T10:07:49Z",
+      "thumbnail": "https://i.ytimg.com/vi/RzmKrZZvcZA/maxresdefault.jpg",
+      "duration": "26:31",
+      "viewCount": 1340,
+      "likeCount": 67,
+      "commentCount": 19,
+      "url": "https://www.youtube.com/watch?v=RzmKrZZvcZA"
+    },
+    "-mWLLATLZcE": {
+      "id": "-mWLLATLZcE",
+      "title": "Podcast: Die Alzheimer L\u00fcge: Verborgene Wahrheiten | PD Dr. med. Michael Nehls im Gespr\u00e4ch bei QS24",
+      "description": "Stellen Sie sich vor, eines Tages wachen Sie auf und lesen in den Nachrichten, dass die allgemein akzeptierte Wahrheit \u00fcber Alzheimer eine Gro\u00dfe Irref\u00fchrung war. Der Arzt, der hier ma\u00dfgeblich zu Wort kommt, hat mehr als 4800 Kilometer auf seinem Fahrrad zur\u00fcckgelegt, um herauszufinden, dass unser Lebensstil ma\u00dfgeblich daf\u00fcr verantwortlich ist, ob wir Alzheimer bekommen oder nicht. Bereit, die Hintergr\u00fcnde zu entdecken?\n\n\n\n\nZu Gast: Herr PD. Dr. med. Michael Nehls, Arzt und Molekulargenetiker\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/rQMbLbbewLTDoTwslagf) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-05-21T10:12:43Z",
+      "thumbnail": "https://i.ytimg.com/vi/-mWLLATLZcE/maxresdefault.jpg",
+      "duration": "30:29",
+      "viewCount": 2589,
+      "likeCount": 156,
+      "commentCount": 6,
+      "url": "https://www.youtube.com/watch?v=-mWLLATLZcE"
+    },
+    "iq_YWxiSAZI": {
+      "id": "iq_YWxiSAZI",
+      "title": "Podcast: Demenz und Depression sind kein unabwendbares Schicksal! | Prof. Dr. med. J\u00f6rg Spitz",
+      "description": "Im Laufe der letzten Jahre sind die Diagnosen von Demenz und Depressionen signifikant angestiegen. Das wirft die Frage auf, was hinter dieser alarmierenden Entwicklung steckt und ob es Perspektiven im Hinblick auf Heilung durch Ern\u00e4hrung und Lebensstil gibt.\n\n\n\n\n\ufeffProf. Dr. med. J\u00f6rg Spitz im Interview mit Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/EltleNKbgNb4zgR3RHQg) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-05-19T10:18:47Z",
+      "thumbnail": "https://i.ytimg.com/vi/iq_YWxiSAZI/maxresdefault.jpg",
+      "duration": "30:50",
+      "viewCount": 1469,
+      "likeCount": 105,
+      "commentCount": 3,
+      "url": "https://www.youtube.com/watch?v=iq_YWxiSAZI"
+    },
+    "IPr4xwtCosY": {
+      "id": "IPr4xwtCosY",
+      "title": "Podcast: Mobilfunkstrahlung beeinflusst unsere Gehirnaktivit\u00e4t st\u00e4rker als gedacht! | Dr. Diana Henz",
+      "description": "Dieser Beitrag beleuchtet die neuesten Forschungsergebnisse zur Gehirnaktivit\u00e4t in Verbindung mit Mobilfunkstrahlung. Es werden die Aspekte der Stressreaktionen beim Telefonieren mit 5G-Technik untersucht und eine innovative Technologien vorgestellt, die eine Entspannung des Gehirns f\u00f6rdern kann.\n\n\n\n\n\ufeffAlexander Glogg im Gespr\u00e4ch mit Dr. Diana Henz\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/jVSmq0OX2WpsEMtiVy9Q) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-05-16T10:04:28Z",
+      "thumbnail": "https://i.ytimg.com/vi/IPr4xwtCosY/maxresdefault.jpg",
+      "duration": "32:33",
+      "viewCount": 1237,
+      "likeCount": 93,
+      "commentCount": 6,
+      "url": "https://www.youtube.com/watch?v=IPr4xwtCosY"
+    },
+    "kPN7p8grBIQ": {
+      "id": "kPN7p8grBIQ",
+      "title": "Podcast: Lasertherapie \u2013 Die Zukunft der neurologischen Gesundheit! | Dr. med. Michael Weber",
+      "description": "Kennen Sie das Gef\u00fchl, wenn eine Technologie direkt Ihr Leben ver\u00e4ndern k\u00f6nnte? Man stelle sich einen Helm vor, der Laserlicht auf das Gehirn strahlt und dabei helfen k\u00f6nnte, degenerative Erkrankungen abzuwenden. In diesem Beitrag wird untersucht, wie Lasertherapie funktioniert, warum sie so vielversprechend ist und was neueste Studien dazu sagen.\n\n\n\n\n\ufeffAlexander Glogg im Gespr\u00e4ch mit Dr. med. Dipl. Chem. Michael Weber\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/WSRKPuEYkAM0qfWMTHNq) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-05-14T10:17:35Z",
+      "thumbnail": "https://i.ytimg.com/vi/kPN7p8grBIQ/maxresdefault.jpg",
+      "duration": "49:42",
+      "viewCount": 810,
+      "likeCount": 45,
+      "commentCount": 5,
+      "url": "https://www.youtube.com/watch?v=kPN7p8grBIQ"
+    },
+    "LwSaPe_ZiV0": {
+      "id": "LwSaPe_ZiV0",
+      "title": "Podcast: Umweltgifte und stille Entz\u00fcndungen: Die unsichtbare Bedrohung | Dr. med. Harald Burgard",
+      "description": "Stellen Sie sich vor, Sie leben mit einer gesundheitlichen Bedrohung, die nicht sichtbar ist und keine akuten Symptome zeigt. Genau das k\u00f6nnen stille Entz\u00fcndungen sein \u2013 ein wenig beachtetes, aber alarmierendes Gesundheitsproblem, das h\u00e4ufig durch Umweltfaktoren und ungesunde Lebensweisen verst\u00e4rkt wird. Dr. med. Harald Burgard, ein Experte in der Umweltmedizin, hat eingehend untersucht, wie diese stille Bedrohung unser Wohlbefinden beeintr\u00e4chtigen kann. In diesem Beitrag wollen wir tiefer eintauchen in das Thema und L\u00f6sungen erkunden, die Hoffnung auf Genesung bieten k\u00f6nnen.\n\n\n\n\n\ufeffDr. med. Harald Burgard im Gespr\u00e4ch bei Moderator Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/poEqIR1Kj35b2x0EGddR) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-05-12T10:06:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/LwSaPe_ZiV0/maxresdefault.jpg",
+      "duration": "30:37",
+      "viewCount": 1362,
+      "likeCount": 88,
+      "commentCount": 4,
+      "url": "https://www.youtube.com/watch?v=LwSaPe_ZiV0"
+    },
+    "EyM70d4IBZQ": {
+      "id": "EyM70d4IBZQ",
+      "title": "Podcast: Entgiftung von innen heraus: Die Rolle der Leber und genetische Faktoren | Prof. Dr. K\u00f6nig",
+      "description": "Die Entgiftung ist ein komplexer Prozess, der von Genetik und einer effektiven Ern\u00e4hrung beeinflusst wird. Nicht jeder kann gleich gut entgiften, und wichtige Faktoren wie Medikamente k\u00f6nnen den Prozess erheblich beeinflussen. Entgiftung, oft auch als Detox bezeichnet, ist mehr als nur ein Trend. Ein besseres Verst\u00e4ndnis der biologischen Prozesse kann helfen, eine wirksame Detox-Strategie zu entwickeln.\u00a0Dabei handelt es sich um einen biologischen Prozess, der f\u00fcr die Gesundheit unerl\u00e4sslich ist. Doch was genau bedeutet Entgiftung? Und warum ist sie so wichtig? Lassen Sie uns die Grundlagen erkunden.\n\n\n\n\n\ufeffProf. Dr. Brigitte K\u00f6nig im Interview mit Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/2dvCCPDIaAyfkNtMLZF0) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-05-09T12:03:49Z",
+      "thumbnail": "https://i.ytimg.com/vi/EyM70d4IBZQ/maxresdefault.jpg",
+      "duration": "29:47",
+      "viewCount": 1085,
+      "likeCount": 28,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=EyM70d4IBZQ"
+    },
+    "NCvA5rL9Xwg": {
+      "id": "NCvA5rL9Xwg",
+      "title": "Podcast: Der Segen f\u00fcr alle Gelenk- und Muskelschmerzen | Das altbew\u00e4hrte Heilmittel",
+      "description": "Infrarotkabinen sind mehr als nur ein Trend. Sie nutzen eine spezielle Technologie, die Infrarotstrahlung zur W\u00e4rme\u00fcbertragung einsetzt. Aber was bedeutet das genau und wie k\u00f6nnen Sie damit Ihre Gesundheit unterst\u00fctzen? Lesen und entscheiden Sie, ob eine Infrarotkabine f\u00fcr Sie die gute Wahl ist.\n\n\n\n\n\ufeffAlexander Glogg im Gespr\u00e4ch mit Kurt Allenspach\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/3PPPhJL8XMgMbc30K8dO) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-05-09T11:05:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/NCvA5rL9Xwg/maxresdefault.jpg",
+      "duration": "25:36",
+      "viewCount": 1228,
+      "likeCount": 49,
+      "commentCount": 3,
+      "url": "https://www.youtube.com/watch?v=NCvA5rL9Xwg"
+    },
+    "j6qq8jKQh0E": {
+      "id": "j6qq8jKQh0E",
+      "title": "Podcast: Was die Werbung verschweigt: Die dunkle Seite der Abnehmspritze! | Prof. Andreas Pf\u00fctzner",
+      "description": "Die Abnehmspritze kann eine vielversprechende L\u00f6sung zur Gewichtsreduktion bieten, birgt aber auch Risiken, die niemals ignoriert werden d\u00fcrfen. Ein ausgewogenes Verst\u00e4ndnis ist entscheidend. \u201eSchlank im Handumdrehen\u201c. Es klingt einfach nur verlockend. Die Abnehmspritze ist in aller Munde, und viele tr\u00e4umen davon, sich die unerw\u00fcnschten Pfunde einfach wegzuspritzen. Ein Stich und schon purzeln die Kilos. Ein (Alb)traum? Ein Gespr\u00e4ch mit Prof. Dr. med. Dr. rer. nat. Andreas Pf\u00fctzner bringt Klarheit und zeigt, welche wissenschaftlichen Grundlagen und Risiken mit dieser Form der Gewichtsabnahme verbunden sind.\n\n\n\n\n\ufeffProf. Dr. Dr. Andreas Pf\u00fctzner im Gespr\u00e4ch bei Moderator Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000?focusedItem=dxARZNfYf0I3xgbLu18C) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-05-09T10:09:03Z",
+      "thumbnail": "https://i.ytimg.com/vi/j6qq8jKQh0E/maxresdefault.jpg",
+      "duration": "31:00",
+      "viewCount": 1060,
+      "likeCount": 64,
+      "commentCount": 5,
+      "url": "https://www.youtube.com/watch?v=j6qq8jKQh0E"
+    },
+    "VqiITT2nE8o": {
+      "id": "VqiITT2nE8o",
+      "title": "Podcast: Wie kann man Diabetes erkennen, wenn der Blutzucker noch normals ist | Prof. Dr. Pf\u00fctzner",
+      "description": "Proinsulin, oft \u00fcbersehen, spielt eine entscheidende Rolle in der fr\u00fchen Erkennung von Diabetes und hat tiefgreifende Auswirkungen auf die Behandlung und das Verst\u00e4ndnis der Erkrankung. Insulin ist ein Begriff, den viele Menschen mit Diabetes verbinden. Weniger bekannt dagegen ist sein Vorl\u00e4ufer, Proinsulin. In diesem Artikel werden wir die besonderen Aspekte dieses Biomarkers erforschen und wie er m\u00f6glicherweise entscheidend ist, um Diabetes fr\u00fchzeitig zu erkennen. Professor Dr. Andreas Pf\u00fctzner, ein Experte auf diesem Gebiet, wird uns durch die komplexe Welt von Proinsulin f\u00fchren und beschreiben, wie Missverst\u00e4ndnisse \u00fcber Insulin und seine Vorstufen zur Diagnose von Diabetes beitragen k\u00f6nnen.\n\n\n\n\n\ufeffProf. Dr. Dr. med. Andreas Pf\u00fctzner im Interview mit Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/wie-kann-man-diabetes-erkennen-wenn-der-blutzucker-noch-normal) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-05-09T09:06:08Z",
+      "thumbnail": "https://i.ytimg.com/vi/VqiITT2nE8o/maxresdefault.jpg",
+      "duration": "36:41",
+      "viewCount": 581,
+      "likeCount": 19,
+      "commentCount": 3,
+      "url": "https://www.youtube.com/watch?v=VqiITT2nE8o"
+    },
+    "_tEJ1JKMftI": {
+      "id": "_tEJ1JKMftI",
+      "title": "Podcast: Autoimmunerkrankungen: Ursachen und L\u00f6sungsans\u00e4tze | Prof. J\u00f6rg Spitz & Dr. Petra Wiechel",
+      "description": "Immer mehr Menschen k\u00e4mpfen mit Autoimmunerkrankungen, die oft als r\u00e4tselhafte Krankheitsbilder erscheinen. Was sind die Gr\u00fcnde hinter dieser Entwicklung? Ein Gespr\u00e4ch mit zwei Experten bringt Licht ins Dunkel, und es wird klar, dass unsere Gesundheit von viel mehr abh\u00e4ngt als nur von den richtigen Medikamenten. Die Einsichten k\u00f6nnten nicht nur f\u00fcr Betroffene wichtig sein, sondern auch f\u00fcr jeden, der pr\u00e4ventiv handeln m\u00f6chte.\n\n\n\n\n\ufeffProf. Dr. med. J\u00f6rg Spitz und Dr. med. Petra Wiechel im Gespr\u00e4ch bei Moderator Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/enwurfdie-zunahme-von-autoimmunerkrankungen-ursachen-und-loesungsansaetze-kopie) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-05-09T08:14:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/_tEJ1JKMftI/maxresdefault.jpg",
+      "duration": "31:55",
+      "viewCount": 786,
+      "likeCount": 41,
+      "commentCount": 2,
+      "url": "https://www.youtube.com/watch?v=_tEJ1JKMftI"
+    },
+    "7_maOZ956yI": {
+      "id": "7_maOZ956yI",
+      "title": "Podcast: Explosionsartiger Anstieg von Autoimmunerkrankungen | Prof. Dr. med. habil. Ulrich Amon",
+      "description": "In der Welt der ganzheitlichen Medizin, wo K\u00f6rper, Geist und Seele in Einklang stehen sollen, entz\u00fcndet sich ein kontroverses, aber gleichfalls vielschichtiges Thema: die explosionsartige Zunahme von Autoimmunerkrankungen. Diese Erkrankungen, bei denen das Immunsystem den eigenen K\u00f6rper angreift, sind in den letzten Jahren stark angestiegen. In den letzten f\u00fcnf Jahren gab es eine Zunahme von 50 Prozent. Zudem stieg die Anzahl der Patiententransaktionen in Arztpraxen um 200 Prozent. Professor Dr. Ulrich Amon beschreibt die Situation als alarmierend.\n\n\n\n\nProf. Dr. med. habil. Ulrich Amon im Interview mit Alexander Glogg\n\n\n\n\nZum interaktiven Beitrag (https://hazu.swiss/qs24/der-gesundheitskompass/ausgabe-nr-1---mai-2025---auflage-120000/sWaNkBMqlBBWpQwFEk5i) \n\n\n\n\nZur QS24.Gesundheitskompass Zeitung (https://www.qs24.tv/qs24-gesundheitskompass/)",
+      "channelId": "UCombGe_D0xJOAtLgKh9HbXA",
+      "channelTitle": "QS24 - Schweizer Gesundheitsfernsehen",
+      "publishedAt": "2025-05-08T15:28:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/7_maOZ956yI/maxresdefault.jpg",
+      "duration": "36:24",
+      "viewCount": 1236,
+      "likeCount": 44,
+      "commentCount": 3,
+      "url": "https://www.youtube.com/watch?v=7_maOZ956yI"
+    }
+  },
+  "include_timestamps": false,
+  "include_video_title": true,
+  "include_video_id": true,
+  "include_video_url": true,
+  "include_view_count": false,
+  "concatenate_all": false,
+  "end_time": 1758094254.361455,
+  "duration": 160.61514496803284
+}
