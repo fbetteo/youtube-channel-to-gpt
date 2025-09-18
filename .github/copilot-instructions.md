@@ -100,11 +100,6 @@ WEBSHARE_PROXY_PASSWORD=your_proxy_pass
 - `POST /download/transcript/raw` - Individual video transcript download
 - `GET /video-info` - Single video metadata
 
-**Playlist Functionality** (NEW - mirrors channel workflow):
-- `GET /playlist/{playlist_id}` - Playlist info with metadata
-- `GET /playlist/{playlist_id}/all-videos` - Complete playlist video list with duration categorization
-- `POST /playlist/download/selected` - Download transcripts for selected playlist videos
-
 **User Management & Billing**:
 - `GET /user/credits` - Check credit balance
 - `GET /user/profile` - User profile information
@@ -146,26 +141,6 @@ curl -X GET "http://localhost:8001/channel/download/results/your-job-id" \
 # Check user credits (authenticated)
 curl -X GET "http://localhost:8001/user/credits" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
-
-# PLAYLIST ENDPOINTS (NEW)
-
-# Download selected playlist videos with formatting options
-curl -X POST "http://localhost:8001/playlist/download/selected" \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  -d '{
-    "playlist_name": "PLxxxxxx",
-    "videos": [{"id": "video1", "title": "Video 1"}],
-    "include_timestamps": true,
-    "include_video_title": false,
-    "concatenate_all": true
-  }'
-
-# Get all videos for a playlist for selection
-curl -X GET "http://localhost:8001/playlist/PLxxxxxx/all-videos"
-
-# Get playlist info
-curl -X GET "http://localhost:8001/playlist/PLxxxxxx"
 ```
 
 ## Transcript API Specific Patterns
@@ -212,144 +187,6 @@ The API has been streamlined to focus on core functionality with quota-optimized
   - Channel header with metadata
   - Each video separated by section markers
   - Consistent formatting across all videos
-
-## Playlist Support Architecture (NEW)
-
-### Overview
-The playlist functionality extends the existing channel-based workflow to support YouTube playlists. The implementation leverages the fact that channels internally use "uploads playlists" - allowing for minimal code duplication while providing identical functionality.
-
-### Key Insight: Playlist-Native Architecture
-The existing channel implementation **already works with playlists** under the hood:
-1. Channel videos are fetched via the channel's "uploads playlist"
-2. The same `playlistItems.list()` API calls are used
-3. All processing logic (duration categorization, metadata extraction, job management) is playlist-agnostic
-
-### Playlist Implementation Components
-
-#### Backend Functions (`youtube_service.py`)
-```python
-# URL/ID parsing and validation
-def extract_playlist_id(url_or_id: str) -> str:
-    # Extracts playlist ID from URLs like:
-    # https://youtube.com/playlist?list=PLxxxxxx
-    # https://youtube.com/watch?v=VIDEO&list=PLxxxxxx
-    # PLxxxxxx (direct ID)
-
-# Playlist metadata fetching
-async def get_playlist_info(playlist_id: str) -> Dict[str, Any]:
-    # Returns: title, description, video count, channel info, thumbnail
-
-# Video listing (mirrors channel logic exactly)
-def _fetch_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
-async def get_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
-    # Same pagination, duration categorization, and metadata as channels
-
-# Unified download function (handles both channels and playlists)
-async def start_selected_videos_transcript_download(
-    channel_name: str = None,
-    playlist_name: str = None,
-    videos: List[Dict[str, Any]] = None,
-    user_id: str = None,
-    is_playlist: bool = False,
-    # ... other parameters
-) -> str:
-```
-
-#### API Models (`transcript_api.py`)
-```python
-# Playlist request models (mirror channel models)
-class PlaylistRequest(BaseModel):
-    playlist_name: str = Field(..., description="YouTube playlist ID or URL")
-    max_results: int = Field(30, description="Maximum number of videos to fetch")
-    # Same formatting options as ChannelRequest
-
-class SelectedPlaylistVideosRequest(BaseModel):
-    playlist_name: str = Field(..., description="YouTube playlist ID or URL")
-    videos: List[VideoInfo] = Field(...)
-    # Identical formatting options as SelectedVideosRequest
-```
-
-#### API Endpoints (Mirror Channel Pattern)
-```python
-# Playlist info endpoint
-@app.get("/playlist/{playlist_id}")
-async def get_playlist_info(playlist_id: str):
-    # Validates playlist, returns metadata
-
-# Playlist video listing  
-@app.get("/playlist/{playlist_id}/all-videos")
-async def list_all_playlist_videos(playlist_id: str):
-    # Returns all videos with duration categories for selection
-
-# Playlist download endpoint
-@app.post("/playlist/download/selected")
-async def download_selected_playlist_videos(
-    request: SelectedPlaylistVideosRequest,
-    payload: dict = Depends(validate_jwt),
-    session: Dict = Depends(get_user_session),
-):
-    # Same credit management, job creation, and processing as channels
-```
-
-### Unified Job Management
-Playlist jobs are tracked using the same infrastructure as channel jobs with additional fields:
-
-```python
-# Job data structure (supports both channels and playlists)
-job_data = {
-    "status": "processing",
-    "channel_name": channel_name if not is_playlist else None,
-    "playlist_id": playlist_name if is_playlist else None,
-    "source_id": source_id,        # Channel ID or Playlist ID
-    "source_name": source_name,    # Channel title or Playlist title  
-    "source_type": source_type,    # "channel" or "playlist"
-    "total_videos": num_videos,
-    # ... rest identical to channel jobs
-}
-```
-
-### Shared Infrastructure Benefits
-- **Credit System**: Same credit deduction and reservation logic
-- **Job Tracking**: Same progress monitoring and status endpoints
-- **File Management**: Same ZIP generation and download handling
-- **Error Handling**: Same retry logic and failure reporting
-- **Metadata Optimization**: Same pre-fetching and batch processing
-
-### URL Support Patterns
-The system handles various playlist URL formats:
-```python
-# Supported playlist URL patterns:
-"https://youtube.com/playlist?list=PLxxxxxx"
-"https://youtube.com/watch?v=VIDEO&list=PLxxxxxx"  # Playlist from video page
-"https://www.youtube.com/playlist?list=PLxxxxxx"
-"PLxxxxxx"  # Direct playlist ID
-```
-
-### Frontend Integration Pattern
-The frontend can use **identical UI components** for both channels and playlists:
-
-```javascript
-// Unified workflow pattern
-function handleInputType(inputUrl) {
-    const type = detectInputType(inputUrl); // 'channel' or 'playlist'
-    
-    if (type === 'channel') {
-        // Use /channel/* endpoints
-        return fetchChannelWorkflow(inputUrl);
-    } else if (type === 'playlist') {
-        // Use /playlist/* endpoints  
-        return fetchPlaylistWorkflow(inputUrl);
-    }
-}
-
-// Same video selection UI, same job monitoring, same download handling
-```
-
-### Implementation Statistics
-- **~150 lines of new code** (mostly function adaptations)
-- **Zero changes** to credit system, job management, or file handling
-- **100% code reuse** for video processing, transcript extraction, and ZIP generation
-- **Identical API patterns** enabling frontend component reuse
 
 ### Credit Management System (CURRENT - Enhanced with Persistence)
 ```python
@@ -478,15 +315,12 @@ metadata = {"project": "transcript-api", "user_uuid": user_id}
 ```python
 # Channel/video ID extraction and validation
 async def extract_youtube_id(url: str) -> Tuple[str, str]
-async def extract_playlist_id(url_or_id: str) -> str  # NEW: Playlist URL parsing
 
 # Video metadata fetching with retry logic
 async def get_video_info(video_id: str) -> Dict
 
 # QUOTA EFFICIENT: Channel video discovery using uploads playlist
 async def get_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]
-# NEW: Playlist video discovery (identical efficiency)
-async def get_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]
 # Uses playlistItems.list (1 unit) + batch videos.list (1 unit per 50 videos)
 # Replaces expensive search.list calls (100 units each)
 # Achieves 99%+ quota reduction for video discovery
@@ -498,10 +332,6 @@ def _categorize_duration(duration_seconds: int) -> str:
 # Transcript extraction with proxy support
 def get_ytt_api() -> YouTubeTranscriptApi:
     # Uses WebshareProxyConfig for rate limit bypass
-
-# NEW: Playlist metadata fetching
-async def get_playlist_info(playlist_id: str) -> Dict[str, Any]:
-    # Uses playlists.list (1 unit) for playlist metadata
 ```
 
 ### Database Operations
@@ -563,10 +393,6 @@ The chat assistant will eventually consume the transcript API service instead of
 # Check service status
 curl http://localhost:8001/
 
-# Test playlist functionality (NEW)
-curl http://localhost:8001/playlist/PLxxxxxx
-curl http://localhost:8001/playlist/PLxxxxxx/all-videos
-
 # Monitor background cleanup job
 # Runs every hour, cleans files older than 24h
 
@@ -575,26 +401,6 @@ python db_youtube_transcripts/database.py
 
 # YouTube API quota monitoring
 # Check console logs for rate limit errors
-```
-
-### Playlist-Specific Debugging (NEW)
-```bash
-# Test playlist URL parsing
-python -c "
-from src.youtube_service import extract_playlist_id
-print(extract_playlist_id('https://youtube.com/playlist?list=PLxxxxxx'))
-print(extract_playlist_id('PLxxxxxx'))
-"
-
-# Verify playlist access permissions
-# Public playlists: Work immediately
-# Private playlists: Return 404 error
-# Unlisted playlists: Work with direct playlist ID
-
-# Common playlist error patterns:
-# - 404: Playlist not found or private
-# - 422: Invalid playlist_name in request body
-# - 500: Job filename generation error (check get_safe_channel_name)
 ```
 
 ### File System Management
