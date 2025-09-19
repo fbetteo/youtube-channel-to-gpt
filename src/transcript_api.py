@@ -54,7 +54,6 @@ from rate_limiter import transcript_limiter
 # Using the Pydantic v2 compatible settings
 from config_v2 import settings
 
-
 # Stripe configuration
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY_LIVE")
 STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET_TRANSCRIPTS")
@@ -1500,7 +1499,7 @@ async def get_playlist_info(
     try:
         # Extract playlist ID from URL if needed
         clean_playlist_id = youtube_service.extract_playlist_id(playlist_id)
-        
+
         # Get playlist info using the new service
         playlist_info = await youtube_service.get_playlist_info(clean_playlist_id)
         return playlist_info
@@ -1527,14 +1526,12 @@ async def list_all_playlist_videos(
     try:
         # Extract playlist ID from URL if needed
         clean_playlist_id = youtube_service.extract_playlist_id(playlist_id)
-        
+
         # Use the paginated function to get all videos
         videos = await youtube_service.get_all_playlist_videos(clean_playlist_id)
 
         # Log the result to help debug
-        logger.info(
-            f"Returning {len(videos)} videos for playlist {playlist_id}"
-        )
+        logger.info(f"Returning {len(videos)} videos for playlist {playlist_id}")
         for i, video in enumerate(videos[:5]):
             logger.info(f"Video {i+1}: {video['id']} - {video['title']}")
 
@@ -1611,9 +1608,12 @@ async def download_selected_playlist_videos(
         logger.error(f"Invalid playlist request: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        logger.error(f"Error starting playlist transcript download: {str(e)}", exc_info=True)
+        logger.error(
+            f"Error starting playlist transcript download: {str(e)}", exc_info=True
+        )
         raise HTTPException(
-            status_code=500, detail=f"Failed to start playlist transcript download: {str(e)}"
+            status_code=500,
+            detail=f"Failed to start playlist transcript download: {str(e)}",
         )
 
 

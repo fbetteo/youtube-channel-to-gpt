@@ -49,8 +49,8 @@ class MemoryTracker:
 
     def __init__(
         self,
-        warning_threshold_percent: float = 85.0,
-        critical_threshold_percent: float = 95.0,
+        warning_threshold_percent: float = 30.0,
+        critical_threshold_percent: float = 60.0,
     ):
         self.warning_threshold = warning_threshold_percent
         self.critical_threshold = critical_threshold_percent
@@ -225,34 +225,50 @@ def get_youtube_client():
     This prevents thread safety issues with the global client.
     """
     try:
-        return build("youtube", "v3", developerKey=settings.youtube_api_key)
+        return youtube
     except Exception as e:
-        logger.error(f"Failed to create YouTube API client: {str(e)}")
-        return youtube  # Fallback to global client
+        logger.error(f"Failed to load global YouTube API client: {str(e)}")
+        return build("youtube", "v3", developerKey=settings.youtube_api_key)
 
 
 # Remove global ytt_api initialization, only keep YouTube API client
+# Thread-local storage for YouTubeTranscriptApi instances
+_thread_local = threading.local()
+
+
 def get_ytt_api() -> YouTubeTranscriptApi:
     """
-    Create a new YouTubeTranscriptApi instance with proxy config if needed.
-    Thread-safe implementation that creates fresh instances.
+    Get a thread-local YouTubeTranscriptApi instance for efficiency.
+    Creates one instance per thread and reuses it to avoid socket churn.
     Returns:
         YouTubeTranscriptApi instance
     """
-    try:
-        if settings.webshare_proxy_username and settings.webshare_proxy_password:
-            proxy_config = WebshareProxyConfig(
-                proxy_username=settings.webshare_proxy_username,
-                proxy_password=settings.webshare_proxy_password,
-                retries_when_blocked=1,
-            )
-            return YouTubeTranscriptApi(proxy_config=proxy_config)
-        else:
-            return YouTubeTranscriptApi()
-    except Exception as e:
-        logger.error(f"Error creating YouTubeTranscriptApi: {str(e)}")
-        # Fallback to basic instance
-        return YouTubeTranscriptApi()
+    # Check if we already have an instance for this thread
+    api: Optional[YouTubeTranscriptApi] = getattr(_thread_local, "ytt_api", None)
+
+    if api is None:
+        try:
+            if settings.webshare_proxy_username and settings.webshare_proxy_password:
+                proxy_config = WebshareProxyConfig(
+                    proxy_username=settings.webshare_proxy_username,
+                    proxy_password=settings.webshare_proxy_password,
+                    retries_when_blocked=1,
+                )
+                api = YouTubeTranscriptApi(proxy_config=proxy_config)
+            else:
+                api = YouTubeTranscriptApi()
+
+            # Store in thread-local storage
+            _thread_local.ytt_api = api
+            logger.debug("Created new thread-local YouTubeTranscriptApi instance")
+
+        except Exception as e:
+            logger.error(f"Error creating YouTubeTranscriptApi: {str(e)}")
+            # Fallback to basic instance
+            api = YouTubeTranscriptApi()
+            _thread_local.ytt_api = api
+
+    return api
 
 
 # Dictionary to track channel download jobs
@@ -594,7 +610,9 @@ async def get_videos_metadata_batch(video_ids: List[str]) -> Dict[str, Dict[str,
                 id=video_ids_str,
                 maxResults=50,
             )
-            return request.execute()
+            response = request.execute()
+            del client  # Free up client resources
+            return response
 
         # Run the blocking API call in a thread pool with timeout
         video_response = await asyncio.wait_for(
@@ -841,8 +859,9 @@ async def get_channel_info(channel_name: str) -> Dict[str, Any]:
                 try:
 
                     def _fetch_by_username():
+                        client = get_youtube_client()
                         return (
-                            youtube.channels()
+                            client.channels()
                             .list(
                                 part="snippet,statistics,contentDetails",
                                 forUsername=channel_name,
@@ -901,12 +920,12 @@ async def get_playlist_info(playlist_id: str) -> Dict[str, Any]:
         ValueError: If playlist is not found
     """
     try:
+
         def _fetch_playlist_info():
             # Use thread-safe client
             client = get_youtube_client()
             request = client.playlists().list(
-                part="snippet,contentDetails,status",
-                id=playlist_id
+                part="snippet,contentDetails,status", id=playlist_id
             )
             return request.execute()
 
@@ -1244,9 +1263,7 @@ def _fetch_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
         for video in batch_videos:
             video["duration"] = duration_map.get(video["id"], "unknown")
 
-    logger.info(
-        f"Found {len(all_videos)} videos in playlist {playlist_id}"
-    )
+    logger.info(f"Found {len(all_videos)} videos in playlist {playlist_id}")
 
     # Log duration distribution
     duration_counts = {}
@@ -1672,14 +1689,18 @@ async def start_selected_videos_transcript_download(
             source_id = playlist_info["playlistId"]
             source_name = playlist_info["title"]
             source_type = "playlist"
-            logger.info(f"Starting playlist download for '{source_name}' (ID: {source_id})")
+            logger.info(
+                f"Starting playlist download for '{source_name}' (ID: {source_id})"
+            )
         elif channel_name:
             # Get channel info to validate channel existence and get channel ID
             channel_info = await get_channel_info(channel_name)
             source_id = channel_info["channelId"]
             source_name = channel_info["title"]
             source_type = "channel"
-            logger.info(f"Starting channel download for '{source_name}' (ID: {source_id})")
+            logger.info(
+                f"Starting channel download for '{source_name}' (ID: {source_id})"
+            )
         else:
             raise ValueError("Either channel_name or playlist_name must be provided")
 
@@ -2145,7 +2166,7 @@ async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:
         with zipfile.ZipFile(zip_buffer, "w") as zip_file:
             # Use the channel name for the concatenated file
             if not job.get("channel_name"):
-                job["channel_name"] = job['source_name'] 
+                job["channel_name"] = job["source_name"]
             safe_channel_name = sanitize_filename(job["channel_name"])
             filename = f"{safe_channel_name}_all_transcripts.txt"
             zip_file.writestr(filename, concatenated_content)
@@ -2239,14 +2260,18 @@ def get_safe_channel_name(job_id: str) -> str:
         raise ValueError(f"Job not found with ID: {job_id}")
 
     job_data = channel_download_jobs[job_id]
-    
+
     # For playlist jobs, use source_name or playlist_id
     if job_data.get("source_type") == "playlist":
-        source_name = job_data.get("source_name") or job_data.get("playlist_id") or "playlist"
+        source_name = (
+            job_data.get("source_name") or job_data.get("playlist_id") or "playlist"
+        )
     else:
         # For channel jobs, use channel_name or source_name
-        source_name = job_data.get("channel_name") or job_data.get("source_name") or "channel"
-    
+        source_name = (
+            job_data.get("channel_name") or job_data.get("source_name") or "channel"
+        )
+
     return sanitize_filename(source_name)
 
 
