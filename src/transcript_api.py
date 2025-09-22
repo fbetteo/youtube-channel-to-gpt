@@ -1618,28 +1618,28 @@ async def download_selected_playlist_videos(
 
 
 # Create a background task to clean up old jobs periodically
-@app.on_event("startup")
-async def startup_event():
-    """Run when the application starts - set up background tasks"""
-    asyncio.create_task(cleanup_job())
+# @app.on_event("startup")
+# async def startup_event():
+#     """Run when the application starts - set up background tasks"""
+#     asyncio.create_task(cleanup_job())
 
 
-async def cleanup_job():
-    """Periodically clean up old jobs and their files"""
-    while True:
-        try:
-            # Wait for a while before cleaning up (e.g., every hour)
-            await asyncio.sleep(3600)  # 1 hour
+# async def cleanup_job():
+#     """Periodically clean up old jobs and their files"""
+#     while True:
+#         try:
+#             # Wait for a while before cleaning up (e.g., every hour)
+#             await asyncio.sleep(3600)  # 1 hour
 
-            # Run the cleanup function
-            logger.info("Starting scheduled cleanup of old jobs")
-            youtube_service.cleanup_old_jobs(max_age_hours=24)  # Keep jobs for 24 hours
-            logger.info("Scheduled cleanup completed")
+#             # Run the cleanup function
+#             logger.info("Starting scheduled cleanup of old jobs")
+#             youtube_service.cleanup_old_jobs(max_age_hours=24)  # Keep jobs for 24 hours
+#             logger.info("Scheduled cleanup completed")
 
-        except Exception as e:
-            logger.error(f"Error in cleanup job: {str(e)}")
-            # Wait a bit before retrying if there was an error
-            await asyncio.sleep(300)  # 5 minutes
+#         except Exception as e:
+#             logger.error(f"Error in cleanup job: {str(e)}")
+#             # Wait a bit before retrying if there was an error
+#             await asyncio.sleep(300)  # 5 minutes
 
 
 if __name__ == "__main__":

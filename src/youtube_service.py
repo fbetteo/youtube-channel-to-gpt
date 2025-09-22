@@ -272,7 +272,7 @@ def get_ytt_api() -> YouTubeTranscriptApi:
 
 
 # Dictionary to track channel download jobs
-channel_download_jobs: Dict[str, Dict[str, Any]] = {}
+# channel_download_jobs: Dict[str, Dict[str, Any]] = {}
 
 # Add persistent job storage
 JOBS_STORAGE_DIR = os.path.join(settings.temp_dir, "jobs")
@@ -383,8 +383,8 @@ def update_job_progress(job_id: str, **updates):
                 json.dump(job, f, default=str, indent=2)
 
                 # Update in-memory copy if it exists
-                if job_id in channel_download_jobs:
-                    channel_download_jobs[job_id].update(job)
+                # if job_id in channel_download_jobs:
+                #     channel_download_jobs[job_id].update(job)
 
                 logger.debug(f"Updated job {job_id} progress: {updates}")
                 return job
@@ -421,7 +421,7 @@ def recover_jobs_from_storage() -> List[str]:
                                 "end_time", time.time()
                             ) - job_data.get("start_time", time.time())
 
-                        channel_download_jobs[job_id] = job_data
+                        # channel_download_jobs[job_id] = job_data
                         recovered_jobs.append(job_id)
 
         logger.info(f"Recovered {len(recovered_jobs)} jobs from storage")
@@ -1737,7 +1737,7 @@ async def start_selected_videos_transcript_download(
 
         # Create a unique job ID
         job_id = str(uuid.uuid4())
-
+        channel_download_jobs: Dict[str, Dict[str, Any]] = {}
         # Initialize job entry in the tracking dictionary
         channel_download_jobs[job_id] = {
             "status": "processing",
@@ -1794,9 +1794,9 @@ async def download_channel_transcripts_task(job_id: str) -> None:
     Args:
         job_id: The job identifier
     """
-    if job_id not in channel_download_jobs:
-        logger.error(f"Job {job_id} not found for processing")
-        return
+    # if job_id not in channel_download_jobs:
+    #     logger.error(f"Job {job_id} not found for processing")
+    #     return
 
     # job = channel_download_jobs[job_id]
     job = load_job_from_file(job_id)
@@ -1965,9 +1965,9 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
         return
 
     # Also ensure in-memory job exists for credit tracking
-    if job_id not in channel_download_jobs:
-        channel_download_jobs[job_id] = job
-        logger.debug(f"Restored job {job_id} to memory from file")
+    # if job_id not in channel_download_jobs:
+    #     channel_download_jobs[job_id] = job
+    #     logger.debug(f"Restored job {job_id} to memory from file")
 
     video_dir = os.path.join(
         output_dir, video_id
@@ -2074,7 +2074,7 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
     job = load_job_from_file(job_id)
     if job:
         # Restore to in-memory storage
-        channel_download_jobs[job_id] = job
+        # channel_download_jobs[job_id] = job
         logger.info(f"Restored job {job_id} from persistent storage to memory")
     else:
         logger.error(f"Job not found in memory or persistent storage: {job_id}")
@@ -2141,8 +2141,8 @@ async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:
     Raises:
         ValueError: If job ID not found or job not completed
     """
-    if job_id not in channel_download_jobs:
-        raise ValueError(f"Job not found with ID: {job_id}")
+    # if job_id not in channel_download_jobs:
+    #     raise ValueError(f"Job not found with ID: {job_id}")
 
     # job = channel_download_jobs[job_id]
     job = load_job_from_file(job_id)
@@ -2180,6 +2180,12 @@ async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:
 
     # Seek to beginning of buffer for response
     zip_buffer.seek(0)
+    # try:
+    #     del channel_download_jobs[job_id]
+    # except Exception as e:
+    #     logger.error(
+    #         f"Error deleting job {job_id} from channel_download_jobs: {str(e)}"
+    #     )
 
     return zip_buffer
 
@@ -2197,8 +2203,8 @@ async def create_concatenated_transcript(job_id: str) -> str:
     Raises:
         ValueError: If job not found
     """
-    if job_id not in channel_download_jobs:
-        raise ValueError(f"Job not found with ID: {job_id}")
+    # if job_id not in channel_download_jobs:
+    #     raise ValueError(f"Job not found with ID: {job_id}")
 
     # job = channel_download_jobs[job_id]
     job = load_job_from_file(job_id)
@@ -2256,10 +2262,11 @@ def get_safe_channel_name(job_id: str) -> str:
     Raises:
         ValueError: If job ID not found
     """
-    if job_id not in channel_download_jobs:
-        raise ValueError(f"Job not found with ID: {job_id}")
+    # if job_id not in channel_download_jobs:
+    #     raise ValueError(f"Job not found with ID: {job_id}")
 
-    job_data = channel_download_jobs[job_id]
+    # job_data = channel_download_jobs[job_id]
+    job_data = load_job_from_file(job_id)
 
     # For playlist jobs, use source_name or playlist_id
     if job_data.get("source_type") == "playlist":
@@ -2319,77 +2326,77 @@ async def retry_operation(operation, max_retries=3, retry_delay=1.0, *args, **kw
     raise last_exception
 
 
-def cleanup_old_jobs(max_age_hours: int = 24) -> None:
-    """
-    Clean up old jobs and their associated files.
+# def cleanup_old_jobs(max_age_hours: int = 24) -> None:
+#     """
+#     Clean up old jobs and their associated files.
 
-    Args:
-        max_age_hours: Maximum age of jobs to keep in hours
-    """
-    # Track memory before cleanup
-    memory_tracker.log_memory_usage("cleanup_start")
+#     Args:
+#         max_age_hours: Maximum age of jobs to keep in hours
+#     """
+#     # Track memory before cleanup
+#     memory_tracker.log_memory_usage("cleanup_start")
 
-    current_time = time.time()
-    max_age_seconds = max_age_hours * 3600
+#     current_time = time.time()
+#     max_age_seconds = max_age_hours * 3600
 
-    jobs_to_remove = []
+#     jobs_to_remove = []
 
-    # Find old jobs
-    for job_id, job in channel_download_jobs.items():
-        job_start_time = job.get("start_time", 0)
-        job_age = current_time - job_start_time
+#     # Find old jobs
+#     for job_id, job in channel_download_jobs.items():
+#         job_start_time = job.get("start_time", 0)
+#         job_age = current_time - job_start_time
 
-        if job_age > max_age_seconds:
-            jobs_to_remove.append(job_id)
+#         if job_age > max_age_seconds:
+#             jobs_to_remove.append(job_id)
 
-            # Try to remove files
-            for file_path in job.get("files", []):
-                try:
-                    if os.path.exists(file_path):
-                        os.remove(file_path)
-                        logger.info(f"Removed old file: {file_path}")
-                except Exception as e:
-                    logger.warning(f"Failed to remove old file {file_path}: {str(e)}")
+#             # Try to remove files
+#             for file_path in job.get("files", []):
+#                 try:
+#                     if os.path.exists(file_path):
+#                         os.remove(file_path)
+#                         logger.info(f"Removed old file: {file_path}")
+#                 except Exception as e:
+#                     logger.warning(f"Failed to remove old file {file_path}: {str(e)}")
 
-            # Try to remove job directory
-            try:
-                user_id = job.get("user_id")
-                if user_id:
-                    job_dir = os.path.join(settings.temp_dir, user_id, job_id)
-                    if os.path.exists(job_dir) and os.path.isdir(job_dir):
-                        # Remove all files in the directory
-                        for root, dirs, files in os.walk(job_dir):
-                            for file in files:
-                                try:
-                                    os.remove(os.path.join(root, file))
-                                except Exception as e:
-                                    logger.warning(
-                                        f"Failed to remove file in cleanup: {str(e)}"
-                                    )
+#             # Try to remove job directory
+#             try:
+#                 user_id = job.get("user_id")
+#                 if user_id:
+#                     job_dir = os.path.join(settings.temp_dir, user_id, job_id)
+#                     if os.path.exists(job_dir) and os.path.isdir(job_dir):
+#                         # Remove all files in the directory
+#                         for root, dirs, files in os.walk(job_dir):
+#                             for file in files:
+#                                 try:
+#                                     os.remove(os.path.join(root, file))
+#                                 except Exception as e:
+#                                     logger.warning(
+#                                         f"Failed to remove file in cleanup: {str(e)}"
+#                                     )
 
-                        # Try to remove the directory
-                        try:
-                            os.rmdir(job_dir)
-                            logger.info(f"Removed old job directory: {job_dir}")
-                        except Exception as e:
-                            logger.warning(f"Failed to remove job directory: {str(e)}")
-            except Exception as e:
-                logger.warning(f"Error during job cleanup for {job_id}: {str(e)}")
+#                         # Try to remove the directory
+#                         try:
+#                             os.rmdir(job_dir)
+#                             logger.info(f"Removed old job directory: {job_dir}")
+#                         except Exception as e:
+#                             logger.warning(f"Failed to remove job directory: {str(e)}")
+#             except Exception as e:
+#                 logger.warning(f"Error during job cleanup for {job_id}: {str(e)}")
 
-    # Remove old jobs from the dictionary
-    for job_id in jobs_to_remove:
-        try:
-            del channel_download_jobs[job_id]
-            logger.info(f"Removed old job: {job_id}")
-        except Exception as e:
-            logger.warning(f"Error removing job {job_id} from dictionary: {str(e)}")
+#     # Remove old jobs from the dictionary
+#     for job_id in jobs_to_remove:
+#         try:
+#             del channel_download_jobs[job_id]
+#             logger.info(f"Removed old job: {job_id}")
+#         except Exception as e:
+#             logger.warning(f"Error removing job {job_id} from dictionary: {str(e)}")
 
-    logger.info(f"Cleanup complete. Removed {len(jobs_to_remove)} old jobs.")
+#     logger.info(f"Cleanup complete. Removed {len(jobs_to_remove)} old jobs.")
 
-    # Force garbage collection after cleanup and track memory
-    if jobs_to_remove:
-        memory_tracker.force_garbage_collection()
-        memory_tracker.log_memory_usage("cleanup_complete")
+#     # Force garbage collection after cleanup and track memory
+#     if jobs_to_remove:
+#         memory_tracker.force_garbage_collection()
+#         memory_tracker.log_memory_usage("cleanup_complete")
 
 
 # Convenience functions for external use
