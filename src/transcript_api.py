@@ -25,6 +25,9 @@ import zipfile
 import uuid
 import asyncio
 import tempfile
+import tracemalloc
+import gc
+import psutil
 
 from fastapi import (
     FastAPI,
@@ -739,19 +742,20 @@ async def startup_event():
     """Run when the application starts - recover jobs and set up background tasks"""
     logger.info("Starting YouTube Transcript API...")
 
-    # Recover jobs from persistent storage
-    try:
-        import youtube_service
 
-        recovered_jobs = youtube_service.recover_jobs_from_storage()
-        if recovered_jobs:
-            logger.info(f"Recovered {len(recovered_jobs)} jobs from persistent storage")
-        else:
-            logger.info("No jobs to recover from persistent storage")
-    except Exception as e:
-        logger.error(f"Failed to recover jobs on startup: {e}")
+#     # Recover jobs from persistent storage
+#     try:
+#         import youtube_service
 
-    logger.info("YouTube Transcript API startup complete")
+#         recovered_jobs = youtube_service.recover_jobs_from_storage()
+#         if recovered_jobs:
+#             logger.info(f"Recovered {len(recovered_jobs)} jobs from persistent storage")
+#         else:
+#             logger.info("No jobs to recover from persistent storage")
+#     except Exception as e:
+#         logger.error(f"Failed to recover jobs on startup: {e}")
+
+#     logger.info("YouTube Transcript API startup complete")
 
 
 @app.on_event("shutdown")
@@ -1617,29 +1621,176 @@ async def download_selected_playlist_videos(
         )
 
 
+# =============================================
+# DEBUG ENDPOINTS
+# =============================================
+
+
+@app.get("/debug/memory")
+async def get_memory_stats():
+    """
+    Get current memory usage statistics and top memory allocations
+    """
+    # Get current process memory info
+    process = psutil.Process(os.getpid())
+    memory_info = process.memory_info()
+
+    # Get tracemalloc statistics if enabled
+    stats = {}
+    if tracemalloc.is_tracing():
+        current, peak = tracemalloc.get_traced_memory()
+        snapshot = tracemalloc.take_snapshot()
+        top_stats = snapshot.statistics("lineno")
+
+        stats = {
+            "tracemalloc_current_mb": current / 1024 / 1024,
+            "tracemalloc_peak_mb": peak / 1024 / 1024,
+            "top_allocations": [
+                {
+                    "file": (
+                        str(stat.traceback.format()[0]) if stat.traceback else "unknown"
+                    ),
+                    "size_mb": stat.size / 1024 / 1024,
+                    "count": stat.count,
+                }
+                for stat in top_stats[:10]  # Top 10 allocations
+            ],
+        }
+    else:
+        stats = {"tracemalloc_enabled": False}
+
+    return {
+        "rss_memory_mb": memory_info.rss / 1024 / 1024,  # Resident Set Size
+        "vms_memory_mb": memory_info.vms / 1024 / 1024,  # Virtual Memory Size
+        "percent_memory": process.memory_percent(),
+        "num_threads": process.num_threads(),
+        "num_fds": process.num_fds() if hasattr(process, "num_fds") else None,
+        **stats,
+    }
+
+
+@app.post("/debug/gc")
+async def force_garbage_collection():
+    """
+    Force garbage collection and return memory stats before/after
+    """
+    # Memory before
+    process = psutil.Process(os.getpid())
+    memory_before = process.memory_info().rss / 1024 / 1024
+
+    # Force garbage collection
+    collected = gc.collect()
+
+    # Memory after
+    memory_after = process.memory_info().rss / 1024 / 1024
+
+    return {
+        "memory_before_mb": memory_before,
+        "memory_after_mb": memory_after,
+        "memory_freed_mb": memory_before - memory_after,
+        "objects_collected": collected,
+    }
+
+
+@app.get("/debug/jobs")
+async def get_jobs_debug():
+    """
+    Get information about current jobs in memory and on disk
+    """
+    # In-memory jobs
+    in_memory_jobs = (
+        len(youtube_service.channel_download_jobs)
+        if hasattr(youtube_service, "channel_download_jobs")
+        else 0
+    )
+
+    # Jobs on disk
+    jobs_dir = os.path.join(settings.temp_dir, "jobs")
+    disk_jobs = 0
+    disk_job_files = []
+
+    if os.path.exists(jobs_dir):
+        job_files = [f for f in os.listdir(jobs_dir) if f.endswith(".json")]
+        disk_jobs = len(job_files)
+
+        # Get file sizes
+        for job_file in job_files[:10]:  # Limit to first 10 for debugging
+            file_path = os.path.join(jobs_dir, job_file)
+            file_size = os.path.getsize(file_path) / 1024  # KB
+            disk_job_files.append({"filename": job_file, "size_kb": file_size})
+
+    return {
+        "in_memory_jobs": in_memory_jobs,
+        "disk_jobs": disk_jobs,
+        "sample_disk_jobs": disk_job_files,
+        "temp_dir": settings.temp_dir,
+    }
+
+
 # Create a background task to clean up old jobs periodically
-# @app.on_event("startup")
-# async def startup_event():
-#     """Run when the application starts - set up background tasks"""
-#     asyncio.create_task(cleanup_job())
 
 
-# async def cleanup_job():
-#     """Periodically clean up old jobs and their files"""
-#     while True:
-#         try:
-#             # Wait for a while before cleaning up (e.g., every hour)
-#             await asyncio.sleep(3600)  # 1 hour
+@app.on_event("startup")
+async def startup_event():
+    """Run when the application starts - set up background tasks and enable memory tracing"""
+    logger.info("Starting YouTube Transcript API...")
 
-#             # Run the cleanup function
-#             logger.info("Starting scheduled cleanup of old jobs")
-#             youtube_service.cleanup_old_jobs(max_age_hours=24)  # Keep jobs for 24 hours
-#             logger.info("Scheduled cleanup completed")
+    # Start memory tracing
+    tracemalloc.start(25)  # Keep 25 frames in tracebacks for better debugging
+    logger.info("Memory tracing enabled with tracemalloc")
 
-#         except Exception as e:
-#             logger.error(f"Error in cleanup job: {str(e)}")
-#             # Wait a bit before retrying if there was an error
-#             await asyncio.sleep(300)  # 5 minutes
+    # Recover jobs from persistent storage
+    # try:
+    #     import youtube_service
+
+    #     recovered_jobs = (
+    #         youtube_service.recover_jobs_from_storage()
+    #         if hasattr(youtube_service, "recover_jobs_from_storage")
+    #         else []
+    #     )
+    #     if recovered_jobs:
+    #         logger.info(f"Recovered {len(recovered_jobs)} jobs from persistent storage")
+    #     else:
+    #         logger.info("No jobs to recover from persistent storage")
+    # except Exception as e:
+    #     logger.error(f"Failed to recover jobs on startup: {e}")
+
+    asyncio.create_task(cleanup_job())
+
+    logger.info("YouTube Transcript API startup complete")
+
+
+async def cleanup_job():
+    """Periodically clean up old jobs and their files"""
+    while True:
+        try:
+            # Wait for a while before cleaning up (e.g., every hour)
+            await asyncio.sleep(3600)  # 1 hour
+
+            # Log memory before cleanup
+            process = psutil.Process(os.getpid())
+            memory_before = process.memory_info().rss / 1024 / 1024
+            logger.info(f"Memory before cleanup: {memory_before:.2f} MB")
+
+            # Run the cleanup function
+            logger.info("Starting scheduled cleanup of old jobs")
+            youtube_service.cleanup_old_jobs(max_age_hours=24)  # Keep jobs for 24 hours
+
+            # Force garbage collection after cleanup
+            collected = gc.collect()
+
+            # Log memory after cleanup
+            memory_after = process.memory_info().rss / 1024 / 1024
+            logger.info(
+                f"Memory after cleanup: {memory_after:.2f} MB (freed: {memory_before - memory_after:.2f} MB, GC collected: {collected} objects)"
+            )
+
+            logger.info("Scheduled cleanup completed")
+
+        except Exception as e:
+            logger.error(f"Error in cleanup job: {str(e)}")
+            # Wait a bit before retrying if there was an error
+            await asyncio.sleep(300)  # 5 minutes
 
 
 if __name__ == "__main__":

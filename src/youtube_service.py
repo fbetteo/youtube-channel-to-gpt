@@ -1341,10 +1341,7 @@ async def get_single_transcript(
 
         # 1. List available transcripts with better error handling
         try:
-            transcript_list = await retry_operation(
-                lambda ytt_api=ytt_api: asyncio.to_thread(ytt_api.list, video_id),
-                max_retries=2,
-            )
+            transcript_list = await asyncio.to_thread(ytt_api.list, video_id)
         except Exception as e:
             logger.error(f"Failed to list transcripts for video {video_id}: {str(e)}")
             raise ValueError(f"No transcripts available for video {video_id}: {str(e)}")
