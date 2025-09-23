@@ -1322,10 +1322,7 @@ async def get_single_transcript(
 
         # 1. List available transcripts with better error handling
         try:
-            transcript_list = await retry_operation(
-                lambda ytt_api=ytt_api: asyncio.to_thread(ytt_api.list, video_id),
-                max_retries=2,
-            )
+            transcript_list = await asyncio.to_thread(ytt_api.list, video_id)
         except Exception as e:
             logger.error(f"Failed to list transcripts for video {video_id}: {str(e)}")
             raise ValueError(f"No transcripts available for video {video_id}: {str(e)}")
@@ -2147,7 +2144,7 @@ async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:
         with zipfile.ZipFile(zip_buffer, "w") as zip_file:
             # Use the channel name for the concatenated file
             if not job.get("channel_name"):
-                job["channel_name"] = job['source_name'] 
+                job["channel_name"] = job["source_name"]
             safe_channel_name = sanitize_filename(job["channel_name"])
             filename = f"{safe_channel_name}_all_transcripts.txt"
             zip_file.writestr(filename, concatenated_content)
