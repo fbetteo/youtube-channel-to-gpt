@@ -49,8 +49,8 @@ class MemoryTracker:
 
     def __init__(
         self,
-        warning_threshold_percent: float = 30.0,
-        critical_threshold_percent: float = 60.0,
+        warning_threshold_percent: float = 85.0,
+        critical_threshold_percent: float = 95.0,
     ):
         self.warning_threshold = warning_threshold_percent
         self.critical_threshold = critical_threshold_percent
@@ -225,50 +225,34 @@ def get_youtube_client():
     This prevents thread safety issues with the global client.
     """
     try:
-        return youtube
-    except Exception as e:
-        logger.error(f"Failed to load global YouTube API client: {str(e)}")
         return build("youtube", "v3", developerKey=settings.youtube_api_key)
+    except Exception as e:
+        logger.error(f"Failed to create YouTube API client: {str(e)}")
+        return youtube  # Fallback to global client
 
 
 # Remove global ytt_api initialization, only keep YouTube API client
-# Thread-local storage for YouTubeTranscriptApi instances
-_thread_local = threading.local()
-
-
 def get_ytt_api() -> YouTubeTranscriptApi:
     """
-    Get a thread-local YouTubeTranscriptApi instance for efficiency.
-    Creates one instance per thread and reuses it to avoid socket churn.
+    Create a new YouTubeTranscriptApi instance with proxy config if needed.
+    Thread-safe implementation that creates fresh instances.
     Returns:
         YouTubeTranscriptApi instance
     """
-    # Check if we already have an instance for this thread
-    api: Optional[YouTubeTranscriptApi] = getattr(_thread_local, "ytt_api", None)
-
-    if api is None:
-        try:
-            if settings.webshare_proxy_username and settings.webshare_proxy_password:
-                proxy_config = WebshareProxyConfig(
-                    proxy_username=settings.webshare_proxy_username,
-                    proxy_password=settings.webshare_proxy_password,
-                    retries_when_blocked=1,
-                )
-                api = YouTubeTranscriptApi(proxy_config=proxy_config)
-            else:
-                api = YouTubeTranscriptApi()
-
-            # Store in thread-local storage
-            _thread_local.ytt_api = api
-            logger.debug("Created new thread-local YouTubeTranscriptApi instance")
-
-        except Exception as e:
-            logger.error(f"Error creating YouTubeTranscriptApi: {str(e)}")
-            # Fallback to basic instance
-            api = YouTubeTranscriptApi()
-            _thread_local.ytt_api = api
-
-    return api
+    try:
+        if settings.webshare_proxy_username and settings.webshare_proxy_password:
+            proxy_config = WebshareProxyConfig(
+                proxy_username=settings.webshare_proxy_username,
+                proxy_password=settings.webshare_proxy_password,
+                retries_when_blocked=1,
+            )
+            return YouTubeTranscriptApi(proxy_config=proxy_config)
+        else:
+            return YouTubeTranscriptApi()
+    except Exception as e:
+        logger.error(f"Error creating YouTubeTranscriptApi: {str(e)}")
+        # Fallback to basic instance
+        return YouTubeTranscriptApi()
 
 
 # Dictionary to track channel download jobs
@@ -610,9 +594,7 @@ async def get_videos_metadata_batch(video_ids: List[str]) -> Dict[str, Dict[str,
                 id=video_ids_str,
                 maxResults=50,
             )
-            response = request.execute()
-            del client  # Free up client resources
-            return response
+            return request.execute()
 
         # Run the blocking API call in a thread pool with timeout
         video_response = await asyncio.wait_for(
@@ -859,9 +841,8 @@ async def get_channel_info(channel_name: str) -> Dict[str, Any]:
                 try:
 
                     def _fetch_by_username():
-                        client = get_youtube_client()
                         return (
-                            client.channels()
+                            youtube.channels()
                             .list(
                                 part="snippet,statistics,contentDetails",
                                 forUsername=channel_name,
