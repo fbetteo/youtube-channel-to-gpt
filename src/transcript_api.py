@@ -57,7 +57,6 @@ from rate_limiter import transcript_limiter
 # Using the Pydantic v2 compatible settings
 from config_v2 import settings
 
-
 # Stripe configuration
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY_LIVE")
 STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET_TRANSCRIPTS")
@@ -1729,6 +1728,8 @@ async def get_jobs_debug():
 
 
 # Create a background task to clean up old jobs periodically
+
+
 @app.on_event("startup")
 async def startup_event():
     """Run when the application starts - set up background tasks and enable memory tracing"""
@@ -1754,7 +1755,6 @@ async def startup_event():
     # except Exception as e:
     #     logger.error(f"Failed to recover jobs on startup: {e}")
 
-    # Start cleanup task
     asyncio.create_task(cleanup_job())
 
     logger.info("YouTube Transcript API startup complete")
