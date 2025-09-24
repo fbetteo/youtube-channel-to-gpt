@@ -1737,8 +1737,8 @@ async def startup_event():
     logger.info("Starting YouTube Transcript API...")
 
     # Start memory tracing
-    tracemalloc.start(25)  # Keep 25 frames in tracebacks for better debugging
-    logger.info("Memory tracing enabled with tracemalloc")
+    # tracemalloc.start(25)  # Keep 25 frames in tracebacks for better debugging
+    # logger.info("Memory tracing enabled with tracemalloc")
 
     # Recover jobs from persistent storage
     # try:
@@ -1756,7 +1756,7 @@ async def startup_event():
     # except Exception as e:
     #     logger.error(f"Failed to recover jobs on startup: {e}")
 
-    asyncio.create_task(cleanup_job())
+    # asyncio.create_task(cleanup_job())
 
     logger.info("YouTube Transcript API startup complete")
 

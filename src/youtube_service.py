@@ -32,6 +32,7 @@ logger = logging.getLogger(__name__)
 memory_logger = logging.getLogger("memory_tracker")
 memory_logger.setLevel(logging.INFO)
 
+ENABLE_MEMORY_TRACKING = False
 # Memory tracking variables
 _memory_monitoring_active = False
 _memory_monitor_thread = None
@@ -96,6 +97,8 @@ class MemoryTracker:
         self, context: str = "", level: str = "info"
     ) -> Dict[str, Any]:
         """Log current memory usage with context."""
+        if not ENABLE_MEMORY_TRACKING:
+            return {}
         memory_info = self.get_memory_info()
         if not memory_info:
             return {}
@@ -1828,7 +1831,7 @@ async def download_channel_transcripts_task(job_id: str) -> None:
 
     # Process videos concurrently with a limit on parallelism
     # Process in batches to avoid overwhelming the API
-    batch_size = 10  # Process 5 videos at a time
+    batch_size = 5  # Reduced from 10 to lower CPU usage
 
     for batch_num, i in enumerate(range(0, len(videos), batch_size), 1):
         batch_videos = videos[i : i + batch_size]
@@ -1997,12 +2000,13 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
                     "type": metadata.get("transcript_type"),
                 }
 
-                # Use atomic operations to update job progress
+                # Use atomic operations to update job progress (combined for efficiency)
                 updated_job = update_job_progress(
                     job_id,
                     files_append=file_info,
                     completed_increment=1,
                     credits_used_increment=1,
+                    processed_count_increment=1,  # Combined into single call
                 )
 
                 if updated_job:
@@ -2020,19 +2024,24 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
             logger.error(
                 f"Transcript processing for {video_id} timed out after 60 seconds"
             )
-            # Use atomic increment for credits_used
-            update_job_progress(job_id, credits_used_increment=1)
+            # Combined update for timeout case
+            update_job_progress(
+                job_id, credits_used_increment=1, processed_count_increment=1
+            )
             raise ValueError("Transcript processing timed out")
 
     except Exception as e:
-        # Use atomic increments for failure tracking
-        update_job_progress(job_id, failed_count_increment=1, credits_used_increment=1)
+        # Combined update for failure case
+        update_job_progress(
+            job_id,
+            failed_count_increment=1,
+            credits_used_increment=1,
+            processed_count_increment=1,
+        )
 
         logger.error(f"Failed to process video {video_id} for job {job_id}: {str(e)}")
 
-    finally:
-        # Use atomic increment for processed count
-        update_job_progress(job_id, processed_count_increment=1)
+    # No finally block needed since processed_count_increment is handled above
 
 
 def get_job_status(job_id: str) -> Dict[str, Any]:
