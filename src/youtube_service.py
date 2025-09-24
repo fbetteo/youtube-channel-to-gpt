@@ -1831,7 +1831,7 @@ async def download_channel_transcripts_task(job_id: str) -> None:
 
     # Process videos concurrently with a limit on parallelism
     # Process in batches to avoid overwhelming the API
-    batch_size = 5  # Reduced from 10 to lower CPU usage
+    batch_size = 10  # Reduced from 10 to lower CPU usage
 
     for batch_num, i in enumerate(range(0, len(videos), batch_size), 1):
         batch_videos = videos[i : i + batch_size]
