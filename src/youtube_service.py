@@ -1519,6 +1519,7 @@ async def get_single_transcript(
 
         # Clean up large variables to help with memory management
         del transcript_data
+        del fetched_transcript
         if "transcript_lines" in locals():
             del transcript_lines
 
