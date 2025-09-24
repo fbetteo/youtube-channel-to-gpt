@@ -2009,6 +2009,10 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
                     logger.info(
                         f"Downloaded transcript for video {video_id} ({updated_job['completed']}/{updated_job['total_videos']})"
                     )
+                    try:
+                        del updated_job  # Help with memory
+                    except Exception as e:
+                        logger.error(f"Error deleting updated_job: {str(e)}")
                 else:
                     logger.warning(f"Failed to update progress for video {video_id}")
 
