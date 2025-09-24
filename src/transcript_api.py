@@ -1504,7 +1504,7 @@ async def get_playlist_info(
     try:
         # Extract playlist ID from URL if needed
         clean_playlist_id = youtube_service.extract_playlist_id(playlist_id)
-        
+
         # Get playlist info using the new service
         playlist_info = await youtube_service.get_playlist_info(clean_playlist_id)
         return playlist_info
@@ -1531,14 +1531,12 @@ async def list_all_playlist_videos(
     try:
         # Extract playlist ID from URL if needed
         clean_playlist_id = youtube_service.extract_playlist_id(playlist_id)
-        
+
         # Use the paginated function to get all videos
         videos = await youtube_service.get_all_playlist_videos(clean_playlist_id)
 
         # Log the result to help debug
-        logger.info(
-            f"Returning {len(videos)} videos for playlist {playlist_id}"
-        )
+        logger.info(f"Returning {len(videos)} videos for playlist {playlist_id}")
         for i, video in enumerate(videos[:5]):
             logger.info(f"Video {i+1}: {video['id']} - {video['title']}")
 
@@ -1615,9 +1613,12 @@ async def download_selected_playlist_videos(
         logger.error(f"Invalid playlist request: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        logger.error(f"Error starting playlist transcript download: {str(e)}", exc_info=True)
+        logger.error(
+            f"Error starting playlist transcript download: {str(e)}", exc_info=True
+        )
         raise HTTPException(
-            status_code=500, detail=f"Failed to start playlist transcript download: {str(e)}"
+            status_code=500,
+            detail=f"Failed to start playlist transcript download: {str(e)}",
         )
 
 
@@ -1761,7 +1762,7 @@ async def startup_event():
 
 
 async def cleanup_job():
-    """Periodically clean up old jobs and their files"""
+    """Periodically GC"""
     while True:
         try:
             # Wait for a while before cleaning up (e.g., every hour)
@@ -1773,8 +1774,9 @@ async def cleanup_job():
             logger.info(f"Memory before cleanup: {memory_before:.2f} MB")
 
             # Run the cleanup function
-            logger.info("Starting scheduled cleanup of old jobs")
-            youtube_service.cleanup_old_jobs(max_age_hours=24)  # Keep jobs for 24 hours
+            logger.info("Starting scheduled garbage collection")
+            # remove porque esto no guardo mas en diccionario, todo va al json.
+            # youtube_service.cleanup_old_jobs(max_age_hours=24)  # Keep jobs for 24 hours
 
             # Force garbage collection after cleanup
             collected = gc.collect()
@@ -1785,7 +1787,7 @@ async def cleanup_job():
                 f"Memory after cleanup: {memory_after:.2f} MB (freed: {memory_before - memory_after:.2f} MB, GC collected: {collected} objects)"
             )
 
-            logger.info("Scheduled cleanup completed")
+            logger.info("Scheduled garbage collection completed")
 
         except Exception as e:
             logger.error(f"Error in cleanup job: {str(e)}")
