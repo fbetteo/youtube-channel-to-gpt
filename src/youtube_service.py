@@ -1710,11 +1710,9 @@ async def start_selected_videos_transcript_download(
                 logger.error(f"Error accessing video properties: {str(e)}")
                 logger.error(f"Video object type: {type(v)}")
 
-        # Pre-fetch metadata for all selected videos
-        logger.info(f"Pre-fetching metadata for {len(video_ids)} selected videos...")
-        videos_metadata = await pre_fetch_videos_metadata(video_ids)
+        # Metadata will be pre-fetched in the background task for faster response
         logger.info(
-            f"Metadata pre-fetching completed. Successfully fetched metadata for {len([m for m in videos_metadata.values() if m])} videos."
+            f"Job will pre-fetch metadata for {len(video_ids)} selected videos in background"
         )
 
         # Create a unique job ID
@@ -1739,7 +1737,7 @@ async def start_selected_videos_transcript_download(
             "credits_reserved": num_videos,  # Total credits reserved upfront
             "credits_used": 0,  # Track actual credits used per video
             "reservation_id": None,  # Will be set when credits are reserved
-            "videos_metadata": videos_metadata,  # Pre-fetched metadata
+            "videos_metadata": {},  # Will be populated in background task
             # Formatting options
             "include_timestamps": include_timestamps,
             "include_video_title": include_video_title,
@@ -1784,6 +1782,29 @@ async def download_channel_transcripts_task(job_id: str) -> None:
     job = load_job_from_file(job_id)
     videos = job["videos"]
     user_id = job["user_id"]
+
+    # Pre-fetch metadata for all videos in background task
+    video_ids = []
+    for video in videos:
+        try:
+            video_id = video.id if hasattr(video, "id") else video["id"]
+            video_ids.append(video_id)
+        except Exception as e:
+            logger.error(f"Error extracting video ID: {str(e)}")
+
+    logger.info(f"Job {job_id}: Pre-fetching metadata for {len(video_ids)} videos...")
+    try:
+        videos_metadata = await pre_fetch_videos_metadata(video_ids)
+        # Update job with pre-fetched metadata
+        update_job_progress(job_id, videos_metadata=videos_metadata)
+        logger.info(
+            f"Job {job_id}: Metadata pre-fetching completed. Successfully fetched metadata for {len([m for m in videos_metadata.values() if m])} videos."
+        )
+    except Exception as e:
+        logger.error(f"Job {job_id}: Error pre-fetching metadata: {str(e)}")
+        # Continue with empty metadata - individual video processing will handle it
+        videos_metadata = {}
+        update_job_progress(job_id, videos_metadata=videos_metadata)
 
     # Reserve credits upfront for all videos (Phase 2: Batch Credit Management)
     try:
