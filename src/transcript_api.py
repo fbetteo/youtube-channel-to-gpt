@@ -100,6 +100,10 @@ app.add_middleware(
 # In production, consider a more robust solution like Redis
 user_cache = {}
 
+# In-memory storage for video fetching jobs
+# In production, consider a more robust solution like Redis
+video_jobs = {}
+
 # Get API key from settings
 API_KEY = settings.api_key
 
@@ -949,6 +953,156 @@ async def get_user_profile(payload: dict = Depends(validate_jwt)):
 
 
 # =============================================
+# BACKGROUND TASKS FOR VIDEO FETCHING
+# =============================================
+
+
+async def fetch_channel_videos_task(job_id: str, channel_name: str):
+    """
+    Background task to fetch all videos from a channel with timeout protection.
+    Updates job status in video_jobs dictionary.
+    """
+    try:
+        logger.info(
+            f"Starting background fetch for channel {channel_name} (job: {job_id})"
+        )
+
+        # Fetch with 5-minute timeout
+        timeout_seconds = 300  # 5 minutes
+
+        async def _fetch_videos():
+            # Get channel info
+            channel_info = await youtube_service.get_channel_info(channel_name)
+            channel_id = channel_info["channelId"]
+
+            # Get ALL videos from channel (no limit)
+            videos = await youtube_service.get_all_channel_videos(channel_id)
+
+            return channel_info, videos
+
+        # Execute with timeout
+        try:
+            channel_info, videos = await asyncio.wait_for(
+                _fetch_videos(), timeout=timeout_seconds
+            )
+
+            # Update job with success
+            video_jobs[job_id].update(
+                {
+                    "status": "completed",
+                    "channel_info": channel_info,
+                    "videos": videos,
+                    "video_count": len(videos),
+                    "duration_breakdown": {
+                        "short": len(
+                            [v for v in videos if v.get("duration") == "short"]
+                        ),
+                        "medium": len(
+                            [v for v in videos if v.get("duration") == "medium"]
+                        ),
+                        "long": len([v for v in videos if v.get("duration") == "long"]),
+                    },
+                    "end_time": time.time(),
+                }
+            )
+
+            logger.info(
+                f"Successfully fetched {len(videos)} videos for channel {channel_name} (job: {job_id})"
+            )
+
+        except asyncio.TimeoutError:
+            error_msg = f"Timeout after {timeout_seconds} seconds"
+            video_jobs[job_id].update(
+                {"status": "failed", "error": error_msg, "end_time": time.time()}
+            )
+            logger.error(
+                f"Timeout fetching videos for channel {channel_name} (job: {job_id}): {error_msg}"
+            )
+
+    except Exception as e:
+        error_msg = f"Error fetching videos: {str(e)}"
+        video_jobs[job_id].update(
+            {"status": "failed", "error": error_msg, "end_time": time.time()}
+        )
+        logger.error(
+            f"Error in background task for channel {channel_name} (job: {job_id}): {error_msg}",
+            exc_info=True,
+        )
+
+
+async def fetch_playlist_videos_task(job_id: str, playlist_id: str):
+    """
+    Background task to fetch all videos from a playlist with timeout protection.
+    Updates job status in video_jobs dictionary.
+    """
+    try:
+        logger.info(
+            f"Starting background fetch for playlist {playlist_id} (job: {job_id})"
+        )
+
+        # Fetch with 5-minute timeout
+        timeout_seconds = 300  # 5 minutes
+
+        async def _fetch_videos():
+            # Get playlist info
+            playlist_info = await youtube_service.get_playlist_info(playlist_id)
+
+            # Get ALL videos from playlist (no limit)
+            videos = await youtube_service.get_all_playlist_videos(playlist_id)
+
+            return playlist_info, videos
+
+        # Execute with timeout
+        try:
+            playlist_info, videos = await asyncio.wait_for(
+                _fetch_videos(), timeout=timeout_seconds
+            )
+
+            # Update job with success
+            video_jobs[job_id].update(
+                {
+                    "status": "completed",
+                    "playlist_info": playlist_info,
+                    "videos": videos,
+                    "video_count": len(videos),
+                    "duration_breakdown": {
+                        "short": len(
+                            [v for v in videos if v.get("duration") == "short"]
+                        ),
+                        "medium": len(
+                            [v for v in videos if v.get("duration") == "medium"]
+                        ),
+                        "long": len([v for v in videos if v.get("duration") == "long"]),
+                    },
+                    "end_time": time.time(),
+                }
+            )
+
+            logger.info(
+                f"Successfully fetched {len(videos)} videos for playlist {playlist_id} (job: {job_id})"
+            )
+
+        except asyncio.TimeoutError:
+            error_msg = f"Timeout after {timeout_seconds} seconds"
+            video_jobs[job_id].update(
+                {"status": "failed", "error": error_msg, "end_time": time.time()}
+            )
+            logger.error(
+                f"Timeout fetching videos for playlist {playlist_id} (job: {job_id}): {error_msg}"
+            )
+
+    except Exception as e:
+        error_msg = f"Error fetching videos: {str(e)}"
+        video_jobs[job_id].update(
+            {"status": "failed", "error": error_msg, "end_time": time.time()}
+        )
+        logger.error(
+            f"Error in background task for playlist {playlist_id} (job: {job_id}): {error_msg}",
+            exc_info=True,
+        )
+
+
+# =============================================
 # TRANSCRIPT ENDPOINTS (UPDATED WITH CREDIT LOGIC)
 # =============================================
 
@@ -1312,33 +1466,40 @@ async def get_channel_info(
 @app.get("/channel/{channel_name}/all-videos")
 async def list_all_channel_videos(
     channel_name: str,
-    # payload: dict = Depends(validate_jwt),
+    background_tasks: BackgroundTasks,
 ):
     """
-    Get all videos for a channel with pagination.
-    Returns a list of videos with metadata for selection in the frontend.
+    Start fetching all videos from a YouTube channel asynchronously.
+    Returns a job ID immediately that can be used to check progress.
     """
     try:
-        channel_info = await youtube_service.get_channel_info(channel_name)
-        channel_id = channel_info["channelId"]
+        # Create job ID
+        job_id = str(uuid.uuid4())
 
-        # Use the paginated function to get all videos
-        videos = await youtube_service.get_all_channel_videos(channel_id)
+        # Initialize job status
+        video_jobs[job_id] = {
+            "status": "processing",
+            "channel_name": channel_name,
+            "start_time": time.time(),
+            "videos": None,
+            "error": None,
+            "channel_info": None,
+        }
 
-        # Log the result to help debug
-        logger.info(
-            f"Returning {len(videos)} videos for channel {channel_name} (ID: {channel_id})"
-        )
-        for i, video in enumerate(videos[:5]):
-            logger.info(f"Video {i+1}: {video['id']} - {video['title']}")
+        # Start background task
+        background_tasks.add_task(fetch_channel_videos_task, job_id, channel_name)
 
-        return videos
-    except ValueError as e:
-        logger.error(f"Invalid channel: {str(e)}")
-        raise HTTPException(status_code=404, detail=str(e))
+        return {
+            "job_id": job_id,
+            "status": "processing",
+            "message": "Fetching channel videos in background. Use /channel/videos-status/{job_id} to check progress.",
+        }
+
     except Exception as e:
-        logger.error(f"Error getting all videos: {str(e)}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Failed to get videos: {str(e)}")
+        logger.error(f"Error starting channel video fetch: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=500, detail=f"Failed to start video fetch: {str(e)}"
+        )
 
 
 @app.post("/channel/download/selected")
@@ -1405,6 +1566,73 @@ async def download_selected_videos(
         raise HTTPException(
             status_code=500, detail=f"Failed to start transcript download: {str(e)}"
         )
+
+
+@app.get("/channel/videos-status/{job_id}")
+async def get_videos_fetch_status(
+    job_id: str,
+):
+    """
+    Check the status of a video fetching job and return results if complete.
+    """
+    try:
+        if job_id not in video_jobs:
+            raise HTTPException(status_code=404, detail="Job not found")
+
+        job = video_jobs[job_id]
+        status = job["status"]
+
+        if status == "processing":
+            elapsed_time = time.time() - job["start_time"]
+            return {
+                "job_id": job_id,
+                "status": "processing",
+                "channel_name": job.get("channel_name"),
+                "playlist_id": job.get("playlist_id"),
+                "elapsed_time": elapsed_time,
+                "message": "Still fetching videos...",
+            }
+
+        elif status == "completed":
+            elapsed_time = job["end_time"] - job["start_time"]
+
+            # Return the channel data or playlist data
+            if "channel_info" in job:
+                return {
+                    "job_id": job_id,
+                    "status": "completed",
+                    "elapsed_time": elapsed_time,
+                    "channel": job["channel_info"],
+                    "videos": job["videos"],
+                    "video_count": job["video_count"],
+                    "duration_breakdown": job["duration_breakdown"],
+                }
+            else:
+                return {
+                    "job_id": job_id,
+                    "status": "completed",
+                    "elapsed_time": elapsed_time,
+                    "playlist": job["playlist_info"],
+                    "videos": job["videos"],
+                    "video_count": job["video_count"],
+                    "duration_breakdown": job["duration_breakdown"],
+                }
+
+        elif status == "failed":
+            elapsed_time = job["end_time"] - job["start_time"]
+            return {
+                "job_id": job_id,
+                "status": "failed",
+                "elapsed_time": elapsed_time,
+                "error": job["error"],
+            }
+
+        else:
+            return {"job_id": job_id, "status": status, "message": "Unknown status"}
+
+    except Exception as e:
+        logger.error(f"Error getting video fetch status: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Failed to get status: {str(e)}")
 
 
 @app.get("/channel/download/status/{job_id}")
@@ -1522,31 +1750,43 @@ async def get_playlist_info(
 @app.get("/playlist/{playlist_id}/all-videos")
 async def list_all_playlist_videos(
     playlist_id: str,
-    # payload: dict = Depends(validate_jwt),
+    background_tasks: BackgroundTasks,
 ):
     """
-    Get all videos for a playlist with pagination.
-    Returns a list of videos with metadata for selection in the frontend.
+    Start fetching all videos from a YouTube playlist asynchronously.
+    Returns a job ID immediately that can be used to check progress.
     """
     try:
         # Extract playlist ID from URL if needed
         clean_playlist_id = youtube_service.extract_playlist_id(playlist_id)
 
-        # Use the paginated function to get all videos
-        videos = await youtube_service.get_all_playlist_videos(clean_playlist_id)
+        # Create job ID
+        job_id = str(uuid.uuid4())
 
-        # Log the result to help debug
-        logger.info(f"Returning {len(videos)} videos for playlist {playlist_id}")
-        for i, video in enumerate(videos[:5]):
-            logger.info(f"Video {i+1}: {video['id']} - {video['title']}")
+        # Initialize job status
+        video_jobs[job_id] = {
+            "status": "processing",
+            "playlist_id": clean_playlist_id,
+            "start_time": time.time(),
+            "videos": None,
+            "error": None,
+            "playlist_info": None,
+        }
 
-        return videos
-    except ValueError as e:
-        logger.error(f"Invalid playlist: {str(e)}")
-        raise HTTPException(status_code=404, detail=str(e))
+        # Start background task
+        background_tasks.add_task(fetch_playlist_videos_task, job_id, clean_playlist_id)
+
+        return {
+            "job_id": job_id,
+            "status": "processing",
+            "message": "Fetching playlist videos in background. Use /channel/videos-status/{job_id} to check progress.",
+        }
+
     except Exception as e:
-        logger.error(f"Error getting all videos: {str(e)}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Failed to get videos: {str(e)}")
+        logger.error(f"Error starting playlist video fetch: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=500, detail=f"Failed to start video fetch: {str(e)}"
+        )
 
 
 @app.post("/playlist/download/selected")
