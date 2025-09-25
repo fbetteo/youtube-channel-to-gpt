@@ -28,6 +28,7 @@ import tempfile
 import tracemalloc
 import gc
 import psutil
+import json
 
 from fastapi import (
     FastAPI,
@@ -100,9 +101,9 @@ app.add_middleware(
 # In production, consider a more robust solution like Redis
 user_cache = {}
 
-# In-memory storage for video fetching jobs
-# In production, consider a more robust solution like Redis
-video_jobs = {}
+# Video jobs persistent storage directory
+VIDEO_JOBS_STORAGE_DIR = os.path.join(settings.temp_dir, "video_jobs")
+os.makedirs(VIDEO_JOBS_STORAGE_DIR, exist_ok=True)
 
 # Get API key from settings
 API_KEY = settings.api_key
@@ -953,6 +954,76 @@ async def get_user_profile(payload: dict = Depends(validate_jwt)):
 
 
 # =============================================
+# VIDEO JOBS PERSISTENT STORAGE
+# =============================================
+
+
+def save_video_job_to_file(job_id: str, job_data: Dict[str, Any]) -> None:
+    """Save video job data to persistent storage"""
+    try:
+        file_path = os.path.join(VIDEO_JOBS_STORAGE_DIR, f"{job_id}.json")
+
+        # Convert data to JSON serializable format
+        serializable_data = {}
+        for key, value in job_data.items():
+            if isinstance(value, (dict, list, str, int, float, bool)) or value is None:
+                serializable_data[key] = value
+            else:
+                # Convert other types to string representation
+                serializable_data[key] = str(value)
+
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump(serializable_data, f, indent=2, ensure_ascii=False)
+
+        logger.debug(f"Saved video job {job_id} to file")
+
+    except Exception as e:
+        logger.error(f"Failed to save video job {job_id} to file: {e}")
+
+
+def load_video_job_from_file(job_id: str) -> Optional[Dict[str, Any]]:
+    """Load video job data from persistent storage"""
+    try:
+        file_path = os.path.join(VIDEO_JOBS_STORAGE_DIR, f"{job_id}.json")
+
+        if not os.path.exists(file_path):
+            return None
+
+        with open(file_path, "r", encoding="utf-8") as f:
+            job_data = json.load(f)
+
+        logger.debug(f"Loaded video job {job_id} from file")
+        return job_data
+
+    except Exception as e:
+        logger.error(f"Failed to load video job {job_id} from file: {e}")
+        return None
+
+
+def update_video_job(job_id: str, **updates) -> Optional[Dict[str, Any]]:
+    """Update video job data with atomic file operations"""
+    try:
+        # Load current job data
+        job_data = load_video_job_from_file(job_id)
+        if job_data is None:
+            logger.error(f"Video job {job_id} not found for update")
+            return None
+
+        # Apply updates
+        for key, value in updates.items():
+            job_data[key] = value
+
+        # Save updated data
+        save_video_job_to_file(job_id, job_data)
+
+        return job_data
+
+    except Exception as e:
+        logger.error(f"Failed to update video job {job_id}: {e}")
+        return None
+
+
+# =============================================
 # BACKGROUND TASKS FOR VIDEO FETCHING
 # =============================================
 
@@ -987,23 +1058,18 @@ async def fetch_channel_videos_task(job_id: str, channel_name: str):
             )
 
             # Update job with success
-            video_jobs[job_id].update(
-                {
-                    "status": "completed",
-                    "channel_info": channel_info,
-                    "videos": videos,
-                    "video_count": len(videos),
-                    "duration_breakdown": {
-                        "short": len(
-                            [v for v in videos if v.get("duration") == "short"]
-                        ),
-                        "medium": len(
-                            [v for v in videos if v.get("duration") == "medium"]
-                        ),
-                        "long": len([v for v in videos if v.get("duration") == "long"]),
-                    },
-                    "end_time": time.time(),
-                }
+            update_video_job(
+                job_id,
+                status="completed",
+                channel_info=channel_info,
+                videos=videos,
+                video_count=len(videos),
+                duration_breakdown={
+                    "short": len([v for v in videos if v.get("duration") == "short"]),
+                    "medium": len([v for v in videos if v.get("duration") == "medium"]),
+                    "long": len([v for v in videos if v.get("duration") == "long"]),
+                },
+                end_time=time.time(),
             )
 
             logger.info(
@@ -1012,8 +1078,8 @@ async def fetch_channel_videos_task(job_id: str, channel_name: str):
 
         except asyncio.TimeoutError:
             error_msg = f"Timeout after {timeout_seconds} seconds"
-            video_jobs[job_id].update(
-                {"status": "failed", "error": error_msg, "end_time": time.time()}
+            update_video_job(
+                job_id, status="failed", error=error_msg, end_time=time.time()
             )
             logger.error(
                 f"Timeout fetching videos for channel {channel_name} (job: {job_id}): {error_msg}"
@@ -1021,9 +1087,7 @@ async def fetch_channel_videos_task(job_id: str, channel_name: str):
 
     except Exception as e:
         error_msg = f"Error fetching videos: {str(e)}"
-        video_jobs[job_id].update(
-            {"status": "failed", "error": error_msg, "end_time": time.time()}
-        )
+        update_video_job(job_id, status="failed", error=error_msg, end_time=time.time())
         logger.error(
             f"Error in background task for channel {channel_name} (job: {job_id}): {error_msg}",
             exc_info=True,
@@ -1059,23 +1123,18 @@ async def fetch_playlist_videos_task(job_id: str, playlist_id: str):
             )
 
             # Update job with success
-            video_jobs[job_id].update(
-                {
-                    "status": "completed",
-                    "playlist_info": playlist_info,
-                    "videos": videos,
-                    "video_count": len(videos),
-                    "duration_breakdown": {
-                        "short": len(
-                            [v for v in videos if v.get("duration") == "short"]
-                        ),
-                        "medium": len(
-                            [v for v in videos if v.get("duration") == "medium"]
-                        ),
-                        "long": len([v for v in videos if v.get("duration") == "long"]),
-                    },
-                    "end_time": time.time(),
-                }
+            update_video_job(
+                job_id,
+                status="completed",
+                playlist_info=playlist_info,
+                videos=videos,
+                video_count=len(videos),
+                duration_breakdown={
+                    "short": len([v for v in videos if v.get("duration") == "short"]),
+                    "medium": len([v for v in videos if v.get("duration") == "medium"]),
+                    "long": len([v for v in videos if v.get("duration") == "long"]),
+                },
+                end_time=time.time(),
             )
 
             logger.info(
@@ -1084,8 +1143,8 @@ async def fetch_playlist_videos_task(job_id: str, playlist_id: str):
 
         except asyncio.TimeoutError:
             error_msg = f"Timeout after {timeout_seconds} seconds"
-            video_jobs[job_id].update(
-                {"status": "failed", "error": error_msg, "end_time": time.time()}
+            update_video_job(
+                job_id, status="failed", error=error_msg, end_time=time.time()
             )
             logger.error(
                 f"Timeout fetching videos for playlist {playlist_id} (job: {job_id}): {error_msg}"
@@ -1093,9 +1152,7 @@ async def fetch_playlist_videos_task(job_id: str, playlist_id: str):
 
     except Exception as e:
         error_msg = f"Error fetching videos: {str(e)}"
-        video_jobs[job_id].update(
-            {"status": "failed", "error": error_msg, "end_time": time.time()}
-        )
+        update_video_job(job_id, status="failed", error=error_msg, end_time=time.time())
         logger.error(
             f"Error in background task for playlist {playlist_id} (job: {job_id}): {error_msg}",
             exc_info=True,
@@ -1477,7 +1534,7 @@ async def list_all_channel_videos(
         job_id = str(uuid.uuid4())
 
         # Initialize job status
-        video_jobs[job_id] = {
+        job_data = {
             "status": "processing",
             "channel_name": channel_name,
             "start_time": time.time(),
@@ -1485,6 +1542,9 @@ async def list_all_channel_videos(
             "error": None,
             "channel_info": None,
         }
+
+        # Save job to persistent storage
+        save_video_job_to_file(job_id, job_data)
 
         # Start background task
         background_tasks.add_task(fetch_channel_videos_task, job_id, channel_name)
@@ -1576,10 +1636,11 @@ async def get_videos_fetch_status(
     Check the status of a video fetching job and return results if complete.
     """
     try:
-        if job_id not in video_jobs:
+        # Load job from file
+        job = load_video_job_from_file(job_id)
+        if job is None:
             raise HTTPException(status_code=404, detail="Job not found")
 
-        job = video_jobs[job_id]
         status = job["status"]
 
         if status == "processing":
@@ -1764,7 +1825,7 @@ async def list_all_playlist_videos(
         job_id = str(uuid.uuid4())
 
         # Initialize job status
-        video_jobs[job_id] = {
+        job_data = {
             "status": "processing",
             "playlist_id": clean_playlist_id,
             "start_time": time.time(),
@@ -1772,6 +1833,9 @@ async def list_all_playlist_videos(
             "error": None,
             "playlist_info": None,
         }
+
+        # Save job to persistent storage
+        save_video_job_to_file(job_id, job_data)
 
         # Start background task
         background_tasks.add_task(fetch_playlist_videos_task, job_id, clean_playlist_id)
