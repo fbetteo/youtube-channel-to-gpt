@@ -29,6 +29,8 @@ import tracemalloc
 import gc
 import psutil
 import json
+from datetime import datetime
+import glob
 
 from fastapi import (
     FastAPI,
@@ -476,7 +478,7 @@ class CreditManager:
             )
             # Don't raise exception here - we don't want to fail the job completion
             # but log the error for investigation
-            logger.error(f"Credit finalization failed but job will complete normally")
+            logger.error("Credit finalization failed but job will complete normally")
         finally:
             if conn:
                 conn.close()
@@ -665,6 +667,25 @@ class SelectedPlaylistVideosRequest(BaseModel):
     )
 
 
+class DownloadHistoryItem(BaseModel):
+    id: str = Field(..., description="Unique identifier for the download")
+    date: str = Field(..., description="ISO date string when download was initiated")
+    sourceName: str = Field(..., description="Name of the channel or playlist")
+    sourceType: str = Field(..., description="Type of source: 'channel' or 'playlist'")
+    videoCount: int = Field(..., description="Total number of videos in the download")
+    status: str = Field(
+        ..., description="Download status: 'completed', 'processing', 'failed'"
+    )
+    downloadUrl: Optional[str] = Field(
+        None, description="URL to download the transcript files if available"
+    )
+    jobId: str = Field(..., description="Job ID for tracking the download")
+    createdAt: str = Field(..., description="ISO timestamp when download was created")
+    completedAt: Optional[str] = Field(
+        None, description="ISO timestamp when download was completed"
+    )
+
+
 def verify_api_key(request: Request):
     """Verify API key for authenticated endpoints"""
     api_key = request.headers.get("X-API-Key")
@@ -675,6 +696,78 @@ def verify_api_key(request: Request):
             headers={"WWW-Authenticate": "ApiKey"},
         )
     return True
+
+
+def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
+    """
+    Get download history for a specific user by scanning job files
+    """
+    history_items = []
+
+    # Path to jobs directory
+    jobs_dir = os.path.join(settings.temp_dir, "jobs")
+
+    if not os.path.exists(jobs_dir):
+        logger.warning(f"Jobs directory not found: {jobs_dir}")
+        return history_items
+
+    # Scan all job files
+    try:
+        for job_file in os.listdir(jobs_dir):
+            if not job_file.endswith(".json"):
+                continue
+
+            job_path = os.path.join(jobs_dir, job_file)
+            try:
+                with open(job_path, "r", encoding="utf-8") as f:
+                    job_data = json.load(f)
+
+                # Filter by user_id
+                if job_data.get("user_id") != user_id:
+                    continue
+
+                # Extract job ID from filename (remove .json extension)
+                job_id = job_file[:-5]
+
+                # Create download URL if files exist
+                download_url = None
+                if job_data.get("status") == "completed" and job_data.get("files"):
+                    # Check if user's transcript directory still exists
+                    user_transcript_dir = os.path.join(
+                        settings.temp_dir, user_id, job_id
+                    )
+                    if os.path.exists(user_transcript_dir) and os.listdir(
+                        user_transcript_dir
+                    ):
+                        download_url = f"/channel/download/results/{job_id}"
+
+                # Map job data to DownloadHistoryItem
+                history_item = DownloadHistoryItem(
+                    id=job_id,
+                    date=job_data.get("start_time", ""),
+                    sourceName=job_data.get("source_name", "Unknown"),
+                    sourceType=job_data.get("source_type", "channel"),
+                    videoCount=job_data.get("total_videos", 0),
+                    status=job_data.get("status", "unknown"),
+                    downloadUrl=download_url,
+                    jobId=job_id,
+                    createdAt=job_data.get("start_time", ""),
+                    completedAt=job_data.get("end_time"),
+                )
+
+                history_items.append(history_item)
+
+            except (json.JSONDecodeError, KeyError, TypeError) as e:
+                logger.warning(f"Error processing job file {job_file}: {e}")
+                continue
+
+    except Exception as e:
+        logger.error(f"Error scanning jobs directory: {e}")
+
+    # Sort by creation date (newest first)
+    history_items.sort(key=lambda x: x.createdAt, reverse=True)
+
+    return history_items
 
 
 def check_anonymous_rate_limit(request: Request):
@@ -950,6 +1043,26 @@ async def get_user_profile(payload: dict = Depends(validate_jwt)):
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to retrieve user profile",
+        )
+
+
+@app.get("/user/download-history", response_model=List[DownloadHistoryItem])
+async def get_user_download_history_endpoint(payload: dict = Depends(validate_jwt)):
+    """
+    Get user's download history
+    """
+    try:
+        user_id = get_user_id_from_payload(payload)
+        history_items = get_user_download_history(user_id)
+
+        logger.info(f"Retrieved {len(history_items)} history items for user {user_id}")
+        return history_items
+
+    except Exception as e:
+        logger.error(f"Error getting download history for user: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to retrieve download history",
         )
 
 
