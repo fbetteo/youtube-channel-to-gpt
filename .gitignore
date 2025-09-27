@@ -1,4 +1,6 @@
 /build/*.txt
+/build/**/*.txt
 .env
 /src/server.log
 *.pyc
+*.zip
