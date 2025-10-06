@@ -700,72 +700,118 @@ def verify_api_key(request: Request):
 
 def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
     """
-    Get download history for a specific user by scanning job files
+    Get download history for a specific user by scanning their transcript directories
+    and matching with job files
     """
     history_items = []
 
-    # Path to jobs directory
+    # Path to user's transcript directory
+    user_transcript_dir = os.path.join(settings.temp_dir, user_id)
     jobs_dir = os.path.join(settings.temp_dir, "jobs")
+
+    if not os.path.exists(user_transcript_dir):
+        logger.info(f"User transcript directory not found: {user_transcript_dir}")
+        return history_items
 
     if not os.path.exists(jobs_dir):
         logger.warning(f"Jobs directory not found: {jobs_dir}")
         return history_items
 
-    # Scan all job files
+    # Scan user's transcript subdirectories (each is a job_id)
     try:
-        for job_file in os.listdir(jobs_dir):
-            if not job_file.endswith(".json"):
+        for item in os.listdir(user_transcript_dir):
+            item_path = os.path.join(user_transcript_dir, item)
+
+            # Skip if not a directory
+            if not os.path.isdir(item_path):
                 continue
 
-            job_path = os.path.join(jobs_dir, job_file)
-            try:
-                with open(job_path, "r", encoding="utf-8") as f:
-                    job_data = json.load(f)
+            # The directory name is the job_id
+            job_id = item
 
-                # Filter by user_id
-                if job_data.get("user_id") != user_id:
+            # Look for corresponding job file
+            job_file_path = os.path.join(jobs_dir, f"{job_id}.json")
+
+            try:
+                # Load job data if file exists
+                job_data = {}
+                if os.path.exists(job_file_path):
+                    with open(job_file_path, "r", encoding="utf-8") as f:
+                        job_data = json.load(f)
+                else:
+                    logger.info(f"Job file not found for job_id {job_id}")
                     continue
 
-                # Extract job ID from filename (remove .json extension)
-                job_id = job_file[:-5]
-
-                # Create download URL if files exist
-                download_url = None
-                if job_data.get("status") == "completed" and job_data.get("files"):
-                    # Check if user's transcript directory still exists
-                    user_transcript_dir = os.path.join(
-                        settings.temp_dir, user_id, job_id
+                # Double-check this job belongs to the user (safety check)
+                if job_data.get("user_id") and job_data.get("user_id") != user_id:
+                    logger.warning(
+                        f"Job {job_id} user_id mismatch: expected {user_id}, got {job_data.get('user_id')}"
                     )
-                    if os.path.exists(user_transcript_dir) and os.listdir(
-                        user_transcript_dir
-                    ):
-                        download_url = f"/channel/download/results/{job_id}"
+                    continue
+
+                # Create download URL since directory exists with files
+                download_url = None
+                if os.listdir(item_path):  # Directory has files
+                    download_url = f"/channel/download/results/{job_id}"
+
+                # Determine status - if we have a directory but no job file, assume completed
+                status = job_data.get("status", "completed")
+
+                # Helper function to convert timestamps to ISO strings
+                def timestamp_to_iso(timestamp_value):
+                    if timestamp_value is None:
+                        return None
+                    if isinstance(timestamp_value, (int, float)):
+                        try:
+                            return datetime.fromtimestamp(timestamp_value).isoformat()
+                        except (ValueError, OSError):
+                            return ""
+                    return str(timestamp_value)
+
+                # Convert timestamps to proper format
+                start_time_iso = timestamp_to_iso(job_data.get("start_time"))
+                end_time_iso = timestamp_to_iso(job_data.get("end_time"))
 
                 # Map job data to DownloadHistoryItem
                 history_item = DownloadHistoryItem(
                     id=job_id,
-                    date=job_data.get("start_time", ""),
-                    sourceName=job_data.get("source_name", "Unknown"),
+                    date=start_time_iso or "",
+                    sourceName=job_data.get("source_name")
+                    or job_data.get("channel_name", "Unknown"),
                     sourceType=job_data.get("source_type", "channel"),
                     videoCount=job_data.get("total_videos", 0),
-                    status=job_data.get("status", "unknown"),
+                    status=status,
                     downloadUrl=download_url,
                     jobId=job_id,
-                    createdAt=job_data.get("start_time", ""),
-                    completedAt=job_data.get("end_time"),
+                    createdAt=start_time_iso or "",
+                    completedAt=end_time_iso,
                 )
 
                 history_items.append(history_item)
 
             except (json.JSONDecodeError, KeyError, TypeError) as e:
-                logger.warning(f"Error processing job file {job_file}: {e}")
+                logger.warning(f"Error processing job {job_id}: {e}")
+                # Still include the item with minimal info since directory exists
+                history_item = DownloadHistoryItem(
+                    id=job_id,
+                    date="",
+                    sourceName="Unknown",
+                    sourceType="channel",
+                    videoCount=0,
+                    status="completed",  # Directory exists, assume completed
+                    downloadUrl=f"/channel/download/results/{job_id}",
+                    jobId=job_id,
+                    createdAt="",
+                    completedAt="",
+                )
+                history_items.append(history_item)
                 continue
 
     except Exception as e:
-        logger.error(f"Error scanning jobs directory: {e}")
+        logger.error(f"Error scanning user transcript directory: {e}")
 
-    # Sort by creation date (newest first)
-    history_items.sort(key=lambda x: x.createdAt, reverse=True)
+    # Sort by creation date (newest first), with fallback to job_id for items without dates
+    history_items.sort(key=lambda x: x.createdAt or x.jobId, reverse=True)
 
     return history_items
 
