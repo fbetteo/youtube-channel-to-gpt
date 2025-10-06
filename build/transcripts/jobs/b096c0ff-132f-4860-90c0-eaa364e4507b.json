@@ -1,0 +1,80 @@
+{
+    "status": "completed",
+    "channel_name": "@franbetteo23",
+    "playlist_id": null,
+    "source_id": "UCywdCBGtWq80POOdkvVPtCw",
+    "source_name": "Franco - Sportsjobs Online - test dev untrusted data",
+    "source_type": "channel",
+    "total_videos": 5,
+    "processed_count": 0,
+    "failed_count": 0,
+    "completed": 0,
+    "files": [
+        {
+            "file_path": "../build/transcripts/c78c3fd6-a2a9-4aa6-8060-99a801538a00/b096c0ff-132f-4860-90c0-eaa364e4507b/6R9XXuRrIT8/Minor League Statcast Data in _6R9XXuRrIT8.txt",
+            "video_id": "6R9XXuRrIT8",
+            "language": "en",
+            "type": "auto-generated"
+        },
+        {
+            "file_path": "../build/transcripts/c78c3fd6-a2a9-4aa6-8060-99a801538a00/b096c0ff-132f-4860-90c0-eaa364e4507b/DRGksETak5o/The {collegebaseball} package_DRGksETak5o.txt",
+            "video_id": "DRGksETak5o",
+            "language": "en",
+            "type": "auto-generated"
+        },
+        {
+            "file_path": "../build/transcripts/c78c3fd6-a2a9-4aa6-8060-99a801538a00/b096c0ff-132f-4860-90c0-eaa364e4507b/IT9zJ8Rn6K8/Full Year Statcast Data in Min_IT9zJ8Rn6K8.txt",
+            "video_id": "IT9zJ8Rn6K8",
+            "language": "en",
+            "type": "auto-generated"
+        },
+        {
+            "file_path": "../build/transcripts/c78c3fd6-a2a9-4aa6-8060-99a801538a00/b096c0ff-132f-4860-90c0-eaa364e4507b/KqrkeUnRSy0/Fantasy Football Draft Modelin_KqrkeUnRSy0.txt",
+            "video_id": "KqrkeUnRSy0",
+            "language": "en",
+            "type": "auto-generated"
+        }
+    ],
+    "videos": [
+        {
+            "id": "6R9XXuRrIT8",
+            "title": "NFL Big Data Bowl Mentorship program 2026",
+            "publishedAt": "2025-09-16T13:12:07Z",
+            "duration": "short",
+            "url": "https://www.youtube.com/watch?v=6R9XXuRrIT8"
+        },
+        {
+            "id": "DRGksETak5o",
+            "title": "how to get a job in sports analytics #jobsearch #programming #datascientist #dataanalysis",
+            "publishedAt": "2025-08-26T21:04:58Z",
+            "duration": "short",
+            "url": "https://www.youtube.com/watch?v=DRGksETak5o"
+        },
+        {
+            "id": "IT9zJ8Rn6K8",
+            "title": "Download all the youtube transcripts from a channel",
+            "publishedAt": "2025-08-22T18:58:46Z",
+            "duration": "medium",
+            "url": "https://www.youtube.com/watch?v=IT9zJ8Rn6K8"
+        },
+        {
+            "id": "KqrkeUnRSy0",
+            "title": "AI and machine learning engineer in soccer for the MLS. #programming #dataanalyst #jobsearch",
+            "publishedAt": "2025-08-14T22:38:29Z",
+            "duration": "short",
+            "url": "https://www.youtube.com/watch?v=KqrkeUnRSy0"
+        }
+    ],
+    "start_time": 1759764812.9787621,
+    "user_id": "c78c3fd6-a2a9-4aa6-8060-99a801538a00",
+    "credits_reserved": 5,
+    "credits_used": 0,
+    "reservation_id": null,
+    "videos_metadata": {},
+    "include_timestamps": false,
+    "include_video_title": true,
+    "include_video_id": true,
+    "include_video_url": true,
+    "include_view_count": false,
+    "concatenate_all": false
+}
