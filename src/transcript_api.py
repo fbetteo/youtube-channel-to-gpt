@@ -25,6 +25,7 @@ import zipfile
 import uuid
 import asyncio
 import tempfile
+import time
 import tracemalloc
 import gc
 import psutil
@@ -1728,18 +1729,18 @@ async def download_selected_videos(
     session: Dict = Depends(get_user_session),
 ):
     """
-    Start asynchronous download of transcripts for selected videos from a YouTube channel.
-    Returns a job ID that can be used to check progress and retrieve results.
+    Ultra-fast response workflow:
+    1. Validate credits & channel (quick)
+    2. Create job immediately
+    3. Start background task for pre-fetching + Lambda dispatch
+    4. Return job_id in ~200ms
 
     REQUIRES AUTHENTICATION: This endpoint requires sufficient credits for the selected videos.
     Each video transcript attempt will deduct 1 credit.
     """
     channel_name = request.channel_name
     videos = request.videos
-    session_id = session["id"]
     user_id = get_user_id_from_payload(payload)
-
-    # Count number of videos to download
     num_videos = len(videos)
 
     try:
@@ -1751,30 +1752,60 @@ async def download_selected_videos(
                 detail=f"Insufficient credits. You need {num_videos} credits but only have {user_credits}. Please purchase more credits.",
             )
 
-        # Start asynchronous transcript retrieval for selected videos
-        job_id = await youtube_service.start_selected_videos_transcript_download(
-            channel_name=channel_name,
-            playlist_name=None,  # No playlist for channel downloads
-            videos=videos,
-            user_id=user_id,
-            include_timestamps=request.include_timestamps,
-            include_video_title=request.include_video_title,
-            include_video_id=request.include_video_id,
-            include_video_url=request.include_video_url,
-            include_view_count=request.include_view_count,
-            concatenate_all=request.concatenate_all,
-            is_playlist=False,  # Flag to indicate this is a channel download
+        # 2. Quick channel validation (< 100ms)
+        channel_info = await youtube_service.get_channel_info(request.channel_name)
+
+        # 3. Reserve credits immediately
+        reservation_id = CreditManager.reserve_credits(user_id, num_videos)
+
+        # 4. Create job immediately (no metadata yet)
+        job_id = str(uuid.uuid4())
+        job_data = {
+            "status": "initializing",  # New status for pre-fetching phase
+            "channel_name": request.channel_name,
+            "channel_info": channel_info,
+            "total_videos": num_videos,
+            "completed": 0,
+            "failed_count": 0,
+            "processed_count": 0,
+            "files": [],
+            "videos": videos,
+            "start_time": time.time(),
+            "user_id": user_id,
+            "credits_reserved": num_videos,
+            "credits_used": 0,
+            "reservation_id": reservation_id,
+            "videos_metadata": {},  # Empty initially
+            "prefetch_completed": False,  # Track pre-fetch progress
+            "lambda_dispatched_count": 0,  # Track dispatched Lambda functions
+            "formatting_options": {
+                "include_timestamps": request.include_timestamps,
+                "include_video_title": request.include_video_title,
+                "include_video_id": request.include_video_id,
+                "include_video_url": request.include_video_url,
+                "include_view_count": request.include_view_count,
+                "concatenate_all": request.concatenate_all,
+            },
+        }
+
+        # Save job immediately
+        youtube_service.save_job_to_file(job_id, job_data)
+        logger.info(
+            f"Created job {job_id} - starting background pre-fetch for {num_videos} videos"
         )
+
+        # 5. Start background task for pre-fetching + Lambda dispatch
+        asyncio.create_task(youtube_service.prefetch_and_dispatch_task(job_id))
 
         return {
             "job_id": job_id,
-            "status": "processing",
+            "status": "initializing",  # User knows pre-fetching is happening
             "total_videos": num_videos,
             "channel_name": channel_name,
             "user_id": user_id,
             "credits_reserved": num_videos,
             "user_credits_at_start": user_credits,
-            "message": f"Transcript retrieval started for {num_videos} selected videos. Credits will be deducted per video attempt (1 credit each). You have {user_credits} credits available. Use the /channel/download/status endpoint to check progress and credit usage.",
+            "message": f"Job created. Pre-fetching metadata for {num_videos} videos, then starting Lambda processing.",
         }
 
     except ValueError as e:
@@ -2086,6 +2117,108 @@ async def download_selected_playlist_videos(
 
 
 # =============================================
+# INTERNAL LAMBDA CALLBACK ENDPOINTS
+# =============================================
+
+
+@app.post("/internal/job/{job_id}/video-complete")
+async def video_completed(job_id: str, completion_data: dict):
+    """
+    Internal endpoint for Lambda to report video completion.
+    Updates job progress and file tracking.
+    """
+    try:
+        # Update job progress with atomic operations
+        file_info = {
+            "video_id": completion_data["video_id"],
+            "s3_key": completion_data["s3_key"],
+            "status": "completed",
+            "transcript_length": completion_data.get("transcript_length", 0),
+        }
+
+        updated_job = update_video_job(
+            job_id,
+            files_append=file_info,  # Add file to list atomically
+            completed_increment=1,  # Increment success counter
+            credits_used_increment=1,  # Track credit usage
+            processed_count_increment=1,  # Track total processed
+        )
+
+        logger.info(f"Video {completion_data['video_id']} completed for job {job_id}")
+
+        # Check if job is complete
+        if (
+            updated_job
+            and updated_job["processed_count"] >= updated_job["total_videos"]
+        ):
+            # Finalize credits (refund unused)
+            CreditManager.finalize_credit_usage(
+                user_id=updated_job["user_id"],
+                reservation_id=updated_job["reservation_id"],
+                credits_used=updated_job["credits_used"],
+                credits_reserved=updated_job["credits_reserved"],
+            )
+
+            # Update job status to completed
+            update_video_job(job_id, status="completed")
+            logger.info(f"Job {job_id} completed - all videos processed")
+
+        return {"status": "updated", "job_id": job_id}
+
+    except Exception as e:
+        logger.error(f"Error updating job progress: {str(e)}")
+        return {"status": "error", "message": str(e)}
+
+
+@app.post("/internal/job/{job_id}/video-failed")
+async def video_failed(job_id: str, failure_data: dict):
+    """
+    Internal endpoint for Lambda to report video failure.
+    """
+    try:
+        updated_job = update_video_job(
+            job_id,
+            failed_count_increment=1,  # Increment failure counter
+            credits_used_increment=1,  # Still count failed attempts
+            processed_count_increment=1,  # Track total processed
+        )
+
+        logger.warning(
+            f"Video {failure_data['video_id']} failed for job {job_id}: {failure_data.get('error', 'Unknown error')}"
+        )
+
+        # Check if job is complete (including failures)
+        if (
+            updated_job
+            and updated_job["processed_count"] >= updated_job["total_videos"]
+        ):
+            # Finalize credits
+            CreditManager.finalize_credit_usage(
+                user_id=updated_job["user_id"],
+                reservation_id=updated_job["reservation_id"],
+                credits_used=updated_job["credits_used"],
+                credits_reserved=updated_job["credits_reserved"],
+            )
+
+            # Update job status
+            status = (
+                "completed_with_errors"
+                if updated_job["failed_count"] > 0
+                else "completed"
+            )
+            update_video_job(job_id, status=status)
+            logger.info(
+                f"Job {job_id} completed with {updated_job['failed_count']} failures"
+            )
+
+        return {"status": "updated", "job_id": job_id}
+
+    except Exception as e:
+        logger.error(f"Error updating job failure: {str(e)}")
+        return {"status": "error", "message": str(e)}
+
+
+# =============================================
 # DEBUG ENDPOINTS
 # =============================================
 
@@ -2192,36 +2325,6 @@ async def get_jobs_debug():
 
 
 # Create a background task to clean up old jobs periodically
-
-
-@app.on_event("startup")
-async def startup_event():
-    """Run when the application starts - set up background tasks and enable memory tracing"""
-    logger.info("Starting YouTube Transcript API...")
-
-    # Start memory tracing
-    # tracemalloc.start(25)  # Keep 25 frames in tracebacks for better debugging
-    # logger.info("Memory tracing enabled with tracemalloc")
-
-    # Recover jobs from persistent storage
-    # try:
-    #     import youtube_service
-
-    #     recovered_jobs = (
-    #         youtube_service.recover_jobs_from_storage()
-    #         if hasattr(youtube_service, "recover_jobs_from_storage")
-    #         else []
-    #     )
-    #     if recovered_jobs:
-    #         logger.info(f"Recovered {len(recovered_jobs)} jobs from persistent storage")
-    #     else:
-    #         logger.info("No jobs to recover from persistent storage")
-    # except Exception as e:
-    #     logger.error(f"Failed to recover jobs on startup: {e}")
-
-    # asyncio.create_task(cleanup_job())
-
-    logger.info("YouTube Transcript API startup complete")
 
 
 async def cleanup_job():

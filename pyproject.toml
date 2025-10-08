@@ -98,6 +98,7 @@ wheel = "0.45.1"
 yarl = "1.18.3"
 youtube-transcript-api = "^1.1.0"
 psutil = "^7.0.0"
+boto3 = "^1.40.47"
 
 
 [build-system]

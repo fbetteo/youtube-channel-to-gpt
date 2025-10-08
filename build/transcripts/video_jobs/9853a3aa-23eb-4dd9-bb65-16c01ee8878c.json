@@ -1,0 +1,60 @@
+{
+  "status": "completed",
+  "channel_name": "@franbetteo23",
+  "start_time": 1759940649.3135207,
+  "videos": [
+    {
+      "id": "PQJEdiA95-U",
+      "title": "NFL Big Data Bowl Mentorship program 2026",
+      "publishedAt": "2025-09-16T13:12:07Z",
+      "url": "https://www.youtube.com/watch?v=PQJEdiA95-U",
+      "duration": "short"
+    },
+    {
+      "id": "pGT00gcGcu0",
+      "title": "how to get a job in sports analytics #jobsearch #programming #datascientist #dataanalysis",
+      "publishedAt": "2025-08-26T21:04:58Z",
+      "url": "https://www.youtube.com/watch?v=pGT00gcGcu0",
+      "duration": "short"
+    },
+    {
+      "id": "SyC-cEUHK8s",
+      "title": "Download all the youtube transcripts from a channel",
+      "publishedAt": "2025-08-22T18:58:46Z",
+      "url": "https://www.youtube.com/watch?v=SyC-cEUHK8s",
+      "duration": "medium"
+    },
+    {
+      "id": "w_h8FuDn_Tc",
+      "title": "AI and machine learning engineer in soccer for the MLS. #programming #dataanalyst #jobsearch",
+      "publishedAt": "2025-08-14T22:38:29Z",
+      "url": "https://www.youtube.com/watch?v=w_h8FuDn_Tc",
+      "duration": "short"
+    },
+    {
+      "id": "llbxCUvmbwQ",
+      "title": "sr football data scientist. Job in sports analytics #sportsanalysis  #jobsearch  #datascience",
+      "publishedAt": "2025-08-11T18:57:50Z",
+      "url": "https://www.youtube.com/watch?v=llbxCUvmbwQ",
+      "duration": "short"
+    }
+  ],
+  "error": null,
+  "channel_info": {
+    "title": "Franco - Sportsjobs Online",
+    "description": "Founder of www.sportsjobs.online  and www.downloadyoutubetranscripts.com\nDS/AI and ML engineer. More about me in tech, life and other topics at www.fbetteo.com\n",
+    "thumbnail": "https://yt3.ggpht.com/GZ9u0RPiUE6hV1dPdyfSTPOmdPZ-4czvVNmo7eEK-UJz_yBMK_C-UOo65tPiXXMyTHnlmAeY=s800-c-k-c0x00ffffff-no-rj",
+    "videoCount": 5,
+    "subscriberCount": 0,
+    "viewCount": 617,
+    "channelId": "UCywdCBGtWq80POOdkvVPtCw",
+    "uploadsPlaylistId": "UUywdCBGtWq80POOdkvVPtCw"
+  },
+  "video_count": 5,
+  "duration_breakdown": {
+    "short": 4,
+    "medium": 1,
+    "long": 0
+  },
+  "end_time": 1759940650.6498237
+}

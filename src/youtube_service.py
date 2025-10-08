@@ -2065,6 +2065,119 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
     # No finally block needed since processed_count_increment is handled above
 
 
+async def prefetch_and_dispatch_task(job_id: str):
+    """
+    Background task that:
+    1. Pre-fetches metadata in batches
+    2. Updates job status
+    3. Dispatches Lambda functions
+    4. Updates job to 'processing'
+    """
+    try:
+        # Load job data
+        job = load_job_from_file(job_id)
+        if not job:
+            logger.error(f"Job {job_id} not found for pre-fetching")
+            return
+
+        videos = job["videos"]
+        user_id = job["user_id"]
+
+        logger.info(
+            f"Job {job_id}: Starting background pre-fetch for {len(videos)} videos"
+        )
+
+        # 1. Pre-fetch metadata in batches (this takes time)
+        video_ids = []
+        for video in videos:
+            try:
+                video_id = video.id if hasattr(video, "id") else video["id"]
+                video_ids.append(video_id)
+            except Exception as e:
+                logger.error(f"Error extracting video ID: {str(e)}")
+
+        update_job_progress(job_id, status="prefetching_metadata")
+
+        videos_metadata = await pre_fetch_videos_metadata(video_ids)
+
+        # 2. Update job with metadata
+        update_job_progress(
+            job_id,
+            videos_metadata=videos_metadata,
+            prefetch_completed=True,
+            status="dispatching_lambda",
+        )
+
+        logger.info(
+            f"Job {job_id}: Metadata pre-fetch completed, dispatching Lambda functions"
+        )
+
+        # 3. Dispatch Lambda functions with pre-fetched metadata
+        import boto3
+        import json
+
+        lambda_client = boto3.client("lambda")
+
+        dispatched_count = 0
+        for video in videos:
+            try:
+                video_id = video.id if hasattr(video, "id") else video["id"]
+                pre_fetched_metadata = videos_metadata.get(video_id, {})
+
+                lambda_payload = {
+                    "video_id": video_id,
+                    "job_id": job_id,
+                    "user_id": user_id,
+                    "formatting_options": job["formatting_options"],
+                    "pre_fetched_metadata": pre_fetched_metadata,
+                }
+
+                # Invoke Lambda asynchronously
+                lambda_client.invoke(
+                    FunctionName="youtube-transcript-processor",
+                    InvocationType="Event",
+                    Payload=json.dumps(lambda_payload),
+                )
+                dispatched_count += 1
+                logger.info(f"Job {job_id}: Dispatched Lambda for video {video_id}")
+
+            except Exception as e:
+                logger.error(
+                    f"Job {job_id}: Failed to dispatch Lambda for video {video_id}: {str(e)}"
+                )
+                # Update failure count
+                update_job_progress(job_id, failed_count_increment=1)
+
+        # 4. Update job status to processing
+        update_job_progress(
+            job_id, status="processing", lambda_dispatched_count=dispatched_count
+        )
+
+        logger.info(
+            f"Job {job_id}: Background task completed. Dispatched {dispatched_count} Lambda functions"
+        )
+
+    except Exception as e:
+        logger.error(f"Job {job_id}: Background pre-fetch task failed: {str(e)}")
+        # Update job status to failed
+        update_job_progress(job_id, status="failed", error_message=str(e))
+
+        # Refund credits since processing failed
+        try:
+            from transcript_api import CreditManager
+
+            CreditManager.finalize_credit_usage(
+                user_id=job["user_id"],
+                reservation_id=job["reservation_id"],
+                credits_used=0,  # No credits used since processing failed
+                credits_reserved=job["credits_reserved"],
+            )
+        except Exception as credit_error:
+            logger.error(
+                f"Failed to refund credits for failed job {job_id}: {str(credit_error)}"
+            )
+
+
 def get_job_status(job_id: str) -> Dict[str, Any]:
     """
     Get the current status of a transcript download job with persistence fallback.
@@ -2122,6 +2235,9 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
         "credits_reserved": job["credits_reserved"],
         "credits_used": job["credits_used"],
         "current_user_credits": current_credits,
+        # New status fields for enhanced workflow
+        "prefetch_completed": job.get("prefetch_completed", False),
+        "lambda_dispatched_count": job.get("lambda_dispatched_count", 0),
         # Formatting options
         "include_timestamps": job.get("include_timestamps", False),
         "include_video_title": job.get("include_video_title", True),
@@ -2130,6 +2246,29 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
         "include_view_count": job.get("include_view_count", False),
         "concatenate_all": job.get("concatenate_all", False),
     }
+
+    # Add phase-specific messages
+    if job["status"] == "initializing":
+        status_info["message"] = "Job created, starting metadata pre-fetch..."
+    elif job["status"] == "prefetching_metadata":
+        status_info["message"] = (
+            f"Pre-fetching metadata for {job['total_videos']} videos..."
+        )
+    elif job["status"] == "dispatching_lambda":
+        status_info["message"] = "Metadata complete, dispatching Lambda functions..."
+    elif job["status"] == "processing":
+        progress_pct = (job.get("processed_count", 0) / job["total_videos"]) * 100
+        status_info["message"] = (
+            f"Processing transcripts... {progress_pct:.1f}% complete"
+        )
+    elif job["status"] == "completed":
+        status_info["message"] = "All transcripts completed successfully"
+    elif job["status"] == "completed_with_errors":
+        status_info["message"] = f"Completed with {job['failed_count']} errors"
+    elif job["status"] == "failed":
+        status_info["message"] = (
+            f"Job failed: {job.get('error_message', 'Unknown error')}"
+        )
 
     # Add credit usage summary
     status_info["credits_used_this_job"] = job["credits_used"]
