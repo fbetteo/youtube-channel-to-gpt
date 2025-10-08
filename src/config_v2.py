@@ -38,6 +38,25 @@ class Settings(BaseModel):
         default_factory=lambda: os.getenv("TEMP_DIR", "../build/transcripts")
     )
 
+    # AWS/S3 settings for Lambda integration
+    aws_access_key_id: str = Field(
+        default_factory=lambda: os.getenv("AWS_ACCESS_KEY_ID", "")
+    )
+    aws_secret_access_key: str = Field(
+        default_factory=lambda: os.getenv("AWS_SECRET_ACCESS_KEY", "")
+    )
+    aws_default_region: str = Field(
+        default_factory=lambda: os.getenv("AWS_DEFAULT_REGION", "us-east-1")
+    )
+    s3_bucket_name: str = Field(default_factory=lambda: os.getenv("S3_BUCKET_NAME", ""))
+
+    # Lambda settings
+    lambda_function_name: str = Field(
+        default_factory=lambda: os.getenv(
+            "LAMBDA_FUNCTION_NAME", "youtube-transcript-processor"
+        )
+    )
+
     # Server settings
     host: str = Field(default_factory=lambda: os.getenv("HOST", "0.0.0.0"))
     port: int = Field(default_factory=lambda: int(os.getenv("PORT", "8000")))

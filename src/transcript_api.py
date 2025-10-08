@@ -1922,45 +1922,100 @@ async def get_transcript_download_status(
 @app.get("/channel/download/results/{job_id}")
 async def download_transcript_results(
     job_id: str,
-    # auth: bool = Depends(verify_api_key),
+    payload: dict = Depends(validate_jwt),
     session: Dict = Depends(get_user_session),
 ):
     """
     Download the transcripts for a completed job as a ZIP file.
-    Only available when job status is 'completed'.
+    Files are fetched from S3 and ZIP is generated on-demand with concurrent downloads.
+    Only available when job status is 'completed' or 'completed_with_errors'.
+
+    REQUIRES AUTHENTICATION: This endpoint requires a valid JWT token.
     """
     try:
-        # Create a ZIP file with all transcripts for the job
-        logger.info(f"Downloading results for job {job_id}")
-        zip_buffer = await youtube_service.create_transcript_zip(job_id)
+        # Verify user owns this job
+        job = youtube_service.load_job_from_file(job_id)
+        if not job:
+            raise HTTPException(status_code=404, detail="Job not found")
+
+        user_id = get_user_id_from_payload(payload)
+        if job.get("user_id") != user_id:
+            raise HTTPException(
+                status_code=403, detail="Access denied - you don't own this job"
+            )
+
+        # Verify job is completed
+        job_status = job.get("status")
+        if job_status not in ["completed", "completed_with_errors"]:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Job is not ready for download. Current status: {job_status}",
+            )
+
+        # Create ZIP from S3 files using concurrent downloads
         logger.info(
-            f"Created ZIP file for job {job_id} with size {len(zip_buffer.getvalue())} bytes"
+            f"Creating ZIP for job {job_id} from S3 files with concurrent downloads"
+        )
+        zip_start_time = time.time()
+
+        try:
+            zip_buffer = await youtube_service.create_transcript_zip_from_s3_concurrent(
+                job_id
+            )
+        except Exception as s3_error:
+            logger.warning(
+                f"Concurrent S3 download failed, falling back to sequential: {str(s3_error)}"
+            )
+            # Fallback to sequential downloads if concurrent fails
+            zip_buffer = await youtube_service.create_transcript_zip_from_s3_sequential(
+                job_id
+            )
+
+        zip_end_time = time.time()
+        zip_size = len(zip_buffer.getvalue())
+
+        logger.info(
+            f"Created ZIP file for job {job_id} in {zip_end_time - zip_start_time:.2f}s, "
+            f"size: {zip_size:,} bytes ({zip_size / 1024 / 1024:.2f} MB)"
         )
 
-        # Get a safe channel name for the filename
-        safe_channel_name = youtube_service.get_safe_channel_name(job_id)
+        # Get source name for filename
+        source_name = job.get("source_name") or job.get("channel_name", "transcripts")
+        safe_source_name = youtube_service.sanitize_filename(source_name)
 
         # Check if this is a concatenated download to adjust filename
-        job_info = youtube_service.get_job_status(job_id)
-        is_concatenated = job_info.get("concatenate_all", False)
+        is_concatenated = job.get("formatting_options", {}).get(
+            "concatenate_all", False
+        )
         filename_suffix = (
             "_concatenated_transcripts.zip" if is_concatenated else "_transcripts.zip"
         )
 
-        # For BytesIO objects, we need to use Response with bytes content instead of FileResponse
+        # Add statistics to response headers
+        headers = {
+            "Content-Disposition": f'attachment; filename="{safe_source_name}{filename_suffix}"',
+            "X-Job-ID": job_id,
+            "X-Files-Count": str(len(job.get("files", []))),
+            "X-Generation-Time-Seconds": f"{zip_end_time - zip_start_time:.2f}",
+            "X-Source-Type": job.get("source_type", "channel"),
+        }
+
         return Response(
             content=zip_buffer.getvalue(),
             media_type="application/zip",
-            headers={
-                "Content-Disposition": f'attachment; filename="{safe_channel_name}{filename_suffix}"'
-            },
+            headers=headers,
         )
 
     except ValueError as e:
-        logger.error(f"Invalid job request: {str(e)}")
+        logger.error(f"Invalid job request for {job_id}: {str(e)}")
         raise HTTPException(status_code=404, detail=str(e))
+    except HTTPException:
+        # Re-raise HTTP exceptions as-is
+        raise
     except Exception as e:
-        logger.error(f"Error downloading results: {str(e)}", exc_info=True)
+        logger.error(
+            f"Error downloading results for job {job_id}: {str(e)}", exc_info=True
+        )
         raise HTTPException(
             status_code=500, detail=f"Failed to download results: {str(e)}"
         )

@@ -56,5 +56,14 @@
     "medium": 1,
     "long": 0
   },
-  "end_time": 1759940650.6498237
+  "end_time": 1759940650.6498237,
+  "files_append": {
+    "video_id": "dQw4w9WgXcQ",
+    "s3_key": "user123/job456/dQw4w9WgXcQ.txt",
+    "status": "completed",
+    "transcript_length": 1500
+  },
+  "completed_increment": 1,
+  "credits_used_increment": 1,
+  "processed_count_increment": 1
 }

@@ -1,0 +1,13 @@
+{
+  "files": [
+    {
+      "video_id": "dQw4w9WgXcQ",
+      "s3_key": "user123/job456/dQw4w9WgXcQ.txt",
+      "status": "completed",
+      "transcript_length": 1500
+    }
+  ],
+  "completed": 1,
+  "credits_used": 1,
+  "processed_count": 1
+}

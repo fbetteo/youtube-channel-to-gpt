@@ -303,8 +303,8 @@ def save_job_to_file(job_id: str, job_data: Dict[str, Any]) -> None:
             else:
                 serializable_data[k] = v
 
-        with open(job_file, "w") as f:
-            json.dump(serializable_data, f, default=str)
+        with open(job_file, "w", encoding="utf-8") as f:
+            json.dump(serializable_data, f, default=str, ensure_ascii=False, indent=2)
         logger.debug(f"Saved job {job_id} to persistent storage")
     except Exception as e:
         logger.error(f"Failed to save job {job_id}: {e}")
@@ -315,7 +315,7 @@ def load_job_from_file(job_id: str) -> Optional[Dict[str, Any]]:
     try:
         job_file = os.path.join(JOBS_STORAGE_DIR, f"{job_id}.json")
         if os.path.exists(job_file):
-            with open(job_file, "r") as f:
+            with open(job_file, "r", encoding="utf-8") as f:
                 job_data = json.load(f)
             logger.debug(f"Loaded job {job_id} from persistent storage")
             return job_data
@@ -2102,6 +2102,137 @@ async def process_single_video(job_id: str, video_id: str, output_dir: str) -> N
     # No finally block needed since processed_count_increment is handled above
 
 
+async def dispatch_lambdas_concurrently(
+    job_id: str,
+    videos: List[Any],
+    videos_metadata: Dict[str, Dict[str, Any]],
+    user_id: str,
+    formatting_options: Dict[str, Any],
+    max_concurrent: int = 20,
+) -> int:
+    """
+    Dispatch Lambda functions concurrently for video processing.
+
+    Args:
+        job_id: The job identifier
+        videos: List of video objects to process
+        videos_metadata: Pre-fetched metadata for videos
+        user_id: User identifier
+        formatting_options: Formatting options for transcripts
+        max_concurrent: Maximum number of concurrent Lambda invocations
+
+    Returns:
+        Number of successfully dispatched Lambda functions
+    """
+    import boto3
+    import json
+
+    # Create Lambda client once (thread-safe)
+    lambda_client = boto3.client("lambda")
+
+    # Semaphore to limit concurrent invocations
+    semaphore = asyncio.Semaphore(max_concurrent)
+
+    async def dispatch_single_lambda(video) -> bool:
+        """Dispatch a single Lambda function"""
+        async with semaphore:
+            try:
+                video_id = video.id if hasattr(video, "id") else video["id"]
+                pre_fetched_metadata = videos_metadata.get(video_id, {})
+
+                lambda_payload = {
+                    "video_id": video_id,
+                    "job_id": job_id,
+                    "user_id": user_id,
+                    "formatting_options": formatting_options,
+                    "pre_fetched_metadata": pre_fetched_metadata,
+                    "api_base_url": settings.api_base_url,
+                }
+
+                # Run Lambda invocation in thread pool to avoid blocking
+                def invoke_lambda():
+                    return lambda_client.invoke(
+                        FunctionName=settings.lambda_function_name,
+                        InvocationType="Event",  # Asynchronous invocation
+                        Payload=json.dumps(lambda_payload),
+                    )
+
+                # Execute in thread pool
+                await asyncio.to_thread(invoke_lambda)
+
+                logger.debug(f"Job {job_id}: Dispatched Lambda for video {video_id}")
+                return True
+
+            except Exception as e:
+                logger.error(
+                    f"Job {job_id}: Failed to dispatch Lambda for video {video_id}: {str(e)}"
+                )
+                # Update failure count atomically
+                update_job_progress(job_id, failed_count_increment=1)
+                return False
+            finally:
+                # Clean up video_id reference to prevent memory leaks
+                video_id = None
+                pre_fetched_metadata = None
+                lambda_payload = None
+
+    # Create tasks for all videos
+    logger.info(
+        f"Job {job_id}: Dispatching {len(videos)} Lambda functions concurrently (max {max_concurrent} at once)"
+    )
+
+    # Process videos in batches to control memory usage for very large jobs
+    batch_size = 50  # Process 50 videos at a time
+    total_dispatched = 0
+
+    for i in range(0, len(videos), batch_size):
+        batch = videos[i : i + batch_size]
+        batch_num = (i // batch_size) + 1
+        total_batches = (len(videos) + batch_size - 1) // batch_size
+
+        logger.info(
+            f"Job {job_id}: Processing batch {batch_num}/{total_batches} ({len(batch)} videos)"
+        )
+
+        # Use asyncio.gather with semaphore for controlled concurrency
+        tasks = [dispatch_single_lambda(video) for video in batch]
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+
+        # Count successful dispatches in this batch
+        batch_dispatched = 0
+        for j, result in enumerate(results):
+            if isinstance(result, Exception):
+                logger.error(
+                    f"Job {job_id}: Lambda dispatch task {i + j} failed with exception: {result}"
+                )
+            elif result is True:
+                batch_dispatched += 1
+
+        total_dispatched += batch_dispatched
+
+        # Clean up batch references
+        tasks = None
+        results = None
+        batch = None
+
+        # Force garbage collection between batches for large jobs
+        if len(videos) > 100:
+            gc.collect()
+
+        logger.info(
+            f"Job {job_id}: Batch {batch_num} completed: {batch_dispatched} dispatched"
+        )
+
+    logger.info(
+        f"Job {job_id}: All batches completed. Successfully dispatched {total_dispatched}/{len(videos)} Lambda functions"
+    )
+
+    # Final cleanup
+    lambda_client = None
+
+    return total_dispatched
+
+
 async def prefetch_and_dispatch_task(job_id: str):
     """
     Background task that:
@@ -2149,42 +2280,10 @@ async def prefetch_and_dispatch_task(job_id: str):
             f"Job {job_id}: Metadata pre-fetch completed, dispatching Lambda functions"
         )
 
-        # 3. Dispatch Lambda functions with pre-fetched metadata
-        import boto3
-        import json
-
-        lambda_client = boto3.client("lambda")
-
-        dispatched_count = 0
-        for video in videos:
-            try:
-                video_id = video.id if hasattr(video, "id") else video["id"]
-                pre_fetched_metadata = videos_metadata.get(video_id, {})
-
-                lambda_payload = {
-                    "video_id": video_id,
-                    "job_id": job_id,
-                    "user_id": user_id,
-                    "formatting_options": job["formatting_options"],
-                    "pre_fetched_metadata": pre_fetched_metadata,
-                    "api_base_url": settings.api_base_url,
-                }
-
-                # Invoke Lambda asynchronously
-                lambda_client.invoke(
-                    FunctionName="youtube-transcript-processor",
-                    InvocationType="Event",
-                    Payload=json.dumps(lambda_payload),
-                )
-                dispatched_count += 1
-                logger.info(f"Job {job_id}: Dispatched Lambda for video {video_id}")
-
-            except Exception as e:
-                logger.error(
-                    f"Job {job_id}: Failed to dispatch Lambda for video {video_id}: {str(e)}"
-                )
-                # Update failure count
-                update_job_progress(job_id, failed_count_increment=1)
+        # 3. Dispatch Lambda functions concurrently with pre-fetched metadata
+        dispatched_count = await dispatch_lambdas_concurrently(
+            job_id, videos, videos_metadata, user_id, job["formatting_options"]
+        )
 
         # 4. Update job status to processing
         update_job_progress(
@@ -2669,6 +2768,408 @@ def log_memory_checkpoint(checkpoint_name: str) -> Dict[str, Any]:
         Current memory information
     """
     return memory_tracker.log_memory_usage(f"checkpoint[{checkpoint_name}]")
+
+
+# =============================================
+# S3 ZIP CREATION FUNCTIONS
+# =============================================
+
+
+async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.BytesIO]:
+    """
+    Create ZIP by downloading transcript files from S3 concurrently.
+    Faster than sequential downloads with better performance.
+
+    Args:
+        job_id: The job identifier
+
+    Returns:
+        BytesIO object containing the ZIP file, or None if job not completed
+
+    Raises:
+        ValueError: If job ID not found or job not completed
+    """
+    import boto3
+    from config_v2 import settings
+
+    # Load job data
+    job = load_job_from_file(job_id)
+    if not job:
+        raise ValueError(f"Job not found with ID: {job_id}")
+
+    if job["status"] not in ["completed", "completed_with_errors"]:
+        raise ValueError(
+            f"Cannot create ZIP: job status is {job['status']}, not completed"
+        )
+
+    if not job.get("files"):
+        raise ValueError("No transcript files found for this job")
+
+    # Initialize S3 client
+    try:
+        s3_client = boto3.client(
+            "s3",
+            aws_access_key_id=getattr(settings, "aws_access_key_id", None),
+            aws_secret_access_key=getattr(settings, "aws_secret_access_key", None),
+            region_name=getattr(settings, "aws_default_region", "us-east-1"),
+        )
+    except Exception as e:
+        logger.error(f"Failed to create S3 client: {str(e)}")
+        # Fallback to environment variables
+        s3_client = boto3.client("s3")
+
+    bucket_name = getattr(settings, "s3_bucket_name", None) or os.getenv(
+        "S3_BUCKET_NAME"
+    )
+    if not bucket_name:
+        raise ValueError("S3 bucket name not configured")
+
+    # Download all files concurrently (up to 10 at a time)
+    async def download_file(file_info):
+        """Download a single file from S3"""
+        s3_key = file_info["s3_key"]
+        video_id = file_info["video_id"]
+
+        def _download():
+            try:
+                logger.debug(f"Downloading {s3_key} from S3")
+                response = s3_client.get_object(Bucket=bucket_name, Key=s3_key)
+                return {
+                    "video_id": video_id,
+                    "content": response["Body"].read(),
+                    "filename": os.path.basename(s3_key),
+                    "success": True,
+                    "s3_key": s3_key,
+                }
+            except Exception as e:
+                logger.error(f"Failed to download {s3_key}: {str(e)}")
+                return {
+                    "video_id": video_id,
+                    "content": f"Error downloading transcript for video {video_id}: {str(e)}".encode(),
+                    "filename": f"{video_id}_ERROR.txt",
+                    "success": False,
+                    "s3_key": s3_key,
+                }
+
+        # Run S3 download in thread pool
+        return await asyncio.to_thread(_download)
+
+    # Download files concurrently (max 10 concurrent downloads)
+    semaphore = asyncio.Semaphore(10)
+
+    async def download_with_limit(file_info):
+        async with semaphore:
+            return await download_file(file_info)
+
+    logger.info(f"Downloading {len(job['files'])} files concurrently from S3")
+    download_start = time.time()
+
+    download_tasks = [download_with_limit(file_info) for file_info in job["files"]]
+    download_results = await asyncio.gather(*download_tasks)
+
+    download_end = time.time()
+    successful_downloads = len([r for r in download_results if r["success"]])
+    logger.info(
+        f"Downloaded {successful_downloads}/{len(download_results)} files in {download_end - download_start:.2f}s"
+    )
+
+    # Create ZIP from downloaded content
+    zip_buffer = io.BytesIO()
+
+    if job.get("formatting_options", {}).get("concatenate_all", False):
+        # Create concatenated file
+        concatenated_content = await create_concatenated_content_from_results(
+            download_results, job
+        )
+
+        with zipfile.ZipFile(
+            zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
+        ) as zip_file:
+            source_name = job.get("source_name") or job.get(
+                "channel_name", "transcripts"
+            )
+            safe_source_name = sanitize_filename(source_name)
+            filename = f"{safe_source_name}_all_transcripts.txt"
+            zip_file.writestr(filename, concatenated_content)
+
+    else:
+        # Create individual files in ZIP
+        with zipfile.ZipFile(
+            zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
+        ) as zip_file:
+            for result in download_results:
+                zip_file.writestr(result["filename"], result["content"])
+
+    zip_buffer.seek(0)
+
+    logger.info(
+        f"Created ZIP archive for job {job_id} with {successful_downloads} files, size: {len(zip_buffer.getvalue())} bytes"
+    )
+
+    return zip_buffer
+
+
+async def create_concatenated_content_from_results(
+    download_results: List[Dict[str, Any]], job: Dict[str, Any]
+) -> str:
+    """
+    Create a single concatenated transcript from download results.
+
+    Args:
+        download_results: List of download result dictionaries
+        job: Job data dictionary
+
+    Returns:
+        String containing all transcripts concatenated with separators
+    """
+    concatenated_parts = []
+
+    # Add header with source information
+    source_name = job.get("source_name") or job.get("channel_name", "Unknown")
+    source_type = job.get("source_type", "channel")
+
+    concatenated_parts.append(f"{source_type.upper()}: {source_name}")
+    concatenated_parts.append(f"TOTAL VIDEOS: {job.get('completed', 0)}")
+    concatenated_parts.append(f"GENERATED: {time.strftime('%Y-%m-%d %H:%M:%S')}")
+    concatenated_parts.append("=" * 80)
+    concatenated_parts.append("")
+
+    # Add each transcript from download results
+    successful_results = [r for r in download_results if r["success"]]
+
+    for i, result in enumerate(successful_results, 1):
+        try:
+            # Decode content
+            content = result["content"]
+            if isinstance(content, bytes):
+                content = content.decode("utf-8")
+
+            # Add section separator
+            concatenated_parts.append(f"[VIDEO {i}/{len(successful_results)}]")
+            concatenated_parts.append(f"Video ID: {result['video_id']}")
+            concatenated_parts.append("-" * 60)
+            concatenated_parts.append(content)
+            concatenated_parts.append("")  # Empty line between videos
+            concatenated_parts.append("=" * 80)
+            concatenated_parts.append("")  # Empty line between sections
+
+        except Exception as e:
+            logger.error(
+                f"Error processing transcript for video {result['video_id']}: {str(e)}"
+            )
+            # Add error message to concatenated content
+            concatenated_parts.append(
+                f"[VIDEO {i}/{len(successful_results)}] - ERROR PROCESSING TRANSCRIPT"
+            )
+            concatenated_parts.append(f"Video ID: {result['video_id']}")
+            concatenated_parts.append(f"S3 Key: {result.get('s3_key', 'unknown')}")
+            concatenated_parts.append(f"Error: {str(e)}")
+            concatenated_parts.append("")
+            concatenated_parts.append("=" * 80)
+            concatenated_parts.append("")
+
+    # Add failed downloads section if any
+    failed_results = [r for r in download_results if not r["success"]]
+    if failed_results:
+        concatenated_parts.append("=" * 80)
+        concatenated_parts.append("FAILED DOWNLOADS")
+        concatenated_parts.append("=" * 80)
+        concatenated_parts.append("")
+
+        for i, result in enumerate(failed_results, 1):
+            concatenated_parts.append(f"[FAILED {i}/{len(failed_results)}]")
+            concatenated_parts.append(f"Video ID: {result['video_id']}")
+            concatenated_parts.append(f"S3 Key: {result.get('s3_key', 'unknown')}")
+            concatenated_parts.append("-" * 40)
+            try:
+                content = result["content"]
+                if isinstance(content, bytes):
+                    content = content.decode("utf-8")
+                concatenated_parts.append(content)
+            except Exception as e:
+                concatenated_parts.append(f"Error displaying failure message: {str(e)}")
+            concatenated_parts.append("")
+
+    return "\n".join(concatenated_parts)
+
+
+async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.BytesIO]:
+    """
+    Create ZIP by downloading transcript files from S3 sequentially.
+    Fallback option if concurrent downloads cause issues.
+
+    Args:
+        job_id: The job identifier
+
+    Returns:
+        BytesIO object containing the ZIP file, or None if job not completed
+
+    Raises:
+        ValueError: If job ID not found or job not completed
+    """
+    import boto3
+    from config_v2 import settings
+
+    # Load job data
+    job = load_job_from_file(job_id)
+    if not job:
+        raise ValueError(f"Job not found with ID: {job_id}")
+
+    if job["status"] not in ["completed", "completed_with_errors"]:
+        raise ValueError(
+            f"Cannot create ZIP: job status is {job['status']}, not completed"
+        )
+
+    if not job.get("files"):
+        raise ValueError("No transcript files found for this job")
+
+    # Initialize S3 client
+    try:
+        s3_client = boto3.client(
+            "s3",
+            aws_access_key_id=getattr(settings, "aws_access_key_id", None),
+            aws_secret_access_key=getattr(settings, "aws_secret_access_key", None),
+            region_name=getattr(settings, "aws_default_region", "us-east-1"),
+        )
+    except Exception as e:
+        logger.error(f"Failed to create S3 client: {str(e)}")
+        # Fallback to environment variables
+        s3_client = boto3.client("s3")
+
+    bucket_name = getattr(settings, "s3_bucket_name", None) or os.getenv(
+        "S3_BUCKET_NAME"
+    )
+    if not bucket_name:
+        raise ValueError("S3 bucket name not configured")
+
+    # Create a BytesIO buffer for the ZIP file
+    zip_buffer = io.BytesIO()
+
+    # Check if we should concatenate all transcripts into a single file
+    if job.get("formatting_options", {}).get("concatenate_all", False):
+        # Create a single concatenated file from S3 files
+        concatenated_content = await create_concatenated_transcript_from_s3_sequential(
+            job_id, s3_client, bucket_name
+        )
+
+        with zipfile.ZipFile(
+            zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
+        ) as zip_file:
+            # Use the source name for the concatenated file
+            source_name = job.get("source_name") or job.get(
+                "channel_name", "transcripts"
+            )
+            safe_source_name = sanitize_filename(source_name)
+            filename = f"{safe_source_name}_all_transcripts.txt"
+            zip_file.writestr(filename, concatenated_content)
+    else:
+        # Create a ZIP file with individual transcript files from S3
+        with zipfile.ZipFile(
+            zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
+        ) as zip_file:
+            for file_info in job["files"]:
+                s3_key = file_info["s3_key"]
+                video_id = file_info["video_id"]
+
+                try:
+                    # Download file content from S3
+                    logger.debug(f"Downloading {s3_key} from S3 for ZIP creation")
+                    response = s3_client.get_object(Bucket=bucket_name, Key=s3_key)
+                    file_content = response["Body"].read()
+
+                    # Create filename from video ID or extract from S3 key
+                    filename = f"{video_id}.txt"
+                    if "/" in s3_key:
+                        filename = os.path.basename(s3_key)
+
+                    # Add to ZIP
+                    zip_file.writestr(filename, file_content)
+                    logger.debug(f"Added {filename} to ZIP archive")
+
+                except Exception as e:
+                    logger.error(f"Failed to download {s3_key} from S3: {str(e)}")
+                    # Add error placeholder instead of failing entire ZIP
+                    error_content = (
+                        f"Error downloading transcript for video {video_id}: {str(e)}"
+                    )
+                    zip_file.writestr(f"{video_id}_ERROR.txt", error_content)
+
+    # Seek to beginning of buffer for response
+    zip_buffer.seek(0)
+
+    logger.info(f"Created ZIP archive for job {job_id} with {len(job['files'])} files")
+    return zip_buffer
+
+
+async def create_concatenated_transcript_from_s3_sequential(
+    job_id: str, s3_client, bucket_name: str
+) -> str:
+    """
+    Create a single concatenated transcript by downloading individual files from S3 sequentially.
+
+    Args:
+        job_id: The job identifier
+        s3_client: Configured boto3 S3 client
+        bucket_name: S3 bucket name
+
+    Returns:
+        String containing all transcripts concatenated with separators
+    """
+    job = load_job_from_file(job_id)
+    if not job:
+        raise ValueError(f"Job not found with ID: {job_id}")
+
+    concatenated_parts = []
+
+    # Add header with source information
+    source_name = job.get("source_name") or job.get("channel_name", "Unknown")
+    source_type = job.get("source_type", "channel")
+
+    concatenated_parts.append(f"{source_type.upper()}: {source_name}")
+    concatenated_parts.append(f"TOTAL VIDEOS: {job.get('completed', 0)}")
+    concatenated_parts.append(f"GENERATED: {time.strftime('%Y-%m-%d %H:%M:%S')}")
+    concatenated_parts.append("=" * 80)
+    concatenated_parts.append("")
+
+    # Download and concatenate each transcript file from S3
+    for i, file_info in enumerate(job["files"], 1):
+        s3_key = file_info["s3_key"]
+        video_id = file_info["video_id"]
+
+        try:
+            # Download file content from S3
+            logger.debug(f"Downloading {s3_key} from S3 for concatenation")
+            response = s3_client.get_object(Bucket=bucket_name, Key=s3_key)
+            content = response["Body"].read().decode("utf-8")
+
+            # Add section separator
+            concatenated_parts.append(f"[VIDEO {i}/{len(job['files'])}]")
+            concatenated_parts.append(f"Video ID: {video_id}")
+            concatenated_parts.append("-" * 60)
+            concatenated_parts.append(content)
+            concatenated_parts.append("")  # Empty line between videos
+            concatenated_parts.append("=" * 80)
+            concatenated_parts.append("")  # Empty line between sections
+
+        except Exception as e:
+            logger.error(f"Error downloading transcript from S3 {s3_key}: {str(e)}")
+            # Add error message to concatenated content
+            concatenated_parts.append(
+                f"[VIDEO {i}/{len(job['files'])}] - ERROR DOWNLOADING TRANSCRIPT"
+            )
+            concatenated_parts.append(f"Video ID: {video_id}")
+            concatenated_parts.append(f"S3 Key: {s3_key}")
+            concatenated_parts.append(f"Error: {str(e)}")
+            concatenated_parts.append("")
+            concatenated_parts.append("=" * 80)
+            concatenated_parts.append("")
+
+    return "\n".join(concatenated_parts)
+
+
+# =============================================
+# LEGACY ZIP CREATION (LOCAL FILES)
+# =============================================
 
 
 # ytt_api = YouTubeTranscriptApi()
