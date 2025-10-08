@@ -16,6 +16,9 @@ class Settings(BaseModel):
     api_key: str = Field(
         default_factory=lambda: os.getenv("TRANSCRIPT_API_KEY", "default_dev_key")
     )
+    api_base_url: str = Field(
+        default_factory=lambda: os.getenv("API_BASE_URL", "http://localhost:8000")
+    )
 
     # YouTube API settings
     youtube_api_key: str = Field(
@@ -33,6 +36,25 @@ class Settings(BaseModel):
     # File storage settings
     temp_dir: str = Field(
         default_factory=lambda: os.getenv("TEMP_DIR", "../build/transcripts")
+    )
+
+    # AWS/S3 settings for Lambda integration
+    aws_access_key_id: str = Field(
+        default_factory=lambda: os.getenv("AWS_ACCESS_KEY_ID", "")
+    )
+    aws_secret_access_key: str = Field(
+        default_factory=lambda: os.getenv("AWS_SECRET_ACCESS_KEY", "")
+    )
+    aws_default_region: str = Field(
+        default_factory=lambda: os.getenv("AWS_DEFAULT_REGION", "us-east-1")
+    )
+    s3_bucket_name: str = Field(default_factory=lambda: os.getenv("S3_BUCKET_NAME", ""))
+
+    # Lambda settings
+    lambda_function_name: str = Field(
+        default_factory=lambda: os.getenv(
+            "LAMBDA_FUNCTION_NAME", "youtube-transcript-processor"
+        )
     )
 
     # Server settings

@@ -25,9 +25,13 @@ import zipfile
 import uuid
 import asyncio
 import tempfile
+import time
 import tracemalloc
 import gc
 import psutil
+import json
+from datetime import datetime
+import glob
 
 from fastapi import (
     FastAPI,
@@ -99,6 +103,10 @@ app.add_middleware(
 # Simple in-memory cache for user sessions
 # In production, consider a more robust solution like Redis
 user_cache = {}
+
+# Video jobs persistent storage directory
+VIDEO_JOBS_STORAGE_DIR = os.path.join(settings.temp_dir, "jobs")
+os.makedirs(VIDEO_JOBS_STORAGE_DIR, exist_ok=True)
 
 # Get API key from settings
 API_KEY = settings.api_key
@@ -471,7 +479,7 @@ class CreditManager:
             )
             # Don't raise exception here - we don't want to fail the job completion
             # but log the error for investigation
-            logger.error(f"Credit finalization failed but job will complete normally")
+            logger.error("Credit finalization failed but job will complete normally")
         finally:
             if conn:
                 conn.close()
@@ -660,6 +668,25 @@ class SelectedPlaylistVideosRequest(BaseModel):
     )
 
 
+class DownloadHistoryItem(BaseModel):
+    id: str = Field(..., description="Unique identifier for the download")
+    date: str = Field(..., description="ISO date string when download was initiated")
+    sourceName: str = Field(..., description="Name of the channel or playlist")
+    sourceType: str = Field(..., description="Type of source: 'channel' or 'playlist'")
+    videoCount: int = Field(..., description="Total number of videos in the download")
+    status: str = Field(
+        ..., description="Download status: 'completed', 'processing', 'failed'"
+    )
+    downloadUrl: Optional[str] = Field(
+        None, description="URL to download the transcript files if available"
+    )
+    jobId: str = Field(..., description="Job ID for tracking the download")
+    createdAt: str = Field(..., description="ISO timestamp when download was created")
+    completedAt: Optional[str] = Field(
+        None, description="ISO timestamp when download was completed"
+    )
+
+
 def verify_api_key(request: Request):
     """Verify API key for authenticated endpoints"""
     api_key = request.headers.get("X-API-Key")
@@ -670,6 +697,124 @@ def verify_api_key(request: Request):
             headers={"WWW-Authenticate": "ApiKey"},
         )
     return True
+
+
+def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
+    """
+    Get download history for a specific user by scanning their transcript directories
+    and matching with job files
+    """
+    history_items = []
+
+    # Path to user's transcript directory
+    user_transcript_dir = os.path.join(settings.temp_dir, user_id)
+    jobs_dir = os.path.join(settings.temp_dir, "jobs")
+
+    if not os.path.exists(user_transcript_dir):
+        logger.info(f"User transcript directory not found: {user_transcript_dir}")
+        return history_items
+
+    if not os.path.exists(jobs_dir):
+        logger.warning(f"Jobs directory not found: {jobs_dir}")
+        return history_items
+
+    # Scan user's transcript subdirectories (each is a job_id)
+    try:
+        for item in os.listdir(user_transcript_dir):
+            item_path = os.path.join(user_transcript_dir, item)
+
+            # Skip if not a directory
+            if not os.path.isdir(item_path):
+                continue
+
+            # The directory name is the job_id
+            job_id = item
+
+            # Look for corresponding job file
+            job_file_path = os.path.join(jobs_dir, f"{job_id}.json")
+
+            try:
+                # Load job data if file exists
+                job_data = {}
+                if os.path.exists(job_file_path):
+                    with open(job_file_path, "r", encoding="utf-8") as f:
+                        job_data = json.load(f)
+                else:
+                    logger.info(f"Job file not found for job_id {job_id}")
+                    continue
+
+                # Double-check this job belongs to the user (safety check)
+                if job_data.get("user_id") and job_data.get("user_id") != user_id:
+                    logger.warning(
+                        f"Job {job_id} user_id mismatch: expected {user_id}, got {job_data.get('user_id')}"
+                    )
+                    continue
+
+                # Create download URL since directory exists with files
+                download_url = None
+                if os.listdir(item_path):  # Directory has files
+                    download_url = f"/channel/download/results/{job_id}"
+
+                # Determine status - if we have a directory but no job file, assume completed
+                status = job_data.get("status", "completed")
+
+                # Helper function to convert timestamps to ISO strings
+                def timestamp_to_iso(timestamp_value):
+                    if timestamp_value is None:
+                        return None
+                    if isinstance(timestamp_value, (int, float)):
+                        try:
+                            return datetime.fromtimestamp(timestamp_value).isoformat()
+                        except (ValueError, OSError):
+                            return ""
+                    return str(timestamp_value)
+
+                # Convert timestamps to proper format
+                start_time_iso = timestamp_to_iso(job_data.get("start_time"))
+                end_time_iso = timestamp_to_iso(job_data.get("end_time"))
+
+                # Map job data to DownloadHistoryItem
+                history_item = DownloadHistoryItem(
+                    id=job_id,
+                    date=start_time_iso or "",
+                    sourceName=job_data.get("source_name")
+                    or job_data.get("channel_name", "Unknown"),
+                    sourceType=job_data.get("source_type", "channel"),
+                    videoCount=job_data.get("total_videos", 0),
+                    status=status,
+                    downloadUrl=download_url,
+                    jobId=job_id,
+                    createdAt=start_time_iso or "",
+                    completedAt=end_time_iso,
+                )
+
+                history_items.append(history_item)
+
+            except (json.JSONDecodeError, KeyError, TypeError) as e:
+                logger.warning(f"Error processing job {job_id}: {e}")
+                # Still include the item with minimal info since directory exists
+                history_item = DownloadHistoryItem(
+                    id=job_id,
+                    date="",
+                    sourceName="Unknown",
+                    sourceType="channel",
+                    videoCount=0,
+                    status="completed",  # Directory exists, assume completed
+                    downloadUrl=f"/channel/download/results/{job_id}",
+                    jobId=job_id,
+                    createdAt="",
+                    completedAt="",
+                )
+                history_items.append(history_item)
+                continue
+
+    except Exception as e:
+        logger.error(f"Error scanning user transcript directory: {e}")
+
+    # Sort by creation date (newest first), with fallback to job_id for items without dates
+    history_items.sort(key=lambda x: x.createdAt or x.jobId, reverse=True)
+
+    return history_items
 
 
 def check_anonymous_rate_limit(request: Request):
@@ -945,6 +1090,232 @@ async def get_user_profile(payload: dict = Depends(validate_jwt)):
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to retrieve user profile",
+        )
+
+
+@app.get("/user/download-history", response_model=List[DownloadHistoryItem])
+async def get_user_download_history_endpoint(payload: dict = Depends(validate_jwt)):
+    """
+    Get user's download history
+    """
+    try:
+        user_id = get_user_id_from_payload(payload)
+        history_items = get_user_download_history(user_id)
+
+        logger.info(f"Retrieved {len(history_items)} history items for user {user_id}")
+        return history_items
+
+    except Exception as e:
+        logger.error(f"Error getting download history for user: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to retrieve download history",
+        )
+
+
+# =============================================
+# VIDEO JOBS PERSISTENT STORAGE
+# =============================================
+
+
+def save_video_job_to_file(job_id: str, job_data: Dict[str, Any]) -> None:
+    """Save video job data to persistent storage"""
+    try:
+        file_path = os.path.join(VIDEO_JOBS_STORAGE_DIR, f"{job_id}.json")
+
+        # Convert data to JSON serializable format
+        serializable_data = {}
+        for key, value in job_data.items():
+            if isinstance(value, (dict, list, str, int, float, bool)) or value is None:
+                serializable_data[key] = value
+            else:
+                # Convert other types to string representation
+                serializable_data[key] = str(value)
+
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump(serializable_data, f, indent=2, ensure_ascii=False)
+
+        logger.debug(f"Saved video job {job_id} to file")
+
+    except Exception as e:
+        logger.error(f"Failed to save video job {job_id} to file: {e}")
+
+
+def load_video_job_from_file(job_id: str) -> Optional[Dict[str, Any]]:
+    """Load video job data from persistent storage"""
+    try:
+        file_path = os.path.join(VIDEO_JOBS_STORAGE_DIR, f"{job_id}.json")
+
+        if not os.path.exists(file_path):
+            return None
+
+        with open(file_path, "r", encoding="utf-8") as f:
+            job_data = json.load(f)
+
+        logger.debug(f"Loaded video job {job_id} from file")
+        return job_data
+
+    except Exception as e:
+        logger.error(f"Failed to load video job {job_id} from file: {e}")
+        return None
+
+
+def update_video_job(job_id: str, **updates) -> Optional[Dict[str, Any]]:
+    """Update video job data with atomic file operations"""
+    try:
+        # Load current job data
+        job_data = load_video_job_from_file(job_id)
+        if job_data is None:
+            logger.error(f"Video job {job_id} not found for update")
+            return None
+
+        # Apply updates
+        for key, value in updates.items():
+            job_data[key] = value
+
+        # Save updated data
+        save_video_job_to_file(job_id, job_data)
+
+        return job_data
+
+    except Exception as e:
+        logger.error(f"Failed to update video job {job_id}: {e}")
+        return None
+
+
+# =============================================
+# BACKGROUND TASKS FOR VIDEO FETCHING
+# =============================================
+
+
+async def fetch_channel_videos_task(job_id: str, channel_name: str):
+    """
+    Background task to fetch all videos from a channel with timeout protection.
+    Updates job status in video_jobs dictionary.
+    """
+    try:
+        logger.info(
+            f"Starting background fetch for channel {channel_name} (job: {job_id})"
+        )
+
+        # Fetch with 5-minute timeout
+        timeout_seconds = 300  # 5 minutes
+
+        async def _fetch_videos():
+            # Get channel info
+            channel_info = await youtube_service.get_channel_info(channel_name)
+            channel_id = channel_info["channelId"]
+
+            # Get ALL videos from channel (no limit)
+            videos = await youtube_service.get_all_channel_videos(channel_id)
+
+            return channel_info, videos
+
+        # Execute with timeout
+        try:
+            channel_info, videos = await asyncio.wait_for(
+                _fetch_videos(), timeout=timeout_seconds
+            )
+
+            # Update job with success
+            update_video_job(
+                job_id,
+                status="completed",
+                channel_info=channel_info,
+                videos=videos,
+                video_count=len(videos),
+                duration_breakdown={
+                    "short": len([v for v in videos if v.get("duration") == "short"]),
+                    "medium": len([v for v in videos if v.get("duration") == "medium"]),
+                    "long": len([v for v in videos if v.get("duration") == "long"]),
+                },
+                end_time=time.time(),
+            )
+
+            logger.info(
+                f"Successfully fetched {len(videos)} videos for channel {channel_name} (job: {job_id})"
+            )
+
+        except asyncio.TimeoutError:
+            error_msg = f"Timeout after {timeout_seconds} seconds"
+            update_video_job(
+                job_id, status="failed", error=error_msg, end_time=time.time()
+            )
+            logger.error(
+                f"Timeout fetching videos for channel {channel_name} (job: {job_id}): {error_msg}"
+            )
+
+    except Exception as e:
+        error_msg = f"Error fetching videos: {str(e)}"
+        update_video_job(job_id, status="failed", error=error_msg, end_time=time.time())
+        logger.error(
+            f"Error in background task for channel {channel_name} (job: {job_id}): {error_msg}",
+            exc_info=True,
+        )
+
+
+async def fetch_playlist_videos_task(job_id: str, playlist_id: str):
+    """
+    Background task to fetch all videos from a playlist with timeout protection.
+    Updates job status in video_jobs dictionary.
+    """
+    try:
+        logger.info(
+            f"Starting background fetch for playlist {playlist_id} (job: {job_id})"
+        )
+
+        # Fetch with 5-minute timeout
+        timeout_seconds = 300  # 5 minutes
+
+        async def _fetch_videos():
+            # Get playlist info
+            playlist_info = await youtube_service.get_playlist_info(playlist_id)
+
+            # Get ALL videos from playlist (no limit)
+            videos = await youtube_service.get_all_playlist_videos(playlist_id)
+
+            return playlist_info, videos
+
+        # Execute with timeout
+        try:
+            playlist_info, videos = await asyncio.wait_for(
+                _fetch_videos(), timeout=timeout_seconds
+            )
+
+            # Update job with success
+            update_video_job(
+                job_id,
+                status="completed",
+                playlist_info=playlist_info,
+                videos=videos,
+                video_count=len(videos),
+                duration_breakdown={
+                    "short": len([v for v in videos if v.get("duration") == "short"]),
+                    "medium": len([v for v in videos if v.get("duration") == "medium"]),
+                    "long": len([v for v in videos if v.get("duration") == "long"]),
+                },
+                end_time=time.time(),
+            )
+
+            logger.info(
+                f"Successfully fetched {len(videos)} videos for playlist {playlist_id} (job: {job_id})"
+            )
+
+        except asyncio.TimeoutError:
+            error_msg = f"Timeout after {timeout_seconds} seconds"
+            update_video_job(
+                job_id, status="failed", error=error_msg, end_time=time.time()
+            )
+            logger.error(
+                f"Timeout fetching videos for playlist {playlist_id} (job: {job_id}): {error_msg}"
+            )
+
+    except Exception as e:
+        error_msg = f"Error fetching videos: {str(e)}"
+        update_video_job(job_id, status="failed", error=error_msg, end_time=time.time())
+        logger.error(
+            f"Error in background task for playlist {playlist_id} (job: {job_id}): {error_msg}",
+            exc_info=True,
         )
 
 
@@ -1312,33 +1683,43 @@ async def get_channel_info(
 @app.get("/channel/{channel_name}/all-videos")
 async def list_all_channel_videos(
     channel_name: str,
-    # payload: dict = Depends(validate_jwt),
+    background_tasks: BackgroundTasks,
 ):
     """
-    Get all videos for a channel with pagination.
-    Returns a list of videos with metadata for selection in the frontend.
+    Start fetching all videos from a YouTube channel asynchronously.
+    Returns a job ID immediately that can be used to check progress.
     """
     try:
-        channel_info = await youtube_service.get_channel_info(channel_name)
-        channel_id = channel_info["channelId"]
+        # Create job ID
+        job_id = str(uuid.uuid4())
 
-        # Use the paginated function to get all videos
-        videos = await youtube_service.get_all_channel_videos(channel_id)
+        # Initialize job status
+        job_data = {
+            "status": "processing",
+            "channel_name": channel_name,
+            "start_time": time.time(),
+            "videos": None,
+            "error": None,
+            "channel_info": None,
+        }
 
-        # Log the result to help debug
-        logger.info(
-            f"Returning {len(videos)} videos for channel {channel_name} (ID: {channel_id})"
-        )
-        for i, video in enumerate(videos[:5]):
-            logger.info(f"Video {i+1}: {video['id']} - {video['title']}")
+        # Save job to persistent storage
+        save_video_job_to_file(job_id, job_data)
 
-        return videos
-    except ValueError as e:
-        logger.error(f"Invalid channel: {str(e)}")
-        raise HTTPException(status_code=404, detail=str(e))
+        # Start background task
+        background_tasks.add_task(fetch_channel_videos_task, job_id, channel_name)
+
+        return {
+            "job_id": job_id,
+            "status": "processing",
+            "message": "Fetching channel videos in background. Use /channel/videos-status/{job_id} to check progress.",
+        }
+
     except Exception as e:
-        logger.error(f"Error getting all videos: {str(e)}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Failed to get videos: {str(e)}")
+        logger.error(f"Error starting channel video fetch: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=500, detail=f"Failed to start video fetch: {str(e)}"
+        )
 
 
 @app.post("/channel/download/selected")
@@ -1348,18 +1729,18 @@ async def download_selected_videos(
     session: Dict = Depends(get_user_session),
 ):
     """
-    Start asynchronous download of transcripts for selected videos from a YouTube channel.
-    Returns a job ID that can be used to check progress and retrieve results.
+    Ultra-fast response workflow:
+    1. Validate credits & channel (quick)
+    2. Create job immediately
+    3. Start background task for pre-fetching + Lambda dispatch
+    4. Return job_id in ~200ms
 
     REQUIRES AUTHENTICATION: This endpoint requires sufficient credits for the selected videos.
     Each video transcript attempt will deduct 1 credit.
     """
     channel_name = request.channel_name
     videos = request.videos
-    session_id = session["id"]
     user_id = get_user_id_from_payload(payload)
-
-    # Count number of videos to download
     num_videos = len(videos)
 
     try:
@@ -1371,30 +1752,60 @@ async def download_selected_videos(
                 detail=f"Insufficient credits. You need {num_videos} credits but only have {user_credits}. Please purchase more credits.",
             )
 
-        # Start asynchronous transcript retrieval for selected videos
-        job_id = await youtube_service.start_selected_videos_transcript_download(
-            channel_name=channel_name,
-            playlist_name=None,  # No playlist for channel downloads
-            videos=videos,
-            user_id=user_id,
-            include_timestamps=request.include_timestamps,
-            include_video_title=request.include_video_title,
-            include_video_id=request.include_video_id,
-            include_video_url=request.include_video_url,
-            include_view_count=request.include_view_count,
-            concatenate_all=request.concatenate_all,
-            is_playlist=False,  # Flag to indicate this is a channel download
+        # 2. Quick channel validation (< 100ms)
+        channel_info = await youtube_service.get_channel_info(request.channel_name)
+
+        # 3. Reserve credits immediately
+        reservation_id = CreditManager.reserve_credits(user_id, num_videos)
+
+        # 4. Create job immediately (no metadata yet)
+        job_id = str(uuid.uuid4())
+        job_data = {
+            "status": "initializing",  # New status for pre-fetching phase
+            "channel_name": request.channel_name,
+            "channel_info": channel_info,
+            "total_videos": num_videos,
+            "completed": 0,
+            "failed_count": 0,
+            "processed_count": 0,
+            "files": [],
+            "videos": videos,
+            "start_time": time.time(),
+            "user_id": user_id,
+            "credits_reserved": num_videos,
+            "credits_used": 0,
+            "reservation_id": reservation_id,
+            "videos_metadata": {},  # Empty initially
+            "prefetch_completed": False,  # Track pre-fetch progress
+            "lambda_dispatched_count": 0,  # Track dispatched Lambda functions
+            "formatting_options": {
+                "include_timestamps": request.include_timestamps,
+                "include_video_title": request.include_video_title,
+                "include_video_id": request.include_video_id,
+                "include_video_url": request.include_video_url,
+                "include_view_count": request.include_view_count,
+                "concatenate_all": request.concatenate_all,
+            },
+        }
+
+        # Save job immediately
+        youtube_service.save_job_to_file(job_id, job_data)
+        logger.info(
+            f"Created job {job_id} - starting background pre-fetch for {num_videos} videos"
         )
+
+        # 5. Start background task for pre-fetching + Lambda dispatch
+        asyncio.create_task(youtube_service.prefetch_and_dispatch_task(job_id))
 
         return {
             "job_id": job_id,
-            "status": "processing",
+            "status": "initializing",  # User knows pre-fetching is happening
             "total_videos": num_videos,
             "channel_name": channel_name,
             "user_id": user_id,
             "credits_reserved": num_videos,
             "user_credits_at_start": user_credits,
-            "message": f"Transcript retrieval started for {num_videos} selected videos. Credits will be deducted per video attempt (1 credit each). You have {user_credits} credits available. Use the /channel/download/status endpoint to check progress and credit usage.",
+            "message": f"Job created. Pre-fetching metadata for {num_videos} videos, then starting Lambda processing.",
         }
 
     except ValueError as e:
@@ -1405,6 +1816,74 @@ async def download_selected_videos(
         raise HTTPException(
             status_code=500, detail=f"Failed to start transcript download: {str(e)}"
         )
+
+
+@app.get("/channel/videos-status/{job_id}")
+async def get_videos_fetch_status(
+    job_id: str,
+):
+    """
+    Check the status of a video fetching job and return results if complete.
+    """
+    try:
+        # Load job from file
+        job = load_video_job_from_file(job_id)
+        if job is None:
+            raise HTTPException(status_code=404, detail="Job not found")
+
+        status = job["status"]
+
+        if status == "processing":
+            elapsed_time = time.time() - job["start_time"]
+            return {
+                "job_id": job_id,
+                "status": "processing",
+                "channel_name": job.get("channel_name"),
+                "playlist_id": job.get("playlist_id"),
+                "elapsed_time": elapsed_time,
+                "message": "Still fetching videos...",
+            }
+
+        elif status == "completed":
+            elapsed_time = job["end_time"] - job["start_time"]
+
+            # Return the channel data or playlist data
+            if "channel_info" in job:
+                return {
+                    "job_id": job_id,
+                    "status": "completed",
+                    "elapsed_time": elapsed_time,
+                    "channel": job["channel_info"],
+                    "videos": job["videos"],
+                    "video_count": job["video_count"],
+                    "duration_breakdown": job["duration_breakdown"],
+                }
+            else:
+                return {
+                    "job_id": job_id,
+                    "status": "completed",
+                    "elapsed_time": elapsed_time,
+                    "playlist": job["playlist_info"],
+                    "videos": job["videos"],
+                    "video_count": job["video_count"],
+                    "duration_breakdown": job["duration_breakdown"],
+                }
+
+        elif status == "failed":
+            elapsed_time = job["end_time"] - job["start_time"]
+            return {
+                "job_id": job_id,
+                "status": "failed",
+                "elapsed_time": elapsed_time,
+                "error": job["error"],
+            }
+
+        else:
+            return {"job_id": job_id, "status": status, "message": "Unknown status"}
+
+    except Exception as e:
+        logger.error(f"Error getting video fetch status: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Failed to get status: {str(e)}")
 
 
 @app.get("/channel/download/status/{job_id}")
@@ -1443,45 +1922,100 @@ async def get_transcript_download_status(
 @app.get("/channel/download/results/{job_id}")
 async def download_transcript_results(
     job_id: str,
-    # auth: bool = Depends(verify_api_key),
+    payload: dict = Depends(validate_jwt),
     session: Dict = Depends(get_user_session),
 ):
     """
     Download the transcripts for a completed job as a ZIP file.
-    Only available when job status is 'completed'.
+    Files are fetched from S3 and ZIP is generated on-demand with concurrent downloads.
+    Only available when job status is 'completed' or 'completed_with_errors'.
+
+    REQUIRES AUTHENTICATION: This endpoint requires a valid JWT token.
     """
     try:
-        # Create a ZIP file with all transcripts for the job
-        logger.info(f"Downloading results for job {job_id}")
-        zip_buffer = await youtube_service.create_transcript_zip(job_id)
+        # Verify user owns this job
+        job = youtube_service.load_job_from_file(job_id)
+        if not job:
+            raise HTTPException(status_code=404, detail="Job not found")
+
+        user_id = get_user_id_from_payload(payload)
+        if job.get("user_id") != user_id:
+            raise HTTPException(
+                status_code=403, detail="Access denied - you don't own this job"
+            )
+
+        # Verify job is completed
+        job_status = job.get("status")
+        if job_status not in ["completed", "completed_with_errors"]:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Job is not ready for download. Current status: {job_status}",
+            )
+
+        # Create ZIP from S3 files using concurrent downloads
         logger.info(
-            f"Created ZIP file for job {job_id} with size {len(zip_buffer.getvalue())} bytes"
+            f"Creating ZIP for job {job_id} from S3 files with concurrent downloads"
+        )
+        zip_start_time = time.time()
+
+        try:
+            zip_buffer = await youtube_service.create_transcript_zip_from_s3_concurrent(
+                job_id
+            )
+        except Exception as s3_error:
+            logger.warning(
+                f"Concurrent S3 download failed, falling back to sequential: {str(s3_error)}"
+            )
+            # Fallback to sequential downloads if concurrent fails
+            zip_buffer = await youtube_service.create_transcript_zip_from_s3_sequential(
+                job_id
+            )
+
+        zip_end_time = time.time()
+        zip_size = len(zip_buffer.getvalue())
+
+        logger.info(
+            f"Created ZIP file for job {job_id} in {zip_end_time - zip_start_time:.2f}s, "
+            f"size: {zip_size:,} bytes ({zip_size / 1024 / 1024:.2f} MB)"
         )
 
-        # Get a safe channel name for the filename
-        safe_channel_name = youtube_service.get_safe_channel_name(job_id)
+        # Get source name for filename
+        source_name = job.get("source_name") or job.get("channel_name", "transcripts")
+        safe_source_name = youtube_service.sanitize_filename(source_name)
 
         # Check if this is a concatenated download to adjust filename
-        job_info = youtube_service.get_job_status(job_id)
-        is_concatenated = job_info.get("concatenate_all", False)
+        is_concatenated = job.get("formatting_options", {}).get(
+            "concatenate_all", False
+        )
         filename_suffix = (
             "_concatenated_transcripts.zip" if is_concatenated else "_transcripts.zip"
         )
 
-        # For BytesIO objects, we need to use Response with bytes content instead of FileResponse
+        # Add statistics to response headers
+        headers = {
+            "Content-Disposition": f'attachment; filename="{safe_source_name}{filename_suffix}"',
+            "X-Job-ID": job_id,
+            "X-Files-Count": str(len(job.get("files", []))),
+            "X-Generation-Time-Seconds": f"{zip_end_time - zip_start_time:.2f}",
+            "X-Source-Type": job.get("source_type", "channel"),
+        }
+
         return Response(
             content=zip_buffer.getvalue(),
             media_type="application/zip",
-            headers={
-                "Content-Disposition": f'attachment; filename="{safe_channel_name}{filename_suffix}"'
-            },
+            headers=headers,
         )
 
     except ValueError as e:
-        logger.error(f"Invalid job request: {str(e)}")
+        logger.error(f"Invalid job request for {job_id}: {str(e)}")
         raise HTTPException(status_code=404, detail=str(e))
+    except HTTPException:
+        # Re-raise HTTP exceptions as-is
+        raise
     except Exception as e:
-        logger.error(f"Error downloading results: {str(e)}", exc_info=True)
+        logger.error(
+            f"Error downloading results for job {job_id}: {str(e)}", exc_info=True
+        )
         raise HTTPException(
             status_code=500, detail=f"Failed to download results: {str(e)}"
         )
@@ -1504,7 +2038,7 @@ async def get_playlist_info(
     try:
         # Extract playlist ID from URL if needed
         clean_playlist_id = youtube_service.extract_playlist_id(playlist_id)
-        
+
         # Get playlist info using the new service
         playlist_info = await youtube_service.get_playlist_info(clean_playlist_id)
         return playlist_info
@@ -1522,33 +2056,46 @@ async def get_playlist_info(
 @app.get("/playlist/{playlist_id}/all-videos")
 async def list_all_playlist_videos(
     playlist_id: str,
-    # payload: dict = Depends(validate_jwt),
+    background_tasks: BackgroundTasks,
 ):
     """
-    Get all videos for a playlist with pagination.
-    Returns a list of videos with metadata for selection in the frontend.
+    Start fetching all videos from a YouTube playlist asynchronously.
+    Returns a job ID immediately that can be used to check progress.
     """
     try:
         # Extract playlist ID from URL if needed
         clean_playlist_id = youtube_service.extract_playlist_id(playlist_id)
-        
-        # Use the paginated function to get all videos
-        videos = await youtube_service.get_all_playlist_videos(clean_playlist_id)
 
-        # Log the result to help debug
-        logger.info(
-            f"Returning {len(videos)} videos for playlist {playlist_id}"
-        )
-        for i, video in enumerate(videos[:5]):
-            logger.info(f"Video {i+1}: {video['id']} - {video['title']}")
+        # Create job ID
+        job_id = str(uuid.uuid4())
 
-        return videos
-    except ValueError as e:
-        logger.error(f"Invalid playlist: {str(e)}")
-        raise HTTPException(status_code=404, detail=str(e))
+        # Initialize job status
+        job_data = {
+            "status": "processing",
+            "playlist_id": clean_playlist_id,
+            "start_time": time.time(),
+            "videos": None,
+            "error": None,
+            "playlist_info": None,
+        }
+
+        # Save job to persistent storage
+        save_video_job_to_file(job_id, job_data)
+
+        # Start background task
+        background_tasks.add_task(fetch_playlist_videos_task, job_id, clean_playlist_id)
+
+        return {
+            "job_id": job_id,
+            "status": "processing",
+            "message": "Fetching playlist videos in background. Use /channel/videos-status/{job_id} to check progress.",
+        }
+
     except Exception as e:
-        logger.error(f"Error getting all videos: {str(e)}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Failed to get videos: {str(e)}")
+        logger.error(f"Error starting playlist video fetch: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=500, detail=f"Failed to start video fetch: {str(e)}"
+        )
 
 
 @app.post("/playlist/download/selected")
@@ -1615,10 +2162,115 @@ async def download_selected_playlist_videos(
         logger.error(f"Invalid playlist request: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        logger.error(f"Error starting playlist transcript download: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail=f"Failed to start playlist transcript download: {str(e)}"
+        logger.error(
+            f"Error starting playlist transcript download: {str(e)}", exc_info=True
         )
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to start playlist transcript download: {str(e)}",
+        )
+
+
+# =============================================
+# INTERNAL LAMBDA CALLBACK ENDPOINTS
+# =============================================
+
+
+@app.post("/internal/job/{job_id}/video-complete")
+async def video_completed(job_id: str, completion_data: dict):
+    """
+    Internal endpoint for Lambda to report video completion.
+    Updates job progress and file tracking.
+    """
+    try:
+        # Update job progress with atomic operations
+        file_info = {
+            "video_id": completion_data["video_id"],
+            "s3_key": completion_data["s3_key"],
+            "status": "completed",
+            "transcript_length": completion_data.get("transcript_length", 0),
+        }
+
+        updated_job = youtube_service.update_job_progress(
+            job_id,
+            files_append=file_info,  # Add file to list atomically
+            completed_increment=1,  # Increment success counter
+            credits_used_increment=1,  # Track credit usage
+            processed_count_increment=1,  # Track total processed
+        )
+
+        logger.info(f"Video {completion_data['video_id']} completed for job {job_id}")
+
+        # Check if job is complete
+        if (
+            updated_job
+            and updated_job["processed_count"] >= updated_job["total_videos"]
+        ):
+            # Finalize credits (refund unused)
+            CreditManager.finalize_credit_usage(
+                user_id=updated_job["user_id"],
+                reservation_id=updated_job["reservation_id"],
+                credits_used=updated_job["credits_used"],
+                credits_reserved=updated_job["credits_reserved"],
+            )
+
+            # Update job status to completed
+            youtube_service.update_job_progress(job_id, status="completed")
+            logger.info(f"Job {job_id} completed - all videos processed")
+
+        return {"status": "updated", "job_id": job_id}
+
+    except Exception as e:
+        logger.error(f"Error updating job progress: {str(e)}")
+        return {"status": "error", "message": str(e)}
+
+
+@app.post("/internal/job/{job_id}/video-failed")
+async def video_failed(job_id: str, failure_data: dict):
+    """
+    Internal endpoint for Lambda to report video failure.
+    """
+    try:
+        updated_job = youtube_service.update_job_progress(
+            job_id,
+            failed_count_increment=1,  # Increment failure counter
+            credits_used_increment=1,  # Still count failed attempts
+            processed_count_increment=1,  # Track total processed
+        )
+
+        logger.warning(
+            f"Video {failure_data['video_id']} failed for job {job_id}: {failure_data.get('error', 'Unknown error')}"
+        )
+
+        # Check if job is complete (including failures)
+        if (
+            updated_job
+            and updated_job["processed_count"] >= updated_job["total_videos"]
+        ):
+            # Finalize credits
+            CreditManager.finalize_credit_usage(
+                user_id=updated_job["user_id"],
+                reservation_id=updated_job["reservation_id"],
+                credits_used=updated_job["credits_used"],
+                credits_reserved=updated_job["credits_reserved"],
+            )
+
+            # Update job status
+            status = (
+                "completed_with_errors"
+                if updated_job["failed_count"] > 0
+                else "completed"
+            )
+            youtube_service.update_job_progress(job_id, status=status)
+            logger.info(
+                f"Job {job_id} completed with {updated_job['failed_count']} failures"
+            )
+
+        return {"status": "updated", "job_id": job_id}
+
+    except Exception as e:
+        logger.error(f"Error updating job failure: {str(e)}")
+        return {"status": "error", "message": str(e)}
 
 
 # =============================================
@@ -1730,38 +2382,8 @@ async def get_jobs_debug():
 # Create a background task to clean up old jobs periodically
 
 
-@app.on_event("startup")
-async def startup_event():
-    """Run when the application starts - set up background tasks and enable memory tracing"""
-    logger.info("Starting YouTube Transcript API...")
-
-    # Start memory tracing
-    tracemalloc.start(25)  # Keep 25 frames in tracebacks for better debugging
-    logger.info("Memory tracing enabled with tracemalloc")
-
-    # Recover jobs from persistent storage
-    # try:
-    #     import youtube_service
-
-    #     recovered_jobs = (
-    #         youtube_service.recover_jobs_from_storage()
-    #         if hasattr(youtube_service, "recover_jobs_from_storage")
-    #         else []
-    #     )
-    #     if recovered_jobs:
-    #         logger.info(f"Recovered {len(recovered_jobs)} jobs from persistent storage")
-    #     else:
-    #         logger.info("No jobs to recover from persistent storage")
-    # except Exception as e:
-    #     logger.error(f"Failed to recover jobs on startup: {e}")
-
-    asyncio.create_task(cleanup_job())
-
-    logger.info("YouTube Transcript API startup complete")
-
-
 async def cleanup_job():
-    """Periodically clean up old jobs and their files"""
+    """Periodically GC"""
     while True:
         try:
             # Wait for a while before cleaning up (e.g., every hour)
@@ -1773,8 +2395,9 @@ async def cleanup_job():
             logger.info(f"Memory before cleanup: {memory_before:.2f} MB")
 
             # Run the cleanup function
-            logger.info("Starting scheduled cleanup of old jobs")
-            youtube_service.cleanup_old_jobs(max_age_hours=24)  # Keep jobs for 24 hours
+            logger.info("Starting scheduled garbage collection")
+            # remove porque esto no guardo mas en diccionario, todo va al json.
+            # youtube_service.cleanup_old_jobs(max_age_hours=24)  # Keep jobs for 24 hours
 
             # Force garbage collection after cleanup
             collected = gc.collect()
@@ -1785,7 +2408,7 @@ async def cleanup_job():
                 f"Memory after cleanup: {memory_after:.2f} MB (freed: {memory_before - memory_after:.2f} MB, GC collected: {collected} objects)"
             )
 
-            logger.info("Scheduled cleanup completed")
+            logger.info("Scheduled garbage collection completed")
 
         except Exception as e:
             logger.error(f"Error in cleanup job: {str(e)}")
