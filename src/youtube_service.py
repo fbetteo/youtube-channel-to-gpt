@@ -2111,7 +2111,7 @@ async def dispatch_lambdas_concurrently(
     max_concurrent: int = 20,
 ) -> int:
     """
-    Dispatch Lambda functions in fire-and-forget mode for maximum concurrency.
+    Dispatch Lambda functions concurrently in true async fire-and-forget mode.
 
     Args:
         job_id: The job identifier
@@ -2131,12 +2131,11 @@ async def dispatch_lambdas_concurrently(
     lambda_client = boto3.client("lambda")
 
     logger.info(
-        f"Job {job_id}: Fire-and-forget dispatch of {len(videos)} Lambda functions"
+        f"Job {job_id}: Async fire-and-forget dispatch of {len(videos)} Lambda functions"
     )
 
-    dispatch_count = 0
-
-    for video in videos:
+    async def dispatch_single_lambda(video):
+        """Dispatch a single Lambda function asynchronously"""
         try:
             video_id = video.id if hasattr(video, "id") else video["id"]
             pre_fetched_metadata = videos_metadata.get(video_id, {})
@@ -2150,15 +2149,16 @@ async def dispatch_lambdas_concurrently(
                 "api_base_url": settings.api_base_url,
             }
 
-            # Fire-and-forget Lambda dispatch (no await, no semaphore)
-            lambda_client.invoke(
+            # Use asyncio.to_thread for truly async Lambda dispatch
+            await asyncio.to_thread(
+                lambda_client.invoke,
                 FunctionName=settings.lambda_function_name,
                 InvocationType="Event",  # Asynchronous invocation
                 Payload=json.dumps(lambda_payload),
             )
 
-            dispatch_count += 1
             logger.debug(f"Job {job_id}: Dispatched Lambda for video {video_id}")
+            return True
 
         except Exception as e:
             logger.error(
@@ -2166,9 +2166,20 @@ async def dispatch_lambdas_concurrently(
             )
             # Update failure count atomically
             update_job_progress(job_id, failed_count_increment=1)
+            return False
+
+    # Create all tasks at once (no semaphore, no limits)
+    tasks = [dispatch_single_lambda(video) for video in videos]
+
+    # Fire all Lambda dispatches concurrently without waiting for completion
+    # Use asyncio.gather with return_exceptions to prevent any single failure from stopping others
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+
+    # Count successful dispatches
+    dispatch_count = sum(1 for result in results if result is True)
 
     logger.info(
-        f"Job {job_id}: Dispatched {dispatch_count} Lambda functions in fire-and-forget mode"
+        f"Job {job_id}: Dispatched {dispatch_count}/{len(videos)} Lambda functions concurrently"
     )
     return dispatch_count
 
