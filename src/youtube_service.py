@@ -2130,7 +2130,9 @@ async def dispatch_lambdas_concurrently(
     # Create Lambda client once (thread-safe)
     lambda_client = boto3.client("lambda")
 
-    logger.info(f"Job {job_id}: Fire-and-forget dispatch of {len(videos)} Lambda functions")
+    logger.info(
+        f"Job {job_id}: Fire-and-forget dispatch of {len(videos)} Lambda functions"
+    )
 
     dispatch_count = 0
 
@@ -2159,11 +2161,15 @@ async def dispatch_lambdas_concurrently(
             logger.debug(f"Job {job_id}: Dispatched Lambda for video {video_id}")
 
         except Exception as e:
-            logger.error(f"Job {job_id}: Failed to dispatch Lambda for video {video_id}: {str(e)}")
+            logger.error(
+                f"Job {job_id}: Failed to dispatch Lambda for video {video_id}: {str(e)}"
+            )
             # Update failure count atomically
             update_job_progress(job_id, failed_count_increment=1)
 
-    logger.info(f"Job {job_id}: Dispatched {dispatch_count} Lambda functions in fire-and-forget mode")
+    logger.info(
+        f"Job {job_id}: Dispatched {dispatch_count} Lambda functions in fire-and-forget mode"
+    )
     return dispatch_count
 
 
