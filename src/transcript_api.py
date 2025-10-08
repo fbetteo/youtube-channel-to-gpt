@@ -105,7 +105,7 @@ app.add_middleware(
 user_cache = {}
 
 # Video jobs persistent storage directory
-VIDEO_JOBS_STORAGE_DIR = os.path.join(settings.temp_dir, "video_jobs")
+VIDEO_JOBS_STORAGE_DIR = os.path.join(settings.temp_dir, "jobs")
 os.makedirs(VIDEO_JOBS_STORAGE_DIR, exist_ok=True)
 
 # Get API key from settings
@@ -2136,7 +2136,7 @@ async def video_completed(job_id: str, completion_data: dict):
             "transcript_length": completion_data.get("transcript_length", 0),
         }
 
-        updated_job = update_video_job(
+        updated_job = youtube_service.update_job_progress(
             job_id,
             files_append=file_info,  # Add file to list atomically
             completed_increment=1,  # Increment success counter
@@ -2160,7 +2160,7 @@ async def video_completed(job_id: str, completion_data: dict):
             )
 
             # Update job status to completed
-            update_video_job(job_id, status="completed")
+            youtube_service.update_job_progress(job_id, status="completed")
             logger.info(f"Job {job_id} completed - all videos processed")
 
         return {"status": "updated", "job_id": job_id}
@@ -2176,7 +2176,7 @@ async def video_failed(job_id: str, failure_data: dict):
     Internal endpoint for Lambda to report video failure.
     """
     try:
-        updated_job = update_video_job(
+        updated_job = youtube_service.update_job_progress(
             job_id,
             failed_count_increment=1,  # Increment failure counter
             credits_used_increment=1,  # Still count failed attempts
@@ -2206,7 +2206,7 @@ async def video_failed(job_id: str, failure_data: dict):
                 if updated_job["failed_count"] > 0
                 else "completed"
             )
-            update_video_job(job_id, status=status)
+            youtube_service.update_job_progress(job_id, status=status)
             logger.info(
                 f"Job {job_id} completed with {updated_job['failed_count']} failures"
             )

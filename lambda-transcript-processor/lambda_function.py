@@ -214,15 +214,17 @@ def get_video_info(video_id: str) -> Dict[str, Any]:
         raise ValueError(f"Failed to get metadata for video {video_id}: {str(e)}")
 
 
-def call_api_callback(callback_url: str, data: Dict[str, Any], max_retries: int = 3) -> bool:
+def call_api_callback(
+    callback_url: str, data: Dict[str, Any], max_retries: int = 3
+) -> bool:
     """
     Call the FastAPI callback endpoint to report video processing status.
-    
+
     Args:
         callback_url: The full URL to call
         data: The data to send in the request body
         max_retries: Maximum number of retry attempts
-        
+
     Returns:
         bool: True if successful, False otherwise
     """
@@ -232,34 +234,40 @@ def call_api_callback(callback_url: str, data: Dict[str, Any], max_retries: int 
                 callback_url,
                 json=data,
                 timeout=10,
-                headers={"Content-Type": "application/json"}
+                headers={"Content-Type": "application/json"},
             )
-            
+
             if response.status_code == 200:
                 logger.info(f"Successfully called callback: {callback_url}")
                 return True
             else:
-                logger.warning(f"Callback failed with status {response.status_code}: {response.text}")
-                
+                logger.warning(
+                    f"Callback failed with status {response.status_code}: {response.text}"
+                )
+
         except requests.exceptions.RequestException as e:
-            logger.warning(f"Attempt {attempt + 1} failed to call callback {callback_url}: {str(e)}")
-            
+            logger.warning(
+                f"Attempt {attempt + 1} failed to call callback {callback_url}: {str(e)}"
+            )
+
         # Exponential backoff for retries
         if attempt < max_retries - 1:
-            time.sleep(2 ** attempt)
-    
-    logger.error(f"Failed to call callback after {max_retries} attempts: {callback_url}")
+            time.sleep(2**attempt)
+
+    logger.error(
+        f"Failed to call callback after {max_retries} attempts: {callback_url}"
+    )
     return False
 
 
 def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
     """
     AWS Lambda handler for processing YouTube video transcripts.
-    
+
     Expected event structure:
     {
         "video_id": "youtube_video_id",
-        "job_id": "unique_job_identifier", 
+        "job_id": "unique_job_identifier",
         "user_id": "user_identifier",
         "api_base_url": "https://your-api.com",
         "include_timestamps": true/false,
@@ -269,7 +277,7 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
         "include_view_count": true/false,
         "pre_fetched_metadata": {...} // optional
     }
-    
+
     Returns:
         Success/failure status and calls appropriate callback endpoint
     """
@@ -277,7 +285,7 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
     job_id = event["job_id"]
     user_id = event["user_id"]
     api_base_url = event.get("api_base_url", "").rstrip("/")
-    
+
     logger.info(f"Starting transcript fetch for video {video_id} in job {job_id}")
 
     try:
@@ -462,7 +470,7 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
                 "transcript_length": len(transcript_text),
                 "metadata": metadata,
             }
-            
+
             callback_success = call_api_callback(callback_url, completion_data)
             if not callback_success:
                 logger.warning(f"Failed to call success callback for video {video_id}")
@@ -485,7 +493,7 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
     except Exception as e:
         error_message = f"Failed to get transcript for video {video_id}: {str(e)}"
         logger.error(error_message)
-        
+
         # Call failure callback
         if api_base_url:
             callback_url = f"{api_base_url}/internal/job/{job_id}/video-failed"
@@ -494,7 +502,7 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
                 "error": str(e),
                 "error_type": type(e).__name__,
             }
-            
+
             callback_success = call_api_callback(callback_url, failure_data)
             if not callback_success:
                 logger.warning(f"Failed to call failure callback for video {video_id}")

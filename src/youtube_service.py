@@ -327,65 +327,102 @@ def load_job_from_file(job_id: str) -> Optional[Dict[str, Any]]:
 
 def update_job_progress(job_id: str, **updates):
     """Update job progress and save to persistent storage with atomic operations"""
-    import fcntl  # For file locking on Unix systems
     import time
+    import shutil
+    import tempfile
+    from threading import Lock
 
-    # Try to update with file locking to prevent race conditions
-    max_retries = 3
-    for attempt in range(max_retries):
-        try:
-            job_file = os.path.join(JOBS_STORAGE_DIR, f"{job_id}.json")
+    # Use a global lock for all job updates (simpler and more memory efficient)
+    if not hasattr(update_job_progress, "_global_lock"):
+        update_job_progress._global_lock = Lock()
 
-            # Lock the file to prevent race conditions
-            with open(job_file, "r+") as f:
+    # Use the global lock instead of per-job locks to prevent memory accumulation
+    with update_job_progress._global_lock:
+        # Try to update with atomic file operations
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                job_file = os.path.join(JOBS_STORAGE_DIR, f"{job_id}.json")
+
+                # Create temporary file for atomic write
+                temp_filename = None
                 try:
-                    # Try to lock the file (Unix systems)
-                    fcntl.flock(f.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
-                except (ImportError, OSError):
-                    # Windows or file locking not available, continue without lock
-                    pass
-
-                # Load current data
-                f.seek(0)
-                job = json.load(f)
-
-                # Apply updates, handling special increment operations
-                for key, value in updates.items():
-                    if key.endswith("_increment"):
-                        # Handle atomic increments
-                        base_key = key.replace("_increment", "")
-                        job[base_key] = job.get(base_key, 0) + value
-                    elif key == "files_append":
-                        # Handle appending to files list
-                        if "files" not in job:
-                            job["files"] = []
-                        job["files"].append(value)
+                    # Load current data
+                    if os.path.exists(job_file):
+                        with open(job_file, "r", encoding="utf-8") as f:
+                            job = json.load(f)
                     else:
-                        # Regular update
-                        job[key] = value
+                        job = {}
 
-                # Write back to file
-                f.seek(0)
-                f.truncate()
-                json.dump(job, f, default=str, indent=2)
+                    # Apply updates, handling special increment operations
+                    for key, value in updates.items():
+                        if key.endswith("_increment"):
+                            # Handle atomic increments
+                            base_key = key.replace("_increment", "")
+                            job[base_key] = job.get(base_key, 0) + value
+                        elif key == "files_append":
+                            # Handle appending to files list
+                            if "files" not in job:
+                                job["files"] = []
+                            job["files"].append(value)
+                        else:
+                            # Regular update
+                            job[key] = value
 
-                # Update in-memory copy if it exists
-                # if job_id in channel_download_jobs:
-                #     channel_download_jobs[job_id].update(job)
+                    # Write to temporary file first (atomic operation)
+                    with tempfile.NamedTemporaryFile(
+                        mode="w",
+                        encoding="utf-8",
+                        dir=JOBS_STORAGE_DIR,
+                        prefix=f".{job_id}_",
+                        suffix=".tmp",
+                        delete=False,
+                    ) as temp_file:
+                        json.dump(
+                            job, temp_file, default=str, indent=2, ensure_ascii=False
+                        )
+                        temp_file.flush()
+                        os.fsync(temp_file.fileno())  # Force write to disk
+                        temp_filename = temp_file.name
 
-                logger.debug(f"Updated job {job_id} progress: {updates}")
-                return job
+                    # Atomic move: replace the original file
+                    if os.name == "nt":  # Windows
+                        if os.path.exists(job_file):
+                            os.replace(temp_filename, job_file)
+                        else:
+                            shutil.move(temp_filename, job_file)
+                    else:  # Unix/Linux
+                        os.rename(temp_filename, job_file)
 
-        except (json.JSONDecodeError, FileNotFoundError, PermissionError) as e:
-            logger.warning(f"Attempt {attempt + 1} to update job {job_id} failed: {e}")
-            if attempt < max_retries - 1:
-                time.sleep(0.1 * (attempt + 1))  # Exponential backoff
-                continue
-            else:
-                logger.error(
-                    f"Failed to update job {job_id} after {max_retries} attempts"
+                    logger.debug(f"Updated job {job_id} progress: {updates}")
+                    return job
+
+                except Exception as inner_e:
+                    # Clean up temporary file if it exists
+                    if temp_filename and os.path.exists(temp_filename):
+                        try:
+                            os.unlink(temp_filename)
+                        except Exception:
+                            pass
+                    raise inner_e
+
+            except (
+                json.JSONDecodeError,
+                FileNotFoundError,
+                PermissionError,
+                OSError,
+            ) as e:
+                logger.warning(
+                    f"Attempt {attempt + 1} to update job {job_id} failed: {e}"
                 )
-                return None
+                if attempt < max_retries - 1:
+                    time.sleep(0.1 * (2**attempt))  # Exponential backoff
+                    continue
+                else:
+                    logger.error(
+                        f"Failed to update job {job_id} after {max_retries} attempts: {e}"
+                    )
+                    return None
 
 
 def recover_jobs_from_storage() -> List[str]:
@@ -2130,6 +2167,7 @@ async def prefetch_and_dispatch_task(job_id: str):
                     "user_id": user_id,
                     "formatting_options": job["formatting_options"],
                     "pre_fetched_metadata": pre_fetched_metadata,
+                    "api_base_url": settings.api_base_url,
                 }
 
                 # Invoke Lambda asynchronously

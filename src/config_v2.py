@@ -16,6 +16,9 @@ class Settings(BaseModel):
     api_key: str = Field(
         default_factory=lambda: os.getenv("TRANSCRIPT_API_KEY", "default_dev_key")
     )
+    api_base_url: str = Field(
+        default_factory=lambda: os.getenv("API_BASE_URL", "http://localhost:8000")
+    )
 
     # YouTube API settings
     youtube_api_key: str = Field(
