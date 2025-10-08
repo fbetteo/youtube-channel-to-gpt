@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-YouTube Service - Service layer for YouTube transcript downloading and processing
+AWS Lambda function for processing YouTube video transcripts
 """
 import boto3
 import logging
 import os
 import re
+import requests
 import time
 from typing import Dict, Any
 
@@ -213,34 +214,71 @@ def get_video_info(video_id: str) -> Dict[str, Any]:
         raise ValueError(f"Failed to get metadata for video {video_id}: {str(e)}")
 
 
+def call_api_callback(callback_url: str, data: Dict[str, Any], max_retries: int = 3) -> bool:
+    """
+    Call the FastAPI callback endpoint to report video processing status.
+    
+    Args:
+        callback_url: The full URL to call
+        data: The data to send in the request body
+        max_retries: Maximum number of retry attempts
+        
+    Returns:
+        bool: True if successful, False otherwise
+    """
+    for attempt in range(max_retries):
+        try:
+            response = requests.post(
+                callback_url,
+                json=data,
+                timeout=10,
+                headers={"Content-Type": "application/json"}
+            )
+            
+            if response.status_code == 200:
+                logger.info(f"Successfully called callback: {callback_url}")
+                return True
+            else:
+                logger.warning(f"Callback failed with status {response.status_code}: {response.text}")
+                
+        except requests.exceptions.RequestException as e:
+            logger.warning(f"Attempt {attempt + 1} failed to call callback {callback_url}: {str(e)}")
+            
+        # Exponential backoff for retries
+        if attempt < max_retries - 1:
+            time.sleep(2 ** attempt)
+    
+    logger.error(f"Failed to call callback after {max_retries} attempts: {callback_url}")
+    return False
+
+
 def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
     """
-    Get transcript for a single YouTube video, with language fallback.
-
-    Args:
-        video_id: YouTube video ID
-        output_dir: Optional directory to save the transcript file
-        include_timestamps: Whether to include timestamps in the transcript
-        include_video_title: Whether to include video title in file header
-        include_video_id: Whether to include video ID in file header
-        include_video_url: Whether to include video URL in file header
-        include_view_count: Whether to include view count in file header
-        pre_fetched_metadata: Optional pre-fetched metadata to use instead of fetching
-
+    AWS Lambda handler for processing YouTube video transcripts.
+    
+    Expected event structure:
+    {
+        "video_id": "youtube_video_id",
+        "job_id": "unique_job_identifier", 
+        "user_id": "user_identifier",
+        "api_base_url": "https://your-api.com",
+        "include_timestamps": true/false,
+        "include_video_title": true/false,
+        "include_video_id": true/false,
+        "include_video_url": true/false,
+        "include_view_count": true/false,
+        "pre_fetched_metadata": {...} // optional
+    }
+    
     Returns:
-        Tuple of (transcript text, file path if saved, metadata dict)
-
-    Raises:
-        ValueError: If transcript cannot be retrieved
+        Success/failure status and calls appropriate callback endpoint
     """
     video_id = event["video_id"]
     job_id = event["job_id"]
     user_id = event["user_id"]
-    start_time = time.time()
-
-    # Track memory at start of transcript processing
-
-    logger.info(f"Starting transcript fetch for video {video_id}")
+    api_base_url = event.get("api_base_url", "").rstrip("/")
+    
+    logger.info(f"Starting transcript fetch for video {video_id} in job {job_id}")
 
     try:
         # Create fresh API instance for thread safety
@@ -336,13 +374,9 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
             f"Transcript formatting took {format_end - format_start:.3f}s for video {video_id}"
         )
 
-        # Save to file if output directory is specified
-        file_path = None
-        file_start = time.time()
-
-        # Use pre-fetched metadata if available, otherwise fetch it
+        # Get metadata for file headers
         video_title = None
-        video_view_count = None
+        view_count = None
 
         if event.get("pre_fetched_metadata"):
             logger.info(
@@ -350,7 +384,7 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
             )
             # Use pre-fetched metadata (much faster)
             video_title = event["pre_fetched_metadata"].get("title", "Untitled_Video")
-            video_view_count = event["pre_fetched_metadata"].get("viewCount", 0)
+            view_count = event["pre_fetched_metadata"].get("viewCount", 0)
             logger.debug(
                 f"Using pre-fetched metadata for video {video_id}: {video_title}"
             )
@@ -366,12 +400,6 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
                 logger.info(
                     f"Video metadata fetch took {metadata_end - metadata_start:.3f}s for video {video_id}"
                 )
-            # except asyncio.TimeoutError:
-            #     logger.warning(
-            #         f"Metadata fetch timed out for video {video_id}, using fallback title"
-            #     )
-            #     video_title = "Untitled_Video"
-            #     video_view_count = 0
             except Exception as e:
                 logger.warning(
                     f"Failed to get metadata for video {video_id}, using fallback title: {str(e)}"
@@ -379,19 +407,11 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
                 video_title = "Untitled_Video"
                 view_count = 0
 
-            # Create a sanitized filename from the video title (or ID if title not available)
-            safe_title = sanitize_filename(video_title) if video_title else video_id
-            # file_path = os.path.join(output_dir, f"{safe_title}_{video_id}.txt")
-
-            # Create file content with headers (since we're not using output_dir)
+        # Create file content with headers
         file_content = ""
 
         # Add headers based on formatting options
         if event.get("include_video_title", True):
-            # You'd need video title from pre_fetched_metadata or fetch it
-            video_title = event.get("pre_fetched_metadata", {}).get(
-                "title", f"Video {video_id}"
-            )
             file_content += f"Video Title: {video_title}\n"
 
         if event.get("include_video_id", True):
@@ -401,7 +421,6 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
             file_content += f"URL: https://www.youtube.com/watch?v={video_id}\n"
 
         if event.get("include_view_count", False):
-            view_count = event.get("pre_fetched_metadata", {}).get("viewCount", 0)
             file_content += f"View Count: {view_count:,}\n"
 
         # Add separator if any header was written
@@ -434,7 +453,23 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
 
         logger.info(f"Successfully uploaded transcript to S3: {s3_key}")
 
-        # return transcript_text, file_path, metadata
+        # Call success callback
+        if api_base_url:
+            callback_url = f"{api_base_url}/internal/job/{job_id}/video-complete"
+            completion_data = {
+                "video_id": video_id,
+                "s3_key": s3_key,
+                "transcript_length": len(transcript_text),
+                "metadata": metadata,
+            }
+            
+            callback_success = call_api_callback(callback_url, completion_data)
+            if not callback_success:
+                logger.warning(f"Failed to call success callback for video {video_id}")
+        else:
+            logger.warning("No api_base_url provided, skipping callback")
+
+        # Return success response
         return {
             "statusCode": 200,
             "body": {
@@ -443,10 +478,37 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
                 "transcript_length": len(transcript_text),
                 "s3_key": s3_key,
                 "metadata": metadata,
+                "callback_called": api_base_url is not None,
             },
         }
 
     except Exception as e:
-        # Track memory on error too
-        logger.error(f"Error getting transcript for video {video_id}: {str(e)}")
-        raise ValueError(f"Failed to get transcript for video {video_id}: {str(e)}")
+        error_message = f"Failed to get transcript for video {video_id}: {str(e)}"
+        logger.error(error_message)
+        
+        # Call failure callback
+        if api_base_url:
+            callback_url = f"{api_base_url}/internal/job/{job_id}/video-failed"
+            failure_data = {
+                "video_id": video_id,
+                "error": str(e),
+                "error_type": type(e).__name__,
+            }
+            
+            callback_success = call_api_callback(callback_url, failure_data)
+            if not callback_success:
+                logger.warning(f"Failed to call failure callback for video {video_id}")
+        else:
+            logger.warning("No api_base_url provided, skipping failure callback")
+
+        # Return error response
+        return {
+            "statusCode": 500,
+            "body": {
+                "video_id": video_id,
+                "status": "failed",
+                "error": str(e),
+                "error_type": type(e).__name__,
+                "callback_called": api_base_url is not None,
+            },
+        }
