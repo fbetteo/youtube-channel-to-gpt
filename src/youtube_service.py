@@ -2111,7 +2111,7 @@ async def dispatch_lambdas_concurrently(
     max_concurrent: int = 20,
 ) -> int:
     """
-    Dispatch Lambda functions concurrently for video processing.
+    Dispatch Lambda functions in fire-and-forget mode for maximum concurrency.
 
     Args:
         job_id: The job identifier
@@ -2119,10 +2119,10 @@ async def dispatch_lambdas_concurrently(
         videos_metadata: Pre-fetched metadata for videos
         user_id: User identifier
         formatting_options: Formatting options for transcripts
-        max_concurrent: Maximum number of concurrent Lambda invocations
+        max_concurrent: Not used - kept for compatibility
 
     Returns:
-        Number of successfully dispatched Lambda functions
+        Number of Lambda dispatches attempted
     """
     import boto3
     import json
@@ -2130,107 +2130,41 @@ async def dispatch_lambdas_concurrently(
     # Create Lambda client once (thread-safe)
     lambda_client = boto3.client("lambda")
 
-    # Semaphore to limit concurrent invocations
-    semaphore = asyncio.Semaphore(max_concurrent)
+    logger.info(f"Job {job_id}: Fire-and-forget dispatch of {len(videos)} Lambda functions")
 
-    async def dispatch_single_lambda(video) -> bool:
-        """Dispatch a single Lambda function"""
-        async with semaphore:
-            try:
-                video_id = video.id if hasattr(video, "id") else video["id"]
-                pre_fetched_metadata = videos_metadata.get(video_id, {})
+    dispatch_count = 0
 
-                lambda_payload = {
-                    "video_id": video_id,
-                    "job_id": job_id,
-                    "user_id": user_id,
-                    "formatting_options": formatting_options,
-                    "pre_fetched_metadata": pre_fetched_metadata,
-                    "api_base_url": settings.api_base_url,
-                }
+    for video in videos:
+        try:
+            video_id = video.id if hasattr(video, "id") else video["id"]
+            pre_fetched_metadata = videos_metadata.get(video_id, {})
 
-                # Run Lambda invocation in thread pool to avoid blocking
-                def invoke_lambda():
-                    return lambda_client.invoke(
-                        FunctionName=settings.lambda_function_name,
-                        InvocationType="Event",  # Asynchronous invocation
-                        Payload=json.dumps(lambda_payload),
-                    )
+            lambda_payload = {
+                "video_id": video_id,
+                "job_id": job_id,
+                "user_id": user_id,
+                "formatting_options": formatting_options,
+                "pre_fetched_metadata": pre_fetched_metadata,
+                "api_base_url": settings.api_base_url,
+            }
 
-                # Execute in thread pool
-                await asyncio.to_thread(invoke_lambda)
+            # Fire-and-forget Lambda dispatch (no await, no semaphore)
+            lambda_client.invoke(
+                FunctionName=settings.lambda_function_name,
+                InvocationType="Event",  # Asynchronous invocation
+                Payload=json.dumps(lambda_payload),
+            )
 
-                logger.debug(f"Job {job_id}: Dispatched Lambda for video {video_id}")
-                return True
+            dispatch_count += 1
+            logger.debug(f"Job {job_id}: Dispatched Lambda for video {video_id}")
 
-            except Exception as e:
-                logger.error(
-                    f"Job {job_id}: Failed to dispatch Lambda for video {video_id}: {str(e)}"
-                )
-                # Update failure count atomically
-                update_job_progress(job_id, failed_count_increment=1)
-                return False
-            finally:
-                # Clean up video_id reference to prevent memory leaks
-                video_id = None
-                pre_fetched_metadata = None
-                lambda_payload = None
+        except Exception as e:
+            logger.error(f"Job {job_id}: Failed to dispatch Lambda for video {video_id}: {str(e)}")
+            # Update failure count atomically
+            update_job_progress(job_id, failed_count_increment=1)
 
-    # Create tasks for all videos
-    logger.info(
-        f"Job {job_id}: Dispatching {len(videos)} Lambda functions concurrently (max {max_concurrent} at once)"
-    )
-
-    # Process videos in batches to control memory usage for very large jobs
-    batch_size = 50  # Process 50 videos at a time
-    total_dispatched = 0
-
-    for i in range(0, len(videos), batch_size):
-        batch = videos[i : i + batch_size]
-        batch_num = (i // batch_size) + 1
-        total_batches = (len(videos) + batch_size - 1) // batch_size
-
-        logger.info(
-            f"Job {job_id}: Processing batch {batch_num}/{total_batches} ({len(batch)} videos)"
-        )
-
-        # Use asyncio.gather with semaphore for controlled concurrency
-        tasks = [dispatch_single_lambda(video) for video in batch]
-        results = await asyncio.gather(*tasks, return_exceptions=True)
-
-        # Count successful dispatches in this batch
-        batch_dispatched = 0
-        for j, result in enumerate(results):
-            if isinstance(result, Exception):
-                logger.error(
-                    f"Job {job_id}: Lambda dispatch task {i + j} failed with exception: {result}"
-                )
-            elif result is True:
-                batch_dispatched += 1
-
-        total_dispatched += batch_dispatched
-
-        # Clean up batch references
-        tasks = None
-        results = None
-        batch = None
-
-        # Force garbage collection between batches for large jobs
-        if len(videos) > 100:
-            gc.collect()
-
-        logger.info(
-            f"Job {job_id}: Batch {batch_num} completed: {batch_dispatched} dispatched"
-        )
-
-    logger.info(
-        f"Job {job_id}: All batches completed. Successfully dispatched {total_dispatched}/{len(videos)} Lambda functions"
-    )
-
-    # Final cleanup
-    lambda_client = None
-
-    return total_dispatched
+    logger.info(f"Job {job_id}: Dispatched {dispatch_count} Lambda functions in fire-and-forget mode")
+    return dispatch_count
 
 
 async def prefetch_and_dispatch_task(job_id: str):
