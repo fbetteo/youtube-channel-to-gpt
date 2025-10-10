@@ -1770,6 +1770,9 @@ async def download_selected_videos(
             "status": "initializing",  # New status for pre-fetching phase
             "channel_name": request.channel_name,
             "channel_info": channel_info,
+            "source_id": channel_info.get("id", request.channel_name),
+            "source_name": channel_info.get("title", request.channel_name),
+            "source_type": "channel",
             "total_videos": num_videos,
             "completed": 0,
             "failed_count": 0,
@@ -2111,25 +2114,22 @@ async def download_selected_playlist_videos(
     session: Dict = Depends(get_user_session),
 ):
     """
-    Start asynchronous download of transcripts for selected videos from a YouTube playlist.
-    Returns a job ID that can be used to check progress and retrieve results.
+    Ultra-fast response workflow for playlist downloads:
+    1. Validate credits & playlist (quick)
+    2. Create job immediately
+    3. Start background task for pre-fetching + Lambda dispatch
+    4. Return job_id in ~200ms
 
     REQUIRES AUTHENTICATION: This endpoint requires sufficient credits for the selected videos.
     Each video transcript attempt will deduct 1 credit.
     """
     playlist_name = request.playlist_name
     videos = request.videos
-    session_id = session["id"]
     user_id = get_user_id_from_payload(payload)
-
-    # Count number of videos to download
     num_videos = len(videos)
 
     try:
-        # Extract playlist ID from URL if needed
-        clean_playlist_id = youtube_service.extract_playlist_id(playlist_name)
-
-        # Check if user has sufficient credits for the selected videos
+        # Check if user has sufficient credits for the requested videos
         user_credits = CreditManager.get_user_credits(user_id)
         if user_credits < num_videos:
             raise HTTPException(
@@ -2137,31 +2137,65 @@ async def download_selected_playlist_videos(
                 detail=f"Insufficient credits. You need {num_videos} credits but only have {user_credits}. Please purchase more credits.",
             )
 
-        # Start asynchronous transcript retrieval using the existing service
-        # We can reuse the channel download function by passing playlist parameters
-        job_id = await youtube_service.start_selected_videos_transcript_download(
-            channel_name=None,  # No channel for playlist downloads
-            playlist_name=clean_playlist_id,  # Use playlist ID
-            videos=videos,
-            user_id=user_id,
-            include_timestamps=request.include_timestamps,
-            include_video_title=request.include_video_title,
-            include_video_id=request.include_video_id,
-            include_video_url=request.include_video_url,
-            include_view_count=request.include_view_count,
-            concatenate_all=request.concatenate_all,
-            is_playlist=True,  # Flag to indicate this is a playlist download
+        # 2. Quick playlist validation (< 100ms)
+        clean_playlist_id = youtube_service.extract_playlist_id(playlist_name)
+        playlist_info = await youtube_service.get_playlist_info(clean_playlist_id)
+
+        # 3. Reserve credits immediately
+        reservation_id = CreditManager.reserve_credits(user_id, num_videos)
+
+        # 4. Create job immediately (no metadata yet)
+        job_id = str(uuid.uuid4())
+        job_data = {
+            "status": "initializing",  # New status for pre-fetching phase
+            "playlist_id": clean_playlist_id,
+            "playlist_info": playlist_info,
+            "source_id": clean_playlist_id,
+            "source_name": playlist_info.get("title", clean_playlist_id),
+            "source_type": "playlist",
+            "total_videos": num_videos,
+            "completed": 0,
+            "failed_count": 0,
+            "processed_count": 0,
+            "files": [],
+            "videos": videos,
+            "start_time": time.time(),
+            "user_id": user_id,
+            "credits_reserved": num_videos,
+            "credits_used": 0,
+            "reservation_id": reservation_id,
+            "videos_metadata": {},  # Empty initially
+            "prefetch_completed": False,  # Track pre-fetch progress
+            "lambda_dispatched_count": 0,  # Track dispatched Lambda functions
+            "is_playlist": True,  # Flag to indicate this is a playlist download
+            "formatting_options": {
+                "include_timestamps": request.include_timestamps,
+                "include_video_title": request.include_video_title,
+                "include_video_id": request.include_video_id,
+                "include_video_url": request.include_video_url,
+                "include_view_count": request.include_view_count,
+                "concatenate_all": request.concatenate_all,
+            },
+        }
+
+        # Save job immediately
+        youtube_service.save_job_to_file(job_id, job_data)
+        logger.info(
+            f"Created playlist job {job_id} - starting background pre-fetch for {num_videos} videos"
         )
+
+        # 5. Start background task for pre-fetching + Lambda dispatch
+        asyncio.create_task(youtube_service.prefetch_and_dispatch_task(job_id))
 
         return {
             "job_id": job_id,
-            "status": "processing",
+            "status": "initializing",  # User knows pre-fetching is happening
             "total_videos": num_videos,
             "playlist_id": clean_playlist_id,
             "user_id": user_id,
             "credits_reserved": num_videos,
             "user_credits_at_start": user_credits,
-            "message": f"Playlist transcript retrieval started. Credits will be deducted per video attempt (1 credit each). You have {user_credits} credits available. Use the /channel/download/status endpoint to check progress and credit usage.",
+            "message": f"Job created. Pre-fetching metadata for {num_videos} videos, then starting Lambda processing.",
         }
 
     except ValueError as e:
