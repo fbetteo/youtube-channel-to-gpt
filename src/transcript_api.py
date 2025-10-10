@@ -2183,6 +2183,35 @@ async def video_completed(job_id: str, completion_data: dict):
     Updates job progress and file tracking.
     """
     try:
+        # Check execution time for monitoring
+        job = youtube_service.load_job_from_file(job_id)
+        if job and job.get("lambda_dispatch_time"):
+            execution_time = time.time() - job["lambda_dispatch_time"]
+            if execution_time > 300:  # 5 minutes
+                logger.warning(
+                    f"Video {completion_data['video_id']} took {execution_time/60:.1f} minutes to complete "
+                    f"(potential Lambda delay/timeout recovery)"
+                )
+            elif execution_time > 120:  # 2 minutes
+                logger.info(
+                    f"Video {completion_data['video_id']} took {execution_time/60:.1f} minutes to complete"
+                )
+
+        # Check if this video was already counted as timed out
+        if job and job.get("timeout_occurred"):
+            logger.info(
+                f"Video {completion_data['video_id']} completed after timeout was triggered "
+                f"- this is a late-arriving Lambda response"
+            )
+
+            # # Don't process further, job already finalized
+            # # But currently I want to process it anyway to keep accurate counts. I will enable download before that.
+            # return {
+            #     "status": "ignored",
+            #     "reason": "late_arrival_after_timeout",
+            #     "job_id": job_id,
+            # }
+
         # Update job progress with atomic operations
         file_info = {
             "video_id": completion_data["video_id"],
@@ -2231,6 +2260,20 @@ async def video_failed(job_id: str, failure_data: dict):
     Internal endpoint for Lambda to report video failure.
     """
     try:
+        # Check if this video was already counted as timed out
+        job = youtube_service.load_job_from_file(job_id)
+        if job and job.get("timeout_occurred"):
+            logger.info(
+                f"Video {failure_data['video_id']} failed after timeout was triggered "
+                f"- this is a late-arriving Lambda response"
+            )
+            # # Don't process further, job already finalized
+            # return {
+            #     "status": "ignored",
+            #     "reason": "late_failure_after_timeout",
+            #     "job_id": job_id,
+            # }
+
         updated_job = youtube_service.update_job_progress(
             job_id,
             failed_count_increment=1,  # Increment failure counter

@@ -57,6 +57,11 @@ class Settings(BaseModel):
         )
     )
 
+    # Job timeout settings
+    job_timeout_minutes: int = Field(
+        default_factory=lambda: int(os.getenv("JOB_TIMEOUT_MINUTES", "1"))
+    )
+
     # Server settings
     host: str = Field(default_factory=lambda: os.getenv("HOST", "0.0.0.0"))
     port: int = Field(default_factory=lambda: int(os.getenv("PORT", "8000")))
