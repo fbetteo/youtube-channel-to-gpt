@@ -1679,7 +1679,9 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
     # Return relevant status information including credit tracking
     status_info = {
         "status": job["status"],
-        "channel_name": job["channel_name"],
+        "channel_name": job.get("channel_name"),  # Channel name (if channel job)
+        "playlist_id": job.get("playlist_id"),  # Playlist ID (if playlist job)
+        "is_playlist": job.get("is_playlist", False),  # Flag to distinguish job type
         "total_videos": total,
         "processed_count": processed,
         "completed": job["completed"],
