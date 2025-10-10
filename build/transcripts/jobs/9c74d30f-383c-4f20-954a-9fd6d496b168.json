@@ -1,0 +1,437 @@
+{
+  "status": "processing",
+  "channel_name": "@edmundyong",
+  "channel_info": {
+    "title": "Edmund Yong",
+    "description": "Building startups, documenting my journey, and sharing my thoughts.\n",
+    "thumbnail": "https://yt3.ggpht.com/YmKYA3vKEfYSbW6FzzPQkMwQoYXL4IBvureLikObBNbXSZvYSWjHyAyvS18MJ_2eWtrmvrmq-g=s800-c-k-c0x00ffffff-no-rj",
+    "videoCount": 19,
+    "subscriberCount": 114000,
+    "viewCount": 4244865,
+    "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+    "uploadsPlaylistId": "UUuKVsDS3oVzTuNjnQ79pEEg"
+  },
+  "total_videos": 19,
+  "completed": 0,
+  "failed_count": 0,
+  "processed_count": 0,
+  "files": [],
+  "videos": [
+    {
+      "id": "x3C-3dX3e6Q",
+      "title": "Coding a Profitable Whop App From Scratch with AI (full guide / solo / beginner friendly)",
+      "publishedAt": "2025-09-29T16:13:32Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=x3C-3dX3e6Q"
+    },
+    {
+      "id": "tfNIoZE4q-Q",
+      "title": "My Solo Startup Journey So Far (realistic coding vlog)",
+      "publishedAt": "2025-08-12T16:27:17Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=tfNIoZE4q-Q"
+    },
+    {
+      "id": "QI2t35PLsCw",
+      "title": "Building a Profitable App from Scratch SOLO ($1K+ MRR in 1 Month)",
+      "publishedAt": "2025-05-22T13:00:27Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=QI2t35PLsCw"
+    },
+    {
+      "id": "cESaIUWoCJQ",
+      "title": "How I Coded ANOTHER Profitable App SOLO (step by step / from scratch / with AI)",
+      "publishedAt": "2025-05-02T19:46:36Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=cESaIUWoCJQ"
+    },
+    {
+      "id": "nCuaNmeVfQY",
+      "title": "Minimalist Tech Setup: What I Use Daily For Coding, Content & Travel",
+      "publishedAt": "2025-03-24T11:22:23Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=nCuaNmeVfQY"
+    },
+    {
+      "id": "V-zhv95AhF8",
+      "title": "Cursor AI Tricks That Made Me a Better Solo Developer (& more productive)",
+      "publishedAt": "2025-03-14T15:57:51Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=V-zhv95AhF8"
+    },
+    {
+      "id": "CJ-xMLz-ZrM",
+      "title": "My Simple System to Code Without Mental Blocks (as a solo startup founder)",
+      "publishedAt": "2025-03-03T16:01:17Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=CJ-xMLz-ZrM"
+    },
+    {
+      "id": "OoofplYkDQI",
+      "title": "How to Validate SOLO Startup Ideas Fast (beginner friendly guide)",
+      "publishedAt": "2025-02-21T15:01:41Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=OoofplYkDQI"
+    },
+    {
+      "id": "SAbp7E9daso",
+      "title": "OpenAI \"Ended\" My Startup: Here’s What I Learned (Tokyo coding vlog)",
+      "publishedAt": "2025-01-30T14:32:06Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=SAbp7E9daso"
+    },
+    {
+      "id": "Q9uXOSGS8IQ",
+      "title": "How I Make Coding FUN with Simple Habits (and achieve my goals)",
+      "publishedAt": "2025-01-15T15:23:10Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=Q9uXOSGS8IQ"
+    },
+    {
+      "id": "CNsvts6pVzo",
+      "title": "How I Code Profitable Apps SOLO (no wasted time / beginner friendly / with AI)",
+      "publishedAt": "2024-12-27T11:09:06Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=CNsvts6pVzo"
+    },
+    {
+      "id": "l5tdsK_Od2Q",
+      "title": "Life as a 26 y/o Solo Startup Founder (realistic coding vlog)",
+      "publishedAt": "2024-12-13T13:53:41Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=l5tdsK_Od2Q"
+    },
+    {
+      "id": "AGrh9X0eU8I",
+      "title": "My MacBook Setup - Everything I Use for Coding (minimalist)",
+      "publishedAt": "2024-12-03T11:28:11Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=AGrh9X0eU8I"
+    },
+    {
+      "id": "qMTKz4Wa_HI",
+      "title": "Why I Quit My 9-5 to Build a Solo Startup (coding vlog)",
+      "publishedAt": "2024-11-24T13:32:16Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=qMTKz4Wa_HI"
+    },
+    {
+      "id": "JxB0FX_4ql4",
+      "title": "Building a Solo Startup in my 20s (realistic coding vlog)",
+      "publishedAt": "2024-11-17T14:14:34Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=JxB0FX_4ql4"
+    },
+    {
+      "id": "I2aKS-1oUnc",
+      "title": "Why I love being a SOLO startup founder after quitting my 9-5 (realistic coding vlog)",
+      "publishedAt": "2024-11-10T16:03:57Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=I2aKS-1oUnc"
+    },
+    {
+      "id": "0LE0trd740Q",
+      "title": "Should I Code or Market First as a Solo Startup Founder? (Coding Vlog)",
+      "publishedAt": "2024-11-03T07:00:26Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=0LE0trd740Q"
+    },
+    {
+      "id": "K2Jlzp54kdc",
+      "title": "A Realistic Coding Vlog (As A Solo Startup Founder)",
+      "publishedAt": "2024-10-21T08:37:35Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=K2Jlzp54kdc"
+    },
+    {
+      "id": "-oHnkJD1nDE",
+      "title": "Life as a Solo Startup Founder (Coding Vlog)",
+      "publishedAt": "2024-10-14T07:33:06Z",
+      "duration": "medium",
+      "url": "https://www.youtube.com/watch?v=-oHnkJD1nDE"
+    }
+  ],
+  "start_time": 1759946976.5543327,
+  "user_id": "c78c3fd6-a2a9-4aa6-8060-99a801538a00",
+  "credits_reserved": 19,
+  "credits_used": 0,
+  "reservation_id": "e44fa095-7ed7-405e-98c8-1b80179ef1d4",
+  "videos_metadata": {
+    "x3C-3dX3e6Q": {
+      "id": "x3C-3dX3e6Q",
+      "title": "Coding a Profitable Whop App From Scratch with AI (full guide / solo / beginner friendly)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\nA cheeky sidequest to add another income stream to the startup's gauntlet. \n\nFull course on Whop Apps:\nhttps://whop.com/build/?utm_source=edmund \n\nWhop App docs:\nhttps://docs.whop.com/apps/introduction?utm_source=edmund\n\n=====\n\n00:00 - Brainstorm\n04:18 - Build\n05:58 - Launch\n\n=====\n\n#KLVlog #dayinthelife #malaysia #malaysiavlog #startups #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2025-09-29T16:13:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/x3C-3dX3e6Q/maxresdefault.jpg",
+      "duration": "9:05",
+      "viewCount": 14293,
+      "likeCount": 613,
+      "commentCount": 34,
+      "url": "https://www.youtube.com/watch?v=x3C-3dX3e6Q"
+    },
+    "tfNIoZE4q-Q": {
+      "id": "tfNIoZE4q-Q",
+      "title": "My Solo Startup Journey So Far (realistic coding vlog)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nBack in Seoul and continuing my solo journey. Sharing lots of updates on the technical & marketing side of my startup. This is only the beginning. 🫡\n\n=====\n\nConvert users to your product in SECONDS w/ Clerk.:\nhttps://go.clerk.com/bWhPlp7\n\n=====\n\n00:00 - Life updates\n00:31 - App updates\n05:58 - What's next?\n\n=====\n\n#SeoulVlog #dayinthelife #korea #koreavlog #startups #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2025-08-12T16:27:17Z",
+      "thumbnail": "https://i.ytimg.com/vi/tfNIoZE4q-Q/maxresdefault.jpg",
+      "duration": "7:53",
+      "viewCount": 23972,
+      "likeCount": 1097,
+      "commentCount": 71,
+      "url": "https://www.youtube.com/watch?v=tfNIoZE4q-Q"
+    },
+    "QI2t35PLsCw": {
+      "id": "QI2t35PLsCw",
+      "title": "Building a Profitable App from Scratch SOLO ($1K+ MRR in 1 Month)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nNo pixel feet in this video. 😔\n\n=====\n\nConvert users to your product in SECONDS w/ Clerk.:\nhttps://go.clerk.com/bWhPlp7\n\n=====\n\n00:00 - Intro\n00:24 - My updates (growth & earnings)\n02:43 - New browser extension\n05:10 - What I'm working on next\n\n=====\n\n#KLVlog #dayinthelife #malaysia #malaysiavlog #startups #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2025-05-22T13:00:27Z",
+      "thumbnail": "https://i.ytimg.com/vi/QI2t35PLsCw/maxresdefault.jpg",
+      "duration": "6:07",
+      "viewCount": 55844,
+      "likeCount": 1883,
+      "commentCount": 100,
+      "url": "https://www.youtube.com/watch?v=QI2t35PLsCw"
+    },
+    "cESaIUWoCJQ": {
+      "id": "cESaIUWoCJQ",
+      "title": "How I Coded ANOTHER Profitable App SOLO (step by step / from scratch / with AI)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nBuild & deploy your apps in minutes with Tempo:\nhttps://tempo.new/?utm_source=youtube&utm_campaign=edmond\n\n=====\n\n00:00 - Intro\n00:30 - Planning stage\n03:45 - Build stage\n07:42 - Launch & Results\n\n=====\n\n#KLVlog #dayinthelife #malaysia #malaysiavlog #startups #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2025-05-02T19:46:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/cESaIUWoCJQ/maxresdefault.jpg",
+      "duration": "9:52",
+      "viewCount": 956750,
+      "likeCount": 29221,
+      "commentCount": 944,
+      "url": "https://www.youtube.com/watch?v=cESaIUWoCJQ"
+    },
+    "nCuaNmeVfQY": {
+      "id": "nCuaNmeVfQY",
+      "title": "Minimalist Tech Setup: What I Use Daily For Coding, Content & Travel",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nProducts I use from MOFT (Save 10% w/ code \"Edmund10\"):\nMOFT Smart Desk Mat: https://moftinc.pxf.io/7aO2nY\nMOFT Carry Sleeve: https://moftinc.pxf.io/9LzRyE \nMOFT Invisible Tripod Wallet: https://moftinc.pxf.io/jeykJZ\n\n=====\n\nSome of the products mentioned in the video (non-affiliated):\n\nMacBook Accessories:\n\nBenQ LaptopBar\nhttps://www.amazon.co.uk/dp/B0C3HFR2JJ\n\n👀 My Macbook Matte Screen Protector 🤫\nhttps://www.amazon.co.uk/dp/B0CPHTD66C\n\niPad Accessories:\n\nBlack Rock iPad Pro KickStand\nhttps://www.amazon.co.uk/dp/B0BZSYPC7P\n\niPad PaperTouch Glass Screen Protector\nhttps://www.amazon.co.uk/dp/B0BYTG6VRR\n\nCamera:\n\nDJI Osmo Pocket 3\nhttps://www.dji.com/jp/osmo-pocket-3\n\nBackpack:\n\nNomatic/Gomatic Travel Pack (20L)\nhttps://gomatic.co.uk/products/the-gomatic-travel-pack\n\n=====\n\n00:00 - For coding\n01:52 - MOFT\n03:24 - For content\n04:16 - For travel\n\n=====\n\n#TokyoVlog #dayinthelife #japan #japanvlog #startups #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2025-03-24T11:22:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/nCuaNmeVfQY/maxresdefault.jpg",
+      "duration": "4:55",
+      "viewCount": 66434,
+      "likeCount": 2190,
+      "commentCount": 61,
+      "url": "https://www.youtube.com/watch?v=nCuaNmeVfQY"
+    },
+    "V-zhv95AhF8": {
+      "id": "V-zhv95AhF8",
+      "title": "Cursor AI Tricks That Made Me a Better Solo Developer (& more productive)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nShort and sweet. Sharing some recent features I learned in Cursor along with my first attempts at \"vibe coding\". 🥴\n\nLinks:\n\nCursor rules templates:\nhttps://cursor.directory/\nhttps://github.com/supabase/supabase/tree/master/examples/prompts\nhttps://github.com/PatrickJS/awesome-cursorrules\nhttps://dotcursorrules.com/\n\nPrompt Template for Cursor Agent:\nhttps://pastebin.com/wLX4cZu6\n\n=====\n\n00:00 - Intro\n00:18 - AI Rules\n01:28 - Chat\n02:12 - Agent + Vibe coding\n\n=====\n\n#TokyoVlog #dayinthelife #japan #japanvlog #startups #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2025-03-14T15:57:51Z",
+      "thumbnail": "https://i.ytimg.com/vi/V-zhv95AhF8/maxresdefault.jpg",
+      "duration": "3:33",
+      "viewCount": 133157,
+      "likeCount": 3635,
+      "commentCount": 56,
+      "url": "https://www.youtube.com/watch?v=V-zhv95AhF8"
+    },
+    "CJ-xMLz-ZrM": {
+      "id": "CJ-xMLz-ZrM",
+      "title": "My Simple System to Code Without Mental Blocks (as a solo startup founder)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nCheck out Mobbin - A library of design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\n=====\n\nStop overthinking on things that don't matter for your launch 🚀. Sharing some tips that help me stay focused when coding and launching apps solo.\n\n=====\n\n00:00 - Pick a problem that's worth solving\n02:26 - Build a SLC (Simple, Lovable, Complete)\n03:52 - Sponsor: Mobbin\n04:59 - Build a SLC (Simple, Lovable, Complete) \n05:27 - Extra tips\n\n=====\n\n#TokyoVlog #dayinthelife #japan #japanvlog #startups #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2025-03-03T16:01:17Z",
+      "thumbnail": "https://i.ytimg.com/vi/CJ-xMLz-ZrM/maxresdefault.jpg",
+      "duration": "6:30",
+      "viewCount": 38003,
+      "likeCount": 1555,
+      "commentCount": 48,
+      "url": "https://www.youtube.com/watch?v=CJ-xMLz-ZrM"
+    },
+    "OoofplYkDQI": {
+      "id": "OoofplYkDQI",
+      "title": "How to Validate SOLO Startup Ideas Fast (beginner friendly guide)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nCheck out Scrimba - Claim 30% off Pro with my links (for 2 weeks only!):\nAI Engineer Path:\nhttps://scrimba.com/the-ai-engineer-path-c02v?via=edmundyongspecial\nFrontend Developer Career Path:\nhttps://scrimba.com/the-frontend-developer-career-path-c0j?via=edmundyongspecial\nAll Courses:\nhttps://scrimba.com/courses?via=edmundyongspecial\n\n=====\n\nHappy Friday 🫡 \n\nA follow-up from the coding profitable apps solo video, sharing some methods on where to find validated ideas that are already profitable so you can commit to your next startup idea.\n\n=====\n\n00:00 - Intro\n00:39 - Mindset - Stop trying to be original\n03:16 - Other Solo Founders\n04:09 - Leaderboards\n05:19 - Gig websites\n\n=====\n\n#TokyoVlog #dayinthelife #japan #japanvlog #startups #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2025-02-21T15:01:41Z",
+      "thumbnail": "https://i.ytimg.com/vi/OoofplYkDQI/maxresdefault.jpg",
+      "duration": "6:22",
+      "viewCount": 55722,
+      "likeCount": 2314,
+      "commentCount": 59,
+      "url": "https://www.youtube.com/watch?v=OoofplYkDQI"
+    },
+    "SAbp7E9daso": {
+      "id": "SAbp7E9daso",
+      "title": "OpenAI \"Ended\" My Startup: Here’s What I Learned (Tokyo coding vlog)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nWrite high-quality & SEO-optimized blogs with a few clicks:\nhttps://seowriting.ai (code: EDMUND25 at checkout for 25% off)\n\n=====\n\nSharing recent updates for my startup. I've learned a lot this past year of building, and I'm excited to show you what's next! 🫡\n\n=====\n\n00:00 - What happened\n01:52 - What I learned\n03:24 - What's next?\n04:05 - Seowriting.ai\n\n=====\n\n#TokyoVlog #dayinthelife #japanvlog #startups #TokyoLife #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2025-01-30T14:32:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/SAbp7E9daso/maxresdefault.jpg",
+      "duration": "5:11",
+      "viewCount": 165173,
+      "likeCount": 6499,
+      "commentCount": 203,
+      "url": "https://www.youtube.com/watch?v=SAbp7E9daso"
+    },
+    "Q9uXOSGS8IQ": {
+      "id": "Q9uXOSGS8IQ",
+      "title": "How I Make Coding FUN with Simple Habits (and achieve my goals)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nCheck out Scrimba – my preferred platform for learning to code (get an extra 20% off Pro with my links):\nAI Engineer Path:\nhttps://scrimba.com/the-ai-engineer-path-c02v?via=edmundyong  \nFrontend Developer Career Path:\nhttps://scrimba.com/the-frontend-developer-career-path-c0j?via=edmundyong\nAll Courses:\nhttps://scrimba.com/courses?via=edmundyong\n\n=====\n\nHope everyones new year is off to a strong start!\n\nI made this video to share some habits that I personally found useful to get me coding consistently and have some fun whilst doing it 😎\n\nLet me know if you find it useful!\n\np.s. recently arrived in Japan 🇯🇵 open to any ramen spot recommendations 🍜\n\n=====\n\n00:00 - Intro\n01:00 - Gamify\n03:16 - Flow state\n05:16 - Mindset shift\n06:23 - Dopamine detox\n\n=====\n\n#TokyoVlog #dayinthelife #japanvlog #startups #TokyoLife #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2025-01-15T15:23:10Z",
+      "thumbnail": "https://i.ytimg.com/vi/Q9uXOSGS8IQ/maxresdefault.jpg",
+      "duration": "7:10",
+      "viewCount": 94278,
+      "likeCount": 4018,
+      "commentCount": 107,
+      "url": "https://www.youtube.com/watch?v=Q9uXOSGS8IQ"
+    },
+    "CNsvts6pVzo": {
+      "id": "CNsvts6pVzo",
+      "title": "How I Code Profitable Apps SOLO (no wasted time / beginner friendly / with AI)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nCheck out Scrimba – my preferred platform for learning to code (get an extra 20% off Pro with my links):\nAI Engineer Path:\nhttps://scrimba.com/the-ai-engineer-path-c02v?via=edmundyong  \nFrontend Developer Career Path:\nhttps://scrimba.com/the-frontend-developer-career-path-c0j?via=edmundyong\nAll Courses:\nhttps://scrimba.com/courses?via=edmundyong\n\n=====\n\nWishing all you happy holidays 🎄🎅 \n\nSharing a general roadmap on how I approach coding apps that earn money.\n\nResources used in this video (let me know if I am missing any):\n- https://roadmap.sh/\n- https://dev.to/rowsanali/do-you-have-shiny-object-syndrome-as-a-dev-4ld7\n- https://longform.asmartbear.com/slc/\n- https://www.getbeamer.com/blog/customer-feedback-management-startups\n- https://x.com/namyakhann/status/1863525098529194293\n- https://x.com/namyakhann/status/1861816326496399830\n\n=====\n\n00:00 - Intro\n00:46 - The mindset you need to adopt\n01:23 - Setting clear goals (seriously)\n02:51 - The building phase\n05:34 - The marketing phase\n06:25 - The iterating phase\n\n=====\n\n#SeoulVlog #dayinthelife #korean #koreanvlog #startups #SeoulLife #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2024-12-27T11:09:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/CNsvts6pVzo/maxresdefault.jpg",
+      "duration": "7:34",
+      "viewCount": 1526899,
+      "likeCount": 71109,
+      "commentCount": 1256,
+      "url": "https://www.youtube.com/watch?v=CNsvts6pVzo"
+    },
+    "l5tdsK_Od2Q": {
+      "id": "l5tdsK_Od2Q",
+      "title": "Life as a 26 y/o Solo Startup Founder (realistic coding vlog)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nSharing some life & startup updates. Reflecting on the past year & motivation.\n\n=====\n\n00:00 - Intro\n00:25 - My last month in Korea\n00:50 - Reality of working and traveling\n02:54 - Startup updates\n03:58 - End of year reflection & motivation\n\n=====\n\n#SeoulVlog #dayinthelife #korean #koreanvlog #startups #SeoulLife #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2024-12-13T13:53:41Z",
+      "thumbnail": "https://i.ytimg.com/vi/l5tdsK_Od2Q/maxresdefault.jpg",
+      "duration": "4:48",
+      "viewCount": 41995,
+      "likeCount": 1665,
+      "commentCount": 77,
+      "url": "https://www.youtube.com/watch?v=l5tdsK_Od2Q"
+    },
+    "AGrh9X0eU8I": {
+      "id": "AGrh9X0eU8I",
+      "title": "My MacBook Setup - Everything I Use for Coding (minimalist)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nMany comments and requests later, this is a quick video sharing my minimalist MacBook setup and the tools I use to build my startups. Let me know in the comments if you want me to cover any other areas of running a solo startup! \n\n=====\n\n00:00 - Intro\n00:24 - Hardware\n01:30 - Software\n\n=====\n\n#SeoulVlog #dayinthelife #korean #koreanvlog #startups #SeoulLife #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2024-12-03T11:28:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/AGrh9X0eU8I/maxresdefault.jpg",
+      "duration": "4:28",
+      "viewCount": 444347,
+      "likeCount": 10967,
+      "commentCount": 296,
+      "url": "https://www.youtube.com/watch?v=AGrh9X0eU8I"
+    },
+    "qMTKz4Wa_HI": {
+      "id": "qMTKz4Wa_HI",
+      "title": "Why I Quit My 9-5 to Build a Solo Startup (coding vlog)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nSharing my reasons that led me to quit my tech job and start building solo startups. Let me know in the comments if you want me to cover any other areas of running a solo startup! \n\n=====\n\n00:00 - Intro\n00:35 - Reasons that led me to quit my tech job and start working solo\n03:19 - Startup Club - Join the community!\n\n=====\n\n#SeoulVlog #dayinthelife #korean #koreanvlog #startups #SeoulLife #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2024-11-24T13:32:16Z",
+      "thumbnail": "https://i.ytimg.com/vi/qMTKz4Wa_HI/maxresdefault.jpg",
+      "duration": "3:44",
+      "viewCount": 37708,
+      "likeCount": 1560,
+      "commentCount": 129,
+      "url": "https://www.youtube.com/watch?v=qMTKz4Wa_HI"
+    },
+    "JxB0FX_4ql4": {
+      "id": "JxB0FX_4ql4",
+      "title": "Building a Solo Startup in my 20s (realistic coding vlog)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nA hectic week of traveling and my startup going down... Let me know in the comments if you want me to cover any other areas of running a solo startup! \n\n=====\n\n00:00 - Life lately\n00:50 - Announcement - Startup Club (New private community)\n01:26 - Story time - My startup went down\n\n=====\n\n#SeoulVlog #dayinthelife #korean #koreanvlog #startups #SeoulLife #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2024-11-17T14:14:34Z",
+      "thumbnail": "https://i.ytimg.com/vi/JxB0FX_4ql4/maxresdefault.jpg",
+      "duration": "4:41",
+      "viewCount": 61162,
+      "likeCount": 2235,
+      "commentCount": 157,
+      "url": "https://www.youtube.com/watch?v=JxB0FX_4ql4"
+    },
+    "I2aKS-1oUnc": {
+      "id": "I2aKS-1oUnc",
+      "title": "Why I love being a SOLO startup founder after quitting my 9-5 (realistic coding vlog)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nSharing what I love most about working as a solo startup founder after quitting my 9-5. Let me know in the comments if you want me to cover any other areas of running a solo startup! \n\n=====\n\n00:00 - Intro\n00:50 - Things I love about being a solo startup founder\n03:15 - Your call to action\n\n=====\n\n#SeoulVlog #dayinthelife #korean #koreanvlog #startups #SeoulLife #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur #startupvlog",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2024-11-10T16:03:57Z",
+      "thumbnail": "https://i.ytimg.com/vi/I2aKS-1oUnc/maxresdefault.jpg",
+      "duration": "3:41",
+      "viewCount": 315912,
+      "likeCount": 11576,
+      "commentCount": 401,
+      "url": "https://www.youtube.com/watch?v=I2aKS-1oUnc"
+    },
+    "0LE0trd740Q": {
+      "id": "0LE0trd740Q",
+      "title": "Should I Code or Market First as a Solo Startup Founder? (Coding Vlog)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - A library of design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nTry my Startup:\nhttps://www.transcribr.io/\n\nTry my other Startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nMy take on whether you should focus on building or marketing first for your solo startup. Let me know in the comments if you want me to cover any other areas of running a solo startup! \n\n=====\n\n00:00 - The dilemma\n00:53 - When to build first\n02:02 - When to market first\n03:05 - Tips & advice\n\n=====\n\n#SeoulVlog #dayinthelife #korean #koreanvlog #startups #SeoulLife #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2024-11-03T07:00:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/0LE0trd740Q/maxresdefault.jpg",
+      "duration": "4:14",
+      "viewCount": 60262,
+      "likeCount": 2200,
+      "commentCount": 77,
+      "url": "https://www.youtube.com/watch?v=0LE0trd740Q"
+    },
+    "K2Jlzp54kdc": {
+      "id": "K2Jlzp54kdc",
+      "title": "A Realistic Coding Vlog (As A Solo Startup Founder)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nA short day in the life - fixing bugs, drinking coffee, and eating some dim sum. \n\n=====\n\n0:00 - Morning cardio\n0:48 - Finding a cafe\n1:20 - Thank you\n1:42 - Bug squashing & tips for developing browser extensions\n3:25 - Outro\n\n=====\n\n#SeoulVlog #dayinthelife #korean #koreanvlog #startups #SeoulLife #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2024-10-21T08:37:35Z",
+      "thumbnail": "https://i.ytimg.com/vi/K2Jlzp54kdc/maxresdefault.jpg",
+      "duration": "3:55",
+      "viewCount": 123264,
+      "likeCount": 3801,
+      "commentCount": 180,
+      "url": "https://www.youtube.com/watch?v=K2Jlzp54kdc"
+    },
+    "-oHnkJD1nDE": {
+      "id": "-oHnkJD1nDE",
+      "title": "Life as a Solo Startup Founder (Coding Vlog)",
+      "description": "Stop Building Apps That Make $0 - Join Startup Club:\nhttps://www.startupclub.community/\n\nTry my startup:\nhttps://www.transcribr.io/\n\nTry my other startup (Easy Folders):\nhttps://chromewebstore.google.com/detail/chatgpt-folders-search-pr/gdocioajfidpnaejbgmbnkflgmppibfe?utm_source=youtube\n\nScrimba - Learn to code (20% off Pro):\nhttps://scrimba.com/courses?via=edmundyong\n\nMobbin - Instant design inspiration for your apps:\nhttps://mobbin.com/?via=edmund\n\nSocials:\nhttps://www.instagram.com/e.yongg/\nhttps://www.twitter.com/edmund_io/\n\n=====\n\nWelcome to the first vlog. 🫡 \n\n=====\n\n0:00 - Intro\n3:28 - 24h cafe hunt\n7:20 - Gym workout\n11:04 - Demo of my startup\n\n=====\n\n#SeoulVlog #dayinthelife #korean #koreanvlog #startups #SeoulLife #indiehackers #DigitalNomad #softwareengineer #softwaredeveloper #codingvlog #solotravel #solopreneur",
+      "channelId": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "channelTitle": "Edmund Yong",
+      "publishedAt": "2024-10-14T07:33:06Z",
+      "thumbnail": "https://i.ytimg.com/vi/-oHnkJD1nDE/maxresdefault.jpg",
+      "duration": "12:35",
+      "viewCount": 31141,
+      "likeCount": 1266,
+      "commentCount": 111,
+      "url": "https://www.youtube.com/watch?v=-oHnkJD1nDE"
+    }
+  },
+  "prefetch_completed": true,
+  "lambda_dispatched_count": 19,
+  "formatting_options": {
+    "include_timestamps": false,
+    "include_video_title": true,
+    "include_video_id": true,
+    "include_video_url": true,
+    "include_view_count": false,
+    "concatenate_all": false
+  }
+}

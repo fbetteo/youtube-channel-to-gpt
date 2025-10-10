@@ -234,30 +234,6 @@ def get_youtube_client():
         return youtube  # Fallback to global client
 
 
-# Remove global ytt_api initialization, only keep YouTube API client
-def get_ytt_api() -> YouTubeTranscriptApi:
-    """
-    Create a new YouTubeTranscriptApi instance with proxy config if needed.
-    Thread-safe implementation that creates fresh instances.
-    Returns:
-        YouTubeTranscriptApi instance
-    """
-    try:
-        if settings.webshare_proxy_username and settings.webshare_proxy_password:
-            proxy_config = WebshareProxyConfig(
-                proxy_username=settings.webshare_proxy_username,
-                proxy_password=settings.webshare_proxy_password,
-                retries_when_blocked=1,
-            )
-            return YouTubeTranscriptApi(proxy_config=proxy_config)
-        else:
-            return YouTubeTranscriptApi()
-    except Exception as e:
-        logger.error(f"Error creating YouTubeTranscriptApi: {str(e)}")
-        # Fallback to basic instance
-        return YouTubeTranscriptApi()
-
-
 # Dictionary to track channel download jobs
 # channel_download_jobs: Dict[str, Dict[str, Any]] = {}
 
@@ -303,8 +279,8 @@ def save_job_to_file(job_id: str, job_data: Dict[str, Any]) -> None:
             else:
                 serializable_data[k] = v
 
-        with open(job_file, "w") as f:
-            json.dump(serializable_data, f, default=str)
+        with open(job_file, "w", encoding="utf-8") as f:
+            json.dump(serializable_data, f, default=str, ensure_ascii=False, indent=2)
         logger.debug(f"Saved job {job_id} to persistent storage")
     except Exception as e:
         logger.error(f"Failed to save job {job_id}: {e}")
@@ -315,7 +291,7 @@ def load_job_from_file(job_id: str) -> Optional[Dict[str, Any]]:
     try:
         job_file = os.path.join(JOBS_STORAGE_DIR, f"{job_id}.json")
         if os.path.exists(job_file):
-            with open(job_file, "r") as f:
+            with open(job_file, "r", encoding="utf-8") as f:
                 job_data = json.load(f)
             logger.debug(f"Loaded job {job_id} from persistent storage")
             return job_data
@@ -327,65 +303,102 @@ def load_job_from_file(job_id: str) -> Optional[Dict[str, Any]]:
 
 def update_job_progress(job_id: str, **updates):
     """Update job progress and save to persistent storage with atomic operations"""
-    import fcntl  # For file locking on Unix systems
     import time
+    import shutil
+    import tempfile
+    from threading import Lock
 
-    # Try to update with file locking to prevent race conditions
-    max_retries = 3
-    for attempt in range(max_retries):
-        try:
-            job_file = os.path.join(JOBS_STORAGE_DIR, f"{job_id}.json")
+    # Use a global lock for all job updates (simpler and more memory efficient)
+    if not hasattr(update_job_progress, "_global_lock"):
+        update_job_progress._global_lock = Lock()
 
-            # Lock the file to prevent race conditions
-            with open(job_file, "r+") as f:
+    # Use the global lock instead of per-job locks to prevent memory accumulation
+    with update_job_progress._global_lock:
+        # Try to update with atomic file operations
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                job_file = os.path.join(JOBS_STORAGE_DIR, f"{job_id}.json")
+
+                # Create temporary file for atomic write
+                temp_filename = None
                 try:
-                    # Try to lock the file (Unix systems)
-                    fcntl.flock(f.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
-                except (ImportError, OSError):
-                    # Windows or file locking not available, continue without lock
-                    pass
-
-                # Load current data
-                f.seek(0)
-                job = json.load(f)
-
-                # Apply updates, handling special increment operations
-                for key, value in updates.items():
-                    if key.endswith("_increment"):
-                        # Handle atomic increments
-                        base_key = key.replace("_increment", "")
-                        job[base_key] = job.get(base_key, 0) + value
-                    elif key == "files_append":
-                        # Handle appending to files list
-                        if "files" not in job:
-                            job["files"] = []
-                        job["files"].append(value)
+                    # Load current data
+                    if os.path.exists(job_file):
+                        with open(job_file, "r", encoding="utf-8") as f:
+                            job = json.load(f)
                     else:
-                        # Regular update
-                        job[key] = value
+                        job = {}
 
-                # Write back to file
-                f.seek(0)
-                f.truncate()
-                json.dump(job, f, default=str, indent=2)
+                    # Apply updates, handling special increment operations
+                    for key, value in updates.items():
+                        if key.endswith("_increment"):
+                            # Handle atomic increments
+                            base_key = key.replace("_increment", "")
+                            job[base_key] = job.get(base_key, 0) + value
+                        elif key == "files_append":
+                            # Handle appending to files list
+                            if "files" not in job:
+                                job["files"] = []
+                            job["files"].append(value)
+                        else:
+                            # Regular update
+                            job[key] = value
 
-                # Update in-memory copy if it exists
-                # if job_id in channel_download_jobs:
-                #     channel_download_jobs[job_id].update(job)
+                    # Write to temporary file first (atomic operation)
+                    with tempfile.NamedTemporaryFile(
+                        mode="w",
+                        encoding="utf-8",
+                        dir=JOBS_STORAGE_DIR,
+                        prefix=f".{job_id}_",
+                        suffix=".tmp",
+                        delete=False,
+                    ) as temp_file:
+                        json.dump(
+                            job, temp_file, default=str, indent=2, ensure_ascii=False
+                        )
+                        temp_file.flush()
+                        os.fsync(temp_file.fileno())  # Force write to disk
+                        temp_filename = temp_file.name
 
-                logger.debug(f"Updated job {job_id} progress: {updates}")
-                return job
+                    # Atomic move: replace the original file
+                    if os.name == "nt":  # Windows
+                        if os.path.exists(job_file):
+                            os.replace(temp_filename, job_file)
+                        else:
+                            shutil.move(temp_filename, job_file)
+                    else:  # Unix/Linux
+                        os.rename(temp_filename, job_file)
 
-        except (json.JSONDecodeError, FileNotFoundError, PermissionError) as e:
-            logger.warning(f"Attempt {attempt + 1} to update job {job_id} failed: {e}")
-            if attempt < max_retries - 1:
-                time.sleep(0.1 * (attempt + 1))  # Exponential backoff
-                continue
-            else:
-                logger.error(
-                    f"Failed to update job {job_id} after {max_retries} attempts"
+                    logger.debug(f"Updated job {job_id} progress: {updates}")
+                    return job
+
+                except Exception as inner_e:
+                    # Clean up temporary file if it exists
+                    if temp_filename and os.path.exists(temp_filename):
+                        try:
+                            os.unlink(temp_filename)
+                        except Exception:
+                            pass
+                    raise inner_e
+
+            except (
+                json.JSONDecodeError,
+                FileNotFoundError,
+                PermissionError,
+                OSError,
+            ) as e:
+                logger.warning(
+                    f"Attempt {attempt + 1} to update job {job_id} failed: {e}"
                 )
-                return None
+                if attempt < max_retries - 1:
+                    time.sleep(0.1 * (2**attempt))  # Exponential backoff
+                    continue
+                else:
+                    logger.error(
+                        f"Failed to update job {job_id} after {max_retries} attempts: {e}"
+                    )
+                    return None
 
 
 def recover_jobs_from_storage() -> List[str]:
@@ -1282,266 +1295,6 @@ async def get_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
         raise ValueError(f"Failed to fetch all videos: {str(e)}")
 
 
-async def get_single_transcript(
-    video_id: str,
-    output_dir: Optional[str] = None,
-    include_timestamps: bool = False,
-    include_video_title: bool = True,
-    include_video_id: bool = True,
-    include_video_url: bool = True,
-    include_view_count: bool = False,
-    pre_fetched_metadata: Optional[Dict[str, Any]] = None,
-) -> Tuple[str, Optional[str], Dict[str, Any]]:
-    """
-    Get transcript for a single YouTube video, with language fallback.
-
-    Args:
-        video_id: YouTube video ID
-        output_dir: Optional directory to save the transcript file
-        include_timestamps: Whether to include timestamps in the transcript
-        include_video_title: Whether to include video title in file header
-        include_video_id: Whether to include video ID in file header
-        include_video_url: Whether to include video URL in file header
-        include_view_count: Whether to include view count in file header
-        pre_fetched_metadata: Optional pre-fetched metadata to use instead of fetching
-
-    Returns:
-        Tuple of (transcript text, file path if saved, metadata dict)
-
-    Raises:
-        ValueError: If transcript cannot be retrieved
-    """
-    start_time = time.time()
-
-    # Track memory at start of transcript processing
-    memory_tracker.log_memory_usage(f"transcript_start[{video_id}]")
-
-    logger.info(f"Starting transcript fetch for video {video_id}")
-
-    try:
-        # Create fresh API instance for thread safety
-        ytt_api = get_ytt_api()
-        fetch_start = time.time()
-
-        # 1. List available transcripts with better error handling
-        try:
-            transcript_list = await asyncio.to_thread(ytt_api.list, video_id)
-        except Exception as e:
-            logger.error(f"Failed to list transcripts for video {video_id}: {str(e)}")
-            raise ValueError(f"No transcripts available for video {video_id}: {str(e)}")
-
-        transcript = None
-        # 2. Try to find English, otherwise take the first available
-        try:
-            transcript = transcript_list.find_transcript(["en"])
-            logger.info(f"Found English transcript for video {video_id}")
-        except Exception:
-            logger.warning(
-                f"No English transcript found for {video_id}. Trying first available."
-            )
-            try:
-                # Get the first transcript in the list
-                first_transcript_in_list = next(iter(transcript_list))
-                transcript = first_transcript_in_list
-                logger.info(
-                    f"Using first available transcript ({transcript.language_code}) for video {video_id}"
-                )
-            except StopIteration:
-                logger.error(f"No transcripts available at all for video {video_id}")
-                raise ValueError(f"No transcripts available for video {video_id}")
-
-        # 3. Fetch the selected transcript with better error handling
-        try:
-            fetched_transcript = await retry_operation(
-                lambda: asyncio.to_thread(transcript.fetch),
-                max_retries=2,
-            )
-        except Exception as e:
-            logger.error(f"Failed to fetch transcript for video {video_id}: {str(e)}")
-            raise ValueError(
-                f"Failed to fetch transcript for video {video_id}: {str(e)}"
-            )
-
-        fetch_end = time.time()
-        logger.info(
-            f"API fetch took {fetch_end - fetch_start:.3f}s for video {video_id}"
-        )
-
-        # Clean up API instance immediately after use to prevent memory leaks
-        del ytt_api
-
-        # Track memory after API fetch
-        memory_tracker.log_memory_usage(f"transcript_fetched[{video_id}]", "debug")
-
-        # Create metadata with language info
-        selected_language = transcript.language_code
-        metadata = {
-            "video_id": video_id,
-            "transcript_language": selected_language,
-            "transcript_type": (
-                "manual" if not transcript.is_generated else "auto-generated"
-            ),
-        }
-
-        # Get raw data for better performance
-        raw_data_start = time.time()
-        transcript_data = fetched_transcript.to_raw_data()
-        raw_data_end = time.time()
-        logger.info(
-            f"Raw data conversion took {raw_data_end - raw_data_start:.3f}s for video {video_id}"
-        )
-
-        # Track memory after raw data conversion
-        memory_tracker.log_memory_usage(f"transcript_raw_data[{video_id}]", "debug")
-
-        # Format transcript - optimize by using string builder approach
-        format_start = time.time()
-
-        if include_timestamps:
-            # Format with timestamps [MM:SS] Text
-            # Pre-allocate the list to avoid resizing
-            transcript_lines = [""] * len(transcript_data)
-            for i, segment in enumerate(transcript_data):
-                start_time_sec = segment["start"]
-                minutes = int(start_time_sec // 60)
-                seconds = int(start_time_sec % 60)
-                timestamp = f"[{minutes:02d}:{seconds:02d}] "
-                transcript_lines[i] = f"{timestamp}{segment['text']}"
-            transcript_text = "\n".join(transcript_lines)
-        else:
-            # Simple concatenation without timestamps - join for better performance
-            # Use a list comprehension instead of generator expression for potentially better performance
-            transcript_text = " ".join([segment["text"] for segment in transcript_data])
-
-        format_end = time.time()
-        logger.info(
-            f"Transcript formatting took {format_end - format_start:.3f}s for video {video_id}"
-        )
-
-        # Track memory after formatting (this can be memory-intensive for long videos)
-        memory_tracker.log_memory_usage(f"transcript_formatted[{video_id}]")
-
-        # Save to file if output directory is specified
-        file_path = None
-        if output_dir:
-            file_start = time.time()
-
-            # Create directory if it doesn't exist
-            os.makedirs(output_dir, exist_ok=True)
-
-            # Use pre-fetched metadata if available, otherwise fetch it
-            video_title = None
-            video_view_count = None
-
-            if pre_fetched_metadata:
-                logger.info(
-                    f"Using pre-fetched metadata for video {video_id} (title: {pre_fetched_metadata.get('title', 'No title')})"
-                )
-                # Use pre-fetched metadata (much faster)
-                video_title = pre_fetched_metadata.get("title", "Untitled_Video")
-                video_view_count = pre_fetched_metadata.get("viewCount", 0)
-                logger.debug(
-                    f"Using pre-fetched metadata for video {video_id}: {video_title}"
-                )
-            else:
-                logger.info("Fetching video metadata - no prefetch")
-                # Fallback to fetching metadata (slower, with timeout)
-                try:
-                    metadata_start = time.time()
-                    video_info = await asyncio.wait_for(
-                        get_video_info(video_id),
-                        timeout=10.0,  # Increased timeout to 10 seconds when not pre-fetched
-                    )
-                    video_title = video_info.get("title", "Untitled_Video")
-                    video_view_count = video_info.get("viewCount", 0)
-                    metadata_end = time.time()
-                    logger.info(
-                        f"Video metadata fetch took {metadata_end - metadata_start:.3f}s for video {video_id}"
-                    )
-                except asyncio.TimeoutError:
-                    logger.warning(
-                        f"Metadata fetch timed out for video {video_id}, using fallback title"
-                    )
-                    video_title = "Untitled_Video"
-                    video_view_count = 0
-                except Exception as e:
-                    logger.warning(
-                        f"Failed to get metadata for video {video_id}, using fallback title: {str(e)}"
-                    )
-                    video_title = "Untitled_Video"
-                    video_view_count = 0
-
-            # Create a sanitized filename from the video title (or ID if title not available)
-            safe_title = sanitize_filename(video_title) if video_title else video_id
-            file_path = os.path.join(output_dir, f"{safe_title}_{video_id}.txt")
-
-            # Write transcript to file - more efficient by writing once
-            write_start = time.time()
-            with open(file_path, "w", encoding="utf-8") as f:
-                # Write header with available info based on formatting options
-                if include_video_title and video_title:
-                    f.write(f"Video Title: {video_title}\n")
-                if include_video_id:
-                    f.write(f"Video ID: {video_id}\n")
-                if include_video_url:
-                    f.write(f"URL: https://www.youtube.com/watch?v={video_id}\n")
-                if include_view_count and video_view_count is not None:
-                    f.write(f"View Count: {video_view_count:,}\n")
-
-                # Add separator if any header was written
-                if (
-                    (include_video_title and video_title)
-                    or include_video_id
-                    or include_video_url
-                    or (include_view_count and video_view_count is not None)
-                ):
-                    f.write("\n")
-
-                f.write(transcript_text)
-            write_end = time.time()
-            logger.info(
-                f"File writing took {write_end - write_start:.3f}s for video {video_id}"
-            )
-
-            file_end = time.time()
-            logger.info(
-                f"Total file operations took {file_end - file_start:.3f}s for video {video_id}"
-            )
-
-        end_time = time.time()
-        total_time = end_time - start_time
-
-        # Track memory at completion and log final stats
-        final_memory = memory_tracker.log_memory_usage(
-            f"transcript_complete[{video_id}]"
-        )
-
-        logger.info(
-            f"Total transcript processing took {total_time:.3f}s for video {video_id}"
-        )
-
-        # Clean up large variables to help with memory management
-        del transcript_data
-        del fetched_transcript
-        if "transcript_lines" in locals():
-            del transcript_lines
-
-        # Force garbage collection if memory usage is high
-        if (
-            final_memory.get("process_memory_percent", 0)
-            > memory_tracker.warning_threshold
-        ):
-            memory_tracker.force_garbage_collection()
-
-        return transcript_text, file_path, metadata
-
-    except Exception as e:
-        # Track memory on error too
-        memory_tracker.log_memory_usage(f"transcript_error[{video_id}]")
-        logger.error(f"Error getting transcript for video {video_id}: {str(e)}")
-        raise ValueError(f"Failed to get transcript for video {video_id}: {str(e)}")
-
-
 # async def start_channel_transcript_download(
 #     channel_name: str,
 #     max_results: int,
@@ -1634,435 +1387,251 @@ async def get_single_transcript(
 #         raise ValueError(f"Failed to start transcript download: {str(e)}")
 
 
-async def start_selected_videos_transcript_download(
-    channel_name: str = None,
-    playlist_name: str = None,
-    videos: List[Dict[str, Any]] = None,
-    user_id: str = None,
-    include_timestamps: bool = False,
-    include_video_title: bool = True,
-    include_video_id: bool = True,
-    include_video_url: bool = True,
-    include_view_count: bool = False,
-    concatenate_all: bool = False,
-    is_playlist: bool = False,
-) -> str:
+async def dispatch_lambdas_concurrently(
+    job_id: str,
+    videos: List[Any],
+    videos_metadata: Dict[str, Dict[str, Any]],
+    user_id: str,
+    formatting_options: Dict[str, Any],
+    max_concurrent: int = 20,
+) -> int:
     """
-    Start transcript download for a user-selected list of videos from a channel or playlist.
+    Dispatch Lambda functions concurrently in true async fire-and-forget mode.
 
     Args:
-        channel_name: Channel name or ID (for channel downloads)
-        playlist_name: Playlist ID (for playlist downloads)
-        videos: List of video dictionaries containing at least 'id' and 'title'
-        user_id: User identifier for directory organization
-        is_playlist: Flag to indicate if this is a playlist download
+        job_id: The job identifier
+        videos: List of video objects to process
+        videos_metadata: Pre-fetched metadata for videos
+        user_id: User identifier
+        formatting_options: Formatting options for transcripts
+        max_concurrent: Not used - kept for compatibility
 
     Returns:
-        Job ID for tracking the download process
-
-    Raises:
-        ValueError: If channel/playlist not found or other errors occur
+        Number of Lambda dispatches attempted
     """
-    try:
-        # Determine if this is a channel or playlist download
-        if is_playlist and playlist_name:
-            # Validate playlist exists and get info
-            playlist_info = await get_playlist_info(playlist_name)
-            source_id = playlist_info["playlistId"]
-            source_name = playlist_info["title"]
-            source_type = "playlist"
-            logger.info(
-                f"Starting playlist download for '{source_name}' (ID: {source_id})"
-            )
-        elif channel_name:
-            # Get channel info to validate channel existence and get channel ID
-            channel_info = await get_channel_info(channel_name)
-            source_id = channel_info["channelId"]
-            source_name = channel_info["title"]
-            source_type = "channel"
-            logger.info(
-                f"Starting channel download for '{source_name}' (ID: {source_id})"
-            )
-        else:
-            raise ValueError("Either channel_name or playlist_name must be provided")
+    import boto3
+    import json
 
-        # Count and log the video selection
-        num_videos = len(videos) if videos else 0
-        logger.info(
-            f"Preparing to download {num_videos} selected videos for {source_type} '{source_name}'"
-        )
+    # Create Lambda client once (thread-safe)
+    lambda_client = boto3.client("lambda")
 
-        if not videos:
-            logger.warning(f"No videos selected for {source_type}: {source_name}")
-            raise ValueError(f"No videos selected for {source_type}: {source_name}")
-
-        # Log the list of videos to be downloaded
-        logger.info("Selected videos to be downloaded:")
-        video_ids = []
-        for v in videos:
-            try:
-                # Handle both dictionary access and object attribute access
-                video_id = v.id if hasattr(v, "id") else v["id"]
-                video_title = v.title if hasattr(v, "title") else v["title"]
-                logger.info(f"  - {video_id}: {video_title}")
-                video_ids.append(video_id)
-            except Exception as e:
-                logger.error(f"Error accessing video properties: {str(e)}")
-                logger.error(f"Video object type: {type(v)}")
-
-        # Metadata will be pre-fetched in the background task for faster response
-        logger.info(
-            f"Job will pre-fetch metadata for {len(video_ids)} selected videos in background"
-        )
-
-        # Create a unique job ID
-        job_id = str(uuid.uuid4())
-        channel_download_jobs: Dict[str, Dict[str, Any]] = {}
-        # Initialize job entry in the tracking dictionary
-        channel_download_jobs[job_id] = {
-            "status": "processing",
-            "channel_name": channel_name if not is_playlist else None,
-            "playlist_id": playlist_name if is_playlist else None,
-            "source_id": source_id,
-            "source_name": source_name,
-            "source_type": source_type,
-            "total_videos": num_videos,
-            "processed_count": 0,
-            "failed_count": 0,
-            "completed": 0,
-            "files": [],
-            "videos": videos,  # Store the selected videos list
-            "start_time": time.time(),
-            "user_id": user_id,
-            "credits_reserved": num_videos,  # Total credits reserved upfront
-            "credits_used": 0,  # Track actual credits used per video
-            "reservation_id": None,  # Will be set when credits are reserved
-            "videos_metadata": {},  # Will be populated in background task
-            # Formatting options
-            "include_timestamps": include_timestamps,
-            "include_video_title": include_video_title,
-            "include_video_id": include_video_id,
-            "include_video_url": include_video_url,
-            "include_view_count": include_view_count,
-            "concatenate_all": concatenate_all,
-        }
-
-        # Save job to persistent storage immediately after creation
-        save_job_to_file(job_id, channel_download_jobs[job_id])
-        logger.info(
-            f"Created and saved selected videos job {job_id} for {source_type} {source_name}"
-        )
-
-        # Start the background task to process transcripts
-        # Uses the same task processor as the full channel download
-        asyncio.create_task(download_channel_transcripts_task(job_id))
-
-        return job_id
-
-    except Exception as e:
-        logger.error(
-            f"Error starting selected videos transcript download for {channel_name}: {str(e)}"
-        )
-        raise ValueError(f"Failed to start transcript download: {str(e)}")
-
-
-async def download_channel_transcripts_task(job_id: str) -> None:
-    """
-    Background task that downloads transcripts for all videos in a job.
-    This function updates the job status as it progresses.
-
-    Args:
-        job_id: The job identifier
-    """
-    # if job_id not in channel_download_jobs:
-    #     logger.error(f"Job {job_id} not found for processing")
-    #     return
-
-    # job = channel_download_jobs[job_id]
-    job = load_job_from_file(job_id)
-    videos = job["videos"]
-    user_id = job["user_id"]
-
-    # Pre-fetch metadata for all videos in background task
-    video_ids = []
-    for video in videos:
-        try:
-            video_id = video.id if hasattr(video, "id") else video["id"]
-            video_ids.append(video_id)
-        except Exception as e:
-            logger.error(f"Error extracting video ID: {str(e)}")
-
-    logger.info(f"Job {job_id}: Pre-fetching metadata for {len(video_ids)} videos...")
-    try:
-        videos_metadata = await pre_fetch_videos_metadata(video_ids)
-        # Update job with pre-fetched metadata
-        update_job_progress(job_id, videos_metadata=videos_metadata)
-        logger.info(
-            f"Job {job_id}: Metadata pre-fetching completed. Successfully fetched metadata for {len([m for m in videos_metadata.values() if m])} videos."
-        )
-    except Exception as e:
-        logger.error(f"Job {job_id}: Error pre-fetching metadata: {str(e)}")
-        # Continue with empty metadata - individual video processing will handle it
-        videos_metadata = {}
-        update_job_progress(job_id, videos_metadata=videos_metadata)
-
-    # Reserve credits upfront for all videos (Phase 2: Batch Credit Management)
-    try:
-        from transcript_api import CreditManager
-
-        credits_to_reserve = job["credits_reserved"]
-        logger.info(
-            f"Job {job_id}: Reserving {credits_to_reserve} credits for user {user_id}"
-        )
-
-        reservation_id = CreditManager.reserve_credits(user_id, credits_to_reserve)
-        job["reservation_id"] = reservation_id
-
-        # Persist the reservation_id to disk
-        update_job_progress(job_id, reservation_id=reservation_id)
-
-        logger.info(
-            f"Job {job_id}: Successfully reserved {credits_to_reserve} credits, reservation: {reservation_id}"
-        )
-
-    except Exception as e:
-        logger.error(f"Job {job_id}: Failed to reserve credits: {str(e)}")
-        job["status"] = "failed"
-        job["end_time"] = time.time()
-        job["duration"] = job["end_time"] - job["start_time"]
-        job["error"] = f"Credit reservation failed: {str(e)}"
-
-        # Save failed job status to persistent storage
-        update_job_progress(
-            job_id,
-            status=job["status"],
-            end_time=job["end_time"],
-            duration=job["duration"],
-            error=job["error"],
-        )
-
-        return
-
-    # Track memory at start of batch processing
-    memory_tracker.log_memory_usage(f"batch_start[{job_id}]")
-
-    # Create directory for this specific job
-    output_dir = os.path.join(settings.temp_dir, user_id, job_id)
-    os.makedirs(output_dir, exist_ok=True)
-
-    # Process videos concurrently with a limit on parallelism
-    # Process in batches to avoid overwhelming the API
-    batch_size = 10  # Reduced from 10 to lower CPU usage
-
-    for batch_num, i in enumerate(range(0, len(videos), batch_size), 1):
-        batch_videos = videos[i : i + batch_size]
-
-        # Track memory before each batch
-        memory_tracker.log_memory_usage(f"batch_{batch_num}_start[{job_id}]")
-
-        tasks = []
-
-        # Create tasks for each video in the current batch
-        for video in batch_videos:
-            try:
-                # Handle both dictionary access and object attribute access
-                video_id = video.id if hasattr(video, "id") else video["id"]
-                tasks.append(process_single_video(job_id, video_id, output_dir))
-            except Exception as e:
-                logger.error(f"Error accessing video ID: {str(e)}")
-                logger.error(f"Video object type: {type(video)}")
-
-        # Run the batch concurrently and wait for all to complete
-        await asyncio.gather(*tasks)
-
-        # Add small delay between batches to reduce API pressure and prevent memory corruption
-        if batch_num < len(range(0, len(videos), batch_size)):
-            await asyncio.sleep(1.0)  # 1 second delay between batches
-
-        # Track memory after each batch and force GC if needed
-        batch_memory = memory_tracker.log_memory_usage(
-            f"batch_{batch_num}_complete[{job_id}]"
-        )
-
-        # Force garbage collection after each batch if memory usage is getting high
-        if (
-            batch_memory.get("process_memory_percent", 0)
-            > memory_tracker.warning_threshold
-        ):
-            logger.info(
-                f"High memory usage detected after batch {batch_num}, forcing garbage collection"
-            )
-            memory_tracker.force_garbage_collection()
-
-    # Finalize credit usage - refund unused credits (Phase 2: Batch Credit Management)
-    try:
-        job_for_credits = load_job_from_file(job_id)
-        if job_for_credits and job_for_credits.get("reservation_id"):
-            CreditManager.finalize_credit_usage(
-                user_id=user_id,
-                reservation_id=job_for_credits["reservation_id"],
-                credits_used=job_for_credits["credits_used"],
-                credits_reserved=job_for_credits["credits_reserved"],
-            )
-            logger.info(
-                f"Job {job_id}: Finalized credit usage - used {job_for_credits['credits_used']}/{job_for_credits['credits_reserved']} credits"
-            )
-    except Exception as e:
-        logger.error(f"Job {job_id}: Error finalizing credit usage: {str(e)}")
-        # Don't fail the job for credit finalization errors
-
-    # Mark job as completed when all videos are processed
-    # Load fresh job data to get the final state
-    final_job = load_job_from_file(job_id)
-    if final_job:
-        end_time = time.time()
-        duration = end_time - final_job["start_time"]
-
-        # Save final job status to persistent storage
-        update_job_progress(
-            job_id, status="completed", end_time=end_time, duration=duration
-        )
-
-        # Final memory tracking
-        final_memory = memory_tracker.log_memory_usage(f"batch_final[{job_id}]")
-
-        logger.info(
-            f"Job {job_id} completed. Processed {final_job['completed']}/{final_job['total_videos']} videos successfully."
-        )
-
-        # Log memory summary for the entire job
-        memory_logger.info(
-            f"Job {job_id} memory summary: "
-            f"Peak memory: {_memory_stats['peak_memory_mb']:.2f}MB ({_memory_stats['peak_memory_percent']:.2f}%), "
-            f"GC runs: {_memory_stats['gc_count']}, "
-            f"Memory warnings: {_memory_stats['memory_warnings']}, "
-            f"Final memory: {final_memory.get('process_memory_mb', 0):.2f}MB"
-        )
-
-    # Log memory summary for the entire job
-    memory_logger.info(
-        f"Job {job_id} memory summary: "
-        f"Peak memory: {_memory_stats['peak_memory_mb']:.2f}MB ({_memory_stats['peak_memory_percent']:.2f}%), "
-        f"GC runs: {_memory_stats['gc_count']}, "
-        f"Memory warnings: {_memory_stats['memory_warnings']}, "
-        f"Final memory: {final_memory.get('process_memory_mb', 0):.2f}MB"
+    logger.info(
+        f"Job {job_id}: Async fire-and-forget dispatch of {len(videos)} Lambda functions"
     )
 
+    async def dispatch_single_lambda(video):
+        """Dispatch a single Lambda function asynchronously"""
+        try:
+            video_id = video.id if hasattr(video, "id") else video["id"]
+            pre_fetched_metadata = videos_metadata.get(video_id, {})
 
-async def process_single_video(job_id: str, video_id: str, output_dir: str) -> None:
+            lambda_payload = {
+                "video_id": video_id,
+                "job_id": job_id,
+                "user_id": user_id,
+                "formatting_options": formatting_options,
+                "pre_fetched_metadata": pre_fetched_metadata,
+                "api_base_url": settings.api_base_url,
+            }
+
+            # Use asyncio.to_thread for truly async Lambda dispatch
+            await asyncio.to_thread(
+                lambda_client.invoke,
+                FunctionName=settings.lambda_function_name,
+                InvocationType="Event",  # Asynchronous invocation
+                Payload=json.dumps(lambda_payload),
+            )
+
+            logger.debug(f"Job {job_id}: Dispatched Lambda for video {video_id}")
+            return True
+
+        except Exception as e:
+            logger.error(
+                f"Job {job_id}: Failed to dispatch Lambda for video {video_id}: {str(e)}"
+            )
+            # Update failure count atomically
+            update_job_progress(job_id, failed_count_increment=1)
+            return False
+
+    # Create all tasks at once (no semaphore, no limits)
+    tasks = [dispatch_single_lambda(video) for video in videos]
+
+    # Fire all Lambda dispatches concurrently without waiting for completion
+    # Use asyncio.gather with return_exceptions to prevent any single failure from stopping others
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+
+    # Count successful dispatches
+    dispatch_count = sum(1 for result in results if result is True)
+
+    logger.info(
+        f"Job {job_id}: Dispatched {dispatch_count}/{len(videos)} Lambda functions concurrently"
+    )
+    return dispatch_count
+
+
+async def prefetch_and_dispatch_task(job_id: str):
     """
-    Process a single video for transcript download.
-    Note: Credits are handled at the job level via reservation system.
+    Background task that:
+    1. Pre-fetches metadata in batches
+    2. Updates job status
+    3. Dispatches Lambda functions
+    4. Updates job to 'processing'
+    """
+    try:
+        # Load job data
+        job = load_job_from_file(job_id)
+        if not job:
+            logger.error(f"Job {job_id} not found for pre-fetching")
+            return
+
+        videos = job["videos"]
+        user_id = job["user_id"]
+
+        logger.info(
+            f"Job {job_id}: Starting background pre-fetch for {len(videos)} videos"
+        )
+
+        # 1. Pre-fetch metadata in batches (this takes time)
+        video_ids = []
+        for video in videos:
+            try:
+                video_id = video.id if hasattr(video, "id") else video["id"]
+                video_ids.append(video_id)
+            except Exception as e:
+                logger.error(f"Error extracting video ID: {str(e)}")
+
+        update_job_progress(job_id, status="prefetching_metadata")
+
+        videos_metadata = await pre_fetch_videos_metadata(video_ids)
+
+        # 2. Update job with metadata
+        update_job_progress(
+            job_id,
+            videos_metadata=videos_metadata,
+            prefetch_completed=True,
+            status="dispatching_lambda",
+        )
+
+        logger.info(
+            f"Job {job_id}: Metadata pre-fetch completed, dispatching Lambda functions"
+        )
+
+        # 3. Dispatch Lambda functions concurrently with pre-fetched metadata
+        dispatched_count = await dispatch_lambdas_concurrently(
+            job_id, videos, videos_metadata, user_id, job["formatting_options"]
+        )
+
+        # 4. Update job status to processing and start timeout monitoring
+        update_job_progress(
+            job_id,
+            status="processing",
+            lambda_dispatched_count=dispatched_count,
+            lambda_dispatch_time=time.time(),  # Track when Lambdas were dispatched
+        )
+
+        logger.info(
+            f"Job {job_id}: Background task completed. Dispatched {dispatched_count} Lambda functions"
+        )
+
+        # 5. Start timeout monitoring task
+        asyncio.create_task(monitor_job_timeout(job_id, settings.job_timeout_minutes))
+
+    except Exception as e:
+        logger.error(f"Job {job_id}: Background pre-fetch task failed: {str(e)}")
+        # Update job status to failed
+        update_job_progress(job_id, status="failed", error_message=str(e))
+
+        # Refund credits since processing failed
+        try:
+            from transcript_api import CreditManager
+
+            CreditManager.finalize_credit_usage(
+                user_id=job["user_id"],
+                reservation_id=job["reservation_id"],
+                credits_used=0,  # No credits used since processing failed
+                credits_reserved=job["credits_reserved"],
+            )
+        except Exception as credit_error:
+            logger.error(
+                f"Failed to refund credits for failed job {job_id}: {str(credit_error)}"
+            )
+
+
+async def monitor_job_timeout(job_id: str, timeout_minutes: int = 10):
+    """
+    Monitor a job for timeout and mark pending videos as failed.
 
     Args:
         job_id: The job identifier
-        video_id: YouTube video ID to process
-        output_dir: Directory to save transcript files
+        timeout_minutes: Minutes to wait before timing out pending videos
     """
-    # Load job to get initial data
-    job = load_job_from_file(job_id)
-    if not job:
-        logger.error(
-            f"Job {job_id} not found in persistent storage for video {video_id}"
-        )
-        return
-
-    # Also ensure in-memory job exists for credit tracking
-    # if job_id not in channel_download_jobs:
-    #     channel_download_jobs[job_id] = job
-    #     logger.debug(f"Restored job {job_id} to memory from file")
-
-    video_dir = os.path.join(
-        output_dir, video_id
-    )  # Use video ID as subdirectory for isolation
-
     try:
-        # Create a separate subdirectory for each video to isolate failures
-        os.makedirs(video_dir, exist_ok=True)
+        logger.info(
+            f"Job {job_id}: Starting timeout monitor with {timeout_minutes} minute limit"
+        )
 
-        # Add a timeout to prevent any single video from taking too long
-        try:
-            # Get pre-fetched metadata for this video
-            video_metadata = job.get("videos_metadata", {}).get(video_id, {})
+        # Wait for the timeout period
+        await asyncio.sleep(timeout_minutes * 60)
 
-            # Log if we're using pre-fetched metadata
-            if video_metadata:
-                logger.debug(
-                    f"Using pre-fetched metadata for video {video_id}: {video_metadata.get('title', 'No title')}"
-                )
-            else:
-                logger.warning(
-                    f"No pre-fetched metadata for video {video_id}. Available metadata keys: {list(job.get('videos_metadata', {}).keys())[:5]}"
-                )  # Show first 5 keys
+        # Check if job is still processing
+        job = load_job_from_file(job_id)
+        if not job:
+            logger.warning(f"Job {job_id}: Job not found during timeout check")
+            return
 
-            # Get transcript with timeout to prevent hanging - use job formatting options and pre-fetched metadata
-            transcript_task = asyncio.create_task(
-                get_single_transcript(
-                    video_id,
-                    video_dir,
-                    include_timestamps=job["include_timestamps"],
-                    include_video_title=job["include_video_title"],
-                    include_video_id=job["include_video_id"],
-                    include_video_url=job["include_video_url"],
-                    include_view_count=job["include_view_count"],
-                    pre_fetched_metadata=video_metadata,
-                )
+        # Only proceed if job is still processing
+        if job.get("status") != "processing":
+            logger.info(
+                f"Job {job_id}: Job no longer processing, timeout monitor exiting"
             )
-            _, file_path, metadata = await asyncio.wait_for(
-                transcript_task, timeout=35.0
-            )  # 35 second timeout
+            return
 
-            if file_path:
-                # Create file info object
-                file_info = {
-                    "file_path": file_path,
-                    "video_id": video_id,
-                    "language": metadata.get("transcript_language"),
-                    "type": metadata.get("transcript_type"),
-                }
+        # Calculate how many videos are still pending
+        total_videos = job["total_videos"]
+        processed_count = job["processed_count"]
+        pending_count = total_videos - processed_count
 
-                # Use atomic operations to update job progress (combined for efficiency)
-                updated_job = update_job_progress(
-                    job_id,
-                    files_append=file_info,
-                    completed_increment=1,
-                    credits_used_increment=1,
-                    processed_count_increment=1,  # Combined into single call
-                )
-
-                if updated_job:
-                    logger.info(
-                        f"Downloaded transcript for video {video_id} ({updated_job['completed']}/{updated_job['total_videos']})"
-                    )
-                    try:
-                        del updated_job  # Help with memory
-                    except Exception as e:
-                        logger.error(f"Error deleting updated_job: {str(e)}")
-                else:
-                    logger.warning(f"Failed to update progress for video {video_id}")
-
-        except asyncio.TimeoutError:
-            logger.error(
-                f"Transcript processing for {video_id} timed out after 60 seconds"
+        if pending_count > 0:
+            logger.warning(
+                f"Job {job_id}: {pending_count} videos still pending after {timeout_minutes} minutes, marking as failed"
             )
-            # Combined update for timeout case
+
+            # Mark pending videos as failed and complete the job
             update_job_progress(
-                job_id, credits_used_increment=1, processed_count_increment=1
+                job_id,
+                status="completed",
+                timeout_occurred=True,
+                timeout_failed_count=pending_count,
             )
-            raise ValueError("Transcript processing timed out")
+
+            # Finalize credits for completed job
+            try:
+                from transcript_api import CreditManager
+
+                updated_job = load_job_from_file(job_id)
+                if updated_job and updated_job.get("reservation_id"):
+                    CreditManager.finalize_credit_usage(
+                        user_id=updated_job["user_id"],
+                        reservation_id=updated_job["reservation_id"],
+                        credits_used=updated_job["credits_used"],
+                        credits_reserved=updated_job["credits_reserved"],
+                    )
+                    logger.info(f"Job {job_id}: Finalized credits after timeout")
+            except Exception as credit_error:
+                logger.error(
+                    f"Job {job_id}: Failed to finalize credits after timeout: {str(credit_error)}"
+                )
+
+            logger.info(
+                f"Job {job_id}: Timeout handling completed, job marked as finished"
+            )
+        else:
+            logger.info(
+                f"Job {job_id}: All videos processed before timeout, no action needed"
+            )
 
     except Exception as e:
-        # Combined update for failure case
-        update_job_progress(
-            job_id,
-            failed_count_increment=1,
-            credits_used_increment=1,
-            processed_count_increment=1,
-        )
-
-        logger.error(f"Failed to process video {video_id} for job {job_id}: {str(e)}")
-
-    # No finally block needed since processed_count_increment is handled above
+        logger.error(f"Job {job_id}: Error in timeout monitor: {str(e)}")
 
 
 def get_job_status(job_id: str) -> Dict[str, Any]:
@@ -2122,6 +1691,9 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
         "credits_reserved": job["credits_reserved"],
         "credits_used": job["credits_used"],
         "current_user_credits": current_credits,
+        # New status fields for enhanced workflow
+        "prefetch_completed": job.get("prefetch_completed", False),
+        "lambda_dispatched_count": job.get("lambda_dispatched_count", 0),
         # Formatting options
         "include_timestamps": job.get("include_timestamps", False),
         "include_video_title": job.get("include_video_title", True),
@@ -2129,7 +1701,44 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
         "include_video_url": job.get("include_video_url", True),
         "include_view_count": job.get("include_view_count", False),
         "concatenate_all": job.get("concatenate_all", False),
+        # Timeout monitoring fields
+        "lambda_dispatch_time": job.get("lambda_dispatch_time"),
+        "timeout_occurred": job.get("timeout_occurred", False),
+        "timeout_failed_count": job.get("timeout_failed_count", 0),
     }
+
+    # Add phase-specific messages
+    if job["status"] == "initializing":
+        status_info["message"] = "Job created, starting metadata pre-fetch..."
+    elif job["status"] == "prefetching_metadata":
+        status_info["message"] = (
+            f"Pre-fetching metadata for {job['total_videos']} videos..."
+        )
+    elif job["status"] == "dispatching_lambda":
+        status_info["message"] = "Metadata complete, dispatching Lambda functions..."
+    elif job["status"] == "processing":
+        progress_pct = (job.get("processed_count", 0) / job["total_videos"]) * 100
+        elapsed_minutes = (
+            time.time() - job.get("lambda_dispatch_time", job["start_time"])
+        ) / 60
+        timeout_minutes = settings.job_timeout_minutes
+        status_info["message"] = (
+            f"Processing transcripts... {progress_pct:.1f}% complete "
+            f"(elapsed: {elapsed_minutes:.1f} min, timeout at {timeout_minutes} min)"
+        )
+    elif job["status"] == "completed":
+        if job.get("timeout_occurred"):
+            status_info["message"] = (
+                f"Completed with {job.get('timeout_failed_count', 0)} videos timed out"
+            )
+        else:
+            status_info["message"] = "All transcripts completed successfully"
+    elif job["status"] == "completed_with_errors":
+        status_info["message"] = f"Completed with {job['failed_count']} errors"
+    elif job["status"] == "failed":
+        status_info["message"] = (
+            f"Job failed: {job.get('error_message', 'Unknown error')}"
+        )
 
     # Add credit usage summary
     status_info["credits_used_this_job"] = job["credits_used"]
@@ -2492,6 +2101,408 @@ def log_memory_checkpoint(checkpoint_name: str) -> Dict[str, Any]:
         Current memory information
     """
     return memory_tracker.log_memory_usage(f"checkpoint[{checkpoint_name}]")
+
+
+# =============================================
+# S3 ZIP CREATION FUNCTIONS
+# =============================================
+
+
+async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.BytesIO]:
+    """
+    Create ZIP by downloading transcript files from S3 concurrently.
+    Faster than sequential downloads with better performance.
+
+    Args:
+        job_id: The job identifier
+
+    Returns:
+        BytesIO object containing the ZIP file, or None if job not completed
+
+    Raises:
+        ValueError: If job ID not found or job not completed
+    """
+    import boto3
+    from config_v2 import settings
+
+    # Load job data
+    job = load_job_from_file(job_id)
+    if not job:
+        raise ValueError(f"Job not found with ID: {job_id}")
+
+    if job["status"] not in ["completed", "completed_with_errors"]:
+        raise ValueError(
+            f"Cannot create ZIP: job status is {job['status']}, not completed"
+        )
+
+    if not job.get("files"):
+        raise ValueError("No transcript files found for this job")
+
+    # Initialize S3 client
+    try:
+        s3_client = boto3.client(
+            "s3",
+            aws_access_key_id=getattr(settings, "aws_access_key_id", None),
+            aws_secret_access_key=getattr(settings, "aws_secret_access_key", None),
+            region_name=getattr(settings, "aws_default_region", "us-east-1"),
+        )
+    except Exception as e:
+        logger.error(f"Failed to create S3 client: {str(e)}")
+        # Fallback to environment variables
+        s3_client = boto3.client("s3")
+
+    bucket_name = getattr(settings, "s3_bucket_name", None) or os.getenv(
+        "S3_BUCKET_NAME"
+    )
+    if not bucket_name:
+        raise ValueError("S3 bucket name not configured")
+
+    # Download all files concurrently (up to 10 at a time)
+    async def download_file(file_info):
+        """Download a single file from S3"""
+        s3_key = file_info["s3_key"]
+        video_id = file_info["video_id"]
+
+        def _download():
+            try:
+                logger.debug(f"Downloading {s3_key} from S3")
+                response = s3_client.get_object(Bucket=bucket_name, Key=s3_key)
+                return {
+                    "video_id": video_id,
+                    "content": response["Body"].read(),
+                    "filename": os.path.basename(s3_key),
+                    "success": True,
+                    "s3_key": s3_key,
+                }
+            except Exception as e:
+                logger.error(f"Failed to download {s3_key}: {str(e)}")
+                return {
+                    "video_id": video_id,
+                    "content": f"Error downloading transcript for video {video_id}: {str(e)}".encode(),
+                    "filename": f"{video_id}_ERROR.txt",
+                    "success": False,
+                    "s3_key": s3_key,
+                }
+
+        # Run S3 download in thread pool
+        return await asyncio.to_thread(_download)
+
+    # Download files concurrently (max 10 concurrent downloads)
+    semaphore = asyncio.Semaphore(10)
+
+    async def download_with_limit(file_info):
+        async with semaphore:
+            return await download_file(file_info)
+
+    logger.info(f"Downloading {len(job['files'])} files concurrently from S3")
+    download_start = time.time()
+
+    download_tasks = [download_with_limit(file_info) for file_info in job["files"]]
+    download_results = await asyncio.gather(*download_tasks)
+
+    download_end = time.time()
+    successful_downloads = len([r for r in download_results if r["success"]])
+    logger.info(
+        f"Downloaded {successful_downloads}/{len(download_results)} files in {download_end - download_start:.2f}s"
+    )
+
+    # Create ZIP from downloaded content
+    zip_buffer = io.BytesIO()
+
+    if job.get("formatting_options", {}).get("concatenate_all", False):
+        # Create concatenated file
+        concatenated_content = await create_concatenated_content_from_results(
+            download_results, job
+        )
+
+        with zipfile.ZipFile(
+            zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
+        ) as zip_file:
+            source_name = job.get("source_name") or job.get(
+                "channel_name", "transcripts"
+            )
+            safe_source_name = sanitize_filename(source_name)
+            filename = f"{safe_source_name}_all_transcripts.txt"
+            zip_file.writestr(filename, concatenated_content)
+
+    else:
+        # Create individual files in ZIP
+        with zipfile.ZipFile(
+            zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
+        ) as zip_file:
+            for result in download_results:
+                zip_file.writestr(result["filename"], result["content"])
+
+    zip_buffer.seek(0)
+
+    logger.info(
+        f"Created ZIP archive for job {job_id} with {successful_downloads} files, size: {len(zip_buffer.getvalue())} bytes"
+    )
+
+    return zip_buffer
+
+
+async def create_concatenated_content_from_results(
+    download_results: List[Dict[str, Any]], job: Dict[str, Any]
+) -> str:
+    """
+    Create a single concatenated transcript from download results.
+
+    Args:
+        download_results: List of download result dictionaries
+        job: Job data dictionary
+
+    Returns:
+        String containing all transcripts concatenated with separators
+    """
+    concatenated_parts = []
+
+    # Add header with source information
+    source_name = job.get("source_name") or job.get("channel_name", "Unknown")
+    source_type = job.get("source_type", "channel")
+
+    concatenated_parts.append(f"{source_type.upper()}: {source_name}")
+    concatenated_parts.append(f"TOTAL VIDEOS: {job.get('completed', 0)}")
+    concatenated_parts.append(f"GENERATED: {time.strftime('%Y-%m-%d %H:%M:%S')}")
+    concatenated_parts.append("=" * 80)
+    concatenated_parts.append("")
+
+    # Add each transcript from download results
+    successful_results = [r for r in download_results if r["success"]]
+
+    for i, result in enumerate(successful_results, 1):
+        try:
+            # Decode content
+            content = result["content"]
+            if isinstance(content, bytes):
+                content = content.decode("utf-8")
+
+            # Add section separator
+            concatenated_parts.append(f"[VIDEO {i}/{len(successful_results)}]")
+            concatenated_parts.append(f"Video ID: {result['video_id']}")
+            concatenated_parts.append("-" * 60)
+            concatenated_parts.append(content)
+            concatenated_parts.append("")  # Empty line between videos
+            concatenated_parts.append("=" * 80)
+            concatenated_parts.append("")  # Empty line between sections
+
+        except Exception as e:
+            logger.error(
+                f"Error processing transcript for video {result['video_id']}: {str(e)}"
+            )
+            # Add error message to concatenated content
+            concatenated_parts.append(
+                f"[VIDEO {i}/{len(successful_results)}] - ERROR PROCESSING TRANSCRIPT"
+            )
+            concatenated_parts.append(f"Video ID: {result['video_id']}")
+            concatenated_parts.append(f"S3 Key: {result.get('s3_key', 'unknown')}")
+            concatenated_parts.append(f"Error: {str(e)}")
+            concatenated_parts.append("")
+            concatenated_parts.append("=" * 80)
+            concatenated_parts.append("")
+
+    # Add failed downloads section if any
+    failed_results = [r for r in download_results if not r["success"]]
+    if failed_results:
+        concatenated_parts.append("=" * 80)
+        concatenated_parts.append("FAILED DOWNLOADS")
+        concatenated_parts.append("=" * 80)
+        concatenated_parts.append("")
+
+        for i, result in enumerate(failed_results, 1):
+            concatenated_parts.append(f"[FAILED {i}/{len(failed_results)}]")
+            concatenated_parts.append(f"Video ID: {result['video_id']}")
+            concatenated_parts.append(f"S3 Key: {result.get('s3_key', 'unknown')}")
+            concatenated_parts.append("-" * 40)
+            try:
+                content = result["content"]
+                if isinstance(content, bytes):
+                    content = content.decode("utf-8")
+                concatenated_parts.append(content)
+            except Exception as e:
+                concatenated_parts.append(f"Error displaying failure message: {str(e)}")
+            concatenated_parts.append("")
+
+    return "\n".join(concatenated_parts)
+
+
+async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.BytesIO]:
+    """
+    Create ZIP by downloading transcript files from S3 sequentially.
+    Fallback option if concurrent downloads cause issues.
+
+    Args:
+        job_id: The job identifier
+
+    Returns:
+        BytesIO object containing the ZIP file, or None if job not completed
+
+    Raises:
+        ValueError: If job ID not found or job not completed
+    """
+    import boto3
+    from config_v2 import settings
+
+    # Load job data
+    job = load_job_from_file(job_id)
+    if not job:
+        raise ValueError(f"Job not found with ID: {job_id}")
+
+    if job["status"] not in ["completed", "completed_with_errors"]:
+        raise ValueError(
+            f"Cannot create ZIP: job status is {job['status']}, not completed"
+        )
+
+    if not job.get("files"):
+        raise ValueError("No transcript files found for this job")
+
+    # Initialize S3 client
+    try:
+        s3_client = boto3.client(
+            "s3",
+            aws_access_key_id=getattr(settings, "aws_access_key_id", None),
+            aws_secret_access_key=getattr(settings, "aws_secret_access_key", None),
+            region_name=getattr(settings, "aws_default_region", "us-east-1"),
+        )
+    except Exception as e:
+        logger.error(f"Failed to create S3 client: {str(e)}")
+        # Fallback to environment variables
+        s3_client = boto3.client("s3")
+
+    bucket_name = getattr(settings, "s3_bucket_name", None) or os.getenv(
+        "S3_BUCKET_NAME"
+    )
+    if not bucket_name:
+        raise ValueError("S3 bucket name not configured")
+
+    # Create a BytesIO buffer for the ZIP file
+    zip_buffer = io.BytesIO()
+
+    # Check if we should concatenate all transcripts into a single file
+    if job.get("formatting_options", {}).get("concatenate_all", False):
+        # Create a single concatenated file from S3 files
+        concatenated_content = await create_concatenated_transcript_from_s3_sequential(
+            job_id, s3_client, bucket_name
+        )
+
+        with zipfile.ZipFile(
+            zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
+        ) as zip_file:
+            # Use the source name for the concatenated file
+            source_name = job.get("source_name") or job.get(
+                "channel_name", "transcripts"
+            )
+            safe_source_name = sanitize_filename(source_name)
+            filename = f"{safe_source_name}_all_transcripts.txt"
+            zip_file.writestr(filename, concatenated_content)
+    else:
+        # Create a ZIP file with individual transcript files from S3
+        with zipfile.ZipFile(
+            zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
+        ) as zip_file:
+            for file_info in job["files"]:
+                s3_key = file_info["s3_key"]
+                video_id = file_info["video_id"]
+
+                try:
+                    # Download file content from S3
+                    logger.debug(f"Downloading {s3_key} from S3 for ZIP creation")
+                    response = s3_client.get_object(Bucket=bucket_name, Key=s3_key)
+                    file_content = response["Body"].read()
+
+                    # Create filename from video ID or extract from S3 key
+                    filename = f"{video_id}.txt"
+                    if "/" in s3_key:
+                        filename = os.path.basename(s3_key)
+
+                    # Add to ZIP
+                    zip_file.writestr(filename, file_content)
+                    logger.debug(f"Added {filename} to ZIP archive")
+
+                except Exception as e:
+                    logger.error(f"Failed to download {s3_key} from S3: {str(e)}")
+                    # Add error placeholder instead of failing entire ZIP
+                    error_content = (
+                        f"Error downloading transcript for video {video_id}: {str(e)}"
+                    )
+                    zip_file.writestr(f"{video_id}_ERROR.txt", error_content)
+
+    # Seek to beginning of buffer for response
+    zip_buffer.seek(0)
+
+    logger.info(f"Created ZIP archive for job {job_id} with {len(job['files'])} files")
+    return zip_buffer
+
+
+async def create_concatenated_transcript_from_s3_sequential(
+    job_id: str, s3_client, bucket_name: str
+) -> str:
+    """
+    Create a single concatenated transcript by downloading individual files from S3 sequentially.
+
+    Args:
+        job_id: The job identifier
+        s3_client: Configured boto3 S3 client
+        bucket_name: S3 bucket name
+
+    Returns:
+        String containing all transcripts concatenated with separators
+    """
+    job = load_job_from_file(job_id)
+    if not job:
+        raise ValueError(f"Job not found with ID: {job_id}")
+
+    concatenated_parts = []
+
+    # Add header with source information
+    source_name = job.get("source_name") or job.get("channel_name", "Unknown")
+    source_type = job.get("source_type", "channel")
+
+    concatenated_parts.append(f"{source_type.upper()}: {source_name}")
+    concatenated_parts.append(f"TOTAL VIDEOS: {job.get('completed', 0)}")
+    concatenated_parts.append(f"GENERATED: {time.strftime('%Y-%m-%d %H:%M:%S')}")
+    concatenated_parts.append("=" * 80)
+    concatenated_parts.append("")
+
+    # Download and concatenate each transcript file from S3
+    for i, file_info in enumerate(job["files"], 1):
+        s3_key = file_info["s3_key"]
+        video_id = file_info["video_id"]
+
+        try:
+            # Download file content from S3
+            logger.debug(f"Downloading {s3_key} from S3 for concatenation")
+            response = s3_client.get_object(Bucket=bucket_name, Key=s3_key)
+            content = response["Body"].read().decode("utf-8")
+
+            # Add section separator
+            concatenated_parts.append(f"[VIDEO {i}/{len(job['files'])}]")
+            concatenated_parts.append(f"Video ID: {video_id}")
+            concatenated_parts.append("-" * 60)
+            concatenated_parts.append(content)
+            concatenated_parts.append("")  # Empty line between videos
+            concatenated_parts.append("=" * 80)
+            concatenated_parts.append("")  # Empty line between sections
+
+        except Exception as e:
+            logger.error(f"Error downloading transcript from S3 {s3_key}: {str(e)}")
+            # Add error message to concatenated content
+            concatenated_parts.append(
+                f"[VIDEO {i}/{len(job['files'])}] - ERROR DOWNLOADING TRANSCRIPT"
+            )
+            concatenated_parts.append(f"Video ID: {video_id}")
+            concatenated_parts.append(f"S3 Key: {s3_key}")
+            concatenated_parts.append(f"Error: {str(e)}")
+            concatenated_parts.append("")
+            concatenated_parts.append("=" * 80)
+            concatenated_parts.append("")
+
+    return "\n".join(concatenated_parts)
+
+
+# =============================================
+# LEGACY ZIP CREATION (LOCAL FILES)
+# =============================================
 
 
 # ytt_api = YouTubeTranscriptApi()
