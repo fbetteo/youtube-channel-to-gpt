@@ -685,6 +685,17 @@ class DownloadHistoryItem(BaseModel):
     completedAt: Optional[str] = Field(
         None, description="ISO timestamp when download was completed"
     )
+    # Additional useful fields for S3-based storage
+    successfulFiles: int = Field(
+        default=0, description="Number of successfully downloaded transcript files"
+    )
+    failedFiles: int = Field(default=0, description="Number of failed video downloads")
+    successRate: float = Field(
+        default=0.0, description="Success rate as percentage (0-100)"
+    )
+    creditsUsed: int = Field(
+        default=0, description="Credits consumed for this download"
+    )
 
 
 def verify_api_key(request: Request):
@@ -701,62 +712,38 @@ def verify_api_key(request: Request):
 
 def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
     """
-    Get download history for a specific user by scanning their transcript directories
-    and matching with job files
+    Get download history for a specific user by scanning job files for completed downloads.
+    Now works with S3-based storage - uses job metadata instead of local file scanning.
     """
     history_items = []
-
-    # Path to user's transcript directory
-    user_transcript_dir = os.path.join(settings.temp_dir, user_id)
     jobs_dir = os.path.join(settings.temp_dir, "jobs")
-
-    if not os.path.exists(user_transcript_dir):
-        logger.info(f"User transcript directory not found: {user_transcript_dir}")
-        return history_items
 
     if not os.path.exists(jobs_dir):
         logger.warning(f"Jobs directory not found: {jobs_dir}")
         return history_items
 
-    # Scan user's transcript subdirectories (each is a job_id)
     try:
-        for item in os.listdir(user_transcript_dir):
-            item_path = os.path.join(user_transcript_dir, item)
-
-            # Skip if not a directory
-            if not os.path.isdir(item_path):
+        # Scan all job files in the jobs directory
+        for job_file in os.listdir(jobs_dir):
+            if not job_file.endswith(".json"):
                 continue
 
-            # The directory name is the job_id
-            job_id = item
-
-            # Look for corresponding job file
-            job_file_path = os.path.join(jobs_dir, f"{job_id}.json")
+            job_id = job_file[:-5]  # Remove .json extension
+            job_file_path = os.path.join(jobs_dir, job_file)
 
             try:
-                # Load job data if file exists
-                job_data = {}
-                if os.path.exists(job_file_path):
-                    with open(job_file_path, "r", encoding="utf-8") as f:
-                        job_data = json.load(f)
-                else:
-                    logger.info(f"Job file not found for job_id {job_id}")
+                # Load job data
+                with open(job_file_path, "r", encoding="utf-8") as f:
+                    job_data = json.load(f)
+
+                # Check if this job belongs to the user
+                if job_data.get("user_id") != user_id:
                     continue
 
-                # Double-check this job belongs to the user (safety check)
-                if job_data.get("user_id") and job_data.get("user_id") != user_id:
-                    logger.warning(
-                        f"Job {job_id} user_id mismatch: expected {user_id}, got {job_data.get('user_id')}"
-                    )
+                # Only include jobs that have been processed (completed, failed, or with errors)
+                job_status = job_data.get("status", "")
+                if job_status not in ["completed", "completed_with_errors", "failed"]:
                     continue
-
-                # Create download URL since directory exists with files
-                download_url = None
-                if os.listdir(item_path):  # Directory has files
-                    download_url = f"/channel/download/results/{job_id}"
-
-                # Determine status - if we have a directory but no job file, assume completed
-                status = job_data.get("status", "completed")
 
                 # Helper function to convert timestamps to ISO strings
                 def timestamp_to_iso(timestamp_value):
@@ -773,47 +760,66 @@ def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
                 start_time_iso = timestamp_to_iso(job_data.get("start_time"))
                 end_time_iso = timestamp_to_iso(job_data.get("end_time"))
 
-                # Map job data to DownloadHistoryItem
+                # Determine download URL availability and calculate metrics
+                download_url = None
+                successful_files = 0
+                if job_status in ["completed", "completed_with_errors"]:
+                    # Check if job has any completed files (stored in S3)
+                    completed_files = job_data.get("files", [])
+                    successful_files = len(completed_files)
+                    if completed_files:
+                        download_url = f"/channel/download/results/{job_id}"
+
+                # Calculate success metrics for better UX
+                total_videos = job_data.get("total_videos", 0)
+                failed_count = job_data.get("failed_count", 0)
+                credits_used = job_data.get("credits_used", 0)
+                success_rate = (
+                    ((total_videos - failed_count) / total_videos * 100)
+                    if total_videos > 0
+                    else 0
+                )
+
+                # Determine the display status
+                display_status = job_status
+                if job_status == "completed_with_errors":
+                    display_status = "completed"  # Simplify for frontend
+
+                # Map job data to DownloadHistoryItem with enhanced metrics
                 history_item = DownloadHistoryItem(
                     id=job_id,
                     date=start_time_iso or "",
                     sourceName=job_data.get("source_name")
                     or job_data.get("channel_name", "Unknown"),
                     sourceType=job_data.get("source_type", "channel"),
-                    videoCount=job_data.get("total_videos", 0),
-                    status=status,
+                    videoCount=total_videos,
+                    status=display_status,
                     downloadUrl=download_url,
                     jobId=job_id,
                     createdAt=start_time_iso or "",
                     completedAt=end_time_iso,
+                    # Enhanced S3-based metrics
+                    successfulFiles=successful_files,
+                    failedFiles=failed_count,
+                    successRate=round(success_rate, 1),
+                    creditsUsed=credits_used,
                 )
 
                 history_items.append(history_item)
 
             except (json.JSONDecodeError, KeyError, TypeError) as e:
-                logger.warning(f"Error processing job {job_id}: {e}")
-                # Still include the item with minimal info since directory exists
-                history_item = DownloadHistoryItem(
-                    id=job_id,
-                    date="",
-                    sourceName="Unknown",
-                    sourceType="channel",
-                    videoCount=0,
-                    status="completed",  # Directory exists, assume completed
-                    downloadUrl=f"/channel/download/results/{job_id}",
-                    jobId=job_id,
-                    createdAt="",
-                    completedAt="",
-                )
-                history_items.append(history_item)
+                logger.warning(f"Error processing job file {job_file}: {e}")
                 continue
 
     except Exception as e:
-        logger.error(f"Error scanning user transcript directory: {e}")
+        logger.error(f"Error scanning job files for user {user_id}: {e}")
 
     # Sort by creation date (newest first), with fallback to job_id for items without dates
     history_items.sort(key=lambda x: x.createdAt or x.jobId, reverse=True)
 
+    logger.info(
+        f"Retrieved {len(history_items)} download history items for user {user_id}"
+    )
     return history_items
 
 
