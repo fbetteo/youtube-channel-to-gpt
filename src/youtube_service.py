@@ -25,6 +25,9 @@ from youtube_transcript_api.proxies import WebshareProxyConfig
 # Using the Pydantic v2 compatible settings
 from config_v2 import settings
 
+# Import hybrid job manager for database operations
+from hybrid_job_manager import hybrid_job_manager
+
 # Configure logging
 logger = logging.getLogger(__name__)
 
@@ -1387,6 +1390,127 @@ async def get_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
 #         raise ValueError(f"Failed to start transcript download: {str(e)}")
 
 
+async def start_selected_videos_transcript_download(
+    channel_name: str = None,
+    playlist_name: str = None,
+    videos: List[Dict[str, Any]] = None,
+    user_id: str = None,
+    is_playlist: bool = False,
+    include_timestamps: bool = False,
+    include_video_title: bool = True,
+    include_video_id: bool = True,
+    include_video_url: bool = True,
+    include_view_count: bool = False,
+    concatenate_all: bool = False,
+) -> str:
+    """
+    Start the asynchronous process of downloading transcripts for selected videos.
+    Now uses database storage instead of file-based job tracking.
+
+    Args:
+        channel_name: Channel name or ID (for channels)
+        playlist_name: Playlist ID (for playlists)
+        videos: List of selected video dictionaries
+        user_id: User identifier
+        is_playlist: Whether this is a playlist or channel
+        include_timestamps: Include timestamps in transcripts
+        include_video_title: Include video title in headers
+        include_video_id: Include video ID in headers
+        include_video_url: Include video URL in headers
+        include_view_count: Include view count in headers
+        concatenate_all: Create single concatenated file
+
+    Returns:
+        Job ID for tracking the download process
+
+    Raises:
+        ValueError: If invalid input or insufficient credits
+    """
+    try:
+        # Determine source information
+        if is_playlist:
+            source_type = "playlist"
+            source_id = playlist_name
+            # Get playlist info for source name
+            try:
+                playlist_info = await get_playlist_info(playlist_name)
+                source_name = playlist_info.get("title", "Unknown Playlist")
+            except Exception as e:
+                logger.warning(f"Could not get playlist info: {e}")
+                source_name = f"Playlist {playlist_name}"
+        else:
+            source_type = "channel"
+            source_id = channel_name
+            # Get channel info for source name
+            try:
+                channel_info = await get_channel_info(channel_name)
+                source_name = channel_info.get("title", "Unknown Channel")
+            except Exception as e:
+                logger.warning(f"Could not get channel info: {e}")
+                source_name = f"Channel {channel_name}"
+
+        if not videos:
+            logger.warning(f"No videos provided for {source_type}: {source_id}")
+            raise ValueError(f"No videos provided for {source_type}: {source_id}")
+
+        logger.info(
+            f"Preparing to download {len(videos)} videos for {source_type} '{source_id}'"
+        )
+
+        # Create a unique job ID
+        job_id = str(uuid.uuid4())
+
+        # Create formatting options dict
+        formatting_options = {
+            "include_timestamps": include_timestamps,
+            "include_video_title": include_video_title,
+            "include_video_id": include_video_id,
+            "include_video_url": include_video_url,
+            "include_view_count": include_view_count,
+            "concatenate_all": concatenate_all,
+        }
+
+        # Create job in database using hybrid manager
+        await hybrid_job_manager.create_job(
+            job_id=job_id,
+            job_data={
+                "user_id": user_id,
+                "source_type": source_type,
+                "source_id": source_id,
+                "source_name": source_name,
+                "channel_name": channel_name if not is_playlist else None,
+                "playlist_id": playlist_name if is_playlist else None,
+                "total_videos": len(videos),
+                "processed_count": 0,
+                "failed_count": 0,
+                "completed": 0,
+                "files": [],
+                "start_time": time.time(),
+                "credits_reserved": len(videos),
+                "credits_used": 0,
+                "reservation_id": None,
+                "status": "initializing",
+                "videos_metadata": {},
+                "formatting_options": formatting_options,
+                **formatting_options,  # Also store as individual fields for backwards compatibility
+            },
+            videos=videos,
+        )
+
+        logger.info(f"Created job {job_id} in database for {source_type} {source_id}")
+
+        # Start the background task to pre-fetch metadata and dispatch Lambda functions
+        asyncio.create_task(prefetch_and_dispatch_task(job_id))
+
+        return job_id
+
+    except Exception as e:
+        logger.error(
+            f"Error starting transcript download for {source_type} {source_id}: {str(e)}"
+        )
+        raise ValueError(f"Failed to start transcript download: {str(e)}")
+
+
 async def dispatch_lambdas_concurrently(
     job_id: str,
     videos: List[Any],
@@ -1476,10 +1600,11 @@ async def prefetch_and_dispatch_task(job_id: str):
     2. Updates job status
     3. Dispatches Lambda functions
     4. Updates job to 'processing'
+    Now uses database storage via hybrid manager.
     """
     try:
-        # Load job data
-        job = load_job_from_file(job_id)
+        # Load job data from database
+        job = await hybrid_job_manager.get_job(job_id)
         if not job:
             logger.error(f"Job {job_id} not found for pre-fetching")
             return
@@ -1495,17 +1620,17 @@ async def prefetch_and_dispatch_task(job_id: str):
         video_ids = []
         for video in videos:
             try:
-                video_id = video.id if hasattr(video, "id") else video["id"]
+                video_id = video.get("id") if isinstance(video, dict) else video.id
                 video_ids.append(video_id)
             except Exception as e:
                 logger.error(f"Error extracting video ID: {str(e)}")
 
-        update_job_progress(job_id, status="prefetching_metadata")
+        await hybrid_job_manager.update_job(job_id, status="prefetching_metadata")
 
         videos_metadata = await pre_fetch_videos_metadata(video_ids)
 
         # 2. Update job with metadata
-        update_job_progress(
+        await hybrid_job_manager.update_job(
             job_id,
             videos_metadata=videos_metadata,
             prefetch_completed=True,
@@ -1521,12 +1646,21 @@ async def prefetch_and_dispatch_task(job_id: str):
             job_id, videos, videos_metadata, user_id, job["formatting_options"]
         )
 
-        # 4. Update job status to processing and start timeout monitoring
-        update_job_progress(
+        # 4. Update job status to processing - use safe update to prevent race conditions
+        success = await hybrid_job_manager.update_job_status_safe(
+            job_id, "processing", expected_current_status="dispatching_lambda"
+        )
+
+        if not success:
+            logger.warning(
+                f"Job {job_id}: Status was changed during dispatch, but continuing"
+            )
+
+        # Update additional metadata
+        await hybrid_job_manager.update_job(
             job_id,
-            status="processing",
             lambda_dispatched_count=dispatched_count,
-            lambda_dispatch_time=time.time(),  # Track when Lambdas were dispatched
+            lambda_dispatch_time=time.time(),
         )
 
         logger.info(
@@ -1539,7 +1673,9 @@ async def prefetch_and_dispatch_task(job_id: str):
     except Exception as e:
         logger.error(f"Job {job_id}: Background pre-fetch task failed: {str(e)}")
         # Update job status to failed
-        update_job_progress(job_id, status="failed", error_message=str(e))
+        await hybrid_job_manager.update_job(
+            job_id, status="failed", error_message=str(e)
+        )
 
         # Refund credits since processing failed
         try:
@@ -1637,6 +1773,7 @@ async def monitor_job_timeout(job_id: str, timeout_minutes: int = 10):
 def get_job_status(job_id: str) -> Dict[str, Any]:
     """
     Get the current status of a transcript download job with persistence fallback.
+    Now uses hybrid manager for database/file fallback.
 
     Args:
         job_id: The job identifier
@@ -1647,108 +1784,198 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
     Raises:
         ValueError: If job ID is not found
     """
-    # First try in-memory storage
-    # if job_id in channel_download_jobs:
-    #     job = channel_download_jobs[job_id]
-    #     logger.debug(f"Found job {job_id} in memory")
-    # else:
-    #     # Fallback to persistent storage
-    job = load_job_from_file(job_id)
-    if job:
-        # Restore to in-memory storage
-        # channel_download_jobs[job_id] = job
-        logger.info(f"Restored job {job_id} from persistent storage to memory")
-    else:
-        logger.error(f"Job not found in memory or persistent storage: {job_id}")
-        raise ValueError(f"Job not found with ID: {job_id}")
+    # This function needs to be async to use hybrid manager, but keeping sync for compatibility
+    # We'll create a wrapper function for the API endpoints
+    import asyncio
+
+    try:
+        # For backwards compatibility, try to run async operation
+        loop = asyncio.get_event_loop()
+        if loop.is_running():
+            # If we're already in an async context, we need to handle this differently
+            # For now, fall back to the file-based approach
+            job = load_job_from_file(job_id)
+        else:
+            job = loop.run_until_complete(
+                hybrid_job_manager.get_job(job_id, include_videos=False)
+            )
+    except Exception as e:
+        logger.warning(f"Failed to get job {job_id} from hybrid manager: {e}")
+        # Fallback to file-based approach
+        job = load_job_from_file(job_id)
+
+    if not job:
+        logger.error(f"Job {job_id} not found")
+        raise ValueError(f"Job {job_id} not found")
 
     # Calculate progress percentage
-    total = job["total_videos"]
-    processed = job["processed_count"]
-    progress = (processed / total * 100) if total > 0 else 0
+    total_videos = job.get("total_videos", 0)
+    completed = job.get("completed", 0)
+    failed_count = job.get("failed_count", 0)
+    processed_count = job.get("processed_count", 0)
 
-    # Get current user credits for reference
-    current_credits = None
-    try:
-        from transcript_api import CreditManager
+    progress_percentage = 0.0
+    if total_videos > 0:
+        progress_percentage = (processed_count / total_videos) * 100
 
-        current_credits = CreditManager.get_user_credits(job["user_id"])
-    except Exception as e:
-        logger.warning(f"Could not get current credits for job {job_id}: {str(e)}")
+    # Calculate timing information
+    start_time = job.get("start_time")
+    end_time = job.get("end_time")
+    duration = None
 
-    # Return relevant status information including credit tracking
-    status_info = {
-        "status": job["status"],
-        "channel_name": job.get("channel_name"),  # Channel name (if channel job)
-        "playlist_id": job.get("playlist_id"),  # Playlist ID (if playlist job)
-        "is_playlist": job.get("is_playlist", False),  # Flag to distinguish job type
-        "total_videos": total,
-        "processed_count": processed,
-        "completed": job["completed"],
-        "failed_count": job["failed_count"],
-        "progress": round(progress, 2),
-        "start_time": job["start_time"],
-        "end_time": job.get("end_time"),
-        "duration": job.get("duration"),
-        "credits_reserved": job["credits_reserved"],
-        "credits_used": job["credits_used"],
-        "current_user_credits": current_credits,
-        # New status fields for enhanced workflow
-        "prefetch_completed": job.get("prefetch_completed", False),
+    if isinstance(start_time, (int, float)):
+        if end_time and isinstance(end_time, (int, float)):
+            duration = end_time - start_time
+        else:
+            # Job still running, calculate current duration
+            duration = time.time() - start_time
+
+    # Build status response
+    status_response = {
+        "job_id": job_id,
+        "status": job.get("status", "unknown"),
+        "total_videos": total_videos,
+        "completed": completed,
+        "failed_count": failed_count,
+        "processed_count": processed_count,
+        "progress_percentage": round(progress_percentage, 2),
+        "files": job.get("files", []),
+        "start_time": start_time,
+        "end_time": end_time,
+        "duration": duration,
+        # Credit tracking
+        "credits_reserved": job.get("credits_reserved", 0),
+        "credits_used": job.get("credits_used", 0),
+        "credits_remaining": job.get("credits_reserved", 0)
+        - job.get("credits_used", 0),
+        "reservation_id": job.get("reservation_id"),
+        # Source information
+        "source_type": job.get("source_type", "unknown"),
+        "source_name": job.get("source_name", "Unknown Source"),
+        "channel_name": job.get("channel_name"),
+        "playlist_id": job.get("playlist_id"),
+        # Lambda processing
         "lambda_dispatched_count": job.get("lambda_dispatched_count", 0),
-        # Formatting options
-        "include_timestamps": job.get("include_timestamps", False),
-        "include_video_title": job.get("include_video_title", True),
-        "include_video_id": job.get("include_video_id", True),
-        "include_video_url": job.get("include_video_url", True),
-        "include_view_count": job.get("include_view_count", False),
-        "concatenate_all": job.get("concatenate_all", False),
-        # Timeout monitoring fields
         "lambda_dispatch_time": job.get("lambda_dispatch_time"),
+        "prefetch_completed": job.get("prefetch_completed", False),
+        # Error information
+        "error_message": job.get("error_message"),
         "timeout_occurred": job.get("timeout_occurred", False),
-        "timeout_failed_count": job.get("timeout_failed_count", 0),
     }
 
-    # Add phase-specific messages
-    if job["status"] == "initializing":
-        status_info["message"] = "Job created, starting metadata pre-fetch..."
-    elif job["status"] == "prefetching_metadata":
-        status_info["message"] = (
-            f"Pre-fetching metadata for {job['total_videos']} videos..."
+    # Add completion details for completed jobs
+    if job.get("status") == "completed":
+        status_response.update(
+            {
+                "message": f"Download completed. {completed} videos successful, {failed_count} failed.",
+                "download_ready": len(job.get("files", [])) > 0,
+            }
         )
-    elif job["status"] == "dispatching_lambda":
-        status_info["message"] = "Metadata complete, dispatching Lambda functions..."
-    elif job["status"] == "processing":
-        progress_pct = (job.get("processed_count", 0) / job["total_videos"]) * 100
-        elapsed_minutes = (
-            time.time() - job.get("lambda_dispatch_time", job["start_time"])
-        ) / 60
-        timeout_minutes = settings.job_timeout_minutes
-        status_info["message"] = (
-            f"Processing transcripts... {progress_pct:.1f}% complete "
-            f"(elapsed: {elapsed_minutes:.1f} min, timeout at {timeout_minutes} min)"
+    elif job.get("status") == "processing":
+        status_response.update(
+            {
+                "message": f"Processing in progress. {completed}/{total_videos} videos completed.",
+                "estimated_time_remaining": None,  # Could add estimation logic here
+            }
         )
-    elif job["status"] == "completed":
-        if job.get("timeout_occurred"):
-            status_info["message"] = (
-                f"Completed with {job.get('timeout_failed_count', 0)} videos timed out"
-            )
+    elif job.get("status") == "failed":
+        status_response.update(
+            {
+                "message": f"Job failed: {job.get('error_message', 'Unknown error')}",
+            }
+        )
+
+    return status_response
+
+
+async def get_job_status_async(job_id: str) -> Dict[str, Any]:
+    """
+    Async version of get_job_status for use in async contexts.
+    """
+    job = await hybrid_job_manager.get_job(job_id, include_videos=False)
+
+    if not job:
+        logger.error(f"Job {job_id} not found")
+        raise ValueError(f"Job {job_id} not found")
+
+    # Calculate progress percentage
+    total_videos = job.get("total_videos", 0)
+    completed = job.get("completed", 0)
+    failed_count = job.get("failed_count", 0)
+    processed_count = job.get("processed_count", 0)
+
+    progress_percentage = 0.0
+    if total_videos > 0:
+        progress_percentage = (processed_count / total_videos) * 100
+
+    # Calculate timing information
+    start_time = job.get("start_time")
+    end_time = job.get("end_time")
+    duration = None
+
+    if isinstance(start_time, (int, float)):
+        if end_time and isinstance(end_time, (int, float)):
+            duration = end_time - start_time
         else:
-            status_info["message"] = "All transcripts completed successfully"
-    elif job["status"] == "completed_with_errors":
-        status_info["message"] = f"Completed with {job['failed_count']} errors"
-    elif job["status"] == "failed":
-        status_info["message"] = (
-            f"Job failed: {job.get('error_message', 'Unknown error')}"
+            # Job still running, calculate current duration
+            duration = time.time() - start_time
+
+    # Build status response
+    status_response = {
+        "job_id": job_id,
+        "status": job.get("status", "unknown"),
+        "total_videos": total_videos,
+        "completed": completed,
+        "failed_count": failed_count,
+        "processed_count": processed_count,
+        "progress_percentage": round(progress_percentage, 2),
+        "files": job.get("files", []),
+        "start_time": start_time,
+        "end_time": end_time,
+        "duration": duration,
+        # Credit tracking
+        "credits_reserved": job.get("credits_reserved", 0),
+        "credits_used": job.get("credits_used", 0),
+        "credits_remaining": job.get("credits_reserved", 0)
+        - job.get("credits_used", 0),
+        "reservation_id": job.get("reservation_id"),
+        # Source information
+        "source_type": job.get("source_type", "unknown"),
+        "source_name": job.get("source_name", "Unknown Source"),
+        "channel_name": job.get("channel_name"),
+        "playlist_id": job.get("playlist_id"),
+        # Lambda processing
+        "lambda_dispatched_count": job.get("lambda_dispatched_count", 0),
+        "lambda_dispatch_time": job.get("lambda_dispatch_time"),
+        "prefetch_completed": job.get("prefetch_completed", False),
+        # Error information
+        "error_message": job.get("error_message"),
+        "timeout_occurred": job.get("timeout_occurred", False),
+    }
+
+    # Add completion details for completed jobs
+    if job.get("status") == "completed":
+        status_response.update(
+            {
+                "message": f"Download completed. {completed} videos successful, {failed_count} failed.",
+                "download_ready": len(job.get("files", [])) > 0,
+            }
+        )
+    elif job.get("status") == "processing":
+        status_response.update(
+            {
+                "message": f"Processing in progress. {completed}/{total_videos} videos completed.",
+                "estimated_time_remaining": None,  # Could add estimation logic here
+            }
+        )
+    elif job.get("status") == "failed":
+        status_response.update(
+            {
+                "message": f"Job failed: {job.get('error_message', 'Unknown error')}",
+            }
         )
 
-    # Add credit usage summary
-    status_info["credits_used_this_job"] = job["credits_used"]
-    status_info["credits_remaining_for_job"] = max(
-        0, job["credits_reserved"] - job["credits_used"]
-    )
-
-    return status_info
+    return status_response
 
 
 async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:

@@ -61,6 +61,9 @@ from rate_limiter import transcript_limiter
 # Using the Pydantic v2 compatible settings
 from config_v2 import settings
 
+# Import hybrid job manager for database operations
+from hybrid_job_manager import hybrid_job_manager
+
 
 # Stripe configuration
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY_LIVE")
@@ -1907,7 +1910,7 @@ async def get_transcript_download_status(
     """
     try:
         # Get job status from the new service
-        status = youtube_service.get_job_status(job_id)
+        status = await youtube_service.get_job_status_async(job_id)
 
         # If the job is completed, include download URL information
         if status["status"] == "completed":
@@ -1943,7 +1946,7 @@ async def download_transcript_results(
     """
     try:
         # Verify user owns this job
-        job = youtube_service.load_job_from_file(job_id)
+        job = await hybrid_job_manager.get_job(job_id, include_videos=True)
         if not job:
             raise HTTPException(status_code=404, detail="Job not found")
 
@@ -2224,7 +2227,7 @@ async def video_completed(job_id: str, completion_data: dict):
     """
     try:
         # Check execution time for monitoring
-        job = youtube_service.load_job_from_file(job_id)
+        job = await hybrid_job_manager.get_job(job_id, include_videos=False)
         if job and job.get("lambda_dispatch_time"):
             execution_time = time.time() - job["lambda_dispatch_time"]
             if execution_time > 300:  # 5 minutes
@@ -2252,20 +2255,12 @@ async def video_completed(job_id: str, completion_data: dict):
             #     "job_id": job_id,
             # }
 
-        # Update job progress with atomic operations
-        file_info = {
-            "video_id": completion_data["video_id"],
-            "s3_key": completion_data["s3_key"],
-            "status": "completed",
-            "transcript_length": completion_data.get("transcript_length", 0),
-        }
-
-        updated_job = youtube_service.update_job_progress(
-            job_id,
-            files_append=file_info,  # Add file to list atomically
-            completed_increment=1,  # Increment success counter
-            credits_used_increment=1,  # Track credit usage
-            processed_count_increment=1,  # Track total processed
+        # Mark video as completed with atomic database operations
+        updated_job = await hybrid_job_manager.mark_video_completed(
+            job_id=job_id,
+            video_id=completion_data["video_id"],
+            s3_key=completion_data["s3_key"],
+            transcript_length=completion_data.get("transcript_length", 0),
         )
 
         logger.info(f"Video {completion_data['video_id']} completed for job {job_id}")
@@ -2284,7 +2279,7 @@ async def video_completed(job_id: str, completion_data: dict):
             )
 
             # Update job status to completed
-            youtube_service.update_job_progress(job_id, status="completed")
+            await hybrid_job_manager.update_job(job_id, status="completed")
             logger.info(f"Job {job_id} completed - all videos processed")
 
         return {"status": "updated", "job_id": job_id}
@@ -2301,7 +2296,7 @@ async def video_failed(job_id: str, failure_data: dict):
     """
     try:
         # Check if this video was already counted as timed out
-        job = youtube_service.load_job_from_file(job_id)
+        job = await hybrid_job_manager.get_job(job_id, include_videos=False)
         if job and job.get("timeout_occurred"):
             logger.info(
                 f"Video {failure_data['video_id']} failed after timeout was triggered "
@@ -2314,11 +2309,10 @@ async def video_failed(job_id: str, failure_data: dict):
             #     "job_id": job_id,
             # }
 
-        updated_job = youtube_service.update_job_progress(
-            job_id,
-            failed_count_increment=1,  # Increment failure counter
-            credits_used_increment=1,  # Still count failed attempts
-            processed_count_increment=1,  # Track total processed
+        updated_job = await hybrid_job_manager.mark_video_failed(
+            job_id=job_id,
+            video_id=failure_data["video_id"],
+            error=failure_data.get("error", "Unknown error"),
         )
 
         logger.warning(
@@ -2344,7 +2338,7 @@ async def video_failed(job_id: str, failure_data: dict):
                 if updated_job["failed_count"] > 0
                 else "completed"
             )
-            youtube_service.update_job_progress(job_id, status=status)
+            await hybrid_job_manager.update_job(job_id, status=status)
             logger.info(
                 f"Job {job_id} completed with {updated_job['failed_count']} failures"
             )
