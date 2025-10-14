@@ -47,6 +47,7 @@ async def init_db_pool():
             port=os.getenv("DB_PORT_YOUTUBE_TRANSCRIPTS"),
             min_size=5,  # Minimum connections in pool
             max_size=20,  # Maximum connections in pool
+            statement_cache_size=0,  # Disable prepared statements for pgbouncer compatibility
         )
     return _connection_pool
 
