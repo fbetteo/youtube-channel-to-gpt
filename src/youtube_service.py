@@ -2360,7 +2360,7 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
     from config_v2 import settings
 
     # Load job data from database
-    job = await hybrid_job_manager.get_job(job_id, include_videos=False)
+    job = await hybrid_job_manager.get_job(job_id, include_videos=True)
     if not job:
         raise ValueError(f"Job not found with ID: {job_id}")
 
