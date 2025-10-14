@@ -180,10 +180,19 @@ class JobManager:
                         published_at = None
                         if video.get("publishedAt"):
                             try:
-                                published_at = datetime.fromisoformat(
+                                # Parse ISO datetime string and convert to timezone-naive UTC
+                                dt_with_tz = datetime.fromisoformat(
                                     video["publishedAt"].replace("Z", "+00:00")
                                 )
-                            except Exception:
+                                # Convert to UTC and remove timezone info for TIMESTAMP column
+                                published_at = dt_with_tz.utctimetuple()
+                                published_at = datetime(
+                                    *published_at[:6]
+                                )  # Create timezone-naive datetime
+                            except Exception as e:
+                                logger.warning(
+                                    f"Failed to parse publishedAt '{video['publishedAt']}': {e}"
+                                )
                                 pass
 
                         await tx.execute(
