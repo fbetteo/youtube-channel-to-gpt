@@ -1575,8 +1575,8 @@ async def dispatch_lambdas_concurrently(
             logger.error(
                 f"Job {job_id}: Failed to dispatch Lambda for video {video_id}: {str(e)}"
             )
-            # Update failure count atomically
-            update_job_progress(job_id, failed_count_increment=1)
+            # Note: Failed dispatch count is not tracked as it happens before video processing
+            # Only video processing failures are tracked in the database
             return False
 
     # Create all tasks at once (no semaphore, no limits)
@@ -1715,7 +1715,7 @@ async def monitor_job_timeout(job_id: str, timeout_minutes: int = 10):
         await asyncio.sleep(timeout_minutes * 60)
 
         # Check if job is still processing
-        job = load_job_from_file(job_id)
+        job = await hybrid_job_manager.get_job(job_id, include_videos=False)
         if not job:
             logger.warning(f"Job {job_id}: Job not found during timeout check")
             return
@@ -1738,7 +1738,7 @@ async def monitor_job_timeout(job_id: str, timeout_minutes: int = 10):
             )
 
             # Mark pending videos as failed and complete the job
-            update_job_progress(
+            await hybrid_job_manager.update_job(
                 job_id,
                 status="completed",
                 timeout_occurred=True,
@@ -1749,7 +1749,9 @@ async def monitor_job_timeout(job_id: str, timeout_minutes: int = 10):
             try:
                 from transcript_api import CreditManager
 
-                updated_job = load_job_from_file(job_id)
+                updated_job = await hybrid_job_manager.get_job(
+                    job_id, include_videos=False
+                )
                 if updated_job and updated_job.get("reservation_id"):
                     CreditManager.finalize_credit_usage(
                         user_id=updated_job["user_id"],
@@ -1997,11 +1999,10 @@ async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:
     Raises:
         ValueError: If job ID not found or job not completed
     """
-    # if job_id not in channel_download_jobs:
-    #     raise ValueError(f"Job not found with ID: {job_id}")
-
-    # job = channel_download_jobs[job_id]
-    job = load_job_from_file(job_id)
+    # Load job data from database
+    job = await hybrid_job_manager.get_job(job_id, include_videos=False)
+    if not job:
+        raise ValueError(f"Job not found with ID: {job_id}")
 
     if job["status"] != "completed":
         raise ValueError(
@@ -2059,11 +2060,11 @@ async def create_concatenated_transcript(job_id: str) -> str:
     Raises:
         ValueError: If job not found
     """
-    # if job_id not in channel_download_jobs:
-    #     raise ValueError(f"Job not found with ID: {job_id}")
+    # Load job data from database
+    job = await hybrid_job_manager.get_job(job_id, include_videos=False)
+    if not job:
+        raise ValueError(f"Job not found with ID: {job_id}")
 
-    # job = channel_download_jobs[job_id]
-    job = load_job_from_file(job_id)
     concatenated_parts = []
 
     # Add header with channel information
@@ -2105,7 +2106,7 @@ async def create_concatenated_transcript(job_id: str) -> str:
     return "\n".join(concatenated_parts)
 
 
-def get_safe_channel_name(job_id: str) -> str:
+async def get_safe_channel_name(job_id: str) -> str:
     """
     Get a filesystem-safe version of the source name (channel or playlist) for a job.
 
@@ -2118,11 +2119,10 @@ def get_safe_channel_name(job_id: str) -> str:
     Raises:
         ValueError: If job ID not found
     """
-    # if job_id not in channel_download_jobs:
-    #     raise ValueError(f"Job not found with ID: {job_id}")
-
-    # job_data = channel_download_jobs[job_id]
-    job_data = load_job_from_file(job_id)
+    # Load job data from database
+    job_data = await hybrid_job_manager.get_job(job_id, include_videos=False)
+    if not job_data:
+        raise ValueError(f"Job not found with ID: {job_id}")
 
     # For playlist jobs, use source_name or playlist_id
     if job_data.get("source_type") == "playlist":
@@ -2359,8 +2359,8 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
     import boto3
     from config_v2 import settings
 
-    # Load job data
-    job = load_job_from_file(job_id)
+    # Load job data from database
+    job = await hybrid_job_manager.get_job(job_id, include_videos=False)
     if not job:
         raise ValueError(f"Job not found with ID: {job_id}")
 
@@ -2577,8 +2577,8 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
     import boto3
     from config_v2 import settings
 
-    # Load job data
-    job = load_job_from_file(job_id)
+    # Load job data from database
+    job = await hybrid_job_manager.get_job(job_id, include_videos=False)
     if not job:
         raise ValueError(f"Job not found with ID: {job_id}")
 
@@ -2682,7 +2682,8 @@ async def create_concatenated_transcript_from_s3_sequential(
     Returns:
         String containing all transcripts concatenated with separators
     """
-    job = load_job_from_file(job_id)
+    # Load job data from database
+    job = await hybrid_job_manager.get_job(job_id, include_videos=False)
     if not job:
         raise ValueError(f"Job not found with ID: {job_id}")
 
