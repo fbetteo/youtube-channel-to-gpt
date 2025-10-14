@@ -658,9 +658,21 @@ async def get_videos_metadata_batch(video_ids: List[str]) -> Dict[str, Dict[str,
                 "publishedAt": snippet.get("publishedAt", ""),
                 "thumbnail": best_thumbnail.get("url", ""),
                 "duration": duration_str,
-                "viewCount": int(statistics.get("viewCount", 0)),
-                "likeCount": int(statistics.get("likeCount", 0)),
-                "commentCount": int(statistics.get("commentCount", 0)),
+                "viewCount": (
+                    int(statistics.get("viewCount", 0))
+                    if statistics.get("viewCount")
+                    else 0
+                ),
+                "likeCount": (
+                    int(statistics.get("likeCount", 0))
+                    if statistics.get("likeCount")
+                    else 0
+                ),
+                "commentCount": (
+                    int(statistics.get("commentCount", 0))
+                    if statistics.get("commentCount")
+                    else 0
+                ),
                 "url": f"https://www.youtube.com/watch?v={video_id}",
                 # Additional fields for database storage
                 "duration_iso": duration,  # Original ISO format for database
@@ -670,7 +682,9 @@ async def get_videos_metadata_batch(video_ids: List[str]) -> Dict[str, Dict[str,
                 ),
                 "language": snippet.get("defaultAudioLanguage"),
                 "defaultLanguage": snippet.get("defaultLanguage"),
-                "categoryId": snippet.get("categoryId"),
+                "categoryId": snippet.get(
+                    "categoryId"
+                ),  # Will be converted to int in job_manager
                 "tags": snippet.get("tags", []),
             }
 

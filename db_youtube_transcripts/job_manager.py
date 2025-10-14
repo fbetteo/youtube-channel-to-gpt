@@ -729,6 +729,52 @@ class JobManager:
                             )
 
                     # Map YouTube API camelCase keys to database snake_case columns
+                    # Convert numeric string values to proper types
+                    try:
+                        view_count = (
+                            int(metadata.get("viewCount", 0))
+                            if metadata.get("viewCount")
+                            else None
+                        )
+                    except (ValueError, TypeError):
+                        view_count = None
+
+                    try:
+                        like_count = (
+                            int(metadata.get("likeCount", 0))
+                            if metadata.get("likeCount")
+                            else None
+                        )
+                    except (ValueError, TypeError):
+                        like_count = None
+
+                    try:
+                        comment_count = (
+                            int(metadata.get("commentCount", 0))
+                            if metadata.get("commentCount")
+                            else None
+                        )
+                    except (ValueError, TypeError):
+                        comment_count = None
+
+                    try:
+                        category_id = (
+                            int(metadata.get("categoryId"))
+                            if metadata.get("categoryId")
+                            else None
+                        )
+                    except (ValueError, TypeError):
+                        category_id = None
+
+                    try:
+                        duration_seconds = (
+                            int(metadata.get("duration_seconds"))
+                            if metadata.get("duration_seconds")
+                            else None
+                        )
+                    except (ValueError, TypeError):
+                        duration_seconds = None
+
                     await tx.execute(
                         """
                         UPDATE job_videos 
@@ -760,25 +806,17 @@ class JobManager:
                             "channelTitle"
                         ),  # YouTube API camelCase -> channel_title
                         metadata.get("duration_iso"),
-                        metadata.get("duration_seconds"),
+                        duration_seconds,  # Converted to int
                         metadata.get("duration_category"),
-                        metadata.get(
-                            "viewCount"
-                        ),  # YouTube API camelCase -> view_count
-                        metadata.get(
-                            "likeCount"
-                        ),  # YouTube API camelCase -> like_count
-                        metadata.get(
-                            "commentCount"
-                        ),  # YouTube API camelCase -> comment_count
+                        view_count,  # Converted to int
+                        like_count,  # Converted to int
+                        comment_count,  # Converted to int
                         metadata.get("language")
                         or metadata.get("defaultAudioLanguage"),
                         metadata.get(
                             "defaultLanguage"
                         ),  # YouTube API camelCase -> default_language
-                        metadata.get(
-                            "categoryId"
-                        ),  # YouTube API camelCase -> category_id
+                        category_id,  # Converted to int
                         metadata.get("tags"),
                     )
 
