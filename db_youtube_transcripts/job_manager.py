@@ -186,26 +186,31 @@ class JobManager:
                                     f"Failed to parse publishedAt '{video['publishedAt']}': {e}"
                                 )
 
-                        video_data.append((
-                            video["id"],  # video_id
-                            job_id,  # job_id
-                            video.get("title", ""),  # title
-                            video.get(
-                                "url", f"https://www.youtube.com/watch?v={video['id']}"
-                            ),  # url
-                            video.get("description"),  # description
-                            published_at,  # published_at
-                            video.get("channel_id"),  # channel_id
-                            video.get("channel_title"),  # channel_title
-                            video.get("duration_iso"),  # duration_iso (PT4M13S format)
-                            video.get("duration_seconds"),  # duration_seconds
-                            video.get(
-                                "duration", "unknown"
-                            ),  # duration_category (short/medium/long)
-                            video.get("view_count"),  # view_count
-                            video.get("language"),  # language
-                            "pending",  # status (default to pending)
-                        ))
+                        video_data.append(
+                            (
+                                video["id"],  # video_id
+                                job_id,  # job_id
+                                video.get("title", ""),  # title
+                                video.get(
+                                    "url",
+                                    f"https://www.youtube.com/watch?v={video['id']}",
+                                ),  # url
+                                video.get("description"),  # description
+                                published_at,  # published_at
+                                video.get("channel_id"),  # channel_id
+                                video.get("channel_title"),  # channel_title
+                                video.get(
+                                    "duration_iso"
+                                ),  # duration_iso (PT4M13S format)
+                                video.get("duration_seconds"),  # duration_seconds
+                                video.get(
+                                    "duration", "unknown"
+                                ),  # duration_category (short/medium/long)
+                                video.get("view_count"),  # view_count
+                                video.get("language"),  # language
+                                "pending",  # status (default to pending)
+                            )
+                        )
 
                     # Batch insert all videos at once
                     await tx.executemany(
@@ -218,7 +223,7 @@ class JobManager:
                             $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14
                         )
                         """,
-                        video_data
+                        video_data,
                     )
 
                 logger.info(
