@@ -1825,7 +1825,7 @@ async def prefetch_and_dispatch_task(job_id: str):
             job_id,
             videos_metadata=videos_metadata,
             prefetch_completed=True,
-            status="dispatching_lambda",
+            status="dispatching",
         )
 
         # 3. Update video metadata in job_videos table
@@ -1842,7 +1842,7 @@ async def prefetch_and_dispatch_task(job_id: str):
 
         # 4. Update job status to processing - use safe update to prevent race conditions
         success = await hybrid_job_manager.update_job_status_safe(
-            job_id, "processing", expected_current_status="dispatching_lambda"
+            job_id, "processing", expected_current_status="dispatching"
         )
 
         if not success:
