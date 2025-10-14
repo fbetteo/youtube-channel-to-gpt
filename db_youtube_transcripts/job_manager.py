@@ -6,6 +6,7 @@ Replaces the file-based job system with PostgreSQL for better concurrency contro
 
 import logging
 import json
+import asyncio
 from typing import Dict, List, Optional, Any
 from datetime import datetime
 
@@ -250,71 +251,88 @@ class JobManager:
         Returns:
             Job dictionary or None if not found
         """
-        try:
-            async with get_db_connection() as conn:
-                # Get job data (always fast)
-                job_query = "SELECT * FROM jobs WHERE job_id = $1"
-                job_record = await conn.fetchrow(job_query, job_id)
+        max_retries = 3
+        retry_delay = 1  # seconds
 
-                if not job_record:
+        for attempt in range(max_retries):
+            try:
+                async with get_db_connection() as conn:
+                    # Get job data (always fast)
+                    job_query = "SELECT * FROM jobs WHERE job_id = $1"
+                    job_record = await conn.fetchrow(job_query, job_id)
+
+                    if not job_record:
+                        return None
+
+                    # Convert to dict and handle JSON fields
+                    job = dict(job_record)
+
+                    # Parse JSON fields
+                    if job["videos_metadata"]:
+                        job["videos_metadata"] = json.loads(job["videos_metadata"])
+                    if job["formatting_options"]:
+                        job["formatting_options"] = json.loads(
+                            job["formatting_options"]
+                        )
+
+                    # Convert timestamps to Unix timestamps for backwards compatibility
+                    if job["start_time"]:
+                        job["start_time"] = job["start_time"].timestamp()
+                    if job["end_time"]:
+                        job["end_time"] = job["end_time"].timestamp()
+                    if job["lambda_dispatch_time"]:
+                        job["lambda_dispatch_time"] = job[
+                            "lambda_dispatch_time"
+                        ].timestamp()
+
+                    if include_videos:
+                        # Get video data (potentially slower for large jobs)
+                        videos_query = """
+                            SELECT video_id as id, title, url, description, published_at, 
+                                   channel_id, channel_title, duration_iso, duration_seconds,
+                                   duration_category as duration, view_count, language, 
+                                   status, file_path, s3_key, file_size, processed_at,
+                                   error_message, retry_count
+                            FROM job_videos 
+                            WHERE job_id = $1 
+                            ORDER BY created_at
+                        """
+                        video_records = await conn.fetch(videos_query, job_id)
+                        job["videos"] = [dict(v) for v in video_records]
+
+                        # Separate completed files for backwards compatibility
+                        files = []
+                        for video in job["videos"]:
+                            if video["status"] == "completed" and (
+                                video["file_path"] or video["s3_key"]
+                            ):
+                                file_info = {
+                                    "video_id": video["id"],
+                                    "title": video["title"],
+                                    "file_path": video["file_path"],
+                                    "s3_key": video["s3_key"],
+                                    "file_size": video["file_size"],
+                                }
+                                files.append(file_info)
+
+                        job["files"] = files
+
+                    return job
+
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    # Log retry attempt and wait before retrying
+                    logger.warning(
+                        f"Failed to get job {job_id} from database (attempt {attempt + 1}/{max_retries}): {str(e)}"
+                    )
+                    await asyncio.sleep(retry_delay)
+                    retry_delay *= 2  # Exponential backoff
+                else:
+                    # Final attempt failed
+                    logger.error(
+                        f"Failed to get job {job_id} from database after {max_retries} attempts: {str(e)}"
+                    )
                     return None
-
-                # Convert to dict and handle JSON fields
-                job = dict(job_record)
-
-                # Parse JSON fields
-                if job["videos_metadata"]:
-                    job["videos_metadata"] = json.loads(job["videos_metadata"])
-                if job["formatting_options"]:
-                    job["formatting_options"] = json.loads(job["formatting_options"])
-
-                # Convert timestamps to Unix timestamps for backwards compatibility
-                if job["start_time"]:
-                    job["start_time"] = job["start_time"].timestamp()
-                if job["end_time"]:
-                    job["end_time"] = job["end_time"].timestamp()
-                if job["lambda_dispatch_time"]:
-                    job["lambda_dispatch_time"] = job[
-                        "lambda_dispatch_time"
-                    ].timestamp()
-
-                if include_videos:
-                    # Get video data (potentially slower for large jobs)
-                    videos_query = """
-                        SELECT video_id as id, title, url, description, published_at, 
-                               channel_id, channel_title, duration_iso, duration_seconds,
-                               duration_category as duration, view_count, language, 
-                               status, file_path, s3_key, file_size, processed_at,
-                               error_message, retry_count
-                        FROM job_videos 
-                        WHERE job_id = $1 
-                        ORDER BY created_at
-                    """
-                    video_records = await conn.fetch(videos_query, job_id)
-                    job["videos"] = [dict(v) for v in video_records]
-
-                    # Separate completed files for backwards compatibility
-                    files = []
-                    for video in job["videos"]:
-                        if video["status"] == "completed" and (
-                            video["file_path"] or video["s3_key"]
-                        ):
-                            file_info = {
-                                "video_id": video["id"],
-                                "title": video["title"],
-                                "file_path": video["file_path"],
-                                "s3_key": video["s3_key"],
-                                "file_size": video["file_size"],
-                            }
-                            files.append(file_info)
-
-                    job["files"] = files
-
-                return job
-
-        except Exception as e:
-            logger.error(f"Failed to get job {job_id} from database: {str(e)}")
-            return None
 
     @staticmethod
     async def update_job_progress_db(
@@ -467,54 +485,69 @@ class JobManager:
         Returns:
             True on success, False on error
         """
-        try:
-            async with get_db_transaction() as tx:
-                # Update video status
-                video_result = await tx.execute(
-                    """
-                    UPDATE job_videos 
-                    SET status = 'completed',
-                        file_path = $3,
-                        s3_key = $4,
-                        file_size = $5,
-                        processed_at = NOW(),
-                        updated_at = NOW()
-                    WHERE job_id = $1 AND video_id = $2 AND status != 'completed'
-                """,
-                    job_id,
-                    video_id,
-                    file_info.get("file_path"),
-                    file_info.get("s3_key"),
-                    file_info.get("file_size", 0),
-                )
+        max_retries = 3
+        retry_delay = 1  # seconds
 
-                # Only increment job counters if video was actually updated
-                if video_result == "UPDATE 1":
-                    await tx.execute(
+        for attempt in range(max_retries):
+            try:
+                async with get_db_transaction() as tx:
+                    # Update video status
+                    video_result = await tx.execute(
                         """
-                        UPDATE jobs 
-                        SET completed = completed + 1,
-                            processed_count = processed_count + 1,
-                            credits_used = credits_used + 1,
+                        UPDATE job_videos 
+                        SET status = 'completed',
+                            file_path = $3,
+                            s3_key = $4,
+                            file_size = $5,
+                            processed_at = NOW(),
                             updated_at = NOW()
-                        WHERE job_id = $1
+                        WHERE job_id = $1 AND video_id = $2 AND status != 'completed'
                     """,
                         job_id,
+                        video_id,
+                        file_info.get("file_path"),
+                        file_info.get("s3_key"),
+                        file_info.get("file_size", 0),
                     )
 
-                    logger.debug(
-                        f"Marked video {video_id} as completed for job {job_id}"
+                    # Only increment job counters if video was actually updated
+                    if video_result == "UPDATE 1":
+                        await tx.execute(
+                            """
+                            UPDATE jobs 
+                            SET completed = completed + 1,
+                                processed_count = processed_count + 1,
+                                credits_used = credits_used + 1,
+                                updated_at = NOW()
+                            WHERE job_id = $1
+                        """,
+                            job_id,
+                        )
+
+                        logger.debug(
+                            f"Marked video {video_id} as completed for job {job_id}"
+                        )
+                        return True
+                    else:
+                        logger.debug(
+                            f"Video {video_id} was already completed for job {job_id}"
+                        )
+                        return False
+
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    # Log retry attempt and wait before retrying
+                    logger.warning(
+                        f"Failed to mark video {video_id} as completed (attempt {attempt + 1}/{max_retries}): {str(e)}"
                     )
-                    return True
+                    await asyncio.sleep(retry_delay)
+                    retry_delay *= 2  # Exponential backoff
                 else:
-                    logger.debug(
-                        f"Video {video_id} was already completed for job {job_id}"
+                    # Final attempt failed
+                    logger.error(
+                        f"Failed to mark video {video_id} as completed after {max_retries} attempts: {str(e)}"
                     )
                     return False
-
-        except Exception as e:
-            logger.error(f"Failed to mark video {video_id} as completed: {str(e)}")
-            return False
 
     @staticmethod
     async def mark_video_failed(job_id: str, video_id: str, error_message: str) -> bool:
@@ -720,6 +753,9 @@ class JobManager:
         """
         try:
             async with get_db_transaction() as tx:
+                # Prepare batch update data for all videos
+                update_data = []
+
                 for video_id, metadata in videos_metadata.items():
                     # Parse published date if available
                     published_at = None
@@ -784,50 +820,58 @@ class JobManager:
                     except (ValueError, TypeError):
                         duration_seconds = None
 
-                    await tx.execute(
-                        """
-                        UPDATE job_videos 
-                        SET description = $3,
-                            published_at = $4,
-                            channel_id = $5,
-                            channel_title = $6,
-                            duration_iso = $7,
-                            duration_seconds = $8,
-                            duration_category = $9,
-                            view_count = $10,
-                            like_count = $11,
-                            comment_count = $12,
-                            language = $13,
-                            default_language = $14,
-                            category_id = $15,
-                            tags = $16,
-                            updated_at = NOW()
-                        WHERE job_id = $1 AND video_id = $2
-                        """,
-                        job_id,
-                        video_id,
-                        metadata.get("description"),
-                        published_at,  # Parsed timestamp
-                        metadata.get(
-                            "channelId"
-                        ),  # YouTube API camelCase -> channel_id
-                        metadata.get(
-                            "channelTitle"
-                        ),  # YouTube API camelCase -> channel_title
-                        metadata.get("duration_iso"),
-                        duration_seconds,  # Converted to int
-                        metadata.get("duration_category"),
-                        view_count,  # Converted to int
-                        like_count,  # Converted to int
-                        comment_count,  # Converted to int
-                        metadata.get("language")
-                        or metadata.get("defaultAudioLanguage"),
-                        metadata.get(
-                            "defaultLanguage"
-                        ),  # YouTube API camelCase -> default_language
-                        category_id,  # Converted to int
-                        metadata.get("tags"),
+                    # Add to batch update data
+                    update_data.append(
+                        (
+                            job_id,
+                            video_id,
+                            metadata.get("description"),
+                            published_at,  # Parsed timestamp
+                            metadata.get(
+                                "channelId"
+                            ),  # YouTube API camelCase -> channel_id
+                            metadata.get(
+                                "channelTitle"
+                            ),  # YouTube API camelCase -> channel_title
+                            metadata.get("duration_iso"),
+                            duration_seconds,  # Converted to int
+                            metadata.get("duration_category"),
+                            view_count,  # Converted to int
+                            like_count,  # Converted to int
+                            comment_count,  # Converted to int
+                            metadata.get("language")
+                            or metadata.get("defaultAudioLanguage"),
+                            metadata.get(
+                                "defaultLanguage"
+                            ),  # YouTube API camelCase -> default_language
+                            category_id,  # Converted to int
+                            metadata.get("tags"),
+                        )
                     )
+
+                # Perform batch update using executemany for optimal performance
+                await tx.executemany(
+                    """
+                    UPDATE job_videos 
+                    SET description = $3,
+                        published_at = $4,
+                        channel_id = $5,
+                        channel_title = $6,
+                        duration_iso = $7,
+                        duration_seconds = $8,
+                        duration_category = $9,
+                        view_count = $10,
+                        like_count = $11,
+                        comment_count = $12,
+                        language = $13,
+                        default_language = $14,
+                        category_id = $15,
+                        tags = $16,
+                        updated_at = NOW()
+                    WHERE job_id = $1 AND video_id = $2
+                    """,
+                    update_data,
+                )
 
                 logger.info(
                     f"Updated metadata for {len(videos_metadata)} videos in job {job_id}"

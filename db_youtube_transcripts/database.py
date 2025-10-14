@@ -45,9 +45,16 @@ async def init_db_pool():
             user=os.getenv("DB_USERNAME_YOUTUBE_TRANSCRIPTS"),
             password=os.getenv("DB_PASSWORD_YOUTUBE_TRANSCRIPTS"),
             port=os.getenv("DB_PORT_YOUTUBE_TRANSCRIPTS"),
-            min_size=5,  # Minimum connections in pool
-            max_size=20,  # Maximum connections in pool
+            min_size=10,  # Increased minimum connections
+            max_size=50,  # Increased maximum connections for concurrent Lambda callbacks
             statement_cache_size=0,  # Disable prepared statements for pgbouncer compatibility
+            command_timeout=30,  # 30 second command timeout
+            server_settings={
+                "application_name": "transcript_api",
+                "tcp_keepalives_idle": "600",  # Send keepalive every 10 minutes
+                "tcp_keepalives_interval": "30",  # Retry keepalive every 30 seconds
+                "tcp_keepalives_count": "3",  # 3 failed keepalives = dead connection
+            },
         )
     return _connection_pool
 
