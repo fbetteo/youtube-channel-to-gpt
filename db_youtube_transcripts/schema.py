@@ -16,6 +16,9 @@ connection.autocommit = True
 
 with connection.cursor() as c:
 
+    # Drop existing job_videos table if it exists with wrong schema
+    c.execute("DROP TABLE IF EXISTS job_videos CASCADE;")
+
     # Create JOBS table
     jobs_query = """
     CREATE TABLE IF NOT EXISTS jobs (
@@ -74,8 +77,8 @@ with connection.cursor() as c:
     # Create JOB_VIDEOS table
     job_videos_query = """
     CREATE TABLE IF NOT EXISTS job_videos (
-        video_id TEXT PRIMARY KEY,
         job_id UUID NOT NULL REFERENCES jobs(job_id) ON DELETE CASCADE,
+        video_id TEXT NOT NULL,
         
         -- Video metadata
         title TEXT NOT NULL,
@@ -117,7 +120,10 @@ with connection.cursor() as c:
         
         -- Timestamps
         created_at TIMESTAMP NOT NULL DEFAULT NOW(),
-        updated_at TIMESTAMP NOT NULL DEFAULT NOW()
+        updated_at TIMESTAMP NOT NULL DEFAULT NOW(),
+        
+        -- Composite primary key allows same video in different jobs
+        PRIMARY KEY (job_id, video_id)
     );
     """
 
