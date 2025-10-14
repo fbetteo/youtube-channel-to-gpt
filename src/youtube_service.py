@@ -1552,7 +1552,9 @@ async def dispatch_lambdas_concurrently(
             lambda_payload = {
                 "video_id": video_id,
                 "job_id": str(job_id),  # Convert UUID to string for JSON serialization
-                "user_id": str(user_id),  # Convert UUID to string for JSON serialization
+                "user_id": str(
+                    user_id
+                ),  # Convert UUID to string for JSON serialization
                 "formatting_options": formatting_options,
                 "pre_fetched_metadata": pre_fetched_metadata,
                 "api_base_url": settings.api_base_url,
