@@ -56,6 +56,9 @@ class HybridJobManager:
         if USE_DATABASE:
             try:
                 await self._ensure_db_initialized()
+                logger.info(
+                    f"Creating job {job_id} in database with {len(videos)} videos"
+                )
 
                 # Extract required fields for database
                 source_type = "playlist" if job_data.get("playlist_id") else "channel"
@@ -67,6 +70,21 @@ class HybridJobManager:
                 source_name = job_data.get("source_name") or job_data.get(
                     "channel_name", "Unknown"
                 )
+
+                logger.debug(
+                    f"Job data: user_id={job_data.get('user_id')}, source_type={source_type}, source_id={source_id}"
+                )
+
+                # Ensure user exists in user_credits table (required for foreign key)
+                try:
+                    from transcript_api import CreditManager
+
+                    CreditManager.create_user_credits(job_data["user_id"], 0)
+                    logger.debug(
+                        f"Ensured user {job_data['user_id']} exists in user_credits table"
+                    )
+                except Exception as user_error:
+                    logger.warning(f"Could not ensure user exists: {user_error}")
 
                 # Create formatting options dict
                 formatting_options = {
@@ -91,7 +109,7 @@ class HybridJobManager:
                     videos_metadata=job_data.get("videos_metadata"),
                 )
 
-                logger.info(f"Created job {job_id} in database")
+                logger.info(f"Successfully created job {job_id} in database")
 
                 # Also save to file system for backwards compatibility (during transition)
                 if FALLBACK_TO_FILES:
@@ -108,7 +126,10 @@ class HybridJobManager:
                 return job_id
 
             except Exception as db_error:
-                logger.error(f"Failed to create job {job_id} in database: {db_error}")
+                logger.error(
+                    f"Failed to create job {job_id} in database: {db_error}",
+                    exc_info=True,
+                )
                 if not FALLBACK_TO_FILES:
                     raise
 
@@ -212,9 +233,9 @@ class HybridJobManager:
 
     async def mark_video_completed(
         self, job_id: str, video_id: str, file_info: Dict[str, Any]
-    ) -> bool:
+    ) -> Optional[Dict[str, Any]]:
         """
-        Mark a video as completed using the appropriate backend
+        Mark a video as completed using the appropriate backend and return updated job data
         """
         success = False
 
@@ -227,6 +248,8 @@ class HybridJobManager:
                 )
                 if success:
                     logger.debug(f"Marked video {video_id} as completed in database")
+                    # Return updated job data
+                    return await self.get_job(job_id, include_videos=False)
             except Exception as db_error:
                 logger.error(
                     f"Failed to mark video {video_id} completed in database: {db_error}"
@@ -235,32 +258,31 @@ class HybridJobManager:
                     raise
 
         # Also update file system (during transition) or as fallback
-        if FALLBACK_TO_FILES:
+        if FALLBACK_TO_FILES and not success:
             try:
-                from youtube_service import update_job_progress
+                from youtube_service import update_job_progress, load_job_from_file
 
-                update_job_progress(
+                updated_job = update_job_progress(
                     job_id,
                     files_append=file_info,
                     completed_increment=1,
                     credits_used_increment=1,
                 )
                 logger.debug(f"Marked video {video_id} as completed in file system")
-                success = True
+                return updated_job if updated_job else load_job_from_file(job_id)
             except Exception as file_error:
                 logger.error(
                     f"Failed to mark video {video_id} completed in file system: {file_error}"
                 )
-                if not success:  # Only raise if database also failed
-                    raise
+                raise
 
-        return success
+        return None
 
     async def mark_video_failed(
         self, job_id: str, video_id: str, error_message: str
-    ) -> bool:
+    ) -> Optional[Dict[str, Any]]:
         """
-        Mark a video as failed using the appropriate backend
+        Mark a video as failed using the appropriate backend and return updated job data
         """
         success = False
 
@@ -273,6 +295,8 @@ class HybridJobManager:
                 )
                 if success:
                     logger.debug(f"Marked video {video_id} as failed in database")
+                    # Return updated job data
+                    return await self.get_job(job_id, include_videos=False)
             except Exception as db_error:
                 logger.error(
                     f"Failed to mark video {video_id} failed in database: {db_error}"
@@ -281,23 +305,22 @@ class HybridJobManager:
                     raise
 
         # Also update file system (during transition) or as fallback
-        if FALLBACK_TO_FILES:
+        if FALLBACK_TO_FILES and not success:
             try:
-                from youtube_service import update_job_progress
+                from youtube_service import update_job_progress, load_job_from_file
 
-                update_job_progress(
+                updated_job = update_job_progress(
                     job_id, failed_count_increment=1, credits_used_increment=1
                 )
                 logger.debug(f"Marked video {video_id} as failed in file system")
-                success = True
+                return updated_job if updated_job else load_job_from_file(job_id)
             except Exception as file_error:
                 logger.error(
                     f"Failed to mark video {video_id} failed in file system: {file_error}"
                 )
-                if not success:  # Only raise if database also failed
-                    raise
+                raise
 
-        return success
+        return None
 
     async def update_job_status_safe(
         self, job_id: str, new_status: str, expected_current_status: str = None

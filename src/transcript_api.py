@@ -1800,8 +1800,8 @@ async def download_selected_videos(
             },
         }
 
-        # Save job immediately
-        youtube_service.save_job_to_file(job_id, job_data)
+        # Save job immediately using hybrid manager (database + file fallback)
+        await hybrid_job_manager.create_job(job_id, job_data, videos)
         logger.info(
             f"Created job {job_id} - starting background pre-fetch for {num_videos} videos"
         )
@@ -2181,8 +2181,8 @@ async def download_selected_playlist_videos(
             },
         }
 
-        # Save job immediately
-        youtube_service.save_job_to_file(job_id, job_data)
+        # Save job immediately using hybrid manager (database + file fallback)
+        await hybrid_job_manager.create_job(job_id, job_data, videos)
         logger.info(
             f"Created playlist job {job_id} - starting background pre-fetch for {num_videos} videos"
         )
@@ -2259,8 +2259,11 @@ async def video_completed(job_id: str, completion_data: dict):
         updated_job = await hybrid_job_manager.mark_video_completed(
             job_id=job_id,
             video_id=completion_data["video_id"],
-            s3_key=completion_data["s3_key"],
-            transcript_length=completion_data.get("transcript_length", 0),
+            file_info={
+                "s3_key": completion_data["s3_key"],
+                "transcript_length": completion_data.get("transcript_length", 0),
+                "status": "completed",
+            },
         )
 
         logger.info(f"Video {completion_data['video_id']} completed for job {job_id}")
@@ -2312,7 +2315,7 @@ async def video_failed(job_id: str, failure_data: dict):
         updated_job = await hybrid_job_manager.mark_video_failed(
             job_id=job_id,
             video_id=failure_data["video_id"],
-            error=failure_data.get("error", "Unknown error"),
+            error_message=failure_data.get("error", "Unknown error"),
         )
 
         logger.warning(

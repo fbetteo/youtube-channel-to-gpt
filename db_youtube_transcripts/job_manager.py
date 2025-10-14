@@ -389,7 +389,19 @@ class JobManager:
                     job_record = await tx.fetchrow(update_query, *params)
 
                     if not job_record:
-                        logger.warning(f"Job {job_id} not found for update")
+                        logger.warning(
+                            f"Job {job_id} not found for update - checking if it exists"
+                        )
+                        # Check if job exists at all
+                        job_exists = await tx.fetchval(
+                            "SELECT 1 FROM jobs WHERE job_id = $1", job_id
+                        )
+                        if job_exists:
+                            logger.warning(
+                                f"Job {job_id} exists but update returned no rows - possible race condition"
+                            )
+                        else:
+                            logger.error(f"Job {job_id} does not exist in database")
                         return None
 
                 # Update video records for completed files
