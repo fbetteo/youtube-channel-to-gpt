@@ -163,18 +163,10 @@ class JobManager:
                     job_data["playlist_id"],
                 )
 
-                # Insert videos for the job
+                # Insert videos for the job using batch insert for better performance
                 if videos:
-                    video_insert_query = """
-                        INSERT INTO job_videos (
-                            video_id, job_id, title, url, description, published_at,
-                            channel_id, channel_title, duration_iso, duration_seconds,
-                            duration_category, view_count, language, status
-                        ) VALUES (
-                            $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14
-                        )
-                    """
-
+                    # Prepare batch data
+                    video_data = []
                     for video in videos:
                         # Parse published date if available
                         published_at = None
@@ -193,10 +185,8 @@ class JobManager:
                                 logger.warning(
                                     f"Failed to parse publishedAt '{video['publishedAt']}': {e}"
                                 )
-                                pass
 
-                        await tx.execute(
-                            video_insert_query,
+                        video_data.append((
                             video["id"],  # video_id
                             job_id,  # job_id
                             video.get("title", ""),  # title
@@ -215,7 +205,21 @@ class JobManager:
                             video.get("view_count"),  # view_count
                             video.get("language"),  # language
                             "pending",  # status (default to pending)
+                        ))
+
+                    # Batch insert all videos at once
+                    await tx.executemany(
+                        """
+                        INSERT INTO job_videos (
+                            video_id, job_id, title, url, description, published_at,
+                            channel_id, channel_title, duration_iso, duration_seconds,
+                            duration_category, view_count, language, status
+                        ) VALUES (
+                            $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14
                         )
+                        """,
+                        video_data
+                    )
 
                 logger.info(
                     f"Created job {job_id} with {len(videos)} videos in database"

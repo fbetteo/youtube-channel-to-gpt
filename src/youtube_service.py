@@ -1579,9 +1579,10 @@ async def dispatch_lambdas_concurrently(
                 "user_id": str(
                     user_id
                 ),  # Convert UUID to string for JSON serialization
-                "formatting_options": formatting_options,
                 "pre_fetched_metadata": pre_fetched_metadata,
                 "api_base_url": settings.api_base_url,
+                # Flatten formatting options to top-level keys for Lambda compatibility
+                **formatting_options,
             }
 
             # Use asyncio.to_thread for truly async Lambda dispatch
