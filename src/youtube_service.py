@@ -48,6 +48,30 @@ _memory_stats = {
 }
 
 
+# Remove global ytt_api initialization, only keep YouTube API client
+def get_ytt_api() -> YouTubeTranscriptApi:
+    """
+    Create a new YouTubeTranscriptApi instance with proxy config if needed.
+    Thread-safe implementation that creates fresh instances.
+    Returns:
+        YouTubeTranscriptApi instance
+    """
+    try:
+        if settings.webshare_proxy_username and settings.webshare_proxy_password:
+            proxy_config = WebshareProxyConfig(
+                proxy_username=settings.webshare_proxy_username,
+                proxy_password=settings.webshare_proxy_password,
+                retries_when_blocked=1,
+            )
+            return YouTubeTranscriptApi(proxy_config=proxy_config)
+        else:
+            return YouTubeTranscriptApi()
+    except Exception as e:
+        logger.error(f"Error creating YouTubeTranscriptApi: {str(e)}")
+        # Fallback to basic instance
+        return YouTubeTranscriptApi()
+
+
 class MemoryTracker:
     """Memory tracking utility for monitoring system resources."""
 
@@ -996,6 +1020,266 @@ async def get_playlist_info(playlist_id: str) -> Dict[str, Any]:
         raise ValueError(f"Failed to get playlist information: {str(e)}")
 
 
+async def get_single_transcript(
+    video_id: str,
+    output_dir: Optional[str] = None,
+    include_timestamps: bool = False,
+    include_video_title: bool = True,
+    include_video_id: bool = True,
+    include_video_url: bool = True,
+    include_view_count: bool = False,
+    pre_fetched_metadata: Optional[Dict[str, Any]] = None,
+) -> Tuple[str, Optional[str], Dict[str, Any]]:
+    """
+    Get transcript for a single YouTube video, with language fallback.
+
+    Args:
+        video_id: YouTube video ID
+        output_dir: Optional directory to save the transcript file
+        include_timestamps: Whether to include timestamps in the transcript
+        include_video_title: Whether to include video title in file header
+        include_video_id: Whether to include video ID in file header
+        include_video_url: Whether to include video URL in file header
+        include_view_count: Whether to include view count in file header
+        pre_fetched_metadata: Optional pre-fetched metadata to use instead of fetching
+
+    Returns:
+        Tuple of (transcript text, file path if saved, metadata dict)
+
+    Raises:
+        ValueError: If transcript cannot be retrieved
+    """
+    start_time = time.time()
+
+    # Track memory at start of transcript processing
+    memory_tracker.log_memory_usage(f"transcript_start[{video_id}]")
+
+    logger.info(f"Starting transcript fetch for video {video_id}")
+
+    try:
+        # Create fresh API instance for thread safety
+        ytt_api = get_ytt_api()
+        fetch_start = time.time()
+
+        # 1. List available transcripts with better error handling
+        try:
+            transcript_list = await asyncio.to_thread(ytt_api.list, video_id)
+        except Exception as e:
+            logger.error(f"Failed to list transcripts for video {video_id}: {str(e)}")
+            raise ValueError(f"No transcripts available for video {video_id}: {str(e)}")
+
+        transcript = None
+        # 2. Try to find English, otherwise take the first available
+        try:
+            transcript = transcript_list.find_transcript(["en"])
+            logger.info(f"Found English transcript for video {video_id}")
+        except Exception:
+            logger.warning(
+                f"No English transcript found for {video_id}. Trying first available."
+            )
+            try:
+                # Get the first transcript in the list
+                first_transcript_in_list = next(iter(transcript_list))
+                transcript = first_transcript_in_list
+                logger.info(
+                    f"Using first available transcript ({transcript.language_code}) for video {video_id}"
+                )
+            except StopIteration:
+                logger.error(f"No transcripts available at all for video {video_id}")
+                raise ValueError(f"No transcripts available for video {video_id}")
+
+        # 3. Fetch the selected transcript with better error handling
+        try:
+            fetched_transcript = await retry_operation(
+                lambda: asyncio.to_thread(transcript.fetch),
+                max_retries=2,
+            )
+        except Exception as e:
+            logger.error(f"Failed to fetch transcript for video {video_id}: {str(e)}")
+            raise ValueError(
+                f"Failed to fetch transcript for video {video_id}: {str(e)}"
+            )
+
+        fetch_end = time.time()
+        logger.info(
+            f"API fetch took {fetch_end - fetch_start:.3f}s for video {video_id}"
+        )
+
+        # Clean up API instance immediately after use to prevent memory leaks
+        del ytt_api
+
+        # Track memory after API fetch
+        memory_tracker.log_memory_usage(f"transcript_fetched[{video_id}]", "debug")
+
+        # Create metadata with language info
+        selected_language = transcript.language_code
+        metadata = {
+            "video_id": video_id,
+            "transcript_language": selected_language,
+            "transcript_type": (
+                "manual" if not transcript.is_generated else "auto-generated"
+            ),
+        }
+
+        # Get raw data for better performance
+        raw_data_start = time.time()
+        transcript_data = fetched_transcript.to_raw_data()
+        raw_data_end = time.time()
+        logger.info(
+            f"Raw data conversion took {raw_data_end - raw_data_start:.3f}s for video {video_id}"
+        )
+
+        # Track memory after raw data conversion
+        memory_tracker.log_memory_usage(f"transcript_raw_data[{video_id}]", "debug")
+
+        # Format transcript - optimize by using string builder approach
+        format_start = time.time()
+
+        if include_timestamps:
+            # Format with timestamps [MM:SS] Text
+            # Pre-allocate the list to avoid resizing
+            transcript_lines = [""] * len(transcript_data)
+            for i, segment in enumerate(transcript_data):
+                start_time_sec = segment["start"]
+                minutes = int(start_time_sec // 60)
+                seconds = int(start_time_sec % 60)
+                timestamp = f"[{minutes:02d}:{seconds:02d}] "
+                transcript_lines[i] = f"{timestamp}{segment['text']}"
+            transcript_text = "\n".join(transcript_lines)
+        else:
+            # Simple concatenation without timestamps - join for better performance
+            # Use a list comprehension instead of generator expression for potentially better performance
+            transcript_text = " ".join([segment["text"] for segment in transcript_data])
+
+        format_end = time.time()
+        logger.info(
+            f"Transcript formatting took {format_end - format_start:.3f}s for video {video_id}"
+        )
+
+        # Track memory after formatting (this can be memory-intensive for long videos)
+        memory_tracker.log_memory_usage(f"transcript_formatted[{video_id}]")
+
+        # Save to file if output directory is specified
+        file_path = None
+        if output_dir:
+            file_start = time.time()
+
+            # Create directory if it doesn't exist
+            os.makedirs(output_dir, exist_ok=True)
+
+            # Use pre-fetched metadata if available, otherwise fetch it
+            video_title = None
+            video_view_count = None
+
+            if pre_fetched_metadata:
+                logger.info(
+                    f"Using pre-fetched metadata for video {video_id} (title: {pre_fetched_metadata.get('title', 'No title')})"
+                )
+                # Use pre-fetched metadata (much faster)
+                video_title = pre_fetched_metadata.get("title", "Untitled_Video")
+                video_view_count = pre_fetched_metadata.get("viewCount", 0)
+                logger.debug(
+                    f"Using pre-fetched metadata for video {video_id}: {video_title}"
+                )
+            else:
+                logger.info("Fetching video metadata - no prefetch")
+                # Fallback to fetching metadata (slower, with timeout)
+                try:
+                    metadata_start = time.time()
+                    video_info = await asyncio.wait_for(
+                        get_video_info(video_id),
+                        timeout=10.0,  # Increased timeout to 10 seconds when not pre-fetched
+                    )
+                    video_title = video_info.get("title", "Untitled_Video")
+                    video_view_count = video_info.get("viewCount", 0)
+                    metadata_end = time.time()
+                    logger.info(
+                        f"Video metadata fetch took {metadata_end - metadata_start:.3f}s for video {video_id}"
+                    )
+                except asyncio.TimeoutError:
+                    logger.warning(
+                        f"Metadata fetch timed out for video {video_id}, using fallback title"
+                    )
+                    video_title = "Untitled_Video"
+                    video_view_count = 0
+                except Exception as e:
+                    logger.warning(
+                        f"Failed to get metadata for video {video_id}, using fallback title: {str(e)}"
+                    )
+                    video_title = "Untitled_Video"
+                    video_view_count = 0
+
+            # Create a sanitized filename from the video title (or ID if title not available)
+            safe_title = sanitize_filename(video_title) if video_title else video_id
+            file_path = os.path.join(output_dir, f"{safe_title}_{video_id}.txt")
+
+            # Write transcript to file - more efficient by writing once
+            write_start = time.time()
+            with open(file_path, "w", encoding="utf-8") as f:
+                # Write header with available info based on formatting options
+                if include_video_title and video_title:
+                    f.write(f"Video Title: {video_title}\n")
+                if include_video_id:
+                    f.write(f"Video ID: {video_id}\n")
+                if include_video_url:
+                    f.write(f"URL: https://www.youtube.com/watch?v={video_id}\n")
+                if include_view_count and video_view_count is not None:
+                    f.write(f"View Count: {video_view_count:,}\n")
+
+                # Add separator if any header was written
+                if (
+                    (include_video_title and video_title)
+                    or include_video_id
+                    or include_video_url
+                    or (include_view_count and video_view_count is not None)
+                ):
+                    f.write("\n")
+
+                f.write(transcript_text)
+            write_end = time.time()
+            logger.info(
+                f"File writing took {write_end - write_start:.3f}s for video {video_id}"
+            )
+
+            file_end = time.time()
+            logger.info(
+                f"Total file operations took {file_end - file_start:.3f}s for video {video_id}"
+            )
+
+        end_time = time.time()
+        total_time = end_time - start_time
+
+        # Track memory at completion and log final stats
+        final_memory = memory_tracker.log_memory_usage(
+            f"transcript_complete[{video_id}]"
+        )
+
+        logger.info(
+            f"Total transcript processing took {total_time:.3f}s for video {video_id}"
+        )
+
+        # Clean up large variables to help with memory management
+        del transcript_data
+        del fetched_transcript
+        if "transcript_lines" in locals():
+            del transcript_lines
+
+        # Force garbage collection if memory usage is high
+        if (
+            final_memory.get("process_memory_percent", 0)
+            > memory_tracker.warning_threshold
+        ):
+            memory_tracker.force_garbage_collection()
+
+        return transcript_text, file_path, metadata
+
+    except Exception as e:
+        # Track memory on error too
+        memory_tracker.log_memory_usage(f"transcript_error[{video_id}]")
+        logger.error(f"Error getting transcript for video {video_id}: {str(e)}")
+        raise ValueError(f"Failed to get transcript for video {video_id}: {str(e)}")
+
+
 # async def get_channel_videos(
 #     channel_id: str, max_results: int = None
 # ) -> List[Dict[str, str]]:
@@ -1566,6 +1850,7 @@ async def dispatch_lambdas_concurrently(
     logger.info(
         f"Job {job_id}: Async fire-and-forget dispatch of {len(videos)} Lambda functions"
     )
+    logger.info(f"Job {job_id}: Formatting options being sent: {formatting_options}")
 
     async def dispatch_single_lambda(video):
         """Dispatch a single Lambda function asynchronously"""

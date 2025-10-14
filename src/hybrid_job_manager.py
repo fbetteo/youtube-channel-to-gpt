@@ -88,12 +88,24 @@ class HybridJobManager:
 
                 # Create formatting options dict
                 formatting_options = {
-                    "include_timestamps": job_data.get("include_timestamps", False),
-                    "include_video_title": job_data.get("include_video_title", True),
-                    "include_video_id": job_data.get("include_video_id", True),
-                    "include_video_url": job_data.get("include_video_url", True),
-                    "include_view_count": job_data.get("include_view_count", False),
-                    "concatenate_all": job_data.get("concatenate_all", False),
+                    "include_timestamps": job_data.get("formatting_options", {}).get(
+                        "include_timestamps", False
+                    ),
+                    "include_video_title": job_data.get("formatting_options", {}).get(
+                        "include_video_title", True
+                    ),
+                    "include_video_id": job_data.get("formatting_options", {}).get(
+                        "include_video_id", True
+                    ),
+                    "include_video_url": job_data.get("formatting_options", {}).get(
+                        "include_video_url", True
+                    ),
+                    "include_view_count": job_data.get("formatting_options", {}).get(
+                        "include_view_count", False
+                    ),
+                    "concatenate_all": job_data.get("formatting_options", {}).get(
+                        "concatenate_all", False
+                    ),
                 }
 
                 # Convert Pydantic VideoInfo objects to dictionaries for database storage
