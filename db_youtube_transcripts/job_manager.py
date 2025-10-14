@@ -712,37 +712,73 @@ class JobManager:
         try:
             async with get_db_transaction() as tx:
                 for video_id, metadata in videos_metadata.items():
+                    # Parse published date if available
+                    published_at = None
+                    if metadata.get("publishedAt"):
+                        try:
+                            # Parse ISO datetime string and convert to timezone-naive UTC
+                            dt_with_tz = datetime.fromisoformat(
+                                metadata["publishedAt"].replace("Z", "+00:00")
+                            )
+                            # Convert to UTC and remove timezone info for TIMESTAMP column
+                            published_at = dt_with_tz.utctimetuple()
+                            published_at = datetime(*published_at[:6])
+                        except Exception as e:
+                            logger.warning(
+                                f"Failed to parse publishedAt '{metadata['publishedAt']}': {e}"
+                            )
+
+                    # Map YouTube API camelCase keys to database snake_case columns
                     await tx.execute(
                         """
                         UPDATE job_videos 
                         SET description = $3,
-                            channel_id = $4,
-                            channel_title = $5,
-                            duration_iso = $6,
-                            duration_seconds = $7,
-                            view_count = $8,
-                            like_count = $9,
-                            comment_count = $10,
-                            language = $11,
-                            default_language = $12,
-                            category_id = $13,
-                            tags = $14,
+                            published_at = $4,
+                            channel_id = $5,
+                            channel_title = $6,
+                            duration_iso = $7,
+                            duration_seconds = $8,
+                            duration_category = $9,
+                            view_count = $10,
+                            like_count = $11,
+                            comment_count = $12,
+                            language = $13,
+                            default_language = $14,
+                            category_id = $15,
+                            tags = $16,
                             updated_at = NOW()
                         WHERE job_id = $1 AND video_id = $2
                         """,
                         job_id,
                         video_id,
                         metadata.get("description"),
-                        metadata.get("channel_id"),
-                        metadata.get("channel_title"),
+                        published_at,  # Parsed timestamp
+                        metadata.get(
+                            "channelId"
+                        ),  # YouTube API camelCase -> channel_id
+                        metadata.get(
+                            "channelTitle"
+                        ),  # YouTube API camelCase -> channel_title
                         metadata.get("duration_iso"),
                         metadata.get("duration_seconds"),
-                        metadata.get("view_count"),
-                        metadata.get("like_count"),
-                        metadata.get("comment_count"),
-                        metadata.get("language"),
-                        metadata.get("default_language"),
-                        metadata.get("category_id"),
+                        metadata.get("duration_category"),
+                        metadata.get(
+                            "viewCount"
+                        ),  # YouTube API camelCase -> view_count
+                        metadata.get(
+                            "likeCount"
+                        ),  # YouTube API camelCase -> like_count
+                        metadata.get(
+                            "commentCount"
+                        ),  # YouTube API camelCase -> comment_count
+                        metadata.get("language")
+                        or metadata.get("defaultAudioLanguage"),
+                        metadata.get(
+                            "defaultLanguage"
+                        ),  # YouTube API camelCase -> default_language
+                        metadata.get(
+                            "categoryId"
+                        ),  # YouTube API camelCase -> category_id
                         metadata.get("tags"),
                     )
 

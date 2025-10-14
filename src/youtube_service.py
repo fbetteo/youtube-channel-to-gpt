@@ -648,7 +648,7 @@ async def get_videos_metadata_batch(video_ids: List[str]) -> Dict[str, Dict[str,
                 or {}
             )
 
-            # Build metadata dictionary
+            # Build metadata dictionary with all required fields for database
             metadata = {
                 "id": video_id,
                 "title": snippet.get("title", "Untitled"),
@@ -662,6 +662,16 @@ async def get_videos_metadata_batch(video_ids: List[str]) -> Dict[str, Dict[str,
                 "likeCount": int(statistics.get("likeCount", 0)),
                 "commentCount": int(statistics.get("commentCount", 0)),
                 "url": f"https://www.youtube.com/watch?v={video_id}",
+                # Additional fields for database storage
+                "duration_iso": duration,  # Original ISO format for database
+                "duration_seconds": _parse_duration_to_seconds(duration),
+                "duration_category": _categorize_duration(
+                    _parse_duration_to_seconds(duration)
+                ),
+                "language": snippet.get("defaultAudioLanguage"),
+                "defaultLanguage": snippet.get("defaultLanguage"),
+                "categoryId": snippet.get("categoryId"),
+                "tags": snippet.get("tags", []),
             }
 
             results[video_id] = metadata
