@@ -695,6 +695,66 @@ class JobManager:
             logger.error(f"Failed to update status for job {job_id}: {str(e)}")
             return False
 
+    @staticmethod
+    async def update_videos_metadata(
+        job_id: str, videos_metadata: Dict[str, Dict[str, Any]]
+    ) -> bool:
+        """
+        Update video metadata in job_videos table after metadata is pre-fetched.
+
+        Args:
+            job_id: Job identifier
+            videos_metadata: Dictionary mapping video_id to metadata dict
+
+        Returns:
+            True on success, False on error
+        """
+        try:
+            async with get_db_transaction() as tx:
+                for video_id, metadata in videos_metadata.items():
+                    await tx.execute(
+                        """
+                        UPDATE job_videos 
+                        SET description = $3,
+                            channel_id = $4,
+                            channel_title = $5,
+                            duration_iso = $6,
+                            duration_seconds = $7,
+                            view_count = $8,
+                            like_count = $9,
+                            comment_count = $10,
+                            language = $11,
+                            default_language = $12,
+                            category_id = $13,
+                            tags = $14,
+                            updated_at = NOW()
+                        WHERE job_id = $1 AND video_id = $2
+                        """,
+                        job_id,
+                        video_id,
+                        metadata.get("description"),
+                        metadata.get("channel_id"),
+                        metadata.get("channel_title"),
+                        metadata.get("duration_iso"),
+                        metadata.get("duration_seconds"),
+                        metadata.get("view_count"),
+                        metadata.get("like_count"),
+                        metadata.get("comment_count"),
+                        metadata.get("language"),
+                        metadata.get("default_language"),
+                        metadata.get("category_id"),
+                        metadata.get("tags"),
+                    )
+
+                logger.info(
+                    f"Updated metadata for {len(videos_metadata)} videos in job {job_id}"
+                )
+                return True
+
+        except Exception as e:
+            logger.error(f"Failed to update videos metadata for job {job_id}: {str(e)}")
+            return False
+
 
 # Convenience functions for backwards compatibility with existing code
 async def save_job_to_db(job_id: str, job_data: Dict[str, Any]) -> None:

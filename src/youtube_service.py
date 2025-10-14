@@ -1639,6 +1639,9 @@ async def prefetch_and_dispatch_task(job_id: str):
             status="dispatching_lambda",
         )
 
+        # 3. Update video metadata in job_videos table
+        await hybrid_job_manager.update_videos_metadata(job_id, videos_metadata)
+
         logger.info(
             f"Job {job_id}: Metadata pre-fetch completed, dispatching Lambda functions"
         )

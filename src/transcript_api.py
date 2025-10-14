@@ -1951,7 +1951,10 @@ async def download_transcript_results(
             raise HTTPException(status_code=404, detail="Job not found")
 
         user_id = get_user_id_from_payload(payload)
-        if job.get("user_id") != user_id:
+        job_user_id = job.get("user_id")
+
+        # Convert both to strings for comparison (handles UUID vs string mismatch)
+        if str(job_user_id) != str(user_id):
             raise HTTPException(
                 status_code=403, detail="Access denied - you don't own this job"
             )

@@ -97,25 +97,50 @@ class HybridJobManager:
                 }
 
                 # Convert Pydantic VideoInfo objects to dictionaries for database storage
+                # and merge with metadata if available
                 videos_dict = []
+                videos_metadata = job_data.get("videos_metadata", {})
+
                 for video in videos:
                     if hasattr(video, "dict"):  # Pydantic object
-                        videos_dict.append(video.dict())
+                        video_dict = video.dict()
                     elif hasattr(video, "model_dump"):  # Pydantic v2 object
-                        videos_dict.append(video.model_dump())
+                        video_dict = video.model_dump()
                     elif isinstance(video, dict):  # Already a dictionary
-                        videos_dict.append(video)
+                        video_dict = video.copy()
                     else:
                         # Fallback: convert to dict manually
-                        videos_dict.append(
+                        video_dict = {
+                            "id": getattr(video, "id", None),
+                            "title": getattr(video, "title", None),
+                            "publishedAt": getattr(video, "publishedAt", None),
+                            "duration": getattr(video, "duration", None),
+                            "url": getattr(video, "url", None),
+                        }
+
+                    # Merge with metadata if available
+                    video_id = video_dict.get("id")
+                    if video_id and video_id in videos_metadata:
+                        metadata = videos_metadata[video_id]
+                        # Merge metadata fields
+                        video_dict.update(
                             {
-                                "id": getattr(video, "id", None),
-                                "title": getattr(video, "title", None),
-                                "publishedAt": getattr(video, "publishedAt", None),
-                                "duration": getattr(video, "duration", None),
-                                "url": getattr(video, "url", None),
+                                "description": metadata.get("description"),
+                                "channel_id": metadata.get("channel_id"),
+                                "channel_title": metadata.get("channel_title"),
+                                "duration_iso": metadata.get("duration_iso"),
+                                "duration_seconds": metadata.get("duration_seconds"),
+                                "view_count": metadata.get("view_count"),
+                                "like_count": metadata.get("like_count"),
+                                "comment_count": metadata.get("comment_count"),
+                                "language": metadata.get("language"),
+                                "default_language": metadata.get("default_language"),
+                                "category_id": metadata.get("category_id"),
+                                "tags": metadata.get("tags"),
                             }
                         )
+
+                    videos_dict.append(video_dict)
 
                 await JobManager.create_job_with_videos(
                     job_id=job_id,
@@ -384,6 +409,34 @@ class HybridJobManager:
                     f"Failed to update job {job_id} status in file system: {file_error}"
                 )
                 if not success:  # Only raise if database also failed
+                    raise
+
+        return success
+
+    async def update_videos_metadata(
+        self, job_id: str, videos_metadata: Dict[str, Dict[str, Any]]
+    ) -> bool:
+        """
+        Update video metadata after pre-fetching
+        """
+        success = False
+
+        # Try database first
+        if USE_DATABASE:
+            try:
+                await self._ensure_db_initialized()
+                success = await JobManager.update_videos_metadata(
+                    job_id, videos_metadata
+                )
+                if success:
+                    logger.debug(
+                        f"Updated metadata for {len(videos_metadata)} videos in database"
+                    )
+            except Exception as db_error:
+                logger.error(
+                    f"Failed to update videos metadata in database: {db_error}"
+                )
+                if not FALLBACK_TO_FILES:
                     raise
 
         return success
