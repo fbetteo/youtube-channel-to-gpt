@@ -96,13 +96,34 @@ class HybridJobManager:
                     "concatenate_all": job_data.get("concatenate_all", False),
                 }
 
+                # Convert Pydantic VideoInfo objects to dictionaries for database storage
+                videos_dict = []
+                for video in videos:
+                    if hasattr(video, "dict"):  # Pydantic object
+                        videos_dict.append(video.dict())
+                    elif hasattr(video, "model_dump"):  # Pydantic v2 object
+                        videos_dict.append(video.model_dump())
+                    elif isinstance(video, dict):  # Already a dictionary
+                        videos_dict.append(video)
+                    else:
+                        # Fallback: convert to dict manually
+                        videos_dict.append(
+                            {
+                                "id": getattr(video, "id", None),
+                                "title": getattr(video, "title", None),
+                                "publishedAt": getattr(video, "publishedAt", None),
+                                "duration": getattr(video, "duration", None),
+                                "url": getattr(video, "url", None),
+                            }
+                        )
+
                 await JobManager.create_job_with_videos(
                     job_id=job_id,
                     user_id=job_data["user_id"],
                     source_type=source_type,
                     source_id=source_id,
                     source_name=source_name,
-                    videos=videos,
+                    videos=videos_dict,  # Pass converted dictionaries
                     formatting_options=formatting_options,
                     credits_reserved=job_data.get("credits_reserved", len(videos)),
                     reservation_id=job_data.get("reservation_id"),
