@@ -242,6 +242,39 @@ class HybridJobManager:
 
         return None
 
+    async def get_job_status(self, job_id: str) -> Optional[Dict[str, Any]]:
+        """
+        Get a job using the appropriate backend (database preferred, file fallback)
+        """
+        # Try database first
+        if USE_DATABASE:
+            try:
+                await self._ensure_db_initialized()
+                job = await JobManager.get_job_status_from_db(job_id)
+                if job:
+                    logger.debug(f"Retrieved job {job_id} from database")
+                    return job
+            except Exception as db_error:
+                logger.error(f"Failed to get job {job_id} from database: {db_error}")
+                if not FALLBACK_TO_FILES:
+                    raise
+
+        # Fallback to file system
+        if FALLBACK_TO_FILES:
+            try:
+                from youtube_service import load_job_from_file
+
+                job = load_job_from_file(job_id)
+                if job:
+                    logger.debug(f"Retrieved job {job_id} from file system (fallback)")
+                    return job
+            except Exception as file_error:
+                logger.error(
+                    f"Failed to get job {job_id} from file system: {file_error}"
+                )
+
+        return None
+
     async def update_job(self, job_id: str, **updates) -> Optional[Dict[str, Any]]:
         """
         Update a job using the appropriate backend (database preferred, file fallback)
@@ -307,7 +340,7 @@ class HybridJobManager:
                 if success:
                     logger.debug(f"Marked video {video_id} as completed in database")
                     # Return updated job data
-                    return await self.get_job(job_id, include_videos=False)
+                    return await self.get_job_status(job_id)
             except Exception as db_error:
                 logger.error(
                     f"Failed to mark video {video_id} completed in database: {db_error}"
@@ -354,7 +387,7 @@ class HybridJobManager:
                 if success:
                     logger.debug(f"Marked video {video_id} as failed in database")
                     # Return updated job data
-                    return await self.get_job(job_id, include_videos=False)
+                    return await self.get_job_status(job_id)
             except Exception as db_error:
                 logger.error(
                     f"Failed to mark video {video_id} failed in database: {db_error}"

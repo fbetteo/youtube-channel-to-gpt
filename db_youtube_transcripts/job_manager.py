@@ -335,6 +335,52 @@ class JobManager:
                     return None
 
     @staticmethod
+    async def get_job_status_from_db(job_id: str) -> Optional[Dict[str, Any]]:
+        """
+        Get job data from database with optional video details.
+        Optimized for fast job status queries.
+
+        Args:
+            job_id: Job identifier
+            include_videos: Whether to include video details (slower query)
+
+        Returns:
+            Job dictionary or None if not found
+        """
+        max_retries = 3
+        retry_delay = 1  # seconds
+
+        for attempt in range(max_retries):
+            try:
+                async with get_db_connection() as conn:
+                    # Get job data (always fast)
+                    job_query = "SELECT user_id, processed_count, total_videos, failed_count, reservation_id, credits_used, credits_reserved FROM jobs WHERE job_id = $1"
+                    job_record = await conn.fetchrow(job_query, job_id)
+
+                    if not job_record:
+                        return None
+
+                    # Convert to dict and handle JSON fields
+                    job = dict(job_record)
+
+                    return job
+
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    # Log retry attempt and wait before retrying
+                    logger.warning(
+                        f"Failed to get job {job_id} from database (attempt {attempt + 1}/{max_retries}): {str(e)}"
+                    )
+                    await asyncio.sleep(retry_delay)
+                    retry_delay *= 2  # Exponential backoff
+                else:
+                    # Final attempt failed
+                    logger.error(
+                        f"Failed to get job {job_id} from database after {max_retries} attempts: {str(e)}"
+                    )
+                    return None
+
+    @staticmethod
     async def update_job_progress_db(
         job_id: str, **updates
     ) -> Optional[Dict[str, Any]]:
@@ -419,7 +465,7 @@ class JobManager:
                         UPDATE jobs 
                         SET {', '.join(set_clauses)}
                         WHERE job_id = $1
-                        RETURNING *
+                        RETURNING job_id
                     """
 
                     job_record = await tx.fetchrow(update_query, *params)
@@ -462,8 +508,8 @@ class JobManager:
                             file_info.get("file_size", 0),
                         )
 
-                # Return updated job data
-                return await JobManager.get_job_from_db(job_id, include_videos=False)
+                # We used to Return updated job data but wasn't used and lot of egress
+                return True
 
         except Exception as e:
             logger.error(f"Failed to update job {job_id}: {str(e)}")
