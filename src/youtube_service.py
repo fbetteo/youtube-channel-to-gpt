@@ -1938,9 +1938,7 @@ async def monitor_job_timeout(job_id: str, timeout_minutes: int = 10):
             try:
                 from transcript_api import CreditManager
 
-                updated_job = await hybrid_job_manager.get_job(
-                    job_id, include_videos=False
-                )
+                updated_job = await hybrid_job_manager.get_job_status(job_id)
                 if updated_job and updated_job.get("reservation_id"):
                     CreditManager.finalize_credit_usage(
                         user_id=updated_job["user_id"],
