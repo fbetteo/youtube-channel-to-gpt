@@ -1870,7 +1870,7 @@ async def get_videos_fetch_status(
 async def get_transcript_download_status(
     job_id: str,
     # auth: bool = Depends(verify_api_key),
-    session: Dict = Depends(get_user_session),
+    # session: Dict = Depends(get_user_session),
 ):
     """
     Check the status of an asynchronous transcript download job.
