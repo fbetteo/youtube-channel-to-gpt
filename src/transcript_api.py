@@ -2200,7 +2200,12 @@ async def video_completed(job_id: str, completion_data: dict):
         # Check execution time for monitoring
         job = await hybrid_job_manager.get_job_status(job_id)
         if job and job.get("lambda_dispatch_time"):
-            execution_time = time.time() - job["lambda_dispatch_time"]
+            # Convert datetime to timestamp if needed
+            dispatch_time = job["lambda_dispatch_time"]
+            if isinstance(dispatch_time, datetime):
+                dispatch_time = dispatch_time.timestamp()
+
+            execution_time = time.time() - dispatch_time
             if execution_time > 300:  # 5 minutes
                 logger.warning(
                     f"Video {completion_data['video_id']} took {execution_time/60:.1f} minutes to complete "
