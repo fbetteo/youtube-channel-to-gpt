@@ -53,7 +53,7 @@ import stripe
 
 # Database imports
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "db_youtube_transcripts"))
-from db_youtube_transcripts.database import get_db_youtube_transcripts
+# from db_youtube_transcripts.database import get_db_youtube_transcripts
 
 import youtube_service
 from rate_limiter import transcript_limiter
@@ -158,44 +158,30 @@ def get_user_id_from_payload(payload: dict) -> str:
 
 
 class CreditManager:
-    """Manages user credits for transcript downloads"""
+    """Manages user credits for transcript downloads - FULLY ASYNC"""
 
     @staticmethod
-    def get_user_credits(user_id: str) -> int:
-        """Get current credit balance for user"""
-        conn = None
+    async def get_user_credits(user_id: str) -> int:
+        """Get current credit balance for user - ASYNC"""
         try:
             logger.debug(f"Getting credits for user: {user_id}")
-            # Use dependency directly without generator
-            from db_youtube_transcripts.database import (
-                get_connection_youtube_transcripts,
-            )
+            from db_youtube_transcripts.database import get_db_connection
 
-            conn = get_connection_youtube_transcripts()
-            logger.debug("Database connection established")
-
-            cursor = conn.cursor()
-            logger.debug("Database cursor created")
-
-            cursor.execute(
-                "SELECT credits FROM user_credits WHERE user_id = %s", (user_id,)
-            )
-            logger.debug("Query executed successfully")
-
-            result = cursor.fetchone()
-            cursor.close()
-            logger.debug(f"Query result: {result}")
-
-            if result:
-                logger.debug(f"User {user_id} has {result[0]} credits")
-                return result[0]
-            else:
-                logger.info(
-                    f"User {user_id} not found in credits table, creating with 0 credits"
+            async with get_db_connection() as conn:
+                result = await conn.fetchrow(
+                    "SELECT credits FROM user_credits WHERE user_id = $1", user_id
                 )
-                # Create user with 0 credits if doesn't exist
-                CreditManager.create_user_credits(user_id, 0)
-                return 0
+
+                if result:
+                    logger.debug(f"User {user_id} has {result['credits']} credits")
+                    return result["credits"]
+                else:
+                    logger.info(
+                        f"User {user_id} not found in credits table, creating with 0 credits"
+                    )
+                    # Create user with 0 credits if doesn't exist
+                    await CreditManager.create_user_credits(user_id, 0)
+                    return 0
 
         except Exception as e:
             logger.error(
@@ -206,35 +192,27 @@ class CreditManager:
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Failed to retrieve user credits",
             )
-        finally:
-            if conn:
-                conn.close()
 
     @staticmethod
-    def create_user_credits(user_id: str, credits: int = 0) -> None:
-        """Create user credits record"""
-        conn = None
+    async def create_user_credits(user_id: str, credits: int = 0) -> None:
+        """Create user credits record - ASYNC"""
         try:
             logger.debug(
                 f"Creating credits record for user: {user_id} with {credits} credits"
             )
-            from db_youtube_transcripts.database import (
-                get_connection_youtube_transcripts,
-            )
+            from db_youtube_transcripts.database import get_db_connection
 
-            conn = get_connection_youtube_transcripts()
-            logger.debug("Database connection established for create_user_credits")
+            async with get_db_connection() as conn:
+                await conn.execute(
+                    """
+                    INSERT INTO user_credits (user_id, credits) 
+                    VALUES ($1, $2) 
+                    ON CONFLICT (user_id) DO NOTHING
+                    """,
+                    user_id,
+                    credits,
+                )
 
-            cursor = conn.cursor()
-            logger.debug("Database cursor created for create_user_credits")
-
-            cursor.execute(
-                "INSERT INTO user_credits (user_id, credits) VALUES (%s, %s) ON CONFLICT (user_id) DO NOTHING",
-                (user_id, credits),
-            )
-            logger.debug("Insert query executed successfully")
-
-            cursor.close()
             logger.info(
                 f"Created credits record for user {user_id} with {credits} credits"
             )
@@ -248,47 +226,35 @@ class CreditManager:
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Failed to create user credits",
             )
-        finally:
-            if conn:
-                conn.close()
 
     @staticmethod
-    def deduct_credit(user_id: str) -> bool:
+    async def deduct_credit(user_id: str) -> bool:
         """
-        Deduct 1 credit from user. Returns True if successful, False if insufficient credits.
+        Deduct 1 credit from user - ASYNC
+        Returns True if successful, False if insufficient credits.
         """
-        conn = None
         try:
             logger.debug(f"Attempting to deduct credit for user: {user_id}")
-            from db_youtube_transcripts.database import (
-                get_connection_youtube_transcripts,
-            )
+            from db_youtube_transcripts.database import get_db_connection
 
-            conn = get_connection_youtube_transcripts()
-            logger.debug("Database connection established for deduct_credit")
-
-            cursor = conn.cursor()
-            logger.debug("Database cursor created for deduct_credit")
-
-            # Deduct credit only if user has credits available
-            cursor.execute(
-                "UPDATE user_credits SET credits = credits - 1 WHERE user_id = %s AND credits > 0",
-                (user_id,),
-            )
-            logger.debug("Deduct query executed successfully")
-
-            success = cursor.rowcount > 0
-            cursor.close()
-            logger.debug(f"Rows affected: {cursor.rowcount}, success: {success}")
-
-            if success:
-                logger.info(f"Deducted 1 credit from user {user_id}")
-            else:
-                logger.warning(
-                    f"Failed to deduct credit from user {user_id} - insufficient credits"
+            async with get_db_connection() as conn:
+                # Deduct credit only if user has credits available
+                result = await conn.execute(
+                    "UPDATE user_credits SET credits = credits - 1 WHERE user_id = $1 AND credits > 0",
+                    user_id,
                 )
 
-            return success
+                # PostgreSQL returns "UPDATE N" where N is number of rows affected
+                success = result == "UPDATE 1"
+
+                if success:
+                    logger.info(f"Deducted 1 credit from user {user_id}")
+                else:
+                    logger.warning(
+                        f"Failed to deduct credit from user {user_id} - insufficient credits"
+                    )
+
+                return success
 
         except Exception as e:
             logger.error(
@@ -299,37 +265,27 @@ class CreditManager:
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Failed to process credit deduction",
             )
-        finally:
-            if conn:
-                conn.close()
 
     @staticmethod
-    def add_credits(user_id: str, credits: int) -> None:
-        """Add credits to user account"""
-        conn = None
+    async def add_credits(user_id: str, credits: int) -> None:
+        """Add credits to user account - ASYNC"""
         try:
             logger.debug(f"Adding {credits} credits to user: {user_id}")
-            from db_youtube_transcripts.database import (
-                get_connection_youtube_transcripts,
-            )
+            from db_youtube_transcripts.database import get_db_connection
 
-            conn = get_connection_youtube_transcripts()
-            logger.debug("Database connection established for add_credits")
+            async with get_db_connection() as conn:
+                # Insert or update user credits
+                await conn.execute(
+                    """
+                    INSERT INTO user_credits (user_id, credits) 
+                    VALUES ($1, $2)
+                    ON CONFLICT (user_id) 
+                    DO UPDATE SET credits = user_credits.credits + $2
+                    """,
+                    user_id,
+                    credits,
+                )
 
-            cursor = conn.cursor()
-            logger.debug("Database cursor created for add_credits")
-
-            # Insert or update user credits
-            cursor.execute(
-                """
-                INSERT INTO user_credits (user_id, credits) VALUES (%s, %s)
-                ON CONFLICT (user_id) DO UPDATE SET credits = user_credits.credits + %s
-                """,
-                (user_id, credits, credits),
-            )
-            logger.debug("Add credits query executed successfully")
-
-            cursor.close()
             logger.info(f"Added {credits} credits to user {user_id}")
 
         except Exception as e:
@@ -341,14 +297,12 @@ class CreditManager:
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Failed to add credits",
             )
-        finally:
-            if conn:
-                conn.close()
 
     @staticmethod
-    def reserve_credits(user_id: str, credit_count: int) -> str:
+    async def reserve_credits(user_id: str, credit_count: int) -> str:
         """
-        Reserve credits for a batch operation. Returns reservation ID if successful.
+        Reserve credits for a batch operation - ASYNC with atomic transaction
+        Returns reservation ID if successful.
 
         Args:
             user_id: User identifier
@@ -362,57 +316,54 @@ class CreditManager:
         """
         import uuid
 
-        conn = None
         try:
             logger.info(
                 f"Attempting to reserve {credit_count} credits for user: {user_id}"
             )
-            from db_youtube_transcripts.database import (
-                get_connection_youtube_transcripts,
-            )
+            from db_youtube_transcripts.database import get_db_transaction
 
-            conn = get_connection_youtube_transcripts()
-            cursor = conn.cursor()
-
-            # First check if user has enough credits
-            cursor.execute(
-                "SELECT credits FROM user_credits WHERE user_id = %s",
-                (user_id,),
-            )
-            result = cursor.fetchone()
-
-            if not result:
-                logger.warning(f"User {user_id} not found in credits table")
-                raise HTTPException(
-                    status_code=status.HTTP_404_NOT_FOUND,
-                    detail="User credits not found",
+            async with get_db_transaction() as conn:
+                # Check and deduct credits in single atomic operation
+                result = await conn.fetchrow(
+                    """
+                    UPDATE user_credits 
+                    SET credits = credits - $1 
+                    WHERE user_id = $2 AND credits >= $1
+                    RETURNING credits
+                    """,
+                    credit_count,
+                    user_id,
                 )
 
-            current_credits = result[0]
-            if current_credits < credit_count:
-                logger.warning(
-                    f"User {user_id} has insufficient credits: {current_credits} < {credit_count}"
+                if not result:
+                    # Either user doesn't exist or insufficient credits
+                    current = await conn.fetchrow(
+                        "SELECT credits FROM user_credits WHERE user_id = $1", user_id
+                    )
+
+                    if not current:
+                        logger.warning(f"User {user_id} not found in credits table")
+                        raise HTTPException(
+                            status_code=status.HTTP_404_NOT_FOUND,
+                            detail="User credits not found",
+                        )
+
+                    logger.warning(
+                        f"User {user_id} has insufficient credits: {current['credits']} < {credit_count}"
+                    )
+                    raise HTTPException(
+                        status_code=status.HTTP_402_PAYMENT_REQUIRED,
+                        detail=f"Insufficient credits. Need {credit_count}, have {current['credits']}",
+                    )
+
+                # Generate reservation ID for tracking
+                reservation_id = str(uuid.uuid4())
+
+                logger.info(
+                    f"Reserved {credit_count} credits for user {user_id}, reservation: {reservation_id}"
                 )
-                raise HTTPException(
-                    status_code=status.HTTP_402_PAYMENT_REQUIRED,
-                    detail=f"Insufficient credits. Need {credit_count}, have {current_credits}",
-                )
 
-            # Reserve the credits by deducting them immediately
-            cursor.execute(
-                "UPDATE user_credits SET credits = credits - %s WHERE user_id = %s",
-                (credit_count, user_id),
-            )
-
-            # Generate reservation ID for tracking
-            reservation_id = str(uuid.uuid4())
-
-            cursor.close()
-            logger.info(
-                f"Reserved {credit_count} credits for user {user_id}, reservation: {reservation_id}"
-            )
-
-            return reservation_id
+                return reservation_id
 
         except HTTPException:
             # Re-raise HTTP exceptions from credit checks
@@ -426,16 +377,14 @@ class CreditManager:
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Failed to reserve credits",
             )
-        finally:
-            if conn:
-                conn.close()
 
     @staticmethod
-    def finalize_credit_usage(
+    async def finalize_credit_usage(
         user_id: str, reservation_id: str, credits_used: int, credits_reserved: int
     ) -> None:
         """
-        Finalize credit usage for a reservation. Refunds unused credits.
+        Finalize credit usage for a reservation - ASYNC
+        Refunds unused credits.
 
         Args:
             user_id: User identifier
@@ -443,7 +392,6 @@ class CreditManager:
             credits_used: Actual credits used
             credits_reserved: Credits that were reserved
         """
-        conn = None
         try:
             unused_credits = credits_reserved - credits_used
 
@@ -453,20 +401,16 @@ class CreditManager:
                     f"(reservation: {reservation_id})"
                 )
 
-                from db_youtube_transcripts.database import (
-                    get_connection_youtube_transcripts,
-                )
+                from db_youtube_transcripts.database import get_db_connection
 
-                conn = get_connection_youtube_transcripts()
-                cursor = conn.cursor()
+                async with get_db_connection() as conn:
+                    # Refund unused credits
+                    await conn.execute(
+                        "UPDATE user_credits SET credits = credits + $1 WHERE user_id = $2",
+                        unused_credits,
+                        user_id,
+                    )
 
-                # Refund unused credits
-                cursor.execute(
-                    "UPDATE user_credits SET credits = credits + %s WHERE user_id = %s",
-                    (unused_credits, user_id),
-                )
-
-                cursor.close()
                 logger.info(
                     f"Successfully refunded {unused_credits} credits to user {user_id}"
                 )
@@ -483,9 +427,6 @@ class CreditManager:
             # Don't raise exception here - we don't want to fail the job completion
             # but log the error for investigation
             logger.error("Credit finalization failed but job will complete normally")
-        finally:
-            if conn:
-                conn.close()
 
 
 def get_user_or_anonymous(
@@ -493,6 +434,9 @@ def get_user_or_anonymous(
 ) -> Dict[str, Any]:
     """
     Get user info if authenticated, otherwise return anonymous user info
+
+    NOTE: This is a sync function but calls async CreditManager.
+    For proper async usage, use validate_jwt directly and call CreditManager separately.
     """
     if credentials:
         try:
@@ -503,7 +447,16 @@ def get_user_or_anonymous(
                 options={"verify_aud": False},
             )
             user_id = get_user_id_from_payload(payload)
-            credits = CreditManager.get_user_credits(user_id)
+            # NOTE: Calling async function from sync context - not ideal
+            # This works but frontend should use authenticated endpoints instead
+            import asyncio
+
+            try:
+                credits = asyncio.run(CreditManager.get_user_credits(user_id))
+            except RuntimeError:
+                # If event loop is already running, return 0 credits
+                # Frontend should call /user/credits endpoint for accurate balance
+                credits = 0
             return {"is_authenticated": True, "user_id": user_id, "credits": credits}
         except JWTError:
             # Invalid token, treat as anonymous
@@ -894,8 +847,19 @@ def read_root():
 
 @app.on_event("startup")
 async def startup_event():
-    """Run when the application starts - recover jobs and set up background tasks"""
+    """Run when the application starts - initialize database connection pool"""
     logger.info("Starting YouTube Transcript API...")
+
+    try:
+        # Initialize async database connection pool
+        from db_youtube_transcripts.database import init_db_pool
+
+        await init_db_pool()
+        logger.info("Database connection pool initialized successfully")
+    except Exception as e:
+        logger.error(f"Failed to initialize database pool: {e}", exc_info=True)
+        # Don't raise - allow app to start even if DB pool init fails
+        # Individual requests will retry connection
 
 
 #     # Recover jobs from persistent storage
@@ -919,7 +883,11 @@ async def shutdown_event():
     logger.info("Shutting down YouTube Transcript API...")
 
     try:
-        import youtube_service
+        # Close async database connection pool
+        from db_youtube_transcripts.database import close_db_pool
+
+        await close_db_pool()
+        logger.info("Database connection pool closed")
 
         # Note: We could add a cleanup_resources function to youtube_service if needed
         logger.info("Cleanup completed")
@@ -1024,8 +992,8 @@ async def stripe_webhook(request: Request):
             user_id = session["metadata"]["user_id"]
             credits_to_add = int(session["metadata"]["credits"])
 
-            # Add credits to user account
-            CreditManager.add_credits(user_id, credits_to_add)
+            # Add credits to user account - NOW ASYNC
+            await CreditManager.add_credits(user_id, credits_to_add)
 
             logger.info(
                 f"Successfully added {credits_to_add} credits to user {user_id} from session {session['id']}"
@@ -1057,7 +1025,7 @@ async def get_user_credits(
         user_id = get_user_id_from_payload(payload)
         logger.debug(f"Extracted user_id: {user_id}")
 
-        credits = CreditManager.get_user_credits(user_id)
+        credits = await CreditManager.get_user_credits(user_id)
         logger.debug(f"Retrieved credits: {credits}")
 
         response = UserCreditsResponse(user_id=user_id, credits=credits)
@@ -1085,7 +1053,7 @@ async def get_user_profile(payload: dict = Depends(validate_jwt)):
     """
     try:
         user_id = get_user_id_from_payload(payload)
-        credits = CreditManager.get_user_credits(user_id)
+        credits = await CreditManager.get_user_credits(user_id)
 
         return {
             "user_id": user_id,
@@ -1459,8 +1427,8 @@ async def download_transcript_raw(
     if user_info["is_authenticated"]:
         user_id = user_info["user_id"]
 
-        # Deduct credit before attempting download
-        if not CreditManager.deduct_credit(user_id):
+        # Deduct credit before attempting download - NOW ASYNC
+        if not await CreditManager.deduct_credit(user_id):
             raise HTTPException(
                 status_code=status.HTTP_402_PAYMENT_REQUIRED,
                 detail="Insufficient credits. Please purchase more credits to continue.",
@@ -1753,8 +1721,8 @@ async def download_selected_videos(
     num_videos = len(videos)
 
     try:
-        # Check if user has sufficient credits for the requested videos
-        user_credits = CreditManager.get_user_credits(user_id)
+        # Check if user has sufficient credits for the requested videos - NOW ASYNC
+        user_credits = await CreditManager.get_user_credits(user_id)
         if user_credits < num_videos:
             raise HTTPException(
                 status_code=status.HTTP_402_PAYMENT_REQUIRED,
@@ -1764,8 +1732,8 @@ async def download_selected_videos(
         # 2. Quick channel validation (< 100ms)
         channel_info = await youtube_service.get_channel_info(request.channel_name)
 
-        # 3. Reserve credits immediately
-        reservation_id = CreditManager.reserve_credits(user_id, num_videos)
+        # 3. Reserve credits immediately - NOW ASYNC
+        reservation_id = await CreditManager.reserve_credits(user_id, num_videos)
 
         # 4. Create job immediately (no metadata yet)
         job_id = str(uuid.uuid4())
@@ -1902,7 +1870,7 @@ async def get_videos_fetch_status(
 async def get_transcript_download_status(
     job_id: str,
     # auth: bool = Depends(verify_api_key),
-    session: Dict = Depends(get_user_session),
+    # session: Dict = Depends(get_user_session),
 ):
     """
     Check the status of an asynchronous transcript download job.
@@ -2135,8 +2103,8 @@ async def download_selected_playlist_videos(
     num_videos = len(videos)
 
     try:
-        # Check if user has sufficient credits for the requested videos
-        user_credits = CreditManager.get_user_credits(user_id)
+        # Check if user has sufficient credits for the requested videos - NOW ASYNC
+        user_credits = await CreditManager.get_user_credits(user_id)
         if user_credits < num_videos:
             raise HTTPException(
                 status_code=status.HTTP_402_PAYMENT_REQUIRED,
@@ -2147,8 +2115,8 @@ async def download_selected_playlist_videos(
         clean_playlist_id = youtube_service.extract_playlist_id(playlist_name)
         playlist_info = await youtube_service.get_playlist_info(clean_playlist_id)
 
-        # 3. Reserve credits immediately
-        reservation_id = CreditManager.reserve_credits(user_id, num_videos)
+        # 3. Reserve credits immediately - NOW ASYNC
+        reservation_id = await CreditManager.reserve_credits(user_id, num_videos)
 
         # 4. Create job immediately (no metadata yet)
         job_id = str(uuid.uuid4())
@@ -2230,9 +2198,14 @@ async def video_completed(job_id: str, completion_data: dict):
     """
     try:
         # Check execution time for monitoring
-        job = await hybrid_job_manager.get_job(job_id, include_videos=False)
+        job = await hybrid_job_manager.get_job_status(job_id)
         if job and job.get("lambda_dispatch_time"):
-            execution_time = time.time() - job["lambda_dispatch_time"]
+            # Convert datetime to timestamp if needed
+            dispatch_time = job["lambda_dispatch_time"]
+            if isinstance(dispatch_time, datetime):
+                dispatch_time = dispatch_time.timestamp()
+
+            execution_time = time.time() - dispatch_time
             if execution_time > 300:  # 5 minutes
                 logger.warning(
                     f"Video {completion_data['video_id']} took {execution_time/60:.1f} minutes to complete "
@@ -2276,8 +2249,8 @@ async def video_completed(job_id: str, completion_data: dict):
             updated_job
             and updated_job["processed_count"] >= updated_job["total_videos"]
         ):
-            # Finalize credits (refund unused)
-            CreditManager.finalize_credit_usage(
+            # Finalize credits (refund unused) - NOW ASYNC
+            await CreditManager.finalize_credit_usage(
                 user_id=updated_job["user_id"],
                 reservation_id=updated_job["reservation_id"],
                 credits_used=updated_job["credits_used"],
@@ -2302,7 +2275,7 @@ async def video_failed(job_id: str, failure_data: dict):
     """
     try:
         # Check if this video was already counted as timed out
-        job = await hybrid_job_manager.get_job(job_id, include_videos=False)
+        job = await hybrid_job_manager.get_job_status(job_id)
         if job and job.get("timeout_occurred"):
             logger.info(
                 f"Video {failure_data['video_id']} failed after timeout was triggered "
@@ -2330,8 +2303,8 @@ async def video_failed(job_id: str, failure_data: dict):
             updated_job
             and updated_job["processed_count"] >= updated_job["total_videos"]
         ):
-            # Finalize credits
-            CreditManager.finalize_credit_usage(
+            # Finalize credits - NOW ASYNC
+            await CreditManager.finalize_credit_usage(
                 user_id=updated_job["user_id"],
                 reservation_id=updated_job["reservation_id"],
                 credits_used=updated_job["credits_used"],
