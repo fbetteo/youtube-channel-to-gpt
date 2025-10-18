@@ -354,7 +354,7 @@ class JobManager:
             try:
                 async with get_db_connection() as conn:
                     # Get job data (always fast)
-                    job_query = "SELECT user_id, processed_count, total_videos, failed_count,lambda_dispatch_time, timeout_occurred, reservation_id, credits_used, credits_reserved FROM jobs WHERE job_id = $1"
+                    job_query = "SELECT user_id, status, processed_count, total_videos, failed_count,lambda_dispatch_time, timeout_occurred, reservation_id, credits_used, credits_reserved FROM jobs WHERE job_id = $1"
                     job_record = await conn.fetchrow(job_query, job_id)
 
                     if not job_record:
