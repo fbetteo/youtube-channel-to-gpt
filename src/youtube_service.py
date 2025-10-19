@@ -1904,7 +1904,7 @@ async def monitor_job_timeout(job_id: str, timeout_minutes: int = 10):
         await asyncio.sleep(timeout_minutes * 60)
 
         # Check if job is still processing
-        job = await hybrid_job_manager.get_job(job_id, include_videos=False)
+        job = await hybrid_job_manager.get_job_status(job_id)
         if not job:
             logger.warning(f"Job {job_id}: Job not found during timeout check")
             return
