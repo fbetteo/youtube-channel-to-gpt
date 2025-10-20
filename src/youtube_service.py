@@ -1904,7 +1904,7 @@ async def monitor_job_timeout(job_id: str, timeout_minutes: int = 10):
         await asyncio.sleep(timeout_minutes * 60)
 
         # Check if job is still processing
-        job = await hybrid_job_manager.get_job(job_id, include_videos=False)
+        job = await hybrid_job_manager.get_job_status(job_id)
         if not job:
             logger.warning(f"Job {job_id}: Job not found during timeout check")
             return
@@ -2085,8 +2085,10 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
 async def get_job_status_async(job_id: str) -> Dict[str, Any]:
     """
     Async version of get_job_status for use in async contexts.
+    Optimized for frequent polling - fetches only essential status fields.
     """
-    job = await hybrid_job_manager.get_job(job_id, include_videos=False)
+    # Use get_job_status() instead of get_job() to avoid fetching large JSONB fields
+    job = await hybrid_job_manager.get_job_status(job_id)
 
     if not job:
         logger.error(f"Job {job_id} not found")
@@ -2094,7 +2096,6 @@ async def get_job_status_async(job_id: str) -> Dict[str, Any]:
 
     # Calculate progress percentage
     total_videos = job.get("total_videos", 0)
-    completed = job.get("completed", 0)
     failed_count = job.get("failed_count", 0)
     processed_count = job.get("processed_count", 0)
 
@@ -2102,73 +2103,49 @@ async def get_job_status_async(job_id: str) -> Dict[str, Any]:
     if total_videos > 0:
         progress_percentage = (processed_count / total_videos) * 100
 
-    # Calculate timing information
-    start_time = job.get("start_time")
-    end_time = job.get("end_time")
+    # Calculate timing information (if lambda_dispatch_time is available)
+    lambda_dispatch_time = job.get("lambda_dispatch_time")
     duration = None
-
-    if isinstance(start_time, (int, float)):
-        if end_time and isinstance(end_time, (int, float)):
-            duration = end_time - start_time
+    if lambda_dispatch_time:
+        if isinstance(lambda_dispatch_time, (int, float)):
+            duration = time.time() - lambda_dispatch_time
         else:
-            # Job still running, calculate current duration
-            duration = time.time() - start_time
+            # It's a datetime object from database
+            from datetime import datetime
 
-    # Build status response
+            duration = (datetime.now() - lambda_dispatch_time).total_seconds()
+
+    # Build minimal status response (no large fields)
     status_response = {
         "job_id": job_id,
         "status": job.get("status", "unknown"),
         "total_videos": total_videos,
-        "completed": completed,
         "failed_count": failed_count,
         "processed_count": processed_count,
         "progress_percentage": round(progress_percentage, 2),
-        "files": job.get("files", []),
-        "start_time": start_time,
-        "end_time": end_time,
         "duration": duration,
         # Credit tracking
         "credits_reserved": job.get("credits_reserved", 0),
         "credits_used": job.get("credits_used", 0),
         "credits_remaining": job.get("credits_reserved", 0)
         - job.get("credits_used", 0),
-        "reservation_id": job.get("reservation_id"),
-        # Source information
-        "source_type": job.get("source_type", "unknown"),
-        "source_name": job.get("source_name", "Unknown Source"),
-        "channel_name": job.get("channel_name"),
-        "playlist_id": job.get("playlist_id"),
-        # Lambda processing
-        "lambda_dispatched_count": job.get("lambda_dispatched_count", 0),
-        "lambda_dispatch_time": job.get("lambda_dispatch_time"),
-        "prefetch_completed": job.get("prefetch_completed", False),
-        # Error information
-        "error_message": job.get("error_message"),
         "timeout_occurred": job.get("timeout_occurred", False),
     }
 
-    # Add completion details for completed jobs
-    if job.get("status") == "completed":
-        status_response.update(
-            {
-                "message": f"Download completed. {completed} videos successful, {failed_count} failed.",
-                "download_ready": len(job.get("files", [])) > 0,
-            }
+    # Add simple message based on progress
+    completed = processed_count - failed_count
+    if processed_count >= total_videos:
+        status_response["message"] = (
+            f"Download completed. {completed} videos successful, {failed_count} failed."
         )
-    elif job.get("status") == "processing":
-        status_response.update(
-            {
-                "message": f"Processing in progress. {completed}/{total_videos} videos completed.",
-                "estimated_time_remaining": None,  # Could add estimation logic here
-            }
+        status_response["download_ready"] = True
+        status_response["completed"] = completed
+    else:
+        status_response["message"] = (
+            f"Processing in progress. {processed_count}/{total_videos} videos processed."
         )
-    elif job.get("status") == "failed":
-        status_response.update(
-            {
-                "message": f"Job failed: {job.get('error_message', 'Unknown error')}",
-            }
-        )
-
+        status_response["download_ready"] = False
+        status_response["completed"] = completed
     return status_response
 
 

@@ -666,95 +666,86 @@ def verify_api_key(request: Request):
     return True
 
 
-def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
+async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
     """
-    Get download history for a specific user by scanning job files for completed downloads.
-    Now works with S3-based storage - uses job metadata instead of local file scanning.
+    Get download history for a specific user from the database.
+    Returns completed, failed, and partially completed jobs ordered by creation date (newest first).
     """
     history_items = []
-    jobs_dir = os.path.join(settings.temp_dir, "jobs")
-
-    if not os.path.exists(jobs_dir):
-        logger.warning(f"Jobs directory not found: {jobs_dir}")
-        return history_items
 
     try:
-        # Scan all job files in the jobs directory
-        for job_file in os.listdir(jobs_dir):
-            if not job_file.endswith(".json"):
-                continue
+        from db_youtube_transcripts.database import get_db_connection
 
-            job_id = job_file[:-5]  # Remove .json extension
-            job_file_path = os.path.join(jobs_dir, job_file)
+        async with get_db_connection() as conn:
+            # Query jobs table for all completed/failed jobs for this user
+            query = """
+                SELECT 
+                    job_id,
+                    status,
+                    source_type,
+                    source_name,
+                    total_videos,
+                    completed,
+                    failed_count,
+                    credits_used,
+                    created_at,
+                    start_time,
+                    end_time
+                FROM jobs
+                WHERE user_id = $1
+                    AND status IN ('completed', 'completed_with_errors','processing', 'failed')
+                ORDER BY created_at DESC
+            """
 
-            try:
-                # Load job data
-                with open(job_file_path, "r", encoding="utf-8") as f:
-                    job_data = json.load(f)
+            rows = await conn.fetch(query, user_id)
 
-                # Check if this job belongs to the user
-                if job_data.get("user_id") != user_id:
-                    continue
+            for row in rows:
+                # Determine display status
+                display_status = row["status"]
+                if display_status == "completed_with_errors":
+                    display_status = "completed"
 
-                # Only include jobs that have been processed (completed, failed, or with errors)
-                job_status = job_data.get("status", "")
-                if job_status not in ["completed", "completed_with_errors", "failed"]:
-                    continue
+                # Calculate success metrics
+                total_videos = row["total_videos"] or 0
+                successful_files = row["completed"] or 0
+                failed_count = row["failed_count"] or 0
+                credits_used = row["credits_used"] or 0
 
-                # Helper function to convert timestamps to ISO strings
-                def timestamp_to_iso(timestamp_value):
-                    if timestamp_value is None:
-                        return None
-                    if isinstance(timestamp_value, (int, float)):
-                        try:
-                            return datetime.fromtimestamp(timestamp_value).isoformat()
-                        except (ValueError, OSError):
-                            return ""
-                    return str(timestamp_value)
-
-                # Convert timestamps to proper format
-                start_time_iso = timestamp_to_iso(job_data.get("start_time"))
-                end_time_iso = timestamp_to_iso(job_data.get("end_time"))
-
-                # Determine download URL availability and calculate metrics
-                download_url = None
-                successful_files = 0
-                if job_status in ["completed", "completed_with_errors"]:
-                    # Check if job has any completed files (stored in S3)
-                    completed_files = job_data.get("files", [])
-                    successful_files = len(completed_files)
-                    if completed_files:
-                        download_url = f"/channel/download/results/{job_id}"
-
-                # Calculate success metrics for better UX
-                total_videos = job_data.get("total_videos", 0)
-                failed_count = job_data.get("failed_count", 0)
-                credits_used = job_data.get("credits_used", 0)
                 success_rate = (
-                    ((total_videos - failed_count) / total_videos * 100)
-                    if total_videos > 0
-                    else 0
+                    (successful_files / total_videos * 100) if total_videos > 0 else 0
                 )
 
-                # Determine the display status
-                display_status = job_status
-                if job_status == "completed_with_errors":
-                    display_status = "completed"  # Simplify for frontend
+                # Determine download URL availability
+                download_url = None
+                if (
+                    row["status"] in ["completed", "completed_with_errors"]
+                    and successful_files > 0
+                ):
+                    download_url = f"/channel/download/results/{row['job_id']}"
 
-                # Map job data to DownloadHistoryItem with enhanced metrics
+                # Convert timestamps to ISO strings
+                created_at_iso = (
+                    row["created_at"].isoformat() if row["created_at"] else ""
+                )
+                start_time_iso = (
+                    row["start_time"].isoformat()
+                    if row["start_time"]
+                    else created_at_iso
+                )
+                end_time_iso = row["end_time"].isoformat() if row["end_time"] else None
+
+                # Map database row to DownloadHistoryItem
                 history_item = DownloadHistoryItem(
-                    id=job_id,
-                    date=start_time_iso or "",
-                    sourceName=job_data.get("source_name")
-                    or job_data.get("channel_name", "Unknown"),
-                    sourceType=job_data.get("source_type", "channel"),
+                    id=str(row["job_id"]),
+                    date=start_time_iso,
+                    sourceName=row["source_name"] or "Unknown",
+                    sourceType=row["source_type"] or "channel",
                     videoCount=total_videos,
                     status=display_status,
                     downloadUrl=download_url,
-                    jobId=job_id,
-                    createdAt=start_time_iso or "",
+                    jobId=str(row["job_id"]),
+                    createdAt=created_at_iso,
                     completedAt=end_time_iso,
-                    # Enhanced S3-based metrics
                     successfulFiles=successful_files,
                     failedFiles=failed_count,
                     successRate=round(success_rate, 1),
@@ -763,20 +754,17 @@ def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
 
                 history_items.append(history_item)
 
-            except (json.JSONDecodeError, KeyError, TypeError) as e:
-                logger.warning(f"Error processing job file {job_file}: {e}")
-                continue
+        logger.info(
+            f"Retrieved {len(history_items)} download history items from database for user {user_id}"
+        )
+        return history_items
 
     except Exception as e:
-        logger.error(f"Error scanning job files for user {user_id}: {e}")
-
-    # Sort by creation date (newest first), with fallback to job_id for items without dates
-    history_items.sort(key=lambda x: x.createdAt or x.jobId, reverse=True)
-
-    logger.info(
-        f"Retrieved {len(history_items)} download history items for user {user_id}"
-    )
-    return history_items
+        logger.error(
+            f"Error retrieving download history from database for user {user_id}: {e}"
+        )
+        # Return empty list on error rather than raising exception
+        return []
 
 
 def check_anonymous_rate_limit(request: Request):
@@ -1073,11 +1061,11 @@ async def get_user_profile(payload: dict = Depends(validate_jwt)):
 @app.get("/user/download-history", response_model=List[DownloadHistoryItem])
 async def get_user_download_history_endpoint(payload: dict = Depends(validate_jwt)):
     """
-    Get user's download history
+    Get user's download history from database
     """
     try:
         user_id = get_user_id_from_payload(payload)
-        history_items = get_user_download_history(user_id)
+        history_items = await get_user_download_history(user_id)
 
         logger.info(f"Retrieved {len(history_items)} history items for user {user_id}")
         return history_items

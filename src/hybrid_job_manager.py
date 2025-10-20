@@ -313,7 +313,7 @@ class HybridJobManager:
                 update_job_progress(job_id, **updates)
                 logger.debug(f"Updated job {job_id} in file system (fallback)")
                 # Return updated job data
-                return await self.get_job(job_id, include_videos=False)
+                return True
             except Exception as file_error:
                 logger.error(
                     f"Failed to update job {job_id} in file system: {file_error}"
