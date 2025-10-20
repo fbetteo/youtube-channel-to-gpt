@@ -449,14 +449,15 @@ def get_user_or_anonymous(
             user_id = get_user_id_from_payload(payload)
             # NOTE: Calling async function from sync context - not ideal
             # This works but frontend should use authenticated endpoints instead
-            import asyncio
+            ## REMOVE AND SEE LATER HOW TO HANDLE CREDITS, NOT CRITICAL BECAUSE USERS HAVE LOTS OF CREDITS
+            # import asyncio
 
-            try:
-                credits = asyncio.run(CreditManager.get_user_credits(user_id))
-            except RuntimeError:
-                # If event loop is already running, return 0 credits
-                # Frontend should call /user/credits endpoint for accurate balance
-                credits = 0
+            # try:
+            #     credits = asyncio.run(CreditManager.get_user_credits(user_id))
+            # except RuntimeError:
+            #     # If event loop is already running, return 0 credits
+            #     # Frontend should call /user/credits endpoint for accurate balance
+            #     credits = 0
             return {"is_authenticated": True, "user_id": user_id, "credits": credits}
         except JWTError:
             # Invalid token, treat as anonymous
