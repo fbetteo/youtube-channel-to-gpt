@@ -2118,6 +2118,7 @@ async def get_job_status_async(job_id: str) -> Dict[str, Any]:
     # Build minimal status response (no large fields)
     status_response = {
         "job_id": job_id,
+        "status": job.get("status", "unknown"),
         "total_videos": total_videos,
         "failed_count": failed_count,
         "processed_count": processed_count,
