@@ -2139,12 +2139,13 @@ async def get_job_status_async(job_id: str) -> Dict[str, Any]:
             f"Download completed. {completed} videos successful, {failed_count} failed."
         )
         status_response["download_ready"] = True
+        status_response["completed"] = completed
     else:
         status_response["message"] = (
             f"Processing in progress. {processed_count}/{total_videos} videos processed."
         )
         status_response["download_ready"] = False
-
+        status_response["completed"] = completed
     return status_response
 
 
