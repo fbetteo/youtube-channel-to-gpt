@@ -77,9 +77,9 @@ FRONTEND_URL = os.getenv("FRONTEND_URL_YOUTUBE_TRANSCRIPTS", "http://localhost:3
 
 # Price ID mapping for Stripe products
 PRICE_CREDITS_MAP = {
-    "price_1Rg9SQCakpeOUC7BAhOPV6BB": 400,  # 400 credits
-    "price_1Rg9SQCakpeOUC7BeHCiO38e": 1000,  # 1000 credits
-    "price_1Rg9SQCakpeOUC7BooNktUiI": 3000,  # 3000 credits
+    "price_1SKoPc9nwfLYxL59M1ht3uqP": 400,  # 400 credits
+    "price_1SKoPc9nwfLYxL59pXxIYFXm": 1000,  # 1000 credits
+    "price_1SKoPc9nwfLYxL59RjL6qg2L": 3000,  # 3000 credits
 }
 
 # Security setup
