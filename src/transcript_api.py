@@ -650,6 +650,9 @@ class DownloadHistoryItem(BaseModel):
     successRate: float = Field(
         default=0.0, description="Success rate as percentage (0-100)"
     )
+    progress: float = Field(
+        default=0.0, description="Progress percentage (0-100) of the download"
+    )
     creditsUsed: int = Field(
         default=0, description="Credits consumed for this download"
     )
@@ -716,6 +719,13 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
                     (successful_files / total_videos * 100) if total_videos > 0 else 0
                 )
 
+                # Calculate progress
+                progress = (
+                    round(((successful_files + failed_count) / total_videos * 100), 1)
+                    if total_videos > 0
+                    else 0.0
+                )
+
                 # Determine download URL availability
                 download_url = None
                 if (
@@ -749,6 +759,7 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
                     completedAt=end_time_iso,
                     successfulFiles=successful_files,
                     failedFiles=failed_count,
+                    progress=progress,
                     successRate=round(success_rate, 1),
                     creditsUsed=credits_used,
                 )
