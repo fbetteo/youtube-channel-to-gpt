@@ -1974,9 +1974,22 @@ async def download_transcript_results(
             "_concatenated_transcripts.zip" if is_concatenated else "_transcripts.zip"
         )
 
+        # Create filename with proper encoding for HTTP header (RFC 5987)
+        # Use both filename (ASCII fallback) and filename* (UTF-8 encoded) for compatibility
+        from urllib.parse import quote
+
+        filename_display = f"{safe_source_name}{filename_suffix}"
+        filename_encoded = quote(filename_display.encode("utf-8"))
+
+        # Create ASCII-only fallback for older browsers (strip non-ASCII chars)
+        filename_ascii = filename_display.encode("ascii", "ignore").decode("ascii")
+        # If nothing left after stripping (fully non-ASCII name), use generic fallback
+        if not filename_ascii.replace(filename_suffix, "").strip("_"):
+            filename_ascii = f"transcript{filename_suffix}"
+
         # Add statistics to response headers
         headers = {
-            "Content-Disposition": f'attachment; filename="{safe_source_name}{filename_suffix}"',
+            "Content-Disposition": f"attachment; filename=\"{filename_ascii}\"; filename*=UTF-8''{filename_encoded}",
             "X-Job-ID": job_id,
             "X-Files-Count": str(len(job.get("files", []))),
             "X-Generation-Time-Seconds": f"{zip_end_time - zip_start_time:.2f}",
