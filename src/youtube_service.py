@@ -2621,7 +2621,17 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
             )
             safe_source_name = sanitize_filename(source_name)
             filename = f"{safe_source_name}_all_transcripts.txt"
-            zip_file.writestr(filename, concatenated_content)
+
+            # Create ZipInfo with UTF-8 flag to support non-ASCII characters
+            zip_info = zipfile.ZipInfo(filename)
+            zip_info.flag_bits |= 0x800  # Set UTF-8 flag (bit 11)
+
+            # Ensure content is bytes (encode if string with UTF-8 to support Russian/Unicode)
+            content = concatenated_content
+            if isinstance(content, str):
+                content = content.encode("utf-8")
+
+            zip_file.writestr(zip_info, content)
 
     else:
         # Create individual files in ZIP
@@ -2629,7 +2639,16 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
             zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
         ) as zip_file:
             for result in download_results:
-                zip_file.writestr(result["filename"], result["content"])
+                # Create ZipInfo with UTF-8 flag to support non-ASCII characters (e.g., Russian)
+                zip_info = zipfile.ZipInfo(result["filename"])
+                zip_info.flag_bits |= 0x800  # Set UTF-8 flag (bit 11)
+
+                # Ensure content is bytes (encode if string with UTF-8 to support Russian/Unicode)
+                content = result["content"]
+                if isinstance(content, str):
+                    content = content.encode("utf-8")
+
+                zip_file.writestr(zip_info, content)
 
     zip_buffer.seek(0)
 
@@ -2792,7 +2811,17 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
             )
             safe_source_name = sanitize_filename(source_name)
             filename = f"{safe_source_name}_all_transcripts.txt"
-            zip_file.writestr(filename, concatenated_content)
+
+            # Create ZipInfo with UTF-8 flag to support non-ASCII characters
+            zip_info = zipfile.ZipInfo(filename)
+            zip_info.flag_bits |= 0x800  # Set UTF-8 flag (bit 11)
+
+            # Ensure content is bytes (encode if string with UTF-8 to support Russian/Unicode)
+            content = concatenated_content
+            if isinstance(content, str):
+                content = content.encode("utf-8")
+
+            zip_file.writestr(zip_info, content)
     else:
         # Create a ZIP file with individual transcript files from S3
         with zipfile.ZipFile(
@@ -2813,8 +2842,14 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
                     if "/" in s3_key:
                         filename = os.path.basename(s3_key)
 
-                    # Add to ZIP
-                    zip_file.writestr(filename, file_content)
+                    # Ensure content is bytes (encode if string with UTF-8 to support Russian/Unicode)
+                    if isinstance(file_content, str):
+                        file_content = file_content.encode("utf-8")
+
+                    # Add to ZIP with UTF-8 support
+                    zip_info = zipfile.ZipInfo(filename)
+                    zip_info.flag_bits |= 0x800  # Set UTF-8 flag (bit 11)
+                    zip_file.writestr(zip_info, file_content)
                     logger.debug(f"Added {filename} to ZIP archive")
 
                 except Exception as e:
@@ -2823,7 +2858,10 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
                     error_content = (
                         f"Error downloading transcript for video {video_id}: {str(e)}"
                     )
-                    zip_file.writestr(f"{video_id}_ERROR.txt", error_content)
+                    error_filename = f"{video_id}_ERROR.txt"
+                    zip_info = zipfile.ZipInfo(error_filename)
+                    zip_info.flag_bits |= 0x800  # Set UTF-8 flag (bit 11)
+                    zip_file.writestr(zip_info, error_content.encode("utf-8"))
 
     # Seek to beginning of buffer for response
     zip_buffer.seek(0)
