@@ -1781,6 +1781,13 @@ async def dispatch_lambdas_concurrently(
     logger.info(
         f"Job {job_id}: Dispatched {dispatch_count}/{len(videos)} Lambda functions concurrently"
     )
+
+    # Explicitly close the Lambda client to release connection pool
+    try:
+        lambda_client.close()
+    except Exception as e:
+        logger.warning(f"Error closing Lambda client: {e}")
+
     return dispatch_count
 
 
@@ -2607,56 +2614,67 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
     # Create ZIP from downloaded content
     zip_buffer = io.BytesIO()
 
-    if job.get("formatting_options", {}).get("concatenate_all", False):
-        # Create concatenated file
-        concatenated_content = await create_concatenated_content_from_results(
-            download_results, job
-        )
-
-        with zipfile.ZipFile(
-            zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
-        ) as zip_file:
-            source_name = job.get("source_name") or job.get(
-                "channel_name", "transcripts"
+    try:
+        if job.get("formatting_options", {}).get("concatenate_all", False):
+            # Create concatenated file
+            concatenated_content = await create_concatenated_content_from_results(
+                download_results, job
             )
-            safe_source_name = sanitize_filename(source_name)
-            filename = f"{safe_source_name}_all_transcripts.txt"
 
-            # Create ZipInfo with UTF-8 flag to support non-ASCII characters
-            zip_info = zipfile.ZipInfo(filename)
-            zip_info.flag_bits |= 0x800  # Set UTF-8 flag (bit 11)
+            with zipfile.ZipFile(
+                zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
+            ) as zip_file:
+                source_name = job.get("source_name") or job.get(
+                    "channel_name", "transcripts"
+                )
+                safe_source_name = sanitize_filename(source_name)
+                filename = f"{safe_source_name}_all_transcripts.txt"
 
-            # Ensure content is bytes (encode if string with UTF-8 to support Russian/Unicode)
-            content = concatenated_content
-            if isinstance(content, str):
-                content = content.encode("utf-8")
-
-            zip_file.writestr(zip_info, content)
-
-    else:
-        # Create individual files in ZIP
-        with zipfile.ZipFile(
-            zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
-        ) as zip_file:
-            for result in download_results:
-                # Create ZipInfo with UTF-8 flag to support non-ASCII characters (e.g., Russian)
-                zip_info = zipfile.ZipInfo(result["filename"])
+                # Create ZipInfo with UTF-8 flag to support non-ASCII characters
+                zip_info = zipfile.ZipInfo(filename)
                 zip_info.flag_bits |= 0x800  # Set UTF-8 flag (bit 11)
 
                 # Ensure content is bytes (encode if string with UTF-8 to support Russian/Unicode)
-                content = result["content"]
+                content = concatenated_content
                 if isinstance(content, str):
                     content = content.encode("utf-8")
 
                 zip_file.writestr(zip_info, content)
 
-    zip_buffer.seek(0)
+        else:
+            # Create individual files in ZIP
+            with zipfile.ZipFile(
+                zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
+            ) as zip_file:
+                for result in download_results:
+                    # Create ZipInfo with UTF-8 flag to support non-ASCII characters (e.g., Russian)
+                    zip_info = zipfile.ZipInfo(result["filename"])
+                    zip_info.flag_bits |= 0x800  # Set UTF-8 flag (bit 11)
 
-    logger.info(
-        f"Created ZIP archive for job {job_id} with {successful_downloads} files, size: {len(zip_buffer.getvalue())} bytes"
-    )
+                    # Ensure content is bytes (encode if string with UTF-8 to support Russian/Unicode)
+                    content = result["content"]
+                    if isinstance(content, str):
+                        content = content.encode("utf-8")
 
-    return zip_buffer
+                    zip_file.writestr(zip_info, content)
+
+        zip_buffer.seek(0)
+
+        logger.info(
+            f"Created ZIP archive for job {job_id} with {successful_downloads} files, size: {len(zip_buffer.getvalue())} bytes"
+        )
+
+        return zip_buffer
+
+    finally:
+        # Explicitly clean up download_results to free memory
+        del download_results
+
+        # Close S3 client to release connection pool
+        try:
+            s3_client.close()
+        except Exception as e:
+            logger.warning(f"Error closing S3 client: {e}")
 
 
 async def create_concatenated_content_from_results(
