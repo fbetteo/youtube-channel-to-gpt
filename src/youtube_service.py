@@ -1875,7 +1875,7 @@ async def prefetch_and_dispatch_task(job_id: str):
         try:
             from transcript_api import CreditManager
 
-            CreditManager.finalize_credit_usage(
+            await CreditManager.finalize_credit_usage(
                 user_id=job["user_id"],
                 reservation_id=job["reservation_id"],
                 credits_used=0,  # No credits used since processing failed
@@ -1940,7 +1940,7 @@ async def monitor_job_timeout(job_id: str, timeout_minutes: int = 10):
 
                 updated_job = await hybrid_job_manager.get_job_status(job_id)
                 if updated_job and updated_job.get("reservation_id"):
-                    CreditManager.finalize_credit_usage(
+                    await CreditManager.finalize_credit_usage(
                         user_id=updated_job["user_id"],
                         reservation_id=updated_job["reservation_id"],
                         credits_used=updated_job["credits_used"],

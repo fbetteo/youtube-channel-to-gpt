@@ -458,7 +458,7 @@ def get_user_or_anonymous(
             #     # If event loop is already running, return 0 credits
             #     # Frontend should call /user/credits endpoint for accurate balance
             #     credits = 0
-            return {"is_authenticated": True, "user_id": user_id, "credits": credits}
+            return {"is_authenticated": True, "user_id": user_id, "credits": 0}
         except JWTError:
             # Invalid token, treat as anonymous
             pass
