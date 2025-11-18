@@ -51,6 +51,28 @@ class JobManager:
             Exception on database error
         """
         try:
+            # Deduplicate videos by video_id (keep first occurrence)
+            # This prevents PRIMARY KEY violations when playlists have duplicate videos
+            # Using dict.fromkeys() preserves order and is faster than set-based approach
+            original_count = len(videos)
+
+            # Create dict mapping video_id -> video object (preserves insertion order in Python 3.7+)
+            video_dict = {}
+            for video in videos:
+                video_id = video["id"] if isinstance(video, dict) else video.id
+                if video_id not in video_dict:
+                    video_dict[video_id] = video
+
+            # Convert back to list
+            videos = list(video_dict.values())
+            duplicates_removed = original_count - len(videos)
+
+            if duplicates_removed > 0:
+                logger.warning(
+                    f"Job {job_id}: Removed {duplicates_removed} duplicate video(s). "
+                    f"Original: {original_count}, Unique: {len(videos)}"
+                )
+
             async with get_db_transaction() as tx:
                 # Prepare job data with defaults
                 job_data = {
