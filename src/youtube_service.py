@@ -81,11 +81,15 @@ def _get_ydl_opts(base_opts: Dict[str, Any]) -> Dict[str, Any]:
     if settings.webshare_proxy_username and settings.webshare_proxy_password:
         # Construct Webshare proxy URL with URL-encoded credentials
         # Standard Webshare format: http://username:password@p.webshare.io:80
-        username = quote(settings.webshare_proxy_username)
-        password = quote(settings.webshare_proxy_password)
+        # Strip whitespace to avoid auth errors
+        username = quote(settings.webshare_proxy_username.strip())
+        password = quote(settings.webshare_proxy_password.strip())
         proxy_url = f"http://{username}:{password}@p.webshare.io:80"
         opts["proxy"] = proxy_url
-        # logger.debug("Using Webshare proxy for yt-dlp")
+        
+        # Log masked proxy URL for debugging
+        masked_pass = "*" * 5
+        logger.info(f"Using Webshare proxy: http://{username}:{masked_pass}@p.webshare.io:80")
     return opts
 
 
