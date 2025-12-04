@@ -79,7 +79,7 @@ class HybridJobManager:
                 try:
                     from transcript_api import CreditManager
 
-                    CreditManager.create_user_credits(job_data["user_id"], 0)
+                    await CreditManager.create_user_credits(job_data["user_id"], 0)
                     logger.debug(
                         f"Ensured user {job_data['user_id']} exists in user_credits table"
                     )
