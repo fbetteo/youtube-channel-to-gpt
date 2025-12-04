@@ -73,21 +73,28 @@ def get_ytt_api() -> YouTubeTranscriptApi:
         return YouTubeTranscriptApi()
 
 
+import random
+
+
 def _get_ydl_opts(base_opts: Dict[str, Any]) -> Dict[str, Any]:
     """
     Add proxy settings to yt-dlp options if configured.
+    Uses rotating residential proxy with random session suffix for IP rotation.
     """
     opts = base_opts.copy()
     if settings.webshare_proxy_username and settings.webshare_proxy_password:
         # Construct Webshare proxy URL with URL-encoded credentials
-        # Standard Webshare format: http://username:password@p.webshare.io:80
-        # Strip whitespace to avoid auth errors
-        username = quote(settings.webshare_proxy_username.strip())
+        # For rotating residential: add random suffix (-1 to -1000) for IP rotation
+        base_username = settings.webshare_proxy_username.strip()
+        session_suffix = random.randint(1, 1000)
+        username_with_session = f"{base_username}-{session_suffix}"
+
+        username = quote(username_with_session)
         password = quote(settings.webshare_proxy_password.strip())
         proxy_url = f"http://{username}:{password}@p.webshare.io:80"
         opts["proxy"] = proxy_url
 
-        # Log masked proxy URL for debugging
+        # Log masked proxy URL for debugging (show session number)
         masked_pass = "*" * 5
         logger.info(
             f"Using Webshare proxy: http://{username}:{masked_pass}@p.webshare.io:80"
