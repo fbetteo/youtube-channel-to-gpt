@@ -15,6 +15,7 @@ import threading
 import time
 import uuid
 import zipfile
+from urllib.parse import quote
 from typing import Dict, List, Optional, Any, Tuple
 from pathlib import Path
 
@@ -78,9 +79,11 @@ def _get_ydl_opts(base_opts: Dict[str, Any]) -> Dict[str, Any]:
     """
     opts = base_opts.copy()
     if settings.webshare_proxy_username and settings.webshare_proxy_password:
-        # Construct Webshare proxy URL
+        # Construct Webshare proxy URL with URL-encoded credentials
         # Standard Webshare format: http://username:password@p.webshare.io:80
-        proxy_url = f"http://{settings.webshare_proxy_username}:{settings.webshare_proxy_password}@p.webshare.io:80"
+        username = quote(settings.webshare_proxy_username)
+        password = quote(settings.webshare_proxy_password)
+        proxy_url = f"http://{username}:{password}@p.webshare.io:80"
         opts["proxy"] = proxy_url
         # logger.debug("Using Webshare proxy for yt-dlp")
     return opts
