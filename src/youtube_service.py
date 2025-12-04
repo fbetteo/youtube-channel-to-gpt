@@ -86,10 +86,12 @@ def _get_ydl_opts(base_opts: Dict[str, Any]) -> Dict[str, Any]:
         password = quote(settings.webshare_proxy_password.strip())
         proxy_url = f"http://{username}:{password}@p.webshare.io:80"
         opts["proxy"] = proxy_url
-        
+
         # Log masked proxy URL for debugging
         masked_pass = "*" * 5
-        logger.info(f"Using Webshare proxy: http://{username}:{masked_pass}@p.webshare.io:80")
+        logger.info(
+            f"Using Webshare proxy: http://{username}:{masked_pass}@p.webshare.io:80"
+        )
     return opts
 
 
