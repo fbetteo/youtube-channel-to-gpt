@@ -10,7 +10,6 @@ import requests
 import time
 from typing import Dict, Any
 
-from googleapiclient.discovery import build
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.proxies import WebshareProxyConfig
 
@@ -37,18 +36,6 @@ def get_ytt_api() -> YouTubeTranscriptApi:
         logger.error(f"Error creating YouTubeTranscriptApi: {str(e)}")
         # Fallback to basic instance
         return YouTubeTranscriptApi()
-
-
-def get_youtube_client():
-    """
-    Create a thread-safe YouTube API client for each worker.
-    This prevents thread safety issues with the global client.
-    """
-    try:
-        return build("youtube", "v3", developerKey=os.getenv("YOUTUBE_API_KEY"))
-    except Exception as e:
-        logger.error(f"Failed to create YouTube API client: {str(e)}")
-        return None  # Fallback to global client
 
 
 def sanitize_filename(filename: str, max_len: int = 30) -> str:
@@ -116,102 +103,6 @@ def retry_operation(operation, max_retries=3, retry_delay=1.0, *args, **kwargs):
 
     # This should never be reached due to the raise in the else clause
     raise last_exception
-
-
-def _format_duration(duration_str: str) -> str:
-    """
-    Format ISO 8601 duration string to a human-readable format.
-
-    Args:
-        duration_str: ISO 8601 duration string (e.g., 'PT1H2M3S')
-
-    Returns:
-        Formatted duration string (e.g., '1:02:03')
-    """
-    match_hours = re.search(r"(\d+)H", duration_str)
-    match_minutes = re.search(r"(\d+)M", duration_str)
-    match_seconds = re.search(r"(\d+)S", duration_str)
-
-    hours = int(match_hours.group(1)) if match_hours else 0
-    minutes = int(match_minutes.group(1)) if match_minutes else 0
-    seconds = int(match_seconds.group(1)) if match_seconds else 0
-
-    if hours > 0:
-        return f"{hours}:{minutes:02d}:{seconds:02d}"
-    else:
-        return f"{minutes}:{seconds:02d}"
-
-
-def get_video_info(video_id: str) -> Dict[str, Any]:
-    """
-    Get detailed metadata for a YouTube video.
-
-    Args:
-        video_id: The YouTube video ID
-
-    Returns:
-        Dictionary with video metadata (title, channel, views, etc.)
-
-    Raises:
-        ValueError: If video ID is invalid or video doesn't exist
-    """
-    try:
-        # This is a blocking call, so we run it in a thread
-        def _fetch_video_info():
-            # Use thread-safe client
-            client = get_youtube_client()
-            video_request = client.videos().list(
-                part="snippet,contentDetails,statistics",
-                id=video_id,
-            )
-            return video_request.execute()
-
-        # Run the blocking API call in a thread pool
-        video_response = _fetch_video_info()
-
-        if not video_response.get("items"):
-            raise ValueError(f"No video found with ID: {video_id}")
-
-        video_data = video_response["items"][0]
-        snippet = video_data["snippet"]
-        statistics = video_data["statistics"]
-        content_details = video_data["contentDetails"]
-
-        # Format duration string (PT1H2M3S -> 1:02:03)
-        duration = content_details.get("duration", "PT0S")
-        duration_str = _format_duration(duration)
-
-        # Extract thumbnail URLs
-        thumbnails = snippet.get("thumbnails", {})
-        best_thumbnail = (
-            thumbnails.get("maxres")
-            or thumbnails.get("high")
-            or thumbnails.get("medium")
-            or thumbnails.get("default")
-            or {}
-        )
-
-        # Build metadata dictionary
-        metadata = {
-            "id": video_id,
-            "title": snippet.get("title", "Untitled"),
-            "description": snippet.get("description", ""),
-            "channelId": snippet.get("channelId", ""),
-            "channelTitle": snippet.get("channelTitle", ""),
-            "publishedAt": snippet.get("publishedAt", ""),
-            "thumbnail": best_thumbnail.get("url", ""),
-            "duration": duration_str,
-            "viewCount": int(statistics.get("viewCount", 0)),
-            "likeCount": int(statistics.get("likeCount", 0)),
-            "commentCount": int(statistics.get("commentCount", 0)),
-            "url": f"https://www.youtube.com/watch?v={video_id}",
-        }
-
-        return metadata
-
-    except Exception as e:
-        logger.error(f"Error fetching video info for {video_id}: {str(e)}")
-        raise ValueError(f"Failed to get metadata for video {video_id}: {str(e)}")
 
 
 def call_api_callback(
@@ -397,23 +288,9 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
                 f"Using pre-fetched metadata for video {video_id}: {video_title}"
             )
         else:
-            logger.info("Fetching video metadata - no prefetch")
-            # Fallback to fetching metadata (slower, with timeout)
-            try:
-                metadata_start = time.time()
-                video_info = get_video_info(video_id)
-                video_title = video_info.get("title", "Untitled_Video")
-                view_count = video_info.get("viewCount", 0)
-                metadata_end = time.time()
-                logger.info(
-                    f"Video metadata fetch took {metadata_end - metadata_start:.3f}s for video {video_id}"
-                )
-            except Exception as e:
-                logger.warning(
-                    f"Failed to get metadata for video {video_id}, using fallback title: {str(e)}"
-                )
-                video_title = "Untitled_Video"
-                view_count = 0
+            logger.warning("No pre-fetched metadata provided, using basic fallback")
+            video_title = "Untitled_Video"
+            view_count = 0
 
         # Create file content with headers
         file_content = ""
