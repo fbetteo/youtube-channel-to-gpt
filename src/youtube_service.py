@@ -72,6 +72,20 @@ def get_ytt_api() -> YouTubeTranscriptApi:
         return YouTubeTranscriptApi()
 
 
+def _get_ydl_opts(base_opts: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Add proxy settings to yt-dlp options if configured.
+    """
+    opts = base_opts.copy()
+    if settings.webshare_proxy_username and settings.webshare_proxy_password:
+        # Construct Webshare proxy URL
+        # Standard Webshare format: http://username:password@p.webshare.io:80
+        proxy_url = f"http://{settings.webshare_proxy_username}:{settings.webshare_proxy_password}@p.webshare.io:80"
+        opts["proxy"] = proxy_url
+        # logger.debug("Using Webshare proxy for yt-dlp")
+    return opts
+
+
 class MemoryTracker:
     """Memory tracking utility for monitoring system resources."""
 
@@ -620,6 +634,8 @@ async def get_videos_metadata_batch(video_ids: List[str]) -> Dict[str, Dict[str,
                 "ignoreerrors": True,
                 "no_warnings": True,
             }
+            # Add proxy if configured
+            ydl_opts = _get_ydl_opts(ydl_opts)
             try:
                 with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                     info = ydl.extract_info(url, download=False)
@@ -707,6 +723,8 @@ async def get_video_info(video_id: str) -> Dict[str, Any]:
                 "ignoreerrors": True,
                 "no_warnings": True,
             }
+            # Add proxy if configured
+            ydl_opts = _get_ydl_opts(ydl_opts)
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 info = ydl.extract_info(url, download=False)
                 return info
@@ -867,6 +885,8 @@ async def get_channel_info(channel_name: str) -> Dict[str, Any]:
                 "dump_single_json": True,
                 "playlist_items": "0",  # Don't fetch any videos
             }
+            # Add proxy if configured
+            ydl_opts = _get_ydl_opts(ydl_opts)
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 return ydl.extract_info(url, download=False)
 
@@ -930,6 +950,8 @@ async def get_playlist_info(playlist_id: str) -> Dict[str, Any]:
                 "dump_single_json": True,
                 "playlist_items": "0",  # Don't fetch videos yet
             }
+            # Add proxy if configured
+            ydl_opts = _get_ydl_opts(ydl_opts)
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 return ydl.extract_info(url, download=False)
 
@@ -1356,6 +1378,8 @@ def _fetch_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
         "dump_single_json": True,
         "ignoreerrors": True,
     }
+    # Add proxy if configured
+    ydl_opts = _get_ydl_opts(ydl_opts)
 
     for tab in tabs:
         try:
@@ -1464,6 +1488,8 @@ def _fetch_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
         "dump_single_json": True,
         "ignoreerrors": True,
     }
+    # Add proxy if configured
+    ydl_opts = _get_ydl_opts(ydl_opts)
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=False)
