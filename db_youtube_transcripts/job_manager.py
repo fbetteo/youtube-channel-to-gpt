@@ -188,6 +188,12 @@ class JobManager:
 
                 # Insert videos for the job using batch insert for better performance
                 if videos:
+                    # DEBUG: Log first video to see what we're receiving
+                    if videos:
+                        logger.info(
+                            f"[DB INSERT] Sample video being inserted: {videos[0]}"
+                        )
+
                     # Prepare batch data
                     video_data = []
                     for video in videos:
@@ -229,7 +235,8 @@ class JobManager:
                                 video.get(
                                     "duration", "unknown"
                                 ),  # duration_category (short/medium/long)
-                                video.get("view_count"),  # view_count
+                                video.get("view_count")
+                                or 0,  # view_count (ensure not None)
                                 video.get("language"),  # language
                                 "pending",  # status (default to pending)
                             )
@@ -843,32 +850,35 @@ class JobManager:
 
                     # Map YouTube API camelCase keys to database snake_case columns
                     # Convert numeric string values to proper types
+                    # Check both camelCase (from API) and snake_case (from database)
                     try:
-                        view_count = (
-                            int(metadata.get("viewCount", 0))
-                            if metadata.get("viewCount")
-                            else None
+                        view_count_raw = metadata.get("viewCount") or metadata.get(
+                            "view_count", 0
+                        )
+                        view_count = int(view_count_raw) if view_count_raw else 0
+                        logger.debug(
+                            f"DEBUG: video_id={video_id}, view_count_raw={view_count_raw}, view_count={view_count}"
                         )
                     except (ValueError, TypeError):
-                        view_count = None
+                        view_count = 0
 
                     try:
-                        like_count = (
-                            int(metadata.get("likeCount", 0))
-                            if metadata.get("likeCount")
-                            else None
+                        like_count_raw = metadata.get("likeCount") or metadata.get(
+                            "like_count", 0
                         )
+                        like_count = int(like_count_raw) if like_count_raw else 0
                     except (ValueError, TypeError):
-                        like_count = None
+                        like_count = 0
 
                     try:
+                        comment_count_raw = metadata.get(
+                            "commentCount"
+                        ) or metadata.get("comment_count", 0)
                         comment_count = (
-                            int(metadata.get("commentCount", 0))
-                            if metadata.get("commentCount")
-                            else None
+                            int(comment_count_raw) if comment_count_raw else 0
                         )
                     except (ValueError, TypeError):
-                        comment_count = None
+                        comment_count = 0
 
                     try:
                         category_id = (

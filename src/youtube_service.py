@@ -1444,7 +1444,7 @@ def _fetch_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
                     or f"https://www.youtube.com/watch?v={video_id}",
                     "duration": duration_category,
                     "duration_seconds": duration_seconds,
-                    "viewCount": entry.get("view_count", 0),
+                    "viewCount": entry.get("view_count") or 0,
                     "type": "short" if tab == "shorts" else "video",
                 }
 
@@ -1547,7 +1547,7 @@ def _fetch_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
                 or f"https://www.youtube.com/watch?v={video_id}",
                 "duration": duration_category,
                 "duration_seconds": duration_seconds,
-                "viewCount": entry.get("view_count", 0),
+                "viewCount": entry.get("view_count") or 0,
             }
         )
 
@@ -1819,16 +1819,21 @@ async def prefetch_and_dispatch_task(job_id: str):
                 v_id = video.get("id") if is_dict else video.id
                 video_ids.append(v_id)
 
-                # Map fields to what Lambda expects
-                # Lambda expects: title, view_count, id, webpage_url
+                # Map fields to what Lambda expects (camelCase format)
+                # Lambda expects: title, viewCount (camelCase!), id, webpage_url
+                # Handle both camelCase (from API) and snake_case (from DB) for view count
+                view_count = 0
+                if is_dict:
+                    view_count = video.get("viewCount") or video.get("view_count") or 0
+                else:
+                    view_count = getattr(video, "viewCount", 0) or getattr(
+                        video, "view_count", 0
+                    )
+
                 videos_metadata[v_id] = {
                     "id": v_id,
                     "title": video.get("title") if is_dict else video.title,
-                    "view_count": (
-                        video.get("viewCount", 0)
-                        if is_dict
-                        else getattr(video, "viewCount", 0)
-                    ),
+                    "viewCount": view_count,  # Lambda expects camelCase
                     "webpage_url": video.get("url") if is_dict else video.url,
                     "duration": (
                         video.get("duration")

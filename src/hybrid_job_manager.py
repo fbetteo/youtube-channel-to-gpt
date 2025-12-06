@@ -128,31 +128,60 @@ class HybridJobManager:
                             "publishedAt": getattr(video, "publishedAt", None),
                             "duration": getattr(video, "duration", None),
                             "url": getattr(video, "url", None),
+                            "view_count": getattr(video, "view_count", None),
+                            "viewCount": getattr(video, "viewCount", None),
                         }
 
-                    # Merge with metadata if available
+                    # Ensure view_count is populated from viewCount or view_count if present
+                    # Frontend might send viewCount (camelCase) or view_count (snake_case)
+                    if (
+                        "view_count" not in video_dict
+                        or video_dict["view_count"] is None
+                    ):
+                        if (
+                            "viewCount" in video_dict
+                            and video_dict["viewCount"] is not None
+                        ):
+                            video_dict["view_count"] = video_dict["viewCount"]
+                        else:
+                            # Default to 0 if neither exists
+                            video_dict["view_count"] = 0
+
+                    # Map duration_category to duration if needed (database expects 'duration')
+                    if (
+                        "duration_category" in video_dict
+                        and "duration" not in video_dict
+                    ):
+                        video_dict["duration"] = video_dict["duration_category"]
+
+                    # Merge with metadata if available (only overwrite if metadata value is not None)
                     video_id = video_dict.get("id")
                     if video_id and video_id in videos_metadata:
                         metadata = videos_metadata[video_id]
-                        # Merge metadata fields
-                        video_dict.update(
-                            {
-                                "description": metadata.get("description"),
-                                "channel_id": metadata.get("channel_id"),
-                                "channel_title": metadata.get("channel_title"),
-                                "duration_iso": metadata.get("duration_iso"),
-                                "duration_seconds": metadata.get("duration_seconds"),
-                                "view_count": metadata.get("view_count"),
-                                "like_count": metadata.get("like_count"),
-                                "comment_count": metadata.get("comment_count"),
-                                "language": metadata.get("language"),
-                                "default_language": metadata.get("default_language"),
-                                "category_id": metadata.get("category_id"),
-                                "tags": metadata.get("tags"),
-                            }
-                        )
+                        # Merge metadata fields - only update if metadata has non-None value
+                        for key in [
+                            "description",
+                            "channel_id",
+                            "channel_title",
+                            "duration_iso",
+                            "duration_seconds",
+                            "view_count",
+                            "like_count",
+                            "comment_count",
+                            "language",
+                            "default_language",
+                            "category_id",
+                            "tags",
+                        ]:
+                            metadata_value = metadata.get(key)
+                            if metadata_value is not None:
+                                video_dict[key] = metadata_value
 
                     videos_dict.append(video_dict)
+
+                # DEBUG: Log first video to see what we're actually sending to DB
+                if videos_dict:
+                    logger.info(f"Sample video_dict being sent to DB: {videos_dict[0]}")
 
                 await JobManager.create_job_with_videos(
                     job_id=job_id,
