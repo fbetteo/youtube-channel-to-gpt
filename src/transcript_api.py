@@ -538,6 +538,7 @@ class VideoInfo(BaseModel):
     publishedAt: str = None
     duration: str = None
     url: str
+    viewCount: int = 0
 
 
 class SelectedVideosRequest(BaseModel):
