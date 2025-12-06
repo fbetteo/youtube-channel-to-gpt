@@ -1444,7 +1444,7 @@ def _fetch_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
                     or f"https://www.youtube.com/watch?v={video_id}",
                     "duration": duration_category,
                     "duration_seconds": duration_seconds,
-                    "viewCount": entry.get("view_count", 0),
+                    "viewCount": entry.get("view_count") or 0,
                     "type": "short" if tab == "shorts" else "video",
                 }
 
@@ -1547,6 +1547,7 @@ def _fetch_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
                 or f"https://www.youtube.com/watch?v={video_id}",
                 "duration": duration_category,
                 "duration_seconds": duration_seconds,
+                "viewCount": entry.get("view_count") or 0,
             }
         )
 
@@ -1791,18 +1792,71 @@ async def prefetch_and_dispatch_task(job_id: str):
             f"Job {job_id}: Starting background pre-fetch for {len(videos)} videos"
         )
 
-        # 1. Pre-fetch metadata in batches (this takes time)
+        # 1. Check if we can skip pre-fetch (if metadata is already present)
         video_ids = []
-        for video in videos:
-            try:
-                video_id = video.get("id") if isinstance(video, dict) else video.id
-                video_ids.append(video_id)
-            except Exception as e:
-                logger.error(f"Error extracting video ID: {str(e)}")
+        videos_metadata = {}
+        skip_prefetch = False
 
-        await hybrid_job_manager.update_job(job_id, status="prefetching_metadata")
+        # Check first video to see if it has title (and potentially viewCount)
+        if videos and len(videos) > 0:
+            first_video = videos[0]
+            # Handle both dict and object (Pydantic)
+            v_title = (
+                first_video.get("title")
+                if isinstance(first_video, dict)
+                else getattr(first_video, "title", None)
+            )
+            if v_title:
+                skip_prefetch = True
+                logger.info(
+                    f"Job {job_id}: Metadata already present in request, skipping slow pre-fetch"
+                )
 
-        videos_metadata = await pre_fetch_videos_metadata(video_ids)
+        if skip_prefetch:
+            # Construct metadata from existing video info
+            for video in videos:
+                is_dict = isinstance(video, dict)
+                v_id = video.get("id") if is_dict else video.id
+                video_ids.append(v_id)
+
+                # Map fields to what Lambda expects (camelCase format)
+                # Lambda expects: title, viewCount (camelCase!), id, webpage_url
+                # Handle both camelCase (from API) and snake_case (from DB) for view count
+                view_count = 0
+                if is_dict:
+                    view_count = video.get("viewCount") or video.get("view_count") or 0
+                else:
+                    view_count = getattr(video, "viewCount", 0) or getattr(
+                        video, "view_count", 0
+                    )
+
+                videos_metadata[v_id] = {
+                    "id": v_id,
+                    "title": video.get("title") if is_dict else video.title,
+                    "viewCount": view_count,  # Lambda expects camelCase
+                    "webpage_url": video.get("url") if is_dict else video.url,
+                    "duration": (
+                        video.get("duration")
+                        if is_dict
+                        else getattr(video, "duration", None)
+                    ),
+                    "upload_date": (
+                        video.get("publishedAt")
+                        if is_dict
+                        else getattr(video, "publishedAt", None)
+                    ),
+                }
+        else:
+            # Fallback to original pre-fetch logic
+            for video in videos:
+                try:
+                    video_id = video.get("id") if isinstance(video, dict) else video.id
+                    video_ids.append(video_id)
+                except Exception as e:
+                    logger.error(f"Error extracting video ID: {str(e)}")
+
+            await hybrid_job_manager.update_job(job_id, status="prefetching_metadata")
+            videos_metadata = await pre_fetch_videos_metadata(video_ids)
 
         # 2. Update job with metadata
         await hybrid_job_manager.update_job(
