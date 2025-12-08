@@ -878,39 +878,63 @@ async def get_channel_info(channel_name: str) -> Dict[str, Any]:
         ValueError: If channel is not found
     """
     try:
-        # Construct URL - prefer /videos for better stats (video count)
+        # Construct base URL
         if not channel_name.startswith("http"):
             # Check if it looks like a channel ID (UC...)
             if re.match(r"^UC[\w-]{22}$", channel_name):
-                url = f"https://www.youtube.com/channel/{channel_name}/videos"
+                base_url = f"https://www.youtube.com/channel/{channel_name}"
             else:
                 # Assume it's a handle if it's not a channel ID
                 handle = (
                     channel_name if channel_name.startswith("@") else f"@{channel_name}"
                 )
-                url = f"https://www.youtube.com/{handle}/videos"
+                base_url = f"https://www.youtube.com/{handle}"
         else:
-            url = channel_name
-            # If it's a raw channel URL, append /videos if not present and not a specific tab
-            if not any(x in url for x in ["/videos", "/shorts", "/playlists", "/live"]):
-                url = url.rstrip("/") + "/videos"
+            base_url = channel_name.rstrip("/")
+            # Strip any existing tab suffix
+            for tab in ["/videos", "/shorts", "/playlists", "/live"]:
+                if base_url.endswith(tab):
+                    base_url = base_url[: -len(tab)]
+                    break
 
-        def _fetch_channel():
-            ydl_opts = {
-                "quiet": True,
-                "extract_flat": True,  # Just get metadata, don't list all videos yet
-                "dump_single_json": True,
-                "playlist_items": "0",  # Don't fetch any videos
-            }
-            # Add proxy if configured
-            ydl_opts = _get_ydl_opts(ydl_opts)
-            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-                return ydl.extract_info(url, download=False)
+        # Try /videos first, then /shorts if that fails
+        tabs_to_try = ["/videos", "/shorts"]
+        info = None
+        last_error = None
 
-        info = await asyncio.to_thread(_fetch_channel)
+        for tab in tabs_to_try:
+            url = base_url + tab
+            try:
+
+                def _fetch_channel():
+                    ydl_opts = {
+                        "quiet": True,
+                        "extract_flat": True,
+                        "dump_single_json": True,
+                        "playlist_items": "0",
+                    }
+                    # Add proxy if configured
+                    ydl_opts = _get_ydl_opts(ydl_opts)
+                    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                        return ydl.extract_info(url, download=False)
+
+                info = await asyncio.to_thread(_fetch_channel)
+
+                if info:
+                    logger.info(
+                        f"Successfully fetched channel info from {tab} tab for {channel_name}"
+                    )
+                    break
+            except Exception as e:
+                logger.warning(f"Failed to fetch channel info from {tab} tab: {str(e)}")
+                last_error = e
+                continue
 
         if not info:
-            raise ValueError(f"Channel not found: {channel_name}")
+            error_msg = f"Channel not found: {channel_name}"
+            if last_error:
+                error_msg += f" (last error: {str(last_error)})"
+            raise ValueError(error_msg)
 
         channel_id = info.get("channel_id") or info.get("id")
 
