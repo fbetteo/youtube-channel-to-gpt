@@ -86,8 +86,9 @@ def _get_ydl_opts(base_opts: Dict[str, Any]) -> Dict[str, Any]:
         # Construct Webshare proxy URL with URL-encoded credentials
         # For rotating residential: add random suffix (-1 to -1000) for IP rotation
         base_username = settings.webshare_proxy_username.strip()
-        session_suffix = random.randint(1, 100000)
-        username_with_session = f"{base_username}-{session_suffix}"
+        # session_suffix = random.randint(1, 100000)
+        # we can use -rotate
+        username_with_session = f"{base_username}-rotate"
 
         username = quote(username_with_session)
         password = quote(settings.webshare_proxy_password.strip())
