@@ -1,0 +1,255 @@
+{
+  "generated_at": "2025-12-15T12:16:34.142931",
+  "config": {
+    "use_proxy": true,
+    "retries_when_blocked": 1
+  },
+  "summary": {
+    "total_videos": 6,
+    "transcripts_found": 4,
+    "total_requests": 16,
+    "total_bytes": 8157806
+  },
+  "videos": [
+    {
+      "video_id": "E8Rl7s--lHw",
+      "category": "with_transcript",
+      "success": true,
+      "error_message": null,
+      "transcript_found": true,
+      "transcript_language": "en",
+      "transcript_type": "auto-generated",
+      "total_requests": 3,
+      "total_request_bytes": 105,
+      "total_response_bytes": 1303342,
+      "total_bytes": 1303447,
+      "duration_seconds": 12.188,
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://www.youtube.com/watch?v=E8Rl7s--lHw",
+          "request_size": 0,
+          "response_size": 1130623,
+          "status_code": 200,
+          "duration_ms": 7642.15,
+          "timestamp": "2025-12-15T12:16:00.179967"
+        },
+        {
+          "method": "POST",
+          "url": "https://www.youtube.com/youtubei/v1/player?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8",
+          "request_size": 105,
+          "response_size": 170475,
+          "status_code": 200,
+          "duration_ms": 3173.67,
+          "timestamp": "2025-12-15T12:16:03.356635"
+        },
+        {
+          "method": "GET",
+          "url": "https://www.youtube.com/api/timedtext?v=E8Rl7s--lHw&ei=MiZAaf_mBqCK6dsPtPL4sAw&caps=asr&opi=11249672...",
+          "request_size": 0,
+          "response_size": 2244,
+          "status_code": 200,
+          "duration_ms": 1367.39,
+          "timestamp": "2025-12-15T12:16:04.725041"
+        }
+      ]
+    },
+    {
+      "video_id": "7xAOhOIQQP4",
+      "category": "with_transcript",
+      "success": true,
+      "error_message": null,
+      "transcript_found": true,
+      "transcript_language": "en",
+      "transcript_type": "auto-generated",
+      "total_requests": 3,
+      "total_request_bytes": 105,
+      "total_response_bytes": 1321760,
+      "total_bytes": 1321865,
+      "duration_seconds": 7.591,
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://www.youtube.com/watch?v=7xAOhOIQQP4",
+          "request_size": 0,
+          "response_size": 1141909,
+          "status_code": 200,
+          "duration_ms": 2056.36,
+          "timestamp": "2025-12-15T12:16:06.782403"
+        },
+        {
+          "method": "POST",
+          "url": "https://www.youtube.com/youtubei/v1/player?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8",
+          "request_size": 105,
+          "response_size": 124247,
+          "status_code": 200,
+          "duration_ms": 3041.68,
+          "timestamp": "2025-12-15T12:16:09.831403"
+        },
+        {
+          "method": "GET",
+          "url": "https://www.youtube.com/api/timedtext?v=7xAOhOIQQP4&ei=OCZAadHyLNuypt8PxISt-AQ&caps=asr&opi=11249672...",
+          "request_size": 0,
+          "response_size": 55604,
+          "status_code": 200,
+          "duration_ms": 2478.29,
+          "timestamp": "2025-12-15T12:16:12.311903"
+        }
+      ]
+    },
+    {
+      "video_id": "nCuaNmeVfQY",
+      "category": "with_transcript",
+      "success": true,
+      "error_message": null,
+      "transcript_found": true,
+      "transcript_language": "en",
+      "transcript_type": "auto-generated",
+      "total_requests": 3,
+      "total_request_bytes": 105,
+      "total_response_bytes": 1636556,
+      "total_bytes": 1636661,
+      "duration_seconds": 6.738,
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://www.youtube.com/watch?v=nCuaNmeVfQY",
+          "request_size": 0,
+          "response_size": 1335363,
+          "status_code": 200,
+          "duration_ms": 2798.03,
+          "timestamp": "2025-12-15T12:16:15.118024"
+        },
+        {
+          "method": "POST",
+          "url": "https://www.youtube.com/youtubei/v1/player?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8",
+          "request_size": 105,
+          "response_size": 289966,
+          "status_code": 200,
+          "duration_ms": 1996.45,
+          "timestamp": "2025-12-15T12:16:17.124089"
+        },
+        {
+          "method": "GET",
+          "url": "https://www.youtube.com/api/timedtext?v=nCuaNmeVfQY&ei=QCZAaYbuBtflzPsPrL3ZoAE&caps=asr&opi=11249672...",
+          "request_size": 0,
+          "response_size": 11227,
+          "status_code": 200,
+          "duration_ms": 1927.74,
+          "timestamp": "2025-12-15T12:16:19.054858"
+        }
+      ]
+    },
+    {
+      "video_id": "JaaDYAEQ7d8",
+      "category": "without_transcript",
+      "success": false,
+      "error_message": "TranscriptsDisabled: \nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=JaaDYAEQ7d8! This is ",
+      "transcript_found": false,
+      "transcript_language": null,
+      "transcript_type": null,
+      "total_requests": 2,
+      "total_request_bytes": 105,
+      "total_response_bytes": 1292532,
+      "total_bytes": 1292637,
+      "duration_seconds": 5.314,
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://www.youtube.com/watch?v=JaaDYAEQ7d8",
+          "request_size": 0,
+          "response_size": 1113873,
+          "status_code": 200,
+          "duration_ms": 3012.03,
+          "timestamp": "2025-12-15T12:16:22.070011"
+        },
+        {
+          "method": "POST",
+          "url": "https://www.youtube.com/youtubei/v1/player?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8",
+          "request_size": 105,
+          "response_size": 178659,
+          "status_code": 200,
+          "duration_ms": 2295.76,
+          "timestamp": "2025-12-15T12:16:24.369775"
+        }
+      ]
+    },
+    {
+      "video_id": "rCgwPy5s7Y4",
+      "category": "without_transcript",
+      "success": true,
+      "error_message": null,
+      "transcript_found": true,
+      "transcript_language": "en",
+      "transcript_type": "auto-generated",
+      "total_requests": 3,
+      "total_request_bytes": 105,
+      "total_response_bytes": 1420491,
+      "total_bytes": 1420596,
+      "duration_seconds": 5.547,
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://www.youtube.com/watch?v=rCgwPy5s7Y4",
+          "request_size": 0,
+          "response_size": 1176179,
+          "status_code": 200,
+          "duration_ms": 2494.4,
+          "timestamp": "2025-12-15T12:16:26.868350"
+        },
+        {
+          "method": "POST",
+          "url": "https://www.youtube.com/youtubei/v1/player?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8",
+          "request_size": 105,
+          "response_size": 178967,
+          "status_code": 200,
+          "duration_ms": 1677.91,
+          "timestamp": "2025-12-15T12:16:28.551275"
+        },
+        {
+          "method": "GET",
+          "url": "https://www.youtube.com/api/timedtext?v=rCgwPy5s7Y4&ei=SyZAaaO_JtOh-coPopHJ8Aw&caps=asr&opi=11249672...",
+          "request_size": 0,
+          "response_size": 65345,
+          "status_code": 200,
+          "duration_ms": 1361.76,
+          "timestamp": "2025-12-15T12:16:29.914039"
+        }
+      ]
+    },
+    {
+      "video_id": "DB-arVJVGXg",
+      "category": "without_transcript",
+      "success": false,
+      "error_message": "TranscriptsDisabled: \nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=DB-arVJVGXg! This is ",
+      "transcript_found": false,
+      "transcript_language": null,
+      "transcript_type": null,
+      "total_requests": 2,
+      "total_request_bytes": 105,
+      "total_response_bytes": 1182495,
+      "total_bytes": 1182600,
+      "duration_seconds": 4.221,
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://www.youtube.com/watch?v=DB-arVJVGXg",
+          "request_size": 0,
+          "response_size": 1101922,
+          "status_code": 200,
+          "duration_ms": 2213.9,
+          "timestamp": "2025-12-15T12:16:32.134970"
+        },
+        {
+          "method": "POST",
+          "url": "https://www.youtube.com/youtubei/v1/player?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8",
+          "request_size": 105,
+          "response_size": 80573,
+          "status_code": 200,
+          "duration_ms": 2002.79,
+          "timestamp": "2025-12-15T12:16:34.140931"
+        }
+      ]
+    }
+  ]
+}
