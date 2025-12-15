@@ -80,6 +80,10 @@ PRICE_CREDITS_MAP = {
     "price_1SKoPc9nwfLYxL59M1ht3uqP": 400,  # 400 credits
     "price_1SKoPc9nwfLYxL59pXxIYFXm": 1000,  # 1000 credits
     "price_1SKoPc9nwfLYxL59RjL6qg2L": 3000,  # 3000 credits
+    "price_1SehGH9nwfLYxL59yXTx1shd": 100,  # v2 100 credits
+    "price_1SehHA9nwfLYxL59HRvXkMov": 400,  # v2 400 credits
+    "price_1SehHW9nwfLYxL59o8CRldJ7": 1000,  # v2 1000 credits
+    "price_1SehHx9nwfLYxL59rSkRxIp5": 3000,  # v2 3000
 }
 
 # Security setup
