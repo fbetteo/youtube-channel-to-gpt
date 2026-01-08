@@ -64,6 +64,16 @@ from config_v2 import settings
 # Import hybrid job manager for database operations
 from hybrid_job_manager import hybrid_job_manager
 
+# Import API key authentication for developer API
+from api_key_auth import (
+    create_api_key,
+    list_user_api_keys,
+    revoke_api_key,
+)
+
+# Import developer API router
+from routers.developer_api import router as developer_api_router
+
 
 # Stripe configuration
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY_LIVE")
@@ -106,6 +116,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Register Developer API router (provides /api/v1/* endpoints)
+app.include_router(developer_api_router)
 
 # Simple in-memory cache for user sessions
 # In production, consider a more robust solution like Redis
@@ -1092,6 +1105,147 @@ async def get_user_download_history_endpoint(payload: dict = Depends(validate_jw
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to retrieve download history",
+        )
+
+
+# =============================================
+# API KEY MANAGEMENT ENDPOINTS
+# =============================================
+
+
+class CreateAPIKeyRequest(BaseModel):
+    name: str = Field(
+        ..., description="A friendly name for the API key", max_length=100
+    )
+
+
+class APIKeyResponse(BaseModel):
+    key_id: str
+    api_key: Optional[str] = None  # Only returned on creation
+    key_prefix: str
+    name: str
+    is_active: bool = True
+    rate_limit_tier: str = "standard"
+    last_used_at: Optional[str] = None
+    total_requests: int = 0
+    total_credits_used: int = 0
+    created_at: str
+    expires_at: Optional[str] = None
+    message: Optional[str] = None
+
+
+@app.post("/user/api-keys", response_model=APIKeyResponse)
+async def create_user_api_key(
+    request: CreateAPIKeyRequest,
+    payload: dict = Depends(validate_jwt),
+):
+    """
+    Create a new API key for programmatic access.
+
+    **Important:** The `api_key` value is only returned once. Save it immediately.
+
+    API keys allow developers to access transcript services via the `/api/v1/*` endpoints
+    instead of the web dashboard.
+    """
+    try:
+        user_id = get_user_id_from_payload(payload)
+
+        result = await create_api_key(
+            user_id=user_id,
+            name=request.name,
+            rate_limit_tier="standard",
+        )
+
+        logger.info(f"Created API key '{request.name}' for user {user_id}")
+
+        return APIKeyResponse(
+            key_id=result["key_id"],
+            api_key=result["api_key"],  # Only time this is returned!
+            key_prefix=result["key_prefix"],
+            name=result["name"],
+            rate_limit_tier=result["rate_limit_tier"],
+            created_at=result["created_at"],
+            expires_at=result.get("expires_at"),
+            message="Save this API key now. It won't be shown again.",
+        )
+
+    except Exception as e:
+        logger.error(f"Error creating API key: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to create API key",
+        )
+
+
+@app.get("/user/api-keys", response_model=List[APIKeyResponse])
+async def list_api_keys(payload: dict = Depends(validate_jwt)):
+    """
+    List all API keys for the authenticated user.
+
+    Note: The actual API key values are never returned after creation.
+    Only the key_prefix (first 12 characters) is shown for identification.
+    """
+    try:
+        user_id = get_user_id_from_payload(payload)
+        keys = await list_user_api_keys(user_id)
+
+        return [
+            APIKeyResponse(
+                key_id=key["key_id"],
+                key_prefix=key["key_prefix"],
+                name=key["name"],
+                is_active=key["is_active"],
+                rate_limit_tier=key["rate_limit_tier"],
+                last_used_at=key["last_used_at"],
+                total_requests=key["total_requests"],
+                total_credits_used=key["total_credits_used"],
+                created_at=key["created_at"],
+                expires_at=key.get("expires_at"),
+            )
+            for key in keys
+        ]
+
+    except Exception as e:
+        logger.error(f"Error listing API keys: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to list API keys",
+        )
+
+
+@app.delete("/user/api-keys/{key_id}")
+async def delete_api_key(
+    key_id: str,
+    payload: dict = Depends(validate_jwt),
+):
+    """
+    Revoke (deactivate) an API key.
+
+    The key will immediately stop working for API access.
+    This action cannot be undone.
+    """
+    try:
+        user_id = get_user_id_from_payload(payload)
+
+        success = await revoke_api_key(user_id, key_id)
+
+        if not success:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="API key not found or already revoked",
+            )
+
+        logger.info(f"Revoked API key {key_id} for user {user_id}")
+
+        return {"message": "API key revoked successfully", "key_id": key_id}
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error revoking API key: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to revoke API key",
         )
 
 
