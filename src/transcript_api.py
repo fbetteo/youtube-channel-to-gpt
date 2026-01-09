@@ -100,10 +100,14 @@ PRICE_CREDITS_MAP = {
 security = HTTPBearer(auto_error=False)
 
 # Initialize FastAPI
+# Disable public docs in production, use custom protected endpoint instead
 app = FastAPI(
     title=settings.api_title,
     description="API for downloading YouTube video transcripts",
     version=settings.api_version,
+    docs_url=None,  # Disable public /docs
+    redoc_url=None,  # Disable public /redoc
+    openapi_url=None,  # Disable public /openapi.json
 )
 
 # CORS configuration from settings
@@ -859,8 +863,57 @@ def read_root():
     return {
         "service": "YouTube Transcript API",
         "status": "online",
-        "docs_url": "/docs",
+        "docs_url": "Protected - contact admin for access",
     }
+
+
+# Protected documentation endpoints
+DOCS_SECRET = os.getenv("DOCS_SECRET_KEY", "change_me_in_production")
+
+from fastapi.openapi.docs import get_swagger_ui_html, get_redoc_html
+from fastapi.openapi.utils import get_openapi
+
+
+@app.get("/internal/docs", include_in_schema=False)
+async def get_protected_docs(secret: str):
+    """
+    Protected Swagger UI documentation.
+
+    Access via: https://yourdomain.com/internal/docs?secret=YOUR_SECRET_KEY
+    """
+    if secret != DOCS_SECRET:
+        raise HTTPException(status_code=404, detail="Not found")
+
+    return get_swagger_ui_html(
+        openapi_url="/internal/openapi.json?secret=" + secret,
+        title=app.title + " - Docs",
+    )
+
+
+@app.get("/internal/redoc", include_in_schema=False)
+async def get_protected_redoc(secret: str):
+    """Protected ReDoc documentation."""
+    if secret != DOCS_SECRET:
+        raise HTTPException(status_code=404, detail="Not found")
+
+    return get_redoc_html(
+        openapi_url="/internal/openapi.json?secret=" + secret,
+        title=app.title + " - ReDoc",
+    )
+
+
+@app.get("/internal/openapi.json", include_in_schema=False)
+async def get_protected_openapi(secret: str):
+    """Protected OpenAPI schema."""
+    if secret != DOCS_SECRET:
+        raise HTTPException(status_code=404, detail="Not found")
+
+    return get_openapi(
+        title=app.title,
+        version=app.version,
+        description=app.description,
+        routes=app.routes,
+    )
 
 
 @app.on_event("startup")
