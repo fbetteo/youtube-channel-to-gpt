@@ -2648,14 +2648,16 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
         # Run S3 download in thread pool
         return await asyncio.to_thread(_download)
 
-    # Download files concurrently (max 10 concurrent downloads)
-    semaphore = asyncio.Semaphore(10)
+    # Download files concurrently (max 50 concurrent downloads)
+    semaphore = asyncio.Semaphore(50)
 
     async def download_with_limit(file_info):
         async with semaphore:
             return await download_file(file_info)
 
-    logger.info(f"Downloading {len(job['files'])} files concurrently from S3")
+    logger.info(
+        f"Downloading {len(job['files'])} files concurrently from S3 (max 50 concurrent)"
+    )
     download_start = time.time()
 
     download_tasks = [download_with_limit(file_info) for file_info in job["files"]]
