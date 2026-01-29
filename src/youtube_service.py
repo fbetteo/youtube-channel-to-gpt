@@ -2649,7 +2649,7 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
         return await asyncio.to_thread(_download)
 
     # Download files concurrently (max 50 concurrent downloads)
-    semaphore = asyncio.Semaphore(50)
+    semaphore = asyncio.Semaphore(100)
 
     async def download_with_limit(file_info):
         async with semaphore:
@@ -2670,6 +2670,7 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
     )
 
     # Create ZIP from downloaded content
+    zip_start = time.time()
     zip_buffer = io.BytesIO()
 
     try:
@@ -2717,9 +2718,12 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
                     zip_file.writestr(zip_info, content)
 
         zip_buffer.seek(0)
+        zip_end = time.time()
+        zip_size_mb = len(zip_buffer.getvalue()) / (1024 * 1024)
 
         logger.info(
-            f"Created ZIP archive for job {job_id} with {successful_downloads} files, size: {len(zip_buffer.getvalue())} bytes"
+            f"Created ZIP archive for job {job_id} with {successful_downloads} files in {zip_end - zip_start:.2f}s, "
+            f"size: {zip_size_mb:.2f} MB (download: {download_end - download_start:.2f}s, zip: {zip_end - zip_start:.2f}s)"
         )
 
         return zip_buffer
