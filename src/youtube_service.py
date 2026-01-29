@@ -13,13 +13,14 @@ import re
 import tempfile
 import threading
 import time
-import uuid
 import zipfile
 from urllib.parse import quote
 from typing import Dict, List, Optional, Any, Tuple
-from pathlib import Path
 
+import boto3
 import yt_dlp
+from botocore.config import Config as BotoConfig
+from botocore.exceptions import ClientError
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.proxies import WebshareProxyConfig
 
@@ -51,12 +52,14 @@ _memory_stats = {
 # =============================================
 # S3 CLIENT CONNECTION POOLING
 # =============================================
-import boto3
-from botocore.config import Config as BotoConfig
 
 # Global S3 client with connection pooling (reused across requests)
 _s3_client = None
 _s3_bucket_name = None
+
+# Optional fallback client/bucket for legacy storage (e.g., old US bucket)
+_s3_fallback_client = None
+_s3_fallback_bucket_name = None
 
 
 def get_s3_client():
@@ -91,10 +94,51 @@ def get_s3_client():
             "S3_BUCKET_NAME"
         )
         logger.info(
-            f"S3 client initialized with connection pooling (max_pool_connections=200)"
+            "S3 client initialized with connection pooling (max_pool_connections=200)"
         )
 
     return _s3_client, _s3_bucket_name
+
+
+def get_s3_fallback_client():
+    """
+    Get or create fallback S3 client for legacy bucket.
+    Only initialized if S3_BUCKET_NAME_FALLBACK env var is set.
+    """
+    global _s3_fallback_client, _s3_fallback_bucket_name
+
+    fallback_bucket = os.getenv("S3_BUCKET_NAME_FALLBACK")
+    if not fallback_bucket:
+        return None, None
+
+    if _s3_fallback_client is None:
+        fallback_region = os.getenv("S3_FALLBACK_REGION", "us-east-2")
+
+        boto_config = BotoConfig(
+            max_pool_connections=200,
+            retries={"max_attempts": 3, "mode": "adaptive"},
+            connect_timeout=5,
+            read_timeout=30,
+        )
+
+        try:
+            _s3_fallback_client = boto3.client(
+                "s3",
+                aws_access_key_id=getattr(settings, "aws_access_key_id", None),
+                aws_secret_access_key=getattr(settings, "aws_secret_access_key", None),
+                region_name=fallback_region,
+                config=boto_config,
+            )
+        except Exception as e:
+            logger.error(f"Failed to create fallback S3 client: {str(e)}")
+            _s3_fallback_client = boto3.client("s3", config=boto_config)
+
+        _s3_fallback_bucket_name = fallback_bucket
+        logger.info(
+            f"S3 fallback client initialized: bucket={_s3_fallback_bucket_name}, region={fallback_region}"
+        )
+
+    return _s3_fallback_client, _s3_fallback_bucket_name
 
 
 # Remove global ytt_api initialization, only keep YouTube API client
@@ -119,9 +163,6 @@ def get_ytt_api() -> YouTubeTranscriptApi:
         logger.error(f"Error creating YouTubeTranscriptApi: {str(e)}")
         # Fallback to basic instance
         return YouTubeTranscriptApi()
-
-
-import random
 
 
 def _get_ydl_opts(base_opts: Dict[str, Any]) -> Dict[str, Any]:
@@ -397,7 +438,6 @@ def update_job_progress(job_id: str, **updates):
     """Update job progress and save to persistent storage with atomic operations"""
     import time
     import shutil
-    import tempfile
     from threading import Lock
 
     # Use a global lock for all job updates (simpler and more memory efficient)
@@ -2631,9 +2671,6 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
     Raises:
         ValueError: If job ID not found or job not completed
     """
-    import boto3
-    from config_v2 import settings
-
     # Load job data from database
     job = await hybrid_job_manager.get_job(job_id, include_videos=True)
     if not job:
@@ -2652,7 +2689,46 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
     if not bucket_name:
         raise ValueError("S3 bucket name not configured")
 
-    # Download all files concurrently
+    # Get fallback client (if configured)
+    s3_fallback_client, fallback_bucket_name = get_s3_fallback_client()
+
+    # Determine which bucket to use by checking the first file only
+    use_fallback = False
+    if s3_fallback_client and fallback_bucket_name and job["files"]:
+        first_file = job["files"][0]
+        first_key = first_file["s3_key"]
+
+        def _check_first_file():
+            try:
+                s3_client.head_object(Bucket=bucket_name, Key=first_key)
+                return False  # Primary bucket has the file
+            except ClientError as e:
+                error_code = (
+                    e.response.get("Error", {}).get("Code")
+                    if hasattr(e, "response")
+                    else None
+                )
+                if error_code in {"NoSuchKey", "404", "NotFound"}:
+                    # Check fallback bucket
+                    try:
+                        s3_fallback_client.head_object(
+                            Bucket=fallback_bucket_name, Key=first_key
+                        )
+                        logger.info(
+                            "First file found in fallback bucket; using fallback for all files"
+                        )
+                        return True  # Use fallback bucket
+                    except Exception:
+                        pass
+                return False  # Stick with primary
+
+        use_fallback = await asyncio.to_thread(_check_first_file)
+
+    # Select the bucket to use for all downloads
+    active_client = s3_fallback_client if use_fallback else s3_client
+    active_bucket = fallback_bucket_name if use_fallback else bucket_name
+
+    # Download all files concurrently from the determined bucket
     async def download_file(file_info):
         """Download a single file from S3"""
         s3_key = file_info["s3_key"]
@@ -2660,7 +2736,7 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
 
         def _download():
             try:
-                response = s3_client.get_object(Bucket=bucket_name, Key=s3_key)
+                response = active_client.get_object(Bucket=active_bucket, Key=s3_key)
                 return {
                     "video_id": video_id,
                     "content": response["Body"].read(),
@@ -2865,9 +2941,6 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
     Raises:
         ValueError: If job ID not found or job not completed
     """
-    import boto3
-    from config_v2 import settings
-
     # Load job data from database
     job = await hybrid_job_manager.get_job(job_id, include_videos=False)
     if not job:
@@ -2881,23 +2954,51 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
     if not job.get("files"):
         raise ValueError("No transcript files found for this job")
 
-    # Initialize S3 client
-    try:
-        s3_client = boto3.client(
-            "s3",
-            aws_access_key_id=getattr(settings, "aws_access_key_id", None),
-            aws_secret_access_key=getattr(settings, "aws_secret_access_key", None),
-            region_name=getattr(settings, "aws_default_region", "us-east-1"),
-        )
-    except Exception as e:
-        logger.error(f"Failed to create S3 client: {str(e)}")
-        # Fallback to environment variables
-        s3_client = boto3.client("s3")
-
-    bucket_name = getattr(settings, "s3_bucket_name", None) or os.getenv(
-        "S3_BUCKET_NAME"
-    )
+    # Use pooled S3 clients
+    s3_client, bucket_name = get_s3_client()
     if not bucket_name:
+        raise ValueError("S3 bucket name not configured")
+
+    # Get fallback client (if configured)
+    s3_fallback_client, fallback_bucket_name = get_s3_fallback_client()
+
+    # Determine which bucket to use by checking the first file only
+    use_fallback = False
+    if s3_fallback_client and fallback_bucket_name and job["files"]:
+        first_file = job["files"][0]
+        first_key = first_file["s3_key"]
+
+        def _check_first_file():
+            try:
+                s3_client.head_object(Bucket=bucket_name, Key=first_key)
+                return False  # Primary bucket has the file
+            except ClientError as e:
+                error_code = (
+                    e.response.get("Error", {}).get("Code")
+                    if hasattr(e, "response")
+                    else None
+                )
+                if error_code in {"NoSuchKey", "404", "NotFound"}:
+                    # Check fallback bucket
+                    try:
+                        s3_fallback_client.head_object(
+                            Bucket=fallback_bucket_name, Key=first_key
+                        )
+                        logger.info(
+                            "First file found in fallback bucket; using fallback for all files"
+                        )
+                        return True  # Use fallback bucket
+                    except Exception:
+                        pass
+                return False  # Stick with primary
+
+        use_fallback = await asyncio.to_thread(_check_first_file)
+
+    # Select the bucket to use for all downloads
+    active_client = s3_fallback_client if use_fallback else s3_client
+    active_bucket = fallback_bucket_name if use_fallback else bucket_name
+
+    if not active_bucket:
         raise ValueError("S3 bucket name not configured")
 
     # Create a BytesIO buffer for the ZIP file
@@ -2907,7 +3008,7 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
     if job.get("formatting_options", {}).get("concatenate_all", False):
         # Create a single concatenated file from S3 files
         concatenated_content = await create_concatenated_transcript_from_s3_sequential(
-            job_id, s3_client, bucket_name
+            job_id, active_client, active_bucket
         )
 
         with zipfile.ZipFile(
@@ -2942,7 +3043,9 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
                 try:
                     # Download file content from S3
                     logger.debug(f"Downloading {s3_key} from S3 for ZIP creation")
-                    response = s3_client.get_object(Bucket=bucket_name, Key=s3_key)
+                    response = active_client.get_object(
+                        Bucket=active_bucket, Key=s3_key
+                    )
                     file_content = response["Body"].read()
 
                     # Create filename from video ID or extract from S3 key
