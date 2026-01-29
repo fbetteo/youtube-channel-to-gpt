@@ -48,6 +48,54 @@ _memory_stats = {
     "memory_warnings": 0,
 }
 
+# =============================================
+# S3 CLIENT CONNECTION POOLING
+# =============================================
+import boto3
+from botocore.config import Config as BotoConfig
+
+# Global S3 client with connection pooling (reused across requests)
+_s3_client = None
+_s3_bucket_name = None
+
+
+def get_s3_client():
+    """
+    Get or create a reusable S3 client with optimized connection pooling.
+    Reusing the client saves SSL handshake time (~100ms per connection).
+    """
+    global _s3_client, _s3_bucket_name
+
+    if _s3_client is None:
+        # Configure connection pooling for high concurrency
+        boto_config = BotoConfig(
+            max_pool_connections=200,  # Match our concurrency level
+            retries={"max_attempts": 3, "mode": "adaptive"},
+            connect_timeout=5,
+            read_timeout=30,
+        )
+
+        try:
+            _s3_client = boto3.client(
+                "s3",
+                aws_access_key_id=getattr(settings, "aws_access_key_id", None),
+                aws_secret_access_key=getattr(settings, "aws_secret_access_key", None),
+                region_name=getattr(settings, "aws_default_region", "us-east-1"),
+                config=boto_config,
+            )
+        except Exception as e:
+            logger.error(f"Failed to create S3 client with settings: {str(e)}")
+            _s3_client = boto3.client("s3", config=boto_config)
+
+        _s3_bucket_name = getattr(settings, "s3_bucket_name", None) or os.getenv(
+            "S3_BUCKET_NAME"
+        )
+        logger.info(
+            f"S3 client initialized with connection pooling (max_pool_connections=200)"
+        )
+
+    return _s3_client, _s3_bucket_name
+
 
 # Remove global ytt_api initialization, only keep YouTube API client
 def get_ytt_api() -> YouTubeTranscriptApi:
@@ -2599,26 +2647,12 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
     if not job.get("files"):
         raise ValueError("No transcript files found for this job")
 
-    # Initialize S3 client
-    try:
-        s3_client = boto3.client(
-            "s3",
-            aws_access_key_id=getattr(settings, "aws_access_key_id", None),
-            aws_secret_access_key=getattr(settings, "aws_secret_access_key", None),
-            region_name=getattr(settings, "aws_default_region", "us-east-1"),
-        )
-    except Exception as e:
-        logger.error(f"Failed to create S3 client: {str(e)}")
-        # Fallback to environment variables
-        s3_client = boto3.client("s3")
-
-    bucket_name = getattr(settings, "s3_bucket_name", None) or os.getenv(
-        "S3_BUCKET_NAME"
-    )
+    # Use pooled S3 client for better performance
+    s3_client, bucket_name = get_s3_client()
     if not bucket_name:
         raise ValueError("S3 bucket name not configured")
 
-    # Download all files concurrently (up to 10 at a time)
+    # Download all files concurrently
     async def download_file(file_info):
         """Download a single file from S3"""
         s3_key = file_info["s3_key"]
@@ -2626,7 +2660,6 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
 
         def _download():
             try:
-                logger.debug(f"Downloading {s3_key} from S3")
                 response = s3_client.get_object(Bucket=bucket_name, Key=s3_key)
                 return {
                     "video_id": video_id,
@@ -2648,15 +2681,15 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
         # Run S3 download in thread pool
         return await asyncio.to_thread(_download)
 
-    # Download files concurrently (max 50 concurrent downloads)
-    semaphore = asyncio.Semaphore(100)
+    # Download files concurrently (max 200 concurrent downloads)
+    semaphore = asyncio.Semaphore(200)
 
     async def download_with_limit(file_info):
         async with semaphore:
             return await download_file(file_info)
 
     logger.info(
-        f"Downloading {len(job['files'])} files concurrently from S3 (max 50 concurrent)"
+        f"Downloading {len(job['files'])} files concurrently from S3 (max 200 concurrent, pooled client)"
     )
     download_start = time.time()
 
@@ -2731,12 +2764,7 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
     finally:
         # Explicitly clean up download_results to free memory
         del download_results
-
-        # Close S3 client to release connection pool
-        try:
-            s3_client.close()
-        except Exception as e:
-            logger.warning(f"Error closing S3 client: {e}")
+        # Note: S3 client is pooled and reused, don't close it
 
 
 async def create_concatenated_content_from_results(
