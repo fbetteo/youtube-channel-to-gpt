@@ -1484,12 +1484,14 @@ async def get_single_transcript(
 
 def _format_ytdlp_date(date_str: Optional[str], timestamp: Optional[int] = None) -> str:
     """Format YYYYMMDD date string to YYYY-MM-DD.
-    Falls back to Unix timestamp if date_str is missing (common with extract_flat mode)."""
+    Falls back to Unix timestamp if date_str is missing (common with extract_flat mode).
+    """
     if date_str and len(date_str) == 8:
         return f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:]}"
     if timestamp:
         try:
             from datetime import datetime as _dt, timezone as _tz
+
             return _dt.fromtimestamp(timestamp, tz=_tz.utc).strftime("%Y-%m-%d")
         except (OSError, ValueError, OverflowError):
             pass
