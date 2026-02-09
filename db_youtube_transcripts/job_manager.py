@@ -812,6 +812,300 @@ class JobManager:
             logger.error(f"Failed to update status for job {job_id}: {str(e)}")
             return False
 
+    # =============================================
+    # NEW VIDEOS / MISSING VIDEOS DETECTION
+    # =============================================
+
+    @staticmethod
+    async def get_completed_video_ids_for_user(user_id: str) -> set:
+        """
+        Get all video IDs that have been successfully downloaded by this user,
+        across ALL jobs and sources. Since YouTube video IDs are globally unique,
+        this tells us which transcripts the user already has.
+
+        Args:
+            user_id: User UUID
+
+        Returns:
+            Set of video_id strings that have status='completed'
+        """
+        try:
+            async with get_db_connection() as conn:
+                query = """
+                    SELECT DISTINCT jv.video_id
+                    FROM job_videos jv
+                    JOIN jobs j ON j.job_id = jv.job_id
+                    WHERE j.user_id = $1
+                      AND jv.status = 'completed'
+                """
+                records = await conn.fetch(query, user_id)
+                result = {r["video_id"] for r in records}
+                logger.info(
+                    f"Found {len(result)} completed video IDs for user {user_id}"
+                )
+                return result
+
+        except Exception as e:
+            logger.error(
+                f"Failed to get completed video IDs for user {user_id}: {str(e)}"
+            )
+            return set()
+
+    @staticmethod
+    async def get_completed_video_ids_for_job(job_id: str) -> set:
+        """
+        Get all video IDs that were successfully downloaded in a specific job.
+        Used when the user wants to diff against a single job rather than all jobs.
+
+        Args:
+            job_id: Job UUID
+
+        Returns:
+            Set of video_id strings that have status='completed' in this job
+        """
+        try:
+            async with get_db_connection() as conn:
+                query = """
+                    SELECT video_id
+                    FROM job_videos
+                    WHERE job_id = $1
+                      AND status = 'completed'
+                """
+                records = await conn.fetch(query, job_id)
+                result = {r["video_id"] for r in records}
+                logger.info(f"Found {len(result)} completed video IDs for job {job_id}")
+                return result
+
+        except Exception as e:
+            logger.error(
+                f"Failed to get completed video IDs for job {job_id}: {str(e)}"
+            )
+            return set()
+
+    @staticmethod
+    async def get_no_transcript_video_ids_for_user(user_id: str) -> set:
+        """
+        Get video IDs that failed due to missing/disabled transcripts for this user,
+        across ALL jobs. These videos should not be retried since they genuinely
+        have no transcripts available.
+
+        Uses POSITIVE matching on definitive no-transcript signals:
+        - 'Subtitles are disabled' — YouTube explicitly says no subtitles
+        - 'Transcript is disabled' — alternative wording
+
+        This avoids false positives from network/proxy/SSL errors that the Lambda
+        wraps with the same 'No transcripts available' prefix.
+
+        Args:
+            user_id: User UUID
+
+        Returns:
+            Set of video_id strings that failed with genuine no-transcript errors
+        """
+        try:
+            async with get_db_connection() as conn:
+                query = """
+                    SELECT DISTINCT jv.video_id
+                    FROM job_videos jv
+                    JOIN jobs j ON j.job_id = jv.job_id
+                    WHERE j.user_id = $1
+                      AND jv.status = 'failed'
+                      AND (
+                          jv.error_message ILIKE '%Subtitles are disabled%'
+                          OR jv.error_message ILIKE '%Transcript is disabled%'
+                      )
+                """
+                records = await conn.fetch(query, user_id)
+                result = {r["video_id"] for r in records}
+                logger.info(
+                    f"Found {len(result)} no-transcript video IDs for user {user_id}"
+                )
+                return result
+
+        except Exception as e:
+            logger.error(
+                f"Failed to get no-transcript video IDs for user {user_id}: {str(e)}"
+            )
+            return set()
+
+    @staticmethod
+    async def get_no_transcript_video_ids_for_job(job_id: str) -> set:
+        """
+        Get video IDs that failed due to missing/disabled transcripts in a specific job.
+        Uses positive matching on definitive no-transcript signals only.
+
+        Args:
+            job_id: Job UUID
+
+        Returns:
+            Set of video_id strings that failed with genuine no-transcript errors in this job
+        """
+        try:
+            async with get_db_connection() as conn:
+                query = """
+                    SELECT video_id
+                    FROM job_videos
+                    WHERE job_id = $1
+                      AND status = 'failed'
+                      AND (
+                          error_message ILIKE '%Subtitles are disabled%'
+                          OR error_message ILIKE '%Transcript is disabled%'
+                      )
+                """
+                records = await conn.fetch(query, job_id)
+                result = {r["video_id"] for r in records}
+                logger.info(
+                    f"Found {len(result)} no-transcript video IDs for job {job_id}"
+                )
+                return result
+
+        except Exception as e:
+            logger.error(
+                f"Failed to get no-transcript video IDs for job {job_id}: {str(e)}"
+            )
+            return set()
+
+    @staticmethod
+    async def get_job_created_at(job_id: str) -> Optional[datetime]:
+        """
+        Get the created_at timestamp for a specific job.
+        Used as the cutoff date for only_newer mode when scoped to a job.
+
+        Args:
+            job_id: Job UUID
+
+        Returns:
+            datetime of the job's created_at, or None if not found
+        """
+        try:
+            async with get_db_connection() as conn:
+                record = await conn.fetchrow(
+                    "SELECT created_at FROM jobs WHERE job_id = $1", job_id
+                )
+                if record and record["created_at"]:
+                    return record["created_at"]
+                return None
+        except Exception as e:
+            logger.error(f"Failed to get created_at for job {job_id}: {str(e)}")
+            return None
+
+    @staticmethod
+    async def get_last_download_date_for_source(
+        user_id: str,
+        source_type: str,
+        possible_source_ids: List[str],
+    ) -> Optional[datetime]:
+        """
+        Get the creation date of the most recent completed job for a given source.
+        Used as the cutoff for "only_newer" mode — videos published after this date
+        are considered "new" since the user's last download.
+
+        Matches against multiple possible source_id values to handle variations
+        (e.g., channel handle with/without @, channel ID, etc.)
+
+        Args:
+            user_id: User UUID
+            source_type: 'channel' or 'playlist'
+            possible_source_ids: List of possible source_id strings to match against
+
+        Returns:
+            datetime of the most recent job's created_at, or None if no previous jobs
+        """
+        try:
+            async with get_db_connection() as conn:
+                query = """
+                    SELECT MAX(j.created_at) as last_download_date
+                    FROM jobs j
+                    WHERE j.user_id = $1
+                      AND j.source_type = $2
+                      AND j.source_id = ANY($3::text[])
+                      AND j.status IN ('completed', 'completed_with_errors')
+                """
+                record = await conn.fetchrow(
+                    query, user_id, source_type, possible_source_ids
+                )
+
+                if record and record["last_download_date"]:
+                    last_date = record["last_download_date"]
+                    logger.info(
+                        f"Last download date for user {user_id}, "
+                        f"source_type={source_type}, "
+                        f"source_ids={possible_source_ids}: {last_date}"
+                    )
+                    return last_date
+
+                logger.info(
+                    f"No previous downloads found for user {user_id}, "
+                    f"source_type={source_type}, source_ids={possible_source_ids}"
+                )
+                return None
+
+        except Exception as e:
+            logger.error(
+                f"Failed to get last download date for user {user_id}: {str(e)}"
+            )
+            return None
+
+    @staticmethod
+    async def get_user_sources(user_id: str) -> List[Dict[str, Any]]:
+        """
+        Get deduplicated channels/playlists the user has downloaded from.
+        Groups by (source_type, normalized source_name) to handle variations.
+        Uses LOWER(TRIM(source_name)) to handle case and whitespace differences.
+        Counts unique videos by joining with job_videos.
+
+        Args:
+            user_id: User UUID
+
+        Returns:
+            List of dicts with source_id, source_type, source_name,
+            total_downloads, total_unique_videos, latest_job_id, last_download_date
+        """
+        try:
+            async with get_db_connection() as conn:
+                query = """
+                    SELECT
+                        -- Group by source_type and normalized source_name
+                        j.source_type,
+                        -- Use the most recent source_name as the canonical display name
+                        (ARRAY_AGG(j.source_name ORDER BY j.created_at DESC))[1] AS source_name,
+                        -- Pick source_id from the most recent job (for API calls to /new-videos)
+                        (ARRAY_AGG(j.source_id ORDER BY j.created_at DESC))[1] AS source_id,
+                        -- Count distinct jobs
+                        COUNT(DISTINCT j.job_id)::int AS total_downloads,
+                        -- Count distinct videos (unique across all jobs for this source)
+                        COUNT(DISTINCT jv.video_id) FILTER (WHERE jv.status = 'completed')::int AS total_unique_videos,
+                        -- Latest completed job id
+                        (ARRAY_AGG(j.job_id::text ORDER BY j.created_at DESC))[1] AS latest_job_id,
+                        MAX(j.created_at) AS last_download_date
+                    FROM jobs j
+                    LEFT JOIN job_videos jv ON jv.job_id = j.job_id
+                    WHERE j.user_id = $1
+                      AND j.status IN ('completed', 'completed_with_errors')
+                      AND j.source_name IS NOT NULL
+                    GROUP BY j.source_type, LOWER(TRIM(j.source_name))
+                    ORDER BY last_download_date DESC
+                """
+                rows = await conn.fetch(query, user_id)
+                results = [
+                    {
+                        "source_id": r["source_id"],
+                        "source_type": r["source_type"],
+                        "source_name": r["source_name"],
+                        "total_downloads": r["total_downloads"],
+                        "total_unique_videos": r["total_unique_videos"],
+                        "latest_job_id": r["latest_job_id"],
+                        "last_download_date": r["last_download_date"],
+                    }
+                    for r in rows
+                ]
+                logger.info(f"Found {len(results)} unique sources for user {user_id}")
+                return results
+
+        except Exception as e:
+            logger.error(f"Failed to get user sources for {user_id}: {str(e)}")
+            return []
+
     @staticmethod
     async def update_videos_metadata(
         job_id: str, videos_metadata: Dict[str, Dict[str, Any]]

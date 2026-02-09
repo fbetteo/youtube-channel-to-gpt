@@ -1482,11 +1482,20 @@ async def get_single_transcript(
 #         raise ValueError(f"Failed to get videos for channel: {str(e)}")
 
 
-def _format_ytdlp_date(date_str: Optional[str]) -> str:
-    """Format YYYYMMDD date string to YYYY-MM-DD."""
-    if not date_str or len(date_str) != 8:
-        return ""
-    return f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:]}"
+def _format_ytdlp_date(date_str: Optional[str], timestamp: Optional[int] = None) -> str:
+    """Format YYYYMMDD date string to YYYY-MM-DD.
+    Falls back to Unix timestamp if date_str is missing (common with extract_flat mode).
+    """
+    if date_str and len(date_str) == 8:
+        return f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:]}"
+    if timestamp:
+        try:
+            from datetime import datetime as _dt, timezone as _tz
+
+            return _dt.fromtimestamp(timestamp, tz=_tz.utc).strftime("%Y-%m-%d")
+        except (OSError, ValueError, OverflowError):
+            pass
+    return ""
 
 
 def _fetch_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
@@ -1545,9 +1554,10 @@ def _fetch_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
                 else:
                     duration_category = "unknown"
 
-                # Format date
+                # Format date (upload_date may be None in extract_flat mode, fall back to timestamp)
                 upload_date = entry.get("upload_date")
-                published_at = _format_ytdlp_date(upload_date)
+                timestamp = entry.get("timestamp")
+                published_at = _format_ytdlp_date(upload_date, timestamp)
 
                 all_videos_map[video_id] = {
                     "id": video_id,
@@ -1647,9 +1657,10 @@ def _fetch_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
         else:
             duration_category = "unknown"
 
-        # Format date
+        # Format date (upload_date may be None in extract_flat mode, fall back to timestamp)
         upload_date = entry.get("upload_date")
-        published_at = _format_ytdlp_date(upload_date)
+        timestamp = entry.get("timestamp")
+        published_at = _format_ytdlp_date(upload_date, timestamp)
 
         all_videos.append(
             {
