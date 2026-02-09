@@ -650,7 +650,12 @@ class SelectedPlaylistVideosRequest(BaseModel):
 class DownloadHistoryItem(BaseModel):
     id: str = Field(..., description="Unique identifier for the download")
     date: str = Field(..., description="ISO date string when download was initiated")
-    sourceName: str = Field(..., description="Name of the channel or playlist")
+    sourceId: str = Field(
+        ..., description="ID name (raw) of the channel or playlist that was downloaded"
+    )
+    sourceName: str = Field(
+        ..., description="Formatted Name of the channel or playlist"
+    )
     sourceType: str = Field(..., description="Type of source: 'channel' or 'playlist'")
     videoCount: int = Field(..., description="Total number of videos in the download")
     status: str = Field(
@@ -677,6 +682,47 @@ class DownloadHistoryItem(BaseModel):
     )
     creditsUsed: int = Field(
         default=0, description="Credits consumed for this download"
+    )
+
+
+class NewVideosResponseItem(BaseModel):
+    """A video from the current channel/playlist that hasn't been downloaded yet."""
+
+    id: str
+    title: str
+    publishedAt: Optional[str] = None
+    url: str
+    duration: Optional[str] = None
+    duration_seconds: Optional[int] = None
+    viewCount: int = 0
+
+
+class NewVideosResponse(BaseModel):
+    """Response for the /new-videos endpoints."""
+
+    mode: str = Field(..., description="'all_missing' or 'only_newer'")
+    source_type: str = Field(..., description="'channel' or 'playlist'")
+    source_name: str = Field(..., description="Channel or playlist title")
+    total_current_videos: int = Field(
+        ..., description="Total videos currently on the channel/playlist"
+    )
+    already_downloaded: int = Field(
+        ...,
+        description="Number of videos already downloaded (scoped to job_id or all jobs)",
+    )
+    new_videos_count: int = Field(
+        ..., description="Number of new/missing videos available for download"
+    )
+    last_download_date: Optional[str] = Field(
+        None,
+        description="ISO timestamp of the reference job or last download (only_newer mode)",
+    )
+    reference_job_id: Optional[str] = Field(
+        None,
+        description="The job_id used as reference for the diff, or None if comparing against all jobs",
+    )
+    new_videos: List[NewVideosResponseItem] = Field(
+        ..., description="List of videos not yet downloaded"
     )
 
 
@@ -709,6 +755,7 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
                     job_id,
                     status,
                     source_type,
+                    source_id,
                     source_name,
                     total_videos,
                     completed,
@@ -771,6 +818,7 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
                 history_item = DownloadHistoryItem(
                     id=str(row["job_id"]),
                     date=start_time_iso,
+                    sourceId=row["source_id"] or "Unknown",
                     sourceName=row["source_name"] or "Unknown",
                     sourceType=row["source_type"] or "channel",
                     videoCount=total_videos,
@@ -1911,6 +1959,162 @@ async def list_all_channel_videos(
         )
 
 
+@app.get("/channel/{channel_name}/new-videos", response_model=NewVideosResponse)
+async def get_channel_new_videos(
+    channel_name: str,
+    mode: str = "all_missing",
+    job_id: Optional[str] = None,
+    payload: dict = Depends(validate_jwt),
+):
+    """
+    Detect new or missing videos from a YouTube channel compared to what the user
+    has already downloaded. Returns a list of videos available for download.
+
+    **Modes:**
+    - `all_missing`: All videos on the channel that the user has never downloaded
+      (includes both older videos they skipped AND newer videos). This is the default.
+    - `only_newer`: Only videos published AFTER the user's most recent download job
+      for this channel. Use this when you just want "what's new since last time."
+
+    **Scope (optional):**
+    - If `job_id` is provided, the diff is computed against only that specific job's
+      completed videos. Useful when the frontend shows a "Download New" button next to
+      a specific job in the download history.
+    - If `job_id` is omitted, the diff is computed against ALL completed videos the user
+      has ever downloaded from any source (since YouTube video IDs are globally unique).
+
+    REQUIRES AUTHENTICATION: User must be logged in so we can check their download history.
+
+    The returned video list can be passed directly to POST /channel/download/selected
+    to download the missing transcripts.
+    """
+    if mode not in ("all_missing", "only_newer"):
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid mode. Must be 'all_missing' or 'only_newer'.",
+        )
+
+    user_id = get_user_id_from_payload(payload)
+
+    try:
+        # 1. Resolve channel and get channel info
+        channel_info = await youtube_service.get_channel_info(channel_name)
+        channel_id = channel_info.get("channelId")
+        channel_title = channel_info.get("title", channel_name)
+
+        # 2. Fetch all current videos from the channel via yt-dlp
+        current_videos = await youtube_service.get_all_channel_videos(channel_id)
+        current_video_ids = {v["id"] for v in current_videos}
+
+        # 3. Get completed video IDs — scoped to a single job or all user jobs
+        from db_youtube_transcripts.job_manager import JobManager
+
+        if job_id:
+            completed_ids = await JobManager.get_completed_video_ids_for_job(job_id)
+        else:
+            completed_ids = await JobManager.get_completed_video_ids_for_user(user_id)
+
+        # 4. Compute the set of missing video IDs
+        missing_ids = current_video_ids - completed_ids
+        already_downloaded_count = len(current_video_ids) - len(missing_ids)
+
+        # 5. Filter current videos list to only missing ones
+        missing_videos = [v for v in current_videos if v["id"] in missing_ids]
+
+        # 6. If mode is "only_newer", further filter by publish date
+        last_download_date = None
+        if mode == "only_newer":
+            if job_id:
+                # Use the specific job's created_at as the cutoff
+                last_download_date_dt = await JobManager.get_job_created_at(job_id)
+            else:
+                # Build list of possible source_id values to match against DB
+                # (channel name might be stored with or without @, or as channel_id)
+                handle_with_at = (
+                    channel_name if channel_name.startswith("@") else f"@{channel_name}"
+                )
+                handle_without_at = (
+                    channel_name[1:] if channel_name.startswith("@") else channel_name
+                )
+                possible_ids = list(
+                    {handle_with_at, handle_without_at, channel_id, channel_title}
+                )
+
+                last_download_date_dt = (
+                    await JobManager.get_last_download_date_for_source(
+                        user_id, "channel", possible_ids
+                    )
+                )
+
+            if last_download_date_dt:
+                last_download_date = last_download_date_dt.isoformat()
+
+                # Filter to only videos published after the cutoff date
+                filtered = []
+                for v in missing_videos:
+                    pub_date_str = v.get("publishedAt", "")
+                    if pub_date_str:
+                        try:
+                            from datetime import datetime as dt
+
+                            pub_date = dt.fromisoformat(pub_date_str)
+                            if pub_date > last_download_date_dt.replace(tzinfo=None):
+                                filtered.append(v)
+                        except (ValueError, TypeError):
+                            filtered.append(v)
+                    else:
+                        filtered.append(v)
+
+                missing_videos = filtered
+
+        # 7. Build response
+        new_videos_items = [
+            NewVideosResponseItem(
+                id=v["id"],
+                title=v.get("title", "Untitled"),
+                publishedAt=v.get("publishedAt"),
+                url=v.get("url", f"https://www.youtube.com/watch?v={v['id']}"),
+                duration=v.get("duration"),
+                duration_seconds=v.get("duration_seconds"),
+                viewCount=v.get("viewCount", 0),
+            )
+            for v in missing_videos
+        ]
+
+        scope_desc = f"job={job_id}" if job_id else "all_jobs"
+        logger.info(
+            f"Channel '{channel_name}' new-videos check for user {user_id}: "
+            f"mode={mode}, scope={scope_desc}, total_current={len(current_videos)}, "
+            f"already_downloaded={already_downloaded_count}, "
+            f"new_videos={len(new_videos_items)}"
+        )
+
+        return NewVideosResponse(
+            mode=mode,
+            source_type="channel",
+            source_name=channel_title,
+            total_current_videos=len(current_videos),
+            already_downloaded=already_downloaded_count,
+            new_videos_count=len(new_videos_items),
+            last_download_date=last_download_date,
+            reference_job_id=job_id,
+            new_videos=new_videos_items,
+        )
+
+    except ValueError as e:
+        logger.error(f"Channel not found or invalid: {str(e)}")
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        logger.error(
+            f"Error detecting new videos for channel {channel_name}: {str(e)}",
+            exc_info=True,
+        )
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to detect new videos: {str(e)}",
+        )
+
+
 @app.post("/channel/download/selected")
 async def download_selected_videos(
     request: SelectedVideosRequest,
@@ -2303,6 +2507,154 @@ async def list_all_playlist_videos(
         logger.error(f"Error starting playlist video fetch: {str(e)}", exc_info=True)
         raise HTTPException(
             status_code=500, detail=f"Failed to start video fetch: {str(e)}"
+        )
+
+
+@app.get("/playlist/{playlist_id}/new-videos", response_model=NewVideosResponse)
+async def get_playlist_new_videos(
+    playlist_id: str,
+    mode: str = "all_missing",
+    job_id: Optional[str] = None,
+    payload: dict = Depends(validate_jwt),
+):
+    """
+    Detect new or missing videos from a YouTube playlist compared to what the user
+    has already downloaded. Returns a list of videos available for download.
+
+    **Modes:**
+    - `all_missing`: All videos in the playlist that the user has never downloaded
+      (includes both older videos they skipped AND newer additions). This is the default.
+    - `only_newer`: Only videos added to the playlist AFTER the user's most recent
+      download job for this playlist. Use this when you just want "what's new since last time."
+
+    **Scope (optional):**
+    - If `job_id` is provided, the diff is computed against only that specific job's
+      completed videos.
+    - If `job_id` is omitted, the diff is computed against ALL completed videos the user
+      has ever downloaded from any source.
+
+    REQUIRES AUTHENTICATION: User must be logged in so we can check their download history.
+
+    The returned video list can be passed directly to POST /playlist/download/selected
+    to download the missing transcripts.
+    """
+    if mode not in ("all_missing", "only_newer"):
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid mode. Must be 'all_missing' or 'only_newer'.",
+        )
+
+    user_id = get_user_id_from_payload(payload)
+
+    try:
+        # 1. Resolve and validate playlist ID
+        clean_playlist_id = youtube_service.extract_playlist_id(playlist_id)
+        playlist_info = await youtube_service.get_playlist_info(clean_playlist_id)
+        playlist_title = playlist_info.get("title", clean_playlist_id)
+
+        # 2. Fetch all current videos from the playlist via yt-dlp
+        current_videos = await youtube_service.get_all_playlist_videos(
+            clean_playlist_id
+        )
+        current_video_ids = {v["id"] for v in current_videos}
+
+        # 3. Get completed video IDs — scoped to a single job or all user jobs
+        from db_youtube_transcripts.job_manager import JobManager
+
+        if job_id:
+            completed_ids = await JobManager.get_completed_video_ids_for_job(job_id)
+        else:
+            completed_ids = await JobManager.get_completed_video_ids_for_user(user_id)
+
+        # 4. Compute the set of missing video IDs
+        missing_ids = current_video_ids - completed_ids
+        already_downloaded_count = len(current_video_ids) - len(missing_ids)
+
+        # 5. Filter current videos list to only missing ones
+        missing_videos = [v for v in current_videos if v["id"] in missing_ids]
+
+        # 6. If mode is "only_newer", further filter by publish date
+        last_download_date = None
+        if mode == "only_newer":
+            if job_id:
+                # Use the specific job's created_at as the cutoff
+                last_download_date_dt = await JobManager.get_job_created_at(job_id)
+            else:
+                # For playlists, source_id is the playlist ID
+                possible_ids = [clean_playlist_id, playlist_id]
+
+                last_download_date_dt = (
+                    await JobManager.get_last_download_date_for_source(
+                        user_id, "playlist", possible_ids
+                    )
+                )
+
+            if last_download_date_dt:
+                last_download_date = last_download_date_dt.isoformat()
+
+                # Filter to only videos published after the cutoff date
+                filtered = []
+                for v in missing_videos:
+                    pub_date_str = v.get("publishedAt", "")
+                    if pub_date_str:
+                        try:
+                            from datetime import datetime as dt
+
+                            pub_date = dt.fromisoformat(pub_date_str)
+                            if pub_date > last_download_date_dt.replace(tzinfo=None):
+                                filtered.append(v)
+                        except (ValueError, TypeError):
+                            filtered.append(v)
+                    else:
+                        filtered.append(v)
+
+                missing_videos = filtered
+
+        # 7. Build response
+        new_videos_items = [
+            NewVideosResponseItem(
+                id=v["id"],
+                title=v.get("title", "Untitled"),
+                publishedAt=v.get("publishedAt"),
+                url=v.get("url", f"https://www.youtube.com/watch?v={v['id']}"),
+                duration=v.get("duration"),
+                duration_seconds=v.get("duration_seconds"),
+                viewCount=v.get("viewCount", 0),
+            )
+            for v in missing_videos
+        ]
+
+        scope_desc = f"job={job_id}" if job_id else "all_jobs"
+        logger.info(
+            f"Playlist '{clean_playlist_id}' new-videos check for user {user_id}: "
+            f"mode={mode}, scope={scope_desc}, total_current={len(current_videos)}, "
+            f"already_downloaded={already_downloaded_count}, "
+            f"new_videos={len(new_videos_items)}"
+        )
+
+        return NewVideosResponse(
+            mode=mode,
+            source_type="playlist",
+            source_name=playlist_title,
+            total_current_videos=len(current_videos),
+            already_downloaded=already_downloaded_count,
+            new_videos_count=len(new_videos_items),
+            last_download_date=last_download_date,
+            reference_job_id=job_id,
+            new_videos=new_videos_items,
+        )
+
+    except ValueError as e:
+        logger.error(f"Playlist not found or invalid: {str(e)}")
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        logger.error(
+            f"Error detecting new videos for playlist {playlist_id}: {str(e)}",
+            exc_info=True,
+        )
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to detect new videos: {str(e)}",
         )
 
 
