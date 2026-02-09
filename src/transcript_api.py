@@ -685,6 +685,30 @@ class DownloadHistoryItem(BaseModel):
     )
 
 
+class SourceItem(BaseModel):
+    """A deduplicated channel or playlist the user has downloaded from."""
+
+    sourceId: str = Field(
+        ..., description="Channel handle/ID or playlist ID (from most recent job)"
+    )
+    sourceType: str = Field(..., description="'channel' or 'playlist'")
+    sourceName: str = Field(
+        ..., description="Display name of the channel or playlist (deduplication key)"
+    )
+    totalDownloads: int = Field(
+        ..., description="Number of completed download jobs for this source"
+    )
+    totalUniqueVideos: int = Field(
+        ..., description="Total unique videos successfully downloaded (no duplicates)"
+    )
+    latestJobId: str = Field(
+        ..., description="Job ID of the most recent completed download"
+    )
+    lastDownloadDate: str = Field(
+        ..., description="ISO timestamp of the most recent download"
+    )
+
+
 class NewVideosResponseItem(BaseModel):
     """A video from the current channel/playlist that hasn't been downloaded yet."""
 
@@ -710,8 +734,17 @@ class NewVideosResponse(BaseModel):
         ...,
         description="Number of videos already downloaded (scoped to job_id or all jobs)",
     )
+    no_transcript_count: int = Field(
+        0,
+        description="Number of videos we already know have no transcripts available (won't be retried)",
+    )
+    downloadable_count: int = Field(
+        ...,
+        description="Number of videos actually worth downloading (excludes no-transcript videos)",
+    )
     new_videos_count: int = Field(
-        ..., description="Number of new/missing videos available for download"
+        ...,
+        description="Total number of videos we don't have (includes no-transcript ones)",
     )
     last_download_date: Optional[str] = Field(
         None,
@@ -722,7 +755,12 @@ class NewVideosResponse(BaseModel):
         description="The job_id used as reference for the diff, or None if comparing against all jobs",
     )
     new_videos: List[NewVideosResponseItem] = Field(
-        ..., description="List of videos not yet downloaded"
+        ...,
+        description="List of videos worth downloading (no-transcript videos excluded)",
+    )
+    no_transcript_videos: List[NewVideosResponseItem] = Field(
+        default_factory=list,
+        description="List of videos known to have no transcripts (skipped from download)",
     )
 
 
@@ -1186,6 +1224,47 @@ async def get_user_profile(payload: dict = Depends(validate_jwt)):
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to retrieve user profile",
+        )
+
+
+@app.get("/user/sources", response_model=List[SourceItem])
+async def get_user_sources_endpoint(payload: dict = Depends(validate_jwt)):
+    """
+    Get deduplicated channels/playlists the user has downloaded from.
+    Groups by source_id + source_type across completed jobs.
+    """
+    try:
+        user_id = get_user_id_from_payload(payload)
+
+        from db_youtube_transcripts.job_manager import JobManager
+
+        rows = await JobManager.get_user_sources(user_id)
+
+        items = [
+            SourceItem(
+                sourceId=r["source_id"],
+                sourceType=r["source_type"] or "channel",
+                sourceName=r["source_name"] or "Unknown",
+                totalDownloads=r["total_downloads"],
+                totalUniqueVideos=r["total_unique_videos"],
+                latestJobId=r["latest_job_id"],
+                lastDownloadDate=(
+                    r["last_download_date"].isoformat()
+                    if r["last_download_date"]
+                    else ""
+                ),
+            )
+            for r in rows
+        ]
+
+        logger.info(f"Retrieved {len(items)} sources for user {user_id}")
+        return items
+
+    except Exception as e:
+        logger.error(f"Error getting user sources: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to retrieve user sources",
         )
 
 
@@ -2011,15 +2090,29 @@ async def get_channel_new_videos(
 
         if job_id:
             completed_ids = await JobManager.get_completed_video_ids_for_job(job_id)
+            no_transcript_ids = await JobManager.get_no_transcript_video_ids_for_job(
+                job_id
+            )
         else:
             completed_ids = await JobManager.get_completed_video_ids_for_user(user_id)
+            no_transcript_ids = await JobManager.get_no_transcript_video_ids_for_user(
+                user_id
+            )
 
         # 4. Compute the set of missing video IDs
+        #    "missing" = not completed (regardless of whether they failed)
         missing_ids = current_video_ids - completed_ids
         already_downloaded_count = len(current_video_ids) - len(missing_ids)
 
-        # 5. Filter current videos list to only missing ones
-        missing_videos = [v for v in current_videos if v["id"] in missing_ids]
+        # 4b. Among missing videos, separate those known to have no transcripts
+        no_transcript_in_missing = missing_ids & no_transcript_ids
+        downloadable_ids = missing_ids - no_transcript_ids
+
+        # 5. Filter current videos list into downloadable and no-transcript buckets
+        downloadable_videos = [v for v in current_videos if v["id"] in downloadable_ids]
+        no_transcript_videos = [
+            v for v in current_videos if v["id"] in no_transcript_in_missing
+        ]
 
         # 6. If mode is "only_newer", further filter by publish date
         last_download_date = None
@@ -2050,43 +2143,53 @@ async def get_channel_new_videos(
                 last_download_date = last_download_date_dt.isoformat()
 
                 # Filter to only videos published after the cutoff date
-                filtered = []
-                for v in missing_videos:
-                    pub_date_str = v.get("publishedAt", "")
-                    if pub_date_str:
-                        try:
-                            from datetime import datetime as dt
+                def _filter_by_date(videos_list):
+                    filtered = []
+                    for v in videos_list:
+                        pub_date_str = v.get("publishedAt", "")
+                        if pub_date_str:
+                            try:
+                                from datetime import datetime as dt
 
-                            pub_date = dt.fromisoformat(pub_date_str)
-                            if pub_date > last_download_date_dt.replace(tzinfo=None):
+                                pub_date = dt.fromisoformat(pub_date_str)
+                                if pub_date > last_download_date_dt.replace(
+                                    tzinfo=None
+                                ):
+                                    filtered.append(v)
+                            except (ValueError, TypeError):
                                 filtered.append(v)
-                        except (ValueError, TypeError):
+                        else:
                             filtered.append(v)
-                    else:
-                        filtered.append(v)
+                    return filtered
 
-                missing_videos = filtered
+                downloadable_videos = _filter_by_date(downloadable_videos)
+                no_transcript_videos = _filter_by_date(no_transcript_videos)
 
-        # 7. Build response
-        new_videos_items = [
-            NewVideosResponseItem(
-                id=v["id"],
-                title=v.get("title", "Untitled"),
-                publishedAt=v.get("publishedAt"),
-                url=v.get("url", f"https://www.youtube.com/watch?v={v['id']}"),
-                duration=v.get("duration"),
-                duration_seconds=v.get("duration_seconds"),
-                viewCount=v.get("viewCount", 0),
-            )
-            for v in missing_videos
-        ]
+        # 7. Build response items
+        def _to_response_items(videos_list):
+            return [
+                NewVideosResponseItem(
+                    id=v["id"],
+                    title=v.get("title", "Untitled"),
+                    publishedAt=v.get("publishedAt"),
+                    url=v.get("url", f"https://www.youtube.com/watch?v={v['id']}"),
+                    duration=v.get("duration"),
+                    duration_seconds=v.get("duration_seconds"),
+                    viewCount=v.get("viewCount", 0),
+                )
+                for v in videos_list
+            ]
+
+        new_videos_items = _to_response_items(downloadable_videos)
+        no_transcript_items = _to_response_items(no_transcript_videos)
 
         scope_desc = f"job={job_id}" if job_id else "all_jobs"
         logger.info(
             f"Channel '{channel_name}' new-videos check for user {user_id}: "
             f"mode={mode}, scope={scope_desc}, total_current={len(current_videos)}, "
             f"already_downloaded={already_downloaded_count}, "
-            f"new_videos={len(new_videos_items)}"
+            f"no_transcript={len(no_transcript_items)}, "
+            f"downloadable={len(new_videos_items)}"
         )
 
         return NewVideosResponse(
@@ -2095,10 +2198,13 @@ async def get_channel_new_videos(
             source_name=channel_title,
             total_current_videos=len(current_videos),
             already_downloaded=already_downloaded_count,
-            new_videos_count=len(new_videos_items),
+            no_transcript_count=len(no_transcript_items),
+            downloadable_count=len(new_videos_items),
+            new_videos_count=len(new_videos_items) + len(no_transcript_items),
             last_download_date=last_download_date,
             reference_job_id=job_id,
             new_videos=new_videos_items,
+            no_transcript_videos=no_transcript_items,
         )
 
     except ValueError as e:
@@ -2563,15 +2669,29 @@ async def get_playlist_new_videos(
 
         if job_id:
             completed_ids = await JobManager.get_completed_video_ids_for_job(job_id)
+            no_transcript_ids = await JobManager.get_no_transcript_video_ids_for_job(
+                job_id
+            )
         else:
             completed_ids = await JobManager.get_completed_video_ids_for_user(user_id)
+            no_transcript_ids = await JobManager.get_no_transcript_video_ids_for_user(
+                user_id
+            )
 
         # 4. Compute the set of missing video IDs
+        #    "missing" = not completed (regardless of whether they failed)
         missing_ids = current_video_ids - completed_ids
         already_downloaded_count = len(current_video_ids) - len(missing_ids)
 
-        # 5. Filter current videos list to only missing ones
-        missing_videos = [v for v in current_videos if v["id"] in missing_ids]
+        # 4b. Among missing videos, separate those known to have no transcripts
+        no_transcript_in_missing = missing_ids & no_transcript_ids
+        downloadable_ids = missing_ids - no_transcript_ids
+
+        # 5. Filter current videos list into downloadable and no-transcript buckets
+        downloadable_videos = [v for v in current_videos if v["id"] in downloadable_ids]
+        no_transcript_videos = [
+            v for v in current_videos if v["id"] in no_transcript_in_missing
+        ]
 
         # 6. If mode is "only_newer", further filter by publish date
         last_download_date = None
@@ -2593,43 +2713,53 @@ async def get_playlist_new_videos(
                 last_download_date = last_download_date_dt.isoformat()
 
                 # Filter to only videos published after the cutoff date
-                filtered = []
-                for v in missing_videos:
-                    pub_date_str = v.get("publishedAt", "")
-                    if pub_date_str:
-                        try:
-                            from datetime import datetime as dt
+                def _filter_by_date(videos_list):
+                    filtered = []
+                    for v in videos_list:
+                        pub_date_str = v.get("publishedAt", "")
+                        if pub_date_str:
+                            try:
+                                from datetime import datetime as dt
 
-                            pub_date = dt.fromisoformat(pub_date_str)
-                            if pub_date > last_download_date_dt.replace(tzinfo=None):
+                                pub_date = dt.fromisoformat(pub_date_str)
+                                if pub_date > last_download_date_dt.replace(
+                                    tzinfo=None
+                                ):
+                                    filtered.append(v)
+                            except (ValueError, TypeError):
                                 filtered.append(v)
-                        except (ValueError, TypeError):
+                        else:
                             filtered.append(v)
-                    else:
-                        filtered.append(v)
+                    return filtered
 
-                missing_videos = filtered
+                downloadable_videos = _filter_by_date(downloadable_videos)
+                no_transcript_videos = _filter_by_date(no_transcript_videos)
 
-        # 7. Build response
-        new_videos_items = [
-            NewVideosResponseItem(
-                id=v["id"],
-                title=v.get("title", "Untitled"),
-                publishedAt=v.get("publishedAt"),
-                url=v.get("url", f"https://www.youtube.com/watch?v={v['id']}"),
-                duration=v.get("duration"),
-                duration_seconds=v.get("duration_seconds"),
-                viewCount=v.get("viewCount", 0),
-            )
-            for v in missing_videos
-        ]
+        # 7. Build response items
+        def _to_response_items(videos_list):
+            return [
+                NewVideosResponseItem(
+                    id=v["id"],
+                    title=v.get("title", "Untitled"),
+                    publishedAt=v.get("publishedAt"),
+                    url=v.get("url", f"https://www.youtube.com/watch?v={v['id']}"),
+                    duration=v.get("duration"),
+                    duration_seconds=v.get("duration_seconds"),
+                    viewCount=v.get("viewCount", 0),
+                )
+                for v in videos_list
+            ]
+
+        new_videos_items = _to_response_items(downloadable_videos)
+        no_transcript_items = _to_response_items(no_transcript_videos)
 
         scope_desc = f"job={job_id}" if job_id else "all_jobs"
         logger.info(
             f"Playlist '{clean_playlist_id}' new-videos check for user {user_id}: "
             f"mode={mode}, scope={scope_desc}, total_current={len(current_videos)}, "
             f"already_downloaded={already_downloaded_count}, "
-            f"new_videos={len(new_videos_items)}"
+            f"no_transcript={len(no_transcript_items)}, "
+            f"downloadable={len(new_videos_items)}"
         )
 
         return NewVideosResponse(
@@ -2638,10 +2768,13 @@ async def get_playlist_new_videos(
             source_name=playlist_title,
             total_current_videos=len(current_videos),
             already_downloaded=already_downloaded_count,
-            new_videos_count=len(new_videos_items),
+            no_transcript_count=len(no_transcript_items),
+            downloadable_count=len(new_videos_items),
+            new_videos_count=len(new_videos_items) + len(no_transcript_items),
             last_download_date=last_download_date,
             reference_job_id=job_id,
             new_videos=new_videos_items,
+            no_transcript_videos=no_transcript_items,
         )
 
     except ValueError as e:
