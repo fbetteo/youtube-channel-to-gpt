@@ -764,6 +764,27 @@ class NewVideosResponse(BaseModel):
     )
 
 
+class DownloadAllContentRequest(BaseModel):
+    """Request to download all unique transcripts for a source across every job."""
+
+    source_type: str = Field(
+        default="channel",
+        description="'channel' or 'playlist'",
+    )
+    channel_name: Optional[str] = Field(
+        default=None,
+        description="Channel name or handle (required when source_type='channel')",
+    )
+    playlist_id: Optional[str] = Field(
+        default=None,
+        description="Playlist ID (required when source_type='playlist')",
+    )
+    concatenate_all: bool = Field(
+        default=False,
+        description="Return single concatenated file instead of individual files",
+    )
+
+
 def verify_api_key(request: Request):
     """Verify API key for authenticated endpoints"""
     api_key = request.headers.get("X-API-Key")
@@ -2892,6 +2913,123 @@ async def download_selected_playlist_videos(
         raise HTTPException(
             status_code=500,
             detail=f"Failed to start playlist transcript download: {str(e)}",
+        )
+
+
+# =============================================
+# CROSS-JOB ALL-CONTENT DOWNLOAD
+# =============================================
+
+
+@app.post("/download-all-content")
+async def download_all_content(
+    request: DownloadAllContentRequest,
+    payload: dict = Depends(validate_jwt),
+):
+    """
+    Download ALL unique transcripts for a channel or playlist across every job
+    the user has completed. Deduplicates by video_id (keeps newest processed
+    version). Transcripts are ordered newest-first by published_at.
+
+    No credits are charged — the user already paid when each job ran.
+
+    REQUIRES AUTHENTICATION: Valid JWT token required.
+    """
+    user_id = get_user_id_from_payload(payload)
+    source_type = request.source_type.lower()
+    concatenate_all = request.concatenate_all
+
+    if source_type not in ("channel", "playlist"):
+        raise HTTPException(
+            status_code=400,
+            detail="source_type must be 'channel' or 'playlist'",
+        )
+
+    # Validate that the correct identifier was provided for the source_type
+    if source_type == "channel" and not request.channel_name:
+        raise HTTPException(
+            status_code=400,
+            detail="channel_name is required when source_type='channel'",
+        )
+    if source_type == "playlist" and not request.playlist_id:
+        raise HTTPException(
+            status_code=400,
+            detail="playlist_id is required when source_type='playlist'",
+        )
+
+    # Display label for logs and filenames
+    source_label = (
+        request.channel_name.strip()
+        if source_type == "channel"
+        else request.playlist_id.strip()
+    )
+
+    try:
+        logger.info(
+            f"All-content download requested by user {user_id}: "
+            f"{source_type}='{source_label}', concatenate={concatenate_all}"
+        )
+
+        zip_start = time.time()
+        zip_buffer = await youtube_service.create_all_content_zip_from_s3(
+            user_id=user_id,
+            source_type=source_type,
+            channel_name=request.channel_name,
+            playlist_id=request.playlist_id,
+            concatenate_all=concatenate_all,
+        )
+        zip_end = time.time()
+
+        zip_size = len(zip_buffer.getvalue())
+        logger.info(
+            f"All-content ZIP for '{source_label}' created in {zip_end - zip_start:.2f}s, "
+            f"size: {zip_size:,} bytes ({zip_size / 1024 / 1024:.2f} MB)"
+        )
+
+        # Build response filename
+        from urllib.parse import quote
+
+        safe_name = youtube_service.sanitize_filename(source_label)
+        suffix = (
+            "_all_concatenated_transcripts.zip"
+            if concatenate_all
+            else "_all_transcripts.zip"
+        )
+        filename_display = f"{safe_name}{suffix}"
+        filename_encoded = quote(filename_display.encode("utf-8"))
+
+        # ASCII-only fallback for older browsers
+        filename_ascii = filename_display.encode("ascii", "ignore").decode("ascii")
+        if not filename_ascii.replace(suffix, "").strip("_"):
+            filename_ascii = f"transcripts{suffix}"
+
+        headers = {
+            "Content-Disposition": (
+                f'attachment; filename="{filename_ascii}"; '
+                f"filename*=UTF-8''{filename_encoded}"
+            ),
+            "X-Source-Type": source_type,
+            "X-Source-Name": source_label,
+            "X-Generation-Time-Seconds": f"{zip_end - zip_start:.2f}",
+        }
+
+        return Response(
+            content=zip_buffer.getvalue(),
+            media_type="application/zip",
+            headers=headers,
+        )
+
+    except ValueError as e:
+        logger.warning(f"All-content download error: {str(e)}")
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        logger.error(
+            f"Error in all-content download for '{source_label}': {str(e)}",
+            exc_info=True,
+        )
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to download all content: {str(e)}",
         )
 
 

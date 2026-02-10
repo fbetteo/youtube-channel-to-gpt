@@ -3160,6 +3160,222 @@ async def create_concatenated_transcript_from_s3_sequential(
 
 
 # =============================================
+# CROSS-JOB ALL-CONTENT DOWNLOAD FROM S3
+# =============================================
+
+
+async def create_all_content_zip_from_s3(
+    user_id: str,
+    source_type: str,
+    channel_name: str = None,
+    playlist_id: str = None,
+    concatenate_all: bool = False,
+) -> Optional[io.BytesIO]:
+    """
+    Create a ZIP with ALL unique completed transcripts for a source across
+    every job the user has run. Deduplicates by video_id (keeps newest
+    processed version). Transcripts are ordered newest-first by published_at.
+
+    Args:
+        user_id: User UUID
+        source_type: 'channel' or 'playlist'
+        channel_name: Channel name/handle (required when source_type='channel')
+        playlist_id: Playlist ID (required when source_type='playlist')
+        concatenate_all: If True, produce a single concatenated .txt inside the ZIP
+
+    Returns:
+        BytesIO containing the ZIP, or None if no transcripts found
+
+    Raises:
+        ValueError: On configuration errors or empty results
+    """
+    from db_youtube_transcripts.job_manager import JobManager
+
+    # Display label for logs / filenames
+    source_label = (
+        channel_name.strip() if source_type == "channel" else playlist_id.strip()
+    )
+
+    # 1. Query all unique completed videos for this source (newest first)
+    videos = await JobManager.get_all_completed_videos_for_source(
+        user_id=user_id,
+        source_type=source_type,
+        channel_name=channel_name,
+        playlist_id=playlist_id,
+    )
+
+    if not videos:
+        raise ValueError(
+            f"No completed transcripts found for {source_type} '{source_label}'"
+        )
+
+    logger.info(
+        f"All-content download: {len(videos)} unique videos for "
+        f"{source_type} '{source_label}' (user {user_id})"
+    )
+
+    # 2. Set up S3 clients (same logic as the per-job function)
+    s3_client, bucket_name = get_s3_client()
+    if not bucket_name:
+        raise ValueError("S3 bucket name not configured")
+
+    s3_fallback_client, fallback_bucket_name = get_s3_fallback_client()
+
+    # Determine which bucket to use by checking the first file
+    use_fallback = False
+    if s3_fallback_client and fallback_bucket_name and videos:
+        first_key = videos[0]["s3_key"]
+
+        def _check_first_file():
+            try:
+                s3_client.head_object(Bucket=bucket_name, Key=first_key)
+                return False
+            except ClientError as e:
+                error_code = (
+                    e.response.get("Error", {}).get("Code")
+                    if hasattr(e, "response")
+                    else None
+                )
+                if error_code in {"NoSuchKey", "404", "NotFound"}:
+                    try:
+                        s3_fallback_client.head_object(
+                            Bucket=fallback_bucket_name, Key=first_key
+                        )
+                        return True
+                    except Exception:
+                        pass
+                return False
+
+        use_fallback = await asyncio.to_thread(_check_first_file)
+
+    active_client = s3_fallback_client if use_fallback else s3_client
+    active_bucket = fallback_bucket_name if use_fallback else bucket_name
+
+    # 3. Download all files concurrently
+    async def download_file(video: Dict[str, Any]):
+        s3_key = video["s3_key"]
+        video_id = video["video_id"]
+
+        def _download():
+            try:
+                response = active_client.get_object(Bucket=active_bucket, Key=s3_key)
+                return {
+                    "video_id": video_id,
+                    "title": video.get("title", video_id),
+                    "published_at": video.get("published_at"),
+                    "content": response["Body"].read(),
+                    "filename": os.path.basename(s3_key),
+                    "success": True,
+                    "s3_key": s3_key,
+                }
+            except Exception as e:
+                logger.error(f"Failed to download {s3_key}: {str(e)}")
+                return {
+                    "video_id": video_id,
+                    "title": video.get("title", video_id),
+                    "published_at": video.get("published_at"),
+                    "content": f"Error downloading transcript for video {video_id}: {str(e)}".encode(),
+                    "filename": f"{video_id}_ERROR.txt",
+                    "success": False,
+                    "s3_key": s3_key,
+                }
+
+        return await asyncio.to_thread(_download)
+
+    semaphore = asyncio.Semaphore(200)
+
+    async def download_with_limit(video):
+        async with semaphore:
+            return await download_file(video)
+
+    download_start = time.time()
+    download_tasks = [download_with_limit(v) for v in videos]
+    download_results = await asyncio.gather(*download_tasks)
+    download_end = time.time()
+
+    successful = [r for r in download_results if r["success"]]
+    logger.info(
+        f"All-content download: {len(successful)}/{len(download_results)} files "
+        f"downloaded in {download_end - download_start:.2f}s"
+    )
+
+    # 4. Build the ZIP
+    zip_buffer = io.BytesIO()
+
+    try:
+        if concatenate_all:
+            # --- Concatenated mode (newest on top — already ordered) ---
+            parts: List[str] = []
+            parts.append(f"{source_type.upper()}: {source_label}")
+            parts.append(f"TOTAL VIDEOS: {len(successful)}")
+            parts.append(f"GENERATED: {time.strftime('%Y-%m-%d %H:%M:%S')}")
+            parts.append("=" * 80)
+            parts.append("")
+
+            for i, result in enumerate(successful, 1):
+                try:
+                    content = result["content"]
+                    if isinstance(content, bytes):
+                        content = content.decode("utf-8")
+                    parts.append(f"[VIDEO {i}/{len(successful)}]")
+                    parts.append(f"Video ID: {result['video_id']}")
+                    parts.append("-" * 60)
+                    parts.append(content)
+                    parts.append("")
+                    parts.append("=" * 80)
+                    parts.append("")
+                except Exception as e:
+                    logger.error(
+                        f"Error processing transcript for {result['video_id']}: {e}"
+                    )
+                    parts.append(f"[VIDEO {i}/{len(successful)}] - ERROR")
+                    parts.append(f"Video ID: {result['video_id']}")
+                    parts.append(f"Error: {str(e)}")
+                    parts.append("=" * 80)
+                    parts.append("")
+
+            concatenated_text = "\n".join(parts)
+
+            with zipfile.ZipFile(
+                zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
+            ) as zf:
+                safe_name = sanitize_filename(source_label)
+                fname = f"{safe_name}_all_transcripts.txt"
+                zi = zipfile.ZipInfo(fname)
+                zi.flag_bits |= 0x800  # UTF-8 flag
+                data = (
+                    concatenated_text.encode("utf-8")
+                    if isinstance(concatenated_text, str)
+                    else concatenated_text
+                )
+                zf.writestr(zi, data)
+
+        else:
+            # --- Individual files mode ---
+            with zipfile.ZipFile(
+                zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
+            ) as zf:
+                for result in download_results:
+                    zi = zipfile.ZipInfo(result["filename"])
+                    zi.flag_bits |= 0x800
+                    content = result["content"]
+                    if isinstance(content, str):
+                        content = content.encode("utf-8")
+                    zf.writestr(zi, content)
+
+        zip_buffer.seek(0)
+        zip_size_mb = len(zip_buffer.getvalue()) / (1024 * 1024)
+        logger.info(
+            f"All-content ZIP for '{source_label}': {len(successful)} files, "
+            f"{zip_size_mb:.2f} MB"
+        )
+        return zip_buffer
+
+    finally:
+        del download_results
+
+
+# =============================================
 # LEGACY ZIP CREATION (LOCAL FILES)
 # =============================================
 

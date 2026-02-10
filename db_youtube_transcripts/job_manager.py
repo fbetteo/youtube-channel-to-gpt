@@ -1050,8 +1050,10 @@ class JobManager:
     async def get_user_sources(user_id: str) -> List[Dict[str, Any]]:
         """
         Get deduplicated channels/playlists the user has downloaded from.
-        Groups by (source_type, normalized source_name) to handle variations.
-        Uses LOWER(TRIM(source_name)) to handle case and whitespace differences.
+        Groups by source-specific identifiers for accurate deduplication.
+        - Channels: group by normalized channel_name
+        - Playlists: group by normalized playlist_id
+        Uses LOWER(TRIM(...)) to handle case and whitespace differences.
         Counts unique videos by joining with job_videos.
 
         Args:
@@ -1065,12 +1067,14 @@ class JobManager:
             async with get_db_connection() as conn:
                 query = """
                     SELECT
-                        -- Group by source_type and normalized source_name
                         j.source_type,
                         -- Use the most recent source_name as the canonical display name
                         (ARRAY_AGG(j.source_name ORDER BY j.created_at DESC))[1] AS source_name,
                         -- Pick source_id from the most recent job (for API calls to /new-videos)
                         (ARRAY_AGG(j.source_id ORDER BY j.created_at DESC))[1] AS source_id,
+                        -- Explicit identifiers for accurate deduplication
+                        (ARRAY_AGG(j.channel_name ORDER BY j.created_at DESC))[1] AS channel_name,
+                        (ARRAY_AGG(j.playlist_id ORDER BY j.created_at DESC))[1] AS playlist_id,
                         -- Count distinct jobs
                         COUNT(DISTINCT j.job_id)::int AS total_downloads,
                         -- Count distinct videos (unique across all jobs for this source)
@@ -1082,8 +1086,16 @@ class JobManager:
                     LEFT JOIN job_videos jv ON jv.job_id = j.job_id
                     WHERE j.user_id = $1
                       AND j.status IN ('completed', 'completed_with_errors')
-                      AND j.source_name IS NOT NULL
-                    GROUP BY j.source_type, LOWER(TRIM(j.source_name))
+                      AND (
+                          (j.source_type = 'channel' AND j.channel_name IS NOT NULL)
+                          OR (j.source_type = 'playlist' AND j.playlist_id IS NOT NULL)
+                      )
+                    GROUP BY
+                        j.source_type,
+                        CASE
+                            WHEN j.source_type = 'channel' THEN LOWER(TRIM(j.channel_name))
+                            ELSE LOWER(TRIM(j.playlist_id))
+                        END
                     ORDER BY last_download_date DESC
                 """
                 rows = await conn.fetch(query, user_id)
@@ -1092,6 +1104,8 @@ class JobManager:
                         "source_id": r["source_id"],
                         "source_type": r["source_type"],
                         "source_name": r["source_name"],
+                        "channel_name": r["channel_name"],
+                        "playlist_id": r["playlist_id"],
                         "total_downloads": r["total_downloads"],
                         "total_unique_videos": r["total_unique_videos"],
                         "latest_job_id": r["latest_job_id"],
@@ -1104,6 +1118,87 @@ class JobManager:
 
         except Exception as e:
             logger.error(f"Failed to get user sources for {user_id}: {str(e)}")
+            return []
+
+    @staticmethod
+    async def get_all_completed_videos_for_source(
+        user_id: str,
+        source_type: str,
+        channel_name: str = None,
+        playlist_id: str = None,
+    ) -> List[Dict[str, Any]]:
+        """
+        Get all unique completed videos (with S3 keys) for a user + source,
+        across ALL jobs. Deduplicates by video_id, keeping the most recent
+        version (latest processed_at). Ordered newest-first by published_at.
+
+        Matches against the source-specific column in the jobs table:
+        - channel_name column for source_type='channel'
+        - playlist_id column for source_type='playlist'
+
+        Args:
+            user_id: User UUID
+            source_type: 'channel' or 'playlist'
+            channel_name: Channel name/handle (required when source_type='channel')
+            playlist_id: Playlist ID (required when source_type='playlist')
+
+        Returns:
+            List of dicts with video_id, title, s3_key, published_at, etc.
+        """
+        # Determine which column and value to filter on
+        if source_type == "channel":
+            if not channel_name:
+                raise ValueError("channel_name is required when source_type='channel'")
+            source_column = "j.channel_name"
+            source_value = channel_name.strip()
+        elif source_type == "playlist":
+            if not playlist_id:
+                raise ValueError("playlist_id is required when source_type='playlist'")
+            source_column = "j.playlist_id"
+            source_value = playlist_id.strip()
+        else:
+            raise ValueError(f"Invalid source_type: {source_type}")
+
+        try:
+            async with get_db_connection() as conn:
+                # Use DISTINCT ON to keep only the most recently processed version
+                # of each video_id, then order by published_at DESC (newest first)
+                query = f"""
+                    SELECT * FROM (
+                        SELECT DISTINCT ON (jv.video_id)
+                            jv.video_id,
+                            jv.title,
+                            jv.s3_key,
+                            jv.published_at,
+                            jv.url,
+                            jv.view_count,
+                            jv.duration_seconds,
+                            jv.duration_category,
+                            jv.file_size,
+                            jv.processed_at,
+                            j.job_id,
+                            j.source_name
+                        FROM job_videos jv
+                        JOIN jobs j ON j.job_id = jv.job_id
+                        WHERE j.user_id = $1
+                          AND j.source_type = $2
+                          AND LOWER(TRIM({source_column})) = LOWER(TRIM($3))
+                          AND jv.status = 'completed'
+                          AND jv.s3_key IS NOT NULL
+                        ORDER BY jv.video_id, jv.processed_at DESC NULLS LAST
+                    ) AS unique_videos
+                    ORDER BY published_at DESC NULLS LAST
+                """
+                records = await conn.fetch(query, user_id, source_type, source_value)
+                results = [dict(r) for r in records]
+                logger.info(
+                    f"Found {len(results)} unique completed videos for user {user_id}, "
+                    f"source_type={source_type}, {source_column}={source_value}"
+                )
+                return results
+
+        except Exception as e:
+            logger.error(f"Failed to get all completed videos for source: {str(e)}")
             return []
 
     @staticmethod
