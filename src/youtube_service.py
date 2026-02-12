@@ -650,6 +650,25 @@ def sanitize_filename(filename: str, max_len: int = 30) -> str:
     return sanitized[:max_len]
 
 
+def build_transcript_filename(
+    video_id: str,
+    title: Optional[str] = None,
+    max_title_len: int = 100,
+    error_suffix: Optional[str] = None,
+) -> str:
+    """Build a safe transcript filename with title + video id for uniqueness."""
+    safe_title = sanitize_filename(title or "", max_len=max_title_len)
+    if safe_title and safe_title != "_":
+        base = f"{safe_title}_{video_id}"
+    else:
+        base = video_id
+
+    if error_suffix:
+        base = f"{base}_{error_suffix}"
+
+    return f"{base}.txt"
+
+
 async def pre_fetch_videos_metadata(
     video_ids: List[str], batch_size: int = 50
 ) -> Dict[str, Dict[str, Any]]:
@@ -2358,7 +2377,10 @@ async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:
         with zipfile.ZipFile(zip_buffer, "w") as zip_file:
             for file_info in job["files"]:
                 file_path = file_info["file_path"]
-                filename = os.path.basename(file_path)
+                filename = build_transcript_filename(
+                    file_info.get("video_id"),
+                    file_info.get("title"),
+                )
                 zip_file.write(file_path, filename)
 
     # Seek to beginning of buffer for response
@@ -2744,12 +2766,14 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
         """Download a single file from S3"""
         s3_key = file_info["s3_key"]
         video_id = file_info["video_id"]
+        title = file_info.get("title")
 
         def _download():
             try:
                 response = active_client.get_object(Bucket=active_bucket, Key=s3_key)
                 return {
                     "video_id": video_id,
+                    "title": title,
                     "content": response["Body"].read(),
                     "filename": os.path.basename(s3_key),
                     "success": True,
@@ -2759,6 +2783,7 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
                 logger.error(f"Failed to download {s3_key}: {str(e)}")
                 return {
                     "video_id": video_id,
+                    "title": title,
                     "content": f"Error downloading transcript for video {video_id}: {str(e)}".encode(),
                     "filename": f"{video_id}_ERROR.txt",
                     "success": False,
@@ -2826,8 +2851,13 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
                 zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
             ) as zip_file:
                 for result in download_results:
+                    filename = build_transcript_filename(
+                        result["video_id"],
+                        result.get("title"),
+                        error_suffix=None if result["success"] else "ERROR",
+                    )
                     # Create ZipInfo with UTF-8 flag to support non-ASCII characters (e.g., Russian)
-                    zip_info = zipfile.ZipInfo(result["filename"])
+                    zip_info = zipfile.ZipInfo(filename)
                     zip_info.flag_bits |= 0x800  # Set UTF-8 flag (bit 11)
 
                     # Ensure content is bytes (encode if string with UTF-8 to support Russian/Unicode)
@@ -3050,6 +3080,7 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
             for file_info in job["files"]:
                 s3_key = file_info["s3_key"]
                 video_id = file_info["video_id"]
+                title = file_info.get("title")
 
                 try:
                     # Download file content from S3
@@ -3060,9 +3091,7 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
                     file_content = response["Body"].read()
 
                     # Create filename from video ID or extract from S3 key
-                    filename = f"{video_id}.txt"
-                    if "/" in s3_key:
-                        filename = os.path.basename(s3_key)
+                    filename = build_transcript_filename(video_id, title)
 
                     # Ensure content is bytes (encode if string with UTF-8 to support Russian/Unicode)
                     if isinstance(file_content, str):
@@ -3080,7 +3109,9 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
                     error_content = (
                         f"Error downloading transcript for video {video_id}: {str(e)}"
                     )
-                    error_filename = f"{video_id}_ERROR.txt"
+                    error_filename = build_transcript_filename(
+                        video_id, title, error_suffix="ERROR"
+                    )
                     zip_info = zipfile.ZipInfo(error_filename)
                     zip_info.flag_bits |= 0x800  # Set UTF-8 flag (bit 11)
                     zip_file.writestr(zip_info, error_content.encode("utf-8"))
@@ -3356,7 +3387,12 @@ async def create_all_content_zip_from_s3(
                 zip_buffer, "w", compression=zipfile.ZIP_DEFLATED
             ) as zf:
                 for result in download_results:
-                    zi = zipfile.ZipInfo(result["filename"])
+                    filename = build_transcript_filename(
+                        result["video_id"],
+                        result.get("title"),
+                        error_suffix=None if result["success"] else "ERROR",
+                    )
+                    zi = zipfile.ZipInfo(filename)
                     zi.flag_bits |= 0x800
                     content = result["content"]
                     if isinstance(content, str):
