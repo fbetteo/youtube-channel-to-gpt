@@ -1534,6 +1534,7 @@ def _fetch_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
         "extract_flat": True,
         "dump_single_json": True,
         "ignoreerrors": True,
+        "extractor_args": {"youtubetab": {"approximate_date": [""]}},
     }
     # Add proxy if configured
     ydl_opts = _get_ydl_opts(ydl_opts)
@@ -1567,7 +1568,7 @@ def _fetch_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
                 if title == "[Private video]" or title == "[Deleted video]":
                     continue
 
-                duration_seconds = entry.get("duration")
+                duration_seconds = int(entry.get("duration") or 0)
                 if duration_seconds:
                     duration_category = _categorize_duration(duration_seconds)
                 else:
@@ -1645,6 +1646,7 @@ def _fetch_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
         "extract_flat": True,
         "dump_single_json": True,
         "ignoreerrors": True,
+        "extractor_args": {"youtubetab": {"approximate_date": [""]}},
     }
     # Add proxy if configured
     ydl_opts = _get_ydl_opts(ydl_opts)
@@ -1670,7 +1672,7 @@ def _fetch_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
         if title == "[Private video]" or title == "[Deleted video]":
             continue
 
-        duration_seconds = entry.get("duration")
+        duration_seconds = int(entry.get("duration") or 0)
         if duration_seconds:
             duration_category = _categorize_duration(duration_seconds)
         else:
