@@ -1632,6 +1632,102 @@ async def get_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
         raise ValueError(f"Failed to fetch all videos: {str(e)}")
 
 
+def _extract_playlist_id_from_url(url: str) -> Optional[str]:
+    """Extract playlist ID from a playlist URL if present."""
+    if not url:
+        return None
+
+    match = re.search(r"[?&]list=([a-zA-Z0-9_-]{10,})", url)
+    if match:
+        return match.group(1)
+    return None
+
+
+def _fetch_all_channel_playlists(channel_id: str) -> List[Dict[str, Any]]:
+    """
+    Fetch all playlists from a channel using yt-dlp.
+    Returns a list of playlist metadata dicts with lightweight fields.
+    """
+    logger.info(f"Fetching all playlists for channel {channel_id} using yt-dlp")
+
+    ydl_opts = {
+        "quiet": True,
+        "extract_flat": True,
+        "dump_single_json": True,
+        "ignoreerrors": True,
+    }
+    ydl_opts = _get_ydl_opts(ydl_opts)
+
+    url = f"https://www.youtube.com/channel/{channel_id}/playlists"
+
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        info = ydl.extract_info(url, download=False)
+
+    if not info:
+        raise ValueError(f"Channel playlists not found for channel {channel_id}")
+
+    entries = info.get("entries", [])
+    logger.info(f"Found {len(entries)} raw playlist entries for channel {channel_id}")
+
+    playlists_map: Dict[str, Dict[str, Any]] = {}
+
+    for entry in entries:
+        if not entry:
+            continue
+
+        title = entry.get("title", "Untitled")
+        if title in {"[Private playlist]", "[Deleted playlist]"}:
+            continue
+
+        playlist_id = entry.get("id")
+        entry_url = entry.get("url") or entry.get("webpage_url") or ""
+
+        if not playlist_id or not re.match(r"^[a-zA-Z0-9_-]{10,}$", str(playlist_id)):
+            playlist_id = _extract_playlist_id_from_url(entry_url)
+
+        if not playlist_id:
+            continue
+
+        playlists_map[playlist_id] = {
+            "playlistId": playlist_id,
+            "title": title,
+            "url": f"https://www.youtube.com/playlist?list={playlist_id}",
+            "videoCount": None,
+            "thumbnail": entry.get("thumbnail", ""),
+            "channelId": channel_id,
+            "channelTitle": entry.get("uploader") or entry.get("channel") or "",
+        }
+
+    playlists = list(playlists_map.values())
+    logger.info(
+        f"Total unique playlists found for channel {channel_id}: {len(playlists)}"
+    )
+
+    return playlists
+
+
+async def get_all_channel_playlists(channel_id: str) -> List[Dict[str, Any]]:
+    """
+    Async wrapper for _fetch_all_channel_playlists with better error handling and logging.
+
+    Args:
+        channel_id: YouTube channel ID
+
+    Returns:
+        List of playlist dictionaries with lightweight metadata
+    """
+    try:
+        logger.info(f"Fetching all playlists for channel {channel_id}")
+        playlists = await asyncio.to_thread(_fetch_all_channel_playlists, channel_id)
+        logger.info(
+            f"Successfully fetched {len(playlists)} playlists for channel {channel_id}"
+        )
+        return playlists
+    except Exception as e:
+        logger.error(f"Error in get_all_channel_playlists for {channel_id}: {str(e)}")
+        raise ValueError(f"Failed to fetch all playlists: {str(e)}")
+
+
 def _fetch_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
     """
     Fetch all videos from a playlist using yt-dlp.

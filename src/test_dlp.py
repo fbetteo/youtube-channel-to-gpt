@@ -37,3 +37,19 @@ asd = _fetch_all_playlist_videos("PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ")
 
 
 asd
+
+### test list of videos in a playlist
+url = f"https://www.youtube.com/channel/UCXUPKJO5MZQN11PqgIvyuvQ/playlists"
+
+ydl_opts = {
+    "quiet": True,
+    "extract_flat": True,
+    "dump_single_json": True,
+    "ignoreerrors": True,
+}
+ydl_opts = _get_ydl_opts(ydl_opts)
+
+with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+    info = ydl.extract_info(url, download=False)
+
+info
