@@ -647,6 +647,59 @@ class SelectedPlaylistVideosRequest(BaseModel):
     )
 
 
+class BatchPlaylistSelection(BaseModel):
+    playlist_id: str = Field(..., description="YouTube playlist ID or URL")
+    title: Optional[str] = Field(
+        default=None, description="Optional playlist title from frontend"
+    )
+
+
+class BatchPlaylistDownloadRequest(BaseModel):
+    playlists: List[BatchPlaylistSelection] = Field(
+        ..., description="Selected playlists to process"
+    )
+    channel_name: Optional[str] = Field(
+        default=None,
+        description="Optional channel name for batch context",
+    )
+    max_concurrent_jobs: int = Field(
+        default=3,
+        description="Max number of child playlist job creations running in parallel",
+    )
+    # Formatting options (applied to every child playlist job)
+    include_timestamps: bool = Field(
+        default=False, description="Include timestamps in transcript"
+    )
+    include_video_title: bool = Field(
+        default=True, description="Include video title in header"
+    )
+    include_video_id: bool = Field(
+        default=True, description="Include video ID in header"
+    )
+    include_video_url: bool = Field(
+        default=True, description="Include video URL in header"
+    )
+    include_view_count: bool = Field(
+        default=False, description="Include video view count in header"
+    )
+    concatenate_all: bool = Field(
+        default=False,
+        description="Return single concatenated file instead of individual files",
+    )
+
+    @validator("playlists")
+    def validate_playlists(cls, value):
+        if not value:
+            raise ValueError("At least one playlist must be selected")
+        return value
+
+    @validator("max_concurrent_jobs")
+    def validate_max_concurrent_jobs(cls, value):
+        if value <= 0 or value > 10:
+            raise ValueError("max_concurrent_jobs must be between 1 and 10")
+        return value
+
+
 class DownloadHistoryItem(BaseModel):
     id: str = Field(..., description="Unique identifier for the download")
     date: str = Field(..., description="ISO date string when download was initiated")
@@ -1656,6 +1709,142 @@ async def fetch_playlist_videos_task(job_id: str, playlist_id: str):
         )
 
 
+async def fetch_channel_playlists_task(job_id: str, channel_name: str):
+    """
+    Background task to fetch all playlists from a channel and progressively enrich metadata.
+    """
+    try:
+        logger.info(
+            f"Starting background fetch for channel playlists {channel_name} (job: {job_id})"
+        )
+
+        timeout_seconds = 600  # 10 minutes for large channels
+
+        async def _fetch_playlists():
+            channel_info = await youtube_service.get_channel_info(channel_name)
+            channel_id = channel_info["channelId"]
+            playlists = await youtube_service.get_all_channel_playlists(channel_id)
+            return channel_info, playlists
+
+        try:
+            channel_info, playlists = await asyncio.wait_for(
+                _fetch_playlists(), timeout=timeout_seconds
+            )
+        except asyncio.TimeoutError:
+            error_msg = f"Timeout after {timeout_seconds} seconds"
+            update_video_job(
+                job_id, status="failed", error=error_msg, end_time=time.time()
+            )
+            logger.error(
+                f"Timeout fetching playlists for channel {channel_name} (job: {job_id}): {error_msg}"
+            )
+            return
+
+        total_playlists = len(playlists)
+        progress = {
+            "total": total_playlists,
+            "resolved": 0,
+            "failed": 0,
+            "remaining": total_playlists,
+        }
+
+        update_video_job(
+            job_id,
+            status="processing",
+            stage="enriching_playlist_metadata",
+            channel_info=channel_info,
+            playlists=playlists,
+            playlist_count=total_playlists,
+            metadata_enrichment=progress,
+        )
+
+        if total_playlists == 0:
+            update_video_job(
+                job_id,
+                status="completed",
+                stage="completed",
+                end_time=time.time(),
+            )
+            logger.info(
+                f"No playlists found for channel {channel_name} (job: {job_id})"
+            )
+            return
+
+        max_concurrent = 10
+        update_interval = 10
+        semaphore = asyncio.Semaphore(max_concurrent)
+
+        async def enrich_playlist(index: int, playlist_row: Dict[str, Any]):
+            playlist_id = playlist_row.get("playlistId")
+            if not playlist_id:
+                return index, None, "Missing playlistId"
+
+            async with semaphore:
+                try:
+                    playlist_info = await youtube_service.get_playlist_info(playlist_id)
+                    return index, playlist_info, None
+                except Exception as enrich_error:
+                    return index, None, str(enrich_error)
+
+        tasks = [
+            asyncio.create_task(enrich_playlist(i, playlist_row))
+            for i, playlist_row in enumerate(playlists)
+        ]
+
+        updates_since_flush = 0
+        for task in asyncio.as_completed(tasks):
+            index, playlist_info, error_message = await task
+
+            if playlist_info:
+                playlists[index]["videoCount"] = playlist_info.get("videoCount", 0)
+                if playlist_info.get("thumbnail") and not playlists[index].get(
+                    "thumbnail"
+                ):
+                    playlists[index]["thumbnail"] = playlist_info.get("thumbnail")
+                if playlist_info.get("description"):
+                    playlists[index]["description"] = playlist_info.get("description")
+                progress["resolved"] += 1
+            else:
+                playlists[index]["metadata_error"] = error_message
+                progress["failed"] += 1
+
+            progress["remaining"] = (
+                progress["total"] - progress["resolved"] - progress["failed"]
+            )
+            updates_since_flush += 1
+
+            if updates_since_flush >= update_interval:
+                update_video_job(
+                    job_id,
+                    playlists=playlists,
+                    metadata_enrichment=progress,
+                    stage="enriching_playlist_metadata",
+                )
+                updates_since_flush = 0
+
+        update_video_job(
+            job_id,
+            status="completed",
+            stage="completed",
+            playlists=playlists,
+            metadata_enrichment=progress,
+            end_time=time.time(),
+        )
+
+        logger.info(
+            f"Successfully fetched/enriched {total_playlists} playlists for channel {channel_name} "
+            f"(job: {job_id}, resolved={progress['resolved']}, failed={progress['failed']})"
+        )
+
+    except Exception as e:
+        error_msg = f"Error fetching playlists: {str(e)}"
+        update_video_job(job_id, status="failed", error=error_msg, end_time=time.time())
+        logger.error(
+            f"Error in background playlist task for channel {channel_name} (job: {job_id}): {error_msg}",
+            exc_info=True,
+        )
+
+
 # =============================================
 # TRANSCRIPT ENDPOINTS (UPDATED WITH CREDIT LOGIC)
 # =============================================
@@ -2059,6 +2248,51 @@ async def list_all_channel_videos(
         )
 
 
+@app.get("/channel/{channel_name}/all-playlists")
+async def list_all_channel_playlists(
+    channel_name: str,
+    background_tasks: BackgroundTasks,
+):
+    """
+    Start fetching all playlists from a YouTube channel asynchronously.
+    Returns a job ID immediately and progressively enriches playlist metadata.
+    """
+    try:
+        job_id = str(uuid.uuid4())
+
+        job_data = {
+            "status": "processing",
+            "stage": "discovering_playlists",
+            "channel_name": channel_name,
+            "start_time": time.time(),
+            "playlists": [],
+            "playlist_count": 0,
+            "metadata_enrichment": {
+                "total": 0,
+                "resolved": 0,
+                "failed": 0,
+                "remaining": 0,
+            },
+            "error": None,
+            "channel_info": None,
+        }
+
+        save_video_job_to_file(job_id, job_data)
+        background_tasks.add_task(fetch_channel_playlists_task, job_id, channel_name)
+
+        return {
+            "job_id": job_id,
+            "status": "processing",
+            "message": "Fetching channel playlists in background. Use /channel/playlists-status/{job_id} to check progress.",
+        }
+
+    except Exception as e:
+        logger.error(f"Error starting channel playlists fetch: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=500, detail=f"Failed to start playlist fetch: {str(e)}"
+        )
+
+
 @app.get("/channel/{channel_name}/new-videos", response_model=NewVideosResponse)
 async def get_channel_new_videos(
     channel_name: str,
@@ -2406,6 +2640,68 @@ async def get_videos_fetch_status(
 
     except Exception as e:
         logger.error(f"Error getting video fetch status: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Failed to get status: {str(e)}")
+
+
+@app.get("/channel/playlists-status/{job_id}")
+async def get_playlists_fetch_status(
+    job_id: str,
+):
+    """
+    Check status of a channel playlist discovery job.
+    Returns partial playlists while metadata enrichment is in progress.
+    """
+    try:
+        job = load_video_job_from_file(job_id)
+        if job is None:
+            raise HTTPException(status_code=404, detail="Job not found")
+
+        status = job.get("status")
+        start_time = job.get("start_time", time.time())
+        elapsed_time = time.time() - start_time
+
+        if status == "processing":
+            return {
+                "job_id": job_id,
+                "status": "processing",
+                "stage": job.get("stage", "processing"),
+                "channel_name": job.get("channel_name"),
+                "channel": job.get("channel_info"),
+                "playlists": job.get("playlists", []),
+                "playlist_count": job.get("playlist_count", 0),
+                "metadata_enrichment": job.get("metadata_enrichment", {}),
+                "elapsed_time": elapsed_time,
+                "message": "Still fetching playlists metadata...",
+            }
+
+        if status == "completed":
+            end_time = job.get("end_time", time.time())
+            return {
+                "job_id": job_id,
+                "status": "completed",
+                "stage": "completed",
+                "elapsed_time": end_time - start_time,
+                "channel": job.get("channel_info"),
+                "playlists": job.get("playlists", []),
+                "playlist_count": job.get("playlist_count", 0),
+                "metadata_enrichment": job.get("metadata_enrichment", {}),
+            }
+
+        if status == "failed":
+            end_time = job.get("end_time", time.time())
+            return {
+                "job_id": job_id,
+                "status": "failed",
+                "elapsed_time": end_time - start_time,
+                "error": job.get("error", "Unknown error"),
+            }
+
+        return {"job_id": job_id, "status": status, "message": "Unknown status"}
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error getting playlists fetch status: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Failed to get status: {str(e)}")
 
 
@@ -2914,6 +3210,338 @@ async def download_selected_playlist_videos(
             status_code=500,
             detail=f"Failed to start playlist transcript download: {str(e)}",
         )
+
+
+async def _create_playlist_download_job(
+    *,
+    user_id: str,
+    playlist_name: str,
+    videos: List[Dict[str, Any]],
+    formatting_options: Dict[str, Any],
+    playlist_info: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
+    """Create a child playlist download job and start background dispatch."""
+    num_videos = len(videos)
+    if num_videos <= 0:
+        raise ValueError("No videos found for selected playlist")
+
+    clean_playlist_id = youtube_service.extract_playlist_id(playlist_name)
+    resolved_playlist_info = playlist_info or await youtube_service.get_playlist_info(
+        clean_playlist_id
+    )
+
+    user_credits = await CreditManager.get_user_credits(user_id)
+    if user_credits < num_videos:
+        raise HTTPException(
+            status_code=status.HTTP_402_PAYMENT_REQUIRED,
+            detail=(
+                f"Insufficient credits for playlist {clean_playlist_id}. "
+                f"Need {num_videos}, available {user_credits}."
+            ),
+        )
+
+    reservation_id = await CreditManager.reserve_credits(user_id, num_videos)
+    job_id = str(uuid.uuid4())
+
+    job_data = {
+        "status": "initializing",
+        "playlist_id": clean_playlist_id,
+        "playlist_info": resolved_playlist_info,
+        "source_id": clean_playlist_id,
+        "source_name": resolved_playlist_info.get("title", clean_playlist_id),
+        "source_type": "playlist",
+        "total_videos": num_videos,
+        "completed": 0,
+        "failed_count": 0,
+        "processed_count": 0,
+        "files": [],
+        "videos": videos,
+        "start_time": time.time(),
+        "user_id": user_id,
+        "credits_reserved": num_videos,
+        "credits_used": 0,
+        "reservation_id": reservation_id,
+        "videos_metadata": {},
+        "prefetch_completed": False,
+        "lambda_dispatched_count": 0,
+        "is_playlist": True,
+        "formatting_options": formatting_options,
+    }
+
+    try:
+        await hybrid_job_manager.create_job(job_id, job_data, videos)
+        asyncio.create_task(youtube_service.prefetch_and_dispatch_task(job_id))
+    except Exception:
+        try:
+            await CreditManager.finalize_credit_usage(
+                user_id=user_id,
+                reservation_id=reservation_id,
+                credits_used=0,
+                credits_reserved=num_videos,
+            )
+        except Exception as credit_error:
+            logger.error(
+                f"Failed to rollback credits for playlist job {job_id}: {credit_error}"
+            )
+        raise
+
+    return {
+        "job_id": job_id,
+        "status": "initializing",
+        "total_videos": num_videos,
+        "playlist_id": clean_playlist_id,
+        "credits_reserved": num_videos,
+    }
+
+
+async def create_batch_playlist_download_jobs_task(batch_job_id: str):
+    """Background task to create child playlist jobs with throttled concurrency."""
+    job = load_video_job_from_file(batch_job_id)
+    if not job:
+        logger.error(f"Batch playlist job {batch_job_id} not found")
+        return
+
+    user_id = job.get("user_id")
+    selected_playlists = job.get("selected_playlists", [])
+    max_concurrent_jobs = int(job.get("max_concurrent_jobs", 3))
+    formatting_options = job.get("formatting_options", {})
+
+    semaphore = asyncio.Semaphore(max_concurrent_jobs)
+    update_lock = asyncio.Lock()
+
+    created_jobs: List[Dict[str, Any]] = []
+    failed_playlists: List[Dict[str, Any]] = []
+    processed_playlists = 0
+
+    async def process_playlist(playlist_item: Dict[str, Any]):
+        nonlocal processed_playlists
+
+        playlist_input = (
+            playlist_item.get("playlist_id")
+            or playlist_item.get("playlistId")
+            or playlist_item.get("id")
+        )
+        playlist_title = playlist_item.get("title")
+
+        async with semaphore:
+            try:
+                if not playlist_input:
+                    raise ValueError("Missing playlist_id")
+
+                clean_playlist_id = youtube_service.extract_playlist_id(playlist_input)
+                playlist_info = await youtube_service.get_playlist_info(
+                    clean_playlist_id
+                )
+                videos = await youtube_service.get_all_playlist_videos(
+                    clean_playlist_id
+                )
+
+                child_job = await _create_playlist_download_job(
+                    user_id=user_id,
+                    playlist_name=clean_playlist_id,
+                    videos=videos,
+                    formatting_options=formatting_options,
+                    playlist_info=playlist_info,
+                )
+
+                async with update_lock:
+                    created_jobs.append(
+                        {
+                            "playlist_id": clean_playlist_id,
+                            "playlist_title": playlist_info.get("title")
+                            or playlist_title
+                            or clean_playlist_id,
+                            "job_id": child_job["job_id"],
+                            "total_videos": child_job["total_videos"],
+                            "credits_reserved": child_job["credits_reserved"],
+                        }
+                    )
+
+            except Exception as e:
+                error_detail = str(e)
+                if isinstance(e, HTTPException):
+                    error_detail = str(e.detail)
+
+                async with update_lock:
+                    failed_playlists.append(
+                        {
+                            "playlist_id": playlist_input,
+                            "playlist_title": playlist_title,
+                            "error": error_detail,
+                        }
+                    )
+
+            finally:
+                async with update_lock:
+                    processed_playlists += 1
+                    update_video_job(
+                        batch_job_id,
+                        processed_playlists=processed_playlists,
+                        created_jobs=created_jobs,
+                        failed_playlists=failed_playlists,
+                        created_jobs_count=len(created_jobs),
+                        failed_playlists_count=len(failed_playlists),
+                        stage="creating_child_jobs",
+                        updated_at=time.time(),
+                    )
+
+    try:
+        tasks = [process_playlist(item) for item in selected_playlists]
+        await asyncio.gather(*tasks)
+
+        final_status = "completed" if not failed_playlists else "completed_with_errors"
+        update_video_job(
+            batch_job_id,
+            status=final_status,
+            stage="completed",
+            processed_playlists=processed_playlists,
+            created_jobs=created_jobs,
+            failed_playlists=failed_playlists,
+            created_jobs_count=len(created_jobs),
+            failed_playlists_count=len(failed_playlists),
+            end_time=time.time(),
+            updated_at=time.time(),
+        )
+
+        logger.info(
+            f"Batch playlist job {batch_job_id} completed: "
+            f"created={len(created_jobs)}, failed={len(failed_playlists)}"
+        )
+
+    except Exception as e:
+        logger.error(
+            f"Batch playlist job {batch_job_id} failed unexpectedly: {str(e)}",
+            exc_info=True,
+        )
+        update_video_job(
+            batch_job_id,
+            status="failed",
+            stage="failed",
+            error=str(e),
+            end_time=time.time(),
+            updated_at=time.time(),
+        )
+
+
+@app.post("/playlist/download/batch-selected")
+async def download_selected_playlists_batch(
+    request: BatchPlaylistDownloadRequest,
+    background_tasks: BackgroundTasks,
+    payload: dict = Depends(validate_jwt),
+):
+    """
+    Create child playlist transcript jobs in background for multiple selected playlists.
+    Child job creation is throttled via max_concurrent_jobs.
+    """
+    user_id = get_user_id_from_payload(payload)
+    batch_job_id = str(uuid.uuid4())
+
+    selected_playlists = [
+        {"playlist_id": item.playlist_id, "title": item.title}
+        for item in request.playlists
+    ]
+
+    job_data = {
+        "status": "processing",
+        "stage": "queued",
+        "batch_type": "playlist_download_creation",
+        "batch_job_id": batch_job_id,
+        "channel_name": request.channel_name,
+        "user_id": user_id,
+        "start_time": time.time(),
+        "updated_at": time.time(),
+        "selected_playlists": selected_playlists,
+        "total_playlists": len(selected_playlists),
+        "processed_playlists": 0,
+        "max_concurrent_jobs": request.max_concurrent_jobs,
+        "created_jobs": [],
+        "failed_playlists": [],
+        "created_jobs_count": 0,
+        "failed_playlists_count": 0,
+        "error": None,
+        "formatting_options": {
+            "include_timestamps": request.include_timestamps,
+            "include_video_title": request.include_video_title,
+            "include_video_id": request.include_video_id,
+            "include_video_url": request.include_video_url,
+            "include_view_count": request.include_view_count,
+            "concatenate_all": request.concatenate_all,
+        },
+    }
+
+    try:
+        save_video_job_to_file(batch_job_id, job_data)
+
+        background_tasks.add_task(
+            create_batch_playlist_download_jobs_task,
+            batch_job_id,
+        )
+
+        return {
+            "batch_job_id": batch_job_id,
+            "status": "processing",
+            "total_playlists": len(selected_playlists),
+            "max_concurrent_jobs": request.max_concurrent_jobs,
+            "message": "Batch accepted. Use /playlist/download/batch-status/{batch_job_id} to track child job creation.",
+        }
+
+    except Exception as e:
+        logger.error(f"Failed to start playlist batch job: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to start playlist batch job: {str(e)}",
+        )
+
+
+@app.get("/playlist/download/batch-status/{batch_job_id}")
+async def get_batch_playlist_download_status(batch_job_id: str):
+    """Check status of a batch playlist child-job creation request."""
+    try:
+        job = load_video_job_from_file(batch_job_id)
+        if job is None:
+            raise HTTPException(status_code=404, detail="Batch job not found")
+
+        start_time = job.get("start_time", time.time())
+        end_time = job.get("end_time")
+        elapsed_time = (
+            (end_time - start_time)
+            if isinstance(end_time, (int, float))
+            else (time.time() - start_time)
+        )
+
+        response = {
+            "batch_job_id": batch_job_id,
+            "status": job.get("status", "unknown"),
+            "stage": job.get("stage", "unknown"),
+            "channel_name": job.get("channel_name"),
+            "total_playlists": job.get("total_playlists", 0),
+            "processed_playlists": job.get("processed_playlists", 0),
+            "created_jobs_count": job.get("created_jobs_count", 0),
+            "failed_playlists_count": job.get("failed_playlists_count", 0),
+            "max_concurrent_jobs": job.get("max_concurrent_jobs", 3),
+            "created_jobs": job.get("created_jobs", []),
+            "failed_playlists": job.get("failed_playlists", []),
+            "error": job.get("error"),
+            "elapsed_time": elapsed_time,
+        }
+
+        if response["status"] in {"processing", "queued"}:
+            response["message"] = "Batch is still creating child playlist jobs."
+        elif response["status"] == "completed_with_errors":
+            response["message"] = "Batch completed with some failed playlists."
+        elif response["status"] == "completed":
+            response["message"] = "Batch completed successfully."
+
+        return response
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(
+            f"Error getting playlist batch status for {batch_job_id}: {str(e)}",
+            exc_info=True,
+        )
+        raise HTTPException(status_code=500, detail=f"Failed to get status: {str(e)}")
 
 
 # =============================================
