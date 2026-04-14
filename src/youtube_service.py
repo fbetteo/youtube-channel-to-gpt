@@ -1971,7 +1971,7 @@ async def dispatch_lambdas_concurrently(
             # Use asyncio.to_thread for truly async Lambda dispatch
             await asyncio.to_thread(
                 lambda_client.invoke,
-                FunctionName=settings.lambda_function_name,
+                FunctionName=f"{settings.lambda_function_name}:prod_working",
                 InvocationType="Event",  # Asynchronous invocation
                 Payload=json.dumps(lambda_payload),
             )
