@@ -254,6 +254,159 @@ async def finalize_credits(
             logger.info(f"Refunded {credits_to_refund} credits to user {user_id}")
 
 
+async def _start_developer_job_after_discovery(
+    *,
+    job_id: str,
+    source_type: str,
+    source_input: str,
+    max_videos: Optional[int],
+    options: TranscriptOptions,
+    user_id: str,
+    api_key_id: str,
+    rate_limit_tier: str,
+) -> None:
+    """
+    Background bootstrap for developer jobs.
+
+    It discovers videos first, reserves exact credits, creates the full DB job,
+    and then hands off to the existing prefetch + dispatch pipeline.
+    """
+    reservation_id = None
+    credits_reserved = 0
+
+    try:
+        await hybrid_job_manager.update_job(job_id, status="discovering")
+
+        if source_type == "channel":
+            channel_info = await youtube_service.get_channel_info(source_input)
+            source_id = channel_info.get("channelId", source_input)
+            source_name = channel_info.get("title", source_input)
+            all_videos = await youtube_service.get_all_channel_videos(source_id)
+        else:
+            source_id = youtube_service.extract_playlist_id(source_input)
+            playlist_info = await youtube_service.get_playlist_info(source_id)
+            source_name = playlist_info.get("title", source_id)
+            all_videos = await youtube_service.get_all_playlist_videos(source_id)
+
+        if max_videos and max_videos < len(all_videos):
+            all_videos = all_videos[:max_videos]
+
+        if not all_videos:
+            await hybrid_job_manager.update_job(
+                job_id,
+                status="failed",
+                error_message="No videos found for the requested source",
+            )
+            return
+
+        num_videos = len(all_videos)
+        rate_limits = get_rate_limits(rate_limit_tier)
+        if num_videos > rate_limits["max_videos_per_job"]:
+            await hybrid_job_manager.update_job(
+                job_id,
+                status="failed",
+                error_message=(
+                    f"Exceeds maximum videos per job ({rate_limits['max_videos_per_job']}). "
+                    "Use max_videos parameter to limit, or upgrade your API tier."
+                ),
+            )
+            return
+
+        await hybrid_job_manager.update_job(job_id, status="reserving_credits")
+
+        credits = await get_user_credits(user_id)
+        if credits < num_videos:
+            await hybrid_job_manager.update_job(
+                job_id,
+                status="failed",
+                error_message=(
+                    f"Insufficient credits. Need {num_videos} credits, have {credits}."
+                ),
+            )
+            return
+
+        reservation_id = await reserve_credits(user_id, num_videos)
+        credits_reserved = num_videos
+
+        videos_for_job = [
+            {
+                "id": v.get("id"),
+                "title": v.get("title"),
+                "url": v.get("url", f"https://www.youtube.com/watch?v={v.get('id')}"),
+                "duration_seconds": v.get("duration_seconds"),
+                "duration_category": v.get("duration_category") or v.get("duration"),
+                "duration": v.get("duration") or v.get("duration_category"),
+                "view_count": v.get("view_count") or v.get("viewCount") or 0,
+                "viewCount": v.get("viewCount") or v.get("view_count") or 0,
+                "publishedAt": v.get("publishedAt") or v.get("published_at"),
+            }
+            for v in all_videos
+        ]
+
+        job_data = {
+            "status": "initializing",
+            "source_id": source_id,
+            "source_name": source_name,
+            "source_type": source_type,
+            "channel_name": source_name if source_type == "channel" else None,
+            "playlist_id": source_id if source_type == "playlist" else None,
+            "total_videos": num_videos,
+            "completed": 0,
+            "failed_count": 0,
+            "processed_count": 0,
+            "files": [],
+            "videos": videos_for_job,
+            "start_time": time.time(),
+            "user_id": user_id,
+            "credits_reserved": num_videos,
+            "credits_used": 0,
+            "reservation_id": reservation_id,
+            "videos_metadata": {},
+            "prefetch_completed": False,
+            "lambda_dispatched_count": 0,
+            "formatting_options": {
+                "include_timestamps": options.include_timestamps,
+                "include_video_title": options.include_video_title,
+                "include_video_id": options.include_video_id,
+                "include_video_url": options.include_video_url,
+                "include_view_count": options.include_view_count,
+                "concatenate_all": options.concatenate_all,
+            },
+            "api_key_id": api_key_id,
+        }
+
+        await hybrid_job_manager.create_job(job_id, job_data, videos_for_job)
+        await increment_api_key_credits_used(api_key_id, num_videos)
+
+        logger.info(
+            f"API: Discovery completed for {job_id}. Starting processing for {num_videos} videos"
+        )
+        asyncio.create_task(youtube_service.prefetch_and_dispatch_task(job_id))
+
+    except Exception as e:
+        logger.error(
+            f"Error during background job bootstrap {job_id}: {e}", exc_info=True
+        )
+        await hybrid_job_manager.update_job(
+            job_id,
+            status="failed",
+            error_message=f"Failed to start background processing: {e}",
+        )
+
+        if reservation_id and credits_reserved > 0:
+            try:
+                await finalize_credits(
+                    user_id=user_id,
+                    reservation_id=reservation_id,
+                    credits_used=0,
+                    credits_reserved=credits_reserved,
+                )
+            except Exception as refund_error:
+                logger.error(
+                    f"Failed to refund reserved credits for {job_id}: {refund_error}"
+                )
+
+
 # =============================================
 # ENDPOINTS
 # =============================================
@@ -467,117 +620,59 @@ async def download_channel_transcripts(
     - Check progress: `GET /api/v1/jobs/{job_id}`
     - Download results: `GET /api/v1/jobs/{job_id}/download`
 
-    Credits are reserved upfront and unused credits are refunded when the job completes.
+    The request returns quickly with a job_id. Discovery and credit reservation
+    continue in the background; poll /api/v1/jobs/{job_id} for progress.
     """
     user_id = api_key_data["user_id"]
 
     try:
-        # 1. Get channel info
-        channel_info = await youtube_service.get_channel_info(request.channel)
-        channel_id = channel_info.get("channelId", request.channel)
-        channel_name = channel_info.get("title", request.channel)
-
-        # 2. Get all videos
-        all_videos = await youtube_service.get_all_channel_videos(channel_id)
-
-        if not all_videos:
-            raise HTTPException(status_code=404, detail="No videos found in channel")
-
-        # 3. Apply max_videos limit if specified
-        if request.max_videos and request.max_videos < len(all_videos):
-            all_videos = all_videos[: request.max_videos]
-
-        num_videos = len(all_videos)
-
-        # 4. Check rate limits
-        rate_limits = get_rate_limits(api_key_data["rate_limit_tier"])
-        if num_videos > rate_limits["max_videos_per_job"]:
-            raise HTTPException(
-                status_code=400,
-                detail=f"Exceeds maximum videos per job ({rate_limits['max_videos_per_job']}). "
-                f"Use max_videos parameter to limit, or upgrade your API tier.",
-            )
-
-        # 5. Check credits
-        credits = await get_user_credits(user_id)
-        if credits < num_videos:
-            raise HTTPException(
-                status_code=status.HTTP_402_PAYMENT_REQUIRED,
-                detail=f"Insufficient credits. Need {num_videos} credits, have {credits}.",
-            )
-
-        # 6. Reserve credits
-        reservation_id = await reserve_credits(user_id, num_videos)
-
-        # 7. Create job
         job_id = str(uuid.uuid4())
 
-        # Convert videos to the format expected by create_job
-        videos_for_job = [
+        # Create a placeholder job file so /jobs polling works immediately.
+        youtube_service.save_job_to_file(
+            job_id,
             {
-                "id": v.get("id"),
-                "title": v.get("title"),
-                "url": v.get("url", f"https://www.youtube.com/watch?v={v.get('id')}"),
-                "duration_seconds": v.get("duration_seconds"),
-                "duration_category": v.get("duration_category"),
-                "view_count": v.get("view_count"),
-            }
-            for v in all_videos
-        ]
-
-        job_data = {
-            "status": "initializing",
-            "channel_name": channel_name,
-            "channel_info": channel_info,
-            "source_id": channel_id,
-            "source_name": channel_name,
-            "source_type": "channel",
-            "total_videos": num_videos,
-            "completed": 0,
-            "failed_count": 0,
-            "processed_count": 0,
-            "files": [],
-            "videos": videos_for_job,
-            "start_time": time.time(),
-            "user_id": user_id,
-            "credits_reserved": num_videos,
-            "credits_used": 0,
-            "reservation_id": reservation_id,
-            "videos_metadata": {},
-            "prefetch_completed": False,
-            "lambda_dispatched_count": 0,
-            "formatting_options": {
-                "include_timestamps": request.options.include_timestamps,
-                "include_video_title": request.options.include_video_title,
-                "include_video_id": request.options.include_video_id,
-                "include_video_url": request.options.include_video_url,
-                "include_view_count": request.options.include_view_count,
-                "concatenate_all": request.options.concatenate_all,
+                "job_id": job_id,
+                "status": "discovering",
+                "total_videos": 0,
+                "processed_count": 0,
+                "completed": 0,
+                "failed_count": 0,
+                "credits_used": 0,
+                "credits_reserved": 0,
+                "source_type": "channel",
+                "source_name": request.channel,
+                "source_id": request.channel,
+                "user_id": user_id,
+                "start_time": time.time(),
+                "error_message": None,
             },
-            "api_key_id": api_key_data["key_id"],  # Track which API key initiated
-        }
-
-        # Save job to database
-        await hybrid_job_manager.create_job(job_id, job_data, videos_for_job)
-        logger.info(
-            f"API: Created job {job_id} for channel {channel_name} ({num_videos} videos)"
         )
 
-        # 8. Start background processing
-        asyncio.create_task(youtube_service.prefetch_and_dispatch_task(job_id))
-
-        # 9. Track credits on API key (will be updated as videos complete)
-        await increment_api_key_credits_used(api_key_data["key_id"], num_videos)
+        asyncio.create_task(
+            _start_developer_job_after_discovery(
+                job_id=job_id,
+                source_type="channel",
+                source_input=request.channel,
+                max_videos=request.max_videos,
+                options=request.options,
+                user_id=user_id,
+                api_key_id=api_key_data["key_id"],
+                rate_limit_tier=api_key_data["rate_limit_tier"],
+            )
+        )
 
         return JobResponse(
             job_id=job_id,
-            status="initializing",
-            total_videos=num_videos,
+            status="discovering",
+            total_videos=0,
             source_type="channel",
-            source_name=channel_name,
-            credits_reserved=num_videos,
-            message=f"Job created. Processing {num_videos} videos from '{channel_name}'. "
-            f"Check status at GET /api/v1/jobs/{job_id}",
+            source_name=request.channel,
+            credits_reserved=0,
+            message=(
+                "Job accepted. Discovering videos and reserving credits in background. "
+                f"Check status at GET /api/v1/jobs/{job_id}"
+            ),
         )
 
     except HTTPException:
@@ -608,112 +703,52 @@ async def download_playlist_transcripts(
     user_id = api_key_data["user_id"]
 
     try:
-        # 1. Extract playlist ID
-        playlist_id = youtube_service.extract_playlist_id(request.playlist)
-
-        # 2. Get playlist info
-        playlist_info = await youtube_service.get_playlist_info(playlist_id)
-        playlist_name = playlist_info.get("title", playlist_id)
-
-        # 3. Get all videos
-        all_videos = await youtube_service.get_all_playlist_videos(playlist_id)
-
-        if not all_videos:
-            raise HTTPException(status_code=404, detail="No videos found in playlist")
-
-        # 4. Apply max_videos limit if specified
-        if request.max_videos and request.max_videos < len(all_videos):
-            all_videos = all_videos[: request.max_videos]
-
-        num_videos = len(all_videos)
-
-        # 5. Check rate limits
-        rate_limits = get_rate_limits(api_key_data["rate_limit_tier"])
-        if num_videos > rate_limits["max_videos_per_job"]:
-            raise HTTPException(
-                status_code=400,
-                detail=f"Exceeds maximum videos per job ({rate_limits['max_videos_per_job']}). "
-                f"Use max_videos parameter to limit.",
-            )
-
-        # 6. Check credits
-        credits = await get_user_credits(user_id)
-        if credits < num_videos:
-            raise HTTPException(
-                status_code=status.HTTP_402_PAYMENT_REQUIRED,
-                detail=f"Insufficient credits. Need {num_videos} credits, have {credits}.",
-            )
-
-        # 7. Reserve credits
-        reservation_id = await reserve_credits(user_id, num_videos)
-
-        # 8. Create job
         job_id = str(uuid.uuid4())
 
-        videos_for_job = [
+        youtube_service.save_job_to_file(
+            job_id,
             {
-                "id": v.get("id"),
-                "title": v.get("title"),
-                "url": v.get("url", f"https://www.youtube.com/watch?v={v.get('id')}"),
-                "duration_seconds": v.get("duration_seconds"),
-                "duration_category": v.get("duration_category"),
-                "view_count": v.get("view_count"),
-            }
-            for v in all_videos
-        ]
-
-        job_data = {
-            "status": "initializing",
-            "playlist_id": playlist_id,
-            "playlist_info": playlist_info,
-            "source_id": playlist_id,
-            "source_name": playlist_name,
-            "source_type": "playlist",
-            "total_videos": num_videos,
-            "completed": 0,
-            "failed_count": 0,
-            "processed_count": 0,
-            "files": [],
-            "videos": videos_for_job,
-            "start_time": time.time(),
-            "user_id": user_id,
-            "credits_reserved": num_videos,
-            "credits_used": 0,
-            "reservation_id": reservation_id,
-            "videos_metadata": {},
-            "prefetch_completed": False,
-            "lambda_dispatched_count": 0,
-            "formatting_options": {
-                "include_timestamps": request.options.include_timestamps,
-                "include_video_title": request.options.include_video_title,
-                "include_video_id": request.options.include_video_id,
-                "include_video_url": request.options.include_video_url,
-                "include_view_count": request.options.include_view_count,
-                "concatenate_all": request.options.concatenate_all,
+                "job_id": job_id,
+                "status": "discovering",
+                "total_videos": 0,
+                "processed_count": 0,
+                "completed": 0,
+                "failed_count": 0,
+                "credits_used": 0,
+                "credits_reserved": 0,
+                "source_type": "playlist",
+                "source_name": request.playlist,
+                "source_id": request.playlist,
+                "user_id": user_id,
+                "start_time": time.time(),
+                "error_message": None,
             },
-            "api_key_id": api_key_data["key_id"],
-        }
-
-        await hybrid_job_manager.create_job(job_id, job_data, videos_for_job)
-        logger.info(
-            f"API: Created job {job_id} for playlist {playlist_name} ({num_videos} videos)"
         )
 
-        # 9. Start background processing
-        asyncio.create_task(youtube_service.prefetch_and_dispatch_task(job_id))
-
-        # 10. Track credits
-        await increment_api_key_credits_used(api_key_data["key_id"], num_videos)
+        asyncio.create_task(
+            _start_developer_job_after_discovery(
+                job_id=job_id,
+                source_type="playlist",
+                source_input=request.playlist,
+                max_videos=request.max_videos,
+                options=request.options,
+                user_id=user_id,
+                api_key_id=api_key_data["key_id"],
+                rate_limit_tier=api_key_data["rate_limit_tier"],
+            )
+        )
 
         return JobResponse(
             job_id=job_id,
-            status="initializing",
-            total_videos=num_videos,
+            status="discovering",
+            total_videos=0,
             source_type="playlist",
-            source_name=playlist_name,
-            credits_reserved=num_videos,
-            message=f"Job created. Processing {num_videos} videos from playlist '{playlist_name}'. "
-            f"Check status at GET /api/v1/jobs/{job_id}",
+            source_name=request.playlist,
+            credits_reserved=0,
+            message=(
+                "Job accepted. Discovering videos and reserving credits in background. "
+                f"Check status at GET /api/v1/jobs/{job_id}"
+            ),
         )
 
     except HTTPException:
