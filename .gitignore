@@ -2,6 +2,7 @@
 /build/**/*.txt
 # Lambda processor - ignore everything except specific files
 /lambda-transcript-processor/*
+/lambda-transcript-processor*/*
 !/lambda-transcript-processor/lambda_function.py
 !/lambda-transcript-processor/requirements.txt
 !/lambda-transcript-processor/test_local.py

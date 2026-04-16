@@ -2,13 +2,15 @@
 """
 AWS Lambda function for processing YouTube video transcripts
 """
+
 import boto3
 import logging
 import os
+import random
 import re
 import requests
 import time
-from typing import Dict, Any
+from typing import Dict, Any, List, Optional, Tuple
 
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.proxies import WebshareProxyConfig
@@ -16,6 +18,35 @@ from youtube_transcript_api.proxies import WebshareProxyConfig
 
 # Configure logging
 logger = logging.getLogger(__name__)
+
+RETRIABLE_TRANSCRIPT_ERROR_TYPES = {
+    "ChunkedEncodingError",
+    "ConnectionError",
+    "ConnectTimeout",
+    "HTTPError",
+    "IncompleteRead",
+    "IpBlocked",
+    "ProtocolError",
+    "ProxyError",
+    "ReadTimeout",
+    "RequestBlocked",
+    "SSLError",
+    "Timeout",
+    "TooManyRedirects",
+    "YouTubeRequestFailed",
+}
+
+TERMINAL_TRANSCRIPT_ERROR_TYPES = {
+    "AgeRestricted",
+    "InvalidVideoId",
+    "NoTranscriptFound",
+    "PoTokenRequired",
+    "TranscriptRetrievalError",
+    "TranscriptsDisabled",
+    "TranslationLanguageNotAvailable",
+    "VideoUnavailable",
+    "VideoUnplayable",
+}
 
 
 def get_ytt_api() -> YouTubeTranscriptApi:
@@ -36,6 +67,158 @@ def get_ytt_api() -> YouTubeTranscriptApi:
         logger.error(f"Error creating YouTubeTranscriptApi: {str(e)}")
         # Fallback to basic instance
         return YouTubeTranscriptApi()
+
+
+class TranscriptRetrievalError(Exception):
+    """Wrap transcript failures with stage and retry metadata."""
+
+    def __init__(
+        self,
+        video_id: str,
+        stage: str,
+        attempts: int,
+        retriable: bool,
+        original_exception: Exception,
+    ):
+        self.video_id = video_id
+        self.stage = stage
+        self.attempts = attempts
+        self.retriable = retriable
+        self.original_exception = original_exception
+        self.error_type = type(original_exception).__name__
+        message = (
+            f"Transcript retrieval failed for video {video_id} at stage {stage} "
+            f"after {attempts} attempt(s) "
+            f"(retriable={retriable}, error_type={self.error_type}): "
+            f"{original_exception}"
+        )
+        super().__init__(message)
+
+
+def _iter_exception_messages(error: Exception) -> List[str]:
+    """Collect error messages from chained exceptions for classification."""
+    messages = []
+    seen = set()
+    current = error
+
+    while current is not None and id(current) not in seen:
+        seen.add(id(current))
+        message = str(current).strip()
+        if message:
+            messages.append(message)
+        current = current.__cause__ or current.__context__
+
+    return messages
+
+
+def is_retriable_transcript_error(error: Exception) -> bool:
+    """Return True when the error looks like a transient block/network failure."""
+    error_type = type(error).__name__
+    if error_type in TERMINAL_TRANSCRIPT_ERROR_TYPES:
+        return False
+    if error_type in RETRIABLE_TRANSCRIPT_ERROR_TYPES:
+        return True
+
+    combined_message = " | ".join(_iter_exception_messages(error)).lower()
+    retriable_markers = (
+        "429",
+        "too many requests",
+        "sorry/index",
+        "unusual traffic",
+        "connection broken",
+        "request blocked",
+        "incomplete read",
+        "incompleteread",
+        "ip blocked",
+        "proxy error",
+        "read timed out",
+        "connect timeout",
+        "connection aborted",
+        "temporarily unavailable",
+        "bad gateway",
+        "service unavailable",
+    )
+    return any(marker in combined_message for marker in retriable_markers)
+
+
+def fetch_transcript_with_retries(
+    video_id: str,
+    max_attempts: int = 3,
+    base_delay: float = 1.0,
+) -> Tuple[Any, Any, int]:
+    """Fetch transcript by retrying the entire list/select/fetch flow."""
+    last_error: Optional[Exception] = None
+    last_attempt = 0
+    last_stage = "initialize"
+    last_retriable = False
+
+    for attempt in range(1, max_attempts + 1):
+        last_attempt = attempt
+        ytt_api = None
+        stage = "initialize"
+        try:
+            ytt_api = get_ytt_api()
+
+            stage = "list"
+            transcript_list = ytt_api.list(video_id)
+
+            stage = "select"
+            try:
+                transcript = transcript_list.find_transcript(["en"])
+                logger.info(
+                    f"Found English transcript for video {video_id} on attempt {attempt}/{max_attempts}"
+                )
+            except Exception as english_error:
+                logger.warning(
+                    f"No English transcript found for {video_id} on attempt {attempt}/{max_attempts}. "
+                    "Trying first available transcript."
+                )
+                try:
+                    transcript = next(iter(transcript_list))
+                    logger.info(
+                        f"Using first available transcript ({transcript.language_code}) for video {video_id}"
+                    )
+                except StopIteration:
+                    raise english_error
+
+            stage = "fetch"
+            fetched_transcript = transcript.fetch()
+            return transcript, fetched_transcript, attempt
+        except Exception as error:
+            last_error = error
+            last_stage = stage
+            last_retriable = is_retriable_transcript_error(error)
+
+            logger.warning(
+                f"Transcript attempt {attempt}/{max_attempts} failed for video {video_id} "
+                f"at stage {stage} (error_type={type(error).__name__}, retriable={last_retriable}): {error}"
+            )
+
+            if not last_retriable or attempt >= max_attempts:
+                break
+
+            delay = base_delay * (2 ** (attempt - 1)) + random.uniform(0, 0.5)
+            logger.info(
+                f"Retrying transcript fetch for video {video_id} in {delay:.2f}s "
+                f"after transient failure at stage {stage}"
+            )
+            time.sleep(delay)
+        finally:
+            if ytt_api is not None:
+                del ytt_api
+
+    if last_error is None:
+        last_error = RuntimeError(
+            "Transcript retrieval failed without a captured error"
+        )
+
+    raise TranscriptRetrievalError(
+        video_id=video_id,
+        stage=last_stage,
+        attempts=last_attempt,
+        retriable=last_retriable,
+        original_exception=last_error,
+    )
 
 
 def sanitize_filename(filename: str, max_len: int = 30) -> str:
@@ -180,56 +363,16 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
     logger.info(f"Starting transcript fetch for video {video_id} in job {job_id}")
 
     try:
-        # Create fresh API instance for thread safety
-        ytt_api = get_ytt_api()
         fetch_start = time.time()
-
-        # 1. List available transcripts with better error handling
-        try:
-            transcript_list = ytt_api.list(video_id)
-        except Exception as e:
-            logger.error(f"Failed to list transcripts for video {video_id}: {str(e)}")
-            raise ValueError(f"No transcripts available for video {video_id}: {str(e)}")
-
-        transcript = None
-        # 2. Try to find English, otherwise take the first available
-        try:
-            transcript = transcript_list.find_transcript(["en"])
-            logger.info(f"Found English transcript for video {video_id}")
-        except Exception:
-            logger.warning(
-                f"No English transcript found for {video_id}. Trying first available."
-            )
-            try:
-                # Get the first transcript in the list
-                first_transcript_in_list = next(iter(transcript_list))
-                transcript = first_transcript_in_list
-                logger.info(
-                    f"Using first available transcript ({transcript.language_code}) for video {video_id}"
-                )
-            except StopIteration:
-                logger.error(f"No transcripts available at all for video {video_id}")
-                raise ValueError(f"No transcripts available for video {video_id}")
-
-        # 3. Fetch the selected transcript with better error handling
-        try:
-            fetched_transcript = retry_operation(
-                lambda: transcript.fetch(),
-                max_retries=2,
-            )
-        except Exception as e:
-            logger.error(f"Failed to fetch transcript for video {video_id}: {str(e)}")
-            raise ValueError(
-                f"Failed to fetch transcript for video {video_id}: {str(e)}"
-            )
+        transcript, fetched_transcript, attempt_count = fetch_transcript_with_retries(
+            video_id
+        )
 
         fetch_end = time.time()
         logger.info(
-            f"API fetch took {fetch_end - fetch_start:.3f}s for video {video_id}"
+            f"API fetch took {fetch_end - fetch_start:.3f}s for video {video_id} "
+            f"(attempts={attempt_count})"
         )
-
-        # Clean up API instance immediately after use to prevent memory leaks
-        del ytt_api
 
         # Create metadata with language info
         selected_language = transcript.language_code
@@ -369,7 +512,15 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
 
     except Exception as e:
         error_message = f"Failed to get transcript for video {video_id}: {str(e)}"
-        logger.error(error_message)
+        error_stage = getattr(e, "stage", "unknown")
+        error_attempts = getattr(e, "attempts", 1)
+        error_retriable = getattr(e, "retriable", False)
+        last_error_type = getattr(e, "error_type", type(e).__name__)
+
+        logger.error(
+            f"{error_message} (stage={error_stage}, attempts={error_attempts}, "
+            f"retriable={error_retriable}, error_type={last_error_type})"
+        )
 
         # Call failure callback
         if api_base_url:
@@ -377,7 +528,11 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
             failure_data = {
                 "video_id": video_id,
                 "error": str(e),
-                "error_type": type(e).__name__,
+                "error_type": last_error_type,
+                "stage": error_stage,
+                "retriable": error_retriable,
+                "attempts": error_attempts,
+                "last_error_type": last_error_type,
             }
 
             callback_success = call_api_callback(callback_url, failure_data)
@@ -393,7 +548,11 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
                 "video_id": video_id,
                 "status": "failed",
                 "error": str(e),
-                "error_type": type(e).__name__,
+                "error_type": last_error_type,
+                "stage": error_stage,
+                "retriable": error_retriable,
+                "attempts": error_attempts,
+                "last_error_type": last_error_type,
                 "callback_called": api_base_url is not None,
             },
         }

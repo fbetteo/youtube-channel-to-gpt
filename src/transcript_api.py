@@ -2,6 +2,7 @@
 """
 YouTube Transcript API - A dedicated API for downloading YouTube transcripts
 """
+
 import os
 import logging
 import sys
@@ -3686,12 +3687,12 @@ async def video_completed(job_id: str, completion_data: dict):
             execution_time = time.time() - dispatch_time
             if execution_time > 300:  # 5 minutes
                 logger.warning(
-                    f"Video {completion_data['video_id']} took {execution_time/60:.1f} minutes to complete "
+                    f"Video {completion_data['video_id']} took {execution_time / 60:.1f} minutes to complete "
                     f"(potential Lambda delay/timeout recovery)"
                 )
             elif execution_time > 120:  # 2 minutes
                 logger.info(
-                    f"Video {completion_data['video_id']} took {execution_time/60:.1f} minutes to complete"
+                    f"Video {completion_data['video_id']} took {execution_time / 60:.1f} minutes to complete"
                 )
 
         # Check if this video was already counted as timed out
@@ -3773,7 +3774,11 @@ async def video_failed(job_id: str, failure_data: dict):
         )
 
         logger.warning(
-            f"Video {failure_data['video_id']} failed for job {job_id}: {failure_data.get('error', 'Unknown error')}"
+            f"Video {failure_data['video_id']} failed for job {job_id}: {failure_data.get('error', 'Unknown error')} "
+            f"(error_type={failure_data.get('error_type', 'unknown')}, "
+            f"stage={failure_data.get('stage', 'unknown')}, "
+            f"retriable={failure_data.get('retriable', False)}, "
+            f"attempts={failure_data.get('attempts', 1)})"
         )
 
         # Check if job is complete (including failures)
