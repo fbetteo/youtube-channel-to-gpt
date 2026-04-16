@@ -20,10 +20,13 @@ from youtube_transcript_api.proxies import WebshareProxyConfig
 logger = logging.getLogger(__name__)
 
 RETRIABLE_TRANSCRIPT_ERROR_TYPES = {
+    "ChunkedEncodingError",
     "ConnectionError",
     "ConnectTimeout",
     "HTTPError",
+    "IncompleteRead",
     "IpBlocked",
+    "ProtocolError",
     "ProxyError",
     "ReadTimeout",
     "RequestBlocked",
@@ -122,7 +125,10 @@ def is_retriable_transcript_error(error: Exception) -> bool:
         "too many requests",
         "sorry/index",
         "unusual traffic",
+        "connection broken",
         "request blocked",
+        "incomplete read",
+        "incompleteread",
         "ip blocked",
         "proxy error",
         "read timed out",
