@@ -56,6 +56,23 @@ class Settings(BaseModel):
             "LAMBDA_FUNCTION_NAME", "youtube-transcript-processor"
         )
     )
+    lambda_results_queue_url: str = Field(
+        default_factory=lambda: os.getenv("LAMBDA_RESULTS_QUEUE_URL", "")
+    )
+
+    # SQS consumer settings
+    sqs_consumer_wait_time_seconds: int = Field(
+        default_factory=lambda: int(os.getenv("SQS_CONSUMER_WAIT_TIME_SECONDS", "20"))
+    )
+    sqs_consumer_max_messages: int = Field(
+        default_factory=lambda: int(os.getenv("SQS_CONSUMER_MAX_MESSAGES", "10"))
+    )
+    sqs_consumer_visibility_timeout: int = Field(
+        default_factory=lambda: int(os.getenv("SQS_CONSUMER_VISIBILITY_TIMEOUT", "120"))
+    )
+    sqs_consumer_concurrency: int = Field(
+        default_factory=lambda: int(os.getenv("SQS_CONSUMER_CONCURRENCY", "10"))
+    )
 
     # Job timeout settings
     job_timeout_minutes: int = Field(

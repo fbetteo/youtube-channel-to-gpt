@@ -492,7 +492,7 @@ class JobManager:
 
                     update_query = f"""
                         UPDATE jobs 
-                        SET {', '.join(set_clauses)}
+                        SET {", ".join(set_clauses)}
                         WHERE job_id = $1
                         RETURNING job_id
                     """
@@ -682,6 +682,106 @@ class JobManager:
         except Exception as e:
             logger.error(f"Failed to mark video {video_id} as failed: {str(e)}")
             return False
+
+    @staticmethod
+    async def finalize_job_if_complete(job_id: str) -> Optional[Dict[str, Any]]:
+        """
+        Finalize a job once all videos are processed.
+
+        This method is idempotent and safe to call multiple times. It atomically:
+        1. Checks whether the job is complete
+        2. Refunds unused reserved credits exactly once
+        3. Moves the job into a final status exactly once
+        """
+        max_retries = 3
+        retry_delay = 1
+
+        for attempt in range(max_retries):
+            try:
+                async with get_db_transaction() as tx:
+                    job_record = await tx.fetchrow(
+                        """
+                        SELECT job_id, user_id, status, processed_count, total_videos,
+                               failed_count, reservation_id, credits_used, credits_reserved,
+                               end_time
+                        FROM jobs
+                        WHERE job_id = $1
+                        FOR UPDATE
+                        """,
+                        job_id,
+                    )
+
+                    if not job_record:
+                        logger.warning(f"Job {job_id} not found for finalization")
+                        return None
+
+                    job = dict(job_record)
+                    is_complete = job["processed_count"] >= job["total_videos"]
+                    target_status = (
+                        "completed_with_errors"
+                        if job["failed_count"] > 0
+                        else "completed"
+                    )
+
+                    if not is_complete:
+                        job["finalized"] = False
+                        job["refund_applied"] = False
+                        return job
+
+                    refund_applied = False
+                    if job["reservation_id"] is not None:
+                        unused_credits = max(
+                            job["credits_reserved"] - job["credits_used"], 0
+                        )
+                        if unused_credits > 0:
+                            await tx.execute(
+                                "UPDATE user_credits SET credits = credits + $1 WHERE user_id = $2",
+                                unused_credits,
+                                job["user_id"],
+                            )
+                            refund_applied = True
+
+                    needs_job_update = (
+                        job["status"] != target_status
+                        or job["reservation_id"] is not None
+                        or job["end_time"] is None
+                    )
+
+                    if needs_job_update:
+                        updated_job_record = await tx.fetchrow(
+                            """
+                            UPDATE jobs
+                            SET status = $2,
+                                reservation_id = NULL,
+                                end_time = COALESCE(end_time, NOW()),
+                                updated_at = NOW(),
+                                version = version + 1
+                            WHERE job_id = $1
+                            RETURNING job_id, user_id, status, processed_count, total_videos,
+                                      failed_count, reservation_id, credits_used,
+                                      credits_reserved, end_time
+                            """,
+                            job_id,
+                            target_status,
+                        )
+                        job = dict(updated_job_record)
+
+                    job["finalized"] = needs_job_update or refund_applied
+                    job["refund_applied"] = refund_applied
+                    return job
+
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    logger.warning(
+                        f"Failed to finalize job {job_id} (attempt {attempt + 1}/{max_retries}): {str(e)}"
+                    )
+                    await asyncio.sleep(retry_delay)
+                    retry_delay *= 2
+                else:
+                    logger.error(
+                        f"Failed to finalize job {job_id} after {max_retries} attempts: {str(e)}"
+                    )
+                    return None
 
     @staticmethod
     async def get_job_videos_status(job_id: str) -> List[Dict[str, Any]]:
