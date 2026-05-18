@@ -740,6 +740,14 @@ class DownloadHistoryItem(BaseModel):
     creditsUsed: int = Field(
         default=0, description="Credits consumed for this download"
     )
+    downloadReady: bool = Field(
+        default=False,
+        description="Whether at least one transcript file is available to download",
+    )
+    isPartial: bool = Field(
+        default=False,
+        description="Whether the download contains partial results from an unfinished job",
+    )
 
 
 class SourceItem(BaseModel):
@@ -865,7 +873,8 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
         from db_youtube_transcripts.database import get_db_connection
 
         async with get_db_connection() as conn:
-            # Query jobs table for all completed/failed jobs for this user
+            # Include pre-processing states so large jobs show up immediately
+            # after the job row is created, before all Lambda invokes finish.
             query = """
                 SELECT 
                     job_id,
@@ -882,7 +891,15 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
                     end_time
                 FROM jobs
                 WHERE user_id = $1
-                    AND status IN ('completed', 'completed_with_errors','processing', 'failed')
+                    AND status IN (
+                        'initializing',
+                        'prefetching_metadata',
+                        'dispatching',
+                        'processing',
+                        'completed',
+                        'completed_with_errors',
+                        'failed'
+                    )
                 ORDER BY created_at DESC
             """
 
@@ -893,6 +910,12 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
                 display_status = row["status"]
                 if display_status == "completed_with_errors":
                     display_status = "completed"
+                elif display_status in (
+                    "initializing",
+                    "prefetching_metadata",
+                    "dispatching",
+                ):
+                    display_status = "processing"
 
                 # Calculate success metrics
                 total_videos = row["total_videos"] or 0
@@ -911,13 +934,16 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
                     else 0.0
                 )
 
-                # Determine download URL availability
+                # Allow partial downloads as soon as at least one file exists.
                 download_url = None
-                if (
-                    row["status"] in ["completed", "completed_with_errors"]
-                    and successful_files > 0
-                ):
+                download_ready = successful_files > 0
+                if download_ready:
                     download_url = f"/channel/download/results/{row['job_id']}"
+
+                is_partial = download_ready and row["status"] not in [
+                    "completed",
+                    "completed_with_errors",
+                ]
 
                 # Convert timestamps to ISO strings
                 created_at_iso = (
@@ -948,6 +974,8 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
                     progress=progress,
                     successRate=round(success_rate, 1),
                     creditsUsed=credits_used,
+                    downloadReady=download_ready,
+                    isPartial=is_partial,
                 )
 
                 history_items.append(history_item)
@@ -2723,12 +2751,17 @@ async def get_transcript_download_status(
         # Get job status from the new service
         status = await youtube_service.get_job_status_async(job_id)
 
-        # If the job is completed, include download URL information
-        if status["status"] == "completed":
+        # If any transcript files are available, include download URL information.
+        if status.get("download_ready"):
             status["download_url"] = f"/channel/download/results/{job_id}"
-            status["message"] = (
-                f"Transcript download complete. {status['completed']} videos processed successfully."
-            )
+            if status["status"] in ["completed", "completed_with_errors"]:
+                status["message"] = (
+                    f"Transcript download complete. {status['completed']} videos processed successfully."
+                )
+            else:
+                status["message"] = (
+                    f"Partial transcripts available. {status['completed']} videos downloaded so far."
+                )
 
         return status
 
@@ -2749,9 +2782,9 @@ async def download_transcript_results(
     session: Dict = Depends(get_user_session),
 ):
     """
-    Download the transcripts for a completed job as a ZIP file.
+    Download available transcripts for a job as a ZIP file.
     Files are fetched from S3 and ZIP is generated on-demand with concurrent downloads.
-    Only available when job status is 'completed' or 'completed_with_errors'.
+    Completed jobs return the full ZIP; processing jobs return the files completed so far.
 
     REQUIRES AUTHENTICATION: This endpoint requires a valid JWT token.
     """
@@ -2770,17 +2803,29 @@ async def download_transcript_results(
                 status_code=403, detail="Access denied - you don't own this job"
             )
 
-        # Verify job is completed
         job_status = job.get("status")
-        if job_status not in ["completed", "completed_with_errors"]:
+        downloadable_statuses = {
+            "dispatching",
+            "processing",
+            "completed",
+            "completed_with_errors",
+        }
+        if job_status not in downloadable_statuses:
             raise HTTPException(
                 status_code=400,
                 detail=f"Job is not ready for download. Current status: {job_status}",
             )
 
+        completed_files = len(job.get("files", []))
+        if completed_files <= 0:
+            raise HTTPException(
+                status_code=400,
+                detail="No transcript files are available for this job yet.",
+            )
+
         # Create ZIP from S3 files using concurrent downloads
         logger.info(
-            f"Creating ZIP for job {job_id} from S3 files with concurrent downloads"
+            f"Creating ZIP for job {job_id} from {completed_files} S3 files with concurrent downloads"
         )
         zip_start_time = time.time()
 
