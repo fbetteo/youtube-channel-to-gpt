@@ -10,6 +10,7 @@ import random
 import re
 import requests
 import time
+import json
 from typing import Dict, Any, List, Optional, Tuple
 
 from youtube_transcript_api import YouTubeTranscriptApi
@@ -334,6 +335,28 @@ def call_api_callback(
     return False
 
 
+def send_result_to_sqs(message: Dict[str, Any]) -> bool:
+    """Send a Lambda result message to SQS when configured."""
+    queue_url = os.getenv("LAMBDA_RESULTS_QUEUE_URL", "").strip()
+    if not queue_url:
+        return False
+
+    try:
+        sqs_client = boto3.client("sqs")
+        sqs_client.send_message(QueueUrl=queue_url, MessageBody=json.dumps(message))
+        logger.info(
+            f"Successfully sent {message.get('event_type')} event to SQS for "
+            f"video {message.get('video_id')} in job {message.get('job_id')}"
+        )
+        return True
+    except Exception as e:
+        logger.error(
+            f"Failed to send {message.get('event_type')} event to SQS for "
+            f"video {message.get('video_id')} in job {message.get('job_id')}: {str(e)}"
+        )
+        return False
+
+
 def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
     """
     AWS Lambda handler for processing YouTube video transcripts.
@@ -361,6 +384,7 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
     api_base_url = event.get("api_base_url", "").rstrip("/")
 
     logger.info(f"Starting transcript fetch for video {video_id} in job {job_id}")
+    lambda_request_id = getattr(context, "aws_request_id", None)
 
     try:
         fetch_start = time.time()
@@ -482,7 +506,21 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
         logger.info(f"Successfully uploaded transcript to S3: {s3_key}")
 
         # Call success callback
-        if api_base_url:
+        result_message = {
+            "event_type": "video_completed",
+            "job_id": job_id,
+            "video_id": video_id,
+            "user_id": user_id,
+            "lambda_request_id": lambda_request_id,
+            "sent_at": int(time.time()),
+            "s3_key": s3_key,
+            "transcript_length": len(transcript_text),
+            "metadata": metadata,
+        }
+        callback_called = False
+        if send_result_to_sqs(result_message):
+            callback_called = True
+        elif api_base_url:
             callback_url = f"{api_base_url}/internal/job/{job_id}/video-complete"
             completion_data = {
                 "video_id": video_id,
@@ -491,11 +529,11 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
                 "metadata": metadata,
             }
 
-            callback_success = call_api_callback(callback_url, completion_data)
-            if not callback_success:
+            callback_called = call_api_callback(callback_url, completion_data)
+            if not callback_called:
                 logger.warning(f"Failed to call success callback for video {video_id}")
         else:
-            logger.warning("No api_base_url provided, skipping callback")
+            logger.warning("No SQS queue or api_base_url provided, skipping callback")
 
         # Return success response
         return {
@@ -506,7 +544,7 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
                 "transcript_length": len(transcript_text),
                 "s3_key": s3_key,
                 "metadata": metadata,
-                "callback_called": api_base_url is not None,
+                "callback_called": callback_called,
             },
         }
 
@@ -523,7 +561,24 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
         )
 
         # Call failure callback
-        if api_base_url:
+        result_message = {
+            "event_type": "video_failed",
+            "job_id": job_id,
+            "video_id": video_id,
+            "user_id": user_id,
+            "lambda_request_id": lambda_request_id,
+            "sent_at": int(time.time()),
+            "error": str(e),
+            "error_type": last_error_type,
+            "stage": error_stage,
+            "retriable": error_retriable,
+            "attempts": error_attempts,
+            "last_error_type": last_error_type,
+        }
+        callback_called = False
+        if send_result_to_sqs(result_message):
+            callback_called = True
+        elif api_base_url:
             callback_url = f"{api_base_url}/internal/job/{job_id}/video-failed"
             failure_data = {
                 "video_id": video_id,
@@ -535,11 +590,13 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
                 "last_error_type": last_error_type,
             }
 
-            callback_success = call_api_callback(callback_url, failure_data)
-            if not callback_success:
+            callback_called = call_api_callback(callback_url, failure_data)
+            if not callback_called:
                 logger.warning(f"Failed to call failure callback for video {video_id}")
         else:
-            logger.warning("No api_base_url provided, skipping failure callback")
+            logger.warning(
+                "No SQS queue or api_base_url provided, skipping failure callback"
+            )
 
         # Return error response
         return {
@@ -553,6 +610,6 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
                 "retriable": error_retriable,
                 "attempts": error_attempts,
                 "last_error_type": last_error_type,
-                "callback_called": api_base_url is not None,
+                "callback_called": callback_called,
             },
         }
