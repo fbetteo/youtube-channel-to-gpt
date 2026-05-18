@@ -64,6 +64,7 @@ from config_v2 import settings
 
 # Import hybrid job manager for database operations
 from hybrid_job_manager import hybrid_job_manager
+from job_result_processor import process_video_completion, process_video_failure
 
 # Import API key authentication for developer API
 from api_key_auth import (
@@ -3676,71 +3677,7 @@ async def video_completed(job_id: str, completion_data: dict):
     Updates job progress and file tracking.
     """
     try:
-        # Check execution time for monitoring
-        job = await hybrid_job_manager.get_job_status(job_id)
-        if job and job.get("lambda_dispatch_time"):
-            # Convert datetime to timestamp if needed
-            dispatch_time = job["lambda_dispatch_time"]
-            if isinstance(dispatch_time, datetime):
-                dispatch_time = dispatch_time.timestamp()
-
-            execution_time = time.time() - dispatch_time
-            if execution_time > 300:  # 5 minutes
-                logger.warning(
-                    f"Video {completion_data['video_id']} took {execution_time / 60:.1f} minutes to complete "
-                    f"(potential Lambda delay/timeout recovery)"
-                )
-            elif execution_time > 120:  # 2 minutes
-                logger.info(
-                    f"Video {completion_data['video_id']} took {execution_time / 60:.1f} minutes to complete"
-                )
-
-        # Check if this video was already counted as timed out
-        if job and job.get("timeout_occurred"):
-            logger.info(
-                f"Video {completion_data['video_id']} completed after timeout was triggered "
-                f"- this is a late-arriving Lambda response"
-            )
-
-            # # Don't process further, job already finalized
-            # # But currently I want to process it anyway to keep accurate counts. I will enable download before that.
-            # return {
-            #     "status": "ignored",
-            #     "reason": "late_arrival_after_timeout",
-            #     "job_id": job_id,
-            # }
-
-        # Mark video as completed with atomic database operations
-        updated_job = await hybrid_job_manager.mark_video_completed(
-            job_id=job_id,
-            video_id=completion_data["video_id"],
-            file_info={
-                "s3_key": completion_data["s3_key"],
-                "transcript_length": completion_data.get("transcript_length", 0),
-                "status": "completed",
-            },
-        )
-
-        logger.info(f"Video {completion_data['video_id']} completed for job {job_id}")
-
-        # Check if job is complete
-        if (
-            updated_job
-            and updated_job["processed_count"] >= updated_job["total_videos"]
-        ):
-            # Finalize credits (refund unused) - NOW ASYNC
-            await CreditManager.finalize_credit_usage(
-                user_id=updated_job["user_id"],
-                reservation_id=updated_job["reservation_id"],
-                credits_used=updated_job["credits_used"],
-                credits_reserved=updated_job["credits_reserved"],
-            )
-
-            # Update job status to completed
-            await hybrid_job_manager.update_job(job_id, status="completed")
-            logger.info(f"Job {job_id} completed - all videos processed")
-
-        return {"status": "updated", "job_id": job_id}
+        return await process_video_completion(job_id, completion_data)
 
     except Exception as e:
         logger.error(f"Error updating job progress: {str(e)}")
@@ -3753,59 +3690,7 @@ async def video_failed(job_id: str, failure_data: dict):
     Internal endpoint for Lambda to report video failure.
     """
     try:
-        # Check if this video was already counted as timed out
-        job = await hybrid_job_manager.get_job_status(job_id)
-        if job and job.get("timeout_occurred"):
-            logger.info(
-                f"Video {failure_data['video_id']} failed after timeout was triggered "
-                f"- this is a late-arriving Lambda response"
-            )
-            # # Don't process further, job already finalized
-            # return {
-            #     "status": "ignored",
-            #     "reason": "late_failure_after_timeout",
-            #     "job_id": job_id,
-            # }
-
-        updated_job = await hybrid_job_manager.mark_video_failed(
-            job_id=job_id,
-            video_id=failure_data["video_id"],
-            error_message=failure_data.get("error", "Unknown error"),
-        )
-
-        logger.warning(
-            f"Video {failure_data['video_id']} failed for job {job_id}: {failure_data.get('error', 'Unknown error')} "
-            f"(error_type={failure_data.get('error_type', 'unknown')}, "
-            f"stage={failure_data.get('stage', 'unknown')}, "
-            f"retriable={failure_data.get('retriable', False)}, "
-            f"attempts={failure_data.get('attempts', 1)})"
-        )
-
-        # Check if job is complete (including failures)
-        if (
-            updated_job
-            and updated_job["processed_count"] >= updated_job["total_videos"]
-        ):
-            # Finalize credits - NOW ASYNC
-            await CreditManager.finalize_credit_usage(
-                user_id=updated_job["user_id"],
-                reservation_id=updated_job["reservation_id"],
-                credits_used=updated_job["credits_used"],
-                credits_reserved=updated_job["credits_reserved"],
-            )
-
-            # Update job status
-            status = (
-                "completed_with_errors"
-                if updated_job["failed_count"] > 0
-                else "completed"
-            )
-            await hybrid_job_manager.update_job(job_id, status=status)
-            logger.info(
-                f"Job {job_id} completed with {updated_job['failed_count']} failures"
-            )
-
-        return {"status": "updated", "job_id": job_id}
+        return await process_video_failure(job_id, failure_data)
 
     except Exception as e:
         logger.error(f"Error updating job failure: {str(e)}")
