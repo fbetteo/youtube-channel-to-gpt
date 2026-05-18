@@ -2321,15 +2321,19 @@ async def prefetch_and_dispatch_task(job_id: str):
 
 async def monitor_job_timeout(job_id: str, timeout_minutes: int = 10):
     """
-    Monitor a job for timeout and mark pending videos as failed.
+    Monitor a job after the partial-results threshold.
+
+    This should not finalize the job. Large jobs can legitimately keep receiving
+    Lambda/SQS results after this point, while shorter jobs may still have enough
+    completed files for the user to download a useful partial ZIP.
 
     Args:
         job_id: The job identifier
-        timeout_minutes: Minutes to wait before timing out pending videos
+        timeout_minutes: Minutes to wait before checking partial availability
     """
     try:
         logger.info(
-            f"Job {job_id}: Starting timeout monitor with {timeout_minutes} minute limit"
+            f"Job {job_id}: Starting partial-results monitor with {timeout_minutes} minute threshold"
         )
 
         # Wait for the timeout period
@@ -2348,44 +2352,15 @@ async def monitor_job_timeout(job_id: str, timeout_minutes: int = 10):
             )
             return
 
-        # Calculate how many videos are still pending
         total_videos = job["total_videos"]
         processed_count = job["processed_count"]
         pending_count = total_videos - processed_count
 
         if pending_count > 0:
-            logger.warning(
-                f"Job {job_id}: {pending_count} videos still pending after {timeout_minutes} minutes, marking as failed"
-            )
-
-            # Mark pending videos as failed and complete the job
-            await hybrid_job_manager.update_job(
-                job_id,
-                status="completed",
-                timeout_occurred=True,
-                timeout_failed_count=pending_count,
-            )
-
-            # Finalize credits for completed job
-            try:
-                from transcript_api import CreditManager
-
-                updated_job = await hybrid_job_manager.get_job_status(job_id)
-                if updated_job and updated_job.get("reservation_id"):
-                    await CreditManager.finalize_credit_usage(
-                        user_id=updated_job["user_id"],
-                        reservation_id=updated_job["reservation_id"],
-                        credits_used=updated_job["credits_used"],
-                        credits_reserved=updated_job["credits_reserved"],
-                    )
-                    logger.info(f"Job {job_id}: Finalized credits after timeout")
-            except Exception as credit_error:
-                logger.error(
-                    f"Job {job_id}: Failed to finalize credits after timeout: {str(credit_error)}"
-                )
-
             logger.info(
-                f"Job {job_id}: Timeout handling completed, job marked as finished"
+                f"Job {job_id}: {processed_count}/{total_videos} videos processed after "
+                f"{timeout_minutes} minute(s). Keeping job in processing so late "
+                f"Lambda/SQS results can continue updating progress."
             )
         else:
             logger.info(
@@ -2570,13 +2545,15 @@ async def get_job_status_async(job_id: str) -> Dict[str, Any]:
         status_response["message"] = (
             f"Download completed. {completed} videos successful, {failed_count} failed."
         )
-        status_response["download_ready"] = True
+        status_response["download_ready"] = completed > 0
+        status_response["is_partial"] = False
         status_response["completed"] = completed
     else:
         status_response["message"] = (
             f"Processing in progress. {processed_count}/{total_videos} videos processed."
         )
-        status_response["download_ready"] = False
+        status_response["download_ready"] = completed > 0
+        status_response["is_partial"] = completed > 0
         status_response["completed"] = completed
     return status_response
 
@@ -2590,13 +2567,13 @@ async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:
         job_id: The job identifier
 
     Returns:
-        BytesIO object containing the ZIP file, or None if job not completed
+        BytesIO object containing the ZIP file, or None if no files are available
 
     Raises:
-        ValueError: If job ID not found or job not completed
+        ValueError: If job ID not found or no completed files are available
     """
     # Load job data from database
-    job = await hybrid_job_manager.get_job(job_id, include_videos=False)
+    job = await hybrid_job_manager.get_job(job_id, include_videos=True)
     if not job:
         raise ValueError(f"Job not found with ID: {job_id}")
 
@@ -2660,7 +2637,7 @@ async def create_concatenated_transcript(job_id: str) -> str:
         ValueError: If job not found
     """
     # Load job data from database
-    job = await hybrid_job_manager.get_job(job_id, include_videos=False)
+    job = await hybrid_job_manager.get_job(job_id, include_videos=True)
     if not job:
         raise ValueError(f"Job not found with ID: {job_id}")
 
@@ -2960,9 +2937,14 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
     if not job:
         raise ValueError(f"Job not found with ID: {job_id}")
 
-    if job["status"] not in ["completed", "completed_with_errors"]:
+    if job["status"] not in [
+        "dispatching",
+        "processing",
+        "completed",
+        "completed_with_errors",
+    ]:
         raise ValueError(
-            f"Cannot create ZIP: job status is {job['status']}, not completed"
+            f"Cannot create ZIP: job status is {job['status']}, not downloadable"
         )
 
     if not job.get("files"):
@@ -3228,19 +3210,24 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
         job_id: The job identifier
 
     Returns:
-        BytesIO object containing the ZIP file, or None if job not completed
+        BytesIO object containing the ZIP file, or None if no files are available
 
     Raises:
-        ValueError: If job ID not found or job not completed
+        ValueError: If job ID not found or no completed files are available
     """
     # Load job data from database
-    job = await hybrid_job_manager.get_job(job_id, include_videos=False)
+    job = await hybrid_job_manager.get_job(job_id, include_videos=True)
     if not job:
         raise ValueError(f"Job not found with ID: {job_id}")
 
-    if job["status"] not in ["completed", "completed_with_errors"]:
+    if job["status"] not in [
+        "dispatching",
+        "processing",
+        "completed",
+        "completed_with_errors",
+    ]:
         raise ValueError(
-            f"Cannot create ZIP: job status is {job['status']}, not completed"
+            f"Cannot create ZIP: job status is {job['status']}, not downloadable"
         )
 
     if not job.get("files"):
@@ -3389,7 +3376,7 @@ async def create_concatenated_transcript_from_s3_sequential(
         String containing all transcripts concatenated with separators
     """
     # Load job data from database
-    job = await hybrid_job_manager.get_job(job_id, include_videos=False)
+    job = await hybrid_job_manager.get_job(job_id, include_videos=True)
     if not job:
         raise ValueError(f"Job not found with ID: {job_id}")
 
