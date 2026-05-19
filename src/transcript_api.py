@@ -536,6 +536,15 @@ class ChannelRequest(BaseModel):
 
 class CheckoutSessionRequest(BaseModel):
     price_id: str = Field(..., description="Stripe price ID for the credit package")
+    promotekit_referral: Optional[str] = Field(
+        None, description="PromoteKit referral ID from the frontend"
+    )
+    user_id: Optional[str] = Field(
+        None, description="Authenticated user ID sent by the frontend for verification"
+    )
+    email: Optional[str] = Field(
+        None, description="Customer email used to prefill Stripe Checkout"
+    )
 
     @validator("price_id")
     def validate_price_id(cls, v):
@@ -1174,27 +1183,43 @@ async def create_checkout_session(
     """
     try:
         user_id = get_user_id_from_payload(payload)
+        if request.user_id and request.user_id != user_id:
+            logger.warning(
+                f"Checkout user_id mismatch: token user {user_id}, request user {request.user_id}"
+            )
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Request user does not match authenticated user",
+            )
+
         credits_to_add = PRICE_CREDITS_MAP[request.price_id]
+        metadata = {
+            "project": "transcript-api",
+            "user_id": user_id,
+            "credits": str(credits_to_add),
+        }
+        if request.promotekit_referral:
+            metadata["promotekit_referral"] = request.promotekit_referral
 
         # Create Stripe checkout session
-        checkout_session = stripe.checkout.Session.create(
-            payment_method_types=["card"],
-            line_items=[
+        checkout_session_params = {
+            "payment_method_types": ["card"],
+            "line_items": [
                 {
                     "price": request.price_id,
                     "quantity": 1,
                 }
             ],
-            mode="payment",
-            success_url=f"{FRONTEND_URL}/payment/success?session_id={{CHECKOUT_SESSION_ID}}",
-            cancel_url=f"{FRONTEND_URL}/payment/cancel",
-            client_reference_id=user_id,
-            metadata={
-                "project": "transcript-api",
-                "user_id": user_id,
-                "credits": credits_to_add,
-            },
-        )
+            "mode": "payment",
+            "success_url": f"{FRONTEND_URL}/payment/success?session_id={{CHECKOUT_SESSION_ID}}",
+            "cancel_url": f"{FRONTEND_URL}/payment/cancel",
+            "client_reference_id": user_id,
+            "metadata": metadata,
+        }
+        if request.email:
+            checkout_session_params["customer_email"] = request.email
+
+        checkout_session = stripe.checkout.Session.create(**checkout_session_params)
 
         logger.info(
             f"Created checkout session {checkout_session.id} for user {user_id}"
