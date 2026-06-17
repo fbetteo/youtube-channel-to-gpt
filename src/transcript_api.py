@@ -1215,6 +1215,7 @@ async def create_checkout_session(
             "cancel_url": f"{FRONTEND_URL}/payment/cancel",
             "client_reference_id": user_id,
             "metadata": metadata,
+            "allow_promotion_codes": True,
         }
         if request.email:
             checkout_session_params["customer_email"] = request.email
