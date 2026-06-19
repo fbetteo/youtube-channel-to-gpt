@@ -35,7 +35,7 @@ npx youtube-transcript-agent playlist download <playlist> --wait
 npx youtube-transcript-agent mcp
 ```
 
-Set `YOUTUBE_TRANSCRIPT_API_BASE_URL` if the API is not hosted at the production URL.
+Most users do not need to set an API URL. Set `YOUTUBE_TRANSCRIPT_API_BASE_URL` only for local development, staging, self-hosted deployments, or debugging.
 
 ## MCP Tools
 

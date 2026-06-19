@@ -14,7 +14,7 @@ npx youtube-transcript-agent transcript FOp280ZAxhg --timestamps
 Use the hosted MCP endpoint when your agent supports remote MCP:
 
 ```text
-Endpoint: https://your-api.example.com/mcp
+Endpoint: https://api.youtubetranscripts.fbetteo.com/mcp
 Auth: Authorization: Bearer <api_key>
 ```
 
@@ -97,12 +97,14 @@ For local CLI use:
 npx youtube-transcript-agent auth set-key <api_key>
 ```
 
-## API Base URL
+## Advanced API Base URL
 
-Set a custom API base URL for local development or staging:
+Most users do not need to set an API base URL. The CLI defaults to the hosted production API.
+
+Set a custom API base URL only for local development, staging, self-hosted deployments, or debugging:
 
 ```bash
-export YOUTUBE_TRANSCRIPT_API_BASE_URL=http://localhost:8000
+export YOUTUBE_TRANSCRIPT_API_BASE_URL=http://127.0.0.1:8000
 ```
 
 All CLI commands and local MCP calls will use that base URL.

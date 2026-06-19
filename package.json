@@ -1,11 +1,11 @@
 {
   "name": "youtube-transcript-agent",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Agent-ready CLI and local MCP server for YouTube transcript context.",
   "type": "module",
   "bin": {
-    "ytx": "./cli/dist/cli.js",
-    "youtube-transcript-agent": "./cli/dist/cli.js"
+    "ytx": "cli/dist/cli.js",
+    "youtube-transcript-agent": "cli/dist/cli.js"
   },
   "files": [
     "cli/dist",

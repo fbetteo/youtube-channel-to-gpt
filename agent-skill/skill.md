@@ -22,10 +22,12 @@ On Windows PowerShell:
 $env:YOUTUBE_TRANSCRIPT_API_KEY="<api_key>"
 ```
 
-If the API is local or staging:
+Most users do not need to set an API URL. The CLI defaults to the hosted production API.
+
+If the API is local, staging, or self-hosted:
 
 ```bash
-export YOUTUBE_TRANSCRIPT_API_BASE_URL=http://localhost:8000
+export YOUTUBE_TRANSCRIPT_API_BASE_URL=http://127.0.0.1:8000
 ```
 
 ## Recipes

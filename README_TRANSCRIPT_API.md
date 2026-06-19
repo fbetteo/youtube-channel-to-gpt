@@ -17,6 +17,12 @@ This project exposes a developer API, npm CLI, installable agent skill, and MCP 
 
 All `/api/v1/*` transcript endpoints require `X-API-Key`.
 
+Public API base URL:
+
+```bash
+API_BASE_URL=https://api.youtubetranscripts.fbetteo.com
+```
+
 ```bash
 curl -X POST "$API_BASE_URL/api/v1/transcripts/single" \
   -H "X-API-Key: $YOUTUBE_TRANSCRIPT_API_KEY" \
@@ -56,7 +62,7 @@ npx youtube-transcript-agent playlist download PLxxxx --wait
 npx youtube-transcript-agent mcp
 ```
 
-Use `YOUTUBE_TRANSCRIPT_API_BASE_URL` to point the CLI at a non-production API, for example `http://localhost:8000`.
+Most users do not need to set `YOUTUBE_TRANSCRIPT_API_BASE_URL`; the CLI defaults to the hosted production API. Use it only for local development, staging, self-hosted deployments, or debugging.
 
 ## Hosted MCP
 
