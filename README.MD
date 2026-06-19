@@ -1,83 +1,199 @@
-# CY GPT
+# YouTube Transcript Agent
 
+Turn any YouTube video, playlist, or channel into agent-ready transcript context.
 
-<p align="center">
-<img src="./assets/cyLogo.png" height="drawing" width="200"/>
-</p>
+This package provides:
 
-_This project is designed to make it more efficient to collate data from a Youtube Channel to create custom GPTs, train models or for use in querying a large context window (i.e: with Anthropic's Claude 2.1's 200k Token length)_
+- `ytx`, a CLI for transcripts, channel jobs, playlist jobs, polling, and ZIP downloads
+- a local stdio MCP server for coding agents and desktop assistants
+- docs for using the hosted `/mcp` endpoint and Developer API
 
-**Asking for approval before you do this is probably a good idea**
+## Install
 
-*<p align="center">The below example is strictly for research purposes</p>*
+Run without installing:
 
-### Example
-
-The default example is based on a prolific startup accelerator, we'll call them "**C Yombinator**".
-
-Their Youtube channel is filled with boundless insight on running a startup and learning how to "make it" in the tech startup industry!
-
-But their time is very limited and unless you are accepted into their accelerator it will be very difficult to seek advice from them.
-
-Here is where CY GPT comes into play, using the information acquired from the channels Youtube transcripts we can use that data and a bit of prompt engineering to create a custom GPT that will help make our startup tech dreams come true ✨🎉
-
-(in theory...)
-
-### Output Examples
-
-#### Custom GPT by OpenAi
-
-<p align="center">
-<img src="./assets/cy-custom-gpt.png" alt="drawing" height="400"/>
-</p>
-
-
-#### Claude 2.1 Context Window
-
-<p align="center">
-<img src="./assets/vc-claude-context-window.png" height="drawing" width="400"/>
-</p>
-
-### Setup
-
-1. Install python
-
-2. Head to https://developers.google.com/youtube/v3/getting-started and follow the steps to retrieve an API key for Youtube
-
-   a) Create a .env file
-
-   b) Add YOUTUBE_API_KEY=_your YT API key_
-
-3. pip install -r ./requirements
-
-### Running
-
-1. python ./src/retrieval.py - this will retrieve all the Youtube Video Ids and store them in youtube-ids.json
-
-2. python ./src/main.py - This will use those stored Youtube IDs to generate a complete channel transcript (if a video has subtitles enabled)
-
-**Custom GPT via OpenAi:**
-
-3. Head to https://chat.openai.com/gpts/discovery
-
-4. Create a GPT
-
-5. In the Configure tab within the "Knowledge" section, upload your retrieved transcript
-
-6. Update the **Instructions** section with a custom prompt
-
-Example Prompt:
-
-```
-Based on your knowledge base provide detailed and helpful advice to answer a users query.
+```bash
+npx youtube-transcript-agent --help
 ```
 
-7. Use your newly created custom GPT!
+Or install globally:
 
-**Context Window via Claude 2.1 by Anthropic**
+```bash
+npm install -g youtube-transcript-agent
+ytx --help
+```
 
-3. Head to https://claude.ai/chats
+## Authentication
 
-4. Drag n drop OR paste in your data to the input
+The CLI reads auth in this order:
 
-5. Ask questions about if your company has reached PMF yet (hint: it hasn't...sad face)
+1. `YOUTUBE_TRANSCRIPT_API_KEY`
+2. local config created by `ytx auth set-key`
+
+Set an API key:
+
+```bash
+npx youtube-transcript-agent auth set-key <api_key>
+```
+
+Or use environment variables:
+
+```bash
+export YOUTUBE_TRANSCRIPT_API_KEY=<api_key>
+```
+
+PowerShell:
+
+```powershell
+$env:YOUTUBE_TRANSCRIPT_API_KEY="<api_key>"
+```
+
+## CLI Usage
+
+Get account credits:
+
+```bash
+npx youtube-transcript-agent credits
+```
+
+Fetch one transcript:
+
+```bash
+npx youtube-transcript-agent transcript FOp280ZAxhg --timestamps
+```
+
+Download channel transcripts:
+
+```bash
+npx youtube-transcript-agent channel download "@mkbhd" --max 25 --wait --output channel.zip
+```
+
+Download playlist transcripts:
+
+```bash
+npx youtube-transcript-agent playlist download <playlist_url_or_id> --max 25 --wait --output playlist.zip
+```
+
+Poll a job:
+
+```bash
+npx youtube-transcript-agent jobs status <job_id>
+```
+
+Download a completed job:
+
+```bash
+npx youtube-transcript-agent jobs download <job_id> --output transcripts.zip
+```
+
+## Local MCP
+
+Start the local stdio MCP server:
+
+```bash
+npx youtube-transcript-agent mcp
+```
+
+This command waits for JSON-RPC messages on stdin. Agent clients should launch it with:
+
+```text
+Command: npx
+Args: youtube-transcript-agent mcp
+Env:
+  YOUTUBE_TRANSCRIPT_API_KEY=<api_key>
+```
+
+Available MCP tools:
+
+- `get_transcript`
+- `get_channel_info`
+- `list_channel_videos`
+- `start_channel_job`
+- `start_playlist_job`
+- `get_job_status`
+- `get_download_url`
+
+Manual smoke test:
+
+```bash
+echo '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' | npx youtube-transcript-agent mcp
+```
+
+## Hosted MCP
+
+If your API server is deployed with hosted MCP enabled:
+
+```text
+Endpoint: https://api.youtubetranscripts.fbetteo.com/mcp
+Auth: Authorization: Bearer <api_key>
+```
+
+List tools:
+
+```bash
+curl -X POST "https://api.youtubetranscripts.fbetteo.com/mcp" \
+  -H "Content-Type: application/json" \
+  --data-raw '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}'
+```
+
+Call a tool:
+
+```bash
+curl -X POST "https://api.youtubetranscripts.fbetteo.com/mcp" \
+  -H "Authorization: Bearer <api_key>" \
+  -H "Content-Type: application/json" \
+  --data-raw '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"get_transcript","arguments":{"video_url":"FOp280ZAxhg"}}}'
+```
+
+## Agent Skill
+
+The repo includes an installable skill template at:
+
+```text
+agent-skill/skill.md
+```
+
+For distribution, publish that file as the root `skill.md` in a separate public skill repo.
+
+## Troubleshooting
+
+## Advanced API Host Override
+
+Most users do not need to set an API URL. The package defaults to the hosted production API.
+
+Only set a custom base URL for local development, staging, self-hosted deployments, or debugging:
+
+```bash
+export YOUTUBE_TRANSCRIPT_API_BASE_URL=http://127.0.0.1:8000
+```
+
+Or save it in local CLI config:
+
+```bash
+npx youtube-transcript-agent auth set-key <api_key> --base-url http://127.0.0.1:8000
+```
+
+## Troubleshooting
+
+If `fetch failed` appears and the API logs show nothing, the CLI is not reaching the API host. Check:
+
+```bash
+echo "$YOUTUBE_TRANSCRIPT_API_BASE_URL"
+echo "$API_BASE_URL"
+cat ~/.youtube-transcript-agent/config.json 2>/dev/null
+```
+
+The CLI base URL priority is:
+
+1. `YOUTUBE_TRANSCRIPT_API_BASE_URL`
+2. `API_BASE_URL`
+3. saved local config
+4. package default
+
+On Windows PowerShell, quote channel handles:
+
+```powershell
+node cli/dist/cli.js channel download "@mkbhd" --max 2 --wait
+```
+
+PowerShell aliases `curl` to `Invoke-WebRequest`; use `curl.exe` or `Invoke-RestMethod`.

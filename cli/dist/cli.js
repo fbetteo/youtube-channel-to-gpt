@@ -33,7 +33,7 @@ Usage:
 
 Environment:
   YOUTUBE_TRANSCRIPT_API_KEY       API key, preferred over local config
-  YOUTUBE_TRANSCRIPT_API_BASE_URL  API base URL, default ${DEFAULT_BASE_URL}`);
+  YOUTUBE_TRANSCRIPT_API_BASE_URL  Optional local/staging API override, default ${DEFAULT_BASE_URL}`);
 }
 function getFlag(args, name, fallback) {
     const index = args.indexOf(name);
