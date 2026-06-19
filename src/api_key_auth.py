@@ -43,28 +43,18 @@ def hash_api_key(api_key: str) -> str:
     return hashlib.sha256(api_key.encode()).hexdigest()
 
 
-async def validate_api_key(
-    x_api_key: Optional[str] = Header(None, alias="X-API-Key")
-) -> Dict[str, Any]:
+async def validate_api_key_value(api_key: str) -> Dict[str, Any]:
     """
-    Validate an API key from the X-API-Key header.
+    Validate a raw API key value.
 
     Returns:
         Dict with user_id, key_id, rate_limit_tier, and other key metadata
 
     Raises:
-        HTTPException 401 if key is missing
         HTTPException 403 if key is invalid, inactive, or expired
     """
-    if not x_api_key:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="API key is required. Provide it via X-API-Key header.",
-            headers={"WWW-Authenticate": "ApiKey"},
-        )
-
     # Hash the provided key
-    key_hash = hash_api_key(x_api_key)
+    key_hash = hash_api_key(api_key)
 
     try:
         from db_youtube_transcripts.database import get_db_connection
@@ -83,7 +73,7 @@ async def validate_api_key(
             )
 
             if not row:
-                logger.warning(f"Invalid API key attempted: {x_api_key[:12]}...")
+                logger.warning(f"Invalid API key attempted: {api_key[:12]}...")
                 raise HTTPException(
                     status_code=status.HTTP_403_FORBIDDEN,
                     detail="Invalid API key",
@@ -139,6 +129,25 @@ async def validate_api_key(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to validate API key",
         )
+
+
+async def validate_api_key(
+    x_api_key: Optional[str] = Header(None, alias="X-API-Key")
+) -> Dict[str, Any]:
+    """
+    Validate an API key from the X-API-Key header.
+
+    Raises:
+        HTTPException 401 if key is missing
+    """
+    if not x_api_key:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="API key is required. Provide it via X-API-Key header.",
+            headers={"WWW-Authenticate": "ApiKey"},
+        )
+
+    return await validate_api_key_value(x_api_key)
 
 
 async def create_api_key(
