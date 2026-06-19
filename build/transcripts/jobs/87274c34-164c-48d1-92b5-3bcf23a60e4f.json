@@ -1,0 +1,72 @@
+{
+  "status": "processing",
+  "source_id": "UCBJycsmduvYEL83R_U4JriQ",
+  "source_name": "Marques Brownlee - Videos",
+  "source_type": "channel",
+  "channel_name": "Marques Brownlee - Videos",
+  "playlist_id": null,
+  "total_videos": 2,
+  "completed": 0,
+  "failed_count": 0,
+  "processed_count": 0,
+  "files": [],
+  "videos": [
+    {
+      "id": "WOzcFkld6_g",
+      "title": "The Most Interesting Displays In The World!",
+      "url": "https://www.youtube.com/watch?v=WOzcFkld6_g",
+      "duration_seconds": 957,
+      "duration_category": "medium",
+      "duration": "medium",
+      "view_count": 0,
+      "viewCount": 0,
+      "publishedAt": "2026-06-17"
+    },
+    {
+      "id": "_gCXmKjDecU",
+      "title": "WWDC 2026 Impressions: Yeah, That's About Right",
+      "url": "https://www.youtube.com/watch?v=_gCXmKjDecU",
+      "duration_seconds": 988,
+      "duration_category": "medium",
+      "duration": "medium",
+      "view_count": 0,
+      "viewCount": 0,
+      "publishedAt": "2026-06-10"
+    }
+  ],
+  "start_time": 1781897463.039846,
+  "user_id": "c78c3fd6-a2a9-4aa6-8060-99a801538a00",
+  "credits_reserved": 2,
+  "credits_used": 0,
+  "reservation_id": "6250e46c-8d52-428a-b3c1-3716419a7221",
+  "videos_metadata": {
+    "WOzcFkld6_g": {
+      "id": "WOzcFkld6_g",
+      "title": "The Most Interesting Displays In The World!",
+      "viewCount": 0,
+      "webpage_url": "https://www.youtube.com/watch?v=WOzcFkld6_g",
+      "duration": "medium",
+      "upload_date": null
+    },
+    "_gCXmKjDecU": {
+      "id": "_gCXmKjDecU",
+      "title": "WWDC 2026 Impressions: Yeah, That's About Right",
+      "viewCount": 0,
+      "webpage_url": "https://www.youtube.com/watch?v=_gCXmKjDecU",
+      "duration": "medium",
+      "upload_date": null
+    }
+  },
+  "prefetch_completed": true,
+  "lambda_dispatched_count": 2,
+  "formatting_options": {
+    "include_timestamps": false,
+    "include_video_title": true,
+    "include_video_id": true,
+    "include_video_url": true,
+    "include_view_count": false,
+    "concatenate_all": false
+  },
+  "api_key_id": "8bc88ab5-74d5-400b-92a7-14218b775931",
+  "lambda_dispatch_time": 1781897468.6673512
+}

@@ -1,0 +1,50 @@
+# YouTube Transcript Agent
+
+Use this service when you need YouTube video, playlist, or channel transcripts as context for an AI agent.
+
+## Primary Docs
+
+- Agent guide: /docs/agent.md
+- Developer OpenAPI: /api/v1/openapi.json
+- Hosted MCP endpoint: /mcp
+
+## Authentication
+
+Developer API endpoints use:
+
+```
+X-API-Key: <api_key>
+```
+
+Hosted MCP tool calls use:
+
+```
+Authorization: Bearer <api_key>
+```
+
+The CLI reads `YOUTUBE_TRANSCRIPT_API_KEY` first, then local CLI config.
+
+## CLI
+
+Install and run with npx:
+
+```
+npx youtube-transcript-agent transcript <youtube_video_url_or_id>
+npx youtube-transcript-agent channel download <channel> --wait --output transcripts.zip
+npx youtube-transcript-agent playlist download <playlist> --wait
+npx youtube-transcript-agent mcp
+```
+
+Set `YOUTUBE_TRANSCRIPT_API_BASE_URL` if the API is not hosted at the production URL.
+
+## MCP Tools
+
+- `get_transcript`
+- `get_channel_info`
+- `list_channel_videos`
+- `start_channel_job`
+- `start_playlist_job`
+- `get_job_status`
+- `get_download_url`
+
+For large channel and playlist jobs, start a job, poll until `download_ready`, then download the ZIP with the CLI or the developer API.

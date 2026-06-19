@@ -75,6 +75,8 @@ from api_key_auth import (
 
 # Import developer API router
 from routers.developer_api import router as developer_api_router
+from routers.agent_docs import router as agent_docs_router
+from routers.mcp import router as mcp_router
 
 
 # Stripe configuration
@@ -127,6 +129,8 @@ app.add_middleware(
 
 # Register Developer API router (provides /api/v1/* endpoints)
 app.include_router(developer_api_router)
+app.include_router(agent_docs_router)
+app.include_router(mcp_router)
 
 # Simple in-memory cache for user sessions
 # In production, consider a more robust solution like Redis

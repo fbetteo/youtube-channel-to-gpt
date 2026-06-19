@@ -1,0 +1,53 @@
+{
+  "status": "processing",
+  "source_id": "UCv51HKH0-lt1Ker5e7navxw",
+  "source_name": "купить-футбольную-форму.рф Max - Videos",
+  "source_type": "channel",
+  "channel_name": "купить-футбольную-форму.рф Max - Videos",
+  "playlist_id": null,
+  "total_videos": 1,
+  "completed": 0,
+  "failed_count": 0,
+  "processed_count": 0,
+  "files": [],
+  "videos": [
+    {
+      "id": "lQMbFQYZQEg",
+      "title": "Видео отзыв футболка Реал Мадрид 15 16",
+      "url": "https://www.youtube.com/watch?v=lQMbFQYZQEg",
+      "duration_seconds": 178,
+      "duration_category": "medium",
+      "duration": "medium",
+      "view_count": 0,
+      "viewCount": 0,
+      "publishedAt": "2017-06-20"
+    }
+  ],
+  "start_time": 1781896447.5546215,
+  "user_id": "c78c3fd6-a2a9-4aa6-8060-99a801538a00",
+  "credits_reserved": 1,
+  "credits_used": 0,
+  "reservation_id": "ee13c8eb-17fc-4412-a58d-e00ca838f6cb",
+  "videos_metadata": {
+    "lQMbFQYZQEg": {
+      "id": "lQMbFQYZQEg",
+      "title": "Видео отзыв футболка Реал Мадрид 15 16",
+      "viewCount": 0,
+      "webpage_url": "https://www.youtube.com/watch?v=lQMbFQYZQEg",
+      "duration": "medium",
+      "upload_date": null
+    }
+  },
+  "prefetch_completed": true,
+  "lambda_dispatched_count": 1,
+  "formatting_options": {
+    "include_timestamps": false,
+    "include_video_title": true,
+    "include_video_id": true,
+    "include_video_url": true,
+    "include_view_count": false,
+    "concatenate_all": false
+  },
+  "api_key_id": "8bc88ab5-74d5-400b-92a7-14218b775931",
+  "lambda_dispatch_time": 1781896453.6660671
+}
