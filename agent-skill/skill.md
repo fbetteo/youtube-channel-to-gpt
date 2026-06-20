@@ -25,7 +25,7 @@ $env:YOUTUBE_TRANSCRIPT_API_KEY="<api_key>"
 Most users do not need to set an API URL. The CLI defaults to the hosted production API.
 
 If the API is local, staging, or self-hosted:
-
+                                                                
 ```bash
 export YOUTUBE_TRANSCRIPT_API_BASE_URL=http://127.0.0.1:8000
 ```
