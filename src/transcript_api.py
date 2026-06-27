@@ -78,7 +78,6 @@ from routers.developer_api import router as developer_api_router
 from routers.agent_docs import router as agent_docs_router
 from routers.mcp import router as mcp_router
 
-
 # Stripe configuration
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY_LIVE")
 STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET_TRANSCRIPTS")
@@ -1021,7 +1020,7 @@ def check_anonymous_rate_limit(request: Request):
         client_ip = forwarded.split(",")[0].strip()
 
     # Check if rate limit is exceeded
-    free_limit = 100  # 3 downloads per hour
+    free_limit = 10  # 3 downloads per hour
 
     if not transcript_limiter.can_make_request(client_ip, free_limit):
         # Calculate remaining time
