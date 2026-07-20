@@ -16,6 +16,7 @@ import tempfile
 import threading
 import time
 import zipfile
+from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import quote
 from typing import Dict, List, Optional, Any, Tuple
 
@@ -34,6 +35,30 @@ from hybrid_job_manager import hybrid_job_manager
 
 # Configure logging
 logger = logging.getLogger(__name__)
+
+VIDEO_INFO_MAX_ATTEMPTS = 2
+VIDEO_INFO_SOCKET_TIMEOUT_SECONDS = 6
+VIDEO_INFO_ATTEMPT_TIMEOUT_SECONDS = 7.0
+VIDEO_INFO_TOTAL_TIMEOUT_SECONDS = 15.0
+VIDEO_INFO_RETRY_DELAY_SECONDS = 0.25
+VIDEO_INFO_EXECUTOR_MAX_WORKERS = 4
+
+TERMINAL_VIDEO_METADATA_MARKERS = (
+    "private video",
+    "video unavailable",
+    "this video is unavailable",
+    "has been removed",
+    "no longer available",
+    "members-only",
+    "members only",
+    "join this channel",
+    "sign in to confirm your age",
+    "age-restricted",
+    "age restricted",
+)
+
+_video_info_executor: Optional[ThreadPoolExecutor] = None
+_video_info_executor_lock = threading.Lock()
 
 RETRIABLE_TRANSCRIPT_ERROR_TYPES = {
     "ChunkedEncodingError",
@@ -222,6 +247,89 @@ class TranscriptRetrievalError(Exception):
         super().__init__(message)
 
 
+class VideoMetadataNotAccessible(Exception):
+    """Raised when YouTube reports a terminal video-access failure."""
+
+    def __init__(self, video_id: str, original_exception: Exception):
+        self.video_id = video_id
+        self.original_exception = original_exception
+        self.error_type = type(original_exception).__name__
+        super().__init__(f"Video metadata is not accessible for {video_id}")
+
+
+class VideoMetadataUnavailable(Exception):
+    """Raised when transient metadata extraction attempts are exhausted."""
+
+    def __init__(
+        self, video_id: str, attempts: int, original_exception: Exception
+    ):
+        self.video_id = video_id
+        self.attempts = attempts
+        self.original_exception = original_exception
+        self.error_type = type(original_exception).__name__
+        super().__init__(
+            f"Video metadata is temporarily unavailable for {video_id} "
+            f"after {attempts} attempt(s)"
+        )
+
+
+class _VideoInfoAttemptTiming:
+    """Thread-safe timestamps for executor queue and extraction timing."""
+
+    def __init__(self) -> None:
+        self.submitted_at = time.perf_counter()
+        self.started_at: Optional[float] = None
+        self.finished_at: Optional[float] = None
+        self._lock = threading.Lock()
+
+    def mark_started(self) -> None:
+        with self._lock:
+            self.started_at = time.perf_counter()
+
+    def mark_finished(self) -> None:
+        with self._lock:
+            self.finished_at = time.perf_counter()
+
+    def durations_ms(self) -> Tuple[float, float]:
+        now = time.perf_counter()
+        with self._lock:
+            started_at = self.started_at
+            finished_at = self.finished_at
+
+        if started_at is None:
+            return (now - self.submitted_at) * 1000, 0.0
+
+        queue_ms = (started_at - self.submitted_at) * 1000
+        yt_dlp_ms = ((finished_at or now) - started_at) * 1000
+        return queue_ms, yt_dlp_ms
+
+
+def _get_video_info_executor() -> ThreadPoolExecutor:
+    """Return the isolated executor used by interactive metadata requests."""
+    global _video_info_executor
+
+    with _video_info_executor_lock:
+        if _video_info_executor is None:
+            _video_info_executor = ThreadPoolExecutor(
+                max_workers=VIDEO_INFO_EXECUTOR_MAX_WORKERS,
+                thread_name_prefix="video-info",
+            )
+        return _video_info_executor
+
+
+def shutdown_video_info_executor() -> None:
+    """Stop accepting metadata work and cancel tasks that have not started."""
+    global _video_info_executor
+
+    with _video_info_executor_lock:
+        executor = _video_info_executor
+        _video_info_executor = None
+
+    if executor is not None:
+        executor.shutdown(wait=False, cancel_futures=True)
+        logger.info("Video metadata executor shut down")
+
+
 def _iter_exception_messages(error: Exception) -> List[str]:
     """Collect error messages from chained exceptions for classification."""
     messages = []
@@ -367,11 +475,7 @@ def _get_ydl_opts(base_opts: Dict[str, Any]) -> Dict[str, Any]:
         proxy_url = f"http://{username}:{password}@p.webshare.io:80"
         opts["proxy"] = proxy_url
 
-        # Log masked proxy URL for debugging (show session number)
-        masked_pass = "*" * 5
-        logger.info(
-            f"Using Webshare proxy: http://{username}:{masked_pass}@p.webshare.io:80"
-        )
+        logger.info("Using Webshare rotating proxy for yt-dlp")
     return opts
 
 
@@ -1007,70 +1111,224 @@ async def get_videos_metadata_batch(video_ids: List[str]) -> Dict[str, Dict[str,
         raise
 
 
-async def get_video_info(video_id: str) -> Dict[str, Any]:
-    """
-    Get detailed metadata for a YouTube video using yt-dlp.
+def _is_yt_dlp_download_error(error: Exception) -> bool:
+    """Return whether an exception is yt-dlp's extraction error wrapper."""
+    utils_module = getattr(yt_dlp, "utils", None)
+    download_error_type = getattr(utils_module, "DownloadError", None)
+    return download_error_type is not None and isinstance(error, download_error_type)
 
-    Args:
-        video_id: The YouTube video ID
 
-    Returns:
-        Dictionary with video metadata (title, channel, views, etc.)
+def _is_terminal_video_metadata_error(error: Exception) -> bool:
+    """Identify stable access failures that should not be retried."""
+    combined_message = " | ".join(_iter_exception_messages(error)).lower()
+    return any(marker in combined_message for marker in TERMINAL_VIDEO_METADATA_MARKERS)
 
-    Raises:
-        ValueError: If video ID is invalid or video doesn't exist
-    """
+
+def _fetch_video_info_sync(
+    video_id: str, timing: _VideoInfoAttemptTiming
+) -> Optional[Dict[str, Any]]:
+    """Run one bounded yt-dlp metadata attempt in the dedicated executor."""
+    timing.mark_started()
     try:
-
-        def _fetch_info():
-            url = f"https://www.youtube.com/watch?v={video_id}"
-            ydl_opts = {
+        url = f"https://www.youtube.com/watch?v={video_id}"
+        ydl_opts = _get_ydl_opts(
+            {
                 "quiet": True,
                 "skip_download": True,
-                "ignoreerrors": True,
                 "no_warnings": True,
+                "ignoreerrors": False,
+                "socket_timeout": VIDEO_INFO_SOCKET_TIMEOUT_SECONDS,
+                "retries": 0,
+                "extractor_retries": 0,
             }
-            # Add proxy if configured
-            ydl_opts = _get_ydl_opts(ydl_opts)
-            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-                info = ydl.extract_info(url, download=False)
-                return info
+        )
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            return ydl.extract_info(url, download=False)
+    finally:
+        timing.mark_finished()
 
-        info = await asyncio.to_thread(_fetch_info)
 
-        if not info:
-            raise ValueError(f"No video found with ID: {video_id}")
+def _log_video_info_attempt(
+    video_id: str,
+    attempt: int,
+    timing: _VideoInfoAttemptTiming,
+    result: str,
+    error_type: str = "none",
+) -> None:
+    queue_ms, yt_dlp_ms = timing.durations_ms()
+    logger.info(
+        "video_info video_id=%s attempt=%s queue_ms=%.2f "
+        "yt_dlp_ms=%.2f result=%s error_type=%s",
+        video_id,
+        attempt,
+        queue_ms,
+        yt_dlp_ms,
+        result,
+        error_type,
+    )
 
-        duration_seconds = info.get("duration", 0)
-        hours = duration_seconds // 3600
-        minutes = (duration_seconds % 3600) // 60
-        seconds = duration_seconds % 60
-        if hours > 0:
-            duration_str = f"{hours}:{minutes:02d}:{seconds:02d}"
-        else:
-            duration_str = f"{minutes}:{seconds:02d}"
 
-        # Build metadata dictionary
-        metadata = {
-            "id": video_id,
-            "title": info.get("title", "Untitled"),
-            "description": info.get("description", ""),
-            "channelId": info.get("channel_id", ""),
-            "channelTitle": info.get("uploader", ""),
-            "publishedAt": info.get("upload_date", ""),
-            "thumbnail": info.get("thumbnail", ""),
-            "duration": duration_str,
-            "viewCount": info.get("view_count", 0),
-            "likeCount": info.get("like_count", 0),
-            "commentCount": info.get("comment_count", 0),
-            "url": f"https://www.youtube.com/watch?v={video_id}",
-        }
+def _build_video_metadata(video_id: str, info: Dict[str, Any]) -> Dict[str, Any]:
+    """Map a yt-dlp info dictionary to the existing public response shape."""
+    duration_seconds = info.get("duration", 0)
+    hours = duration_seconds // 3600
+    minutes = (duration_seconds % 3600) // 60
+    seconds = duration_seconds % 60
+    if hours > 0:
+        duration_str = f"{hours}:{minutes:02d}:{seconds:02d}"
+    else:
+        duration_str = f"{minutes}:{seconds:02d}"
 
-        return metadata
+    return {
+        "id": video_id,
+        "title": info.get("title", "Untitled"),
+        "description": info.get("description", ""),
+        "channelId": info.get("channel_id", ""),
+        "channelTitle": info.get("uploader", ""),
+        "publishedAt": info.get("upload_date", ""),
+        "thumbnail": info.get("thumbnail", ""),
+        "duration": duration_str,
+        "viewCount": info.get("view_count", 0),
+        "likeCount": info.get("like_count", 0),
+        "commentCount": info.get("comment_count", 0),
+        "url": f"https://www.youtube.com/watch?v={video_id}",
+    }
 
-    except Exception as e:
-        logger.error(f"Error fetching video info for {video_id}: {str(e)}")
-        raise ValueError(f"Failed to get metadata for video {video_id}: {str(e)}")
+
+async def get_video_info(video_id: str) -> Dict[str, Any]:
+    """Get video metadata using two bounded, isolated yt-dlp attempts."""
+    total_started = time.perf_counter()
+    attempts = 0
+    last_error: Optional[Exception] = None
+
+    try:
+        async with asyncio.timeout(VIDEO_INFO_TOTAL_TIMEOUT_SECONDS):
+            loop = asyncio.get_running_loop()
+            info: Optional[Dict[str, Any]] = None
+
+            for attempt in range(1, VIDEO_INFO_MAX_ATTEMPTS + 1):
+                attempts = attempt
+                timing = _VideoInfoAttemptTiming()
+                future = loop.run_in_executor(
+                    _get_video_info_executor(),
+                    _fetch_video_info_sync,
+                    video_id,
+                    timing,
+                )
+
+                try:
+                    info = await asyncio.wait_for(
+                        future, timeout=VIDEO_INFO_ATTEMPT_TIMEOUT_SECONDS
+                    )
+                except TimeoutError as error:
+                    last_error = error
+                    _log_video_info_attempt(
+                        video_id, attempt, timing, "timeout", type(error).__name__
+                    )
+                except Exception as error:
+                    if not _is_yt_dlp_download_error(error):
+                        _log_video_info_attempt(
+                            video_id,
+                            attempt,
+                            timing,
+                            "unexpected_error",
+                            type(error).__name__,
+                        )
+                        raise
+
+                    if _is_terminal_video_metadata_error(error):
+                        _log_video_info_attempt(
+                            video_id,
+                            attempt,
+                            timing,
+                            "terminal_error",
+                            type(error).__name__,
+                        )
+                        raise VideoMetadataNotAccessible(video_id, error) from error
+
+                    last_error = error
+                    _log_video_info_attempt(
+                        video_id,
+                        attempt,
+                        timing,
+                        "transient_error",
+                        type(error).__name__,
+                    )
+                else:
+                    if info is not None:
+                        _log_video_info_attempt(video_id, attempt, timing, "success")
+                        metadata = _build_video_metadata(video_id, info)
+                        total_ms = (time.perf_counter() - total_started) * 1000
+                        logger.info(
+                            "video_info video_id=%s attempts=%s total_ms=%.2f "
+                            "result=success error_type=none",
+                            video_id,
+                            attempts,
+                            total_ms,
+                        )
+                        return metadata
+
+                    last_error = RuntimeError("yt-dlp returned no metadata")
+                    _log_video_info_attempt(
+                        video_id,
+                        attempt,
+                        timing,
+                        "empty_result",
+                        type(last_error).__name__,
+                    )
+
+                if attempt < VIDEO_INFO_MAX_ATTEMPTS:
+                    await asyncio.sleep(VIDEO_INFO_RETRY_DELAY_SECONDS)
+
+            if last_error is None:
+                last_error = RuntimeError("Metadata extraction failed without an error")
+            raise VideoMetadataUnavailable(video_id, attempts, last_error)
+
+    except VideoMetadataNotAccessible as error:
+        total_ms = (time.perf_counter() - total_started) * 1000
+        logger.info(
+            "video_info video_id=%s attempts=%s total_ms=%.2f "
+            "result=terminal_error error_type=%s",
+            video_id,
+            attempts,
+            total_ms,
+            error.error_type,
+        )
+        raise
+    except VideoMetadataUnavailable as error:
+        total_ms = (time.perf_counter() - total_started) * 1000
+        logger.warning(
+            "video_info video_id=%s attempts=%s total_ms=%.2f "
+            "result=unavailable error_type=%s",
+            video_id,
+            attempts,
+            total_ms,
+            error.error_type,
+        )
+        raise
+    except TimeoutError as error:
+        total_ms = (time.perf_counter() - total_started) * 1000
+        logger.warning(
+            "video_info video_id=%s attempts=%s total_ms=%.2f "
+            "result=total_timeout error_type=%s",
+            video_id,
+            attempts,
+            total_ms,
+            type(error).__name__,
+        )
+        raise VideoMetadataUnavailable(video_id, attempts, error) from error
+    except Exception as error:
+        total_ms = (time.perf_counter() - total_started) * 1000
+        logger.error(
+            "video_info video_id=%s attempts=%s total_ms=%.2f "
+            "result=unexpected_error error_type=%s",
+            video_id,
+            attempts,
+            total_ms,
+            type(error).__name__,
+            exc_info=True,
+        )
+        raise
 
 
 def _format_duration(duration_str: str) -> str:
