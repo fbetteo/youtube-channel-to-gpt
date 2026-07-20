@@ -1169,6 +1169,11 @@ async def shutdown_event():
     except Exception as e:
         logger.error(f"Error during shutdown cleanup: {e}")
 
+    try:
+        youtube_service.shutdown_video_info_executor()
+    except Exception as e:
+        logger.error(f"Error shutting down video metadata executor: {e}")
+
     logger.info("YouTube Transcript API shutdown complete")
 
 
@@ -2127,16 +2132,37 @@ async def get_video_info(url: str, session: Dict = Depends(get_user_session)):
     This endpoint is available for anonymous users with no rate limit.
     """
     try:
-        # Extract video ID from URL
         video_id = youtube_service.extract_youtube_id(url)
-
-        # Get video metadata using the new service
-        metadata = await youtube_service.get_video_info(video_id)
-        return metadata
-
     except ValueError as e:
         logger.error(f"Invalid video URL: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
+
+    try:
+        metadata = await youtube_service.get_video_info(video_id)
+        return metadata
+
+    except youtube_service.VideoMetadataNotAccessible as e:
+        logger.info(
+            "Video metadata is not accessible: video_id=%s error_type=%s",
+            e.video_id,
+            e.error_type,
+        )
+        raise HTTPException(
+            status_code=404,
+            detail="Video is unavailable or its metadata cannot be accessed",
+        )
+    except youtube_service.VideoMetadataUnavailable as e:
+        logger.warning(
+            "Video metadata is temporarily unavailable: video_id=%s "
+            "attempts=%s error_type=%s",
+            e.video_id,
+            e.attempts,
+            e.error_type,
+        )
+        raise HTTPException(
+            status_code=503,
+            detail="Video metadata is temporarily unavailable. Please try again.",
+        )
     except Exception as e:
         logger.error(f"Error retrieving video metadata: {str(e)}", exc_info=True)
         raise HTTPException(
