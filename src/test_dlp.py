@@ -53,3 +53,78 @@ with yt_dlp.YoutubeDL(ydl_opts) as ydl:
     info = ydl.extract_info(url, download=False)
 
 info
+info.keys()
+
+info["entries"]
+
+# poetry run python -m yt_dlp --flat-playlist --playlist-end 5 --print "%(id)s | views=%(view_count)s | %(title)s" "https://www.youtube.com/@andrejkarpathy/videos"
+
+
+# extract in playlist
+url = f"https://www.youtube.com/channel/UCXUPKJO5MZQN11PqgIvyuvQ/playlists"
+
+ydl_opts = {
+    "quiet": True,
+    "skip_download": True,
+    "extract_flat": "in_playlist",
+    # "dump_single_json": True,
+    "ignoreerrors": True,
+}
+ydl_opts = _get_ydl_opts(ydl_opts)
+
+with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+    info = ydl.extract_info(url, download=False)
+
+info
+info.keys()
+
+info["entries"]
+
+
+## Channel test
+
+url = "https://www.youtube.com/@andrejkarpathy/videos"
+
+ydl_opts = {
+    "quiet": True,
+    "extract_flat": True,
+    "playlistend": 5,
+    "dump_single_json": True,
+    "ignoreerrors": True,
+}
+
+with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+    info = ydl.extract_info(url, download=False)
+
+for entry in info["entries"]:
+    print(
+        entry.get("id"),
+        entry.get("view_count"),
+        entry.get("duration"),
+        entry.get("title"),
+    )
+
+
+##
+
+url = f"https://www.youtube.com/channel/UCXUPKJO5MZQN11PqgIvyuvQ/videos"
+
+ydl_opts = {
+    "quiet": True,
+    "extract_flat": True,
+    "dump_single_json": True,
+    "ignoreerrors": True,
+}
+
+with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+    info = ydl.extract_info(url, download=False)
+
+for entry in info["entries"]:
+    print(
+        entry.get("id"),
+        entry.get("view_count"),
+        entry.get("duration"),
+        entry.get("title"),
+    )
+
+info
