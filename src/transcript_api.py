@@ -205,10 +205,10 @@ class CreditManager:
                     return result["credits"]
                 else:
                     logger.info(
-                        f"User {user_id} not found in credits table, creating with 10 credits"
+                        f"User {user_id} not found in credits table, creating with 25 credits"
                     )
                     # Create user with 0 credits if doesn't exist
-                    await CreditManager.create_user_credits(user_id, 10)
+                    await CreditManager.create_user_credits(user_id, 25)
                     return 0
 
         except Exception as e:
