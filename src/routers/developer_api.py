@@ -24,6 +24,7 @@ from api_key_auth import (
     increment_api_key_credits_used,
 )
 from hybrid_job_manager import hybrid_job_manager
+from db_youtube_transcripts.job_manager import InsufficientCreditsError, JobManager
 
 logger = logging.getLogger(__name__)
 
@@ -130,13 +131,30 @@ class JobStatusResponse(BaseModel):
     processed_count: int
     completed: int
     failed_count: int
+    skipped_count: int = 0
     credits_used: int
+    refunded_credits: int = 0
     source_type: str
     source_name: str
     download_ready: bool
     download_url: Optional[str] = None
     elapsed_seconds: Optional[float] = None
     error_message: Optional[str] = None
+
+
+class JobCancellationResponse(BaseModel):
+    job_id: str
+    status: str
+    total_videos: int
+    processed_count: int
+    completed: int
+    failed_count: int
+    skipped_count: int
+    credits_used: int
+    refunded_credits: int
+    refunded_now: int
+    download_ready: bool
+    download_url: Optional[str] = None
 
 
 class CreditsResponse(BaseModel):
@@ -275,8 +293,6 @@ async def _start_developer_job_after_discovery(
     credits_reserved = 0
 
     try:
-        await hybrid_job_manager.update_job(job_id, status="discovering")
-
         if source_type == "channel":
             channel_info = await youtube_service.get_channel_info(source_input)
             source_id = channel_info.get("channelId", source_input)
@@ -291,41 +307,51 @@ async def _start_developer_job_after_discovery(
         if max_videos and max_videos < len(all_videos):
             all_videos = all_videos[:max_videos]
 
-        if not all_videos:
-            await hybrid_job_manager.update_job(
+        all_videos, excluded_videos = youtube_service.normalize_videos_for_job(
+            all_videos
+        )
+        if excluded_videos:
+            logger.warning(
+                "API discovery for %s excluded %s unavailable/duplicate video(s)",
                 job_id,
-                status="failed",
-                error_message="No videos found for the requested source",
+                len(excluded_videos),
+            )
+
+        if not all_videos:
+            await JobManager.fail_job_before_dispatch(
+                job_id,
+                "No videos found for the requested source",
             )
             return
 
         num_videos = len(all_videos)
         rate_limits = get_rate_limits(rate_limit_tier)
         if num_videos > rate_limits["max_videos_per_job"]:
-            await hybrid_job_manager.update_job(
+            await JobManager.fail_job_before_dispatch(
                 job_id,
-                status="failed",
-                error_message=(
+                (
                     f"Exceeds maximum videos per job ({rate_limits['max_videos_per_job']}). "
                     "Use max_videos parameter to limit, or upgrade your API tier."
                 ),
             )
             return
 
-        await hybrid_job_manager.update_job(job_id, status="reserving_credits")
+        if not await hybrid_job_manager.update_job_status_safe(
+            job_id, "reserving_credits", expected_current_status="discovering"
+        ):
+            return
 
         credits = await get_user_credits(user_id)
         if credits < num_videos:
-            await hybrid_job_manager.update_job(
+            await JobManager.fail_job_before_dispatch(
                 job_id,
-                status="failed",
-                error_message=(
+                (
                     f"Insufficient credits. Need {num_videos} credits, have {credits}."
                 ),
             )
             return
 
-        reservation_id = await reserve_credits(user_id, num_videos)
+        reservation_id = str(uuid.uuid4())
         credits_reserved = num_videos
 
         videos_for_job = [
@@ -375,36 +401,60 @@ async def _start_developer_job_after_discovery(
             "api_key_id": api_key_id,
         }
 
-        await hybrid_job_manager.create_job(job_id, job_data, videos_for_job)
-        await increment_api_key_credits_used(api_key_id, num_videos)
-
+        await hybrid_job_manager.create_job(
+            job_id,
+            job_data,
+            videos_for_job,
+            reserve_credits=True,
+            replace_placeholder=True,
+        )
         logger.info(
             f"API: Discovery completed for {job_id}. Starting processing for {num_videos} videos"
         )
         asyncio.create_task(youtube_service.prefetch_and_dispatch_task(job_id))
 
+    except InsufficientCreditsError as e:
+        await JobManager.fail_job_before_dispatch(job_id, str(e))
     except Exception as e:
         logger.error(
             f"Error during background job bootstrap {job_id}: {e}", exc_info=True
         )
-        await hybrid_job_manager.update_job(
-            job_id,
-            status="failed",
-            error_message=f"Failed to start background processing: {e}",
+        await JobManager.fail_job_before_dispatch(
+            job_id, f"Failed to start background processing: {e}"
         )
 
-        if reservation_id and credits_reserved > 0:
-            try:
-                await finalize_credits(
-                    user_id=user_id,
-                    reservation_id=reservation_id,
-                    credits_used=0,
-                    credits_reserved=credits_reserved,
-                )
-            except Exception as refund_error:
-                logger.error(
-                    f"Failed to refund reserved credits for {job_id}: {refund_error}"
-                )
+        # Reservation and durable job creation share one DB transaction, so a
+        # bootstrap failure cannot leave credits deducted without a job.
+
+
+async def _create_developer_discovery_placeholder(
+    *,
+    job_id: str,
+    user_id: str,
+    source_type: str,
+    source_input: str,
+    api_key_id: str,
+) -> None:
+    """Create the durable zero-video record polled while discovery runs."""
+    await hybrid_job_manager.create_job(
+        job_id,
+        {
+            "status": "discovering",
+            "user_id": user_id,
+            "source_type": source_type,
+            "source_id": source_input,
+            "source_name": source_input,
+            "playlist_id": source_input if source_type == "playlist" else None,
+            "channel_name": source_input if source_type == "channel" else None,
+            "credits_reserved": 0,
+            "credits_used": 0,
+            "reservation_id": None,
+            "api_key_id": api_key_id,
+            "formatting_options": {},
+        },
+        [],
+        allow_empty=True,
+    )
 
 
 # =============================================
@@ -628,25 +678,12 @@ async def download_channel_transcripts(
     try:
         job_id = str(uuid.uuid4())
 
-        # Create a placeholder job file so /jobs polling works immediately.
-        youtube_service.save_job_to_file(
-            job_id,
-            {
-                "job_id": job_id,
-                "status": "discovering",
-                "total_videos": 0,
-                "processed_count": 0,
-                "completed": 0,
-                "failed_count": 0,
-                "credits_used": 0,
-                "credits_reserved": 0,
-                "source_type": "channel",
-                "source_name": request.channel,
-                "source_id": request.channel,
-                "user_id": user_id,
-                "start_time": time.time(),
-                "error_message": None,
-            },
+        await _create_developer_discovery_placeholder(
+            job_id=job_id,
+            user_id=user_id,
+            source_type="channel",
+            source_input=request.channel,
+            api_key_id=api_key_data["key_id"],
         )
 
         asyncio.create_task(
@@ -705,24 +742,12 @@ async def download_playlist_transcripts(
     try:
         job_id = str(uuid.uuid4())
 
-        youtube_service.save_job_to_file(
-            job_id,
-            {
-                "job_id": job_id,
-                "status": "discovering",
-                "total_videos": 0,
-                "processed_count": 0,
-                "completed": 0,
-                "failed_count": 0,
-                "credits_used": 0,
-                "credits_reserved": 0,
-                "source_type": "playlist",
-                "source_name": request.playlist,
-                "source_id": request.playlist,
-                "user_id": user_id,
-                "start_time": time.time(),
-                "error_message": None,
-            },
+        await _create_developer_discovery_placeholder(
+            job_id=job_id,
+            user_id=user_id,
+            source_type="playlist",
+            source_input=request.playlist,
+            api_key_id=api_key_data["key_id"],
         )
 
         asyncio.create_task(
@@ -783,7 +808,9 @@ async def get_job_status(job_id: str, api_key_data: Dict = Depends(validate_api_
             raise HTTPException(status_code=403, detail="Access denied")
 
         job_status = job.get("status", "unknown")
-        download_ready = job_status in ["completed", "completed_with_errors"]
+        download_ready = job_status in ["completed", "completed_with_errors"] or (
+            job_status == "cancelled" and job.get("completed", 0) > 0
+        )
 
         # Calculate elapsed time
         start_time = job.get("start_time")
@@ -802,7 +829,9 @@ async def get_job_status(job_id: str, api_key_data: Dict = Depends(validate_api_
             processed_count=job.get("processed_count", 0),
             completed=job.get("completed", 0),
             failed_count=job.get("failed_count", 0),
+            skipped_count=job.get("skipped_count", 0),
             credits_used=job.get("credits_used", 0),
+            refunded_credits=job.get("refunded_credits", 0),
             source_type=job.get("source_type", "unknown"),
             source_name=job.get("source_name", "unknown"),
             download_ready=download_ready,
@@ -816,6 +845,43 @@ async def get_job_status(job_id: str, api_key_data: Dict = Depends(validate_api_
     except Exception as e:
         logger.error(f"Error getting job status: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Failed to get job status: {e}")
+
+
+@router.post(
+    "/jobs/{job_id}/cancel",
+    response_model=JobCancellationResponse,
+    summary="Cancel Job",
+)
+async def cancel_job(job_id: str, api_key_data: Dict = Depends(validate_api_key)):
+    """Cancel an owned job, refund unprocessed videos, and retain partial results."""
+    try:
+        result = await JobManager.cancel_job(job_id, api_key_data["user_id"])
+        if not result:
+            raise HTTPException(status_code=404, detail="Job not found")
+        completed = result.get("completed", 0)
+        return JobCancellationResponse(
+            job_id=str(result["job_id"]),
+            status=result["status"],
+            total_videos=result["total_videos"],
+            processed_count=result["processed_count"],
+            completed=completed,
+            failed_count=result["failed_count"],
+            skipped_count=result.get("skipped_count", 0),
+            credits_used=result["credits_used"],
+            refunded_credits=result.get("refunded_credits", 0),
+            refunded_now=result.get("refunded_now", 0),
+            download_ready=completed > 0,
+            download_url=(
+                f"/api/v1/jobs/{job_id}/download" if completed > 0 else None
+            ),
+        )
+    except PermissionError:
+        raise HTTPException(status_code=403, detail="Access denied")
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error cancelling job {job_id}: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Failed to cancel job: {e}")
 
 
 @router.get("/jobs/{job_id}/download", summary="Download Job Results")
@@ -844,11 +910,13 @@ async def download_job_results(
 
         # Verify job is ready
         job_status = job.get("status")
-        if job_status not in ["completed", "completed_with_errors"]:
+        if job_status not in ["completed", "completed_with_errors", "cancelled"]:
             raise HTTPException(
                 status_code=400,
                 detail=f"Job not ready for download. Status: {job_status}",
             )
+        if not job.get("files"):
+            raise HTTPException(status_code=400, detail="No transcript files are available")
 
         # Create ZIP from S3
         logger.info(f"API: Creating ZIP for job {job_id}")

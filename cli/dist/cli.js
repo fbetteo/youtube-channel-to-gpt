@@ -15,6 +15,7 @@ const TOOL_NAMES = [
     "start_playlist_job",
     "get_job_status",
     "get_download_url",
+    "cancel_job",
 ];
 function printHelp() {
     console.log(`youtube-transcript-agent (ytx)
@@ -28,6 +29,7 @@ Usage:
   ytx channel download <channel> [--max <n>] [--timestamps] [--concat] [--wait] [--output <zip>]
   ytx playlist download <playlist> [--max <n>] [--timestamps] [--concat] [--wait] [--output <zip>]
   ytx jobs status <job_id> [--json]
+  ytx jobs cancel <job_id> [--json]
   ytx jobs download <job_id> [--output <zip>]
   ytx mcp
 
@@ -133,7 +135,7 @@ async function waitForJob(jobId) {
     while (Date.now() - started < timeoutMs) {
         const status = (await requestJson(`/api/v1/jobs/${jobId}`));
         console.error(`status=${status.status} processed=${status.processed_count ?? 0}/${status.total_videos ?? 0}`);
-        if (status.download_ready || ["failed"].includes(String(status.status))) {
+        if (status.download_ready || ["failed", "cancelled"].includes(String(status.status))) {
             return status;
         }
         await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -253,6 +255,11 @@ async function command(args) {
         await downloadJob(jobId, getFlag(args, "--output", "transcripts.zip"));
         return;
     }
+    if (area === "jobs" && action === "cancel") {
+        const jobId = requirePositional(value, "ytx jobs cancel <job_id>");
+        printPayload(await requestJson(`/api/v1/jobs/${jobId}/cancel`, { method: "POST" }), hasFlag(args, "--json"));
+        return;
+    }
     if (area === "mcp") {
         await runMcp();
         return;
@@ -301,6 +308,11 @@ async function callTool(name, args) {
                     concatenate_all: Boolean(args.concatenate_all),
                 },
             }),
+        }));
+    }
+    if (name === "cancel_job") {
+        return (await requestJson(`/api/v1/jobs/${String(args.job_id)}/cancel`, {
+            method: "POST",
         }));
     }
     const status = (await requestJson(`/api/v1/jobs/${String(args.job_id)}`));

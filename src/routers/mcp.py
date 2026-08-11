@@ -143,6 +143,14 @@ TOOLS = [
             ["job_id"],
         ),
     },
+    {
+        "name": "cancel_job",
+        "description": "Cancel an async transcript job and refund unprocessed videos.",
+        "inputSchema": _tool_schema(
+            {"job_id": {"type": "string", "description": "Transcript job ID."}},
+            ["job_id"],
+        ),
+    },
 ]
 
 
@@ -234,6 +242,15 @@ async def _call_tool(
             raise HTTPException(
                 status_code=status.HTTP_409_CONFLICT,
                 detail=f"Job is not ready for download. Status: {payload['status']}",
+            )
+        return _content_json(payload)
+
+    if name == "cancel_job":
+        response = await developer_api.cancel_job(args["job_id"], api_key_data)
+        payload = response.model_dump()
+        if payload.get("download_url"):
+            payload["download_url"] = (
+                str(request.base_url).rstrip("/") + payload["download_url"]
             )
         return _content_json(payload)
 

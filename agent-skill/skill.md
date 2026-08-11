@@ -62,6 +62,12 @@ Use this for courses, podcast series, conference tracks, and curated research pl
 npx youtube-transcript-agent jobs status <job_id>
 ```
 
+Cancel an in-progress job without discarding completed transcripts:
+
+```bash
+npx youtube-transcript-agent jobs cancel <job_id>
+```
+
 When `download_ready` is true:
 
 ```bash

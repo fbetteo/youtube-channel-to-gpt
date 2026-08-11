@@ -44,7 +44,13 @@ class HybridJobManager:
                     raise
 
     async def create_job(
-        self, job_id: str, job_data: Dict[str, Any], videos: List[Dict[str, Any]] = None
+        self,
+        job_id: str,
+        job_data: Dict[str, Any],
+        videos: List[Dict[str, Any]] = None,
+        reserve_credits: bool = False,
+        allow_empty: bool = False,
+        replace_placeholder: bool = False,
     ) -> str:
         """
         Create a job using the appropriate backend (database preferred, file fallback)
@@ -52,189 +58,86 @@ class HybridJobManager:
         if videos is None:
             videos = job_data.get("videos", [])
 
-        # Try database first
-        if USE_DATABASE:
-            try:
-                await self._ensure_db_initialized()
-                logger.info(
-                    f"Creating job {job_id} in database with {len(videos)} videos"
+        if not USE_DATABASE:
+            raise RuntimeError("Database-backed job creation is required")
+
+        try:
+            await self._ensure_db_initialized()
+            logger.info(
+                f"Creating job {job_id} in database with {len(videos)} videos"
+            )
+
+            source_type = "playlist" if job_data.get("playlist_id") else "channel"
+            source_id = (
+                job_data.get("playlist_id")
+                or job_data.get("channel_id")
+                or job_data.get("source_id")
+            )
+            source_name = job_data.get("source_name") or job_data.get(
+                "channel_name", "Unknown"
+            )
+
+            from youtube_service import delete_job_file, normalize_videos_for_job
+
+            videos_dict, excluded = normalize_videos_for_job(videos)
+            if excluded:
+                logger.warning(
+                    "Job %s excluded %s invalid or duplicate video(s)",
+                    job_id,
+                    len(excluded),
+                )
+            if not videos_dict and not allow_empty:
+                raise ValueError("No processable videos found")
+            if len(videos_dict) != job_data.get("credits_reserved", len(videos_dict)):
+                raise ValueError(
+                    "Job videos must be normalized before reserving credits"
                 )
 
-                # Extract required fields for database
-                source_type = "playlist" if job_data.get("playlist_id") else "channel"
-                source_id = (
-                    job_data.get("playlist_id")
-                    or job_data.get("channel_id")
-                    or job_data.get("source_id")
-                )
-                source_name = job_data.get("source_name") or job_data.get(
-                    "channel_name", "Unknown"
-                )
+            videos_metadata = job_data.get("videos_metadata", {})
+            for video_dict in videos_dict:
+                metadata = videos_metadata.get(video_dict["id"], {})
+                for key in [
+                    "description",
+                    "channel_id",
+                    "channel_title",
+                    "duration_iso",
+                    "duration_seconds",
+                    "view_count",
+                    "like_count",
+                    "comment_count",
+                    "language",
+                    "default_language",
+                    "category_id",
+                    "tags",
+                ]:
+                    if metadata.get(key) is not None:
+                        video_dict[key] = metadata[key]
 
-                logger.debug(
-                    f"Job data: user_id={job_data.get('user_id')}, source_type={source_type}, source_id={source_id}"
-                )
+            await JobManager.create_job_with_videos(
+                job_id=job_id,
+                user_id=job_data["user_id"],
+                source_type=source_type,
+                source_id=source_id,
+                source_name=source_name,
+                videos=videos_dict,
+                formatting_options=job_data.get("formatting_options", {}),
+                credits_reserved=job_data.get("credits_reserved", len(videos_dict)),
+                reservation_id=job_data.get("reservation_id"),
+                videos_metadata=videos_metadata,
+                api_key_id=job_data.get("api_key_id"),
+                reserve_credits=reserve_credits,
+                replace_placeholder=replace_placeholder,
+                status=job_data.get("status", "initializing"),
+            )
+            delete_job_file(job_id)
 
-                # Ensure user exists in user_credits table (required for foreign key)
-                try:
-                    from transcript_api import CreditManager
-
-                    await CreditManager.create_user_credits(job_data["user_id"], 0)
-                    logger.debug(
-                        f"Ensured user {job_data['user_id']} exists in user_credits table"
-                    )
-                except Exception as user_error:
-                    logger.warning(f"Could not ensure user exists: {user_error}")
-
-                # Create formatting options dict
-                formatting_options = {
-                    "include_timestamps": job_data.get("formatting_options", {}).get(
-                        "include_timestamps", False
-                    ),
-                    "include_video_title": job_data.get("formatting_options", {}).get(
-                        "include_video_title", True
-                    ),
-                    "include_video_id": job_data.get("formatting_options", {}).get(
-                        "include_video_id", True
-                    ),
-                    "include_video_url": job_data.get("formatting_options", {}).get(
-                        "include_video_url", True
-                    ),
-                    "include_view_count": job_data.get("formatting_options", {}).get(
-                        "include_view_count", False
-                    ),
-                    "concatenate_all": job_data.get("formatting_options", {}).get(
-                        "concatenate_all", False
-                    ),
-                }
-
-                # Convert Pydantic VideoInfo objects to dictionaries for database storage
-                # and merge with metadata if available
-                videos_dict = []
-                videos_metadata = job_data.get("videos_metadata", {})
-
-                for video in videos:
-                    if hasattr(video, "dict"):  # Pydantic object
-                        video_dict = video.dict()
-                    elif hasattr(video, "model_dump"):  # Pydantic v2 object
-                        video_dict = video.model_dump()
-                    elif isinstance(video, dict):  # Already a dictionary
-                        video_dict = video.copy()
-                    else:
-                        # Fallback: convert to dict manually
-                        video_dict = {
-                            "id": getattr(video, "id", None),
-                            "title": getattr(video, "title", None),
-                            "publishedAt": getattr(video, "publishedAt", None),
-                            "duration": getattr(video, "duration", None),
-                            "url": getattr(video, "url", None),
-                            "view_count": getattr(video, "view_count", None),
-                            "viewCount": getattr(video, "viewCount", None),
-                        }
-
-                    # Ensure view_count is populated from viewCount or view_count if present
-                    # Frontend might send viewCount (camelCase) or view_count (snake_case)
-                    if (
-                        "view_count" not in video_dict
-                        or video_dict["view_count"] is None
-                    ):
-                        if (
-                            "viewCount" in video_dict
-                            and video_dict["viewCount"] is not None
-                        ):
-                            video_dict["view_count"] = video_dict["viewCount"]
-                        else:
-                            # Default to 0 if neither exists
-                            video_dict["view_count"] = 0
-
-                    # Map duration_category to duration if needed (database expects 'duration')
-                    if (
-                        "duration_category" in video_dict
-                        and "duration" not in video_dict
-                    ):
-                        video_dict["duration"] = video_dict["duration_category"]
-
-                    # Merge with metadata if available (only overwrite if metadata value is not None)
-                    video_id = video_dict.get("id")
-                    if video_id and video_id in videos_metadata:
-                        metadata = videos_metadata[video_id]
-                        # Merge metadata fields - only update if metadata has non-None value
-                        for key in [
-                            "description",
-                            "channel_id",
-                            "channel_title",
-                            "duration_iso",
-                            "duration_seconds",
-                            "view_count",
-                            "like_count",
-                            "comment_count",
-                            "language",
-                            "default_language",
-                            "category_id",
-                            "tags",
-                        ]:
-                            metadata_value = metadata.get(key)
-                            if metadata_value is not None:
-                                video_dict[key] = metadata_value
-
-                    videos_dict.append(video_dict)
-
-                # DEBUG: Log first video to see what we're actually sending to DB
-                if videos_dict:
-                    logger.info(f"Sample video_dict being sent to DB: {videos_dict[0]}")
-
-                await JobManager.create_job_with_videos(
-                    job_id=job_id,
-                    user_id=job_data["user_id"],
-                    source_type=source_type,
-                    source_id=source_id,
-                    source_name=source_name,
-                    videos=videos_dict,  # Pass converted dictionaries
-                    formatting_options=formatting_options,
-                    credits_reserved=job_data.get("credits_reserved", len(videos)),
-                    reservation_id=job_data.get("reservation_id"),
-                    videos_metadata=job_data.get("videos_metadata"),
-                )
-
-                logger.info(f"Successfully created job {job_id} in database")
-
-                # Also save to file system for backwards compatibility (during transition)
-                if FALLBACK_TO_FILES:
-                    try:
-                        from youtube_service import save_job_to_file
-
-                        save_job_to_file(job_id, job_data)
-                        logger.debug(f"Also saved job {job_id} to file system")
-                    except Exception as file_error:
-                        logger.warning(
-                            f"Failed to save job {job_id} to file system: {file_error}"
-                        )
-
-                return job_id
-
-            except Exception as db_error:
-                logger.error(
-                    f"Failed to create job {job_id} in database: {db_error}",
-                    exc_info=True,
-                )
-                if not FALLBACK_TO_FILES:
-                    raise
-
-        # Fallback to file system
-        if FALLBACK_TO_FILES:
-            try:
-                from youtube_service import save_job_to_file
-
-                save_job_to_file(job_id, job_data)
-                logger.info(f"Created job {job_id} in file system (fallback)")
-                return job_id
-            except Exception as file_error:
-                logger.error(
-                    f"Failed to create job {job_id} in file system: {file_error}"
-                )
-                raise
-
-        raise Exception(f"Failed to create job {job_id} in any backend")
+            logger.info(f"Successfully created durable job {job_id} in database")
+            return job_id
+        except Exception as db_error:
+            logger.error(
+                f"Failed to create durable job {job_id}: {db_error}", exc_info=True
+            )
+            raise
 
     async def get_job(
         self, job_id: str, include_videos: bool = True
@@ -315,19 +218,6 @@ class HybridJobManager:
                 result = await JobManager.update_job_progress_db(job_id, **updates)
                 if result:
                     logger.debug(f"Updated job {job_id} in database")
-
-                    # Also update file system during transition
-                    if FALLBACK_TO_FILES:
-                        try:
-                            from youtube_service import update_job_progress
-
-                            update_job_progress(job_id, **updates)
-                            logger.debug(f"Also updated job {job_id} in file system")
-                        except Exception as file_error:
-                            logger.warning(
-                                f"Failed to update job {job_id} in file system: {file_error}"
-                            )
-
                     return result
             except Exception as db_error:
                 logger.error(f"Failed to update job {job_id} in database: {db_error}")
@@ -337,8 +227,10 @@ class HybridJobManager:
         # Fallback to file system
         if FALLBACK_TO_FILES:
             try:
-                from youtube_service import update_job_progress
+                from youtube_service import load_job_from_file, update_job_progress
 
+                if load_job_from_file(job_id) is None:
+                    return None
                 update_job_progress(job_id, **updates)
                 logger.debug(f"Updated job {job_id} in file system (fallback)")
                 # Return updated job data
@@ -461,6 +353,9 @@ class HybridJobManager:
                     logger.debug(
                         f"Updated job {job_id} status to {new_status} in database"
                     )
+                    return True
+                if await JobManager.get_job_status_from_db(job_id):
+                    return False
             except Exception as db_error:
                 logger.error(
                     f"Failed to update job {job_id} status in database: {db_error}"
@@ -468,11 +363,14 @@ class HybridJobManager:
                 if not FALLBACK_TO_FILES:
                     raise
 
-        # Also update file system (during transition) or as fallback
+        # File updates are only for legacy discovery/fallback records that do
+        # not exist in PostgreSQL. Durable active jobs never write shadow files.
         if FALLBACK_TO_FILES:
             try:
-                from youtube_service import update_job_progress
+                from youtube_service import load_job_from_file, update_job_progress
 
+                if load_job_from_file(job_id) is None:
+                    return success
                 update_job_progress(job_id, status=new_status)
                 logger.debug(
                     f"Updated job {job_id} status to {new_status} in file system"

@@ -76,7 +76,7 @@ class Settings(BaseModel):
 
     # Job timeout settings
     job_timeout_minutes: int = Field(
-        default_factory=lambda: int(os.getenv("JOB_TIMEOUT_MINUTES", "1"))
+        default_factory=lambda: int(os.getenv("JOB_TIMEOUT_MINUTES", "15"))
     )
 
     # Server settings
