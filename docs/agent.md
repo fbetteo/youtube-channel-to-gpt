@@ -57,6 +57,7 @@ This is best for course material, conference talks, podcasts, and launch playlis
 
 ```bash
 npx youtube-transcript-agent jobs status <job_id>
+npx youtube-transcript-agent jobs cancel <job_id>
 npx youtube-transcript-agent jobs download <job_id> --output transcripts.zip
 ```
 
@@ -73,6 +74,7 @@ The MCP server exposes these tools:
 - `start_playlist_job`: starts an async playlist transcript job.
 - `get_job_status`: polls an async job.
 - `get_download_url`: returns a ZIP download URL for a completed job.
+- `cancel_job`: cancels a job, refunds unprocessed videos, and preserves completed transcripts.
 
 For large jobs, prefer `start_channel_job` or `start_playlist_job`, then `get_job_status`.
 Do not ask the MCP server to inline ZIP files into chat context.

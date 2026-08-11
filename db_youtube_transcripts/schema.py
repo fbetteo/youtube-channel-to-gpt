@@ -38,10 +38,13 @@ with connection.cursor() as c:
         processed_count INTEGER NOT NULL DEFAULT 0,
         completed INTEGER NOT NULL DEFAULT 0,
         failed_count INTEGER NOT NULL DEFAULT 0,
+        skipped_count INTEGER NOT NULL DEFAULT 0,
         
         -- Credit management
         credits_reserved INTEGER NOT NULL DEFAULT 0,
         credits_used INTEGER NOT NULL DEFAULT 0,
+        refunded_credits INTEGER NOT NULL DEFAULT 0,
+        api_key_id UUID NULL,
         reservation_id UUID NULL,
         
         -- Formatting options

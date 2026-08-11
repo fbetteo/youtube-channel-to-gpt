@@ -706,6 +706,16 @@ def save_job_to_file(job_id: str, job_data: Dict[str, Any]) -> None:
         logger.error(f"Failed to save job {job_id}: {e}")
 
 
+def delete_job_file(job_id: str) -> None:
+    """Remove a legacy job file after its durable DB record has been created."""
+    job_file = os.path.join(JOBS_STORAGE_DIR, f"{job_id}.json")
+    try:
+        if os.path.exists(job_file):
+            os.remove(job_file)
+    except OSError as e:
+        logger.warning(f"Failed to remove legacy job file {job_id}: {e}")
+
+
 def load_job_from_file(job_id: str) -> Optional[Dict[str, Any]]:
     """Load job data from persistent storage"""
     try:
@@ -2173,9 +2183,14 @@ def _fetch_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
             continue
 
         video_id = entry.get("id")
-        title = entry.get("title", "Untitled")
+        title = entry.get("title")
 
-        if title == "[Private video]" or title == "[Deleted video]":
+        if not _is_processable_video(video_id, title):
+            logger.warning(
+                "Skipping unavailable playlist entry id=%s title=%r",
+                video_id,
+                title,
+            )
             continue
 
         duration_seconds = int(entry.get("duration") or 0)
@@ -2211,6 +2226,76 @@ def _fetch_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
     logger.info(f"Duration distribution: {duration_counts}")
 
     return all_videos
+
+
+UNAVAILABLE_VIDEO_TITLES = {
+    "private video",
+    "deleted video",
+    "unavailable video",
+}
+VALID_DURATION_CATEGORIES = {"short", "medium", "long"}
+
+
+def _is_processable_video(video_id: Any, title: Any) -> bool:
+    """Return whether a discovered video has enough metadata to be processed."""
+    if not isinstance(video_id, str) or not video_id.strip():
+        return False
+    if not isinstance(title, str) or not title.strip():
+        return False
+    normalized_title = title.strip().strip("[]").casefold()
+    return normalized_title not in UNAVAILABLE_VIDEO_TITLES
+
+
+def normalize_videos_for_job(
+    videos: List[Any],
+) -> tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    """Normalize, filter, and deduplicate videos before reserving job credits."""
+    accepted: List[Dict[str, Any]] = []
+    excluded: List[Dict[str, Any]] = []
+    seen_ids = set()
+
+    for raw_video in videos:
+        if hasattr(raw_video, "model_dump"):
+            video = raw_video.model_dump()
+        elif hasattr(raw_video, "dict"):
+            video = raw_video.dict()
+        elif isinstance(raw_video, dict):
+            video = raw_video.copy()
+        else:
+            video = {
+                "id": getattr(raw_video, "id", None),
+                "title": getattr(raw_video, "title", None),
+                "url": getattr(raw_video, "url", None),
+                "duration": getattr(raw_video, "duration", None),
+                "duration_seconds": getattr(raw_video, "duration_seconds", None),
+                "publishedAt": getattr(raw_video, "publishedAt", None),
+                "viewCount": getattr(raw_video, "viewCount", 0),
+            }
+
+        video_id = video.get("id")
+        title = video.get("title")
+        if not _is_processable_video(video_id, title):
+            excluded.append({"id": video_id, "title": title, "reason": "unavailable"})
+            continue
+        if video_id in seen_ids:
+            excluded.append({"id": video_id, "title": title, "reason": "duplicate"})
+            continue
+
+        seen_ids.add(video_id)
+        duration = video.get("duration") or video.get("duration_category")
+        if duration not in VALID_DURATION_CATEGORIES:
+            duration = None
+
+        video["id"] = video_id.strip()
+        video["title"] = title.strip()
+        video["url"] = video.get("url") or f"https://www.youtube.com/watch?v={video_id}"
+        video["duration"] = duration
+        video["duration_category"] = duration
+        video["view_count"] = video.get("view_count") or video.get("viewCount") or 0
+        video["viewCount"] = video["view_count"]
+        accepted.append(video)
+
+    return accepted, excluded
 
 
 async def get_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
@@ -2334,7 +2419,7 @@ async def dispatch_lambdas_concurrently(
     user_id: str,
     formatting_options: Dict[str, Any],
     max_concurrent: int = 20,
-) -> int:
+) -> Dict[str, Any]:
     """
     Dispatch Lambda functions concurrently in true async fire-and-forget mode.
 
@@ -2347,7 +2432,7 @@ async def dispatch_lambdas_concurrently(
         max_concurrent: Not used - kept for compatibility
 
     Returns:
-        Number of Lambda dispatches attempted
+        Successful video IDs and per-video dispatch failures
     """
     import boto3
     import json
@@ -2362,6 +2447,7 @@ async def dispatch_lambdas_concurrently(
 
     async def dispatch_single_lambda(video):
         """Dispatch a single Lambda function asynchronously"""
+        video_id = None
         try:
             video_id = video.id if hasattr(video, "id") else video["id"]
             pre_fetched_metadata = videos_metadata.get(video_id, {})
@@ -2388,7 +2474,7 @@ async def dispatch_lambdas_concurrently(
             )
 
             logger.debug(f"Job {job_id}: Dispatched Lambda for video {video_id}")
-            return True
+            return {"video_id": video_id, "dispatched": True}
 
         except Exception as e:
             logger.error(
@@ -2396,7 +2482,7 @@ async def dispatch_lambdas_concurrently(
             )
             # Note: Failed dispatch count is not tracked as it happens before video processing
             # Only video processing failures are tracked in the database
-            return False
+            return {"video_id": video_id, "dispatched": False, "error": str(e)}
 
     # Create all tasks at once (no semaphore, no limits)
     tasks = [dispatch_single_lambda(video) for video in videos]
@@ -2406,7 +2492,17 @@ async def dispatch_lambdas_concurrently(
     results = await asyncio.gather(*tasks, return_exceptions=True)
 
     # Count successful dispatches
-    dispatch_count = sum(1 for result in results if result is True)
+    successful_ids = [
+        result["video_id"]
+        for result in results
+        if isinstance(result, dict) and result.get("dispatched")
+    ]
+    failed_dispatches = [
+        result
+        for result in results
+        if isinstance(result, dict) and not result.get("dispatched")
+    ]
+    dispatch_count = len(successful_ids)
 
     logger.info(
         f"Job {job_id}: Dispatched {dispatch_count}/{len(videos)} Lambda functions concurrently"
@@ -2418,7 +2514,11 @@ async def dispatch_lambdas_concurrently(
     except Exception as e:
         logger.warning(f"Error closing Lambda client: {e}")
 
-    return dispatch_count
+    return {
+        "dispatched_count": dispatch_count,
+        "successful_ids": successful_ids,
+        "failed_dispatches": failed_dispatches,
+    }
 
 
 async def prefetch_and_dispatch_task(job_id: str):
@@ -2431,10 +2531,19 @@ async def prefetch_and_dispatch_task(job_id: str):
     Now uses database storage via hybrid manager.
     """
     try:
+        from db_youtube_transcripts.job_manager import JobManager
+
         # Load job data from database
         job = await hybrid_job_manager.get_job(job_id)
         if not job:
             logger.error(f"Job {job_id} not found for pre-fetching")
+            return
+        if job.get("status") in {
+            "cancelled",
+            "completed",
+            "completed_with_errors",
+            "failed",
+        }:
             return
 
         videos = job["videos"]
@@ -2498,6 +2607,11 @@ async def prefetch_and_dispatch_task(job_id: str):
                         else getattr(video, "publishedAt", None)
                     ),
                 }
+            if not await hybrid_job_manager.update_job_status_safe(
+                job_id, "dispatching", expected_current_status="initializing"
+            ):
+                logger.info(f"Job {job_id}: stopped before dispatch after status change")
+                return
         else:
             # Fallback to original pre-fetch logic
             for video in videos:
@@ -2507,15 +2621,25 @@ async def prefetch_and_dispatch_task(job_id: str):
                 except Exception as e:
                     logger.error(f"Error extracting video ID: {str(e)}")
 
-            await hybrid_job_manager.update_job(job_id, status="prefetching_metadata")
+            if not await hybrid_job_manager.update_job_status_safe(
+                job_id,
+                "prefetching_metadata",
+                expected_current_status="initializing",
+            ):
+                logger.info(f"Job {job_id}: stopped before metadata prefetch")
+                return
             videos_metadata = await pre_fetch_videos_metadata(video_ids)
+            if not await hybrid_job_manager.update_job_status_safe(
+                job_id, "dispatching", expected_current_status="prefetching_metadata"
+            ):
+                logger.info(f"Job {job_id}: stopped before dispatch after status change")
+                return
 
         # 2. Update job with metadata
         await hybrid_job_manager.update_job(
             job_id,
             videos_metadata=videos_metadata,
             prefetch_completed=True,
-            status="dispatching",
         )
 
         # 3. Update video metadata in job_videos table
@@ -2526,9 +2650,25 @@ async def prefetch_and_dispatch_task(job_id: str):
         )
 
         # 3. Dispatch Lambda functions concurrently with pre-fetched metadata
-        dispatched_count = await dispatch_lambdas_concurrently(
+        dispatch_result = await dispatch_lambdas_concurrently(
             job_id, videos, videos_metadata, user_id, job["formatting_options"]
         )
+        dispatched_count = dispatch_result["dispatched_count"]
+
+        await JobManager.mark_videos_dispatched(
+            job_id, dispatch_result["successful_ids"]
+        )
+
+        for failure in dispatch_result["failed_dispatches"]:
+            video_id = failure.get("video_id")
+            if video_id:
+                await JobManager.mark_video_skipped(
+                    job_id,
+                    video_id,
+                    f"Lambda dispatch failed: {failure.get('error', 'unknown error')}",
+                )
+        if dispatch_result["failed_dispatches"]:
+            await JobManager.finalize_job_if_complete(job_id)
 
         # 4. Update job status to processing - use safe update to prevent race conditions
         success = await hybrid_job_manager.update_job_status_safe(
@@ -2540,50 +2680,33 @@ async def prefetch_and_dispatch_task(job_id: str):
                 f"Job {job_id}: Status was changed during dispatch, but continuing"
             )
 
-        # Update additional metadata
-        await hybrid_job_manager.update_job(
-            job_id,
-            lambda_dispatched_count=dispatched_count,
-            lambda_dispatch_time=time.time(),
-        )
+        # Update additional metadata only while the job remains active. A
+        # cancellation or very fast terminal result wins the status race.
+        if success:
+            await hybrid_job_manager.update_job(
+                job_id,
+                lambda_dispatched_count=dispatched_count,
+                lambda_dispatch_time=time.time(),
+            )
 
         logger.info(
             f"Job {job_id}: Background task completed. Dispatched {dispatched_count} Lambda functions"
         )
 
         # 5. Start timeout monitoring task
-        asyncio.create_task(monitor_job_timeout(job_id, settings.job_timeout_minutes))
+        if dispatched_count:
+            asyncio.create_task(
+                monitor_job_timeout(job_id, settings.job_timeout_minutes)
+            )
 
     except Exception as e:
         logger.error(f"Job {job_id}: Background pre-fetch task failed: {str(e)}")
-        # Update job status to failed
-        await hybrid_job_manager.update_job(
-            job_id, status="failed", error_message=str(e)
-        )
-
-        # Refund credits since processing failed
-        try:
-            from transcript_api import CreditManager
-
-            await CreditManager.finalize_credit_usage(
-                user_id=job["user_id"],
-                reservation_id=job["reservation_id"],
-                credits_used=0,  # No credits used since processing failed
-                credits_reserved=job["credits_reserved"],
-            )
-        except Exception as credit_error:
-            logger.error(
-                f"Failed to refund credits for failed job {job_id}: {str(credit_error)}"
-            )
+        await JobManager.fail_job_before_dispatch(job_id, str(e))
 
 
-async def monitor_job_timeout(job_id: str, timeout_minutes: int = 10):
+async def monitor_job_timeout(job_id: str, timeout_minutes: int = 15):
     """
-    Monitor a job after the partial-results threshold.
-
-    This should not finalize the job. Large jobs can legitimately keep receiving
-    Lambda/SQS results after this point, while shorter jobs may still have enough
-    completed files for the user to download a useful partial ZIP.
+    Reconcile invoked videos that never produced a Lambda/SQS result.
 
     Args:
         job_id: The job identifier
@@ -2615,10 +2738,18 @@ async def monitor_job_timeout(job_id: str, timeout_minutes: int = 10):
         pending_count = total_videos - processed_count
 
         if pending_count > 0:
-            logger.info(
-                f"Job {job_id}: {processed_count}/{total_videos} videos processed after "
-                f"{timeout_minutes} minute(s). Keeping job in processing so late "
-                f"Lambda/SQS results can continue updating progress."
+            from db_youtube_transcripts.job_manager import JobManager
+
+            reconciled = await JobManager.fail_unresolved_videos(
+                job_id,
+                f"No Lambda result received within {timeout_minutes} minutes",
+            )
+            if reconciled["failed"] or reconciled["skipped"]:
+                await JobManager.finalize_job_if_complete(job_id)
+            logger.warning(
+                f"Job {job_id}: reconciled {reconciled['failed']} invoked and "
+                f"{reconciled['skipped']} undispatched video(s) after "
+                f"{timeout_minutes} minute(s)"
             )
         else:
             logger.info(
@@ -2671,6 +2802,7 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
     total_videos = job.get("total_videos", 0)
     completed = job.get("completed", 0)
     failed_count = job.get("failed_count", 0)
+    skipped_count = job.get("skipped_count", 0)
     processed_count = job.get("processed_count", 0)
 
     progress_percentage = 0.0
@@ -2696,6 +2828,7 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
         "total_videos": total_videos,
         "completed": completed,
         "failed_count": failed_count,
+        "skipped_count": skipped_count,
         "processed_count": processed_count,
         "progress_percentage": round(progress_percentage, 2),
         "files": job.get("files", []),
@@ -2708,6 +2841,7 @@ def get_job_status(job_id: str) -> Dict[str, Any]:
         "credits_remaining": job.get("credits_reserved", 0)
         - job.get("credits_used", 0),
         "reservation_id": job.get("reservation_id"),
+        "refunded_credits": job.get("refunded_credits", 0),
         # Source information
         "source_type": job.get("source_type", "unknown"),
         "source_name": job.get("source_name", "Unknown Source"),
@@ -2762,6 +2896,7 @@ async def get_job_status_async(job_id: str) -> Dict[str, Any]:
     # Calculate progress percentage
     total_videos = job.get("total_videos", 0)
     failed_count = job.get("failed_count", 0)
+    skipped_count = job.get("skipped_count", 0)
     processed_count = job.get("processed_count", 0)
 
     progress_percentage = 0.0
@@ -2786,6 +2921,7 @@ async def get_job_status_async(job_id: str) -> Dict[str, Any]:
         "status": job.get("status", "unknown"),
         "total_videos": total_videos,
         "failed_count": failed_count,
+        "skipped_count": skipped_count,
         "processed_count": processed_count,
         "progress_percentage": round(progress_percentage, 2),
         "duration": duration,
@@ -2795,10 +2931,11 @@ async def get_job_status_async(job_id: str) -> Dict[str, Any]:
         "credits_remaining": job.get("credits_reserved", 0)
         - job.get("credits_used", 0),
         "timeout_occurred": job.get("timeout_occurred", False),
+        "refunded_credits": job.get("refunded_credits", 0),
     }
 
     # Add simple message based on progress
-    completed = processed_count - failed_count
+    completed = job.get("completed", processed_count - failed_count - skipped_count)
     if processed_count >= total_videos:
         status_response["message"] = (
             f"Download completed. {completed} videos successful, {failed_count} failed."

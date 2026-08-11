@@ -16,6 +16,10 @@ from .database import get_db_connection, get_db_transaction
 logger = logging.getLogger(__name__)
 
 
+class InsufficientCreditsError(ValueError):
+    """Raised when an atomic job reservation cannot be funded."""
+
+
 class JobManager:
     """Database-backed job management with atomic operations and race condition prevention"""
 
@@ -28,6 +32,8 @@ class JobManager:
         source_name: str,
         videos: List[Dict[str, Any]],
         formatting_options: Dict[str, Any] = None,
+        reserve_credits: bool = False,
+        replace_placeholder: bool = False,
         **job_metadata,
     ) -> str:
         """
@@ -78,7 +84,7 @@ class JobManager:
                 job_data = {
                     "job_id": job_id,
                     "user_id": user_id,
-                    "status": "initializing",
+                    "status": job_metadata.get("status", "initializing"),
                     "source_type": source_type,
                     "source_id": source_id,
                     "source_name": source_name,
@@ -86,11 +92,14 @@ class JobManager:
                     "processed_count": 0,
                     "completed": 0,
                     "failed_count": 0,
+                    "skipped_count": 0,
                     "credits_reserved": job_metadata.get(
                         "credits_reserved", len(videos)
                     ),
                     "credits_used": 0,
                     "reservation_id": job_metadata.get("reservation_id"),
+                    "refunded_credits": 0,
+                    "api_key_id": job_metadata.get("api_key_id"),
                     # Formatting options
                     "include_timestamps": (
                         formatting_options.get("include_timestamps", False)
@@ -133,24 +142,52 @@ class JobManager:
                     "playlist_id": source_id if source_type == "playlist" else None,
                 }
 
-                # Insert job record
+                if reserve_credits:
+                    reservation_result = await tx.execute(
+                        """
+                        UPDATE user_credits
+                        SET credits = credits - $1
+                        WHERE user_id = $2 AND credits >= $1
+                        """,
+                        job_data["credits_reserved"],
+                        user_id,
+                    )
+                    if reservation_result != "UPDATE 1":
+                        raise InsufficientCreditsError(
+                            f"Insufficient credits. Need {job_data['credits_reserved']} credits."
+                        )
+                    if job_data["api_key_id"]:
+                        await tx.execute(
+                            """
+                            UPDATE api_keys
+                            SET total_credits_used = total_credits_used + $1
+                            WHERE key_id = $2
+                            """,
+                            job_data["credits_reserved"],
+                            job_data["api_key_id"],
+                        )
+
+                # Insert the job in the same transaction as credit reservation. API
+                # discovery jobs already have a zero-video durable placeholder, which
+                # is populated here without ever creating an active JSON-backed job.
                 job_insert_query = """
                     INSERT INTO jobs (
                         job_id, user_id, status, source_type, source_id, source_name,
-                        total_videos, processed_count, completed, failed_count,
-                        credits_reserved, credits_used, reservation_id,
+                        total_videos, processed_count, completed, failed_count, skipped_count,
+                        credits_reserved, credits_used, reservation_id, refunded_credits,
                         include_timestamps, include_video_title, include_video_id, 
                         include_video_url, include_view_count, concatenate_all,
                         lambda_dispatched_count, prefetch_completed,
-                        videos_metadata, formatting_options, channel_name, playlist_id
+                        videos_metadata, formatting_options, channel_name, playlist_id,
+                        api_key_id
                     ) VALUES (
                         $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13,
-                        $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25
+                        $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25,
+                        $26, $27, $28
                     )
                 """
 
-                await tx.execute(
-                    job_insert_query,
+                job_values = (
                     job_data["job_id"],
                     job_data["user_id"],
                     job_data["status"],
@@ -161,9 +198,11 @@ class JobManager:
                     job_data["processed_count"],
                     job_data["completed"],
                     job_data["failed_count"],
+                    job_data["skipped_count"],
                     job_data["credits_reserved"],
                     job_data["credits_used"],
                     job_data["reservation_id"],
+                    job_data["refunded_credits"],
                     job_data["include_timestamps"],
                     job_data["include_video_title"],
                     job_data["include_video_id"],
@@ -184,7 +223,48 @@ class JobManager:
                     ),
                     job_data["channel_name"],
                     job_data["playlist_id"],
+                    job_data["api_key_id"],
                 )
+                if replace_placeholder:
+                    placeholder = await tx.fetchrow(
+                        """
+                        SELECT user_id, status, total_videos
+                        FROM jobs WHERE job_id = $1 FOR UPDATE
+                        """,
+                        job_id,
+                    )
+                    if (
+                        not placeholder
+                        or str(placeholder["user_id"]) != str(user_id)
+                        or placeholder["total_videos"] != 0
+                        or placeholder["status"]
+                        not in {"initializing", "discovering", "reserving_credits"}
+                    ):
+                        raise ValueError(
+                            f"Job {job_id} is not a replaceable discovery placeholder"
+                        )
+                    await tx.execute(
+                        """
+                        UPDATE jobs SET
+                            status = $3, source_type = $4, source_id = $5,
+                            source_name = $6, total_videos = $7,
+                            processed_count = $8, completed = $9, failed_count = $10,
+                            skipped_count = $11, credits_reserved = $12,
+                            credits_used = $13, reservation_id = $14,
+                            refunded_credits = $15, include_timestamps = $16,
+                            include_video_title = $17, include_video_id = $18,
+                            include_video_url = $19, include_view_count = $20,
+                            concatenate_all = $21, lambda_dispatched_count = $22,
+                            prefetch_completed = $23, videos_metadata = $24,
+                            formatting_options = $25, channel_name = $26,
+                            playlist_id = $27, api_key_id = $28,
+                            error_message = NULL, updated_at = NOW(), version = version + 1
+                        WHERE job_id = $1 AND user_id = $2
+                        """,
+                        *job_values,
+                    )
+                else:
+                    await tx.execute(job_insert_query, *job_values)
 
                 # Insert videos for the job using batch insert for better performance
                 if videos:
@@ -232,9 +312,11 @@ class JobManager:
                                     "duration_iso"
                                 ),  # duration_iso (PT4M13S format)
                                 video.get("duration_seconds"),  # duration_seconds
-                                video.get(
-                                    "duration", "unknown"
-                                ),  # duration_category (short/medium/long)
+                                (
+                                    video.get("duration")
+                                    if video.get("duration") in {"short", "medium", "long"}
+                                    else None
+                                ),  # duration_category (short/medium/long or NULL)
                                 video.get("view_count")
                                 or 0,  # view_count (ensure not None)
                                 video.get("language"),  # language
@@ -383,7 +465,7 @@ class JobManager:
             try:
                 async with get_db_connection() as conn:
                     # Get job data (always fast)
-                    job_query = "SELECT user_id, status, processed_count, total_videos, failed_count,lambda_dispatch_time, timeout_occurred, reservation_id, credits_used, credits_reserved FROM jobs WHERE job_id = $1"
+                    job_query = "SELECT user_id, status, processed_count, total_videos, completed, failed_count, skipped_count, lambda_dispatch_time, timeout_occurred, reservation_id, credits_used, credits_reserved, refunded_credits FROM jobs WHERE job_id = $1"
                     job_record = await conn.fetchrow(job_query, job_id)
 
                     if not job_record:
@@ -446,8 +528,10 @@ class JobManager:
                         if base_key in [
                             "completed",
                             "failed_count",
+                            "skipped_count",
                             "processed_count",
                             "credits_used",
+                            "refunded_credits",
                         ]:
                             set_clauses.append(
                                 f"{base_key} = {base_key} + ${param_count}"
@@ -576,7 +660,14 @@ class JobManager:
                             file_size = $5,
                             processed_at = NOW(),
                             updated_at = NOW()
-                        WHERE job_id = $1 AND video_id = $2 AND status != 'completed'
+                        WHERE job_id = $1
+                          AND video_id = $2
+                          AND status IN ('pending', 'processing')
+                          AND EXISTS (
+                              SELECT 1 FROM jobs
+                              WHERE jobs.job_id = $1
+                                AND jobs.status IN ('initializing', 'prefetching_metadata', 'dispatching', 'processing')
+                          )
                     """,
                         job_id,
                         video_id,
@@ -648,7 +739,14 @@ class JobManager:
                         processed_at = NOW(),
                         retry_count = retry_count + 1,
                         updated_at = NOW()
-                    WHERE job_id = $1 AND video_id = $2 AND status NOT IN ('completed', 'failed')
+                    WHERE job_id = $1
+                      AND video_id = $2
+                      AND status IN ('pending', 'processing')
+                      AND EXISTS (
+                          SELECT 1 FROM jobs
+                          WHERE jobs.job_id = $1
+                            AND jobs.status IN ('initializing', 'prefetching_metadata', 'dispatching', 'processing')
+                      )
                 """,
                     job_id,
                     video_id,
@@ -684,6 +782,316 @@ class JobManager:
             return False
 
     @staticmethod
+    async def mark_video_skipped(
+        job_id: str, video_id: str, error_message: str
+    ) -> bool:
+        """Mark work that was never dispatched as skipped without charging a credit."""
+        try:
+            async with get_db_transaction() as tx:
+                video_result = await tx.execute(
+                    """
+                    UPDATE job_videos
+                    SET status = 'skipped', error_message = $3,
+                        processed_at = NOW(), updated_at = NOW()
+                    WHERE job_id = $1 AND video_id = $2
+                      AND status IN ('pending', 'processing')
+                      AND EXISTS (
+                          SELECT 1 FROM jobs
+                          WHERE jobs.job_id = $1
+                            AND jobs.status IN ('initializing', 'prefetching_metadata', 'dispatching', 'processing')
+                      )
+                    """,
+                    job_id,
+                    video_id,
+                    error_message,
+                )
+                if video_result != "UPDATE 1":
+                    return False
+                await tx.execute(
+                    """
+                    UPDATE jobs
+                    SET skipped_count = skipped_count + 1,
+                        processed_count = processed_count + 1,
+                        updated_at = NOW()
+                    WHERE job_id = $1
+                    """,
+                    job_id,
+                )
+                return True
+        except Exception as e:
+            logger.error(f"Failed to mark video {video_id} as skipped: {str(e)}")
+            return False
+
+    @staticmethod
+    async def mark_videos_dispatched(job_id: str, video_ids: List[str]) -> int:
+        """Record which videos were accepted for Lambda invocation."""
+        if not video_ids:
+            return 0
+        try:
+            async with get_db_transaction() as tx:
+                result = await tx.execute(
+                    """
+                    UPDATE job_videos
+                    SET status = 'processing', updated_at = NOW()
+                    WHERE job_id = $1 AND video_id = ANY($2::text[])
+                      AND status = 'pending'
+                      AND EXISTS (
+                          SELECT 1 FROM jobs
+                          WHERE jobs.job_id = $1
+                            AND jobs.status = 'dispatching'
+                      )
+                    """,
+                    job_id,
+                    video_ids,
+                )
+                return int(result.rsplit(" ", 1)[-1])
+        except Exception as e:
+            logger.error(f"Failed to record dispatched videos for {job_id}: {e}")
+            return 0
+
+    @staticmethod
+    async def fail_unresolved_videos(
+        job_id: str, error_message: str
+    ) -> Dict[str, int]:
+        """Reconcile timed-out invoked and never-dispatched videos."""
+        try:
+            async with get_db_transaction() as tx:
+                job = await tx.fetchrow(
+                    "SELECT status FROM jobs WHERE job_id = $1 FOR UPDATE", job_id
+                )
+                if not job or job["status"] not in {
+                    "initializing",
+                    "prefetching_metadata",
+                    "dispatching",
+                    "processing",
+                }:
+                    return {"failed": 0, "skipped": 0}
+                invoked = await tx.fetchval(
+                    """
+                    SELECT count(*) FROM job_videos
+                    WHERE job_id = $1 AND status = 'processing'
+                    """,
+                    job_id,
+                )
+                undispatched = await tx.fetchval(
+                    """
+                    SELECT count(*) FROM job_videos
+                    WHERE job_id = $1 AND status = 'pending'
+                    """,
+                    job_id,
+                )
+                if not invoked and not undispatched:
+                    return {"failed": 0, "skipped": 0}
+                await tx.execute(
+                    """
+                    UPDATE job_videos
+                    SET status = 'failed', error_message = $2,
+                        processed_at = NOW(), retry_count = retry_count + 1,
+                        updated_at = NOW()
+                    WHERE job_id = $1 AND status = 'processing'
+                    """,
+                    job_id,
+                    error_message,
+                )
+                await tx.execute(
+                    """
+                    UPDATE job_videos
+                    SET status = 'skipped', error_message = $2,
+                        processed_at = NOW(), updated_at = NOW()
+                    WHERE job_id = $1 AND status = 'pending'
+                    """,
+                    job_id,
+                    f"Never dispatched: {error_message}",
+                )
+                await tx.execute(
+                    """
+                    UPDATE jobs
+                        SET failed_count = failed_count + $2,
+                        skipped_count = skipped_count + $3,
+                        processed_count = processed_count + $2 + $3,
+                        credits_used = credits_used + $2,
+                        timeout_occurred = true,
+                        updated_at = NOW()
+                    WHERE job_id = $1
+                    """,
+                    job_id,
+                    invoked,
+                    undispatched,
+                )
+                return {"failed": int(invoked), "skipped": int(undispatched)}
+        except Exception as e:
+            logger.error(f"Failed to reconcile unresolved videos for {job_id}: {e}")
+            return {"failed": 0, "skipped": 0}
+
+    @staticmethod
+    async def fail_job_before_dispatch(job_id: str, error_message: str) -> bool:
+        """Fail an active bootstrap job and refund all unaccepted work exactly once."""
+        try:
+            async with get_db_transaction() as tx:
+                job_record = await tx.fetchrow(
+                    """
+                    SELECT user_id, status, credits_reserved, credits_used,
+                           refunded_credits, reservation_id, api_key_id
+                    FROM jobs WHERE job_id = $1 FOR UPDATE
+                    """,
+                    job_id,
+                )
+                if not job_record or job_record["status"] not in {
+                    "initializing",
+                    "prefetching_metadata",
+                    "dispatching",
+                    "discovering",
+                    "reserving_credits",
+                }:
+                    return False
+                pending = await tx.fetchval(
+                    """SELECT count(*) FROM job_videos
+                       WHERE job_id = $1 AND status IN ('pending', 'processing')""",
+                    job_id,
+                )
+                await tx.execute(
+                    """
+                    UPDATE job_videos SET status = 'skipped', error_message = $2,
+                        processed_at = NOW(), updated_at = NOW()
+                    WHERE job_id = $1 AND status IN ('pending', 'processing')
+                    """,
+                    job_id,
+                    error_message,
+                )
+                refund = (
+                    max(
+                        job_record["credits_reserved"]
+                        - job_record["credits_used"]
+                        - job_record["refunded_credits"],
+                        0,
+                    )
+                    if job_record["reservation_id"] is not None
+                    else 0
+                )
+                if refund:
+                    await tx.execute(
+                        "UPDATE user_credits SET credits = credits + $1 WHERE user_id = $2",
+                        refund,
+                        job_record["user_id"],
+                    )
+                    if job_record["api_key_id"]:
+                        await tx.execute(
+                            """UPDATE api_keys SET total_credits_used =
+                               GREATEST(total_credits_used - $1, 0) WHERE key_id = $2""",
+                            refund,
+                            job_record["api_key_id"],
+                        )
+                await tx.execute(
+                    """
+                    UPDATE jobs SET status = 'failed', processed_count = total_videos,
+                        skipped_count = skipped_count + $2,
+                        refunded_credits = refunded_credits + $3,
+                        reservation_id = NULL, error_message = $4,
+                        end_time = COALESCE(end_time, NOW()), updated_at = NOW(),
+                        version = version + 1
+                    WHERE job_id = $1
+                    """,
+                    job_id,
+                    pending,
+                    refund,
+                    error_message,
+                )
+                return True
+        except Exception as e:
+            logger.error(f"Failed to terminate bootstrap job {job_id}: {e}")
+            return False
+
+    @staticmethod
+    async def cancel_job(job_id: str, user_id: str) -> Optional[Dict[str, Any]]:
+        """Cancel a job atomically, refund unprocessed work once, and preserve partials."""
+        async with get_db_transaction() as tx:
+            job_record = await tx.fetchrow(
+                """
+                SELECT job_id, user_id, status, total_videos, processed_count,
+                       completed, failed_count, skipped_count, credits_reserved,
+                       credits_used, refunded_credits, reservation_id, api_key_id
+                FROM jobs WHERE job_id = $1 FOR UPDATE
+                """,
+                job_id,
+            )
+            if not job_record:
+                return None
+            job = dict(job_record)
+            if str(job["user_id"]) != str(user_id):
+                raise PermissionError("Access denied")
+            if job["status"] == "cancelled":
+                job["refunded_now"] = 0
+                return job
+            if job["status"] in {"completed", "completed_with_errors", "failed"}:
+                job["refunded_now"] = 0
+                return job
+
+            skipped_now = await tx.fetchval(
+                """
+                SELECT count(*) FROM job_videos
+                WHERE job_id = $1 AND status IN ('pending', 'processing')
+                """,
+                job_id,
+            )
+            await tx.execute(
+                """
+                UPDATE job_videos
+                SET status = 'skipped', error_message = 'Cancelled by user',
+                    processed_at = NOW(), updated_at = NOW()
+                WHERE job_id = $1 AND status IN ('pending', 'processing')
+                """,
+                job_id,
+            )
+            refund = (
+                max(
+                    job["credits_reserved"]
+                    - job["credits_used"]
+                    - job["refunded_credits"],
+                    0,
+                )
+                if job["reservation_id"] is not None
+                else 0
+            )
+            if refund:
+                await tx.execute(
+                    "UPDATE user_credits SET credits = credits + $1 WHERE user_id = $2",
+                    refund,
+                    job["user_id"],
+                )
+                if job.get("api_key_id"):
+                    await tx.execute(
+                        """
+                        UPDATE api_keys
+                        SET total_credits_used = GREATEST(total_credits_used - $1, 0)
+                        WHERE key_id = $2
+                        """,
+                        refund,
+                        job["api_key_id"],
+                    )
+            updated = await tx.fetchrow(
+                """
+                UPDATE jobs
+                SET status = 'cancelled',
+                    processed_count = total_videos,
+                    skipped_count = skipped_count + $2,
+                    refunded_credits = refunded_credits + $3,
+                    reservation_id = NULL,
+                    end_time = COALESCE(end_time, NOW()),
+                    updated_at = NOW(), version = version + 1
+                WHERE job_id = $1
+                RETURNING job_id, user_id, status, total_videos, processed_count,
+                          completed, failed_count, skipped_count, credits_reserved,
+                          credits_used, refunded_credits, reservation_id
+                """,
+                job_id,
+                skipped_now,
+                refund,
+            )
+            result = dict(updated)
+            result["refunded_now"] = refund
+            return result
+
+    @staticmethod
     async def finalize_job_if_complete(job_id: str) -> Optional[Dict[str, Any]]:
         """
         Finalize a job once all videos are processed.
@@ -702,8 +1110,8 @@ class JobManager:
                     job_record = await tx.fetchrow(
                         """
                         SELECT job_id, user_id, status, processed_count, total_videos,
-                               failed_count, reservation_id, credits_used, credits_reserved,
-                               end_time
+                               failed_count, skipped_count, reservation_id, credits_used,
+                               credits_reserved, refunded_credits, api_key_id, end_time
                         FROM jobs
                         WHERE job_id = $1
                         FOR UPDATE
@@ -716,10 +1124,14 @@ class JobManager:
                         return None
 
                     job = dict(job_record)
+                    if job["status"] in {"cancelled", "failed"}:
+                        job["finalized"] = False
+                        job["refund_applied"] = False
+                        return job
                     is_complete = job["processed_count"] >= job["total_videos"]
                     target_status = (
                         "completed_with_errors"
-                        if job["failed_count"] > 0
+                        if job["failed_count"] > 0 or job["skipped_count"] > 0
                         else "completed"
                     )
 
@@ -729,6 +1141,7 @@ class JobManager:
                         return job
 
                     refund_applied = False
+                    unused_credits = 0
                     if job["reservation_id"] is not None:
                         unused_credits = max(
                             job["credits_reserved"] - job["credits_used"], 0
@@ -739,6 +1152,16 @@ class JobManager:
                                 unused_credits,
                                 job["user_id"],
                             )
+                            if job.get("api_key_id"):
+                                await tx.execute(
+                                    """
+                                    UPDATE api_keys
+                                    SET total_credits_used = GREATEST(total_credits_used - $1, 0)
+                                    WHERE key_id = $2
+                                    """,
+                                    unused_credits,
+                                    job["api_key_id"],
+                                )
                             refund_applied = True
 
                     needs_job_update = (
@@ -753,16 +1176,18 @@ class JobManager:
                             UPDATE jobs
                             SET status = $2,
                                 reservation_id = NULL,
+                                refunded_credits = refunded_credits + $3,
                                 end_time = COALESCE(end_time, NOW()),
                                 updated_at = NOW(),
                                 version = version + 1
                             WHERE job_id = $1
                             RETURNING job_id, user_id, status, processed_count, total_videos,
-                                      failed_count, reservation_id, credits_used,
-                                      credits_reserved, end_time
+                                      failed_count, skipped_count, reservation_id, credits_used,
+                                      credits_reserved, refunded_credits, end_time
                             """,
                             job_id,
                             target_status,
+                            unused_credits,
                         )
                         job = dict(updated_job_record)
 

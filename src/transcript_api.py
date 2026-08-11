@@ -571,7 +571,7 @@ class PaymentSuccessResponse(BaseModel):
 
 class VideoInfo(BaseModel):
     id: str
-    title: str
+    title: Optional[str] = None
     publishedAt: str = None
     duration: str = None
     url: str
@@ -2580,7 +2580,7 @@ async def download_selected_videos(
     Each video transcript attempt will deduct 1 credit.
     """
     channel_name = request.channel_name
-    videos = request.videos
+    videos, excluded_videos = youtube_service.normalize_videos_for_job(request.videos)
     user_id = get_user_id_from_payload(payload)
     num_videos = len(videos)
 
@@ -2596,8 +2596,8 @@ async def download_selected_videos(
         # 2. Quick channel validation (< 100ms)
         channel_info = await youtube_service.get_channel_info(request.channel_name)
 
-        # 3. Reserve credits immediately - NOW ASYNC
-        reservation_id = await CreditManager.reserve_credits(user_id, num_videos)
+        # Credit reservation and durable job creation happen in one DB transaction.
+        reservation_id = str(uuid.uuid4())
 
         # 4. Create job immediately (no metadata yet)
         job_id = str(uuid.uuid4())
@@ -2632,8 +2632,9 @@ async def download_selected_videos(
             },
         }
 
-        # Save job immediately using hybrid manager (database + file fallback)
-        await hybrid_job_manager.create_job(job_id, job_data, videos)
+        await hybrid_job_manager.create_job(
+            job_id, job_data, videos, reserve_credits=True
+        )
         logger.info(
             f"Created job {job_id} - starting background pre-fetch for {num_videos} videos"
         )
@@ -2648,6 +2649,7 @@ async def download_selected_videos(
             "channel_name": channel_name,
             "user_id": user_id,
             "credits_reserved": num_videos,
+            "excluded_videos": len(excluded_videos),
             "user_credits_at_start": user_credits,
             "message": f"Job created. Pre-fetching metadata for {num_videos} videos, then starting Lambda processing.",
         }
@@ -2725,6 +2727,8 @@ async def get_videos_fetch_status(
         else:
             return {"job_id": job_id, "status": status, "message": "Unknown status"}
 
+    except HTTPException:
+        raise
     except Exception as e:
         logger.error(f"Error getting video fetch status: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Failed to get status: {str(e)}")
@@ -2830,6 +2834,44 @@ async def get_transcript_download_status(
         )
 
 
+@app.post("/channel/download/cancel/{job_id}")
+async def cancel_transcript_download(
+    job_id: str,
+    payload: dict = Depends(validate_jwt),
+):
+    """Cancel an owned transcript job while preserving completed files."""
+    from db_youtube_transcripts.job_manager import JobManager
+
+    try:
+        result = await JobManager.cancel_job(job_id, get_user_id_from_payload(payload))
+        if not result:
+            raise HTTPException(status_code=404, detail="Job not found")
+        completed = result.get("completed", 0)
+        response = {
+            "job_id": str(result["job_id"]),
+            "status": result["status"],
+            "total_videos": result["total_videos"],
+            "processed_count": result["processed_count"],
+            "completed": completed,
+            "failed_count": result["failed_count"],
+            "skipped_count": result.get("skipped_count", 0),
+            "credits_used": result["credits_used"],
+            "refunded_credits": result.get("refunded_credits", 0),
+            "refunded_now": result.get("refunded_now", 0),
+            "download_ready": completed > 0,
+        }
+        if completed > 0:
+            response["download_url"] = f"/channel/download/results/{job_id}"
+        return response
+    except PermissionError:
+        raise HTTPException(status_code=403, detail="Access denied")
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error cancelling job {job_id}: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Failed to cancel job: {e}")
+
+
 @app.get("/channel/download/results/{job_id}")
 async def download_transcript_results(
     job_id: str,
@@ -2864,6 +2906,7 @@ async def download_transcript_results(
             "processing",
             "completed",
             "completed_with_errors",
+            "cancelled",
         }
         if job_status not in downloadable_statuses:
             raise HTTPException(
@@ -3229,7 +3272,7 @@ async def download_selected_playlist_videos(
     Each video transcript attempt will deduct 1 credit.
     """
     playlist_name = request.playlist_name
-    videos = request.videos
+    videos, excluded_videos = youtube_service.normalize_videos_for_job(request.videos)
     user_id = get_user_id_from_payload(payload)
     num_videos = len(videos)
 
@@ -3246,8 +3289,7 @@ async def download_selected_playlist_videos(
         clean_playlist_id = youtube_service.extract_playlist_id(playlist_name)
         playlist_info = await youtube_service.get_playlist_info(clean_playlist_id)
 
-        # 3. Reserve credits immediately - NOW ASYNC
-        reservation_id = await CreditManager.reserve_credits(user_id, num_videos)
+        reservation_id = str(uuid.uuid4())
 
         # 4. Create job immediately (no metadata yet)
         job_id = str(uuid.uuid4())
@@ -3283,8 +3325,9 @@ async def download_selected_playlist_videos(
             },
         }
 
-        # Save job immediately using hybrid manager (database + file fallback)
-        await hybrid_job_manager.create_job(job_id, job_data, videos)
+        await hybrid_job_manager.create_job(
+            job_id, job_data, videos, reserve_credits=True
+        )
         logger.info(
             f"Created playlist job {job_id} - starting background pre-fetch for {num_videos} videos"
         )
@@ -3299,6 +3342,7 @@ async def download_selected_playlist_videos(
             "playlist_id": clean_playlist_id,
             "user_id": user_id,
             "credits_reserved": num_videos,
+            "excluded_videos": len(excluded_videos),
             "user_credits_at_start": user_credits,
             "message": f"Job created. Pre-fetching metadata for {num_videos} videos, then starting Lambda processing.",
         }
@@ -3325,6 +3369,7 @@ async def _create_playlist_download_job(
     playlist_info: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     """Create a child playlist download job and start background dispatch."""
+    videos, excluded_videos = youtube_service.normalize_videos_for_job(videos)
     num_videos = len(videos)
     if num_videos <= 0:
         raise ValueError("No videos found for selected playlist")
@@ -3344,7 +3389,7 @@ async def _create_playlist_download_job(
             ),
         )
 
-    reservation_id = await CreditManager.reserve_credits(user_id, num_videos)
+    reservation_id = str(uuid.uuid4())
     job_id = str(uuid.uuid4())
 
     job_data = {
@@ -3372,22 +3417,10 @@ async def _create_playlist_download_job(
         "formatting_options": formatting_options,
     }
 
-    try:
-        await hybrid_job_manager.create_job(job_id, job_data, videos)
-        asyncio.create_task(youtube_service.prefetch_and_dispatch_task(job_id))
-    except Exception:
-        try:
-            await CreditManager.finalize_credit_usage(
-                user_id=user_id,
-                reservation_id=reservation_id,
-                credits_used=0,
-                credits_reserved=num_videos,
-            )
-        except Exception as credit_error:
-            logger.error(
-                f"Failed to rollback credits for playlist job {job_id}: {credit_error}"
-            )
-        raise
+    await hybrid_job_manager.create_job(
+        job_id, job_data, videos, reserve_credits=True
+    )
+    asyncio.create_task(youtube_service.prefetch_and_dispatch_task(job_id))
 
     return {
         "job_id": job_id,
@@ -3395,6 +3428,7 @@ async def _create_playlist_download_job(
         "total_videos": num_videos,
         "playlist_id": clean_playlist_id,
         "credits_reserved": num_videos,
+        "excluded_videos": len(excluded_videos),
     }
 
 

@@ -21,6 +21,7 @@ from db_youtube_transcripts.job_manager import JobManager
 
 
 logger = logging.getLogger(__name__)
+TERMINAL_JOB_STATUSES = {"completed", "completed_with_errors", "failed", "cancelled"}
 
 
 async def _get_job_status(job_id: str) -> Dict[str, Any]:
@@ -79,6 +80,21 @@ async def process_video_completion(
 ) -> Dict[str, Any]:
     video_id = completion_data["video_id"]
     job = await _get_job_status(job_id)
+    if job.get("status") in TERMINAL_JOB_STATUSES:
+        logger.info(
+            "Ignoring late completion for video %s in terminal job %s (%s)",
+            video_id,
+            job_id,
+            job.get("status"),
+        )
+        return {
+            "status": "ignored",
+            "job_id": job_id,
+            "video_id": video_id,
+            "job_status": job.get("status"),
+            "processed_count": job.get("processed_count", 0),
+            "total_videos": job.get("total_videos", 0),
+        }
 
     _log_execution_timing(job, video_id)
     _log_timeout_state(job, video_id, "completed")
@@ -114,6 +130,21 @@ async def process_video_failure(
 ) -> Dict[str, Any]:
     video_id = failure_data["video_id"]
     job = await _get_job_status(job_id)
+    if job.get("status") in TERMINAL_JOB_STATUSES:
+        logger.info(
+            "Ignoring late failure for video %s in terminal job %s (%s)",
+            video_id,
+            job_id,
+            job.get("status"),
+        )
+        return {
+            "status": "ignored",
+            "job_id": job_id,
+            "video_id": video_id,
+            "job_status": job.get("status"),
+            "processed_count": job.get("processed_count", 0),
+            "total_videos": job.get("total_videos", 0),
+        }
 
     _log_timeout_state(job, video_id, "failed")
 
