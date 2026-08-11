@@ -130,6 +130,22 @@ with connection.cursor() as c:
     );
     """
 
+    discovery_jobs_query = """
+    CREATE TABLE IF NOT EXISTS video_discovery_jobs (
+        job_id UUID PRIMARY KEY,
+        job_type VARCHAR(50) NOT NULL,
+        source_type VARCHAR(20) NULL,
+        source_id TEXT NULL,
+        status VARCHAR(30) NOT NULL DEFAULT 'processing',
+        payload JSONB NOT NULL DEFAULT '{}'::jsonb,
+        error_message TEXT NULL,
+        created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+        updated_at TIMESTAMP NOT NULL DEFAULT NOW(),
+        completed_at TIMESTAMP NULL,
+        expires_at TIMESTAMP NOT NULL DEFAULT NOW() + INTERVAL '48 hours'
+    );
+    """
+
     # Create indexes for performance
     indexes_query = """
     -- Jobs table indexes
@@ -145,6 +161,8 @@ with connection.cursor() as c:
     CREATE INDEX IF NOT EXISTS idx_job_videos_duration_category ON job_videos(duration_category);
     CREATE INDEX IF NOT EXISTS idx_job_videos_processed_at ON job_videos(processed_at);
     CREATE INDEX IF NOT EXISTS idx_job_videos_language ON job_videos(language);
+    CREATE INDEX IF NOT EXISTS idx_video_discovery_jobs_status ON video_discovery_jobs(status);
+    CREATE INDEX IF NOT EXISTS idx_video_discovery_jobs_expires_at ON video_discovery_jobs(expires_at);
     """
 
     # Add triggers for updated_at timestamps
@@ -179,6 +197,7 @@ with connection.cursor() as c:
         # Execute job_videos table creation
         print("Creating job_videos table...")
         c.execute(job_videos_query)
+        c.execute(discovery_jobs_query)
         print("✓ Job_videos table created successfully")
 
         # Execute indexes creation
