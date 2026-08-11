@@ -125,12 +125,38 @@ def test_cancelled_job_ignores_late_lambda_result(monkeypatch):
 
 
 def test_website_video_status_preserves_not_found(monkeypatch):
-    monkeypatch.setattr(transcript_api, "load_video_job_from_file", lambda job_id: None)
+    monkeypatch.setattr(
+        transcript_api, "load_discovery_job", AsyncMock(return_value=None)
+    )
 
     with pytest.raises(HTTPException) as exc_info:
         asyncio.run(transcript_api.get_videos_fetch_status("missing"))
 
     assert exc_info.value.status_code == 404
+
+
+def test_playlist_discovery_is_persisted_before_background_work(monkeypatch):
+    create_job = AsyncMock(return_value="job-id")
+    monkeypatch.setattr(transcript_api, "create_discovery_job", create_job)
+    monkeypatch.setattr(
+        transcript_api.youtube_service,
+        "extract_playlist_id",
+        lambda playlist_id: "playlist-id",
+    )
+    background_tasks = transcript_api.BackgroundTasks()
+
+    response = asyncio.run(
+        transcript_api.list_all_playlist_videos("playlist-id", background_tasks)
+    )
+
+    create_job.assert_awaited_once()
+    assert response["job_id"] == create_job.await_args.args[0]
+    assert create_job.await_args.kwargs == {
+        "job_type": "playlist_videos",
+        "source_type": "playlist",
+        "source_id": "playlist-id",
+    }
+    assert len(background_tasks.tasks) == 1
 
 
 def test_developer_cancel_response_keeps_partial_download(monkeypatch):

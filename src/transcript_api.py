@@ -65,6 +65,7 @@ from config_v2 import settings
 # Import hybrid job manager for database operations
 from hybrid_job_manager import hybrid_job_manager
 from job_result_processor import process_video_completion, process_video_failure
+from db_youtube_transcripts.discovery_job_manager import DiscoveryJobManager
 
 # Import API key authentication for developer API
 from api_key_auth import (
@@ -1570,73 +1571,34 @@ async def delete_api_key(
 
 
 # =============================================
-# VIDEO JOBS PERSISTENT STORAGE
+# SHARED DISCOVERY JOB STORAGE
 # =============================================
 
 
-def save_video_job_to_file(job_id: str, job_data: Dict[str, Any]) -> None:
-    """Save video job data to persistent storage"""
-    try:
-        file_path = os.path.join(VIDEO_JOBS_STORAGE_DIR, f"{job_id}.json")
-
-        # Convert data to JSON serializable format
-        serializable_data = {}
-        for key, value in job_data.items():
-            if isinstance(value, (dict, list, str, int, float, bool)) or value is None:
-                serializable_data[key] = value
-            else:
-                # Convert other types to string representation
-                serializable_data[key] = str(value)
-
-        with open(file_path, "w", encoding="utf-8") as f:
-            json.dump(serializable_data, f, indent=2, ensure_ascii=False)
-
-        logger.debug(f"Saved video job {job_id} to file")
-
-    except Exception as e:
-        logger.error(f"Failed to save video job {job_id} to file: {e}")
+async def create_discovery_job(
+    job_id: str,
+    job_data: Dict[str, Any],
+    *,
+    job_type: str,
+    source_type: Optional[str] = None,
+    source_id: Optional[str] = None,
+) -> str:
+    """Create shared job state before returning an ID to a caller."""
+    return await DiscoveryJobManager.create_job(
+        job_id, job_type, source_type, source_id, job_data
+    )
 
 
-def load_video_job_from_file(job_id: str) -> Optional[Dict[str, Any]]:
-    """Load video job data from persistent storage"""
-    try:
-        file_path = os.path.join(VIDEO_JOBS_STORAGE_DIR, f"{job_id}.json")
-
-        if not os.path.exists(file_path):
-            return None
-
-        with open(file_path, "r", encoding="utf-8") as f:
-            job_data = json.load(f)
-
-        logger.debug(f"Loaded video job {job_id} from file")
-        return job_data
-
-    except Exception as e:
-        logger.error(f"Failed to load video job {job_id} from file: {e}")
-        return None
+async def load_discovery_job(
+    job_id: str, *, stale_after_minutes: Optional[int] = None
+) -> Optional[Dict[str, Any]]:
+    return await DiscoveryJobManager.get_job(job_id, stale_after_minutes)
 
 
-def update_video_job(job_id: str, **updates) -> Optional[Dict[str, Any]]:
-    """Update video job data with atomic file operations"""
-    try:
-        # Load current job data
-        job_data = load_video_job_from_file(job_id)
-        if job_data is None:
-            logger.error(f"Video job {job_id} not found for update")
-            return None
-
-        # Apply updates
-        for key, value in updates.items():
-            job_data[key] = value
-
-        # Save updated data
-        save_video_job_to_file(job_id, job_data)
-
-        return job_data
-
-    except Exception as e:
-        logger.error(f"Failed to update video job {job_id}: {e}")
-        return None
+async def update_discovery_job(
+    job_id: str, **updates: Any
+) -> Optional[Dict[str, Any]]:
+    return await DiscoveryJobManager.update_job(job_id, **updates)
 
 
 # =============================================
@@ -1647,7 +1609,7 @@ def update_video_job(job_id: str, **updates) -> Optional[Dict[str, Any]]:
 async def fetch_channel_videos_task(job_id: str, channel_name: str):
     """
     Background task to fetch all videos from a channel with timeout protection.
-    Updates job status in video_jobs dictionary.
+    Updates shared PostgreSQL discovery-job state.
     """
     try:
         logger.info(
@@ -1674,7 +1636,7 @@ async def fetch_channel_videos_task(job_id: str, channel_name: str):
             )
 
             # Update job with success
-            update_video_job(
+            await update_discovery_job(
                 job_id,
                 status="completed",
                 channel_info=channel_info,
@@ -1694,7 +1656,7 @@ async def fetch_channel_videos_task(job_id: str, channel_name: str):
 
         except asyncio.TimeoutError:
             error_msg = f"Timeout after {timeout_seconds} seconds"
-            update_video_job(
+            await update_discovery_job(
                 job_id, status="failed", error=error_msg, end_time=time.time()
             )
             logger.error(
@@ -1703,7 +1665,7 @@ async def fetch_channel_videos_task(job_id: str, channel_name: str):
 
     except Exception as e:
         error_msg = f"Error fetching videos: {str(e)}"
-        update_video_job(job_id, status="failed", error=error_msg, end_time=time.time())
+        await update_discovery_job(job_id, status="failed", error=error_msg, end_time=time.time())
         logger.error(
             f"Error in background task for channel {channel_name} (job: {job_id}): {error_msg}",
             exc_info=True,
@@ -1713,7 +1675,7 @@ async def fetch_channel_videos_task(job_id: str, channel_name: str):
 async def fetch_playlist_videos_task(job_id: str, playlist_id: str):
     """
     Background task to fetch all videos from a playlist with timeout protection.
-    Updates job status in video_jobs dictionary.
+    Updates shared PostgreSQL discovery-job state.
     """
     try:
         logger.info(
@@ -1739,7 +1701,7 @@ async def fetch_playlist_videos_task(job_id: str, playlist_id: str):
             )
 
             # Update job with success
-            update_video_job(
+            await update_discovery_job(
                 job_id,
                 status="completed",
                 playlist_info=playlist_info,
@@ -1759,7 +1721,7 @@ async def fetch_playlist_videos_task(job_id: str, playlist_id: str):
 
         except asyncio.TimeoutError:
             error_msg = f"Timeout after {timeout_seconds} seconds"
-            update_video_job(
+            await update_discovery_job(
                 job_id, status="failed", error=error_msg, end_time=time.time()
             )
             logger.error(
@@ -1768,7 +1730,7 @@ async def fetch_playlist_videos_task(job_id: str, playlist_id: str):
 
     except Exception as e:
         error_msg = f"Error fetching videos: {str(e)}"
-        update_video_job(job_id, status="failed", error=error_msg, end_time=time.time())
+        await update_discovery_job(job_id, status="failed", error=error_msg, end_time=time.time())
         logger.error(
             f"Error in background task for playlist {playlist_id} (job: {job_id}): {error_msg}",
             exc_info=True,
@@ -1798,7 +1760,7 @@ async def fetch_channel_playlists_task(job_id: str, channel_name: str):
             )
         except asyncio.TimeoutError:
             error_msg = f"Timeout after {timeout_seconds} seconds"
-            update_video_job(
+            await update_discovery_job(
                 job_id, status="failed", error=error_msg, end_time=time.time()
             )
             logger.error(
@@ -1814,7 +1776,7 @@ async def fetch_channel_playlists_task(job_id: str, channel_name: str):
             "remaining": total_playlists,
         }
 
-        update_video_job(
+        await update_discovery_job(
             job_id,
             status="processing",
             stage="enriching_playlist_metadata",
@@ -1825,7 +1787,7 @@ async def fetch_channel_playlists_task(job_id: str, channel_name: str):
         )
 
         if total_playlists == 0:
-            update_video_job(
+            await update_discovery_job(
                 job_id,
                 status="completed",
                 stage="completed",
@@ -1880,7 +1842,7 @@ async def fetch_channel_playlists_task(job_id: str, channel_name: str):
             updates_since_flush += 1
 
             if updates_since_flush >= update_interval:
-                update_video_job(
+                await update_discovery_job(
                     job_id,
                     playlists=playlists,
                     metadata_enrichment=progress,
@@ -1888,7 +1850,7 @@ async def fetch_channel_playlists_task(job_id: str, channel_name: str):
                 )
                 updates_since_flush = 0
 
-        update_video_job(
+        await update_discovery_job(
             job_id,
             status="completed",
             stage="completed",
@@ -1904,7 +1866,7 @@ async def fetch_channel_playlists_task(job_id: str, channel_name: str):
 
     except Exception as e:
         error_msg = f"Error fetching playlists: {str(e)}"
-        update_video_job(job_id, status="failed", error=error_msg, end_time=time.time())
+        await update_discovery_job(job_id, status="failed", error=error_msg, end_time=time.time())
         logger.error(
             f"Error in background playlist task for channel {channel_name} (job: {job_id}): {error_msg}",
             exc_info=True,
@@ -2316,8 +2278,13 @@ async def list_all_channel_videos(
             "channel_info": None,
         }
 
-        # Save job to persistent storage
-        save_video_job_to_file(job_id, job_data)
+        await create_discovery_job(
+            job_id,
+            job_data,
+            job_type="channel_videos",
+            source_type="channel",
+            source_id=channel_name,
+        )
 
         # Start background task
         background_tasks.add_task(fetch_channel_videos_task, job_id, channel_name)
@@ -2364,7 +2331,13 @@ async def list_all_channel_playlists(
             "channel_info": None,
         }
 
-        save_video_job_to_file(job_id, job_data)
+        await create_discovery_job(
+            job_id,
+            job_data,
+            job_type="channel_playlists",
+            source_type="channel",
+            source_id=channel_name,
+        )
         background_tasks.add_task(fetch_channel_playlists_task, job_id, channel_name)
 
         return {
@@ -2672,8 +2645,7 @@ async def get_videos_fetch_status(
     Check the status of a video fetching job and return results if complete.
     """
     try:
-        # Load job from file
-        job = load_video_job_from_file(job_id)
+        job = await load_discovery_job(job_id, stale_after_minutes=6)
         if job is None:
             raise HTTPException(status_code=404, detail="Job not found")
 
@@ -2743,7 +2715,7 @@ async def get_playlists_fetch_status(
     Returns partial playlists while metadata enrichment is in progress.
     """
     try:
-        job = load_video_job_from_file(job_id)
+        job = await load_discovery_job(job_id, stale_after_minutes=12)
         if job is None:
             raise HTTPException(status_code=404, detail="Job not found")
 
@@ -3061,8 +3033,13 @@ async def list_all_playlist_videos(
             "playlist_info": None,
         }
 
-        # Save job to persistent storage
-        save_video_job_to_file(job_id, job_data)
+        await create_discovery_job(
+            job_id,
+            job_data,
+            job_type="playlist_videos",
+            source_type="playlist",
+            source_id=clean_playlist_id,
+        )
 
         # Start background task
         background_tasks.add_task(fetch_playlist_videos_task, job_id, clean_playlist_id)
@@ -3434,7 +3411,7 @@ async def _create_playlist_download_job(
 
 async def create_batch_playlist_download_jobs_task(batch_job_id: str):
     """Background task to create child playlist jobs with throttled concurrency."""
-    job = load_video_job_from_file(batch_job_id)
+    job = await load_discovery_job(batch_job_id)
     if not job:
         logger.error(f"Batch playlist job {batch_job_id} not found")
         return
@@ -3512,7 +3489,7 @@ async def create_batch_playlist_download_jobs_task(batch_job_id: str):
             finally:
                 async with update_lock:
                     processed_playlists += 1
-                    update_video_job(
+                    await update_discovery_job(
                         batch_job_id,
                         processed_playlists=processed_playlists,
                         created_jobs=created_jobs,
@@ -3528,7 +3505,7 @@ async def create_batch_playlist_download_jobs_task(batch_job_id: str):
         await asyncio.gather(*tasks)
 
         final_status = "completed" if not failed_playlists else "completed_with_errors"
-        update_video_job(
+        await update_discovery_job(
             batch_job_id,
             status=final_status,
             stage="completed",
@@ -3551,7 +3528,7 @@ async def create_batch_playlist_download_jobs_task(batch_job_id: str):
             f"Batch playlist job {batch_job_id} failed unexpectedly: {str(e)}",
             exc_info=True,
         )
-        update_video_job(
+        await update_discovery_job(
             batch_job_id,
             status="failed",
             stage="failed",
@@ -3608,7 +3585,13 @@ async def download_selected_playlists_batch(
     }
 
     try:
-        save_video_job_to_file(batch_job_id, job_data)
+        await create_discovery_job(
+            batch_job_id,
+            job_data,
+            job_type="playlist_download_batch",
+            source_type="channel",
+            source_id=request.channel_name,
+        )
 
         background_tasks.add_task(
             create_batch_playlist_download_jobs_task,
@@ -3635,7 +3618,7 @@ async def download_selected_playlists_batch(
 async def get_batch_playlist_download_status(batch_job_id: str):
     """Check status of a batch playlist child-job creation request."""
     try:
-        job = load_video_job_from_file(batch_job_id)
+        job = await load_discovery_job(batch_job_id, stale_after_minutes=30)
         if job is None:
             raise HTTPException(status_code=404, detail="Batch job not found")
 
