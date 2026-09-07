@@ -149,6 +149,7 @@ def select_transcript(
 
     return transcripts[0], True
 
+
 # Memory tracking logger - separate logger for memory metrics
 memory_logger = logging.getLogger("memory_tracker")
 memory_logger.setLevel(logging.INFO)
@@ -320,9 +321,7 @@ class VideoMetadataNotAccessible(Exception):
 class VideoMetadataUnavailable(Exception):
     """Raised when transient metadata extraction attempts are exhausted."""
 
-    def __init__(
-        self, video_id: str, attempts: int, original_exception: Exception
-    ):
+    def __init__(self, video_id: str, attempts: int, original_exception: Exception):
         self.video_id = video_id
         self.attempts = attempts
         self.original_exception = original_exception
@@ -2667,7 +2666,9 @@ async def prefetch_and_dispatch_task(job_id: str):
             if not await hybrid_job_manager.update_job_status_safe(
                 job_id, "dispatching", expected_current_status="initializing"
             ):
-                logger.info(f"Job {job_id}: stopped before dispatch after status change")
+                logger.info(
+                    f"Job {job_id}: stopped before dispatch after status change"
+                )
                 return
         else:
             # Fallback to original pre-fetch logic
@@ -2689,7 +2690,9 @@ async def prefetch_and_dispatch_task(job_id: str):
             if not await hybrid_job_manager.update_job_status_safe(
                 job_id, "dispatching", expected_current_status="prefetching_metadata"
             ):
-                logger.info(f"Job {job_id}: stopped before dispatch after status change")
+                logger.info(
+                    f"Job {job_id}: stopped before dispatch after status change"
+                )
                 return
 
         # 2. Update job with metadata
