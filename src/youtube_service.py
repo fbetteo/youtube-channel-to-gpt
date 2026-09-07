@@ -89,6 +89,67 @@ TERMINAL_TRANSCRIPT_ERROR_TYPES = {
     "VideoUnplayable",
 }
 
+LANGUAGE_CODE_PATTERN = re.compile(r"^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
+
+
+def normalize_preferred_language(language_code: Optional[str]) -> Optional[str]:
+    """Validate and normalize a YouTube/BCP-47-style language code."""
+    if language_code is None:
+        return None
+
+    value = language_code.strip()
+    if not value or not LANGUAGE_CODE_PATTERN.fullmatch(value):
+        raise ValueError(
+            "preferred_language must be a language code such as 'it', 'pt-BR', or 'zh-Hans'"
+        )
+
+    parts = value.split("-")
+    normalized = [parts[0].lower()]
+    for part in parts[1:]:
+        if len(part) == 4 and part.isalpha():
+            normalized.append(part.title())
+        elif len(part) == 2 and part.isalpha():
+            normalized.append(part.upper())
+        else:
+            normalized.append(part.lower())
+    return "-".join(normalized)
+
+
+def select_transcript(
+    transcript_list: Any, preferred_language: Optional[str]
+) -> Tuple[Any, bool]:
+    """Select a preferred transcript without making another YouTube request."""
+    transcripts = list(transcript_list)
+    if not transcripts:
+        raise ValueError("No transcripts are available for this video")
+
+    if preferred_language is None:
+        return transcripts[0], False
+
+    preferred_lower = preferred_language.lower()
+    preferred_base = preferred_lower.split("-", 1)[0]
+    exact_matches = [
+        transcript
+        for transcript in transcripts
+        if transcript.language_code.lower() == preferred_lower
+    ]
+    family_matches = [
+        transcript
+        for transcript in transcripts
+        if transcript.language_code.lower().split("-", 1)[0] == preferred_base
+    ]
+
+    for matches in (exact_matches, family_matches):
+        if matches:
+            manual = next(
+                (transcript for transcript in matches if not transcript.is_generated),
+                None,
+            )
+            return manual or matches[0], False
+
+    return transcripts[0], True
+
+
 # Memory tracking logger - separate logger for memory metrics
 memory_logger = logging.getLogger("memory_tracker")
 memory_logger.setLevel(logging.INFO)
@@ -260,9 +321,7 @@ class VideoMetadataNotAccessible(Exception):
 class VideoMetadataUnavailable(Exception):
     """Raised when transient metadata extraction attempts are exhausted."""
 
-    def __init__(
-        self, video_id: str, attempts: int, original_exception: Exception
-    ):
+    def __init__(self, video_id: str, attempts: int, original_exception: Exception):
         self.video_id = video_id
         self.attempts = attempts
         self.original_exception = original_exception
@@ -380,8 +439,10 @@ def _fetch_transcript_with_retries(
     video_id: str,
     max_attempts: int = 3,
     base_delay: float = 1.0,
+    preferred_language: Optional[str] = "en",
 ) -> Tuple[Any, Any, int]:
     """Fetch transcript by retrying the entire list/select/fetch flow."""
+    normalized_language = normalize_preferred_language(preferred_language)
     last_error: Optional[Exception] = None
     last_attempt = 0
     last_stage = "initialize"
@@ -398,23 +459,16 @@ def _fetch_transcript_with_retries(
             transcript_list = ytt_api.list(video_id)
 
             stage = "select"
-            try:
-                transcript = transcript_list.find_transcript(["en"])
-                logger.info(
-                    f"Found English transcript for video {video_id} on attempt {attempt}/{max_attempts}"
-                )
-            except Exception as english_error:
-                logger.warning(
-                    f"No English transcript found for {video_id} on attempt {attempt}/{max_attempts}. "
-                    "Trying first available transcript."
-                )
-                try:
-                    transcript = next(iter(transcript_list))
-                    logger.info(
-                        f"Using first available transcript ({transcript.language_code}) for video {video_id}"
-                    )
-                except StopIteration:
-                    raise english_error
+            transcript, fallback_used = select_transcript(
+                transcript_list, normalized_language
+            )
+            logger.info(
+                "transcript_language_selection video_id=%s requested=%s selected=%s fallback_used=%s",
+                video_id,
+                normalized_language or "auto",
+                transcript.language_code,
+                fallback_used,
+            )
 
             stage = "fetch"
             fetched_transcript = transcript.fetch()
@@ -1590,6 +1644,7 @@ async def get_single_transcript(
     include_video_url: bool = True,
     include_view_count: bool = False,
     pre_fetched_metadata: Optional[Dict[str, Any]] = None,
+    preferred_language: Optional[str] = "en",
 ) -> Tuple[str, Optional[str], Dict[str, Any]]:
     """
     Get transcript for a single YouTube video, with language fallback.
@@ -1622,6 +1677,7 @@ async def get_single_transcript(
         transcript, fetched_transcript, attempt_count = await asyncio.to_thread(
             _fetch_transcript_with_retries,
             video_id,
+            preferred_language=preferred_language,
         )
 
         fetch_end = time.time()
@@ -2610,7 +2666,9 @@ async def prefetch_and_dispatch_task(job_id: str):
             if not await hybrid_job_manager.update_job_status_safe(
                 job_id, "dispatching", expected_current_status="initializing"
             ):
-                logger.info(f"Job {job_id}: stopped before dispatch after status change")
+                logger.info(
+                    f"Job {job_id}: stopped before dispatch after status change"
+                )
                 return
         else:
             # Fallback to original pre-fetch logic
@@ -2632,7 +2690,9 @@ async def prefetch_and_dispatch_task(job_id: str):
             if not await hybrid_job_manager.update_job_status_safe(
                 job_id, "dispatching", expected_current_status="prefetching_metadata"
             ):
-                logger.info(f"Job {job_id}: stopped before dispatch after status change")
+                logger.info(
+                    f"Job {job_id}: stopped before dispatch after status change"
+                )
                 return
 
         # 2. Update job with metadata

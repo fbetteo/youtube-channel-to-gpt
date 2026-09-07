@@ -46,7 +46,7 @@ from fastapi import (
 from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, field_validator, validator
 
 # Authentication and Stripe imports
 from jose import JWTError, jwt
@@ -500,14 +500,26 @@ def get_user_or_anonymous(
 # =============================================
 
 
-class DownloadURLRequest(BaseModel):
+class TranscriptLanguagePreference(BaseModel):
+    preferred_language: Optional[str] = Field(
+        default=None,
+        description="Preferred transcript language; null uses the first available track",
+    )
+
+    @field_validator("preferred_language")
+    @classmethod
+    def validate_preferred_language(cls, value):
+        return youtube_service.normalize_preferred_language(value)
+
+
+class DownloadURLRequest(TranscriptLanguagePreference):
     youtube_url: str = Field(..., description="YouTube video URL or ID")
     include_timestamps: bool = Field(
         True, description="Whether to include timestamps in the transcript"
     )
 
 
-class ChannelRequest(BaseModel):
+class ChannelRequest(TranscriptLanguagePreference):
     channel_name: str = Field(..., description="YouTube channel name or ID")
     max_results: int = Field(30, description="Maximum number of videos to fetch")
     # Formatting options
@@ -579,7 +591,7 @@ class VideoInfo(BaseModel):
     viewCount: int = 0
 
 
-class SelectedVideosRequest(BaseModel):
+class SelectedVideosRequest(TranscriptLanguagePreference):
     channel_name: str = Field(..., description="YouTube channel name or ID")
     videos: List[VideoInfo] = Field(
         ..., description="List of selected videos to download transcripts for"
@@ -606,7 +618,7 @@ class SelectedVideosRequest(BaseModel):
     )
 
 
-class PlaylistRequest(BaseModel):
+class PlaylistRequest(TranscriptLanguagePreference):
     playlist_name: str = Field(..., description="YouTube playlist ID or URL")
     max_results: int = Field(30, description="Maximum number of videos to fetch")
     # Formatting options
@@ -637,7 +649,7 @@ class PlaylistRequest(BaseModel):
         return v
 
 
-class SelectedPlaylistVideosRequest(BaseModel):
+class SelectedPlaylistVideosRequest(TranscriptLanguagePreference):
     playlist_name: str = Field(..., description="YouTube playlist ID or URL")
     videos: List[VideoInfo] = Field(
         ..., description="List of selected videos to download transcripts for"
@@ -671,7 +683,7 @@ class BatchPlaylistSelection(BaseModel):
     )
 
 
-class BatchPlaylistDownloadRequest(BaseModel):
+class BatchPlaylistDownloadRequest(TranscriptLanguagePreference):
     playlists: List[BatchPlaylistSelection] = Field(
         ..., description="Selected playlists to process"
     )
@@ -2035,6 +2047,7 @@ async def download_transcript_raw(
                     video_id,
                     output_dir=None,
                     include_timestamps=request.include_timestamps,
+                    preferred_language=request.preferred_language,
                 )
             )
             transcript_text, _, metadata = await asyncio.wait_for(
@@ -2602,6 +2615,7 @@ async def download_selected_videos(
                 "include_video_url": request.include_video_url,
                 "include_view_count": request.include_view_count,
                 "concatenate_all": request.concatenate_all,
+                "preferred_language": request.preferred_language,
             },
         }
 
@@ -3299,6 +3313,7 @@ async def download_selected_playlist_videos(
                 "include_video_url": request.include_video_url,
                 "include_view_count": request.include_view_count,
                 "concatenate_all": request.concatenate_all,
+                "preferred_language": request.preferred_language,
             },
         }
 
@@ -3581,6 +3596,7 @@ async def download_selected_playlists_batch(
             "include_video_url": request.include_video_url,
             "include_view_count": request.include_view_count,
             "concatenate_all": request.concatenate_all,
+            "preferred_language": request.preferred_language,
         },
     }
 

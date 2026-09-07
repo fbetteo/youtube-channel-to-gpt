@@ -49,6 +49,66 @@ TERMINAL_TRANSCRIPT_ERROR_TYPES = {
     "VideoUnplayable",
 }
 
+LANGUAGE_CODE_PATTERN = re.compile(r"^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
+
+
+def normalize_preferred_language(language_code: Optional[str]) -> Optional[str]:
+    """Validate and normalize a YouTube/BCP-47-style language code."""
+    if language_code is None:
+        return None
+
+    value = language_code.strip()
+    if not value or not LANGUAGE_CODE_PATTERN.fullmatch(value):
+        raise ValueError(
+            "preferred_language must be a language code such as 'it', 'pt-BR', or 'zh-Hans'"
+        )
+
+    parts = value.split("-")
+    normalized = [parts[0].lower()]
+    for part in parts[1:]:
+        if len(part) == 4 and part.isalpha():
+            normalized.append(part.title())
+        elif len(part) == 2 and part.isalpha():
+            normalized.append(part.upper())
+        else:
+            normalized.append(part.lower())
+    return "-".join(normalized)
+
+
+def select_transcript(
+    transcript_list: Any, preferred_language: Optional[str]
+) -> Tuple[Any, bool]:
+    """Select a preferred transcript without making another YouTube request."""
+    transcripts = list(transcript_list)
+    if not transcripts:
+        raise ValueError("No transcripts are available for this video")
+
+    if preferred_language is None:
+        return transcripts[0], False
+
+    preferred_lower = preferred_language.lower()
+    preferred_base = preferred_lower.split("-", 1)[0]
+    exact_matches = [
+        transcript
+        for transcript in transcripts
+        if transcript.language_code.lower() == preferred_lower
+    ]
+    family_matches = [
+        transcript
+        for transcript in transcripts
+        if transcript.language_code.lower().split("-", 1)[0] == preferred_base
+    ]
+
+    for matches in (exact_matches, family_matches):
+        if matches:
+            manual = next(
+                (transcript for transcript in matches if not transcript.is_generated),
+                None,
+            )
+            return manual or matches[0], False
+
+    return transcripts[0], True
+
 
 def get_ytt_api() -> YouTubeTranscriptApi:
     """
@@ -146,8 +206,10 @@ def fetch_transcript_with_retries(
     video_id: str,
     max_attempts: int = 3,
     base_delay: float = 1.0,
+    preferred_language: Optional[str] = "en",
 ) -> Tuple[Any, Any, int]:
     """Fetch transcript by retrying the entire list/select/fetch flow."""
+    normalized_language = normalize_preferred_language(preferred_language)
     last_error: Optional[Exception] = None
     last_attempt = 0
     last_stage = "initialize"
@@ -164,23 +226,16 @@ def fetch_transcript_with_retries(
             transcript_list = ytt_api.list(video_id)
 
             stage = "select"
-            try:
-                transcript = transcript_list.find_transcript(["en"])
-                logger.info(
-                    f"Found English transcript for video {video_id} on attempt {attempt}/{max_attempts}"
-                )
-            except Exception as english_error:
-                logger.warning(
-                    f"No English transcript found for {video_id} on attempt {attempt}/{max_attempts}. "
-                    "Trying first available transcript."
-                )
-                try:
-                    transcript = next(iter(transcript_list))
-                    logger.info(
-                        f"Using first available transcript ({transcript.language_code}) for video {video_id}"
-                    )
-                except StopIteration:
-                    raise english_error
+            transcript, fallback_used = select_transcript(
+                transcript_list, normalized_language
+            )
+            logger.info(
+                "transcript_language_selection video_id=%s requested=%s selected=%s fallback_used=%s",
+                video_id,
+                normalized_language or "auto",
+                transcript.language_code,
+                fallback_used,
+            )
 
             stage = "fetch"
             fetched_transcript = transcript.fetch()
@@ -382,6 +437,7 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
     job_id = event["job_id"]
     user_id = event["user_id"]
     api_base_url = event.get("api_base_url", "").rstrip("/")
+    preferred_language = event.get("preferred_language", "en")
 
     logger.info(f"Starting transcript fetch for video {video_id} in job {job_id}")
     lambda_request_id = getattr(context, "aws_request_id", None)
@@ -389,7 +445,7 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
     try:
         fetch_start = time.time()
         transcript, fetched_transcript, attempt_count = fetch_transcript_with_retries(
-            video_id
+            video_id, preferred_language=preferred_language
         )
 
         fetch_end = time.time()
