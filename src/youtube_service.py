@@ -150,6 +150,34 @@ def select_transcript(
     return transcripts[0], True
 
 
+def normalize_caption_text(text: Any) -> str:
+    """Collapse subtitle-internal line breaks and repeated whitespace."""
+    return " ".join(str(text or "").split())
+
+
+def format_transcript_segments(
+    transcript_data: List[Dict[str, Any]], include_timestamps: bool
+) -> str:
+    """Build transcript text after normalizing each caption segment."""
+    if not include_timestamps:
+        return " ".join(
+            cleaned_text
+            for segment in transcript_data
+            if (cleaned_text := normalize_caption_text(segment.get("text")))
+        )
+
+    transcript_lines = []
+    for segment in transcript_data:
+        cleaned_text = normalize_caption_text(segment.get("text"))
+        if not cleaned_text:
+            continue
+        start_time_sec = segment["start"]
+        minutes = int(start_time_sec // 60)
+        seconds = int(start_time_sec % 60)
+        transcript_lines.append(f"[{minutes:02d}:{seconds:02d}] {cleaned_text}")
+    return "\n".join(transcript_lines)
+
+
 # Memory tracking logger - separate logger for memory metrics
 memory_logger = logging.getLogger("memory_tracker")
 memory_logger.setLevel(logging.INFO)
@@ -531,6 +559,49 @@ def _get_ydl_opts(base_opts: Dict[str, Any]) -> Dict[str, Any]:
 
         logger.info("Using Webshare rotating proxy for yt-dlp")
     return opts
+
+
+def _get_localized_ydl_opts(
+    base_opts: Dict[str, Any], preferred_language: Optional[str]
+) -> Dict[str, Any]:
+    """Add a metadata language without replacing existing extractor arguments."""
+    opts = base_opts.copy()
+    extractor_args = {
+        extractor: arguments.copy()
+        for extractor, arguments in base_opts.get("extractor_args", {}).items()
+    }
+    normalized_language = normalize_preferred_language(preferred_language)
+    if normalized_language:
+        extractor_args.setdefault("youtube", {})["lang"] = [normalized_language]
+    if extractor_args:
+        opts["extractor_args"] = extractor_args
+    return _get_ydl_opts(opts)
+
+
+def _extract_flat_info(
+    url: str,
+    base_opts: Dict[str, Any],
+    preferred_language: Optional[str],
+) -> Optional[Dict[str, Any]]:
+    """Extract flat metadata, retrying without localization if it fails."""
+    normalized_language = normalize_preferred_language(preferred_language)
+    try:
+        ydl_opts = _get_localized_ydl_opts(base_opts, normalized_language)
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            return ydl.extract_info(url, download=False)
+    except Exception:
+        if not normalized_language:
+            raise
+        logger.warning(
+            "Localized metadata extraction failed for %s (language=%s); "
+            "retrying with YouTube's default metadata",
+            url,
+            normalized_language,
+            exc_info=True,
+        )
+        ydl_opts = _get_localized_ydl_opts(base_opts, None)
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            return ydl.extract_info(url, download=False)
 
 
 class MemoryTracker:
@@ -1713,21 +1784,9 @@ async def get_single_transcript(
         # Format transcript - optimize by using string builder approach
         format_start = time.time()
 
-        if include_timestamps:
-            # Format with timestamps [MM:SS] Text
-            # Pre-allocate the list to avoid resizing
-            transcript_lines = [""] * len(transcript_data)
-            for i, segment in enumerate(transcript_data):
-                start_time_sec = segment["start"]
-                minutes = int(start_time_sec // 60)
-                seconds = int(start_time_sec % 60)
-                timestamp = f"[{minutes:02d}:{seconds:02d}] "
-                transcript_lines[i] = f"{timestamp}{segment['text']}"
-            transcript_text = "\n".join(transcript_lines)
-        else:
-            # Simple concatenation without timestamps - join for better performance
-            # Use a list comprehension instead of generator expression for potentially better performance
-            transcript_text = " ".join([segment["text"] for segment in transcript_data])
+        transcript_text = format_transcript_segments(
+            transcript_data, include_timestamps=include_timestamps
+        )
 
         format_end = time.time()
         logger.info(
@@ -1993,7 +2052,9 @@ def _format_ytdlp_date(date_str: Optional[str], timestamp: Optional[int] = None)
     return ""
 
 
-def _fetch_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
+def _fetch_all_channel_videos(
+    channel_id: str, preferred_language: Optional[str] = None
+) -> List[Dict[str, Any]]:
     """
     Fetch all videos from a channel using yt-dlp, including Shorts.
     Returns a list of video metadata dicts.
@@ -2005,23 +2066,19 @@ def _fetch_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
     # Fetch from both 'videos' (long form) and 'shorts' tabs
     tabs = ["videos", "shorts"]
 
-    ydl_opts = {
+    base_ydl_opts = {
         "quiet": True,
         "extract_flat": True,
         "dump_single_json": True,
         "ignoreerrors": True,
         "extractor_args": {"youtubetab": {"approximate_date": [""]}},
     }
-    # Add proxy if configured
-    ydl_opts = _get_ydl_opts(ydl_opts)
-
     for tab in tabs:
         try:
             url = f"https://www.youtube.com/channel/{channel_id}/{tab}"
             logger.info(f"Fetching {tab} from {url}")
 
-            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-                info = ydl.extract_info(url, download=False)
+            info = _extract_flat_info(url, base_ydl_opts, preferred_language)
 
             if not info:
                 logger.warning(f"No info found for {tab} tab of channel {channel_id}")
@@ -2086,7 +2143,9 @@ def _fetch_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
     return all_videos
 
 
-async def get_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
+async def get_all_channel_videos(
+    channel_id: str, preferred_language: Optional[str] = None
+) -> List[Dict[str, Any]]:
     """
     Async wrapper for _fetch_all_channel_videos with better error handling and logging.
 
@@ -2098,7 +2157,9 @@ async def get_all_channel_videos(channel_id: str) -> List[Dict[str, Any]]:
     """
     try:
         logger.info(f"Fetching all videos for channel {channel_id}")
-        videos = await asyncio.to_thread(_fetch_all_channel_videos, channel_id)
+        videos = await asyncio.to_thread(
+            _fetch_all_channel_videos, channel_id, preferred_language
+        )
         logger.info(
             f"Successfully fetched {len(videos)} videos for channel {channel_id}"
         )
@@ -2204,7 +2265,9 @@ async def get_all_channel_playlists(channel_id: str) -> List[Dict[str, Any]]:
         raise ValueError(f"Failed to fetch all playlists: {str(e)}")
 
 
-def _fetch_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
+def _fetch_all_playlist_videos(
+    playlist_id: str, preferred_language: Optional[str] = None
+) -> List[Dict[str, Any]]:
     """
     Fetch all videos from a playlist using yt-dlp.
     Returns a list of video metadata dicts.
@@ -2213,18 +2276,14 @@ def _fetch_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
 
     url = f"https://www.youtube.com/playlist?list={playlist_id}"
 
-    ydl_opts = {
+    base_ydl_opts = {
         "quiet": True,
         "extract_flat": True,
         "dump_single_json": True,
         "ignoreerrors": True,
         "extractor_args": {"youtubetab": {"approximate_date": [""]}},
     }
-    # Add proxy if configured
-    ydl_opts = _get_ydl_opts(ydl_opts)
-
-    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        info = ydl.extract_info(url, download=False)
+    info = _extract_flat_info(url, base_ydl_opts, preferred_language)
 
     if not info:
         raise ValueError(f"Playlist {playlist_id} not found")
@@ -2354,7 +2413,9 @@ def normalize_videos_for_job(
     return accepted, excluded
 
 
-async def get_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
+async def get_all_playlist_videos(
+    playlist_id: str, preferred_language: Optional[str] = None
+) -> List[Dict[str, Any]]:
     """
     Async wrapper for _fetch_all_playlist_videos with better error handling and logging.
 
@@ -2366,7 +2427,9 @@ async def get_all_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
     """
     try:
         logger.info(f"Fetching all videos for playlist {playlist_id}")
-        videos = await asyncio.to_thread(_fetch_all_playlist_videos, playlist_id)
+        videos = await asyncio.to_thread(
+            _fetch_all_playlist_videos, playlist_id, preferred_language
+        )
         logger.info(
             f"Successfully fetched {len(videos)} videos for playlist {playlist_id}"
         )

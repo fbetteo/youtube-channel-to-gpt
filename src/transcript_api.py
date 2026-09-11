@@ -1618,7 +1618,11 @@ async def update_discovery_job(
 # =============================================
 
 
-async def fetch_channel_videos_task(job_id: str, channel_name: str):
+async def fetch_channel_videos_task(
+    job_id: str,
+    channel_name: str,
+    preferred_language: Optional[str] = None,
+):
     """
     Background task to fetch all videos from a channel with timeout protection.
     Updates shared PostgreSQL discovery-job state.
@@ -1637,7 +1641,9 @@ async def fetch_channel_videos_task(job_id: str, channel_name: str):
             channel_id = channel_info["channelId"]
 
             # Get ALL videos from channel (no limit)
-            videos = await youtube_service.get_all_channel_videos(channel_id)
+            videos = await youtube_service.get_all_channel_videos(
+                channel_id, preferred_language=preferred_language
+            )
 
             return channel_info, videos
 
@@ -1651,6 +1657,7 @@ async def fetch_channel_videos_task(job_id: str, channel_name: str):
             await update_discovery_job(
                 job_id,
                 status="completed",
+                preferred_language=preferred_language,
                 channel_info=channel_info,
                 videos=videos,
                 video_count=len(videos),
@@ -1684,7 +1691,11 @@ async def fetch_channel_videos_task(job_id: str, channel_name: str):
         )
 
 
-async def fetch_playlist_videos_task(job_id: str, playlist_id: str):
+async def fetch_playlist_videos_task(
+    job_id: str,
+    playlist_id: str,
+    preferred_language: Optional[str] = None,
+):
     """
     Background task to fetch all videos from a playlist with timeout protection.
     Updates shared PostgreSQL discovery-job state.
@@ -1702,7 +1713,9 @@ async def fetch_playlist_videos_task(job_id: str, playlist_id: str):
             playlist_info = await youtube_service.get_playlist_info(playlist_id)
 
             # Get ALL videos from playlist (no limit)
-            videos = await youtube_service.get_all_playlist_videos(playlist_id)
+            videos = await youtube_service.get_all_playlist_videos(
+                playlist_id, preferred_language=preferred_language
+            )
 
             return playlist_info, videos
 
@@ -1716,6 +1729,7 @@ async def fetch_playlist_videos_task(job_id: str, playlist_id: str):
             await update_discovery_job(
                 job_id,
                 status="completed",
+                preferred_language=preferred_language,
                 playlist_info=playlist_info,
                 videos=videos,
                 video_count=len(videos),
@@ -2272,12 +2286,16 @@ async def get_channel_info(
 async def list_all_channel_videos(
     channel_name: str,
     background_tasks: BackgroundTasks,
+    preferred_language: Optional[str] = None,
 ):
     """
     Start fetching all videos from a YouTube channel asynchronously.
     Returns a job ID immediately that can be used to check progress.
     """
     try:
+        preferred_language = youtube_service.normalize_preferred_language(
+            preferred_language
+        )
         # Create job ID
         job_id = str(uuid.uuid4())
 
@@ -2285,6 +2303,7 @@ async def list_all_channel_videos(
         job_data = {
             "status": "processing",
             "channel_name": channel_name,
+            "preferred_language": preferred_language,
             "start_time": time.time(),
             "videos": None,
             "error": None,
@@ -2300,14 +2319,22 @@ async def list_all_channel_videos(
         )
 
         # Start background task
-        background_tasks.add_task(fetch_channel_videos_task, job_id, channel_name)
+        background_tasks.add_task(
+            fetch_channel_videos_task,
+            job_id,
+            channel_name,
+            preferred_language,
+        )
 
         return {
             "job_id": job_id,
             "status": "processing",
+            "preferred_language": preferred_language,
             "message": "Fetching channel videos in background. Use /channel/videos-status/{job_id} to check progress.",
         }
 
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
         logger.error(f"Error starting channel video fetch: {str(e)}", exc_info=True)
         raise HTTPException(
@@ -3025,12 +3052,16 @@ async def get_playlist_info(
 async def list_all_playlist_videos(
     playlist_id: str,
     background_tasks: BackgroundTasks,
+    preferred_language: Optional[str] = None,
 ):
     """
     Start fetching all videos from a YouTube playlist asynchronously.
     Returns a job ID immediately that can be used to check progress.
     """
     try:
+        preferred_language = youtube_service.normalize_preferred_language(
+            preferred_language
+        )
         # Extract playlist ID from URL if needed
         clean_playlist_id = youtube_service.extract_playlist_id(playlist_id)
 
@@ -3041,6 +3072,7 @@ async def list_all_playlist_videos(
         job_data = {
             "status": "processing",
             "playlist_id": clean_playlist_id,
+            "preferred_language": preferred_language,
             "start_time": time.time(),
             "videos": None,
             "error": None,
@@ -3056,14 +3088,22 @@ async def list_all_playlist_videos(
         )
 
         # Start background task
-        background_tasks.add_task(fetch_playlist_videos_task, job_id, clean_playlist_id)
+        background_tasks.add_task(
+            fetch_playlist_videos_task,
+            job_id,
+            clean_playlist_id,
+            preferred_language,
+        )
 
         return {
             "job_id": job_id,
             "status": "processing",
+            "preferred_language": preferred_language,
             "message": "Fetching playlist videos in background. Use /channel/videos-status/{job_id} to check progress.",
         }
 
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
         logger.error(f"Error starting playlist video fetch: {str(e)}", exc_info=True)
         raise HTTPException(
@@ -3463,7 +3503,8 @@ async def create_batch_playlist_download_jobs_task(batch_job_id: str):
                     clean_playlist_id
                 )
                 videos = await youtube_service.get_all_playlist_videos(
-                    clean_playlist_id
+                    clean_playlist_id,
+                    preferred_language=formatting_options.get("preferred_language"),
                 )
 
                 child_job = await _create_playlist_download_job(

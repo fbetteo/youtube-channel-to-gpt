@@ -15,6 +15,7 @@ export interface BatchPlaylistDownloadRequest {
   playlists: BatchPlaylistSelection[];
   channel_name?: string;
   max_concurrent_jobs?: number; // 1..10, defaults to 3
+  preferred_language?: string | null;
 
   // Formatting options applied to every child playlist job
   include_timestamps?: boolean;

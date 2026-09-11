@@ -110,6 +110,34 @@ def select_transcript(
     return transcripts[0], True
 
 
+def normalize_caption_text(text: Any) -> str:
+    """Collapse subtitle-internal line breaks and repeated whitespace."""
+    return " ".join(str(text or "").split())
+
+
+def format_transcript_segments(
+    transcript_data: List[Dict[str, Any]], include_timestamps: bool
+) -> str:
+    """Build transcript text after normalizing each caption segment."""
+    if not include_timestamps:
+        return " ".join(
+            cleaned_text
+            for segment in transcript_data
+            if (cleaned_text := normalize_caption_text(segment.get("text")))
+        )
+
+    transcript_lines = []
+    for segment in transcript_data:
+        cleaned_text = normalize_caption_text(segment.get("text"))
+        if not cleaned_text:
+            continue
+        start_time_sec = segment["start"]
+        minutes = int(start_time_sec // 60)
+        seconds = int(start_time_sec % 60)
+        transcript_lines.append(f"[{minutes:02d}:{seconds:02d}] {cleaned_text}")
+    return "\n".join(transcript_lines)
+
+
 def get_ytt_api() -> YouTubeTranscriptApi:
     """
     Create a new YouTubeTranscriptApi instance with proxy config if needed.
@@ -475,21 +503,10 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
         # Format transcript - optimize by using string builder approach
         format_start = time.time()
 
-        if event.get("include_timestamps", False):
-            # Format with timestamps [MM:SS] Text
-            # Pre-allocate the list to avoid resizing
-            transcript_lines = [""] * len(transcript_data)
-            for i, segment in enumerate(transcript_data):
-                start_time_sec = segment["start"]
-                minutes = int(start_time_sec // 60)
-                seconds = int(start_time_sec % 60)
-                timestamp = f"[{minutes:02d}:{seconds:02d}] "
-                transcript_lines[i] = f"{timestamp}{segment['text']}"
-            transcript_text = "\n".join(transcript_lines)
-        else:
-            # Simple concatenation without timestamps - join for better performance
-            # Use a list comprehension instead of generator expression for potentially better performance
-            transcript_text = " ".join([segment["text"] for segment in transcript_data])
+        transcript_text = format_transcript_segments(
+            transcript_data,
+            include_timestamps=event.get("include_timestamps", False),
+        )
 
         format_end = time.time()
         logger.info(
