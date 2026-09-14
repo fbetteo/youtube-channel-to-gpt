@@ -58,6 +58,69 @@ def test_transcript_formatting_collapses_internal_whitespace():
     )
 
 
+def test_concatenated_transcript_omits_structural_video_id_when_disabled():
+    content = asyncio.run(
+        youtube_service.create_concatenated_content_from_results(
+            [
+                {
+                    "success": True,
+                    "video_id": "EWvNQjAaOHw",
+                    "content": "Video Title: How I use LLMs\nTranscript text",
+                }
+            ],
+            {
+                "source_name": "Test channel",
+                "source_type": "channel",
+                "completed": 1,
+                "formatting_options": {"include_video_id": False},
+            },
+        )
+    )
+
+    assert "[VIDEO 1/1]" in content
+    assert "Video ID:" not in content
+
+
+def test_concatenated_transcript_includes_structural_video_id_by_default():
+    content = asyncio.run(
+        youtube_service.create_concatenated_content_from_results(
+            [
+                {
+                    "success": True,
+                    "video_id": "EWvNQjAaOHw",
+                    "content": "Transcript text",
+                }
+            ],
+            {"source_name": "Test channel", "completed": 1},
+        )
+    )
+
+    assert "Video ID: EWvNQjAaOHw" in content
+
+
+def test_concatenated_transcript_keeps_video_id_in_failure_diagnostics():
+    content = asyncio.run(
+        youtube_service.create_concatenated_content_from_results(
+            [
+                {
+                    "success": False,
+                    "video_id": "failed-video-id",
+                    "s3_key": "failed-transcript.txt",
+                    "content": "Download failed",
+                }
+            ],
+            {
+                "source_name": "Test channel",
+                "completed": 0,
+                "formatting_options": {"include_video_id": False},
+            },
+        )
+    )
+
+    assert "[FAILED 1/1]" in content
+    assert "Video ID: failed-video-id" in content
+
+
 def test_localized_options_preserve_existing_extractor_arguments(monkeypatch):
     monkeypatch.setattr(youtube_service, "_get_ydl_opts", lambda options: options)
     base_options = {

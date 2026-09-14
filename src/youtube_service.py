@@ -3141,6 +3141,14 @@ async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:
     return zip_buffer
 
 
+def _job_includes_video_id(job: Dict[str, Any]) -> bool:
+    """Return the persisted video-ID formatting preference for a job."""
+    formatting_options = job.get("formatting_options")
+    if isinstance(formatting_options, dict) and "include_video_id" in formatting_options:
+        return formatting_options["include_video_id"]
+    return job.get("include_video_id", True)
+
+
 async def create_concatenated_transcript(job_id: str) -> str:
     """
     Create a single concatenated transcript from all individual transcript files.
@@ -3649,6 +3657,7 @@ async def create_concatenated_content_from_results(
         String containing all transcripts concatenated with separators
     """
     concatenated_parts = []
+    include_video_id = _job_includes_video_id(job)
 
     # Add header with source information
     source_name = job.get("source_name") or job.get("channel_name", "Unknown")
@@ -3672,7 +3681,8 @@ async def create_concatenated_content_from_results(
 
             # Add section separator
             concatenated_parts.append(f"[VIDEO {i}/{len(successful_results)}]")
-            concatenated_parts.append(f"Video ID: {result['video_id']}")
+            if include_video_id:
+                concatenated_parts.append(f"Video ID: {result['video_id']}")
             concatenated_parts.append("-" * 60)
             concatenated_parts.append(content)
             concatenated_parts.append("")  # Empty line between videos
@@ -3899,6 +3909,7 @@ async def create_concatenated_transcript_from_s3_sequential(
         raise ValueError(f"Job not found with ID: {job_id}")
 
     concatenated_parts = []
+    include_video_id = _job_includes_video_id(job)
 
     # Add header with source information
     source_name = job.get("source_name") or job.get("channel_name", "Unknown")
@@ -3923,7 +3934,8 @@ async def create_concatenated_transcript_from_s3_sequential(
 
             # Add section separator
             concatenated_parts.append(f"[VIDEO {i}/{len(job['files'])}]")
-            concatenated_parts.append(f"Video ID: {video_id}")
+            if include_video_id:
+                concatenated_parts.append(f"Video ID: {video_id}")
             concatenated_parts.append("-" * 60)
             concatenated_parts.append(content)
             concatenated_parts.append("")  # Empty line between videos
