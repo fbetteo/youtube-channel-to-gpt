@@ -20,6 +20,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+from typing import Literal
 from typing import Dict, Any, List, Optional
 import io
 import zipfile
@@ -58,6 +59,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "db_youtube_transc
 # from db_youtube_transcripts.database import get_db_youtube_transcripts
 
 import youtube_service
+import summary_service
 from rate_limiter import transcript_limiter
 
 # Using the Pydantic v2 compatible settings
@@ -554,6 +556,20 @@ class DownloadURLRequest(TranscriptLanguagePreference):
     include_timestamps: bool = Field(
         True, description="Whether to include timestamps in the transcript"
     )
+
+
+class SummaryRequest(TranscriptLanguagePreference):
+    youtube_url: str = Field(..., description="YouTube video URL or ID")
+    summary_language: Optional[str] = Field(
+        default=None,
+        description="Summary language; null uses the transcript's language",
+    )
+    length: Literal["concise", "detailed"] = Field(default="concise")
+
+    @field_validator("summary_language")
+    @classmethod
+    def validate_summary_language(cls, value):
+        return youtube_service.normalize_preferred_language(value)
 
 
 class ChannelRequest(TranscriptLanguagePreference):
@@ -1062,6 +1078,29 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
         return []
 
 
+def get_client_ip(request: Request) -> str:
+    """
+    Client IP for anonymous limits. The Next.js proxy sends the visitor's IP in
+    X-Client-IP, trusted only with the shared secret. Otherwise use the last
+    X-Forwarded-For hop (added by our nginx); earlier hops are client-supplied.
+    """
+    proxy_secret = request.headers.get("X-Proxy-Secret", "")
+    client_header = request.headers.get("X-Client-IP", "").strip()
+    if (
+        settings.proxy_shared_secret
+        and client_header
+        and secrets.compare_digest(
+            proxy_secret.encode(), settings.proxy_shared_secret.encode()
+        )
+    ):
+        return client_header
+    forwarded = request.headers.get("X-Forwarded-For", "")
+    hops = [hop.strip() for hop in forwarded.split(",") if hop.strip()]
+    if hops:
+        return hops[-1]
+    return request.client.host if request.client else "unknown"
+
+
 def check_anonymous_rate_limit(request: Request):
     """
     Check rate limit for anonymous users
@@ -1069,12 +1108,7 @@ def check_anonymous_rate_limit(request: Request):
     Anonymous users are identified by their IP address and are limited
     to 3 transcript downloads per hour.
     """
-    # Extract client IP (handle proxy forwarding)
-    client_ip = request.client.host
-    forwarded = request.headers.get("X-Forwarded-For")
-    if forwarded:
-        # Use the first IP in the chain if forwarded
-        client_ip = forwarded.split(",")[0].strip()
+    client_ip = get_client_ip(request)
 
     # Check if rate limit is exceeded
     free_limit = 10  # 3 downloads per hour
@@ -2111,6 +2145,7 @@ async def download_transcript_raw(
 
         logger.info(f"Authenticated raw transcript download for user {user_id}")
     else:
+        user_id = None
         # Apply rate limiting for anonymous users
         rate_limit_info = check_anonymous_rate_limit(fastapi_request)
         logger.info(
@@ -2124,20 +2159,19 @@ async def download_transcript_raw(
         extract_end = time.time()
         logger.info(f"URL extraction took {extract_end - extract_start:.3f}s")
 
-        # Get transcript with timeout protection
+        if user_id:
+            # The credit also covers a summary of this video for 24 hours.
+            await summary_service.record_paid_access(user_id, video_id)
+
+        # Get transcript (cache first) with timeout protection
         transcript_start = time.time()
         try:
-            # Create a task and set a timeout
-            transcript_task = asyncio.create_task(
-                youtube_service.get_single_transcript(
-                    video_id,
-                    output_dir=None,
-                    include_timestamps=request.include_timestamps,
-                    preferred_language=request.preferred_language,
-                )
+            segments, metadata = await asyncio.wait_for(
+                summary_service.load_transcript(video_id, request.preferred_language),
+                timeout=30.0,
             )
-            transcript_text, _, metadata = await asyncio.wait_for(
-                transcript_task, timeout=30.0
+            transcript_text = youtube_service.format_transcript_segments(
+                segments, include_timestamps=request.include_timestamps
             )
         except asyncio.TimeoutError:
             logger.error(
@@ -2180,6 +2214,70 @@ async def download_transcript_raw(
         raise HTTPException(
             status_code=500, detail=f"Failed to download transcript: {str(e)}"
         )
+
+
+@app.post("/summaries/single")
+async def summarize_single_video(
+    request: SummaryRequest,
+    fastapi_request: Request,
+    user_info: Dict = Depends(get_user_or_anonymous),
+):
+    """
+    Transcript plus AI summary for one video, as JSON.
+
+    Signed-in users pay 1 credit (same as a raw transcript), refunded when the
+    failure is ours (timeout, provider error, video too long). A transcript
+    paid within 24 h already covers the summary. Anonymous users
+    share the raw-transcript rate limit. A video without captions is charged,
+    like a raw download.
+    """
+    if not summary_service.is_configured():
+        raise HTTPException(
+            status_code=503, detail="Summaries are not available right now."
+        )
+    try:
+        video_id = youtube_service.extract_youtube_id(request.youtube_url)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    user_id = user_info["user_id"] if user_info["is_authenticated"] else None
+    charged = False
+    if user_id:
+        # One credit covers a video's transcript and summary (24 h window).
+        if not await summary_service.has_recent_paid_access(user_id, video_id):
+            if not await CreditManager.deduct_credit(user_id):
+                raise HTTPException(
+                    status_code=status.HTTP_402_PAYMENT_REQUIRED,
+                    detail="Insufficient credits. Please purchase more credits to continue.",
+                )
+            charged = True
+            await summary_service.record_paid_access(user_id, video_id)
+    else:
+        check_anonymous_rate_limit(fastapi_request)
+
+    async def refund():
+        if charged:
+            try:
+                await CreditManager.add_credits(user_id, 1)
+            except Exception as e:
+                logger.error(f"Summary refund failed for user {user_id}: {e}")
+
+    try:
+        return await summary_service.summarize_video(
+            video_id,
+            preferred_language=request.preferred_language,
+            summary_language=request.summary_language,
+            length=request.length,
+        )
+    except summary_service.TranscriptUnavailable as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except summary_service.SummaryError as e:
+        await refund()
+        raise HTTPException(status_code=e.status_code, detail=e.message)
+    except Exception as e:
+        await refund()
+        logger.error(f"Summary failed for video {video_id}: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to summarize video.")
 
 
 @app.get("/video-info")

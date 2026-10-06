@@ -28,52 +28,26 @@ Avoid bare `pytest` discovery for routine checks: root and `src/` contain manual
 
 ## Configuration and operations
 
-### Summary beta
+### Single-video summaries
 
-Set `SUMMARY_OPENAI_API_KEY` on the Python server to enable authenticated
-single-video summaries. Do not put this key in the frontend or a `NEXT_PUBLIC_*`
-variable. The separate variable avoids accidentally reusing a legacy assistant
-key. No database migration is required. Install the locked `tiktoken` dependency
-with `poetry install`, then pre-cache its encoding using
-`poetry run python scripts/prepare_summary_tokenizer.py`. The first initialization
-downloads public tokenizer data; use the same `TIKTOKEN_CACHE_DIR` and service
-user for preparation and runtime if deployment needs an explicit persistent cache.
+Set `SUMMARY_OPENAI_API_KEY` on the Python server to enable `POST
+/summaries/single` (a separate variable from any legacy assistant key; never put
+it in the frontend). Optional: run
+`poetry run python db_youtube_transcripts/migration_add_video_summary_cache.py`
+to create the additive tables (`video_transcripts`, `video_summaries`, `video_access`); without them every request is live and a summary after a paid transcript costs a second credit.
+
+Set the same random value as `PROXY_SHARED_SECRET` here and `TRANSCRIPT_API_PROXY_SECRET` in the frontend so anonymous limits use the visitor's IP.
 
 | Setting | Default | Purpose |
 | --- | --- | --- |
-| `SUMMARY_MODEL` | `gpt-4.1-mini` | Structured-output text model |
-| `SUMMARY_MAX_INPUT_TOKENS` | `50000` | Model-tokenizer estimate for captions, source IDs, prompt, and schema, plus 256 tokens for provider framing |
-| `SUMMARY_MAX_OUTPUT_TOKENS` | `2000` | Generation ceiling; incomplete output is rejected |
-| `SUMMARY_TIMEOUT_SECONDS` | `20` | Provider deadline; must be positive and no more than 20 seconds |
-| `SUMMARY_REQUESTS_PER_HOUR` | `10` | Admitted attempts per signed-in user per API process |
-| `SUMMARY_MAX_CONCURRENT` | `4` | Concurrent summary flows per API process; at most one per user per process |
+| `SUMMARY_MODEL` | `gpt-4.1-mini` | Must support strict JSON-schema output; part of the cache key |
+| `SUMMARY_TIMEOUT_SECONDS` | `25` | Provider deadline (no SDK retries) |
+| `SUMMARY_MAX_INPUT_CHARS` | `240000` | Caption characters accepted (~60k tokens); longer videos get 422 |
+| `SUMMARY_MAX_OUTPUT_TOKENS` | `3000` | Output ceiling; truncated output is rejected and refunded |
 
-The beta does not deduct existing download credits, save summaries, or automatically
-retry requests. Limits reset on restart and multiply across API processes;
-they are not a durable account-wide billing mechanism. Keep rollout bounded until
-shared quotas/persistence are added. Input above the ceiling is rejected without
-calling the model, while the retrieved transcript remains available. With the
-token-based bound, supported duration varies with caption density and language.
-The tokenizer must recognize `SUMMARY_MODEL`; unsupported models produce an
-explicit error rather than falling back to a potentially wrong encoding. The
-local estimate is returned as `estimated_input_tokens`; actual billed tokens are
-reported separately in `usage` after generation. Provider-specific schema framing
-means these counts may differ slightly.
-
-The frontend summary proxy uses a 60-second route duration and 55-second deadline;
-the backend stream has a 52-second total budget (30 for extraction, up to 20 for
-generation). Confirm the deployed hosting plan permits this duration. Nginx or
-other reverse proxies must pass SSE promptly; the backend supplies
-`X-Accel-Buffering: no`, but infrastructure can override that header. No production
-proxy settings were changed as part of implementation.
-
-Backend verification: `poetry run pytest tests/test_single_video_summary.py
-tests/test_transcript_language_selection.py tests/test_transcript_formatting_and_localized_titles.py
-tests/test_agent_interfaces.py`. In the frontend repo, run
-`node --test tests/single-video-summary.test.cjs` and `npm run build`.
-Provider calls are mocked in tests, including an HTTP MockTransport exercising
-the installed OpenAI SDK. Live model quality, token cost, and deployed latency
-still need evaluation with a configured project key.
+Worst case is ~25 s transcript + ~25 s generation, so the frontend proxy needs a
+60 s route duration. Live quality, latency, and token cost still need checking
+with a real key on the evaluation set in the plan.
 
 ### Existing services
 

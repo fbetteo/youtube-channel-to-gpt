@@ -1706,6 +1706,32 @@ async def get_playlist_info(playlist_id: str) -> Dict[str, Any]:
         raise ValueError(f"Failed to get playlist information: {str(e)}")
 
 
+async def get_transcript_data(
+    video_id: str, preferred_language: Optional[str] = None
+) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    """
+    Fetch caption segments ({text, start, duration}) plus language metadata,
+    with the same retries and language selection as single downloads.
+
+    Raises:
+        ValueError: If no transcript can be retrieved
+    """
+    try:
+        transcript, fetched_transcript, _ = await asyncio.to_thread(
+            _fetch_transcript_with_retries,
+            video_id,
+            preferred_language=preferred_language,
+        )
+    except TranscriptRetrievalError as e:
+        raise ValueError(str(e))
+    metadata = {
+        "video_id": video_id,
+        "transcript_language": transcript.language_code,
+        "transcript_type": "auto-generated" if transcript.is_generated else "manual",
+    }
+    return fetched_transcript.to_raw_data(), metadata
+
+
 async def get_single_transcript(
     video_id: str,
     output_dir: Optional[str] = None,
