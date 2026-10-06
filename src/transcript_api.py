@@ -947,6 +947,7 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
                     total_videos,
                     completed,
                     failed_count,
+                    skipped_count,
                     credits_used,
                     created_at,
                     start_time,
@@ -983,15 +984,21 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
                 total_videos = row["total_videos"] or 0
                 successful_files = row["completed"] or 0
                 failed_count = row["failed_count"] or 0
+                skipped_count = row["skipped_count"] or 0
                 credits_used = row["credits_used"] or 0
 
                 success_rate = (
                     (successful_files / total_videos * 100) if total_videos > 0 else 0
                 )
 
-                # Calculate progress
+                # Skipped videos (never dispatched) are finished work too.
                 progress = (
-                    round(((successful_files + failed_count) / total_videos * 100), 1)
+                    round(
+                        (successful_files + failed_count + skipped_count)
+                        / total_videos
+                        * 100,
+                        1,
+                    )
                     if total_videos > 0
                     else 0.0
                 )

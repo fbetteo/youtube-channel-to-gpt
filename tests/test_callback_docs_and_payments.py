@@ -297,3 +297,40 @@ def test_lambda_reports_retriable_failure_before_its_own_timeout(monkeypatch):
     assert exc_info.value.retriable is True
     assert exc_info.value.stage == "deadline"
     assert exc_info.value.error_type == "DeadlineExceeded"
+
+
+def test_history_progress_counts_skipped_videos(monkeypatch):
+    from contextlib import asynccontextmanager
+    from datetime import datetime
+    from db_youtube_transcripts import database
+
+    row = {
+        "job_id": "job-1",
+        "status": "completed_with_errors",
+        "source_type": "channel",
+        "source_id": "UC1",
+        "source_name": "Channel",
+        "total_videos": 10,
+        "completed": 6,
+        "failed_count": 1,
+        "skipped_count": 3,
+        "credits_used": 7,
+        "created_at": datetime(2026, 1, 1),
+        "start_time": None,
+        "end_time": datetime(2026, 1, 1),
+    }
+
+    class _Conn:
+        async def fetch(self, query, user_id):
+            return [row]
+
+    @asynccontextmanager
+    async def fake_connection():
+        yield _Conn()
+
+    monkeypatch.setattr(database, "get_db_connection", fake_connection)
+
+    [item] = asyncio.run(transcript_api.get_user_download_history("user-1"))
+
+    assert item.progress == 100.0
+    assert item.status == "completed"
