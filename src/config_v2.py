@@ -60,6 +60,15 @@ class Settings(BaseModel):
         default_factory=lambda: os.getenv("LAMBDA_RESULTS_QUEUE_URL", "")
     )
 
+    # Legacy unauthenticated /internal/job/... result callbacks. Set to false once
+    # Lambda results arrive through SQS; the worker then relies on SQS only.
+    enable_http_result_callbacks: bool = Field(
+        default_factory=lambda: os.getenv(
+            "ENABLE_HTTP_RESULT_CALLBACKS", "true"
+        ).strip().lower()
+        not in {"false", "0", "no"}
+    )
+
     # SQS consumer settings
     sqs_consumer_wait_time_seconds: int = Field(
         default_factory=lambda: int(os.getenv("SQS_CONSUMER_WAIT_TIME_SECONDS", "20"))
@@ -72,6 +81,29 @@ class Settings(BaseModel):
     )
     sqs_consumer_concurrency: int = Field(
         default_factory=lambda: int(os.getenv("SQS_CONSUMER_CONCURRENCY", "10"))
+    )
+
+    # Shared with the Next.js proxy. When it matches X-Proxy-Secret, the
+    # X-Client-IP header is trusted for anonymous rate limiting.
+    proxy_shared_secret: str = Field(
+        default_factory=lambda: os.getenv("PROXY_SHARED_SECRET", "")
+    )
+
+    # Single-video AI summaries (OpenAI). Disabled while the key is empty.
+    summary_openai_api_key: str = Field(
+        default_factory=lambda: os.getenv("SUMMARY_OPENAI_API_KEY", "")
+    )
+    summary_model: str = Field(
+        default_factory=lambda: os.getenv("SUMMARY_MODEL", "gpt-4.1-mini")
+    )
+    summary_timeout_seconds: float = Field(
+        default_factory=lambda: float(os.getenv("SUMMARY_TIMEOUT_SECONDS", "25"))
+    )
+    summary_max_input_chars: int = Field(
+        default_factory=lambda: int(os.getenv("SUMMARY_MAX_INPUT_CHARS", "240000"))
+    )
+    summary_max_output_tokens: int = Field(
+        default_factory=lambda: int(os.getenv("SUMMARY_MAX_OUTPUT_TOKENS", "3000"))
     )
 
     # Job timeout settings

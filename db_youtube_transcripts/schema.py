@@ -16,9 +16,6 @@ connection.autocommit = True
 
 with connection.cursor() as c:
 
-    # Drop existing job_videos table if it exists with wrong schema
-    c.execute("DROP TABLE IF EXISTS job_videos CASCADE;")
-
     # Create JOBS table
     jobs_query = """
     CREATE TABLE IF NOT EXISTS jobs (

@@ -20,6 +20,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+from typing import Literal
 from typing import Dict, Any, List, Optional
 import io
 import zipfile
@@ -31,6 +32,7 @@ import tracemalloc
 import gc
 import psutil
 import json
+import secrets
 from datetime import datetime
 import glob
 
@@ -57,6 +59,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "db_youtube_transc
 # from db_youtube_transcripts.database import get_db_youtube_transcripts
 
 import youtube_service
+import summary_service
 from rate_limiter import transcript_limiter
 
 # Using the Pydantic v2 compatible settings
@@ -208,9 +211,11 @@ class CreditManager:
                     logger.info(
                         f"User {user_id} not found in credits table, creating with 25 credits"
                     )
-                    # Create user with 0 credits if doesn't exist
                     await CreditManager.create_user_credits(user_id, 25)
-                    return 0
+                    # Re-read: a concurrent request may have created the row first.
+                    return await conn.fetchval(
+                        "SELECT credits FROM user_credits WHERE user_id = $1", user_id
+                    )
 
         except Exception as e:
             logger.error(
@@ -326,6 +331,40 @@ class CreditManager:
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Failed to add credits",
             )
+
+    @staticmethod
+    async def grant_checkout_credits(session_id: str, user_id: str, credits: int) -> bool:
+        """
+        Grant purchased credits once per Stripe Checkout session.
+        Returns False when the session was already credited (Stripe redelivery).
+        """
+        from db_youtube_transcripts.database import get_db_transaction
+
+        async with get_db_transaction() as tx:
+            inserted = await tx.fetchval(
+                """
+                INSERT INTO stripe_checkout_credits (session_id, user_id, credits)
+                VALUES ($1, $2, $3)
+                ON CONFLICT (session_id) DO NOTHING
+                RETURNING session_id
+                """,
+                session_id,
+                user_id,
+                credits,
+            )
+            if inserted is None:
+                return False
+            await tx.execute(
+                """
+                INSERT INTO user_credits (user_id, credits)
+                VALUES ($1, $2)
+                ON CONFLICT (user_id)
+                DO UPDATE SET credits = user_credits.credits + $2
+                """,
+                user_id,
+                credits,
+            )
+        return True
 
     @staticmethod
     async def reserve_credits(user_id: str, credit_count: int) -> str:
@@ -517,6 +556,20 @@ class DownloadURLRequest(TranscriptLanguagePreference):
     include_timestamps: bool = Field(
         True, description="Whether to include timestamps in the transcript"
     )
+
+
+class SummaryRequest(TranscriptLanguagePreference):
+    youtube_url: str = Field(..., description="YouTube video URL or ID")
+    summary_language: Optional[str] = Field(
+        default=None,
+        description="Summary language; null uses the transcript's language",
+    )
+    length: Literal["concise", "detailed"] = Field(default="concise")
+
+    @field_validator("summary_language")
+    @classmethod
+    def validate_summary_language(cls, value):
+        return youtube_service.normalize_preferred_language(value)
 
 
 class ChannelRequest(TranscriptLanguagePreference):
@@ -910,6 +963,7 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
                     total_videos,
                     completed,
                     failed_count,
+                    skipped_count,
                     credits_used,
                     created_at,
                     start_time,
@@ -946,15 +1000,21 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
                 total_videos = row["total_videos"] or 0
                 successful_files = row["completed"] or 0
                 failed_count = row["failed_count"] or 0
+                skipped_count = row["skipped_count"] or 0
                 credits_used = row["credits_used"] or 0
 
                 success_rate = (
                     (successful_files / total_videos * 100) if total_videos > 0 else 0
                 )
 
-                # Calculate progress
+                # Skipped videos (never dispatched) are finished work too.
                 progress = (
-                    round(((successful_files + failed_count) / total_videos * 100), 1)
+                    round(
+                        (successful_files + failed_count + skipped_count)
+                        / total_videos
+                        * 100,
+                        1,
+                    )
                     if total_videos > 0
                     else 0.0
                 )
@@ -1018,6 +1078,29 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
         return []
 
 
+def get_client_ip(request: Request) -> str:
+    """
+    Client IP for anonymous limits. The Next.js proxy sends the visitor's IP in
+    X-Client-IP, trusted only with the shared secret. Otherwise use the last
+    X-Forwarded-For hop (added by our nginx); earlier hops are client-supplied.
+    """
+    proxy_secret = request.headers.get("X-Proxy-Secret", "")
+    client_header = request.headers.get("X-Client-IP", "").strip()
+    if (
+        settings.proxy_shared_secret
+        and client_header
+        and secrets.compare_digest(
+            proxy_secret.encode(), settings.proxy_shared_secret.encode()
+        )
+    ):
+        return client_header
+    forwarded = request.headers.get("X-Forwarded-For", "")
+    hops = [hop.strip() for hop in forwarded.split(",") if hop.strip()]
+    if hops:
+        return hops[-1]
+    return request.client.host if request.client else "unknown"
+
+
 def check_anonymous_rate_limit(request: Request):
     """
     Check rate limit for anonymous users
@@ -1025,12 +1108,7 @@ def check_anonymous_rate_limit(request: Request):
     Anonymous users are identified by their IP address and are limited
     to 3 transcript downloads per hour.
     """
-    # Extract client IP (handle proxy forwarding)
-    client_ip = request.client.host
-    forwarded = request.headers.get("X-Forwarded-For")
-    if forwarded:
-        # Use the first IP in the chain if forwarded
-        client_ip = forwarded.split(",")[0].strip()
+    client_ip = get_client_ip(request)
 
     # Check if rate limit is exceeded
     free_limit = 10  # 3 downloads per hour
@@ -1084,8 +1162,17 @@ def read_root():
     }
 
 
-# Protected documentation endpoints
-DOCS_SECRET = os.getenv("DOCS_SECRET_KEY", "change_me_in_production")
+# Protected documentation and debug endpoints. Without DOCS_SECRET_KEY they
+# are disabled rather than reachable through a guessable default.
+DOCS_SECRET = os.getenv("DOCS_SECRET_KEY", "")
+
+
+def require_docs_secret(secret: str) -> None:
+    if not DOCS_SECRET or not secrets.compare_digest(
+        secret.encode(), DOCS_SECRET.encode()
+    ):
+        raise HTTPException(status_code=404, detail="Not found")
+
 
 from fastapi.openapi.docs import get_swagger_ui_html, get_redoc_html
 from fastapi.openapi.utils import get_openapi
@@ -1098,8 +1185,7 @@ async def get_protected_docs(secret: str):
 
     Access via: https://yourdomain.com/internal/docs?secret=YOUR_SECRET_KEY
     """
-    if secret != DOCS_SECRET:
-        raise HTTPException(status_code=404, detail="Not found")
+    require_docs_secret(secret)
 
     return get_swagger_ui_html(
         openapi_url="/internal/openapi.json?secret=" + secret,
@@ -1110,8 +1196,7 @@ async def get_protected_docs(secret: str):
 @app.get("/internal/redoc", include_in_schema=False)
 async def get_protected_redoc(secret: str):
     """Protected ReDoc documentation."""
-    if secret != DOCS_SECRET:
-        raise HTTPException(status_code=404, detail="Not found")
+    require_docs_secret(secret)
 
     return get_redoc_html(
         openapi_url="/internal/openapi.json?secret=" + secret,
@@ -1122,8 +1207,7 @@ async def get_protected_redoc(secret: str):
 @app.get("/internal/openapi.json", include_in_schema=False)
 async def get_protected_openapi(secret: str):
     """Protected OpenAPI schema."""
-    if secret != DOCS_SECRET:
-        raise HTTPException(status_code=404, detail="Not found")
+    require_docs_secret(secret)
 
     return get_openapi(
         title=app.title,
@@ -1131,6 +1215,9 @@ async def get_protected_openapi(secret: str):
         description=app.description,
         routes=app.routes,
     )
+
+
+stale_job_sweeper_task: Optional[asyncio.Task] = None
 
 
 @app.on_event("startup")
@@ -1148,6 +1235,11 @@ async def startup_event():
         logger.error(f"Failed to initialize database pool: {e}", exc_info=True)
         # Don't raise - allow app to start even if DB pool init fails
         # Individual requests will retry connection
+
+    global stale_job_sweeper_task
+    stale_job_sweeper_task = asyncio.create_task(
+        youtube_service.run_stale_job_sweeper()
+    )
 
 
 #     # Recover jobs from persistent storage
@@ -1169,6 +1261,8 @@ async def startup_event():
 async def shutdown_event():
     """Clean up resources on FastAPI shutdown"""
     logger.info("Shutting down YouTube Transcript API...")
+    if stale_job_sweeper_task:
+        stale_job_sweeper_task.cancel()
 
     try:
         # Close async database connection pool
@@ -1298,12 +1392,24 @@ async def stripe_webhook(request: Request):
             )
             return {"status": "ignored"}
 
+        # "no_payment_required" covers 100%-off promotion codes.
+        if session.get("payment_status") not in {"paid", "no_payment_required"}:
+            logger.warning(
+                f"Not granting credits for session {session['id']}: "
+                f"payment_status={session.get('payment_status')}"
+            )
+            return {"status": "ignored"}
+
         try:
             user_id = session["metadata"]["user_id"]
             credits_to_add = int(session["metadata"]["credits"])
 
-            # Add credits to user account - NOW ASYNC
-            await CreditManager.add_credits(user_id, credits_to_add)
+            granted = await CreditManager.grant_checkout_credits(
+                session["id"], user_id, credits_to_add
+            )
+            if not granted:
+                logger.info(f"Session {session['id']} already credited; skipping")
+                return {"status": "duplicate"}
 
             logger.info(
                 f"Successfully added {credits_to_add} credits to user {user_id} from session {session['id']}"
@@ -2039,6 +2145,7 @@ async def download_transcript_raw(
 
         logger.info(f"Authenticated raw transcript download for user {user_id}")
     else:
+        user_id = None
         # Apply rate limiting for anonymous users
         rate_limit_info = check_anonymous_rate_limit(fastapi_request)
         logger.info(
@@ -2052,20 +2159,19 @@ async def download_transcript_raw(
         extract_end = time.time()
         logger.info(f"URL extraction took {extract_end - extract_start:.3f}s")
 
-        # Get transcript with timeout protection
+        if user_id:
+            # The credit also covers a summary of this video for 24 hours.
+            await summary_service.record_paid_access(user_id, video_id)
+
+        # Get transcript (cache first) with timeout protection
         transcript_start = time.time()
         try:
-            # Create a task and set a timeout
-            transcript_task = asyncio.create_task(
-                youtube_service.get_single_transcript(
-                    video_id,
-                    output_dir=None,
-                    include_timestamps=request.include_timestamps,
-                    preferred_language=request.preferred_language,
-                )
+            segments, metadata = await asyncio.wait_for(
+                summary_service.load_transcript(video_id, request.preferred_language),
+                timeout=30.0,
             )
-            transcript_text, _, metadata = await asyncio.wait_for(
-                transcript_task, timeout=30.0
+            transcript_text = youtube_service.format_transcript_segments(
+                segments, include_timestamps=request.include_timestamps
             )
         except asyncio.TimeoutError:
             logger.error(
@@ -2108,6 +2214,70 @@ async def download_transcript_raw(
         raise HTTPException(
             status_code=500, detail=f"Failed to download transcript: {str(e)}"
         )
+
+
+@app.post("/summaries/single")
+async def summarize_single_video(
+    request: SummaryRequest,
+    fastapi_request: Request,
+    user_info: Dict = Depends(get_user_or_anonymous),
+):
+    """
+    Transcript plus AI summary for one video, as JSON.
+
+    Signed-in users pay 1 credit (same as a raw transcript), refunded when the
+    failure is ours (timeout, provider error, video too long). A transcript
+    paid within 24 h already covers the summary. Anonymous users
+    share the raw-transcript rate limit. A video without captions is charged,
+    like a raw download.
+    """
+    if not summary_service.is_configured():
+        raise HTTPException(
+            status_code=503, detail="Summaries are not available right now."
+        )
+    try:
+        video_id = youtube_service.extract_youtube_id(request.youtube_url)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    user_id = user_info["user_id"] if user_info["is_authenticated"] else None
+    charged = False
+    if user_id:
+        # One credit covers a video's transcript and summary (24 h window).
+        if not await summary_service.has_recent_paid_access(user_id, video_id):
+            if not await CreditManager.deduct_credit(user_id):
+                raise HTTPException(
+                    status_code=status.HTTP_402_PAYMENT_REQUIRED,
+                    detail="Insufficient credits. Please purchase more credits to continue.",
+                )
+            charged = True
+            await summary_service.record_paid_access(user_id, video_id)
+    else:
+        check_anonymous_rate_limit(fastapi_request)
+
+    async def refund():
+        if charged:
+            try:
+                await CreditManager.add_credits(user_id, 1)
+            except Exception as e:
+                logger.error(f"Summary refund failed for user {user_id}: {e}")
+
+    try:
+        return await summary_service.summarize_video(
+            video_id,
+            preferred_language=request.preferred_language,
+            summary_language=request.summary_language,
+            length=request.length,
+        )
+    except summary_service.TranscriptUnavailable as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except summary_service.SummaryError as e:
+        await refund()
+        raise HTTPException(status_code=e.status_code, detail=e.message)
+    except Exception as e:
+        await refund()
+        logger.error(f"Summary failed for video {video_id}: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to summarize video.")
 
 
 @app.get("/video-info")
@@ -3844,12 +4014,18 @@ async def download_all_content(
 # =============================================
 
 
+def require_http_result_callbacks() -> None:
+    if not settings.enable_http_result_callbacks:
+        raise HTTPException(status_code=404, detail="Not found")
+
+
 @app.post("/internal/job/{job_id}/video-complete")
 async def video_completed(job_id: str, completion_data: dict):
     """
     Internal endpoint for Lambda to report video completion.
     Updates job progress and file tracking.
     """
+    require_http_result_callbacks()
     try:
         return await process_video_completion(job_id, completion_data)
 
@@ -3863,6 +4039,7 @@ async def video_failed(job_id: str, failure_data: dict):
     """
     Internal endpoint for Lambda to report video failure.
     """
+    require_http_result_callbacks()
     try:
         return await process_video_failure(job_id, failure_data)
 
@@ -3877,10 +4054,11 @@ async def video_failed(job_id: str, failure_data: dict):
 
 
 @app.get("/debug/memory")
-async def get_memory_stats():
+async def get_memory_stats(secret: str):
     """
     Get current memory usage statistics and top memory allocations
     """
+    require_docs_secret(secret)
     # Get current process memory info
     process = psutil.Process(os.getpid())
     memory_info = process.memory_info()
@@ -3920,10 +4098,11 @@ async def get_memory_stats():
 
 
 @app.post("/debug/gc")
-async def force_garbage_collection():
+async def force_garbage_collection(secret: str):
     """
     Force garbage collection and return memory stats before/after
     """
+    require_docs_secret(secret)
     # Memory before
     process = psutil.Process(os.getpid())
     memory_before = process.memory_info().rss / 1024 / 1024
@@ -3943,10 +4122,11 @@ async def force_garbage_collection():
 
 
 @app.get("/debug/jobs")
-async def get_jobs_debug():
+async def get_jobs_debug(secret: str):
     """
     Get information about current jobs in memory and on disk
     """
+    require_docs_secret(secret)
     # In-memory jobs
     in_memory_jobs = (
         len(youtube_service.channel_download_jobs)

@@ -716,7 +716,9 @@ class JobManager:
                     return False
 
     @staticmethod
-    async def mark_video_failed(job_id: str, video_id: str, error_message: str) -> bool:
+    async def mark_video_failed(
+        job_id: str, video_id: str, error_message: str, charge: bool = True
+    ) -> bool:
         """
         Mark a specific video as failed and update job counters atomically.
 
@@ -724,6 +726,8 @@ class JobManager:
             job_id: Job identifier
             video_id: Video identifier
             error_message: Error description
+            charge: Consume a credit. False for failures on our side (proxy,
+                network, worker deadline); finalization then refunds the credit.
 
         Returns:
             True on success, False on error
@@ -760,11 +764,12 @@ class JobManager:
                         UPDATE jobs 
                         SET failed_count = failed_count + 1,
                             processed_count = processed_count + 1,
-                            credits_used = credits_used + 1,
+                            credits_used = credits_used + $2,
                             updated_at = NOW()
                         WHERE job_id = $1
                     """,
                         job_id,
+                        1 if charge else 0,
                     )
 
                     logger.debug(
@@ -850,10 +855,35 @@ class JobManager:
             return 0
 
     @staticmethod
+    async def find_stale_active_jobs(stale_minutes: int) -> List[str]:
+        """Return active jobs with no progress (results, dispatch, status) recently."""
+        try:
+            async with get_db_connection() as conn:
+                rows = await conn.fetch(
+                    """
+                    SELECT job_id FROM jobs
+                    WHERE status IN ('initializing', 'prefetching_metadata',
+                                     'dispatching', 'processing')
+                      AND updated_at < NOW() - make_interval(mins => $1)
+                    """,
+                    stale_minutes,
+                )
+                return [str(row["job_id"]) for row in rows]
+        except Exception as e:
+            logger.error(f"Failed to find stale jobs: {e}")
+            return []
+
+    @staticmethod
     async def fail_unresolved_videos(
         job_id: str, error_message: str
     ) -> Dict[str, int]:
-        """Reconcile timed-out invoked and never-dispatched videos."""
+        """
+        Reconcile timed-out invoked and never-dispatched videos.
+
+        No result at all means our pipeline lost the video (throttling, crash,
+        undelivered message), so it is not charged and finalization refunds it.
+        Videos without captions report video_failed and are charged there.
+        """
         try:
             async with get_db_transaction() as tx:
                 job = await tx.fetchrow(
@@ -909,7 +939,6 @@ class JobManager:
                         SET failed_count = failed_count + $2,
                         skipped_count = skipped_count + $3,
                         processed_count = processed_count + $2 + $3,
-                        credits_used = credits_used + $2,
                         timeout_occurred = true,
                         updated_at = NOW()
                     WHERE job_id = $1

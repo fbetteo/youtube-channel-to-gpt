@@ -24,6 +24,11 @@ logger = logging.getLogger(__name__)
 TERMINAL_JOB_STATUSES = {"completed", "completed_with_errors", "failed", "cancelled"}
 
 
+def build_transcript_s3_key(user_id: Any, job_id: str, video_id: str) -> str:
+    """Return the key the Lambda worker writes: {user_id}/{job_id}/{video_id}.txt."""
+    return f"{user_id}/{job_id}/{video_id}.txt"
+
+
 async def _get_job_status(job_id: str) -> Dict[str, Any]:
     job = await JobManager.get_job_status_from_db(job_id)
     if not job:
@@ -99,11 +104,19 @@ async def process_video_completion(
     _log_execution_timing(job, video_id)
     _log_timeout_state(job, video_id, "completed")
 
+    # Never trust a reported S3 key: ZIP downloads read whatever key is stored,
+    # so derive it from the job owner using the worker's key layout.
+    s3_key = build_transcript_s3_key(job["user_id"], job_id, video_id)
+    if completion_data.get("s3_key") not in (None, s3_key):
+        logger.warning(
+            "Ignoring mismatched s3_key for video %s in job %s", video_id, job_id
+        )
+
     was_updated = await JobManager.mark_video_completed(
         job_id=job_id,
         video_id=video_id,
         file_info={
-            "s3_key": completion_data["s3_key"],
+            "s3_key": s3_key,
             "transcript_length": completion_data.get("transcript_length", 0),
             "status": "completed",
         },
@@ -148,10 +161,13 @@ async def process_video_failure(
 
     _log_timeout_state(job, video_id, "failed")
 
+    # Charge only content failures (no captions, unavailable video). Retriable
+    # failures are on our side: proxy blocks, network errors, worker deadline.
     was_updated = await JobManager.mark_video_failed(
         job_id=job_id,
         video_id=video_id,
         error_message=failure_data.get("error", "Unknown error"),
+        charge=not failure_data.get("retriable", False),
     )
 
     if was_updated:

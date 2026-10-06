@@ -11,6 +11,7 @@ import re
 import requests
 import time
 import json
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeout
 from typing import Dict, Any, List, Optional, Tuple
 
 from youtube_transcript_api import YouTubeTranscriptApi
@@ -24,6 +25,7 @@ RETRIABLE_TRANSCRIPT_ERROR_TYPES = {
     "ChunkedEncodingError",
     "ConnectionError",
     "ConnectTimeout",
+    "DeadlineExceeded",
     "HTTPError",
     "IncompleteRead",
     "IpBlocked",
@@ -48,6 +50,9 @@ TERMINAL_TRANSCRIPT_ERROR_TYPES = {
     "VideoUnavailable",
     "VideoUnplayable",
 }
+
+# Seconds kept free after fetching for the S3 upload and result delivery.
+DEADLINE_SAFETY_SECONDS = 15
 
 LANGUAGE_CODE_PATTERN = re.compile(r"^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
 
@@ -305,6 +310,44 @@ def fetch_transcript_with_retries(
     )
 
 
+class DeadlineExceeded(Exception):
+    """The transcript fetch could not finish within the Lambda's time budget."""
+
+
+def fetch_transcript_before_deadline(
+    video_id: str, preferred_language: Optional[str], context
+) -> Tuple[Any, Any, int]:
+    """
+    Run the fetch with a budget below the Lambda timeout, so the worker always
+    reports a result instead of being killed silently mid-retry.
+    """
+    get_remaining = getattr(context, "get_remaining_time_in_millis", None)
+    if get_remaining is None:
+        return fetch_transcript_with_retries(
+            video_id, preferred_language=preferred_language
+        )
+
+    budget = max(get_remaining() / 1000 - DEADLINE_SAFETY_SECONDS, 1)
+    executor = ThreadPoolExecutor(max_workers=1)
+    future = executor.submit(
+        fetch_transcript_with_retries, video_id, preferred_language=preferred_language
+    )
+    try:
+        return future.result(timeout=budget)
+    except FutureTimeout:
+        raise TranscriptRetrievalError(
+            video_id=video_id,
+            stage="deadline",
+            attempts=1,
+            retriable=True,
+            original_exception=DeadlineExceeded(
+                f"no transcript within the {budget:.0f}s Lambda time budget"
+            ),
+        )
+    finally:
+        executor.shutdown(wait=False)
+
+
 def sanitize_filename(filename: str, max_len: int = 30) -> str:
     """
     Sanitizes a filename to be safe for all operating systems.
@@ -472,8 +515,8 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
 
     try:
         fetch_start = time.time()
-        transcript, fetched_transcript, attempt_count = fetch_transcript_with_retries(
-            video_id, preferred_language=preferred_language
+        transcript, fetched_transcript, attempt_count = (
+            fetch_transcript_before_deadline(video_id, preferred_language, context)
         )
 
         fetch_end = time.time()
