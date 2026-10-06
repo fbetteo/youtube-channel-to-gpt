@@ -60,6 +60,15 @@ class Settings(BaseModel):
         default_factory=lambda: os.getenv("LAMBDA_RESULTS_QUEUE_URL", "")
     )
 
+    # Legacy unauthenticated /internal/job/... result callbacks. Set to false once
+    # Lambda results arrive through SQS; the worker then relies on SQS only.
+    enable_http_result_callbacks: bool = Field(
+        default_factory=lambda: os.getenv(
+            "ENABLE_HTTP_RESULT_CALLBACKS", "true"
+        ).strip().lower()
+        not in {"false", "0", "no"}
+    )
+
     # SQS consumer settings
     sqs_consumer_wait_time_seconds: int = Field(
         default_factory=lambda: int(os.getenv("SQS_CONSUMER_WAIT_TIME_SECONDS", "20"))

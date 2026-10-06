@@ -209,9 +209,11 @@ class CreditManager:
                     logger.info(
                         f"User {user_id} not found in credits table, creating with 25 credits"
                     )
-                    # Create user with 0 credits if doesn't exist
                     await CreditManager.create_user_credits(user_id, 25)
-                    return 0
+                    # Re-read: a concurrent request may have created the row first.
+                    return await conn.fetchval(
+                        "SELECT credits FROM user_credits WHERE user_id = $1", user_id
+                    )
 
         except Exception as e:
             logger.error(
@@ -1174,6 +1176,9 @@ async def get_protected_openapi(secret: str):
     )
 
 
+stale_job_sweeper_task: Optional[asyncio.Task] = None
+
+
 @app.on_event("startup")
 async def startup_event():
     """Run when the application starts - initialize database connection pool"""
@@ -1189,6 +1194,11 @@ async def startup_event():
         logger.error(f"Failed to initialize database pool: {e}", exc_info=True)
         # Don't raise - allow app to start even if DB pool init fails
         # Individual requests will retry connection
+
+    global stale_job_sweeper_task
+    stale_job_sweeper_task = asyncio.create_task(
+        youtube_service.run_stale_job_sweeper()
+    )
 
 
 #     # Recover jobs from persistent storage
@@ -1210,6 +1220,8 @@ async def startup_event():
 async def shutdown_event():
     """Clean up resources on FastAPI shutdown"""
     logger.info("Shutting down YouTube Transcript API...")
+    if stale_job_sweeper_task:
+        stale_job_sweeper_task.cancel()
 
     try:
         # Close async database connection pool
@@ -3897,12 +3909,18 @@ async def download_all_content(
 # =============================================
 
 
+def require_http_result_callbacks() -> None:
+    if not settings.enable_http_result_callbacks:
+        raise HTTPException(status_code=404, detail="Not found")
+
+
 @app.post("/internal/job/{job_id}/video-complete")
 async def video_completed(job_id: str, completion_data: dict):
     """
     Internal endpoint for Lambda to report video completion.
     Updates job progress and file tracking.
     """
+    require_http_result_callbacks()
     try:
         return await process_video_completion(job_id, completion_data)
 
@@ -3916,6 +3934,7 @@ async def video_failed(job_id: str, failure_data: dict):
     """
     Internal endpoint for Lambda to report video failure.
     """
+    require_http_result_callbacks()
     try:
         return await process_video_failure(job_id, failure_data)
 

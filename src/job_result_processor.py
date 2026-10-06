@@ -161,10 +161,13 @@ async def process_video_failure(
 
     _log_timeout_state(job, video_id, "failed")
 
+    # Charge only content failures (no captions, unavailable video). Retriable
+    # failures are on our side: proxy blocks, network errors, worker deadline.
     was_updated = await JobManager.mark_video_failed(
         job_id=job_id,
         video_id=video_id,
         error_message=failure_data.get("error", "Unknown error"),
+        charge=not failure_data.get("retriable", False),
     )
 
     if was_updated:

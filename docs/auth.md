@@ -23,6 +23,6 @@ Developer keys use a `yt_live_` prefix, are stored as SHA-256 hashes, and are re
 
 ## Current inconsistencies
 
-Some website status/discovery endpoints have no auth dependency. Legacy `/internal/job/...` HTTP callbacks also have no auth dependency in their current handlers; an `internal` path does not enforce access control. Completion results ignore the reported `s3_key` and derive `{user_id}/{job_id}/{video_id}.txt` from the job owner, so a caller cannot point a job at another user's object. Do not describe them as protected or copy that pattern for new private operations. SQS access uses AWS credentials/IAM.
+Some website status/discovery endpoints have no auth dependency. Legacy `/internal/job/...` HTTP callbacks also have no auth dependency in their current handlers; an `internal` path does not enforce access control. Completion results ignore the reported `s3_key` and derive `{user_id}/{job_id}/{video_id}.txt` from the job owner, so a caller cannot point a job at another user's object. Set `ENABLE_HTTP_RESULT_CALLBACKS=false` once SQS delivery is configured to make these routes return 404; the worker then reports results only through SQS. Do not describe them as protected or copy that pattern for new private operations. SQS access uses AWS credentials/IAM.
 
 Anonymous limiting is in-memory and process-local. Window/request limits are split between `src/rate_limiter.py` and `check_anonymous_rate_limit` in the API; inspect both rather than assuming the older “3 per hour” guidance.

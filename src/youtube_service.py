@@ -2816,71 +2816,44 @@ async def prefetch_and_dispatch_task(job_id: str):
             f"Job {job_id}: Background task completed. Dispatched {dispatched_count} Lambda functions"
         )
 
-        # 5. Start timeout monitoring task
-        if dispatched_count:
-            asyncio.create_task(
-                monitor_job_timeout(job_id, settings.job_timeout_minutes)
-            )
+        # Videos that never report back are closed by run_stale_job_sweeper.
 
     except Exception as e:
         logger.error(f"Job {job_id}: Background pre-fetch task failed: {str(e)}")
         await JobManager.fail_job_before_dispatch(job_id, str(e))
 
 
-async def monitor_job_timeout(job_id: str, timeout_minutes: int = 15):
+async def reconcile_stale_jobs(stale_minutes: int) -> int:
     """
-    Reconcile invoked videos that never produced a Lambda/SQS result.
+    Close active jobs that made no progress for stale_minutes.
 
-    Args:
-        job_id: The job identifier
-        timeout_minutes: Minutes to wait before checking partial availability
+    Covers work the in-process monitor cannot: jobs whose dispatch or timeout
+    task died with an API restart. Unsent videos are skipped and in-flight ones
+    failed; neither is charged, so finalization refunds them.
     """
-    try:
-        logger.info(
-            f"Job {job_id}: Starting partial-results monitor with {timeout_minutes} minute threshold"
+    from db_youtube_transcripts.job_manager import JobManager
+
+    job_ids = await JobManager.find_stale_active_jobs(stale_minutes)
+    for job_id in job_ids:
+        reconciled = await JobManager.fail_unresolved_videos(
+            job_id, f"No progress for {stale_minutes} minutes"
         )
+        await JobManager.finalize_job_if_complete(job_id)
+        logger.warning(
+            f"Job {job_id}: stale job reconciled ({reconciled['failed']} failed, "
+            f"{reconciled['skipped']} skipped)"
+        )
+    return len(job_ids)
 
-        # Wait for the timeout period
-        await asyncio.sleep(timeout_minutes * 60)
 
-        # Check if job is still processing
-        job = await hybrid_job_manager.get_job_status(job_id)
-        if not job:
-            logger.warning(f"Job {job_id}: Job not found during timeout check")
-            return
-
-        # Only proceed if job is still processing
-        if job.get("status") != "processing":
-            logger.info(
-                f"Job {job_id}: Job no longer processing, timeout monitor exiting"
-            )
-            return
-
-        total_videos = job["total_videos"]
-        processed_count = job["processed_count"]
-        pending_count = total_videos - processed_count
-
-        if pending_count > 0:
-            from db_youtube_transcripts.job_manager import JobManager
-
-            reconciled = await JobManager.fail_unresolved_videos(
-                job_id,
-                f"No Lambda result received within {timeout_minutes} minutes",
-            )
-            if reconciled["failed"] or reconciled["skipped"]:
-                await JobManager.finalize_job_if_complete(job_id)
-            logger.warning(
-                f"Job {job_id}: reconciled {reconciled['failed']} invoked and "
-                f"{reconciled['skipped']} undispatched video(s) after "
-                f"{timeout_minutes} minute(s)"
-            )
-        else:
-            logger.info(
-                f"Job {job_id}: All videos processed before timeout, no action needed"
-            )
-
-    except Exception as e:
-        logger.error(f"Job {job_id}: Error in timeout monitor: {str(e)}")
+async def run_stale_job_sweeper(interval_seconds: int = 300) -> None:
+    """Reconcile stale jobs at startup and then periodically."""
+    while True:
+        try:
+            await reconcile_stale_jobs(settings.job_timeout_minutes)
+        except Exception as e:
+            logger.error(f"Stale job sweep failed: {e}")
+        await asyncio.sleep(interval_seconds)
 
 
 def get_job_status(job_id: str) -> Dict[str, Any]:
