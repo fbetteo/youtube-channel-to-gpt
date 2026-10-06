@@ -2,6 +2,7 @@
 """
 Memory monitoring utility for the transcript API
 """
+import os
 import requests
 import time
 import json
@@ -16,7 +17,10 @@ def monitor_memory(base_url="http://localhost:8001"):
     while True:
         try:
             # Get memory stats
-            response = requests.get(f"{base_url}/debug/memory")
+            response = requests.get(
+                f"{base_url}/debug/memory",
+                params={"secret": os.getenv("DOCS_SECRET_KEY", "")},
+            )
             if response.status_code == 200:
                 stats = response.json()
 

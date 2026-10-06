@@ -22,6 +22,6 @@
 
 Checkout/webhooks live in `src/transcript_api.py`. `PRICE_CREDITS_MAP` is server-side. Checkout links the Supabase user through session metadata, including `project="transcript-api"`; the signature-verified webhook grants credits on `checkout.session.completed` for this project.
 
-Keep frontend checkout payloads, referral metadata, and redirect URLs aligned. Browser success pages do not grant credits. The current handler has no explicit persisted event/session deduplication; do not assume payment events can be replayed safely when testing.
+Keep frontend checkout payloads, referral metadata, and redirect URLs aligned. Browser success pages do not grant credits. The webhook grants credits only when `payment_status` is `paid` or `no_payment_required` (100%-off promotion codes), and records each Checkout session in `stripe_checkout_credits` in the same transaction as the credit grant, so redelivered events return `duplicate` without adding credits. That table comes from `db_youtube_transcripts/migration_add_stripe_checkout_credits.py`; until it exists, the webhook returns 500 and Stripe retries.
 
 Relevant tests: `tests/test_playlist_job_lifecycle.py`, `tests/test_discovery_job_manager.py`.

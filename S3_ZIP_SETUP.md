@@ -128,13 +128,13 @@ aws s3 cp s3://your-bucket-name/user123/job456/video1.txt ./test_file.txt
 
 ```bash
 # Check memory usage
-curl http://127.0.0.1:8000/debug/memory
+curl "http://127.0.0.1:8000/debug/memory?secret=$DOCS_SECRET_KEY"
 
 # Check active jobs
-curl http://127.0.0.1:8000/debug/jobs
+curl "http://127.0.0.1:8000/debug/jobs?secret=$DOCS_SECRET_KEY"
 
 # Force garbage collection
-curl -X POST http://127.0.0.1:8000/debug/gc
+curl -X POST "http://127.0.0.1:8000/debug/gc?secret=$DOCS_SECRET_KEY"
 ```
 
 ### Error Handling
