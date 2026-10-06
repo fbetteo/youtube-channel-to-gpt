@@ -56,6 +56,16 @@ DEADLINE_SAFETY_SECONDS = 15
 
 LANGUAGE_CODE_PATTERN = re.compile(r"^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
 
+# Shared, user-independent copy of each fetched transcript, reused across jobs.
+# Nothing here deletes entries. TRANSCRIPT_CACHE_MAX_AGE_DAYS: unset = reuse
+# forever; N = re-fetch (and overwrite) entries older than N days; 0 = never reuse.
+TRANSCRIPT_CACHE_PREFIX = "transcript-cache"
+_cache_max_age = os.getenv("TRANSCRIPT_CACHE_MAX_AGE_DAYS", "").strip()
+TRANSCRIPT_CACHE_MAX_AGE_DAYS: Optional[float] = (
+    float(_cache_max_age) if _cache_max_age else None
+)
+SEGMENTS_SCHEMA_VERSION = 1
+
 
 def normalize_preferred_language(language_code: Optional[str]) -> Optional[str]:
     """Validate and normalize a YouTube/BCP-47-style language code."""
@@ -348,6 +358,74 @@ def fetch_transcript_before_deadline(
         executor.shutdown(wait=False)
 
 
+def transcript_cache_key(video_id: str, requested_language: Optional[str]) -> str:
+    """Cache key per video and requested language ('auto' when none requested)."""
+    return f"{TRANSCRIPT_CACHE_PREFIX}/{video_id}/{requested_language or 'auto'}.json"
+
+
+def build_segments_document(
+    video_id: str,
+    requested_language: Optional[str],
+    language: str,
+    is_generated: bool,
+    segments: List[Dict[str, Any]],
+    fetched_at: int,
+) -> Dict[str, Any]:
+    """Canonical transcript record; every download format is rendered from it."""
+    return {
+        "schema_version": SEGMENTS_SCHEMA_VERSION,
+        "video_id": video_id,
+        "requested_language": requested_language or "auto",
+        "language": language,
+        "is_generated": is_generated,
+        "fetched_at": fetched_at,
+        "segments": segments,
+    }
+
+
+def load_cached_transcript(
+    s3_client, bucket_name: str, cache_key: str, now: Optional[float] = None
+) -> Optional[Dict[str, Any]]:
+    """Return a usable cached segments document, or None. Never raises."""
+    max_age_days = TRANSCRIPT_CACHE_MAX_AGE_DAYS
+    if max_age_days is not None and max_age_days <= 0:
+        return None
+    try:
+        response = s3_client.get_object(Bucket=bucket_name, Key=cache_key)
+        document = json.loads(response["Body"].read())
+    except Exception as e:
+        # Missing keys surface as NoSuchKey, or AccessDenied without ListBucket.
+        logger.info(f"Transcript cache miss for {cache_key}: {type(e).__name__}")
+        return None
+
+    if document.get("schema_version") != SEGMENTS_SCHEMA_VERSION or not isinstance(
+        document.get("segments"), list
+    ):
+        return None
+    if max_age_days is None:
+        return document
+    age_seconds = (now or time.time()) - float(document.get("fetched_at") or 0)
+    if age_seconds > max_age_days * 86400:
+        logger.info(f"Transcript cache entry {cache_key} expired")
+        return None
+    return document
+
+
+def save_cached_transcript(
+    s3_client, bucket_name: str, cache_key: str, document: Dict[str, Any]
+) -> None:
+    """Best-effort cache write; a failure must not fail the video."""
+    try:
+        s3_client.put_object(
+            Bucket=bucket_name,
+            Key=cache_key,
+            Body=json.dumps(document, ensure_ascii=False).encode("utf-8"),
+            ContentType="application/json",
+        )
+    except Exception as e:
+        logger.warning(f"Transcript cache write failed for {cache_key}: {e}")
+
+
 def sanitize_filename(filename: str, max_len: int = 30) -> str:
     """
     Sanitizes a filename to be safe for all operating systems.
@@ -514,34 +592,46 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
     lambda_request_id = getattr(context, "aws_request_id", None)
 
     try:
+        s3_client = boto3.client("s3")
+        bucket_name = os.getenv("S3_BUCKET_NAME")
+        requested_language = normalize_preferred_language(preferred_language)
+        cache_key = transcript_cache_key(video_id, requested_language)
+
         fetch_start = time.time()
-        transcript, fetched_transcript, attempt_count = (
-            fetch_transcript_before_deadline(video_id, preferred_language, context)
-        )
+        document = load_cached_transcript(s3_client, bucket_name, cache_key)
+        transcript_source = "cache"
+        if document is None:
+            transcript_source = "youtube"
+            transcript, fetched_transcript, attempt_count = (
+                fetch_transcript_before_deadline(
+                    video_id, requested_language, context
+                )
+            )
+            document = build_segments_document(
+                video_id=video_id,
+                requested_language=requested_language,
+                language=transcript.language_code,
+                is_generated=transcript.is_generated,
+                segments=fetched_transcript.to_raw_data(),
+                fetched_at=int(time.time()),
+            )
+            save_cached_transcript(s3_client, bucket_name, cache_key, document)
+            logger.info(
+                f"API fetch took {time.time() - fetch_start:.3f}s for video {video_id} "
+                f"(attempts={attempt_count})"
+            )
+        else:
+            logger.info(f"Transcript cache hit for video {video_id} ({cache_key})")
 
-        fetch_end = time.time()
-        logger.info(
-            f"API fetch took {fetch_end - fetch_start:.3f}s for video {video_id} "
-            f"(attempts={attempt_count})"
-        )
-
-        # Create metadata with language info
-        selected_language = transcript.language_code
         metadata = {
             "video_id": video_id,
-            "transcript_language": selected_language,
+            "transcript_language": document["language"],
             "transcript_type": (
-                "manual" if not transcript.is_generated else "auto-generated"
+                "auto-generated" if document["is_generated"] else "manual"
             ),
+            "transcript_source": transcript_source,
         }
-
-        # Get raw data for better performance
-        raw_data_start = time.time()
-        transcript_data = fetched_transcript.to_raw_data()
-        raw_data_end = time.time()
-        logger.info(
-            f"Raw data conversion took {raw_data_end - raw_data_start:.3f}s for video {video_id}"
-        )
+        transcript_data = document["segments"]
 
         # Format transcript - optimize by using string builder approach
         format_start = time.time()
@@ -597,12 +687,17 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
 
         file_content += transcript_text
 
-        # Store result in S3
-        s3_client = boto3.client("s3")
-        bucket_name = os.getenv("S3_BUCKET_NAME")
-
         # Create S3 key: user_id/job_id/video_id.txt
         s3_key = f"{user_id}/{job_id}/{video_id}.txt"
+
+        # Segments next to the text file, so downloads can render SRT/VTT/JSON.
+        # Written first: a completed .txt then always has its .json.
+        s3_client.put_object(
+            Bucket=bucket_name,
+            Key=f"{user_id}/{job_id}/{video_id}.json",
+            Body=json.dumps(document, ensure_ascii=False).encode("utf-8"),
+            ContentType="application/json",
+        )
 
         # Upload to S3
         s3_client.put_object(

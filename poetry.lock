@@ -2895,13 +2895,13 @@ propcache = ">=0.2.0"
 
 [[package]]
 name = "youtube-transcript-api"
-version = "1.1.0"
-description = "This is an python API which allows you to get the transcripts/subtitles for a given YouTube video. It also works for automatically generated subtitles, supports translating subtitles and it does not require a headless browser, like other selenium based solutions do!"
+version = "1.2.4"
+description = "This is a python API which allows you to get the transcripts/subtitles for a given YouTube video. It also works for automatically generated subtitles, supports translating subtitles and it does not require a headless browser, like other selenium based solutions do!"
 optional = false
-python-versions = "<3.14,>=3.8"
+python-versions = "<3.15,>=3.8"
 files = [
-    {file = "youtube_transcript_api-1.1.0-py3-none-any.whl", hash = "sha256:876ac42b1e3f8cc99b81d8fd810bd74ed07511e51dff5db50e714e3156ad3595"},
-    {file = "youtube_transcript_api-1.1.0.tar.gz", hash = "sha256:786d9e64bd7fffee0dbc1471a61a798cebdc379b9cf8f7661d3664e831fcc1a5"},
+    {file = "youtube_transcript_api-1.2.4-py3-none-any.whl", hash = "sha256:03878759356da5caf5edac77431780b91448fb3d8c21d4496015bdc8a7bc43ff"},
+    {file = "youtube_transcript_api-1.2.4.tar.gz", hash = "sha256:b72d0e96a335df599d67cee51d49e143cff4f45b84bcafc202ff51291603ddcd"},
 ]
 
 [package.dependencies]
@@ -2932,4 +2932,4 @@ secretstorage = ["secretstorage"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.12,<3.14"
-content-hash = "3c90d2967295b27bd38f700d2626b0ee3e1696b8915095524b73d4c6ab8b5471"
+content-hash = "a71adee0c4df619e7daebfa2cc0ead906fe52a5c91c0d0646d5b0d37135e9849"

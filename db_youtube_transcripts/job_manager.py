@@ -423,6 +423,7 @@ class JobManager:
                                     "file_path": video["file_path"],
                                     "s3_key": video["s3_key"],
                                     "file_size": video["file_size"],
+                                    "view_count": video["view_count"],
                                 }
                                 files.append(file_info)
 
@@ -1731,7 +1732,8 @@ class JobManager:
                             jv.file_size,
                             jv.processed_at,
                             j.job_id,
-                            j.source_name
+                            j.source_name,
+                            j.formatting_options
                         FROM job_videos jv
                         JOIN jobs j ON j.job_id = jv.job_id
                         WHERE j.user_id = $1

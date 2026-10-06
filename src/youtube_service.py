@@ -27,6 +27,9 @@ from botocore.exceptions import ClientError
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.proxies import WebshareProxyConfig
 
+import transcript_formats
+from transcript_formats import format_transcript_segments, normalize_caption_text
+
 # Using the Pydantic v2 compatible settings
 from config_v2 import settings
 
@@ -148,34 +151,6 @@ def select_transcript(
             return manual or matches[0], False
 
     return transcripts[0], True
-
-
-def normalize_caption_text(text: Any) -> str:
-    """Collapse subtitle-internal line breaks and repeated whitespace."""
-    return " ".join(str(text or "").split())
-
-
-def format_transcript_segments(
-    transcript_data: List[Dict[str, Any]], include_timestamps: bool
-) -> str:
-    """Build transcript text after normalizing each caption segment."""
-    if not include_timestamps:
-        return " ".join(
-            cleaned_text
-            for segment in transcript_data
-            if (cleaned_text := normalize_caption_text(segment.get("text")))
-        )
-
-    transcript_lines = []
-    for segment in transcript_data:
-        cleaned_text = normalize_caption_text(segment.get("text"))
-        if not cleaned_text:
-            continue
-        start_time_sec = segment["start"]
-        minutes = int(start_time_sec // 60)
-        seconds = int(start_time_sec % 60)
-        transcript_lines.append(f"[{minutes:02d}:{seconds:02d}] {cleaned_text}")
-    return "\n".join(transcript_lines)
 
 
 # Memory tracking logger - separate logger for memory metrics
@@ -1077,6 +1052,7 @@ def build_transcript_filename(
     title: Optional[str] = None,
     max_title_len: int = 100,
     error_suffix: Optional[str] = None,
+    extension: str = "txt",
 ) -> str:
     """Build a safe transcript filename with title + video id for uniqueness."""
     safe_title = sanitize_filename(title or "", max_len=max_title_len)
@@ -1088,7 +1064,76 @@ def build_transcript_filename(
     if error_suffix:
         base = f"{base}_{error_suffix}"
 
-    return f"{base}.txt"
+    return f"{base}.{extension}"
+
+
+def _segments_key_for(s3_key: str) -> str:
+    """The worker stores segments next to the text: {user}/{job}/{video}.json."""
+    return f"{os.path.splitext(s3_key)[0]}.json"
+
+
+def _read_segments_document(
+    s3_client, bucket_name: str, s3_key: str, output_format: str
+) -> Optional[Dict[str, Any]]:
+    """The segments stored beside a job's .txt, or None when there are none."""
+    try:
+        response = s3_client.get_object(
+            Bucket=bucket_name, Key=_segments_key_for(s3_key)
+        )
+        return json.loads(response["Body"].read())
+    except ClientError as e:
+        if e.response.get("Error", {}).get("Code") in {"NoSuchKey", "404", "NotFound"}:
+            logger.info(f"No segments stored for {s3_key}; using the stored .txt")
+            return None
+        if output_format != "txt":
+            raise
+    except Exception:
+        if output_format != "txt":
+            raise
+    # Plain text can still be served from the stored .txt.
+    logger.warning(f"Reading segments for {s3_key} failed; using the stored .txt")
+    return None
+
+
+def parse_formatting_options(value: Any) -> Dict[str, Any]:
+    """jobs.formatting_options as a dict (asyncpg returns JSON columns as text)."""
+    if isinstance(value, str):
+        try:
+            value = json.loads(value)
+        except ValueError:
+            return {}
+    return value if isinstance(value, dict) else {}
+
+
+def read_job_transcript(
+    s3_client,
+    bucket_name: str,
+    s3_key: str,
+    output_format: str = "txt",
+    title: Optional[str] = None,
+    view_count: Optional[int] = None,
+    formatting_options: Optional[Dict[str, Any]] = None,
+) -> Tuple[bytes, str]:
+    """
+    Read one job transcript as (content, file extension) in the requested format,
+    rendered from the stored segments with the job's formatting options.
+    Jobs created before the worker stored segments have only the .txt, so they
+    return that plain text for any format.
+    """
+    document = _read_segments_document(s3_client, bucket_name, s3_key, output_format)
+    if document is None:
+        response = s3_client.get_object(Bucket=bucket_name, Key=s3_key)
+        return response["Body"].read(), "txt"
+
+    if output_format == "txt":
+        rendered = transcript_formats.render_text(
+            document, formatting_options, title, view_count
+        )
+    else:
+        rendered = transcript_formats.render_document(
+            document, output_format, formatting_options, title, view_count
+        )
+    return rendered.encode("utf-8"), output_format
 
 
 async def pre_fetch_videos_metadata(
@@ -1575,13 +1620,13 @@ async def get_channel_info(channel_name: str) -> Dict[str, Any]:
         else:
             base_url = channel_name.rstrip("/")
             # Strip any existing tab suffix
-            for tab in ["/videos", "/shorts", "/playlists", "/live"]:
+            for tab in ["/videos", "/shorts", "/streams", "/playlists", "/live"]:
                 if base_url.endswith(tab):
                     base_url = base_url[: -len(tab)]
                     break
 
-        # Try /videos first, then /shorts if that fails
-        tabs_to_try = ["/videos", "/shorts"]
+        # Try /videos first, then /shorts and /streams if that fails
+        tabs_to_try = ["/videos", "/shorts", "/streams"]
         info = None
         last_error = None
 
@@ -2078,19 +2123,21 @@ def _format_ytdlp_date(date_str: Optional[str], timestamp: Optional[int] = None)
     return ""
 
 
+# Channel tabs scanned during discovery, mapped to the video "type" they produce.
+CHANNEL_VIDEO_TABS = {"videos": "video", "shorts": "short", "streams": "live"}
+
+
 def _fetch_all_channel_videos(
     channel_id: str, preferred_language: Optional[str] = None
 ) -> List[Dict[str, Any]]:
     """
-    Fetch all videos from a channel using yt-dlp, including Shorts.
-    Returns a list of video metadata dicts.
+    Fetch all videos from a channel using yt-dlp: long-form videos, Shorts, and
+    past livestreams (which YouTube lists only under the streams tab).
+    The tabs are fetched in parallel. Returns a list of video metadata dicts.
     """
     logger.info(f"Fetching all videos for channel {channel_id} using yt-dlp")
 
     all_videos_map = {}  # Use dict for deduplication by ID
-
-    # Fetch from both 'videos' (long form) and 'shorts' tabs
-    tabs = ["videos", "shorts"]
 
     base_ydl_opts = {
         "quiet": True,
@@ -2099,13 +2146,22 @@ def _fetch_all_channel_videos(
         "ignoreerrors": True,
         "extractor_args": {"youtubetab": {"approximate_date": [""]}},
     }
-    for tab in tabs:
+
+    def _fetch_tab(tab: str) -> Optional[Dict[str, Any]]:
         try:
             url = f"https://www.youtube.com/channel/{channel_id}/{tab}"
             logger.info(f"Fetching {tab} from {url}")
+            return _extract_flat_info(url, base_ydl_opts, preferred_language)
+        except Exception as e:
+            # A channel without a given tab (e.g. no livestreams) fails here.
+            logger.error(f"Error fetching {tab} for channel {channel_id}: {str(e)}")
+            return None
 
-            info = _extract_flat_info(url, base_ydl_opts, preferred_language)
+    with ThreadPoolExecutor(max_workers=len(CHANNEL_VIDEO_TABS)) as executor:
+        tab_infos = list(executor.map(_fetch_tab, CHANNEL_VIDEO_TABS))
 
+    for tab, info in zip(CHANNEL_VIDEO_TABS, tab_infos):
+        try:
             if not info:
                 logger.warning(f"No info found for {tab} tab of channel {channel_id}")
                 continue
@@ -2147,11 +2203,11 @@ def _fetch_all_channel_videos(
                     "duration": duration_category,
                     "duration_seconds": duration_seconds,
                     "viewCount": entry.get("view_count") or 0,
-                    "type": "short" if tab == "shorts" else "video",
+                    "type": CHANNEL_VIDEO_TABS[tab],
                 }
 
         except Exception as e:
-            logger.error(f"Error fetching {tab} for channel {channel_id}: {str(e)}")
+            logger.error(f"Error reading {tab} for channel {channel_id}: {str(e)}")
             # Continue to next tab even if one fails
 
     all_videos = list(all_videos_map.values())
@@ -3140,6 +3196,23 @@ async def create_transcript_zip(job_id: str) -> Optional[io.BytesIO]:
     return zip_buffer
 
 
+def apply_option_overrides(
+    job: Dict[str, Any], option_overrides: Optional[Dict[str, Any]]
+) -> None:
+    """Replace the loaded job's options with the ones this download uses."""
+    job["formatting_options"] = transcript_formats.merge_formatting_options(
+        parse_formatting_options(job.get("formatting_options")), option_overrides
+    )
+
+
+def should_concatenate(job: Dict[str, Any], output_format: str = "txt") -> bool:
+    """Concatenation applies to plain text only; other formats stay one file per video."""
+    formatting_options = job.get("formatting_options") or {}
+    return output_format == "txt" and bool(
+        formatting_options.get("concatenate_all", False)
+    )
+
+
 def _job_includes_video_id(job: Dict[str, Any]) -> bool:
     """Return the persisted video-ID formatting preference for a job."""
     formatting_options = job.get("formatting_options")
@@ -3443,13 +3516,19 @@ def log_memory_checkpoint(checkpoint_name: str) -> Dict[str, Any]:
 # =============================================
 
 
-async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.BytesIO]:
+async def create_transcript_zip_from_s3_concurrent(
+    job_id: str,
+    output_format: str = "txt",
+    option_overrides: Optional[Dict[str, Any]] = None,
+) -> Optional[io.BytesIO]:
     """
     Create ZIP by downloading transcript files from S3 concurrently.
     Faster than sequential downloads with better performance.
 
     Args:
         job_id: The job identifier
+        output_format: txt, srt, vtt, or json (non-txt is never concatenated)
+        option_overrides: download-time formatting options over the job's own
 
     Returns:
         BytesIO object containing the ZIP file, or None if job not completed
@@ -3461,6 +3540,7 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
     job = await hybrid_job_manager.get_job(job_id, include_videos=True)
     if not job:
         raise ValueError(f"Job not found with ID: {job_id}")
+    apply_option_overrides(job, option_overrides)
 
     if job["status"] not in [
         "dispatching",
@@ -3518,6 +3598,7 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
     # Select the bucket to use for all downloads
     active_client = s3_fallback_client if use_fallback else s3_client
     active_bucket = fallback_bucket_name if use_fallback else bucket_name
+    formatting_options = job.get("formatting_options") or {}
 
     # Download all files concurrently from the determined bucket
     async def download_file(file_info):
@@ -3528,11 +3609,20 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
 
         def _download():
             try:
-                response = active_client.get_object(Bucket=active_bucket, Key=s3_key)
+                content, extension = read_job_transcript(
+                    active_client,
+                    active_bucket,
+                    s3_key,
+                    output_format,
+                    title,
+                    view_count=file_info.get("view_count"),
+                    formatting_options=formatting_options,
+                )
                 return {
                     "video_id": video_id,
                     "title": title,
-                    "content": response["Body"].read(),
+                    "content": content,
+                    "extension": extension,
                     "filename": os.path.basename(s3_key),
                     "success": True,
                     "s3_key": s3_key,
@@ -3543,6 +3633,7 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
                     "video_id": video_id,
                     "title": title,
                     "content": f"Error downloading transcript for video {video_id}: {str(e)}".encode(),
+                    "extension": "txt",
                     "filename": f"{video_id}_ERROR.txt",
                     "success": False,
                     "s3_key": s3_key,
@@ -3557,6 +3648,8 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
     async def download_with_limit(file_info):
         async with semaphore:
             return await download_file(file_info)
+
+    concatenate = should_concatenate(job, output_format)
 
     logger.info(
         f"Downloading {len(job['files'])} files concurrently from S3 (max 200 concurrent, pooled client)"
@@ -3577,7 +3670,7 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
     zip_buffer = io.BytesIO()
 
     try:
-        if job.get("formatting_options", {}).get("concatenate_all", False):
+        if concatenate:
             # Create concatenated file
             concatenated_content = await create_concatenated_content_from_results(
                 download_results, job
@@ -3613,6 +3706,7 @@ async def create_transcript_zip_from_s3_concurrent(job_id: str) -> Optional[io.B
                         result["video_id"],
                         result.get("title"),
                         error_suffix=None if result["success"] else "ERROR",
+                        extension=result["extension"],
                     )
                     # Create ZipInfo with UTF-8 flag to support non-ASCII characters (e.g., Russian)
                     zip_info = zipfile.ZipInfo(filename)
@@ -3728,13 +3822,19 @@ async def create_concatenated_content_from_results(
     return "\n".join(concatenated_parts)
 
 
-async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.BytesIO]:
+async def create_transcript_zip_from_s3_sequential(
+    job_id: str,
+    output_format: str = "txt",
+    option_overrides: Optional[Dict[str, Any]] = None,
+) -> Optional[io.BytesIO]:
     """
     Create ZIP by downloading transcript files from S3 sequentially.
     Fallback option if concurrent downloads cause issues.
 
     Args:
         job_id: The job identifier
+        output_format: txt, srt, vtt, or json (non-txt is never concatenated)
+        option_overrides: download-time formatting options over the job's own
 
     Returns:
         BytesIO object containing the ZIP file, or None if no files are available
@@ -3746,6 +3846,7 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
     job = await hybrid_job_manager.get_job(job_id, include_videos=True)
     if not job:
         raise ValueError(f"Job not found with ID: {job_id}")
+    apply_option_overrides(job, option_overrides)
 
     if job["status"] not in [
         "dispatching",
@@ -3811,10 +3912,10 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
     zip_buffer = io.BytesIO()
 
     # Check if we should concatenate all transcripts into a single file
-    if job.get("formatting_options", {}).get("concatenate_all", False):
+    if should_concatenate(job, output_format):
         # Create a single concatenated file from S3 files
         concatenated_content = await create_concatenated_transcript_from_s3_sequential(
-            job_id, active_client, active_bucket
+            job_id, active_client, active_bucket, option_overrides
         )
 
         with zipfile.ZipFile(
@@ -3850,13 +3951,20 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
                 try:
                     # Download file content from S3
                     logger.debug(f"Downloading {s3_key} from S3 for ZIP creation")
-                    response = active_client.get_object(
-                        Bucket=active_bucket, Key=s3_key
+                    file_content, extension = read_job_transcript(
+                        active_client,
+                        active_bucket,
+                        s3_key,
+                        output_format,
+                        title,
+                        view_count=file_info.get("view_count"),
+                        formatting_options=job.get("formatting_options") or {},
                     )
-                    file_content = response["Body"].read()
 
                     # Create filename from video ID or extract from S3 key
-                    filename = build_transcript_filename(video_id, title)
+                    filename = build_transcript_filename(
+                        video_id, title, extension=extension
+                    )
 
                     # Ensure content is bytes (encode if string with UTF-8 to support Russian/Unicode)
                     if isinstance(file_content, str):
@@ -3889,7 +3997,10 @@ async def create_transcript_zip_from_s3_sequential(job_id: str) -> Optional[io.B
 
 
 async def create_concatenated_transcript_from_s3_sequential(
-    job_id: str, s3_client, bucket_name: str
+    job_id: str,
+    s3_client,
+    bucket_name: str,
+    option_overrides: Optional[Dict[str, Any]] = None,
 ) -> str:
     """
     Create a single concatenated transcript by downloading individual files from S3 sequentially.
@@ -3898,6 +4009,7 @@ async def create_concatenated_transcript_from_s3_sequential(
         job_id: The job identifier
         s3_client: Configured boto3 S3 client
         bucket_name: S3 bucket name
+        option_overrides: download-time formatting options over the job's own
 
     Returns:
         String containing all transcripts concatenated with separators
@@ -3906,6 +4018,7 @@ async def create_concatenated_transcript_from_s3_sequential(
     job = await hybrid_job_manager.get_job(job_id, include_videos=True)
     if not job:
         raise ValueError(f"Job not found with ID: {job_id}")
+    apply_option_overrides(job, option_overrides)
 
     concatenated_parts = []
     include_video_id = _job_includes_video_id(job)
@@ -3928,8 +4041,15 @@ async def create_concatenated_transcript_from_s3_sequential(
         try:
             # Download file content from S3
             logger.debug(f"Downloading {s3_key} from S3 for concatenation")
-            response = s3_client.get_object(Bucket=bucket_name, Key=s3_key)
-            content = response["Body"].read().decode("utf-8")
+            content_bytes, _ = read_job_transcript(
+                s3_client,
+                bucket_name,
+                s3_key,
+                title=file_info.get("title"),
+                view_count=file_info.get("view_count"),
+                formatting_options=job.get("formatting_options") or {},
+            )
+            content = content_bytes.decode("utf-8")
 
             # Add section separator
             concatenated_parts.append(f"[VIDEO {i}/{len(job['files'])}]")
@@ -3968,6 +4088,8 @@ async def create_all_content_zip_from_s3(
     channel_name: str = None,
     playlist_id: str = None,
     concatenate_all: bool = False,
+    output_format: str = "txt",
+    option_overrides: Optional[Dict[str, Any]] = None,
 ) -> Optional[io.BytesIO]:
     """
     Create a ZIP with ALL unique completed transcripts for a source across
@@ -3980,6 +4102,8 @@ async def create_all_content_zip_from_s3(
         channel_name: Channel name/handle (required when source_type='channel')
         playlist_id: Playlist ID (required when source_type='playlist')
         concatenate_all: If True, produce a single concatenated .txt inside the ZIP
+        output_format: txt, srt, vtt, or json; non-txt is never concatenated
+        option_overrides: download-time options over each source job's own
 
     Returns:
         BytesIO containing the ZIP, or None if no transcripts found
@@ -4056,12 +4180,26 @@ async def create_all_content_zip_from_s3(
 
         def _download():
             try:
-                response = active_client.get_object(Bucket=active_bucket, Key=s3_key)
+                content, extension = read_job_transcript(
+                    active_client,
+                    active_bucket,
+                    s3_key,
+                    output_format,
+                    video.get("title"),
+                    view_count=video.get("view_count"),
+                    # Each video keeps the options of the job that produced it,
+                    # unless this download overrides them.
+                    formatting_options=transcript_formats.merge_formatting_options(
+                        parse_formatting_options(video.get("formatting_options")),
+                        option_overrides,
+                    ),
+                )
                 return {
                     "video_id": video_id,
                     "title": video.get("title", video_id),
                     "published_at": video.get("published_at"),
-                    "content": response["Body"].read(),
+                    "content": content,
+                    "extension": extension,
                     "filename": os.path.basename(s3_key),
                     "success": True,
                     "s3_key": s3_key,
@@ -4073,6 +4211,7 @@ async def create_all_content_zip_from_s3(
                     "title": video.get("title", video_id),
                     "published_at": video.get("published_at"),
                     "content": f"Error downloading transcript for video {video_id}: {str(e)}".encode(),
+                    "extension": "txt",
                     "filename": f"{video_id}_ERROR.txt",
                     "success": False,
                     "s3_key": s3_key,
@@ -4158,6 +4297,7 @@ async def create_all_content_zip_from_s3(
                         result["video_id"],
                         result.get("title"),
                         error_suffix=None if result["success"] else "ERROR",
+                        extension=result["extension"],
                     )
                     zi = zipfile.ZipInfo(filename)
                     zi.flag_bits |= 0x800

@@ -18,6 +18,7 @@ from fastapi import APIRouter, HTTPException, Depends, status
 from pydantic import BaseModel, Field, validator
 
 import youtube_service
+from transcript_formats import OutputFormat, download_option_overrides
 from api_key_auth import (
     validate_api_key,
     get_rate_limits,
@@ -886,13 +887,22 @@ async def cancel_job(job_id: str, api_key_data: Dict = Depends(validate_api_key)
 
 @router.get("/jobs/{job_id}/download", summary="Download Job Results")
 async def download_job_results(
-    job_id: str, api_key_data: Dict = Depends(validate_api_key)
+    job_id: str,
+    format: OutputFormat = "txt",
+    option_overrides: Dict[str, Optional[bool]] = Depends(download_option_overrides),
+    api_key_data: Dict = Depends(validate_api_key),
 ):
     """
     Download the transcript results for a completed job.
 
     Returns a ZIP file containing all transcripts.
     Only available when job status is 'completed' or 'completed_with_errors'.
+    `format` (txt, srt, vtt, json) picks the file format. Non-txt formats are one
+    file per video and ignore concatenate_all; videos from jobs created before
+    segment storage existed are returned as txt.
+    Optional `include_timestamps`, `include_video_title`, `include_video_id`,
+    `include_video_url`, `include_view_count`, and `concatenate_all` override the
+    job's saved options for this download (older jobs keep their stored text).
     """
     from fastapi.responses import Response
 
@@ -924,12 +934,12 @@ async def download_job_results(
 
         try:
             zip_buffer = await youtube_service.create_transcript_zip_from_s3_concurrent(
-                job_id
+                job_id, output_format=format, option_overrides=option_overrides
             )
         except Exception as e:
             logger.warning(f"Concurrent download failed, trying sequential: {e}")
             zip_buffer = await youtube_service.create_transcript_zip_from_s3_sequential(
-                job_id
+                job_id, output_format=format, option_overrides=option_overrides
             )
 
         zip_time = time.time() - zip_start

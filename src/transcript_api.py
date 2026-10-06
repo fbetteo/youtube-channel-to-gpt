@@ -60,6 +60,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "db_youtube_transc
 
 import youtube_service
 import summary_service
+from transcript_formats import OutputFormat, download_option_overrides
 from rate_limiter import transcript_limiter
 
 # Using the Pydantic v2 compatible settings
@@ -809,6 +810,10 @@ class DownloadHistoryItem(BaseModel):
         default=0, description="Number of successfully downloaded transcript files"
     )
     failedFiles: int = Field(default=0, description="Number of failed video downloads")
+    formattingOptions: Dict[str, Any] = Field(
+        default_factory=dict,
+        description="The job's saved formatting options (download defaults)",
+    )
     successRate: float = Field(
         default=0.0, description="Success rate as percentage (0-100)"
     )
@@ -926,6 +931,20 @@ class DownloadAllContentRequest(BaseModel):
         default=False,
         description="Return single concatenated file instead of individual files",
     )
+    format: OutputFormat = Field(
+        default="txt",
+        description=(
+            "File format: txt, srt, vtt, or json. Non-txt formats are one file per "
+            "video and ignore concatenate_all; videos downloaded before segment "
+            "storage existed are returned as txt."
+        ),
+    )
+    # null keeps each source job's own setting; older videos keep stored text.
+    include_timestamps: Optional[bool] = None
+    include_video_title: Optional[bool] = None
+    include_video_id: Optional[bool] = None
+    include_video_url: Optional[bool] = None
+    include_view_count: Optional[bool] = None
 
 
 def verify_api_key(request: Request):
@@ -967,7 +986,8 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
                     credits_used,
                     created_at,
                     start_time,
-                    end_time
+                    end_time,
+                    formatting_options
                 FROM jobs
                 WHERE user_id = $1
                     AND status IN (
@@ -1061,6 +1081,9 @@ async def get_user_download_history(user_id: str) -> List[DownloadHistoryItem]:
                     creditsUsed=credits_used,
                     downloadReady=download_ready,
                     isPartial=is_partial,
+                    formattingOptions=youtube_service.parse_formatting_options(
+                        row.get("formatting_options")
+                    ),
                 )
 
                 history_items.append(history_item)
@@ -3058,6 +3081,8 @@ async def cancel_transcript_download(
 @app.get("/channel/download/results/{job_id}")
 async def download_transcript_results(
     job_id: str,
+    format: OutputFormat = "txt",
+    option_overrides: Dict[str, Optional[bool]] = Depends(download_option_overrides),
     payload: dict = Depends(validate_jwt),
     session: Dict = Depends(get_user_session),
 ):
@@ -3065,6 +3090,15 @@ async def download_transcript_results(
     Download available transcripts for a job as a ZIP file.
     Files are fetched from S3 and ZIP is generated on-demand with concurrent downloads.
     Completed jobs return the full ZIP; processing jobs return the files completed so far.
+
+    `format` (txt, srt, vtt, json) picks the file format. Non-txt formats are one
+    file per video and ignore concatenate_all; videos from jobs created before
+    segment storage existed are returned as txt.
+
+    Optional `include_timestamps`, `include_video_title`, `include_video_id`,
+    `include_video_url`, `include_view_count`, and `concatenate_all` override the
+    job's saved options for this download. Videos from jobs created before
+    segment storage existed keep their stored text (only concatenate_all applies).
 
     REQUIRES AUTHENTICATION: This endpoint requires a valid JWT token.
     """
@@ -3112,7 +3146,7 @@ async def download_transcript_results(
 
         try:
             zip_buffer = await youtube_service.create_transcript_zip_from_s3_concurrent(
-                job_id
+                job_id, output_format=format, option_overrides=option_overrides
             )
         except Exception as s3_error:
             logger.warning(
@@ -3120,7 +3154,7 @@ async def download_transcript_results(
             )
             # Fallback to sequential downloads if concurrent fails
             zip_buffer = await youtube_service.create_transcript_zip_from_s3_sequential(
-                job_id
+                job_id, output_format=format, option_overrides=option_overrides
             )
 
         zip_end_time = time.time()
@@ -3136,9 +3170,8 @@ async def download_transcript_results(
         safe_source_name = youtube_service.sanitize_filename(source_name)
 
         # Check if this is a concatenated download to adjust filename
-        is_concatenated = job.get("formatting_options", {}).get(
-            "concatenate_all", False
-        )
+        youtube_service.apply_option_overrides(job, option_overrides)
+        is_concatenated = youtube_service.should_concatenate(job, format)
         filename_suffix = (
             "_concatenated_transcripts.zip" if is_concatenated else "_transcripts.zip"
         )
@@ -3913,7 +3946,7 @@ async def download_all_content(
     """
     user_id = get_user_id_from_payload(payload)
     source_type = request.source_type.lower()
-    concatenate_all = request.concatenate_all
+    concatenate_all = request.concatenate_all and request.format == "txt"
 
     if source_type not in ("channel", "playlist"):
         raise HTTPException(
@@ -3953,6 +3986,14 @@ async def download_all_content(
             channel_name=request.channel_name,
             playlist_id=request.playlist_id,
             concatenate_all=concatenate_all,
+            output_format=request.format,
+            option_overrides={
+                "include_timestamps": request.include_timestamps,
+                "include_video_title": request.include_video_title,
+                "include_video_id": request.include_video_id,
+                "include_video_url": request.include_video_url,
+                "include_view_count": request.include_view_count,
+            },
         )
         zip_end = time.time()
 

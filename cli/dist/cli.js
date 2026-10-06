@@ -26,11 +26,11 @@ Usage:
   ytx transcript <video_url_or_id> [--timestamps] [--json]
   ytx channel info <channel> [--json]
   ytx channel videos <channel> [--json]
-  ytx channel download <channel> [--max <n>] [--timestamps] [--concat] [--wait] [--output <zip>]
-  ytx playlist download <playlist> [--max <n>] [--timestamps] [--concat] [--wait] [--output <zip>]
+  ytx channel download <channel> [--max <n>] [--timestamps] [--concat] [--wait] [--output <zip>] [--format txt|srt|vtt|json]
+  ytx playlist download <playlist> [--max <n>] [--timestamps] [--concat] [--wait] [--output <zip>] [--format txt|srt|vtt|json]
   ytx jobs status <job_id> [--json]
   ytx jobs cancel <job_id> [--json]
-  ytx jobs download <job_id> [--output <zip>]
+  ytx jobs download <job_id> [--output <zip>] [--format txt|srt|vtt|json]
   ytx mcp
 
 Environment:
@@ -142,8 +142,8 @@ async function waitForJob(jobId) {
     }
     throw new Error(`Timed out waiting for job ${jobId}`);
 }
-async function downloadJob(jobId, output) {
-    const response = await apiFetch(`/api/v1/jobs/${jobId}/download`);
+async function downloadJob(jobId, output, format = "txt") {
+    const response = await apiFetch(`/api/v1/jobs/${jobId}/download?format=${encodeURIComponent(format)}`);
     if (!response.ok || !response.body) {
         const body = await parseResponse(response);
         throw new Error(typeof body === "string" ? body : JSON.stringify(body));
@@ -221,7 +221,7 @@ async function command(args) {
         if (hasFlag(args, "--wait")) {
             const status = await waitForJob(String(job.job_id));
             if (status.download_ready) {
-                await downloadJob(String(job.job_id), getFlag(args, "--output", "transcripts.zip"));
+                await downloadJob(String(job.job_id), getFlag(args, "--output", "transcripts.zip"), getFlag(args, "--format", "txt"));
             }
         }
         return;
@@ -240,7 +240,7 @@ async function command(args) {
         if (hasFlag(args, "--wait")) {
             const status = await waitForJob(String(job.job_id));
             if (status.download_ready) {
-                await downloadJob(String(job.job_id), getFlag(args, "--output", "transcripts.zip"));
+                await downloadJob(String(job.job_id), getFlag(args, "--output", "transcripts.zip"), getFlag(args, "--format", "txt"));
             }
         }
         return;
@@ -252,7 +252,7 @@ async function command(args) {
     }
     if (area === "jobs" && action === "download") {
         const jobId = requirePositional(value, "ytx jobs download <job_id>");
-        await downloadJob(jobId, getFlag(args, "--output", "transcripts.zip"));
+        await downloadJob(jobId, getFlag(args, "--output", "transcripts.zip"), getFlag(args, "--format", "txt"));
         return;
     }
     if (area === "jobs" && action === "cancel") {
