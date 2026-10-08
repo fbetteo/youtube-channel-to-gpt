@@ -78,10 +78,28 @@ def _is_usable(document: Dict[str, Any]) -> bool:
 
 
 async def load(video_id: str, preferred_language: Optional[str]) -> Optional[Dict[str, Any]]:
-    """Return the cached document, or None on miss/expiry/error."""
+    """
+    Return the cached document, or None on miss/expiry/error.
+
+    A miss for a specific language falls back to the 'auto' entry when that
+    entry's track is in the requested language: 'auto' takes the first listed
+    track and YouTube lists manual tracks before generated ones, so it is the
+    same track the language request would select.
+    """
     if MAX_AGE_DAYS is not None and MAX_AGE_DAYS <= 0:
         return None
-    key = cache_key(video_id, preferred_language)
+    language = requested_language_key(preferred_language)
+    document = await _read(_object_key(video_id, language))
+    if document is None and language != "auto":
+        fallback = await _read(_object_key(video_id, "auto"))
+        if fallback and fallback["language"].lower() == language.lower():
+            document = fallback
+    if document is not None:
+        await _index(document, hit=True)
+    return document
+
+
+async def _read(key: str) -> Optional[Dict[str, Any]]:
     try:
         s3_client, bucket = youtube_service.get_s3_client()
         response = await asyncio.to_thread(s3_client.get_object, Bucket=bucket, Key=key)
@@ -94,7 +112,6 @@ async def load(video_id: str, preferred_language: Optional[str]) -> Optional[Dic
         logger.info(f"Transcript cache entry {key} unusable or expired")
         return None
     logger.info(f"Transcript cache hit for {key}")
-    await _index(document, hit=True)
     return document
 
 

@@ -148,3 +148,26 @@ def test_developer_single_invalid_url_charges_nothing(monkeypatch):
     assert exc_info.value.status_code == 400
     mocks.reserve.assert_not_awaited()
     mocks.finalize.assert_not_awaited()
+
+
+def test_language_request_falls_back_to_matching_auto_entry(s3):
+    english = transcript_cache.build_document("vid", None, "en", True, SEGMENTS, 123)
+    s3.objects["transcript-cache/vid/auto.json"] = json.dumps(english).encode()
+
+    assert asyncio.run(transcript_cache.load("vid", "en")) == english
+    assert asyncio.run(transcript_cache.load("vid", "es")) is None  # track is English
+
+
+def test_youtube_client_requests_have_a_default_timeout(monkeypatch):
+    seen = {}
+
+    def fake_request(self, method, url, **kwargs):
+        seen.update(kwargs)
+
+    monkeypatch.setattr(transcript_cache.youtube_service.requests.Session, "request", fake_request)
+    session = transcript_cache.youtube_service._TimeoutSession()
+
+    session.request("GET", "https://www.youtube.com")
+    assert seen["timeout"] == transcript_cache.youtube_service.YOUTUBE_HTTP_TIMEOUT
+    session.request("GET", "https://www.youtube.com", timeout=3)
+    assert seen["timeout"] == 3

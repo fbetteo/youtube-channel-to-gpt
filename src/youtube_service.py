@@ -21,6 +21,7 @@ from urllib.parse import quote
 from typing import Dict, List, Optional, Any, Tuple
 
 import boto3
+import requests
 import yt_dlp
 from botocore.config import Config as BotoConfig
 from botocore.exceptions import ClientError
@@ -262,6 +263,18 @@ def get_s3_fallback_client():
 
 
 # Remove global ytt_api initialization, only keep YouTube API client
+# (connect, read) seconds for each YouTube request. youtube-transcript-api sets
+# no timeout, so a rotating proxy IP that stalls would block the thread for
+# minutes; failing fast lets the retry try a fresh IP instead.
+YOUTUBE_HTTP_TIMEOUT = (5, 15)
+
+
+class _TimeoutSession(requests.Session):
+    def request(self, *args, **kwargs):
+        kwargs.setdefault("timeout", YOUTUBE_HTTP_TIMEOUT)
+        return super().request(*args, **kwargs)
+
+
 def get_ytt_api() -> YouTubeTranscriptApi:
     """
     Create a new YouTubeTranscriptApi instance with proxy config if needed.
@@ -276,9 +289,11 @@ def get_ytt_api() -> YouTubeTranscriptApi:
                 proxy_password=settings.webshare_proxy_password,
                 retries_when_blocked=1,
             )
-            return YouTubeTranscriptApi(proxy_config=proxy_config)
+            return YouTubeTranscriptApi(
+                proxy_config=proxy_config, http_client=_TimeoutSession()
+            )
         else:
-            return YouTubeTranscriptApi()
+            return YouTubeTranscriptApi(http_client=_TimeoutSession())
     except Exception as e:
         logger.error(f"Error creating YouTubeTranscriptApi: {str(e)}")
         # Fallback to basic instance
