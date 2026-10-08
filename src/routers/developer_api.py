@@ -17,6 +17,7 @@ from typing import Annotated, Dict, Any, List, Optional
 from fastapi import APIRouter, HTTPException, Depends, Query, status
 from pydantic import BaseModel, Field, validator
 
+import summary_service
 import youtube_service
 from transcript_formats import OutputFormat, download_option_overrides
 from api_key_auth import (
@@ -171,7 +172,7 @@ class SingleTranscriptResponse(BaseModel):
     """Response with single video transcript."""
 
     video_id: str
-    title: str
+    title: Optional[str] = None  # not looked up yet; null rather than a guess
     transcript: str
     language: str
     character_count: int
@@ -469,6 +470,12 @@ async def _create_developer_discovery_placeholder(
 # ENDPOINTS
 # =============================================
 
+# Below nginx's 60 s proxy timeout, so callers get our 504 and a refund.
+SINGLE_TRANSCRIPT_TIMEOUT_SECONDS = 45
+# Developer jobs send no language, so the worker falls back to "en"; single
+# requests use the same so both share transcript cache entries.
+DEVELOPER_TRANSCRIPT_LANGUAGE = "en"
+
 
 @router.get("/", summary="API Health Check")
 async def api_root():
@@ -511,13 +518,19 @@ async def get_single_transcript(
     """
     Get transcript for a single YouTube video.
 
-    **Cost:** 1 credit per video
+    **Cost:** 1 credit per video, refunded when no transcript is returned.
 
-    Returns the full transcript text immediately (synchronous).
+    Served from the shared transcript cache when possible. If YouTube is slow
+    the call returns 504 after about 45 s; the fetch keeps running and fills the
+    cache, so retrying a minute later is usually instant.
     """
     user_id = api_key_data["user_id"]
 
-    # Check credits
+    try:
+        video_id = youtube_service.extract_youtube_id(request.video_url)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
     credits = await get_user_credits(user_id)
     if credits < 1:
         raise HTTPException(
@@ -525,42 +538,42 @@ async def get_single_transcript(
             detail="Insufficient credits. Need 1 credit for single video transcript.",
         )
 
+    await reserve_credits(user_id, 1)
     try:
-        # Extract video ID
-        video_id = youtube_service.extract_youtube_id(request.video_url)
-
-        # Reserve credit
-        await reserve_credits(user_id, 1)
-
-        # Get transcript using existing service
-        transcript_text, _, metadata = await youtube_service.get_single_transcript(
-            video_id=video_id,
-            output_dir=None,
-            include_timestamps=request.include_timestamps,
+        segments, metadata = await summary_service.load_transcript_within(
+            video_id, DEVELOPER_TRANSCRIPT_LANGUAGE, SINGLE_TRANSCRIPT_TIMEOUT_SECONDS
         )
-
-        # Track credit usage on API key
-        await increment_api_key_credits_used(api_key_data["key_id"], 1)
-
-        return SingleTranscriptResponse(
-            video_id=video_id,
-            title=metadata.get("title", "Unknown"),
-            transcript=transcript_text,
-            language=metadata.get("transcript_language", "unknown"),
-            character_count=len(transcript_text),
-            credits_used=1,
+    except asyncio.TimeoutError:
+        await finalize_credits(user_id, "", 0, 1)
+        raise HTTPException(
+            status_code=504,
+            detail=(
+                "Transcript retrieval timed out; no credit was charged. "
+                "Retry in a minute: the transcript is usually cached by then."
+            ),
         )
-
     except ValueError as e:
-        # Refund credit if extraction failed
         await finalize_credits(user_id, "", 0, 1)
         raise HTTPException(status_code=400, detail=str(e))
-    except HTTPException:
-        raise
     except Exception as e:
         logger.error(f"Error getting single transcript: {e}", exc_info=True)
         await finalize_credits(user_id, "", 0, 1)
         raise HTTPException(status_code=500, detail=f"Failed to get transcript: {e}")
+
+    # The credit also covers a website summary of this video for 24 hours.
+    await summary_service.record_paid_access(user_id, video_id)
+    await increment_api_key_credits_used(api_key_data["key_id"], 1)
+
+    transcript_text = youtube_service.format_transcript_segments(
+        segments, include_timestamps=request.include_timestamps
+    )
+    return SingleTranscriptResponse(
+        video_id=video_id,
+        transcript=transcript_text,
+        language=metadata.get("transcript_language", "unknown"),
+        character_count=len(transcript_text),
+        credits_used=1,
+    )
 
 
 @router.get(

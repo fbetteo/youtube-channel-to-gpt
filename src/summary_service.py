@@ -3,8 +3,9 @@ Single-video AI summaries.
 
 Captions are grouped into ~30 s numbered blocks. The model cites block numbers,
 never times; the server maps them to real start times, so timestamps cannot be
-hallucinated. Transcripts and summaries are cached in Postgres when the cache
-tables exist (see db_youtube_transcripts/migration_add_video_summary_cache.py).
+hallucinated. Transcripts use the shared cache (src/transcript_cache.py, S3 +
+Postgres index); summaries are cached in Postgres when the cache tables exist
+(see db_youtube_transcripts/migration_add_video_summary_cache.py).
 """
 
 import asyncio
@@ -14,6 +15,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from openai import AsyncOpenAI
 
+import transcript_cache
 import youtube_service
 from config_v2 import settings
 
@@ -220,58 +222,28 @@ async def generate_summary(
 
 
 async def _load_cached_transcript(
-    video_id: str, requested_language: str
+    video_id: str, preferred_language: Optional[str]
 ) -> Optional[Tuple[List[Dict[str, Any]], Dict[str, Any]]]:
-    try:
-        from db_youtube_transcripts.database import get_db_connection
-
-        async with get_db_connection() as conn:
-            row = await conn.fetchrow(
-                """
-                SELECT language, is_generated, segments FROM video_transcripts
-                WHERE video_id = $1 AND requested_language = $2
-                """,
-                video_id,
-                requested_language,
-            )
-        if not row:
-            return None
-        metadata = {
-            "video_id": video_id,
-            "transcript_language": row["language"],
-            "transcript_type": "auto-generated" if row["is_generated"] else "manual",
-        }
-        return json.loads(row["segments"]), metadata
-    except Exception as e:
-        logger.warning(f"Transcript cache read failed for {video_id}: {e}")
+    document = await transcript_cache.load(video_id, preferred_language)
+    if not document:
         return None
+    return document["segments"], transcript_cache.to_metadata(document)
 
 
 async def _save_cached_transcript(
     video_id: str,
-    requested_language: str,
+    preferred_language: Optional[str],
     segments: List[Dict[str, Any]],
     metadata: Dict[str, Any],
 ) -> None:
-    try:
-        from db_youtube_transcripts.database import get_db_connection
-
-        async with get_db_connection() as conn:
-            await conn.execute(
-                """
-                INSERT INTO video_transcripts
-                    (video_id, requested_language, language, is_generated, segments)
-                VALUES ($1, $2, $3, $4, $5::jsonb)
-                ON CONFLICT (video_id, requested_language) DO NOTHING
-                """,
-                video_id,
-                requested_language,
-                metadata["transcript_language"],
-                metadata["transcript_type"] == "auto-generated",
-                json.dumps(segments),
-            )
-    except Exception as e:
-        logger.warning(f"Transcript cache write failed for {video_id}: {e}")
+    document = transcript_cache.build_document(
+        video_id,
+        preferred_language,
+        language=metadata["transcript_language"],
+        is_generated=metadata["transcript_type"] == "auto-generated",
+        segments=segments,
+    )
+    await transcript_cache.save(document, source="single")
 
 
 def _summary_key(
@@ -346,15 +318,36 @@ async def load_transcript(
     Caption segments and language metadata, from the cache or YouTube.
     Shared by raw downloads and summaries. Raises ValueError without captions.
     """
-    requested_language = preferred_language or "auto"
-    cached = await _load_cached_transcript(video_id, requested_language)
+    cached = await _load_cached_transcript(video_id, preferred_language)
     if cached:
         return cached
     segments, metadata = await youtube_service.get_transcript_data(
         video_id, preferred_language
     )
-    await _save_cached_transcript(video_id, requested_language, segments, metadata)
+    await _save_cached_transcript(video_id, preferred_language, segments, metadata)
     return segments, metadata
+
+
+# Fetches that outlived their request; kept referenced so they can finish.
+_background_fetches: set = set()
+
+
+async def load_transcript_within(
+    video_id: str, preferred_language: Optional[str], timeout: float
+) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    """
+    load_transcript with a time limit (raises asyncio.TimeoutError). On timeout
+    the fetch keeps running and still fills the cache, so a retry a minute
+    later is usually a cache hit instead of another slow proxy fetch.
+    """
+    task = asyncio.ensure_future(load_transcript(video_id, preferred_language))
+    _background_fetches.add(task)
+    # Drop the reference when done; reading the exception avoids
+    # "Task exception was never retrieved" for fetches nobody awaits anymore.
+    task.add_done_callback(
+        lambda t: (_background_fetches.discard(t), t.cancelled() or t.exception())
+    )
+    return await asyncio.wait_for(asyncio.shield(task), timeout=timeout)
 
 
 # ---- Paid access: one credit covers a video's transcript and its summary ----
@@ -412,9 +405,8 @@ async def summarize_video(
     length: str,
 ) -> Dict[str, Any]:
     try:
-        segments, metadata = await asyncio.wait_for(
-            load_transcript(video_id, preferred_language),
-            timeout=TRANSCRIPT_TIMEOUT_SECONDS,
+        segments, metadata = await load_transcript_within(
+            video_id, preferred_language, TRANSCRIPT_TIMEOUT_SECONDS
         )
     except asyncio.TimeoutError:
         raise SummaryError(504, "Transcript retrieval timed out. Please try again.")

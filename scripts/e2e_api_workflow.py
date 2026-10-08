@@ -308,12 +308,17 @@ def save_results(report: dict, run_dir: Path) -> None:
         "run_dir": run_dir.name,
     }
     csv_path = RESULTS_DIR / "runs.csv"
-    new_file = not csv_path.exists()
-    with csv_path.open("a", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=list(row))
-        if new_file:
-            writer.writeheader()
-        writer.writerow(row)
+    rows = []
+    if csv_path.exists():
+        with csv_path.open(newline="", encoding="utf-8") as f:
+            rows = list(csv.DictReader(f))
+    rows.append(row)
+    # Rewrite the whole file so old rows stay aligned if columns were added.
+    fields = list(dict.fromkeys(list(row) + [k for r in rows for k in r]))
+    with csv_path.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows(rows)
 
 
 def print_summary(report: dict) -> None:
