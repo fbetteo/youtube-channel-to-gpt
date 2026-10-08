@@ -69,7 +69,7 @@ The MCP server exposes these tools:
 
 - `get_transcript`: returns a single transcript immediately.
 - `get_channel_info`: validates a channel and returns metadata.
-- `list_channel_videos`: previews channel videos.
+- `list_channel_videos`: previews channel videos (`limit`, default 100; `limit=N` shows exactly what `start_channel_job` with `max_videos=N` downloads; `has_more` tells if there are more).
 - `start_channel_job`: starts an async channel transcript job.
 - `start_playlist_job`: starts an async playlist transcript job.
 - `get_job_status`: polls an async job.

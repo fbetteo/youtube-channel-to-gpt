@@ -1679,10 +1679,12 @@ async def get_channel_info(channel_name: str) -> Dict[str, Any]:
         )
 
         return {
-            "title": info.get("title", ""),
+            # The tab title reads "<channel> - Videos"; prefer the channel name.
+            "title": info.get("channel") or info.get("uploader") or info.get("title", ""),
             "description": info.get("description", ""),
             "thumbnail": thumbnail_url,
-            "videoCount": info.get("playlist_count", 0),
+            # Usually null: YouTube no longer reports a count for channel tabs.
+            "videoCount": info.get("playlist_count"),
             "subscriberCount": subscriber_count,
             "viewCount": info.get("view_count", 0),
             "channelId": channel_id,
@@ -2128,12 +2130,16 @@ CHANNEL_VIDEO_TABS = {"videos": "video", "shorts": "short", "streams": "live"}
 
 
 def _fetch_all_channel_videos(
-    channel_id: str, preferred_language: Optional[str] = None
+    channel_id: str,
+    preferred_language: Optional[str] = None,
+    max_per_tab: Optional[int] = None,
 ) -> List[Dict[str, Any]]:
     """
     Fetch all videos from a channel using yt-dlp: long-form videos, Shorts, and
     past livestreams (which YouTube lists only under the streams tab).
-    The tabs are fetched in parallel. Returns a list of video metadata dicts.
+    The tabs are fetched in parallel. Returns a list of video metadata dicts,
+    ordered by tab (videos, shorts, streams), each tab newest first.
+    max_per_tab stops each tab listing early, which keeps big channels fast.
     """
     logger.info(f"Fetching all videos for channel {channel_id} using yt-dlp")
 
@@ -2146,6 +2152,8 @@ def _fetch_all_channel_videos(
         "ignoreerrors": True,
         "extractor_args": {"youtubetab": {"approximate_date": [""]}},
     }
+    if max_per_tab:
+        base_ydl_opts["playlistend"] = max_per_tab
 
     def _fetch_tab(tab: str) -> Optional[Dict[str, Any]]:
         try:
@@ -2226,7 +2234,9 @@ def _fetch_all_channel_videos(
 
 
 async def get_all_channel_videos(
-    channel_id: str, preferred_language: Optional[str] = None
+    channel_id: str,
+    preferred_language: Optional[str] = None,
+    max_per_tab: Optional[int] = None,
 ) -> List[Dict[str, Any]]:
     """
     Async wrapper for _fetch_all_channel_videos with better error handling and logging.
@@ -2240,7 +2250,7 @@ async def get_all_channel_videos(
     try:
         logger.info(f"Fetching all videos for channel {channel_id}")
         videos = await asyncio.to_thread(
-            _fetch_all_channel_videos, channel_id, preferred_language
+            _fetch_all_channel_videos, channel_id, preferred_language, max_per_tab
         )
         logger.info(
             f"Successfully fetched {len(videos)} videos for channel {channel_id}"

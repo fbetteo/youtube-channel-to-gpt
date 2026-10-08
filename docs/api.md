@@ -23,6 +23,10 @@
 
 Download-time overrides: the same endpoints accept optional `include_timestamps`, `include_video_title`, `include_video_id`, `include_video_url`, `include_view_count`, and `concatenate_all` (query parameters on the GETs, body fields on `/download-all-content`, which already had `concatenate_all`). Omitted/null keeps the job's saved `formatting_options` (`transcript_formats.merge_formatting_options`; ZIP builders apply it via `youtube_service.apply_option_overrides`). They change rendered videos only: stored-`.txt` videos keep their original text, though concatenation still applies to them. No credits are charged for re-downloads. `/user/download-history` items include `formattingOptions` (the job's saved options) so the website can prefill its download picker. While the worker still writes both files, `render_text` must match its `.txt` byte for byte: `tests/test_transcript_segments_cache_and_formats.py` checks this, and `scripts/compare_rendered_txt.py` (read-only, needs DB/S3 config) compares real stored jobs.
 
+## Channel video listing
+
+`GET /api/v1/channels/{channel}/videos?limit=N` (default 100, max 2000; CLI `--limit`, MCP `limit`) returns up to `limit` videos plus `has_more`. Order is the channel job order: long-form, then Shorts, then streams, each newest first, so `limit=N` previews what `max_videos=N` downloads. Each tab is capped in yt-dlp (`playlistend`, `get_all_channel_videos(max_per_tab=...)`) so large channels answer well inside the 60 s nginx timeout; an uncapped full listing of a big channel does not. Developer channel jobs with `max_videos` use the same cap during discovery. `video_count` from `/channels/{channel}/info` is usually null (yt-dlp gets no count for channel tabs) and `title` is the channel name, not the tab title.
+
 ## Single-video summary
 
 Website `POST /summaries/single` (`src/transcript_api.py`, logic in

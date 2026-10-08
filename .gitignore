@@ -11,3 +11,5 @@
 /src/server.log
 *.pyc
 *.zip
+# Local e2e run results (scripts/e2e_api_workflow.py)
+/scripts/e2e_results/

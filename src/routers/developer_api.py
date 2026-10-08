@@ -12,9 +12,9 @@ import asyncio
 import logging
 import time
 import uuid
-from typing import Dict, Any, List, Optional
+from typing import Annotated, Dict, Any, List, Optional
 
-from fastapi import APIRouter, HTTPException, Depends, status
+from fastapi import APIRouter, HTTPException, Depends, Query, status
 from pydantic import BaseModel, Field, validator
 
 import youtube_service
@@ -199,6 +199,7 @@ class VideoInfo(BaseModel):
     duration_category: Optional[str]
     view_count: Optional[int]
     published_at: Optional[str]
+    type: Optional[str] = None  # video, short, or live
 
 
 class ChannelVideosResponse(BaseModel):
@@ -206,9 +207,11 @@ class ChannelVideosResponse(BaseModel):
 
     channel_id: str
     channel_name: str
-    total_videos: int
+    total_videos: int  # videos returned in this response
     videos: List[VideoInfo]
     duration_breakdown: Dict[str, int]
+    limit: int
+    has_more: bool  # the channel has more videos than `limit`
 
 
 # =============================================
@@ -298,7 +301,11 @@ async def _start_developer_job_after_discovery(
             channel_info = await youtube_service.get_channel_info(source_input)
             source_id = channel_info.get("channelId", source_input)
             source_name = channel_info.get("title", source_input)
-            all_videos = await youtube_service.get_all_channel_videos(source_id)
+            # Same tab order as the full listing, so capping each tab at
+            # max_videos keeps the first max_videos unchanged.
+            all_videos = await youtube_service.get_all_channel_videos(
+                source_id, max_per_tab=max_videos
+            )
         else:
             source_id = youtube_service.extract_playlist_id(source_input)
             playlist_info = await youtube_service.get_playlist_info(source_id)
@@ -575,12 +582,12 @@ async def get_channel_info(
         info = await youtube_service.get_channel_info(channel)
 
         return ChannelInfoResponse(
-            channel_id=info.get("id", ""),
+            channel_id=info.get("channelId") or "",
             title=info.get("title", ""),
             description=info.get("description"),
             subscriber_count=info.get("subscriberCount"),
             video_count=info.get("videoCount"),
-            thumbnail_url=info.get("thumbnailUrl"),
+            thumbnail_url=info.get("thumbnail") or None,
         )
 
     except ValueError as e:
@@ -596,31 +603,39 @@ async def get_channel_info(
     summary="List Channel Videos",
 )
 async def list_channel_videos(
-    channel: str, api_key_data: Dict = Depends(validate_api_key)
+    channel: str,
+    api_key_data: Dict = Depends(validate_api_key),
+    limit: Annotated[int, Query(ge=1, le=2000)] = 100,
 ):
     """
-    List all videos from a YouTube channel.
+    List videos from a YouTube channel, up to `limit` (default 100, max 2000).
 
     **Cost:** Free (no credits)
 
-    Returns video metadata including duration categories.
-    Use this to preview what will be downloaded.
+    Order: long-form videos, then Shorts, then past livestreams, each newest
+    first. This is the order channel jobs use, so `limit=N` previews exactly
+    what a job with `max_videos=N` downloads. `has_more` is true when the
+    channel has more videos than `limit`.
     """
     try:
         # Get channel info first
         channel_info = await youtube_service.get_channel_info(channel)
         channel_id = channel_info.get("channelId", channel)
-        logger.info(f"Listing videos for channel ID: {channel_id}")
+        logger.info(f"Listing up to {limit} videos for channel ID: {channel_id}")
 
-        # Get all videos
-        videos = await youtube_service.get_all_channel_videos(channel_id)
+        # One extra per tab tells us whether the channel has more than `limit`.
+        videos = await youtube_service.get_all_channel_videos(
+            channel_id, max_per_tab=limit + 1
+        )
+        has_more = len(videos) > limit
+        videos = videos[:limit]
 
         # Calculate duration breakdown
         duration_breakdown = {"short": 0, "medium": 0, "long": 0}
         video_list = []
 
         for v in videos:
-            category = v.get("duration_category", "medium")
+            category = v.get("duration", "unknown")
             duration_breakdown[category] = duration_breakdown.get(category, 0) + 1
 
             video_list.append(
@@ -630,10 +645,11 @@ async def list_channel_videos(
                     url=v.get(
                         "url", f"https://www.youtube.com/watch?v={v.get('id', '')}"
                     ),
-                    duration_seconds=v.get("duration_seconds"),
+                    duration_seconds=v.get("duration_seconds") or None,
                     duration_category=category,
-                    view_count=v.get("view_count"),
-                    published_at=v.get("published_at"),
+                    view_count=v.get("viewCount"),
+                    published_at=v.get("publishedAt"),
+                    type=v.get("type"),
                 )
             )
 
@@ -643,6 +659,8 @@ async def list_channel_videos(
             total_videos=len(video_list),
             videos=video_list,
             duration_breakdown=duration_breakdown,
+            limit=limit,
+            has_more=has_more,
         )
 
     except ValueError as e:

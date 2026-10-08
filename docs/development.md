@@ -26,6 +26,8 @@ Choose affected files in `tests/`: agent interfaces, playlist lifecycle, discove
 
 Avoid bare `pytest` discovery for routine checks: root and `src/` contain manual scripts that can contact AWS/YouTube or require configured services. Do not treat live download/payment scripts as unit tests. Build the CLI for TypeScript changes; check frontend changes in its repo.
 
+Live Developer API walkthrough (spends real credits: 1 + `--max-videos`): `scripts/e2e_api_workflow.py --channel @handle --max-videos 5 [-i] [--label tag]` uses `YOUTUBE_TRANSCRIPT_API_KEY` and `YOUTUBE_TRANSCRIPT_API_BASE_URL` like the CLI. It covers credits, channel info and listing, a single video, a channel job with polling, the ZIP download, and a credit check. Results go to the gitignored `scripts/e2e_results/` (a per-run folder with `report.json`, `run.log` and the ZIP, plus a shared `runs.csv` for comparing runs).
+
 ## Configuration and operations
 
 ### Single-video summaries

@@ -25,7 +25,7 @@ Usage:
   ytx credits
   ytx transcript <video_url_or_id> [--timestamps] [--json]
   ytx channel info <channel> [--json]
-  ytx channel videos <channel> [--json]
+  ytx channel videos <channel> [--limit <n>] [--json]
   ytx channel download <channel> [--max <n>] [--timestamps] [--concat] [--wait] [--output <zip>] [--format txt|srt|vtt|json]
   ytx playlist download <playlist> [--max <n>] [--timestamps] [--concat] [--wait] [--output <zip>] [--format txt|srt|vtt|json]
   ytx jobs status <job_id> [--json]
@@ -204,7 +204,9 @@ async function command(args) {
     }
     if (area === "channel" && action === "videos") {
         const channel = requirePositional(value, "ytx channel videos <channel>");
-        printPayload(await requestJson(`/api/v1/channels/${encodeURIComponent(channel)}/videos`), hasFlag(args, "--json"));
+        const limit = getFlag(args, "--limit");
+        const query = limit ? `?limit=${encodeURIComponent(limit)}` : "";
+        printPayload(await requestJson(`/api/v1/channels/${encodeURIComponent(channel)}/videos${query}`), hasFlag(args, "--json"));
         return;
     }
     if (area === "channel" && action === "download") {
@@ -282,7 +284,8 @@ async function callTool(name, args) {
         return (await requestJson(`/api/v1/channels/${encodeURIComponent(String(args.channel))}/info`));
     }
     if (name === "list_channel_videos") {
-        return (await requestJson(`/api/v1/channels/${encodeURIComponent(String(args.channel))}/videos`));
+        const query = args.limit ? `?limit=${encodeURIComponent(String(args.limit))}` : "";
+        return (await requestJson(`/api/v1/channels/${encodeURIComponent(String(args.channel))}/videos${query}`));
     }
     if (name === "start_channel_job") {
         return (await requestJson("/api/v1/transcripts/channel", {

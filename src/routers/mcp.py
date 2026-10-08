@@ -84,9 +84,23 @@ TOOLS = [
     },
     {
         "name": "list_channel_videos",
-        "description": "List videos and duration metadata for a YouTube channel.",
+        "description": (
+            "List a YouTube channel's videos with duration metadata, in the order "
+            "channel jobs use (long-form, then Shorts, then livestreams; newest "
+            "first). limit=N previews what start_channel_job with max_videos=N "
+            "downloads; has_more tells if the channel has more."
+        ),
         "inputSchema": _tool_schema(
-            {"channel": {"type": "string", "description": "Handle, name, or ID."}},
+            {
+                "channel": {"type": "string", "description": "Handle, name, or ID."},
+                "limit": {
+                    "type": "integer",
+                    "description": "Maximum videos to return.",
+                    "default": 100,
+                    "minimum": 1,
+                    "maximum": 2000,
+                },
+            },
             ["channel"],
         ),
     },
@@ -206,7 +220,12 @@ async def _call_tool(
         return _content_json(response.model_dump())
 
     if name == "list_channel_videos":
-        response = await developer_api.list_channel_videos(args["channel"], api_key_data)
+        response = await developer_api.list_channel_videos(
+            args["channel"],
+            api_key_data,
+            # Direct call skips FastAPI's Query validation, so clamp here.
+            limit=min(max(int(args.get("limit", 100)), 1), 2000),
+        )
         return _content_json(response.model_dump())
 
     if name == "start_channel_job":
