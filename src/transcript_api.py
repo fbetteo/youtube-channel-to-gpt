@@ -2189,9 +2189,8 @@ async def download_transcript_raw(
         # Get transcript (cache first) with timeout protection
         transcript_start = time.time()
         try:
-            segments, metadata = await asyncio.wait_for(
-                summary_service.load_transcript(video_id, request.preferred_language),
-                timeout=30.0,
+            segments, metadata = await summary_service.load_transcript_within(
+                video_id, request.preferred_language, timeout=30.0
             )
             transcript_text = youtube_service.format_transcript_segments(
                 segments, include_timestamps=request.include_timestamps

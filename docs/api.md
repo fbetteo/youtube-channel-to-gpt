@@ -61,10 +61,37 @@ refunded on our failures (transcript timeout 504, provider error 502, video over
 `SUMMARY_MAX_INPUT_CHARS` 422, unexpected 500). A video without captions returns
 400 and stays charged, matching raw downloads. Anonymous users consume the same
 in-memory limiter as `/download/transcript/raw`. 503 before charging when
-`SUMMARY_OPENAI_API_KEY` is unset. Transcripts and summaries are cached in
-`video_transcripts` / `video_summaries` when those tables exist; cache errors
-fall back to live work. Raw downloads share the same transcript cache
-(`summary_service.load_transcript`). Plan and next phases: `docs/plans/single-video-summary.md`.
+`SUMMARY_OPENAI_API_KEY` is unset. Transcripts use the shared transcript cache
+(below); summaries are cached in `video_summaries` when that table exists. Cache
+errors fall back to live work. Plan and next phases: `docs/plans/single-video-summary.md`.
+
+## Shared transcript cache
+
+`src/transcript_cache.py`. One cache for every path: website raw downloads and
+summaries, developer `/api/v1/transcripts/single` (so MCP `get_transcript` and
+`ytx transcript`), and the Lambda worker. Segments live in S3 at
+`transcript-cache/{video_id}/{requested_language|auto}.json`, in the worker's
+format (`tests/test_transcript_cache.py` checks they match). Lookups read S3
+directly, so worker-written entries hit immediately. Postgres `transcript_cache`
+indexes entries (language, size, `source`, `hit_count`, `last_hit_at`, no
+segments) for batch lookups and stats; a hit or write upserts it. Single paths go
+through `summary_service.load_transcript` / `load_transcript_within`: on timeout
+the fetch keeps running and still fills the cache, so a retry is usually a hit.
+`TRANSCRIPT_CACHE_MAX_AGE_DAYS` means the same on the API as on the worker.
+
+Keys use the requested language: website single requests send none (`auto`);
+developer single requests and developer jobs default to `en`, so those two share
+entries but differ from website `auto` entries.
+
+Developer single: 1 credit, refunded on timeout (504 after 45 s, below nginx's
+60 s), missing captions (400) or errors (500); an invalid URL charges nothing. It
+records `video_access`, so a website summary within 24 h is free. `title` is
+null until titles are cached.
+
+Setup: `db_youtube_transcripts/migration_add_transcript_cache.py`, then
+`scripts/backfill_transcript_cache.py` (dry run; `--apply` copies old
+`video_transcripts` rows to S3 and indexes existing S3 entries). The old
+`video_transcripts` table is no longer read or written.
 
 ## Contract changes
 
