@@ -18,6 +18,7 @@ sys.modules.setdefault(
     ),
 )
 
+import job_result_processor
 import summary_service
 import transcript_cache
 from routers import developer_api
@@ -171,3 +172,66 @@ def test_youtube_client_requests_have_a_default_timeout(monkeypatch):
     assert seen["timeout"] == transcript_cache.youtube_service.YOUTUBE_HTTP_TIMEOUT
     session.request("GET", "https://www.youtube.com", timeout=3)
     assert seen["timeout"] == 3
+
+
+def test_worker_index_row_matches_the_api():
+    lambda_module = load_lambda_module()
+    document = transcript_cache.build_document("vid", "en", "en", True, SEGMENTS, 123)
+
+    worker = lambda_module.build_cache_index_row(document, hit=True)
+    assert worker.pop("hit") is True
+    assert worker == transcript_cache.index_row(document)
+
+
+def _completion_mocks(monkeypatch):
+    job = {"status": "processing", "user_id": "user-1"}
+    monkeypatch.setattr(job_result_processor, "_get_job_status", AsyncMock(return_value=job))
+    monkeypatch.setattr(
+        job_result_processor.JobManager, "mark_video_completed", AsyncMock(return_value=True)
+    )
+    monkeypatch.setattr(
+        job_result_processor,
+        "_finalize_job_if_needed",
+        AsyncMock(return_value={"status": "processing", "processed_count": 1, "total_videos": 2}),
+    )
+    upsert = AsyncMock()
+    monkeypatch.setattr(transcript_cache, "_upsert", upsert)
+    return upsert
+
+
+def test_job_completion_indexes_the_worker_cache_entry(monkeypatch):
+    upsert = _completion_mocks(monkeypatch)
+    document = transcript_cache.build_document("vid", "en", "en", True, SEGMENTS, 123)
+    entry = load_lambda_module().build_cache_index_row(document, hit=True)
+
+    asyncio.run(
+        job_result_processor.process_video_completion(
+            "job-id", {"video_id": "vid", "cache_entry": entry}
+        )
+    )
+
+    upsert.assert_awaited_once_with(entry, source="job", hit=True)
+
+
+def test_job_completion_without_a_matching_entry_skips_the_index(monkeypatch):
+    upsert = _completion_mocks(monkeypatch)
+    document = transcript_cache.build_document("other", "en", "en", True, SEGMENTS, 123)
+    entry = transcript_cache.index_row(document)
+
+    for data in ({"video_id": "vid"}, {"video_id": "vid", "cache_entry": entry}):
+        result = asyncio.run(job_result_processor.process_video_completion("job-id", data))
+        assert result["status"] == "updated"
+    upsert.assert_not_awaited()
+
+
+def test_worker_index_failure_does_not_fail_the_completion(monkeypatch):
+    upsert = _completion_mocks(monkeypatch)
+    upsert.side_effect = RuntimeError("db down")
+
+    result = asyncio.run(
+        job_result_processor.process_video_completion(
+            "job-id", {"video_id": "vid", "cache_entry": {"video_id": "vid"}}
+        )
+    )
+
+    assert result["status"] == "updated"

@@ -383,6 +383,22 @@ def build_segments_document(
     }
 
 
+def build_cache_index_row(document: Dict[str, Any], hit: bool) -> Dict[str, Any]:
+    """Index fields for the API's Postgres transcript_cache (this worker has no
+    database access). Must match src/transcript_cache.py index_row."""
+    segments = document["segments"]
+    return {
+        "video_id": document["video_id"],
+        "requested_language": document["requested_language"],
+        "language": document["language"],
+        "is_generated": bool(document["is_generated"]),
+        "segment_count": len(segments),
+        "char_count": sum(len(str(s.get("text", ""))) for s in segments),
+        "fetched_at": document.get("fetched_at"),
+        "hit": hit,
+    }
+
+
 def load_cached_transcript(
     s3_client, bucket_name: str, cache_key: str, now: Optional[float] = None
 ) -> Optional[Dict[str, Any]]:
@@ -413,7 +429,7 @@ def load_cached_transcript(
 
 def save_cached_transcript(
     s3_client, bucket_name: str, cache_key: str, document: Dict[str, Any]
-) -> None:
+) -> bool:
     """Best-effort cache write; a failure must not fail the video."""
     try:
         s3_client.put_object(
@@ -422,8 +438,10 @@ def save_cached_transcript(
             Body=json.dumps(document, ensure_ascii=False).encode("utf-8"),
             ContentType="application/json",
         )
+        return True
     except Exception as e:
         logger.warning(f"Transcript cache write failed for {cache_key}: {e}")
+        return False
 
 
 def sanitize_filename(filename: str, max_len: int = 30) -> str:
@@ -600,6 +618,7 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
         fetch_start = time.time()
         document = load_cached_transcript(s3_client, bucket_name, cache_key)
         transcript_source = "cache"
+        cached = document is not None
         if document is None:
             transcript_source = "youtube"
             transcript, fetched_transcript, attempt_count = (
@@ -615,7 +634,9 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
                 segments=fetched_transcript.to_raw_data(),
                 fetched_at=int(time.time()),
             )
-            save_cached_transcript(s3_client, bucket_name, cache_key, document)
+            cached = save_cached_transcript(
+                s3_client, bucket_name, cache_key, document
+            )
             logger.info(
                 f"API fetch took {time.time() - fetch_start:.3f}s for video {video_id} "
                 f"(attempts={attempt_count})"
@@ -632,6 +653,12 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
             "transcript_source": transcript_source,
         }
         transcript_data = document["segments"]
+        # None when the cache write failed: nothing in S3 to index.
+        cache_entry = (
+            build_cache_index_row(document, hit=transcript_source == "cache")
+            if cached
+            else None
+        )
 
         # Format transcript - optimize by using string builder approach
         format_start = time.time()
@@ -727,6 +754,7 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
             "s3_key": s3_key,
             "transcript_length": len(transcript_text),
             "metadata": metadata,
+            "cache_entry": cache_entry,
         }
         callback_called = False
         if send_result_to_sqs(result_message):
@@ -738,6 +766,7 @@ def lambda_handler(event: Dict[str, Any], context) -> Dict[str, Any]:
                 "s3_key": s3_key,
                 "transcript_length": len(transcript_text),
                 "metadata": metadata,
+                "cache_entry": cache_entry,
             }
 
             callback_called = call_api_callback(callback_url, completion_data)

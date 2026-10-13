@@ -74,7 +74,9 @@ summaries, developer `/api/v1/transcripts/single` (so MCP `get_transcript` and
 format (`tests/test_transcript_cache.py` checks they match). Lookups read S3
 directly, so worker-written entries hit immediately. Postgres `transcript_cache`
 indexes entries (language, size, `source`, `hit_count`, `last_hit_at`, no
-segments) for batch lookups and stats; a hit or write upserts it. Single paths go
+segments) for batch lookups and stats; a hit or write upserts it. Worker entries
+are indexed by the API when the job result arrives (see
+[jobs-and-credits.md](jobs-and-credits.md)). Single paths go
 through `summary_service.load_transcript` / `load_transcript_within`: on timeout
 the fetch keeps running and still fills the cache, so a retry is usually a hit.
 `TRANSCRIPT_CACHE_MAX_AGE_DAYS` means the same on the API as on the worker.

@@ -18,6 +18,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(os.path.dirname(SCRIPT_DIR), "db_youtube_transcripts"))
 
 from db_youtube_transcripts.job_manager import JobManager
+import transcript_cache
 
 
 logger = logging.getLogger(__name__)
@@ -85,6 +86,13 @@ async def process_video_completion(
 ) -> Dict[str, Any]:
     video_id = completion_data["video_id"]
     job = await _get_job_status(job_id)
+
+    # The worker cached this transcript in S3 but cannot reach Postgres, so it
+    # sends the index row. Absent from older workers or when its cache write failed.
+    cache_entry = completion_data.get("cache_entry")
+    if isinstance(cache_entry, dict) and cache_entry.get("video_id") == video_id:
+        await transcript_cache.index_worker_entry(cache_entry)
+
     if job.get("status") in TERMINAL_JOB_STATUSES:
         logger.info(
             "Ignoring late completion for video %s in terminal job %s (%s)",

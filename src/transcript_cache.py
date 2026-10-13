@@ -135,45 +135,72 @@ async def save(document: Dict[str, Any], source: str) -> None:
     await _index(document, source=source)
 
 
+def index_row(document: Dict[str, Any]) -> Dict[str, Any]:
+    """Index fields of a document, without segments. The worker builds the same
+    row (build_cache_index_row) and sends it with each completed job video."""
+    segments = document["segments"]
+    return {
+        "video_id": document["video_id"],
+        "requested_language": document["requested_language"],
+        "language": document["language"],
+        "is_generated": bool(document["is_generated"]),
+        "segment_count": len(segments),
+        "char_count": sum(len(str(s.get("text", ""))) for s in segments),
+        "fetched_at": document.get("fetched_at"),
+    }
+
+
+async def index_worker_entry(row: Dict[str, Any]) -> None:
+    """Index an entry the Lambda worker wrote to S3 (it has no database access).
+    `row["hit"]` is true when the worker reused the entry. Never raises."""
+    try:
+        await _upsert(row, source="job", hit=bool(row.get("hit")))
+    except Exception as e:
+        logger.warning(f"Transcript cache index failed for {row.get('video_id')}: {e}")
+
+
 async def _index(document: Dict[str, Any], source: str = "unknown", hit: bool = False) -> None:
     """Upsert the index row; a hit also bumps hit_count. Never raises."""
     try:
-        from db_youtube_transcripts.database import get_db_connection
-
-        segments = document["segments"]
-        async with get_db_connection() as conn:
-            await conn.execute(
-                """
-                INSERT INTO transcript_cache
-                    (video_id, requested_language, language, is_generated,
-                     segment_count, char_count, fetched_at, source,
-                     hit_count, last_hit_at)
-                VALUES ($1, $2, $3, $4, $5, $6, to_timestamp($7), $8,
-                        CASE WHEN $9 THEN 1 ELSE 0 END,
-                        CASE WHEN $9 THEN NOW() END)
-                ON CONFLICT (video_id, requested_language) DO UPDATE SET
-                    language = EXCLUDED.language,
-                    is_generated = EXCLUDED.is_generated,
-                    segment_count = EXCLUDED.segment_count,
-                    char_count = EXCLUDED.char_count,
-                    fetched_at = EXCLUDED.fetched_at,
-                    hit_count = transcript_cache.hit_count
-                        + CASE WHEN $9 THEN 1 ELSE 0 END,
-                    last_hit_at = CASE WHEN $9 THEN NOW()
-                        ELSE transcript_cache.last_hit_at END
-                """,
-                document["video_id"],
-                document["requested_language"],
-                document["language"],
-                bool(document["is_generated"]),
-                len(segments),
-                sum(len(str(s.get("text", ""))) for s in segments),
-                float(document.get("fetched_at") or time.time()),
-                source,
-                hit,
-            )
+        await _upsert(index_row(document), source=source, hit=hit)
     except Exception as e:
         logger.warning(f"Transcript cache index failed for {document.get('video_id')}: {e}")
+
+
+async def _upsert(row: Dict[str, Any], source: str, hit: bool) -> None:
+    from db_youtube_transcripts.database import get_db_connection
+
+    async with get_db_connection() as conn:
+        await conn.execute(
+            """
+            INSERT INTO transcript_cache
+                (video_id, requested_language, language, is_generated,
+                 segment_count, char_count, fetched_at, source,
+                 hit_count, last_hit_at)
+            VALUES ($1, $2, $3, $4, $5, $6, to_timestamp($7), $8,
+                    CASE WHEN $9 THEN 1 ELSE 0 END,
+                    CASE WHEN $9 THEN NOW() END)
+            ON CONFLICT (video_id, requested_language) DO UPDATE SET
+                language = EXCLUDED.language,
+                is_generated = EXCLUDED.is_generated,
+                segment_count = EXCLUDED.segment_count,
+                char_count = EXCLUDED.char_count,
+                fetched_at = EXCLUDED.fetched_at,
+                hit_count = transcript_cache.hit_count
+                    + CASE WHEN $9 THEN 1 ELSE 0 END,
+                last_hit_at = CASE WHEN $9 THEN NOW()
+                    ELSE transcript_cache.last_hit_at END
+            """,
+            row["video_id"],
+            row["requested_language"],
+            row["language"],
+            bool(row["is_generated"]),
+            int(row["segment_count"]),
+            int(row["char_count"]),
+            float(row.get("fetched_at") or time.time()),
+            source,
+            hit,
+        )
 
 
 def to_metadata(document: Dict[str, Any]) -> Dict[str, Any]:
