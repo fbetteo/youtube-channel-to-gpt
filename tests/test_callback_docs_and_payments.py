@@ -5,6 +5,7 @@ from pathlib import Path
 from unittest.mock import AsyncMock
 
 import pytest
+from datetime import datetime, timezone
 from fastapi import HTTPException
 
 
@@ -77,29 +78,28 @@ class _WebhookRequest:
         return b"{}"
 
 
-def _checkout_event(payment_status="paid"):
+def _checkout_event(payment_status="paid", kind=None):
+    metadata = {"project": "transcript-api", "user_id": "user-1", "credits": "100"}
+    if kind:
+        metadata["kind"] = kind
     return {
         "type": "checkout.session.completed",
         "data": {
             "object": {
                 "id": "cs_test_1",
                 "payment_status": payment_status,
-                "metadata": {
-                    "project": "transcript-api",
-                    "user_id": "user-1",
-                    "credits": "100",
-                },
+                "metadata": metadata,
             }
         },
     }
 
 
-def _run_webhook(monkeypatch, event, granted=True):
+def _run_webhook(monkeypatch, event, granted=True, grant_name="grant_permanent"):
     monkeypatch.setattr(
         transcript_api.stripe.Webhook, "construct_event", lambda *args: event
     )
     grant = AsyncMock(return_value=granted)
-    monkeypatch.setattr(transcript_api.CreditManager, "grant_checkout_credits", grant)
+    monkeypatch.setattr(transcript_api.credit_ledger, grant_name, grant)
     result = asyncio.run(transcript_api.stripe_webhook(_WebhookRequest()))
     return result, grant
 
@@ -129,6 +129,185 @@ def test_webhook_accepts_full_discount_sessions(monkeypatch):
 
     assert result == {"status": "success"}
     grant.assert_awaited_once()
+
+
+def test_webhook_grants_topups_as_expiring_lots(monkeypatch):
+    result, grant = _run_webhook(
+        monkeypatch, _checkout_event(kind="topup"), grant_name="grant_topup"
+    )
+
+    assert result == {"status": "success"}
+    grant.assert_awaited_once_with("cs_test_1", "user-1", 100)
+
+
+def test_webhook_ignores_subscription_checkout_sessions(monkeypatch):
+    event = _checkout_event()
+    event["data"]["object"]["mode"] = "subscription"
+    result, grant = _run_webhook(monkeypatch, event)
+
+    assert result == {"status": "ignored"}
+    grant.assert_not_awaited()
+
+
+def _subscription(status="active", project="transcript-api"):
+    return {
+        "id": "sub_1",
+        "customer": "cus_1",
+        "status": status,
+        "metadata": {"project": project, "user_id": "user-1"},
+        "current_period_end": 1_800_000_000,
+        "items": {"data": [{"price": {"metadata": {"credits": "1000"}}}]},
+    }
+
+
+def _run_subscription_webhook(monkeypatch, event, subscription, granted=True):
+    monkeypatch.setattr(
+        transcript_api.stripe.Webhook, "construct_event", lambda *args: event
+    )
+    monkeypatch.setattr(
+        transcript_api.stripe.Subscription, "retrieve", lambda sub_id: subscription
+    )
+    mocks = {
+        "sync_subscription": AsyncMock(),
+        "end_subscription": AsyncMock(),
+        "start_period": AsyncMock(return_value=granted),
+    }
+    monkeypatch.setattr(
+        transcript_api.CreditManager, "sync_subscription", mocks["sync_subscription"]
+    )
+    for name in ("end_subscription", "start_period"):
+        monkeypatch.setattr(transcript_api.credit_ledger, name, mocks[name])
+    result = asyncio.run(transcript_api.stripe_webhook(_WebhookRequest()))
+    return result, mocks
+
+
+def _invoice_event(billing_reason="subscription_cycle"):
+    return {
+        "type": "invoice.paid",
+        "data": {
+            "object": {
+                "id": "in_1",
+                "billing_reason": billing_reason,
+                "subscription": "sub_1",
+            }
+        },
+    }
+
+
+@pytest.mark.parametrize(
+    "billing_reason, first_period",
+    [("subscription_create", True), ("subscription_cycle", False)],
+)
+def test_paid_invoice_starts_subscription_period(
+    monkeypatch, billing_reason, first_period
+):
+    result, mocks = _run_subscription_webhook(
+        monkeypatch, _invoice_event(billing_reason), _subscription()
+    )
+
+    assert result == {"status": "success"}
+    mocks["sync_subscription"].assert_awaited_once()
+    mocks["start_period"].assert_awaited_once_with(
+        "in_1",
+        "user-1",
+        1000,
+        first_period=first_period,
+        period_end=datetime.fromtimestamp(1_800_000_000, timezone.utc),
+    )
+
+
+def test_paid_invoice_redelivery_does_not_grant_again(monkeypatch):
+    result, _ = _run_subscription_webhook(
+        monkeypatch, _invoice_event(), _subscription(), granted=False
+    )
+
+    assert result == {"status": "duplicate"}
+
+
+@pytest.mark.parametrize(
+    "billing_reason, subscription",
+    [
+        ("subscription_update", _subscription()),
+        ("subscription_cycle", _subscription(project="other-project")),
+        ("subscription_cycle", _subscription(status="canceled")),
+    ],
+)
+def test_paid_invoice_ignored_without_new_active_period(
+    monkeypatch, billing_reason, subscription
+):
+    result, mocks = _run_subscription_webhook(
+        monkeypatch, _invoice_event(billing_reason), subscription
+    )
+
+    assert result == {"status": "ignored"}
+    mocks["start_period"].assert_not_awaited()
+
+
+def test_ended_subscription_drops_monthly_credits(monkeypatch):
+    event = {
+        "type": "customer.subscription.deleted",
+        "data": {"object": {"id": "sub_1"}},
+    }
+    result, mocks = _run_subscription_webhook(
+        monkeypatch, event, _subscription(status="canceled")
+    )
+
+    assert result == {"status": "success"}
+    mocks["sync_subscription"].assert_awaited_once()
+    mocks["end_subscription"].assert_awaited_once_with("user-1")
+
+
+def test_topups_require_active_subscription(monkeypatch):
+    monkeypatch.setattr(transcript_api, "get_user_id_from_payload", lambda p: "user-1")
+    monkeypatch.setattr(
+        transcript_api.CreditManager,
+        "get_active_subscription",
+        AsyncMock(return_value=None),
+    )
+    request = transcript_api.CheckoutSessionRequest(lookup_key="transcript_topup_1000")
+
+    with pytest.raises(HTTPException) as exc_info:
+        asyncio.run(transcript_api.create_checkout_session(request, {}))
+
+    assert exc_info.value.status_code == 403
+
+
+def test_topup_quantity_buys_that_many_units(monkeypatch):
+    monkeypatch.setattr(transcript_api, "get_user_id_from_payload", lambda p: "user-1")
+    monkeypatch.setattr(
+        transcript_api.CreditManager,
+        "get_active_subscription",
+        AsyncMock(return_value={"status": "active"}),
+    )
+    monkeypatch.setattr(
+        transcript_api.CreditManager, "get_stripe_customer_id", AsyncMock(return_value="cus_1")
+    )
+    price = {
+        "id": "price_topup",
+        "metadata": {"project": "transcript-api", "kind": "topup", "credits": "1000"},
+    }
+    monkeypatch.setattr(
+        transcript_api.stripe.Price,
+        "list",
+        lambda **kwargs: types.SimpleNamespace(data=[price]),
+    )
+    created = {}
+
+    def fake_create(**params):
+        created.update(params)
+        return types.SimpleNamespace(id="cs_1", url="https://checkout.example/cs_1")
+
+    monkeypatch.setattr(transcript_api.stripe.checkout.Session, "create", fake_create)
+    request = transcript_api.CheckoutSessionRequest(
+        lookup_key="transcript_topup_1000", quantity=3
+    )
+
+    result = asyncio.run(transcript_api.create_checkout_session(request, {}))
+
+    assert result["credits"] == 3000
+    assert created["line_items"] == [{"price": "price_topup", "quantity": 3}]
+    assert created["metadata"]["credits"] == "3000"
+    assert created["metadata"]["kind"] == "topup"
 
 
 def test_http_result_callbacks_can_be_disabled(monkeypatch):
@@ -179,7 +358,7 @@ def test_new_user_sees_welcome_credits_on_first_check(monkeypatch):
         transcript_api.CreditManager, "create_user_credits", fake_create
     )
 
-    assert asyncio.run(transcript_api.CreditManager.get_user_credits("new-user")) == 25
+    assert asyncio.run(transcript_api.CreditManager.get_user_credits("new-user")) == 100
 
 
 def test_timed_out_videos_are_not_charged(monkeypatch):
