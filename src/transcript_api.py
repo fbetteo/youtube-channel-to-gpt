@@ -33,7 +33,7 @@ import gc
 import psutil
 import json
 import secrets
-from datetime import datetime
+from datetime import datetime, timezone
 import glob
 
 from fastapi import (
@@ -60,6 +60,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "db_youtube_transc
 
 import youtube_service
 import summary_service
+import credit_ledger
+from credit_ledger import ACTIVE_SUBSCRIPTION_STATUSES
 from transcript_formats import OutputFormat, download_option_overrides
 from rate_limiter import transcript_limiter
 
@@ -87,13 +89,19 @@ from routers.mcp import router as mcp_router
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY_LIVE")
 STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET_TRANSCRIPTS")
 stripe.api_key = STRIPE_SECRET_KEY
+# Created by scripts/stripe_setup.py; empty uses the account's default portal.
+STRIPE_PORTAL_CONFIGURATION_ID = os.getenv("STRIPE_PORTAL_CONFIGURATION_ID")
+STRIPE_PROJECT = "transcript-api"
+# Credits granted on a user's first balance read (frontend: NEW_USER_FREE_CREDITS).
+WELCOME_CREDITS = 100
 
 # JWT Configuration for Supabase
 ALGORITHM = "HS256"
 SUPABASE_SECRET = os.getenv("SUPABASE_SECRET_YOUTUBE_TRANSCRIPTS")
 FRONTEND_URL = os.getenv("FRONTEND_URL_YOUTUBE_TRANSCRIPTS", "http://localhost:3000")
 
-# Price ID mapping for Stripe products
+# Legacy one-time packs (pre-subscription). New prices are referenced by
+# lookup_key and carry metadata.credits (scripts/stripe_setup.py).
 PRICE_CREDITS_MAP = {
     "price_1SKoPc9nwfLYxL59M1ht3uqP": 400,  # 400 credits
     "price_1SKoPc9nwfLYxL59pXxIYFXm": 1000,  # 1000 credits
@@ -190,6 +198,14 @@ def get_user_id_from_payload(payload: dict) -> str:
     return payload.get("sub")
 
 
+def _subscription_period_end(subscription) -> datetime:
+    """Current period end; newer Stripe API versions move it onto the item."""
+    ts = subscription.get("current_period_end") or subscription["items"]["data"][0].get(
+        "current_period_end"
+    )
+    return datetime.fromtimestamp(ts, timezone.utc)
+
+
 class CreditManager:
     """Manages user credits for transcript downloads - FULLY ASYNC"""
 
@@ -210,9 +226,9 @@ class CreditManager:
                     return result["credits"]
                 else:
                     logger.info(
-                        f"User {user_id} not found in credits table, creating with 25 credits"
+                        f"User {user_id} not found in credits table, creating with {WELCOME_CREDITS} credits"
                     )
-                    await CreditManager.create_user_credits(user_id, 25)
+                    await CreditManager.create_user_credits(user_id, WELCOME_CREDITS)
                     # Re-read: a concurrent request may have created the row first.
                     return await conn.fetchval(
                         "SELECT credits FROM user_credits WHERE user_id = $1", user_id
@@ -334,38 +350,70 @@ class CreditManager:
             )
 
     @staticmethod
-    async def grant_checkout_credits(session_id: str, user_id: str, credits: int) -> bool:
-        """
-        Grant purchased credits once per Stripe Checkout session.
-        Returns False when the session was already credited (Stripe redelivery).
-        """
-        from db_youtube_transcripts.database import get_db_transaction
+    async def sync_subscription(user_id: str, subscription) -> None:
+        """Store the latest state of a Stripe subscription."""
+        from db_youtube_transcripts.database import get_db_connection
 
-        async with get_db_transaction() as tx:
-            inserted = await tx.fetchval(
+        price = subscription["items"]["data"][0]["price"]
+        period_end = _subscription_period_end(subscription).timestamp()
+        async with get_db_connection() as conn:
+            await conn.execute(
                 """
-                INSERT INTO stripe_checkout_credits (session_id, user_id, credits)
-                VALUES ($1, $2, $3)
-                ON CONFLICT (session_id) DO NOTHING
-                RETURNING session_id
+                INSERT INTO user_subscriptions (
+                    stripe_subscription_id, user_id, stripe_customer_id, status,
+                    lookup_key, monthly_credits, cancel_at_period_end,
+                    current_period_end
+                )
+                VALUES ($1, $2, $3, $4, $5, $6, $7, to_timestamp($8))
+                ON CONFLICT (stripe_subscription_id) DO UPDATE SET
+                    status = EXCLUDED.status,
+                    lookup_key = EXCLUDED.lookup_key,
+                    monthly_credits = EXCLUDED.monthly_credits,
+                    cancel_at_period_end = EXCLUDED.cancel_at_period_end,
+                    current_period_end = EXCLUDED.current_period_end,
+                    updated_at = NOW()
                 """,
-                session_id,
+                subscription["id"],
                 user_id,
-                credits,
+                subscription["customer"],
+                subscription["status"],
+                price.get("lookup_key"),
+                int((price.get("metadata") or {}).get("credits") or 0),
+                bool(subscription.get("cancel_at_period_end")),
+                period_end,
             )
-            if inserted is None:
-                return False
-            await tx.execute(
+
+    @staticmethod
+    async def get_active_subscription(user_id: str) -> Optional[dict]:
+        """Latest active subscription row for the user, if any."""
+        from db_youtube_transcripts.database import get_db_connection
+
+        async with get_db_connection() as conn:
+            row = await conn.fetchrow(
                 """
-                INSERT INTO user_credits (user_id, credits)
-                VALUES ($1, $2)
-                ON CONFLICT (user_id)
-                DO UPDATE SET credits = user_credits.credits + $2
+                SELECT * FROM user_subscriptions
+                WHERE user_id = $1 AND status = ANY($2::text[])
+                ORDER BY updated_at DESC
+                LIMIT 1
                 """,
                 user_id,
-                credits,
+                list(ACTIVE_SUBSCRIPTION_STATUSES),
             )
-        return True
+            return dict(row) if row else None
+
+    @staticmethod
+    async def get_stripe_customer_id(user_id: str) -> Optional[str]:
+        """Most recent Stripe customer for the user (active or not)."""
+        from db_youtube_transcripts.database import get_db_connection
+
+        async with get_db_connection() as conn:
+            return await conn.fetchval(
+                """
+                SELECT stripe_customer_id FROM user_subscriptions
+                WHERE user_id = $1 ORDER BY updated_at DESC LIMIT 1
+                """,
+                user_id,
+            )
 
     @staticmethod
     async def reserve_credits(user_id: str, credit_count: int) -> str:
@@ -605,7 +653,14 @@ class ChannelRequest(TranscriptLanguagePreference):
 
 
 class CheckoutSessionRequest(BaseModel):
-    price_id: str = Field(..., description="Stripe price ID for the credit package")
+    price_id: Optional[str] = Field(
+        None, description="Legacy Stripe price ID for a one-time credit pack"
+    )
+    lookup_key: Optional[str] = Field(
+        None,
+        description="Stripe price lookup_key: a top-up on /payments/create-checkout-session, "
+        "a plan on /payments/create-subscription-checkout",
+    )
     promotekit_referral: Optional[str] = Field(
         None, description="PromoteKit referral ID from the frontend"
     )
@@ -615,19 +670,43 @@ class CheckoutSessionRequest(BaseModel):
     email: Optional[str] = Field(
         None, description="Customer email used to prefill Stripe Checkout"
     )
+    quantity: int = Field(
+        1, ge=1, le=100, description="Top-up units to buy (each unit is the price's credits)"
+    )
 
     @validator("price_id")
     def validate_price_id(cls, v):
-        if v not in PRICE_CREDITS_MAP:
+        if v is not None and v not in PRICE_CREDITS_MAP:
             raise ValueError(
                 f"Invalid price_id. Valid options: {list(PRICE_CREDITS_MAP.keys())}"
             )
         return v
 
 
+class SubscriptionInfo(BaseModel):
+    status: str
+    lookup_key: Optional[str] = None
+    monthly_credits: int
+    cancel_at_period_end: bool
+    current_period_end: Optional[datetime] = None
+
+
+class TopupInfo(BaseModel):
+    credits: int
+    expires_at: datetime
+
+
 class UserCreditsResponse(BaseModel):
     user_id: str
     credits: int
+    # Split of `credits` (see credit_ledger): monthly credits reset at renewal,
+    # top-ups expire 30 days after purchase, both end with the plan;
+    # permanent credits never expire.
+    subscription_credits: int = 0
+    topup_credits: int = 0
+    permanent_credits: int = 0
+    topups: List[TopupInfo] = []
+    subscription: Optional[SubscriptionInfo] = None
 
 
 class PaymentSuccessResponse(BaseModel):
@@ -1241,6 +1320,7 @@ async def get_protected_openapi(secret: str):
 
 
 stale_job_sweeper_task: Optional[asyncio.Task] = None
+topup_expiry_task: Optional[asyncio.Task] = None
 
 
 @app.on_event("startup")
@@ -1259,10 +1339,11 @@ async def startup_event():
         # Don't raise - allow app to start even if DB pool init fails
         # Individual requests will retry connection
 
-    global stale_job_sweeper_task
+    global stale_job_sweeper_task, topup_expiry_task
     stale_job_sweeper_task = asyncio.create_task(
         youtube_service.run_stale_job_sweeper()
     )
+    topup_expiry_task = asyncio.create_task(credit_ledger.run_topup_expiry_sweeper())
 
 
 #     # Recover jobs from persistent storage
@@ -1286,6 +1367,8 @@ async def shutdown_event():
     logger.info("Shutting down YouTube Transcript API...")
     if stale_job_sweeper_task:
         stale_job_sweeper_task.cancel()
+    if topup_expiry_task:
+        topup_expiry_task.cancel()
 
     try:
         # Close async database connection pool
@@ -1312,40 +1395,87 @@ async def shutdown_event():
 # =============================================
 
 
+def _checkout_user_id(request: CheckoutSessionRequest, payload: dict) -> str:
+    user_id = get_user_id_from_payload(payload)
+    if request.user_id and request.user_id != user_id:
+        logger.warning(
+            f"Checkout user_id mismatch: token user {user_id}, request user {request.user_id}"
+        )
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Request user does not match authenticated user",
+        )
+    return user_id
+
+
+def _price_for_lookup_key(lookup_key: str, kind: str):
+    """Active price created by scripts/stripe_setup.py and its credits."""
+    prices = stripe.Price.list(lookup_keys=[lookup_key], active=True).data
+    price = prices[0] if prices else None
+    metadata = (price.get("metadata") or {}) if price else {}
+    if (
+        price is None
+        or metadata.get("project") != STRIPE_PROJECT
+        or metadata.get("kind") != kind
+    ):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Unknown {kind} lookup_key: {lookup_key}",
+        )
+    return price, int(metadata["credits"])
+
+
+def _checkout_metadata(user_id: str, request: CheckoutSessionRequest) -> dict:
+    metadata = {"project": STRIPE_PROJECT, "user_id": user_id}
+    if request.promotekit_referral:
+        metadata["promotekit_referral"] = request.promotekit_referral
+    return metadata
+
+
 @app.post("/payments/create-checkout-session")
 async def create_checkout_session(
     request: CheckoutSessionRequest, payload: dict = Depends(validate_jwt)
 ):
     """
-    Create a Stripe checkout session for purchasing credits
+    Create a Stripe checkout session for a one-time credit purchase:
+    a top-up (lookup_key, requires an active subscription) or a legacy pack (price_id).
     """
     try:
-        user_id = get_user_id_from_payload(payload)
-        if request.user_id and request.user_id != user_id:
-            logger.warning(
-                f"Checkout user_id mismatch: token user {user_id}, request user {request.user_id}"
-            )
+        user_id = _checkout_user_id(request, payload)
+        if (request.price_id is None) == (request.lookup_key is None):
             raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="Request user does not match authenticated user",
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Send exactly one of price_id or lookup_key",
             )
 
-        credits_to_add = PRICE_CREDITS_MAP[request.price_id]
-        metadata = {
-            "project": "transcript-api",
-            "user_id": user_id,
-            "credits": str(credits_to_add),
-        }
-        if request.promotekit_referral:
-            metadata["promotekit_referral"] = request.promotekit_referral
+        customer_id = None
+        if request.lookup_key:
+            if not await CreditManager.get_active_subscription(user_id):
+                raise HTTPException(
+                    status_code=status.HTTP_403_FORBIDDEN,
+                    detail="Top-ups require an active subscription",
+                )
+            price, unit_credits = _price_for_lookup_key(request.lookup_key, "topup")
+            price_id = price["id"]
+            quantity = request.quantity
+            credits_to_add = unit_credits * quantity
+            customer_id = await CreditManager.get_stripe_customer_id(user_id)
+        else:
+            price_id = request.price_id
+            quantity = 1
+            credits_to_add = PRICE_CREDITS_MAP[price_id]
+
+        metadata = _checkout_metadata(user_id, request)
+        metadata["credits"] = str(credits_to_add)
+        metadata["kind"] = "topup" if request.lookup_key else "pack"
 
         # Create Stripe checkout session
         checkout_session_params = {
             "payment_method_types": ["card"],
             "line_items": [
                 {
-                    "price": request.price_id,
-                    "quantity": 1,
+                    "price": price_id,
+                    "quantity": quantity,
                 }
             ],
             "mode": "payment",
@@ -1355,7 +1485,9 @@ async def create_checkout_session(
             "metadata": metadata,
             "allow_promotion_codes": True,
         }
-        if request.email:
+        if customer_id:
+            checkout_session_params["customer"] = customer_id
+        elif request.email:
             checkout_session_params["customer_email"] = request.email
 
         checkout_session = stripe.checkout.Session.create(**checkout_session_params)
@@ -1370,6 +1502,8 @@ async def create_checkout_session(
             "credits": credits_to_add,
         }
 
+    except HTTPException:
+        raise
     except stripe.error.StripeError as e:
         logger.error(f"Stripe error creating checkout session: {e}")
         raise HTTPException(
@@ -1382,6 +1516,153 @@ async def create_checkout_session(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to create payment session",
         )
+
+
+@app.post("/payments/create-subscription-checkout")
+async def create_subscription_checkout(
+    request: CheckoutSessionRequest, payload: dict = Depends(validate_jwt)
+):
+    """
+    Create a Stripe checkout session for a monthly plan (lookup_key).
+    Credits are granted per paid invoice by the webhook, not here.
+    """
+    try:
+        user_id = _checkout_user_id(request, payload)
+        if not request.lookup_key:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="lookup_key is required",
+            )
+        if await CreditManager.get_active_subscription(user_id):
+            raise HTTPException(
+                status_code=status.HTTP_409_CONFLICT,
+                detail="You already have an active subscription; manage it from the billing portal",
+            )
+        price, monthly_credits = _price_for_lookup_key(request.lookup_key, "plan")
+
+        # No `credits` in metadata: checkout.session.completed must not grant.
+        metadata = _checkout_metadata(user_id, request)
+        params = {
+            "line_items": [{"price": price["id"], "quantity": 1}],
+            "mode": "subscription",
+            "success_url": f"{FRONTEND_URL}/payment/success?session_id={{CHECKOUT_SESSION_ID}}",
+            "cancel_url": f"{FRONTEND_URL}/payment/cancel",
+            "client_reference_id": user_id,
+            "metadata": metadata,
+            # The webhook finds the user through the subscription's metadata.
+            "subscription_data": {"metadata": metadata},
+            "allow_promotion_codes": True,
+        }
+        customer_id = await CreditManager.get_stripe_customer_id(user_id)
+        if customer_id:
+            params["customer"] = customer_id
+        elif request.email:
+            params["customer_email"] = request.email
+
+        checkout_session = stripe.checkout.Session.create(**params)
+        logger.info(
+            f"Created subscription checkout {checkout_session.id} for user {user_id}"
+        )
+        return {
+            "checkout_url": checkout_session.url,
+            "session_id": checkout_session.id,
+            "monthly_credits": monthly_credits,
+        }
+
+    except HTTPException:
+        raise
+    except stripe.error.StripeError as e:
+        logger.error(f"Stripe error creating subscription checkout: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Payment processing error: {str(e)}",
+        )
+    except Exception as e:
+        logger.error(f"Error creating subscription checkout: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to create payment session",
+        )
+
+
+@app.post("/payments/portal")
+async def create_billing_portal_session(payload: dict = Depends(validate_jwt)):
+    """Stripe Customer Portal link to cancel, change card, or see invoices."""
+    user_id = get_user_id_from_payload(payload)
+    customer_id = await CreditManager.get_stripe_customer_id(user_id)
+    if not customer_id:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail="No subscription found"
+        )
+    params = {"customer": customer_id, "return_url": f"{FRONTEND_URL}/pricing"}
+    if STRIPE_PORTAL_CONFIGURATION_ID:
+        params["configuration"] = STRIPE_PORTAL_CONFIGURATION_ID
+    try:
+        portal_session = stripe.billing_portal.Session.create(**params)
+    except stripe.error.StripeError as e:
+        logger.error(f"Stripe error creating portal session: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Payment processing error: {str(e)}",
+        )
+    return {"url": portal_session.url}
+
+
+async def _sync_stripe_subscription(subscription_id: str):
+    """
+    Fetch and store the latest subscription state, so event order and webhook
+    payload versions don't matter. Returns (subscription, user_id), or
+    (None, None) for subscriptions of other projects on the Stripe account.
+    """
+    subscription = stripe.Subscription.retrieve(subscription_id)
+    metadata = subscription.get("metadata") or {}
+    if metadata.get("project") != STRIPE_PROJECT:
+        return None, None
+    user_id = metadata["user_id"]
+    await CreditManager.sync_subscription(user_id, subscription)
+    if subscription["status"] not in ACTIVE_SUBSCRIPTION_STATUSES:
+        await credit_ledger.end_subscription(user_id)
+    return subscription, user_id
+
+
+async def _handle_invoice_paid(invoice) -> dict:
+    """Start a subscription period: reset monthly credits once per invoice."""
+    billing_reason = invoice.get("billing_reason")
+    if billing_reason not in ("subscription_create", "subscription_cycle"):
+        return {"status": "ignored"}
+    subscription_id = invoice.get("subscription") or (
+        (invoice.get("parent") or {}).get("subscription_details") or {}
+    ).get("subscription")
+    if not subscription_id:
+        return {"status": "ignored"}
+
+    subscription, user_id = await _sync_stripe_subscription(subscription_id)
+    if subscription is None:
+        return {"status": "ignored"}
+    if subscription["status"] not in ACTIVE_SUBSCRIPTION_STATUSES:
+        logger.warning(
+            f"Not granting invoice {invoice['id']}: subscription {subscription_id} "
+            f"is {subscription['status']}"
+        )
+        return {"status": "ignored"}
+
+    price = subscription["items"]["data"][0]["price"]
+    credits = int(price["metadata"]["credits"])
+    granted = await credit_ledger.start_period(
+        invoice["id"],
+        user_id,
+        credits,
+        first_period=billing_reason == "subscription_create",
+        period_end=_subscription_period_end(subscription),
+    )
+    if not granted:
+        logger.info(f"Invoice {invoice['id']} already credited; skipping")
+        return {"status": "duplicate"}
+    logger.info(
+        f"Started subscription period for user {user_id}: {credits} credits "
+        f"(invoice {invoice['id']}, {billing_reason})"
+    )
+    return {"status": "success"}
 
 
 @app.post("/payments/webhook")
@@ -1408,8 +1689,12 @@ async def stripe_webhook(request: Request):
     if event["type"] == "checkout.session.completed":
         session = event["data"]["object"]
 
+        # Subscription credits are granted on invoice.paid.
+        if session.get("mode") == "subscription":
+            return {"status": "ignored"}
+
         # Check if this is for our transcript-api project
-        if session.get("metadata", {}).get("project") != "transcript-api":
+        if session.get("metadata", {}).get("project") != STRIPE_PROJECT:
             logger.info(
                 f"Ignoring webhook for different project: {session.get('metadata', {}).get('project')}"
             )
@@ -1427,9 +1712,12 @@ async def stripe_webhook(request: Request):
             user_id = session["metadata"]["user_id"]
             credits_to_add = int(session["metadata"]["credits"])
 
-            granted = await CreditManager.grant_checkout_credits(
-                session["id"], user_id, credits_to_add
-            )
+            # Top-ups expire; legacy packs (no kind) never do.
+            if session["metadata"].get("kind") == "topup":
+                grant = credit_ledger.grant_topup
+            else:
+                grant = credit_ledger.grant_permanent
+            granted = await grant(session["id"], user_id, credits_to_add)
             if not granted:
                 logger.info(f"Session {session['id']} already credited; skipping")
                 return {"status": "duplicate"}
@@ -1447,6 +1735,26 @@ async def stripe_webhook(request: Request):
                 detail="Failed to process payment",
             )
 
+    elif event["type"] == "invoice.paid" or event["type"].startswith(
+        "customer.subscription."
+    ):
+        obj = event["data"]["object"]
+        try:
+            if event["type"] == "invoice.paid":
+                return await _handle_invoice_paid(obj)
+            subscription, _ = await _sync_stripe_subscription(obj["id"])
+            return {"status": "ignored" if subscription is None else "success"}
+        except Exception as e:
+            # 500 makes Stripe retry the event.
+            logger.error(
+                f"Error processing {event['type']} for {obj.get('id')}: {e}",
+                exc_info=True,
+            )
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to process subscription event",
+            )
+
     else:
         logger.info(f"Unhandled event type: {event['type']}")
         return {"status": "unhandled"}
@@ -1457,19 +1765,29 @@ async def get_user_credits(
     payload: dict = Depends(validate_jwt),
 ) -> UserCreditsResponse:
     """
-    Get current credit balance for authenticated user
+    Get current credit balance and subscription for authenticated user
     """
     try:
-        logger.debug("Starting get_user_credits endpoint")
         user_id = get_user_id_from_payload(payload)
-        logger.debug(f"Extracted user_id: {user_id}")
+        await CreditManager.get_user_credits(user_id)  # creates new users
+        subscription = await CreditManager.get_active_subscription(user_id)
+        layers = await credit_ledger.summary(user_id)
 
-        credits = await CreditManager.get_user_credits(user_id)
-        logger.debug(f"Retrieved credits: {credits}")
-
-        response = UserCreditsResponse(user_id=user_id, credits=credits)
-        logger.debug(f"Created response: {response}")
-        return response
+        # Without a plan, unassigned credits are the user's own balance (permanent);
+        # with one they are refunds of plan credits and end with the plan.
+        monthly = layers.monthly + layers.unassigned if subscription else 0
+        return UserCreditsResponse(
+            user_id=user_id,
+            credits=layers.total,
+            subscription_credits=monthly,
+            topup_credits=layers.topups,
+            permanent_credits=layers.total - monthly - layers.topups,
+            topups=[
+                TopupInfo(credits=lot.amount, expires_at=lot.expires_at)
+                for lot in layers.topup_lots
+            ],
+            subscription=SubscriptionInfo(**subscription) if subscription else None,
+        )
 
     except HTTPException:
         # Re-raise HTTPExceptions from CreditManager
