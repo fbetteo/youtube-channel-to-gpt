@@ -1,0 +1,34 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.fbetteo/youtube-transcripts",
+  "title": "YouTube Transcripts",
+  "description": "Transcripts from YouTube videos, whole channels and playlists for AI agents, with bulk ZIP export.",
+  "version": "1.0.0",
+  "websiteUrl": "https://downloadyoutubetranscripts.com/use-with-agents",
+  "repository": {
+    "url": "https://github.com/fbetteo/youtube-channel-to-gpt",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.youtubetranscripts.fbetteo.com/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Your API key from https://downloadyoutubetranscripts.com/api-access",
+          "isRequired": true,
+          "isSecret": true,
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "API key from https://downloadyoutubetranscripts.com/api-access",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
