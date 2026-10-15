@@ -123,7 +123,11 @@ def archive_unlisted_prices(apply):
     """Archive active prices on our products whose lookup_key is no longer configured."""
     wanted = {spec["lookup_key"] for spec in PLANS + TOPUPS}
     for kind, product in PRODUCTS.items():
-        for price in stripe.Price.list(product=product["id"], active=True, limit=100).auto_paging_iter():
+        try:
+            prices = stripe.Price.list(product=product["id"], active=True, limit=100)
+        except stripe.error.InvalidRequestError:
+            continue  # product not created yet (first dry run): nothing to archive
+        for price in prices.auto_paging_iter():
             if price.lookup_key not in wanted:
                 print(f"[price] archive {price.lookup_key or price.id} ({kind}, no longer configured)")
                 if apply:
