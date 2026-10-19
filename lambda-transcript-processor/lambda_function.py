@@ -54,6 +54,10 @@ TERMINAL_TRANSCRIPT_ERROR_TYPES = {
 # Seconds kept free after fetching for the S3 upload and result delivery.
 DEADLINE_SAFETY_SECONDS = 15
 
+# Per-request limit for YouTube calls. Without it a stalled proxy connection
+# hangs until the Lambda deadline instead of failing fast and retrying on a new IP.
+YOUTUBE_REQUEST_TIMEOUT_SECONDS = 10
+
 LANGUAGE_CODE_PATTERN = re.compile(r"^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
 
 # Shared, user-independent copy of each fetched transcript, reused across jobs.
@@ -153,6 +157,14 @@ def format_transcript_segments(
     return "\n".join(transcript_lines)
 
 
+class TimeoutSession(requests.Session):
+    """requests.Session that applies a default timeout to every request."""
+
+    def request(self, *args, **kwargs):
+        kwargs.setdefault("timeout", YOUTUBE_REQUEST_TIMEOUT_SECONDS)
+        return super().request(*args, **kwargs)
+
+
 def get_ytt_api() -> YouTubeTranscriptApi:
     """
     Create a new YouTubeTranscriptApi instance with proxy config if needed.
@@ -166,11 +178,13 @@ def get_ytt_api() -> YouTubeTranscriptApi:
             proxy_password=os.getenv("WEBSHARE_PROXY_PASSWORD"),
             retries_when_blocked=1,
         )
-        return YouTubeTranscriptApi(proxy_config=proxy_config)
+        return YouTubeTranscriptApi(
+            proxy_config=proxy_config, http_client=TimeoutSession()
+        )
     except Exception as e:
         logger.error(f"Error creating YouTubeTranscriptApi: {str(e)}")
         # Fallback to basic instance
-        return YouTubeTranscriptApi()
+        return YouTubeTranscriptApi(http_client=TimeoutSession())
 
 
 class TranscriptRetrievalError(Exception):

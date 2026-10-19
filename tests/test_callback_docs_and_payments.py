@@ -478,6 +478,58 @@ def test_lambda_reports_retriable_failure_before_its_own_timeout(monkeypatch):
     assert exc_info.value.error_type == "DeadlineExceeded"
 
 
+def test_lambda_fails_fast_on_a_proxy_that_never_answers(monkeypatch):
+    import importlib.util
+    import socket
+    import threading
+    import time
+    from youtube_transcript_api.proxies import GenericProxyConfig
+
+    spec = importlib.util.spec_from_file_location(
+        "lambda_function",
+        Path(__file__).resolve().parents[1]
+        / "lambda-transcript-processor"
+        / "lambda_function.py",
+    )
+    lambda_function = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(lambda_function)
+
+    # A proxy that accepts connections and then stays silent, like a stalled exit IP.
+    server = socket.socket()
+    server.bind(("127.0.0.1", 0))
+    server.listen()
+    accepted = []
+
+    def accept_and_stay_silent():
+        try:
+            while True:
+                accepted.append(server.accept())
+        except OSError:
+            pass  # server closed at the end of the test
+
+    threading.Thread(target=accept_and_stay_silent, daemon=True).start()
+    proxy_url = f"http://127.0.0.1:{server.getsockname()[1]}"
+
+    monkeypatch.setattr(lambda_function, "YOUTUBE_REQUEST_TIMEOUT_SECONDS", 0.5)
+    monkeypatch.setattr(
+        lambda_function,
+        "WebshareProxyConfig",
+        lambda **kwargs: GenericProxyConfig(http_url=proxy_url, https_url=proxy_url),
+    )
+
+    started = time.monotonic()
+    with pytest.raises(lambda_function.TranscriptRetrievalError) as exc_info:
+        lambda_function.fetch_transcript_with_retries(
+            "vid", max_attempts=2, base_delay=0
+        )
+    elapsed = time.monotonic() - started
+    server.close()
+
+    assert elapsed < 5
+    assert exc_info.value.attempts == 2
+    assert exc_info.value.retriable is True
+
+
 def test_history_progress_counts_skipped_videos(monkeypatch):
     from contextlib import asynccontextmanager
     from datetime import datetime
