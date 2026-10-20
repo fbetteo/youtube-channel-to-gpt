@@ -18,6 +18,7 @@
 - `JobManager` owns transactional progress, terminal transitions, cancellation, and refunds. Keep balance/job accounting consistent and preserve protection against repeated results or finalization.
 - The asyncpg pool and transaction helper live in `db_youtube_transcripts/database.py`. Transactional locks/updates prevent concurrent workers applying the same progress/balance change independently. Legacy synchronous connections also exist.
 - Schema/migration entry points: `db_youtube_transcripts/schema.py`, `schema_api_keys.py`, `migration_*.py`. Review execution effects before running against a configured database; code changes do not migrate deployed tables.
+- Every `public` table must have Row Level Security enabled, with no policies. Supabase exposes `public` over its REST API to the anon key that browsers receive. RLS blocks that path, and the backend is unaffected because it connects to Postgres directly as the table owner. Include `ALTER TABLE ... ENABLE ROW LEVEL SECURITY` when you create a table, or re-run `migration_enable_rls.py --apply`.
 
 ## Payments
 
