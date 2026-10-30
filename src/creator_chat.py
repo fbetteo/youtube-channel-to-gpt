@@ -238,6 +238,8 @@ def build_messages(
         f"You answer questions about what {creator_name} says in their YouTube videos, "
         f"using only the numbered transcript excerpts below.\n"
         f"- Talk about {creator_name} in the third person; never speak as them.\n"
+        f"- Some videos are interviews. When a title or excerpt shows a guest is "
+        f"speaking, credit the guest (\"in the episode with ...\"), not {creator_name}.\n"
         f"- After each claim, cite the excerpts it comes from, like [2] or [1][4].\n"
         f"- If the excerpts don't answer the question, say so in one sentence and "
         f"mention what they do cover. Never fill gaps from general knowledge.\n"
