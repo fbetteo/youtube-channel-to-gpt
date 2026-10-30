@@ -23,6 +23,7 @@ It uses Next.js App Router, TypeScript, Chakra UI, and Supabase SSR. Frontend/ba
   `lib/summary-service.ts` implement controls, result tabs, source links,
   cancellation, and Markdown export. Keep the transcript after generation fails.
 
+- Creator chat pages (`/creators`, `/creators/[slug]`) read backend `GET /creators` server-side and stream `POST /creators/{slug}/chat` through the `app/api/creators/[slug]/chat` proxy, which forwards bearer auth and the client IP headers. Event names and error statuses are in [api.md](api.md#creator-chat); change both sides together.
 - Website proxies mainly call `/channel`, `/playlist`, `/download`, `/user`, `/payments`. Developer integrations use `/api/v1` and MCP; confirm which surface a feature calls.
 - Preserve bearer forwarding for authenticated backend calls. Next.js session cookies are not backend JWT credentials.
 - Return real backend job IDs and poll backend state; avoid independent job stores in frontend routes. Preserve interval cleanup/adaptive polling.
