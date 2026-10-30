@@ -222,7 +222,7 @@ def cmd_up(args):
 
     print("Starting Postgres...")
     docker("run", "-d", "--rm", "--name", PG_CONTAINER, "--label", "ytx-verify=1",
-           "-e", f"POSTGRES_PASSWORD={PG_PASSWORD}", "-p", f"{PG_PORT}:5432", "postgres:16-alpine")
+           "-e", f"POSTGRES_PASSWORD={PG_PASSWORD}", "-p", f"{PG_PORT}:5432", "pgvector/pgvector:pg15")
     state = {"pg_container": PG_CONTAINER, "api_pid": None, "stripe_test_clocks": [],
              "started": datetime.now().isoformat(timespec="seconds")}
     save_state(state)

@@ -30,7 +30,7 @@ poetry run python .claude/skills/verify/verify.py up
 
 It refuses to start when an instance is recorded and alive, when port 8765 or 55432 is taken, or when the container already exists. Only one instance per machine: ports and container name are fixed. Never point it at, or kill, a server it did not start.
 
-Steps it runs: start `postgres:16-alpine` and wait for a real query (not just `pg_isready`); create `user_credits` (production gets it from Supabase, no repo script does); run `db_youtube_transcripts/schema`, `schema_api_keys` and every `migration_*` as modules; start uvicorn on `127.0.0.1:8765` with the isolated environment. Ready when it prints `Ready: http://127.0.0.1:8765 (probe user has 100 welcome credits)`. That probe proves auth, the database and the schema together, not just that the port answers. It takes about 30 s.
+Steps it runs: start `pgvector/pgvector:pg15` (production is Supabase Postgres 15 with pgvector) and wait for a real query (not just `pg_isready`); create `user_credits` (production gets it from Supabase, no repo script does); run `db_youtube_transcripts/schema`, `schema_api_keys` and every `migration_*` as modules; start uvicorn on `127.0.0.1:8765` with the isolated environment. Ready when it prints `Ready: http://127.0.0.1:8765 (probe user has 100 welcome credits)`. That probe proves auth, the database and the schema together, not just that the port answers. It takes about 30 s.
 
 ## Doctor
 
