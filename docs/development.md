@@ -64,6 +64,8 @@ poetry run python scripts/creators.py eval [<slug>] [-v]
 
 Search is hybrid (pgvector plus Postgres full-text on the generated `search_text` column, merged by rank). `eval` scores it against `scripts/creator_chat_eval.json`; run it before and after changing chunking or search, and record the numbers in the commit.
 
+`chat <slug> "question" "follow-up"...` runs the real chat pipeline from the terminal (also for creators not enabled yet); `enable <slug> [--off]` shows or hides a creator on the site. Settings: `CREATOR_CHAT_MODEL` (`gpt-4.1-mini`), `CREATOR_CHAT_ANONYMOUS_DAILY` (3), `CREATOR_CHAT_USER_DAILY` (50). API contract: [api.md](api.md#creator-chat).
+
 `EMBEDDING_MODEL` and `EMBEDDING_DIMENSIONS` in `src/creator_chat.py` must match the `vector(512)` column; changing either means re-indexing every creator.
 
 ### Existing services

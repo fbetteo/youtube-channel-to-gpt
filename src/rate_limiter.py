@@ -142,3 +142,5 @@ class RateLimiter:
 
 # Global rate limiter instance
 transcript_limiter = RateLimiter(window_size=360)  # 1 hour window. add bcak 3600
+# Creator chat messages per day, keyed "ip:<addr>" or "user:<id>".
+creator_chat_limiter = RateLimiter(window_size=86400)

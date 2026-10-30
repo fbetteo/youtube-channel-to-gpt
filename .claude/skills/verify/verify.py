@@ -240,6 +240,8 @@ def cmd_up(args):
     with pg() as conn, conn.cursor() as c:
         c.execute(USER_CREDITS_SCAFFOLD)
     env = instance_env()
+    if args.openai:
+        env["SUMMARY_OPENAI_API_KEY"] = dotenv().get("SUMMARY_OPENAI_API_KEY") or ""
     db_dir = REPO / "db_youtube_transcripts"
     modules = ["schema", "schema_api_keys"] + sorted(p.stem for p in db_dir.glob("migration_*.py"))
     for name in modules:  # as modules: some migrations use package-relative imports
@@ -371,6 +373,39 @@ def cmd_sql(args):
     print(json.dumps(rows, indent=2, default=str))
 
 
+CREATOR_COLUMNS = "channel_id, slug, name, handle, category, avatar_url, tagline"
+CHUNK_COLUMNS = ("video_id, chunk_index, channel_id, video_title, published_at, "
+                 "start_seconds, end_seconds, text, embedding, embedding_model")
+
+
+def cmd_seed_creator(args):
+    """Copy one creator and its embedded chunks from production (read-only) and enable it."""
+    import psycopg2
+
+    env = dotenv()
+    source = psycopg2.connect(
+        dbname=env["DB_NAME_YOUTUBE_TRANSCRIPTS"], host=env["DB_HOST_YOUTUBE_TRANSCRIPTS"],
+        user=env["DB_USERNAME_YOUTUBE_TRANSCRIPTS"], password=env["DB_PASSWORD_YOUTUBE_TRANSCRIPTS"],
+        port=env["DB_PORT_YOUTUBE_TRANSCRIPTS"],
+    )
+    source.set_session(readonly=True)
+    with source, source.cursor() as c:
+        c.execute(f"SELECT {CREATOR_COLUMNS} FROM creators WHERE slug = %s", (args.slug,))
+        creator = c.fetchone()
+        if not creator:
+            sys.exit(f"No creator '{args.slug}' in production. Add and index it with scripts/creators.py.")
+        c.execute(f"SELECT {CHUNK_COLUMNS.replace('embedding,', 'embedding::text,')} "
+                  "FROM transcript_chunks WHERE channel_id = %s", (creator[0],))
+        chunks = c.fetchall()
+    source.close()
+    with pg() as conn, conn.cursor() as c:
+        c.execute(f"INSERT INTO creators ({CREATOR_COLUMNS}, enabled) VALUES (%s, %s, %s, %s, %s, %s, %s, TRUE) "
+                  "ON CONFLICT (channel_id) DO UPDATE SET enabled = TRUE", creator)
+        c.executemany(f"INSERT INTO transcript_chunks ({CHUNK_COLUMNS}) VALUES "
+                      "(%s, %s, %s, %s, %s, %s, %s, %s, %s::vector, %s) ON CONFLICT DO NOTHING", chunks)
+    print(f"Seeded {creator[2]} ('{args.slug}', enabled) with {len(chunks)} chunks")
+
+
 def stripe_client():
     import stripe
 
@@ -471,7 +506,10 @@ def cmd_stripe_cancel(args):
 def main():
     p = argparse.ArgumentParser(description="Drive an isolated local transcript API.")
     sub = p.add_subparsers(dest="cmd", required=True)
-    sub.add_parser("up").set_defaults(fn=cmd_up)
+    u = sub.add_parser("up")
+    u.add_argument("--openai", action="store_true",
+                   help="use the real SUMMARY_OPENAI_API_KEY from .env (spends money)")
+    u.set_defaults(fn=cmd_up)
     sub.add_parser("doctor").set_defaults(fn=cmd_doctor)
     sub.add_parser("down").set_defaults(fn=cmd_down)
     j = sub.add_parser("jwt")
@@ -490,6 +528,9 @@ def main():
     q.add_argument("query")
     q.add_argument("--run")
     q.set_defaults(fn=cmd_sql)
+    sc = sub.add_parser("seed-creator")
+    sc.add_argument("slug")
+    sc.set_defaults(fn=cmd_seed_creator)
     s = sub.add_parser("stripe-subscribe")
     s.add_argument("--user", required=True)
     s.add_argument("--lookup-key", default="transcript_monthly_1000")

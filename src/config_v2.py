@@ -106,6 +106,17 @@ class Settings(BaseModel):
         default_factory=lambda: int(os.getenv("SUMMARY_MAX_OUTPUT_TOKENS", "3000"))
     )
 
+    # Creator chat (RAG over creators' transcripts). Uses the summary OpenAI key.
+    creator_chat_model: str = Field(
+        default_factory=lambda: os.getenv("CREATOR_CHAT_MODEL", "gpt-4.1-mini")
+    )
+    creator_chat_anonymous_daily: int = Field(
+        default_factory=lambda: int(os.getenv("CREATOR_CHAT_ANONYMOUS_DAILY", "3"))
+    )
+    creator_chat_user_daily: int = Field(
+        default_factory=lambda: int(os.getenv("CREATOR_CHAT_USER_DAILY", "50"))
+    )
+
     # Job timeout settings
     job_timeout_minutes: int = Field(
         default_factory=lambda: int(os.getenv("JOB_TIMEOUT_MINUTES", "15"))
