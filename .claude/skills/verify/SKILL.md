@@ -15,7 +15,7 @@ The user-facing surface of this repo is HTTP: website routes in `src/transcript_
 | Website auth | local JWT secret; the helper mints tokens for any user UUID |
 | Stripe | `STRIPE_SECRET_KEY_TEST_TRANSCRIPTS` from `.env` (test mode only); local webhook secret, so the helper signs webhooks itself |
 | AWS (S3 cache, Lambda, SQS) | deliberately invalid credentials: cache reads/writes fail and fall back to live fetches, Lambda dispatch fails |
-| OpenAI (summaries) | unset, so `/summaries/single` returns 503 |
+| OpenAI (summaries, creator chat) | unset, so both return 503; `up --openai` uses the real key from `.env` (spends money) |
 | YouTube | **real** network, through the proxies in `.env` |
 
 Helper: `.claude/skills/verify/verify.py`, run with `poetry run python` from the repo root. In Git Bash, prefix commands that pass URL paths with `MSYS_NO_PATHCONV=1` (Git Bash rewrites `/user/credits` into a Windows path; the helper refuses such paths). In cmd or PowerShell no prefix is needed. Examples below set `V="poetry run python .claude/skills/verify/verify.py"` in Git Bash.
@@ -30,7 +30,7 @@ poetry run python .claude/skills/verify/verify.py up
 
 It refuses to start when an instance is recorded and alive, when port 8765 or 55432 is taken, or when the container already exists. Only one instance per machine: ports and container name are fixed. Never point it at, or kill, a server it did not start.
 
-Steps it runs: start `postgres:16-alpine` and wait for a real query (not just `pg_isready`); create `user_credits` (production gets it from Supabase, no repo script does); run `db_youtube_transcripts/schema`, `schema_api_keys` and every `migration_*` as modules; start uvicorn on `127.0.0.1:8765` with the isolated environment. Ready when it prints `Ready: http://127.0.0.1:8765 (probe user has 100 welcome credits)`. That probe proves auth, the database and the schema together, not just that the port answers. It takes about 30 s.
+Steps it runs: start `pgvector/pgvector:pg15` (production is Supabase Postgres 15 with pgvector) and wait for a real query (not just `pg_isready`); create `user_credits` (production gets it from Supabase, no repo script does); run `db_youtube_transcripts/schema`, `schema_api_keys` and every `migration_*` as modules; start uvicorn on `127.0.0.1:8765` with the isolated environment. Ready when it prints `Ready: http://127.0.0.1:8765 (probe user has 100 welcome credits)`. That probe proves auth, the database and the schema together, not just that the port answers. It takes about 30 s.
 
 ## Doctor
 
@@ -93,4 +93,4 @@ Stops the API process tree by recorded PID (never by name), deletes the Stripe t
 
 ## Helper reference
 
-`verify.py up | doctor | down | jwt USER_ID | call METHOD PATH [--user UUID | --api-key KEY | --bearer KEY] [--json BODY] [--run NAME] | sql QUERY [--run NAME] | stripe-subscribe --user UUID [--lookup-key KEY] [--run NAME] | stripe-advance [--days N] [--run NAME] | stripe-cancel [--run NAME] | stripe-forward [--run NAME]`. The constants at the top of the file (ports, container name, secrets) and `instance_env()` define the isolation.
+`verify.py up [--openai] | doctor | down | jwt USER_ID | call METHOD PATH [--user UUID | --api-key KEY | --bearer KEY] [--json BODY] [--run NAME] | sql QUERY [--run NAME] | seed-creator SLUG (copies a creator's production chunks read-only, enabled) | stripe-subscribe --user UUID [--lookup-key KEY] [--run NAME] | stripe-advance [--days N] [--run NAME] | stripe-cancel [--run NAME] | stripe-forward [--run NAME]`. The constants at the top of the file (ports, container name, secrets) and `instance_env()` define the isolation.

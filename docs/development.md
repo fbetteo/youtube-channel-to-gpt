@@ -51,6 +51,23 @@ Worst case is ~25 s transcript + ~25 s generation, so the frontend proxy needs a
 60 s route duration. Live quality, latency, and token cost still need checking
 with a real key on the evaluation set in the plan.
 
+### Creator chat index
+
+Tables come from `db_youtube_transcripts/migration_add_creator_chat.py` (pgvector, `creators`, `transcript_chunks`). Embeddings use `SUMMARY_OPENAI_API_KEY`. Indexing reads only the shared transcript cache, so run a channel job first for a creator whose videos are not cached. Re-running `index` skips videos already indexed.
+
+```bat
+poetry run python scripts/creators.py add @handle --category indie-hacking [--slug name]
+poetry run python scripts/creators.py index <slug> [--limit N] [--reindex]
+poetry run python scripts/creators.py search <slug> "question"
+poetry run python scripts/creators.py eval [<slug>] [-v]
+```
+
+Search is hybrid (pgvector plus Postgres full-text on the generated `search_text` column, merged by rank). `eval` scores it against `scripts/creator_chat_eval.json`; run it before and after changing chunking or search, and record the numbers in the commit.
+
+`chat <slug> "question" "follow-up"...` runs the real chat pipeline from the terminal (also for creators not enabled yet); `enable <slug> [--off]` shows or hides a creator on the site. Settings: `CREATOR_CHAT_MODEL` (`gpt-4.1-mini`), `CREATOR_CHAT_ANONYMOUS_DAILY` (3), `CREATOR_CHAT_USER_DAILY` (50). API contract: [api.md](api.md#creator-chat).
+
+`EMBEDDING_MODEL` and `EMBEDDING_DIMENSIONS` in `src/creator_chat.py` must match the `vector(512)` column; changing either means re-indexing every creator.
+
 ### Existing services
 
 - `src/config_v2.py` loads `.env` and defines API, YouTube, AWS/S3, SQS, proxy, CORS, and timeout settings. Other values are read directly in the API and database modules.

@@ -65,6 +65,33 @@ in-memory limiter as `/download/transcript/raw`. 503 before charging when
 (below); summaries are cached in `video_summaries` when that table exists. Cache
 errors fall back to live work. Plan and next phases: `docs/plans/single-video-summary.md`.
 
+## Creator chat
+
+Website-only, free (no credits); logic in `src/creator_chat.py`, endpoints in
+`src/transcript_api.py`. Only creators with `creators.enabled` exist for these
+routes; others are 404.
+
+- `GET /creators` returns `{"creators": [{slug, name, handle, category,
+  avatar_url, tagline, video_count}]}`; `GET /creators/{slug}` returns one.
+- `POST /creators/{slug}/chat` with `{"message": "...", "history": [{"role":
+  "user"|"assistant", "content": "..."}]}` (message 1-1000 chars, up to 20
+  history turns, oldest first; the server uses the last 6). The browser keeps
+  the conversation; the server stores nothing.
+
+The chat response is `text/event-stream`, in order: `sources` = `{query,
+sources[{n, video_id, title, start_seconds, url}]}`, then many `delta` =
+`{text}`, then `done` = `{usage, remaining}`. A failure after the stream starts
+ends it with `error` = `{detail}`. The answer cites sources as `[n]`; render
+those from `sources`, since only the server knows the real titles and times.
+Follow-ups (non-empty history) are rewritten into a standalone question before
+search; `sources.query` shows what was searched.
+
+Before streaming: 503 without `SUMMARY_OPENAI_API_KEY`, 404 unknown creator,
+422 invalid body. Limits are in-memory per API process over 24 h:
+`CREATOR_CHAT_ANONYMOUS_DAILY` (3) per client IP (from `get_client_ip`, so the
+proxy secret matters), then 401 `Sign in to keep chatting.`; signed-in
+`CREATOR_CHAT_USER_DAILY` (50) per user, then 429.
+
 ## Shared transcript cache
 
 `src/transcript_cache.py`. One cache for every path: website raw downloads and

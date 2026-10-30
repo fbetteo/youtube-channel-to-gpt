@@ -11,6 +11,7 @@
 | Durable state | `db_youtube_transcripts/job_manager.py`, `discovery_job_manager.py`, `database.py`; `src/hybrid_job_manager.py` wraps transcript jobs |
 | Worker | `lambda-transcript-processor/lambda_function.py`: fetch, format, upload to S3, report results |
 | Result handling | `src/job_result_processor.py`: shared HTTP/SQS logic; `src/sqs_result_consumer.py` runs separately |
+| Creator chat (RAG) | `src/creator_chat.py`: chunking, embeddings, pgvector search over cached transcripts; `scripts/creators.py` adds and indexes creators |
 | CLI / local MCP | `cli/src/cli.ts`, built by root `package.json` |
 | Web frontend | Separate Next.js repo; see [frontend.md](frontend.md) |
 

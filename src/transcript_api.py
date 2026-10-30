@@ -45,7 +45,12 @@ from fastapi import (
     BackgroundTasks,
     Response,
 )
-from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse
+from fastapi.responses import (
+    FileResponse,
+    JSONResponse,
+    PlainTextResponse,
+    StreamingResponse,
+)
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel, Field, field_validator, validator
@@ -59,11 +64,12 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "db_youtube_transc
 # from db_youtube_transcripts.database import get_db_youtube_transcripts
 
 import youtube_service
+import creator_chat
 import summary_service
 import credit_ledger
 from credit_ledger import ACTIVE_SUBSCRIPTION_STATUSES
 from transcript_formats import OutputFormat, download_option_overrides
-from rate_limiter import transcript_limiter
+from rate_limiter import creator_chat_limiter, transcript_limiter
 
 # Using the Pydantic v2 compatible settings
 from config_v2 import settings
@@ -619,6 +625,20 @@ class SummaryRequest(TranscriptLanguagePreference):
     @classmethod
     def validate_summary_language(cls, value):
         return youtube_service.normalize_preferred_language(value)
+
+
+class CreatorChatTurn(BaseModel):
+    role: Literal["user", "assistant"]
+    content: str = Field(..., max_length=6000)
+
+
+class CreatorChatRequest(BaseModel):
+    message: str = Field(..., min_length=1, max_length=1000)
+    history: List[CreatorChatTurn] = Field(
+        default_factory=list,
+        max_length=20,
+        description="Earlier turns, oldest first; the server uses the last few",
+    )
 
 
 class ChannelRequest(TranscriptLanguagePreference):
@@ -2618,6 +2638,89 @@ async def summarize_single_video(
         await refund()
         logger.error(f"Summary failed for video {video_id}: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail="Failed to summarize video.")
+
+
+def check_creator_chat_limit(request: Request, user_info: Dict) -> int:
+    """Count one chat message; returns how many are left in the 24 h window."""
+    if user_info["is_authenticated"]:
+        key = f"user:{user_info['user_id']}"
+        limit = settings.creator_chat_user_daily
+    else:
+        key = f"ip:{get_client_ip(request)}"
+        limit = settings.creator_chat_anonymous_daily
+    if not creator_chat_limiter.can_make_request(key, limit):
+        if user_info["is_authenticated"]:
+            raise HTTPException(
+                status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+                detail="Daily chat limit reached. Try again tomorrow.",
+            )
+        # 401 tells the frontend to ask for sign-in, which raises the limit.
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Sign in to keep chatting.",
+        )
+    creator_chat_limiter.add_request(key)
+    return creator_chat_limiter.get_remaining_requests(key, limit)
+
+
+def _sse(event: str, data: Dict[str, Any]) -> str:
+    return f"event: {event}\ndata: {json.dumps(data, ensure_ascii=False)}\n\n"
+
+
+@app.get("/creators")
+async def list_chat_creators():
+    """Creators available for chat, for the creators page."""
+    return {"creators": await creator_chat.list_creators()}
+
+
+@app.get("/creators/{slug}")
+async def get_chat_creator(slug: str):
+    creators = await creator_chat.list_creators(slug)
+    if not creators:
+        raise HTTPException(status_code=404, detail="Creator not found.")
+    return creators[0]
+
+
+@app.post("/creators/{slug}/chat")
+async def chat_with_creator(
+    slug: str,
+    request: CreatorChatRequest,
+    fastapi_request: Request,
+    user_info: Dict = Depends(get_user_or_anonymous),
+):
+    """
+    One chat turn grounded in the creator's videos, as Server-Sent Events:
+    `sources` (numbered video moments the answer cites as [n]), `delta`
+    (answer text, many), then `done` (usage, messages remaining) or `error`.
+    Free: anonymous visitors get a few messages a day per IP, then 401;
+    signed-in users get more, then 429.
+    """
+    if not creator_chat.is_configured():
+        raise HTTPException(status_code=503, detail="Chat is not available right now.")
+    creator = await creator_chat.get_enabled_creator(slug)
+    if not creator:
+        raise HTTPException(status_code=404, detail="Creator not found.")
+    remaining = check_creator_chat_limit(fastapi_request, user_info)
+    history = [turn.model_dump() for turn in request.history]
+
+    async def events():
+        try:
+            async for event, data in creator_chat.chat_events(
+                creator, request.message, history
+            ):
+                if event == "done":
+                    data = {**data, "remaining": remaining}
+                yield _sse(event, data)
+        except Exception as e:
+            logger.error(f"Creator chat failed for {slug}: {e}", exc_info=True)
+            yield _sse("error", {"detail": "Chat failed. Please try again."})
+
+    return StreamingResponse(
+        events(),
+        media_type="text/event-stream",
+        # X-Accel-Buffering stops nginx from holding the stream until it ends.
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )
 
 
 @app.get("/video-info")

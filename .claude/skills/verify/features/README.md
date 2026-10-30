@@ -33,8 +33,9 @@ Each feature file starts with an H1 title and one paragraph describing the user-
 - [Developer API and CLI](./developer-api.md): API keys, `/api/v1` credits and single transcripts, the `ytx` CLI.
 - [Hosted MCP](./hosted-mcp.md): `/mcp` JSON-RPC tool listing and `get_transcript`.
 - [Website single video](./website-single-video.md): `/download/transcript/raw` signed in and anonymous; `/summaries/single` availability.
+- [Creator chat](./creator-chat.md): creators listing, streamed RAG chat, follow-ups, anonymous and signed-in daily limits.
 
 ## Not drivable in isolation
 
 - Channel and playlist bulk jobs (`/channel/*`, `/playlist/*`, `/api/v1/transcripts/channel|playlist`, MCP `start_*_job`) need the production Lambda, S3 and SQS. The instance's AWS credentials are deliberately invalid, so dispatch fails. Their completion path is not proven by this harness; report it as skipped with that reason.
-- Single-video summaries need `SUMMARY_OPENAI_API_KEY`, which the instance leaves unset.
+- Single-video summaries need `SUMMARY_OPENAI_API_KEY`, which the instance leaves unset unless started with `up --openai` (real spend).
