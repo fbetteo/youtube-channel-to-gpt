@@ -13,6 +13,7 @@ Changing model or size means a new column type and re-indexing every creator.
 
 There is no vector index yet: an exact scan of one creator's chunks is fast at
 this size and never misses a match. Add HNSW when a creator gets slow.
+search_text (generated, GIN-indexed) serves the keyword half of hybrid search.
 
 Additive only; no existing data is changed. Idempotent.
     python db_youtube_transcripts/migration_add_creator_chat.py
@@ -82,6 +83,19 @@ with connection.cursor() as c:
     )
     c.execute(
         "CREATE INDEX IF NOT EXISTS idx_transcript_chunks_channel ON transcript_chunks (channel_id);"
+    )
+    # Keyword half of hybrid search; title words weigh more than spoken ones.
+    c.execute(
+        """
+        ALTER TABLE transcript_chunks ADD COLUMN IF NOT EXISTS search_text tsvector
+        GENERATED ALWAYS AS (
+            setweight(to_tsvector('english', coalesce(video_title, '')), 'A')
+            || setweight(to_tsvector('english', text), 'B')
+        ) STORED;
+        """
+    )
+    c.execute(
+        "CREATE INDEX IF NOT EXISTS idx_transcript_chunks_search ON transcript_chunks USING GIN (search_text);"
     )
     c.execute("ALTER TABLE transcript_chunks ENABLE ROW LEVEL SECURITY;")
     print("✓ transcript_chunks created successfully")

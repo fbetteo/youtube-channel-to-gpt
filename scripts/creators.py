@@ -4,6 +4,7 @@ Manage creator chat creators and their transcript index (src/creator_chat.py).
     poetry run python scripts/creators.py add @marc-lou --category indie-hacking
     poetry run python scripts/creators.py index marc-lou [--limit 5] [--reindex]
     poetry run python scripts/creators.py search marc-lou "how do you find ideas?"
+    poetry run python scripts/creators.py eval [marc-lou] [-v]
 
 add      Look up a channel and upsert its creators row (enabled stays false).
 index    Chunk and embed every cached transcript of the creator's long-form
@@ -11,13 +12,17 @@ index    Chunk and embed every cached transcript of the creator's long-form
          videos). Videos already indexed with the current model are skipped,
          so a stopped run resumes. Only reads the transcript cache: videos
          without a cached transcript are reported, never fetched.
-search   Embed a question and print the closest chunks, to check retrieval.
+search   Embed a question and print the best chunks, to check retrieval.
+eval     Score search against scripts/creator_chat_eval.json: questions with
+         the videos (judged from titles) a good answer should come from.
+         Run it before and after any change to chunking or search.
 
 Needs the DB_*, AWS/S3 and SUMMARY_OPENAI_API_KEY settings in .env.
 """
 
 import argparse
 import asyncio
+import json
 import logging
 import sys
 from datetime import datetime
@@ -35,6 +40,7 @@ from db_youtube_transcripts.database import close_db_pool, get_db_connection  # 
 # text-embedding-3-small, USD per 1M tokens
 EMBEDDING_PRICE_PER_MILLION = 0.02
 INDEX_CONCURRENCY = 5
+EVAL_FILE = Path(__file__).with_name("creator_chat_eval.json")
 
 
 async def get_creator(conn, slug):
@@ -197,13 +203,41 @@ async def cmd_search(args):
     async with get_db_connection() as conn:
         creator = await get_creator(conn, args.slug)
         [vector], _ = await creator_chat.embed([args.question])
-        results = await creator_chat.search(conn, creator["channel_id"], vector, args.k)
+        results = await creator_chat.search(
+            conn, creator["channel_id"], args.question, vector, args.k
+        )
     for r in results:
         print(
-            f"\n{r['distance']:.3f}  {r['video_title']}  @ {timestamp(r['start_seconds'])}\n"
+            f"\n{r['score']:.3f}  {r['video_title']}  @ {timestamp(r['start_seconds'])}\n"
             f"       https://www.youtube.com/watch?v={r['video_id']}&t={int(r['start_seconds'])}s\n"
             f"       {r['text'][:300]}"
         )
+
+
+async def cmd_eval(args):
+    """Hit rate and MRR of the top-k chunks against scripts/creator_chat_eval.json."""
+    cases = json.loads(EVAL_FILE.read_text(encoding="utf-8"))
+    slugs = [args.slug] if args.slug else list(cases)
+    hits, reciprocal_ranks = [], []
+    for slug in slugs:
+        async with get_db_connection() as conn:
+            creator = await get_creator(conn, slug)
+            questions = [case["question"] for case in cases[slug]]
+            vectors, _ = await creator_chat.embed(questions)
+            for case, vector in zip(cases[slug], vectors):
+                results = await creator_chat.search(
+                    conn, creator["channel_id"], case["question"], vector, args.k
+                )
+                rank = next(
+                    (i for i, r in enumerate(results, 1) if r["video_id"] in case["relevant"]),
+                    None,
+                )
+                hits.append(rank is not None)
+                reciprocal_ranks.append(1 / rank if rank else 0)
+                if args.verbose:
+                    print(f"  {slug:<10} {str(rank or '-'):>2}  {case['question']}")
+    n = len(hits)
+    print(f"hit@{args.k} {sum(hits)}/{n} = {sum(hits) / n:.2f}   MRR {sum(reciprocal_ranks) / n:.2f}")
 
 
 def main():
@@ -228,6 +262,12 @@ def main():
     search.add_argument("question")
     search.add_argument("-k", type=int, default=8)
     search.set_defaults(fn=cmd_search)
+
+    evaluate = sub.add_parser("eval")
+    evaluate.add_argument("slug", nargs="?", help="defaults to every creator in the eval file")
+    evaluate.add_argument("-k", type=int, default=8)
+    evaluate.add_argument("-v", "--verbose", action="store_true", help="rank per question")
+    evaluate.set_defaults(fn=cmd_eval)
 
     args = parser.parse_args()
     logging.basicConfig(level=logging.WARNING)
