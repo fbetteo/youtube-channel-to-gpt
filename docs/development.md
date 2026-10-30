@@ -59,7 +59,10 @@ Tables come from `db_youtube_transcripts/migration_add_creator_chat.py` (pgvecto
 poetry run python scripts/creators.py add @handle --category indie-hacking [--slug name]
 poetry run python scripts/creators.py index <slug> [--limit N] [--reindex]
 poetry run python scripts/creators.py search <slug> "question"
+poetry run python scripts/creators.py eval [<slug>] [-v]
 ```
+
+Search is hybrid (pgvector plus Postgres full-text on the generated `search_text` column, merged by rank). `eval` scores it against `scripts/creator_chat_eval.json`; run it before and after changing chunking or search, and record the numbers in the commit.
 
 `EMBEDDING_MODEL` and `EMBEDDING_DIMENSIONS` in `src/creator_chat.py` must match the `vector(512)` column; changing either means re-indexing every creator.
 
