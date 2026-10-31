@@ -53,5 +53,23 @@
     {"question": "Does intermittent fasting help with fat loss?", "relevant": ["9tRohh0gErM", "D61jJJPIQeo", "7R3-3HR6-u4"]},
     {"question": "What does Matt Walker say about napping?", "relevant": ["4F_RBc1akC8", "gbQFSMayJxk", "hvPGfcAgk9Y", "-OBCwiPPfEU"]},
     {"question": "How can I set up my desk to focus better?", "relevant": ["Ze2pc6NwsHQ", "23t_ynq2tmk"]}
+  ],
+  "learning-bayesian-statistics": [
+    {"question": "Why use Bayesian models instead of frequentist ones for sports data?", "relevant": ["EJ3R86qHbsw", "1vIwpwDRkJ4", "SEY-A6raxN4", "8uqiwYL0zz0"]},
+    {"question": "How do you estimate how much a single player contributes to winning?", "relevant": ["cQillgLRdWY"]},
+    {"question": "How did baseball analytics evolve over the years?", "relevant": ["K8CJ7v4SxUU", "eGinKhh_Tvs", "Zb5ijR1eyvc"]},
+    {"question": "How do you build a data department inside a football club?", "relevant": ["DtJhWPFvwp4", "74HHGHtkEGg", "mSm9GD8dUYo"]}
+  ],
+  "friends-of-tracking": [
+    {"question": "How do I build an expected goals model?", "relevant": ["bpjLyFyLlXs", "wHOgINJ5g54", "310_eW0hUqQ"]},
+    {"question": "What is pitch control and how is it calculated?", "relevant": ["5X1cSehLg6s", "X9PrwPyolyU", "KXSLKwADXKI"]},
+    {"question": "How can I measure how much a pass or dribble increases the chance of scoring?", "relevant": ["xyyZLs_N1F0", "0ol_eLLEQ64", "Ep9wXQgAFaE", "WlORqYIb-Gg", "w9G0z3eGCj8", "KXSLKwADXKI", "nzIFXf5f3XA", "0VAdzaid8L8"]},
+    {"question": "How do I measure the distance and speed players run from tracking data?", "relevant": ["VX3T-4lB2o0", "8TrleFklEsE", "fYqEnoOV9Po"]}
+  ],
+  "sport-analytics": [
+    {"question": "What does an analyst do day to day for an NFL team?", "relevant": ["oQEi5nbW9bU"]},
+    {"question": "How do sportsbooks like FanDuel model games?", "relevant": ["vPSWQ_s9FuQ"]},
+    {"question": "How do I break into a career in hockey analytics?", "relevant": ["2GSqyRA8o5I", "-OYNj2me5Qc"]},
+    {"question": "What does a TV statistician do during a broadcast?", "relevant": ["BztJowZDw1U"]}
   ]
 }
