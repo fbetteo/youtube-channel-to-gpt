@@ -158,6 +158,26 @@ async def list_creators(slug: Optional[str] = None) -> List[Dict[str, Any]]:
     return [dict(row) for row in rows]
 
 
+async def list_creator_videos(slug: str, limit: int = 60) -> List[Dict[str, Any]]:
+    """Newest indexed videos of an enabled creator: what its chat can answer from."""
+    from db_youtube_transcripts.database import get_db_connection
+
+    async with get_db_connection() as conn:
+        rows = await conn.fetch(
+            """
+            SELECT t.video_id, min(t.video_title) AS title, max(t.published_at) AS published_at
+            FROM transcript_chunks t JOIN creators c USING (channel_id)
+            WHERE c.slug = $1 AND c.enabled
+            GROUP BY t.video_id
+            ORDER BY published_at DESC NULLS LAST
+            LIMIT $2
+            """,
+            slug,
+            limit,
+        )
+    return [dict(row) for row in rows]
+
+
 async def get_enabled_creator(slug: str) -> Optional[Dict[str, Any]]:
     from db_youtube_transcripts.database import get_db_connection
 

@@ -2678,7 +2678,7 @@ async def get_chat_creator(slug: str):
     creators = await creator_chat.list_creators(slug)
     if not creators:
         raise HTTPException(status_code=404, detail="Creator not found.")
-    return creators[0]
+    return {**creators[0], "videos": await creator_chat.list_creator_videos(slug)}
 
 
 @app.post("/creators/{slug}/chat")
