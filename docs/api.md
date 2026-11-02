@@ -72,7 +72,9 @@ Website-only, free (no credits); logic in `src/creator_chat.py`, endpoints in
 routes; others are 404.
 
 - `GET /creators` returns `{"creators": [{slug, name, handle, category,
-  avatar_url, tagline, video_count}]}`; `GET /creators/{slug}` returns one.
+  avatar_url, tagline, video_count}]}`; `GET /creators/{slug}` returns one,
+  plus `videos`: the newest 60 indexed videos `[{video_id, title,
+  published_at}]` (the frontend lists them on the creator page for SEO).
 - `POST /creators/{slug}/chat` with `{"message": "...", "history": [{"role":
   "user"|"assistant", "content": "..."}]}` (message 1-1000 chars, up to 20
   history turns, oldest first; the server uses the last 6). The browser keeps
