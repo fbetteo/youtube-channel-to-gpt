@@ -72,13 +72,13 @@ async def cmd_add(args):
             """,
             info["channelId"],
             slug,
-            info["title"],
+            args.name or info["title"],
             handle,
             args.category,
             info["thumbnail"] or None,
             args.tagline,
         )
-    print(f"Saved {info['title']} ({info['channelId']}) as '{slug}' in {args.category}")
+    print(f"Saved {args.name or info['title']} ({info['channelId']}) as '{slug}' in {args.category}")
     print(f"Avatar: {info['thumbnail']}")
 
 
@@ -294,6 +294,7 @@ def main():
     add.add_argument("handle", help="@handle or channel ID")
     add.add_argument("--category", required=True)
     add.add_argument("--slug", help="defaults to the handle without @")
+    add.add_argument("--name", help="defaults to the channel title")
     add.add_argument("--tagline")
     add.set_defaults(fn=cmd_add)
 

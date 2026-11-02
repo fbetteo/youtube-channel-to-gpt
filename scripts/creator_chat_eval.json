@@ -71,5 +71,12 @@
     {"question": "How do sportsbooks like FanDuel model games?", "relevant": ["vPSWQ_s9FuQ"]},
     {"question": "How do I break into a career in hockey analytics?", "relevant": ["2GSqyRA8o5I", "-OYNj2me5Qc"]},
     {"question": "What does a TV statistician do during a broadcast?", "relevant": ["BztJowZDw1U"]}
+  ],
+  "levelsio": [
+    {"question": "How do you build a startup without raising money?", "relevant": ["6reLWfFNer0", "HiK0ztFJsm4"]},
+    {"question": "How many digital nomads will there be in the future?", "relevant": ["4IYOZ6H0UNk", "09onST5h084"]},
+    {"question": "Why should cities try to attract remote workers?", "relevant": ["b8IObfwOAqg", "09onST5h084"]},
+    {"question": "How fast can you code and launch a product like Hoodmaps?", "relevant": ["q--QUbZ_258", "9XBOCY_LdGQ", "Tq1uoC-lxy8", "FN144KdOIGM"]},
+    {"question": "What happens to makers when AI can build any app?", "relevant": ["B6FxojoTHCc"]}
   ]
 }

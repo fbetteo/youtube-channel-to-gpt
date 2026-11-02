@@ -56,7 +56,7 @@ with a real key on the evaluation set in the plan.
 Tables come from `db_youtube_transcripts/migration_add_creator_chat.py` (pgvector, `creators`, `transcript_chunks`). Embeddings use `SUMMARY_OPENAI_API_KEY`. Indexing reads only the shared transcript cache, so run a channel job first for a creator whose videos are not cached. Re-running `index` skips videos already indexed.
 
 ```bat
-poetry run python scripts/creators.py add @handle --category indie-hacking [--slug name]
+poetry run python scripts/creators.py add @handle --category indie-hacking [--slug name] [--name "Display Name"] [--tagline "..."]
 poetry run python scripts/creators.py index <slug> [--limit N] [--reindex]
 poetry run python scripts/creators.py search <slug> "question"
 poetry run python scripts/creators.py eval [<slug>] [-v]
