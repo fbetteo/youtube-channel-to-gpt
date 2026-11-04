@@ -71,7 +71,7 @@ Search is hybrid (pgvector plus Postgres full-text on the generated `search_text
 ### Existing services
 
 - `src/config_v2.py` loads `.env` and defines API, YouTube, AWS/S3, SQS, proxy, CORS, and timeout settings. Other values are read directly in the API and database modules.
-- Auth: `SUPABASE_SECRET_YOUTUBE_TRANSCRIPTS`. Database: `DB_HOST_YOUTUBE_TRANSCRIPTS`, `DB_NAME_YOUTUBE_TRANSCRIPTS`, `DB_USERNAME_YOUTUBE_TRANSCRIPTS`, `DB_PASSWORD_YOUTUBE_TRANSCRIPTS`, `DB_PORT_YOUTUBE_TRANSCRIPTS`.
+- Auth: `SUPABASE_SECRET_YOUTUBE_TRANSCRIPTS`. `API_KEY_ENCRYPTION_KEY` (a Fernet key: `python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"`) encrypts default API keys; see [auth.md](auth.md). Database: `DB_HOST_YOUTUBE_TRANSCRIPTS`, `DB_NAME_YOUTUBE_TRANSCRIPTS`, `DB_USERNAME_YOUTUBE_TRANSCRIPTS`, `DB_PASSWORD_YOUTUBE_TRANSCRIPTS`, `DB_PORT_YOUTUBE_TRANSCRIPTS`.
 - Payments: `STRIPE_SECRET_KEY_LIVE`, `STRIPE_WEBHOOK_SECRET_TRANSCRIPTS`, `STRIPE_PORTAL_CONFIGURATION_ID` (printed by `scripts/stripe_setup.py`); `STRIPE_SECRET_KEY_TEST_TRANSCRIPTS` for the setup script's `--test`. Redirects: `FRONTEND_URL_YOUTUBE_TRANSCRIPTS`.
 - `DOCS_SECRET_KEY` gates `/internal/docs`, `/internal/redoc`, `/internal/openapi.json`, and `/debug/*` through a `?secret=` query parameter. When unset, all of them return 404.
 - AWS: `AWS_DEFAULT_REGION`, `LAMBDA_FUNCTION_NAME`, `S3_BUCKET_NAME`, `LAMBDA_RESULTS_QUEUE_URL`. Inspect worker environment reads too; backend settings do not automatically configure Lambda.

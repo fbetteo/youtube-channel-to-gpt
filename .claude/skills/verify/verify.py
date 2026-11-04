@@ -97,6 +97,8 @@ def instance_env():
         OPENAI_API_KEY="",
         DOCS_SECRET_KEY="ytx-verify-docs",
         PROXY_SHARED_SECRET="ytx-verify-proxy",
+        # Fernet key, base64 of b"ytx-verify-default-key-encrypt32".
+        API_KEY_ENCRYPTION_KEY="eXR4LXZlcmlmeS1kZWZhdWx0LWtleS1lbmNyeXB0MzI=",
         API_BASE_URL=API,
         FRONTEND_URL_YOUTUBE_TRANSCRIPTS="http://localhost:3000",
     )

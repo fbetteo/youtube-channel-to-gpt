@@ -82,6 +82,7 @@ from db_youtube_transcripts.discovery_job_manager import DiscoveryJobManager
 # Import API key authentication for developer API
 from api_key_auth import (
     create_api_key,
+    get_or_create_default_api_key,
     list_user_api_keys,
     revoke_api_key,
 )
@@ -1925,6 +1926,7 @@ class APIKeyResponse(BaseModel):
     key_prefix: str
     name: str
     is_active: bool = True
+    is_default: bool = False
     rate_limit_tier: str = "standard"
     last_used_at: Optional[str] = None
     total_requests: int = 0
@@ -1977,6 +1979,31 @@ async def create_user_api_key(
         )
 
 
+@app.get("/user/api-keys/default", response_model=APIKeyResponse)
+async def get_default_api_key(payload: dict = Depends(validate_jwt)):
+    """
+    Return the user's default API key in full, creating it on first call.
+
+    Unlike other keys, the default key can be shown again. Revoke it to get a
+    new one on the next call.
+    """
+    try:
+        user_id = get_user_id_from_payload(payload)
+        # Creates the user_credits row (welcome credits) that api_keys references.
+        await CreditManager.get_user_credits(user_id)
+        key = await get_or_create_default_api_key(user_id)
+        return APIKeyResponse(**key, is_default=True)
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error getting default API key: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to get default API key",
+        )
+
+
 @app.get("/user/api-keys", response_model=List[APIKeyResponse])
 async def list_api_keys(payload: dict = Depends(validate_jwt)):
     """
@@ -1995,6 +2022,7 @@ async def list_api_keys(payload: dict = Depends(validate_jwt)):
                 key_prefix=key["key_prefix"],
                 name=key["name"],
                 is_active=key["is_active"],
+                is_default=key["is_default"],
                 rate_limit_tier=key["rate_limit_tier"],
                 last_used_at=key["last_used_at"],
                 total_requests=key["total_requests"],

@@ -39,6 +39,7 @@ def test_developer_api_still_requires_api_key():
 
     assert response.status_code == 401
     assert "API key" in response.json()["detail"]
+    assert "/dashboard/api-keys" in response.json()["detail"]
 
 
 def test_hosted_mcp_lists_tools_without_secret():
@@ -70,3 +71,4 @@ def test_hosted_mcp_tool_call_requires_bearer_auth():
     )
 
     assert response.status_code == 401
+    assert "/dashboard/api-keys" in response.text
