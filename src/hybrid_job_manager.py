@@ -123,7 +123,6 @@ class HybridJobManager:
                 formatting_options=job_data.get("formatting_options", {}),
                 credits_reserved=job_data.get("credits_reserved", len(videos_dict)),
                 reservation_id=job_data.get("reservation_id"),
-                videos_metadata=videos_metadata,
                 api_key_id=job_data.get("api_key_id"),
                 reserve_credits=reserve_credits,
                 replace_placeholder=replace_placeholder,

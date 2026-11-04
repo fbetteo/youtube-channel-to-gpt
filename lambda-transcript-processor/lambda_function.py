@@ -59,6 +59,8 @@ DEADLINE_SAFETY_SECONDS = 15
 YOUTUBE_REQUEST_TIMEOUT_SECONDS = 10
 
 LANGUAGE_CODE_PATTERN = re.compile(r"^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
+INVALID_FILENAME_CHARS_PATTERN = re.compile(r'[<>:"/\\|?*\x00-\x1f]')
+WHITESPACE_RUN_PATTERN = re.compile(r"\s+")
 
 # Shared, user-independent copy of each fetched transcript, reused across jobs.
 # Nothing here deletes entries. TRANSCRIPT_CACHE_MAX_AGE_DAYS: unset = reuse
@@ -470,9 +472,9 @@ def sanitize_filename(filename: str, max_len: int = 30) -> str:
         A sanitized filename
     """
     # Remove characters invalid in Windows/Linux filenames
-    sanitized = re.sub(r'[<>:"/\\|?*\x00-\x1f]', "", filename)
+    sanitized = INVALID_FILENAME_CHARS_PATTERN.sub("", filename)
     # Replace multiple spaces with a single space
-    sanitized = re.sub(r"\s+", " ", sanitized)
+    sanitized = WHITESPACE_RUN_PATTERN.sub(" ", sanitized)
     # Remove leading/trailing spaces and dots
     sanitized = sanitized.strip(" .")
     # Prevent empty filenames

@@ -58,9 +58,10 @@ class DiscoveryJobManager:
         return job_id
 
     @staticmethod
-    async def update_job(job_id: str, **updates: Any) -> Optional[Dict[str, Any]]:
+    async def update_job(job_id: str, **updates: Any) -> Optional[str]:
+        """Merge updates into a live job; returns its new status, or None if nothing changed."""
         if not updates:
-            return await DiscoveryJobManager.get_job(job_id)
+            return None
 
         updates = dict(updates)
         status = updates.get("status")
@@ -68,7 +69,7 @@ class DiscoveryJobManager:
         is_terminal = status in {"completed", "completed_with_errors", "failed"}
 
         async with get_db_connection() as conn:
-            record = await conn.fetchrow(
+            return await conn.fetchval(
                 """
                 UPDATE video_discovery_jobs
                 SET payload = payload || $2::jsonb,
@@ -82,7 +83,7 @@ class DiscoveryJobManager:
                 WHERE job_id = $1
                   AND expires_at > NOW()
                   AND status NOT IN ('completed', 'completed_with_errors', 'failed')
-                RETURNING payload, status, error_message
+                RETURNING status
                 """,
                 job_id,
                 _json_payload(updates),
@@ -90,7 +91,6 @@ class DiscoveryJobManager:
                 error_message,
                 is_terminal,
             )
-        return DiscoveryJobManager._record_to_job(record)
 
     @staticmethod
     async def get_job(

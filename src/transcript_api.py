@@ -398,7 +398,9 @@ class CreditManager:
         async with get_db_connection() as conn:
             row = await conn.fetchrow(
                 """
-                SELECT * FROM user_subscriptions
+                SELECT status, lookup_key, monthly_credits,
+                       cancel_at_period_end, current_period_end
+                FROM user_subscriptions
                 WHERE user_id = $1 AND status = ANY($2::text[])
                 ORDER BY updated_at DESC
                 LIMIT 1
@@ -1956,6 +1958,8 @@ async def create_user_api_key(
     """
     try:
         user_id = get_user_id_from_payload(payload)
+        # Creates the user_credits row (welcome credits) that api_keys references.
+        await CreditManager.get_user_credits(user_id)
 
         result = await create_api_key(
             user_id=user_id,
@@ -2107,9 +2111,7 @@ async def load_discovery_job(
     return await DiscoveryJobManager.get_job(job_id, stale_after_minutes)
 
 
-async def update_discovery_job(
-    job_id: str, **updates: Any
-) -> Optional[Dict[str, Any]]:
+async def update_discovery_job(job_id: str, **updates: Any) -> Optional[str]:
     return await DiscoveryJobManager.update_job(job_id, **updates)
 
 

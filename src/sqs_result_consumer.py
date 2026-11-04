@@ -45,6 +45,9 @@ class SQSResultConsumer:
         self.max_messages = settings.sqs_consumer_max_messages
         self.visibility_timeout = settings.sqs_consumer_visibility_timeout
         self.concurrency = settings.sqs_consumer_concurrency
+        # A DB call stuck on a dead connection must not freeze the whole batch.
+        # Finish before the message becomes visible again so SQS retries it.
+        self.message_timeout = max(self.visibility_timeout - 20, 10)
         self.semaphore = asyncio.Semaphore(self.concurrency)
         self.stop_event = asyncio.Event()
         self.sqs_client = boto3.client("sqs", region_name=settings.aws_default_region)
@@ -86,9 +89,17 @@ class SQSResultConsumer:
                     f"job_id={body.get('job_id')} video_id={body.get('video_id')} "
                     f"receive_count={receive_count}"
                 )
-                await process_lambda_result_message(body)
+                await asyncio.wait_for(
+                    process_lambda_result_message(body), timeout=self.message_timeout
+                )
                 await self.delete_message(receipt_handle)
                 return True
+            except asyncio.TimeoutError:
+                logger.error(
+                    f"Timed out after {self.message_timeout}s processing SQS message "
+                    f"receive_count={receive_count}; it will be retried"
+                )
+                return False
             except Exception as e:
                 logger.error(
                     f"Failed to process SQS message receive_count={receive_count}: {str(e)}",

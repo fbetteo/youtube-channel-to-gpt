@@ -29,6 +29,7 @@ EMBEDDING_BATCH_SIZE = 256
 
 CHAT_SOURCES = 8
 HISTORY_MESSAGES = 6
+CITATION_PATTERN = re.compile(r"\s*\[\d+\]")
 ANSWER_MAX_TOKENS = 800
 OPENAI_TIMEOUT_SECONDS = 30
 
@@ -191,7 +192,7 @@ async def get_enabled_creator(slug: str) -> Optional[Dict[str, Any]]:
 def clean_history(history: List[Dict[str, str]]) -> List[Dict[str, str]]:
     """Last HISTORY_MESSAGES turns. Old [n] citations point at old sources, so drop them."""
     return [
-        {"role": turn["role"], "content": re.sub(r"\s*\[\d+\]", "", turn["content"])}
+        {"role": turn["role"], "content": CITATION_PATTERN.sub("", turn["content"])}
         for turn in history[-HISTORY_MESSAGES:]
     ]
 

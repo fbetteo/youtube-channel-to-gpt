@@ -10,6 +10,7 @@ type Json = Record<string, unknown>;
 const CONFIG_DIR = join(homedir(), ".youtube-transcript-agent");
 const CONFIG_PATH = join(CONFIG_DIR, "config.json");
 const DEFAULT_BASE_URL = "https://api.youtubetranscripts.fbetteo.com";
+const TRAILING_SLASHES_PATTERN = /\/+$/;
 const TOOL_NAMES = [
   "get_transcript",
   "get_channel_info",
@@ -79,7 +80,7 @@ async function getBaseUrl(): Promise<string> {
     process.env.API_BASE_URL ||
     (config.apiBaseUrl as string | undefined) ||
     DEFAULT_BASE_URL
-  ).replace(/\/+$/, "");
+  ).replace(TRAILING_SLASHES_PATTERN, "");
 }
 
 async function getApiKey(): Promise<string> {
@@ -203,7 +204,7 @@ async function command(args: string[]): Promise<void> {
     const config = await readConfig();
     config.apiKey = value;
     const baseUrl = getFlag(args, "--base-url");
-    if (baseUrl) config.apiBaseUrl = baseUrl.replace(/\/+$/, "");
+    if (baseUrl) config.apiBaseUrl = baseUrl.replace(TRAILING_SLASHES_PATTERN, "");
     await writeConfig(config);
     console.log("API key saved.");
     return;

@@ -134,8 +134,6 @@ class JobManager:
                     # Lambda processing
                     "lambda_dispatched_count": 0,
                     "prefetch_completed": False,
-                    # Metadata storage
-                    "videos_metadata": job_metadata.get("videos_metadata"),
                     "formatting_options": formatting_options,
                     # Source-specific fields
                     "channel_name": source_id if source_type == "channel" else None,
@@ -178,12 +176,11 @@ class JobManager:
                         include_timestamps, include_video_title, include_video_id, 
                         include_video_url, include_view_count, concatenate_all,
                         lambda_dispatched_count, prefetch_completed,
-                        videos_metadata, formatting_options, channel_name, playlist_id,
-                        api_key_id
+                        formatting_options, channel_name, playlist_id, api_key_id
                     ) VALUES (
                         $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13,
                         $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25,
-                        $26, $27, $28
+                        $26, $27
                     )
                 """
 
@@ -211,11 +208,6 @@ class JobManager:
                     job_data["concatenate_all"],
                     job_data["lambda_dispatched_count"],
                     job_data["prefetch_completed"],
-                    (
-                        json.dumps(job_data["videos_metadata"])
-                        if job_data["videos_metadata"]
-                        else None
-                    ),
                     (
                         json.dumps(job_data["formatting_options"])
                         if job_data["formatting_options"]
@@ -255,9 +247,8 @@ class JobManager:
                             include_video_title = $17, include_video_id = $18,
                             include_video_url = $19, include_view_count = $20,
                             concatenate_all = $21, lambda_dispatched_count = $22,
-                            prefetch_completed = $23, videos_metadata = $24,
-                            formatting_options = $25, channel_name = $26,
-                            playlist_id = $27, api_key_id = $28,
+                            prefetch_completed = $23, formatting_options = $24,
+                            channel_name = $25, playlist_id = $26, api_key_id = $27,
                             error_message = NULL, updated_at = NOW(), version = version + 1
                         WHERE job_id = $1 AND user_id = $2
                         """,
@@ -378,9 +369,6 @@ class JobManager:
                     # Convert to dict and handle JSON fields
                     job = dict(job_record)
 
-                    # Parse JSON fields
-                    if job["videos_metadata"]:
-                        job["videos_metadata"] = json.loads(job["videos_metadata"])
                     if job["formatting_options"]:
                         job["formatting_options"] = json.loads(
                             job["formatting_options"]
@@ -553,7 +541,6 @@ class JobManager:
                         "error_message",
                         "end_time",
                         "duration",
-                        "videos_metadata",
                     ]:
                         # Direct field updates
                         if key == "lambda_dispatch_time":
@@ -563,8 +550,6 @@ class JobManager:
                                 if isinstance(value, (int, float))
                                 else value
                             )
-                        elif key == "videos_metadata":
-                            value = json.dumps(value) if value else None
 
                         set_clauses.append(f"{key} = ${param_count}")
                         params.append(value)

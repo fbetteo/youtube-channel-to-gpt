@@ -94,6 +94,18 @@ TERMINAL_TRANSCRIPT_ERROR_TYPES = {
 }
 
 LANGUAGE_CODE_PATTERN = re.compile(r"^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
+VIDEO_ID_IN_URL_PATTERN = re.compile(
+    r"(?:v=|\/videos\/|embed\/|youtu.be\/|\/v\/|\/e\/|watch\?v=|\/watch\?v=)([^#\&\?\/\s]*)"
+)
+VIDEO_ID_PATTERN = re.compile(r"^[a-zA-Z0-9_-]{11}$")
+LIST_PARAM_PATTERN = re.compile(r"[?&]list=([a-zA-Z0-9_-]+)")
+PLAYLIST_ID_PATTERN = re.compile(r"^[a-zA-Z0-9_-]{10,}$")
+CHANNEL_ID_PATTERN = re.compile(r"^UC[\w-]{22}$")
+INVALID_FILENAME_CHARS_PATTERN = re.compile(r'[<>:"/\\|?*\x00-\x1f]')
+WHITESPACE_RUN_PATTERN = re.compile(r"\s+")
+DURATION_HOURS_PATTERN = re.compile(r"(\d+)H")
+DURATION_MINUTES_PATTERN = re.compile(r"(\d+)M")
+DURATION_SECONDS_PATTERN = re.compile(r"(\d+)S")
 
 
 def normalize_preferred_language(language_code: Optional[str]) -> Optional[str]:
@@ -988,18 +1000,12 @@ def extract_youtube_id(url: str) -> str:
     Raises:
         ValueError: If unable to extract a valid YouTube video ID
     """
-    # Common YouTube URL patterns
-    patterns = [
-        r"(?:v=|\/videos\/|embed\/|youtu.be\/|\/v\/|\/e\/|watch\?v=|\/watch\?v=)([^#\&\?\/\s]*)",
-    ]
-
-    for pattern in patterns:
-        match = re.search(pattern, url)
-        if match:
-            return match.group(1)
+    match = VIDEO_ID_IN_URL_PATTERN.search(url)
+    if match:
+        return match.group(1)
 
     # If no pattern matches, perhaps the URL is already just the ID
-    if re.match(r"^[a-zA-Z0-9_-]{11}$", url):
+    if VIDEO_ID_PATTERN.match(url):
         return url
 
     raise ValueError(f"Could not extract YouTube video ID from URL: {url}")
@@ -1018,22 +1024,13 @@ def extract_playlist_id(url_or_id: str) -> str:
     Raises:
         ValueError: If unable to extract a valid YouTube playlist ID
     """
-    # Common YouTube playlist URL patterns
-    patterns = [
-        r"[?&]list=([a-zA-Z0-9_-]+)",  # ?list=PLxxxxxx or &list=PLxxxxxx
-        r"playlist\?list=([a-zA-Z0-9_-]+)",  # playlist?list=PLxxxxxx
-    ]
-
-    for pattern in patterns:
-        match = re.search(pattern, url_or_id)
-        if match:
-            playlist_id = match.group(1)
-            # Validate that it looks like a valid playlist ID
-            if re.match(r"^[a-zA-Z0-9_-]{10,}$", playlist_id):
-                return playlist_id
+    # ?list=PLxxxxxx or &list=PLxxxxxx (also covers playlist?list=)
+    match = LIST_PARAM_PATTERN.search(url_or_id)
+    if match and PLAYLIST_ID_PATTERN.match(match.group(1)):
+        return match.group(1)
 
     # If no pattern matches, perhaps the input is already just the ID
-    if re.match(r"^[a-zA-Z0-9_-]{10,}$", url_or_id):
+    if PLAYLIST_ID_PATTERN.match(url_or_id):
         return url_or_id
 
     raise ValueError(f"Could not extract YouTube playlist ID from URL: {url_or_id}")
@@ -1051,9 +1048,9 @@ def sanitize_filename(filename: str, max_len: int = 30) -> str:
         A sanitized filename
     """
     # Remove characters invalid in Windows/Linux filenames
-    sanitized = re.sub(r'[<>:"/\\|?*\x00-\x1f]', "", filename)
+    sanitized = INVALID_FILENAME_CHARS_PATTERN.sub("", filename)
     # Replace multiple spaces with a single space
-    sanitized = re.sub(r"\s+", " ", sanitized)
+    sanitized = WHITESPACE_RUN_PATTERN.sub(" ", sanitized)
     # Remove leading/trailing spaces and dots
     sanitized = sanitized.strip(" .")
     # Prevent empty filenames
@@ -1536,9 +1533,9 @@ def _format_duration(duration_str: str) -> str:
     Returns:
         Formatted duration string (e.g., '1:02:03')
     """
-    match_hours = re.search(r"(\d+)H", duration_str)
-    match_minutes = re.search(r"(\d+)M", duration_str)
-    match_seconds = re.search(r"(\d+)S", duration_str)
+    match_hours = DURATION_HOURS_PATTERN.search(duration_str)
+    match_minutes = DURATION_MINUTES_PATTERN.search(duration_str)
+    match_seconds = DURATION_SECONDS_PATTERN.search(duration_str)
 
     hours = int(match_hours.group(1)) if match_hours else 0
     minutes = int(match_minutes.group(1)) if match_minutes else 0
@@ -1560,9 +1557,9 @@ def _parse_duration_to_seconds(duration_str: str) -> int:
     Returns:
         Total duration in seconds
     """
-    match_hours = re.search(r"(\d+)H", duration_str)
-    match_minutes = re.search(r"(\d+)M", duration_str)
-    match_seconds = re.search(r"(\d+)S", duration_str)
+    match_hours = DURATION_HOURS_PATTERN.search(duration_str)
+    match_minutes = DURATION_MINUTES_PATTERN.search(duration_str)
+    match_seconds = DURATION_SECONDS_PATTERN.search(duration_str)
 
     hours = int(match_hours.group(1)) if match_hours else 0
     minutes = int(match_minutes.group(1)) if match_minutes else 0
@@ -1624,7 +1621,7 @@ async def get_channel_info(channel_name: str) -> Dict[str, Any]:
         # Construct base URL
         if not channel_name.startswith("http"):
             # Check if it looks like a channel ID (UC...)
-            if re.match(r"^UC[\w-]{22}$", channel_name):
+            if CHANNEL_ID_PATTERN.match(channel_name):
                 base_url = f"https://www.youtube.com/channel/{channel_name}"
             else:
                 # Assume it's a handle if it's not a channel ID
@@ -2281,8 +2278,8 @@ def _extract_playlist_id_from_url(url: str) -> Optional[str]:
     if not url:
         return None
 
-    match = re.search(r"[?&]list=([a-zA-Z0-9_-]{10,})", url)
-    if match:
+    match = LIST_PARAM_PATTERN.search(url)
+    if match and PLAYLIST_ID_PATTERN.match(match.group(1)):
         return match.group(1)
     return None
 
@@ -2326,7 +2323,7 @@ def _fetch_all_channel_playlists(channel_id: str) -> List[Dict[str, Any]]:
         playlist_id = entry.get("id")
         entry_url = entry.get("url") or entry.get("webpage_url") or ""
 
-        if not playlist_id or not re.match(r"^[a-zA-Z0-9_-]{10,}$", str(playlist_id)):
+        if not playlist_id or not PLAYLIST_ID_PATTERN.match(str(playlist_id)):
             playlist_id = _extract_playlist_id_from_url(entry_url)
 
         if not playlist_id:
@@ -2865,14 +2862,8 @@ async def prefetch_and_dispatch_task(job_id: str):
                 )
                 return
 
-        # 2. Update job with metadata
-        await hybrid_job_manager.update_job(
-            job_id,
-            videos_metadata=videos_metadata,
-            prefetch_completed=True,
-        )
-
-        # 3. Update video metadata in job_videos table
+        # 2. Store video metadata in the job_videos table
+        await hybrid_job_manager.update_job(job_id, prefetch_completed=True)
         await hybrid_job_manager.update_videos_metadata(job_id, videos_metadata)
 
         logger.info(

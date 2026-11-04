@@ -19,6 +19,10 @@ class FakeConnection:
         self.calls.append(("fetchrow", query, args))
         return self.record
 
+    async def fetchval(self, query, *args):
+        self.calls.append(("fetchval", query, args))
+        return self.record["status"]
+
 
 def connection_context(connection):
     @asynccontextmanager
@@ -67,7 +71,8 @@ def test_discovery_updates_do_not_revive_terminal_jobs(monkeypatch):
         )
     )
 
-    assert result["status"] == "completed"
+    assert result == "completed"
     assert "status NOT IN ('completed', 'completed_with_errors', 'failed')" in (
         connection.calls[0][1]
     )
+    assert "RETURNING status" in connection.calls[0][1]

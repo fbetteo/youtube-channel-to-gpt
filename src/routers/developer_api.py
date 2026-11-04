@@ -834,7 +834,7 @@ async def get_job_status(job_id: str, api_key_data: Dict = Depends(validate_api_
     user_id = api_key_data["user_id"]
 
     try:
-        job = await hybrid_job_manager.get_job(job_id)
+        job = await hybrid_job_manager.get_job(job_id, include_videos=False)
 
         if not job:
             raise HTTPException(status_code=404, detail="Job not found")

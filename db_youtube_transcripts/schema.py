@@ -56,9 +56,9 @@ with connection.cursor() as c:
         lambda_dispatched_count INTEGER DEFAULT 0,
         lambda_dispatch_time TIMESTAMP NULL,
         prefetch_completed BOOLEAN DEFAULT false,
+        timeout_occurred BOOLEAN NOT NULL DEFAULT false,
         
         -- Metadata storage
-        videos_metadata JSONB NULL,
         formatting_options JSONB NULL,
         error_message TEXT NULL,
         
