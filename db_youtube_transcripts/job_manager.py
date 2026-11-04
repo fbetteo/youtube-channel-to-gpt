@@ -628,7 +628,8 @@ class JobManager:
             file_info: Dict with file_path, s3_key, file_size, etc.
 
         Returns:
-            True on success, False on error
+            True if applied, False if the video or job was already terminal.
+            Raises on database errors so the caller can retry the result.
         """
         max_retries = 3
         retry_delay = 1  # seconds
@@ -699,7 +700,7 @@ class JobManager:
                     logger.error(
                         f"Failed to mark video {video_id} as completed after {max_retries} attempts: {str(e)}"
                     )
-                    return False
+                    raise
 
     @staticmethod
     async def mark_video_failed(
@@ -716,7 +717,8 @@ class JobManager:
                 network, worker deadline); finalization then refunds the credit.
 
         Returns:
-            True on success, False on error
+            True if applied, False if the video or job was already terminal.
+            Raises on database errors so the caller can retry the result.
         """
         try:
             async with get_db_transaction() as tx:
@@ -770,7 +772,7 @@ class JobManager:
 
         except Exception as e:
             logger.error(f"Failed to mark video {video_id} as failed: {str(e)}")
-            return False
+            raise
 
     @staticmethod
     async def mark_video_skipped(
