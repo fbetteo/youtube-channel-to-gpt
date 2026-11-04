@@ -14,6 +14,8 @@ Website JWT validation uses HS256 and `SUPABASE_SECRET_YOUTUBE_TRANSCRIPTS`, wit
 
 Developer keys use a `yt_live_` prefix, are stored as SHA-256 hashes, and are returned in full only at creation. Validation checks existence, active status, and expiry and records usage. Revocation is scoped to the owner. Tier settings exist; check handler enforcement before claiming a limit applies.
 
+Each user also has a default key (`is_default`), created by the first `GET /user/api-keys/default` (which also creates the `user_credits` row). Only the default key keeps an encrypted copy (`key_ciphertext`, Fernet with `API_KEY_ENCRYPTION_KEY`), so that route returns it in full on every call and the dashboard can show it again. Validation still uses the hash. A partial unique index allows one active default per user; revoking it makes the next call create a new one. Without `API_KEY_ENCRYPTION_KEY` the route returns 503, and changing that value makes existing default keys unreadable (they still validate; revoke them to roll). Missing, invalid, revoked, and expired key errors on `/api/v1` and MCP end with `Get your API key at {FRONTEND_URL_YOUTUBE_TRANSCRIPTS}/dashboard/api-keys` so an agent can point its user there.
+
 ## Working rules
 
 - Reuse the dependency for the target surface; Supabase JWTs and developer keys are different credentials.

@@ -4,6 +4,8 @@ Turn YouTube videos, playlists, and channels into agent-ready transcript context
 
 ## Quick Start
 
+Every account comes with an API key. Sign up or sign in at https://www.downloadyoutubetranscripts.com/dashboard/api-keys and copy it from there.
+
 Use the CLI when you are running locally:
 
 ```bash

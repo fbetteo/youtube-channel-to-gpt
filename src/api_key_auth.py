@@ -6,13 +6,23 @@ API keys are an alternative to JWT authentication for programmatic access.
 """
 
 import hashlib
+import os
 import secrets
 import logging
 from datetime import datetime
 from typing import Optional, Dict, Any
+from cryptography.fernet import Fernet
 from fastapi import HTTPException, Header, status
 
 logger = logging.getLogger(__name__)
+
+
+def get_key_hint() -> str:
+    """Where to get a key; appended to auth errors so agents can tell their user."""
+    frontend_url = os.getenv(
+        "FRONTEND_URL_YOUTUBE_TRANSCRIPTS", "http://localhost:3000"
+    )
+    return f"Get your API key at {frontend_url}/dashboard/api-keys"
 
 
 def generate_api_key() -> tuple[str, str, str]:
@@ -76,7 +86,7 @@ async def validate_api_key_value(api_key: str) -> Dict[str, Any]:
                 logger.warning(f"Invalid API key attempted: {api_key[:12]}...")
                 raise HTTPException(
                     status_code=status.HTTP_403_FORBIDDEN,
-                    detail="Invalid API key",
+                    detail=f"Invalid API key. {get_key_hint()}",
                 )
 
             # Check if key is active
@@ -84,7 +94,7 @@ async def validate_api_key_value(api_key: str) -> Dict[str, Any]:
                 logger.warning(f"Inactive API key used: {row['key_id']}")
                 raise HTTPException(
                     status_code=status.HTTP_403_FORBIDDEN,
-                    detail="API key has been deactivated",
+                    detail=f"API key has been deactivated. {get_key_hint()}",
                 )
 
             # Check if key has expired
@@ -92,7 +102,7 @@ async def validate_api_key_value(api_key: str) -> Dict[str, Any]:
                 logger.warning(f"Expired API key used: {row['key_id']}")
                 raise HTTPException(
                     status_code=status.HTTP_403_FORBIDDEN,
-                    detail="API key has expired",
+                    detail=f"API key has expired. {get_key_hint()}",
                 )
 
             # Update last_used_at and increment total_requests
@@ -143,7 +153,7 @@ async def validate_api_key(
     if not x_api_key:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="API key is required. Provide it via X-API-Key header.",
+            detail=f"API key is required. Provide it via the X-API-Key header. {get_key_hint()}",
             headers={"WWW-Authenticate": "ApiKey"},
         )
 
@@ -209,6 +219,61 @@ async def create_api_key(
         )
 
 
+DEFAULT_KEY_QUERY = """
+    SELECT key_id, key_prefix, name, key_ciphertext, created_at
+    FROM api_keys
+    WHERE user_id = $1 AND is_default AND is_active
+"""
+
+
+async def get_or_create_default_api_key(user_id: str) -> Dict[str, Any]:
+    """
+    Return the user's default API key in full, creating it on first call.
+
+    Only the default key keeps an encrypted copy (key_ciphertext) so the
+    dashboard can show it again; other keys are shown once. Validation still
+    goes through key_hash. Revoking the default makes the next call create a
+    new one. The user_credits row must already exist (foreign key).
+    """
+    encryption_key = os.getenv("API_KEY_ENCRYPTION_KEY")
+    if not encryption_key:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="Default API keys are not configured on this server.",
+        )
+    fernet = Fernet(encryption_key)
+
+    from db_youtube_transcripts.database import get_db_connection
+
+    async with get_db_connection() as conn:
+        row = await conn.fetchrow(DEFAULT_KEY_QUERY, user_id)
+        if not row:
+            full_key, key_hash, key_prefix = generate_api_key()
+            await conn.execute(
+                """
+                INSERT INTO api_keys
+                    (user_id, key_hash, key_prefix, name, is_default, key_ciphertext)
+                VALUES ($1, $2, $3, 'Default', TRUE, $4)
+                ON CONFLICT DO NOTHING
+                """,
+                user_id,
+                key_hash,
+                key_prefix,
+                fernet.encrypt(full_key.encode()).decode(),
+            )
+            # Re-read: a concurrent request may have created the default first.
+            row = await conn.fetchrow(DEFAULT_KEY_QUERY, user_id)
+            logger.info(f"Created default API key {row['key_id']} for user {user_id}")
+
+    return {
+        "key_id": str(row["key_id"]),
+        "api_key": fernet.decrypt(row["key_ciphertext"].encode()).decode(),
+        "key_prefix": row["key_prefix"],
+        "name": row["name"],
+        "created_at": row["created_at"].isoformat(),
+    }
+
+
 async def list_user_api_keys(user_id: str) -> list[Dict[str, Any]]:
     """
     List all API keys for a user (without the actual key values).
@@ -225,8 +290,8 @@ async def list_user_api_keys(user_id: str) -> list[Dict[str, Any]]:
         async with get_db_connection() as conn:
             rows = await conn.fetch(
                 """
-                SELECT 
-                    key_id, key_prefix, name, is_active, rate_limit_tier,
+                SELECT
+                    key_id, key_prefix, name, is_active, is_default, rate_limit_tier,
                     last_used_at, total_requests, total_credits_used,
                     created_at, expires_at
                 FROM api_keys
@@ -242,6 +307,7 @@ async def list_user_api_keys(user_id: str) -> list[Dict[str, Any]]:
                     "key_prefix": row["key_prefix"],
                     "name": row["name"],
                     "is_active": row["is_active"],
+                    "is_default": row["is_default"],
                     "rate_limit_tier": row["rate_limit_tier"],
                     "last_used_at": (
                         row["last_used_at"].isoformat() if row["last_used_at"] else None

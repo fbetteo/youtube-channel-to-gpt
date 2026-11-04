@@ -12,7 +12,7 @@ from fastapi import APIRouter, HTTPException, Request, Response, status
 from fastapi.responses import JSONResponse, PlainTextResponse, StreamingResponse
 from pydantic import BaseModel, Field
 
-from api_key_auth import validate_api_key_value
+from api_key_auth import get_key_hint, validate_api_key_value
 from routers import developer_api
 
 
@@ -173,7 +173,7 @@ async def _api_key_data_from_request(request: Request) -> Dict[str, Any]:
     if not auth_header.lower().startswith("bearer "):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="MCP tool calls require Authorization: Bearer <api_key>.",
+            detail=f"MCP tool calls require Authorization: Bearer <api_key>. {get_key_hint()}",
             headers={"WWW-Authenticate": "Bearer"},
         )
 
@@ -181,7 +181,7 @@ async def _api_key_data_from_request(request: Request) -> Dict[str, Any]:
     if not api_key:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Bearer token is empty.",
+            detail=f"Bearer token is empty. {get_key_hint()}",
             headers={"WWW-Authenticate": "Bearer"},
         )
 
