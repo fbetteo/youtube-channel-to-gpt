@@ -1790,9 +1790,14 @@ async def get_user_credits(
     """
     try:
         user_id = get_user_id_from_payload(payload)
-        await CreditManager.get_user_credits(user_id)  # creates new users
-        subscription = await CreditManager.get_active_subscription(user_id)
-        layers = await credit_ledger.summary(user_id)
+
+        async def _layers():
+            await CreditManager.get_user_credits(user_id)  # creates new users
+            return await credit_ledger.summary(user_id)
+
+        subscription, layers = await asyncio.gather(
+            CreditManager.get_active_subscription(user_id), _layers()
+        )
 
         # Without a plan, unassigned credits are the user's own balance (permanent);
         # with one they are refunds of plan credits and end with the plan.
@@ -2203,21 +2208,16 @@ async def fetch_playlist_videos_task(
         # Fetch with 5-minute timeout
         timeout_seconds = 300  # 5 minutes
 
-        async def _fetch_videos():
-            # Get playlist info
-            playlist_info = await youtube_service.get_playlist_info(playlist_id)
-
-            # Get ALL videos from playlist (no limit)
-            videos = await youtube_service.get_all_playlist_videos(
-                playlist_id, preferred_language=preferred_language
-            )
-
-            return playlist_info, videos
-
         # Execute with timeout
         try:
             playlist_info, videos = await asyncio.wait_for(
-                _fetch_videos(), timeout=timeout_seconds
+                asyncio.gather(
+                    youtube_service.get_playlist_info(playlist_id),
+                    youtube_service.get_all_playlist_videos(
+                        playlist_id, preferred_language=preferred_language
+                    ),
+                ),
+                timeout=timeout_seconds,
             )
 
             # Update job with success
@@ -2516,8 +2516,8 @@ async def download_transcript_raw(
 
     Returns the transcript text directly without creating intermediate files.
 
-    For authenticated users: deducts 1 credit per attempt
-    For anonymous users: rate limited downloads
+    For authenticated users: 1 credit, refunded if the attempt fails
+    For anonymous users: rate limited downloads; failed attempts don't count
     """
     endpoint_start = time.time()
 
@@ -2541,16 +2541,22 @@ async def download_transcript_raw(
             f"Anonymous raw transcript download from {rate_limit_info['client_ip']} "
             f"({rate_limit_info['remaining_requests']} requests remaining)"
         )
+
+    async def give_back():
+        if user_id:
+            try:
+                await CreditManager.add_credits(user_id, 1)
+            except Exception as e:
+                logger.error(f"Raw transcript refund failed for user {user_id}: {e}")
+        else:
+            transcript_limiter.remove_request(rate_limit_info["client_ip"])
+
     try:
         # Extract YouTube video ID from URL
         extract_start = time.time()
         video_id = youtube_service.extract_youtube_id(request.youtube_url)
         extract_end = time.time()
         logger.info(f"URL extraction took {extract_end - extract_start:.3f}s")
-
-        if user_id:
-            # The credit also covers a summary of this video for 24 hours.
-            await summary_service.record_paid_access(user_id, video_id)
 
         # Get transcript (cache first) with timeout protection
         transcript_start = time.time()
@@ -2588,16 +2594,26 @@ async def download_transcript_raw(
             f"Raw response preparation took {response_end - response_start:.3f}s"
         )
 
+        if user_id:
+            # The credit also covers a summary of this video for 24 hours.
+            await summary_service.record_paid_access(user_id, video_id)
+
         endpoint_end = time.time()
         total_time = endpoint_end - endpoint_start
         logger.info(f"Total raw endpoint execution took {total_time:.3f}s")
 
         return response
 
+    except HTTPException:
+        await give_back()
+        raise
     except ValueError as e:
-        logger.error(f"Invalid URL: {str(e)}")
+        # Invalid URL, unavailable video, or no captions
+        await give_back()
+        logger.info(f"Raw transcript unavailable: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
+        await give_back()
         logger.error(f"Error downloading transcript: {str(e)}", exc_info=True)
         raise HTTPException(
             status_code=500, detail=f"Failed to download transcript: {str(e)}"
@@ -2703,10 +2719,12 @@ async def list_chat_creators():
 
 @app.get("/creators/{slug}")
 async def get_chat_creator(slug: str):
-    creators = await creator_chat.list_creators(slug)
+    creators, videos = await asyncio.gather(
+        creator_chat.list_creators(slug), creator_chat.list_creator_videos(slug)
+    )
     if not creators:
         raise HTTPException(status_code=404, detail="Creator not found.")
-    return {**creators[0], "videos": await creator_chat.list_creator_videos(slug)}
+    return {**creators[0], "videos": videos}
 
 
 @app.post("/creators/{slug}/chat")
@@ -3077,23 +3095,24 @@ async def get_channel_new_videos(
         channel_id = channel_info.get("channelId")
         channel_title = channel_info.get("title", channel_name)
 
-        # 2. Fetch all current videos from the channel via yt-dlp
-        current_videos = await youtube_service.get_all_channel_videos(channel_id)
-        current_video_ids = {v["id"] for v in current_videos}
-
-        # 3. Get completed video IDs — scoped to a single job or all user jobs
+        # 2. Fetch all current videos from the channel via yt-dlp, and
+        # 3. completed video IDs — scoped to a single job or all user jobs
         from db_youtube_transcripts.job_manager import JobManager
 
         if job_id:
-            completed_ids = await JobManager.get_completed_video_ids_for_job(job_id)
-            no_transcript_ids = await JobManager.get_no_transcript_video_ids_for_job(
-                job_id
+            history_lookups = (
+                JobManager.get_completed_video_ids_for_job(job_id),
+                JobManager.get_no_transcript_video_ids_for_job(job_id),
             )
         else:
-            completed_ids = await JobManager.get_completed_video_ids_for_user(user_id)
-            no_transcript_ids = await JobManager.get_no_transcript_video_ids_for_user(
-                user_id
+            history_lookups = (
+                JobManager.get_completed_video_ids_for_user(user_id),
+                JobManager.get_no_transcript_video_ids_for_user(user_id),
             )
+        current_videos, completed_ids, no_transcript_ids = await asyncio.gather(
+            youtube_service.get_all_channel_videos(channel_id), *history_lookups
+        )
+        current_video_ids = {v["id"] for v in current_videos}
 
         # 4. Compute the set of missing video IDs
         #    "missing" = not completed (regardless of whether they failed)
@@ -3801,28 +3820,33 @@ async def get_playlist_new_videos(
     try:
         # 1. Resolve and validate playlist ID
         clean_playlist_id = youtube_service.extract_playlist_id(playlist_id)
-        playlist_info = await youtube_service.get_playlist_info(clean_playlist_id)
-        playlist_title = playlist_info.get("title", clean_playlist_id)
 
-        # 2. Fetch all current videos from the playlist via yt-dlp
-        current_videos = await youtube_service.get_all_playlist_videos(
-            clean_playlist_id
-        )
-        current_video_ids = {v["id"] for v in current_videos}
-
-        # 3. Get completed video IDs — scoped to a single job or all user jobs
+        # 2. Fetch playlist info and all current videos via yt-dlp, and
+        # 3. completed video IDs — scoped to a single job or all user jobs
         from db_youtube_transcripts.job_manager import JobManager
 
         if job_id:
-            completed_ids = await JobManager.get_completed_video_ids_for_job(job_id)
-            no_transcript_ids = await JobManager.get_no_transcript_video_ids_for_job(
-                job_id
+            history_lookups = (
+                JobManager.get_completed_video_ids_for_job(job_id),
+                JobManager.get_no_transcript_video_ids_for_job(job_id),
             )
         else:
-            completed_ids = await JobManager.get_completed_video_ids_for_user(user_id)
-            no_transcript_ids = await JobManager.get_no_transcript_video_ids_for_user(
-                user_id
+            history_lookups = (
+                JobManager.get_completed_video_ids_for_user(user_id),
+                JobManager.get_no_transcript_video_ids_for_user(user_id),
             )
+        (
+            playlist_info,
+            current_videos,
+            completed_ids,
+            no_transcript_ids,
+        ) = await asyncio.gather(
+            youtube_service.get_playlist_info(clean_playlist_id),
+            youtube_service.get_all_playlist_videos(clean_playlist_id),
+            *history_lookups,
+        )
+        playlist_title = playlist_info.get("title", clean_playlist_id)
+        current_video_ids = {v["id"] for v in current_videos}
 
         # 4. Compute the set of missing video IDs
         #    "missing" = not completed (regardless of whether they failed)
@@ -4150,12 +4174,12 @@ async def create_batch_playlist_download_jobs_task(batch_job_id: str):
                     raise ValueError("Missing playlist_id")
 
                 clean_playlist_id = youtube_service.extract_playlist_id(playlist_input)
-                playlist_info = await youtube_service.get_playlist_info(
-                    clean_playlist_id
-                )
-                videos = await youtube_service.get_all_playlist_videos(
-                    clean_playlist_id,
-                    preferred_language=formatting_options.get("preferred_language"),
+                playlist_info, videos = await asyncio.gather(
+                    youtube_service.get_playlist_info(clean_playlist_id),
+                    youtube_service.get_all_playlist_videos(
+                        clean_playlist_id,
+                        preferred_language=formatting_options.get("preferred_language"),
+                    ),
                 )
 
                 child_job = await _create_playlist_download_job(

@@ -309,9 +309,11 @@ async def _start_developer_job_after_discovery(
             )
         else:
             source_id = youtube_service.extract_playlist_id(source_input)
-            playlist_info = await youtube_service.get_playlist_info(source_id)
+            playlist_info, all_videos = await asyncio.gather(
+                youtube_service.get_playlist_info(source_id),
+                youtube_service.get_all_playlist_videos(source_id),
+            )
             source_name = playlist_info.get("title", source_id)
-            all_videos = await youtube_service.get_all_playlist_videos(source_id)
 
         if max_videos and max_videos < len(all_videos):
             all_videos = all_videos[:max_videos]
@@ -561,8 +563,10 @@ async def get_single_transcript(
         raise HTTPException(status_code=500, detail=f"Failed to get transcript: {e}")
 
     # The credit also covers a website summary of this video for 24 hours.
-    await summary_service.record_paid_access(user_id, video_id)
-    await increment_api_key_credits_used(api_key_data["key_id"], 1)
+    await asyncio.gather(
+        summary_service.record_paid_access(user_id, video_id),
+        increment_api_key_credits_used(api_key_data["key_id"], 1),
+    )
 
     transcript_text = youtube_service.format_transcript_segments(
         segments, include_timestamps=request.include_timestamps

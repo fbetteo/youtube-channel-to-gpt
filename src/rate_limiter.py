@@ -61,6 +61,12 @@ class RateLimiter:
             self._clean_old_requests(key)
             self.requests[key].append(time.time())
 
+    def remove_request(self, key: str) -> None:
+        """Forget the most recent request for the key, e.g. one that failed"""
+        with self.lock:
+            if self.requests.get(key):
+                self.requests[key].pop()
+
     def get_request_count(self, key: str) -> int:
         """
         Get the number of requests made by the key in the current window

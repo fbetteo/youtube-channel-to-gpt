@@ -59,8 +59,11 @@ transcript and summary: a signed-in user charged for that video (raw download or
 summary) in the last 24 h (`video_access`) is not charged again. Otherwise 1 credit,
 refunded on our failures (transcript timeout 504, provider error 502, video over
 `SUMMARY_MAX_INPUT_CHARS` 422, unexpected 500). A video without captions returns
-400 and stays charged, matching raw downloads. Anonymous users consume the same
-in-memory limiter as `/download/transcript/raw`. 503 before charging when
+400 and stays charged. Anonymous users consume the same in-memory limiter as `/download/transcript/raw`. The raw route also
+charges 1 credit and refunds it on any failure (invalid URL, unavailable video, no
+captions, timeout 504, 500); a failed anonymous raw attempt gives its limiter slot
+back. The website fetches `/video-info` in parallel with the raw route, so the raw
+route must stay free on failure. 503 before charging when
 `SUMMARY_OPENAI_API_KEY` is unset. Transcripts use the shared transcript cache
 (below); summaries are cached in `video_summaries` when that table exists. Cache
 errors fall back to live work. Plan and next phases: `docs/plans/single-video-summary.md`.
