@@ -56,6 +56,8 @@ CREATE TABLE IF NOT EXISTS user_credits (
     credits INTEGER NOT NULL DEFAULT 0,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+CREATE SCHEMA IF NOT EXISTS auth;
+CREATE TABLE IF NOT EXISTS auth.users (id UUID PRIMARY KEY, email TEXT);
 """
 
 
@@ -408,6 +410,14 @@ def cmd_seed_creator(args):
     print(f"Seeded {creator[2]} ('{args.slug}', enabled) with {len(chunks)} chunks")
 
 
+def cmd_seed_user(args):
+    """Stand in for a Supabase signup: give a user UUID an email in auth.users."""
+    with pg() as conn, conn.cursor() as c:
+        c.execute("INSERT INTO auth.users (id, email) VALUES (%s, %s) "
+                  "ON CONFLICT (id) DO UPDATE SET email = EXCLUDED.email", (args.user_id, args.email))
+    print(f"Seeded auth user {args.user_id} <{args.email}>")
+
+
 def stripe_client():
     import stripe
 
@@ -533,6 +543,10 @@ def main():
     sc = sub.add_parser("seed-creator")
     sc.add_argument("slug")
     sc.set_defaults(fn=cmd_seed_creator)
+    su = sub.add_parser("seed-user")
+    su.add_argument("user_id")
+    su.add_argument("email")
+    su.set_defaults(fn=cmd_seed_user)
     s = sub.add_parser("stripe-subscribe")
     s.add_argument("--user", required=True)
     s.add_argument("--lookup-key", default="transcript_monthly_1000")
