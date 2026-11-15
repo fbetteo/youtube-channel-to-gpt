@@ -68,6 +68,7 @@ import creator_chat
 import summary_service
 import credit_ledger
 from credit_ledger import ACTIVE_SUBSCRIPTION_STATUSES
+from disposable_email import is_disposable_email
 from transcript_formats import OutputFormat, download_option_overrides
 from rate_limiter import creator_chat_limiter, transcript_limiter
 
@@ -232,10 +233,14 @@ class CreditManager:
                     logger.debug(f"User {user_id} has {result['credits']} credits")
                     return result["credits"]
                 else:
-                    logger.info(
-                        f"User {user_id} not found in credits table, creating with {WELCOME_CREDITS} credits"
+                    email = await conn.fetchval(
+                        "SELECT email FROM auth.users WHERE id = $1", user_id
                     )
-                    await CreditManager.create_user_credits(user_id, WELCOME_CREDITS)
+                    welcome = 0 if is_disposable_email(email) else WELCOME_CREDITS
+                    logger.info(
+                        f"User {user_id} not found in credits table, creating with {welcome} credits"
+                    )
+                    await CreditManager.create_user_credits(user_id, welcome)
                     # Re-read: a concurrent request may have created the row first.
                     return await conn.fetchval(
                         "SELECT credits FROM user_credits WHERE user_id = $1", user_id

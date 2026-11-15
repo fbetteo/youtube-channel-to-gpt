@@ -54,6 +54,8 @@ MSYS_NO_PATHCONV=1 $V call POST /user/api-keys --user <uuid> --json '{"name":"ve
 MSYS_NO_PATHCONV=1 $V call POST /api/v1/transcripts/single --api-key yt_live_... --json '{"video_url":"jNQXAC9IVRw"}' --run myrun
 # Raw JWT for curl or other clients
 $V jwt <uuid>
+# Give a user an email in auth.users (stands in for Supabase signup; disposable domains get 0 welcome credits)
+$V seed-user <uuid> someone@example.com
 # Observe database state (SELECT/WITH only; change state through the API)
 $V sql "SELECT user_id, credits, permanent_credits FROM user_credits" --run myrun
 # Stripe test-mode subscription lifecycle: real Stripe objects, events delivered signed to /payments/webhook
@@ -93,4 +95,4 @@ Stops the API process tree by recorded PID (never by name), deletes the Stripe t
 
 ## Helper reference
 
-`verify.py up [--openai] | doctor | down | jwt USER_ID | call METHOD PATH [--user UUID | --api-key KEY | --bearer KEY] [--json BODY] [--run NAME] | sql QUERY [--run NAME] | seed-creator SLUG (copies a creator's production chunks read-only, enabled) | stripe-subscribe --user UUID [--lookup-key KEY] [--run NAME] | stripe-advance [--days N] [--run NAME] | stripe-cancel [--run NAME] | stripe-forward [--run NAME]`. The constants at the top of the file (ports, container name, secrets) and `instance_env()` define the isolation.
+`verify.py up [--openai] | doctor | down | jwt USER_ID | call METHOD PATH [--user UUID | --api-key KEY | --bearer KEY] [--json BODY] [--run NAME] | sql QUERY [--run NAME] | seed-creator SLUG (copies a creator's production chunks read-only, enabled) | seed-user USER_ID EMAIL | stripe-subscribe --user UUID [--lookup-key KEY] [--run NAME] | stripe-advance [--days N] [--run NAME] | stripe-cancel [--run NAME] | stripe-forward [--run NAME]`. The constants at the top of the file (ports, container name, secrets) and `instance_env()` define the isolation.
